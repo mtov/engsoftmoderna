@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
 <script>
@@ -10,6 +11,15 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-8249107-3');
+</script>
+  
+<script>
+var trackOutboundLink = function(url, doc, label) {
+    ga('send', 'event', doc, label, url, {
+       'transport': 'beacon',
+       'hitCallback': function(){window.open(url);}
+    });
+}
 </script>
   
 <title>Engenharia de Software Moderna (DCC/UFMG)</title>
@@ -63,7 +73,7 @@ e adaptar os slides; porém, créditos devem ser dados ao seu autor.
   
 <li> Parte I - Introdução:
 <ul>
-<li> 01 - <a href="https://docs.google.com/presentation/d/1L8yl5gxgaHwsESih6aiB4Oy4rZF5FWmCaX-HZizj9Cg/edit?usp=sharing">Introdução</a> (2 aulas)
+<li> 01 - <a onclick="trackOutboundLink(this.href, 'slides', 'intro'); return false;" href="https://docs.google.com/presentation/d/1L8yl5gxgaHwsESih6aiB4Oy4rZF5FWmCaX-HZizj9Cg/edit?usp=sharing">Introdução</a> (2 aulas)
 </ul>  
 
 <li> Parte II - Processos:
