@@ -1,0 +1,27 @@
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<body>
+
+<h3>Uma Simples SPA</h3>
+
+<div id="ui">
+  Temperatura: {{ temperatura }}
+  <p><button v-on:click="incTemperatura">Incrementa</button></p>
+</div>
+
+<script>
+var model = new Vue({
+  el: '#ui',
+  data: {
+    temperatura: 30
+  },
+  methods: {
+    incTemperatura: function () {
+      this.temperatura++;
+    }
+  }
+})
+</script>
+
+</body>
+</html>
