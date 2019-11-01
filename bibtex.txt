@@ -1,6 +1,6 @@
 @book{esm-book,
-  author    = {Marco Tulio Valente}, 
   title     = {Engenharia de Software Moderna},
+  author    = {Marco Tulio Valente}, 
   publisher = {ASERG/DCC/UFMG},
   year      = 2020,
 }
