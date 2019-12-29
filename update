@@ -1,1 +1,10 @@
 curl -o cap2.html https://docs.google.com/document/d/e/2PACX-1vQuvqasjm_WqVSS7YUBiraL4GWwKJom6JBDFGkxRPFvzjysow0UmmWpBq6PVyhBGeO23WGhHX2JnJPD/pub
+
+curl -o cap7.html https://docs.google.com/document/d/e/2PACX-1vShBhqGk0ckdtt8wGs5fuVOlAsCnidOvG6tGs0ZrhJCRnGPY1WqNDsy54pW-kF-gqJxEqrug24FhRDj/pub
+
+git add cap2.html
+git add cap7.html
+
+git commit -a -m "update"
+
+git push origin master
