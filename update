@@ -8,7 +8,7 @@ cat analytics.html cap2.html >> teste.html
 mv teste.html cap2.html
 
 cat analytics.html cap3.html >> teste.html
-mv teste.html cap7.html
+mv teste.html cap3.html
 
 cat analytics.html cap7.html >> teste.html
 mv teste.html cap7.html
