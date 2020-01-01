@@ -1,0 +1,11 @@
+from: markdown
+to: html5
+
+metadata:
+  title: Engenharia de Software Moderna
+  author:
+  - Marco Tulio Valente
+
+include-in-header: header.html
+include-before-body: begin-body.html 
+include-after-body: end-body.html
