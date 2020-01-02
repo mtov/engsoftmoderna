@@ -1,20 +1,16 @@
 pandoc --defaults=defaults.yaml cap0.md -o cap0.html
 pandoc --defaults=defaults.yaml cap1.md -o cap1.html
+pandoc --defaults=defaults.yaml cap7.md -o cap7.html
 
 curl -o cap2.html https://docs.google.com/document/d/e/2PACX-1vQuvqasjm_WqVSS7YUBiraL4GWwKJom6JBDFGkxRPFvzjysow0UmmWpBq6PVyhBGeO23WGhHX2JnJPD/pub
 
 curl -o cap3.html https://docs.google.com/document/d/e/2PACX-1vShmUD15aIUNCy50C_cHLqq2PgcNV6UArnC8q8zMlovcYtkjyalk62JxlfUrfHt74cLclpv7o7RQVIW/pub
-
-curl -o cap7.html https://docs.google.com/document/d/e/2PACX-1vShBhqGk0ckdtt8wGs5fuVOlAsCnidOvG6tGs0ZrhJCRnGPY1WqNDsy54pW-kF-gqJxEqrug24FhRDj/pub
 
 cat analytics.html cap2.html >> teste.html
 mv teste.html cap2.html
 
 cat analytics.html cap3.html >> teste.html
 mv teste.html cap3.html
-
-cat analytics.html cap7.html >> teste.html
-mv teste.html cap7.html
 
 git add .
 
