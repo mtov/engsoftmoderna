@@ -1,5 +1,5 @@
 
-# Cap. 1 - Processos
+# Cap. 1 - Introdução
 
 > Our civilization runs on software. -- Bjarne Stroustrup
 
@@ -412,7 +412,7 @@ Esse código possui um defeito, pois a área de um círculo é \"pi vezes
 raio ao quadrado\", e não ao cubo. Bug é um termo mais informal, usado
 com objetivos às vezes diversos. Mas, o uso mais comum é como sinônimo
 de defeito. Por fim, uma falha ocorre quando um código com defeito for
-executado — por exemplo, a condição do if do programa acima for
+executado — por exemplo, a condição do `if` do programa acima for
 verdadeira — e, com isso, levar o programa a apresentar um resultado
 incorreto. Portanto, nem todo defeito ou bug ocasiona falhas, pois pode
 ser que o código defeituoso nunca seja executado.
@@ -1036,7 +1036,7 @@ podem contribuir com dois benefícios principais: (1) elas podem tornar
 mais produtivo o desenvolvimento de Sistemas B; (b) elas podem propiciar
 a construção de Sistemas B com melhor qualidade, tanto interna (por
 exemplo, sistemas mais fáceis de serem mantidos) como externa (por
-exemplo, sistemas com menor quantidade de bugs em tempo de produção).
+exemplo, sistemas com menor quantidade de bugs em produção).
 
 ## 1.4 Próximos Capítulos
 
