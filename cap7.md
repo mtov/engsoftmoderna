@@ -323,7 +323,7 @@ Vamos concluir com um resumo sobre MVC, na visão de Fowler e Beck
 ([link](https://dl.acm.org/citation.cfm?id=311424), Cap.
 12, pág. 370):
 
-O coração e a parte mais preciosa de MVC está na separação entre
+> O coração e a parte mais preciosa de MVC está na separação entre
 código de interface com o usuário (a Visão, também chamada de
 apresentação) e a lógica do domínio (o Modelo). As classes de
 apresentação implementam apenas a lógica necessária para lidar com a

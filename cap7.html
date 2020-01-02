@@ -112,7 +112,9 @@
 <li>MVC favorece testabilidade. Como veremos no próximo capítulo, é mais fácil testar objetos não-visuais, isto é, não relacionados com a implementação de interfaces gráficas. Por isso, ao separar objetos de apresentação de objetos de Modelo, fica mais fácil testar esses últimos.</li>
 </ul>
 <p>Vamos concluir com um resumo sobre MVC, na visão de Fowler e Beck (<a href="https://dl.acm.org/citation.cfm?id=311424">link</a>, Cap. 12, pág. 370):</p>
+<blockquote>
 <p>O coração e a parte mais preciosa de MVC está na separação entre código de interface com o usuário (a Visão, também chamada de apresentação) e a lógica do domínio (o Modelo). As classes de apresentação implementam apenas a lógica necessária para lidar com a interface do usuário. Por outro lado, objetos de domínio não incluem código visual, mas apenas lógica de negócios. Isso separa duas partes complexas de sistemas de software em partes que são mais fáceis de se modificar. Também permite várias apresentações da mesma lógica de negócio.</p>
+</blockquote>
 <p>💡<strong>Pergunta Frequente</strong>: <strong>Qual a diferença entre MVC e três camadas?</strong> A resposta vai ser um pouco longa e vamos nos basear na evolução histórica dessas arquiteturas:</p>
 <ul>
 <li><p>Como comentamos, MVC surgiu no final da década de 70, para ajudar na construção de interfaces gráficas. Isto é, aplicações que incluem uma interface com janelas, botões, caixas de texto, etc. Como exemplo, podemos citar um pacote de escritório, com aplicações como Word, Excel e Powerpoint, no caso do sistema operacional Windows.</p></li>
