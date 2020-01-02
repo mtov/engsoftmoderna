@@ -1,6 +1,7 @@
 https://engsoftmoderna.info
 https://engsoftmoderna.info/index.html
 https://engsoftmoderna.info/slides.html
+https://engsoftmoderna.info/cap0.html
 https://engsoftmoderna.info/cap2.html
 https://engsoftmoderna.info/cap3.html
 https://engsoftmoderna.info/cap7.html

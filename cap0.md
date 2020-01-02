@@ -1,6 +1,7 @@
 # Prefácio
 
 > A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.
+>
 > -- <cite>Eduardo Giannetti</cite>
 
 
@@ -54,6 +55,7 @@ Apesar de o livro não estar pronto, resolvemos escrever essa primeira versão d
 
 Muito em breve, vamos concluir este prefácio!
 
+Marco Tulio Valente
 Belo Horizonte, 11 de novembro de 2019.
 
 ## Sobre o Autor
@@ -61,4 +63,4 @@ Belo Horizonte, 11 de novembro de 2019.
 Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Federal de Minas Gerais, onde atualmente é Professor Associado do Departamento de Ciência da Computação. Seus interesses de pesquisa concentram-se em Engenharia de Software, especificamente nas áreas de Manutenção e Evolução de Software, Qualidade de Software e Mineração de Repositórios de Software. Ele é Bolsista de Produtividade Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG. É autor de mais de 100 artigos em periódicos e conferências internacionais, muitos deles em co-autoria com pesquisadores internacionais de renome. Orientou mais de 30 dissertações de mestrado e cerca de uma dezena de teses de doutorado. Desde 2010, coordena o Applied Software Engineering Research Group ([ASERG](http://aserg.labsoft.dcc.ufmg.br/)), do DCC/UFMG. É responsável também pelo 
 [CSIndexbr](https://csindexbr.org/), sistema que oferece dados transparentes sobre a produção científica brasileira em Ciência da Computação.
 
-![Marco Tulio](figs/mtov.png)
+![](figs/cap0/mtov.png)
