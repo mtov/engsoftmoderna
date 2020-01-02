@@ -1217,9 +1217,11 @@ emitia-se mais poluentes, para melhorar o desempenho. Ou seja, o código
 provavelmente incluía uma estrutura de decisão como a seguinte
 (meramente ilustrativa, para fins deste exercício):
 
- if \"carro sendo testado em um laboratório\"
-   then \"emita poluentes dentro das normas\"
-  else \"emissão de poluentes não é mais uma preocupação\"
+```
+ if "carro sendo testado em um laboratório"
+    then "emita poluentes dentro das normas"
+    else "emissão de poluentes não é mais uma preocupação"
+```
 
 O que você faria se seu chefe pedisse para escrever um *if* como o
 acima? (para mais informações sobre esse episódio com automóveis
