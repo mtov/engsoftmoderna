@@ -643,9 +643,9 @@ etc.
 Historicamente, existem dois grandes tipos de processos que podem ser
 adotados na construção de sistemas de software:
 
-1.  **Processos Waterfall** (ou em cascata)
+*  **Processos Waterfall** (ou em cascata)
 
-2.  **Processos Ágeis** (ou incrementais ou iterativos).
+*  **Processos Ágeis** (ou incrementais ou iterativos).
 
 Processos Waterfall foram os primeiros a serem propostos, ainda na
 década de 70, quando a Engenharia de Software começava a ganhar
