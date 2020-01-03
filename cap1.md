@@ -798,7 +798,7 @@ São exemplos de fatores (ou atributos) de qualidade interna:
 modularidade, legibilidade do código, manutenibilidade e testabilidade.
 
 Para garantir qualidade de software, diversas estratégias podem ser
-usadas. Primeiro, **métrica**s podem ser usadas para acompanhar o
+usadas. Primeiro, **métricas** podem ser usadas para acompanhar o
 desenvolvimento de um produto de software, incluindo métricas de código
 fonte e métricas de processo. Um exemplo de métrica de código é o número
 de linhas de um programa, que pode ser usado para dar uma ideia de seu
