@@ -455,22 +455,22 @@ usar um exemplo.
 
 **Exemplo**: Suponha que Bob é responsável por manter uma determinada
 funcionalidade de um sistema. Para simplificar, vamos assumir que essa
-funcionalidade é implementada em uma única função f. Bob teve a ideia de
-mudar completamente a implementação de f, de forma que ela passe a usar
+funcionalidade é implementada em uma única função `f`. Bob teve a ideia de
+mudar completamente a implementação de `f`, de forma que ela passe a usar
 algoritmos e estruturas de dados mais eficientes. Para isso, Bob vai
 precisar de algumas semanas. No entanto, apesar de estar otimista, Bob
 não tem certeza de que a nova implementação vai proporcionar os ganhos
 que ele imagina. Por fim, mas não menos importante, durante a
-implementação do novo código, Bob pode precisar do código original de f,
+implementação do novo código, Bob pode precisar do código original de `f`,
 para, por exemplo, corrigir bugs reportados pelos usuários.
 
 Esse é um cenário interessante para Bob criar um branch para implementar
-e testar — de forma isolada — essa nova versão de f. Para isso,
+e testar — de forma isolada — essa nova versão de `f`. Para isso,
 ele deve usar o comando:
 
 `git branch f-novo`
 
-Esse comando cria um novo branch, chamado f-novo, supondo que esse
+Esse comando cria um novo branch, chamado `f-novo`, supondo que esse
 branch ainda não existe.
 
 Para mudar do branch corrente para um novo branch, deve-se usar git
