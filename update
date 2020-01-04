@@ -1,6 +1,7 @@
 pandoc --defaults=defaults.yaml cap0.md -o cap0.html
 pandoc --defaults=defaults.yaml cap1.md -o cap1.html
 pandoc --defaults=defaults.yaml cap7.md -o cap7.html
+pandoc --defaults=defaults.yaml capAp.md -o capAp.html
 
 curl -o cap2.html https://docs.google.com/document/d/e/2PACX-1vQuvqasjm_WqVSS7YUBiraL4GWwKJom6JBDFGkxRPFvzjysow0UmmWpBq6PVyhBGeO23WGhHX2JnJPD/pub
 

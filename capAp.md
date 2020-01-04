@@ -48,8 +48,7 @@ um bug ou implementar uma nova funcionalidade. Por fim, eles atualizam o
 arquivo no servidor, realizando uma operação chamada **commit**, a qual
 torna o arquivo visível para os outros desenvolvedores.
 
-![](media/image5.png){width="2.887461723534558in"
-height="2.7968755468066493in"}
+![](figs/capAp/vcs.png){width=40%}
 
 No início dos anos 2000, começaram a surgir **sistemas de controle de
 versões distribuídos** (DVCS). Dentre eles, podemos citar o sistema
@@ -60,8 +59,7 @@ que cada desenvolvedor possui em sua máquina um servidor completo de
 controle de versões, que pode se comunicar com os servidores de outras
 máquinas, como ilustrado na próxima figura.
 
-![](media/image9.png){width="3.0531255468066494in"
-height="3.903464566929134in"}
+![](figs/capAp/dvcs.png){width=40%}
 
 Apesar de todos os clientes serem funcionalmente equivalentes, na
 prática, quando se usa um DVCS, existe uma máquina principal, que
@@ -181,7 +179,7 @@ o refactoring é explicado em detalhes na mensagem do commit. Na última
 linha da figura, podemos ver o nome do autor do commit e a informação de
 que ele foi realizado há 13 dias.
 
-![](media/image10.png){width="6.970833333333333in" height="2.75in"}
+![](figs/capAp/commit.png){width=85%}
 
 Na última linha da figura também podemos observar que todo commit possui
 um identificador único, no caso:
@@ -221,8 +219,7 @@ executar um add, para salvar o conteúdo do arquivo no index. Feito isso,
 podemos usar um commit para salvar no repositório local a versão
 adicionada ao index. Esse fluxo é ilustrado na próxima figura.
 
-![](media/image6.png){width="3.497916666666667in"
-height="1.7515726159230096in"}
+![](figs/capAp/add.png){width=45%}
 
 **Exemplo**: Suponha o seguinte arquivo simples, mas suficiente para
 explicar os comandos add e commit.
@@ -298,8 +295,7 @@ realiza duas operações principais:
 
 A próxima figura ilustra o funcionamento dos comandos push e pull.
 
-![](media/image4.png){width="3.5791666666666666in"
-height="3.3030872703412073in"}
+![](figs/capAp/push-pull.png){width=50%}
 
 **Exemplo**: Suponha que no repositório git central de um projeto exista
 o seguinte arquivo:
@@ -408,26 +404,17 @@ main() {
  }                                                       
 ```
 
-As linhas inseridas pelo git devem ser entendidas da seguinte forma.
-Entre
+As linhas inseridas pelo git devem ser entendidas da seguinte forma:
 
-----------------------------  ---------------------------------------
-                  Código modificado por Bob, isto é,     
- `print("Hello, world!");`    pelo desenvolvedor que não conseguiu   
-                              dar um push e teve que dar um pull.    
-                              `HEAD` designa que o código foi          
-                              modificado no último commit realizado  
-                              por Bob.                               
+* Entre `<<<<<<< HEAD` e `=======` temos o código modificado por Bob,
+isto é, pelo desenvolvedor que não conseguiu dar um push e teve que
+dar um pull. `HEAD` designa que o código foi modificado no
+último commit realizado por Bob.  
 
- `=======`                    Separador do código responsável pelo  
-                              conflito.                                 
+* Entre  `=======` e `>>>>>>> f25bce8 ...` temos o código modificado
+ por Alice, isto é, pela desenvolvedora que executou com sucesso seu push.
+`f225bce8...` é o ID do commit no qual Alice modificou essa parte do código.       
 
- `print("Olá, mundo!");`      Código modificado por Alice, isto é, 
- `>>>>>>> f25bce8 ...`        pela desenvolvedora que executou com   
-                              sucesso seu push. `f225bce8...` é o ID   
-                              do commit no qual Alice modificou essa 
-                              parte do código.                       
-----------------------------  ---------------------------------------
 
 Cabe então a Bob resolver o conflito, o que é sempre uma tarefa manual.
 Para isso, ele tem que escolher o trecho de código que vai prevalecer
@@ -561,8 +548,7 @@ repositório não possui pai. Já um commit de merge possui dois ou mais
 pais, que representam os branches que foram unidos. Os demais commits
 possuem exatamente um pai.
 
-![](media/image2.png){width="4.879048556430446in"
-height="2.338542213473316in"}
+![](figs/capAp/branches.png){width=50%}
 
 Um branch nada mais é do que uma variável interna do git que contém o
 identificador do último commit realizado no branch. Existe ainda uma
@@ -570,8 +556,7 @@ variável chamada `HEAD`, que aponta para a variável do branch atual. Ou
 seja, `HEAD` contém o nome da variável que contém o identificador do
 último commit do branch atual. Um exemplo é mostrado a seguir:
 
-![](media/image3.png){width="4.791755249343832in"
-height="2.744792213473316in"}
+![](figs/capAp/head1.png){width=60%}
 
 Nesse exemplo, podemos ver que existem dois branches, representados
 pelas variáveis `MASTER` e `ISSUE-45`. Cada uma delas aponta para o último
@@ -579,8 +564,7 @@ commit de seu respectivo branch. A variável HEAD
 aponta para a variável `MASTER`. Isso significa que o branch atual é o
 `MASTER`. Se realizarmos um commit, a configuração mudará para:
 
-![](media/image7.png){width="4.958183508311461in"
-height="2.838542213473316in"}
+![](figs/capAp/head2.png){width=60%}
 
 O novo commit tem identificador 7. Ele foi realizado no `MASTER`, já que
 HEAD apontava para a variável desse branch. O pai do novo commit pai é o
@@ -591,8 +575,7 @@ branch, o pai do próximo commit será o commit 7.
 Porém, se mudarmos para o branch `ISSUE-45`, a configuração passará a ser
 a seguinte:
 
-![](media/image8.png){width="4.9697922134733155in"
-height="2.8700284339457567in"}
+![](figs/capAp/head3.png){width=60%}
 
 A única mudança é que a variável `HEAD` passou a apontar para a variável
 do novo branch, isto é, para a variável `ISSUE-45`. Isso é suficiente para
@@ -707,12 +690,12 @@ do branch para o GitHub:
 
 Na verdade, esses passos não são novidade em relação ao  que vimos na
 seção anterior. No entanto, as diferenças começam  agora. Primeiro, Bob deve ir
-na página do GitHub e selecionar o branch `livro-esm. Feito isso, o GitHub
+na página do GitHub e selecionar o branch `livro-esm`. Feito isso, o GitHub
 mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e
 descrever o seu pull request, como mostra a próxima figura.
 
-![](media/image1.png){width="5.69917760279965in"
-height="3.2031255468066493in"}
+
+![](figs/capAp/pull-request.png){width=65%}
 
 Um pull request é uma solicitação para que um outro desenvolvedor revise
 e, se for o caso, realize o merge de um branch que você criou.
@@ -841,7 +824,7 @@ Carol).
 
 Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
 
-Rachel M. Carmena. How to teach Git. Blog post,
+Rachel M. Carmena. How to teach Git. Blog post
 [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
 
 ## Exercício

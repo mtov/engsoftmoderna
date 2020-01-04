@@ -54,9 +54,9 @@
 <p>Como mencionamos algumas vezes neste livro, software é desenvolvido em equipe. Por isso, precisamos de um servidor para armazenar o código fonte do sistema que está sendo implementado por um grupo de desenvolvedores. A existência desse servidor é fundamental para que os desenvolvedores possam colaborar. Por exemplo, se um desenvolvedor precisar da versão mais recente de um arquivo, ele vai saber precisamente onde ela está disponível. Além disso, sempre é útil manter o histórico das versões mais importantes de cada arquivo. Isso permite, se necessário, realizar uma espécie de "undo" no tempo, isto é, recuperar o código de um arquivo como ele estava há anos atrás, por exemplo.</p>
 <p>Um <strong>sistema de controle de versões</strong> (VCS, na sigla em inglês) oferece os dois serviços mencionados no parágrafo anterior. Primeiro, ele oferece um <strong>repositório</strong> para armazenar a versão mais recente do código fonte de um sistema, bem como de arquivos relacionados, como arquivos de documentação, configuração, páginas Web, manuais, etc. Em segundo lugar, ele permite que se recupere versões mais antigas de qualquer arquivo, caso isso seja necessário. Modernamente, é inconcebível desenvolver qualquer sistema, mesmo que simples, sem um VCS.</p>
 <p>Os primeiros sistemas de controle de versões surgiram no início da década de 70, como o sistema SCCS, desenvolvido para o sistema operacional Unix. Em seguida, surgiram outros sistemas, como o CVS, em meados da década de 80, e depois o sistema Subversion, também conhecido pela sigla svn, no início dos anos 2000. Todos são sistemas centralizados e baseados em uma arquitetura cliente/servidor (veja figura a seguir). Nessa arquitetura, existe um único servidor, que armazena o repositório e o sistema de controle de versões. Os clientes acessam esse servidor para obter a versão mais recente de um arquivo. Feito isso, eles podem modificar o arquivo, por exemplo, para corrigir um bug ou implementar uma nova funcionalidade. Por fim, eles atualizam o arquivo no servidor, realizando uma operação chamada <strong>commit</strong>, a qual torna o arquivo visível para os outros desenvolvedores.</p>
-<p><img src="media/image5.png" style="width:2.88746in;height:2.79688in" /></p>
+<p><img src="figs/capAp/vcs.png" style="width:40.0%" /></p>
 <p>No início dos anos 2000, começaram a surgir <strong>sistemas de controle de versões distribuídos</strong> (DVCS). Dentre eles, podemos citar o sistema BitKeeper, cujo primeiro release é de 2000, e os sistemas Mercurial e git, ambos lançados em 2005. Em vez de uma arquitetura cliente/servidor, um DVCS adota uma arquitetura peer-to-peer. Na prática, isso significa que cada desenvolvedor possui em sua máquina um servidor completo de controle de versões, que pode se comunicar com os servidores de outras máquinas, como ilustrado na próxima figura.</p>
-<p><img src="media/image9.png" style="width:3.05313in;height:3.90346in" /></p>
+<p><img src="figs/capAp/dvcs.png" style="width:40.0%" /></p>
 <p>Apesar de todos os clientes serem funcionalmente equivalentes, na prática, quando se usa um DVCS, existe uma máquina principal, que armazena a versão de referência do código fonte. Na nossa figura, chamamos esse repositório de <strong>repositório central</strong>. Cada desenvolvedor pode trabalhar de forma independente e até mesmo offline em sua máquina cliente, realizando commits no seu repositório. De tempos em tempos, ele deve sincronizar esse repositório com o central, por meio de duas operações: <strong>pull</strong> e <strong>push</strong>. Um pull atualiza o repositório local com novos commits disponíveis no repositório central. Por sua vez, um push faz a operação contrária, isto é, envia para o repositório central os commits mais recentes realizados pelo desenvolvedor em seu repositório local.</p>
 <p>Quando comparado com um VCS centralizado, um DVCS tem as seguintes vantagens:</p>
 <ul>
@@ -76,7 +76,7 @@
 <p>Commits são usados para criar snapshots (ou fotografias) dos arquivos de um sistema. Uma vez tiradas essas fotografias, elas são armazenadas no sistema de controle de versões, de forma compactada e otimizada, para não ocupar muito espaço em disco. Posteriormente, pode-se recuperar qualquer uma das fotografias, para, por exemplo, restaurar uma implementação antiga de um arquivo.</p>
 <p>Recomenda-se que desenvolvedores realizem commits periodicamente, sempre que tiverem efetuado uma mudança importante no código. Em DVCSs, como o git, os commits são primeiro armazenados no repositório local do desenvolvedor. Por isso, o custo de um commit é pequeno e, portanto, desenvolvedores podem realizar diversos commits ao longo de um dia de trabalho. Na verdade, o que não é recomendável é a realização de commits grandes, com modificações importantes em diversos arquivos. Também não recomenda-se que um commit inclua modificações relativas a mais de uma tarefa de manutenção. Por exemplo, não é recomendável corrigir dois bugs em um mesmo commit. Em vez disso, cada bug deve ser corrigido em um commit separado. Assim, facilita-se uma futura análise do código, caso, por exemplo, um cliente volte a reclamar que seu bug não foi corrigido.</p>
 <p>Commits também possuem metadados, incluindo data, hora, autor e uma mensagem, que descreve a modificação realizada pelo commit. A próxima figura mostra uma página do GitHub que exibe os metadados principais de um commit do repositório google/guava. Pode-se observar que o commit refere-se a um refactoring, o que fica claro no seu título. Em seguida, o refactoring é explicado em detalhes na mensagem do commit. Na última linha da figura, podemos ver o nome do autor do commit e a informação de que ele foi realizado há 13 dias.</p>
-<p><img src="media/image10.png" style="width:6.97083in;height:2.75in" /></p>
+<p><img src="figs/capAp/commit.png" style="width:85.0%" /></p>
 <p>Na última linha da figura também podemos observar que todo commit possui um identificador único, no caso:</p>
 <p><code>1c757483665f0ba8fed31a2af7e31643a4590256</code></p>
 <p>Esse identificador possui 20 bytes, normalmente representados em hexadecimal. Esses bytes correspondem a uma verificação de consistência (<em>check sum</em>) do conteúdo do commit, conforme computado por uma função hash SHA-1.</p>
@@ -89,7 +89,7 @@
 </ul>
 <p>Dentre essas três áreas, o desenvolvedor acessa apenas o diretório de trabalho, que funciona como um diretório comum do sistema operacional. As duas outras áreas são internas ao git e manipuladas exclusivamente por ele. Como qualquer diretório, o diretório de trabalho pode conter diversos arquivos. Porém, apenas aqueles adicionados ao index, por meio de um comando <strong>add</strong>, serão gerenciados pelo git.</p>
 <p>Além de armazenar a lista de arquivos versionados, o index também armazena o conteúdo deles. Por isso, antes de fazer um commit devemos executar um add, para salvar o conteúdo do arquivo no index. Feito isso, podemos usar um commit para salvar no repositório local a versão adicionada ao index. Esse fluxo é ilustrado na próxima figura.</p>
-<p><img src="media/image6.png" style="width:3.49792in;height:1.75157in" /></p>
+<p><img src="figs/capAp/add.png" style="width:45.0%" /></p>
 <p><strong>Exemplo</strong>: Suponha o seguinte arquivo simples, mas suficiente para explicar os comandos add e commit.</p>
 <pre><code>// arq1 
 x = 10; </code></pre>
@@ -115,7 +115,7 @@ git commit -m &quot;Removendo arq1.txt&quot;</code></pre>
 <li><p>Em seguida, o comando pull atualiza os arquivos do diretório de trabalho. Essa operação é chamada de <strong>merge</strong>.</p></li>
 </ul>
 <p>A próxima figura ilustra o funcionamento dos comandos push e pull.</p>
-<p><img src="media/image4.png" style="width:3.57917in;height:3.30309in" /></p>
+<p><img src="figs/capAp/push-pull.png" style="width:50.0%" /></p>
 <p><strong>Exemplo</strong>: Suponha que no repositório git central de um projeto exista o seguinte arquivo:</p>
 <pre><code>void f() {
   ... 
@@ -158,27 +158,11 @@ void g() // implementada por Bob {
  print(&quot;Olá, mundo!&quot;);                                 
  &gt;&gt;&gt;&gt;&gt;&gt;&gt; f25bce8fea85a625b891c890a8eca003b723f21b 
  }                                                       </code></pre>
-<p>As linhas inseridas pelo git devem ser entendidas da seguinte forma. Entre</p>
-<table style="width:97%;">
-<colgroup>
-<col style="width: 41%" />
-<col style="width: 55%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">Código modif <code>print("Hello, world!");</code></td>
-<td style="text-align: left;">icado por Bob, isto é, pelo desenvolvedor que não conseguiu dar um push e teve que dar um pull. <code>HEAD</code> designa que o código foi modificado no último commit realizado por Bob.</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;"><code>=======</code></td>
-<td style="text-align: left;">Separador do código responsável pelo conflito.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;"><code>print("Olá, mundo!");</code> <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; f25bce8 ...</code></td>
-<td style="text-align: left;">Código modificado por Alice, isto é, pela desenvolvedora que executou com sucesso seu push. <code>f225bce8...</code> é o ID do commit no qual Alice modificou essa parte do código.</td>
-</tr>
-</tbody>
-</table>
+<p>As linhas inseridas pelo git devem ser entendidas da seguinte forma:</p>
+<ul>
+<li><p>Entre <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> e <code>=======</code> temos o código modificado por Bob, isto é, pelo desenvolvedor que não conseguiu dar um push e teve que dar um pull. <code>HEAD</code> designa que o código foi modificado no último commit realizado por Bob.</p></li>
+<li><p>Entre <code>=======</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; f25bce8 ...</code> temos o código modificado por Alice, isto é, pela desenvolvedora que executou com sucesso seu push. <code>f225bce8...</code> é o ID do commit no qual Alice modificou essa parte do código.</p></li>
+</ul>
 <p>Cabe então a Bob resolver o conflito, o que é sempre uma tarefa manual. Para isso, ele tem que escolher o trecho de código que vai prevalecer — o seu código ou o da Alice — e editar o arquivo de acordo com tal escolha, para remover os delimitadores inseridos pelo git. Vamos supor que Bob decida que o código de Alice é o certo, pois agora o sistema está usando mensagens em Português. Logo, ele deve editar o arquivo, de forma que fique assim:</p>
 <pre><code>main() {                
   print(&quot;Olá, mundo!&quot;); 
@@ -204,14 +188,14 @@ void g() // implementada por Bob {
 <p>Por fim, após realizar o merge, Bob pode remover o branch <code>f-novo</code>, caso não seja importante manter o histórico dos commits realizados para implementar a nova versão de <code>f</code>. Para deletar <code>f-novo</code>, ele deve executar o seguinte comando no branch master:</p>
 <p><code>git branch -d f-novo</code></p>
 <p>📚<strong>Aprofundamento</strong>: Commits podem possuir zero, um ou mais pais (ou antecessores). Como ilustra a próxima figura, o primeiro commit de um repositório não possui pai. Já um commit de merge possui dois ou mais pais, que representam os branches que foram unidos. Os demais commits possuem exatamente um pai.</p>
-<p><img src="media/image2.png" style="width:4.87905in;height:2.33854in" /></p>
+<p><img src="figs/capAp/branches.png" style="width:50.0%" /></p>
 <p>Um branch nada mais é do que uma variável interna do git que contém o identificador do último commit realizado no branch. Existe ainda uma variável chamada <code>HEAD</code>, que aponta para a variável do branch atual. Ou seja, <code>HEAD</code> contém o nome da variável que contém o identificador do último commit do branch atual. Um exemplo é mostrado a seguir:</p>
-<p><img src="media/image3.png" style="width:4.79176in;height:2.74479in" /></p>
+<p><img src="figs/capAp/head1.png" style="width:60.0%" /></p>
 <p>Nesse exemplo, podemos ver que existem dois branches, representados pelas variáveis <code>MASTER</code> e <code>ISSUE-45</code>. Cada uma delas aponta para o último commit de seu respectivo branch. A variável HEAD aponta para a variável <code>MASTER</code>. Isso significa que o branch atual é o <code>MASTER</code>. Se realizarmos um commit, a configuração mudará para:</p>
-<p><img src="media/image7.png" style="width:4.95818in;height:2.83854in" /></p>
+<p><img src="figs/capAp/head2.png" style="width:60.0%" /></p>
 <p>O novo commit tem identificador 7. Ele foi realizado no <code>MASTER</code>, já que HEAD apontava para a variável desse branch. O pai do novo commit pai é o antigo <code>HEAD</code>, no caso o commit 3. A variável <code>MASTER</code> avançou e passou a apontar para o novo commit. Isso significa que, se não mudarmos de branch, o pai do próximo commit será o commit 7.</p>
 <p>Porém, se mudarmos para o branch <code>ISSUE-45</code>, a configuração passará a ser a seguinte:</p>
-<p><img src="media/image8.png" style="width:4.96979in;height:2.87003in" /></p>
+<p><img src="figs/capAp/head3.png" style="width:60.0%" /></p>
 <p>A única mudança é que a variável <code>HEAD</code> passou a apontar para a variável do novo branch, isto é, para a variável <code>ISSUE-45</code>. Isso é suficiente para fazer com que o próximo commit seja realizado nesse branch, isto é, que ela tenha o commit 6 como pai.</p>
 <h2 id="a.8-branches-remotos">A.8 Branches Remotos</h2>
 <p>Até esse momento, trabalhamos com branches localmente, isto é, os branches que discutimos existem apenas no repositório local. No entanto, é possível realizar o push de um branch local para um repositório remoto. Para ilustrar esse recurso, vamos usar um exemplo semelhante ao da seção anterior.</p>
@@ -239,8 +223,8 @@ void g() // implementada por Bob {
 <p><code>git add README.md</code><br />
 <code>git commit -m "Livro ESM"</code><br />
 <code>git push -u origin livro-esm</code></p>
-<p>Na verdade, esses passos não são novidade em relação ao que vimos na seção anterior. No entanto, as diferenças começam agora. Primeiro, Bob deve ir na página do GitHub e selecionar o branch `livro-esm. Feito isso, o GitHub mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e descrever o seu pull request, como mostra a próxima figura.</p>
-<p><img src="media/image1.png" style="width:5.69918in;height:3.20313in" /></p>
+<p>Na verdade, esses passos não são novidade em relação ao que vimos na seção anterior. No entanto, as diferenças começam agora. Primeiro, Bob deve ir na página do GitHub e selecionar o branch <code>livro-esm</code>. Feito isso, o GitHub mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e descrever o seu pull request, como mostra a próxima figura.</p>
+<p><img src="figs/capAp/pull-request.png" style="width:65.0%" /></p>
 <p>Um pull request é uma solicitação para que um outro desenvolvedor revise e, se for o caso, realize o merge de um branch que você criou. Consequentemente, pull requests são um recurso para que uma organização passe a adotar <strong>revisões de código</strong>. Ou seja, desenvolvedores não integram diretamente o seu código no master do repositório remoto. Em vez disso, eles solicitam, via pull requests, que outros desenvolvedores revisem primeiro esse código e então façam o merge.</p>
 <p>Na página do GitHub para criação de pull requests, Bob pode informar que deseja que seu código seja revisado pela Alice. Ela será então notificada que existe um pull request esperando sua revisão. Também via interface do GitHub, Alice pode revisar os commits do pull request criado por Bob, inclusive por meio de um um diff entre o código novo e o código antigo. Se for o caso, Alice pode trocar mensagens com Bob, para esclarecer dúvidas sobre o novo código. Mais ainda, ela pode solicitar mudanças no código. Nesse caso, Bob deve providenciar as mudanças e realizar um novo add, commit e push. Então, os novos commit serão automaticamente anexados ao pull request, para que Alice possa conferir se o seu pedido foi atendido. Estando a modificação aprovada, Alice pode integrar o código no master, bastando para isso clicar em um dos botões da página de revisão de pull requests.</p>
 <h2 id="a.10-squash">A.10 Squash</h2>
@@ -270,7 +254,7 @@ squash 9be7fdb Inclusão do link 5</code></pre>
 <p>Portanto, fork é um mecanismo que, quando combinado com pull requests, viabiliza que um projeto de código aberto receba contribuições de outros desenvolvedores. Explicando um pouco melhor, um projeto de código aberto pode receber contribuições — mais especificamente, commits — não apenas de seu time de desenvolvedores (Bob e Alice, no nosso exemplo), mas de um outro desenvolvedor com conta no GitHub (como é o caso de Carol).</p>
 <h2 id="bibliografia">Bibliografia</h2>
 <p>Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.</p>
-<p>Rachel M. Carmena. How to teach Git. Blog post, <a href="https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html">(link)</a>.</p>
+<p>Rachel M. Carmena. How to teach Git. Blog post <a href="https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html">(link)</a>.</p>
 <h2 id="exercício">Exercício</h2>
 <p>Neste apêndice, mostramos diversos exemplos. Tente reproduzir cada um deles. Nos exemplos que envolvem repositórios remotos, a sugestão é usar um repositório do GitHub. Nos exemplos que envolvem dois usuários (Alice e Bob, por exemplo), a sugestão é criar dois diretórios locais e usá-los para reproduzir os comandos de cada usuário.</p>
 </div>
