@@ -83,7 +83,7 @@ de Engenharia de Software.
 ![Cientistas na conferência da OTAN de 1968 sobre Engenharia de Software.
 Reprodução autorizada pelo Prof. Robert McClure. Para mais fotos da
 conferência, veja este
-[link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html)](figs/cap1/otan.jpg){width=45%}
+[link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html).](figs/cap1/otan.jpg){width=45%}
 
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
 ilustra os desafios que esperavam a recém criada área de pesquisa:
@@ -738,8 +738,7 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![](figs/cap1/uml.png){width="5.229166666666667in"
-height="1.4791666666666667in"}
+![](figs/cap1/uml.png){width=45%}
 
 Exemplo de Diagrama de Classe UML com duas classes, Cliente e
 ContaBancaria
@@ -829,8 +828,7 @@ pelo revisor. Existem diversas ferramentas para apoiar processos de
 revisão de código. No exemplo da figura, usamos a ferramenta fornecida
 pelo GitHub.
 
-![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width="4.18501968503937in"
-height="2.151042213473316in"}
+![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width=40%}
 
 
 ### Prática Profissional

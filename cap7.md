@@ -463,7 +463,7 @@ o método incTemperatura é executado, o valor da temperatura é
 automaticamente atualizado na interface. O processo contrário também é
 verdadeiro, apesar de não ser exercitado em nosso exemplo, que é bem
 simples. Esse recurso de frameworks para construção de SPAs é chamado de
-**two way data binding**.
+**two-way data binding**.
 
 ## 7.4 Microsserviços
 
@@ -684,7 +684,7 @@ sistema distribuído. Dentre eles, podemos citar:
     R$ 500,00 no cartão Y. Porém, essas transações devem ser
     atômicas: ou os dois cartões são debitados ou nenhum deles é
     debitado. Por isso, em arquiteturas baseadas em microsserviços,
-    protocolos de transações distribuídas, como **two phase commit**,
+    protocolos de transações distribuídas, como **two-phase commit**,
     podem ser necessários para garantir uma semântica de transações em
     operações que escrevem em mais de um banco de dados.
 
