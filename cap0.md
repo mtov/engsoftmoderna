@@ -7,7 +7,7 @@
 
 A ideia de escrever este livro surgiu no início de 2019, quando fui alocado para ministrar a disciplina Engenharia de Software, do Bacharelado em Ciência da Computação, da UFMG. Para preparar o curso, comecei com uma análise dos principais livros de Engenharia de Software. Para minha surpresa, percebi que eles tinham mudado pouco desde que cursei a disciplina na minha graduação: há mais de 25 anos!
 
-Meu objetivo era escolher um livro que permitisse, no início de uma aula, dizer para os alunos: "hoje vamos estudar tal assunto, que corresponde a tal capítulo do livro texto". No final da aula, gostaria de sugerir aos alunos: "para fixar a matéria que acabamos de ver, sugiro que façam tais exercícios". No entanto, infelizmente, não encontrei esse livro… Em vez disso, tive que fazer uma extensa pesquisa e leitura de pelo menos 15 livros. 
+Meu objetivo era escolher um livro que permitisse, no início de uma aula, dizer para os alunos: "hoje vamos estudar tal assunto, que corresponde a tal capítulo do livro texto". No final da aula, gostaria de sugerir aos alunos: "para fixar a matéria que acabamos de ver, sugiro que façam tais exercícios". No entanto, infelizmente, não encontrei esse livro... Em vez disso, tive que fazer uma extensa pesquisa e leitura de pelo menos 15 livros. 
 
 Como resultado, preparei mais de 600 slides, que considero conter o principal material que deve ser tratado em uma disciplina de graduação em Engenharia de Software, especificamente em cursos que possuem uma única disciplina na área. Porém, estudar apenas por slides não proporciona a mesma experiência de aprendizado obtida com a leitura atenta de um texto completo e contextualizado.
 
@@ -21,7 +21,7 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo e organizaç
 
 * O livro inclui inúmeros exemplos e discussões de casos reais. Para isso, criei a seção "Mundo Real", onde os assuntos são ilustrados com exemplos recentes e reais, provenientes de grandes empresas de software e também de artigos científicos, buscando-se apresentar o que se faz de melhor tanto na indústria como na academia.
 
-* O livro foi escrito em Português, pois o objetivo é contribuir, primeiro, com os cursos e alunos brasileiros. Porém, optamos por não traduzir diversos termos, como refactoring, branches, sprint, etc, pois achamos eles também são usados, sem tradução, pelos desenvolvedores brasileiros no seu dia a dia.
+* O livro foi escrito em Português, pois o objetivo é contribuir, primeiro, com os cursos e alunos brasileiros. Porém, optamos por não traduzir alguns termos — como refactoring, branches, sprint, etc — pois achamos que eles são usados, também sem tradução, pelos desenvolvedores brasileiros no seu dia a dia.
 
 * Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, todos os trechos de código são mostrados em uma sintaxe bastante neutra. 
 
@@ -33,7 +33,7 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo e organizaç
 
 ## Público Alvo
 
-O livro se destina a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado --- junto com outros livros --- em cursos com duas ou mais disciplinas na área.
+O livro se destina a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
 
 Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem bastante clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro.
 
@@ -45,15 +45,13 @@ Espera-se que os leitores tenham domínio de conceitos básicos de programação
 
 ## Próximos Passos
 
-Até o presente momento, temos 9 capítulos prontos, os quais estão disponíveis em:
+Até o presente momento, temos 9 capítulos prontos, de um total previsto de 10 capítulos. Logo, estamos perto de terminar! Para conhecer esses capítulos, recomendamos consultar a última seção do Capítulo 1, onde apresentamos a estrutura do livro. 
 
-[https://engsoftmoderna.info](https://engsoftmoderna.info)
+Vamos sempre manter uma versão aberta do livro, em HTML, no endereço:
 
-No total, pretendemos ter 10 capítulos. Logo, estamos perto de terminar! Para conhecer esses capítulos, recomendamos consultar a última seção do Capítulo 1 (Introdução), onde apresentamos a estrutura do livro. 
+[https://engsoftmoderna.info](https://engsoftmoderna.info/)
 
-Apesar de o livro não estar pronto, resolvemos escrever essa primeira versão de prefácio, para que os early adopters de nosso trabalho possam ter uma melhor ideia da sua proposta.
-
-Muito em breve, vamos concluir este prefácio!
+Mas também pretendemos, em algum momento, ter uma versão em papel.
 
 Marco Tulio Valente
 Belo Horizonte, 11 de novembro de 2019.

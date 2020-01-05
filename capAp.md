@@ -425,8 +425,7 @@ arquivo, de forma que fique assim:
 
 ```
 main() {                
-  print("Olá, mundo!"); 
-                         
+  print("Olá, mundo!");                      
 }                       
 ```
 
@@ -473,7 +472,7 @@ Esse comando cria um novo branch, chamado `f-novo`, supondo que esse
 branch ainda não existe.
 
 Para mudar do branch corrente para um novo branch, deve-se usar `git
-checkout \[nome-branch\]`. Para descobrir qual o nome do branch corrente,
+checkout [nome-branch]`. Para descobrir qual o nome do branch corrente,
 basta usar `git branch`. Na verdade, esse comando lista todos os branches
 e indica qual deles é o corrente.
 
