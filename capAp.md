@@ -179,7 +179,7 @@ o refactoring é explicado em detalhes na mensagem do commit. Na última
 linha da figura, podemos ver o nome do autor do commit e a informação de
 que ele foi realizado há 13 dias.
 
-![](figs/capAp/commit.png){width=85%}
+![](figs/capAp/commit.png){width=95%}
 
 Na última linha da figura também podemos observar que todo commit possui
 um identificador único, no caso:

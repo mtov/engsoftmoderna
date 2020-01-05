@@ -753,8 +753,8 @@ qualidade. Esse contexto não é diferente quando o produto em questão é
 um software. Segundo uma classificação inicialmente proposta por
 Bertrand Meyer
 [link](https://dl.acm.org/citation.cfm?id=261119),
-qualidade de software pode ser avaliada em duas dimensões: **externa**
-ou **interna**.
+qualidade de software pode ser avaliada em duas dimensões: 
+**qualidade externa** ou **qualidade interna**.
 
 Qualidade externa considera fatores que podem ser aferidos sem analisar
 o código de um sistema. Assim, a qualidade externa de um software pode
