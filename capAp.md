@@ -229,8 +229,7 @@ explicar os comandos add e commit.
 x = 10; 
 ```
 
-Após criar esse arquivo, o desenvolvedor executou o seguinte comando em
-sua linha de comandos:
+Após criar esse arquivo, o desenvolvedor executou o seguinte comando:
 
 `git add arq1`
 
@@ -273,7 +272,7 @@ git rm arq1.txt
 git commit -m "Removendo arq1.txt"
 ```
 
-Além de remover do repositório git local, esses comandos também removem
+Além de remover do repositório git local, o comando rm também remove
 o arquivo do diretório de trabalho.
 
 ## A.5 Push & Pull
@@ -473,25 +472,25 @@ ele deve usar o comando:
 Esse comando cria um novo branch, chamado `f-novo`, supondo que esse
 branch ainda não existe.
 
-Para mudar do branch corrente para um novo branch, deve-se usar git
-checkout \[nome-branch\]. Para descobrir qual o nome do branch corrente,
-basta usar git branch. Na verdade, esse comando lista todos os branches
+Para mudar do branch corrente para um novo branch, deve-se usar `git
+checkout \[nome-branch\]`. Para descobrir qual o nome do branch corrente,
+basta usar `git branch`. Na verdade, esse comando lista todos os branches
 e indica qual deles é o corrente.
 
 Branches podem ser entendidos como \"sub-diretórios virtuais\" do
 diretório de trabalho. A principal diferença é que branches são
 gerenciados pelo git e não pelo sistema operacional. Por isso, optamos
 por chamá-los de virtuais. Explorando mais essa comparação, podemos
-pensar que o comando git branch \[nome\] equivale ao comando mkdir
-\[nome\], com a diferença que o git não apenas cria um branch mas copia
+pensar que o comando `git branch [nome]` equivale ao comando `mkdir
+[nome]`, com a diferença que o git não apenas cria um branch mas copia
 para ele todos os arquivos do branch pai. Por outro lado, diretórios são
-criados vazios pelo sistema operacional. Já o comando git checkout
-\[nome\] lembra o comando cd \[nome\]. E git status lembra um misto de
-comandos ls e pwd. Também para reforçar essa comparação, existem certos
+criados vazios pelo sistema operacional. Já o comando `git checkout
+[nome]` lembra o comando `cd [nome]`. E `git status` lembra um misto de
+comandos `ls` e `pwd`. Também para reforçar essa comparação, existem certos
 comandos que permitem adicionar ao prompt do sistema operacional não
 apenas o nome do diretório corrente mas também o nome do branch
 corrente. Assim, o prompt pode ser exibido como
-c:\\projetos\\sistema1\\master\>.
+`c:\projetos\sistema1\master>`.
 
 Por outro lado, existe também uma diferença importante entre branches e
 diretórios. Um desenvolvedor somente pode alterar o branch corrente de A
@@ -560,7 +559,7 @@ seja, `HEAD` contém o nome da variável que contém o identificador do
 
 Nesse exemplo, podemos ver que existem dois branches, representados
 pelas variáveis `MASTER` e `ISSUE-45`. Cada uma delas aponta para o último
-commit de seu respectivo branch. A variável HEAD
+commit de seu respectivo branch. A variável `HEAD`
 aponta para a variável `MASTER`. Isso significa que o branch atual é o
 `MASTER`. Se realizarmos um commit, a configuração mudará para:
 
@@ -674,13 +673,14 @@ branch master. Em vez disso, a sugestão de link precisa ser revisada e
 aprovada por um outro membro do time.
 
 Bob resolveu então sugerir a adição, nessa página, de um link para o presente
-apêndice do nosso livro Engenharia de Software Moderna. Para isso, ele
-primeiro clonou o repositório e criou um um branch, chamado `livro-esm`
+apêndice do livro Engenharia de Software Moderna. Para isso, ele
+primeiro clonou o repositório e criou um um branch, chamado `livro-esm`,
+por meio dos seguintes comandos:
 
 `git clone https://github.com/aserg-ufmg/awesome-git.git`                    
 `git checkout livro-esm`
                                     
-Em seguida, ele editou o arquivo README.md, adicionando a URL do 
+Em seguida, Bob editou o arquivo README.md, adicionando a URL do 
 apêndice. Por fim, ele realizou um add, um commit e fez um push 
 do branch para o GitHub:
 
@@ -693,7 +693,6 @@ seção anterior. No entanto, as diferenças começam  agora. Primeiro, Bob deve
 na página do GitHub e selecionar o branch `livro-esm`. Feito isso, o GitHub
 mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e
 descrever o seu pull request, como mostra a próxima figura.
-
 
 ![](figs/capAp/pull-request.png){width=65%}
 

@@ -1149,7 +1149,12 @@ ser objeto de uma refatoração.
 
 **Capítulo 10: DevOps** \[a ser escrito\]
 
-**Apêndice A: Git** \[em breve\]
+**Apêndice A: Git**, que apresenta uma breve introdução ao conceito
+de controle de versões e, em seguida, apresenta e mostra exemplos
+de uso dos principais comandos do sistema git. Atualmente, é
+inconcebível não usar controle de versões em qualquer sistema, 
+mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar
+esse apêndice no livro.
 
 ## Bibliografia
 

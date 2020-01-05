@@ -93,7 +93,7 @@
 <p><strong>Exemplo</strong>: Suponha o seguinte arquivo simples, mas suficiente para explicar os comandos add e commit.</p>
 <pre><code>// arq1 
 x = 10; </code></pre>
-<p>Após criar esse arquivo, o desenvolvedor executou o seguinte comando em sua linha de comandos:</p>
+<p>Após criar esse arquivo, o desenvolvedor executou o seguinte comando:</p>
 <p><code>git add arq1</code></p>
 <p>Esse comando adiciona o arquivo arq1 no index (ou stage). Porém, logo em seguida, o desenvolvedor modificou de novo o arquivo:</p>
 <pre><code>// arq1
@@ -107,7 +107,7 @@ x = 20; // novo valor de x</code></pre>
 <p>Da mesma forma que existe um add, também existe uma operação para remover um arquivo de um repositório git. Um exemplo é dado a seguir:</p>
 <pre><code>git rm arq1.txt
 git commit -m &quot;Removendo arq1.txt&quot;</code></pre>
-<p>Além de remover do repositório git local, esses comandos também removem o arquivo do diretório de trabalho.</p>
+<p>Além de remover do repositório git local, o comando rm também remove o arquivo do diretório de trabalho.</p>
 <h2 id="a.5-push-pull">A.5 Push &amp; Pull</h2>
 <p>O comando <strong>push</strong> copia os commits mais recentes do repositório local para o repositório remoto. Portanto, ele é uma operação mais lenta, pois envolve comunicação pela rede. Um push deve ser usado quando o desenvolvedor deseja tornar uma modificação visível para os demais desenvolvedores. Para atualizar seu repositório local, os outros desenvolvedores do time devem executar um comando <strong>pull</strong>. Esse comando realiza duas operações principais:</p>
 <ul>
@@ -176,8 +176,8 @@ void g() // implementada por Bob {
 <p>Esse é um cenário interessante para Bob criar um branch para implementar e testar — de forma isolada — essa nova versão de <code>f</code>. Para isso, ele deve usar o comando:</p>
 <p><code>git branch f-novo</code></p>
 <p>Esse comando cria um novo branch, chamado <code>f-novo</code>, supondo que esse branch ainda não existe.</p>
-<p>Para mudar do branch corrente para um novo branch, deve-se usar git checkout [nome-branch]. Para descobrir qual o nome do branch corrente, basta usar git branch. Na verdade, esse comando lista todos os branches e indica qual deles é o corrente.</p>
-<p>Branches podem ser entendidos como "sub-diretórios virtuais" do diretório de trabalho. A principal diferença é que branches são gerenciados pelo git e não pelo sistema operacional. Por isso, optamos por chamá-los de virtuais. Explorando mais essa comparação, podemos pensar que o comando git branch [nome] equivale ao comando mkdir [nome], com a diferença que o git não apenas cria um branch mas copia para ele todos os arquivos do branch pai. Por outro lado, diretórios são criados vazios pelo sistema operacional. Já o comando git checkout [nome] lembra o comando cd [nome]. E git status lembra um misto de comandos ls e pwd. Também para reforçar essa comparação, existem certos comandos que permitem adicionar ao prompt do sistema operacional não apenas o nome do diretório corrente mas também o nome do branch corrente. Assim, o prompt pode ser exibido como c:\projetos\sistema1\master&gt;.</p>
+<p>Para mudar do branch corrente para um novo branch, deve-se usar <code>git checkout \[nome-branch\]</code>. Para descobrir qual o nome do branch corrente, basta usar <code>git branch</code>. Na verdade, esse comando lista todos os branches e indica qual deles é o corrente.</p>
+<p>Branches podem ser entendidos como "sub-diretórios virtuais" do diretório de trabalho. A principal diferença é que branches são gerenciados pelo git e não pelo sistema operacional. Por isso, optamos por chamá-los de virtuais. Explorando mais essa comparação, podemos pensar que o comando <code>git branch [nome]</code> equivale ao comando <code>mkdir [nome]</code>, com a diferença que o git não apenas cria um branch mas copia para ele todos os arquivos do branch pai. Por outro lado, diretórios são criados vazios pelo sistema operacional. Já o comando <code>git checkout [nome]</code> lembra o comando <code>cd [nome]</code>. E <code>git status</code> lembra um misto de comandos <code>ls</code> e <code>pwd</code>. Também para reforçar essa comparação, existem certos comandos que permitem adicionar ao prompt do sistema operacional não apenas o nome do diretório corrente mas também o nome do branch corrente. Assim, o prompt pode ser exibido como <code>c:\projetos\sistema1\master&gt;</code>.</p>
 <p>Por outro lado, existe também uma diferença importante entre branches e diretórios. Um desenvolvedor somente pode alterar o branch corrente de A para B se as modificações que ele fez em A estiverem salvas. Isto é, se ele tiver realizado antes um add e commit. Caso ele tenha esquecido de chamar esses comandos, um comando git checkout B irá falhar com a seguinte mensagem de erro:</p>
 <p><code>Your local changes to the following files would be overwritten by checkout: \[list of files\]                                                     Please commit your changes or stash them before you switch branches.</code></p>
 <p>Voltando ao exemplo, após Bob ter criado o seu branch, ele deve proceder do seguinte modo. Quando ele quiser trabalhar na nova implementação de <code>f</code>, ele deve primeiro mudar o branch corrente para <code>f-novo</code>. Por outro lado, quando ele precisar modificar o código original de <code>f</code> — aquele que está em produção — ele deve se certificar de que o branch corrente é o <code>master</code>. Independentemente do branch em que estiver, Bob deve continuar usando add e commit para salvar o estado do seu trabalho.</p>
@@ -191,7 +191,7 @@ void g() // implementada por Bob {
 <p><img src="figs/capAp/branches.png" style="width:50.0%" /></p>
 <p>Um branch nada mais é do que uma variável interna do git que contém o identificador do último commit realizado no branch. Existe ainda uma variável chamada <code>HEAD</code>, que aponta para a variável do branch atual. Ou seja, <code>HEAD</code> contém o nome da variável que contém o identificador do último commit do branch atual. Um exemplo é mostrado a seguir:</p>
 <p><img src="figs/capAp/head1.png" style="width:60.0%" /></p>
-<p>Nesse exemplo, podemos ver que existem dois branches, representados pelas variáveis <code>MASTER</code> e <code>ISSUE-45</code>. Cada uma delas aponta para o último commit de seu respectivo branch. A variável HEAD aponta para a variável <code>MASTER</code>. Isso significa que o branch atual é o <code>MASTER</code>. Se realizarmos um commit, a configuração mudará para:</p>
+<p>Nesse exemplo, podemos ver que existem dois branches, representados pelas variáveis <code>MASTER</code> e <code>ISSUE-45</code>. Cada uma delas aponta para o último commit de seu respectivo branch. A variável <code>HEAD</code> aponta para a variável <code>MASTER</code>. Isso significa que o branch atual é o <code>MASTER</code>. Se realizarmos um commit, a configuração mudará para:</p>
 <p><img src="figs/capAp/head2.png" style="width:60.0%" /></p>
 <p>O novo commit tem identificador 7. Ele foi realizado no <code>MASTER</code>, já que HEAD apontava para a variável desse branch. O pai do novo commit pai é o antigo <code>HEAD</code>, no caso o commit 3. A variável <code>MASTER</code> avançou e passou a apontar para o novo commit. Isso significa que, se não mudarmos de branch, o pai do próximo commit será o commit 7.</p>
 <p>Porém, se mudarmos para o branch <code>ISSUE-45</code>, a configuração passará a ser a seguinte:</p>
@@ -216,10 +216,10 @@ void g() // implementada por Bob {
 <p>Modernamente, o processo de revisão e integração do código de um pull request ocorre via interface Web, provida, por exemplo, pelo GitHub. Porém, se essa interface não existisse, o revisor teria que começar o seu trabalho realizando um pull do branch para sua máquina local. Daí então a origem do nome, isto é, pull request é uma solicitação (<em>request</em>) para que um segundo desenvolvedor revise e integre um determinado branch. Para atender a essa solicitação, ele deve começar realizando um pull do branch.</p>
 <p>A seguir, vamos detalhar o processo de submissão e revisão de pull requests por meio de um exemplo.</p>
 <p><strong>Exemplo</strong>: Suponha que Bob e Alice são membros de uma organização que mantém um repositório chamado awesome-git, com uma lista de links interessantes sobre git. Os links ficam armazenados no arquivo README.md desse repositório, isto é, na sua página principal, cujo endereço é github.com/aserg-ufmg/awesome-git. Qualquer membro da organização pode sugerir a adição de links nessa página. Mas veja que estamos usando a palavra sugerir. Isto é, eles não podem fazer um push diretamente no branch master. Em vez disso, a sugestão de link precisa ser revisada e aprovada por um outro membro do time.</p>
-<p>Bob resolveu então sugerir a adição, nessa página, de um link para o presente apêndice do nosso livro Engenharia de Software Moderna. Para isso, ele primeiro clonou o repositório e criou um um branch, chamado <code>livro-esm</code></p>
+<p>Bob resolveu então sugerir a adição, nessa página, de um link para o presente apêndice do livro Engenharia de Software Moderna. Para isso, ele primeiro clonou o repositório e criou um um branch, chamado <code>livro-esm</code>, por meio dos seguintes comandos:</p>
 <p><code>git clone https://github.com/aserg-ufmg/awesome-git.git</code><br />
 <code>git checkout livro-esm</code></p>
-<p>Em seguida, ele editou o arquivo README.md, adicionando a URL do apêndice. Por fim, ele realizou um add, um commit e fez um push do branch para o GitHub:</p>
+<p>Em seguida, Bob editou o arquivo README.md, adicionando a URL do apêndice. Por fim, ele realizou um add, um commit e fez um push do branch para o GitHub:</p>
 <p><code>git add README.md</code><br />
 <code>git commit -m "Livro ESM"</code><br />
 <code>git push -u origin livro-esm</code></p>

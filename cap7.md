@@ -484,8 +484,8 @@ tempo de execução o sistema é um grande **monolito**, como ilustra a
 próxima figura.
 
 ![Monolito formado por 9 módulos. Em tempo de execução, o sistema executa 
-como um único processo (representado pelo quadrado que delimita
-os 9 módulos)](figs/cap7/monolito.png){width="35%"}
+como um único processo, representado pelo quadrado que delimita
+os 9 módulos.](figs/cap7/monolito.png){width="35%"}
 
 Em um monolito, sempre existe o risco de que uma mudança realizada por
 um time T em um módulo Mi cause um efeito colateral em um módulo Mj. Por
@@ -533,7 +533,7 @@ são executados, em conjunto, em um sexto processo.
 microsserviço executa como um processo autônomo.](figs/cap7/microservices1.png){width=35%}
 
 Até esse ponto da explicação, usamos o termo processo, mas o nome do
-padrão se refere a eles como **serviços**. Ainda, os serviços são micro
+padrão refere-se a eles como **serviços**. Ainda, os serviços são micro
 porque não implementam funcionalidades complexas. Lembre-se que eles são
 desenvolvidos por times ágeis, que como dissemos no Capítulo 2, são
 times pequenos, com cerca de cinco desenvolvedores, por exemplo.
@@ -548,9 +548,9 @@ horizontal**. Por exemplo, ela permite dividir os clientes do sistema
 entre as duas instâncias mostradas na figura. Como se trata de um monolito, 
 as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 
-![](figs/cap7/monolito.png){width=30%} 
-![](figs/cap7/monolito.png){width=30%}
- 
+![Servidor 1, com todos os nove microsserviços](figs/cap7/monolito.png){width=30%}
+
+![Servidor 2, também com todos os nove microsserviços](figs/cap7/monolito.png){width=30%}
 
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
@@ -563,12 +563,10 @@ parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
 instâncias, todas elas em um novo servidor.
 
-![](figs/cap7/escalabilidade1.png){width=30%}
-![](figs/cap7/escalabilidade2.png){width=30%}
-  
-Escalabilidade horizontal de microsserviços. O segundo servidor possui
-apenas instâncias do microsserviço M1.
+![Servidor 1, com todos os microsserviços, menos M1](figs/cap7/escalabilidade1.png){width=30%}
 
+![Servidor 2, apenas com instâncias de M1](figs/cap7/escalabilidade2.png){width=30%}
+  
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
 que cada time tenha seu próprio regime de liberação de novas releases;

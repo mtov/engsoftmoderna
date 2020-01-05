@@ -166,7 +166,7 @@ var model = new Vue({
 <p>Como discutimos no Capítulo 2, métodos ágeis preconizam iterações rápidas, com entregas frequentes de novas releases, a fim de obter feedback e, se for preciso, efetuar mudanças de rumo. Porém, mesmo que uma empresa adote um método de desenvolvimento ágil — como XP ou Scrum — ela vai enfrentar um "gargalo" arquitetural quando precisar lançar novas releases de um produto de forma frequente.</p>
 <p>Esse gargalo ocorre porque sistemas, via de regra, seguem em tempo de execução uma arquitetura monolítica. Ou seja, mesmo que o desenvolvimento tenha sido particionado em módulos M1, M2, M3, …, Mn, em tempo de execução esses módulos são executados, pelo sistema operacional, como um processo único. Assim, todos os módulos compartilham o mesmo espaço de endereçamento. Em outras palavras, em tempo de execução o sistema é um grande <strong>monolito</strong>, como ilustra a próxima figura.</p>
 <figure>
-<img src="figs/cap7/monolito.png" style="width:35.0%" alt="" /><figcaption>Monolito formado por 9 módulos. Em tempo de execução, o sistema executa como um único processo (representado pelo quadrado que delimita os 9 módulos)</figcaption>
+<img src="figs/cap7/monolito.png" style="width:35.0%" alt="" /><figcaption>Monolito formado por 9 módulos. Em tempo de execução, o sistema executa como um único processo, representado pelo quadrado que delimita os 9 módulos.</figcaption>
 </figure>
 <p>Em um monolito, sempre existe o risco de que uma mudança realizada por um time T em um módulo Mi cause um efeito colateral em um módulo Mj. Por exemplo, Mi e Mj podem compartilhar uma variável global ou um atributo estático. Uma mudança nessa variável, realizada em Mi, pode comprometer o funcionamento de Mj. Na realidade, esse risco é maior do que um leitor iniciante em desenvolvimento de sistemas pode imaginar.</p>
 <p>Para evitar que os clientes sejam surpreendidos com bugs inesperados em seus sistemas, as empresas que usam arquiteturas monolíticas adotam um processo rigoroso e "burocrático" para o lançamento de novas releases. Esse processo pode incluir até mesmo testes manuais antes da liberação do sistema para produção. Por testes manuais, queremos dizer um testador usar as funcionalidades mais críticas do sistema, de forma a simular uma sessão de uso por um cliente final.</p>
@@ -176,12 +176,21 @@ var model = new Vue({
 <figure>
 <img src="figs/cap7/microservices1.png" style="width:35.0%" alt="" /><figcaption>Arquitetura com 6 microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.</figcaption>
 </figure>
-<p>Até esse ponto da explicação, usamos o termo processo, mas o nome do padrão se refere a eles como <strong>serviços</strong>. Ainda, os serviços são micro porque não implementam funcionalidades complexas. Lembre-se que eles são desenvolvidos por times ágeis, que como dissemos no Capítulo 2, são times pequenos, com cerca de cinco desenvolvedores, por exemplo. Consequentemente, times pequenos não têm capacidade para implementar grandes serviços.</p>
+<p>Até esse ponto da explicação, usamos o termo processo, mas o nome do padrão refere-se a eles como <strong>serviços</strong>. Ainda, os serviços são micro porque não implementam funcionalidades complexas. Lembre-se que eles são desenvolvidos por times ágeis, que como dissemos no Capítulo 2, são times pequenos, com cerca de cinco desenvolvedores, por exemplo. Consequentemente, times pequenos não têm capacidade para implementar grandes serviços.</p>
 <p>Uma segunda vantagem de microsserviços é <strong>escalabilidade</strong>. Quando um monolito enfrenta problemas de performance, uma solução consiste em disponibilizar instâncias do sistema em máquinas diferentes, como mostra a próxima figura. Essa solução é chamada de <strong>escalabilidade horizontal</strong>. Por exemplo, ela permite dividir os clientes do sistema entre as duas instâncias mostradas na figura. Como se trata de um monolito, as duas instâncias são idênticas, isto é, possuem os mesmos módulos.</p>
-<p><img src="figs/cap7/monolito.png" style="width:30.0%" /> <img src="figs/cap7/monolito.png" style="width:30.0%" /></p>
+<figure>
+<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 1, com todos os nove microsserviços</figcaption>
+</figure>
+<figure>
+<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 2, também com todos os nove microsserviços</figcaption>
+</figure>
 <p>Porém, os problemas de performance podem ser causados por serviços específicos; por exemplo, apenas pelo serviço de autenticação de usuários. Então, microsserviços permitem replicar apenas os componentes diretamente relacionados com os problemas de performance. A próxima figura mostra uma nova instalação do nosso sistema baseado em microsserviços. O segundo servidor que foi disponibilizado inclui apenas instâncias do serviço M1. A suposição é que M1 é responsável pela maior parte dos problemas de performance da instalação inicial. Na primeira instalação, tínhamos uma única instância de M1. Agora, temos seis instâncias, todas elas em um novo servidor.</p>
-<p><img src="figs/cap7/escalabilidade1.png" style="width:30.0%" /> <img src="figs/cap7/escalabilidade2.png" style="width:30.0%" /></p>
-<p>Escalabilidade horizontal de microsserviços. O segundo servidor possui apenas instâncias do microsserviço M1.</p>
+<figure>
+<img src="figs/cap7/escalabilidade1.png" style="width:30.0%" alt="" /><figcaption>Servidor 1, com todos os microsserviços, menos M1</figcaption>
+</figure>
+<figure>
+<img src="figs/cap7/escalabilidade2.png" style="width:30.0%" alt="" /><figcaption>Servidor 2, apenas com instâncias de M1</figcaption>
+</figure>
 <p>Até o momento, listamos duas vantagens de microsserviços: (1) eles permitem a evolução mais rápida e independente de um sistema, permitindo que cada time tenha seu próprio regime de liberação de novas releases; (2) eles permitem escalar um sistema em um nível de granularidade mais fino do que é possível com monolitos. Mas existem pelo menos mais duas vantagens:</p>
 <ul>
 <li><p>Como os microsserviços são autônomos e independentes eles podem ser implementados em tecnologias diferentes, incluindo linguagens de programação, frameworks e bancos de dados. O microsserviço de cadastro de clientes em um sistema de comércio eletrônico, por exemplo, pode ser implementado em Java com um banco de dados relacional. Já o microsserviço de recomendação de novas compras pode ser implementado em Python com um banco de dados NoSQL.</p></li>
