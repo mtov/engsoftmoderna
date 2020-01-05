@@ -97,7 +97,7 @@ Vrije Universiteit, em Amsterdã, na Holanda. E Torvalds (Linus) na época
 era estudante de Computação na Universidade de Helsinki, na Finlândia.
 
 ![Andrew S. Tanenbaum, professor da Vrije Universiteit, e defensor de arquiteturas
-microkernel para sistemas operacionais (foto da Wikipedia,licença CC-BY-SA)](figs/cap7/tanembaum.png)
+microkernel para sistemas operacionais (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/tanembaum.png)
 
 ![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)   
 ](figs/cap7/linus.png)
@@ -483,7 +483,7 @@ compartilham o mesmo espaço de endereçamento. Em outras palavras, em
 tempo de execução o sistema é um grande **monolito**, como ilustra a
 próxima figura.
 
-![Monolito formado por 9 módulos. Em tempo de execução, o sistema executa 
+![Monolito formado por nove módulos. Em tempo de execução, o sistema executa 
 como um único processo, representado pelo quadrado que delimita
 os 9 módulos.](figs/cap7/monolito.png){width="35%"}
 
@@ -529,7 +529,7 @@ executados, cada um deles, em um processo independente. Os módulos M4 e
 M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9
 são executados, em conjunto, em um sexto processo.
 
-![Arquitetura com 6 microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada
+![Arquitetura com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada
 microsserviço executa como um processo autônomo.](figs/cap7/microservices1.png){width=35%}
 
 Até esse ponto da explicação, usamos o termo processo, mas o nome do
@@ -548,9 +548,9 @@ horizontal**. Por exemplo, ela permite dividir os clientes do sistema
 entre as duas instâncias mostradas na figura. Como se trata de um monolito, 
 as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 
-![Servidor 1, com todos os nove microsserviços](figs/cap7/monolito.png){width=30%}
+![Servidor 1, executando o monolito em um processo.](figs/cap7/monolito.png){width=30%}
 
-![Servidor 2, também com todos os nove microsserviços](figs/cap7/monolito.png){width=30%}
+![Servidor 2, com uma réplica do monolito.](figs/cap7/monolito.png){width=30%}
 
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
@@ -563,9 +563,9 @@ parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
 instâncias, todas elas em um novo servidor.
 
-![Servidor 1, com todos os microsserviços, menos M1](figs/cap7/escalabilidade1.png){width=30%}
+![Servidor 1, com todos os microsserviços, menos M1.](figs/cap7/escalabilidade1.png){width=30%}
 
-![Servidor 2, apenas com instâncias de M1](figs/cap7/escalabilidade2.png){width=30%}
+![Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade2.png){width=30%}
   
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
