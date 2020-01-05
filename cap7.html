@@ -174,15 +174,15 @@ var model = new Vue({
 <p>Quando os módulos são separados em processos distintos não há mais possibilidade de que um módulo acesse um recurso interno de outro módulo, como uma variável global, um atributo estático ou uma interface interna. Em vez disso, por construção, toda comunicação tem que ocorrer via interfaces públicas dos módulos. Assim, microsserviços são um instrumento para garantir que os times de desenvolvimento somente usem interfaces públicas de outros sistemas. A obediência à essa regra é garantida pelo sistema operacional.</p>
 <p>A próxima figura mostra uma versão baseada em microsserviços do nosso exemplo. Nela, continuam existindo nove módulos. Mas eles são executados por 6 processos independentes, representados pelos quadrados ou retângulos em volta dos módulos. Os módulos M1, M2, M3 e M6 são executados, cada um deles, em um processo independente. Os módulos M4 e M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9 são executados, em conjunto, em um sexto processo.</p>
 <figure>
-<img src="figs/cap7/microservices1.png" style="width:35.0%" alt="" /><figcaption>Arquitetura com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.</figcaption>
+<img src="figs/cap7/microservices1.png" style="width:35.0%" alt="" /><figcaption>Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.</figcaption>
 </figure>
 <p>Até esse ponto da explicação, usamos o termo processo, mas o nome do padrão refere-se a eles como <strong>serviços</strong>. Ainda, os serviços são micro porque não implementam funcionalidades complexas. Lembre-se que eles são desenvolvidos por times ágeis, que como dissemos no Capítulo 2, são times pequenos, com cerca de cinco desenvolvedores, por exemplo. Consequentemente, times pequenos não têm capacidade para implementar grandes serviços.</p>
 <p>Uma segunda vantagem de microsserviços é <strong>escalabilidade</strong>. Quando um monolito enfrenta problemas de performance, uma solução consiste em disponibilizar instâncias do sistema em máquinas diferentes, como mostra a próxima figura. Essa solução é chamada de <strong>escalabilidade horizontal</strong>. Por exemplo, ela permite dividir os clientes do sistema entre as duas instâncias mostradas na figura. Como se trata de um monolito, as duas instâncias são idênticas, isto é, possuem os mesmos módulos.</p>
 <figure>
-<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 1, executando o monolito em um processo.</figcaption>
+<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 1, executando o monolito em um único processo.</figcaption>
 </figure>
 <figure>
-<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 2, com uma réplica do monolito.</figcaption>
+<img src="figs/cap7/monolito.png" style="width:30.0%" alt="" /><figcaption>Servidor 2, executando uma réplica do monolito.</figcaption>
 </figure>
 <p>Porém, os problemas de performance podem ser causados por serviços específicos; por exemplo, apenas pelo serviço de autenticação de usuários. Então, microsserviços permitem replicar apenas os componentes diretamente relacionados com os problemas de performance. A próxima figura mostra uma nova instalação do nosso sistema baseado em microsserviços. O segundo servidor que foi disponibilizado inclui apenas instâncias do serviço M1. A suposição é que M1 é responsável pela maior parte dos problemas de performance da instalação inicial. Na primeira instalação, tínhamos uma única instância de M1. Agora, temos seis instâncias, todas elas em um novo servidor.</p>
 <figure>
@@ -204,7 +204,7 @@ var model = new Vue({
 <img src="figs/cap7/dados1.png" style="width:27.0%" alt="" /><figcaption>Microsserviços M1 e M2 compartilham o mesmo banco de dados, o que pode não ser recomendável.</figcaption>
 </figure>
 <figure>
-<img src="figs/cap7/dados2.png" style="width:27.0%" alt="" /><figcaption>Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é recomendável.</figcaption>
+<img src="figs/cap7/dados2.png" style="width:27.0%" alt="" /><figcaption>Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é mais recomendável.</figcaption>
 </figure>
 <p>Por exemplo, equipes e arquiteturas tradicionais de desenvolvimento costumam ter um administrador de dados, a quem cabe cuidar das tabelas do banco de dados. Qualquer mudança no banco de dados — como a criação de uma coluna em uma tabela — precisa de aprovação do administrador de dados. Logo, essa autoridade central tem que conciliar os interesses, muitas vezes conflitantes, das diversas equipes de desenvolvimento. Por isso, suas decisões podem se tornar lentas e burocráticas, atrasando a evolução do sistema.</p>
 <h3 id="quando-não-usar-microsserviços">Quando não usar microsserviços?</h3>

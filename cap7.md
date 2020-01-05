@@ -529,7 +529,7 @@ executados, cada um deles, em um processo independente. Os módulos M4 e
 M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9
 são executados, em conjunto, em um sexto processo.
 
-![Arquitetura com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada
+![Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada
 microsserviço executa como um processo autônomo.](figs/cap7/microservices1.png){width=35%}
 
 Até esse ponto da explicação, usamos o termo processo, mas o nome do
@@ -548,9 +548,9 @@ horizontal**. Por exemplo, ela permite dividir os clientes do sistema
 entre as duas instâncias mostradas na figura. Como se trata de um monolito, 
 as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 
-![Servidor 1, executando o monolito em um processo.](figs/cap7/monolito.png){width=30%}
+![Servidor 1, executando o monolito em um único processo.](figs/cap7/monolito.png){width=30%}
 
-![Servidor 2, com uma réplica do monolito.](figs/cap7/monolito.png){width=30%}
+![Servidor 2, executando uma réplica do monolito.](figs/cap7/monolito.png){width=30%}
 
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
@@ -631,7 +631,7 @@ do sistema.
 
 ![Microsserviços M1 e M2 compartilham o mesmo banco de dados, o que pode não ser recomendável.](figs/cap7/dados1.png){width=27%}   
 
-![Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é recomendável.](figs/cap7/dados2.png){width=27%}
+![Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é mais recomendável.](figs/cap7/dados2.png){width=27%}
     
 
 Por exemplo, equipes e arquiteturas tradicionais de desenvolvimento
