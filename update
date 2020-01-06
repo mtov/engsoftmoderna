@@ -8,8 +8,6 @@ curl -o cap3.html https://docs.google.com/document/d/e/2PACX-1vShmUD15aIUNCy50C_
 cat analytics.html cap3.html >> teste.html
 mv teste.html cap3.html
 
-sed -i -e 's/<table /<table class="preset" /g' cap2.html
-
 git add .
 
 git commit -a -m "update"

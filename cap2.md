@@ -276,54 +276,32 @@ também não adotar suas práticas.
 Neste capítulo, vamos primeiro apresentar os valores e princípios de XP.
 Veja uma lista deles na próxima tabela.
 
-+-------------------+--------------------------+
-| **Valores**       | **Princípios**           |
-+===================+==========================+
-| Comunicação       | Humanidade               |
-|                   |                          |
-| Simplicidade      | Economicidade            |
-|                   |                          |
-| Feedback          | Benefícios Mútuos        |
-|                   |                          |
-| Coragem           | Melhorias Contínuas      |
-|                   |                          |
-| Respeito          | Falhas Acontecem         |
-|                   |                          |
-| Qualidade de Vida | Baby Steps               |
-|                   |                          |
-|                   | Responsabilidade Pessoal |
-+-------------------+--------------------------+
+---------------  -----------------------------------------------------------------
+Valores          Comunicação, Simplicidade, Feedback, Coragem, Respeito e
+                 Qualidade de Vida
+
+Princípios       Humanidade, Economicidade, Benefícios Mútuos, Melhorias
+                 Contínuas, Falhas Acontecem, Baby Steps e Responsabilidade Pessoal
+---------------  ------------------------------------------------------------------
 
 Em seguida, vamos descrever as práticas. Para facilitar a explicação
 delas, resolvemos organizá-las em três grupos: práticas sobre o processo
 de desenvolvimento, práticas de programação e práticas de gerenciamento
 de projetos. A próxima tabela lista as práticas em cada grupo.
 
-+----------------------+----------------------+----------------------+
-| **Práticas sobre o   | **Práticas de        | **Práticas de        |
-| Processo de          | Programação**        | Gerenciamento de     |
-| Desenvolvimento**    |                      | Projetos**           |
-+======================+======================+======================+
-| Representante dos    | Design Incremental   | Ambiente de Trabalho |
-| Clientes             |                      |                      |
-|                      | Programação Pareada  | Contratos com Escopo |
-| Histórias de Usuário |                      | Aberto               |
-|                      | Testes Automatizados |                      |
-| Iterações            |                      | Métricas             |
-|                      | Desenvolvimento      |                      |
-| Releases             | Dirigido por Testes  |                      |
-|                      | (TDD)                |                      |
-| Planejamento de      |                      |                      |
-| Releases             | Build Automatizado   |                      |
-|                      |                      |                      |
-| Planejamento de      | Integração Contínua  |                      |
-| Iterações            |                      |                      |
-|                      |                      |                      |
-| Planning Poker       |                      |                      |
-|                      |                      |                      |
-| Slack                |                      |                      |
-+----------------------+----------------------+----------------------+
+------------------    --------------------------------------------------------------
+Práticas sobre o      Representante dos Clientes, Histórias dos Usuários, Iterações,
+Processo de           Releases, Planejamento de Releases, Planejamento de Iterações,
+Desenvolvimento       Planning Poker, Slack
 
+Práticas de           Design Incremental, Programação Pareada, Desenvolvimento
+Programação           Dirigido por Testes (TDD), Build Automatizado e Integração 
+                      Contínua
+
+Práticas de           Ambiente de Trabalho, Contratos com Escopo e Métricas
+Gerenciamento de
+Projetos                     
+------------------    --------------------------------------------------------------
 
 ### Valores
 
@@ -1273,11 +1251,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint de 15 dias.
 
-![](figs/cap2/burndown.png){width=55%}
-
-Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15
-dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as
-tarefas previstas.
+![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.png){width=55%}
 
 🌎 **Mundo Real**: Este livro está sendo escrito usando artefatos e
 eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
