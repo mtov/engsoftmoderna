@@ -463,9 +463,13 @@ um sistema de perguntas e respostas — semelhante ao famoso Stack
 Overflow ([link](https://stackoverflow.com)) — que
 usaremos neste capítulo para explicar XP:
 
-  Postar Pergunta
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
+  
+
+-------------------------------  
+**Postar Pergunta**
+
+*Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
+-------------------------------  
 
 Depois de serem escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
@@ -669,31 +673,11 @@ ser alguém que conheça o domínio do sistema e que tenha autoridade para
 priorizar histórias. Conforme detalhado a seguir, existem pelo menos
 três perfis de representante dos clientes:
 
-*   Suponha o desenvolvimento interno de um sistema, isto é, o
-     departamento de sistemas da empresa X está desenvolvendo um
-     sistema para um outro departamento Y, da mesma empresa. Nesse
-     caso, o representante dos clientes deve ser um funcionário do
-     departamento Y.
+*   Suponha o desenvolvimento interno de um sistema, isto é, o departamento de sistemas da empresa X está desenvolvendo um sistema para um outro departamento Y, da mesma empresa. Nesse caso, o representante dos clientes deve ser um funcionário do departamento Y.
 
-*   Suponha que o time de desenvolvimento foi contratado para
-     desenvolver um sistema para a empresa X. Ou seja, trata-se de um
-     desenvolvimento terceirizado. Nesse caso, o representante do
-     cliente deve ser um funcionário da empresa X, com pleno domínio da
-     área do sistema e que vai ser um dos seus principais usuários,
-     quando ele ficar pronto.
+*   Suponha que o time de desenvolvimento foi contratado para desenvolver um sistema para a empresa X. Ou seja, trata-se de um desenvolvimento terceirizado. Nesse caso, o representante do cliente deve ser um funcionário da empresa X, com pleno domínio da área do sistema e que vai ser um dos seus principais usuários, quando ele ficar pronto.
 
-*   Suponha que o time de desenvolvimento de uma empresa X foi designado
-     para fazer um sistema para um público externo à empresa. Por
-     exemplo, um sistema como aquele usado neste capítulo, similar ao
-     Stack Overflow. Logo, os clientes do sistema não são funcionários
-     de X, mas sim clientes externos. Nesse caso, o representante dos
-     clientes deve ser alguém da área de marketing, vendas ou negócios
-     da empresa X. Em última instância, pode ser o dono da empresa. Em
-     qualquer caso, a sugestão é que seja uma pessoa próxima do
-     problema e o mais distante possível da solução. Por isso mesmo,
-     deve-se evitar que ele seja um desenvolvedor ou um gerente de
-     projeto. O tipo de representante dos clientes que mencionamos
-     neste item é, às vezes, chamado de um **user proxy**.
+*   Suponha que o time de desenvolvimento de uma empresa X foi designado para fazer um sistema para um público externo à empresa. Por exemplo, um sistema como aquele usado neste capítulo, similar ao Stack Overflow. Logo, os clientes do sistema não são funcionários de X, mas sim clientes externos. Nesse caso, o representante dos clientes deve ser alguém da área de marketing, vendas ou negócios da empresa X. Em última instância, pode ser o dono da empresa. Em qualquer caso, a sugestão é que seja uma pessoa próxima do problema e o mais distante possível da solução. Por isso mesmo, deve-se evitar que ele seja um desenvolvedor ou um gerente de projeto. O tipo de representante dos clientes que mencionamos neste item é, às vezes, chamado de um **user proxy**.
 
 **Como definir a velocidade do time?** Não existe bala de prata para
 essa questão. Essa definição depende da experiência do time e de seus
@@ -1102,21 +1086,21 @@ Essa definição inclui um conjunto preciso de **papéis**, **artefatos** e
 **eventos**, que são listados e resumidos na tabela a seguir. No resto
 desta seção, vamos explicar cada um deles.
 
-+-----------------+--------------------+------------------------+
-| **Papéis**      | **Artefatos**      | **Eventos**            |
-+=================+====================+========================+
-| Dono do Produto | Backlog do Produto | Planejamento do Sprint |
-|                 |                    |                        |
-| Scrum Master    | Backlog do Sprint  | Sprint                 |
-|                 |                    |                        |
-| Desenvolvedor   | Quadro Scrum       | Reuniões Diárias       |
-|                 |                    |                        |
-|                 | Gráfico Burndown   | Revisão do Sprint      |
-|                 |                    |                        |
-|                 |                    | Retrospectiva          |
-+-----------------+--------------------+------------------------+
 
-**Papéis**: Times Scrum são formados por um Dono de Produto (*Product
+--------------   ------------------------------------------------------
+Papéis           Dono do Produto, Scrum Master, Desenvolvedor
+
+Artefatos        Backlog do Produto, Backlog do Sprint, Quadro Scrum,
+                 Gráfico de Burndown
+
+Eventos          Planejamento do Sprint, Sprint, Reuniões Diárias,
+                 Revisão do Sprint, Retrospectiva
+--------------   ------------------------------------------------------
+
+
+### Papéis 
+
+Times Scrum são formados por um Dono de Produto (*Product
 Owner*), um Scrum Master e de três a nove desenvolvedores.
 
 O **Dono do Produto** tem exatamente o mesmo papel do Representante dos
@@ -1153,7 +1137,9 @@ frameworks que serão usados no desenvolvimento. Cabe a eles também
 estimar o tamanho das histórias definidas pelo Dono do Produto, usando
 uma unidade como story points, de modo semelhante ao que vimos em XP.
 
-**Principais Artefatos e Eventos:** Em Scrum, os dois artefatos
+### Artefatos e Eventos 
+
+Em Scrum, os dois artefatos
 principais são o Backlog do Produto e o Backlog do Sprint e os
 principais eventos são sprints e o planejamento de sprints, conforme
 descreveremos a seguir.

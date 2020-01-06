@@ -171,14 +171,15 @@
 <h3 id="práticas-sobre-o-processo-de-desenvolvimento">Práticas sobre o Processo de Desenvolvimento</h3>
 <p>XP — como outros métodos ágeis — recomenda o envolvimento dos clientes com o projeto. Ou seja, além de desenvolvedores, os times incluem pelo menos um <strong>representante dos clientes</strong>, que deve entender do domínio do sistema que será construído. Uma das funções desse representante é escrever as <strong>histórias de usuário</strong> (<em>user stories</em>), que é o nome que XP dá para os documentos que descrevem os requisitos do sistema a ser implementado. No entanto, histórias são documentos resumidos, com apenas duas ou três sentenças, com as quais o representante dos clientes define o que ele deseja que o sistema faça, usando sua própria linguagem.</p>
 <p>Iremos aprofundar o estudo sobre histórias de usuários no Capítulo 3 (Engenharia de Requisitos). Mas, por enquanto, gostaríamos de adiantar que as histórias são escritas em cartões de papel, normalmente a mão. Ou seja, em vez de documentos de requisitos detalhados, histórias são documentos simples, que focam nas funcionalidades do sistema, sempre na visão de seus usuários. Como exemplo, mostramos a seguir uma história de um sistema de perguntas e respostas — semelhante ao famoso Stack Overflow (<a href="https://stackoverflow.com">link</a>) — que usaremos neste capítulo para explicar XP:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Postar Pergunta</th>
-</tr>
-</thead>
+<table style="width:47%;">
+<colgroup>
+<col style="width: 47%" />
+</colgroup>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;"><strong>Postar Pergunta</strong></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><em>Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.</em></td>
 </tr>
 </tbody>
@@ -330,41 +331,33 @@
 <li><p>Scrum é um método ágil para gerenciamento de projetos, que não necessariamente precisam ser projetos de desenvolvimento de software. Por exemplo, a escrita deste livro — como comentaremos daqui a pouco — é um projeto que está sendo realizado usando conceitos de Scrum. Tendo um foco mais amplo que XP, Scrum não propõe nenhuma prática de programação.</p></li>
 </ul>
 <p>Dentre os métodos ágeis, Scrum é também aquele que é melhor definido. Essa definição inclui um conjunto preciso de <strong>papéis</strong>, <strong>artefatos</strong> e <strong>eventos</strong>, que são listados e resumidos na tabela a seguir. No resto desta seção, vamos explicar cada um deles.</p>
-<table style="width:89%;">
+<table>
 <colgroup>
-<col style="width: 25%" />
-<col style="width: 29%" />
-<col style="width: 34%" />
+<col style="width: 23%" />
+<col style="width: 76%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th><strong>Papéis</strong></th>
-<th><strong>Artefatos</strong></th>
-<th><strong>Eventos</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><p>Dono do Produto</p>
-<p>Scrum Master</p>
-<p>Desenvolvedor</p></td>
-<td><p>Backlog do Produto</p>
-<p>Backlog do Sprint</p>
-<p>Quadro Scrum</p>
-<p>Gráfico Burndown</p></td>
-<td><p>Planejamento do Sprint</p>
-<p>Sprint</p>
-<p>Reuniões Diárias</p>
-<p>Revisão do Sprint</p>
-<p>Retrospectiva</p></td>
+<td style="text-align: left;">Papéis</td>
+<td style="text-align: left;">Dono do Produto, Scrum Master, Desenvolvedor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Artefatos</td>
+<td style="text-align: left;">Backlog do Produto, Backlog do Sprint, Quadro Scrum, Gráfico de Burndown</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eventos</td>
+<td style="text-align: left;">Planejamento do Sprint, Sprint, Reuniões Diárias, Revisão do Sprint, Retrospectiva</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Papéis</strong>: Times Scrum são formados por um Dono de Produto (<em>Product Owner</em>), um Scrum Master e de três a nove desenvolvedores.</p>
+<h3 id="papéis">Papéis</h3>
+<p>Times Scrum são formados por um Dono de Produto (<em>Product Owner</em>), um Scrum Master e de três a nove desenvolvedores.</p>
 <p>O <strong>Dono do Produto</strong> tem exatamente o mesmo papel do Representante dos Clientes em XP, por isso não vamos explicar de novo a sua função em detalhes. Mas ele, como o próprio nome indica, deve possuir a visão do produto que será construído, sendo responsável também por maximizar o retorno do investimento feito no projeto. Assim como em XP, cabe ao Dono do Produto escrever as histórias do usuário e, por isso, ele deve estar sempre disponível para tirar dúvidas do time.</p>
 <p>O <strong>Scrum Master</strong> é um papel característico e único de Scrum. Trata-se do especialista em Scrum do time, sendo responsável por garantir que as regras do método estão sendo seguidas. Para isso, ele deve continuamente treinar e explicar os princípios de Scrum para os demais membros do time. Ele também deve desempenhar funções de um facilitador dos trabalhos e removedor de impedimentos. Por exemplo, suponha que um time esteja enfrentando problemas com um dos servidores de bancos de dados, cujos discos estão apresentando problemas todos os dias. Cabe ao Scrum Master intervir junto aos níveis adequados da empresa para garantir que esse problema de hardware não atrapalhe o avanço do time. Por outro lado, ele não é um gerente de projeto tradicional. Por exemplo, ele não é o líder do time, pois todos em um time Scrum tem o mesmo nível hierárquico.</p>
 <p>Costuma-se dizer que times Scrum são <strong>cross-funcionais</strong>, isto é, eles devem incluir — além do Dono do Produto e do Scrum Master — todos os especialistas necessários para desenvolver o produto, de forma a não depender de membros externos. No caso de projetos de software, isso inclui desenvolvedores <em>front-end,</em> desenvolvedores <em>back-end,</em> especialistas em bancos de dados, projetistas de interfaces, etc. Cabe a esses especialistas tomar todas as decisões técnicas do projeto, incluindo definição da linguagem de programação, arquitetura e frameworks que serão usados no desenvolvimento. Cabe a eles também estimar o tamanho das histórias definidas pelo Dono do Produto, usando uma unidade como story points, de modo semelhante ao que vimos em XP.</p>
-<p><strong>Principais Artefatos e Eventos:</strong> Em Scrum, os dois artefatos principais são o Backlog do Produto e o Backlog do Sprint e os principais eventos são sprints e o planejamento de sprints, conforme descreveremos a seguir.</p>
+<h3 id="artefatos-e-eventos">Artefatos e Eventos</h3>
+<p>Em Scrum, os dois artefatos principais são o Backlog do Produto e o Backlog do Sprint e os principais eventos são sprints e o planejamento de sprints, conforme descreveremos a seguir.</p>
 <ul>
 <li><p>O <strong>Backlog do Produto</strong> é uma lista de histórias, ordenada por prioridades. Assim como em XP, as histórias são escritas e priorizadas pelo Dono do Produto e constituem uma descrição resumida das funcionalidades que devem ser implementadas no projeto. É importante mencionar ainda que o Backlog do Produto é um artefato dinâmico, isto é, ele deve ser continuamente atualizado, de forma a refletir mudanças nos requisitos e na visão do produto. Por exemplo, à medida que o desenvolvimento avança, ideias de novas funcionalidades podem surgir, enquanto outras podem perder importância. Todas essas atualizações devem ser realizadas pelo Dono do Produto. Na verdade, é o fato de ser o dono do Backlog do Produto que faz o Dono do Produto receber esse nome.</p></li>
 <li><p><strong>Sprint</strong> é o nome dado por Scrum para uma iteração. Ou seja, como todo método ágil, Scrum é um método iterativo, no qual o desenvolvimento é dividido em sprints, de até um mês. Ao final de um sprint, deve-se entregar um produto com valor tangível para o cliente. O resultado de um sprint é frequentemente chamado de um produto potencialmente pronto para entrar em produção (<em>potentially shippable product</em>). Lembre que o adjetivo potencial não torna a entrada em produção obrigatória, conforme discutido na Seção 2.2.</p></li>
