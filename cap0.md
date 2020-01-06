@@ -54,6 +54,7 @@ Vamos sempre manter uma versão aberta do livro, em HTML, no endereço:
 Mas também pretendemos, em algum momento, ter uma versão em papel.
 
 Marco Tulio Valente
+
 Belo Horizonte, 11 de novembro de 2019.
 
 ## Sobre o Autor
