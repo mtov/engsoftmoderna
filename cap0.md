@@ -1,5 +1,3 @@
-![](figs/cap0/capa.png){width=100%}
-
 # Prefácio
 
 > A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.

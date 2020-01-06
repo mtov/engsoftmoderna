@@ -1372,10 +1372,10 @@ Veja uma foto a seguir.
 
 (https://www.flickr.com/photos/22434330@N00),
 
-**O que é um squad**? Basicamente, o termo **squad** é um sinônimo para
+**O que é um squad**? Esse termo é um sinônimo para
 time ágil ou time Scrum. O nome foi popularizado pela Spotify. Assim
 como times Scrum, squads são pequenos, cross-funcionais e
-auto-organizáveis. É comum ainda se deparar com o nome tribo, para
+auto-organizáveis. É comum ainda usar o nome tribo para
 denotar um conjunto de squads.
 
 **O Dono do Produto pode ser um comitê**? Em outras palavras, pode
