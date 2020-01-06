@@ -1613,59 +1613,45 @@ por gerentes da organização, por exemplo.
 
 Resta-nos agora explicar como os limites WIP são definidos. Existe mais
 de uma alternativa, mas vamos adotar uma adaptação de um algoritmo
-proposto por Eric Brechner — um Engenheiro de Software da Microsoft
+proposto por Eric Brechner — um engenheiro da Microsoft
 — em seu livro sobre o uso de Kanban no desenvolvimento de software
 ([link](https://dl.acm.org/citation.cfm?id=2774938)). O
-algoritmo é o seguinte:
+algoritmo é descrito a seguir.
 
-* Primeiro, temos que estimar quanto tempo em média uma tarefa vai
-     ficar em cada passo do Quadro Kanban. Esse tempo é chamado de
-     **lead time (LT)**. No nosso exemplo, vamos supor os seguintes
-     valores:
+Primeiro, temos que estimar quanto tempo em média uma tarefa vai ficar em cada passo do Quadro Kanban. Esse tempo é chamado de **lead time (LT)**. No nosso exemplo, vamos supor os seguintes valores:
 
- LT(especificação) = 5 dias
+ * LT(especificação) = 5 dias
 
- LT(implementação) = 12 dias
+ * LT(implementação) = 12 dias
 
- LT(revisão) = 6 dias
+ * LT(revisão) = 6 dias
 
- Veja que essa estimativa considera uma tarefa média, pois sabemos que
- vão existir tarefas mais complexas e mais simples. Veja ainda que o
- lead time inclui o tempo em fila, isto é, o tempo que a tarefa vai
- ficar na 2a sub-coluna dos passos do Quadro Kanban aguardando ser
- puxada para o passo seguinte.
+Veja que essa estimativa considera uma tarefa média, pois sabemos que vão existir tarefas mais complexas e mais simples. Veja ainda que o lead time inclui o tempo em fila, isto é, o tempo que a tarefa vai ficar na 2a sub-coluna dos passos do Quadro Kanban aguardando ser puxada para o passo seguinte.
 
-* Em seguida, deve-se estimar o **throughput (TP)** do passo com maior
-     lead time do Quadro Kanban, isto é, o número de tarefas produzidas
-     por dia nesse passo. No nosso exemplo, e na maioria dos projetos
-     de desenvolvimento de software, esse passo é o de Implementação.
-     Assim, suponha que o nosso time seja capaz de sustentar a
-     implementação de 8 tarefas por mês. O **throughput** desse passo é
-     então: 8 / 21 = 0.38 tarefas/dia. Veja que consideramos que um mês
-     tem 21 dias úteis.
+Em seguida, deve-se estimar o **throughput (TP)** do passo com maior lead time do Quadro Kanban, isto é, o número de tarefas produzidas por dia nesse passo. No nosso exemplo, e na maioria dos projetos de desenvolvimento de software, esse passo é o de Implementação. Assim, suponha que o nosso time seja capaz de sustentar a implementação de 8 tarefas por mês. O **throughput** desse passo é então: 8 / 21 = 0.38 tarefas/dia. Veja que consideramos que um mês tem 21 dias úteis.
 
-*   Por fim, o WIP de cada passo é assim definido:
+Por fim, o WIP de cada passo é assim definido:
 
  **WIP(passo) = TP \* LT(passo)**.
 
- onde throughput refere-se ao throughput do passo mais lento, conforme
- calculado no item anterior.
+onde throughput refere-se ao throughput do passo mais lento, conforme
+calculado no item anterior.
 
-*   Logo, teremos os seguintes resultados:
+Logo, teremos os seguintes resultados:
 
- WIP(especificação) = 0.38 \* 5 = 1.9
+* WIP(especificação) = 0.38 \* 5 = 1.9
 
- WIP(implementação) = 0.38 \* 12 = 4.57
+* WIP(implementação) = 0.38 \* 12 = 4.57
 
- WIP(revisão) = 0.38 \* 6 = 2.29
+* WIP(revisão) = 0.38 \* 6 = 2.29
 
-*   Arredondando para cima, os resultados ficam assim:
+Arredondando para cima, os resultados finais ficam assim:
 
- WIP(especificação) = 2
+* WIP(especificação) = 2
 
- WIP(implementação) = 5
+* WIP(implementação) = 5
 
- WIP(revisão) = 3
+* WIP(revisão) = 3
 
 No algoritmo proposto por Eric Brechner, sugere-se ainda adicionar uma
 margem de erro de 50% nos WIPs calculados, para acomodar variações no

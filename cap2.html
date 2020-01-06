@@ -490,32 +490,30 @@
 </ul>
 <p>Apenas reforçando, o objetivo dos limites WIP é evitar que os times Kanban fiquem sobrecarregados de trabalho. Quando um desenvolvedor tem muitas tarefas para realizar — porque os limites WIP não estão sendo respeitados — a tendência é que ele não consiga concluir nenhuma dessas tarefas com qualidade. Como usual em qualquer atividade humana, quando assumimos muitos compromissos, a qualidade de nossas entregas cai muito. Kanban reconhece esse problema e, para que ele não ocorra, cria uma "trava" automática para impedir que os times aceitem trabalhos além da sua capacidade de entrega. Essas "travas", que são os limites WIP, servem para uso interno do time e, mais importante ainda, para uso externo. Ou seja, elas são o instrumento de que um time dispõe para recusar trabalho extra que está sendo "empurrado" de cima para baixo por gerentes da organização, por exemplo.</p>
 <h3 id="calculando-os-limites-wip">Calculando os Limites WIP</h3>
-<p>Resta-nos agora explicar como os limites WIP são definidos. Existe mais de uma alternativa, mas vamos adotar uma adaptação de um algoritmo proposto por Eric Brechner — um Engenheiro de Software da Microsoft — em seu livro sobre o uso de Kanban no desenvolvimento de software (<a href="https://dl.acm.org/citation.cfm?id=2774938">link</a>). O algoritmo é o seguinte:</p>
+<p>Resta-nos agora explicar como os limites WIP são definidos. Existe mais de uma alternativa, mas vamos adotar uma adaptação de um algoritmo proposto por Eric Brechner — um engenheiro da Microsoft — em seu livro sobre o uso de Kanban no desenvolvimento de software (<a href="https://dl.acm.org/citation.cfm?id=2774938">link</a>). O algoritmo é descrito a seguir.</p>
+<p>Primeiro, temos que estimar quanto tempo em média uma tarefa vai ficar em cada passo do Quadro Kanban. Esse tempo é chamado de <strong>lead time (LT)</strong>. No nosso exemplo, vamos supor os seguintes valores:</p>
 <ul>
-<li>Primeiro, temos que estimar quanto tempo em média uma tarefa vai ficar em cada passo do Quadro Kanban. Esse tempo é chamado de <strong>lead time (LT)</strong>. No nosso exemplo, vamos supor os seguintes valores:</li>
+<li><p>LT(especificação) = 5 dias</p></li>
+<li><p>LT(implementação) = 12 dias</p></li>
+<li><p>LT(revisão) = 6 dias</p></li>
 </ul>
-<p>LT(especificação) = 5 dias</p>
-<p>LT(implementação) = 12 dias</p>
-<p>LT(revisão) = 6 dias</p>
 <p>Veja que essa estimativa considera uma tarefa média, pois sabemos que vão existir tarefas mais complexas e mais simples. Veja ainda que o lead time inclui o tempo em fila, isto é, o tempo que a tarefa vai ficar na 2a sub-coluna dos passos do Quadro Kanban aguardando ser puxada para o passo seguinte.</p>
-<ul>
-<li><p>Em seguida, deve-se estimar o <strong>throughput (TP)</strong> do passo com maior lead time do Quadro Kanban, isto é, o número de tarefas produzidas por dia nesse passo. No nosso exemplo, e na maioria dos projetos de desenvolvimento de software, esse passo é o de Implementação. Assim, suponha que o nosso time seja capaz de sustentar a implementação de 8 tarefas por mês. O <strong>throughput</strong> desse passo é então: 8 / 21 = 0.38 tarefas/dia. Veja que consideramos que um mês tem 21 dias úteis.</p></li>
-<li><p>Por fim, o WIP de cada passo é assim definido:</p></li>
-</ul>
+<p>Em seguida, deve-se estimar o <strong>throughput (TP)</strong> do passo com maior lead time do Quadro Kanban, isto é, o número de tarefas produzidas por dia nesse passo. No nosso exemplo, e na maioria dos projetos de desenvolvimento de software, esse passo é o de Implementação. Assim, suponha que o nosso time seja capaz de sustentar a implementação de 8 tarefas por mês. O <strong>throughput</strong> desse passo é então: 8 / 21 = 0.38 tarefas/dia. Veja que consideramos que um mês tem 21 dias úteis.</p>
+<p>Por fim, o WIP de cada passo é assim definido:</p>
 <p><strong>WIP(passo) = TP * LT(passo)</strong>.</p>
 <p>onde throughput refere-se ao throughput do passo mais lento, conforme calculado no item anterior.</p>
+<p>Logo, teremos os seguintes resultados:</p>
 <ul>
-<li>Logo, teremos os seguintes resultados:</li>
+<li><p>WIP(especificação) = 0.38 * 5 = 1.9</p></li>
+<li><p>WIP(implementação) = 0.38 * 12 = 4.57</p></li>
+<li><p>WIP(revisão) = 0.38 * 6 = 2.29</p></li>
 </ul>
-<p>WIP(especificação) = 0.38 * 5 = 1.9</p>
-<p>WIP(implementação) = 0.38 * 12 = 4.57</p>
-<p>WIP(revisão) = 0.38 * 6 = 2.29</p>
+<p>Arredondando para cima, os resultados finais ficam assim:</p>
 <ul>
-<li>Arredondando para cima, os resultados ficam assim:</li>
+<li><p>WIP(especificação) = 2</p></li>
+<li><p>WIP(implementação) = 5</p></li>
+<li><p>WIP(revisão) = 3</p></li>
 </ul>
-<p>WIP(especificação) = 2</p>
-<p>WIP(implementação) = 5</p>
-<p>WIP(revisão) = 3</p>
 <p>No algoritmo proposto por Eric Brechner, sugere-se ainda adicionar uma margem de erro de 50% nos WIPs calculados, para acomodar variações no tamanho das tarefas, tarefas bloqueadas devido a fatores externos, etc. No entanto, como nosso exemplo é ilustrativo, não vamos ajustar os WIPs que foram calculados acima.</p>
 <p>Conforme afirmado, limites WIPs são o recurso oferecido por Kanban para garantir um ritmo de trabalho sustentável e a entrega de sistemas de software com qualidade. O papel desses limites é contribuir para que os desenvolvedores não fiquem sobrecarregados de tarefas e, consequentemente, propensos a baixar a qualidade de seu trabalho. Na verdade, todo método de desenvolvimento de software tende a oferecer esse tipo de recurso. Por exemplo, em Scrum existe o conceito de sprints com time-boxes definidos, cujo objetivo é evitar que times aceitem trabalhar em histórias que ultrapassam a sua velocidade de entrega. Adicionalmente, uma vez iniciado, o objetivo de um sprint não pode ser alterado, de forma a blindar o time de mudanças diárias de prioridade. No caso de métodos Waterfall, o recurso para garantir um fluxo de trabalho sustentável e de qualidade é a existência de uma fase detalhada de especificação de requisitos. Com essa fase, a intenção era oferecer aos desenvolvedores uma ideia clara do sistema que eles deveriam implementar.</p>
 <p>📚 <strong>Aprofundamento</strong>: O procedimento para cálculo de WIPs explicado anteriormente é uma aplicação direta da <strong>Lei de Little</strong>, que é um dos resultados mais importantes da Teoria de Filas (<a href="https://isbnsearch.org/isbn/0471503363">link</a>). A Lei de Little diz que o número de itens em um sistema de filas é igual à taxa de chegada desses itens multiplicado pelo tempo que cada item fica no sistema. Traduzindo para o nosso contexto, o sistema é um passo de um processo Kanban e os itens são tarefas. Assim, temos também que:</p>
