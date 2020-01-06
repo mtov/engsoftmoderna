@@ -276,12 +276,13 @@ também não adotar suas práticas.
 Neste capítulo, vamos primeiro apresentar os valores e princípios de XP.
 Veja uma lista deles na próxima tabela.
 
----------------  -----------------------------------------------------------------
+
+---------------  ------------------------------------------------------------------
 Valores          Comunicação, Simplicidade, Feedback, Coragem, Respeito e
                  Qualidade de Vida
 
 Princípios       Humanidade, Economicidade, Benefícios Mútuos, Melhorias
-                 Contínuas, Falhas Acontecem, Baby Steps e Responsabilidade Pessoal
+                 Contínuas, Falhas Acontecem, Baby Steps, Responsabilidade Pessoal
 ---------------  ------------------------------------------------------------------
 
 Em seguida, vamos descrever as práticas. Para facilitar a explicação
@@ -289,19 +290,19 @@ delas, resolvemos organizá-las em três grupos: práticas sobre o processo
 de desenvolvimento, práticas de programação e práticas de gerenciamento
 de projetos. A próxima tabela lista as práticas em cada grupo.
 
-------------------    --------------------------------------------------------------
+------------------    ---------------------------------------------------------------
 Práticas sobre o      Representante dos Clientes, Histórias dos Usuários, Iterações,
 Processo de           Releases, Planejamento de Releases, Planejamento de Iterações,
 Desenvolvimento       Planning Poker, Slack
 
 Práticas de           Design Incremental, Programação Pareada, Desenvolvimento
-Programação           Dirigido por Testes (TDD), Build Automatizado e Integração 
+Programação           Dirigido por Testes (TDD), Build Automatizado, Integração 
                       Contínua
 
-Práticas de           Ambiente de Trabalho, Contratos com Escopo e Métricas
+Práticas de           Ambiente de Trabalho, Contratos com Escopo Aberto, Métricas
 Gerenciamento de
 Projetos                     
-------------------    --------------------------------------------------------------
+------------------    ---------------------------------------------------------------
 
 ### Valores
 
