@@ -16,6 +16,7 @@ a discutir quando métodos ágeis não são recomendados (Seção 2.6). Por
 fim, na Seção 2.7, discutimos alguns processos tradicionais,
 principalmente o Processo Unificado.
 
+
 # 2.1 Importância de Processos
 
 A produção de um carro em uma fábrica de automóveis segue um processo
@@ -170,15 +171,15 @@ As próximas figuras comparam um desenvolvimento em Waterfall e um
 desenvolvimento Ágil.
 
 ![Exemplo de desenvolvimento usando um Processo Waterfall. O sistema fica
-pronto apenas no final.](figs/cap2/waterfall.jpg){width=80%}
+pronto apenas no final.](figs/cap2/waterfall.jpg){width=70%}
 
 
 ![Exemplo de desenvolvimento usando um Processo Ágil. A cada iteração
 (representadas pelos retângulos) gera-se um incremento no sistema (S++),
-que já pode ser validado e testado pelos usuários finais.](figs/cap2/agile.jpg){width=80%}
+que já pode ser validado e testado pelos usuários finais.](figs/cap2/agile.jpg){width=70%}
 
 
-⚠️ **Aviso**: A figura anterior pode sugerir que, em desenvolvimento
+No entanto, a figura anterior pode sugerir que, em desenvolvimento
 ágil, cada iteração é um mini-waterfall, incluindo todas as fases de um
 processo Waterfall. Isso não é verdadeiro; em geral, as iterações em
 métodos ágeis não são um pipeline de tarefas, como em Waterfall (mais
@@ -485,7 +486,7 @@ usaremos neste capítulo para explicar XP:
 
   Postar Pergunta
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.
+  *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
 
 Depois de serem escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
@@ -1291,21 +1292,21 @@ para ter uma duração de três meses. Para ficar mais claro, mostra-se a
 seguir o backlog do sprint atual, bem como o estado de cada tarefa,
 exatamente no momento em que se está escrevendo este parágrafo.
 
-+----------------+----------------+----------------+----------------+
-| **História**   | **A fazer**    | **Em           | **Concluídas** |
-|                |                | andamento**    |                |
-+================+================+================+================+
-| Capítulo 2 -   | Kanban         | Scrum          | Introdução     |
-| Processos de   |                |                |                |
-| D              | Quando não     |                | Manifesto Ágil |
-| esenvolvimento | usar Métodos   |                |                |
-|                | Ágeis          |                | XP             |
-|                |                |                |                |
-|                | Outros         |                |                |
-|                | Processos      |                |                |
-|                |                |                |                |
-|                | Exercícios     |                |                |
-+----------------+----------------+----------------+----------------+
++-----------------+----------------+----------------+----------------+
+| **História**    | **A fazer**    | **Em           | **Concluídas** |
+|                 |                | andamento**    |                |
++=================+================+================+================+
+| Cap. 2 -        | Kanban         | Scrum          | Introdução     |
+| Processos de    |                |                |                |
+| Desenvolvimento | Quando não     |                | Manifesto Ágil |
+|                 | usar Métodos   |                |                |
+|                 | Ágeis          |                | XP             |
+|                 |                |                |                |
+|                 | Outros         |                |                |
+|                 | Processos      |                |                |
+|                 |                |                |                |
+|                 | Exercícios     |                |                |
++-----------------+----------------+----------------+----------------+
 
 Decidiu-se adotar um método ágil para escrita do livro para minimizar os
 riscos de desenvolver um produto que não atenda às necessidades de
