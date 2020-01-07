@@ -108,14 +108,14 @@ entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2.svg){width=50%}
+cada faixa de estouro).](figs/cap2/chaos2.svg){width=70%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=50%}
+(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=70%}
 
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
@@ -1137,7 +1137,7 @@ frameworks que serão usados no desenvolvimento. Cabe a eles também
 estimar o tamanho das histórias definidas pelo Dono do Produto, usando
 uma unidade como story points, de modo semelhante ao que vimos em XP.
 
-### Artefatos e Eventos 
+### Principais Artefatos e Eventos 
 
 Em Scrum, os dois artefatos
 principais são o Backlog do Produto e o Backlog do Sprint e os
@@ -1238,7 +1238,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint de 15 dias.
 
-![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.png){width=55%}
+![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.svg){width=55%}
 
 🌎 **Mundo Real**: Este livro está sendo escrito usando artefatos e
 eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
@@ -1285,7 +1285,9 @@ pelo autor do livro. Concluída essa revisão, o capítulo é divulgado
 preliminarmente para os membros do Grupo de Pesquisa em Engenharia de
 Software Aplicada, do DCC/UFMG.
 
-**Outros Eventos de Scrum:** Vamos agora descrever mais três eventos
+### Outros Eventos de Scrum
+
+Vamos agora descrever mais três eventos
 Scrum, especificamente Reuniões Diárias, Revisão do Sprint e
 Retrospectiva.
 
