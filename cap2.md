@@ -108,14 +108,14 @@ entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2.svg){width=70%}
+cada faixa de estouro).](figs/cap2/chaos2.svg){width=60%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=70%}
+(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=60%}
 
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
@@ -639,7 +639,9 @@ de desenvolvimento de software costuma ser intenso e desgastante. Logo,
 os desenvolvedores precisam de um tempo para realizarem algumas tarefas
 onde não exista uma cobrança de resultados, entregas, etc.
 
-💡**Perguntas Frequentes**: Vamos agora responder a algumas perguntas
+### Perguntas Frequentes
+
+Vamos agora responder a algumas perguntas
 sobre as práticas de XP que acabamos de explicar.
 
 **Qual a duração ideal de uma iteração**? Difícil precisar, pois depende
@@ -1238,7 +1240,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint de 15 dias.
 
-![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.svg){width=55%}
+![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.svg){width=65%}
 
 🌎 **Mundo Real**: Este livro está sendo escrito usando artefatos e
 eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
@@ -1285,7 +1287,7 @@ pelo autor do livro. Concluída essa revisão, o capítulo é divulgado
 preliminarmente para os membros do Grupo de Pesquisa em Engenharia de
 Software Aplicada, do DCC/UFMG.
 
-### Outros Eventos de Scrum
+### Outros Eventos
 
 Vamos agora descrever mais três eventos
 Scrum, especificamente Reuniões Diárias, Revisão do Sprint e
@@ -1361,7 +1363,9 @@ Time-box dos eventos scrum. No caso de eventos com um time-box máximo,
 ele se refere a um sprint de um mês. Se o sprint for menor, o time-box
 sugerido deve ser também menor.
 
-💡**Perguntas Frequentes**: Antes de concluir a seção, vamos responder
+### Perguntas Frequentes
+
+Antes de concluir a seção, vamos responder
 algumas perguntas sobre Scrum:
 
 **O que significa a palavra Scrum**? O nome não é uma sigla, mas uma
@@ -1699,7 +1703,9 @@ podemos representar a Lei de Little da seguinte forma:
 ![Lei de Little: WIP = TP * LT](figs/cap2/lei-little.png){width=40%}
 
 
-💡**Perguntas Frequentes**: Antes de concluir, vamos responder algumas
+### Perguntas Frequentes 
+
+Antes de concluir, vamos responder algumas
 perguntas sobre Kanban:
 
 **Quais são os papéis que existem em Kanban**? Ao contrário de Scrum,
@@ -1851,8 +1857,8 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
      de propor o método UP, também desenvolvia e vendia licenças de uso
      de ferramentas CASE.
 
-![Exemplo de diagrama UML desenhado usando uma ferramenta CASE. Imagem extraída de [link](https://umbrello.kde.org/screenshots.php).](figs/cap2/case.png){width=55%}
 
+![Exemplo de diagrama UML desenhado usando uma ferramenta CASE. Imagem extraída de [link](https://umbrello.kde.org/screenshots.php).](figs/cap2/case.png){width=55%}
 
 UP propõe que o desenvolvimento de um sistema seja decomposto nas
 seguintes fases:
