@@ -276,12 +276,11 @@ também não adotar suas práticas.
 Neste capítulo, vamos primeiro apresentar os valores e princípios de XP.
 Veja uma lista deles na próxima tabela.
 
-
 ---------------  ------------------------------------------------------------------
-Valores          Comunicação, Simplicidade, Feedback, Coragem, Respeito e
-                 Qualidade de Vida
+Valores          Comunicação, Simplicidade, Feedback, Coragem, Respeito e Qualidade 
+                 de Vida
 
-Princípios       Humanidade, Economicidade, Benefícios Mútuos, Melhorias
+Princípios       Humanidade, Economicidade, Benefícios Mútuos, Melhorias 
                  Contínuas, Falhas Acontecem, Baby Steps, Responsabilidade Pessoal
 ---------------  ------------------------------------------------------------------
 
@@ -639,7 +638,7 @@ de desenvolvimento de software costuma ser intenso e desgastante. Logo,
 os desenvolvedores precisam de um tempo para realizarem algumas tarefas
 onde não exista uma cobrança de resultados, entregas, etc.
 
-### Perguntas Frequentes
+#### Perguntas Frequentes
 
 Vamos agora responder a algumas perguntas
 sobre as práticas de XP que acabamos de explicar.
@@ -1373,10 +1372,7 @@ referência à \"reunião\" de jogadores realizada em uma partida de rugby
 para decidir quem vai ficar com a bola, após uma infração involuntária.
 Veja uma foto a seguir.
 
-![Scrum, licença CC-BY.](figs/cap2/scrum.png){width=30%}
-
-
-(https://www.flickr.com/photos/22434330@N00),
+![Scrum em uma partida de rugby, foto: [Flickr](https://flic.kr/p/gB9tsA), licença CC-BY.](figs/cap2/scrum.jpg){width=45%}
 
 **O que é um squad**? Esse termo é um sinônimo para
 time ágil ou time Scrum. O nome foi popularizado pela Spotify. Assim
@@ -1763,18 +1759,21 @@ qualquer área podem se beneficiar de pelo menos algumas das práticas
 propostas por métodos ágeis. Por outro lado, existem práticas que não
 são recomendadas para determinados tipos de sistemas, organizações e
 contextos. Assim, vamos responder a pergunta proposta em uma
-granularidade mais fina. Isto é, vamos comentar sobre quando não usar
-determinadas práticas de desenvolvimento ágil. Para isso, usaremos a
-seguinte tabela:
+granularidade mais fina. Isto é, vamos comentar 
+a seguir sobre quando **não** usar
+determinadas práticas de desenvolvimento ágil. 
 
-  **Prática**                        **Quando não usar?**
-  ---------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Design Incremental                 Design incremental faz sentido quando o time tem uma primeira visão do design do sistema. Se o time não tem essa visão, ou o domínio do sistema é novo e complexo, ou o custo de mudanças futuras é muito alto, recomenda-se adotar uma fase de design e análise inicial, antes de partir para iterações que requeiram implementações de funcionalidades.
-  Histórias do Usuário               Histórias são um método leve para especificação de requisitos, que depois são clarificados com o envolvimento cotidiano de um representante dos clientes no projeto. Porém, em certos casos, pode ser importante ter uma especificação detalhada de requisitos no início do projeto, principalmente se ele for um projeto de uma área totalmente nova para o time de desenvolvedores.
-  Envolvimento do Cliente            Se os requisitos do sistema são estáveis e de pleno conhecimento do time de desenvolvedores, não faz sentido ter um Representante dos Clientes ou Dono do Produto integrado ao time. Por exemplo, esse papel não é importante no desenvolvimento de um compilador para uma linguagem conhecida, com uma gramática e semântica consolidadas.
-  Documentação Leve e Simplificada   Em certos domínios, documentações detalhadas de requisitos e de projeto são mandatórias. Por exemplo, sistemas cujas falhas podem causar a morte de seres humanos, como aqueles das áreas médicas e de transporte, costumam demandar certificação por uma entidade externa, que pode exigir uma documentação detalhada, além do código fonte.
-  Times Auto-organizáveis            Times ágeis são autônomos e empoderados para trabalhar sem interferências durante o time-box de uma iteração. Consequentemente, eles não precisam prestar contas diárias para os gerentes e executivos da organização. No entanto, essa característica pode ser incompatível com os valores e cultura de certas organizações, principalmente aquelas com uma tradição de níveis hierárquicos e de controle rígidos.
-  Contratos com Escopo Aberto        Em contratos com escopo aberto, a remuneração é por hora trabalhada. Assim, a empresa que assina o contrato não tem — no momento da assinatura — uma ideia precisa de quais funcionalidades serão implementadas e nem do prazo e custo do sistema. Algumas organizações podem não se sentir seguras para assinar esse tipo de contrato, principalmente quando elas não têm uma experiência prévia com desenvolvimento ágil ou referências confiáveis sobre a empresa contratada.
+ * **Design Incremental**. Esse tipo de design faz sentido quando o time tem uma primeira visão do design do sistema. Se o time não tem essa visão, ou o domínio do sistema é novo e complexo, ou o custo de mudanças futuras é muito alto, recomenda-se adotar uma fase de design e análise inicial, antes de partir para iterações que requeiram implementações de funcionalidades.
+
+ * **Histórias do Usuário**. Histórias são um método leve para especificação de requisitos, que depois são clarificados com o envolvimento cotidiano de um representante dos clientes no projeto. Porém, em certos casos, pode ser importante ter uma especificação detalhada de requisitos no início do projeto, principalmente se ele for um projeto de uma área totalmente nova para o time de desenvolvedores.
+
+ * **Envolvimento do Cliente**. Se os requisitos do sistema são estáveis e de pleno conhecimento do time de desenvolvedores, não faz sentido ter um Representante dos Clientes ou Dono do Produto integrado ao time. Por exemplo, esse papel não é importante no desenvolvimento de um compilador para uma linguagem conhecida, com uma gramática e semântica consolidadas.
+
+ * **Documentação Leve e Simplificada**. Em certos domínios, documentações detalhadas de requisitos e de projeto são mandatórias. Por exemplo, sistemas cujas falhas podem causar a morte de seres humanos, como aqueles das áreas médicas e de transporte, costumam demandar certificação por uma entidade externa, que pode exigir uma documentação detalhada, além do código fonte.
+
+ * **Times Auto-organizáveis**. Times ágeis são autônomos e empoderados para trabalhar sem interferências durante o time-box de uma iteração. Consequentemente, eles não precisam prestar contas diárias para os gerentes e executivos da organização. No entanto, essa característica pode ser incompatível com os valores e cultura de certas organizações, principalmente aquelas com uma tradição de níveis hierárquicos e de controle rígidos.
+
+ * **Contratos com Escopo Aberto**. Em contratos com escopo aberto, a remuneração é por hora trabalhada. Assim, a empresa que assina o contrato não tem — no momento da assinatura — uma ideia precisa de quais funcionalidades serão implementadas e nem do prazo e custo do sistema. Algumas organizações podem não se sentir seguras para assinar esse tipo de contrato, principalmente quando elas não têm uma experiência prévia com desenvolvimento ágil ou referências confiáveis sobre a empresa contratada.
 
 Para concluir, é importante mencionar que duas práticas ágeis são
 atualmente adotadas na grande maioria de projetos de software:
@@ -1857,6 +1856,8 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
      de propor o método UP, também desenvolvia e vendia licenças de uso
      de ferramentas CASE.
 
+
+<!-- end of list -->
 
 ![Exemplo de diagrama UML desenhado usando uma ferramenta CASE. Imagem extraída de [link](https://umbrello.kde.org/screenshots.php).](figs/cap2/case.png){width=55%}
 
