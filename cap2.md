@@ -108,14 +108,14 @@ entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2.png){width=50%}
+cada faixa de estouro).](figs/cap2/chaos2.svg){width=50%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1.png){width=50%}
+(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=50%}
 
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
@@ -243,7 +243,7 @@ Kanban (36%) e Extreme Programming (16%). Por outro lado, apenas 15% dos
 participantes marcaram Waterfall como resposta.
 
 ![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
-usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey.png){width=60%}
+usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey.svg){width=60%}
 
 
 ## 2.3 Extreme Programming (XP)
