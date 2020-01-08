@@ -108,14 +108,14 @@ entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2.svg){width=60%}
+cada faixa de estouro).](figs/cap2/chaos2.svg){width=55%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=60%}
+(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=55%}
 
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
@@ -274,34 +274,22 @@ organização não está preparada para trabalhar no modelo mental de XP
 também não adotar suas práticas.
 
 Neste capítulo, vamos primeiro apresentar os valores e princípios de XP.
-Veja uma lista deles na próxima tabela.
+Veja uma lista deles a seguir:
 
----------------  ------------------------------------------------------------------
-Valores          Comunicação, Simplicidade, Feedback, Coragem, Respeito e Qualidade 
-                 de Vida
+* **Valores**: comunicação, simplicidade, feedback, coragem, respeito e qualidade de vida. 
 
-Princípios       Humanidade, Economicidade, Benefícios Mútuos, Melhorias 
-                 Contínuas, Falhas Acontecem, Baby Steps, Responsabilidade Pessoal
----------------  ------------------------------------------------------------------
+* **Princípios**: humanidade, economicidade, benefícios mútuos, melhorias contínuas, falhas acontecem, baby steps, responsabilidade pessoal
 
 Em seguida, vamos descrever as práticas. Para facilitar a explicação
 delas, resolvemos organizá-las em três grupos: práticas sobre o processo
 de desenvolvimento, práticas de programação e práticas de gerenciamento
-de projetos. A próxima tabela lista as práticas em cada grupo.
+de projetos. Veja a seguir uma lista das práticas em cada grupo:
 
-------------------    ---------------------------------------------------------------
-Práticas sobre o      Representante dos Clientes, Histórias dos Usuários, Iterações,
-Processo de           Releases, Planejamento de Releases, Planejamento de Iterações,
-Desenvolvimento       Planning Poker, Slack
+* **Práticas sobre o Processo de Desenvolvimento**: representante dos clientes, histórias dos usuários, iterações, releases, planejamento de releases, planejamento de iterações, planning poker, slack.
 
-Práticas de           Design Incremental, Programação Pareada, Desenvolvimento
-Programação           Dirigido por Testes (TDD), Build Automatizado, Integração 
-                      Contínua
+* **Práticas de Programação**: design incremental, programação pareada, desenvolvimento dirigido por testes (TDD), build automatizado, integração contínua.
 
-Práticas de           Ambiente de Trabalho, Contratos com Escopo Aberto, Métricas
-Gerenciamento de
-Projetos                     
-------------------    ---------------------------------------------------------------
+* **Práticas de Gerenciamento de Projetos**: métricas, ambiente de trabalho, contratos com escopo aberto.
 
 ### Valores
 
@@ -462,13 +450,11 @@ um sistema de perguntas e respostas — semelhante ao famoso Stack
 Overflow ([link](https://stackoverflow.com)) — que
 usaremos neste capítulo para explicar XP:
 
-  
-
--------------------------------  
+--------------------------------------------------------------  
 **Postar Pergunta**
 
 *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
--------------------------------  
+--------------------------------------------------------------  
 
 Depois de serem escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
@@ -1087,16 +1073,11 @@ Essa definição inclui um conjunto preciso de **papéis**, **artefatos** e
 **eventos**, que são listados e resumidos na tabela a seguir. No resto
 desta seção, vamos explicar cada um deles.
 
+* **Papéis**: Dono do Produto, Scrum Master, Desenvolvedor.
 
---------------   ------------------------------------------------------
-Papéis           Dono do Produto, Scrum Master, Desenvolvedor
+* **Artefatos**: Backlog do Produto, Backlog do Sprint, Quadro Scrum, Gráfico de Burndown.
 
-Artefatos        Backlog do Produto, Backlog do Sprint, Quadro Scrum,
-                 Gráfico de Burndown
-
-Eventos          Planejamento do Sprint, Sprint, Reuniões Diárias,
-                 Revisão do Sprint, Retrospectiva
---------------   ------------------------------------------------------
+* **Eventos**: Planejamento do Sprint, Sprint, Reuniões Diárias, Revisão do Sprint, Retrospectiva.
 
 
 ### Papéis 

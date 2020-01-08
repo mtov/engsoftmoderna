@@ -64,11 +64,11 @@
 <p>No entanto, após cerca de uma década, começou-se a perceber que software é diferente de outros produtos de Engenharia. Essa percepção foi ficando clara devido aos problemas frequentes enfrentados por projetos de software nas décadas de 70 a 90. Por exemplo, os cronogramas e orçamentos desses projetos não eram obedecidos. Não raro, projetos inteiros eram cancelados, após um ou mais anos de trabalho, sem entregar um sistema funcional para os clientes.</p>
 <p>Em 1994, um relatório produzido pela empresa de consultoria Standish Group revelou informações mais detalhadas sobre os projetos de software da época. Por exemplo, o relatório, que ficou conhecido pelo sugestivo nome de CHAOS Report (<a href="https://www.standishgroup.com/sample_research_files/chaos_report_1994.pdf">link</a>), mostrou que mais de 55% dos projetos estourava os prazos planejados entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%, conforme mostra o próximo gráfico:</p>
 <figure>
-<img src="figs/cap2/chaos2.svg" style="width:60.0%" alt="" /><figcaption>CHAOS Report (1994): percentual de projetos que estourava seus <strong>prazos</strong> (para cada faixa de estouro).</figcaption>
+<img src="figs/cap2/chaos2.svg" style="width:55.0%" alt="" /><figcaption>CHAOS Report (1994): percentual de projetos que estourava seus <strong>prazos</strong> (para cada faixa de estouro).</figcaption>
 </figure>
 <p>Os resultados em termos de custos não eram mais animadores: quase 40% dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra o seguinte gráfico:</p>
 <figure>
-<img src="figs/cap2/chaos1.svg" style="width:60.0%" alt="" /><figcaption>CHAOS Report (1994): percentual de projetos que estourava seus <strong>orçamentos</strong> (para cada faixa de estouro).</figcaption>
+<img src="figs/cap2/chaos1.svg" style="width:55.0%" alt="" /><figcaption>CHAOS Report (1994): percentual de projetos que estourava seus <strong>orçamentos</strong> (para cada faixa de estouro).</figcaption>
 </figure>
 <p>Em 2001, um grupo de profissionais da indústria se reuniu na cidade de Snowbird, no estado norte-americano de Utah, para discutir e propor uma alternativa aos processos do tipo Waterfall que então predominavam. Essencialmente, eles passaram a defender que software é diferente de produtos tradicionais de Engenharia. Por isso, software também demanda um processo de desenvolvimento diferente.</p>
 <p>Por exemplo, os requisitos de um software mudam com frequência, mais do que os requisitos de um computador (hardware), de um avião ou de uma ponte. Além disso, os clientes frequentemente não têm uma ideia precisa do que querem. Ou seja, corre-se o risco de projetar por anos um produto que depois de pronto não será mais necessário, ou porque o mundo mudou ou porque os planos e as necessidades dos clientes mudaram. Eles diagnosticaram ainda problemas referentes aos documentos prescritos por processos do tipo Waterfall, incluindo documentos de requisitos, fluxogramas, diagramas, etc. Esses documentos eram detalhados, pesados e extensos; assim, rapidamente se tornavam obsoletos, pois quando os requisitos mudavam os desenvolvedores não propagavam as alterações para a documentação, mas apenas para o código fonte.</p>
@@ -114,44 +114,17 @@
 <h2 id="extreme-programming-xp">2.3 Extreme Programming (XP)</h2>
 <p>Segundo seu autor, XP é um método leve recomendado para desenvolver software com requisitos vagos ou sujeitos a mudanças; isto é, basicamente sistemas comerciais, na classificação que adotamos no Capítulo 1. Sendo um método ágil, XP possui todas as características que mencionamos na seção anterior, isto é: adota ciclos curtos e iterativos de desenvolvimento, concede menos ênfase a documentação e planos detalhados, propõe que o design de um sistema também seja definido de forma incremental e sugere que as equipes de desenvolvimento sejam pequenas.</p>
 <p>Porém, XP não é um método prescritivo, que define um passo a passo detalhado para construção de software. Em vez disso, XP é definido por meio de um conjunto de <strong>valores</strong>, <strong>princípios</strong> e <strong>práticas de desenvolvimento</strong>. Ou seja, XP é inicialmente definido de forma abstrata, usando-se de valores e princípios que devem fazer parte da cultura e dos hábitos de times de desenvolvimento de software. Depois, esses valores e princípios são concretizados em uma lista de práticas de desenvolvimento. Frequentemente, quando decidem adotar XP, desenvolvedores e organizações concentram-se nas práticas. Porém, os valores e princípios são componentes chaves do método, pois são eles que dão sentido às práticas propostas em XP. Sendo mais claro, se uma organização não está preparada para trabalhar no modelo mental de XP — representado pelos seus valores e princípios — recomenda-se também não adotar suas práticas.</p>
-<p>Neste capítulo, vamos primeiro apresentar os valores e princípios de XP. Veja uma lista deles na próxima tabela.</p>
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Valores</td>
-<td>Comunicação, Simplicidade, Feedback, Coragem, Respeito e Qualidade de Vida</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Princípios</td>
-<td>Humanidade, Economicidade, Benefícios Mútuos, Melhorias Contínuas, Falhas Acontecem, Baby Steps, Responsabilidade Pessoal</td>
-</tr>
-</tbody>
-</table>
-<p>Em seguida, vamos descrever as práticas. Para facilitar a explicação delas, resolvemos organizá-las em três grupos: práticas sobre o processo de desenvolvimento, práticas de programação e práticas de gerenciamento de projetos. A próxima tabela lista as práticas em cada grupo.</p>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 74%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Práticas sobre o Processo de Desenvolvimento</td>
-<td style="text-align: left;">Representante dos Clientes, Histórias dos Usuários, Iterações, Releases, Planejamento de Releases, Planejamento de Iterações, Planning Poker, Slack</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Práticas de Programação</td>
-<td style="text-align: left;">Design Incremental, Programação Pareada, Desenvolvimento Dirigido por Testes (TDD), Build Automatizado, Integração Contínua</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Práticas de Gerenciamento de Projetos</td>
-<td style="text-align: left;">Ambiente de Trabalho, Contratos com Escopo Aberto, Métricas</td>
-</tr>
-</tbody>
-</table>
+<p>Neste capítulo, vamos primeiro apresentar os valores e princípios de XP. Veja uma lista deles a seguir:</p>
+<ul>
+<li><p><strong>Valores</strong>: comunicação, simplicidade, feedback, coragem, respeito e qualidade de vida.</p></li>
+<li><p><strong>Princípios</strong>: humanidade, economicidade, benefícios mútuos, melhorias contínuas, falhas acontecem, baby steps, responsabilidade pessoal</p></li>
+</ul>
+<p>Em seguida, vamos descrever as práticas. Para facilitar a explicação delas, resolvemos organizá-las em três grupos: práticas sobre o processo de desenvolvimento, práticas de programação e práticas de gerenciamento de projetos. Veja a seguir uma lista das práticas em cada grupo:</p>
+<ul>
+<li><p><strong>Práticas sobre o Processo de Desenvolvimento</strong>: representante dos clientes, histórias dos usuários, iterações, releases, planejamento de releases, planejamento de iterações, planning poker, slack.</p></li>
+<li><p><strong>Práticas de Programação</strong>: design incremental, programação pareada, desenvolvimento dirigido por testes (TDD), build automatizado, integração contínua.</p></li>
+<li><p><strong>Práticas de Gerenciamento de Projetos</strong>: métricas, ambiente de trabalho, contratos com escopo aberto.</p></li>
+</ul>
 <h3 id="valores">Valores</h3>
 <p>XP defende que o desenvolvimento de projetos de software seja norteado por três valores principais: comunicação, simplicidade e feedback. Na verdade, argumenta-se que esses valores são universais, para convívio humano. Ou seja, eles não servem apenas para guiar projetos de desenvolvimento, mas a própria vida em sociedade. Uma boa <strong>comunicação</strong> é importante em qualquer projeto, não apenas para evitar, mas também para aprender com erros. O segundo valor de XP é <strong>simplicidade</strong>, pois em todo sistema complexo e desafiador existem sistemas ou subsistemas mais simples, que às vezes não são considerados. Por último, existem riscos em todos os projetos de software: os requisitos mudam, a tecnologia muda, a equipe de desenvolvimento muda, o mundo muda, etc. Um valor que ajuda a controlar tais riscos é estar aberto ao <strong>feedback</strong> dos stakeholders, a fim de que correções de rota sejam implementadas o quanto antes. Em outras palavras, é difícil desenvolver o sistema de software "certo" em uma primeira e única tentativa. Frederick Brooks tem uma frase conhecida sobre esse fenômeno:</p>
 <blockquote>
@@ -171,9 +144,9 @@
 <h3 id="práticas-sobre-o-processo-de-desenvolvimento">Práticas sobre o Processo de Desenvolvimento</h3>
 <p>XP — como outros métodos ágeis — recomenda o envolvimento dos clientes com o projeto. Ou seja, além de desenvolvedores, os times incluem pelo menos um <strong>representante dos clientes</strong>, que deve entender do domínio do sistema que será construído. Uma das funções desse representante é escrever as <strong>histórias de usuário</strong> (<em>user stories</em>), que é o nome que XP dá para os documentos que descrevem os requisitos do sistema a ser implementado. No entanto, histórias são documentos resumidos, com apenas duas ou três sentenças, com as quais o representante dos clientes define o que ele deseja que o sistema faça, usando sua própria linguagem.</p>
 <p>Iremos aprofundar o estudo sobre histórias de usuários no Capítulo 3 (Engenharia de Requisitos). Mas, por enquanto, gostaríamos de adiantar que as histórias são escritas em cartões de papel, normalmente a mão. Ou seja, em vez de documentos de requisitos detalhados, histórias são documentos simples, que focam nas funcionalidades do sistema, sempre na visão de seus usuários. Como exemplo, mostramos a seguir uma história de um sistema de perguntas e respostas — semelhante ao famoso Stack Overflow (<a href="https://stackoverflow.com">link</a>) — que usaremos neste capítulo para explicar XP:</p>
-<table style="width:47%;">
+<table style="width:90%;">
 <colgroup>
-<col style="width: 47%" />
+<col style="width: 90%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -332,26 +305,11 @@
 <li><p>Scrum é um método ágil para gerenciamento de projetos, que não necessariamente precisam ser projetos de desenvolvimento de software. Por exemplo, a escrita deste livro — como comentaremos daqui a pouco — é um projeto que está sendo realizado usando conceitos de Scrum. Tendo um foco mais amplo que XP, Scrum não propõe nenhuma prática de programação.</p></li>
 </ul>
 <p>Dentre os métodos ágeis, Scrum é também aquele que é melhor definido. Essa definição inclui um conjunto preciso de <strong>papéis</strong>, <strong>artefatos</strong> e <strong>eventos</strong>, que são listados e resumidos na tabela a seguir. No resto desta seção, vamos explicar cada um deles.</p>
-<table>
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 76%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Papéis</td>
-<td style="text-align: left;">Dono do Produto, Scrum Master, Desenvolvedor</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Artefatos</td>
-<td style="text-align: left;">Backlog do Produto, Backlog do Sprint, Quadro Scrum, Gráfico de Burndown</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Eventos</td>
-<td style="text-align: left;">Planejamento do Sprint, Sprint, Reuniões Diárias, Revisão do Sprint, Retrospectiva</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><p><strong>Papéis</strong>: Dono do Produto, Scrum Master, Desenvolvedor.</p></li>
+<li><p><strong>Artefatos</strong>: Backlog do Produto, Backlog do Sprint, Quadro Scrum, Gráfico de Burndown.</p></li>
+<li><p><strong>Eventos</strong>: Planejamento do Sprint, Sprint, Reuniões Diárias, Revisão do Sprint, Retrospectiva.</p></li>
+</ul>
 <h3 id="papéis">Papéis</h3>
 <p>Times Scrum são formados por um Dono de Produto (<em>Product Owner</em>), um Scrum Master e de três a nove desenvolvedores.</p>
 <p>O <strong>Dono do Produto</strong> tem exatamente o mesmo papel do Representante dos Clientes em XP, por isso não vamos explicar de novo a sua função em detalhes. Mas ele, como o próprio nome indica, deve possuir a visão do produto que será construído, sendo responsável também por maximizar o retorno do investimento feito no projeto. Assim como em XP, cabe ao Dono do Produto escrever as histórias do usuário e, por isso, ele deve estar sempre disponível para tirar dúvidas do time.</p>
