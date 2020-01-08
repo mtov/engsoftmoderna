@@ -6,7 +6,7 @@
 
 Até agora, neste livro, estudamos um conjunto de práticas para desenvolvimento de software com qualidade e agilidade. Por meio de métodos ágeis — como Scrum, XP ou Kanban —, vimos que o cliente deve participar desde o primeiro dia da construção de um sistema. Por outro lado, também estudamos práticas importantes para produção de software com qualidade, como testes de unidade e refactoring. Estudamos ainda princípios e padrões de projeto e também padrões arquiteturais.
 
-Logo, após aplicar o que vimos, o sistema — ou um incremento dele, resultante de um sprint — estará pronto para entrar em produção. Porém, a etapa de implantação não é tão simples e rápida como pode parecer.
+Logo, após aplicar o que vimos, o sistema — ou um incremento dele, resultante de um sprint — está pronto para entrar em produção. Essa tarefa é conhecida também pelos nomes de **implantação (deploy)** ou **entrega (release)** do sistema. Independente do nome, ela não é tão simples e rápida como pode parecer.
 
 Historicamente, em organizações tradicionais, a área de Tecnologia da Informação costumava ser dividida em dois departamentos: 
 
@@ -28,7 +28,44 @@ Por exemplo, para agilizar a implantação, os times ágeis podem incluir um pro
 
 DevOps também advoga a automatização de todos os passos necessários para colocar um sistema produção e monitorar o seu correto funcionamento. Isso implica na adoção de práticas que já vimos neste capítulo, notadamente testes automatizados. Mas também de novas práticas e 
 ferramentas, tais como Integração Contínua (*Continuous Integration*) e Entrega Contínua
-(*Continuos Deployment*), que iremos estudar neste capítulo.
+(*Continuous Deployment*), que iremos estudar neste capítulo.
 
-## Integração Contínua
+Para finalizar, vamos discutir um conjunto de princípios para entrega de software, enunciados por Jez Humble e David Harley. Apesar de propostos antes da ideia de DevOps ganhar
+tração, eles são completamente alinhados com essa ideia. Alguns dos princípios são os seguintes:
 
+* **Crie um processo repetível e confiável para entrega de software**. Esse princípio 
+pode ser considerado o mais importante deles. A ideia é que a entrega de software não
+pode ser um evento traumático, com passos manuais e sujeitos a surpresas. Em vez disso,
+colocar um software em produção deve ser tão simples como apertar um botão.
+
+* **Automatize tudo que for possível**. Já comentamos sobre esse princípio antes nessa seção. Ele é um pré-requisito indispensável para atender ao princípio anterior. Advoga-se que todos os passos para entrega de um software devem ser automáticos, incluindo seu *build*, a execução dos testes, a configuração e ativação dos servidores e da rede, a carga do banco de dados, etc. De novo, idealmente, queremos apertar um botão e, em seguida, ver o sistema em produção.
+
+* **Mantenha tudo em um sistema de controle de versões**. Por consequência, deve ser  simples
+restaurar e voltar o sistema para um estado anterior. "Tudo" no enunciado do princípio refere-se não apenas a todo o código fonte, mas também arquivos e scripts de adminstração
+do sistema, documentação, páginas Web, arquivos de dados, etc.
+
+* **Se um passo causa dor, execute-o com mais frequência e o quanto antes** Esse princípio
+não tem uma inspiração masoquista. Em vez disso, a ideia é antecipar os problemas, antes
+que eles se acumulem e quando as soluções tendem a ser mais complicadas. O exemplo clássico é
+o de integração contínua. Se um desenvolvedor passa muito tempo trabalhando de forma isolada,
+depois ele — e também o seu time — podem ter uma grande dor de cabeça para integrar o código. Logo, como integração pode causar dor, a recomendação consiste então em integrar o novo código com mais frequência e o quanto antes, se possível, diariamente.
+
+* **"Concluído" significa pronto para entrega** Com frequência, desenvolvedores dizem que uma
+nova história está pronta (*done*). Porém, ao serem questionados se ela pode entrar em produção, começam a surgir "pequenas" pendências, tais como: a implementação ainda não foi testada com dados reais, ela ainda não foi documentada, ela ainda não foi integrada com o sistema X, etc. Esse princípio defende então que "concluído", em projetos de sofwtare, deve ter uma semântica clara, isto é: 100% pronto para entrar em produção.
+
+* **Todos são responsáveis pela entrega do software** Esse último princípio alinha-se
+perfeitamente com os princípios de DevOps que discutimos no início da seção. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e que seu comunicam apenas na véspera de uma implantação. 
+
+## 10.2 Organização de Branches
+
+### Feature Flags
+
+## 10.2 Integração Contínua
+
+### Servidores de Integração Contínua
+
+## 10.3 Entrega Contínua
+
+## 10.4 Infraestrutura como Código
+
+## 10.5 Engenharia de Releases
