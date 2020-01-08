@@ -44,28 +44,28 @@ colocar um software em produção deve ser tão simples como apertar um botão.
 restaurar e voltar o sistema para um estado anterior. "Tudo" no enunciado do princípio refere-se não apenas a todo o código fonte, mas também arquivos e scripts de adminstração
 do sistema, documentação, páginas Web, arquivos de dados, etc.
 
-* **Se um passo causa dor, execute-o com mais frequência e o quanto antes** Esse princípio
+* **Se um passo causa dor, execute-o com mais frequência e o quanto antes**. Esse princípio
 não tem uma inspiração masoquista. Em vez disso, a ideia é antecipar os problemas, antes
 que eles se acumulem e quando as soluções tendem a ser mais complicadas. O exemplo clássico é
 o de integração contínua. Se um desenvolvedor passa muito tempo trabalhando de forma isolada,
 depois ele — e também o seu time — podem ter uma grande dor de cabeça para integrar o código. Logo, como integração pode causar dor, a recomendação consiste então em integrar o novo código com mais frequência e o quanto antes, se possível, diariamente.
 
-* **"Concluído" significa pronto para entrega** Com frequência, desenvolvedores dizem que uma
+* **"Concluído" significa pronto para entrega**. Com frequência, desenvolvedores dizem que uma
 nova história está pronta (*done*). Porém, ao serem questionados se ela pode entrar em produção, começam a surgir "pequenas" pendências, tais como: a implementação ainda não foi testada com dados reais, ela ainda não foi documentada, ela ainda não foi integrada com o sistema X, etc. Esse princípio defende então que "concluído", em projetos de sofwtare, deve ter uma semântica clara, isto é: 100% pronto para entrar em produção.
 
-* **Todos são responsáveis pela entrega do software** Esse último princípio alinha-se
+* **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
 perfeitamente com os princípios de DevOps que discutimos no início da seção. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e que seu comunicam apenas na véspera de uma implantação. 
-
-## 10.2 Organização de Branches
-
-### Feature Flags
 
 ## 10.2 Integração Contínua
 
 ### Servidores de Integração Contínua
 
-## 10.3 Entrega Contínua
+## 10.3 Desenvolvimento no Trunk
 
-## 10.4 Infraestrutura como Código
+### Feature Flags
 
-## 10.5 Engenharia de Releases
+## 10.4 Entrega Contínua
+
+## 10.5 Infraestrutura como Código
+
+## 10.6 Engenharia de Releases
