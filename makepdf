@@ -1,0 +1,1 @@
+pandoc -V fontsize=12pt -H latex.sty --pdf-engine=xelatex cap10.md -o cap10.pdf

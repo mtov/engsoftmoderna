@@ -1,135 +1,11 @@
 
 # Apêndice A - Git 
 
-> The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics. -- Linus Torvalds
+> *The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics. -- Linus Torvalds*
 
-Este capítulo inicia com uma introdução ao conceito de controle de
-versões. Nela, apresentamos as duas principais arquiteturas de sistemas
-de controle de versões: centralizada e distribuída. Em seguida, nas
-seções seguintes, apresentamos e discutimos exemplos de uso dos
-principais comandos do sistema git, que é o sistema de controle de
-versões mais usado atualmente.
+Neste apêndice, apresentamos e discutimos exemplos de uso do sistema Git, que é o sistema de controle de versões mais usado atualmente. Inspirados pela frase acima, de Linus Torvalds, criador do Git, vamos focar nos conceitos e comandos básicos desse sistema. Como sugere a frase, é importante dominar esses comandos antes de se aventurar no uso de comandos mais avançados. Caso o leitor não tenha conhecimento dos objetivos e vantagens proporcionados por um sistema de controle de versões, recomendamos primeiro a leitura da seção "Controle de Versões", do Capítulo 10 deste livro.
 
-## A.1 Sistemas de Controle de Versões
-
-Como mencionamos algumas vezes neste livro, software é desenvolvido em
-equipe. Por isso, precisamos de um servidor para armazenar o código
-fonte do sistema que está sendo implementado por um grupo de
-desenvolvedores. A existência desse servidor é fundamental para que os
-desenvolvedores possam colaborar. Por exemplo, se um desenvolvedor
-precisar da versão mais recente de um arquivo, ele vai saber
-precisamente onde ela está disponível. Além disso, sempre é útil manter
-o histórico das versões mais importantes de cada arquivo. Isso permite,
-se necessário, realizar uma espécie de \"undo\" no tempo, isto é,
-recuperar o código de um arquivo como ele estava há anos atrás, por
-exemplo.
-
-Um **sistema de controle de versões** (VCS, na sigla em inglês) oferece
-os dois serviços mencionados no parágrafo anterior. Primeiro, ele
-oferece um **repositório** para armazenar a versão mais recente do
-código fonte de um sistema, bem como de arquivos relacionados, como
-arquivos de documentação, configuração, páginas Web, manuais, etc. Em
-segundo lugar, ele permite que se recupere versões mais antigas de
-qualquer arquivo, caso isso seja necessário. Modernamente, é
-inconcebível desenvolver qualquer sistema, mesmo que simples, sem um
-VCS.
-
-Os primeiros sistemas de controle de versões surgiram no início da
-década de 70, como o sistema SCCS, desenvolvido para o sistema
-operacional Unix. Em seguida, surgiram outros sistemas, como o CVS, em
-meados da década de 80, e depois o sistema Subversion, também conhecido
-pela sigla svn, no início dos anos 2000. Todos são sistemas
-centralizados e baseados em uma arquitetura cliente/servidor (veja
-figura a seguir). Nessa arquitetura, existe um único servidor, que
-armazena o repositório e o sistema de controle de versões. Os clientes
-acessam esse servidor para obter a versão mais recente de um arquivo.
-Feito isso, eles podem modificar o arquivo, por exemplo, para corrigir
-um bug ou implementar uma nova funcionalidade. Por fim, eles atualizam o
-arquivo no servidor, realizando uma operação chamada **commit**, a qual
-torna o arquivo visível para os outros desenvolvedores.
-
-![](figs/capAp/vcs.png){width=40%}
-
-No início dos anos 2000, começaram a surgir **sistemas de controle de
-versões distribuídos** (DVCS). Dentre eles, podemos citar o sistema
-BitKeeper, cujo primeiro release é de 2000, e os sistemas Mercurial e
-git, ambos lançados em 2005. Em vez de uma arquitetura cliente/servidor,
-um DVCS adota uma arquitetura peer-to-peer. Na prática, isso significa
-que cada desenvolvedor possui em sua máquina um servidor completo de
-controle de versões, que pode se comunicar com os servidores de outras
-máquinas, como ilustrado na próxima figura.
-
-![](figs/capAp/dvcs.png){width=40%}
-
-Apesar de todos os clientes serem funcionalmente equivalentes, na
-prática, quando se usa um DVCS, existe uma máquina principal, que
-armazena a versão de referência do código fonte. Na nossa figura,
-chamamos esse repositório de **repositório central**. Cada desenvolvedor
-pode trabalhar de forma independente e até mesmo offline em sua máquina
-cliente, realizando commits no seu repositório. De tempos em tempos, ele
-deve sincronizar esse repositório com o central, por meio de duas
-operações: **pull** e **push**. Um pull atualiza o repositório local com
-novos commits disponíveis no repositório central. Por sua vez, um push
-faz a operação contrária, isto é, envia para o repositório central os
-commits mais recentes realizados pelo desenvolvedor em seu repositório
-local.
-
-Quando comparado com um VCS centralizado, um DVCS tem as seguintes
-vantagens:
-
-*   Pode-se trabalhar e gerenciar versões de forma offline, sem estar
-    conectado a uma rede, pois os commits são realizados primeiro no
-    repositório local.
-
-*   Pode-se realizar commits com mais frequência, incluindo commits com
-    implementações parciais, pois eles não vão chegar imediatamente
-    até o repositório central.
-
-*   Commits são executados em menos tempo, isto é, são operações mais
-    rápidas e leves. O motivo é que eles são realizados no repositório
-    local de cada máquina.
-
-*   A sincronização não precisa ser sempre com o repositório central. Em
-    vez disso, dois nodos podem também sincronizar os seus
-    repositórios. Por exemplo, pode-se ter uma estrutura hierárquica
-    dos repositórios. Nesses casos, os commits \"nascem\" nos
-    repositórios que representam as folhas da hierarquia e vão subindo
-    até chegar ao repositório central.
-
-**Git** é um sistema de controle de versões distribuído cujo
-desenvolvimento foi liderado por Linus Torvalds, também responsável pela
-criação do sistema operacional Linux. Nos anos iniciais, o
-desenvolvimento do kernel do Linux usava um sistema de controle de
-versões comercial, chamado BitKeeper, que também possui uma arquitetura
-distribuída. No entanto, em 2005, a empresa proprietária do BitKeeper
-resolveu revogar as licenças gratuitas que eram usadas no
-desenvolvimento do Linux. Os desenvolvedores do sistema operacional,
-liderados por Torvalds, decidiram então iniciar a implementação de um
-DVCS próprio, ao qual deram o nome de Git. Assim como o Linux, o Git é
-um sistema de código aberto, que pode ser gratuitamente instalado em
-qualquer máquina. O Git é ainda um sistema de linha de comando. Porém,
-existem também algumas interfaces gráficas, produzidas por outras
-empresas, que permitem usar o sistema sem ter que digitar comandos.
-
-**GitHub** é um serviço de hospedagem de código que usa o sistema git
-para prover controle de versões. O GitHub oferece repositórios públicos
-e gratuitos, para projetos de código aberto, e repositórios fechados e
-pagos, para uso por empresas. Assim, em vez de manter internamente um
-DVCS, uma empresa desenvolvedora de software pode alugar esse serviço do
-GitHub. Uma comparação pode ser feita com serviços de mail. Em vez de
-instalar um servidor de mail em uma máquina própria, uma empresa pode
-contratar esse serviço de terceiros, como do Google, via GMail. Apesar
-de o GitHub ser o mais popular, existem serviços semelhantes providos
-por outras empresas, como GitLab e BitBucket.
-
-No restante deste apêndice, estudaremos os principais comandos do git.
-Vamos também estudar dois recursos específicos do GitHub, que são forks
-e pull requests. No entanto, inspirados pela frase de Torvalds que abre
-o apêndice, vamos focar nos conceitos e comandos básicos do git. Como
-sugere essa frase, é importante dominar esses comandos antes de se
-aventurar no uso de comandos mais avançados.
-
-## A.2 Init & Clone
+## A.1 Init & Clone
 
 Para começar a usar o git para gerenciar as versões de um sistema
 devemos executar um dos seguintes comandos: **init** ou **clone**. O
@@ -148,7 +24,7 @@ trabalhar em um projeto que já está em andamento e que já possui commits
 em um repositório central. No exemplo, esse repositório é
 disponibilizado pelo GitHub.
 
-## A.3 Commit
+## A.2 Commit
 
 Commits são usados para criar snapshots (ou fotografias) dos arquivos de
 um sistema. Uma vez tiradas essas fotografias, elas são armazenadas no
@@ -191,7 +67,7 @@ hexadecimal. Esses bytes correspondem a uma verificação de consistência
 (*check sum*) do conteúdo do commit, conforme computado por uma função
 hash SHA-1.
 
-## A.4 Add 
+## A.3 Add 
 
 Na máquina local, o sistema git manipula três áreas distintas:
 
@@ -275,7 +151,7 @@ git commit -m "Removendo arq1.txt"
 Além de remover do repositório git local, o comando rm também remove
 o arquivo do diretório de trabalho.
 
-## A.5 Push & Pull
+## A.4 Push & Pull
 
 O comando **push** copia os commits mais recentes do repositório local
 para o repositório remoto. Portanto, ele é uma operação mais lenta, pois
@@ -345,7 +221,7 @@ após esse comando pull, o arquivo em questão será atualizado na máquina
 da Alice, para incluir a função `g` implementada por Bob.
 
 
-## A.6 Conflitos de Merge
+## A.5 Conflitos de Merge
 
 Conflitos de merge acontecem quando dois desenvolvedores alteram o mesmo
 trecho de código ao mesmo tempo. Para entender melhor essa situação,
@@ -440,7 +316,7 @@ linha de um único arquivo. No entanto, um pull pode dar origem a
 conflitos mais complexos. Por exemplo, um mesmo arquivo pode apresentar
 vários conflitos. E também podemos ter conflitos em mais de um arquivo.
 
-## A.7 Branches
+## A.6 Branches
 
 O git organiza o diretório de trabalho em \"diretórios virtuais\",
 chamados de **branches**. Até agora, não precisamos comentar sobre
@@ -580,7 +456,7 @@ do novo branch, isto é, para a variável `ISSUE-45`. Isso é suficiente para
 fazer com que o próximo commit seja realizado nesse branch, isto é, que
 ela tenha o commit 6 como pai.
 
-## A.8 Branches Remotos
+## A.7 Branches Remotos
 
 Até esse momento, trabalhamos com branches localmente, isto é, os
 branches que discutimos existem apenas no repositório local. No entanto,
@@ -636,7 +512,7 @@ E Alice também pode deletar seu branch local, chamando apenas:
 `git branch -d g-novo`
 
 
-## A.9 Pull Requests
+## A.8 Pull Requests
 
 Pull Pull requests é um mecanismo que viabiliza que um branch seja
 revisado e discutido antes de ser integrado no branch principal. Quando
@@ -717,7 +593,7 @@ se o seu pedido foi atendido. Estando a modificação aprovada, Alice pode
 integrar o código no master, bastando para isso clicar em um dos botões
 da página de revisão de pull requests.
 
-## A.10 Squash
+## A.9 Squash
 
 Squash é um comando que permite unir diversos commits em um único
 commit. É uma operação recomendada, por exemplo, antes de submeter pull
@@ -773,7 +649,7 @@ commit que junta os cinco commits listados. Uma vez informada a
 mensagem, Bob deve salvar o arquivo e, então, o squash estará
 finalizado.
 
-A.11 Forks
+A.10 Forks
 ==========
 
 Fork é o mecanismo que o GitHub oferece para clonar repositórios
