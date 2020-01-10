@@ -667,7 +667,7 @@ alto nível), projeto detalhado, codificação e testes. Finalizado esse
 pipeline, o sistema é liberado para produção, isto é, para uso efetivo
 pelos seus usuários, conforme ilustrado na próxima figura
 
-![](figs/cap1/waterfall.png){width="5.855208880139982in"
+![](figs/cap1/waterfall.svg){width="5.855208880139982in"
 height="3.772189413823272in"}
 
 No entanto, processos Waterfall, a partir do final da década de 90,
@@ -1147,12 +1147,7 @@ ser objeto de uma refatoração.
 
 **Capítulo 10: DevOps** \[a ser escrito\]
 
-**Apêndice A: Git**, que apresenta uma breve introdução ao conceito
-de controle de versões e, em seguida, apresenta e mostra exemplos
-de uso dos principais comandos do sistema git. Atualmente, é
-inconcebível não usar controle de versões em qualquer sistema, 
-mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar
-esse apêndice no livro.
+**Apêndice A: Git**, que apresenta e mostra exemplos de uso dos principais comandos do sistema git. Atualmente, é inconcebível não usar controle de versões em qualquer sistema, mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar esse apêndice no livro. Git é o sistema de controle de versões mais usado atualmente.
 
 ## Bibliografia
 

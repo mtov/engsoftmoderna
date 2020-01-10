@@ -22,13 +22,13 @@ Então, para facilitar a implantação e entrega de sistemas, foi proposto o con
 
 > Em vez de iniciar as implantações à meia-noite de sexta-feira e passar todo o fim de semana trabalhando para concluí-las, as implantações ocorrem em qualquer dia útil, quando todos estão na empresa e sem que os clientes percebam — exceto quando encontram novas funcionalidades e correções de bugs. 
 
-No entanto, DevOps não advoga a criação de um profissional novo, que fique responsável tanto pelo desenvolvimento como pela implantação de sistemas. Em vez disso, defende-se uma aproximação entre o  pessoal de desenvolvimento e o pessoal de operações e vice-versa, visando fazer com que a implantação de sistemas seja mais ágil e menos traumática. Tentando explicar com outras palavras, a ideia é evitar dois silos independentes: desenvolvedores e operadores, como na figura a seguir. 
+No entanto, DevOps não advoga a criação de um profissional novo, que fique responsável tanto pelo desenvolvimento como pela implantação de sistemas. Em vez disso, defende-se uma aproximação entre o  pessoal de desenvolvimento e o pessoal de operações e vice-versa, visando fazer com que a implantação de sistemas seja mais ágil e menos traumática. Tentando explicar com outras palavras, a ideia é evitar dois silos independentes: desenvolvedores e operadores, com pouca ou nenhuma iteração eles, como ilustrado na figura a seguir. 
 
-![Organização que **não** é baseada em DevOps. Existe pouca comunicação entre Dev e Ops.](figs/cap10/no-devops.svg){width=40%}
+![Organização que **não** é baseada em DevOps. Existe pouca comunicação entre Dev e Ops.](figs/cap10/no-devops.svg){width=35%}
 
-Em vez disso, defende-se que esses profissionais conversem desde os primeiros sprints de um projeto, como na figura a seguir. Para o cliente final, o benefício deve ser a entrada em produção mais cedo do sistema que ele contratou.
+Em vez disso, defende-se que esses profissionais atuem em conjunto desde os primeiros sprints de um projeto, como na figura a seguir. Para o cliente final, o benefício deve ser a entrada em produção mais cedo do sistema que ele contratou.
 
-![Organização baseada em DevOps. Frequentemente, alguns Dev e alguns Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops.svg){width=40%}
+![Organização baseada em DevOps. Frequentemente, alguns Dev e alguns Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops.svg){width=35%}
 
 Quando migra-se para uma cultura de DevOps, os times ágeis podem incluir um profissional de operações, que participe dos trabalhos do time em tempo parcial ou mesmo em tempo integral. Sempre em função da demanda, esse profissional pode também participar de mais de um time. A ideia é que ele antecipe problemas de desempenho, segurança, incompatibilidades com outros sistemas, etc. Ele pode também, enquanto o código está sendo implementado, começar a trabalhar nos scripts de instalação, administração e monitoramento do sistema em produção.
 
@@ -66,11 +66,11 @@ Um **sistema de controle de versões** (VCS, na sigla em inglês) oferece os doi
 
 Os primeiros sistemas de controle de versões surgiram no início da década de 70, como o sistema SCCS, desenvolvido para o sistema operacional Unix. Em seguida, surgiram outros sistemas, como o CVS, em meados da década de 80, e depois o sistema Subversion, também conhecido pela sigla svn, no início dos anos 2000. Todos são sistemas centralizados e baseados em uma arquitetura cliente/servidor (veja figura a seguir). Nessa arquitetura, existe um único servidor, que armazena o repositório e o sistema de controle de versões. Os clientes acessam esse servidor para obter a versão mais recente de um arquivo. Feito isso, eles podem modificar o arquivo, por exemplo, para corrigir um bug ou implementar uma nova funcionalidade. Por fim, eles atualizam o arquivo no servidor, realizando uma operação chamada **commit**, a qual torna o arquivo visível para os outros desenvolvedores.
 
-![VCS Centralizado](figs/cap10/vcs.svg){width=40%}
+![VCS Centralizado. Existe um único repositório, no nodo servidor](figs/cap10/vcs.svg){width=35%}
 
 No início dos anos 2000, começaram a surgir **sistemas de controle de versões distribuídos** (DVCS). Dentre eles, podemos citar o sistema BitKeeper, cujo primeiro release é de 2000, e os sistemas Mercurial e git, ambos lançados em 2005. Em vez de uma arquitetura cliente/servidor, um DVCS adota uma arquitetura peer-to-peer. Na prática, isso significa que cada desenvolvedor possui em sua máquina um servidor completo de controle de versões, que pode se comunicar com os servidores de outras máquinas, como ilustrado na próxima figura.
 
-![VCS Distribuído (DVCS)](figs/cap10/dvcs.svg){width=40%}
+![VCS Distribuído (DVCS). Cada cliente possui um servidor. Logo, a arquitetura é peer-to-peer.](figs/cap10/dvcs.svg){width=35%}
 
 Apesar de todos os clientes serem funcionalmente equivalentes, na prática, quando se usa um DVCS, existe uma máquina principal, que armazena a versão de referência do código fonte. Na nossa figura, chamamos esse repositório de **repositório central**. Cada desenvolvedor pode trabalhar de forma independente e até mesmo offline em sua máquina cliente, realizando commits no seu repositório. De tempos em tempos, ele deve sincronizar esse repositório com o central, por meio de duas operações: **pull** e **push**. Um pull atualiza o repositório local com novos commits disponíveis no repositório central. Por sua vez, um push faz a operação contrária, isto é, envia para o repositório central os commits mais recentes realizados pelo desenvolvedor em seu repositório local.
 Quando comparado com um VCS centralizado, um DVCS tem as seguintes
@@ -102,6 +102,39 @@ vantagens:
 No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.
 
 ## 10.3 Integração Contínua
+
+### Motivação
+
+Antes de definir o que é integração contínua, vamos descrever o cenário que levou à proposta dessa prática de integração de código. Tradicionalmente, era —  e ainda é relativamente comum — que os times de desenvolvimento trabalhem usando branches. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de master ou trunk. E os usuários podem criar seus próprios branches.
+
+Por exemplo, antes de implementar uma nova funcionalidade, era comum criavar um branch para conter o seu código. Tais branches são  chamados de **branches funcionais (feature branches)**. Dependendo da complexidade da funcionalidade, branches funcionais podem levar meses para serem integrados de volta à linha principal de desenvolvimento, isto é, ao  **master** ou **trunk**. Logo, podem dezenas de branches ativos, no caso de sistemas maiores e  complexos. 
+
+O problema acontecia quando a implementação da nova funcionalidade terminava e o código do branch era "copiado" de volta para o master, por meio de um comando do sistema de controle de versões chamado **merge**. Nesse momento, uma variedade de conflitos poderia ocorrer, os quais são conhecidos como **conflitos de integração** ou **conflitos de merge**.
+
+Para ilustrar esses conflitos, por meio de um exemplo simples, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada nesse branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava e realizada commits em seu branch também ocorriam commits no branch principal.
+
+![Desenvolvimento usando branches funcionais.](figs/cap10/branch-funcional.svg){width=75%}
+
+Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos, tais como:
+
+* Para implementar a funcionalidade X, o novo código chamava uma função `f1`, que existia no master no momento da criação do branch. Porém, no intervalo de 40 dias, a assinatura dessa função foi modificada no master por outros desenvolvedores. Por exemplo, ela pode ter sido renomeada ou ter ganho um novo parâmetro. Ou ainda, em um cenário mais radical, `f1` foi removida da base de código.
+
+* Para implementar a funcionalidade X, Alice mudou o comportamento de uma função `f2` do master. Por exemplo, `f2` retornava seu resultado em uma determinada
+unidade (digamos, milhas) e Alice alterou o código para que ela retornasse o resultado em uma outra unidade (digamos, quilômetros). Evidentemente, Alice atualizou o código que chamava `f2`no seu branch, para considerar um resultado em quilômetros. Porém, no período de 40 dias em que ela trabalhou de forma isolada, surgiram novas chamadas de `f2`, que foram integradas no master, mas supondo um resultado na unidade usual, isto é, milhas.
+
+Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de branches funcionais, os problemas causados por conflitos podem assumir proporções consideráveis e atrasar a entrada em produção de novas funcionalidades. O motivo é que a resolução de conflitos é uma tarefa manual, que requer análise e consenso entre os desenvolvedores envolvidos. Por isso, costuma-se ouvir desenvolvedores usando o termo **integration hell** para se referir aos problemas que ocorrem durante a integração de branches funcionais.
+
+### O que é Integração Contínua?
+
+Integração contínua (*continuous integration* ou CI) é uma prática que foi proposta por Extreme Proggraming (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução desse capítulo: se uma tarefa causa "dor", o melhor é não deixá-la acumular. Em vez disso, tente quebrá-la em sub-tarefas que possam ser realizadas de forma frequente. Como essas tarefas são pequenas e simples, a "dor" decorrente da sua realização será menor.
+
+Adaptando para o contexto de integração de código, sabemos que grandes integrações são uma fonte de "dor" para os desenvolvedores, pois eles têm que resolver de forma manual diversos conflitos. Assim, CI recomenda integrar o código de forma frequente, isto é, contínua. Como essas integrações são pequenas, elas tendem a gerar menos conflitos. 
+
+Kent Beck, em seu livro de XP, defende o uso de CI da seguinte forma ([link](https://dl.acm.org/doi/book/10.5555/1076267)):
+
+> Você deve integrar e testar o seu código em intervalos menores do que algumas horas. Programação em times não é um problema do tipo dividir-e-conquistar. Na verdade, é um problema que requer dividir, conquistar e integrar. A duração de uma tarefa de integração é algo imprevisível e pode facilmente levar mais tempo do que a tarefa original de codificação. Assim, quanto mais tempo você levar para integrar, maiores e mais imprevisíveis serão os custos.
+
+Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é exatamente consensual. Por exemplo, Fowler menciona pelo menos uma integração por dia por desenvolvedor ([link](https://martinfowler.com/articles/continuousIntegration.html)), o que parece ser um limiar mínimo para um time argumentar que está usando CI.
 
 ### Servidores de Integração Contínua
 
