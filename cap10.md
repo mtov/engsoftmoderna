@@ -43,7 +43,7 @@ colocar um software em produção deve ser tão simples como apertar um botão.
 
 * **Automatize tudo que for possível**. Na verdade, esse princípio é um pré-requisito indispensável para atender ao princípio anterior. Advoga-se que todos os passos para entrega de um software devem ser automáticos, incluindo seu *build*, a execução dos testes, a configuração e ativação dos servidores e da rede, a carga do banco de dados, etc. De novo, idealmente, queremos apertar um botão e, em seguida, ver o sistema em produção.
 
-* **Mantenha tudo em um sistema de controle de versões**. "Tudo" no enunciado do princípio refere-se não apenas a todo o código fonte, mas também arquivos e scripts de adminstração
+* **Mantenha tudo em um sistema de controle de versões**. "Tudo" no enunciado do princípio refere-se não apenas a todo o código fonte, mas também arquivos e scripts de administração
 do sistema, documentação, páginas Web, arquivos de dados, etc. Consequentemente, deve ser simples restaurar e voltar o sistema para um estado anterior. Neste capítulo, iniciaremos
 estudando alguns conceitos básicos de **controle de versões**, na Seção 10.2. Além disso, no Apêndice A apresentamos e ilustramos o uso dos principais comandos do sistema Git, que é o sistema de controle de versões mais usado atualmente.
 
@@ -53,12 +53,12 @@ que eles se acumulem e as soluções fiquem complicadas. O exemplo clássico é
 o de **integração contínua**. Se um desenvolvedor passa muito tempo trabalhando de forma isolada, ele e o seu time podem depois ter uma grande dor de cabeça para integrar o código. Logo, como integração pode causar dor, a recomendação consiste em integrar código novo com mais frequência e o quanto antes, se possível, diariamente. Iremos estudar mais sobre integração contínua na Seção 10.3.
 
 * **"Concluído" significa pronto para entrega**. Com frequência, desenvolvedores dizem que uma
-nova história está pronta (*done*). Porém, ao serem questionados se ela pode entrar em produção, começam a surgir "pequenas" pendências, tais como: a implementação ainda não foi testada com dados reais, ela ainda não foi documentada, ela ainda não foi integrada com o sistema X, etc. Esse princípio defende então que "concluído", em projetos de sofwtare, deve ter uma semântica clara, isto é: 100% pronto para entrar em produção.
+nova história está pronta (*done*). Porém, ao serem questionados se ela pode entrar em produção, começam a surgir "pequenas" pendências, tais como: a implementação ainda não foi testada com dados reais, ela ainda não foi documentada, ela ainda não foi integrada com o sistema X, etc. Esse princípio defende então que "concluído", em projetos de software, deve ter uma semântica clara, isto é: 100% pronto para entrar em produção.
 
 * **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
 perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação.
 
-🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizadae, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
+🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizadae, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
 
 ## 10.2 Controle de Versões
 
@@ -128,7 +128,7 @@ Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de b
 
 ### O que é Integração Contínua?
 
-Integração contínua (*continuous integration* ou CI) é uma prática que foi proposta por Extreme Proggraming (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução desse capítulo: se uma tarefa causa "dor", o melhor é não deixá-la acumular. Em vez disso, tente quebrá-la em sub-tarefas que possam ser realizadas de forma frequente. Como essas tarefas são pequenas e simples, a "dor" decorrente da sua realização será menor.
+Integração contínua (*continuous integration* ou CI) é uma prática que foi proposta por Extreme Programing (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução desse capítulo: se uma tarefa causa "dor", o melhor é não deixá-la acumular. Em vez disso, tente quebrá-la em sub-tarefas que possam ser realizadas de forma frequente. Como essas tarefas são pequenas e simples, a "dor" decorrente da sua realização será menor.
 
 Adaptando para o contexto de integração de código, sabemos que grandes integrações são uma fonte de "dor" para os desenvolvedores, pois eles têm que resolver de forma manual diversos conflitos. Assim, CI recomenda integrar o código de forma frequente, isto é, contínua. Como essas integrações são pequenas, elas tendem a gerar menos conflitos. 
 
@@ -142,24 +142,31 @@ Nessa citação, Beck defende várias integrações ao longo de um dia de trabal
 
 Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas — ou ferramentas — são muito importantes quando se usa CI. Na verdade, elas são pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:
 
-* **Build automatizado**: deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual de qualquer desenvolvedor ou operador.
+* **Build automatizado**. Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual de qualquer desenvolvedor ou operador.
 
-* **Testes automatizados**: além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.
+* **Testes automatizados**. Além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.
 
-* **Servidores de Integração**: Porém, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
+* **Servidores de Integração Contínua**. Contudo, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
 
-  * Após cada novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes. 
+  * Após qualquer novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes. 
 
   * Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o novo código no master. 
 
   * Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.
 
+Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, que é gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.
+
+⚠️ **Aviso:** um erro comum é considerar que uma organização está usando CI apenas porque contratou um serviço de integração contínua. A existência desse serviço é um pré-requisito para adoção de CI. Porém, o que de fato caracteriza CI é a integração, pelo menos diária, do código produzido por cada desenvolvedor da organização.
 
 ### Desenvolvimento no Trunk
 
-### Feature Flags
+Uma outra dúvida comum sobre CIs é se a prática permite o uso de branches. Coerente com a definição de CI, a melhor resposta para essa dúvida é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Em outras palavras, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado.
+
+No entanto, se os branches devem durar apenas um dia, o custo/benefício de criá-los pode não ser interessante. Assim, quando migram para CI, é comum que as organizações adotem também o que se chama de **desenvolvimento baseado no trunk** (*trunk based development*). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
 ## 10.5 Entrega Contínua
+
+### Feature Flags
 
 ## 10.6 Infraestrutura como Código
 
