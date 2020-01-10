@@ -140,7 +140,7 @@ Nessa citação, Beck defende várias integrações ao longo de um dia de trabal
 
 ### Servidores de Integração Contínua
 
-Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas — ou ferramentas — são muito importantes quando se usa CI. Na verdade, elas são pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:
+Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas — ou ferramentas — são muito importantes quando se usa CI. Na verdade, elas são, de forma pragmática, pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:
 
 * **Build automatizado**. Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual de qualquer desenvolvedor ou operador.
 
@@ -156,11 +156,11 @@ Quando se usa CI, o master é constantemente atualizado com código novo. Para g
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, que é gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.
 
-⚠️ **Aviso:** um erro comum é considerar que uma organização está usando CI apenas porque contratou um serviço de integração contínua. A existência desse serviço é um pré-requisito para adoção de CI. Porém, o que de fato caracteriza CI é a integração, pelo menos diária, do código produzido por cada desenvolvedor da organização.
+⚠️ **Aviso:** um erro comum  — também chamado de **Teatro de CI (CI Theater)** — é considerar que uma organização está usando CI apenas porque contratou um serviço de integração contínua . Como vimos, o uso de um servidor de CI é um pré-requisito para adoção de CI. Porém, o que de fato caracteriza CI é a integração, pelo menos diária, do código produzido por cada desenvolvedor da organização.
 
 ### Desenvolvimento no Trunk
 
-Uma outra dúvida comum sobre CIs é se a prática permite o uso de branches. Coerente com a definição de CI, a melhor resposta para essa dúvida é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Em outras palavras, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado.
+Uma outra dúvida comum sobre CI é se a prática permite o uso de branches. Coerente com a definição de CI, a melhor resposta para essa dúvida é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Em outras palavras, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado.
 
 No entanto, se os branches devem durar apenas um dia, o custo/benefício de criá-los pode não ser interessante. Assim, quando migram para CI, é comum que as organizações adotem também o que se chama de **desenvolvimento baseado no trunk** (*trunk based development*). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
