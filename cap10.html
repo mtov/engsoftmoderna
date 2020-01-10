@@ -128,11 +128,16 @@
 </blockquote>
 <p>Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Por exemplo, Fowler menciona pelo menos uma integração por dia por desenvolvedor (<a href="https://martinfowler.com/articles/continuousIntegration.html">link</a>), o que parece ser então um limite mínimo para um time argumentar que está usando CI.</p>
 <h3 id="servidores-de-integração-contínua">Servidores de Integração Contínua</h3>
-<p>Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas ou ferramentas são muito importantes quando se usa CI. Na verdade, pode-se dizer que elas são pré-requisitos para adoção de CI. Essas práticas são as seguintes:</p>
+<p>Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas — ou ferramentas — são muito importantes quando se usa CI. Na verdade, elas são pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:</p>
 <ul>
-<li><p><strong>Build automatizado</strong>: deve ser possível realizar uma compilação completa do sistema e gerar uma versão executáve de forma totalmente automática.</p></li>
-<li><p><strong>Testes automatizados</strong>: além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Isto é, que ele continua funcionando da forma esperada. Para isso, para usar CI, deve-se ter uma boa cobertuda de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.</p></li>
-<li><p><strong>Servidores de Integração</strong>: Porém, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionanm da seguinte forma: após cada novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes. Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que então integra o novo código no master. Caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que seu código não será integrado no master.</p></li>
+<li><p><strong>Build automatizado</strong>: deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual de qualquer desenvolvedor ou operador.</p></li>
+<li><p><strong>Testes automatizados</strong>: além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.</p></li>
+<li><p><strong>Servidores de Integração</strong>: Porém, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma:</p>
+<ul>
+<li><p>Após cada novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes.</p></li>
+<li><p>Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o novo código no master.</p></li>
+<li><p>Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.</p></li>
+</ul></li>
 </ul>
 <h3 id="desenvolvimento-no-trunk">Desenvolvimento no Trunk</h3>
 <h3 id="feature-flags">Feature Flags</h3>

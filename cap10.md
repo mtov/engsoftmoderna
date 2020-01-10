@@ -140,13 +140,20 @@ Nessa citação, Beck defende várias integrações ao longo de um dia de trabal
 
 ### Servidores de Integração Contínua
 
-Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas ou ferramentas são muito importantes quando se usa CI. Na verdade, pode-se dizer que elas são pré-requisitos para adoção de CI. Essas práticas são as seguintes:
+Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que tudo vai funcionar da forma prevista, três outras práticas — ou ferramentas — são muito importantes quando se usa CI. Na verdade, elas são pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:
 
-* **Build automatizado**: deve ser possível realizar uma compilação completa do sistema e gerar uma versão executáve de forma totalmente automática.
+* **Build automatizado**: deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual de qualquer desenvolvedor ou operador.
 
-* **Testes automatizados**: além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Isto é, que ele continua funcionando da forma esperada. Para isso, para usar CI, deve-se ter uma boa cobertuda de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.
+* **Testes automatizados**: além de garantir que o sistema continua compilando após um novo commit, é importante garantir também que o sistema continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade foram estudados no Capítulo 8.
 
-* **Servidores de Integração**: Porém, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionanm da seguinte forma: após cada novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes. Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que então integra o novo código no master. Caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que seu código não será integrado no master.
+* **Servidores de Integração**: Porém, não basta ter build e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
+
+  * Após cada novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como executa todos os testes. 
+
+  * Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o novo código no master. 
+
+  * Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.
+
 
 ### Desenvolvimento no Trunk
 
