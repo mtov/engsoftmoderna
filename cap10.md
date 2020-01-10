@@ -56,7 +56,9 @@ o de **integração contínua**. Se um desenvolvedor passa muito tempo trabalhan
 nova história está pronta (*done*). Porém, ao serem questionados se ela pode entrar em produção, começam a surgir "pequenas" pendências, tais como: a implementação ainda não foi testada com dados reais, ela ainda não foi documentada, ela ainda não foi integrada com o sistema X, etc. Esse princípio defende então que "concluído", em projetos de sofwtare, deve ter uma semântica clara, isto é: 100% pronto para entrar em produção.
 
 * **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
-perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação. 
+perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação.
+
+🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizadae, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
 
 ## 10.2 Controle de Versões
 
@@ -105,15 +107,15 @@ No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git.
 
 ### Motivação
 
-Antes de definir o que é integração contínua, vamos descrever o cenário que levou à proposta dessa prática de integração de código. Tradicionalmente, era —  e ainda é relativamente comum — que os times de desenvolvimento trabalhem usando branches. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de master ou trunk. E os usuários podem criar seus próprios branches.
+Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era —  e ainda é relativamente comum — que os times de desenvolvimento trabalhem usando branches. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de master ou trunk. E os usuários podem criar seus próprios branches.
 
-Por exemplo, antes de implementar uma nova funcionalidade, era comum criavar um branch para conter o seu código. Tais branches são  chamados de **branches funcionais (feature branches)**. Dependendo da complexidade da funcionalidade, branches funcionais podem levar meses para serem integrados de volta à linha principal de desenvolvimento, isto é, ao  **master** ou **trunk**. Logo, podem dezenas de branches ativos, no caso de sistemas maiores e  complexos. 
+Por exemplo, antes de implementar uma nova funcionalidade, era comum criar um branch para conter o seu código. Tais branches são  chamados de **branches funcionais (feature branches)**. Dependendo da complexidade da funcionalidade, branches funcionais podem levar meses para serem integrados de volta à linha principal de desenvolvimento, isto é, ao  **master** ou **trunk**. Logo, podem dezenas de branches ativos, no caso de sistemas maiores e  complexos. 
 
 O problema acontecia quando a implementação da nova funcionalidade terminava e o código do branch era "copiado" de volta para o master, por meio de um comando do sistema de controle de versões chamado **merge**. Nesse momento, uma variedade de conflitos poderia ocorrer, os quais são conhecidos como **conflitos de integração** ou **conflitos de merge**.
 
 Para ilustrar esses conflitos, por meio de um exemplo simples, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada nesse branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava e realizada commits em seu branch também ocorriam commits no branch principal.
 
-![Desenvolvimento usando branches funcionais.](figs/cap10/branch-funcional.svg){width=75%}
+![Desenvolvimento usando branches funcionais.](figs/cap10/branch-funcional.svg){width=65%}
 
 Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos, tais como:
 

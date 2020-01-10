@@ -1,4 +1,3 @@
-
 # Cap. 1 - Introdução
 
 > Our civilization runs on software. -- Bjarne Stroustrup

@@ -1,7 +1,6 @@
 
 # Cap. 7 - Arquitetura
 
-
 > Architecture is about the important stuff. Whatever that is. -- Ralph Johnson
 
 Este capítulo inicia com uma introdução ao conceito de arquitetura de
@@ -688,6 +687,22 @@ sistema distribuído. Dentre eles, podemos citar:
     podem ser necessários para garantir uma semântica de transações em
     operações que escrevem em mais de um banco de dados.
 
+### Vídeos Complementares
+
+Para complementar o conteúdo desta seção, recomendamos dois vídeos
+relacionados com microsserviços:
+
+*   Um tutorial sobre microsserviços
+    ([link](https://youtu.be/wgdBVIX9ifA)), apresentado
+    por Martin Fowler na conferência GOTO 2015, com duração de 26
+    minutos.
+
+*   Uma palestra sobre a arquitetura de microsserviços adotada pela
+    Netflix ([link](https://youtu.be/57UK46qfBLY)),
+    realizada por Ruslan Meshenberg, na época diretor de engenharia da
+    empresa e apresentada na conferência GOTO 2016, com duração de 49
+    minutos.
+
 ## 7.5 Arquiteturas Orientadas a Mensagens
 
 Neste tipo de arquitetura, a comunicação entre clientes e servidores é
@@ -955,21 +970,6 @@ detalhada, revisões de código e programação em pares. Porém, todas se
 mostraram incapazes de atenuar os problemas causados pela arquitetura em
 forma de \"big ball of mud\".
 
-## Vídeos Complementares
-
-Para complementar o conteúdo deste capítulo, recomendamos dois vídeos
-relacionados com microsserviços:
-
-*   Um tutorial sobre microsserviços
-    ([link](https://youtu.be/wgdBVIX9ifA)), apresentado
-    por Martin Fowler na conferência GOTO 2015, com duração de 26
-    minutos.
-
-*   Uma palestra sobre a arquitetura de microsserviços adotada pela
-    Netflix ([link](https://youtu.be/57UK46qfBLY)),
-    realizada por Ruslan Meshenberg, na época diretor de engenharia da
-    empresa e apresentada na conferência GOTO 2016, com duração de 49
-    minutos.
 
 ## Bibliografia
 
