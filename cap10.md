@@ -107,13 +107,13 @@ No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git.
 
 ### Motivação
 
-Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de **master** ou **trunk**. E os usuários podem criar seus próprios branches.
+Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de **master** (quando usa-se Git) ou **trunk** (quando usa-se outros sistemas, como svn). Além do branch principal, os usuários podem criar seus próprios branches.
 
-Por exemplo, antes de implementar uma nova funcionalidade, era comum criar um branch apenas para conter o seu código. Tais branches são chamados de **branches de funcionalidades (feature branches)** e, dependendo da complexidade da funcionalidade, eles podiam levar meses para serem integrados de volta à linha principal de desenvolvimento. Logo, era comum em um sistema maior e mais complexo existirem dezenas de branches ativos.
+Por exemplo, antes de implementar uma nova funcionalidade, era comum criar um branch apenas para conter o seu código. Tais branches são chamados de **branches de funcionalidades (feature branches)** e, dependendo da complexidade da funcionalidade, eles podiam levar meses para serem integrados de volta à linha principal de desenvolvimento. Logo, era comum em  sistemas maiores e mais complexos existirem dezenas de branches ativos.
 
 Quando a implementação da nova funcionalidade terminava, o código do branch era "copiado" de volta para o master, por meio de um comando do sistema de controle de versões chamado **merge**. Nesse momento, uma variedade de conflitos poderia ocorrer, os quais são conhecidos como **conflitos de integração** ou **conflitos de merge**.
 
-Para ilustrar esses conflitos, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava  — realizando commits em seu branch — também ocorriam commits no branch principal.
+Para ilustrar esses conflitos, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.
 
 ![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional.svg){width=65%}
 
@@ -140,11 +140,11 @@ Nessa citação, Beck defende várias integrações ao longo de um dia de trabal
 
 ### Boas Práticas para Uso de CI
 
-Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado (isto é, deixe de compilar ou possua bugs), algumas práticas são importantes quando se usa CI. Vamos discutir algumas deleas a seguir:
+Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, algumas práticas são importantes quando se usa CI. Vamos discutir algumas delas a seguir.
 
 #### Build Automatizado
 
-Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
+Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
 
 #### Testes Automatizados
 
@@ -152,7 +152,7 @@ Além de garantir que o sistema compila sem erros após um novo commit, é impor
 
 #### Servidores de Integração Contínua
 
-Contudo, também não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
+Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
 
   * Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes. 
 
@@ -162,7 +162,7 @@ Contudo, também não basta ter builds e testes automatizados. É importante que
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.
 
-Uma dúvida comum sobre CI é se a prática é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta para essa dúvida é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Ou seja, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
+Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Ou seja, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
 
 > Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um "animal" diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de builidng contínuo e pode ser uma coisa boa... Porém, como não há integração, não podemos chamar essa prática de CI.
 
@@ -176,7 +176,7 @@ Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho.
 
 🌎 **Mundo Real**: Desenvolvimento baseado no trunk é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
 
-* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges". ([link](https://arxiv.org/abs/1702.01715))
+* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges. ([link](https://arxiv.org/abs/1702.01715))
 
 * No Facebook, "todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk." ([link](https://doi.org/10.1109/MIC.2013.25))
 
