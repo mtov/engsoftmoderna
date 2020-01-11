@@ -115,7 +115,7 @@ Quando a implementação da nova funcionalidade terminava, o código do branch e
 
 Para ilustrar esses conflitos, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.
 
-![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional.svg){width=65%}
+![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional.svg){width=55%}
 
 Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos. Alguns deles são descritos a seguir:
 
@@ -152,13 +152,16 @@ Além de garantir que o sistema compila sem erros após um novo commit, é impor
 
 #### Servidores de Integração Contínua
 
-Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
+Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma (acompanhe também pela próxima figura): 
 
   * Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes. 
 
   * Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o código no master. 
 
   * Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.
+
+
+![Servidor de Integração Contínua](figs/cap10/ci-server.svg){width=50%}
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.
 

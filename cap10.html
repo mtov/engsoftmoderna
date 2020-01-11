@@ -111,7 +111,7 @@
 <p>Quando a implementação da nova funcionalidade terminava, o código do branch era “copiado” de volta para o master, por meio de um comando do sistema de controle de versões chamado <strong>merge</strong>. Nesse momento, uma variedade de conflitos poderia ocorrer, os quais são conhecidos como <strong>conflitos de integração</strong> ou <strong>conflitos de merge</strong>.</p>
 <p>Para ilustrar esses conflitos, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.</p>
 <figure>
-<img src="figs/cap10/branch-funcional.svg" style="width:65.0%" alt="" /><figcaption>Desenvolvimento usando branches de funcionalidades.</figcaption>
+<img src="figs/cap10/branch-funcional.svg" style="width:55.0%" alt="" /><figcaption>Desenvolvimento usando branches de funcionalidades.</figcaption>
 </figure>
 <p>Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos. Alguns deles são descritos a seguir:</p>
 <ul>
@@ -134,12 +134,15 @@
 <h4 id="testes-automatizados">Testes Automatizados</h4>
 <p>Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8.</p>
 <h4 id="servidores-de-integração-contínua">Servidores de Integração Contínua</h4>
-<p>Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma:</p>
+<p>Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma (acompanhe também pela próxima figura):</p>
 <ul>
 <li><p>Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes.</p></li>
 <li><p>Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o código no master.</p></li>
 <li><p>Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.</p></li>
 </ul>
+<figure>
+<img src="figs/cap10/ci-server.svg" style="width:50.0%" alt="" /><figcaption>Servidor de Integração Contínua</figcaption>
+</figure>
 <p>Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.</p>
 <p>Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Ou seja, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI (<a href="https://martinfowler.com/bliki/FeatureBranch.html">link</a>):</p>
 <blockquote>
