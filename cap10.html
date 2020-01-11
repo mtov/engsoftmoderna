@@ -127,30 +127,33 @@
 <p>Você deve integrar e testar o seu código em intervalos menores do que algumas horas. Programação em times não é um problema do tipo dividir-e-conquistar. Na verdade, é um problema que requer dividir, conquistar e integrar. A duração de uma tarefa de integração é algo imprevisível e pode facilmente levar mais tempo do que a tarefa original de codificação. Assim, quanto mais tempo você levar para integrar, maiores e mais imprevisíveis serão os custos.</p>
 </blockquote>
 <p>Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Outros autores, como Fowler, mencionam pelo menos uma integração por dia por desenvolvedor (<a href="https://martinfowler.com/articles/continuousIntegration.html">link</a>), o que parece ser um limite mínimo para um time argumentar que está usando CI.</p>
-<h3 id="servidores-de-integração-contínua">Servidores de Integração Contínua</h3>
-<p>Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado (isto é, deixe de compilar ou possua bugs), três outras práticas são muito importantes quando se usa CI. Na verdade, elas podem ser considerados como pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:</p>
-<ul>
-<li><p><strong>Build automatizado</strong>. Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo build seja o mais rápido possível, pois com integração contínua ele será sempre executado.</p></li>
-<li><p><strong>Testes automatizados</strong>. Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8.</p></li>
-<li><p><strong>Servidores de Integração Contínua</strong>. Contudo, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma:</p>
+<h3 id="boas-práticas-para-uso-de-ci">Boas Práticas para Uso de CI</h3>
+<p>Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado (isto é, deixe de compilar ou possua bugs), algumas práticas são importantes quando se usa CI. Vamos discutir algumas deleas a seguir:</p>
+<h4 id="build-automatizado">Build Automatizado</h4>
+<p>Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.</p>
+<h4 id="testes-automatizados">Testes Automatizados</h4>
+<p>Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8.</p>
+<h4 id="servidores-de-integração-contínua">Servidores de Integração Contínua</h4>
+<p>Contudo, também não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma:</p>
 <ul>
 <li><p>Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes.</p></li>
 <li><p>Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o código no master.</p></li>
 <li><p>Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.</p></li>
-</ul></li>
 </ul>
 <p>Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.</p>
 <p>Uma dúvida comum sobre CI é se a prática é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta para essa dúvida é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Ou seja, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI (<a href="https://martinfowler.com/bliki/FeatureBranch.html">link</a>):</p>
 <blockquote>
 <p>Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um “animal” diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de builidng contínuo e pode ser uma coisa boa… Porém, como não há integração, não podemos chamar essa prática de CI.</p>
 </blockquote>
-<p>O termo <strong>Teatro de CI (CI Theater)</strong> designa os cenários nos quais uma organização apenas instala uma servidor de CI. No entanto, os desenvolvedores não integram seu código diariamente e continuam trabalhando em branches de longa duração.</p>
-<h3 id="desenvolvimento-baseado-no-trunk">Desenvolvimento Baseado no Trunk</h3>
+<!---
+O termo **Teatro de CI (CI Theater)** designa os cenários nos quais uma organização apenas instala uma servidor de CI. No entanto, os desenvolvedores não integram seu código diariamente e continuam trabalhando em branches de longa duração.
+-->
+<h4 id="desenvolvimento-baseado-no-trunk">Desenvolvimento Baseado no Trunk</h4>
 <p>Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também <strong>desenvolvimento baseado no trunk</strong> (<em>trunk based development</em>). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master.</p>
 <p>🌎 <strong>Mundo Real</strong>: Desenvolvimento baseado no trunk é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:</p>
 <ul>
-<li><p>No Google, “quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges (<a href="https://arxiv.org/abs/1702.01715">link</a>).”</p></li>
-<li><p>No Facebook, “todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk (<a href="https://doi.org/10.1109/MIC.2013.25">link</a>)”.</p></li>
+<li><p>No Google, “quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges”. (<a href="https://arxiv.org/abs/1702.01715">link</a>)</p></li>
+<li><p>No Facebook, “todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk.” (<a href="https://doi.org/10.1109/MIC.2013.25">link</a>)</p></li>
 </ul>
 <h2 id="entrega-contínua">10.5 Entrega Contínua</h2>
 <h3 id="feature-flags">Feature Flags</h3>

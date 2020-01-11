@@ -138,15 +138,21 @@ Kent Beck, em seu livro de XP, defende o uso de CI da seguinte forma ([link](htt
 
 Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Outros autores, como Fowler, mencionam pelo menos uma integração por dia por desenvolvedor ([link](https://martinfowler.com/articles/continuousIntegration.html)), o que parece ser um limite mínimo para um time argumentar que está usando CI.
 
-### Servidores de Integração Contínua
+### Boas Práticas para Uso de CI
 
-Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado (isto é, deixe de compilar ou possua bugs), três outras práticas são muito importantes quando se usa CI. Na verdade, elas podem ser considerados como pré-requisitos para adoção com sucesso de CI. Essas práticas são as seguintes:
+Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado (isto é, deixe de compilar ou possua bugs), algumas práticas são importantes quando se usa CI. Vamos discutir algumas deleas a seguir:
 
-* **Build automatizado**. Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
+#### Build Automatizado
 
-* **Testes automatizados**. Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Para isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8.
+Deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
 
-* **Servidores de Integração Contínua**. Contudo, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
+#### Testes Automatizados
+
+Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8.
+
+#### Servidores de Integração Contínua
+
+Contudo, também não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma: 
 
   * Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes. 
 
@@ -160,17 +166,19 @@ Uma dúvida comum sobre CI é se a prática é compatível com o uso de branches
 
 > Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um "animal" diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de builidng contínuo e pode ser uma coisa boa... Porém, como não há integração, não podemos chamar essa prática de CI.
 
+<!---
 O termo **Teatro de CI (CI Theater)** designa os cenários nos quais uma organização apenas instala uma servidor de CI. No entanto, os desenvolvedores não integram seu código diariamente e continuam trabalhando em branches de longa duração.
+-->
 
-### Desenvolvimento Baseado no Trunk
+#### Desenvolvimento Baseado no Trunk
 
 Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development*). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
 🌎 **Mundo Real**: Desenvolvimento baseado no trunk é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
 
-* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges ([link](https://arxiv.org/abs/1702.01715))."
+* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges". ([link](https://arxiv.org/abs/1702.01715))
 
-* No Facebook, "todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk ([link](https://doi.org/10.1109/MIC.2013.25))". 
+* No Facebook, "todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk." ([link](https://doi.org/10.1109/MIC.2013.25))
 
 
 ## 10.5 Entrega Contínua
