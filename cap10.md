@@ -58,7 +58,7 @@ nova história está pronta (*done*). Porém, ao serem questionados se ela pode 
 * **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
 perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação.
 
-🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizadae, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
+🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
 
 ## 10.2 Controle de Versões
 
@@ -119,16 +119,18 @@ Para ilustrar esses conflitos, suponha que Alice criou um branch para implementa
 
 Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos. Alguns deles são descritos a seguir:
 
-* Para implementar a funcionalidade X, o novo desenvolvido por Alice chamava uma função `f1`, que existia no master no momento da criação do branch. Porém, no intervalo de 40 dias, a assinatura dessa função foi modificada no master por outros desenvolvedores. Por exemplo, a função pode ter sido renomeada ou ter ganho um novo parâmetro. Ou ainda, em um cenário mais radical, `f1` pode ter sido removida da linha principal de desenvolvimento.
+* Para implementar a funcionalidade X, o novo código desenvolvido por Alice chamava uma função `f1`, que existia no master no momento da criação do branch. Porém, no intervalo de 40 dias, a assinatura dessa função foi modificada no master por outros desenvolvedores. Por exemplo, a função pode ter sido renomeada ou ter ganho um novo parâmetro. Ou ainda, em um cenário mais radical, `f1` pode ter sido removida da linha principal de desenvolvimento.
 
 * Para implementar a funcionalidade X, Alice mudou o comportamento de uma função `f2` do master. Por exemplo, `f2` retornava seu resultado em
 milhas e Alice alterou o seu código para que o resultado fosse retornado em quilômetros. Evidentemente, Alice atualizou todo o código que chamava `f2` no seu branch, para considerar resultados em quilômetros. Porém, no período de 40 dias, surgiram novas chamadas de `f2`, que foram integradas no master, mas supondo um resultado ainda em milhas.
 
 Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de branches funcionais, os problemas causados por conflitos podem assumir proporções consideráveis e atrasar a entrada em produção de novas funcionalidades. Veja que a resolução de conflitos é uma tarefa manual, que requer análise e consenso entre os desenvolvedores envolvidos. Por isso, o termo **integration hell** é frequentemente usado para descrever os problemas que ocorrem durante a integração de branches de funcionalidades.
 
+Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Assim, esse desenvolvedor pode sentir-se mais confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de interfaces e telas, para acesso a dados, etc.
+
 ### O que é Integração Contínua?
 
-Integração contínua (*continuous integration* ou CI) é uma prática de desenvolvimento que foi proposta por Extreme Programing (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática foi enunciado na Introdução desse capítulo: se uma tarefa causa "dor", não devemos deixar que ela acumule. Em vez disso, devemos quebrá-la em sub-tarefas que possam ser realizadas de forma frequente. Como essas tarefas são pequenas e simples, a "dor" decorrente da sua realização será menor.
+Integração contínua (*continuous integration* ou CI) é uma prática de desenvolvimento proposta por Extreme Programing (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução deste capítulo: se uma tarefa causa "dor", não podemos deixar que ela acumule. Em vez disso, devemos quebrá-la em subtarefas que possam ser realizadas de forma frequente. Como essas subtarefas serão pequenas e simples, a "dor" decorrente da sua realização será menor.
 
 Adaptando para o contexto de integração de código, sabemos que grandes integrações são uma fonte de "dor" para os desenvolvedores, pois eles têm que resolver de forma manual diversos conflitos. Assim, CI recomenda integrar o código de forma frequente, isto é, contínua. Como isso, as integrações serão pequenas e irão gerar menos conflitos. 
 
@@ -144,7 +146,7 @@ Quando se usa CI, o master é constantemente atualizado com código novo. Para g
 
 #### Build Automatizado
 
-Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem qualquer intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
+Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
 
 #### Testes Automatizados
 
@@ -163,11 +165,11 @@ Por fim, não basta ter builds e testes automatizados. É importante que eles se
 
 ![Servidor de Integração Contínua](figs/cap10/ci-server.svg){width=50%}
 
-Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas.
+Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
-Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Ou seja, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
+Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Dizendo de outra forma, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Ainda nessa linha, Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
 
-> Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um "animal" diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de builidng contínuo e pode ser uma coisa boa... Porém, como não há integração, não podemos chamar essa prática de CI.
+> Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um "animal" diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de building contínuo e pode ser uma coisa boa... Porém, como não há integração, não podemos chamar essa prática de CI.
 
 <!---
 O termo **Teatro de CI (CI Theater)** designa os cenários nos quais uma organização apenas instala uma servidor de CI. No entanto, os desenvolvedores não integram seu código diariamente e continuam trabalhando em branches de longa duração.
@@ -175,9 +177,9 @@ O termo **Teatro de CI (CI Theater)** designa os cenários nos quais uma organiz
 
 #### Desenvolvimento Baseado no Trunk
 
-Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development*). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
+Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development* ou TBD). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
-🌎 **Mundo Real**: Desenvolvimento baseado no trunk é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
+🌎 **Mundo Real**: TBD é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
 
 * No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges. ([link](https://arxiv.org/abs/1702.01715))
 
@@ -191,3 +193,17 @@ Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho.
 ## 10.6 Infraestrutura como Código
 
 ## 10.7 Engenharia de Releases
+
+## Bibliografia
+
+* Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
+
+* Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.
+
+* Steve Matyas, Andrew Glover, Paul M. Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
+
+## Exercícios de Fixação
+
+1. Pesquise na Internet o significado da expressão Teatro de CI (*CI Theater*) e então descreva esse significado com suas próprias palavras.
+
+
