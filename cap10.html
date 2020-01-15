@@ -104,6 +104,27 @@
 <p><strong>Git</strong> é um sistema de controle de versões distribuído cujo desenvolvimento foi liderado por Linus Torvalds, também responsável pela criação do sistema operacional Linux. Nos anos iniciais, o desenvolvimento do kernel do Linux usava um sistema de controle de versões comercial, chamado BitKeeper, que também possui uma arquitetura distribuída. No entanto, em 2005, a empresa proprietária do BitKeeper resolveu revogar as licenças gratuitas que eram usadas no desenvolvimento do Linux. Os desenvolvedores do sistema operacional, liderados por Torvalds, decidiram então iniciar a implementação de um DVCS próprio, ao qual deram o nome de Git. Assim como o Linux, o Git é um sistema de código aberto, que pode ser gratuitamente instalado em qualquer máquina. O Git é ainda um sistema de linha de comando. Porém, existem também algumas interfaces gráficas, produzidas por outras empresas, que permitem usar o sistema sem ter que digitar comandos.</p>
 <p><strong>GitHub</strong> é um serviço de hospedagem de código que usa o sistema git para prover controle de versões. O GitHub oferece repositórios públicos e gratuitos, para projetos de código aberto, e repositórios fechados e pagos, para uso por empresas. Assim, em vez de manter internamente um DVCS, uma empresa desenvolvedora de software pode alugar esse serviço do GitHub. Uma comparação pode ser feita com serviços de mail. Em vez de instalar um servidor de mail em uma máquina própria, uma empresa pode contratar esse serviço de terceiros, como do Google, via GMail. Apesar de o GitHub ser o mais popular, existem serviços semelhantes providos por outras empresas, como GitLab e BitBucket.</p>
 <p>No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.</p>
+<h3 id="multirepos-vs-monorepos">Multirepos vs Monorepos</h3>
+<p>Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, uma solução baseada em um único repositório está tornando-se comum, principalmente entre grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de <strong>mulirepos</strong> e <strong>monorepo</strong> — são ilustradas na próxima figura.</p>
+<figure>
+<img src="figs/cap10/multirepos.svg" style="width:35.0%" alt="" /><figcaption>Multirepos: VCS gerencia vários repositórios (um repositório por projeto ou sistema)</figcaption>
+</figure>
+<figure>
+<img src="figs/cap10/monorepo.svg" style="width:35.0%" alt="" /><figcaption>Monorepo: VCS gerencia um único repositório. Projetos são diretórios desse repositório.</figcaption>
+</figure>
+<p>Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:</p>
+<ul>
+<li><p>Se optar por multirepos, uma organização teria vários repositórios, tais como aserg-ufmg/sistema1, aserg-ufmg/sistema2, aserg-ufmg/sistema3, etc.</p></li>
+<li><p>Se optar por monorepos, ela teria um único repositório — digamos, aserg-ufmg/monorepo. No diretório raiz desse repositório, teríamos subdiretórios como os seguintes: sistema1, sistema2, sistema3, etc.</p></li>
+</ul>
+<p>Dentre as vantagens de monorepos podemos citar:</p>
+<ul>
+<li><p>Como existe um único repositório, não há dúvida sobre em qual repositório encontra-se a versão mais atualizada de um arquivo. Isto é, como monorepos, existe uma única fonte de “verdade” sobre versões do código fonte.</p></li>
+<li><p>Monorepos incentivam o reuso e compartilhamento de código, pois os desenvolvedores têm acesso mais rápido a qualquer código, de qualquer sistema.</p></li>
+<li><p>Mudanças são sempre atômicas. Como multirepos, dois commits podem ser necessários para implementar uma única mudança, caso ela afete dois sistemas. Com monorepos, a mesma mudança pode ser realizada por meio de um único commit.</p></li>
+<li><p>Facilita a execução de refactorings em larga escala. Por exemplo, suponha a renomeação de uma função de uma API que é usada em todos os sistemas da organização. Como monorepos, essa renomeação pode ser realizada em um único commit.</p></li>
+</ul>
+<p>Por outro lado, monorepos demandam uso ferramentas que facilitem a navegação em grandes bases de código. Por exemplo, caso use git, o desenvolvedor terá em seu repositório local todos os arquivos de todos os sistemas da organização. Por isso, os responsáveis pelo monorepo do Google comentam que tiveram que implementar internamente um plug-in para a IDE Eclipse que facilitava o trabalho com uma base de código muito grande, como a que eles tinham na empresa ((link)[https://doi.org/10.1145/2854146]).</p>
 <h2 id="integração-contínua">10.3 Integração Contínua</h2>
 <h3 id="motivação">Motivação</h3>
 <p>Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de <strong>master</strong> (quando usa-se Git) ou <strong>trunk</strong> (quando usa-se outros sistemas, como svn). Além do branch principal, os usuários podem criar seus próprios branches.</p>

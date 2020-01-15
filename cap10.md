@@ -103,6 +103,34 @@ vantagens:
 
 No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.
 
+### Multirepos vs Monorepos
+
+Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, uma solução baseada em um único repositório está tornando-se comum, principalmente entre grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **mulirepos** e **monorepo** — são ilustradas na próxima figura.
+
+![Multirepos: VCS gerencia vários repositórios (um repositório por projeto ou sistema)](figs/cap10/multirepos.svg){width=35%}
+
+![Monorepo: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo.svg){width=35%}
+
+Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:
+
+* Se optar por multirepos, uma organização teria vários repositórios, tais como aserg-ufmg/sistema1, aserg-ufmg/sistema2, aserg-ufmg/sistema3, etc.
+
+* Se optar por monorepos, ela teria um único repositório — digamos, aserg-ufmg/monorepo. No diretório raiz desse repositório, teríamos subdiretórios como os seguintes: sistema1, sistema2, sistema3, etc.
+
+Dentre as vantagens de monorepos podemos citar: 
+
+* Como existe um único repositório, não há dúvida sobre em qual repositório encontra-se a versão mais atualizada de um arquivo. Isto é, como monorepos, existe uma única fonte de "verdade" sobre versões do código fonte.
+
+* Monorepos incentivam o reuso e compartilhamento de código, pois os desenvolvedores têm acesso mais rápido a qualquer código, de qualquer sistema.
+
+* Mudanças são sempre atômicas. Como multirepos, dois commits podem ser necessários para implementar uma única mudança, caso ela afete dois sistemas. Com monorepos, a mesma mudança pode ser realizada por meio de um único commit.
+
+* Facilita a execução de refactorings em larga escala. Por exemplo, suponha a renomeação de uma função de uma API que é usada em todos os sistemas da organização. Como monorepos,
+essa renomeação pode ser realizada em um único commit.
+
+Por outro lado, monorepos demandam uso ferramentas que facilitem a navegação em grandes bases de código. Por exemplo, caso use git, o desenvolvedor terá em seu repositório local todos os arquivos de todos os sistemas da organização. Por isso, os responsáveis pelo monorepo do Google comentam que tiveram que implementar internamente um plug-in para a IDE Eclipse que facilitava o trabalho com uma base de código muito grande, como a que eles tinham na empresa ((link)[https://doi.org/10.1145/2854146]).
+
+
 ## 10.3 Integração Contínua
 
 ### Motivação
