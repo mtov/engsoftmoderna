@@ -5,10 +5,6 @@ pandoc --defaults=defaults.yaml cap7.md -o cap7.html
 pandoc --defaults=defaults.yaml cap10.md -o cap10.html
 pandoc --defaults=defaults.yaml capAp.md -o capAp.html
 
-curl -o cap3.html https://docs.google.com/document/d/e/2PACX-1vShmUD15aIUNCy50C_cHLqq2PgcNV6UArnC8q8zMlovcYtkjyalk62JxlfUrfHt74cLclpv7o7RQVIW/pub
-cat analytics.html cap3.html >> teste.html
-mv teste.html cap3.html
-
 git add .
 
 git commit -a -m "update"
