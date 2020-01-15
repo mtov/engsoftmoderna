@@ -24,7 +24,7 @@ produtos de software.
 restrições. Requisitos relacionados com a primeira parte dessa definição
  —  \"o que um sistema deve fazer\", ou seja, suas funcionalidades
  —  são chamados de **Requisitos Funcionais**. Já os requisitos
-relacionados com a segunda parte  —  \"sob que restrições\"  —  são
+relacionados com a segunda parte —  \"sob que restrições\"  —  são
 chamados de **Requisitos Não-Funcionais**.
 
 Vamos usar novamente o exemplo do Capítulo 1, relativo a um sistema de
@@ -124,8 +124,8 @@ antropólogo pode se mudar para a aldeia e passar meses convivendo com os
 índios, para entender seus hábitos, costumes, linguagem, etc. De forma
 análoga, em Engenharia de Requisitos, etnografia designa a técnica de
 elicitação de requisitos que recomenda que o desenvolvedor se integre ao
-ambiente de trabalho dos stakeholders e observe  —  normalmente, por
-alguns dias  —  como ele desenvolve suas atividades. Veja que essa
+ambiente de trabalho dos stakeholders e observe — normalmente, por
+alguns dias — como ele desenvolve suas atividades. Veja que essa
 observação é silenciosa, isto é, o desenvolvedor não interfere e opina
 sobre as tarefas e eventos que estão sendo observados.
 
@@ -241,7 +241,7 @@ usados pelos stakeholders. Veja que esses últimos tendem a ser
 especialistas de longa data na área do sistema. Portanto, eles podem se
 expressar usando uma linguagem muito específica.
 
-**🌎** **Mundo Real**: Para entender os desafios enfrentados em
+🌎 **Mundo Real**: Para entender os desafios enfrentados em
 Engenharia de Requisitos, em 2016, cerca de duas dezenas de
 pesquisadores coordenaram um survey com 228 empresas que desenvolvem
 software, distribuídas por 10 países, incluindo o Brasil
