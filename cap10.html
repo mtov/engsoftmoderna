@@ -158,13 +158,14 @@
 <h4 id="servidores-de-integração-contínua">Servidores de Integração Contínua</h4>
 <p>Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma (acompanhe também pela próxima figura):</p>
 <ul>
-<li><p>Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes.</p></li>
-<li><p>Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o código no master.</p></li>
-<li><p>Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.</p></li>
+<li><p>Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que clona o repositório e executa então um build completo do sistema, bem como roda todos os testes.</p></li>
+<li><p>Após a execução do build e dos testes, o servidor de CI notifica o usuário.</p></li>
 </ul>
 <figure>
 <img src="figs/cap10/ci-server.svg" style="width:50.0%" alt="" /><figcaption>Servidor de Integração Contínua</figcaption>
 </figure>
+<p>O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve imediatamente parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta negativamente o trabalho dos outros desenvolvedores, pois eles nem vão conseguir compilar o código. Costuma-se dizer que nada em uma empresa tem maior prioridade do que a correção de um build quebrado. No entanto, veja que a solução pode ser simplesmente reverter o código para a versão imediatamente anterior ao último commit.</p>
+<p>Adicionalmente, recomenda-se que um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.</p>
 <p>Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.</p>
 <p>Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Dizendo de outra forma, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Ainda nessa linha, Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI (<a href="https://martinfowler.com/bliki/FeatureBranch.html">link</a>):</p>
 <blockquote>

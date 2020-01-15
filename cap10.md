@@ -78,24 +78,13 @@ Apesar de todos os clientes serem funcionalmente equivalentes, na prática, quan
 Quando comparado com um VCS centralizado, um DVCS tem as seguintes
 vantagens:
 
-*   Pode-se trabalhar e gerenciar versões de forma offline, sem estar
-    conectado a uma rede, pois os commits são realizados primeiro no
-    repositório local.
+* Pode-se trabalhar e gerenciar versões de forma offline, sem estar conectado a uma rede, pois os commits são realizados primeiro no repositório local.
 
-*   Pode-se realizar commits com mais frequência, incluindo commits com
-    implementações parciais, pois eles não vão chegar imediatamente
-    até o repositório central.
+* Pode-se realizar commits com mais frequência, incluindo commits com implementações parciais, pois eles não vão chegar imediatamente até o repositório central.
 
-*   Commits são executados em menos tempo, isto é, são operações mais
-    rápidas e leves. O motivo é que eles são realizados no repositório
-    local de cada máquina.
+* Commits são executados em menos tempo, isto é, são operações mais rápidas e leves. O motivo é que eles são realizados no repositório local de cada máquina.
 
-*   A sincronização não precisa ser sempre com o repositório central. Em
-    vez disso, dois nodos podem também sincronizar os seus
-    repositórios. Por exemplo, pode-se ter uma estrutura hierárquica
-    dos repositórios. Nesses casos, os commits \"nascem\" nos
-    repositórios que representam as folhas da hierarquia e vão subindo
-    até chegar ao repositório central.
+* A sincronização não precisa ser sempre com o repositório central. Em vez disso, dois nodos podem também sincronizar os seus repositórios. Por exemplo, pode-se ter uma estrutura hierárquica dos repositórios. Nesses casos, os commits \"nascem\" nos repositórios que representam as folhas da hierarquia e vão subindo até chegar ao repositório central.
 
 **Git** é um sistema de controle de versões distribuído cujo desenvolvimento foi liderado por Linus Torvalds, também responsável pela criação do sistema operacional Linux. Nos anos iniciais, o desenvolvimento do kernel do Linux usava um sistema de controle de versões comercial, chamado BitKeeper, que também possui uma arquitetura distribuída. No entanto, em 2005, a empresa proprietária do BitKeeper resolveu revogar as licenças gratuitas que eram usadas no desenvolvimento do Linux. Os desenvolvedores do sistema operacional, liderados por Torvalds, decidiram então iniciar a implementação de um DVCS próprio, ao qual deram o nome de Git. Assim como o Linux, o Git é um sistema de código aberto, que pode ser gratuitamente instalado em qualquer máquina. O Git é ainda um sistema de linha de comando. Porém, existem também algumas interfaces gráficas, produzidas por outras empresas, que permitem usar o sistema sem ter que digitar comandos.
 
@@ -174,7 +163,7 @@ Quando se usa CI, o master é constantemente atualizado com código novo. Para g
 
 #### Build Automatizado
 
-Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado.
+Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado. 
 
 #### Testes Automatizados
 
@@ -184,14 +173,16 @@ Além de garantir que o sistema compila sem erros após um novo commit, é impor
 
 Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma (acompanhe também pela próxima figura): 
 
-  * Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que executa então um build completo do sistema, bem como roda todos os testes. 
+  * Após um novo commit, o sistema de controle de versões avisa o servidor de CI, que clona o repositório e executa então um build completo do sistema, bem como roda todos os testes. 
 
-  * Se ambos terminarem com sucesso, o servidor de integração notifica o controle de versões, que integra o código no master. 
-
-  * Porém, caso o build ou algum teste falhem, o servidor de CI notifica o desenvolvedor responsável pelo commit que ele deve antes corrigir o seu código.
+  * Após a execução do build e dos testes, o servidor de CI notifica o usuário.
 
 
 ![Servidor de Integração Contínua](figs/cap10/ci-server.svg){width=50%}
+
+O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve imediatamente parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta negativamente o trabalho dos outros desenvolvedores, pois eles nem vão conseguir compilar o código. Costuma-se dizer que nada em uma empresa tem maior prioridade do que a correção de um build quebrado. No entanto, veja que a solução pode ser simplesmente reverter o código para a versão imediatamente anterior ao último commit.
+
+Adicionalmente, recomenda-se que um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
