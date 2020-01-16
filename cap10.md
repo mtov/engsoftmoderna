@@ -163,7 +163,7 @@ Quando se usa CI, o master é constantemente atualizado com código novo. Para g
 
 #### Build Automatizado
 
-Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado. 
+Quando se usa CI, deve ser possível realizar uma compilação completa do sistema e gerar uma versão executável de forma automatizada, isto é, sem intervenção manual. Além disso, é importante que o processo de build seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limte de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)).
 
 #### Testes Automatizados
 
@@ -177,12 +177,14 @@ Por fim, não basta ter builds e testes automatizados. É importante que eles se
 
   * Após a execução do build e dos testes, o servidor de CI notifica o usuário.
 
-
 ![Servidor de Integração Contínua](figs/cap10/ci-server.svg){width=50%}
 
-O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve imediatamente parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta negativamente o trabalho dos outros desenvolvedores, pois eles nem vão conseguir compilar o código. Costuma-se dizer que nada em uma empresa tem maior prioridade do que a correção de um build quebrado. No entanto, veja que a solução pode ser simplesmente reverter o código para a versão imediatamente anterior ao último commit.
+O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Especificamente, quando o build falha, costuma-se dizer que ele ``quebrou''. Com frequência, o build na máquina do desenvolvedor pode ser realizado com sucesso. Mas ao ser executado no servidor de CI, ele pode falhar. Isso ocorre, por exemplo, quando o desenvolvedor esquece de realizar o commit de um arquivo. Dependências incorretas são outro motivo para quebra de builds. Por exemplo, o código requer a versão 2.0 de uma biblioteca, mas o servidor de CI realiza o build usando a versão 1.0.
 
-Adicionalmente, recomenda-se que um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.
+
+Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve imediatamente parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta o trabalho dos outros desenvolvedores, pois eles não vão conseguir compilar ou executar o código. Costuma-se dizer que nada em uma empresa de software tem maior prioridade do que a correção de um build quebrado. No entanto, a solução pode ser simplesmente reverter o código para a versão anterior ao commit com problemas.
+
+Um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Por exemplo, ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como entar em uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
