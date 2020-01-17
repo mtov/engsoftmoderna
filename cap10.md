@@ -222,7 +222,7 @@ CI também não é compatível com projetos de código livre. Na maioria das vez
 
 ### Feature Flags
 
-## 10.7 Engenharia de Releases
+## 10.6 Engenharia de Releases
 
 ## Bibliografia
 
