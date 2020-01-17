@@ -737,7 +737,7 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![](figs/cap1/uml.png){width=45%}
+![](figs/cap1/uml.svg){width=45%}
 
 Exemplo de Diagrama de Classe UML com duas classes, Cliente e
 ContaBancaria
