@@ -293,10 +293,10 @@ de Métodos Ágeis. Conforme visto, quando os requisitos mudam
 frequentemente e o sistema não é de missão crítica, não vale a pena
 investir anos na elaboração de um Documento Detalhado de Requisitos.
 Corre-se o risco de quando ele ficar pronto, os requisitos já estarem
-obsoletos  —  ou um concorrente já ter construído um sistema
+obsoletos —  ou um concorrente já ter construído um sistema
 equivalente e dominado o mercado. Em tais sistemas, como vimos no
 Capítulo 2, pode-se adotar documentos simplificados de especificação de
-requisitos \- —  chamados de **Histórias de Usuários**  —  e
+requisitos — chamados de **Histórias de Usuários**  —  e
 incorporar um representante dos clientes, em tempo integral, ao time de
 desenvolvimento, para tirar dúvidas e explicar os requisitos para os
 desenvolvedores. Dada a importância de tais cenários  —  sistemas
@@ -324,8 +324,8 @@ sistema de software. Um possível teste envolve a construção de um
 **Produto Mínimo Viável** (**MVP**). Um MVP é um sistema funcional, mas
 que possui apenas o conjunto mínimo de funcionalidades necessárias para
 comprovar a viabilidade de um produto ou sistema. Dada a importância
-contemporânea de tais cenários \- —  sistemas para resolver problemas
-em mercados desconhecidos ou incertos  —  estudaremos mais sobre MVPs
+contemporânea de tais cenários — sistemas para resolver problemas
+em mercados desconhecidos ou incertos — estudaremos mais sobre MVPs
 na Seção 3.5.
 
 ## 3.3. Histórias de Usuários
@@ -359,18 +359,18 @@ História de Usuário = Cartão + Conversas + Confirmação
 A seguir, exploramos cada uma dessas partes de uma história:
 
 -   **Cartão**, usado pelos clientes para escrever, na sua linguagem e
-    > em poucas sentenças, uma funcionalidade que esperam ver
-    > implementada no sistema.
+    em poucas sentenças, uma funcionalidade que esperam ver
+    implementada no sistema.
 
 -   **Conversas** entre clientes e desenvolvedores, por meio das quais
-    > os clientes explicam e detalham o que escreveram em cada cartão.
-    > Como dito antes, a visão de métodos ágeis sobre Engenharia de
-    > Requisitos é pragmática: como especificações textuais e completas
-    > de requisitos não funcionam, elas foram eliminadas e substituídas
-    > por comunicação verbal entre desenvolvedores e clientes. Por isso,
-    > métodos ágeis  —  conforme estudamos no Capítulo 2  —  incluem
-    > nos times de desenvolvimento um representante dos clientes, que
-    > participa do time em tempo integral.
+    os clientes explicam e detalham o que escreveram em cada cartão.
+    Como dito antes, a visão de métodos ágeis sobre Engenharia de
+    Requisitos é pragmática: como especificações textuais e completas
+    de requisitos não funcionam, elas foram eliminadas e substituídas
+    por comunicação verbal entre desenvolvedores e clientes. Por isso,
+    métodos ágeis  —  conforme estudamos no Capítulo 2  —  incluem
+    nos times de desenvolvimento um representante dos clientes, que
+    participa do time em tempo integral.
 
 -   **Confirmação**, que é basicamente um teste de alto nível  —  de
     > novo especificado pelo cliente  —  para verificar se a história
@@ -424,8 +424,8 @@ Boas histórias devem possuir as seguintes características (cujas
 iniciais em inglês dão origem ao acrônimo INVEST):
 
 -   Histórias devem ser **independentes**: dadas duas histórias X e Y,
-    > deve ser possível implementá-las em qualquer ordem. Para isso,
-    > idealmente, não devem existir dependências entre elas.
+    deve ser possível implementá-las em qualquer ordem. Para isso,
+    idealmente, não devem existir dependências entre elas.
 
 -   Histórias devem ser abertas para **negociação**. Frequentemente,
     > costuma-se dizer que histórias (o cartão) são convites para
@@ -491,8 +491,7 @@ sistema pode durar uma semana, deve-se ter em mãos uma boa lista de
 histórias de usuários, que demandem alguns sprints para serem
 implementadas.
 
-Exemplo: Sistema de Controle de Bibliotecas
--------------------------------------------
+### Exemplo: Sistema de Controle de Bibliotecas
 
 Nesta seção, vamos mostrar exemplos de histórias para um sistema de
 controle de bibliotecas. Elas estão associadas a três tipos de usuários:
@@ -580,7 +579,7 @@ pelos clientes. Em uma tradução literal, os desenvolvedores ficam
 cobrindo as histórias com camadas de ouro, quando isso não irá gerar
 valor para os usuários do sistema.
 
-**💡Perguntas Frequentes**: Antes de finalizar, e como comum neste livro,
+💡**Perguntas Frequentes**: Antes de finalizar, e como comum neste livro,
 vamos responder algumas perguntas sobre histórias de usuários:
 
 **Como especificar requisitos não-funcionais usando histórias?** Essa é
@@ -1218,17 +1217,13 @@ sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para
 isso, podemos modificar a página principal, incluindo o seguinte trecho
 de código:
 
-+----------------------------------------------------------+
-| version = Math.Random(); // número aleatório entre 0 e 1 |
-|                                                          |
-| **if** (version \< 0.5)                                  |
-|                                                          |
-| \"execute a versão de controle\"                         |
-|                                                          |
-| **else**                                                 |
-|                                                          |
-| \"execute a versão de tratamento\"                       |
-+----------------------------------------------------------+
+```
+version = Math.Random(); // número aleatório entre 0 e 1                                                      
+if (version < 0.5)                                  
+    "execute a versão de controle"   
+else                                                 
+    "execute a versão de tratamento"                       
+```
 
 Após um certo número de acessos, o teste é encerrado e verificamos se a
 versão de tratamento, de fato, aumentou a taxa de conversão de usuários.

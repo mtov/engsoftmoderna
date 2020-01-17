@@ -122,6 +122,8 @@ Por outro lado, monorepos demandam o uso de ferramentas que ajudem a navegar em 
 
 ## 10.3 Integração Contínua
 
+Para explicar o conceito de Integração Contínua (CI), iniciamos com uma subseção de motivação. Em seguida, apresentamos o conceito propriamente dito. Feito isso, discutimos outras práticas que uma organização deve adotar junto com CI. Terminamos com uma breve discussão sobre cenários que podem desmotivar o emprego de CI em uma organização.
+
 ### Motivação
 
 Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de **master** (quando usa-se Git) ou **trunk** (quando usa-se outros sistemas, como svn). Além do branch principal, os usuários podem criar seus próprios branches.
@@ -182,7 +184,7 @@ Por fim, não basta ter builds e testes automatizados. É importante que eles se
 
 O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve imediatamente parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta negativamente o trabalho dos outros desenvolvedores, pois eles nem vão conseguir compilar o código. Costuma-se dizer que nada em uma empresa tem maior prioridade do que a correção de um build quebrado. No entanto, veja que a solução pode ser simplesmente reverter o código para a versão imediatamente anterior ao último commit.
 
-Adicionalmente, recomenda-se que um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.
+Adicionalmente, um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Nessa mesma linha de raciocínio, o desenvolvedor não deve nem mesmo iniciar outras tarefas importantes, como uma reunião, sair para almoçar fora ou ir para a casa, antes do resultado do servidor de CI.
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
