@@ -165,7 +165,7 @@ Quando se usa CI, o master é constantemente atualizado com código novo. Para g
 
 #### Build Automatizado
 
-Build é um nome usado para designar a compilação de todo os arquivos de um sistema, até a geração uma versão executável. Quando se usa CI, o build deve ser totalmente automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limte de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
+Build é um nome usado para designar a compilação de todo os arquivos de um sistema, até a geração uma versão executável. Quando se usa CI, o build deve ser totalmente automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
 
 #### Testes Automatizados
 
@@ -185,7 +185,7 @@ O objetivo principal de um servidor de integração contínua é evitar a integr
 
 Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve parar tudo que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta o trabalho dos outros desenvolvedores, pois eles não vão conseguir compilar ou executar o código. Costuma-se dizer que nada em uma empresa de software tem maior prioridade do que a correção de um build quebrado. No entanto, a solução pode ser simplesmente reverter o código para a versão anterior ao commit com problemas.
 
-Ainda nesta linha de raciocínio, um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Por exemplo, ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Ele não deve também iniciar outras tarefas importantes, como entar em uma reunião, sair para almoçar ou ir para a casa, antes do resultado do servidor de CI.
+Ainda nesta linha de raciocínio, um desenvolvedor somente deve avançar para uma próxima tarefa de programação após receber o resultado do servidor de CI. Por exemplo, ele não deve começar a escrever código novo, antes de ter certeza de que seu último commit passou pelo serviço de integração contínua. Ele não deve também iniciar outras tarefas importantes, como entrar em uma reunião, sair para almoçar ou ir para a casa, antes do resultado do servidor de CI.
 
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
@@ -209,15 +209,15 @@ Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho.
 
 #### Programação Pareada
 
-Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programção pareada com CI. Porém, tal uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. Embora, nesse caso, como o código já foi integrado, os custos de aplicar a revisão serão maiores. 
+Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programação pareada com CI. Porém, tal uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. No entanto, nesse caso, como o código já foi integrado, os custos de aplicar a revisão podem ser maiores. 
 
 ### Quando não usar CI?
 
-Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. Dependendo da organização, do domínio do sistema (que pode ser um sistema mais cítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil aplicar esse limite.
+Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. No entanto, dependendo da organização, do domínio do sistema (que pode ser um sistema crítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil aplicar esse limite.
 
-No entanto, é preciso lembrar que tal limite não é uma lei da natureza. Talvez, seja difícil adotá-lo, mas seja factível realizar uma integração a cada dois ou três dias. Ou seja, qualquer prática de Engenharia de Software — incluindo integração contínua — não deve ser considerada ao pé da letra, isto é, exatamente comoestá descrito no manual ou no livro texto. Adaptações ao contexto da organização são sempre possíveís e devem ser consideradas. Por exemplo, experimentação com diferentes intervalos de integração pode ajudar a definir a melhor configuração para uma organização específica.
+E também é preciso lembrar que esse limite não é uma lei da natureza. Por exemplo, talvez seja mais factível realizar uma integração a cada dois ou três dias. Na verdade, qualquer prática de Engenharia de Software — incluindo integração contínua — não deve ser considerada ao pé da letra, isto é, exatamente como está descrita no manual ou no livro texto. Adaptações justificadas pelo contexto da organização são sempre possíveis e devem ser consideradas. Experimentação com diferentes intervalos de integração pode também ajudar a definir a melhor configuração para uma determinada organização.
 
-CI também não é compatível com projetos de código livre. Na maioria das vezes, os desenvolvedores de tais projetos são voluntários e não têm disponibilidade para trabalhar diariamente no seu código. Nesses casos, um modelo baseado em Pull Requests e Forks, conforme usado pelo GitHub, é mais adequado.
+CI também não é compatível com projetos de código livre. Na maioria das vezes, os desenvolvedores desses projetos são voluntários e não têm disponibilidade para trabalhar diariamente no seu código. Nesses casos, um modelo baseado em Pull Requests e Forks, conforme usado pelo GitHub, é mais adequado.
 
 
 ## 10.5 Entrega Contínua
@@ -236,8 +236,27 @@ CI também não é compatível com projetos de código livre. Na maioria das vez
 
 ## Exercícios de Fixação
 
-1. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuos delivery*) e implantação contínua (*continuos deployment*).
+1. Defina e descreva os objetivos de DevOps.
 
-2. Pesquise na Internet o significado da expressão Teatro de CI (*CI Theater*) e então descreva esse significado com suas próprias palavras.
+2. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para "Engenheiro Devops", requerendo habilidades como as seguintes:
+
+```
+* Ferramentas de controle de versão (Git, Bitbucket, SVN, etc)
+* Gerenciadores de dependência e build (Maven, Gradle e etc)
+* Ferramentas de integração contínua (Jenkins, Bamboo, VSTS) 
+* Administração de servidores em Cloud: AWS e Azure 
+* Sistemas Operacionais (Ubuntu, CentOS e Red Hat)
+* Banco de dados (DynamoDB, Aurora Mysql) 
+* Docker e orquestração de docker (Kubernetes, Mesos, Swarm) 
+* Desenvolvimento com APIs REST, Java
+```
+
+Considerando a definição de DevOps que respondeu no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
+
+3. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuos delivery*) e implantação contínua (*continuos deployment*).
+
+4. Porque integração contínua, entrega contínua e implantação contínua são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.
+
+5. Pesquise na Internet o significado da expressão Teatro de CI (*CI Theater*) e então descreva esse significado com suas próprias palavras.
 
 
