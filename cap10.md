@@ -207,13 +207,20 @@ Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho.
 
 #### Programação Pareada
 
-Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é imediatamente revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, o uso de programção pareada é recomendado quando se adota CI. Porém, ele também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. Mas nesse caso, como o código já foi integrado, os custos de aplicar a revisão serão maiores. 
+Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programção pareada com CI. Porém, tal uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. Embora, nesse caso, como o código já foi integrado, os custos de aplicar a revisão serão maiores. 
+
+### Quando não usar CI?
+
+Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. Dependendo da organização, do domínio do sistema (que pode ser um sistema mais cítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil aplicar esse limite.
+
+No entanto, é preciso lembrar que tal limite não é uma lei da natureza. Talvez, seja difícil adotá-lo, mas seja factível realizar uma integração a cada dois ou três dias. Ou seja, qualquer prática de Engenharia de Software — incluindo integração contínua — não deve ser considerada ao pé da letra, isto é, exatamente comoestá descrito no manual ou no livro texto. Adaptações ao contexto da organização são sempre possíveís e devem ser consideradas. Por exemplo, experimentação com diferentes intervalos de integração pode ajudar a definir a melhor configuração para uma organização específica.
+
+CI também não é compatível com projetos de código livre. Na maioria das vezes, os desenvolvedores de tais projetos são voluntários e não têm disponibilidade para trabalhar diariamente no seu código. Nesses casos, um modelo baseado em Pull Requests e Forks, conforme usado pelo GitHub, é mais adequado.
+
 
 ## 10.5 Entrega Contínua
 
 ### Feature Flags
-
-## 10.6 Infraestrutura como Código
 
 ## 10.7 Engenharia de Releases
 
