@@ -48,7 +48,7 @@
 </header>
 <h1 data-number="1" id="processos" data-number="1"><span class="header-section-number">2</span> Processos</h1>
 <blockquote>
-<p>In software development, <q>perfect</q> is a verb, not an adjective. There is no perfect process. There is no perfect design. There are no perfect stories. You can, however, perfect your process, your design, and your stories. – Kent Beck</p>
+<p><em>In software development, perfect is a verb, not an adjective. There is no perfect process. There is no perfect design. There are no perfect stories. You can, however, perfect your process, your design, and your stories.</em> – Kent Beck</p>
 </blockquote>
 <p>Este capítulo inicia com uma apresentação sobre a importância de processos de software (Seção 2.1). Em seguida, discutimos questões gerais e preliminares sobre processos ágeis de desenvolvimento de software (Seção 2.2), incluindo uma apresentação sobre o contexto histórico que motivou o surgimento desse tipo de processo. As próximas seções tratam de três métodos ágeis: Extreme Programming (Seção 2.3), Scrum (Seção 2.4) e Kanban (Seção 2.5). Depois, temos uma seção dedicada a discutir quando métodos ágeis não são recomendados (Seção 2.6). Por fim, na Seção 2.7, discutimos alguns processos tradicionais, principalmente o Processo Unificado.</p>
 <h2 data-number="1.1" id="importância-de-processos" data-number="1.1"><span class="header-section-number">2.1</span> Importância de Processos</h2>
@@ -84,10 +84,10 @@
 <p>A característica principal de processos ágeis é a adoção de <strong>ciclos curtos e iterativos de desenvolvimento</strong>, por meio dos quais um sistema é implementado de forma gradativa; começando por aquilo que é mais urgente para o cliente. De início, implementa-se uma primeira versão do sistema, com as funcionalidades que segundo o cliente são para <q>ontem</q>, isto é, possuem prioridade máxima. Em seguida, essa versão é validada pelo cliente. Se ela for aprovada, um novo ciclo — ou <strong>iteração</strong> — inicia-se, com mais algumas funcionalidades, também priorizadas pelos clientes. Normalmente, esses ciclos são curtos, com duração de um mês, talvez até um pouco menos. Assim, o sistema vai sendo construído de forma incremental; sendo cada incremento devidamente aprovado pelos clientes. O desenvolvimento termina quando o cliente decide que todos os requisitos estão implementados.</p>
 <p>As próximas figuras comparam um desenvolvimento em Waterfall e um desenvolvimento Ágil.</p>
 <figure>
-<img src="figs/cap2/waterfall.jpg" style="width:70.0%" alt="" /><figcaption>Exemplo de desenvolvimento usando um Processo Waterfall. O sistema fica pronto apenas no final.</figcaption>
+<img src="figs/cap2/waterfall2.svg" style="width:70.0%" alt="" /><figcaption>Desenvolvimento usando um Processo Waterfall. O sistema fica pronto apenas no final.</figcaption>
 </figure>
 <figure>
-<img src="figs/cap2/agile.jpg" style="width:70.0%" alt="" /><figcaption>Exemplo de desenvolvimento usando um Processo Ágil. A cada iteração (representadas pelos retângulos) gera-se um incremento no sistema (S++), que já pode ser validado e testado pelos usuários finais.</figcaption>
+<img src="figs/cap2/agile.svg" style="width:70.0%" alt="" /><figcaption>Desenvolvimento usando um Processo Ágil. A cada iteração (representadas pelos retângulos) gera-se um incremento no sistema (S++), que já pode ser validado e testado pelos usuários finais.</figcaption>
 </figure>
 <p>No entanto, a figura anterior pode sugerir que, em desenvolvimento ágil, cada iteração é um mini-waterfall, incluindo todas as fases de um processo Waterfall. Isso não é verdadeiro; em geral, as iterações em métodos ágeis não são um pipeline de tarefas, como em Waterfall (mais sobre isso nas próximas seções). A figura também pode sugerir que ao final de cada iteração tem-se que colocar um sistema em produção, para uso pelos usuários finais. Isso também não é verdade. De fato, o objetivo é entregar um sistema funcional, isto é, que realize tarefas úteis. Porém, a decisão de colocá-lo em produção envolve outras variáveis, como riscos para o negócio da empresa, disponibilidade de servidores, campanhas de marketing, elaboração de manuais, treinamento de usuários, etc.</p>
 <p>Outras características de processos ágeis incluem:</p>
@@ -128,7 +128,7 @@
 <h3 data-number="1.3.1" id="valores" data-number="1.3.1"><span class="header-section-number">2.3.1</span> Valores</h3>
 <p>XP defende que o desenvolvimento de projetos de software seja norteado por três valores principais: comunicação, simplicidade e feedback. Na verdade, argumenta-se que esses valores são universais, para convívio humano. Ou seja, eles não servem apenas para guiar projetos de desenvolvimento, mas a própria vida em sociedade. Uma boa <strong>comunicação</strong> é importante em qualquer projeto, não apenas para evitar, mas também para aprender com erros. O segundo valor de XP é <strong>simplicidade</strong>, pois em todo sistema complexo e desafiador existem sistemas ou subsistemas mais simples, que às vezes não são considerados. Por último, existem riscos em todos os projetos de software: os requisitos mudam, a tecnologia muda, a equipe de desenvolvimento muda, o mundo muda, etc. Um valor que ajuda a controlar tais riscos é estar aberto ao <strong>feedback</strong> dos stakeholders, a fim de que correções de rota sejam implementadas o quanto antes. Em outras palavras, é difícil desenvolver o sistema de software <q>certo</q> em uma primeira e única tentativa. Frederick Brooks tem uma frase conhecida sobre esse fenômeno:</p>
 <blockquote>
-<p>Planeje-se para jogar fora algumas partes de seu sistema, pois você fará isso.</p>
+<p><q>Planeje-se para jogar fora algumas partes de seu sistema, pois você fará isso.</q></p>
 </blockquote>
 <p>Por isso, feedback é um valor essencial para garantir que as partes ou versões que serão descartadas sejam identificadas o quanto antes, de forma a diminuir prejuízos e retrabalho. Além dos três valores mencionados, XP também defende outros valores, como <strong>coragem</strong>, <strong>respeito</strong> e <strong>qualidade de vida</strong>.</p>
 <h3 data-number="1.3.2" id="princípios" data-number="1.3.2"><span class="header-section-number">2.3.2</span> Princípios</h3>
@@ -436,14 +436,14 @@ Veja uma foto a seguir.
 <li><p>As demais colunas são os passos que devem ser seguidos para transformar uma história do usuário em uma funcionalidade executável. Por exemplo, pode-se ter colunas como Especificação, Implementação e Revisão de Código. A ideia, portanto, é que as histórias sejam processadas passo a passo, da esquerda para a direita, como em uma linha de montagem. Além disso, cada coluna é dividida em duas sub-colunas: <q>em execução</q> e <q>concluídas</q>. Por exemplo, a coluna implementação tem duas sub-colunas: tarefas em implementação e tarefas implementadas. As tarefas concluídas em um passo estão aguardando serem puxadas, por um membro do time, para o próximo passo. Por isso, Kanban é chamado de um sistema <em>pull</em>.</p></li>
 </ul>
 <p>Mostra-se abaixo um exemplo de Quadro Kanban. Observe que existe uma história no backlog (H3), além de uma história (H2) que já foi puxada por algum membro do time para o passo de especificação. Existem ainda quatro tarefas (T6 a T9) que foram especificadas a partir de uma história anterior. Continuando, existem duas tarefas em implementação (T4 e T5) e existe uma tarefa implementada e aguardando ser puxada para revisão de código (T3). No último passo, existe uma tarefa em revisão (T2) e uma tarefa cujo processamento está concluído (T1). Por enquanto, não se preocupe com a sigla WIP que aparece em todos os passos, exceto no backlog. Vamos explicá-la em breve. Além disso, representamos as histórias e tarefas pelas letras H e T, respectivamente. Porém, em um quadro real, ambas são cartões auto-adesivos com uma pequena descrição. O Quadro Kanban pode ser assim montado em uma das paredes do ambiente de trabalho do time.</p>
-<p><img src="figs/cap2/kanban1.jpg" style="width:80.0%" /></p>
+<p><img src="figs/cap2/kanban1.png" style="width:80.0%" /></p>
 <p>Agora, mostraremos uma evolução do projeto. Isto é, alguns dias depois, o Quadro Kanban passou para o seguinte estado (as tarefas que avançaram no quadro estão em vermelho).</p>
-<p><img src="figs/cap2/kanban2.jpg" style="width:80.0%" /></p>
+<p><img src="figs/cap2/kanban2.png" style="width:80.0%" /></p>
 <p>Veja que a história H2 desapareceu, pois foi quebrada em três tarefas (T10, T11 e T12). O objetivo da fase de especificação é exatamente transformar uma história em uma lista de tarefas. Continuando, T6 e T7 — que antes estavam esperando — entraram em implementação. Já T3 entrou na fase de revisão de código. Por fim, a revisão de T2 terminou. Veja ainda que, neste momento, não existe nenhuma tarefa implementada e aguardando ser puxada para revisão.</p>
 <p>Como em outros métodos ágeis, times Kanban são auto-organizáveis. Isso significa que eles têm autonomia para definir qual tarefa vai ser puxada para o próximo passo. Eles também são cross-funcionais, isto é, devem incluir membros capazes de realizar todos os passos do Quadro Kanban.</p>
 <p>Por fim, resta explicar o conceito de <strong>Limites WIP</strong> (<em>Working in Progress</em>). Via de regra, métodos de gerenciamento de projetos têm como objetivo garantir um ritmo sustentável de trabalho. Para isso, deve-se evitar duas situações extremas: (1) o time ficar ocioso boa parte do tempo, sem tarefa para realizar; ou (2) o time ficar sobrecarregado de trabalho e, por isso, não conseguir produzir software de qualidade. Para evitar a segunda situação — sobrecarga de trabalho — Kanban propõe um limite máximo de tarefas que podem estar em cada um dos passos de um Quadro Kanban. Esse limite é conhecido pelo nome Limite WIP, isto é, trata-se do limite máximo de cartões presentes em cada passo, contando aqueles na primeira coluna (em andamento) e aqueles na segunda coluna (concluídos) do passo. A exceção é o último passo, onde o WIP aplica-se apenas à primeira sub-coluna, já que não faz sentido aplicar um limite ao número de tarefas concluídas pelo time.</p>
 <p>Abaixo, reproduzimos o último Quadro Kanban, mas com os limites WIP. Eles são os números que aparecem abaixo do nome de cada passo, na primeira linha do quadro. Ou seja, nesse Quadro Kanban, admite-se um máximo de 2 histórias em especificação; 5 tarefas em implementação; e 3 tarefas em revisão. Vamos deixar para explicar o limite WIP do passo Especificação por último. Mas podemos ver que existem 4 tarefas em implementação (T4, T5, T6 e T7). Portanto, abaixo do WIP desse passo, que é igual a 5 tarefas. Em Revisão de Código, o limite é de 3 tarefas e também está sendo respeitado, pois existe apenas uma tarefa em revisão (T3). Veja que para fins de verificar o limite WIP contam-se as tarefas em andamento (1a sub-coluna de cada passo) e concluídas (2a sub-coluna de cada passo), com exceção do último passo, no qual consideram-se apenas as tarefas da primeira sub-coluna (T3, no exemplo).</p>
-<p><img src="figs/cap2/kanban3.jpg" style="width:80.0%" /></p>
+<p><img src="figs/cap2/kanban3.png" style="width:80.0%" /></p>
 <p>Agora vamos explicar o WIP do passo Especificação. Para verificar o WIP desse passo, deve-se somar as histórias em especificação (zero no quadro anterior) e as histórias que já foram especificadas. No caso, temos duas histórias especificadas. Ou seja, T8 e T9 são tarefas que resultaram da especificação de uma mesma história. E as tarefas T10, T11 e T12 são resultado da especificação de uma segunda história. Portanto, para fins do cálculo de WIP, temos duas histórias no passo, o que está dentro do seu limite, que também é 2. Para facilitar a visualização, costuma-se representar as tarefas resultantes da especificação de uma mesma história em uma única linha. Seguindo esse padrão, para calcular o WIP do passo Especificação, deve-se somar as histórias da primeira subcoluna (zero, no nosso exemplo) com o número de linhas na segunda coluna (duas).</p>
 <p>Ainda no quadro anterior, e considerando os limites WIP, tem-se que:</p>
 <ul>
@@ -486,7 +486,7 @@ Veja uma foto a seguir.
 <li><p>Throughput (TP): taxa de chegada dessas tarefas nesse passo</p></li>
 <li><p>Lead Time (LT): tempo que cada tarefa fica nesse passo</p></li>
 </ul>
-<p>Ou seja, de acordo com a Lei de Little: <strong>WIP = TP "* LT</strong>. Visualmente, podemos representar a Lei de Little da seguinte forma:</p>
+<p>Ou seja, de acordo com a Lei de Little: <strong>WIP = TP * LT</strong>. Visualmente, podemos representar a Lei de Little da seguinte forma:</p>
 <figure>
 <img src="figs/cap2/lei-little.png" style="width:40.0%" alt="" /><figcaption>Lei de Little: WIP = TP * LT</figcaption>
 </figure>
@@ -577,15 +577,11 @@ Veja uma foto a seguir.
 <li><p>Suponha dois times, A e B, atuando em projetos diferentes, contratados por empresas distintas, sem conexões entre eles. Porém, ambos os times adotam sprints de 15 dias e ambos possuem 5 desenvolvedores. Nos seus projetos, o time A considera que sua velocidade é de 24 pontos. Já o time B assume uma velocidade de 16 pontos. Pode-se afirmar que A é 50% mais produtivo que B? Justifique sua resposta.</p></li>
 <li><p>Quais são as principais diferenças entre Scrum e Kanban?</p></li>
 <li><p>Quais são as diferenças entre um Quadro Scrum e um Quadro Kanban?</p></li>
-<li><p>Qual o erro existe no seguinte Quadro Kanban?</p></li>
-</ol>
-<p><img src="figs/cap2/kanban4.jpg" style="width:80.0%" /></p>
-<ol start="13" type="1">
-<li>Suponha o seguinte quadro Kanban. Neste momento, o time não consegue trabalhar na especificação de novas histórias, pois o WIP do passo Especificação está sendo totalmente preenchido por itens esperando movimentação para o passo seguinte (Implementação). O que seria mais recomendado neste momento: (a) desrespeitar o WIP e já puxar uma nova história do Backlog para Especificação; ou (b) ajudar o time nas três tarefas em Validação, de forma a desbloquear o fluxo do processo.</li>
-</ol>
-<p><img src="figs/cap2/kanban5.jpg" style="width:80.0%" /></p>
-<ol start="14" type="1">
-<li>Seja um processo Kanban, dividido em quatro passos. A tabela abaixo informa o lead time de cada um deles e o throughout do passo C, que é o passo mais lento. Com base nesses valores, calcule o WIP de cada passo (última coluna da tabela).</li>
+<li><p>Qual o erro existe no seguinte Quadro Kanban?</p>
+<p><img src="figs/cap2/kanban4.png" style="width:80.0%" /></p></li>
+<li><p>Suponha o seguinte quadro Kanban. Neste momento, o time não consegue trabalhar na especificação de novas histórias, pois o WIP do passo Especificação está sendo totalmente preenchido por itens esperando movimentação para o passo seguinte (Implementação). O que seria mais recomendado neste momento: (a) desrespeitar o WIP e já puxar uma nova história do Backlog para Especificação; ou (b) ajudar o time nas três tarefas em Validação, de forma a desbloquear o fluxo do processo.</p>
+<p><img src="figs/cap2/kanban5.png" style="width:80.0%" /></p></li>
+<li><p>Seja um processo Kanban, dividido em quatro passos. A tabela abaixo informa o lead time de cada um deles e o throughout do passo C, que é o passo mais lento. Com base nesses valores, calcule o WIP de cada passo (última coluna da tabela).</p></li>
 </ol>
 <table style="width:85%;">
 <colgroup>
@@ -608,13 +604,17 @@ Veja uma foto a seguir.
 <tr class="odd">
 <td>A</td>
 <td>4</td>
-<td>"-</td>
+<td><ul>
+<li></li>
+</ul></td>
 <td></td>
 </tr>
 <tr class="even">
 <td>B</td>
 <td>3</td>
-<td>"-</td>
+<td><ul>
+<li></li>
+</ul></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -626,7 +626,9 @@ Veja uma foto a seguir.
 <tr class="even">
 <td>D</td>
 <td>5</td>
-<td>"-</td>
+<td><ul>
+<li></li>
+</ul></td>
 <td></td>
 </tr>
 </tbody>
@@ -634,10 +636,8 @@ Veja uma foto a seguir.
 <ol start="15" type="1">
 <li><p>Por que se recomenda que os limites WIP calculados usando a Lei de Little sejam incrementados, por exemplo em 50%, de forma a admitir uma margem de erro? Em outros palavras, quais eventos podem originar esses erros na estimativa dos WIPs?</p></li>
 <li><p>Descreva os principais recursos oferecidos por Waterfall, Scrum e Kanban para controlar riscos e garantir um fluxo de trabalho sustentável e que propicie o desenvolvimento de software com qualidade.</p></li>
-<li><p>Seja o seguinte gráfico, que mostra — para um determinado sistema — como os custos de mudanças variam conforme a fase do desenvolvimento em que elas são realizadas. (a) Qual método de desenvolvimento você recomendaria para esse sistema? Justifique sua resposta. (b) Sistemas de quais domínios podem ter uma curva de custos de mudanças semelhante a essa?</p></li>
-</ol>
-<p><img src="figs/cap2/custo-mudancas.png" style="width:45.0%" /></p>
-<ol start="18" type="1">
+<li><p>Seja o seguinte gráfico, que mostra — para um determinado sistema — como os custos de mudanças variam conforme a fase do desenvolvimento em que elas são realizadas. (a) Qual método de desenvolvimento você recomendaria para esse sistema? Justifique sua resposta. (b) Sistemas de quais domínios podem ter uma curva de custos de mudanças semelhante a essa?</p>
+<p><img src="figs/cap2/custo-mudancas.png" style="width:45.0%" /></p></li>
 <li><p>Por que métodos como o Processo Unificado (UP) e Espiral não são considerados ágeis? E qual a diferença deles para o Modelo Waterfall?</p></li>
 <li><p>O artigo <q><em>Development and Deployment at Facebook</em></q> (<a href="https://research.fb.com/publications/development-and-deployment-at-facebook/">link</a>) apresenta os métodos e práticas de desenvolvimento de software usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2), os autores fazem uma distinção entre alguns métodos de desenvolvimento, baseando-se na frequência com que versões de um sistema são liberadas para uso quando se adota cada um deles. Complete a seguinte tabela informando a frequência de releases mencionada no artigo para alguns métodos e políticas de liberação de software.</p></li>
 </ol>

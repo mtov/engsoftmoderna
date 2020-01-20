@@ -1,7 +1,7 @@
 
 # DevOps (em andamento)
 
-> "Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds." -- G. Kim, J. Humble, P. Debois, J. Willes
+> *Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds.* -- G. Kim, J. Humble, P. Debois, J. Willes
 
 ## Introdução
 

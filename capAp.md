@@ -1,7 +1,7 @@
 
 # Apêndice A - Git 
 
-> *The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics. -- Linus Torvalds*
+> *The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics.* -- Linus Torvalds
 
 Neste apêndice, apresentamos e discutimos exemplos de uso do sistema Git, que é o sistema de controle de versões mais usado atualmente. Inspirados pela frase acima, de Linus Torvalds, criador do Git, vamos focar nos conceitos e comandos básicos desse sistema. Como sugere a frase, é importante dominar esses comandos antes de se aventurar no uso de comandos mais avançados. Caso o leitor não tenha conhecimento dos objetivos e vantagens proporcionados por um sistema de controle de versões, recomendamos primeiro a leitura da seção "Controle de Versões", do Capítulo 10 deste livro.
 

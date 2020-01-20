@@ -1,7 +1,7 @@
 
 # Prefácio {.unnumbered}
 
-> A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.
+> *A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.*
  -- Eduardo Giannetti
 
 A ideia de escrever este livro surgiu no início de 2019, quando fui alocado para ministrar a disciplina Engenharia de Software, do Bacharelado em Ciência da Computação, da UFMG. Para preparar o curso, comecei com uma análise dos principais livros de Engenharia de Software. Para minha surpresa, percebi que eles tinham mudado pouco desde que cursei a disciplina na minha graduação: há mais de 25 anos!

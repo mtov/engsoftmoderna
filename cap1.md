@@ -1,7 +1,7 @@
 
 # Introdução
 
-> Our civilization runs on software. -- Bjarne Stroustrup
+> *Our civilization runs on software.* -- Bjarne Stroustrup
 
 Neste primeiro capítulo, vamos definir e contextualizar o que é
 Engenharia de Software (Seção 1.1) e dar uma visão geral dos principais
@@ -80,20 +80,12 @@ Conferência da OTAN é considerada o marco histórico de criação da área
 de Engenharia de Software.
 
 ![Cientistas na conferência da OTAN de 1968 sobre Engenharia de Software.
-Reprodução autorizada pelo Prof. Robert McClure. Para mais fotos da
-conferência, veja este
-[link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html).](figs/cap1/otan.jpg){width=55%}
+Reprodução gentilmente autorizada pelo Prof. Robert McClure.](figs/cap1/otan.jpg){width=55%}
 
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
 ilustra os desafios que esperavam a recém criada área de pesquisa:
 
-> O problema básico é que certas classes de sistemas estão colocando
-> demandas sobre nós que estão além das nossas capacidades e das teorias
-> e métodos de projeto que conhecemos no presente tempo. Em algumas
-> aplicações não existe uma crise, como em rotinas de ordenação e folhas
-> de pagamento, por exemplo. Porém, estamos tendo dificuldades com
-> grandes aplicações. Não podemos esperar que a produção de tais
-> sistemas seja fácil.
+> "O problema básico é que certas classes de sistemas estão colocando demandas sobre nós que estão além das nossas capacidades e das teorias e métodos de projeto que conhecemos no presente tempo. Em algumas aplicações não existe uma crise, como em rotinas de ordenação e folhas de pagamento, por exemplo. Porém, estamos tendo dificuldades com grandes aplicações. Não podemos esperar que a produção de tais sistemas seja fácil."
 
 Passado mais de meio século da Conferência da OTAN, os avanços obtidos
 em técnicas e métodos para construção de software são notáveis. Hoje, já
@@ -359,7 +351,7 @@ esperado. A seguinte frase, bastante famosa, de Edsger W. Dijkstra —
 também prêmio Turing em Computação (1982) — sintetiza não apenas os
 benefícios de testes, mas também suas limitações:
 
-> Testes de software mostram a presença de bugs, mas não sua ausência.
+> "Testes de software mostram a presença de bugs, mas não sua ausência."
 
 Pelo menos três pontos podem ser comentados sobre testes, ainda nesta
 Introdução.
@@ -587,9 +579,7 @@ fornecedores de qualquer natureza, talvez algum nível de governo, etc.
 Existe uma frase muito conhecida, também de Frederick Brooks, que
 captura uma peculiaridade de projetos de software. Segundo Brooks:
 
-> A inclusão de novos desenvolvedores em um projeto que está atrasado
-contribui para torná-lo mais atrasado (*adding manpower to a late
-software project makes it later*)
+> "A inclusão de novos desenvolvedores em um projeto que está atrasado contribui para torná-lo mais atrasado."
 
 Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
@@ -858,9 +848,7 @@ Computer Society
 Esse último é interessante porque é específico para a prática de
 Engenharia de Software. Por exemplo, ele prescreve que:
 
-> Engenheiros de Software devem se comprometer em fazer da análise,
-> especificação, projeto, desenvolvimento, teste e manutenção de software
-> uma profissão benéfica e respeitada.
+> "Engenheiros de Software devem se comprometer em fazer da análise, especificação, projeto, desenvolvimento, teste e manutenção de software uma profissão benéfica e respeitada."
 
 No Brasil, existe também o Código de Ética da Sociedade Brasileira de
 Computação (SBC), que por ser sintético, mas ao mesmo tempo claro,

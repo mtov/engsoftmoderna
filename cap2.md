@@ -1,10 +1,10 @@
 
 # Processos
 
-> In software development, "perfect" is a verb, not an adjective. There
+> *In software development, perfect is a verb, not an adjective. There
 is no perfect process. There is no perfect design. There are no perfect
 stories. You can, however, perfect your process, your design, and your
-stories. -- Kent Beck
+stories.* -- Kent Beck
 
 Este capítulo inicia com uma apresentação sobre a importância de
 processos de software (Seção 2.1). Em seguida, discutimos questões
@@ -166,13 +166,13 @@ decide que todos os requisitos estão implementados.
 As próximas figuras comparam um desenvolvimento em Waterfall e um
 desenvolvimento Ágil.
 
-![Exemplo de desenvolvimento usando um Processo Waterfall. O sistema fica
-pronto apenas no final.](figs/cap2/waterfall.jpg){width=70%}
+![Desenvolvimento usando um Processo Waterfall. O sistema fica
+pronto apenas no final.](figs/cap2/waterfall2){width=70%}
 
 
-![Exemplo de desenvolvimento usando um Processo Ágil. A cada iteração
+![Desenvolvimento usando um Processo Ágil. A cada iteração
 (representadas pelos retângulos) gera-se um incremento no sistema (S++),
-que já pode ser validado e testado pelos usuários finais.](figs/cap2/agile.jpg){width=70%}
+que já pode ser validado e testado pelos usuários finais.](figs/cap2/agile){width=70%}
 
 
 No entanto, a figura anterior pode sugerir que, em desenvolvimento
@@ -298,7 +298,7 @@ sejam implementadas o quanto antes. Em outras palavras, é difícil
 desenvolver o sistema de software "certo" em uma primeira e única
 tentativa. Frederick Brooks tem uma frase conhecida sobre esse fenômeno:
 
-> Planeje-se para jogar fora algumas partes de seu sistema, pois você fará isso.
+> "Planeje-se para jogar fora algumas partes de seu sistema, pois você fará isso."
 
 Por isso, feedback é um valor essencial para garantir que as partes ou
 versões que serão descartadas sejam identificadas o quanto antes, de
@@ -1491,13 +1491,13 @@ quadro real, ambas são cartões auto-adesivos com uma pequena descrição.
 O Quadro Kanban pode ser assim montado em uma das paredes do ambiente de
 trabalho do time.
 
-![](figs/cap2/kanban1.jpg){width=80%}
+![](figs/cap2/kanban1.png){width=80%}
 
 Agora, mostraremos uma evolução do projeto. Isto é, alguns dias depois,
 o Quadro Kanban passou para o seguinte estado (as tarefas que avançaram
 no quadro estão em vermelho).
 
-![](figs/cap2/kanban2.jpg){width=80%}
+![](figs/cap2/kanban2.png){width=80%}
 
 Veja que a história H2 desapareceu, pois foi quebrada em três tarefas
 (T10, T11 e T12). O objetivo da fase de especificação é exatamente
@@ -1541,7 +1541,7 @@ em andamento (1a sub-coluna de cada passo) e concluídas (2a sub-coluna
 de cada passo), com exceção do último passo, no qual consideram-se
 apenas as tarefas da primeira sub-coluna (T3, no exemplo).
 
-![](figs/cap2/kanban3.jpg){width=80%}
+![](figs/cap2/kanban3.png){width=80%}
 
 Agora vamos explicar o WIP do passo Especificação. Para verificar o WIP
 desse passo, deve-se somar as histórias em especificação (zero no quadro
@@ -1667,7 +1667,7 @@ processo Kanban e os itens são tarefas. Assim, temos também que:
 
 *   Lead Time (LT): tempo que cada tarefa fica nesse passo
 
-Ou seja, de acordo com a Lei de Little: **WIP = TP "* LT**. Visualmente,
+Ou seja, de acordo com a Lei de Little: **WIP = TP * LT**. Visualmente,
 podemos representar a Lei de Little da seguinte forma:
 
 ![Lei de Little: WIP = TP * LT](figs/cap2/lei-little.png){width=40%}
@@ -1941,7 +1941,7 @@ Edição, versão 1.1.2, 2014.
 
 12. Qual o erro existe no seguinte Quadro Kanban?
 
-![](figs/cap2/kanban4.jpg){width=80%}
+    ![](figs/cap2/kanban4.png){width=80%}
 
 13. Suponha o seguinte quadro Kanban. Neste momento, o time não consegue
      trabalhar na especificação de novas histórias, pois o WIP do passo
@@ -1952,7 +1952,7 @@ Edição, versão 1.1.2, 2014.
      time nas três tarefas em Validação, de forma a desbloquear o fluxo
      do processo.
 
-![](figs/cap2/kanban5.jpg){width=80%}
+     ![](figs/cap2/kanban5.png){width=80%}
 
 14. Seja um processo Kanban, dividido em quatro passos. A tabela abaixo
      informa o lead time de cada um deles e o throughout do passo C,
@@ -1964,13 +1964,13 @@ Edição, versão 1.1.2, 2014.
 |           |                  |                   |         |
 |           | **médio (dias)** | **(tarefas/dia)** |         |
 +===========+==================+===================+=========+
-| A         | 4                | "-                |         |
+| A         | 4                | -                 |         |
 +-----------+------------------+-------------------+---------+
-| B         | 3                | "-                |         |
+| B         | 3                | -                 |         |
 +-----------+------------------+-------------------+---------+
 | C         | 10               | 0.5               |         |
 +-----------+------------------+-------------------+---------+
-| D         | 5                | "-                |         |
+| D         | 5                | -                 |         |
 +-----------+------------------+-------------------+---------+
 
 15. Por que se recomenda que os limites WIP calculados usando a Lei de
@@ -1990,7 +1990,7 @@ Edição, versão 1.1.2, 2014.
      sua resposta. (b) Sistemas de quais domínios podem ter uma curva
      de custos de mudanças semelhante a essa?
 
- ![](figs/cap2/custo-mudancas.png){width=45%}
+     ![](figs/cap2/custo-mudancas.png){width=45%}
 
 18. Por que métodos como o Processo Unificado (UP) e Espiral não são
      considerados ágeis? E qual a diferença deles para o Modelo
