@@ -212,25 +212,10 @@ No entanto, as características acima ainda são genéricas e abrangentes; por i
 
 *  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
 
-```{=latex}
-\begin{aviso}
-```
-**Aviso**: Todo método de desenvolvimento deve ser entendido como um conjunto de recomendações; cabe a uma organização analisar cada uma e decidir se ela faz sentido no seu contexto. Como resultado, a organização pode ainda decidir por adaptar essas recomendações para atender às suas necessidades. Logo, provavelmente, não existem duas organizações que seguem exatamente o mesmo processo de desenvolvimento, mesmo que elas digam que estão desenvolvendo usando Scrum, por exemplo.
-```{=latex}
-\end{aviso}
-```
-
-```{=latex}
-\begin{esmblock}
-```
 **Aprofundamento**: Neste livro, usamos os termos **processos** e **métodos**. Processo é o conjunto de passos, etapas e tarefas que se usa para construir um software. Toda organização usa um processo para desenvolver seus sistemas, o qual pode ser ágil ou waterfall, por exemplo. Ou, talvez, esse processo pode ser caótico. Porém, o ponto que queremos reforçar é que sempre existe um processo. Já método, no nosso contexto, define e especifica um determinado processo de desenvolvimento (a palavra método tem sua origem no grego, onde significa "caminho para se chegar a um objetivo"). Assim, XP, Scrum e Kanban são métodos ágeis ou, de modo mais extenso, são métodos que definem práticas, atividades, eventos e técnicas compatíveis com princípios ágeis de desenvolvimento de software. Aproveitando que estamos tratando de definições, frequentemente usa-se também o termo **metodologia** quando se fala de processos de software. Por exemplo**,** é comum ver referências a metodologias para desenvolvimento de software, metodologias ágeis, metodologia orientada a objetos, etc. A palavra metodologia, no sentido mais estrito, denota o "ramo da lógica que se ocupa dos métodos das diferentes ciências", segundo o Dicionário Houaiss. No entanto, a palavra também pode ser usada como sinônimo de método, segundo o mesmo dicionário. Apesar disso, nesse livro evitamos usar o termo metodologia e tentamos empregar sempre o termo método.
-```{=latex}
-\end{esmblock}
-```
 
-```{=latex}
-\begin{esmblock}
-```
+**Aviso**: Todo método de desenvolvimento deve ser entendido como um conjunto de recomendações; cabe a uma organização analisar cada uma e decidir se ela faz sentido no seu contexto. Como resultado, a organização pode ainda decidir por adaptar essas recomendações para atender às suas necessidades. Logo, provavelmente, não existem duas organizações que seguem exatamente o mesmo processo de desenvolvimento, mesmo que elas digam que estão desenvolvendo usando Scrum, por exemplo.
+
 **Mundo Real**: O sucesso e impacto de processos ágeis foi
 impressionante. Hoje, a grande maioria das empresas que desenvolvem
 software, independente de seu tamanho ou do foco de seu negócio, usam
@@ -245,9 +230,6 @@ incluindo aquelas que vamos estudar neste capítulo, como Scrum (63%),
 Kanban (36%) e Extreme Programming (16%). Por outro lado, apenas 15% dos
 participantes marcaram Waterfall como resposta.
 
-```{=latex}
-\end{esmblock}
-```
 
 ![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
 usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
@@ -422,9 +404,6 @@ casos, a ideia é evitar dois grupos em uma organização, desenvolvedores
 versus operadores, com um grupo empurrando a responsabilidade pelos
 problemas para o outro.
 
-```{=latex}
-\begin{esmblock}
-```
 
 **Mundo Real**: Um dos primeiros sistemas a adotar XP foi um
 sistema de folha de pagamentos da fabricante de automóveis Chrysler,
@@ -437,9 +416,6 @@ Martin Fowler, participou do projeto, como consultor. No desenvolvimento
 do sistema C3, foram usadas e testadas diversas ideias do método que
 poucos anos depois receberia o nome de XP.
 
-```{=latex}
-\end{esmblock}
-```
 
 ### Práticas sobre o Processo de Desenvolvimento
 
@@ -1381,13 +1357,13 @@ denotar um conjunto de squads.
 **O Dono do Produto pode ser um comitê**? Em outras palavras, pode
 existir mais de um Dono de Produto em um time Scrum? A resposta é não.
 Apenas um membro do time exerce essa função. O objetivo é evitar
-decisões por comitê, que tendem a gerar produtos lotados de features,
-que foram implementadas apenas para atender a determinados membros do
+decisões por comitê, que tendem a gerar produtos lotados de funcionalidades,
+mas que foram implementadas apenas para atender a determinados membros do
 comitê. Porém, nada impede que o Dono do Produto faça a ponte entre o
 time e outros usuários com amplo domínio da área do produto que está
 sendo construído. Na verdade, essa é uma tarefa esperada de Donos de
 Produto, pois às vezes existem requisitos que são do domínio de apenas
-outros colaboradores da organização. Cabe então ao Dono do Produto
+alguns colaboradores da organização. Cabe então ao Dono do Produto
 intermediar as conversas entre os desenvolvedores do time Scrum e tais
 usuários.
 

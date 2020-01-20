@@ -172,7 +172,7 @@ isto é, elas não ocorrem em outros produtos de Engenharia, pelo menos na
 mesma intensidade. Por exemplo, quando a legislação ambiental muda, os
 fabricantes de automóveis tem anos para se conformar às novas leis.
 Adicionalmente, carros não são alterados, pelo menos de forma essencial,
-com novas features, após serem vendidos. Por fim, um carro é um produto
+com novas funcionalidades, após serem vendidos. Por fim, um carro é um produto
 físico e visível, possuindo peso, altura, largura, número de assentos,
 forma geométrica, etc; o que facilita sua avaliação e precificação por
 consumidores finais.
@@ -562,8 +562,8 @@ Um incremento em *z* ocorre quando se lança uma nova release com apenas
 correções de bugs (normalmente, chamada de *patch*); um incremento em
 *y* ocorre quando se lança uma release da biblioteca com pequenas
 funcionalidades (normalmente, chamada de versão *minor*); por fim, um
-incremento em *x* ocorre quando se lança uma release com novas features,
-fundamentalmente diferentes das features da última release (normalmente,
+incremento em *x* ocorre quando se lança uma release com funcionalidades
+muito diferentes daquelas da última release (normalmente,
 chamada de versão *major*). Esse esquema de numeração de releases é
 conhecido como **versionamento semântico**.
 
