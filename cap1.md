@@ -445,9 +445,6 @@ maior inteiro que pode ser representado em 16 bits. Com isso, gerou-se
 um resultado espúrio, que fez com que o sistema de controle do foguete
 funcionasse de forma errática, causando a explosão.
 
-**Vídeo Complementar**: O vídeo da explosão do foguete Ariane 5, em
-1996, pode ser encontrado no Youtube, por exemplo, neste
-[link](https://www.youtube.com/watch?v=kYUrqdUyEpI).
 
 ### Manutenção e Evolução de Software {.unnumbered}
 

@@ -22,7 +22,6 @@ variables:
   documentclass: book
   fontsize: 11pt
   classoption: oneside
-  links-as-notes: true
   colorlinks: true
   linkcolor: blue
   urlcolor: blue

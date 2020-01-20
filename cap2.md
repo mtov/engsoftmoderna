@@ -1024,12 +1024,6 @@ momento em que o projeto começar a gerar os seus primeiros resultados
 financeiros (que também deve ser pequeno, da ordem de um ano, por
 exemplo).
 
-**Vídeo Complementar**: XP já completou 20 anos. Em uma palestra
-comemorativa, realizada em um evento sobre métodos ágeis na França, Kent
-Beck discorreu sobre a história de XP e fez uma reflexão crítica sobre o
-método proposto por ele, indicando as práticas que foram bem sucedidas e
-aquelas que não deram tão certo. Assista o vídeo da palestra, com cerca
-de 40 minutos, neste [link](https://youtu.be/cGuTmOUdFbo).
 
 ## Scrum
 
@@ -1185,11 +1179,7 @@ próxima figura.
 ![Exemplo de Quadro Scrum, mostrando as histórias selecionadas para o
 sprint e as tarefas nas quais elas foram quebradas. Cada tarefa nesse
 quadro pode estar em um dos seguintes estados: a fazer, em andamento, em
-teste ou concluída. Veja que o sprint está planejado para terminar no
-dia 22/12. Foto da
-[Wikipedia](https://commons.wikimedia.org/wiki/File:Scrum_task_board.jpg),
-licença
-CC-BY.](figs/cap2/quadro-scrum.png){width=40%}
+teste ou concluída.](figs/cap2/scrum-board){width=60%}
 
 Uma decisão importante em projetos Scrum envolve os critérios para
 considerar uma história ou tarefa como concluídas (*done*). Esses
@@ -1280,9 +1270,7 @@ seria recomendável que eles se reunissem, separadamente do resto do
 time, para discutir as modificações que pretendem realizar. E, com isso,
 minimizar as chances de possíveis conflitos de integração.
 
-**Vídeo Complementar**: Este vídeo de treinamento da IBM, com 4
-minutos de duração, mostra um exemplo de reunião diária
-([link](https://www.youtube.com/watch?v=GzQjGhD5tSU)).
+
 
 A **Revisão do Sprint** *(Sprint Review*) é uma reunião para mostrar os
 resultados de um sprint. Dela devem participar todos os membros do time
@@ -1421,15 +1409,7 @@ seguintes:
 * Avaliar se os resultados produzidos pelos times Scrum estão, de
      fato, gerando benefícios e valor para a organização.
 
-**Vídeo Complementar**: Junto com Ken Schwaber, Jeff Sutherland é um
-dos criadores do Scrum. Recomendamos duas de suas palestras sobre o
-método, ambas realizadas em 2014. A primeira é uma TED Talk, portanto
-mais genérica e para um público que não é especialista em
-desenvolvimento de software, disponível neste
-[link](https://youtu.be/s4thQcgLCqk), com duração de 16
-minutos. A segunda é uma apresentação técnica disponível neste
-[link](https://youtu.be/2L1oBLTICx4), com duração de um
-hora.
+
 
 ## Kanban
 
@@ -1661,16 +1641,16 @@ de chegada desses itens multiplicado pelo tempo que cada item fica no
 sistema. Traduzindo para o nosso contexto, o sistema é um passo de um
 processo Kanban e os itens são tarefas. Assim, temos também que:
 
-*  WIP: número de tarefas em um dado passo de um processo Kanban
+* WIP: número de tarefas em um dado passo de um processo Kanban
 
-*   Throughput (TP): taxa de chegada dessas tarefas nesse passo
+* Throughput (TP): taxa de chegada dessas tarefas nesse passo
 
-*   Lead Time (LT): tempo que cada tarefa fica nesse passo
+* Lead Time (LT): tempo que cada tarefa fica nesse passo
 
 Ou seja, de acordo com a Lei de Little: **WIP = TP * LT**. Visualmente,
 podemos representar a Lei de Little da seguinte forma:
 
-![Lei de Little: WIP = TP * LT](figs/cap2/lei-little.png){width=40%}
+![Lei de Little: WIP = TP * LT](figs/cap2/lei-little){width=60%}
 
 
 ### Perguntas Frequentes 
@@ -1710,13 +1690,7 @@ adoção de ambas soluções: um quadro físico, mas com um backup em um
 software de gerenciamento de projetos, que possa ser acessado pelos
 gerentes e executivos da organização.
 
-**Vídeo Complementar**: Para conhecer mais sobre Kanban, recomendamos
-uma apresentação sobre o método realizada por Eric Brechner em 2016 e
-disponível neste [link](https://youtu.be/CD0y-aU1sXo), com
-duração de pouco mais de uma hora. O interessante é que a palestra é
-organizada como um projeto Kanban. Por exemplo, um quadro é usado para
-coletar as perguntas da plateia, que vão então sendo respondidas pelo
-palestrante.
+
 
 ## Quando não Usar Métodos Ágeis?
 
@@ -1853,7 +1827,7 @@ das fases. Por exemplo, construção — em uma dada iteração — pode
 ser dividida em duas sub-fases, cada uma construindo uma parte do
 produto. A próxima figura ilustra o modelo de iterações de UP.
 
-![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1.jpg){width=60%}
+![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=60%}
 
 UP define também um conjunto de disciplinas de engenharia que incluem
 por exemplo: modelagem de negócios, definição de requisitos, análise e
@@ -1865,7 +1839,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=60%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=70%}
 
 ## Bibliografia {.unnumbered}
 

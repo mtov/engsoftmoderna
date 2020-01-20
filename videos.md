@@ -1,0 +1,33 @@
+**Vídeo Complementar**: O vídeo da explosão do foguete Ariane 5, em
+1996, pode ser encontrado no Youtube, por exemplo, neste
+[link](https://www.youtube.com/watch?v=kYUrqdUyEpI).
+
+
+**Vídeo Complementar**: XP já completou 20 anos. Em uma palestra
+comemorativa, realizada em um evento sobre métodos ágeis na França, Kent
+Beck discorreu sobre a história de XP e fez uma reflexão crítica sobre o
+método proposto por ele, indicando as práticas que foram bem sucedidas e
+aquelas que não deram tão certo. Assista o vídeo da palestra, com cerca
+de 40 minutos, neste [link](https://youtu.be/cGuTmOUdFbo).
+
+**Vídeo Complementar**: Este vídeo de treinamento da IBM, com 4
+minutos de duração, mostra um exemplo de reunião diária
+([link](https://www.youtube.com/watch?v=GzQjGhD5tSU)).
+
+**Vídeo Complementar**: Junto com Ken Schwaber, Jeff Sutherland é um
+dos criadores do Scrum. Recomendamos duas de suas palestras sobre o
+método, ambas realizadas em 2014. A primeira é uma TED Talk, portanto
+mais genérica e para um público que não é especialista em
+desenvolvimento de software, disponível neste
+[link](https://youtu.be/s4thQcgLCqk), com duração de 16
+minutos. A segunda é uma apresentação técnica disponível neste
+[link](https://youtu.be/2L1oBLTICx4), com duração de um
+hora.
+
+**Vídeo Complementar**: Para conhecer mais sobre Kanban, recomendamos
+uma apresentação sobre o método realizada por Eric Brechner em 2016 e
+disponível neste [link](https://youtu.be/CD0y-aU1sXo), com
+duração de pouco mais de uma hora. O interessante é que a palestra é
+organizada como um projeto Kanban. Por exemplo, um quadro é usado para
+coletar as perguntas da plateia, que vão então sendo respondidas pelo
+palestrante.
