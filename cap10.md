@@ -145,7 +145,7 @@ milhas e Alice alterou o seu código para que o resultado fosse retornado em qui
 
 Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de branches funcionais, os problemas causados por conflitos podem assumir proporções consideráveis e atrasar a entrada em produção de novas funcionalidades. Veja que a resolução de conflitos é uma tarefa manual, que requer análise e consenso entre os desenvolvedores envolvidos. Por isso, o termo **integration hell** é frequentemente usado para descrever os problemas que ocorrem durante a integração de branches de funcionalidades.
 
-Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Assim, esse desenvolvedor pode sentir-se mais confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de interfaces e telas, para acesso a dados, etc.
+Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Assim, esse desenvolvedor pode sentir-se mais confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de janelas e telas, para acesso a dados, etc.
 
 ### O que é Integração Contínua?
 
