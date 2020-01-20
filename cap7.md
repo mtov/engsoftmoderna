@@ -16,7 +16,7 @@ Mensagens (Seção 7.5) e Publish/Subscribe (Seção 7.6). Terminamos o
 capítulo discutindo outros padrões arquiteturais (Seção 7.7) e dando um
 exemplo de anti-padrão arquitetural (Seção 7.8).
 
-## 7.1 Introdução 
+## Introdução 
 
 Existe mais de uma definição para arquitetura de software. Uma das mais
 comuns considera que arquitetura preocupa-se com \"projeto em mais alto
@@ -71,7 +71,7 @@ forma breve outros padrões arquiteturais, como pipes e filtros (Seção
 7.7). Vamos também dar um exemplo de um anti-padrão arquitetural,
 conhecido como *big ball of mud* (Seção 7.8).
 
-📚 **Aprofundamento**: Alguns autores — como Taylor et al.
+**Aprofundamento**: Alguns autores — como Taylor et al.
 ([link](https://dl.acm.org/citation.cfm?id=1538494))
 — fazem uma distinção entre padrões e **estilos arquiteturais**.
 Segundo eles, padrões focam em soluções para problemas específicos de
@@ -84,7 +84,7 @@ outro lado, Pipes & Filtros constituem um estilo arquitetural. Neste
 capítulo, porém, não vamos fazer essa distinção. Em vez disso,
 chamaremos todos eles de padrões arquiteturais.
 
-🌎 **Mundo Real**: No início de 1992, um debate acalorado sobre a
+**Mundo Real**: No início de 1992, um debate acalorado sobre a
 arquitetura de sistemas operacionais tomou conta de um grupo de
 discussão da Internet. Apesar de vários desenvolvedores e pesquisadores
 terem participado da discussão, ela ficou conhecida como **Debate
@@ -134,7 +134,7 @@ revela que arquitetura não são apenas decisões importantes e difíceis de
 reverter. Muitas vezes, são também decisões que levam anos para que seus
 efeitos negativos fiquem mais claros e comecem a causar problemas.
 
-## 7.2 Arquitetura em Camadas
+## Arquitetura em Camadas
 
 **Arquitetura em camadas** é um dos padrões arquiteturais mais usados,
 desde que os primeiros sistemas de software de maior porte foram
@@ -163,7 +163,7 @@ uma camada por mais de uma camada superior. Por exemplo, a camada de
 transporte pode ser usada por vários protocolos de aplicação, como HTTP,
 SMTP, DHCP, etc.
 
-📚 **Aprofundamento**: Uma das primeiras propostas de arquitetura em
+**Aprofundamento**: Uma das primeiras propostas de arquitetura em
 camada foi elaborada por Edsger W. Dijkstra, em 1968, para um sistema
 operacional denominado THE
 ([link](https://doi.org/10.1145/363095.363143)). As
@@ -174,7 +174,7 @@ usuários (camada 4). Dijkstra conclui o artigo destacando que os
 benefícios de uma estrutura hierárquica são mais importantes ainda em
 projetos de maior porte.
 
-### Arquitetura em Três Camadas
+### Arquitetura em Três Camadas {.unnumbered}
 
 Esse tipo de arquitetura é comum na construção de sistemas de informação
 corporativos. Até o final da década de 80, aplicações corporativas —
@@ -237,7 +237,7 @@ continua sendo o banco de dados. A desvantagem de arquiteturas em duas
 camadas é que todo o processamento ocorre nos clientes, que, portanto,
 devem ter um maior poder de computação.
 
-## 7.3 Arquitetura MVC
+## Arquitetura MVC
 
 O padrão arquitetural MVC (Model-View-Controller) foi proposto no final
 da década de 70 e, em seguida, usado na implementação de Smalltalk-80,
@@ -332,7 +332,7 @@ complexas de sistemas de software em partes que são mais fáceis de se
 modificar. Também permite várias apresentações da mesma lógica de
 negócio.
 
-💡**Pergunta Frequente**: **Qual a diferença entre MVC e três camadas?**
+**Pergunta Frequente**: **Qual a diferença entre MVC e três camadas?**
 A resposta vai ser um pouco longa e vamos nos basear na evolução
 histórica dessas arquiteturas:
 
@@ -377,7 +377,7 @@ vertente clássica, que surgiu com Smalltalk-80 e a vertente Web, que se
 tornou comum na década de 90 e início dos anos 2000. Essa última
 vertente lembra bastante sistemas três camadas.
 
-### Exemplo: Single Page Applications
+### Exemplo: Single Page Applications {.unnumbered}
 
 Em uma aplicação Web tradicional, com formulários, menus, botões, etc,
 toda vez que o usuário gera um evento — por exemplo, clica em um
@@ -445,7 +445,7 @@ para incrementá-la (veja figura a seguir).
 
 ![](figs/cap7/spa.png){width="27%"}
 
-👨‍💻 **Código Fonte**: O código do exemplo está disponível neste
+**Código Fonte**: O código do exemplo está disponível neste
 [link](https://gist.github.com/mtov/ac1120c5b3e0a85d39bb7b05d20ee307).
 Se quiser executar a aplicação no seu navegador, basta usar esse
 [link](https://engsoftmoderna.info/examples/vue.html).
@@ -464,7 +464,7 @@ verdadeiro, apesar de não ser exercitado em nosso exemplo, que é bem
 simples. Esse recurso de frameworks para construção de SPAs é chamado de
 **two-way data binding**.
 
-## 7.4 Microsserviços
+## Microsserviços
 
 Como discutimos no Capítulo 2, métodos ágeis preconizam iterações
 rápidas, com entregas frequentes de novas releases, a fim de obter
@@ -602,7 +602,7 @@ plataforma de computação em nuvem e pagar por hora de utilização da
 máquina. Com isso, fica mais fácil escalar um microsserviço
 horizontalmente, acrescentando novas máquinas virtuais.
 
-📚 **Aprofundamento**: Microsserviços constituem um exemplo de aplicação
+**Aprofundamento**: Microsserviços constituem um exemplo de aplicação
 da **Lei de Conway**. Formulada em 1968 por Melvin Conway, ela é uma das
 leis empíricas sobre desenvolvimento de software, assim como a Lei de
 Brooks, que estudamos no Capítulo 1. A Lei de Conway afirma o seguinte:
@@ -615,7 +615,7 @@ desenvolvimento distribuídos em diversos países. Além de
 descentralizados, esses times são autônomos e sempre incentivados a
 produzir inovações.
 
-### Gerenciamento de Dados
+### Gerenciamento de Dados {.unnumbered}
 
 Pelo menos na sua forma pura, microsserviços devem ser autônomos também
 do ponto de vista de dados. Isto é, eles devem gerenciar os dados de que
@@ -642,7 +642,7 @@ os interesses, muitas vezes conflitantes, das diversas equipes de
 desenvolvimento. Por isso, suas decisões podem se tornar lentas e
 burocráticas, atrasando a evolução do sistema.
 
-### Quando não usar microsserviços?
+### Quando não usar microsserviços? {.unnumbered}
 
 Até esse momento, apresentamos as vantagens e benefícios de
 microsserviços. Mas é importante dizer que essa arquitetura é mais
@@ -687,7 +687,7 @@ sistema distribuído. Dentre eles, podemos citar:
     podem ser necessários para garantir uma semântica de transações em
     operações que escrevem em mais de um banco de dados.
 
-### Vídeos Complementares
+### Vídeos Complementares {.unnumbered}
 
 Para complementar o conteúdo desta seção, recomendamos dois vídeos
 relacionados com microsserviços:
@@ -703,7 +703,7 @@ relacionados com microsserviços:
     empresa e apresentada na conferência GOTO 2016, com duração de 49
     minutos.
 
-## 7.5 Arquiteturas Orientadas a Mensagens
+## Arquiteturas Orientadas a Mensagens
 
 Neste tipo de arquitetura, a comunicação entre clientes e servidores é
 mediada por um terceiro serviço que têm a única função de prover uma
@@ -767,7 +767,7 @@ mensagens da mesma fila, como mostra a próxima figura.
 
 ![](figs/cap7/mom2.png){width=70%}
 
-### Exemplo: Empresa de Telecomunicações
+### Exemplo: Empresa de Telecomunicações {.unnumbered}
 
 Suponha que uma empresa de telecomunicações tenha dois sistemas
 principais: vendas e engenharia. O sistema de vendas é responsável pela
@@ -798,7 +798,7 @@ lido e processado durante a noite pelo sistema de engenharia. Portanto,
 um cliente poderia ter que esperar quase 24 horas para ter seu serviço
 ativado.
 
-## 7.6 Arquiteturas Publish/Subscribe
+## Arquiteturas Publish/Subscribe
 
 Em arquiteturas publish/subscribe, as mensagens são chamadas de
 **eventos**. Os componentes da arquitetura são chamados de
@@ -850,7 +850,7 @@ e, na maioria das vezes, distribuídos. Por outro lado, o padrão de
 projeto Observador não foi proposto no contexto de arquiteturas
 distribuídas.
 
-### Exemplo: Companhia Aérea
+### Exemplo: Companhia Aérea {.unnumbered}
 
 Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
 arquitetura publish/subscribe. Suponha que essa companhia tenha um
@@ -880,7 +880,7 @@ assíncrona, pois os assinantes são notificados assim que um evento
 ocorre; isto é, eles não precisam consultar periodicamente o sistema
 publish/subscribe sobre a ocorrência dos eventos de interesse.
 
-## 7.7 Outros Padrões Arquiteturais
+## Outros Padrões Arquiteturais
 
 **Pipes e Filtros** é um tipo de arquitetura orientada a dados, na qual
 os programas \-- chamados de **filtros** — têm como função processar
@@ -926,7 +926,7 @@ arquivos na Internet. Aplicações que implementam o protocolo podem tanto
 prover arquivos como realizar o download de arquivos disponíveis na
 rede.
 
-## 7.8 Anti-padrões Arquiteturais
+## Anti-padrões Arquiteturais
 
 Vamos encerrar com a descrição de um **anti-padrão** arquitetural, isto
 é, uma organização de sistemas que não é recomendada. Talvez, o mais
@@ -943,7 +943,7 @@ vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
 
-🌎 **Mundo Real**: Em um artigo publicado em 2009 na revista IEEE
+**Mundo Real**: Em um artigo publicado em 2009 na revista IEEE
 Software ([link](https://doi.org/10.1109/MS.2009.42)),
 Santonu Sarkar e mais cinco colegas — na época consultores da
 empresa indiana InfoSys — descrevem uma experiência de modularização
@@ -971,7 +971,7 @@ mostraram incapazes de atenuar os problemas causados pela arquitetura em
 forma de \"big ball of mud\".
 
 
-## Bibliografia
+## Bibliografia {.unnumbered}
 
 * James Lewis, Martin Fowler. Microservices: a definition of this new
 architectural term. 2014.
@@ -992,7 +992,7 @@ Object-Oriented Programming, 1988.
 Software Architecture: A Pattern Language for Distributed Computing,
 Vol. 4, John Wiley & Sons, 2007.
 
-## Exercícios de Fixação
+## Exercícios de Fixação {.unnumbered}
 
 1.  Dada a sua complexidade, sistemas de bancos de dados são componentes
     relevantes na arquitetura de qualquer tipo de sistema. Verdadeiro
