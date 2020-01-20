@@ -1,4 +1,5 @@
-# Cap. 2 - Processos
+
+# Processos
 
 > In software development, "perfect" is a verb, not an adjective. There
 is no perfect process. There is no perfect design. There are no perfect
@@ -17,7 +18,7 @@ fim, na Seção 2.7, discutimos alguns processos tradicionais,
 principalmente o Processo Unificado.
 
 
-# 2.1 Importância de Processos
+## Importância de Processos
 
 A produção de um carro em uma fábrica de automóveis segue um processo
 bem definido. Sem estender muito a explicação, primeiro, as chapas de
@@ -73,13 +74,9 @@ no Capítulo 1 já comentamos sobre Processos Waterfall e Ágeis. Na
 próxima seção, vamos retomar essa discussão e, em seguida, descrever
 alguns métodos de desenvolvimento de software.
 
-## 2.2 Manifesto Ágil
+## Manifesto Ágil
 
-Conforme afirmado no Capítulo 1, os primeiros processos de
-desenvolvimento de software — do tipo Waterfall, propostos ainda na
-década de 70 — eram estritamente sequenciais, começando com uma fase
-de especificação de requisitos até chegar às fases finais de
-implementação, testes e manutenção do sistema.
+Os primeiros processos de desenvolvimento de software — do tipo Waterfall, propostos ainda na década de 70 — eram estritamente sequenciais, começando com uma fase de especificação de requisitos até chegar às fases finais de implementação, testes e manutenção do sistema.
 
 Se considerarmos o contexto histórico, essa primeira visão de processo
 era natural, visto que projetos de Engenharia tradicional também são
@@ -108,15 +105,14 @@ entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2.svg){width=55%}
+cada faixa de estouro).](figs/cap2/chaos2){width=55%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1.svg){width=55%}
-
+(para cada faixa de estouro).](figs/cap2/chaos1){width=55%}
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
 Snowbird, no estado norte-americano de Utah, para discutir e propor uma
@@ -143,8 +139,8 @@ de software, as quais foram registradas em um documento que chamaram de
 **Manifesto Ágil**. Por ser curto, iremos reproduzir o texto do
 manifesto a seguir:
 
- Por meio desse trabalho, passamos a valorizar:
-
+> Por meio desse trabalho, passamos a valorizar:
+>
 > **Indivíduos e interações**, mais do que processos e ferramentas
 >
 > **Software em funcionamento**, mais do que documentação abrangente
@@ -158,7 +154,7 @@ curtos e iterativos de desenvolvimento**, por meio dos quais um sistema
 é implementado de forma gradativa; começando por aquilo que é mais
 urgente para o cliente. De início, implementa-se uma primeira versão do
 sistema, com as funcionalidades que segundo o cliente são para
-\"ontem\", isto é, possuem prioridade máxima. Em seguida, essa versão é
+"ontem", isto é, possuem prioridade máxima. Em seguida, essa versão é
 validada pelo cliente. Se ela for aprovada, um novo ciclo — ou
 **iteração** — inicia-se, com mais algumas funcionalidades, também
 priorizadas pelos clientes. Normalmente, esses ciclos são curtos, com
@@ -216,19 +212,26 @@ No entanto, as características acima ainda são genéricas e abrangentes; por i
 
 *  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
 
-📚 **Aprofundamento**: Neste livro, usamos os termos **processos** e **métodos**. Processo é o conjunto de passos, etapas e tarefas que se usa para construir um software. Toda organização usa um processo para desenvolver seus sistemas, o qual pode ser ágil ou waterfall, por exemplo. Ou, talvez, esse processo pode ser caótico. Porém, o ponto que queremos reforçar é que sempre existe um processo. Já método, no nosso contexto, define e especifica um determinado processo de desenvolvimento (a palavra método tem sua origem no grego, onde significa \"caminho para se chegar a um objetivo\"). Assim, XP, Scrum e Kanban são métodos ágeis ou, de modo mais extenso, são métodos que definem práticas, atividades, eventos e técnicas compatíveis com princípios ágeis de desenvolvimento de software. Aproveitando que estamos tratando de definições, frequentemente usa-se também o termo **metodologia** quando se fala de processos de software. Por exemplo**,** é comum ver referências a metodologias para desenvolvimento de software, metodologias ágeis, metodologia orientada a objetos, etc. A palavra metodologia, no sentido mais estrito, denota o \"ramo da lógica que se ocupa dos métodos das diferentes ciências\", segundo o Dicionário Houaiss. No entanto, a palavra também pode ser usada como sinônimo de método, segundo o mesmo dicionário. Apesar disso, nesse livro evitamos usar o termo metodologia e tentamos empregar sempre o termo método.
+```{=latex}
+\begin{aviso}
+```
+**Aviso**: Todo método de desenvolvimento deve ser entendido como um conjunto de recomendações; cabe a uma organização analisar cada uma e decidir se ela faz sentido no seu contexto. Como resultado, a organização pode ainda decidir por adaptar essas recomendações para atender às suas necessidades. Logo, provavelmente, não existem duas organizações que seguem exatamente o mesmo processo de desenvolvimento, mesmo que elas digam que estão desenvolvendo usando Scrum, por exemplo.
+```{=latex}
+\end{aviso}
+```
 
-⚠️ **Aviso**: Todo método de desenvolvimento deve ser entendido como um
-conjunto de recomendações; cabe a uma organização analisar cada uma e
-decidir se ela faz sentido no seu contexto. Como resultado, a
-organização pode ainda decidir por adaptar essas recomendações para
-atender às suas necessidades.
+```{=latex}
+\begin{esmblock}
+```
+**Aprofundamento**: Neste livro, usamos os termos **processos** e **métodos**. Processo é o conjunto de passos, etapas e tarefas que se usa para construir um software. Toda organização usa um processo para desenvolver seus sistemas, o qual pode ser ágil ou waterfall, por exemplo. Ou, talvez, esse processo pode ser caótico. Porém, o ponto que queremos reforçar é que sempre existe um processo. Já método, no nosso contexto, define e especifica um determinado processo de desenvolvimento (a palavra método tem sua origem no grego, onde significa "caminho para se chegar a um objetivo"). Assim, XP, Scrum e Kanban são métodos ágeis ou, de modo mais extenso, são métodos que definem práticas, atividades, eventos e técnicas compatíveis com princípios ágeis de desenvolvimento de software. Aproveitando que estamos tratando de definições, frequentemente usa-se também o termo **metodologia** quando se fala de processos de software. Por exemplo**,** é comum ver referências a metodologias para desenvolvimento de software, metodologias ágeis, metodologia orientada a objetos, etc. A palavra metodologia, no sentido mais estrito, denota o "ramo da lógica que se ocupa dos métodos das diferentes ciências", segundo o Dicionário Houaiss. No entanto, a palavra também pode ser usada como sinônimo de método, segundo o mesmo dicionário. Apesar disso, nesse livro evitamos usar o termo metodologia e tentamos empregar sempre o termo método.
+```{=latex}
+\end{esmblock}
+```
 
-Logo, provavelmente, não existem duas organizações que seguem exatamente
-o mesmo processo de desenvolvimento, mesmo que elas digam que estão
-desenvolvendo usando Scrum, por exemplo.
-
-🌎 **Mundo Real**: O sucesso e impacto de processos ágeis foi
+```{=latex}
+\begin{esmblock}
+```
+**Mundo Real**: O sucesso e impacto de processos ágeis foi
 impressionante. Hoje, a grande maioria das empresas que desenvolvem
 software, independente de seu tamanho ou do foco de seu negócio, usam
 princípios ágeis, em maior ou menor escala. Para citar alguns dados, em
@@ -242,11 +245,14 @@ incluindo aquelas que vamos estudar neste capítulo, como Scrum (63%),
 Kanban (36%) e Extreme Programming (16%). Por outro lado, apenas 15% dos
 participantes marcaram Waterfall como resposta.
 
+```{=latex}
+\end{esmblock}
+```
+
 ![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
-usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey.svg){width=60%}
+usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
 
-
-## 2.3 Extreme Programming (XP)
+## Extreme Programming (XP)
 
 Segundo seu autor, XP é um método leve recomendado para desenvolver
 software com requisitos vagos ou sujeitos a mudanças; isto é,
@@ -307,10 +313,10 @@ requisitos mudam, a tecnologia muda, a equipe de desenvolvimento muda, o
 mundo muda, etc. Um valor que ajuda a controlar tais riscos é estar
 aberto ao **feedback** dos stakeholders, a fim de que correções de rota
 sejam implementadas o quanto antes. Em outras palavras, é difícil
-desenvolver o sistema de software \"certo\" em uma primeira e única
+desenvolver o sistema de software "certo" em uma primeira e única
 tentativa. Frederick Brooks tem uma frase conhecida sobre esse fenômeno:
 
-> Planeje-se para jogar fora algumas partes ou versões de seu sistema, pois você fará isso"
+> Planeje-se para jogar fora algumas partes de seu sistema, pois você fará isso.
 
 Por isso, feedback é um valor essencial para garantir que as partes ou
 versões que serão descartadas sejam identificadas o quanto antes, de
@@ -329,7 +335,7 @@ práticas. Os princípios — que descreveremos agora — fazem o
 papel de uma ponte ligando esses dois lados. Alguns dos principais
 princípios de XP são os seguintes:
 
-**Humanidade** (\"humanity\", em inglês). Software é uma atividade
+**Humanidade** ("humanity", em inglês). Software é uma atividade
 intensiva no uso de capital humano. O principal recurso de uma empresa
 de software não são seus bens físicos — computadores, prédios,
 móveis ou conexões de Internet, por exemplo — mas sim seus
@@ -362,7 +368,7 @@ código não vai introduzir regressões — isto é, bugs — em código
 que está funcionando. Um terceiro e último exemplo: refactoring é uma
 atividade que torna o código mais limpo e fácil de entender, tanto para
 quem o escreveu, como para quem futuramente terá que mantê-lo. A frase
-\"todo negócio tem que ser bom para os dois lados\" resume bem esse
+"todo negócio tem que ser bom para os dois lados" resume bem esse
 terceiro princípio de XP.
 
 **Melhorias Contínuas** (no livro de XP, o nome original é
@@ -416,7 +422,11 @@ casos, a ideia é evitar dois grupos em uma organização, desenvolvedores
 versus operadores, com um grupo empurrando a responsabilidade pelos
 problemas para o outro.
 
-🌎 **Mundo Real**: Um dos primeiros sistemas a adotar XP foi um
+```{=latex}
+\begin{esmblock}
+```
+
+**Mundo Real**: Um dos primeiros sistemas a adotar XP foi um
 sistema de folha de pagamentos da fabricante de automóveis Chrysler,
 chamado Chrysler Comprehensive Compensation (C3)
 ([link](https://doi.org/10.1109/2.796139)). O projeto
@@ -426,6 +436,10 @@ liderança de Kent Beck. Outro membro conhecido da comunidade ágil,
 Martin Fowler, participou do projeto, como consultor. No desenvolvimento
 do sistema C3, foram usadas e testadas diversas ideias do método que
 poucos anos depois receberia o nome de XP.
+
+```{=latex}
+\end{esmblock}
+```
 
 ### Práticas sobre o Processo de Desenvolvimento
 
@@ -478,7 +492,7 @@ story points) e mais uma tarefa na próxima escala inferior (3 pontos)?
 Se isso for verdade, 8 story points é uma boa estimativa. Caso
 contrário, o melhor é estimar a história com 5 story points.
 
-📚 **Aprofundamento**: Uma técnica usada para estimar o tamanho de
+**Aprofundamento**: Uma técnica usada para estimar o tamanho de
 histórias é conhecida como **Planning Poker**. Ela funciona assim: o
 representante dos clientes seleciona uma história e a lê para os
 desenvolvedores. Após a leitura, os desenvolvedores interagem com o
@@ -504,7 +518,7 @@ iteração. Sugere-se que o representante dos clientes escreva histórias
 que requeiram pelo menos uma release para serem implementadas. Ou seja,
 em XP, o horizonte de planejamento é uma release, isto é, alguns meses.
 
-⚠️ **Aviso**: Em XP, a palavra release tem um sentido diferente daquele
+**Aviso**: Em XP, a palavra release tem um sentido diferente daquele
 que se usa em gerência de configuração. Em gerência de configuração, uma
 release é uma versão de um sistema que será disponibilizada para seus
 usuários finais. Como já mencionamos em um aviso anterior, não
@@ -568,7 +582,7 @@ realizar o **planejamento da iteração.** O objetivo desse planejamento é
 decompor as histórias de uma iteração em tarefas, as quais devem
 corresponder a atividades de programação que possam ser alocadas para um
 dos desenvolvedores do time. Por exemplo, a seguinte lista mostra as
-tarefas para a história \"Postar Perguntas\", que é a primeira história
+tarefas para a história "Postar Perguntas", que é a primeira história
 que será implementada em nosso sistema de exemplo.
 
 *   Projetar e testar a interface Web, incluindo layout, CSS templates,
@@ -616,15 +630,15 @@ ou manual ou mesmo desenvolver um projeto paralelo. Algumas empresas,
 como o Google, por exemplo, são famosas por permitir que seus
 desenvolvedores usem 20% de seu tempo para desenvolver um projeto
 pessoal ([link](https://arxiv.org/abs/1702.01715)). No
-caso de XP, folgas têm dois objetivos principais: (1) criar um \"buffer
-de segurança\" em uma iteração, que possa ser usado caso alguma tarefa
+caso de XP, folgas têm dois objetivos principais: (1) criar um "buffer
+de segurança" em uma iteração, que possa ser usado caso alguma tarefa
 demande mais tempo do que o previsto; (2) permitir que os
 desenvolvedores respirem um pouco, pois o ritmo de trabalho em projetos
 de desenvolvimento de software costuma ser intenso e desgastante. Logo,
 os desenvolvedores precisam de um tempo para realizarem algumas tarefas
 onde não exista uma cobrança de resultados, entregas, etc.
 
-#### Perguntas Frequentes
+#### Perguntas Frequentes {.unnumbered}
 
 Vamos agora responder a algumas perguntas
 sobre as práticas de XP que acabamos de explicar.
@@ -678,7 +692,7 @@ software?** Não, histórias são especificadas pelo representante dos
 clientes, que é um profissional leigo em Engenharia de Software.
 Portanto, ele não costuma ter conhecimento de infra-estrutura de
 software. No entanto, uma história pode dar origem a uma tarefa como
-\"instalar e testar o banco de dados\". Resumindo, histórias estão
+"instalar e testar o banco de dados". Resumindo, histórias estão
 associadas a requisitos funcionais; para implementá-las criam-se
 tarefas, que podem estar associadas a requisitos funcionais,
 não-funcionais ou tarefas técnicas, como instalação de bancos de dados,
@@ -687,13 +701,13 @@ servidores, frameworks, etc.
 **A história X depende da história Y, mas o representante dos clientes
 priorizou Y antes de X. O que devo fazer?** Por exemplo, suponha que no
 sistema de exemplo o representante dos clientes tenha alocado a história
-\"Postar Pergunta\" para a iteração 2 e a história \"Postar Resposta\"
+"Postar Pergunta" para a iteração 2 e a história "Postar Resposta"
 para a iteração 1. A pergunta então é a seguinte: o time deve respeitar
 essa alocação? Sim, pois a regra é clara: o representante dos clientes é
 a autoridade final quando trata-se de definir a ordem de implementação
 das histórias. Logo, pode-se perguntar em seguida: como que vamos postar
 respostas, sem ter as perguntas? Para isso, basta implementar algumas
-perguntas \"fixas\", que não possam ser modificadas pelos usuários. Na
+perguntas "fixas", que não possam ser modificadas pelos usuários. Na
 iteração 1, quando o cliente abrir o sistema, essas perguntas vão
 aparecer por default, talvez com um layout bem simples, e então o
 cliente vai poder usar o sistema apenas para responder essas perguntas
@@ -751,8 +765,8 @@ surgir ao longo do projeto, tornando o design inicial desatualizado.
 
 Por isso, XP defende que o momento ideal para pensar em *design* é
 quando ele se revelar importante. Frequentemente, duas frases são usadas
-para motivar e justificar essa prática: \"*do the simplest thing that
-could possibly work*\" e \"*you aren\'t going to need it*\", essa última
+para motivar e justificar essa prática: *do the simplest thing that
+could possibly work* e *you aren't going to need it*, essa última
 conhecida pela sigla YAGNI.
 
 Duas observações são importantes para melhor entender a proposta de
@@ -778,7 +792,7 @@ pares é uma das práticas mais polêmicas de XP. Apesar de polêmica, a
 ideia é simples: toda tarefa de codificação — incluindo
 implementação de uma nova história, de um teste, ou a correção de um bug
 — deve ser realizada por dois desenvolvedores trabalhando juntos,
-compartilhando o mesmo teclado e monitor, como mostra a próxima figura.
+compartilhando o mesmo teclado e monitor.
 Um dos desenvolvedores é o **líder** (ou *driver*) da sessão, ficando
 com o teclado e o mouse. Ao segundo desenvolvedor cabe a função de
 revisor e questionador, no bom sentido, do trabalho do líder. Às vezes ,
@@ -787,7 +801,7 @@ dos ralis automobilísticos, onde os pilotos são acompanhados de um
 navegador.
 
 Com programação em pares espera-se melhorar a qualidade do código e do
-design, pois \"duas cabeças pensam melhor do que uma.\" Além disso,
+design, pois "duas cabeças pensam melhor do que uma." Além disso,
 programação em pares contribui para disseminar o conhecimento sobre o
 código, que não fica nas mãos e na cabeça de apenas um desenvolvedor.
 Por exemplo, não é raro encontrar sistemas nos quais um determinado
@@ -812,20 +826,21 @@ Assim, se em uma sessão você atuou como revisor do programador X, na
 sessão seguinte você passará a ser o líder, mas tendo outro
 desenvolvedor Y como revisor.
 
+<!---
 ![Programação em pares, tal como proposto por XP. Foto da
 [Wikipedia](https://commons.wikimedia.org/wiki/File:Pair_programming_1.jpg),
 licença CC-BY.
 ](figs/cap2/pair-programming.png){width=40%}
+--->
 
-
-🌎 **Mundo Real**: Em 2008, dois pesquisadores da Microsoft Research,
+**Mundo Real**: Em 2008, dois pesquisadores da Microsoft Research,
 Andrew Begel e Nachiappan Nagappan, realizaram um survey com 106
 desenvolvedores da empresa, para capturar a percepção deles sobre
 programação em pares
 ([link](https://doi.org/10.1145/1414004.1414026)). Quase
 65% dos desenvolvedores responderam positivamente a uma primeira
 pergunta sobre se programação em pares estaria funcionando bem para eles
-(\"*pair programming is working well for me*\"). Quando perguntados
+("*pair programming is working well for me*"). Quando perguntados
 sobre os benefícios de programação em pares, as respostas foram as
 seguintes: redução no número de bugs (62%), produção de código de melhor
 qualidade (45%), disseminação de conhecimento sobre o código (40%) e
@@ -954,7 +969,7 @@ contínua é gratuito; se for privado, deve-se pagar uma assinatura.
 Iremos estudar mais sobre Integração Contínua no capítulo sobre Gerência
 de Configuração.
 
-🌎 **Mundo Real**: Em 2010, Laurie Williams, professora da
+**Mundo Real**: Em 2010, Laurie Williams, professora da
 Universidade da Carolina do Norte, nos EUA, pediu que 326
 desenvolvedores respondessem a um questionário sobre a experiência deles
 com métodos ágeis
@@ -1022,8 +1037,8 @@ Como usual em XP, o objetivo é abrir um fluxo de comunicação e feedback
 entre contratada e contratante, em vez de forçar a primeira a entregar
 um produto com problemas conhecidos, apenas para cumprir um contrato. Na
 verdade, contratos com escopo aberto são mais compatíveis com os
-princípios do Manifesto Ágil, que explicitamente valoriza \"colaboração
-com o cliente, mais que negociação de contratos\".
+princípios do Manifesto Ágil, que explicitamente valoriza "colaboração
+com o cliente, mais que negociação de contratos".
 
 **Métricas de Processo**. Para que gerentes e executivos possam
 acompanhar um projeto XP recomenda-se o uso de duas métricas principais:
@@ -1033,14 +1048,14 @@ momento em que o projeto começar a gerar os seus primeiros resultados
 financeiros (que também deve ser pequeno, da ordem de um ano, por
 exemplo).
 
-📺 **Vídeo Complementar**: XP já completou 20 anos. Em uma palestra
+**Vídeo Complementar**: XP já completou 20 anos. Em uma palestra
 comemorativa, realizada em um evento sobre métodos ágeis na França, Kent
 Beck discorreu sobre a história de XP e fez uma reflexão crítica sobre o
 método proposto por ele, indicando as práticas que foram bem sucedidas e
 aquelas que não deram tão certo. Assista o vídeo da palestra, com cerca
 de 40 minutos, neste [link](https://youtu.be/cGuTmOUdFbo).
 
-## 2.4 Scrum
+## Scrum
 
 Scrum é um método ágil, iterativo e incremental para gerenciamento de
 projetos. Foi proposto por Jeffrey Sutherland e Ken Schwaber, em um
@@ -1220,9 +1235,9 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint de 15 dias.
 
-![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown.svg){width=65%}
+![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown){width=65%}
 
-🌎 **Mundo Real**: Este livro está sendo escrito usando artefatos e
+**Mundo Real**: Este livro está sendo escrito usando artefatos e
 eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
 autor que, em certa medida, desempenha todos os papéis previstos por
 Scrum. Logo no início do projeto, os capítulos do livro foram
@@ -1289,7 +1304,7 @@ seria recomendável que eles se reunissem, separadamente do resto do
 time, para discutir as modificações que pretendem realizar. E, com isso,
 minimizar as chances de possíveis conflitos de integração.
 
-📺 **Vídeo Complementar**: Este vídeo de treinamento da IBM, com 4
+**Vídeo Complementar**: Este vídeo de treinamento da IBM, com 4
 minutos de duração, mostra um exemplo de reunião diária
 ([link](https://www.youtube.com/watch?v=GzQjGhD5tSU)).
 
@@ -1312,7 +1327,7 @@ Apenas para dar um exemplo, como resultado de uma retrospectiva, o time
 pode acordar sobre a importância de todos estarem presentes,
 pontualmente, nas reuniões diárias, pois nos últimos sprints alguns
 membros estão se atrasando. Veja, portanto, que uma retrospectiva não é
-uma reunião para \"lavar a roupa suja\" e para membros ficarem
+uma reunião para "lavar a roupa suja" e para membros ficarem
 discutindo entre si. Se for necessário, isso deve ser feito em
 particular, em outras reuniões ou com a presença de gerentes da
 organização. Depois da retrospectiva, o ciclo se repete, com um novo
@@ -1321,10 +1336,10 @@ sprint.
 Uma característica marcante de todos os eventos Scrum é terem uma
 duração bem definida, que é chamada de **time-box** da atividade. Por
 isso, esse termo aparece sempre em documentos Scrum. Por exemplo, veja
-essa frase do Scrum Guide oficial: \"o coração do método Scrum é um
+essa frase do Scrum Guide oficial: "o coração do método Scrum é um
 sprint, que tem um time-box de um mês ou menos e durante o qual um
-produto \"done\", usável e que potencialmente pode ser colocado em
-produção é criado\"
+produto "done", usável e que potencialmente pode ser colocado em
+produção é criado"
 ([link](https://www.scrum.org/resources/scrum-guide)). O
 objetivo da fixação de *time boxes* é criar um fluxo contínuo de
 trabalho, bem como fomentar o compromisso da equipe com o sucesso do
@@ -1349,11 +1364,13 @@ Antes de concluir a seção, vamos responder
 algumas perguntas sobre Scrum:
 
 **O que significa a palavra Scrum**? O nome não é uma sigla, mas uma
-referência à \"reunião\" de jogadores realizada em uma partida de rugby
+referência à "reunião" de jogadores realizada em uma partida de rugby
 para decidir quem vai ficar com a bola, após uma infração involuntária.
-Veja uma foto a seguir.
 
+<!---
+Veja uma foto a seguir.
 ![Scrum em uma partida de rugby, foto: [Flickr](https://flic.kr/p/gB9tsA), licença CC-BY.](figs/cap2/scrum.jpg){width=45%}
+---->
 
 **O que é um squad**? Esse termo é um sinônimo para
 time ágil ou time Scrum. O nome foi popularizado pela Spotify. Assim
@@ -1428,7 +1445,7 @@ seguintes:
 * Avaliar se os resultados produzidos pelos times Scrum estão, de
      fato, gerando benefícios e valor para a organização.
 
-📺 **Vídeo Complementar**: Junto com Ken Schwaber, Jeff Sutherland é um
+**Vídeo Complementar**: Junto com Ken Schwaber, Jeff Sutherland é um
 dos criadores do Scrum. Recomendamos duas de suas palestras sobre o
 método, ambas realizadas em 2014. A primeira é uma TED Talk, portanto
 mais genérica e para um público que não é especialista em
@@ -1438,10 +1455,10 @@ minutos. A segunda é uma apresentação técnica disponível neste
 [link](https://youtu.be/2L1oBLTICx4), com duração de um
 hora.
 
-## 2.5 Kanban
+## Kanban
 
-A palavra japonesa *kanban* significa \"cartão visual\" ou \"cartão de
-sinalização\". Desde a década de 50, o nome também é usado para denotar
+A palavra japonesa *kanban* significa "cartão visual" ou "cartão de
+sinalização". Desde a década de 50, o nome também é usado para denotar
 o processo de produção *just-in-time* usado em fábricas japonesas,
 principalmente naquelas da Toyota, onde ele foi usado pela primeira vez.
 O processo também é conhecido como Sistema de Produção da Toyota (TPS)
@@ -1452,9 +1469,9 @@ No caso de desenvolvimento de software, Kanban foi usado pela primeira
 vez na Microsoft, em 2004, como parte de um esforço liderado por David
 Anderson, então um funcionário da empresa
 ([link](https://isbnsearch.org/isbn/0984521402)). Segundo
-Anderson, \"Kanban é um método que ajuda times de desenvolvimento a
+Anderson, "Kanban é um método que ajuda times de desenvolvimento a
 trabalhar em ritmo sustentável, eliminando desperdício, entregando valor
-com frequência e fomentando uma cultura de melhorias contínuas\".
+com frequência e fomentando uma cultura de melhorias contínuas".
 
 Para começar a explicar Kanban, vamos usar uma comparação com Scrum.
 Primeiro, Kanban é mais simples do que Scrum, pois não usa nenhum dos
@@ -1476,7 +1493,7 @@ O Quadro Kanban é dividido em colunas, da seguinte forma:
      Implementação e Revisão de Código. A ideia, portanto, é que as
      histórias sejam processadas passo a passo, da esquerda para a
      direita, como em uma linha de montagem. Além disso, cada coluna é
-     dividida em duas sub-colunas: \"em execução\" e \"concluídas\".
+     dividida em duas sub-colunas: "em execução" e "concluídas".
      Por exemplo, a coluna implementação tem duas sub-colunas: tarefas
      em implementação e tarefas implementadas. As tarefas concluídas em
      um passo estão aguardando serem puxadas, por um membro do time,
@@ -1585,11 +1602,11 @@ respeitados — a tendência é que ele não consiga concluir nenhuma
 dessas tarefas com qualidade. Como usual em qualquer atividade humana,
 quando assumimos muitos compromissos, a qualidade de nossas entregas cai
 muito. Kanban reconhece esse problema e, para que ele não ocorra, cria
-uma \"trava\" automática para impedir que os times aceitem trabalhos
-além da sua capacidade de entrega. Essas \"travas\", que são os limites
+uma "trava" automática para impedir que os times aceitem trabalhos
+além da sua capacidade de entrega. Essas "travas", que são os limites
 WIP, servem para uso interno do time e, mais importante ainda, para uso
 externo. Ou seja, elas são o instrumento de que um time dispõe para
-recusar trabalho extra que está sendo \"empurrado\" de cima para baixo
+recusar trabalho extra que está sendo "empurrado" de cima para baixo
 por gerentes da organização, por exemplo.
 
 ### Calculando os Limites WIP
@@ -1615,18 +1632,18 @@ Em seguida, deve-se estimar o **throughput (TP)** do passo com maior lead time d
 
 Por fim, o WIP de cada passo é assim definido:
 
- **WIP(passo) = TP \* LT(passo)**.
+ **WIP(passo) = TP * LT(passo)**.
 
 onde throughput refere-se ao throughput do passo mais lento, conforme
 calculado no item anterior.
 
 Logo, teremos os seguintes resultados:
 
-* WIP(especificação) = 0.38 \* 5 = 1.9
+* WIP(especificação) = 0.38 * 5 = 1.9
 
-* WIP(implementação) = 0.38 \* 12 = 4.57
+* WIP(implementação) = 0.38 * 12 = 4.57
 
-* WIP(revisão) = 0.38 \* 6 = 2.29
+* WIP(revisão) = 0.38 * 6 = 2.29
 
 Arredondando para cima, os resultados finais ficam assim:
 
@@ -1659,7 +1676,7 @@ de especificação de requisitos. Com essa fase, a intenção era oferecer
 aos desenvolvedores uma ideia clara do sistema que eles deveriam
 implementar.
 
-📚 **Aprofundamento**: O procedimento para cálculo de WIPs explicado
+**Aprofundamento**: O procedimento para cálculo de WIPs explicado
 anteriormente é uma aplicação direta da **Lei de Little**, que é um dos
 resultados mais importantes da Teoria de Filas
 ([link](https://isbnsearch.org/isbn/0471503363)). A Lei de
@@ -1674,7 +1691,7 @@ processo Kanban e os itens são tarefas. Assim, temos também que:
 
 *   Lead Time (LT): tempo que cada tarefa fica nesse passo
 
-Ou seja, de acordo com a Lei de Little: **WIP = TP \* LT**. Visualmente,
+Ou seja, de acordo com a Lei de Little: **WIP = TP "* LT**. Visualmente,
 podemos representar a Lei de Little da seguinte forma:
 
 ![Lei de Little: WIP = TP * LT](figs/cap2/lei-little.png){width=40%}
@@ -1717,7 +1734,7 @@ adoção de ambas soluções: um quadro físico, mas com um backup em um
 software de gerenciamento de projetos, que possa ser acessado pelos
 gerentes e executivos da organização.
 
-📺 **Vídeo Complementar**: Para conhecer mais sobre Kanban, recomendamos
+**Vídeo Complementar**: Para conhecer mais sobre Kanban, recomendamos
 uma apresentação sobre o método realizada por Eric Brechner em 2016 e
 disponível neste [link](https://youtu.be/CD0y-aU1sXo), com
 duração de pouco mais de uma hora. O interessante é que a palestra é
@@ -1725,7 +1742,7 @@ organizada como um projeto Kanban. Por exemplo, um quadro é usado para
 coletar as perguntas da plateia, que vão então sendo respondidas pelo
 palestrante.
 
-## 2.6 Quando não Usar Métodos Ágeis?
+## Quando não Usar Métodos Ágeis?
 
 Apesar de métodos ágeis — como aqueles estudados nas seções
 anteriores — terem alcançado um sucesso inquestionável, é bom
@@ -1763,7 +1780,7 @@ atualmente adotadas na grande maioria de projetos de software:
 
 * Iterações (ou sprints), mesmo que com duração maior do que aquela típica de métodos ágeis. Por exemplo, iterações com duração de dois ou três meses, em vez de iterações com menos de 30 dias. Na verdade, entre o surgimento de Waterfall e de métodos ágeis, alguns métodos iterativos foram propostos, isto é, métodos com pontos de validação ao longo do desenvolvimento. Na próxima seção, iremos estudar dois destes métodos.
 
-## 2.7 Outros Métodos Iterativos
+## Outros Métodos Iterativos
 
 A transição entre Waterfall — dominante nas décadas de 70 e 80 —
 e métodos ágeis — que começaram a surgir na década de 90, mas que só
@@ -1780,7 +1797,7 @@ Um exemplo de proposta de processo surgida nesta época é o **Modelo em
 Espiral**, proposto por Barry Boehm, em 1986
 ([link](https://doi.org/10.1145/12944.12948)). Nesse
 modelo, um sistema é desenvolvido na forma de uma espiral de iterações.
-Cada iteração, ou \"volta completa\" na espiral, inclui quatro etapas
+Cada iteração, ou "volta completa" na espiral, inclui quatro etapas
 (veja também a próxima figura):
 
 * Definição de objetivos e restrições, tais como custos, cronogramas,
@@ -1822,7 +1839,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
      são documentados e representados usando-se diagramas gráficos de
      UML. No Capítulo 4, iremos estudar UML com mais calma. Por
      enquanto, vamos ressaltar que a proposta era ter uma linguagem de
-     modelagem \"unificada\" (UML) e também um processo \"unificado\"
+     modelagem "unificada" (UML) e também um processo "unificado"
      (UP), ambos propostos pelo mesmo grupo de profissionais.
 
 *   UP é associado a ferramentas de apoio ao projeto e análise de
@@ -1874,7 +1891,7 @@ outro lado, implementação está concentrada na fase de Construção.
 
 ![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=60%}
 
-## Bibliografia
+## Bibliografia {.unnumbered}
 
 * Kent Beck, Cynthia Andres. Extreme Programming Explained: Embrace
 Change. Addison-Wesley, 2nd edition, 2004.
@@ -1902,7 +1919,7 @@ Edition. Wiley, 2008.
 Abordagem Ágil Usando Computação em Nuvem. Strawberry Canyon LLC. 1a
 Edição, versão 1.1.2, 2014.
 
-## Exercícios de Fixação
+## Exercícios de Fixação {.unnumbered}
 
 1.  Como XP preconiza que devem ser os contratos de desenvolvimento de
      software.
@@ -1912,7 +1929,7 @@ Edição, versão 1.1.2, 2014.
 3.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por que?
      Defina esses termos.
 
-4.  Qual a diferença entre as histórias do \"topo\" e do \"fundo\" do
+4.  Qual a diferença entre as histórias do "topo" e do "fundo" do
      Backlog do Produto, em Scrum?
 
 5.  O que são e para que servem story points?
@@ -1971,13 +1988,13 @@ Edição, versão 1.1.2, 2014.
 |           |                  |                   |         |
 |           | **médio (dias)** | **(tarefas/dia)** |         |
 +===========+==================+===================+=========+
-| A         | 4                | \-                |         |
+| A         | 4                | "-                |         |
 +-----------+------------------+-------------------+---------+
-| B         | 3                | \-                |         |
+| B         | 3                | "-                |         |
 +-----------+------------------+-------------------+---------+
 | C         | 10               | 0.5               |         |
 +-----------+------------------+-------------------+---------+
-| D         | 5                | \-                |         |
+| D         | 5                | "-                |         |
 +-----------+------------------+-------------------+---------+
 
 15. Por que se recomenda que os limites WIP calculados usando a Lei de
@@ -2003,7 +2020,7 @@ Edição, versão 1.1.2, 2014.
      considerados ágeis? E qual a diferença deles para o Modelo
      Waterfall?
 
-19. O artigo \"*Development and Deployment at Facebook*\"
+19. O artigo "*Development and Deployment at Facebook*"
      ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
      apresenta os métodos e práticas de desenvolvimento de software
      usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2),
@@ -2014,10 +2031,10 @@ Edição, versão 1.1.2, 2014.
      mencionada no artigo para alguns métodos e políticas de liberação
      de software.
 
-  **Método (ou política de liberação de releases)**   **Frequência com que novas releases são liberadas**
-  --------------------------------------------------- -----------------------------------------------------
+  **Método**            **Frequência de novas releases**
+  ----------            --------------------------------
   Waterfall                                           
-  Evolucionário (exemplo: Espiral)                    
+  Evolucionário                    
   Ágil                                                
-  Método usado no Facebook                            
+  Facebook                            
   Deployment Contínuo                                 

@@ -1,15 +1,15 @@
 \usepackage[portuguese]{babel}
 
-
 \usepackage{geometry}
 \geometry{papersize={7in,9in},bottom=3pc,top=5pc,left=5pc,right=5pc,bmargin=4.5pc,footskip=18pt,headsep=25pt}
 
 \pdfobjcompresslevel=0
-
 \widowpenalty = 10000
 
-%\usepackage{setspace}
-%\onehalfspacing
+\usepackage{hyperref}
+
+\setcounter{tocdepth}{1}
+
 
 \usepackage{csquotes}
 
@@ -29,20 +29,19 @@
 }
 \lstset{style=mystyle}
 
-\usepackage{tcolorbox}
-\tcbset{colback=yellow!10!white,
-        boxrule=0.5pt,
+\usepackage[most]{tcolorbox}
+\tcbset{boxrule=0.5pt,
         width=5in,
         boxsep=3pt,
         left=5pt,
         right=5pt,
-        top=3pt}
+        top=5pt}
 
-%\usepackage{framed}
-\let\oldquote=\quote
-\let\endoldquote=\endquote
-%\colorlet{shadecolor}{cyan!10}
-%\renewenvironment{quote}{\begin{shaded*}\begin{oldquote}\em \small}{\end{oldquote}\end{shaded*}}
+\renewenvironment{quote}{\centering \small \begin{tcolorbox}[colback=cyan!10!white]}{\end{tcolorbox}}
 
-\renewenvironment{quote}{\centering \begin{tcolorbox} \small}{\end{tcolorbox}}
+\newenvironment{esmblock}{\centering \begin{tcolorbox}[colback=gray!10!white]}{\end{tcolorbox}}
+\newenvironment{aviso}{\centering \begin{tcolorbox}[colback=yellow!10!white]}{\end{tcolorbox}}
 
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{*0}{0pt}
+\titlespacing*{\subsection}{0pt}{*0}{0pt}

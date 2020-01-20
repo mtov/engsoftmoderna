@@ -1,15 +1,12 @@
-![](figs/cap0/capa.jpg){width=70%}
 
-# Prefácio
+# Prefácio {.unnumbered}
 
 > A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.
->
-> -- <cite>Eduardo Giannetti</cite>
-
+ -- Eduardo Giannetti
 
 A ideia de escrever este livro surgiu no início de 2019, quando fui alocado para ministrar a disciplina Engenharia de Software, do Bacharelado em Ciência da Computação, da UFMG. Para preparar o curso, comecei com uma análise dos principais livros de Engenharia de Software. Para minha surpresa, percebi que eles tinham mudado pouco desde que cursei a disciplina na minha graduação: há mais de 25 anos!
 
-Meu objetivo era escolher um livro que permitisse, no início de uma aula, dizer para os alunos: "hoje vamos estudar tal assunto, que corresponde a tal capítulo do livro texto". No final da aula, gostaria de sugerir aos alunos: "para fixar a matéria que acabamos de ver, sugiro que façam tais exercícios". No entanto, infelizmente, não encontrei esse livro... Em vez disso, tive que fazer uma extensa pesquisa e leitura de pelo menos 15 livros. 
+Meu objetivo era escolher um livro que permitisse, no início de uma aula, dizer para os alunos: "hoje vamos estudar tal assunto, que corresponde a tal capítulo do livro texto". No final da aula, gostaria de sugerir aos alunos: "para fixar a matéria que acabamos de ver, sugiro que façam tais exercícios". No entanto, infelizmente, não encontrei esse livro. Em vez disso, tive que fazer uma extensa pesquisa e leitura de pelo menos 15 livros. 
 
 Como resultado, preparei mais de 600 slides, que considero conter o principal material que deve ser tratado em uma disciplina de graduação em Engenharia de Software, especificamente em cursos que possuem uma única disciplina na área. Porém, estudar apenas por slides não proporciona a mesma experiência de aprendizado obtida com a leitura atenta de um texto completo e contextualizado.
 
@@ -33,7 +30,7 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo e organizaç
 
 * Ao longo da escrita, procuramos praticar o que enfatizamos no livro, principalmente no que diz respeito à prevalência atual de métodos de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios ágeis. Cada capítulo foi tratado com sendo um sprint; uma vez pronto, ele foi disponibilizado para uso, para receber críticas e sugestões. Como ocorre com software, acho muito arriscado, nos dias de hoje, passar anos escrevendo um manuscrito, trancado em minha sala, para só então torná-lo público. Outra prática ágil que se mostrou muito interessante foi deployment contínuo, isto é, toda atualização, em qualquer capítulo, era imediatamente propagada para a versão Web do livro.
 
-## Público Alvo
+## Público Alvo {.unnumbered}
 
 O livro se destina a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
 
@@ -41,11 +38,11 @@ Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdad
 
 Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software. De forma nenhuma, este é um livro descolado do estado da prática em Engenharia de Software.
 
-## Pré-requisitos
+## Pré-requisitos {.unnumbered}
 
 Espera-se que os leitores tenham domínio de conceitos básicos de programação e algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Idealmente, supondo um curso de graduação de 4 anos, os alunos devem estar na metade final do curso para que possam aproveitar os conceitos e métodos tratados no livro.
 
-## Próximos Passos
+## Próximos Passos {.unnumbered}
 
 Até o presente momento, temos 9 capítulos prontos, de um total previsto de 10 capítulos. Logo, estamos perto de terminar! Para conhecer esses capítulos, recomendamos consultar a última seção do Capítulo 1, onde apresentamos a estrutura do livro. 
 
@@ -59,7 +56,7 @@ Marco Tulio Valente
 
 Belo Horizonte, 11 de novembro de 2019.
 
-## Sobre o Autor
+## Sobre o Autor {.unnumbered}
 
 Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Federal de Minas Gerais, onde atualmente é Professor Associado do Departamento de Ciência da Computação. Seus interesses de pesquisa concentram-se em Engenharia de Software, especificamente nas áreas de Manutenção e Evolução de Software, Qualidade de Software e Mineração de Repositórios de Software. Ele é Bolsista de Produtividade Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG. É autor de mais de 100 artigos em periódicos e conferências internacionais, muitos deles em co-autoria com pesquisadores internacionais de renome. Orientou mais de 30 dissertações de mestrado e cerca de uma dezena de teses de doutorado. Desde 2010, coordena o Applied Software Engineering Research Group ([ASERG](http://aserg.labsoft.dcc.ufmg.br/)), do DCC/UFMG. É responsável também pelo 
 [CSIndexbr](https://csindexbr.org/), sistema que oferece dados transparentes sobre a produção científica brasileira em Ciência da Computação.

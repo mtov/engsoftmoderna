@@ -5,7 +5,7 @@
 
 Neste apêndice, apresentamos e discutimos exemplos de uso do sistema Git, que é o sistema de controle de versões mais usado atualmente. Inspirados pela frase acima, de Linus Torvalds, criador do Git, vamos focar nos conceitos e comandos básicos desse sistema. Como sugere a frase, é importante dominar esses comandos antes de se aventurar no uso de comandos mais avançados. Caso o leitor não tenha conhecimento dos objetivos e vantagens proporcionados por um sistema de controle de versões, recomendamos primeiro a leitura da seção "Controle de Versões", do Capítulo 10 deste livro.
 
-## A.1 Init & Clone
+## Init & Clone
 
 Para começar a usar o git para gerenciar as versões de um sistema
 devemos executar um dos seguintes comandos: **init** ou **clone**. O
@@ -14,9 +14,7 @@ comando init cria um repositório vazio. O segundo comando — clone
 ele copia para esse repositório todos os commits de um repositório
 remoto, passado como parâmetro. Seja, por exemplo, o seguinte comando:
 
-```
-git clone https://github.com/NOME-USER/NOME-REPO
-```
+`git clone https://github.com/NOME-USER/NOME-REPO`
 
 Esse comando clona para o diretório corrente um repositório armazenado
 remotamente no GitHub. Portanto, devemos usar clone quando vamos
@@ -24,7 +22,7 @@ trabalhar em um projeto que já está em andamento e que já possui commits
 em um repositório central. No exemplo, esse repositório é
 disponibilizado pelo GitHub.
 
-## A.2 Commit
+## Commit
 
 Commits são usados para criar snapshots (ou fotografias) dos arquivos de
 um sistema. Uma vez tiradas essas fotografias, elas são armazenadas no
@@ -55,7 +53,7 @@ o refactoring é explicado em detalhes na mensagem do commit. Na última
 linha da figura, podemos ver o nome do autor do commit e a informação de
 que ele foi realizado há 13 dias.
 
-![](figs/capAp/commit.png){width=95%}
+![Commit no GitHub](figs/capAp/commit.png){width=95%}
 
 Na última linha da figura também podemos observar que todo commit possui
 um identificador único, no caso:
@@ -67,7 +65,7 @@ hexadecimal. Esses bytes correspondem a uma verificação de consistência
 (*check sum*) do conteúdo do commit, conforme computado por uma função
 hash SHA-1.
 
-## A.3 Add 
+## Add 
 
 Na máquina local, o sistema git manipula três áreas distintas:
 
@@ -95,7 +93,7 @@ executar um add, para salvar o conteúdo do arquivo no index. Feito isso,
 podemos usar um commit para salvar no repositório local a versão
 adicionada ao index. Esse fluxo é ilustrado na próxima figura.
 
-![](figs/capAp/add.png){width=45%}
+![Comandos Add e Commit](figs/capAp/add){width=55%}
 
 **Exemplo**: Suponha o seguinte arquivo simples, mas suficiente para
 explicar os comandos add e commit.
@@ -151,7 +149,7 @@ git commit -m "Removendo arq1.txt"
 Além de remover do repositório git local, o comando rm também remove
 o arquivo do diretório de trabalho.
 
-## A.4 Push & Pull
+## Push & Pull
 
 O comando **push** copia os commits mais recentes do repositório local
 para o repositório remoto. Portanto, ele é uma operação mais lenta, pois
@@ -170,7 +168,7 @@ realiza duas operações principais:
 
 A próxima figura ilustra o funcionamento dos comandos push e pull.
 
-![](figs/capAp/push-pull.png){width=50%}
+![Comandos push e pull](figs/capAp/push-pull){width=55%}
 
 **Exemplo**: Suponha que no repositório git central de um projeto exista
 o seguinte arquivo:
@@ -192,11 +190,11 @@ No mesmo dia, Bob implementou uma segunda função `g` no arquivo, que ficou
 assim:
 
 ```
-void f() // função antiga {
+void f() {   // antiga
   ... 
 }
 
-void g() // implementada por Bob {
+void g() {   // implementada por Bob
   ... 
 }
 ```
@@ -221,7 +219,7 @@ após esse comando pull, o arquivo em questão será atualizado na máquina
 da Alice, para incluir a função `g` implementada por Bob.
 
 
-## A.5 Conflitos de Merge
+## Conflitos de Merge
 
 Conflitos de merge acontecem quando dois desenvolvedores alteram o mesmo
 trecho de código ao mesmo tempo. Para entender melhor essa situação,
@@ -243,7 +241,7 @@ programa para Português:
 
 ```
 main() {
-  print("Olá, mundo!");
+  print("Ola, mundo!");
 }
 ```
 
@@ -255,15 +253,19 @@ Bob, após corrigir o erro de ortografia, salvou o arquivo e também
 executou um add, seguido de um commit. Por fim, ele executou push, mas o
 comando falhou com a seguinte mensagem de erro:
 
-`Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref. You may want to first integrate the remote changes (e.g., \'git pull \...\') before pushing again.`
+| Updates were rejected because the remote contains work that you do 
+| not have locally. This is usually caused by another repository 
+| pushing to the same ref. You may want to first integrate the 
+| remote changes (e.g., git pull ...) before pushing again.
+
 
 A mensagem é bem clara: Bob não pode executar um push, pois o
 repositório remoto possui conteúdo novo, no caso, gerado por Alice.
 Antes de executar um push, Bob precisa executar um pull. Porém, ao fazer
 isso, ele recebe uma nova mensagem de erro:
 
-`CONFLICT (content): Merge conflict in arq2
-Automatic merge failed; fix conflicts and then commit the result.`
+| CONFLICT (content): Merge conflict in arq2
+| Automatic merge failed; fix conflicts and then commit the result.
 
 Essa nova mensagem é também clara: existe um conflito de merge no
 arquivo `arq2`. Ao editar esse arquivo, Bob vai perceber que ele foi
@@ -274,7 +276,7 @@ main() {
  <<<<<<< HEAD                                     
  print("Hello, world!");                               
  =======                                                 
- print("Olá, mundo!");                                 
+ print("Ola, mundo!");                                 
  >>>>>>> f25bce8fea85a625b891c890a8eca003b723f21b 
  }                                                       
 ```
@@ -301,7 +303,7 @@ arquivo, de forma que fique assim:
 
 ```
 main() {                
-  print("Olá, mundo!");                      
+  print("Ola, mundo!");                      
 }                       
 ```
 
@@ -316,7 +318,7 @@ linha de um único arquivo. No entanto, um pull pode dar origem a
 conflitos mais complexos. Por exemplo, um mesmo arquivo pode apresentar
 vários conflitos. E também podemos ter conflitos em mais de um arquivo.
 
-## A.6 Branches
+## Branches
 
 O git organiza o diretório de trabalho em \"diretórios virtuais\",
 chamados de **branches**. Até agora, não precisamos comentar sobre
@@ -374,9 +376,9 @@ ele tiver realizado antes um add e commit. Caso ele tenha esquecido de
 chamar esses comandos, um comando git checkout B irá falhar com a
 seguinte mensagem de erro:
 
-`Your local changes to the following files would be overwritten by checkout:
-\[list of files\]                                                    
-Please commit your changes or stash them before you switch branches.`
+| Your local changes to the following files would be overwritten by checkout:
+| \[list of files\] 
+| Please commit your changes or stash them before you switch branches.
 
 
 Voltando ao exemplo, após Bob ter criado o seu branch, ele deve proceder
@@ -416,13 +418,13 @@ seguinte comando no branch master:
 
 `git branch -d f-novo`
 
-📚**Aprofundamento**: Commits podem possuir zero, um ou mais pais (ou
+**Aprofundamento**: Commits podem possuir zero, um ou mais pais (ou
 antecessores). Como ilustra a próxima figura, o primeiro commit de um
 repositório não possui pai. Já um commit de merge possui dois ou mais
 pais, que representam os branches que foram unidos. Os demais commits
 possuem exatamente um pai.
 
-![](figs/capAp/branches.png){width=50%}
+![](figs/capAp/branches){width=60%}
 
 Um branch nada mais é do que uma variável interna do git que contém o
 identificador do último commit realizado no branch. Existe ainda uma
@@ -430,7 +432,7 @@ variável chamada `HEAD`, que aponta para a variável do branch atual. Ou
 seja, `HEAD` contém o nome da variável que contém o identificador do
 último commit do branch atual. Um exemplo é mostrado a seguir:
 
-![](figs/capAp/head1.png){width=60%}
+![](figs/capAp/head1){width=65%}
 
 Nesse exemplo, podemos ver que existem dois branches, representados
 pelas variáveis `MASTER` e `ISSUE-45`. Cada uma delas aponta para o último
@@ -438,7 +440,7 @@ commit de seu respectivo branch. A variável `HEAD`
 aponta para a variável `MASTER`. Isso significa que o branch atual é o
 `MASTER`. Se realizarmos um commit, a configuração mudará para:
 
-![](figs/capAp/head2.png){width=60%}
+![](figs/capAp/head2){width=65%}
 
 O novo commit tem identificador 7. Ele foi realizado no `MASTER`, já que
 HEAD apontava para a variável desse branch. O pai do novo commit pai é o
@@ -449,14 +451,14 @@ branch, o pai do próximo commit será o commit 7.
 Porém, se mudarmos para o branch `ISSUE-45`, a configuração passará a ser
 a seguinte:
 
-![](figs/capAp/head3.png){width=60%}
+![](figs/capAp/head3){width=65%}
 
 A única mudança é que a variável `HEAD` passou a apontar para a variável
 do novo branch, isto é, para a variável `ISSUE-45`. Isso é suficiente para
 fazer com que o próximo commit seja realizado nesse branch, isto é, que
 ela tenha o commit 6 como pai.
 
-## A.7 Branches Remotos
+## Branches Remotos
 
 Até esse momento, trabalhamos com branches localmente, isto é, os
 branches que discutimos existem apenas no repositório local. No entanto,
@@ -512,7 +514,7 @@ E Alice também pode deletar seu branch local, chamando apenas:
 `git branch -d g-novo`
 
 
-## A.8 Pull Requests
+## Pull Requests
 
 Pull Pull requests é um mecanismo que viabiliza que um branch seja
 revisado e discutido antes de ser integrado no branch principal. Quando
@@ -569,7 +571,7 @@ na página do GitHub e selecionar o branch `livro-esm`. Feito isso, o GitHub
 mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e
 descrever o seu pull request, como mostra a próxima figura.
 
-![](figs/capAp/pull-request.png){width=65%}
+![Exemplo de pull request](figs/capAp/pull-request.png){width=70%}
 
 Um pull request é uma solicitação para que um outro desenvolvedor revise
 e, se for o caso, realize o merge de um branch que você criou.
@@ -593,7 +595,7 @@ se o seu pedido foi atendido. Estando a modificação aprovada, Alice pode
 integrar o código no master, bastando para isso clicar em um dos botões
 da página de revisão de pull requests.
 
-## A.9 Squash
+## Squash
 
 Squash é um comando que permite unir diversos commits em um único
 commit. É uma operação recomendada, por exemplo, antes de submeter pull
@@ -624,11 +626,11 @@ branch atual. Um editor de textos será aberto com uma lista contendo o
 ID e a descrição de cada um, como mostrado a seguir:
 
 ```
-pick 16b5fcc Inclusão do link 1
-pick c964dea Inclusão do link 2
-pick 06cf8ee Inclusão do link 3
-pick 396b4a3 Inclusão do link 4
-pick 9be7fdb Inclusão do link 5
+pick 16b5fcc Incluindo link 1
+pick c964dea Incluindo link 2
+pick 06cf8ee Incluindo link 3
+pick 396b4a3 Incluindo link 4
+pick 9be7fdb Incluindo link 5
 ```
 
 Bob deve então usar o próprio editor para substituir a palavra pick por
@@ -636,11 +638,11 @@ squash, exceto aquela da primeira linha. O arquivo ficará então assim
 (com os squash adicionados em negrito):
 
 ```
-pick 16b5fcc Inclusão do link 1
-squash c964dea Inclusão do link 2
-squash 06cf8ee Inclusão do link 3
-squash 396b4a3 Inclusão do link 4
-squash 9be7fdb Inclusão do link 5
+pick 16b5fcc Incluindo link 1
+squash c964dea Incluindo link 2
+squash 06cf8ee Incluindo link 3
+squash 396b4a3 Incluindo link 4
+squash 9be7fdb Incluindo link 5
 ```
 
 Bob deve então salvar o arquivo. Automaticamente, um novo editor será
@@ -649,8 +651,7 @@ commit que junta os cinco commits listados. Uma vez informada a
 mensagem, Bob deve salvar o arquivo e, então, o squash estará
 finalizado.
 
-A.10 Forks
-==========
+## Forks
 
 Fork é o mecanismo que o GitHub oferece para clonar repositórios
 remotos, isto é, repositórios armazenados pelo próprio GitHub. Um fork é
@@ -694,14 +695,14 @@ apenas de seu time de desenvolvedores (Bob e Alice, no nosso exemplo),
 mas de um outro desenvolvedor com conta no GitHub (como é o caso de
 Carol).
 
-## Bibliografia
+## Bibliografia {.unnumbered}
 
 * Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
 
 * Rachel M. Carmena. How to teach Git. Blog post
 [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
 
-## Exercício
+## Exercícios de Fixação {.unnumbered}
 
 Neste apêndice, mostramos diversos exemplos. Tente reproduzir cada um
 deles. Nos exemplos que envolvem repositórios remotos, a sugestão é usar

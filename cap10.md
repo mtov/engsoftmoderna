@@ -1,8 +1,9 @@
-# Cap. 10 - DevOps (em andamento)
 
-> *Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds. -- G. Kim, J. Humble, P. Debois, J. Willes*
+# DevOps (em andamento)
 
-## 10.1 Introdução
+> "Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds." -- G. Kim, J. Humble, P. Debois, J. Willes
+
+## Introdução
 
 Até agora, neste livro, estudamos um conjunto de práticas para desenvolvimento de software com qualidade e agilidade. Por meio de métodos ágeis — como Scrum, XP ou Kanban —, vimos que o cliente deve participar desde o primeiro dia da construção de um sistema. Também estudamos práticas importantes para produção de software com qualidade, como testes de unidade e refactoring. Estudamos ainda princípios e padrões de projeto e também padrões arquiteturais.
 
@@ -20,15 +21,15 @@ Resumindo, nesse modelo tradicional, existia um stakeholder importante — os ad
 
 Então, para facilitar a implantação e entrega de sistemas, foi proposto o conceito de **DevOps**. Por ser um termo recente, ele ainda não possui uma definição consolidada. Mas seus proponentes gostam de descrever DevOps como um movimento que visa unificar as culturas de desenvolvimento (Dev) e de operação (Ops), visando permitir a implantação mais rápida e ágil de um sistema. Esse objetivo está refletido na frase que abre esse capítulo, de autoria de Gene Kim, Jez Humble, Patrick Debois e John Willes, todos eles membros de um grupo de desenvolvedores que ajudou a difundir os princípios de DevOps. Segundo eles, DevOps implica na seguinte disrupção na cultura tradicional de implantação de sistemas ([link](https://dl.acm.org/doi/book/10.5555/3044729)):
 
-> Em vez de iniciar as implantações à meia-noite de sexta-feira e passar todo o fim de semana trabalhando para concluí-las, as implantações ocorrem em qualquer dia útil, quando todos estão na empresa e sem que os clientes percebam — exceto quando encontram novas funcionalidades e correções de bugs. 
+> "Em vez de iniciar as implantações à meia-noite de sexta-feira e passar todo o fim de semana trabalhando para concluí-las, as implantações ocorrem em qualquer dia útil, quando todos estão na empresa e sem que os clientes percebam — exceto quando encontram novas funcionalidades e correções de bugs." 
 
 No entanto, DevOps não advoga a criação de um profissional novo, que fique responsável tanto pelo desenvolvimento como pela implantação de sistemas. Em vez disso, defende-se uma aproximação entre o  pessoal de desenvolvimento e o pessoal de operações e vice-versa, visando fazer com que a implantação de sistemas seja mais ágil e menos traumática. Tentando explicar com outras palavras, a ideia é evitar dois silos independentes: desenvolvedores e operadores, com pouca ou nenhuma iteração eles, como ilustrado na figura a seguir. 
 
-![Organização que **não** é baseada em DevOps. Existe pouca comunicação entre Dev e Ops.](figs/cap10/no-devops.svg){width=35%}
+![Organização que **não** é baseada em DevOps. Existe pouca comunicação entre Dev e Ops.](figs/cap10/no-devops){width=35%}
 
 Em vez disso, defende-se que esses profissionais atuem em conjunto desde os primeiros sprints de um projeto, como na figura a seguir. Para o cliente final, o benefício deve ser a entrada em produção mais cedo do sistema que ele contratou.
 
-![Organização baseada em DevOps. Frequentemente, alguns Dev e alguns Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops.svg){width=35%}
+![Organização baseada em DevOps. Frequentemente, alguns Dev e alguns Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops){width=35%}
 
 Quando migra-se para uma cultura de DevOps, os times ágeis podem incluir um profissional de operações, que participe dos trabalhos do time em tempo parcial ou mesmo em tempo integral. Sempre em função da demanda, esse profissional pode também participar de mais de um time. A ideia é que ele antecipe problemas de desempenho, segurança, incompatibilidades com outros sistemas, etc. Ele pode também, enquanto o código está sendo implementado, começar a trabalhar nos scripts de instalação, administração e monitoramento do sistema em produção.
 
@@ -58,9 +59,9 @@ nova história está pronta (*done*). Porém, ao serem questionados se ela pode 
 * **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
 perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação.
 
-🌎 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
+**Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
 
-## 10.2 Controle de Versões
+## Controle de Versões
 
 Como mencionamos algumas vezes neste livro, software é desenvolvido em equipe. Por isso, precisamos de um servidor para armazenar o código fonte do sistema que está sendo implementado por um grupo de desenvolvedores. A existência desse servidor é fundamental para que esses desenvolvedores possam colaborar e para que os operadores saibam precisamente qual versão do sistema deve ser colocada em produção. Além disso, sempre é útil manter o histórico das versões mais importantes de cada arquivo. Isso permite, se necessário, realizar uma espécie de \"undo\" no tempo, isto é, recuperar o código de um arquivo como ele estava há anos atrás, por exemplo.
 
@@ -68,11 +69,11 @@ Um **sistema de controle de versões** (VCS, na sigla em inglês) oferece os doi
 
 Os primeiros sistemas de controle de versões surgiram no início da década de 70, como o sistema SCCS, desenvolvido para o sistema operacional Unix. Em seguida, surgiram outros sistemas, como o CVS, em meados da década de 80, e depois o sistema Subversion, também conhecido pela sigla svn, no início dos anos 2000. Todos são sistemas centralizados e baseados em uma arquitetura cliente/servidor (veja figura a seguir). Nessa arquitetura, existe um único servidor, que armazena o repositório e o sistema de controle de versões. Os clientes acessam esse servidor para obter a versão mais recente de um arquivo. Feito isso, eles podem modificar o arquivo, por exemplo, para corrigir um bug ou implementar uma nova funcionalidade. Por fim, eles atualizam o arquivo no servidor, realizando uma operação chamada **commit**, a qual torna o arquivo visível para os outros desenvolvedores.
 
-![VCS Centralizado. Existe um único repositório, no nodo servidor](figs/cap10/vcs.svg){width=35%}
+![VCS Centralizado. Existe um único repositório, no nodo servidor](figs/cap10/vcs){width=35%}
 
 No início dos anos 2000, começaram a surgir **sistemas de controle de versões distribuídos** (DVCS). Dentre eles, podemos citar o sistema BitKeeper, cujo primeiro release é de 2000, e os sistemas Mercurial e git, ambos lançados em 2005. Em vez de uma arquitetura cliente/servidor, um DVCS adota uma arquitetura peer-to-peer. Na prática, isso significa que cada desenvolvedor possui em sua máquina um servidor completo de controle de versões, que pode se comunicar com os servidores de outras máquinas, como ilustrado na próxima figura.
 
-![VCS Distribuído (DVCS). Cada cliente possui um servidor. Logo, a arquitetura é peer-to-peer.](figs/cap10/dvcs.svg){width=35%}
+![VCS Distribuído (DVCS). Cada cliente possui um servidor. Logo, a arquitetura é peer-to-peer.](figs/cap10/dvcs){width=35%}
 
 Apesar de todos os clientes serem funcionalmente equivalentes, na prática, quando se usa um DVCS, existe uma máquina principal, que armazena a versão de referência do código fonte. Na nossa figura, chamamos esse repositório de **repositório central**. Cada desenvolvedor pode trabalhar de forma independente e até mesmo offline em sua máquina cliente, realizando commits no seu repositório. De tempos em tempos, ele deve sincronizar esse repositório com o central, por meio de duas operações: **pull** e **push**. Um pull atualiza o repositório local com novos commits disponíveis no repositório central. Por sua vez, um push faz a operação contrária, isto é, envia para o repositório central os commits mais recentes realizados pelo desenvolvedor em seu repositório local.
 Quando comparado com um VCS centralizado, um DVCS tem as seguintes
@@ -92,13 +93,13 @@ vantagens:
 
 No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.
 
-### Multirepos vs Monorepos
+### Multirepos vs Monorepos {.unnumbered}
 
 Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente entre grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **multirepos** e **monorepo** — são ilustradas nas próximas figuras.
 
-![Multirepos: VCS gerencia vários repositórios (um repositório por projeto ou sistema)](figs/cap10/multirepos.svg){width=35%}
+![Multirepos: VCS gerencia vários repositórios (um repositório por projeto ou sistema)](figs/cap10/multirepos){width=35%}
 
-![Monorepo: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo.svg){width=35%}
+![Monorepo: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=35%}
 
 Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:
 
@@ -120,11 +121,11 @@ essa renomeação pode ser realizada em um único commit.
 Por outro lado, monorepos demandam o uso de ferramentas que ajudem a navegar em grandes bases de código. Por exemplo, caso use git, o desenvolvedor terá em seu repositório local todos os arquivos de todos os sistemas da organização. Por isso, os responsáveis pelo monorepo do Google comentam que foram obrigados a implementar internamente um plug-in para a IDE Eclipse, o qual facilita o trabalho com uma base de código muito grande, como a que eles possuem na empresa ([link](https://doi.org/10.1145/2854146)).
 
 
-## 10.3 Integração Contínua
+## Integração Contínua
 
 Para explicar o conceito de Integração Contínua (CI), iniciamos com uma subseção de motivação. Em seguida, apresentamos o conceito propriamente dito. Feito isso, discutimos outras práticas que uma organização deve adotar junto com CI. Terminamos com uma breve discussão sobre cenários que podem desmotivar o emprego de CI em uma organização.
 
-### Motivação
+### Motivação {.unnumbered}
 
 Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de **master** (quando usa-se Git) ou **trunk** (quando usa-se outros sistemas, como svn). Além do branch principal, os usuários podem criar seus próprios branches.
 
@@ -134,7 +135,7 @@ Quando a implementação da nova funcionalidade terminava, o código do branch e
 
 Para ilustrar esses conflitos, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustra a figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.
 
-![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional.svg){width=55%}
+![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional){width=55%}
 
 Então, após 40 dias, quando Alice integrou seu código no master, surgiram diversos conflitos. Alguns deles são descritos a seguir:
 
@@ -147,7 +148,7 @@ Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de b
 
 Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Assim, esse desenvolvedor pode sentir-se mais confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de interfaces e telas, para acesso a dados, etc.
 
-### O que é Integração Contínua?
+### O que é Integração Contínua? {.unnumbered}
 
 Integração contínua (*continuous integration* ou CI) é uma prática de desenvolvimento proposta por Extreme Programing (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução deste capítulo: se uma tarefa causa "dor", não podemos deixar que ela acumule. Em vez disso, devemos quebrá-la em subtarefas que possam ser realizadas de forma frequente. Como essas subtarefas serão pequenas e simples, a "dor" decorrente da sua realização será menor.
 
@@ -155,23 +156,23 @@ Adaptando para o contexto de integração de código, sabemos que grandes integr
 
 Kent Beck, em seu livro de XP, defende o uso de CI da seguinte forma ([link](https://dl.acm.org/doi/book/10.5555/1076267)):
 
-> Você deve integrar e testar o seu código em intervalos menores do que algumas horas. Programação em times não é um problema do tipo dividir-e-conquistar. Na verdade, é um problema que requer dividir, conquistar e integrar. A duração de uma tarefa de integração é algo imprevisível e pode facilmente levar mais tempo do que a tarefa original de codificação. Assim, quanto mais tempo você levar para integrar, maiores e mais imprevisíveis serão os custos.
+> "Você deve integrar e testar o seu código em intervalos menores do que algumas horas. Programação em times não é um problema do tipo dividir-e-conquistar. Na verdade, é um problema que requer dividir, conquistar e integrar. A duração de uma tarefa de integração é algo imprevisível e pode facilmente levar mais tempo do que a tarefa original de codificação. Assim, quanto mais tempo você levar para integrar, maiores e mais imprevisíveis serão os custos."
 
 Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Outros autores, como Fowler, mencionam pelo menos uma integração por dia por desenvolvedor ([link](https://martinfowler.com/articles/continuousIntegration.html)), o que parece ser um limite mínimo para um time argumentar que está usando CI.
 
-### Boas Práticas para Uso de CI
+### Boas Práticas para Uso de CI {.unnumbered}
 
 Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, algumas práticas são importantes quando se usa CI. Vamos discutir algumas delas a seguir.
 
-#### Build Automatizado
+#### Build Automatizado {.unnumbered}
 
 Build é um nome usado para designar a compilação de todo os arquivos de um sistema, até a geração uma versão executável. Quando se usa CI, o build deve ser totalmente automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
 
-#### Testes Automatizados
+#### Testes Automatizados {.unnumbered}
 
 Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8. 
 
-#### Servidores de Integração Contínua
+#### Servidores de Integração Contínua {.unnumbered}
 
 Por fim, não basta ter builds e testes automatizados. É importante que eles sejam executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem Servidores de CI, que funcionam da seguinte forma (acompanhe também pela próxima figura): 
 
@@ -179,7 +180,7 @@ Por fim, não basta ter builds e testes automatizados. É importante que eles se
 
   * Após a execução do build e dos testes, o servidor de CI notifica o usuário.
 
-![Servidor de Integração Contínua](figs/cap10/ci-server.svg){width=50%}
+![Servidor de Integração Contínua](figs/cap10/ci-server){width=50%}
 
 O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Quando o build falha, costuma-se dizer que ele "quebrou". Com frequência, o build na máquina do desenvolvedor pode ter sido concluído com sucesso. Mas ao ser executado no servidor de CI, ele pode falhar. Isso ocorre, por exemplo, quando o desenvolvedor esquece de realizar o commit de algum arquivo. Dependências incorretas são outro motivo para quebra de builds. Por exemplo, o código foi compilado e testado na máquina local do desenvolvedor usando a versão 2.0 de uma determinada biblioteca, mas o servidor de CI realiza o build usando a versão 1.0.
 
@@ -191,27 +192,24 @@ Existem diversos servidores de integração contínua no mercado. Alguns deles s
 
 Uma dúvida comum é se CI é compatível com o uso de branches. De forma coerente com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Dizendo de outra forma, CI não é incompatível com branches, mas apenas com com branches com um tempo de vida elevado. Ainda nessa linha, Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
 
-> Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um "animal" diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de building contínuo e pode ser uma coisa boa... Porém, como não há integração, não podemos chamar essa prática de CI.
+> "Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um animal diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de building contínuo e pode ser uma coisa boa. Porém, como não há integração, não podemos chamar essa prática de CI."
 
-<!---
-O termo **Teatro de CI (CI Theater)** designa os cenários nos quais uma organização apenas instala uma servidor de CI. No entanto, os desenvolvedores não integram seu código diariamente e continuam trabalhando em branches de longa duração.
--->
 
-#### Desenvolvimento Baseado no Trunk
+#### Desenvolvimento Baseado no Trunk {.unnumbered}
 
 Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development* ou TBD). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
-🌎 **Mundo Real**: TBD é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
+**Mundo Real**: TBD é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
 
-* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges. ([link](https://arxiv.org/abs/1702.01715))
+* No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges." ([link](https://arxiv.org/abs/1702.01715))
 
 * No Facebook, "todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk." ([link](https://doi.org/10.1109/MIC.2013.25))
 
-#### Programação Pareada
+#### Programação Pareada {.unnumbered}
 
 Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programação pareada com CI. Porém, tal uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. No entanto, nesse caso, como o código já foi integrado, os custos de aplicar a revisão podem ser maiores. 
 
-### Quando não usar CI?
+### Quando não usar CI? {.unnumbered}
 
 Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. No entanto, dependendo da organização, do domínio do sistema (que pode ser um sistema crítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil aplicar esse limite.
 
@@ -220,13 +218,13 @@ E também é preciso lembrar que esse limite não é uma lei da natureza. Por ex
 CI também não é compatível com projetos de código livre. Na maioria das vezes, os desenvolvedores desses projetos são voluntários e não têm disponibilidade para trabalhar diariamente no seu código. Nesses casos, um modelo baseado em Pull Requests e Forks, conforme usado pelo GitHub, é mais adequado.
 
 
-## 10.5 Entrega Contínua
+## Entrega Contínua
 
-### Feature Flags
+### Feature Flags {.unnumbered}
 
-## 10.6 Engenharia de Releases
+## Engenharia de Releases
 
-## Bibliografia
+## Bibliografia {.unnumbered}
 
 * Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
 
@@ -234,29 +232,27 @@ CI também não é compatível com projetos de código livre. Na maioria das vez
 
 * Steve Matyas, Andrew Glover, Paul M. Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
 
-## Exercícios de Fixação
+## Exercícios de Fixação {.unnumbered}
 
 1. Defina e descreva os objetivos de DevOps.
 
 2. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para "Engenheiro Devops", requerendo habilidades como as seguintes:
 
-```
-* Ferramentas de controle de versão (Git, Bitbucket, SVN, etc)
-* Gerenciadores de dependência e build (Maven, Gradle e etc)
-* Ferramentas de integração contínua (Jenkins, Bamboo, VSTS) 
-* Administração de servidores em Cloud: AWS e Azure 
-* Sistemas Operacionais (Ubuntu, CentOS e Red Hat)
-* Banco de dados (DynamoDB, Aurora Mysql) 
-* Docker e orquestração de docker (Kubernetes, Mesos, Swarm) 
-* Desenvolvimento com APIs REST, Java
-```
+ * Ferramentas de controle de versão (Git, Bitbucket, SVN, etc)
+ * Gerenciadores de dependência e build (Maven, Gradle e etc)
+ * Ferramentas de integração contínua (Jenkins, Bamboo, VSTS) 
+ * Administração de servidores em Cloud (AWS e Azure) 
+ * Sistemas Operacionais (Ubuntu, CentOS e Red Hat)
+ * Banco de dados (DynamoDB, Aurora Mysql) 
+ * Docker e orquestração de docker (Kubernetes, Mesos, Swarm) 
+ * Desenvolvimento com APIs REST, Java
 
-Considerando a definição de DevOps que respondeu no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
+   Considerando a definição de DevOps que respondeu no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
 
 3. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuos delivery*) e implantação contínua (*continuos deployment*).
 
 4. Porque integração contínua, entrega contínua e implantação contínua são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.
 
-5. Pesquise na Internet o significado da expressão Teatro de CI (*CI Theater*) e então descreva esse significado com suas próprias palavras.
+5. Pesquise o significado da expressão Teatro de CI (*CI Theater*) e então descreva esse significado com suas próprias palavras.
 
 
