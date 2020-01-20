@@ -1,4 +1,5 @@
-# Cap. 1 - Introdução
+
+# Introdução
 
 > Our civilization runs on software. -- Bjarne Stroustrup
 
@@ -14,7 +15,7 @@ início, evitar falsas expectativas em relação ao conteúdo do trabalho.
 Por fim, iremos apresentar a estrutura e os assuntos tratados nos
 capítulos restantes do livro (Seção 1.4).
 
-## 1.1 Definições, Contexto e História
+## Definições, Contexto e História
 
 No mundo moderno, tudo é software. Por exemplo, hoje em dia, empresas de
 qualquer tamanho dependem dos mais diversos sistemas de informação para
@@ -68,10 +69,9 @@ renomados Cientistas da Computação se reuniu durante uma semana em
 Garmisch, na Alemanha, em uma conferência patrocinada por um comitê
 científico da OTAN, a organização militar que congrega os países do
 Atlântico Norte (veja uma foto da reunião na próxima figura). O objetivo
-da conferência era chamar a atenção para um \"problema crucial do uso de
-computadores, o chamado software\". A conferência produziu um relatório,
-com mais de 130 páginas
-([link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html)),
+da conferência era chamar a atenção para um "problema crucial do uso de
+computadores, o chamado software". A conferência produziu um relatório,
+com mais de 130 páginas,
 que afirmava a necessidade de que software fosse construído com base em
 princípios práticos e teóricos, tal como ocorre em ramos tradicionais e
 bem estabelecidos da Engenharia. Para deixar essa proposta mais clara,
@@ -82,7 +82,7 @@ de Engenharia de Software.
 ![Cientistas na conferência da OTAN de 1968 sobre Engenharia de Software.
 Reprodução autorizada pelo Prof. Robert McClure. Para mais fotos da
 conferência, veja este
-[link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html).](figs/cap1/otan.jpg){width=45%}
+[link](http://homepages.cs.ncl.ac.uk/brian.randell/NATO/index.html).](figs/cap1/otan.jpg){width=55%}
 
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
 ilustra os desafios que esperavam a recém criada área de pesquisa:
@@ -102,7 +102,7 @@ deve ser construído em fases estritamente sequenciais, como ocorre com
 produtos tradicionais de engenharia, tais como Engenharia Civil,
 Engenharia Mecânica, Engenharia Eletrônica, etc. Já existem também
 padrões que podem ser usados por Engenheiros de Software em seus novos
-sistemas, de forma que eles não precisam \"reinventar a roda\" toda vez
+sistemas, de forma que eles não precisam "reinventar a roda" toda vez
 que enfrentam um novo problema de projeto. Bibliotecas e frameworks para
 os mais diversos fins estão largamente disponíveis, de forma que
 desenvolvedores de software podem reusar código sem se preocupar com
@@ -117,15 +117,15 @@ apenas corretiva, para corrigir bugs reportados por usuários, mas também
 para garantir que os sistemas continuem fáceis de manter e entender,
 mesmo com o passar dos anos.
 
-### Não existe bala de prata
+### Não existe bala de prata {.unnumbered}
 
 Como começamos a afirmar no parágrafo anterior, desenvolvimento de
 software é diferente de qualquer outro produto de Engenharia,
 principalmente quando se compara software com hardware. Frederick
 Brooks, Prêmio Turing em Computação (1999) e um dos pioneiros da área de
 Engenharia de Software, foi um dos primeiros a chamar a atenção para
-esse fato. Em 1987, em um ensaio intitulado \"*Não Existe Bala de Prata:
-Essência e Acidentes em Engenharia de Software\"*
+esse fato. Em 1987, em um ensaio intitulado *Não Existe Bala de Prata:
+Essência e Acidentes em Engenharia de Software*
 ([link](https://doi.org/10.1109/MC.1987.1663532)), ele
 discorreu sobre as particularidades da área de Engenharia de Software.
 
@@ -188,12 +188,12 @@ documentação, uma aplicação Web com uma interface pouco intuitiva, etc.
 Todas essas dificuldades dizem respeito à solução adotada e, portanto,
 não são uma característica inerente dos sistema mencionados.
 
-🌎 **Mundo Real**: Para ilustrar a complexidade envolvida na
+**Mundo Real**: Para ilustrar a complexidade envolvida na
 construção de sistemas de software reais, vamos dar alguns números sobre
 o tamanho desses sistemas, em linhas de código. Por exemplo, o sistema
 operacional Linux, em sua versão 4.1.3, de 2017, possui cerca de 25
 milhões de linhas de código e contribuições de quase 1.700 engenheiros
-([link](https://www.linuxfoundation.org/2017-linux-kernel-report-landing-page/)).
+([link](https://www.linuxfoundation.org/2017-linux-kernel-report-landing-page)).
 Para mencionar um segundo exemplo, os sistemas do Google somavam 2
 bilhões de linhas de código, distribuídas por 9 milhões de arquivos, em
 janeiro de 2015 ([link](https://doi.org/10.1145/2854146)).
@@ -201,11 +201,11 @@ Nesta época, cerca de 40 mil solicitações de mudanças de código
 (commits) eram realizadas, em média, por dia, pelos cerca de 25 mil
 Engenheiros de Software empregados pelo Google.
 
-## 1.2 O que se Estuda em Engenharia de Software?
+## O que se Estuda em Engenharia de Software?
 
 Para responder a essa pergunta, vamos nos basear no *Guide to the
 Software Engineering Body of Knowledge*, também conhecido pela sigla
-SWEBOK ([link](http://www.swebok.org/)). Trata-se de um
+SWEBOK ([link](http://www.swebok.org)). Trata-se de um
 documento, organizado pela IEEE Computer Society (uma sociedade
 científica internacional), com o apoio de diversos pesquisadores e de
 profissionais da indústria. O objetivo do SWEBOK é precisamente
@@ -249,7 +249,7 @@ um panorama do conhecimento que se adquiriu ao longo dos anos em
 Engenharia de Software e, assim, informá-lo sobre *o que* se estuda
 nessa área.
 
-### Engenharia de Requisitos
+### Engenharia de Requisitos {.unnumbered}
 
 Os requisitos de um sistema definem *o que* ele deve fazer e *como* ele
 deve operar. Assim, a Engenharia de Requisitos inclui o conjunto 
@@ -289,7 +289,7 @@ não-funcionais, dentre outros, incluem:
 
 * Usabilidade: ter uma versão para deficientes visuais.
 
-### Projeto de Software
+### Projeto de Software {.unnumbered}
 
 Durante o projeto de um sistema de software, são definidas suas
 principais unidades de código, porém apenas no nível de interfaces,
@@ -307,6 +307,7 @@ implementado em uma linguagem orientada a objetos.
 Por exemplo, durante o projeto de um sistema de *home-banking*, pode-se
 propor uma classe para representar contas bancárias, como a seguinte:
 
+
 ```
 class ContaBancaria {                                                                          
    private Cliente cliente;                        
@@ -317,6 +318,7 @@ class ContaBancaria {
    ...                                            
  }                                               
 ```
+
 
 Primeiro, é importante mencionar que a implementação acima é bem
 simples, pois o nosso objetivo é didático, isto é, diferenciar projeto
@@ -336,7 +338,7 @@ código possuem maior granularidade — são pacotes, por exemplo
 nível de abstração mais alto do que aquele que envolve classes ou
 construções semelhantes.
 
-### Construção de Software
+### Construção de Software {.unnumbered}
 
 Construção trata da implementação, isto é, codificação do sistema. Neste
 momento, existem diversas decisões que precisam ser tomadas, como, por
@@ -349,7 +351,7 @@ compiladores, ambientes integrados de desenvolvimento (IDEs),
 depuradores, sistemas gerenciadores de bancos de dados, ferramentas para
 construção de interfaces, etc.
 
-### Testes de Software
+### Testes de Software {.unnumbered}
 
 Teste consiste na execução de um programa com um conjunto finito de
 casos, com o objetivo de verificar se ele possui o comportamento
@@ -407,8 +409,8 @@ círculo, dependendo de uma determinada condição:
     area = pi * raio * raio * raio; 
 ```
 
-Esse código possui um defeito, pois a área de um círculo é \"pi vezes
-raio ao quadrado\", e não ao cubo. Bug é um termo mais informal, usado
+Esse código possui um defeito, pois a área de um círculo é "pi vezes
+raio ao quadrado", e não ao cubo. Bug é um termo mais informal, usado
 com objetivos às vezes diversos. Mas, o uso mais comum é como sinônimo
 de defeito. Por fim, uma falha ocorre quando um código com defeito for
 executado — por exemplo, a condição do `if` do programa acima for
@@ -420,18 +422,18 @@ Resumindo: código defeituoso é aquele que não está de acordo com a sua
 especificação. Se esse código for executado e de fato levar o programa a
 apresentar um resultado incorreto, diz-se que ocorreu uma falha.
 
-📚 **Aprofundamento:** Na literatura sobre testes, às vezes são
+**Aprofundamento:** Na literatura sobre testes, às vezes são
 mencionados os termos **erro** e **falta (fault)**. Quando isso ocorre, o
 significado é o mesmo daquele que adotamos para *defeito* neste livro.
 Por exemplo, o *IEEE Standard Glossary of Software Engineering
 Terminology*
 ([link](https://doi.org/10.1109/IEEESTD.1990.101064))
-define que falta é um \"passo, processo ou definição de dados incorretos
+define que falta é um "passo, processo ou definição de dados incorretos
 em um programa de computador; os termos erro e bug são \[também\] usados
-para expressar esse significado\". Resumindo, *defeito*, *erro*, *falta*
+para expressar esse significado". Resumindo, *defeito*, *erro*, *falta*
 e *bug* são sinônimos.
 
-🌎 **Mundo Real**: Existe uma lista enorme de falhas de software, com
+**Mundo Real**: Existe uma lista enorme de falhas de software, com
 consequências graves, tanto em termos financeiros como de vidas humanas.
 Um dos exemplos mais famosos é a explosão do foguete francês Ariane 5,
 lançado em 1996, de Kourou, na Guiana Francesa. Cerca de 30 segundos
@@ -445,17 +447,17 @@ militar e espacial. Essas linhas eram responsáveis pela conversão de um
 número real, em ponto flutuante, com 64 bits, para um número inteiro,
 com 16 bits. Durante os testes e, provavelmente, lançamentos anteriores
 do foguete, essa conversão sempre foi bem sucedida: o número real sempre
-\"cabia\" em um inteiro. Porém, na data da explosão, alguma situação
+"cabia" em um inteiro. Porém, na data da explosão, alguma situação
 nunca testada previamente exigiu a conversão de um número maior do que o
 maior inteiro que pode ser representado em 16 bits. Com isso, gerou-se
 um resultado espúrio, que fez com que o sistema de controle do foguete
 funcionasse de forma errática, causando a explosão.
 
-📺 **Vídeo Complementar**: O vídeo da explosão do foguete Ariane 5, em
+**Vídeo Complementar**: O vídeo da explosão do foguete Ariane 5, em
 1996, pode ser encontrado no Youtube, por exemplo, neste
 [link](https://www.youtube.com/watch?v=kYUrqdUyEpI).
 
-### Manutenção e Evolução de Software
+### Manutenção e Evolução de Software {.unnumbered}
 
 Assim como sistemas tradicionais de Engenharia, software também precisa
 de manutenção. Neste livro, vamos usar a seguinte classificação para os
@@ -511,7 +513,7 @@ arriscada. Porém, é importante ressaltar que legado não significa
 irrelevante, pois muitas vezes esses sistemas realizam operações
 críticas para seus clientes.
 
-🌎 **Mundo Real**: Um exemplo de manutenção preventiva foram as
+**Mundo Real**: Um exemplo de manutenção preventiva foram as
 atividades de manutenção realizadas por diversas empresas antes da
 virada do último milênio, de 1999 para 2000. Nessa época, diversos
 sistemas armazenavam o ano de uma data com dois dígitos, isto é, as
@@ -524,7 +526,7 @@ as datas para o formato DD-MM-AAAA. Como essas atividades foram
 realizadas antes da virada do milênio, elas são um exemplo de manutenção
 preventiva.
 
-📚 **Aprofundamento:** Na literatura, existem classificações alternativas
+**Aprofundamento:** Na literatura, existem classificações alternativas
 para os tipos de manutenção de software. Uma delas, proposta por Lientz
 & Swanson, em 1978
 ([link](https://dl.acm.org/citation.cfm?id=601062)),
@@ -538,7 +540,7 @@ proposto neste livro; (4) Preventiva, refere-se a mudanças que visam
 incrementar a manutenibilidade de um sistema; neste livro, optamos pelo
 termo mais comum hoje em dia, que é refactoring.
 
-### Gerência de Configuração
+### Gerência de Configuração {.unnumbered}
 
 Atualmente, é inconcebível desenvolver um software sem um sistema de
 controle de versões, como git. Esses sistemas armazenam todas as versões
@@ -563,11 +565,10 @@ funcionalidades (normalmente, chamada de versão *minor*); por fim, um
 incremento em *x* ocorre quando se lança uma release com novas features,
 fundamentalmente diferentes das features da última release (normalmente,
 chamada de versão *major*). Esse esquema de numeração de releases é
-conhecido como **versionamento semântico**
-([link](https://semver.org)).
+conhecido como **versionamento semântico**.
 
 
-### Gerência de Projetos
+### Gerência de Projetos {.unnumbered}
 
 Desenvolvimento de software requer o uso de práticas e atividades de
 gerência de projetos, por exemplo, para negociação de contratos com
@@ -587,13 +588,13 @@ Existe uma frase muito conhecida, também de Frederick Brooks, que
 captura uma peculiaridade de projetos de software. Segundo Brooks:
 
 > A inclusão de novos desenvolvedores em um projeto que está atrasado
-contribui para torná-lo mais atrasado (\"adding manpower to a late
-software project makes it later\")
+contribui para torná-lo mais atrasado (*adding manpower to a late
+software project makes it later*)
 
 Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
 desenvolvedores terão primeiro que entender e compreender todo o
-sistema, sua arquitetura e seu projeto (\"design\"), antes de começarem
+sistema, sua arquitetura e seu projeto (*design*), antes de começarem
 a produzir código útil. Além disso, equipes maiores implicam em um maior
 esforço de comunicação e coordenação para tomar e explicar decisões. Por
 exemplo, se um time tem 3 desenvolvedores (d~1~, d~2~, d~3~), existem 3
@@ -603,7 +604,7 @@ canais. Se ele cresce para 10 desenvolvedores, passam a existir 45
 canais de comunicação. Por isso, modernamente, software tende a ser
 desenvolvido em times pequenos, com uma dezena de engenheiros, se tanto.
 
-🇧🇷 **Tradução**: Em Português, a palavra *projeto* pode se referir tanto
+**Tradução**: Em Português, a palavra *projeto* pode se referir tanto
 a *design* como a *project*. Por exemplo, em uma subseção anterior
 introduzimos questões de projeto de software, isto é, *software design*,
 tratando de conceitos como interfaces, dependências, arquitetura, etc.
@@ -617,7 +618,7 @@ neste capítulo. Já no Capítulo 5 (Princípios de Projeto) e no Capítulo 6
 (Padrões de Projeto), *design* será traduzido para projeto, pois é o uso
 mais comum nesses capítulos, aparecendo inclusive no título dos mesmos.
 
-📚 **Aprofundamento:** A Lei de Brooks foi proposta em um livro clássico
+**Aprofundamento:** A Lei de Brooks foi proposta em um livro clássico
 do autor sobre gerenciamento de projetos de software, chamado *The
 Mythical Man-Month*, cuja primeira edição foi publicada em 1975
 ([link](https://dl.acm.org/citation.cfm?id=207583)). Nesse
@@ -630,7 +631,7 @@ originalmente em 1987 (e que já comentamos nesta Introdução). Em 1999,
 Frederick Brooks ganhou o Prêmio Turing, considerado o Prêmio Nobel da
 Computação.
 
-### Processos de Desenvolvimento de Software
+### Processos de Desenvolvimento de Software {.unnumbered}
 
 Um processo de desenvolvimento define quais atividades e etapas devem
 ser seguidas para construir e entregar um sistema de software. Uma
@@ -664,10 +665,9 @@ sistema deve ser feita em etapas sequenciais, como em uma cascata de
 são as seguintes: levantamento de requisitos, análise (ou projeto de
 alto nível), projeto detalhado, codificação e testes. Finalizado esse
 pipeline, o sistema é liberado para produção, isto é, para uso efetivo
-pelos seus usuários, conforme ilustrado na próxima figura
+pelos seus usuários, conforme ilustrado na próxima figura.
 
-![](figs/cap1/waterfall.svg){width="5.855208880139982in"
-height="3.772189413823272in"}
+![Fases de um processo Waterfall](figs/cap1/waterfall){width=80%}
 
 No entanto, processos Waterfall, a partir do final da década de 90,
 passaram a ser muito criticados, devido aos atrasos e problemas
@@ -709,7 +709,7 @@ primeiro desenvolvedor a integrar seu código será bem sucedido; enquanto
 que o segundo desenvolvedor será informado de que o trecho já foi
 modificado pelo primeiro.
 
-### Modelos de Software
+### Modelos de Software {.unnumbered}
 
 Um modelo oferece uma representação em mais alto nível de um sistema do
 que o seu código fonte. O objetivo é permitir que desenvolvedores possam
@@ -737,12 +737,11 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![](figs/cap1/uml.svg){width=45%}
+![Exemplo de Diagrama de Classe UML com duas classes, `Cliente` e `ContaBancaria`](figs/cap1/uml){width=75%}
 
-Exemplo de Diagrama de Classe UML com duas classes, Cliente e
-ContaBancaria
 
-### Qualidade de Software
+
+### Qualidade de Software {.unnumbered}
 
 Qualidade é um objetivo recorrente em produtos de engenharia.
 Fabricantes de automóveis, celulares, computadores, empresas de
@@ -827,10 +826,10 @@ pelo revisor. Existem diversas ferramentas para apoiar processos de
 revisão de código. No exemplo da figura, usamos a ferramenta fornecida
 pelo GitHub.
 
-![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width=40%}
+![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width=60%}
 
 
-### Prática Profissional
+### Prática Profissional {.unnumbered}
 
 Como afirmado na frase de Bjarne Stroustrup que abre este capítulo,
 *nossa sociedade funciona a base de software*. Isso gera diversas
@@ -909,7 +908,7 @@ resolvemos reproduzir a seguir:
 > -- Código de Ética da Sociedade Brasileira de Computação (SBC, 2013)
 ([link](http://www.sbc.org.br/institucional-3/codigo-de-etica))
 
-🌎 **Mundo Real**: O Stack Overflow realiza anualmente um survey com
+**Mundo Real**: O Stack Overflow realiza anualmente um survey com
 usuários da plataforma de perguntas e respostas. Em 2018, esse survey
 foi respondido por mais de 100 mil desenvolvedores, dos mais variados
 países. Dentre as perguntas, um grupo se referia a questões éticas
@@ -924,7 +923,7 @@ desenvolvedor. Quando perguntados se concordariam em escrever um código
 com dúvidas éticas, 58% responderam que não e 37% responderam que
 dependeria do código requisitado.
 
-### Aspectos Econômicos
+### Aspectos Econômicos {.unnumbered}
 
 Diversas decisões e questões econômicas se entrelaçam com o
 desenvolvimento de sistemas. Por exemplo, uma startup de software deve
@@ -952,7 +951,7 @@ poderiam ajudar a ampliar a base de clientes. O que é melhor? Corrigir
 os bugs ou implementar novas funcionalidades? No fundo, essa é uma
 decisão econômica.
 
-## 1.3 Sistemas ABC: Acute, Business e Casuais
+## Sistemas ABC: Acute, Business e Casuais
 
 Atualmente, como estamos ressaltando nesta Introdução, software permeia
 as mais distintas atividades humanas. Ou seja, temos software de todos
@@ -997,8 +996,8 @@ beneficiam tanto das práticas, técnicas e processos estudados neste
 livro. Pelo contrário, no caso de Sistemas C, o maior risco é
 **over-engineering***,* ou seja*,* o uso de recursos mais sofisticados
 em um contexto que não demanda tanta preocupação. Como se diz
-coloquialmente, Engenharia de Software nesse contexto equivale a \"usar
-uma bala de canhão, para matar formigas\".
+coloquialmente, Engenharia de Software nesse contexto equivale a "usar
+uma bala de canhão, para matar formigas".
 
 No outro extremo, temos os Sistemas A (de *acute*, ou de missão
 crítica). São sistemas onde qualquer falha pode causar um imenso
@@ -1015,7 +1014,7 @@ somente é tomada caso ambas instâncias cheguem ao mesmo resultado. Por
 fim, esses sistemas às vezes são especificados em uma linguagem formal,
 baseadas em teoria de conjuntos, lógica, etc.
 
-⚠️ **Aviso:** Por tudo que foi afirmado no parágrafo anterior,
+**Aviso:** Por tudo que foi afirmado no parágrafo anterior,
 **sistemas A (isto é, de missão crítica) não serão tratados neste
 livro**.
 
@@ -1035,7 +1034,7 @@ a construção de Sistemas B com melhor qualidade, tanto interna (por
 exemplo, sistemas mais fáceis de serem mantidos) como externa (por
 exemplo, sistemas com menor quantidade de bugs em produção).
 
-## 1.4 Próximos Capítulos
+## Próximos Capítulos
 
 Este livro terá **10 capítulos**: \[estrutura provisória e sujeita a
 mudanças\]
@@ -1066,8 +1065,8 @@ seja, para criação de modelos detalhados de software. Praticamente, não
 existem mais casos de empresas que investem meses — ou anos — na
 elaboração de diagramas gráficos antes de começar a implementar qualquer
 linha de código. Porém, se não tratássemos de UML no livro ficaríamos
-com a sensação de que \"após o banho, jogamos o bebê fora, junto com a
-água da bacia\". Se por um lado não faz sentido estudar todos os
+com a sensação de que "após o banho, jogamos o bebê fora, junto com a
+água da bacia". Se por um lado não faz sentido estudar todos os
 diagramas da UML em detalhes, por outro lado existem elementos
 importantes em alguns desses diagramas. Além disso, desenvolvedores, com
 frequência, elaboram pequenos esboços de software, por exemplo, para
@@ -1105,11 +1104,11 @@ arquitetura MVC (incluindo single-page applications), microsserviços,
 arquiteturas orientadas por filas de mensagens e arquiteturas
 publish/subscribe. Essas duas últimas são comuns na construção de
 sistemas distribuídos fracamente acoplados. Por fim, apresentamos um
-anti-padrão arquitetural, chamado \"big ball of mud\", que é um termo
+anti-padrão arquitetural, chamado *big ball of mud*, que é um termo
 usado para designar sistemas sem organização arquitetural. Esses
 sistemas poderiam até possuir uma arquitetura no seu início, mas depois
 o projeto arquitetural deles foi sendo abandonado, transformando os
-sistemas em um \"spaghetti\" de dependências entre os seus módulos.
+sistemas em um "spaghetti" de dependências entre os seus módulos.
 
 **Capítulo 8: Testes**, com ênfase em testes de unidade, usando
 frameworks como o JUnit. O capítulo inclui dezenas de exemplos de testes
@@ -1141,14 +1140,14 @@ leitor uma experiência prática de refatoração, que o ajude a desenvolver
 o hábito de frequentemente alocar tempo para melhor a qualidade interna
 do código que ele vai desenvolver. No capítulo, também apresentamos uma
 lista de code smells, isto é, indicadores de que uma determinada
-estrutura de código não está \"cheirando bem\" e que, portanto, poderia
+estrutura de código não está "cheirando bem" e que, portanto, poderia
 ser objeto de uma refatoração.
 
 **Capítulo 10: DevOps** \[a ser escrito\]
 
 **Apêndice A: Git**, que apresenta e mostra exemplos de uso dos principais comandos do sistema git. Atualmente, é inconcebível não usar controle de versões em qualquer sistema, mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar esse apêndice no livro. Git é o sistema de controle de versões mais usado atualmente.
 
-## Bibliografia
+## Bibliografia {.unnumbered}
 
 * Pierre Bourque e Richard E. Fairley (editores). Guide to the Software
 Engineering Body of Knowledge, Version 3.0, IEEE Computer Society, 2014.
@@ -1160,7 +1159,7 @@ Edição, versão 1.1.2, 2014.
 * Frederick P. Brooks. O Mítico Homem-Mês. Ensaios Sobre Engenharia de
 Software. Alta Books, 1a edição, 2018.
 
-## Exercícios de Fixação
+## Exercícios de Fixação {.unnumbered}
 
 1\. Segundo Frederick Brooks, desenvolvimento de software enfrenta
 dificuldades essenciais (para as quais não há bala de prata) e
@@ -1215,11 +1214,10 @@ provavelmente incluía uma estrutura de decisão como a seguinte
 (meramente ilustrativa, para fins deste exercício):
 
 ```
- if "carro sendo testado em um laboratório"
-    then "emita poluentes dentro das normas"
-    else "emissão de poluentes não é mais uma preocupação"
+if Carro sendo testado em um laboratorio
+   then Emita poluentes dentro das normas
+   else Emita poluentes fora das normas
 ```
-
 O que você faria se seu chefe pedisse para escrever um *if* como o
 acima? (para mais informações sobre esse episódio com automóveis
 Volkswagen, consulte essa página da

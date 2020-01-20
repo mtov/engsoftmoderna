@@ -1,1 +1,7 @@
-pandoc -V fontsize=12pt -H latex.sty --pdf-engine=xelatex cap10.md -o cap10.pdf
+cat cap0.md > esm-book.md
+cat cap1.md >> esm-book.md
+cat cap2.md >> esm-book.md
+cat cap10.md >> esm-book.md
+cat capAp.md >> esm-book.md
+pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.pdf
+rm esm-book.md

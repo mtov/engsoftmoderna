@@ -1,0 +1,29 @@
+from: markdown
+to: pdf
+
+metadata:
+  title: Engenharia de Software Moderna
+  author:
+  - Marco Tulio Valente
+   
+pdf-engine: pdflatex
+
+include-in-header: helper/packages.tex
+include-before-body: helper/begin-document.tex 
+
+default-image-extension: ".pdf"
+
+listings: true
+
+top-level-division: chapter
+number-sections: true
+
+variables:
+  documentclass: book
+  fontsize: 11pt
+  classoption: oneside
+  links-as-notes: true
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+
