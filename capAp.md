@@ -1,5 +1,8 @@
+```{=latex}
+\appendix
+```
 
-# Apêndice A - Git 
+# Git 
 
 > *The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics.* -- Linus Torvalds
 

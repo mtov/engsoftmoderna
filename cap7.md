@@ -1,7 +1,7 @@
 
-# Cap. 7 - Arquitetura
+# Arquitetura
 
-> Architecture is about the important stuff. Whatever that is. -- Ralph Johnson
+> *Architecture is about the important stuff. Whatever that is.* -- Ralph Johnson
 
 Este capítulo inicia com uma introdução ao conceito de arquitetura de
 software. Em seguida, discutimos diversos padrões arquiteturais,
@@ -19,15 +19,15 @@ exemplo de anti-padrão arquitetural (Seção 7.8).
 ## Introdução 
 
 Existe mais de uma definição para arquitetura de software. Uma das mais
-comuns considera que arquitetura preocupa-se com \"projeto em mais alto
-nível\". Ou seja, o foco deixa de ser a organização e interfaces de
+comuns considera que arquitetura preocupa-se com "projeto em mais alto
+nível". Ou seja, o foco deixa de ser a organização e interfaces de
 classes individuais e passa a ser em unidades de maior tamanho, sejam
 elas pacotes, componentes, módulos, subsistemas, camadas ou serviços
 — o nome não importa tanto neste primeiro momento. De forma
 genérica, os termos que acabamos de mencionar devem ser entendidos como
 conjuntos de classes relacionadas.
 
-Além de possuírem um \"maior tamanho\", os componentes arquiteturais
+Além de possuírem um "maior tamanho", os componentes arquiteturais
 devem ser relevantes para que um sistema atenda a seus objetivos. Por
 exemplo, suponha que você trabalhe em um sistema de informações.
 Certamente, esse sistema inclui um módulo de persistência, que faz a
@@ -95,14 +95,14 @@ sistemas operacionais, autor de livros-texto na área e professor da
 Vrije Universiteit, em Amsterdã, na Holanda. E Torvalds (Linus) na época
 era estudante de Computação na Universidade de Helsinki, na Finlândia.
 
-![Andrew S. Tanenbaum, professor da Vrije Universiteit, e defensor de arquiteturas
-microkernel para sistemas operacionais (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/tanembaum.png)
+<!---
+![Andrew S. Tanenbaum, professor da Vrije Universiteit, e defensor de arquiteturas microkernel para sistemas operacionais (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/tanembaum.png){width=25%}
 
-![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)   
-](figs/cap7/linus.png)
+![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/linus.png){width=25%}
+--->
 
 A discussão começou quando Tanenbaum postou uma mensagem no grupo com o
-título \"Linux está obsoleto\". O seu principal argumento era que o
+título "Linux está obsoleto". O seu principal argumento era que o
 Linux seguia uma **arquitetura monolítica**, na qual todas as funções do
 sistema operacional — como gerenciamento de processos, gerenciamento
 de memória e sistemas de arquivos, por exemplo — são implementadas
@@ -120,12 +120,12 @@ se fosse, ele certamente não teria obtido uma boa nota com o projeto
 monolítico do Linux. Um comentário interessante foi feito em seguida por
 Ken Thompson, um dos projetistas das primeiras versões do Unix:
 
-> Na minha opinião, é mais fácil implementar um sistema operacional com um kernel monolítico. Mas é também mais fácil que ele se transforme em uma \"bagunça\" à medida que o kernel é modificado.
+> "Na minha opinião, é mais fácil implementar um sistema operacional com um kernel monolítico. Mas é também mais fácil que ele se transforme em uma bagunça à medida que o kernel é modificado."
 
 Na verdade, Thompson previu o futuro, pois em 2009, Linus declarou o
 seguinte em uma conferência:
 
-> Nós não somos mais o kernel simples, pequeno e hiper-eficiente que eu imaginei há 15 anos. \[Em vez disso\], nosso kernel está ficando grande e inchado \... E sempre que adicionamos novas funcionalidades, o cenário piora.
+> "Nós não somos mais o kernel simples, pequeno e hiper-eficiente que eu imaginei há 15 anos. Em vez disso, nosso kernel está ficando grande e inchado. E sempre que adicionamos novas funcionalidades, o cenário piora."
 
 Esse comentário consta de uma página da Wikipedia
 ([link](https://en.wikipedia.org/wiki/Criticism_of_Linux))
@@ -181,7 +181,7 @@ corporativos. Até o final da década de 80, aplicações corporativas —
 como folhas de pagamento, controle de estoque, sistemas financeiros, etc
 — executavam em **mainframes**, que eram computadores fisicamente
 grandes e também muito caros. As aplicações eram monolíticas e acessadas
-por meio de \"terminais burros\", isto é, sem qualquer capacidade de
+por meio de "terminais burros", isto é, sem qualquer capacidade de
 processamento e com uma interface totalmente textual. Com o avanço nas
 tecnologias de rede e de hardware, foi possível migrar esses sistemas de
 mainframes para outras plataformas. Foi nessa época que arquiteturas em
@@ -223,7 +223,7 @@ chamado de servidor de aplicação. E, por fim, temos o banco de dados. A
 próxima figura mostra um exemplo, que assume que a interface oferecida
 aos clientes é uma interface gráfica:
 
-![](figs/cap7/tiers3.png){width=65%}
+![Arquitetura em três camadas](figs/cap7/tiers3){width=75%}
 
 Em um sistema três camadas, a camada de aplicação pode ter diversos
 módulos, incluindo uma fachada, para facilitar o acesso ao sistema pelos
@@ -261,10 +261,10 @@ que as classes de um sistema devem ser organizadas em três grupos:
     dispositivos de entrada, como mouse e teclado. Como resultado de
     tais eventos, Controladoras podem solicitar uma alteração no
     estado do Modelo ou da Visão. Suponha, por exemplo, uma
-    Calculadora. Quando o usuário clica em um botão \"+\", uma classe
+    Calculadora. Quando o usuário clica em um botão "+", uma classe
     Controladora deve capturar esse evento e chamar um método do
     Modelo. Como um segundo exemplo, quando o usuário clicar no botão
-    \"Dark UI\", cabe também a uma classe Controladora solicitar à
+    "Dark UI", cabe também a uma classe Controladora solicitar à
     Visão para mudar as cores da interface gráfica para tons mais
     escuros.
 
@@ -293,7 +293,7 @@ entender a Interface Gráfica como sendo observadora do Modelo. Quando o
 estado dos objetos do Modelo é alterado, deve-se atualizar
 automaticamente a interface do sistema.
 
-![](figs/cap7/mvc.png){width="40%"}
+![Arquitetura MVC](figs/cap7/mvc){width="50%"}
 
 Dentre as vantagens de arquiteturas MVC, podemos citar:
 
@@ -310,7 +310,7 @@ Dentre as vantagens de arquiteturas MVC, podemos citar:
     apresentados em duas visões diferentes. Na primeira, como um
     relógio analógico. Na segunda, como um relógio digital.
 
-![](figs/cap7/clock.png){width="30%"}
+    ![Sistema MVC com mais de uma visão (interface gráfica)](figs/cap7/clock.png){width="40%"}
 
 *   MVC favorece testabilidade. Como veremos no próximo capítulo, é mais
     fácil testar objetos não-visuais, isto é, não relacionados com a
@@ -322,7 +322,7 @@ Vamos concluir com um resumo sobre MVC, na visão de Fowler e Beck
 ([link](https://dl.acm.org/citation.cfm?id=311424), Cap.
 12, pág. 370):
 
-> O coração e a parte mais preciosa de MVC está na separação entre
+> "O coração e a parte mais preciosa de MVC está na separação entre
 código de interface com o usuário (a Visão, também chamada de
 apresentação) e a lógica do domínio (o Modelo). As classes de
 apresentação implementam apenas a lógica necessária para lidar com a
@@ -330,7 +330,7 @@ interface do usuário. Por outro lado, objetos de domínio não incluem
 código visual, mas apenas lógica de negócios. Isso separa duas partes
 complexas de sistemas de software em partes que são mais fáceis de se
 modificar. Também permite várias apresentações da mesma lógica de
-negócio.
+negócio."
 
 **Pergunta Frequente**: **Qual a diferença entre MVC e três camadas?**
 A resposta vai ser um pouco longa e vamos nos basear na evolução
@@ -367,7 +367,7 @@ histórica dessas arquiteturas:
     visão como resposta e modelo, que é a camada que persiste os dados
     em um banco de dados.
 
-![](figs/cap7/mvc-web.png){width=55%}
+    ![Arquitetura MVC Web](figs/cap7/mvc-web){width=55%}
 
 Logo, apesar de sistemas Web serem parecidos com sistemas três camadas,
 os frameworks Web mais populares optaram por usar termos típicos de MVC
@@ -381,7 +381,7 @@ vertente lembra bastante sistemas três camadas.
 
 Em uma aplicação Web tradicional, com formulários, menus, botões, etc,
 toda vez que o usuário gera um evento — por exemplo, clica em um
-botão \"Gravar\" — ocorre uma interação entre o navegador e o
+botão "Gravar" — ocorre uma interação entre o navegador e o
 servidor Web. Isto é, o navegador envia informações para o servidor Web,
 que as processa e devolve uma nova página para ser exibida para o
 usuário. Essas aplicações são então menos interativas e responsivas,
@@ -418,7 +418,8 @@ Vue.js, que é um desses frameworks.
 
 <div id="ui">
   Temperatura: {{ temperatura }}
-  <p><button v-on:click="incTemperatura">Incrementa</button></p>
+  <p><button v-on:click="incTemperatura">Incrementa
+  </button></p>
 </div>
 
 <script>
@@ -443,7 +444,7 @@ var model = new Vue({
 Essa aplicação apresenta uma temperatura na tela do navegador e um botão
 para incrementá-la (veja figura a seguir).
 
-![](figs/cap7/spa.png){width="27%"}
+![Interface da Single-Page Application do exemplo](figs/cap7/spa.png){width="27%"}
 
 **Código Fonte**: O código do exemplo está disponível neste
 [link](https://gist.github.com/mtov/ac1120c5b3e0a85d39bb7b05d20ee307).
@@ -470,7 +471,7 @@ Como discutimos no Capítulo 2, métodos ágeis preconizam iterações
 rápidas, com entregas frequentes de novas releases, a fim de obter
 feedback e, se for preciso, efetuar mudanças de rumo. Porém, mesmo que
 uma empresa adote um método de desenvolvimento ágil — como XP ou
-Scrum — ela vai enfrentar um \"gargalo\" arquitetural quando
+Scrum — ela vai enfrentar um "gargalo" arquitetural quando
 precisar lançar novas releases de um produto de forma frequente.
 
 Esse gargalo ocorre porque sistemas, via de regra, seguem em tempo de
@@ -482,9 +483,7 @@ compartilham o mesmo espaço de endereçamento. Em outras palavras, em
 tempo de execução o sistema é um grande **monolito**, como ilustra a
 próxima figura.
 
-![Monolito formado por nove módulos. Em tempo de execução, o sistema executa 
-como um único processo, representado pelo quadrado que delimita
-os 9 módulos.](figs/cap7/monolito.png){width="35%"}
+![Monolito com nove módulos. Em tempo de execução, o sistema executa como um único processo, representado pelo quadrado que delimita os 9 módulos.](figs/cap7/monolito){width="35%"}
 
 Em um monolito, sempre existe o risco de que uma mudança realizada por
 um time T em um módulo Mi cause um efeito colateral em um módulo Mj. Por
@@ -495,7 +494,7 @@ iniciante em desenvolvimento de sistemas pode imaginar.
 
 Para evitar que os clientes sejam surpreendidos com bugs inesperados em
 seus sistemas, as empresas que usam arquiteturas monolíticas adotam um
-processo rigoroso e \"burocrático\" para o lançamento de novas releases.
+processo rigoroso e "burocrático" para o lançamento de novas releases.
 Esse processo pode incluir até mesmo testes manuais antes da liberação
 do sistema para produção. Por testes manuais, queremos dizer um testador
 usar as funcionalidades mais críticas do sistema, de forma a simular uma
@@ -528,8 +527,7 @@ executados, cada um deles, em um processo independente. Os módulos M4 e
 M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9
 são executados, em conjunto, em um sexto processo.
 
-![Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada
-microsserviço executa como um processo autônomo.](figs/cap7/microservices1.png){width=35%}
+![Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.](figs/cap7/microservices1){width=35%}
 
 Até esse ponto da explicação, usamos o termo processo, mas o nome do
 padrão refere-se a eles como **serviços**. Ainda, os serviços são micro
@@ -547,9 +545,9 @@ horizontal**. Por exemplo, ela permite dividir os clientes do sistema
 entre as duas instâncias mostradas na figura. Como se trata de um monolito, 
 as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 
-![Servidor 1, executando o monolito em um único processo.](figs/cap7/monolito.png){width=30%}
+![Servidor 1, executando o monolito em um único processo.](figs/cap7/monolito){width=30%}
 
-![Servidor 2, executando uma réplica do monolito.](figs/cap7/monolito.png){width=30%}
+![Servidor 2, executando uma réplica do monolito.](figs/cap7/monolito){width=30%}
 
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
@@ -562,9 +560,9 @@ parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
 instâncias, todas elas em um novo servidor.
 
-![Servidor 1, com todos os microsserviços, menos M1.](figs/cap7/escalabilidade1.png){width=30%}
+![Servidor 1, com todos os microsserviços, exceto M1.](figs/cap7/escalabilidade1){width=30%}
 
-![Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade2.png){width=30%}
+![Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade2){width=30%}
   
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
@@ -628,9 +626,9 @@ na figura da direita. O principal motivo é que quando se têm um único
 banco de dados ele também pode se transformar em um gargalo à evolução
 do sistema.
 
-![Microsserviços M1 e M2 compartilham o mesmo banco de dados, o que pode não ser recomendável.](figs/cap7/dados1.png){width=27%}   
+![Microsserviços M1 e M2 compartilham o mesmo banco de dados, o que pode não ser recomendável.](figs/cap7/dados1){width=27%}   
 
-![Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é mais recomendável.](figs/cap7/dados2.png){width=27%}
+![Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é mais recomendável.](figs/cap7/dados2){width=27%}
     
 
 Por exemplo, equipes e arquiteturas tradicionais de desenvolvimento
@@ -687,21 +685,6 @@ sistema distribuído. Dentre eles, podemos citar:
     podem ser necessários para garantir uma semântica de transações em
     operações que escrevem em mais de um banco de dados.
 
-### Vídeos Complementares {.unnumbered}
-
-Para complementar o conteúdo desta seção, recomendamos dois vídeos
-relacionados com microsserviços:
-
-*   Um tutorial sobre microsserviços
-    ([link](https://youtu.be/wgdBVIX9ifA)), apresentado
-    por Martin Fowler na conferência GOTO 2015, com duração de 26
-    minutos.
-
-*   Uma palestra sobre a arquitetura de microsserviços adotada pela
-    Netflix ([link](https://youtu.be/57UK46qfBLY)),
-    realizada por Ruslan Meshenberg, na época diretor de engenharia da
-    empresa e apresentada na conferência GOTO 2016, com duração de 49
-    minutos.
 
 ## Arquiteturas Orientadas a Mensagens
 
@@ -709,7 +692,7 @@ Neste tipo de arquitetura, a comunicação entre clientes e servidores é
 mediada por um terceiro serviço que têm a única função de prover uma
 **fila de mensagens**, como mostra a próxima figura.
 
-![](figs/cap7/mom.png){width="70%"}
+![Arquitetura Orientada a Mensagens](figs/cap7/mom){width="80%"}
 
 Os clientes atuam como produtores de informações, isto é, eles inserem
 mensagens na fila. E os servidores atuam como consumidores de mensagens,
@@ -765,7 +748,7 @@ Filas de mensagens permitem também escalar mais facilmente um sistema
 distribuído. Para isso, basta configurar múltiplos servidores consumindo
 mensagens da mesma fila, como mostra a próxima figura.
 
-![](figs/cap7/mom2.png){width=70%}
+![Fila de Mensagens com vários consumidores.](figs/cap7/mom2){width=80%}
 
 ### Exemplo: Empresa de Telecomunicações {.unnumbered}
 
@@ -809,7 +792,7 @@ Assinantes devem previamente assinar eventos de seu interesse. Quando um
 evento é publicado, os seus assinantes são notificados, conforme mostra
 a próxima figura.
 
-![](figs/cap7/pubsub.png){width=55%}
+![Arquitetura Pub/Sub](figs/cap7/pubsub){width=65%}
 
 Assim como ocorre quando se usa filas de mensagens, arquiteturas
 publish/subscribe também oferecem desacoplamento no espaço e no tempo.
@@ -830,7 +813,7 @@ filas de mensagens:
     notificados por meio da execução de um determinado método. Por
     outro lado, quando se usa uma fila de mensagens, os servidores
     — isto é, os consumidores das mensagens — têm que
-    \"puxar\" (*pull*) as mensagens da fila.
+    "puxar" (*pull*) as mensagens da fila.
 
 Em alguns sistemas publish/subscribe, eventos são organizados em
 **tópicos**, que funcionam como categorias de eventos. Quando um
@@ -860,9 +843,9 @@ todos os dados da venda (data, horário, número do vôo, dados do
 passageiro, etc). A figura a seguir ilustra a arquitetura proposta para
 o sistema.
 
-![](figs/cap7/ciaaerea.png){width=70%}
+![Arquitetura Pub/Sub em uma Companhia Aérea](figs/cap7/ciaaerea){width=70%}
 
-O evento \"venda\" será então assinado por três sistemas da companhia
+O evento "venda" será então assinado por três sistemas da companhia
 aérea: (1) sistema de milhagens, pois as milhas relativas à passagem
 devem ser creditadas na conta do passageiro; (2) sistema de marketing,
 que pode usar os dados da venda para fazer ofertas para o cliente, como
@@ -895,9 +878,7 @@ em paralelo. O exemplo clássico de arquitetura baseada em pipes e
 filtros são os comandos de sistemas Unix. Por exemplo, a linha de
 comando:
 
-```
-ls | grep csv | sort
-```
+`ls | grep csv | sort`
 
 especifica a execução de três comandos (filtros) que são conectados por
 dois pipes (barras verticais). No caso dos comandos Unix, as entradas e
@@ -930,15 +911,15 @@ rede.
 
 Vamos encerrar com a descrição de um **anti-padrão** arquitetural, isto
 é, uma organização de sistemas que não é recomendada. Talvez, o mais
-conhecido anti-padrão é chamado de **big ball of mud** (ou \"grande bola
-de lama\"). Esse anti-padrão — proposto por Brian Foote e Joseph
+conhecido anti-padrão é chamado de **big ball of mud** (ou "grande bola
+de lama"). Esse anti-padrão — proposto por Brian Foote e Joseph
 Yoder ([link](https://joeyoder.com/PDFs/mud.pdf)) —
 descreve sistemas nos quais qualquer módulo comunica-se com praticamente
 qualquer outro módulo, como mostra a próxima figura.
 
-![](figs/cap7/big-mall-mud.png){width=40%}
+![Anti-padrão *big ball of mud*](figs/cap7/big-ball-mud){width=40%}
 
-Ou seja, um \"big ball of mud\" não possui uma arquitetura definida. Em
+Ou seja, um "big ball of mud" não possui uma arquitetura definida. Em
 vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
@@ -950,10 +931,10 @@ empresa indiana InfoSys — descrevem uma experiência de modularização
 de um grande sistema bancário. O sistema nasceu no final da década de 90
 e desde então aumentou seu tamanho em 10 vezes: passou de 2.5 milhões
 para mais de 25 milhões de linhas de código! Segundo os autores, os
-times de desenvolvimento do sistema contavam com \"várias centenas de
-engenheiros\". Apesar de não usarem o termo, o artigo caracteriza a
-arquitetura desse sistema bancário como uma \"big ball of mud\". Por
-exemplo, eles mencionam que apenas um diretório, chamado \"sources\",
+times de desenvolvimento do sistema contavam com "várias centenas de
+engenheiros". Apesar de não usarem o termo, o artigo caracteriza a
+arquitetura desse sistema bancário como uma "big ball of mud". Por
+exemplo, eles mencionam que apenas um diretório, chamado "sources",
 possuía quase 15 mil arquivos. Em seguida, os autores analisam o
 problema que era manter esse sistema: (1) o tempo de aprendizado de
 novos engenheiros só aumentava, passando de 3 para 7 meses, no intervalo
@@ -964,11 +945,11 @@ mesmo que simples, também estava aumentando muito.
 Pode parecer que sistemas como esse — analisado no artigo da IEEE
 Software — são exceções. Porém, eles são mais comuns do que se pode
 imaginar. E a origem do problema reside na transformação do código em
-uma \"big ball of mud\". De forma interessante, os autores citam que o
+uma "big ball of mud". De forma interessante, os autores citam que o
 banco tentou contornar o problema adotando práticas como documentação
 detalhada, revisões de código e programação em pares. Porém, todas se
 mostraram incapazes de atenuar os problemas causados pela arquitetura em
-forma de \"big ball of mud\".
+forma de "big ball of mud".
 
 
 ## Bibliografia {.unnumbered}

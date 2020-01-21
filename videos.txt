@@ -31,3 +31,19 @@ duração de pouco mais de uma hora. O interessante é que a palestra é
 organizada como um projeto Kanban. Por exemplo, um quadro é usado para
 coletar as perguntas da plateia, que vão então sendo respondidas pelo
 palestrante.
+
+### Vídeos Complementares {.unnumbered}
+
+Para complementar o conteúdo desta seção, recomendamos dois vídeos
+relacionados com microsserviços:
+
+*   Um tutorial sobre microsserviços
+    ([link](https://youtu.be/wgdBVIX9ifA)), apresentado
+    por Martin Fowler na conferência GOTO 2015, com duração de 26
+    minutos.
+
+*   Uma palestra sobre a arquitetura de microsserviços adotada pela
+    Netflix ([link](https://youtu.be/57UK46qfBLY)),
+    realizada por Ruslan Meshenberg, na época diretor de engenharia da
+    empresa e apresentada na conferência GOTO 2016, com duração de 49
+    minutos.

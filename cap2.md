@@ -430,15 +430,7 @@ resumidos, com apenas duas ou três sentenças, com as quais o
 representante dos clientes define o que ele deseja que o sistema faça,
 usando sua própria linguagem.
 
-Iremos aprofundar o estudo sobre histórias de usuários no Capítulo 3
-(Engenharia de Requisitos). Mas, por enquanto, gostaríamos de adiantar
-que as histórias são escritas em cartões de papel, normalmente a mão. Ou
-seja, em vez de documentos de requisitos detalhados, histórias são
-documentos simples, que focam nas funcionalidades do sistema, sempre na
-visão de seus usuários. Como exemplo, mostramos a seguir uma história de
-um sistema de perguntas e respostas — semelhante ao famoso Stack
-Overflow ([link](https://stackoverflow.com)) — que
-usaremos neste capítulo para explicar XP:
+Iremos aprofundar o estudo sobre histórias de usuários no Capítulo 3. Mas, por enquanto, gostaríamos de adiantar que as histórias são escritas em cartões de papel, normalmente a mão. Ou seja, em vez de documentos de requisitos detalhados, histórias são documentos simples, que focam nas funcionalidades do sistema, sempre na visão de seus usuários. Como exemplo, mostramos a seguir uma história de um sistema de perguntas e respostas — semelhante ao famoso Stack Overflow ([link](https://stackoverflow.com)) — que usaremos neste capítulo para explicar XP:
 
 --------------------------------------------------------------  
 **Postar Pergunta**
