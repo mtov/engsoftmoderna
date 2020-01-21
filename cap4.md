@@ -350,14 +350,14 @@ Mostra-se a seguir um diagrama com duas classes: `Pessoa` e `Fone`.
 
 ![](figs/cap4/class1){width=75%}
 
-Nesse diagrama, pode-se conferir que a classe Pessoa tem três atributos
+Nesse diagrama, pode-se conferir que a classe `Pessoa` tem três atributos
 — `nome`, `sobrenome` e `fone` — e dois métodos — `setPessoa` e
 `getPessoa`. Os três atributos são privados, conforme indicado pelo sinal
 "-" antes de cada um. Informa-se também o tipo de cada atributo. Por
 sua vez, os dois métodos são públicos, conforme indicado pelo sinal
 "+". O diagrama possui ainda uma segunda classe, chamada `Fone`, com
 três atributos privados — `codigo`, `numero` e `celular` — e três
-métodos públicos — `setFone`, `getFone` e `isCelular. No caso dos
+métodos públicos — `setFone`, `getFone` e `isCelular`. No caso dos
 métodos, informamos também o nome de seus parâmetros e o tipo de
 retorno.
 
@@ -406,7 +406,7 @@ diagrama:
 As duas versões do diagrama são semanticamente idênticas. A diferença é
 que na primeira versão as classes aparecem "ilhadas". Já na segunda
 versão, mostrada acima, fica visualmente claro que existe uma associação
-de Pessoa para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um
+de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um
 atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é
 mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na
 segunda versão, ele é apresentado "fora" desse compartimento. Mais
@@ -470,12 +470,12 @@ Nesse diagrama, a multiplicidade 0..1 — da extremidade com a seta
 — indica que uma `Pessoa` pode ter zero ou um único `Fone`. Mas o mais
 importante é explicar a multiplicidade que foi adicionada na extremidade
 oposta da seta, isto é, a multiplicidade \*. Ela indica que um `Fone` pode
-estar associado a mais de uma Pessoa. Em outras palavras, duas pessoas,
+estar associado a mais de uma `Pessoa`. Em outras palavras, duas pessoas,
 distintas, podem compartilhar o mesmo objeto do tipo `Fone`. No entanto, a
 associação continua sendo unidirecional, isto é, `Pessoa` tem um atributo
 fone que representa o seu `Fone`. Porém, `Fone` não possui um atributo para
 armazenar as diversas pessoas a que ele pode estar associado. Tentando
-ser mais claro, dada uma Pessoa pode-se recuperar o seu `Fone`. Para isso,
+ser mais claro, dada uma `Pessoa` pode-se recuperar o seu `Fone`. Para isso,
 basta acessar o atributo fone. Mas dado um `Fone` não é possível saber,
 pelo menos via atributos, a quais objetos do tipo `Pessoa` ele está
 associado.
@@ -508,7 +508,7 @@ class Fone {
 Nesse código, `Pessoa` possui um atributo privado fone do tipo `Fone`, que
 pode ser null; com isso, satisfazemos a extremidade 0..1 da associação
 bidirecional. Por outro lado, `Fone` possui um vetor privado, de nome
-dono, que vai referenciar objetos do tipo Pessoa; assim, satisfazemos a
+dono, que vai referenciar objetos do tipo `Pessoa`; assim, satisfazemos a
 extremidade \* da mesma associação.
 
 No último diagrama de classes, omitimos todos os símbolos de
