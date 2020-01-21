@@ -111,7 +111,7 @@ height="2.224663167104112in"}
 <p><img src="figs/cap4/class0.svg" style="width:22.0%" /></p>
 <p>Mostra-se a seguir um diagrama com duas classes: <code>Pessoa</code> e <code>Fone</code>.</p>
 <p><img src="figs/cap4/class1.svg" style="width:75.0%" /></p>
-<p>Nesse diagrama, pode-se conferir que a classe Pessoa tem três atributos — <code>nome</code>, <code>sobrenome</code> e <code>fone</code> — e dois métodos — <code>setPessoa</code> e <code>getPessoa</code>. Os três atributos são privados, conforme indicado pelo sinal <q>-</q> antes de cada um. Informa-se também o tipo de cada atributo. Por sua vez, os dois métodos são públicos, conforme indicado pelo sinal <q>+</q>. O diagrama possui ainda uma segunda classe, chamada <code>Fone</code>, com três atributos privados — <code>codigo</code>, <code>numero</code> e <code>celular</code> — e três métodos públicos — <code>setFone</code>, <code>getFone</code> e <code>isCelular</code>. No caso dos métodos, informamos também o nome de seus parâmetros e o tipo de retorno.</p>
+<p>Nesse diagrama, pode-se conferir que a classe Pessoa tem três atributos — <code>nome</code>, <code>sobrenome</code> e <code>fone</code> — e dois métodos — <code>setPessoa</code> e <code>getPessoa</code>. Os três atributos são privados, conforme indicado pelo sinal <q>-</q> antes de cada um. Informa-se também o tipo de cada atributo. Por sua vez, os dois métodos são públicos, conforme indicado pelo sinal <q>+</q>. O diagrama possui ainda uma segunda classe, chamada <code>Fone</code>, com três atributos privados — <code>codigo</code>, <code>numero</code> e <code>celular</code> — e três métodos públicos — <code>setFone</code>, <code>getFone</code> e `isCelular. No caso dos métodos, informamos também o nome de seus parâmetros e o tipo de retorno.</p>
 <p>Porém, se fosse somente isso, os diagramas dariam a impressão de que as classes de um sistema são <q>ilhas</q> sem comunicação entre si. No entanto, um dos principais objetivos de diagramas de classe é mostrar visualmente os relacionamentos que existem entre as classes de um sistema. Por isso, eles incluem também linhas e setas, as quais são usadas para representar três tipos de relacionamentos: <strong>associação</strong>, <strong>herança</strong> e <strong>dependência</strong>. Vamos tratar de cada um deles nos próximos parágrafos.</p>
 <h3 class="unnumbered" data-number="" id="associações" class="unnumbered" data-number="">Associações</h3>
 <p>Quando uma classe A possui um atributo b de um tipo B, dizemos que existe uma associação de A para B, a qual é representada por meio de uma seta, também de A para B. Na extremidade da seta, informa-se o nome do atributo de A responsável pela associação — no nosso caso, b. Veja o exemplo abaixo (nele, só mostramos as informações que nos interessam; por isso, o compartimento de atributos e métodos está vazio):</p>
@@ -276,13 +276,21 @@ class MinhaClasse {
 <li>Engenharia Avante (<em>Forward Engineering</em>).</li>
 </ol>
 <p>3. Modele os cenários descritos a seguir usando Diagramas de Classe UML.Veja que as classes são grafadas em uma fonte diferente.</p>
-<ol type="a">
-<li><p>ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez, pode ter várias ContaBancaria. Existe navegabilidade em ambos os sentidos.</p></li>
-<li><p>ContaPoupanca e ContaSalario são subclasses de ContaBancaria.</p></li>
-<li><p>No código de ContaBancaria declara-se uma variável local do tipo BancoDados.</p></li>
-<li><p>Um ItemPedido se refere a um único Produto (sem navegabilidade). Um Produto pode ter vários ItemPedido (com navegabilidade).</p></li>
-<li><p>A classe Aluno possui atributos <em>nome</em>, <em>matricula</em>, <em>curso</em> (todos privados); e métodos <em>getCurso()</em> e <em>cancelaMatricula()</em>, ambos públicos.</p></li>
-</ol>
+<pre><code>(a) ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez,
+    pode ter várias ContaBancaria. Existe navegabilidade em ambos os
+    sentidos.
+
+(b) ContaPoupanca e ContaSalario são subclasses de ContaBancaria.
+
+(c) No código de ContaBancaria declara-se uma variável local do tipo
+    BancoDados.
+
+(d) Um ItemPedido se refere a um único Produto (sem navegabilidade). Um
+    Produto pode ter vários ItemPedido (com navegabilidade).
+
+(e) A classe Aluno possui atributos *nome*, *matricula*, *curso* (todos
+    privados); e métodos *getCurso()* e *cancelaMatricula()*, ambos
+    públicos.</code></pre>
 <p>4. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de classes para representar as seguintes classes e associações:</p>
 <ul>
 <li><p>Uma revista científica possui título, INSS e periodicidade;</p></li>

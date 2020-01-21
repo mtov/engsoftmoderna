@@ -357,7 +357,7 @@ Nesse diagrama, pode-se conferir que a classe Pessoa tem três atributos
 sua vez, os dois métodos são públicos, conforme indicado pelo sinal
 "+". O diagrama possui ainda uma segunda classe, chamada `Fone`, com
 três atributos privados — `codigo`, `numero` e `celular` — e três
-métodos públicos — `setFone`, `getFone` e `isCelular`. No caso dos
+métodos públicos — `setFone`, `getFone` e `isCelular. No caso dos
 métodos, informamos também o nome de seus parâmetros e o tipo de
 retorno.
 
@@ -845,34 +845,34 @@ Hall, 2004.
 
 1\. Explique e discuta os três usos possíveis de UML: 
 
-(a) Como blueprint (ou plantas técnicas detalhadas)
-(b) Como sketches (esboços) 
-(c) Como linguagem de programação.
+   (a) Como blueprint (ou plantas técnicas detalhadas)
+   (b) Como sketches (esboços) 
+   (c) Como linguagem de programação.
 
 2\. Descreva cenários de uso de um diagrama de classes UML como um
 instrumento de:
 
-(a) Engenharia Reversa
-(b) Engenharia Avante (*Forward Engineering*).
+   (a) Engenharia Reversa
+   (b) Engenharia Avante (*Forward Engineering*).
 
 3\. Modele os cenários descritos a seguir usando Diagramas de Classe
 UML.Veja que as classes são grafadas em uma fonte diferente.
 
-(a) ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez,
-    pode ter várias ContaBancaria. Existe navegabilidade em ambos os
-    sentidos.
+    (a) ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez,
+        pode ter várias ContaBancaria. Existe navegabilidade em ambos os
+        sentidos.
 
-(b) ContaPoupanca e ContaSalario são subclasses de ContaBancaria.
+    (b) ContaPoupanca e ContaSalario são subclasses de ContaBancaria.
 
-(c) No código de ContaBancaria declara-se uma variável local do tipo
-    BancoDados.
+    (c) No código de ContaBancaria declara-se uma variável local do tipo
+        BancoDados.
 
-(d) Um ItemPedido se refere a um único Produto (sem navegabilidade). Um
-    Produto pode ter vários ItemPedido (com navegabilidade).
+    (d) Um ItemPedido se refere a um único Produto (sem navegabilidade). Um
+        Produto pode ter vários ItemPedido (com navegabilidade).
 
-(e) A classe Aluno possui atributos *nome*, *matricula*, *curso* (todos
-    privados); e métodos *getCurso()* e *cancelaMatricula()*, ambos
-    públicos.
+    (e) A classe Aluno possui atributos *nome*, *matricula*, *curso* (todos
+        privados); e métodos *getCurso()* e *cancelaMatricula()*, ambos
+        públicos.
 
 4\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
 classes para representar as seguintes classes e associações:
