@@ -221,7 +221,7 @@ distribuída. Isto é, a camada de interface executa na máquina dos
 clientes. A camada de negócio executa em um servidor, muitas vezes
 chamado de servidor de aplicação. E, por fim, temos o banco de dados. A
 próxima figura mostra um exemplo, que assume que a interface oferecida
-aos clientes é uma interface gráfica:
+aos clientes é uma interface gráfica.
 
 ![Arquitetura em três camadas](figs/cap7/tiers3){width=75%}
 
@@ -521,7 +521,7 @@ garantida pelo sistema operacional.
 
 A próxima figura mostra uma versão baseada em microsserviços do nosso
 exemplo. Nela, continuam existindo nove módulos. Mas eles são executados
-por 6 processos independentes, representados pelos quadrados ou
+por seis processos independentes, representados pelos quadrados ou
 retângulos em volta dos módulos. Os módulos M1, M2, M3 e M6 são
 executados, cada um deles, em um processo independente. Os módulos M4 e
 M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9
@@ -545,9 +545,7 @@ horizontal**. Por exemplo, ela permite dividir os clientes do sistema
 entre as duas instâncias mostradas na figura. Como se trata de um monolito, 
 as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 
-![Servidor 1, executando o monolito em um único processo.](figs/cap7/monolito){width=30%}
-
-![Servidor 2, executando uma réplica do monolito.](figs/cap7/monolito){width=30%}
+![Servidor 1, executando o monolito em um único processo.  E Servidor 2, executando uma réplica do monolito.](figs/cap7/monolito2){width=60%}
 
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
@@ -560,10 +558,8 @@ parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
 instâncias, todas elas em um novo servidor.
 
-![Servidor 1, com todos os microsserviços, exceto M1.](figs/cap7/escalabilidade1){width=30%}
+![Servidor 1, com todos os microsserviços, exceto M1. Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade){width=60%}
 
-![Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade2){width=30%}
-  
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
 que cada time tenha seu próprio regime de liberação de novas releases;
@@ -792,7 +788,7 @@ Assinantes devem previamente assinar eventos de seu interesse. Quando um
 evento é publicado, os seus assinantes são notificados, conforme mostra
 a próxima figura.
 
-![Arquitetura Pub/Sub](figs/cap7/pubsub){width=65%}
+![Arquitetura Publish/Subscribe](figs/cap7/pubsub){width=65%}
 
 Assim como ocorre quando se usa filas de mensagens, arquiteturas
 publish/subscribe também oferecem desacoplamento no espaço e no tempo.
@@ -843,7 +839,7 @@ todos os dados da venda (data, horário, número do vôo, dados do
 passageiro, etc). A figura a seguir ilustra a arquitetura proposta para
 o sistema.
 
-![Arquitetura Pub/Sub em uma Companhia Aérea](figs/cap7/ciaaerea){width=70%}
+![Arquitetura Pub/Sub em uma companhia aérea](figs/cap7/ciaaerea){width=70%}
 
 O evento "venda" será então assinado por três sistemas da companhia
 aérea: (1) sistema de milhagens, pois as milhas relativas à passagem
@@ -937,7 +933,7 @@ arquitetura desse sistema bancário como uma "big ball of mud". Por
 exemplo, eles mencionam que apenas um diretório, chamado "sources",
 possuía quase 15 mil arquivos. Em seguida, os autores analisam o
 problema que era manter esse sistema: (1) o tempo de aprendizado de
-novos engenheiros só aumentava, passando de 3 para 7 meses, no intervalo
+novos engenheiros só aumentava, passando de três para sete meses, no intervalo
 de cinco anos; (2) frequentemente, a correção de bugs introduzia novos
 bugs no sistema; (3) o tempo de implementação de novas funcionalidades,
 mesmo que simples, também estava aumentando muito.
@@ -955,21 +951,22 @@ forma de "big ball of mud".
 ## Bibliografia {.unnumbered}
 
 * James Lewis, Martin Fowler. Microservices: a definition of this new
-architectural term. 2014.
+architectural term. Blog post, 2014.
 
 * Martin Fowler. Patterns of Enterprise Application Architecture,
 Addison-Wesley, 2002.
 
-* Martin Fowler. Who Needs an Architect, IEEE Software, 2003.
+* Martin Fowler. Who Needs an Architect, IEEE Software, 
+vol. 20, issue 5, p. 11-13, 2003.
 
 * Patrick Eugster et al. The many faces of publish/subscribe. ACM
-Computing Surveys, 2003.
+Computing Surveys, vol. 35, issue 2, p. 114-131, 2003.
 
-* Glenn E. Krasner, Stephen T. Pope. A cookbook for using the model-view
+* Glenn Krasner, Stephen Pope. A cookbook for using the model-view
 controller user interface paradigm in Smalltalk-80. Journal of
-Object-Oriented Programming, 1988.
+Object-Oriented Programming, vol. 1, issue 3, p. 26-49, 1988.
 
-* Kevlin Henney, Frank Buschmann, Douglas C. Schmidt. Pattern-Oriented
+* Kevlin Henney, Frank Buschmann, Douglas Schmidt. Pattern-Oriented
 Software Architecture: A Pattern Language for Distributed Computing,
 Vol. 4, John Wiley & Sons, 2007.
 
@@ -1001,16 +998,16 @@ Vol. 4, John Wiley & Sons, 2007.
 
 8.  (POSCOMP, 2019, adaptado) Marque V ou F.
 
-( ) Mesmo que um dado padrão arquitetural ofereça uma solução para o
-problema sendo resolvido, nem sempre ele é adequado. Fatores como
-contexto e o sistema de forças que afeta a solução fazem também parte
-do processo de avaliação e da escolha de padrões adequados.
+    ( ) Mesmo que um dado padrão arquitetural ofereça uma solução para o 
+    problema sendo resolvido, nem sempre ele é adequado. Fatores como
+    contexto e o sistema de forças que afeta a solução fazem também parte
+    do processo de avaliação e da escolha de padrões adequados.
 
-( ) Padrão MVC é uma adaptação do padrão arquitetural Camadas. A
-Camada Visão lida com a apresentação e a manipulação da interface, a
-Camada Modelo organiza os objetos específicos da aplicação, e a Camada
-Controle posiciona-se entre estas duas com as regras do negócio.
+    ( ) Padrão MVC é uma adaptação do padrão arquitetural Camadas. A
+    Camada Visão lida com a apresentação e a manipulação da interface, a
+    Camada Modelo organiza os objetos específicos da aplicação, e a Camada
+    Controle posiciona-se entre estas duas com as regras do negócio.
 
-( ) O padrão Broker é voltado a problemas de ambientes distribuídos.
-Sugere uma arquitetura na qual um componente (broker) estabelece uma
-mediação que permite um desacoplamento entre clientes e servidores.
+    ( ) O padrão Broker é voltado a problemas de ambientes distribuídos.
+    Sugere uma arquitetura na qual um componente (broker) estabelece uma
+    mediação que permite um desacoplamento entre clientes e servidores.

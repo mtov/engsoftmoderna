@@ -1855,11 +1855,11 @@ Agile Process. Addison-Wesley, 2012
 * Ian Sommerville. Engenharia de Software. Pearson, 10a edição, 2019.
 
 * Hans van Vliet. Software Engineering: Principles and Practice. 3rd
-Edition. Wiley, 2008.
+edition. Wiley, 2008.
 
-* Armando Fox e David Patterson. Construindo Software como Serviço: Uma
+* Armando Fox, David Patterson. Construindo Software como Serviço: Uma
 Abordagem Ágil Usando Computação em Nuvem. Strawberry Canyon LLC. 1a
-Edição, versão 1.1.2, 2014.
+edição, 2014.
 
 ## Exercícios de Fixação {.unnumbered}
 

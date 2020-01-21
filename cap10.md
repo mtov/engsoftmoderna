@@ -230,7 +230,7 @@ CI também não é compatível com projetos de código livre. Na maioria das vez
 
 * Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.
 
-* Steve Matyas, Andrew Glover, Paul M. Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
+* Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
 
 ## Exercícios de Fixação {.unnumbered}
 

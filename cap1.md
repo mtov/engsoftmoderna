@@ -1134,14 +1134,14 @@ ser objeto de uma refatoração.
 
 ## Bibliografia {.unnumbered}
 
-* Pierre Bourque e Richard E. Fairley (editores). Guide to the Software
+* Pierre Bourque, Richard Fairley. Guide to the Software
 Engineering Body of Knowledge, Version 3.0, IEEE Computer Society, 2014.
 
-* Armando Fox e David Patterson. Construindo Software como Serviço: Uma
+* Armando Fox, David Patterson. Construindo Software como Serviço: Uma
 Abordagem Ágil Usando Computação em Nuvem. Strawberry Canyon LLC. 1a
-Edição, versão 1.1.2, 2014.
+edição, 2014.
 
-* Frederick P. Brooks. O Mítico Homem-Mês. Ensaios Sobre Engenharia de
+* Frederick Brooks. O Mítico Homem-Mês. Ensaios Sobre Engenharia de
 Software. Alta Books, 1a edição, 2018.
 
 ## Exercícios de Fixação {.unnumbered}

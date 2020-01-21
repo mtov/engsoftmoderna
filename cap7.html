@@ -85,7 +85,7 @@
 <li><p>Lógica de Negócio, também conhecida como camada de aplicação, implementa as regras de negócio do sistema. No sistema acadêmico que estamos usando como exemplo, podemos ter a seguinte regra de negócio: as notas são maiores ou iguais a zero e menores ou iguais ao valor da avaliação. Quando um professor solicitar o lançamento das notas de uma disciplina, cabe à camada de lógica verificar se essa regra é obedecida. Uma outra regra de negócio pode ser a seguinte: após o lançamento de qualquer nota, os alunos devem ser avisados por meio de um e-mail.</p></li>
 <li><p>Banco de Dados, que armazena os dados manipulados pelo sistema. Por exemplo, no nosso sistema acadêmico, após lançamento e validação das notas, elas são salvas em um banco de dados.</p></li>
 </ul>
-<p>Normalmente, uma arquitetura em três camadas é uma arquitetura distribuída. Isto é, a camada de interface executa na máquina dos clientes. A camada de negócio executa em um servidor, muitas vezes chamado de servidor de aplicação. E, por fim, temos o banco de dados. A próxima figura mostra um exemplo, que assume que a interface oferecida aos clientes é uma interface gráfica:</p>
+<p>Normalmente, uma arquitetura em três camadas é uma arquitetura distribuída. Isto é, a camada de interface executa na máquina dos clientes. A camada de negócio executa em um servidor, muitas vezes chamado de servidor de aplicação. E, por fim, temos o banco de dados. A próxima figura mostra um exemplo, que assume que a interface oferecida aos clientes é uma interface gráfica.</p>
 <figure>
 <img src="figs/cap7/tiers3.svg" style="width:75.0%" alt="" /><figcaption>Arquitetura em três camadas</figcaption>
 </figure>
@@ -180,24 +180,18 @@ var model = new Vue({
 <p>Para evitar que os clientes sejam surpreendidos com bugs inesperados em seus sistemas, as empresas que usam arquiteturas monolíticas adotam um processo rigoroso e <q>burocrático</q> para o lançamento de novas releases. Esse processo pode incluir até mesmo testes manuais antes da liberação do sistema para produção. Por testes manuais, queremos dizer um testador usar as funcionalidades mais críticas do sistema, de forma a simular uma sessão de uso por um cliente final.</p>
 <p>Para resolver esse gargalo — o desenvolvimento passou a ser ágil, mas a entrada em produção permanece burocrática —, recentemente, algumas empresas passaram a migrar os seus monolitos para uma arquitetura baseada em <strong>microsserviços</strong>. A ideia é simples: certos grupos de módulos são executados em processos independentes, sem compartilhamento de memória. Ou seja, o sistema é decomposto em módulos não apenas em tempo de desenvolvimento, mas também em tempo de execução. Com isso, as chances de que mudanças em um módulo causem problemas em outros módulos são menores.</p>
 <p>Quando os módulos são separados em processos distintos não há mais possibilidade de que um módulo acesse um recurso interno de outro módulo, como uma variável global, um atributo estático ou uma interface interna. Em vez disso, por construção, toda comunicação tem que ocorrer via interfaces públicas dos módulos. Assim, microsserviços são um instrumento para garantir que os times de desenvolvimento somente usem interfaces públicas de outros sistemas. A obediência à essa regra é garantida pelo sistema operacional.</p>
-<p>A próxima figura mostra uma versão baseada em microsserviços do nosso exemplo. Nela, continuam existindo nove módulos. Mas eles são executados por 6 processos independentes, representados pelos quadrados ou retângulos em volta dos módulos. Os módulos M1, M2, M3 e M6 são executados, cada um deles, em um processo independente. Os módulos M4 e M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9 são executados, em conjunto, em um sexto processo.</p>
+<p>A próxima figura mostra uma versão baseada em microsserviços do nosso exemplo. Nela, continuam existindo nove módulos. Mas eles são executados por seis processos independentes, representados pelos quadrados ou retângulos em volta dos módulos. Os módulos M1, M2, M3 e M6 são executados, cada um deles, em um processo independente. Os módulos M4 e M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9 são executados, em conjunto, em um sexto processo.</p>
 <figure>
 <img src="figs/cap7/microservices1.svg" style="width:35.0%" alt="" /><figcaption>Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.</figcaption>
 </figure>
 <p>Até esse ponto da explicação, usamos o termo processo, mas o nome do padrão refere-se a eles como <strong>serviços</strong>. Ainda, os serviços são micro porque não implementam funcionalidades complexas. Lembre-se que eles são desenvolvidos por times ágeis, que como dissemos no Capítulo 2, são times pequenos, com cerca de cinco desenvolvedores, por exemplo. Consequentemente, times pequenos não têm capacidade para implementar grandes serviços.</p>
 <p>Uma segunda vantagem de microsserviços é <strong>escalabilidade</strong>. Quando um monolito enfrenta problemas de performance, uma solução consiste em disponibilizar instâncias do sistema em máquinas diferentes, como mostra a próxima figura. Essa solução é chamada de <strong>escalabilidade horizontal</strong>. Por exemplo, ela permite dividir os clientes do sistema entre as duas instâncias mostradas na figura. Como se trata de um monolito, as duas instâncias são idênticas, isto é, possuem os mesmos módulos.</p>
 <figure>
-<img src="figs/cap7/monolito.svg" style="width:30.0%" alt="" /><figcaption>Servidor 1, executando o monolito em um único processo.</figcaption>
-</figure>
-<figure>
-<img src="figs/cap7/monolito.svg" style="width:30.0%" alt="" /><figcaption>Servidor 2, executando uma réplica do monolito.</figcaption>
+<img src="figs/cap7/monolito2.svg" style="width:60.0%" alt="" /><figcaption>Servidor 1, executando o monolito em um único processo. E Servidor 2, executando uma réplica do monolito.</figcaption>
 </figure>
 <p>Porém, os problemas de performance podem ser causados por serviços específicos; por exemplo, apenas pelo serviço de autenticação de usuários. Então, microsserviços permitem replicar apenas os componentes diretamente relacionados com os problemas de performance. A próxima figura mostra uma nova instalação do nosso sistema baseado em microsserviços. O segundo servidor que foi disponibilizado inclui apenas instâncias do serviço M1. A suposição é que M1 é responsável pela maior parte dos problemas de performance da instalação inicial. Na primeira instalação, tínhamos uma única instância de M1. Agora, temos seis instâncias, todas elas em um novo servidor.</p>
 <figure>
-<img src="figs/cap7/escalabilidade1.svg" style="width:30.0%" alt="" /><figcaption>Servidor 1, com todos os microsserviços, exceto M1.</figcaption>
-</figure>
-<figure>
-<img src="figs/cap7/escalabilidade2.svg" style="width:30.0%" alt="" /><figcaption>Servidor 2, executando seis processos, todos eles relativos a M1.</figcaption>
+<img src="figs/cap7/escalabilidade.svg" style="width:60.0%" alt="" /><figcaption>Servidor 1, com todos os microsserviços, exceto M1. Servidor 2, executando seis processos, todos eles relativos a M1.</figcaption>
 </figure>
 <p>Até o momento, listamos duas vantagens de microsserviços: (1) eles permitem a evolução mais rápida e independente de um sistema, permitindo que cada time tenha seu próprio regime de liberação de novas releases; (2) eles permitem escalar um sistema em um nível de granularidade mais fino do que é possível com monolitos. Mas existem pelo menos mais duas vantagens:</p>
 <ul>
@@ -246,7 +240,7 @@ var model = new Vue({
 <h2 data-number="1.6" id="arquiteturas-publishsubscribe" data-number="1.6"><span class="header-section-number">7.6</span> Arquiteturas Publish/Subscribe</h2>
 <p>Em arquiteturas publish/subscribe, as mensagens são chamadas de <strong>eventos</strong>. Os componentes da arquitetura são chamados de <strong>publicadores</strong> (<em>publishers</em>) e <strong>assinantes</strong> (<em>subscribers</em>) de eventos. Publicadores produzem eventos e os publicam no serviço de publish/subscribe, que normalmente executa em uma máquina separada. Assinantes devem previamente assinar eventos de seu interesse. Quando um evento é publicado, os seus assinantes são notificados, conforme mostra a próxima figura.</p>
 <figure>
-<img src="figs/cap7/pubsub.svg" style="width:65.0%" alt="" /><figcaption>Arquitetura Pub/Sub</figcaption>
+<img src="figs/cap7/pubsub.svg" style="width:65.0%" alt="" /><figcaption>Arquitetura Publish/Subscribe</figcaption>
 </figure>
 <p>Assim como ocorre quando se usa filas de mensagens, arquiteturas publish/subscribe também oferecem desacoplamento no espaço e no tempo. No entanto, existem duas diferenças principais entre publish/subscribe e filas de mensagens:</p>
 <ul>
@@ -258,7 +252,7 @@ var model = new Vue({
 <h3 class="unnumbered" data-number="" id="exemplo-companhia-aérea" class="unnumbered" data-number="">Exemplo: Companhia Aérea</h3>
 <p>Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma arquitetura publish/subscribe. Suponha que essa companhia tenha um sistema de vendas, que é usado pelos clientes para comprar passagens aéreas. Após efetuar uma venda, esse sistema pode gerar um evento, com todos os dados da venda (data, horário, número do vôo, dados do passageiro, etc). A figura a seguir ilustra a arquitetura proposta para o sistema.</p>
 <figure>
-<img src="figs/cap7/ciaaerea.svg" style="width:70.0%" alt="" /><figcaption>Arquitetura Pub/Sub em uma Companhia Aérea</figcaption>
+<img src="figs/cap7/ciaaerea.svg" style="width:70.0%" alt="" /><figcaption>Arquitetura Pub/Sub em uma companhia aérea</figcaption>
 </figure>
 <p>O evento <q>venda</q> será então assinado por três sistemas da companhia aérea: (1) sistema de milhagens, pois as milhas relativas à passagem devem ser creditadas na conta do passageiro; (2) sistema de marketing, que pode usar os dados da venda para fazer ofertas para o cliente, como aluguel de carros, promoção para classe executiva, etc; (3) Sistema de contabilidade, pois a venda que foi realizada precisa ser incluída na contabilidade da empresa.</p>
 <p>Essa arquitetura tem as seguintes características interessantes: (1) comunicação em grupo, pois o mesmo evento é assinado por três sistemas; (2) desacoplamento no espaço, pois o sistema de vendas não tem conhecimento dos sistemas interessados nos eventos que ele publica; (3) desacoplamento no tempo, pois o sistema de publish/subscribe reenvia os eventos caso os sistemas assinantes estejam fora do ar; (4) notificação assíncrona, pois os assinantes são notificados assim que um evento ocorre; isto é, eles não precisam consultar periodicamente o sistema publish/subscribe sobre a ocorrência dos eventos de interesse.</p>
@@ -274,16 +268,16 @@ var model = new Vue({
 <img src="figs/cap7/big-ball-mud.svg" style="width:40.0%" alt="" /><figcaption>Anti-padrão <em>big ball of mud</em></figcaption>
 </figure>
 <p>Ou seja, um <q>big ball of mud</q> não possui uma arquitetura definida. Em vez disso, o que existe é uma explosão no número de dependências, que dá origem a um espaguete de código. Consequentemente, a manutenção do sistema torna-se muito difícil e arriscada.</p>
-<p><strong>Mundo Real</strong>: Em um artigo publicado em 2009 na revista IEEE Software (<a href="https://doi.org/10.1109/MS.2009.42">link</a>), Santonu Sarkar e mais cinco colegas — na época consultores da empresa indiana InfoSys — descrevem uma experiência de modularização de um grande sistema bancário. O sistema nasceu no final da década de 90 e desde então aumentou seu tamanho em 10 vezes: passou de 2.5 milhões para mais de 25 milhões de linhas de código! Segundo os autores, os times de desenvolvimento do sistema contavam com <q>várias centenas de engenheiros</q>. Apesar de não usarem o termo, o artigo caracteriza a arquitetura desse sistema bancário como uma <q>big ball of mud</q>. Por exemplo, eles mencionam que apenas um diretório, chamado <q>sources</q>, possuía quase 15 mil arquivos. Em seguida, os autores analisam o problema que era manter esse sistema: (1) o tempo de aprendizado de novos engenheiros só aumentava, passando de 3 para 7 meses, no intervalo de cinco anos; (2) frequentemente, a correção de bugs introduzia novos bugs no sistema; (3) o tempo de implementação de novas funcionalidades, mesmo que simples, também estava aumentando muito.</p>
+<p><strong>Mundo Real</strong>: Em um artigo publicado em 2009 na revista IEEE Software (<a href="https://doi.org/10.1109/MS.2009.42">link</a>), Santonu Sarkar e mais cinco colegas — na época consultores da empresa indiana InfoSys — descrevem uma experiência de modularização de um grande sistema bancário. O sistema nasceu no final da década de 90 e desde então aumentou seu tamanho em 10 vezes: passou de 2.5 milhões para mais de 25 milhões de linhas de código! Segundo os autores, os times de desenvolvimento do sistema contavam com <q>várias centenas de engenheiros</q>. Apesar de não usarem o termo, o artigo caracteriza a arquitetura desse sistema bancário como uma <q>big ball of mud</q>. Por exemplo, eles mencionam que apenas um diretório, chamado <q>sources</q>, possuía quase 15 mil arquivos. Em seguida, os autores analisam o problema que era manter esse sistema: (1) o tempo de aprendizado de novos engenheiros só aumentava, passando de três para sete meses, no intervalo de cinco anos; (2) frequentemente, a correção de bugs introduzia novos bugs no sistema; (3) o tempo de implementação de novas funcionalidades, mesmo que simples, também estava aumentando muito.</p>
 <p>Pode parecer que sistemas como esse — analisado no artigo da IEEE Software — são exceções. Porém, eles são mais comuns do que se pode imaginar. E a origem do problema reside na transformação do código em uma <q>big ball of mud</q>. De forma interessante, os autores citam que o banco tentou contornar o problema adotando práticas como documentação detalhada, revisões de código e programação em pares. Porém, todas se mostraram incapazes de atenuar os problemas causados pela arquitetura em forma de <q>big ball of mud</q>.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
 <ul>
-<li><p>James Lewis, Martin Fowler. Microservices: a definition of this new architectural term. 2014.</p></li>
+<li><p>James Lewis, Martin Fowler. Microservices: a definition of this new architectural term. Blog post, 2014.</p></li>
 <li><p>Martin Fowler. Patterns of Enterprise Application Architecture, Addison-Wesley, 2002.</p></li>
-<li><p>Martin Fowler. Who Needs an Architect, IEEE Software, 2003.</p></li>
-<li><p>Patrick Eugster et al. The many faces of publish/subscribe. ACM Computing Surveys, 2003.</p></li>
-<li><p>Glenn E. Krasner, Stephen T. Pope. A cookbook for using the model-view controller user interface paradigm in Smalltalk-80. Journal of Object-Oriented Programming, 1988.</p></li>
-<li><p>Kevlin Henney, Frank Buschmann, Douglas C. Schmidt. Pattern-Oriented Software Architecture: A Pattern Language for Distributed Computing, Vol. 4, John Wiley &amp; Sons, 2007.</p></li>
+<li><p>Martin Fowler. Who Needs an Architect, IEEE Software, vol. 20, issue 5, p. 11-13, 2003.</p></li>
+<li><p>Patrick Eugster et al. The many faces of publish/subscribe. ACM Computing Surveys, vol. 35, issue 2, p. 114-131, 2003.</p></li>
+<li><p>Glenn Krasner, Stephen Pope. A cookbook for using the model-view controller user interface paradigm in Smalltalk-80. Journal of Object-Oriented Programming, vol. 1, issue 3, p. 26-49, 1988.</p></li>
+<li><p>Kevlin Henney, Frank Buschmann, Douglas Schmidt. Pattern-Oriented Software Architecture: A Pattern Language for Distributed Computing, Vol. 4, John Wiley &amp; Sons, 2007.</p></li>
 </ul>
 <h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
 <ol type="1">
@@ -294,11 +288,11 @@ var model = new Vue({
 <li><p>Explique o que significa desacoplamento no espaço e desacoplamento no tempo. Por que arquiteturas baseadas em filas de mensagens e arquiteturas Publish/Subscribe oferecem essa forma de desacoplamento?</p></li>
 <li><p>Quando uma empresa deve considerar o uso de uma arquitetura baseada em filas de mensagens ou uma arquitetura publish/subscribe?</p></li>
 <li><p>Explique o objetivo do conceito de tópicos em uma arquitetura publish/subscribe.</p></li>
-<li><p>(POSCOMP, 2019, adaptado) Marque V ou F.</p></li>
-</ol>
+<li><p>(POSCOMP, 2019, adaptado) Marque V ou F.</p>
 <p>( ) Mesmo que um dado padrão arquitetural ofereça uma solução para o problema sendo resolvido, nem sempre ele é adequado. Fatores como contexto e o sistema de forças que afeta a solução fazem também parte do processo de avaliação e da escolha de padrões adequados.</p>
 <p>( ) Padrão MVC é uma adaptação do padrão arquitetural Camadas. A Camada Visão lida com a apresentação e a manipulação da interface, a Camada Modelo organiza os objetos específicos da aplicação, e a Camada Controle posiciona-se entre estas duas com as regras do negócio.</p>
-<p>( ) O padrão Broker é voltado a problemas de ambientes distribuídos. Sugere uma arquitetura na qual um componente (broker) estabelece uma mediação que permite um desacoplamento entre clientes e servidores.</p>
+<p>( ) O padrão Broker é voltado a problemas de ambientes distribuídos. Sugere uma arquitetura na qual um componente (broker) estabelece uma mediação que permite um desacoplamento entre clientes e servidores.</p></li>
+</ol>
 </div>
 </div>
 </div>

@@ -702,8 +702,7 @@ Carol).
 
 * Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
 
-* Rachel M. Carmena. How to teach Git. Blog post
-[(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
+* Rachel M. Carmena. How to teach Git. Blog post, [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
 
 ## Exercícios de Fixação {.unnumbered}
 
