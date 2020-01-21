@@ -104,15 +104,13 @@ mostrou que mais de 55% dos projetos estourava os prazos planejados
 entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
-![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para
-cada faixa de estouro).](figs/cap2/chaos2){width=55%}
+![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para cada faixa de estouro).](figs/cap2/chaos2){width=55%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, conforme mostra
 o seguinte gráfico:
 
-![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos**
-(para cada faixa de estouro).](figs/cap2/chaos1){width=55%}
+![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos** (para cada faixa de estouro).](figs/cap2/chaos1){width=55%}
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
 Snowbird, no estado norte-americano de Utah, para discutir e propor uma
