@@ -316,6 +316,10 @@ Por fim, gostaríamos de lembrar que já tratamos de Diagramas de Casos de
 Uso no Capítulo 3, quando apresentamos técnicas para especificação de
 requisitos.
 
+```{=latex}
+\begin{aviso}
+```
+
 **Aviso:** Existem diversas versões de UML. No restante deste
 capítulo vamos usar a **versão de UML que é adotada na 3a edição do
 livro UML Distilled, de Martin Fowler**
@@ -330,6 +334,10 @@ se ter uma ideia do nível de detalhe alcançado por UML, a especificação
 da versão mais recente da linguagem — versão 2.5.1, quando da
 escrita deste capítulo — possui 796 páginas. Ela pode ser encontrada
 no site da OMG ([link](https://www.omg.org/)).
+
+```{=latex}
+\end{aviso}
+```
 
 ## Diagramas de Classes
 
@@ -520,6 +528,10 @@ exigir que os diagramas sejam sintaticamente perfeitos. Por isso,
 pequenos erros ou omissões são tolerados, principalmente quando não há
 prejuízo para o propósito que levou à criação do diagrama.
 
+```{=latex}
+\begin{esmbox}
+```
+
 **Aprofundamento**: UML — dependendo da versão que está sendo
 usada — admite notações diferentes para associações. Por exemplo,
 algumas vezes, informa-se um nome para a associação, o qual é mostrado
@@ -550,15 +562,19 @@ diagramas"
 ([link](https://dl.acm.org/citation.cfm?id=861282), página
 68).
 
+```{=latex}
+\end{esmbox}
+```
+
 ### Herança {.unnumbered}
 
 Em diagramas de classes, relações de herança são representadas por meio
 de setas com a extremidade não preenchida (isto é, ⇾). Essas setas são
 usadas para conectar subclasses à sua classe base. No próximo exemplo,
-elas indicam que PessoaFisica e PessoaJuridica são subclasses de `Pessoa`.
+elas indicam que `PessoaFisica` e `PessoaJuridica` são subclasses de `Pessoa`.
 Como usual em orientação a objetos, subclasses herdam todos os atributos
 e métodos da classe base, mas também podem adicionar novos membros. Por
-exemplo, apenas PessoaFisica tem cpf e apenas PessoaJuridica tem cnpj.
+exemplo, apenas `PessoaFisica` tem `cpf` e apenas `PessoaJuridica` tem `cnpj`.
 
 ![](figs/cap4/class10){width=85%}
 
@@ -589,9 +605,9 @@ class MinhaClasse {
    ...
 }
 ```
-Observe que o metodoX de MinhaClasse possui uma variável local do tipo
-java.util.Stack. Nesse caso, dizemos que existe uma dependência de
-MinhaClasse para java.util.Stack, a qual é modelada da seguinte forma:
+Observe que o `metodoX` de `MinhaClasse` possui uma variável local do tipo
+`java.util.Stack`. Nesse caso, dizemos que existe uma dependência de
+`MinhaClasse` para `java.util.Stack`, a qual é modelada da seguinte forma:
 
 ![](figs/cap4/class9){width=50%}
 
@@ -601,7 +617,7 @@ classe de origem instancia objetos da classe de destino da dependência)
 ou call (para indicar que a classe de origem chama métodos da classe de
 destino). Essas palavras são escritas entre sinais de menor (\<\<) e
 maior (\>\>). No diagrama a seguir, por exemplo, fica claro o tipo de
-dependência que ShapeFactory estabelece com a classe Shape.
+dependência que `ShapeFactory` estabelece com a classe `Shape`.
 
 ![](figs/cap4/class11)
 
@@ -630,14 +646,14 @@ A próxima figura mostra um exemplo de diagrama de pacotes:
 ![](figs/cap4/package1){width=50%}
 
 Nesse diagrama, podemos ver que o sistema possui quatro pacotes
-principais: MobileView, WebView, BusinessLayer e Persistence. Podemos
+principais: `MobileView`, `WebView`, `BusinessLayer` e `Persistence`. Podemos
 ver ainda as dependências — setas tracejadas — que existem entre
-eles. Ambos os pacotes View usam classes de BusinessLayer. Por outro
-lado, as classes de BusinessLayer também usam classes da View, por
+eles. Ambos os pacotes `View` usam classes de `BusinessLayer`. Por outro
+lado, as classes de `BusinessLayer` também usam classes da `View`, por
 exemplo, para notificá-las da ocorrência de algum evento. Por isso, as
-setas que ligam os pacotes de View a BusinessLayer são bidirecionais.
-Por fim, apenas classes do pacote BusinessLayer usam classes do pacote
-Persistence.
+setas que ligam os pacotes de `View` a `BusinessLayer` são bidirecionais.
+Por fim, apenas classes do pacote `BusinessLayer` usam classes do pacote
+`Persistence`.
 
 Para concluir, gostaríamos de acrescentar duas observações:
 
@@ -693,7 +709,7 @@ o tipo de retorno é void; ou (2) o objeto de retorno não é relevante, a
 ponto de merecer ser representado no diagrama.
 
 No diagrama de sequência mostrado acima representamos apenas dois
-objetos (a1 e b1). Mas um diagrama de sequência pode ter mais objetos.
+objetos (`a1` e `b1`). Mas um diagrama de sequência pode ter mais objetos.
 No entanto, esse número não pode crescer tanto, pois o diagrama acaba
 ficando complexo e de difícil entendimento. Por exemplo, pode não ser
 possível representá-lo em uma única folha de papel ou em uma tela de
@@ -728,9 +744,9 @@ class A {
 
 
 A execução desse programa é representada pelo diagrama de sequência a
-seguir. Observe como a chamada de g() feita por f() é representada por
+seguir. Observe como a chamada de `g()` feita por `f()` é representada por
 meio de um novo retângulo, que "sai" do retângulo que representa a
-ativação de f().
+ativação de `f()`.
 
 ![](figs/cap4/sequence2){width=30%}
 

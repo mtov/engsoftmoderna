@@ -30,7 +30,8 @@
 }
 \lstset{style=mystyle}
 
-\usepackage[most]{tcolorbox}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
 \tcbset{boxrule=0.5pt,
         width=5in,
         boxsep=3pt,
@@ -38,8 +39,11 @@
         right=5pt,
         top=5pt}
 
-\renewenvironment{quote}{\centering \small \begin{tcolorbox}[colback=cyan!10!white]}{\end{tcolorbox}}
+\renewenvironment{quote}{\centering \begin{tcolorbox}[colback=cyan!10!white]}{\end{tcolorbox}}
 
+\newenvironment{esmbox}{\centering \begin{tcolorbox}[breakable, colback=gray!10!white]}{\end{tcolorbox}}
+
+\newenvironment{aviso}{\centering \begin{tcolorbox}[breakable, colback=yellow!10!white]}{\end{tcolorbox}}
 
 \usepackage[compact]{titlesec}
 \titlespacing*{\section}{0pt}{*0}{0pt}
