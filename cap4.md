@@ -716,7 +716,7 @@ volta a ficar tracejada. Além disso, o início da chamada é indicado por
 uma seta na horizontal, com o nome do método chamado. O retorno da
 chamada é indicado por uma seta tracejada, com o nome do objeto
 retornado. No entanto, às vezes a seta de retorno é omitida, como no
-caso da chamada do método g. Existem dois motivos para essa omissão: (1)
+caso da chamada do método `g`. Existem dois motivos para essa omissão: (1)
 o tipo de retorno é void; ou (2) o objeto de retorno não é relevante, a
 ponto de merecer ser representado no diagrama.
 
