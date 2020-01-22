@@ -168,7 +168,7 @@ class Fone {
 <p>No último diagrama de classes, omitimos todos os símbolos de visibilidade, tanto pública (+) como privada (-). Isso foi feito, de forma deliberada, para destacar que estamos tratando do uso de UML para criação de esboços, quando os diagramas são criados para discutir e ilustrar uma ideia de design. Logo, nesse contexto, não faz sentido exigir que os diagramas sejam sintaticamente perfeitos. Por isso, pequenos erros ou omissões são tolerados, principalmente quando não há prejuízo para o propósito que levou à criação do diagrama.</p>
 <p><strong>Aprofundamento</strong>: UML — dependendo da versão que está sendo usada — admite notações diferentes para associações. Por exemplo, algumas vezes, informa-se um nome para a associação, o qual é mostrado logo acima e ao longo da seta que une as duas classes. Outras vezes, no caso de associações bidirecionais, as duas setas são omitidas — pois a padronização de UML define o seguinte: <q>uma associação em que nenhuma das extremidades é marcada com uma seta de navegabilidade é navegável em ambas as direções</q>. No entanto, essas notações alternativas tendem a ser confusas ou mesmo ambíguas. Por exemplo, Gonzalo Génova e mais dois pesquisadores da Universidade de Madrid, na Espanha, fazem a seguinte observação sobre o uso de associações bidirecionais sem setas: <q>infelizmente, isso pode introduzir ambiguidade na notação gráfica, porque não conseguimos mais distinguir entre associações bidirecionais e associações sem especificação de navegabilidade</q> em uma de suas extremidades. (<a href="http://www.jot.fm/issues/issue_2003_09/article4/">link</a>, Seção 3, quarto parágrafo). Existem ainda dois conceitos frequentemente mencionados quando estudamos associações em UML: composição e agregação. Composição é uma relação na qual a classe de destino <em>não</em> pode existir de forma independente da classe de origem. Por outro lado, quando as duas classes têm ciclos de vida independentes, temos uma relação de agregação. No entanto, na prática, esses conceitos também geram confusão e, por isso, resolvemos não incluí-los na explicação sobre diagramas de classes. A mesma opinião é compartilhada por outros autores. Por exemplo, Fowler afirma o seguinte: <q>agregação é algo estritamente sem sentido; portanto, eu recomendo que você ignore esse conceito em seus diagramas</q> (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>, página 68).</p>
 <h3 class="unnumbered" data-number="" id="herança" class="unnumbered" data-number="">Herança</h3>
-<p>Em diagramas de classes, relações de herança são representadas por meio de setas com a extremidade não preenchida (isto é, ⇾). Essas setas são usadas para conectar subclasses à sua classe base. No próximo exemplo, elas indicam que <code>PessoaFisica</code> e <code>PessoaJuridica</code> são subclasses de <code>Pessoa</code>. Como usual em orientação a objetos, subclasses herdam todos os atributos e métodos da classe base, mas também podem adicionar novos membros. Por exemplo, apenas <code>PessoaFisica</code> tem <code>cpf</code> e apenas <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
+<p>Em diagramas de classes, relações de herança são representadas por meio de setas com a extremidade não preenchida. Essas setas são usadas para conectar subclasses à sua classe base. No próximo exemplo, elas indicam que <code>PessoaFisica</code> e <code>PessoaJuridica</code> são subclasses de <code>Pessoa</code>. Como usual em orientação a objetos, subclasses herdam todos os atributos e métodos da classe base, mas também podem adicionar novos membros. Por exemplo, apenas <code>PessoaFisica</code> tem <code>cpf</code> e apenas <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
 <p><img src="figs/cap4/class10.svg" style="width:85.0%" /></p>
 <h3 class="unnumbered" data-number="" id="dependências" class="unnumbered" data-number="">Dependências</h3>
 <p>Existe uma dependência de uma classe A para uma classe B, representada por uma seta com uma linha tracejada de A para B, quando a classe A usa a classe B, porém esse uso não ocorre por meio de associação (isto é, A não tem um atributo do tipo B) ou herança (isto é, A não é uma subclasse de B). Dependências ocorrem, por exemplo, quando um método de A declara um parâmetro ou variável local do tipo B ou quando um método de A lança uma exceção do tipo B. Uma dependência é considerada uma modalidade menos forte de relacionamento entre classes do que relacionamentos que ocorrem por meio de associação e herança.</p>
@@ -204,7 +204,7 @@ class MinhaClasse {
 <p>Diagramas de sequência são diagramas dinâmicos, também chamados de comportamentais. Por isso, em vez de classes, eles modelam objetos de um sistema. Adicionalmente, eles incluem informações sobre quais métodos desses objetos são executados em um determinado cenário de uso de um programa. Logo, eles são usados quando se pretende explicar o comportamento de um sistema, em um determinado cenário. Por exemplo, no final desta seção, vamos apresentar um diagrama de sequência que ilustra os métodos que são chamados quando um cliente chega em um caixa eletrônico e solicita uma operação de retirada de valores.</p>
 <p>Antes disso, para iniciar a apresentação de diagramas de sequência, vamos usar o seguinte diagrama:</p>
 <p><img src="figs/cap4/sequence1.svg" style="width:45.0%" /></p>
-<p>Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes a1 e b1. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método g. Existem dois motivos para essa omissão: (1) o tipo de retorno é void; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
+<p>Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes <code>a1</code> e <code>b1</code>. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método g. Existem dois motivos para essa omissão: (1) o tipo de retorno é void; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
 <p>No diagrama de sequência mostrado acima representamos apenas dois objetos (<code>a1</code> e <code>b1</code>). Mas um diagrama de sequência pode ter mais objetos. No entanto, esse número não pode crescer tanto, pois o diagrama acaba ficando complexo e de difícil entendimento. Por exemplo, pode não ser possível representá-lo em uma única folha de papel ou em uma tela de computador.</p>
 <p>Um objeto pode ficar ativo e inativo diversas vezes em um mesmo diagrama. Ou seja, ele pode executar um método; ficar inativo; executar um novo método; ficar inativo, etc. Existe ainda um caso especial, quando um objeto chama um método dele mesmo, isto é, quando ele chama um método usando this. Para ilustrar esse caso, suponha o seguinte programa.</p>
 <pre><code>class A {
@@ -231,27 +231,20 @@ class MinhaClasse {
 <h3 data-number="1.5.1" id="diagramas-de-atividades" data-number="1.5.1"><span class="header-section-number">4.5.1</span> Diagramas de Atividades</h3>
 <p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por quadrados. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A próxima figura mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em um loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra.</p>
 <p><img src="figs/cap4/activity01.svg" style="width:40.0%" /></p>
-<p>Para entender o funcionamento de um diagrama de atividades (como aquele mostrado acima), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. Na próxima tabela, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
-<h3 class="unnumbered" data-number="" id="nodo-inicial" class="unnumbered" data-number="">Nodo Inicial</h3>
-<p>Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.</p>
+<p>Para entender o funcionamento de um diagrama de atividades (como aquele mostrado acima), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
+<p><strong>Nodo Inicial:</strong> Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.</p>
 <p><img src="figs/cap4/activity-t-inicial.svg" /></p>
-<h3 class="unnumbered" data-number="" id="ações" class="unnumbered" data-number="">Ações</h3>
-<p>Possuem um único fluxo de entrada e um único fluxo de saída. Para um ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.</p>
+<p><strong>Ações:</strong> Possuem um único fluxo de entrada e um único fluxo de saída. Para um ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.</p>
 <p><img src="figs/cap4/activity-t-acao.svg" /></p>
-<h3 class="unnumbered" data-number="" id="decisões" class="unnumbered" data-number="">Decisões</h3>
-<p>Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.</p>
+<p><strong>Decisões:</strong> Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.</p>
 <p><img src="figs/cap4/activity-t-decisao.svg" /></p>
-<h3 class="unnumbered" data-number="" id="merges" class="unnumbered" data-number="">Merges</h3>
-<p>Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.</p>
+<p><strong>Merges:</strong> Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.</p>
 <p><img src="figs/cap4/activity-t-merge.svg" /></p>
-<h3 class="unnumbered" data-number="" id="forks" class="unnumbered" data-number="">Forks</h3>
-<p>Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.</p>
+<p><strong>Forks:</strong> Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.</p>
 <p><img src="figs/cap4/activity-t-fork.svg" /></p>
-<h3 class="unnumbered" data-number="" id="joins" class="unnumbered" data-number="">Joins</h3>
-<p>Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.</p>
+<p><strong>Joins:</strong> Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.</p>
 <p><img src="figs/cap4/activity-t-join.svg" /></p>
-<h3 class="unnumbered" data-number="" id="nodo-final" class="unnumbered" data-number="">Nodo Final</h3>
-<p>Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.</p>
+<p><strong>Nodo Final:</strong> Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.</p>
 <p><img src="figs/cap4/activity-t-final.svg" /></p>
 <p><strong>Aprofundamento</strong>: Existem pelo menos três outras alternativas para modelagem de fluxos e processos:</p>
 <ul>
@@ -276,52 +269,24 @@ class MinhaClasse {
 <li>Engenharia Avante (<em>Forward Engineering</em>).</li>
 </ol>
 <p>3. Modele os cenários descritos a seguir usando Diagramas de Classe UML.Veja que as classes são grafadas em uma fonte diferente.</p>
-<pre><code>(a) ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez,
-    pode ter várias ContaBancaria. Existe navegabilidade em ambos os
-    sentidos.
-
-(b) ContaPoupanca e ContaSalario são subclasses de ContaBancaria.
-
-(c) No código de ContaBancaria declara-se uma variável local do tipo
-    BancoDados.
-
-(d) Um ItemPedido se refere a um único Produto (sem navegabilidade). Um
-    Produto pode ter vários ItemPedido (com navegabilidade).
-
-(e) A classe Aluno possui atributos *nome*, *matricula*, *curso* (todos
-    privados); e métodos *getCurso()* e *cancelaMatricula()*, ambos
-    públicos.</code></pre>
+<ol type="a">
+<li><p><code>ContaBancaria</code> possui exatamente um <code>Cliente</code>. Um <code>Cliente</code>, por sua vez, pode ter várias <code>ContaBancaria</code>. Existe navegabilidade em ambos os sentidos.</p></li>
+<li><p><code>ContaPoupanca</code> e <code>ContaSalario</code> são subclasses de <code>ContaBancaria</code>.</p></li>
+<li><p>No código de <code>ContaBancaria</code> declara-se uma variável local do tipo <code>BancoDados</code>.</p></li>
+<li><p>Um <code>ItemPedido</code> se refere a um único <code>Produto</code> (sem navegabilidade). Um <code>Produto</code> pode ter vários <code>ItemPedido</code> (com navegabilidade).</p></li>
+<li><p>A classe <code>Aluno</code> possui atributos <code>nome</code>, <code>matricula</code>, <code>curso</code> (todos privados); e métodos <code>getCurso()</code> e <code>cancelaMatricula()</code>, ambos públicos.</p></li>
+</ol>
 <p>4. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de classes para representar as seguintes classes e associações:</p>
 <ul>
 <li><p>Uma revista científica possui título, INSS e periodicidade;</p></li>
 <li><p>Essa revista publica diversas edições com os seguintes atributos: número da edição, volume da edição e data da edição. Importante destacar que cada instância da classe edição relaciona-se única e exclusivamente a uma instância da classe revista científica, não podendo relacionar-se com nenhuma outra;</p></li>
 <li><p>Um artigo possui título e nome do autor. Um artigo é um conteúdo exclusivo de uma edição. E uma edição obrigatoriamente tem que possuir no mínimo 10 e no máximo 15 artigos.</p></li>
 </ul>
-<p>5. (ENADE 2014, Tec. e Análise de Sistemas, adaptado) Seja o seguinte código em Java:</p>
-<pre><code>class Funcionario extends Pessoa {
-   private double salario;
-   public Funcionario (int rg, String nome, double salario { 
-      super(rg, nome);
-      ... 
-   }
-   public double getSalario() { ... } 
-   public double obterSalario(double percentualAcrescimo) { ... }
-   public double obterSalario(double adicional, double desconto) { ... } 
-}
-</code></pre>
-<p>Selecione o diagrama de classes UML que melhor representa esse código:</p>
-<ol type="a">
-<li><p><img src="figs/cap4/image5.png" style="width:3.32292in;height:1.68056in" /></p></li>
-<li><p><img src="figs/cap4/image18.png" style="width:3.32292in;height:1.61111in" /></p></li>
-<li><p><img src="figs/cap4/image19.png" style="width:3.32292in;height:1.72222in" /></p></li>
-<li><p><img src="figs/cap4/image25.png" style="width:3.32292in;height:1.68056in" /></p></li>
-<li><p><img src="figs/cap4/image10.png" style="width:3.32292in;height:1.81944in" /></p></li>
-</ol>
-<p>6. Crie diagramas de classes para os seguintes trechos de código:</p>
+<p>5. Crie diagramas de classes para os seguintes trechos de código:</p>
 <p>(a)</p>
 <pre><code>public class HelloWorldSwing { 
    public static void main(String[] args) {
-     JFrame frame = new JFrame(“Hello world!”);
+     JFrame frame = new JFrame(&quot;Hello world!6);
      frame.setVisible(true);
    }
 }</code></pre>
@@ -335,7 +300,7 @@ class MinhaClasse {
      frame.setVisible(true);
    }
 }</code></pre>
-<p>7. Mostre o diagrama de sequência relativo ao seguinte código. O diagrama deve começar com a seguinte chamada <em>a</em>.<em>m5()</em>.</p>
+<p>6. Mostre o diagrama de sequência relativo ao seguinte código. O diagrama deve começar com a seguinte chamada <em>a</em>.<em>m5()</em>.</p>
 <pre><code>A a = new A(); // variaveis globais
 B b = new B();
 C c = new C();
@@ -352,8 +317,8 @@ class A {
    void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }   
 }     
 </code></pre>
-<p>8. Em diagramas de atividades, explique a diferença um nodo de <em>merge</em> e um nodo de <em>join</em>.</p>
-<p>9. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama de forma a refletir corretamente a intenção do projetista.</p>
+<p>7. Em diagramas de atividades, explique a diferença um nodo de <em>merge</em> e um nodo de <em>join</em>.</p>
+<p>8. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama de forma a refletir corretamente a intenção do projetista.</p>
 <p><img src="figs/cap4/activity-exercicio.svg" style="width:30.0%" /></p>
 </div>
 </div>

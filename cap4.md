@@ -83,6 +83,9 @@ começar descrevendo a história e o contexto que levou à criação da UML.
 Em seguida, vamos estudar alguns dos principais diagramas UML com um
 pouco mais de detalhe.
 
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento**: Desde a década de 70, pesquisadores têm
 investigado o uso de modelos matemáticos em Engenharia de Software, por
 meio do que se chama de **Métodos Formais**. Esses métodos valem-se de
@@ -101,6 +104,9 @@ entanto, o uso de formalismos e especificações matemáticas em Engenharia
 de Software não avançou como em outras Engenharias. Por isso, eles são
 pouco usados atualmente, com exceção talvez de alguns sistemas de missão
 crítica.
+```{=latex}
+\end{esmbox}
+```
 
 ## UML
 
@@ -243,6 +249,9 @@ diferença importante para documentos de requisitos, que, conforme vimos
 no capítulo anterior, são escritos por desenvolvedores, mas de forma que
 eles possam ser lidos e verificados pelos usuários finais do sistema.
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: No segundo semestre de 2013, Sebastian Baltes e
 Stephan Diehl — ambos pesquisadores da Universidade de Trier, na
 Alemanha — pediram 394 desenvolvedores para responder um
@@ -281,6 +290,9 @@ desenvolvimento de software, conforme descrito a seguir:
     percentuais reforçam a importância de estudar UML, não como
     notação para documentação detalhada de sistemas (*blueprints*),
     mas para ajudar na construção de modelos informais e parciais.
+```{=latex}
+\end{esmbox}
+```
 
 ### Diagramas UML {.unnumbered}
 
@@ -569,7 +581,7 @@ diagramas"
 ### Herança {.unnumbered}
 
 Em diagramas de classes, relações de herança são representadas por meio
-de setas com a extremidade não preenchida (isto é, ⇾). Essas setas são
+de setas com a extremidade não preenchida. Essas setas são
 usadas para conectar subclasses à sua classe base. No próximo exemplo,
 elas indicam que `PessoaFisica` e `PessoaJuridica` são subclasses de `Pessoa`.
 Como usual em orientação a objetos, subclasses herdam todos os atributos
@@ -694,7 +706,7 @@ notação usada por diagramas de sequência. Como já dissemos, diagramas de
 sequência modelam objetos, os quais são representados por meio de
 retângulos, com o nome dos objetos modelados. Esses retângulos ficam
 dispostos logo na primeira linha do diagrama. Portanto, dois objetos são
-representados no diagrama anterior, de nomes a1 e b1. Abaixo de cada
+representados no diagrama anterior, de nomes `a1` e `b1`. Abaixo de cada
 objeto, desenha-se uma linha vertical, a qual pode assumir duas formas:
 (1) quando ela é desenhada de forma tracejada, o objeto está inativo,
 isto é, nenhum de seus métodos está sendo executado; (2) quando a linha
@@ -769,56 +781,43 @@ assume-se que os produtos comprados já estão no carrinho de compra.
 
 ![](figs/cap4/activity01){width=40%}
 
-
 Para entender o funcionamento de um diagrama de atividades (como aquele
 mostrado acima), devemos assumir que existe uma ficha (*token*)
-imaginária que caminha pelos nodos do diagrama. Na próxima tabela,
+imaginária que caminha pelos nodos do diagrama. A seguir,
 explicamos o comportamento de cada nodo de um diagrama de atividades,
 assumindo a existência dessa ficha.
 
-### Nodo Inicial {.unnumbered}
-
-Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.
+**Nodo Inicial:** Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.
 
 ![](figs/cap4/activity-t-inicial)
 
-### Ações {.unnumbered}   
-
-Possuem um único fluxo de entrada e um único fluxo de saída. Para um ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
+**Ações:** Possuem um único fluxo de entrada e um único fluxo de saída. Para um ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
 
 ![](figs/cap4/activity-t-acao)
 
-
-### Decisões {.unnumbered}   
-
-Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.
+**Decisões:** Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.
 
 ![](figs/cap4/activity-t-decisao)
 
-### Merges {.unnumbered} 
-
-Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.
+**Merges:** Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.
 
 ![](figs/cap4/activity-t-merge)
 
-### Forks {.unnumbered}  
-
-Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
+**Forks:** Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
 
 ![](figs/cap4/activity-t-fork)
 
-### Joins {.unnumbered}   
-
-Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.
+**Joins:** Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.
 
 ![](figs/cap4/activity-t-join)
 
-### Nodo Final {.unnumbered}  
-
-Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.
+**Nodo Final:** Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.
 
 ![](figs/cap4/activity-t-final)
 
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento**: Existem pelo menos três outras alternativas para
 modelagem de fluxos e processos:
 
@@ -843,6 +842,9 @@ modelagem de fluxos e processos:
     negócio do que aquela oferecida por diagramas de atividades. Um
     dos objetivos é propiciar que as pessoas de negócio possam ler e
     validar diagramas BPMN.
+```{=latex}
+\end{esmbox}
+```
 
 ## Bibliografia {.unnumbered}
 
@@ -874,20 +876,20 @@ instrumento de:
 3\. Modele os cenários descritos a seguir usando Diagramas de Classe
 UML.Veja que as classes são grafadas em uma fonte diferente.
 
-    (a) ContaBancaria possui exatamente um Cliente. Um Cliente, por sua vez,
-        pode ter várias ContaBancaria. Existe navegabilidade em ambos os
+(a) `ContaBancaria` possui exatamente um `Cliente`. Um `Cliente`, por sua vez,
+        pode ter várias `ContaBancaria`. Existe navegabilidade em ambos os
         sentidos.
 
-    (b) ContaPoupanca e ContaSalario são subclasses de ContaBancaria.
+(b) `ContaPoupanca` e `ContaSalario` são subclasses de `ContaBancaria`.
 
-    (c) No código de ContaBancaria declara-se uma variável local do tipo
-        BancoDados.
+(c) No código de `ContaBancaria` declara-se uma variável local do tipo
+        `BancoDados`.
 
-    (d) Um ItemPedido se refere a um único Produto (sem navegabilidade). Um
-        Produto pode ter vários ItemPedido (com navegabilidade).
+(d) Um `ItemPedido` se refere a um único `Produto` (sem navegabilidade). Um
+        `Produto` pode ter vários `ItemPedido` (com navegabilidade).
 
-    (e) A classe Aluno possui atributos *nome*, *matricula*, *curso* (todos
-        privados); e métodos *getCurso()* e *cancelaMatricula()*, ambos
+(e) A classe `Aluno` possui atributos `nome`, `matricula`, `curso` (todos
+        privados); e métodos `getCurso()` e `cancelaMatricula()`, ambos
         públicos.
 
 4\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
@@ -905,48 +907,15 @@ classes para representar as seguintes classes e associações:
     exclusivo de uma edição. E uma edição obrigatoriamente tem que
     possuir no mínimo 10 e no máximo 15 artigos.
 
-5\. (ENADE 2014, Tec. e Análise de Sistemas, adaptado) Seja o seguinte
-código em Java:
 
-```
-class Funcionario extends Pessoa {
-   private double salario;
-   public Funcionario (int rg, String nome, double salario { 
-      super(rg, nome);
-      ... 
-   }
-   public double getSalario() { ... } 
-   public double obterSalario(double percentualAcrescimo) { ... }
-   public double obterSalario(double adicional, double desconto) { ... } 
-}
-
-```
-
-Selecione o diagrama de classes UML que melhor representa esse código:
-
-(a)
-![](figs/cap4/image5.png){width="3.3229166666666665in" height="1.6805555555555556in"} 
-
-(b)
-![](figs/cap4/image18.png){width="3.3229166666666665in" height="1.6111111111111112in"}
- 
-(c) 
-![](figs/cap4/image19.png){width="3.3229166666666665in" height="1.7222222222222223in"}    
-
-(d)
-![](figs/cap4/image25.png){width="3.3229166666666665in" height="1.6805555555555556in"}
-  
-(e)
-![](figs/cap4/image10.png){width="3.3229166666666665in" height="1.8194444444444444in"}   
-
-6\. Crie diagramas de classes para os seguintes trechos de código:
+5\. Crie diagramas de classes para os seguintes trechos de código:
 
 \(a\)
 
 ```
 public class HelloWorldSwing { 
    public static void main(String[] args) {
-     JFrame frame = new JFrame(“Hello world!”);
+     JFrame frame = new JFrame("Hello world!6);
      frame.setVisible(true);
    }
 }
@@ -967,7 +936,7 @@ class HelloWorldSwing extends JFrame {
 }
 ```
 
-7\. Mostre o diagrama de sequência relativo ao seguinte código. O
+6\. Mostre o diagrama de sequência relativo ao seguinte código. O
 diagrama deve começar com a seguinte chamada *a*.*m5()*.
 
 ```
@@ -989,10 +958,10 @@ class A {
 
 ```
 
-8\. Em diagramas de atividades, explique a diferença um nodo de *merge*
+7\. Em diagramas de atividades, explique a diferença um nodo de *merge*
 e um nodo de *join*.
 
-9\. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama
+8\. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama
 de forma a refletir corretamente a intenção do projetista.
 
 ![](figs/cap4/activity-exercicio){width=30%}

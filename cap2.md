@@ -1954,19 +1954,13 @@ edição, 2014.
      que é o passo mais lento. Com base nesses valores, calcule o WIP
      de cada passo (última coluna da tabela).
 
-+-----------+------------------+-------------------+---------+
-| **Passo** | **Lead time**    | **Throughput**    | **WIP** |
-|           |                  |                   |         |
-|           | **médio (dias)** | **(tarefas/dia)** |         |
-+===========+==================+===================+=========+
-| A         | 4                | -                 |         |
-+-----------+------------------+-------------------+---------+
-| B         | 3                | -                 |         |
-+-----------+------------------+-------------------+---------+
-| C         | 10               | 0.5               |         |
-+-----------+------------------+-------------------+---------+
-| D         | 5                | -                 |         |
-+-----------+------------------+-------------------+---------+
+
+ **Passo**      **Lead Time** (médio, dias)      **Throughput** (tarefas/dia)      **WIP**
+-----------    -----------------------------   -------------------------------   ----------
+    A                4                           -
+    B                3                           -
+    C               10                           0.5
+    D                5                           -
 
 15. Por que se recomenda que os limites WIP calculados usando a Lei de
      Little sejam incrementados, por exemplo em 50%, de forma a admitir
