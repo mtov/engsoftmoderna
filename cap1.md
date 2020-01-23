@@ -180,6 +180,9 @@ documentação, uma aplicação Web com uma interface pouco intuitiva, etc.
 Todas essas dificuldades dizem respeito à solução adotada e, portanto,
 não são uma característica inerente dos sistema mencionados.
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: Para ilustrar a complexidade envolvida na
 construção de sistemas de software reais, vamos dar alguns números sobre
 o tamanho desses sistemas, em linhas de código. Por exemplo, o sistema
@@ -192,6 +195,9 @@ janeiro de 2015 ([link](https://doi.org/10.1145/2854146)).
 Nesta época, cerca de 40 mil solicitações de mudanças de código
 (commits) eram realizadas, em média, por dia, pelos cerca de 25 mil
 Engenheiros de Software empregados pelo Google.
+```{=latex}
+\end{esmbox}
+```
 
 ## O que se Estuda em Engenharia de Software?
 
@@ -351,7 +357,7 @@ esperado. A seguinte frase, bastante famosa, de Edsger W. Dijkstra —
 também prêmio Turing em Computação (1982) — sintetiza não apenas os
 benefícios de testes, mas também suas limitações:
 
-> "Testes de software mostram a presença de bugs, mas não sua ausência."
+> "Testes de software mostram a presença de bugs, mas não a sua ausência."
 
 Pelo menos três pontos podem ser comentados sobre testes, ainda nesta
 Introdução.
@@ -414,6 +420,10 @@ Resumindo: código defeituoso é aquele que não está de acordo com a sua
 especificação. Se esse código for executado e de fato levar o programa a
 apresentar um resultado incorreto, diz-se que ocorreu uma falha.
 
+```{=latex}
+\begin{esmbox}
+```
+
 **Aprofundamento:** Na literatura sobre testes, às vezes são
 mencionados os termos **erro** e **falta (fault)**. Quando isso ocorre, o
 significado é o mesmo daquele que adotamos para *defeito* neste livro.
@@ -425,6 +435,13 @@ em um programa de computador; os termos erro e bug são \[também\] usados
 para expressar esse significado". Resumindo, *defeito*, *erro*, *falta*
 e *bug* são sinônimos.
 
+```{=latex}
+\end{esmbox}
+```
+
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: Existe uma lista enorme de falhas de software, com
 consequências graves, tanto em termos financeiros como de vidas humanas.
 Um dos exemplos mais famosos é a explosão do foguete francês Ariane 5,
@@ -444,7 +461,9 @@ nunca testada previamente exigiu a conversão de um número maior do que o
 maior inteiro que pode ser representado em 16 bits. Com isso, gerou-se
 um resultado espúrio, que fez com que o sistema de controle do foguete
 funcionasse de forma errática, causando a explosão.
-
+```{=latex}
+\end{esmbox}
+```
 
 ### Manutenção e Evolução de Software {.unnumbered}
 
@@ -502,6 +521,9 @@ arriscada. Porém, é importante ressaltar que legado não significa
 irrelevante, pois muitas vezes esses sistemas realizam operações
 críticas para seus clientes.
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: Um exemplo de manutenção preventiva foram as
 atividades de manutenção realizadas por diversas empresas antes da
 virada do último milênio, de 1999 para 2000. Nessa época, diversos
@@ -514,7 +536,14 @@ de trabalho para realizar manutenções em seus sistemas e converter todas
 as datas para o formato DD-MM-AAAA. Como essas atividades foram
 realizadas antes da virada do milênio, elas são um exemplo de manutenção
 preventiva.
+```{=latex}
+\end{esmbox}
+```
 
+
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento:** Na literatura, existem classificações alternativas
 para os tipos de manutenção de software. Uma delas, proposta por Lientz
 & Swanson, em 1978
@@ -528,6 +557,9 @@ logo, não inclui, por exemplo, customizações para novos clientes, como
 proposto neste livro; (4) Preventiva, refere-se a mudanças que visam
 incrementar a manutenibilidade de um sistema; neste livro, optamos pelo
 termo mais comum hoje em dia, que é refactoring.
+```{=latex}
+\end{esmbox}
+```
 
 ### Gerência de Configuração {.unnumbered}
 
@@ -576,7 +608,7 @@ fornecedores de qualquer natureza, talvez algum nível de governo, etc.
 Existe uma frase muito conhecida, também de Frederick Brooks, que
 captura uma peculiaridade de projetos de software. Segundo Brooks:
 
-> "A inclusão de novos desenvolvedores em um projeto que está atrasado contribui para torná-lo mais atrasado."
+> "A inclusão de novos desenvolvedores em um projeto que está atrasado contribui para torná-lo ainda mais atrasado."
 
 Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
@@ -605,6 +637,10 @@ neste capítulo. Já no Capítulo 5 (Princípios de Projeto) e no Capítulo 6
 (Padrões de Projeto), *design* será traduzido para projeto, pois é o uso
 mais comum nesses capítulos, aparecendo inclusive no título dos mesmos.
 
+```{=latex}
+\begin{esmbox}
+```
+
 **Aprofundamento:** A Lei de Brooks foi proposta em um livro clássico
 do autor sobre gerenciamento de projetos de software, chamado *The
 Mythical Man-Month*, cuja primeira edição foi publicada em 1975
@@ -617,6 +653,10 @@ Silver Bullet Essence and Accidents of Software Engineering*, publicado
 originalmente em 1987 (e que já comentamos nesta Introdução). Em 1999,
 Frederick Brooks ganhou o Prêmio Turing, considerado o Prêmio Nobel da
 Computação.
+
+```{=latex}
+\end{esmbox}
+```
 
 ### Processos de Desenvolvimento de Software {.unnumbered}
 
@@ -893,6 +933,10 @@ resolvemos reproduzir a seguir:
 > -- Código de Ética da Sociedade Brasileira de Computação (SBC, 2013)
 ([link](http://www.sbc.org.br/institucional-3/codigo-de-etica))
 
+
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: O Stack Overflow realiza anualmente um survey com
 usuários da plataforma de perguntas e respostas. Em 2018, esse survey
 foi respondido por mais de 100 mil desenvolvedores, dos mais variados
@@ -907,6 +951,9 @@ organização ou empresa, enquanto que 23% disseram que é o próprio
 desenvolvedor. Quando perguntados se concordariam em escrever um código
 com dúvidas éticas, 58% responderam que não e 37% responderam que
 dependeria do código requisitado.
+```{=latex}
+\end{esmbox}
+```
 
 ### Aspectos Econômicos {.unnumbered}
 
@@ -999,9 +1046,17 @@ somente é tomada caso ambas instâncias cheguem ao mesmo resultado. Por
 fim, esses sistemas às vezes são especificados em uma linguagem formal,
 baseadas em teoria de conjuntos, lógica, etc.
 
+```{=latex}
+\begin{aviso}
+```
+
 **Aviso:** Por tudo que foi afirmado no parágrafo anterior,
 **sistemas A (isto é, de missão crítica) não serão tratados neste
 livro**.
+
+```{=latex}
+\end{aviso}
+```
 
 Sobram os sistemas B (Business), que são exatamente aqueles que vão se
 beneficiar dos conceitos estudados neste livro. Esses sistemas incluem
