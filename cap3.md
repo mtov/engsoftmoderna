@@ -10,20 +10,22 @@ Este capítulo inicia com uma apresentação sobre a importância e os diversos 
 
 Vamos usar novamente o exemplo do Capítulo 1, relativo a um sistema de home-banking, para ilustrar a diferença entre esses dois tipos de requisitos. Em um sistema de home-banking, os requisitos funcionais incluem informar o saldo e extrato de uma conta, realizar transferências entre contas, pagar um boleto bancário, cancelar um cartão de débito, dentre outros. Já os requisitos não-funcionais estão relacionados com a qualidade do serviço prestado pelo sistema, incluindo características como desempenho, disponibilidade, níveis de segurança, portabilidade, privacidade, consumo de memória e disco, dentre outros. Portanto, os requisitos não-funcionais definem restrições ao funcionamento do sistema. Por exemplo, não basta que o sistema de home-banking implemente todas as funcionalidades requeridas pelo banco. Adicionalmente, ele deve ter uma disponibilidade de 99,9%  —  a qual funciona, portanto, como uma restrição ao seu funcionamento.
 
-Como expresso por Frederick Brooks na sentença que abre esse capítulo, a definição dos requisitos é uma etapa crucial da construção de qualquer sistema de software. De nada adianta ter um sistema com o melhor design, implementado na mais moderna linguagem de programação, usando o melhor processo de desenvolvimento, com alta cobertura de testes, etc e ele não atender às necessidades e restrições de seus usuários.
+Como expresso por Frederick Brooks na sentença que abre este capítulo, a definição dos requisitos é uma etapa crucial da construção de qualquer sistema de software. De nada adianta ter um sistema com o melhor design, implementado na mais moderna linguagem, usando o melhor processo de desenvolvimento, com alta cobertura de testes, etc e ele não atender às necessidades de seus usuários.
 
-Por isso, problemas na especificação de requisitos têm um custo alto. Eles podem, por exemplo, implicar em trabalho extra, quando se descobre  —  após o sistema ter sido implementado  —  que os requisitos foram especificados de forma incorreta ou que requisitos importantes não foram especificados. No limite, corre-se o risco de entregar um sistema que vai ser rejeitado pelos seus usuários, pois ele não resolve os seus problemas.
+Problemas na especificação de requisitos também têm um custo alto. Eles podem requerer trabalho extra, quando se descobre  —  após o sistema ficar pronto  —  que os requisitos foram especificados de forma incorreta ou que requisitos importantes não foram especificados. No limite, corre-se o risco de entregar um sistema que vai ser rejeitado pelos seus usuários, pois ele não resolve os seus problemas.
 
-Requisitos funcionais, na maioria das vezes, são especificados em linguagem natural. Por outro lado, requisitos não-funcionais são especificados de forma quantitativa usando-se métricas, como aquelas descritas na próxima tabela. O uso de métricas evita especificações genéricas, como "o sistema deve ser rápido e ter alta disponibilidade". Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo.
+Requisitos funcionais, na maioria das vezes, são especificados em linguagem natural. Por outro lado, requisitos não-funcionais são especificados de forma quantitativa usando-se métricas, como aquelas descritas na próxima tabela. 
 
 | **Requisito Não-Funcional** |  **Métrica**
 | ------------- | ------------- |
 | Desempenho | Transações por segundo, tempo de resposta, latência, vazão (throughput)
-| Espaço | Uso de disco, uso de RAM, uso de cache
-| Confiabilidade |  % de disponibilidade, tempo médio entre falhas (MTBF)
+| Espaço | Uso de disco, RAM, cache
+| Confiabilidade | % de disponibilidade, tempo médio entre falhas (MTBF)
 | Robustez | Tempo para recuperar o sistema após uma falha (MTTR); probabilidade de perda de dados após uma falha
-| Usabilidade | Tempo de treinamento de novos usuários
-| Portabilidade | % de linhas de código que são portáveis entre plataformas
+| Usabilidade | Tempo de treinamento de usuários
+| Portabilidade | % de linhas de código portáveis entre plataformas
+
+O uso de métricas evita especificações genéricas, como "o sistema deve ser rápido e ter alta disponibilidade". Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo.
 
 Alguns autores, como Ian Sommerville ([link](https://iansommerville.com/software-engineering-book/)), também classificam requisitos em **requisitos de usuário** e **requisitos de sistema**. Requisitos de usuários são requisitos de mais alto nível, escritos por usuários, normalmente em linguagem natural e sem entrar em detalhes técnicos. Já requisitos de sistema são técnicos, precisos e escritos pelos próprios desenvolvedores. Normalmente, um requisito de usuário é expandido em um conjunto de requisitos de sistema. Suponha, por exemplo, um sistema bancário. Um requisito de usuário  —  especificado pelos funcionários do banco  —  pode ser o seguinte: "o sistema deve permitir transferências de valores para uma conta corrente de outro banco, por meio de TEDs". Esse requisito dá origem a um conjunto de requisitos de sistema, os quais vão detalhar e especificar o protocolo a ser usado para realização de tais transferências entre bancos. Portanto, requisitos de usuário estão mais próximos do problema, enquanto que requisitos de sistema estão mais próximos da solução.
 
@@ -32,11 +34,11 @@ Alguns autores, como Ian Sommerville ([link](https://iansommerville.com/software
 **Engenharia de Requisitos** é o nome que se dá ao conjunto de atividades relacionadas com a descoberta, análise, especificação e manutenção dos requisitos de um sistema. O termo engenharia é usado para
 reforçar que essas atividades devem ser realizadas de modo sistemático, ao longo de todo o ciclo de vida de um sistema e, sempre que possível, valendo-se de técnicas bem definidas.
 
-Em Engenharia de Requisitos, as atividades relacionadas com a descoberta e entendimento dos requisitos de um sistema são chamadas de **Elicitação de Requisitos**. Segundo o Dicionário Houaiss, elicitar (ou eliciar) significa "fazer sair, expulsar, expelir". No nosso contexto, o termo designa as interações dos desenvolvedores de um sistema com os seus stakeholders, com o objetivo de "fazer sair", isto é, descobrir e entender os principais requisitos do sistema que se pretende construir.
+As atividades relacionadas com a descoberta e entendimento dos requisitos de um sistema são chamadas de **Elicitação de Requisitos**. Segundo o Dicionário Houaiss, elicitar (ou eliciar) significa "fazer sair, expulsar, expelir". No nosso contexto, o termo designa as interações dos desenvolvedores de um sistema com os seus stakeholders, com o objetivo de "fazer sair", isto é, descobrir e entender os principais requisitos do sistema que se pretende construir.
 
 Diversas técnicas podem ser usadas para elicitação de requisitos, incluindo entrevistas com stakeholders, aplicação de questionários, leitura de documentos e formulários da organização que está contratando o sistema, realização de workshops com os usuários, implementação de protótipos e análise de cenários de uso. Existem ainda técnicas de elicitação de requisitos baseadas em estudos etnográficos. O termo tem sua origem na Antropologia, onde designa o estudo de uma cultura em seu ambiente natural (*etnos*, em grego, significa povo ou cultura). Por exemplo, para estudar uma nova tribo indígena descoberta na Amazônia, o antropólogo pode se mudar para a aldeia e passar meses convivendo com os índios, para entender seus hábitos, costumes, linguagem, etc. De forma análoga, em Engenharia de Requisitos, etnografia designa a técnica de elicitação de requisitos que recomenda que o desenvolvedor se integre ao ambiente de trabalho dos stakeholders e observe — normalmente, por alguns dias — como ele desenvolve suas atividades. Veja que essa observação é silenciosa, isto é, o desenvolvedor não interfere e opina sobre as tarefas e eventos que estão sendo observados.
 
-Após elicitados, os requisitos devem ser (1) documentados, (2) verificados e validados e (3) priorizados.
+Após elicitados, os requisitos devem ser: (1) documentados, (2) verificados e validados e (3) priorizados.
 
 No caso de desenvolvimento ágil, a documentação de requisitos é feita de forma simplificada, por meio de **histórias do usuário**, conforme estudamos no Capítulo 2. Por outro lado, em alguns projetos, ainda
 exige-se um **Documento de Especificação de Requisitos**, onde todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor uma padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
@@ -107,10 +109,9 @@ elicitação de requisitos que ameacem seu poder e status na organização. Outr
 
 A próxima figura resume um pouco o que foi estudado sobre requisitos até agora. Ela mostra que os requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona. Usaremos essa figura para motivar e apresentar os temas que estudaremos no restante deste capítulo.
 
-<figure>
-  <img src="figs/cap3/requisitos.png" style="width:80%">
-  <figcaption>Requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona.</figcaption>
-</figure>
+
+![Requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona.](figs/cap3/requisitos){width=55%}
+
 
 A figura serve para ilustrar uma situação muito comum em Engenharia de Requisitos: sistemas cujos requisitos mudam com frequência ou cujos usuários não sabem especificar com precisão o sistema que querem. Na verdade, já estudamos sobre tais sistemas no Capítulo 2, quando tratamos de Métodos Ágeis. Conforme visto, quando os requisitos mudam frequentemente e o sistema não é de missão crítica, não vale a pena investir anos na elaboração de um Documento Detalhado de Requisitos. Corre-se o risco de quando ele ficar pronto, os requisitos já estarem obsoletos —  ou um concorrente já ter construído um sistema equivalente e dominado o mercado. Em tais sistemas, como vimos no Capítulo 2, pode-se adotar documentos simplificados de especificação de requisitos — chamados de **Histórias de Usuários**  —  e incorporar um representante dos clientes, em tempo integral, ao time de desenvolvimento, para tirar dúvidas e explicar os requisitos para os desenvolvedores. Dada a importância de tais cenários  —  sistemas cujos requisitos são sujeitos a mudanças, mas não críticos  —  iremos iniciar com o estudo de Histórias de Usuários na Seção 3.3.
 
@@ -302,10 +303,7 @@ No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto,
 
 Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é mostrado a seguir. Nele estão representados dois atores: Cliente e Gerente. Cliente participa dos seguintes casos de uso: Sacar Dinheiro e Transferir Valores. E Gerente é o ator principal do caso de uso Abrir Conta. O diagrama também deixa explícito que Transferir Valores inclui o caso de uso Autenticar Cliente. Por fim, veja que os casos de uso são representados dentro de um retângulo, que delimita as fronteiras do sistema. Os dois atores são representados fora dessa fronteira.
 
-<figure>
-  <img src="figs/cap3/diagrama-uml.png" style="width:60%">
-  <figcaption>Exemplo de Diagrama UML de Casos de Uso.</figcaption>
-</figure>
+![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=55%}
 
 ```{=latex}
 \begin{esmbox}
@@ -334,11 +332,7 @@ Uma solução consiste em implementar um sistema simples, com um conjunto de req
 
 Lean startup propõe um método sistemático e científico para construção e validação de MVPs. Esse método consiste em um ciclo com três passos: **construir**, **medir** e **aprender** (veja próxima figura). No primeiro passo (construir), tem-se uma ideia de produto e então implementa-se um MVP para testá-la. No segundo passo (medir), o MVP é disponibilizado para uso por clientes reais com o intuito de coletar dados sobre a sua viabilidade. No terceiro passo (aprender), as métricas coletadas são analisadas e geram o que se denomina de **aprendizado validado** (*validated learning*).
 
-<figure>
-  <img src="figs/cap3/lean-startup.png" style="width:80%">
-  <figcaption>Método Lean Startup para validação de MVPs.</figcaption>
-</figure>
-
+![Método Lean Startup para validação de MVPs](figs/cap3/lean){width=60%}
 
 O aprendizado obtido com um MVP pode resultar em três decisões:
 

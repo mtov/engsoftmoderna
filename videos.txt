@@ -49,3 +49,5 @@ relacionados com microsserviços:
     minutos.
 
 **Vídeo Complementar**: Mike Cohn é o autor de um conhecido livro sobre histórias de usuário ([link](https://dl.acm.org/citation.cfm?id=984017)). Nesta palestra de 2012 ([link](https://youtu.be/6q5-cVeNjCE))  —  com 52 minutos e realizada em uma conferência norueguesa de desenvolvedores de software  —  ele apresenta uma introdução ao conceito de histórias de usuários.
+
+**Vídeo Complementar**: O MVP em forma de vídeo do Dropbox está no YouTube ([link](https://youtu.be/7QmCUDHpNzE)).
