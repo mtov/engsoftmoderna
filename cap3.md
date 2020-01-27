@@ -16,7 +16,7 @@ Por isso, problemas na especificação de requisitos têm um custo alto. Eles po
 
 Requisitos funcionais, na maioria das vezes, são especificados em linguagem natural. Por outro lado, requisitos não-funcionais são especificados de forma quantitativa usando-se métricas, como aquelas descritas na próxima tabela. O uso de métricas evita especificações genéricas, como "o sistema deve ser rápido e ter alta disponibilidade". Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo.
 
-| Requisito Não-Funcional |  Métrica
+| **Requisito Não-Funcional** |  **Métrica**
 | ------------- | ------------- |
 | Desempenho | Transações por segundo, tempo de resposta, latência, vazão (throughput)
 | Espaço | Uso de disco, uso de RAM, uso de cache
@@ -42,19 +42,18 @@ No caso de desenvolvimento ágil, a documentação de requisitos é feita de for
 exige-se um **Documento de Especificação de Requisitos**, onde todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor uma padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
 Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são as seguintes:
 
-
-* Requisito Relacionados com Interfaces Externas 
-  * Interfaces com o Usuário                      
-  * Interfaces com Hardware                      
-  * Interfaces com Outros Sistemas de Software     
-  * Interfaces de Comunicação                      
-* Requisitos Funcionais                          
-  * Requisito Funcional \#1                        
-  * Requisito Funcional \#2                        
-  * ....                                           
-* Requisitos de Desempenho                       
-* Requisitos de Projeto                          
-* Outros Requisitos                       
+> * Requisito Relacionados com Interfaces Externas 
+>   * Interfaces com o Usuário                      
+>   * Interfaces com Hardware                      
+>   * Interfaces com Outros Sistemas de Software     
+>   * Interfaces de Comunicação                      
+> * Requisitos Funcionais                          
+>   * Requisito Funcional \#1                        
+>   * Requisito Funcional \#2                        
+>   * ....                                           
+> * Requisitos de Desempenho                       
+> * Requisitos de Projeto                          
+> * Outros Requisitos                       
 
 Após sua especificação, os requisitos devem ser verificados e validados. O objetivo é garantir que eles estejam corretos, precisos, completos, consistentes e verificáveis, conforme discutido a seguir.
 
@@ -76,7 +75,10 @@ Adicionalmente, os requisitos podem mudar, pois o mundo muda. Por exemplo, no si
 Antes de concluir, é importante mencionar que Engenharia de Requisitos é uma atividade multidisciplinar e complexa. Por exemplo, fatores políticos podem fazer com que certos stakeholders não colaborem com a
 elicitação de requisitos que ameacem seu poder e status na organização. Outros stakeholders simplesmente podem não ter tempo para se reunir com os desenvolvedores, a fim de explicar os requisitos do sistema. A especificação de requisitos pode ser impactada ainda por uma barreira cognitiva entre os stakeholders e desenvolvedores. Devido a essa barreira, os desenvolvedores podem não entender a linguagem e os termos usados pelos stakeholders. Veja que esses últimos tendem a ser especialistas de longa data na área do sistema. Portanto, eles podem se expressar usando uma linguagem muito específica.
 
-🌎 **Mundo Real**: Para entender os desafios enfrentados em Engenharia de Requisitos, em 2016, cerca de duas dezenas de pesquisadores coordenaram um survey com 228 empresas que desenvolvem software, distribuídas por 10 países, incluindo o Brasil ([link](https://arxiv.org/abs/1611.10288)). Quando questionadas sobre os principais problemas enfrentados na especificação de requisitos, as dez respostas mais comuns foram as seguintes (incluindo o percentual de empresas que apontou cada problema):
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Para entender os desafios enfrentados em Engenharia de Requisitos, em 2016, cerca de duas dezenas de pesquisadores coordenaram um survey com 228 empresas que desenvolvem software, distribuídas por 10 países, incluindo o Brasil ([link](https://arxiv.org/abs/1611.10288)). Quando questionadas sobre os principais problemas enfrentados na especificação de requisitos, as dez respostas mais comuns foram as seguintes (incluindo o percentual de empresas que apontou cada problema):
 
 * Requisitos incompletos ou não-documentados (48%)
 
@@ -97,8 +99,11 @@ elicitação de requisitos que ameacem seu poder e status na organização. Outr
 * Requisitos inconsistentes (19%)
 
 * Falta de acesso às necessidades dos clientes ou a informações do negócio (18%)
+```{=latex}
+\end{esmbox}
+```
 
-### O que vamos estudar? {.unnumbered}
+### O Que Vamos Estudar? 
 
 A próxima figura resume um pouco o que foi estudado sobre requisitos até agora. Ela mostra que os requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona. Usaremos essa figura para motivar e apresentar os temas que estudaremos no restante deste capítulo.
 
@@ -156,12 +161,23 @@ Antes de começar a escrever histórias, recomenda-se pensar e listar os princip
 Vamos mostrar exemplos de histórias nesse formato na próxima seção. Antes, gostaríamos de comentar que, logo no início do desenvolvimento de um sistema, costuma-se realizar um **workshop de escrita de histórias**. Esse workshop reúne em uma sala representantes dos principais usuários do sistema, que discutem os objetivos do sistema, suas principais funcionalidades, etc. Ao final do workshop, que dependendo do tamanho do sistema pode durar uma semana, deve-se ter em mãos uma boa lista de
 histórias de usuários, que demandem alguns sprints para serem implementadas.
 
-### Exemplo: Sistema de Controle de Bibliotecas {.unnumbered}
+### Exemplo: Sistema de Controle de Bibliotecas 
 
 Nesta seção, vamos mostrar exemplos de histórias para um sistema de controle de bibliotecas. Elas estão associadas a três tipos de usuários: usuário típico, professor e funcionário da biblioteca.
 
 Primeiro, mostramos histórias propostas por usuários típicos. Qualquer usuário da biblioteca se encaixa nesse papel e, portanto, pode realizar as operações mencionadas nessas histórias. Observe que as histórias são resumidas e não detalham como cada operação será implementada. Por exemplo, uma história documenta que o sistema deve permitir pesquisas por livros. No entanto, existem diversos detalhes que a história omite, incluindo os campos de pesquisa, os filtros que poderão ser usados, o número máximo de resultados retornados em cada pesquisa, o layout das telas de pesquisa e de resultados, etc. Mas lembre-se que uma história é uma promessa: o representante dos clientes promete ter tempo para definir e explicar tais detalhes em conversas com os desenvolvedores, durante o sprint no qual a história será implementada. Conforme já comentado, quando se usa histórias, essa comunicação verbal entre desenvolvedores e representante dos clientes é a principal atividade de Engenharia de Requisitos.
 
+> Como usuário típico, eu gostaria de realizar empréstimos de livros
+
+> Como usuário típico, eu gostaria de devolver um livro que tomei emprestado
+
+> Como usuário típico, eu gostaria de renovar empréstimos de livros
+
+> Como usuário típico, eu gostaria de pesquisar por livros
+
+> Como usuário típico, eu gostaria de reservar livros que estão emprestados
+
+> Como usuário típico, eu gostaria de receber e-mails com as novas aquisições da biblioteca
 
 | | |
 |-|-|
@@ -198,7 +214,10 @@ Antes de concluir, vamos mostrar um teste de aceitação para a história "pesqu
 | Pesquisa por livros cadastrados na biblioteca desde uma data, até a data atual                                                
 | | | |
 
-📚 **Aprofundamento**: Testes de aceitação devem ser especificados pelo
+```{=latex}
+\begin{esmbox}
+```
+**Aprofundamento**: Testes de aceitação devem ser especificados pelo
 representante dos clientes. Com isso, procura-se evitar o que se
 denomina de **gold plating**. Em Engenharia de Requisitos, a expressão
 designa a situação na qual os desenvolvedores decidem, por conta
@@ -207,15 +226,17 @@ requisitos, de forma mais genérica  — , sem que isso tenha sido pedido
 pelos clientes. Em uma tradução literal, os desenvolvedores ficam
 cobrindo as histórias com camadas de ouro, quando isso não irá gerar
 valor para os usuários do sistema.
+```{=latex}
+\end{esmbox}
+```
 
-💡 **Perguntas Frequentes**: Antes de finalizar, e como comum neste livro,
+**Perguntas Frequentes**: Antes de finalizar, e como comum neste livro,
 vamos responder algumas perguntas sobre histórias de usuários:
 
 **Como especificar requisitos não-funcionais usando histórias?** Essa é uma questão de tratamento mais desafiador quando se usa métodos ágeis. De fato, o representante dos clientes (ou dono do produto) pode escrever uma história dizendo que "o tempo de resposta máximo do sistema deve ser de 1 segundo". No entanto, não faz sentido alocar essa história a uma iteração, pois ela deve ser uma preocupação durante todas as iterações do projeto. Por isso, a melhor solução é pedir ao dono do produto para escrever histórias sobre requisitos não-funcionais, mas usá-las principalmente para reforçar os critérios de conclusão de histórias (*done criteria*). Por exemplo, para considerar que uma história esteja concluída ela deverá passar por uma revisão de código que tenha como objetivo detectar problemas de desempenho. Antes de disponibilizar para produção qualquer release do sistema, pode-se também realizar um teste de desempenho, para garantir que o requisito não-funcional especificado na história esteja sendo atendido. Em resumo, pode-se  —  e deve-se  —  escrever histórias sobre requisitos não-funcionais, mas elas não vão para o backlog do produto. Em vez disso, elas são usadas para refinar os critérios de conclusão de histórias.
 
 **É possível criar histórias para estudo de uma nova tecnologia?** Conceitualmente, a resposta é que não se deve criar histórias exclusivamente para aquisição de conhecimento, pois histórias devem sempre ser escritas e priorizadas pelos clientes. E elas devem ter valor para o negócio. Logo, não vale a pena violar esse princípio e permitir que os desenvolvedores criem uma história como "estudar o emprego do framework X na implementação da interface Web". Por outro lado, esse estudo pode ser uma tarefa, necessária para implementar uma determinada história. Tarefas para aquisição de conhecimento são chamadas de **spikes**.
 
-📺 **Vídeo Complementar**: Mike Cohn é o autor de um conhecido livro sobre histórias de usuário ([link](https://dl.acm.org/citation.cfm?id=984017)). Nesta palestra de 2012 ([link](https://youtu.be/6q5-cVeNjCE))  —  com 52 minutos e realizada em uma conferência norueguesa de desenvolvedores de software  —  ele apresenta uma introdução ao conceito de histórias de usuários.
 
 ## Casos de Uso
 
@@ -275,7 +296,7 @@ Para concluir, vamos descrever algumas boas práticas de escrita de casos de uso
 
 * Padronize o vocabulário adotado nos casos de uso. Por exemplo, evite usar o nome Cliente em um caso de uso e Usuário em outro. No livro *The Pragmatic Programmer* ([link](https://dl.acm.org/citation.cfm?id=320326)), David Thomas e Andrew Hunt recomendam a criação de um **glossário**, isto é, um documento que lista os termos e vocabulário usados em um projeto. Segundo os autores, "é muito difícil ser bem sucedido em um projeto onde os usuários e desenvolvedores se referem às mesmas coisas usando nomes diferentes e, pior ainda, se referem a coisas diferentes pelo mesmo nome".
 
-### Diagramas de Casos de Uso {.unnumbered}
+### Diagramas de Casos de Uso
 
 No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto, gostaríamos de adiantar e comentar sobre um dos diagramas UML, chamado **Diagrama de Casos de Uso**. Esse diagrama é um "índice gráfico" de casos de uso. Ele representa os atores de um sistema (como pequenos bonecos) e os casos de uso (como elipses). Mostram-se também dois tipos de relacionamento: (1) ligando ator com caso de uso, que indicam que um ator participa de um determinado caso de uso; (2) ligando dois casos de uso, que indicam que um caso de uso inclui ou estende outro caso de uso.
 
@@ -286,9 +307,15 @@ Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é 
   <figcaption>Exemplo de Diagrama UML de Casos de Uso.</figcaption>
 </figure>
 
-📚 **Aprofundamento**: Neste livro, fazemos uma distinção entre casos de uso (documentos textuais para especificar requisitos) e diagramas de caso uso (índices gráficos de casos de uso, conforme proposto em UML). A mesma decisão é adotada, por exemplo, por Craig Larman, em seu livro sobre UML e padrões de projeto ([link](https://dl.acm.org/citation.cfm?id=1044919)). Ele afirma que "casos de uso são documentos textuais e não diagramas. Portanto, a modelagem de casos de uso é essencialmente uma ação de redigir texto e não de desenhar diagramas". E também por Martin Fowler, que chega a afirmar que "diagramas UML de caso de uso possuem pouco valor  —  a importância de casos de uso está no texto, que não é padronizado em UML. Portanto, quando for adotar casos de uso coloque sua energia no texto". Por outro lado, outros autores, para evitar qualquer confusão optam por usar o termo **cenários de uso**, em vez de casos de uso.
+```{=latex}
+\begin{esmbox}
+```
+**Aprofundamento**: Neste livro, fazemos uma distinção entre casos de uso (documentos textuais para especificar requisitos) e diagramas de caso uso (índices gráficos de casos de uso, conforme proposto em UML). A mesma decisão é adotada, por exemplo, por Craig Larman, em seu livro sobre UML e padrões de projeto ([link](https://dl.acm.org/citation.cfm?id=1044919)). Ele afirma que "casos de uso são documentos textuais e não diagramas. Portanto, a modelagem de casos de uso é essencialmente uma ação de redigir texto e não de desenhar diagramas". E também por Martin Fowler, que chega a afirmar que "diagramas UML de caso de uso possuem pouco valor  —  a importância de casos de uso está no texto, que não é padronizado em UML. Portanto, quando for adotar casos de uso coloque sua energia no texto". Por outro lado, outros autores, para evitar qualquer confusão optam por usar o termo **cenários de uso**, em vez de casos de uso.
+```{=latex}
+\end{esmbox}
+```
 
-💡 **Perguntas Frequentes**: Vamos responder agora duas perguntas sobre
+**Perguntas Frequentes**: Vamos responder agora duas perguntas sobre
 casos de uso.
 
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Um resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações (sprints) e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
@@ -335,7 +362,9 @@ Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar t
 
 * Recomendação: número de clientes que recomendaram o sistema para outros clientes.
 
-🌎 **Mundo Real**: Um MVP não precisa ser um software real, implementado em uma linguagem de programação, com bancos de dados, integração com outros sistemas, etc. Dois exemplos de MVP que não são sistemas são frequentemente mencionados nos artigos sobre Lean Startup.
+### Exemplos de MVP
+
+Um MVP não precisa ser um software real, implementado em uma linguagem de programação, com bancos de dados, integração com outros sistemas, etc. Dois exemplos de MVP que não são sistemas são frequentemente mencionados nos artigos sobre Lean Startup.
 
 O primeiro é o caso da Zappos, uma das primeiras empresas a tentar vender sapatos pela Internet nos Estados Unidos. Em 1999, para testar de forma pioneira a viabilidade de uma loja de sapatos virtual, o fundador da empresa concebeu um MVP simples e original. Ele visitou algumas lojas de sapatos de sua cidade, fotografou diversos pares de sapato e criou uma página Web bastante simples, onde os clientes poderiam selecionar os sapatos que desejassem comprar. Porém, todo o processamento era feito de forma manual, incluindo a comunicação com a empresa de cartões de crédito, a compra dos sapatos nas lojas da cidade e a remessa para os clientes. Não existia nenhum sistema para automatizar essas tarefas. No entanto, com esse MVP baseado em tarefas manuais, o dono da Zappos conseguiu validar de forma rápida e barata a sua hipótese inicial, isto é, de que havia mercado para venda de sapatos pela Internet. Anos mais tarde, a Zappos foi adquirida pela Amazon, por mais de um bilhão de dólares.
 
@@ -343,19 +372,20 @@ Um segundo exemplo de MVP que não envolveu a disponibilização de um software 
 
 No entanto, MVPs também podem ser implementados na forma de sistemas de software reais, embora mínimos. Por exemplo, no início de 2018, nosso grupo de pesquisa na UFMG iniciou o projeto de um sistema para catalogar a produção científica brasileira em Ciência da Computação. A primeira decisão foi construir um MVP, cobrindo apenas artigos em cerca de 15 conferências da área de Engenharia de Software. Nessa primeira versão, o código implementado em Python tinha menos de 200 linhas. Os gráficos mostrados pelo sistema, por exemplo, eram planilhas do Google Spreadsheets embutidas em páginas HTML. Esse sistema  —  inicialmente chamado CoreBR  —  foi divulgado e promovido em uma lista de e-mails da qual participam os professores brasileiros de Engenharia de Software. Como o sistema atraiu um bom interesse, medido por meio de métricas como duração das sessões de uso, decidimos investir mais tempo na sua construção. Primeiro, seu nome foi alterado para CSIndexbr ([link](https://csindexbr.org)). Depois, expandimos gradativamente a cobertura para mais 20 áreas de pesquisa em Ciência da Computação e quase duas centenas de conferências. Passamos a cobrir também artigos publicados em mais de 170 periódicos. O número de professores com artigos indexados aumentou de menos de 100 para mais de 900 professores. A interface do usuário deixou de ser um conjunto de planilhas e passou a ser um conjunto de gráficos implementados em JavaScript.
 
-📺 **Vídeo Complementar**: O MVP em forma de vídeo do Dropbox está no YouTube ([link](https://youtu.be/7QmCUDHpNzE)).
 
-💡 **Perguntas Frequentes**: Para finalizar, vamos responder algumas perguntas sobre MVPs.
+### Perguntas Frequentes
+
+Para finalizar, vamos responder algumas perguntas sobre MVPs.
 
 **Apenas startups devem usar MVPs?** Definitivamente não. Como tentamos discutir nesta seção, MVPs são um mecanismo para lidar com incerteza. Isto é, quando não sabemos se os usuários vão gostar e usar um determinado produto. No contexto de Engenharia de Software, esse produto é um software. Claro que startups, por definição, são empresas que trabalham em mercados de extrema incerteza. Porém, incerteza e riscos também podem caracterizar software desenvolvido por diversos tipos de organização, privadas ou públicas; pequenas, médias ou grandes; e dos mais diversos setores.
 
-**Quando __não__ vale a pena usar MVPs**? De certo modo, essa pergunta foi respondida na questão anterior. Quando o mercado de um produto de software é estável e conhecido, não há necessidade de validar hipóteses de negócio e, portanto, de construir MVPs. Em sistemas de missão crítica, também não se cogita a construção de MVPs. Por exemplo, está fora de cogitação construir um MVP para um software de monitoramento de pacientes de UTIs.
+**Quando não vale a pena usar MVPs**? De certo modo, essa pergunta foi respondida na questão anterior. Quando o mercado de um produto de software é estável e conhecido, não há necessidade de validar hipóteses de negócio e, portanto, de construir MVPs. Em sistemas de missão crítica, também não se cogita a construção de MVPs. Por exemplo, está fora de cogitação construir um MVP para um software de monitoramento de pacientes de UTIs.
 
 **Qual a diferença entre MVPs e prototipação?** Prototipação é uma técnica conhecida em Engenharia de Software para elicitação e validação de requisitos. A diferença entre protótipos e MVPs está nas três letras da sigla, isto é, tanto no M, como no V e no P. Primeiro, protótipos não são necessariamente sistemas mínimos. Por exemplo, eles podem incluir toda a interface de um sistema, com milhares de funcionalidades. Segundo, protótipos não são necessariamente implementados para testar a viabilidade de um sistema junto aos seus usuários finais. Por exemplo, eles podem ser construídos para demonstrar o sistema apenas para os executivos de uma empresa contratante. Por isso mesmo, eles também não são produtos.
 
 **Um MVP é um produto de baixa qualidade?** Essa pergunta é mais complexa de ser respondida. Porém, é verdade que um MVP deve ter apenas a qualidade mínima necessária para avaliar um conjunto de hipóteses de negócio. Por exemplo, o código de um MVP não precisa ser de fácil manutenção e usar os mais modernos padrões de design e frameworks de desenvolvimento, pois pode ser que o produto se mostre inviável e seja descartado. Na verdade, em um MVP, qualquer nível de qualidade a mais do que o necessário para iniciar o laço construir-medir-aprender é considerado desperdício. Por outro lado, é importante que a qualidade de um MVP não seja tão ruim a ponto de impactar negativamente a experiência do usuário. Por exemplo, um MVP hospedado em um servidor Web com problemas de disponibilidade pode dar origem a resultados chamados de falsos negativos. Eles ocorrem quando a hipótese de negócio é falsamente invalidada. No nosso exemplo, o motivo do insucesso não estaria no MVP, mas sim no fato de os usuários não conseguirem acessar o sistema, pois o servidor Web frequentemente estava fora do ar.
 
-### Construindo o Primeiro MVP {.unnumbered}
+### Construindo o Primeiro MVP
 
 Lean startup não define como construir o primeiro MVP de um sistema. Em alguns casos isso não é um problema, pois os proponentes do MVP têm uma ideia precisa de suas funcionalidades e requisitos. Então, eles já conseguem implementar o primeiro MVP e, assim, iniciar o ciclo construir-medir-aprender. Por outro lado, em certos casos, mesmo a ideia do sistema pode não estar clara. Nesses casos, recomenda-se construir um protótipo antes de implementar o primeiro MVP.
 
@@ -399,7 +429,9 @@ Uma questão fundamental em testes A/B é a determinação do tamanho da amostra
 
 O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem eventos com maior taxa de conversão e que testam ganhos de maior proporção. No exemplo anterior, se a taxa de conversão fosse de 10% e a melhoria a ser testada fosse de 25%, o tamanho da amostra cairia para 1,800 clientes, para cada grupo. Esses valores foram estimados usando a calculadora de testes A/B da empresa Optimizely, disponível neste [link](https://www.optimizely.com/sample-size-calculator/).
 
-💡 **Perguntas Frequentes**: Seguem algumas perguntas e esclarecimentos sobre testes A/B.
+### Perguntas Frequentes
+
+Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 **Posso testar mais de duas variações?** Sim, a metodologia que explicamos adapta-se a mais de dois testes. Basta dividir os acessos em três grupos aleatórias, por exemplo, se quiser testar três versões de um sistema. Esses testes, com mais de um tratamento, são chamados de Testes A/B/n.
 
@@ -409,13 +441,19 @@ O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem 
 
 **Qual a origem dos termos grupos de controle e de tratamento?** Os termos têm sua origem na área médica, mais especificamente em experimentos randomizados controlados (*randomized control experiments*). Por exemplo, para lançar uma nova droga no mercado, empresas farmacêuticas devem realizar esse tipo de experimento. São escolhidas duas amostras, chamadas de controle e de tratamento. Os participantes da amostra de controle recebem um placebo e os participantes da amostra de tratamento são tratados com a droga. Após o teste, comparam-se os resultados para verificar se o uso da droga foi efetivo. Experimentos randomizados controlados são um modo cientificamente aceito de provar causalidade. No nosso exemplo, eles podem, por exemplo, provar que a droga testada causou a cura de uma doença.
 
-🌎 **Mundo Real**: Testes A/B são usados por todas as grandes empresas da Internet. A seguir, reproduzimos depoimentos de desenvolvedores e cientistas de três empresas sobre esses testes:
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Testes A/B são usados por todas as grandes empresas da Internet. A seguir, reproduzimos depoimentos de desenvolvedores e cientistas de três empresas sobre esses testes:
 
 No Facebook, "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). \... Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
 Na Netflix, "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
 
 Na Microsoft, especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
+```{=latex}
+\end{esmbox}
+```
 
 ## Bibliografia {.unnumbered}
 

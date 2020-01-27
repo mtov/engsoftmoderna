@@ -47,3 +47,5 @@ relacionados com microsserviços:
     realizada por Ruslan Meshenberg, na época diretor de engenharia da
     empresa e apresentada na conferência GOTO 2016, com duração de 49
     minutos.
+
+**Vídeo Complementar**: Mike Cohn é o autor de um conhecido livro sobre histórias de usuário ([link](https://dl.acm.org/citation.cfm?id=984017)). Nesta palestra de 2012 ([link](https://youtu.be/6q5-cVeNjCE))  —  com 52 minutos e realizada em uma conferência norueguesa de desenvolvedores de software  —  ele apresenta uma introdução ao conceito de histórias de usuários.
