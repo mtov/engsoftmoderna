@@ -145,7 +145,7 @@ Em sistemas grandes, com milhares de arquivos, dezenas de desenvolvedores e de b
 
 Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Por isso, esse desenvolvedor pode sentir-se confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de janelas e telas, para acesso a dados, etc.
 
-### O que é Integração Contínua? {.unnumbered}
+### O que é Integração Contínua?
 
 **Integração Contínua** (*continuous integration* ou CI) é uma prática de desenvolvimento proposta por Extreme Programming (XP), conforme estudamos no Capítulo 2. O princípio motivador da prática já foi enunciado na Introdução deste capítulo: se uma tarefa causa "dor", não podemos deixar que ela acumule. Em vez disso, devemos quebrá-la em subtarefas que possam ser realizadas de forma frequente. Como essas subtarefas são pequenas e simples, a "dor" decorrente da sua realização será menor.
 
@@ -157,7 +157,7 @@ Kent Beck, em seu livro de XP, defende o uso de CI da seguinte forma ([link](htt
 
 Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Outros autores, como Martin Fowler, mencionam pelo menos uma integração por dia por desenvolvedor ([link](https://martinfowler.com/articles/continuousIntegration.html)), o que parece ser um limite mínimo para um time argumentar que está usando CI.
 
-### Boas Práticas para Uso de CI {.unnumbered}
+### Boas Práticas para Uso de CI
 
 Quando usa-se CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, recomenda-se o uso de algumas práticas junto com CI. Vamos discutir algumas delas a seguir.
 
@@ -212,7 +212,7 @@ Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho.
 
 Programação pareada pode ser entendida como uma forma contínua de revisão de código. Quando adota-se essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programação pareada com CI. Porém, esse uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. No entanto, nesse caso, como o código já foi integrado, os custos de aplicar a revisão podem ser maiores. 
 
-### Quando não usar CI? {.unnumbered}
+### Quando não usar CI? 
 
 Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. No entanto, dependendo da organização, do domínio do sistema (que pode ser um sistema crítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil adotar esse limite.
 
@@ -231,13 +231,6 @@ Porém, existe mais um passo da cadeia de automação proposta por DevOps, chama
 * Algumas vezes no dia, o servidor de CI realiza automaticamente testes mais exaustivos com os novos commits que ainda não entraram em produção. Esses testes incluem, por exemplo, testes de integração, testes de interface e testes de desempenho.
 * Se todos os testes passarem, os commits entram imediatamente em produção. Isto é, os usuários já vão interagir com a nova versão do código.
 
-**Mundo Real**: Diversas empresas que desenvolvem sistemas Web usam CD. Por exemplo, Savor e colegas reportam que no Facebook cada desenvolvedor coloca em produção, na média, 3.5 atualizações de software por semana ([link](https://doi.org/10.1145/2889160.2889223)). Em cada atualização, na média, 92 linhas de código são adicionadas ou modificadas. Esses números revelam que, para funcionar bem, CD requer que as atualizações de código sejam pequenas. Portanto, os desenvolvedores tem que desenvolver a habilidade de quebrar qualquer tarefa de programação (por exemplo, uma nova funcionalidade, mesmo que complexa) em partes pequenas, que possam ser implementadas, testadas, integradas e entregues rapidamente.
-
-
-### Feature Flags {.unnumbered}
-
-## Engenharia de Releases
-
 Dentre as vantagens de CD, podemos citar:
 
 * CD reduz o tempo de entrega de novas funcionalidades. Por exemplo, suponha que as funcionalidades F1, F2,..., Fn estão previstas para uma nova release de um sistema. No modo tradicional, todas elas devem ser implementadas e testadas, antes da liberação da nova release. Por outro lado, com CD, as funcionalidades são gradativamente liberadas, à medida que ficam prontas. Ou seja, CD diminui  o intervalo entre releases. Passa-se a ter mais releases, mas com um menor número de funcionalidades.
@@ -252,7 +245,15 @@ motivados, pois eles não ficam meses trabalhando sem receber feedback. Em vez d
 
 * Em linha com o item anterior, CD favore experimentação e um estilo de desenvolvimento orientado por dados e feedback dos usuários. Novas funcionalidades entram rapidamente em produção. Com isso, recebe-se retorno dos usuários, que podem recomendar mudanças na implementação ou, no limite, o cancelamento de alguma funcionalidade.
 
-### Entrega Contínua (vs Deploymemt Contínuo){.unnumbered}
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Diversas empresas que desenvolvem sistemas Web usam CD. Por exemplo, Savor e colegas reportam que no Facebook cada desenvolvedor coloca em produção, na média, 3.5 atualizações de software por semana ([link](https://doi.org/10.1145/2889160.2889223)). Em cada atualização, na média, 92 linhas de código são adicionadas ou modificadas. Esses números revelam que, para funcionar bem, CD requer que as atualizações de código sejam pequenas. Portanto, os desenvolvedores tem que desenvolver a habilidade de quebrar qualquer tarefa de programação (por exemplo, uma nova funcionalidade, mesmo que complexa) em partes pequenas, que possam ser implementadas, testadas, integradas e entregues rapidamente.
+```{=latex}
+\end{esmbox}
+```
+
+### Entrega Contínua (Continous Delivery)
 
 Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas envolvem um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web. 
 
@@ -275,7 +276,7 @@ não-Web. Por exemplo, o Google libera novas releases do navegador Chrome para o
 \end{esmbox}
 ```
 
-### Feature Flags {.unnumbered}
+### Feature Flags
 
 Nem sempre todo commit está pronto para entrar em produção. Por exemplo, o desenvolvedor pode estar trabalhando em uma funcionalidade X, mas ainda falta implementar parte de seus requisitos. Se novas releases são liberadas quase todo dia, como garantir que essas implementações parciais não vão chegar até os usuários? Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais seguir essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*.
 
@@ -301,9 +302,9 @@ Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova
 nova_pag = false;
 ...
 if (nova_pag) 
-   "carregue nova pagina"
+   "carregue nova página"
 else
-   "carregue pagina antiga"
+   "carregue página antiga"
 ```    
 
 Esse é o código que vai para produção, enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, você pode habilitar a nova página, fazendo `nova_pag` receber `true`. Assim, durante a implementação da nova página, vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga pode ser removido. Ou seja, a duplicação de código foi uma situação temporária.
@@ -314,18 +315,21 @@ Esse é o código que vai para produção, enquanto a nova página não estiver 
 ```
 **Mundo Real:** Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento ([link](https://doi.org/10.1145/2901739.2901745)). Neste período, eles encontraram mais de 2.400 feature flags distintas no código do navegador.
 Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adiciona 73 novos flags e remove 43 flags. Por isso, o crescimento reportado pelos autores.
-
 ```{=latex}
 \end{esmbox}
 ```
 
+
+## Engenharia de Releases
+
+
 ## Bibliografia {.unnumbered}
 
-* Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
+Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
 
-* Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.
+Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.
 
-* Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
+Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.
 
 ## Exercícios de Fixação {.unnumbered}
 

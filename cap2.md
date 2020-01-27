@@ -225,7 +225,6 @@ Neste capítulo, vamos estudar três métodos ágeis:
 ```{=latex} 
 \begin{esmbox} 
 ```
-
 **Mundo Real**: O sucesso e impacto de processos ágeis foi
 impressionante. Hoje, a grande maioria das empresas que desenvolvem
 software, independente de seu tamanho ou do foco de seu negócio, usam
@@ -238,10 +237,6 @@ a grande maioria deles mencionou métodos ou práticas ágeis,
 incluindo aquelas que vamos estudar neste capítulo, como Scrum (63% das respostas),
 Kanban (36%) e Extreme Programming (16%). Apenas 15% dos
 participantes marcaram Waterfall como resposta.
-
-![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
-usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
-
 ```{=latex}
 \end{esmbox}
 ```
