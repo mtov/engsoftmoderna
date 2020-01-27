@@ -1,10 +1,5 @@
 from: markdown
 to: pdf
-
-metadata:
-  title: Engenharia de Software Moderna
-  author:
-  - Marco Tulio Valente
    
 pdf-engine: pdflatex
 

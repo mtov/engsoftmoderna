@@ -1,5 +1,5 @@
 
-# DevOps (em andamento)
+# DevOps
 
 > *Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds.* -- G. Kim, J. Humble, P. Debois, J. Willes
 
@@ -59,7 +59,13 @@ nova história está pronta (*done*). Porém, ao serem questionados se ela pode 
 * **Todos são responsáveis pela entrega do software**. Esse último princípio alinha-se
 perfeitamente com a cultura de DevOps que discutimos no início desta Introdução. Ou seja, não admite-se mais que os  times de desenvolvimento e operação trabalham em silos independentes e troquem informações apenas na véspera de uma implantação.
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por desenvolvedores frustrados com os atritos constantes entre as equipes de desenvolvimento e operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também de implantação. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
+```{=latex}
+\end{esmbox}
+```
 
 ## Controle de Versões
 
@@ -162,15 +168,15 @@ Nessa citação, Beck defende várias integrações ao longo de um dia de trabal
 
 ### Boas Práticas para Uso de CI {.unnumbered}
 
-Quando se usa CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, algumas práticas são importantes quando se usa CI. Vamos discutir algumas delas a seguir.
+Quando usa-se CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, recomenda-se o uso de algumas práticas junto com CI. Vamos discutir algumas delas a seguir.
 
 #### Build Automatizado {.unnumbered}
 
-Build é um nome usado para designar a compilação de todo os arquivos de um sistema, até a geração uma versão executável. Quando se usa CI, o build deve ser totalmente automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
+Build é um nome usado para designar a compilação de todo os arquivos de um sistema, até a geração uma versão executável. Quando se usa CI, o build deve ser automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
 
 #### Testes Automatizados {.unnumbered}
 
-Além de garantir que o sistema compila sem erros após um novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade. Neste livro, testes de unidade já foram estudados no Capítulo 8. 
+Além de garantir que o sistema compila sem erros após cada novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade, conforme estudamos no Capítulo 8. 
 
 #### Servidores de Integração Contínua {.unnumbered}
 
@@ -199,11 +205,17 @@ Uma dúvida comum é se CI é compatível com o uso de branches. De forma coeren
 
 Como vimos, ao adotar CI, os branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development* ou TBD). Quando isso ocorre, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, isto é, no trunk ou master. 
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: TBD é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:
 
 * No Google, "quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges." ([link](https://arxiv.org/abs/1702.01715))
 
 * No Facebook, "todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk." ([link](https://doi.org/10.1109/MIC.2013.25))
+```{=latex}
+\end{esmbox}
+```
 
 #### Programação Pareada {.unnumbered}
 
@@ -223,6 +235,87 @@ CI também não é compatível com projetos de código livre. Na maioria das vez
 ### Feature Flags {.unnumbered}
 
 ## Engenharia de Releases
+
+Dentre as vantagens de CD, podemos citar:
+
+* CD reduz o tempo de entrega de novas funcionalidades. Por exemplo, suponha que as funcionalidades F1, F2,..., Fn estão previstas para uma nova release de um sistema. No modo tradicional, todas elas devem ser implementadas e testadas, antes da liberação da nova release. Por outro lado, com CD, as funcionalidades são gradativamente liberadas, à medida que ficam prontas. Ou seja, CD diminui  o intervalo entre releases. Passa-se a ter mais releases, mas com um menor número de funcionalidades.
+
+* CD torna novas releases (ou implantações) um "não-evento". Ou seja, não existe mais um
+dia D ou um deadline para entrega de novas releases. Deadlines são sempre uma fonte de
+stress para desenvolvedores e operadores de sistema. A perda de um deadline, por exemplo,
+pode implicar que uma funcionalidade somente entre em produção meses depois. 
+
+* Além de reduzir o stress causado por deadlines, CD ajuda a manter os desenvolvedores
+motivados, pois eles não ficam meses trabalhando sem receber feedback. Em vez disso, os desenvolvedores rapidamente recebem retorno — proveniente de usuários reais — sobre o sucesso ou não de suas tarefas. 
+
+* Em linha com o item anterior, CD favore experimentação e um estilo de desenvolvimento orientado por dados e feedback dos usuários. Novas funcionalidades entram rapidamente em produção. Com isso, recebe-se retorno dos usuários, que podem recomendar mudanças na implementação ou, no limite, o cancelamento de alguma funcionalidade.
+
+### Entrega Contínua (vs Deploymemt Contínuo){.unnumbered}
+
+Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas envolvem um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web. 
+
+No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais *fraca* de CD, chamada de **Entrega Contínua (Continuous Delivery)**. A ideia é simples: todo commit *pode* entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.
+
+Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:
+
+* **Deployment to production**: processo de liberar uma nova versão de um sistema para seus usuários.
+
+* **Delivery**: processo de liberar uma nova versão de um sistema para ser objeto de deployment.
+
+Assim, quando adota-se Deployment Contínuo, ambos os processos são automáticos e contínuos. Porém, com Entrega Contínua, a entrega é realizada com frequência, mas o deployment depende de uma autorização manual. 
+
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real:** Vamos citar alguns dados sobre a frequência de deployments em sistemas
+não-Web. Por exemplo, o Google libera novas releases do navegador Chrome para o público a cada seis semanas. Até 2019, a IDE Eclipse tinha uma única nova release por ano. A partir de 2019, o sistema passou a ter uma nova release a cada 13 semanas. Um dos motivos foi "permitir que os desenvolvedores liberem novas funcionalidades de forma rápida". Como um terceiro exemplo, a versão para Android do Facebook sofria uma atualização a cada oito semanas. Mais recentemente, o Facebook encurtou esse tempo para uma semana ([link](https://doi.org/10.1145/2950290.2994157)). Ou seja, as empresas estão lançando releases de forma mais rápida, para agradar os usuários, receber feedback, manter os desenvolvedores motivados e continuarem competindo no mercado.
+```{=latex}
+\end{esmbox}
+```
+
+### Feature Flags {.unnumbered}
+
+Nem sempre todo commit está pronto para entrar em produção. Por exemplo, o desenvolvedor pode estar trabalhando em uma funcionalidade X, mas ainda falta implementar parte de seus requisitos. Se novas releases são liberadas quase todo dia, como garantir que essas implementações parciais não vão chegar até os usuários? Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais seguir essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*.
+
+A solução para esse problema é simples: integre continuamente o código parcial de X, mas com a funcionalidade desabilitada, isto é, qualquer código relativo a X estará "guardado" por uma variável booleana (um *flag*) que, enquanto a implementação de X não for concluída, vai avaliar como falso:
+
+```
+featureX = false;
+...
+if (featureX) 
+   "aqui tem codigo incompleto de X"
+
+...
+
+if (featureX)
+   "aqui tem mais codigo incompleto de X"
+```    
+
+No contexto de deployment contínuo, variáveis booleanas usadas para desativar a execução de implementações parciais de funcionalidades são chamadas de **Feature Flags** ou **Feature Toggles**.
+
+Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um sistema. Você pode declarar uma feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:
+
+```
+nova_pag = false;
+...
+if (nova_pag) 
+   "carregue nova pagina"
+else
+   "carregue pagina antiga"
+```    
+
+Esse é o código que vai para produção, enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, você pode habilitar a nova página, fazendo `nova_pag` receber `true`. Assim, durante a implementação da nova página, vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga pode ser removido. Ou seja, a duplicação de código foi uma situação temporária.
+
+
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real:** Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento ([link](https://doi.org/10.1145/2901739.2901745)). Neste período, eles encontraram mais de 2.400 feature flags distintas no código do navegador.
+Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adiciona 73 novos flags e remove 43 flags. Por isso, o crescimento reportado pelos autores.
+
+```{=latex}
+\end{esmbox}
+```
 
 ## Bibliografia {.unnumbered}
 

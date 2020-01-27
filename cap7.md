@@ -39,7 +39,7 @@ inteligência artificial para diagnosticar doenças. O sistema também
 possui um módulo de persistência para armazenar dados das doenças que
 são diagnosticadas. Porém, esse módulo, além de simples, não é relevante
 para o objetivo principal do sistema. Logo, ele não faz parte da
-arquitetura do sistema de diagnóstico de doenças.
+sua arquitetura.
 
 Existe ainda uma segunda definição para arquitetura de software. Tal
 como expresso na frase de Ralph Johnson que abre esse capítulo, ela
@@ -71,6 +71,9 @@ forma breve outros padrões arquiteturais, como pipes e filtros (Seção
 7.7). Vamos também dar um exemplo de um anti-padrão arquitetural,
 conhecido como *big ball of mud* (Seção 7.8).
 
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento**: Alguns autores — como Taylor et al.
 ([link](https://dl.acm.org/citation.cfm?id=1538494))
 — fazem uma distinção entre padrões e **estilos arquiteturais**.
@@ -83,8 +86,13 @@ de separar apresentação e modelo em sistemas de interfaces gráficas. Por
 outro lado, Pipes & Filtros constituem um estilo arquitetural. Neste
 capítulo, porém, não vamos fazer essa distinção. Em vez disso,
 chamaremos todos eles de padrões arquiteturais.
+```{=latex}
+\end{esmbox}
+```
 
-**Mundo Real**: No início de 1992, um debate acalorado sobre a
+### Debate Tanenbaum-Torvalds
+
+No início de 1992, um debate acalorado sobre a
 arquitetura de sistemas operacionais tomou conta de um grupo de
 discussão da Internet. Apesar de vários desenvolvedores e pesquisadores
 terem participado da discussão, ela ficou conhecida como **Debate
@@ -125,7 +133,7 @@ Ken Thompson, um dos projetistas das primeiras versões do Unix:
 Na verdade, Thompson previu o futuro, pois em 2009, Linus declarou o
 seguinte em uma conferência:
 
-> "Nós não somos mais o kernel simples, pequeno e hiper-eficiente que eu imaginei há 15 anos. Em vez disso, nosso kernel está ficando grande e inchado. E sempre que adicionamos novas funcionalidades, o cenário piora."
+> "Não somos mais o kernel simples, pequeno e hiper-eficiente que imaginei há 15 anos. Em vez disso, nosso kernel está ficando grande e inchado. E sempre que adicionamos novas funcionalidades, o cenário piora."
 
 Esse comentário consta de uma página da Wikipedia
 ([link](https://en.wikipedia.org/wiki/Criticism_of_Linux))
@@ -163,6 +171,9 @@ uma camada por mais de uma camada superior. Por exemplo, a camada de
 transporte pode ser usada por vários protocolos de aplicação, como HTTP,
 SMTP, DHCP, etc.
 
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento**: Uma das primeiras propostas de arquitetura em
 camada foi elaborada por Edsger W. Dijkstra, em 1968, para um sistema
 operacional denominado THE
@@ -173,8 +184,11 @@ camadas propostas por Dijkstra foram as seguintes: multiprogramação
 usuários (camada 4). Dijkstra conclui o artigo destacando que os
 benefícios de uma estrutura hierárquica são mais importantes ainda em
 projetos de maior porte.
+```{=latex}
+\end{esmbox}
+```
 
-### Arquitetura em Três Camadas {.unnumbered}
+### Arquitetura em Três Camadas
 
 Esse tipo de arquitetura é comum na construção de sistemas de informação
 corporativos. Até o final da década de 80, aplicações corporativas —
@@ -199,8 +213,7 @@ As três camadas dessas arquitetura são as seguintes:
     interface para os professores lançarem as notas de suas
     disciplinas. O elemento principal dessa interface pode ser um
     formulário com duas colunas: nome do aluno e nota. O código que
-    implementa esse formulário deve estar na camada de interface do
-    sistema acadêmico.
+    implementa esse formulário deve estar na camada de interface.
 
 *   Lógica de Negócio, também conhecida como camada de aplicação,
     implementa as regras de negócio do sistema. No sistema acadêmico
@@ -225,7 +238,7 @@ aos clientes é uma interface gráfica.
 
 ![Arquitetura em três camadas](figs/cap7/tiers3){width=75%}
 
-Em um sistema três camadas, a camada de aplicação pode ter diversos
+Em sistemas três camadas, a camada de aplicação pode ter diversos
 módulos, incluindo uma fachada, para facilitar o acesso ao sistema pelos
 clientes, e um módulo de persistência, com a função de isolar o banco de
 dados dos demais módulos.
@@ -377,7 +390,7 @@ vertente clássica, que surgiu com Smalltalk-80 e a vertente Web, que se
 tornou comum na década de 90 e início dos anos 2000. Essa última
 vertente lembra bastante sistemas três camadas.
 
-### Exemplo: Single Page Applications {.unnumbered}
+### Exemplo: Single Page Applications
 
 Em uma aplicação Web tradicional, com formulários, menus, botões, etc,
 toda vez que o usuário gera um evento — por exemplo, clica em um
@@ -385,7 +398,7 @@ botão "Gravar" — ocorre uma interação entre o navegador e o
 servidor Web. Isto é, o navegador envia informações para o servidor Web,
 que as processa e devolve uma nova página para ser exibida para o
 usuário. Essas aplicações são então menos interativas e responsivas,
-pois sempre existe o atraso da comunicação entre navegador e servidor
+devido ao atraso da comunicação entre navegador e servidor
 Web.
 
 Recentemente, surgiu um novo tipo de sistema Web, chamado de **Single
@@ -401,15 +414,14 @@ conhecido. Evidentemente, continua existindo uma parte da aplicação no
 servidor, com a qual a SPA comunica-se frequentemente. Por exemplo,
 quando chega um novo e-mail o GMail atualiza a lista de mensagens na
 caixa de entrada. Para que isso ocorra de forma automática, a
-comunicação entre a SPA e a aplicação servidora deve ser assíncrona.
+comunicação entre a SPA e o servidor deve ser assíncrona.
 
-Existem diversos frameworks — todos eles em JavaScript — para
-implementação de SPAs. A seguir, mostramos um exemplo de código usando
-Vue.js, que é um desses frameworks.
+Existem diversos frameworks — todos em JavaScript — para
+implementação de SPAs. A seguir, mostramos um exemplo usando
+Vue.js.
 
 ```
 <html>
-
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 <body>
@@ -437,7 +449,6 @@ var model = new Vue({
 </script>
 
 </body>
-
 </html>
 ```
 
@@ -470,7 +481,7 @@ simples. Esse recurso de frameworks para construção de SPAs é chamado de
 Como discutimos no Capítulo 2, métodos ágeis preconizam iterações
 rápidas, com entregas frequentes de novas releases, a fim de obter
 feedback e, se for preciso, efetuar mudanças de rumo. Porém, mesmo que
-uma empresa adote um método de desenvolvimento ágil — como XP ou
+uma empresa adote um método ágil — como 
 Scrum — ela vai enfrentar um "gargalo" arquitetural quando
 precisar lançar novas releases de um produto de forma frequente.
 
@@ -596,6 +607,9 @@ plataforma de computação em nuvem e pagar por hora de utilização da
 máquina. Com isso, fica mais fácil escalar um microsserviço
 horizontalmente, acrescentando novas máquinas virtuais.
 
+```{=latex}
+\begin{esmbox}
+```
 **Aprofundamento**: Microsserviços constituem um exemplo de aplicação
 da **Lei de Conway**. Formulada em 1968 por Melvin Conway, ela é uma das
 leis empíricas sobre desenvolvimento de software, assim como a Lei de
@@ -608,24 +622,40 @@ grandes empresas de Internet que possuem centenas de times de
 desenvolvimento distribuídos em diversos países. Além de
 descentralizados, esses times são autônomos e sempre incentivados a
 produzir inovações.
+```{=latex}
+\end{esmbox}
+```
 
-### Gerenciamento de Dados {.unnumbered}
+### Gerenciamento de Dados
 
 Pelo menos na sua forma pura, microsserviços devem ser autônomos também
 do ponto de vista de dados. Isto é, eles devem gerenciar os dados de que
 precisam para prover o seu serviço. Logo, o cenário ilustrado pela
-figura da esquerda a seguir — no qual dois microsserviços
+figura a seguir — no qual dois microsserviços
 compartilham o mesmo banco de dados — não é recomendável em uma
-arquitetura baseada em microsserviços. O ideal é que M1 e M2 sejam
+arquitetura baseada em microsserviços. 
+
+```{=latex}
+\begin{center}
+```
+![](figs/cap7/dados1){width=27%}   
+```{=latex}
+\end{center}
+```
+
+O ideal é que M1 e M2 sejam
 independentes também do ponto de vista de bancos de dados, com mostrado
-na figura da direita. O principal motivo é que quando se têm um único
+na próxima figura. O principal motivo é que quando se têm um único
 banco de dados ele também pode se transformar em um gargalo à evolução
 do sistema.
 
-![Microsserviços M1 e M2 compartilham o mesmo banco de dados, o que pode não ser recomendável.](figs/cap7/dados1){width=27%}   
-
-![Microsserviços M1 e M2 são autônomos do ponto de vista de dados, o que é mais recomendável.](figs/cap7/dados2){width=27%}
-    
+```{=latex}
+\begin{center}
+```
+![](figs/cap7/dados2){width=27%}
+```{=latex}
+\end{center}
+```
 
 Por exemplo, equipes e arquiteturas tradicionais de desenvolvimento
 costumam ter um administrador de dados, a quem cabe cuidar das tabelas
@@ -636,7 +666,7 @@ os interesses, muitas vezes conflitantes, das diversas equipes de
 desenvolvimento. Por isso, suas decisões podem se tornar lentas e
 burocráticas, atrasando a evolução do sistema.
 
-### Quando não usar microsserviços? {.unnumbered}
+### Quando não usar microsserviços? 
 
 Até esse momento, apresentamos as vantagens e benefícios de
 microsserviços. Mas é importante dizer que essa arquitetura é mais
@@ -746,7 +776,7 @@ mensagens da mesma fila, como mostra a próxima figura.
 
 ![Fila de Mensagens com vários consumidores.](figs/cap7/mom2){width=80%}
 
-### Exemplo: Empresa de Telecomunicações {.unnumbered}
+### Exemplo: Empresa de Telecomunicações 
 
 Suponha que uma empresa de telecomunicações tenha dois sistemas
 principais: vendas e engenharia. O sistema de vendas é responsável pela
@@ -772,8 +802,7 @@ serviços pendentes, pode demorar um pouco até que um determinado serviço
 seja ativado. Por outro lado, a solução com fila de mensagens permite
 ativar os serviços mais rapidamente do que por meio de uma solução
 **batch**. Nesse tipo de solução, o sistema de vendas geraria ao final
-de cada dia um arquivo com todos os pacotes vendidos. Esse arquivo seria
-lido e processado durante a noite pelo sistema de engenharia. Portanto,
+de cada dia um arquivo com todos os pacotes vendidos. Esse arquivo seria processado durante a noite pelo sistema de engenharia. Portanto,
 um cliente poderia ter que esperar quase 24 horas para ter seu serviço
 ativado.
 
@@ -829,7 +858,7 @@ e, na maioria das vezes, distribuídos. Por outro lado, o padrão de
 projeto Observador não foi proposto no contexto de arquiteturas
 distribuídas.
 
-### Exemplo: Companhia Aérea {.unnumbered}
+### Exemplo: Companhia Aérea 
 
 Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
 arquitetura publish/subscribe. Suponha que essa companhia tenha um
@@ -920,6 +949,9 @@ vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
 
+```{=latex}
+\begin{esmbox}
+```
 **Mundo Real**: Em um artigo publicado em 2009 na revista IEEE
 Software ([link](https://doi.org/10.1109/MS.2009.42)),
 Santonu Sarkar e mais cinco colegas — na época consultores da
@@ -946,27 +978,29 @@ banco tentou contornar o problema adotando práticas como documentação
 detalhada, revisões de código e programação em pares. Porém, todas se
 mostraram incapazes de atenuar os problemas causados pela arquitetura em
 forma de "big ball of mud".
-
+```{=latex}
+\end{esmbox}
+```
 
 ## Bibliografia {.unnumbered}
 
-* James Lewis, Martin Fowler. Microservices: a definition of this new
+James Lewis, Martin Fowler. Microservices: a definition of this new
 architectural term. Blog post, 2014.
 
-* Martin Fowler. Patterns of Enterprise Application Architecture,
+Martin Fowler. Patterns of Enterprise Application Architecture,
 Addison-Wesley, 2002.
 
-* Martin Fowler. Who Needs an Architect, IEEE Software, 
+Martin Fowler. Who Needs an Architect, IEEE Software, 
 vol. 20, issue 5, p. 11-13, 2003.
 
-* Patrick Eugster et al. The many faces of publish/subscribe. ACM
+Patrick Eugster et al. The many faces of publish/subscribe. ACM
 Computing Surveys, vol. 35, issue 2, p. 114-131, 2003.
 
-* Glenn Krasner, Stephen Pope. A cookbook for using the model-view
+Glenn Krasner, Stephen Pope. A cookbook for using the model-view
 controller user interface paradigm in Smalltalk-80. Journal of
 Object-Oriented Programming, vol. 1, issue 3, p. 26-49, 1988.
 
-* Kevlin Henney, Frank Buschmann, Douglas Schmidt. Pattern-Oriented
+Kevlin Henney, Frank Buschmann, Douglas Schmidt. Pattern-Oriented
 Software Architecture: A Pattern Language for Distributed Computing,
 Vol. 4, John Wiley & Sons, 2007.
 
