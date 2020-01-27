@@ -480,6 +480,25 @@ Por sua vez, manutenção preventiva tem com objetivo corrigir bugs
 latentes no código, que ainda não causaram falhas junto aos usuários do
 sistema.
 
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Um exemplo de manutenção preventiva foram as
+atividades de manutenção realizadas por diversas empresas antes da
+virada do último milênio, de 1999 para 2000. Nessa época, diversos
+sistemas armazenavam o ano de uma data com dois dígitos, isto é, as
+datas tinham o formato DD-MM-AA. As empresas ficaram receosas de que, em
+2000 e nos anos seguintes, algumas operações envolvendo datas
+retornassem valores incorretos, pois uma subtração 00 - 99, por exemplo,
+poderia dar um resultado inesperado. As empresas montaram então grupos
+de trabalho para realizar manutenções em seus sistemas e converter todas
+as datas para o formato DD-MM-AAAA. Como essas atividades foram
+realizadas antes da virada do milênio, elas são um exemplo de manutenção
+preventiva.
+```{=latex}
+\end{esmbox}
+```
+
 Manutenção adaptativa tem como objetivo adaptar um sistema a uma mudança
 em seu ambiente, incluindo tecnologia, legislação, regras de integração
 com outros sistemas ou demandas de novos clientes. Como exemplos de
@@ -520,26 +539,6 @@ Por esse motivo, a manutenção desses sistemas costuma ser mais custosa e
 arriscada. Porém, é importante ressaltar que legado não significa
 irrelevante, pois muitas vezes esses sistemas realizam operações
 críticas para seus clientes.
-
-```{=latex}
-\begin{esmbox}
-```
-**Mundo Real**: Um exemplo de manutenção preventiva foram as
-atividades de manutenção realizadas por diversas empresas antes da
-virada do último milênio, de 1999 para 2000. Nessa época, diversos
-sistemas armazenavam o ano de uma data com dois dígitos, isto é, as
-datas tinham o formato DD-MM-AA. As empresas ficaram receosas de que, em
-2000 e nos anos seguintes, algumas operações envolvendo datas
-retornassem valores incorretos, pois uma subtração 00 - 99, por exemplo,
-poderia dar um resultado inesperado. As empresas montaram então grupos
-de trabalho para realizar manutenções em seus sistemas e converter todas
-as datas para o formato DD-MM-AAAA. Como essas atividades foram
-realizadas antes da virada do milênio, elas são um exemplo de manutenção
-preventiva.
-```{=latex}
-\end{esmbox}
-```
-
 
 ```{=latex}
 \begin{esmbox}

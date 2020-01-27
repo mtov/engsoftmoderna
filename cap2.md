@@ -246,12 +246,13 @@ incluindo aquelas que vamos estudar neste capítulo, como Scrum (63%),
 Kanban (36%) e Extreme Programming (16%). Por outro lado, apenas 15% dos
 participantes marcaram Waterfall como resposta.
 
+![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
+usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
+
 ```{=latex}
 \end{esmbox}
 ```
 
-![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
-usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
 
 ## Extreme Programming (XP)
 
