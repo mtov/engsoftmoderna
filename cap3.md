@@ -2,7 +2,7 @@
 
 > *The hardest single part of building a software system is deciding precisely what to build.* -- Frederick Brooks
 
-Este capítulo inicia com uma apresentação sobre a importância e os diversos tipos de requisitos de software (Seção 3.1). Em seguida, caracterizamos e apresentamos as atividades que compõem o que chamamos de Engenharia de Requisitos (Seção 3.2). As quatro seções seguintes apresentam quatro técnicas e documentos para especificação e validação de requisitos. Na Seção 3.3, tratamos de histórias de usuário, as quais são os principais instrumentos de Engenharia de Requisitos quando se usa Métodos Ágeis de Desenvenvolvimento. Em seguida, na Seção 3.4 tratamos de casos de uso, que são documentos tradicionais e mais detalhados para especificação de requisitos. Na Seção 3.5, vamos falar de Produto Mínimo Viável (MVP), muito usados modernamente para prospectar e validar requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também largamente usados hoje em dia para validar e definir os requisitos de produtos de software.
+Este capítulo inicia com uma apresentação sobre a importância e os diversos tipos de requisitos de software (Seção 3.1). Em seguida, caracterizamos e apresentamos as atividades que compõem o que chamamos de Engenharia de Requisitos (Seção 3.2). As quatro seções seguintes apresentam quatro técnicas e documentos para especificação e validação de requisitos. Na Seção 3.3, tratamos de histórias de usuário, as quais são os principais instrumentos de Engenharia de Requisitos quando se usa Métodos Ágeis de Desenvenvolvimento. Em seguida, na Seção 3.4 tratamos de casos de uso, que são documentos tradicionais e mais detalhados para especificação de requisitos. Na Seção 3.5, vamos tratar de Produto Mínimo Viável (MVP), muito usados modernamente para prospectar e validar requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também muito usados hoje em dia para validar e definir os requisitos de produtos de software.
 
 ## Introdução
 
@@ -11,7 +11,6 @@ Este capítulo inicia com uma apresentação sobre a importância e os diversos 
 Vamos usar novamente o exemplo do Capítulo 1, relativo a um sistema de home-banking, para ilustrar a diferença entre esses dois tipos de requisitos. Em um sistema de home-banking, os requisitos funcionais incluem informar o saldo e extrato de uma conta, realizar transferências entre contas, pagar um boleto bancário, cancelar um cartão de débito, dentre outros. Já os requisitos não-funcionais estão relacionados com a qualidade do serviço prestado pelo sistema, incluindo características como desempenho, disponibilidade, níveis de segurança, portabilidade, privacidade, consumo de memória e disco, dentre outros. Portanto, os requisitos não-funcionais definem restrições ao funcionamento do sistema. Por exemplo, não basta que o sistema de home-banking implemente todas as funcionalidades requeridas pelo banco. Adicionalmente, ele deve ter uma disponibilidade de 99,9%  —  a qual funciona, portanto, como uma restrição ao seu funcionamento.
 
 Como expresso por Frederick Brooks na sentença que abre este capítulo, a definição dos requisitos é uma etapa crucial da construção de qualquer sistema de software. De nada adianta ter um sistema com o melhor design, implementado na mais moderna linguagem, usando o melhor processo de desenvolvimento, com alta cobertura de testes, etc e ele não atender às necessidades de seus usuários.
-
 Problemas na especificação de requisitos também têm um custo alto. Eles podem requerer trabalho extra, quando se descobre  —  após o sistema ficar pronto  —  que os requisitos foram especificados de forma incorreta ou que requisitos importantes não foram especificados. No limite, corre-se o risco de entregar um sistema que vai ser rejeitado pelos seus usuários, pois ele não resolve os seus problemas.
 
 Requisitos funcionais, na maioria das vezes, são especificados em linguagem natural. Por outro lado, requisitos não-funcionais são especificados de forma quantitativa usando-se métricas, como aquelas descritas na próxima tabela. 
@@ -23,7 +22,7 @@ Requisitos funcionais, na maioria das vezes, são especificados em linguagem nat
 | Confiabilidade | % de disponibilidade, tempo médio entre falhas (MTBF)
 | Robustez | Tempo para recuperar o sistema após uma falha (MTTR); probabilidade de perda de dados após uma falha
 | Usabilidade | Tempo de treinamento de usuários
-| Portabilidade | % de linhas de código portáveis entre plataformas
+| Portabilidade | % de linhas de código portáveis 
 
 O uso de métricas evita especificações genéricas, como "o sistema deve ser rápido e ter alta disponibilidade". Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo.
 
@@ -42,20 +41,9 @@ Após elicitados, os requisitos devem ser: (1) documentados, (2) verificados e v
 
 No caso de desenvolvimento ágil, a documentação de requisitos é feita de forma simplificada, por meio de **histórias do usuário**, conforme estudamos no Capítulo 2. Por outro lado, em alguns projetos, ainda
 exige-se um **Documento de Especificação de Requisitos**, onde todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor uma padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
-Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são as seguintes:
+Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos IEEE 830 são as seguintes:
 
-> * Requisito Relacionados com Interfaces Externas 
->   * Interfaces com o Usuário                      
->   * Interfaces com Hardware                      
->   * Interfaces com Outros Sistemas de Software     
->   * Interfaces de Comunicação                      
-> * Requisitos Funcionais                          
->   * Requisito Funcional \#1                        
->   * Requisito Funcional \#2                        
->   * ....                                           
-> * Requisitos de Desempenho                       
-> * Requisitos de Projeto                          
-> * Outros Requisitos                       
+![Documento de Requisitos no Padrão IEEE 830](figs/cap3/padrao-ieee-830){width="65%"}
 
 Após sua especificação, os requisitos devem ser verificados e validados. O objetivo é garantir que eles estejam corretos, precisos, completos, consistentes e verificáveis, conforme discutido a seguir.
 
@@ -100,7 +88,7 @@ elicitação de requisitos que ameacem seu poder e status na organização. Outr
 
 * Requisitos inconsistentes (19%)
 
-* Falta de acesso às necessidades dos clientes ou a informações do negócio (18%)
+* Falta de acesso às necessidades dos clientes ou do negócio (18%)
 ```{=latex}
 \end{esmbox}
 ```
@@ -110,7 +98,7 @@ elicitação de requisitos que ameacem seu poder e status na organização. Outr
 A próxima figura resume um pouco o que foi estudado sobre requisitos até agora. Ela mostra que os requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona. Usaremos essa figura para motivar e apresentar os temas que estudaremos no restante deste capítulo.
 
 
-![Requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona.](figs/cap3/requisitos){width=55%}
+![Requisitos são a "ponte" que liga um problema do mundo real a um sistema de software que o soluciona.](figs/cap3/requisitos){width=60%}
 
 
 A figura serve para ilustrar uma situação muito comum em Engenharia de Requisitos: sistemas cujos requisitos mudam com frequência ou cujos usuários não sabem especificar com precisão o sistema que querem. Na verdade, já estudamos sobre tais sistemas no Capítulo 2, quando tratamos de Métodos Ágeis. Conforme visto, quando os requisitos mudam frequentemente e o sistema não é de missão crítica, não vale a pena investir anos na elaboração de um Documento Detalhado de Requisitos. Corre-se o risco de quando ele ficar pronto, os requisitos já estarem obsoletos —  ou um concorrente já ter construído um sistema equivalente e dominado o mercado. Em tais sistemas, como vimos no Capítulo 2, pode-se adotar documentos simplificados de especificação de requisitos — chamados de **Histórias de Usuários**  —  e incorporar um representante dos clientes, em tempo integral, ao time de desenvolvimento, para tirar dúvidas e explicar os requisitos para os desenvolvedores. Dada a importância de tais cenários  —  sistemas cujos requisitos são sujeitos a mudanças, mas não críticos  —  iremos iniciar com o estudo de Histórias de Usuários na Seção 3.3.
@@ -157,7 +145,7 @@ Boas histórias devem possuir as seguintes características (cujas iniciais em i
 
 Antes de começar a escrever histórias, recomenda-se pensar e listar os principais usuários que vão interagir com o sistema. Assim, evita-se que as histórias fiquem enviesadas e cubram as necessidades de apenas certos tipos de usuários. Definidos esses **papéis de usuários** (*user roles*), costuma-se escrever as histórias no seguinte modelo:
 
-> Como um [papel de usuário], eu gostaria de [realizar alguma coisa com o sistema]
+> Como um [papel de usuário], eu gostaria de [realizar algo com o sistema]
 
 Vamos mostrar exemplos de histórias nesse formato na próxima seção. Antes, gostaríamos de comentar que, logo no início do desenvolvimento de um sistema, costuma-se realizar um **workshop de escrita de histórias**. Esse workshop reúne em uma sala representantes dos principais usuários do sistema, que discutem os objetivos do sistema, suas principais funcionalidades, etc. Ao final do workshop, que dependendo do tamanho do sistema pode durar uma semana, deve-se ter em mãos uma boa lista de
 histórias de usuários, que demandem alguns sprints para serem implementadas.
@@ -166,54 +154,54 @@ histórias de usuários, que demandem alguns sprints para serem implementadas.
 
 Nesta seção, vamos mostrar exemplos de histórias para um sistema de controle de bibliotecas. Elas estão associadas a três tipos de usuários: usuário típico, professor e funcionário da biblioteca.
 
-Primeiro, mostramos histórias propostas por usuários típicos. Qualquer usuário da biblioteca se encaixa nesse papel e, portanto, pode realizar as operações mencionadas nessas histórias. Observe que as histórias são resumidas e não detalham como cada operação será implementada. Por exemplo, uma história documenta que o sistema deve permitir pesquisas por livros. No entanto, existem diversos detalhes que a história omite, incluindo os campos de pesquisa, os filtros que poderão ser usados, o número máximo de resultados retornados em cada pesquisa, o layout das telas de pesquisa e de resultados, etc. Mas lembre-se que uma história é uma promessa: o representante dos clientes promete ter tempo para definir e explicar tais detalhes em conversas com os desenvolvedores, durante o sprint no qual a história será implementada. Conforme já comentado, quando se usa histórias, essa comunicação verbal entre desenvolvedores e representante dos clientes é a principal atividade de Engenharia de Requisitos.
+Primeiro, mostramos histórias propostas por usuários típicos (veja a a seguir). Qualquer usuário da biblioteca se encaixa nesse papel e, portanto, pode realizar as operações mencionadas nessas histórias. Observe que as histórias são resumidas e não detalham como cada operação será implementada. Por exemplo, uma história documenta que o sistema deve permitir pesquisas por livros. No entanto, existem diversos detalhes que a história omite, incluindo os campos de pesquisa, os filtros que poderão ser usados, o número máximo de resultados retornados em cada pesquisa, o layout das telas de pesquisa e de resultados, etc. Mas lembre-se que uma história é uma promessa: o representante dos clientes promete ter tempo para definir e explicar tais detalhes em conversas com os desenvolvedores, durante o sprint no qual a história será implementada. Conforme já comentado, quando se usa histórias, essa comunicação verbal entre desenvolvedores e representante dos clientes é a principal atividade de Engenharia de Requisitos.
 
 > Como usuário típico, eu gostaria de realizar empréstimos de livros
-
+>
 > Como usuário típico, eu gostaria de devolver um livro que tomei emprestado
-
+>
 > Como usuário típico, eu gostaria de renovar empréstimos de livros
-
+>
 > Como usuário típico, eu gostaria de pesquisar por livros
-
+>
 > Como usuário típico, eu gostaria de reservar livros que estão emprestados
+>
+> Como usuário típico, eu gostaria de receber e-mails com novas aquisições
 
-> Como usuário típico, eu gostaria de receber e-mails com as novas aquisições da biblioteca
-
-| | |
-|-|-|
-| Como usuário típico, eu gostaria de realizar empréstimos de livros | Como usuário típico, eu gostaria de devolver um livro que tomei emprestado
-| Como usuário típico, eu gostaria de renovar empréstimos de livros | Como usuário típico, eu gostaria de pesquisar por livros
-| Como usuário típico, eu gostaria de reservar livros que estão emprestados | Como usuário típico, eu gostaria de receber e-mails com as novas aquisições da biblioteca
-| | |
 
 Em seguida, mostramos as histórias propostas por professores. É importante mencionar que, de fato, os professores foram os usuários que lembraram de requisitar as histórias a seguir. Eles podem ter feito isso, por exemplo, em um workshop de escrita de histórias. Mas isso não implica que apenas professores poderão fazer uso dessas histórias. Por exemplo, ao detalhar as histórias em um sprint, o representante dos clientes (*product owner*) pode achar interessante permitir que qualquer usuário faça doações de livros e não apenas professores. Por fim, a última história sugerida por professores  —  permitir devoluções em outras bibliotecas da universidade  —  pode ser considerada como um **épico**, isto é, uma história mais complexa. Como a universidade possui mais de uma biblioteca, o professor gostaria de realizar um empréstimo na Biblioteca Central e devolver o livro na biblioteca do seu departamento, por exemplo. No entanto, essa funcionalidade requer a integração dos sistemas das duas bibliotecas e, também, pessoal disponível para transportar o livro para sua biblioteca original.
 
-| | |
-|-|-|
-| Como professor, eu gostaria de realizar empréstimos de maior duração | Como professor, eu gostaria de sugerir a compra de livros
-| Como professor, eu gostaria de doar livros para a biblioteca | Como professor, eu gostaria de devolver livros em outras bibliotecas da universidade
-| | |
+> Como professor, eu gostaria de realizar empréstimos de maior duração
+>
+> Como professor, eu gostaria de sugerir a compra de livros
+>
+> Como professor, eu gostaria de doar livros para a biblioteca
+>
+> Como professor, eu gostaria de devolver livros em outras bibliotecas da universidade
 
 Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, durante o workshop de escrita de histórias. Veja que, geralmente, são histórias relacionadas com a organização da biblioteca e também para garantir o seu bom funcionamento.
 
-
-| | |
-|-|-|
-| Como funcionário da biblioteca, eu gostaria de cadastrar novos usuários | Como funcionário da biblioteca, eu gostaria de cadastrar novos livros
-| Como funcionário da biblioteca, eu gostaria de dar baixa em livros que estão estragados | Como funcionário da biblioteca, eu gostaria de obter estatísticas sobre o acervo atual
-| Como funcionário da biblioteca, eu gostaria que o sistema envie e-mails de cobrança para alunos com empréstimos atrasados | Como funcionário da biblioteca, eu gostaria que o sistema aplicasse multas quando da devolução de empréstimos atrasados
-| | |
+> Como funcionário da biblioteca, eu gostaria de cadastrar novos usuários
+>
+> Como funcionário da biblioteca, eu gostaria de cadastrar novos livros
+>
+> Como funcionário da biblioteca, eu gostaria de dar baixa em livros que estão estragados
+>
+> Como funcionário da biblioteca, eu gostaria de obter estatísticas sobre o acervo atual
+>
+> Como funcionário da biblioteca, eu gostaria que o sistema envie e-mails de cobrança para alunos com empréstimos atrasados
+>
+> Como funcionário da biblioteca, eu gostaria que o sistema aplicasse multas quando da devolução de empréstimos atrasados
 
 Antes de concluir, vamos mostrar um teste de aceitação para a história "pesquisar por livros". Para confirmar a implementação dessa história, o representante dos clientes definiu que gostaria de ver as seguintes pesquisas serem realizadas com sucesso. Elas serão demonstradas e testadas durante a reunião de entrega de histórias  —  chamada de sprint review quando se usa Scrum.
 
-| |
-|-|
-| Pesquisa por livros, informando ISBN
-| Pesquisa por livros, informando autor; retorna livros cujo autor contém a string de busca                                  
-| Pesquisa por livros, informando título; retorna livros cujo título contém a string de busca
-| Pesquisa por livros cadastrados na biblioteca desde uma data, até a data atual                                                
-| | | |
+>Pesquisa por livros, informando ISBN
+>
+> Pesquisa por livros, informando autor; retorna livros cujo autor contém a string de busca
+>                                 
+> Pesquisa por livros, informando título; retorna livros cujo título contém a string de busca
+>
+> Pesquisa por livros cadastrados na biblioteca desde uma data, até a data atual                                                
 
 ```{=latex}
 \begin{esmbox}
@@ -231,7 +219,9 @@ valor para os usuários do sistema.
 \end{esmbox}
 ```
 
-**Perguntas Frequentes**: Antes de finalizar, e como comum neste livro,
+### Perguntas Frequentes
+
+Antes de finalizar, e como comum neste livro,
 vamos responder algumas perguntas sobre histórias de usuários:
 
 **Como especificar requisitos não-funcionais usando histórias?** Essa é uma questão de tratamento mais desafiador quando se usa métodos ágeis. De fato, o representante dos clientes (ou dono do produto) pode escrever uma história dizendo que "o tempo de resposta máximo do sistema deve ser de 1 segundo". No entanto, não faz sentido alocar essa história a uma iteração, pois ela deve ser uma preocupação durante todas as iterações do projeto. Por isso, a melhor solução é pedir ao dono do produto para escrever histórias sobre requisitos não-funcionais, mas usá-las principalmente para reforçar os critérios de conclusão de histórias (*done criteria*). Por exemplo, para considerar que uma história esteja concluída ela deverá passar por uma revisão de código que tenha como objetivo detectar problemas de desempenho. Antes de disponibilizar para produção qualquer release do sistema, pode-se também realizar um teste de desempenho, para garantir que o requisito não-funcional especificado na história esteja sendo atendido. Em resumo, pode-se  —  e deve-se  —  escrever histórias sobre requisitos não-funcionais, mas elas não vão para o backlog do produto. Em vez disso, elas são usadas para refinar os critérios de conclusão de histórias.
@@ -303,7 +293,7 @@ No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto,
 
 Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é mostrado a seguir. Nele estão representados dois atores: Cliente e Gerente. Cliente participa dos seguintes casos de uso: Sacar Dinheiro e Transferir Valores. E Gerente é o ator principal do caso de uso Abrir Conta. O diagrama também deixa explícito que Transferir Valores inclui o caso de uso Autenticar Cliente. Por fim, veja que os casos de uso são representados dentro de um retângulo, que delimita as fronteiras do sistema. Os dois atores são representados fora dessa fronteira.
 
-![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=55%}
+![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=60%}
 
 ```{=latex}
 \begin{esmbox}
@@ -313,8 +303,9 @@ Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é 
 \end{esmbox}
 ```
 
-**Perguntas Frequentes**: Vamos responder agora duas perguntas sobre
-casos de uso.
+### Perguntas Frequentes
+
+Vamos responder agora duas perguntas sobre casos de uso.
 
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Um resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações (sprints) e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
@@ -521,22 +512,34 @@ extensões para ele.
 > **Ator**: Usuário da loja virtual
 >
 > **Fluxo normal**:
+>
 > 1. Usuário pesquisa catálogo de livros
+>
 > 2. Usuário seleciona livros e coloca no carrinho de compra
+>
 > 3. Usuário decide fechar compra
+>
 > 4. Usuário seleciona endereço de entrega
+>
 > 5. Usuário seleciona tipo de entrega
+>
 > 6. Usuário seleciona modo de pagamento
+>
 > 7. Usuário confirma pedido
 
 10\. Para cada técnica de especificação e/ou validação de requisitos a seguir, descreva um sistema onde o seu uso seria mais recomendado: (1) Histórias de Usuários; (2) Casos de Uso; (3) MVPs.
 
 11\. Qual a diferença entre um Produto Mínimo Viável (MVP) e o produto obtido na primeira iteração de um método ágil, como XP ou Scrum?
 
-12\. O artigo "*Failures to be celebrated: an analysis of major pivots of software startups*" ([link](https://arxiv.org/abs/1710.04037)) apresenta uma discussão sobre quase 50 casos reais de pivôs em startups da área de software. Na Seção 2.3, o artigo apresenta uma classificação de dez tipos de pivô comuns nessas startups. Leia essa parte do artigo, liste pelo menos cinco tipos de pivôs e faça uma breve descrição de cada um deles.
+12\. O artigo *Failures to be celebrated: an analysis of major pivots of software startups* ([link](https://arxiv.org/abs/1710.04037)) apresenta uma discussão sobre quase 50 casos reais de pivôs em startups da área de software. Na Seção 2.3, o artigo apresenta uma classificação de dez tipos de pivô comuns nessas startups. Leia essa parte do artigo, liste pelo menos cinco tipos de pivôs e faça uma breve descrição de cada um deles.
 
 13\. Quando começou, a EasyTaxi  —  a empresa brasileira de aplicativos para solicitação de táxis  —  construiu um MVP que usava um software muito simples e uma parte operacional realizada de forma manual. Pesquise na Internet sobre esse MVP (basta usar as palavras EasyTaxi e MVP no Google) e faça uma descrição do mesmo.
 
-14\. Suponha que estamos em 2008, quando ainda não existia Spotify, e você decidiu criar uma startup para oferecer um serviço de streaming de músicas na Internet. Então, como primeiro passo, você decidiu começar com um MVP. (a) Quais seriam as features desse MVP? (b) Ele seria desenvolvido para quais plataformas de hardware e sistemas operacionais? (c) Elabore um rascunho rápido da sua interface com o usuário. (d) Quais métricas você usaria para medir o sucesso/fracasso do MVP?
+14\. Suponha que estamos em 2008, quando ainda não existia Spotify, e você decidiu criar uma startup para oferecer um serviço de streaming de músicas na Internet. Então, como primeiro passo, você decidiu começar com um MVP. 
+
+(a) Quais seriam as features desse MVP? 
+(b) Ele seria desenvolvido para quais plataformas de hardware e sistemas operacionais? 
+(c) Elabore um rascunho rápido da sua interface com o usuário. 
+(d) Quais métricas você usaria para medir o sucesso/fracasso do MVP?
 
 15\. Suponha que você seja responsável por um sistema de comércio eletrônico. Suponha que na versão atual desse sistema (versão A) a mensagem do carrinho de compra seja "Adicionar ao Carrinho". Suponha que você pretenda fazer um teste A/B testando a mensagem alternativa "Compre Já", a qual vai corresponder à versão B do teste. (1) Qual seria a métrica usada como taxa de conversão nesse teste? (2) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder à segunda questão, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
