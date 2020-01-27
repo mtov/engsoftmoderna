@@ -353,7 +353,7 @@ no site da OMG ([link](https://www.omg.org/)).
 
 ## Diagramas de Classes
 
-Diagramas de classes são possivelmente os diagramas mais usados da UML.
+Diagramas de classes são os diagramas mais usados da UML.
 Eles oferecem uma representação gráfica para um conjunto de classes,
 provendo informações sobre atributos, métodos e relacionamentos que
 existem entre as classes modeladas.
@@ -364,11 +364,11 @@ compartimentos, conforme mostra a figura a seguir. Esses compartimentos
 contém o nome da classe (normalmente, em negrito), seus atributos e
 métodos.
 
-![](figs/cap4/class0){width=22%}
+![](figs/cap4/class0){width=28%}
 
 Mostra-se a seguir um diagrama com duas classes: `Pessoa` e `Fone`.
 
-![](figs/cap4/class1){width=75%}
+![](figs/cap4/class1){width=80%}
 
 Nesse diagrama, pode-se conferir que a classe `Pessoa` tem três atributos
 — `nome`, `sobrenome` e `fone` — e dois métodos — `setPessoa` e
@@ -390,7 +390,7 @@ usadas para representar três tipos de relacionamentos: **associação**,
 **herança** e **dependência**. Vamos tratar de cada um deles nos
 próximos parágrafos.
 
-### Associações {.unnumbered}
+### Associações 
 
 Quando uma classe A possui um atributo b de um tipo B, dizemos que
 existe uma associação de A para B, a qual é representada por meio de uma
@@ -421,18 +421,9 @@ Portanto, usando associações, podemos transformar o primeiro diagrama
 que mostramos nesta seção, com as classes `Pessoa` e `Fone`, no seguinte
 diagrama:
 
-![](figs/cap4/class3){width=75%}
+![](figs/cap4/class3){width=80%}
 
-As duas versões do diagrama são semanticamente idênticas. A diferença é
-que na primeira versão as classes aparecem "ilhadas". Já na segunda
-versão, mostrada acima, fica visualmente claro que existe uma associação
-de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um
-atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é
-mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na
-segunda versão, ele é apresentado "fora" desse compartimento. Mais
-especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O
-objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele é do
-tipo `Fone`.
+As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
 
 Frequentemente, associações incluem informações de **multiplicidade**,
 que indicam quantos objetos podem estar associados ao atributo
@@ -448,26 +439,24 @@ ou um único telefone. Usando termos de programação, o atributo fone de
 `Pessoa` pode ter o valor null, isto é, a `Pessoa` em questão não tem `Fone`
 associado. Ou então ela pode se associar a um único objeto do tipo `Fone`.
 
-![](figs/cap4/class4){width=75%}
+![](figs/cap4/class4){width=80%}
 
 No próximo exemplo, a semântica já é diferente. Nesse caso, uma `Pessoa`
 pode estar associada a múltiplos objetos do tipo `Fone`, inclusive nenhum.
 Essa multiplicidade é representada pelo \* que adicionamos logo acima da
 seta da associação.
 
-![](figs/cap4/class5){width=75%}
+![](figs/cap4/class5){width=80%}
 
-Portanto, neste segundo exemplo com informações de multiplicidade, o
-tipo do atributo fone deve ser um vetor de `Fone`. Para que isso fique bem
-claro, mostramos uma parte do código das duas classes
+Neste segundo exemplo com informações de multiplicidade, o
+tipo do atributo `fone` deve ser um vetor de `Fone`. Para que fique
+claro, mostramos o código das classes:
 
 ```
 class Pessoa {
-   ...
    private Fone[] fone;
    ...
 }
-
 class Fone {
    ...
 }
@@ -484,7 +473,7 @@ de Classe são capazes de modelar qualquer um dos dois cenários.
 Em alguns casos, informações de multiplicidade são também mostradas na
 extremidade contrária da seta, como no exemplo abaixo:
 
-![](figs/cap4/class6){width=75%}
+![](figs/cap4/class6){width=80%}
 
 Nesse diagrama, a multiplicidade 0..1 — da extremidade com a seta
 — indica que uma `Pessoa` pode ter zero ou um único `Fone`. Mas o mais
@@ -504,9 +493,9 @@ Para concluir, suponha que seja importante "navegar" nos dois sentidos
 da associação, isto é, de `Pessoa` para `Fone` e também de `Fone` para `Pessoa`.
 A solução para essa exigência é simples: basta tornar a **associação
 bidirecional**, isto é, adicionar uma seta em cada extremidade da linha
-que conecta as classes, como mostrado a seguir.
+que conecta as classes, como mostrado no próximo diagrama.
 
-![](figs/cap4/class7){width=75%}
+![](figs/cap4/class7){width=80%}
 
 Para não deixar dúvidas sobre a semântica de uma associação
 bidirecional, mostramos também o código das duas classes:
@@ -568,7 +557,7 @@ duas classes têm ciclos de vida independentes, temos uma relação de
 agregação. No entanto, na prática, esses conceitos também geram confusão
 e, por isso, resolvemos não incluí-los na explicação sobre diagramas de
 classes. A mesma opinião é compartilhada por outros autores. Por
-exemplo, Fowler afirma o seguinte: "agregação é algo estritamente sem
+exemplo, Fowler afirma que "agregação é algo estritamente sem
 sentido; portanto, eu recomendo que você ignore esse conceito em seus
 diagramas"
 ([link](https://dl.acm.org/citation.cfm?id=861282), página
@@ -578,7 +567,7 @@ diagramas"
 \end{esmbox}
 ```
 
-### Herança {.unnumbered}
+### Herança 
 
 Em diagramas de classes, relações de herança são representadas por meio
 de setas com a extremidade não preenchida. Essas setas são
@@ -631,7 +620,7 @@ destino). Essas palavras são escritas entre sinais de menor (\<\<) e
 maior (\>\>). No diagrama a seguir, por exemplo, fica claro o tipo de
 dependência que `ShapeFactory` estabelece com a classe `Shape`.
 
-![](figs/cap4/class11)
+![](figs/cap4/class11){width=60%}
 
 Uma classe pode ter dependências para um grande número de classes. No
 entanto, não se costuma representar todas elas em diagramas de classes,
@@ -646,7 +635,7 @@ classes — isto é, pacotes — e as dependências entre eles. Para
 isso, UML define um retângulo especial para representar pacotes,
 mostrado abaixo:
 
-![](figs/cap4/package0){width=20%}
+![](figs/cap4/package0){width=25%}
 
 Ao contrário dos retângulos de classes, o retângulo de pacotes inclui
 apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na
@@ -766,7 +755,7 @@ Para concluir, o próximo diagrama mostra um cenário mais real, que
 ilustra os métodos chamados quando o cliente de uma caixa eletrônico
 solicita um depósito de certo valor em sua conta.
 
-![](figs/cap4/sequence3){width=55%}
+![](figs/cap4/sequence3){width=60%}
 
 
 ### Diagramas de Atividades
@@ -840,7 +829,7 @@ modelagem de fluxos e processos:
     recente, que teve início nos anos 2000, visando a proposição de
     uma notação gráfica mais amigável para modelagem de processos de
     negócio do que aquela oferecida por diagramas de atividades. Um
-    dos objetivos é propiciar que as pessoas de negócio possam ler e
+    dos objetivos é propiciar que analistas de negócio possam ler, interpretar e
     validar diagramas BPMN.
 ```{=latex}
 \end{esmbox}
@@ -867,7 +856,7 @@ Hall, 2004.
    (b) Como sketches (esboços) 
    (c) Como linguagem de programação.
 
-2\. Descreva cenários de uso de um diagrama de classes UML como um
+2\. Descreva cenários de uso de diagramas de classes UML como
 instrumento de:
 
    (a) Engenharia Reversa
@@ -958,10 +947,10 @@ class A {
 
 ```
 
-7\. Em diagramas de atividades, explique a diferença um nodo de *merge*
+7\. Em diagramas de atividades, explique a diferença entre um nodo de *merge*
 e um nodo de *join*.
 
 8\. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama
 de forma a refletir corretamente a intenção do projetista.
 
-![](figs/cap4/activity-exercicio){width=30%}
+![](figs/cap4/activity-exercicio){width=35%}

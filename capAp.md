@@ -12,8 +12,8 @@ Neste apêndice, apresentamos e discutimos exemplos de uso do sistema Git, que �
 
 Para começar a usar o git para gerenciar as versões de um sistema
 devemos executar um dos seguintes comandos: **init** ou **clone**. O
-comando init cria um repositório vazio. O segundo comando — clone
-— primeiro chama init para criar um repositório vazio. Em seguida,
+comando `init` cria um repositório vazio. O segundo comando — `clone`
+— primeiro chama `init` para criar um repositório vazio. Em seguida,
 ele copia para esse repositório todos os commits de um repositório
 remoto, passado como parâmetro. Seja, por exemplo, o seguinte comando:
 
@@ -35,7 +35,8 @@ qualquer uma das fotografias, para, por exemplo, restaurar uma
 implementação antiga de um arquivo.
 
 Recomenda-se que desenvolvedores realizem commits periodicamente, sempre
-que tiverem efetuado uma mudança importante no código. Em DVCSs, como o
+que tiverem efetuado uma mudança importante no código. Em sistemas de controle
+de versões distribuídos, como o
 git, os commits são primeiro armazenados no repositório local do
 desenvolvedor. Por isso, o custo de um commit é pequeno e, portanto,
 desenvolvedores podem realizar diversos commits ao longo de um dia de
@@ -88,18 +89,18 @@ trabalho, que funciona como um diretório comum do sistema operacional.
 As duas outras áreas são internas ao git e manipuladas exclusivamente
 por ele. Como qualquer diretório, o diretório de trabalho pode conter
 diversos arquivos. Porém, apenas aqueles adicionados ao index, por meio
-de um comando **add**, serão gerenciados pelo git.
+de um **add**, serão gerenciados pelo git.
 
 Além de armazenar a lista de arquivos versionados, o index também
-armazena o conteúdo deles. Por isso, antes de fazer um commit devemos
-executar um add, para salvar o conteúdo do arquivo no index. Feito isso,
-podemos usar um commit para salvar no repositório local a versão
+armazena o conteúdo deles. Por isso, antes de fazer um  `commit` devemos
+executar um  `add`, para salvar o conteúdo do arquivo no index. Feito isso,
+podemos usar um  `commit` para salvar no repositório local a versão
 adicionada ao index. Esse fluxo é ilustrado na próxima figura.
 
-![Comandos Add e Commit](figs/capAp/add){width=55%}
+![Comandos `add` e  `commit`](figs/capAp/add){width=55%}
 
 **Exemplo**: Suponha o seguinte arquivo simples, mas suficiente para
-explicar os comandos add e commit.
+explicar os comandos  `add` e  `commit`.
 
 ```
 // arq1 
@@ -110,7 +111,7 @@ Após criar esse arquivo, o desenvolvedor executou o seguinte comando:
 
 `git add arq1`
 
-Esse comando adiciona o arquivo arq1 no index (ou stage). Porém, logo em
+Esse comando adiciona o arquivo `arq1` no index (ou stage). Porém, logo em
 seguida, o desenvolvedor modificou de novo o arquivo:
 
 ```
@@ -124,12 +125,12 @@ Feito isso, ele executou:
 
 A opção `-m` informa a mensagem que descreve o commit. Porém, o ponto que
 queremos ressaltar com esse exemplo é o seguinte: como o usuário não
-executou um novo add após mudar o valor de `x` para 20, a versão mais
+executou um novo  `add` após mudar o valor de `x` para 20, a versão mais
 recente do arquivo não será salva pelo commit. Em vez disso, a versão de
-arq1 que será versionada é aquela onde `x` tem o valor 10, pois ela é a
+`arq1` que será versionada é aquela onde `x` tem o valor 10, pois ela é a
 versão que consta do index.
 
-Para evitar o problema descrito nesse exemplo, é comum usar um commit da
+Para evitar o problema descrito nesse exemplo, é comum usar um  `commit` da
 seguinte forma:
 
 `git commit -a -m "Alterando valor de x"`
@@ -137,11 +138,11 @@ seguinte forma:
 A opção `-a` indica que antes de executar o commit queremos adicionar no
 index todos os arquivos rastreados (*tracked*) que tenham sido
 modificados desde o último commit. Portanto, a opção `-a` não elimina a
-necessidade de usar add. O uso desse comando continua sendo necessário,
+necessidade de usar  `add`. O uso desse comando continua sendo necessário,
 pelo menos uma vez, para indicar ao git que desejamos tornar um
 determinado arquivo rastreável.
 
-Da mesma forma que existe um add, também existe uma operação para
+Da mesma forma que existe um  `add`, também existe uma operação para
 remover um arquivo de um repositório git. Um exemplo é dado a seguir:
 
 ```
@@ -149,29 +150,29 @@ git rm arq1.txt
 git commit -m "Removendo arq1.txt"
 ```
 
-Além de remover do repositório git local, o comando rm também remove
+Além de remover do repositório git local, o comando `rm` também remove
 o arquivo do diretório de trabalho.
 
 ## Push & Pull
 
 O comando **push** copia os commits mais recentes do repositório local
 para o repositório remoto. Portanto, ele é uma operação mais lenta, pois
-envolve comunicação pela rede. Um push deve ser usado quando o
+envolve comunicação pela rede. Um  `push` deve ser usado quando o
 desenvolvedor deseja tornar uma modificação visível para os demais
 desenvolvedores. Para atualizar seu repositório local, os outros
 desenvolvedores do time devem executar um comando **pull**. Esse comando
 realiza duas operações principais:
 
-*   Primeiro, um pull copia os commits mais recentes do repositório
+*   Primeiro, um  `pull` copia os commits mais recentes do repositório
     central para o repositório local do desenvolvedor. Essa operação
     inicial é chamada de **fetch**.
 
-*   Em seguida, o comando pull atualiza os arquivos do diretório de
+*   Em seguida, o comando `pull` atualiza os arquivos do diretório de
     trabalho. Essa operação é chamada de **merge**.
 
-A próxima figura ilustra o funcionamento dos comandos push e pull.
+A próxima figura ilustra o funcionamento dos comandos `push` e  `pull`.
 
-![Comandos push e pull](figs/capAp/push-pull){width=55%}
+![Comandos `push` e `pull`](figs/capAp/push-pull){width=55%}
 
 **Exemplo**: Suponha que no repositório git central de um projeto exista
 o seguinte arquivo:
@@ -183,14 +184,13 @@ void f() {
 ```
 
 Suponha que dois desenvolvedores, chamados Bob e Alice, realizaram um
-pull e, portanto, copiaram esse arquivo para o repositório local e para
+ `pull` e, portanto, copiaram esse arquivo para o repositório local e para
 o diretório de trabalho de suas máquinas. A sintaxe desse comando é a
 seguinte:
 
 `git pull`
 
-No mesmo dia, Bob implementou uma segunda função `g` no arquivo, que ficou
-assim:
+No mesmo dia, Bob implementou uma segunda função `g` no arquivo:
 
 ```
 void f() {   // antiga
@@ -202,7 +202,7 @@ void g() {   // implementada por Bob
 }
 ```
 
-Em seguida, Bob realizou um add, um commit e um push. Esse último
+Em seguida, Bob realizou um  `add`, um  `commit` e um  `push`. Esse último
 comando tem a seguinte sintaxe:
 
 `git push origin master`
@@ -212,13 +212,13 @@ repositório remoto, por exemplo, o repositório GitHub. Já o parâmetro
 `master` indica o branch principal. Iremos estudar mais sobre branches
 daqui a pouco.
 
-Após executar o comando push acima, a nova versão do arquivo estará
+Após executar o comando  `push` acima, a nova versão do arquivo estará
 salva também no repositório remoto. Alguns dias depois, Alice decidiu
 que precisa alterar esse mesmo arquivo. Como ela ficou um tempo sem
-trabalhar no sistema, o recomendado é que ela execute primeiro um pull,
+trabalhar no sistema, o recomendado é que ela execute primeiro um  `pull`,
 para atualizar seu repositório local e seu diretório de trabalho com as
 mudanças ocorridas nesse período, como aquela realizada por Bob. Assim,
-após esse comando pull, o arquivo em questão será atualizado na máquina
+após esse `pull`, o arquivo em questão será atualizado na máquina
 da Alice, para incluir a função `g` implementada por Bob.
 
 
@@ -235,25 +235,25 @@ main() {
   print("Helo, world!");
 }
 ```
-Concluída a implementação, Bob realizou um add, seguido de um commit e
-um push.
+Concluída a implementação, Bob realizou um  `add`, seguido de um  `commit` e
+um  `push`.
 
-Em seguida, Alice realizou um pull e obteve a versão do arquivo
+Em seguida, Alice realizou um  `pull` e obteve a versão do arquivo
 implementada por Bob. Então, Alice resolveu traduzir a mensagem do
 programa para Português:
 
 ```
 main() {
-  print("Ola, mundo!");
+  print("Olá, mundo!");
 }
 ```
 
 Enquanto Alice fazia a tradução, Bob percebeu que escreveu Hello de
 forma errada, com apenas uma letra l. Porém, Alice foi mais rápida e
-realizou a trinca de comandos add, commit e push.
+realizou a trinca de comandos  `add`,  `commit` e  `push`.
 
 Bob, após corrigir o erro de ortografia, salvou o arquivo e também
-executou um add, seguido de um commit. Por fim, ele executou push, mas o
+executou um  `add`, seguido de um  `commit`. Por fim, ele executou  `push`, mas o
 comando falhou com a seguinte mensagem de erro:
 
 | Updates were rejected because the remote contains work that you do 
@@ -262,9 +262,9 @@ comando falhou com a seguinte mensagem de erro:
 | remote changes (e.g., git pull ...) before pushing again.
 
 
-A mensagem é bem clara: Bob não pode executar um push, pois o
+A mensagem é bem clara: Bob não pode executar um  `push`, pois o
 repositório remoto possui conteúdo novo, no caso, gerado por Alice.
-Antes de executar um push, Bob precisa executar um pull. Porém, ao fazer
+Antes de executar um `push`, Bob precisa executar um  `pull`. Porém, ao fazer
 isso, ele recebe uma nova mensagem de erro:
 
 | CONFLICT (content): Merge conflict in arq2
@@ -279,7 +279,7 @@ main() {
  <<<<<<< HEAD                                     
  print("Hello, world!");                               
  =======                                                 
- print("Ola, mundo!");                                 
+ print("Olá, mundo!");                                 
  >>>>>>> f25bce8fea85a625b891c890a8eca003b723f21b 
  }                                                       
 ```
@@ -287,12 +287,12 @@ main() {
 As linhas inseridas pelo git devem ser entendidas da seguinte forma:
 
 * Entre `<<<<<<< HEAD` e `=======` temos o código modificado por Bob,
-isto é, pelo desenvolvedor que não conseguiu dar um push e teve que
-dar um pull. `HEAD` designa que o código foi modificado no
+isto é, pelo desenvolvedor que não conseguiu dar um  `push` e teve que
+dar um  `pull`. `HEAD` designa que o código foi modificado no
 último commit realizado por Bob.  
 
 * Entre  `=======` e `>>>>>>> f25bce8 ...` temos o código modificado
- por Alice, isto é, pela desenvolvedora que executou com sucesso seu push.
+ por Alice, isto é, pela desenvolvedora que executou com sucesso seu  `push`.
 `f225bce8...` é o ID do commit no qual Alice modificou essa parte do código.       
 
 
@@ -306,27 +306,27 @@ arquivo, de forma que fique assim:
 
 ```
 main() {                
-  print("Ola, mundo!");                      
+  print("Olá, mundo!");                      
 }                       
 ```
 
 Veja que Bob removeu os delimitadores inseridos pelo git (`<<<<<<< 
 HEAD` , `=======` e `>>>>>>> f25bce8...`). E também o comando `print`
 com a mensagem em inglês. Após deixar o código da forma correta, Bob
-deve executar novamente os comandos add, commit e push, que agora serão
+deve executar novamente os comandos  `add`,  `commit` e  `push`, que agora serão
 bem sucedidos.
 
 Nesse exemplo, mostramos um conflito simples, que ficou restrito a única
-linha de um único arquivo. No entanto, um pull pode dar origem a
+linha de um único arquivo. No entanto, um `pull` pode dar origem a
 conflitos mais complexos. Por exemplo, um mesmo arquivo pode apresentar
 vários conflitos. E também podemos ter conflitos em mais de um arquivo.
 
 ## Branches
 
-O git organiza o diretório de trabalho em \"diretórios virtuais\",
+O git organiza o diretório de trabalho em "diretórios virtuais",
 chamados de **branches**. Até agora, não precisamos comentar sobre
 branches porque todo repositório possui um branch default, chamado de
-**master**, criado pelo comando init. Se não nos preocuparmos com
+**master**, criado pelo comando `init`. Se não nos preocuparmos com
 branches, todo o desenvolvimento ocorrerá no master. Porém, em alguns
 casos, é interessante criar outros branches para melhor organizar o
 desenvolvimento. Para descrever o conceito de branches, vamos de novo
@@ -375,7 +375,7 @@ corrente. Assim, o prompt pode ser exibido como
 Por outro lado, existe também uma diferença importante entre branches e
 diretórios. Um desenvolvedor somente pode alterar o branch corrente de A
 para B se as modificações que ele fez em A estiverem salvas. Isto é, se
-ele tiver realizado antes um add e commit. Caso ele tenha esquecido de
+ele tiver realizado antes um  `add` e  `commit`. Caso ele tenha esquecido de
 chamar esses comandos, um comando git checkout B irá falhar com a
 seguinte mensagem de erro:
 
@@ -390,7 +390,7 @@ do seguinte modo. Quando ele quiser trabalhar na nova implementação de
 lado, quando ele precisar modificar o código original de `f` — aquele
 que está em produção — ele deve se certificar de que o branch
 corrente é o `master`. Independentemente do branch em que estiver, Bob
-deve continuar usando add e commit para salvar o estado do seu trabalho.
+deve usar  `add` e  `commit` para salvar o estado do seu trabalho.
 
 Bob vai continuar nesse fluxo, alternando entre os branches `f-novo` e
 `master`, até que a nova implementação de `f` esteja concluída. Quando isso
@@ -411,17 +411,19 @@ merge de branches, esses conflitos vão ocorrer quando tanto o branch que
 está recebendo as modificações (`master`, no nosso exemplo) como o branch
 que está sendo integrado (`f-novo`, no exemplo) tiverem alterado os mesmos
 trechos de código. Conforme discutido na Seção A.6, o git irá delimitar
-os trechos com conflitos e caberá ao desenvolvedor que chamou o merge
-resolvê-los. Isto é, escolher o trecho de código que deve prevalecer.
+os trechos com conflitos e caberá ao desenvolvedor que chamou o `merge`
+resolvê-los. Isto é, escolher o código que deve prevalecer.
 
 Por fim, após realizar o merge, Bob pode remover o branch `f-novo`, caso
 não seja importante manter o histórico dos commits realizados para
 implementar a nova versão de `f`. Para deletar `f-novo`, ele deve executar o
-seguinte comando no branch master:
+seguinte comando no master:
 
 `git branch -d f-novo`
 
-**Aprofundamento**: Commits podem possuir zero, um ou mais pais (ou
+### Grafo de Commits
+
+Commits podem possuir zero, um ou mais pais (ou
 antecessores). Como ilustra a próxima figura, o primeiro commit de um
 repositório não possui pai. Já um commit de merge possui dois ou mais
 pais, que representam os branches que foram unidos. Os demais commits
@@ -437,7 +439,7 @@ seja, `HEAD` contém o nome da variável que contém o identificador do
 
 ![](figs/capAp/head1){width=65%}
 
-Nesse exemplo, podemos ver que existem dois branches, representados
+Nesse exemplo, existem dois branches, representados
 pelas variáveis `MASTER` e `ISSUE-45`. Cada uma delas aponta para o último
 commit de seu respectivo branch. A variável `HEAD`
 aponta para a variável `MASTER`. Isso significa que o branch atual é o
@@ -451,7 +453,7 @@ antigo `HEAD`, no caso o commit 3. A variável `MASTER` avançou e passou a
 apontar para o novo commit. Isso significa que, se não mudarmos de
 branch, o pai do próximo commit será o commit 7.
 
-Porém, se mudarmos para o branch `ISSUE-45`, a configuração passará a ser
+Porém, se mudarmos para o branch `ISSUE-45`, a configuração será
 a seguinte:
 
 ![](figs/capAp/head3){width=65%}
@@ -465,7 +467,7 @@ ela tenha o commit 6 como pai.
 
 Até esse momento, trabalhamos com branches localmente, isto é, os
 branches que discutimos existem apenas no repositório local. No entanto,
-é possível realizar o push de um branch local para um repositório
+é possível realizar o  `push` de um branch local para um repositório
 remoto. Para ilustrar esse recurso, vamos usar um exemplo semelhante ao
 da seção anterior.
 
@@ -473,17 +475,17 @@ da seção anterior.
 implementar uma nova funcionalidade. Ele realizou alguns commits nesse
 branch e agora gostaria de compartilhá-lo com Alice, para que ela
 implemente parte da nova funcionalidade. Para isso, Bob deve usar o
-seguinte push:
+seguinte `push`:
 
 `git push -u origin g-novo`
 
-Esse comando realiza o push do branch corrente (`g-novo`) para o
+Esse comando realiza o  `push` do branch corrente (`g-novo`) para o
 repositório remoto, chamado pelo git de `origin`. O repositório remoto
 pode, por exemplo, ser um repositório do GitHub. O parâmetro `-u` indica
 que, no futuro, vamos querer sincronizar os dois repositórios por meio
-de um pull (a letra do parâmetro vem da palavra *upstream*). Essa
-sintaxe vale apenas para o primeiro push de um branch remoto. Nos
-comandos seguintes, pode-se omitir o `-u`, isto é, usar apenas `git push
+de um  `pull` (a letra do parâmetro vem da palavra *upstream*). Essa
+sintaxe vale apenas para o primeiro `push` de um branch remoto. Nos
+comandos seguintes, pode-se omitir o `-u`, isto é, usar apenas `git  push
 origin g-novo`.
 
 No repositório remoto, será criado um branch `g-novo`. Para trabalhar
@@ -501,16 +503,16 @@ máquina local. Já o segundo comando cria um branch local, chamado
 `origin/g-novo`, conforme indica o parâmetro `-t`, que vem da palavra
 *tracking*. Em seguida, Alice pode realizar commits nesse branch. Por
 fim, quando estiver pronta para publicar suas mudanças, ela deve
-executar um push, com a sintaxe normal, isto é, sem o parâmetro `-u`.
+executar um `push`, com a sintaxe normal, isto é, sem o parâmetro `-u`.
 
-Agora, Bob pode realizar um pull, concluir que a implementação da nova
+Agora, Bob pode realizar um  `pull`, concluir que a implementação da nova
 funcionalidade está finalizada e, portanto, pode ser integrada no
 master, por meio de um merge. Bob pode também deletar os branches local
-e remoto, usando o seguinte par de comandos:
+e remoto, usando os comandos:
 
 `git branch -d g-novo`
 
-`git push origin \--delete g-novo`
+`git push origin --delete g-novo`
 
 E Alice também pode deletar seu branch local, chamando apenas:
 
@@ -519,7 +521,7 @@ E Alice também pode deletar seu branch local, chamando apenas:
 
 ## Pull Requests
 
-Pull Pull requests é um mecanismo que viabiliza que um branch seja
+Pull requests é um mecanismo que viabiliza que um branch seja
 revisado e discutido antes de ser integrado no branch principal. Quando
 se usa pull requests, um desenvolvedor sempre implementa novas
 funcionalidades em um branch separado. Concluída a implementação, ele
@@ -533,11 +535,11 @@ de controle de versões.
 Modernamente, o processo de revisão e integração do código de um pull
 request ocorre via interface Web, provida, por exemplo, pelo GitHub.
 Porém, se essa interface não existisse, o revisor teria que começar o
-seu trabalho realizando um pull do branch para sua máquina local. Daí
+seu trabalho realizando um  `pull` do branch para sua máquina local. Daí
 então a origem do nome, isto é, pull request é uma solicitação
 (*request*) para que um segundo desenvolvedor revise e integre um
 determinado branch. Para atender a essa solicitação, ele deve começar
-realizando um pull do branch.
+realizando um  `pull` do branch.
 
 A seguir, vamos detalhar o processo de submissão e revisão de pull
 requests por meio de um exemplo.
@@ -548,7 +550,7 @@ interessantes sobre git. Os links ficam armazenados no arquivo README.md
 desse repositório, isto é, na sua página principal, cujo endereço é
 github.com/aserg-ufmg/awesome-git. Qualquer membro da organização pode
 sugerir a adição de links nessa página. Mas veja que estamos usando a
-palavra sugerir. Isto é, eles não podem fazer um push diretamente no
+palavra sugerir. Isto é, eles não podem fazer um  `push` diretamente no
 branch master. Em vez disso, a sugestão de link precisa ser revisada e
 aprovada por um outro membro do time.
 
@@ -561,7 +563,7 @@ por meio dos seguintes comandos:
 `git checkout livro-esm`
                                     
 Em seguida, Bob editou o arquivo README.md, adicionando a URL do 
-apêndice. Por fim, ele realizou um add, um commit e fez um push 
+apêndice. Por fim, ele realizou um  `add`, um  `commit` e fez um `push` 
 do branch para o GitHub:
 
 `git add README.md`                
@@ -592,7 +594,7 @@ criado por Bob, inclusive por meio de um um diff entre o código novo e o
 código antigo. Se for o caso, Alice pode trocar mensagens com Bob, para
 esclarecer dúvidas sobre o novo código. Mais ainda, ela pode solicitar
 mudanças no código. Nesse caso, Bob deve providenciar as mudanças e
-realizar um novo add, commit e push. Então, os novos commit serão
+realizar um novo  `add`,  `commit` e  `push`. Então, os novos commit serão
 automaticamente anexados ao pull request, para que Alice possa conferir
 se o seu pedido foi atendido. Estando a modificação aprovada, Alice pode
 integrar o código no master, bastando para isso clicar em um dos botões
@@ -622,7 +624,7 @@ links).
 
 Para realizar um squash, Bob deve chamar:
 
-`git rebase -i HEAD\~5`
+`git rebase -i HEAD~5`
 
 O número 5 significa que pretende-se unir os cinco últimos commits do
 branch atual. Um editor de textos será aberto com uma lista contendo o
@@ -637,8 +639,7 @@ pick 9be7fdb Incluindo link 5
 ```
 
 Bob deve então usar o próprio editor para substituir a palavra pick por
-squash, exceto aquela da primeira linha. O arquivo ficará então assim
-(com os squash adicionados em negrito):
+squash, exceto aquela da primeira linha. O arquivo ficará então assim:
 
 ```
 pick 16b5fcc Incluindo link 1
@@ -663,18 +664,18 @@ existe um botão para realizar essa operação. Se fizermos um fork do
 repositório torvalds/linux será criado uma cópia desse repositório na
 nossa conta do GitHub, chamado, por exemplo, mtov/linux.
 
-Como fazemos sempre neste apêndice, vamos usar um exemplo para explicar
+Como fazemos sempre, vamos usar um exemplo para explicar
 essa operação.
 
 **Exemplo**: Suponha o repositório github.com/aserg-ufmg/awesome-git,
 usado no exemplo sobre pull requests. Suponha ainda uma terceira
 desenvolvedora, chamada Carol. Porém, como Carol não é membro da
-organização ASERG/UFMG, ela não tem permissão para realizar push nesse
+organização ASERG/UFMG, ela não tem permissão para realizar  `push` nesse
 repositório, como fez Bob no exemplo anterior. Apesar disso, Carol acha
 que na lista atual falta um link importante e interessante, cuja
 inclusão ela gostaria de sugerir. Mas relembrando: Carol não pode seguir
 os mesmos passos usados por Bob no exemplo anterior, pois ela não tem
-permissão para dar push no repositório em questão.
+permissão para dar `push` no repositório em questão.
 
 Para resolver esse problema, Carol deve começar criando um fork do
 repositório. Para isso, basta clicar no botão fork, que existe na página
@@ -682,7 +683,7 @@ de qualquer repositório no GitHub. Assim, Carol terá na sua conta do
 GitHub um novo repositório, cujo endereço será o seguinte:
 github.com/carol/awesome-git. Ela poderá clonar esse repositório para
 sua máquina local, criar um branch, adicionar o link que deseja na lista
-de links e realizar add, commit e push. Essa última operação será
+de links e realizar  `add`,  `commit` e  `push`. Essa última operação será
 realizada no repositório resultante do fork. Por último, Carol deve ir
 na página do seu fork no GitHub e solicitar a criação de um pull
 request. Como o repositório é um fork, ela terá agora uma opção extra:
@@ -702,7 +703,7 @@ Carol).
 
 * Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
 
-* Rachel M. Carmena. How to teach Git. Blog post, [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
+* Rachel M. Carmena. How to teach Git. Blog post [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
 
 ## Exercícios de Fixação {.unnumbered}
 

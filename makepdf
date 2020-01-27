@@ -3,6 +3,7 @@ cat cap1.md >> esm-book.md
 cat cap2.md >> esm-book.md
 cat cap4.md >> esm-book.md
 cat cap7.md >> esm-book.md
+cat cap9.md >> esm-book.md
 cat cap10.md >> esm-book.md
 cat capAp.md >> esm-book.md
 pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.pdf

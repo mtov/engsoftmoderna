@@ -85,7 +85,7 @@ Reprodução gentilmente autorizada pelo Prof. Robert McClure.](figs/cap1/otan.j
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
 ilustra os desafios que esperavam a recém criada área de pesquisa:
 
-> "O problema básico é que certas classes de sistemas estão colocando demandas sobre nós que estão além das nossas capacidades e das teorias e métodos de projeto que conhecemos no presente tempo. Em algumas aplicações não existe uma crise, como em rotinas de ordenação e folhas de pagamento, por exemplo. Porém, estamos tendo dificuldades com grandes aplicações. Não podemos esperar que a produção de tais sistemas seja fácil."
+> "O problema é que certas classes de sistemas estão colocando demandas sobre nós que estão além das nossas capacidades e das teorias e métodos de projeto que conhecemos no presente tempo. Em algumas aplicações não existe uma crise, como rotinas de ordenação e folhas de pagamento, por exemplo. Porém, estamos tendo dificuldades com grandes aplicações. Não podemos esperar que a produção de tais sistemas seja fácil."
 
 Passado mais de meio século da Conferência da OTAN, os avanços obtidos
 em técnicas e métodos para construção de software são notáveis. Hoje, já
@@ -247,7 +247,7 @@ um panorama do conhecimento que se adquiriu ao longo dos anos em
 Engenharia de Software e, assim, informá-lo sobre *o que* se estuda
 nessa área.
 
-### Engenharia de Requisitos {.unnumbered}
+### Engenharia de Requisitos 
 
 Os requisitos de um sistema definem *o que* ele deve fazer e *como* ele
 deve operar. Assim, a Engenharia de Requisitos inclui o conjunto 
@@ -287,7 +287,7 @@ não-funcionais, dentre outros, incluem:
 
 * Usabilidade: ter uma versão para deficientes visuais.
 
-### Projeto de Software {.unnumbered}
+### Projeto de Software
 
 Durante o projeto de um sistema de software, são definidas suas
 principais unidades de código, porém apenas no nível de interfaces,
@@ -336,7 +336,7 @@ código possuem maior granularidade — são pacotes, por exemplo
 nível de abstração mais alto do que aquele que envolve classes ou
 construções semelhantes.
 
-### Construção de Software {.unnumbered}
+### Construção de Software 
 
 Construção trata da implementação, isto é, codificação do sistema. Neste
 momento, existem diversas decisões que precisam ser tomadas, como, por
@@ -349,7 +349,7 @@ compiladores, ambientes integrados de desenvolvimento (IDEs),
 depuradores, sistemas gerenciadores de bancos de dados, ferramentas para
 construção de interfaces, etc.
 
-### Testes de Software {.unnumbered}
+### Testes de Software 
 
 Teste consiste na execução de um programa com um conjunto finito de
 casos, com o objetivo de verificar se ele possui o comportamento
@@ -375,10 +375,10 @@ validação de sistemas. Verificação tem como o objetivo garantir que um
 sistema atende à sua especificação. Já com validação, o objetivo é
 garantir que um sistema atende às necessidades de seus clientes. A
 diferença entre os conceitos só faz sentido porque pode ocorrer de a
-especificação de um sistema não refletir precisamente as necessidades de
+especificação de um sistema não expressar as necessidades de
 seus clientes. Por exemplo, essa diferença pode ser causada por um erro
 na fase de levantamento de requisitos; isto é, os desenvolvedores não
-entenderam bem os requisitos do sistema ou o cliente não foi capaz de
+entenderam os requisitos do sistema ou o cliente não foi capaz de
 explicá-los precisamente.
 
 Existem duas frases, muito usadas, que resumem as diferenças entre
@@ -400,7 +400,7 @@ validação.
 Terceiro, é importante definir e distinguir três conceitos relacionados
 a testes: **defeitos**, **bugs** e **falhas**. Para ilustrar a diferença
 entre eles, suponha o seguinte código para calcular a área de um
-círculo, dependendo de uma determinada condição:
+círculo, dependendo de uma condição:
 
 ```
  if (condicao)
@@ -465,7 +465,7 @@ funcionasse de forma errática, causando a explosão.
 \end{esmbox}
 ```
 
-### Manutenção e Evolução de Software {.unnumbered}
+### Manutenção e Evolução de Software 
 
 Assim como sistemas tradicionais de Engenharia, software também precisa
 de manutenção. Neste livro, vamos usar a seguinte classificação para os
@@ -529,7 +529,7 @@ décadas exatamente porque eles sofrem manutenções evolutivas, que
 preservam o seu valor para os clientes. Por exemplo, diversos sistemas
 bancários usados hoje em dia foram criados nas décadas de 70 e 80, em
 linguagens como COBOL. No entanto, eles já sofreram diversas evoluções e
-melhorias. Por exemplo, hoje esses sistemas possuem interfaces Web e
+melhorias. Hoje, esses sistemas possuem interfaces Web e
 para celulares, que se integram aos módulos principais, implementados há
 dezenas de anos.
 
@@ -555,12 +555,13 @@ operacional do software, como um novo hardware ou sistema operacional;
 logo, não inclui, por exemplo, customizações para novos clientes, como
 proposto neste livro; (4) Preventiva, refere-se a mudanças que visam
 incrementar a manutenibilidade de um sistema; neste livro, optamos pelo
-termo mais comum hoje em dia, que é refactoring.
+termo mais comum hoje em dia, que é refactoring, e que iremos estudar 
+no Capítulo 9.
 ```{=latex}
 \end{esmbox}
 ```
 
-### Gerência de Configuração {.unnumbered}
+### Gerência de Configuração 
 
 Atualmente, é inconcebível desenvolver um software sem um sistema de
 controle de versões, como git. Esses sistemas armazenam todas as versões
@@ -588,7 +589,7 @@ chamada de versão *major*). Esse esquema de numeração de releases é
 conhecido como **versionamento semântico**.
 
 
-### Gerência de Projetos {.unnumbered}
+### Gerência de Projetos 
 
 Desenvolvimento de software requer o uso de práticas e atividades de
 gerência de projetos, por exemplo, para negociação de contratos com
@@ -619,7 +620,7 @@ exemplo, se um time tem 3 desenvolvedores (d~1~, d~2~, d~3~), existem 3
 canais de comunicação possíveis (d~1~-d~2~, d~1~-d~3~ e d~2~-d~3~); se
 ele cresce para 4 desenvolvedores, o número de canais duplica, para 6
 canais. Se ele cresce para 10 desenvolvedores, passam a existir 45
-canais de comunicação. Por isso, modernamente, software tende a ser
+canais de comunicação. Por isso, modernamente, software é
 desenvolvido em times pequenos, com uma dezena de engenheiros, se tanto.
 
 **Tradução**: Em Português, a palavra *projeto* pode se referir tanto
@@ -657,7 +658,7 @@ Computação.
 \end{esmbox}
 ```
 
-### Processos de Desenvolvimento de Software {.unnumbered}
+### Processos de Desenvolvimento de Software 
 
 Um processo de desenvolvimento define quais atividades e etapas devem
 ser seguidas para construir e entregar um sistema de software. Uma
@@ -693,14 +694,14 @@ alto nível), projeto detalhado, codificação e testes. Finalizado esse
 pipeline, o sistema é liberado para produção, isto é, para uso efetivo
 pelos seus usuários, conforme ilustrado na próxima figura.
 
-![Fases de um processo Waterfall](figs/cap1/waterfall){width=80%}
+![Fases de um processo Waterfall.](figs/cap1/waterfall){width=80%}
 
 No entanto, processos Waterfall, a partir do final da década de 90,
 passaram a ser muito criticados, devido aos atrasos e problemas
 recorrentes em projetos de software, que ocorriam com frequência nessa
 época. O principal problema é que Waterfall pressupõe um levantamento
 completo de requisitos, depois um projeto detalhado, depois uma
-implementação completa ... Para só então validar o sistema com os
+implementação completa, etc. Para só então validar o sistema com os
 usuários, o que pode acontecer anos após o início do projeto. No
 entanto, neste período de tempo, o mundo pode ter mudado, bem como as
 necessidades dos clientes, que podem não mais precisar do sistema que
@@ -735,7 +736,7 @@ primeiro desenvolvedor a integrar seu código será bem sucedido; enquanto
 que o segundo desenvolvedor será informado de que o trecho já foi
 modificado pelo primeiro.
 
-### Modelos de Software {.unnumbered}
+### Modelos de Software 
 
 Um modelo oferece uma representação em mais alto nível de um sistema do
 que o seu código fonte. O objetivo é permitir que desenvolvedores possam
@@ -763,11 +764,11 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![Exemplo de Diagrama de Classe UML com duas classes, `Cliente` e `ContaBancaria`](figs/cap1/uml){width=75%}
+![Exemplo de Diagrama de Classe UML com duas classes, `Cliente` e `ContaBancaria`.](figs/cap1/uml){width=75%}
 
 
 
-### Qualidade de Software {.unnumbered}
+### Qualidade de Software 
 
 Qualidade é um objetivo recorrente em produtos de engenharia.
 Fabricantes de automóveis, celulares, computadores, empresas de
@@ -781,7 +782,7 @@ qualidade de software pode ser avaliada em duas dimensões:
 
 Qualidade externa considera fatores que podem ser aferidos sem analisar
 o código de um sistema. Assim, a qualidade externa de um software pode
-ser avaliada mesmo por usuários comuns, que não precisam ser
+ser avaliada mesmo por usuários comuns, que não são
 especialistas em Engenharia de Software. Como exemplo, temos os
 seguintes fatores (ou atributos) de qualidade externa:
 
@@ -849,13 +850,13 @@ código com uma dúvida, antes de aprová-lo. Em seguida, o responsável
 pelo código poderia concordar que, de fato, existe um bug, corrigir o
 código e submetê-lo de novo para revisão. Finalmente, ele seria aprovado
 pelo revisor. Existem diversas ferramentas para apoiar processos de
-revisão de código. No exemplo da figura, usamos a ferramenta fornecida
+revisão de código. No exemplo, usamos a ferramenta fornecida
 pelo GitHub.
 
 ![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width=60%}
 
 
-### Prática Profissional {.unnumbered}
+### Prática Profissional 
 
 Como afirmado na frase de Bjarne Stroustrup que abre este capítulo,
 *nossa sociedade funciona a base de software*. Isso gera diversas
@@ -886,7 +887,7 @@ Engenharia de Software. Por exemplo, ele prescreve que:
 
 > "Engenheiros de Software devem se comprometer em fazer da análise, especificação, projeto, desenvolvimento, teste e manutenção de software uma profissão benéfica e respeitada."
 
-No Brasil, existe também o Código de Ética da Sociedade Brasileira de
+No Brasil, existe o Código de Ética da Sociedade Brasileira de
 Computação (SBC), que por ser sintético, mas ao mesmo tempo claro,
 resolvemos reproduzir a seguir:
 
@@ -954,7 +955,7 @@ dependeria do código requisitado.
 \end{esmbox}
 ```
 
-### Aspectos Econômicos {.unnumbered}
+### Aspectos Econômicos 
 
 Diversas decisões e questões econômicas se entrelaçam com o
 desenvolvimento de sistemas. Por exemplo, uma startup de software deve
@@ -1038,12 +1039,12 @@ equipamentos de uma UTI, um trem de metrô, etc. O exemplo do sistema de
 controle do foguete Ariane 5, usado na seção sobre Testes de Software, é
 um exemplo de Sistema A. O desenvolvimento desses sistemas deve ser
 feito de acordo com processos rígidos, incluindo rigorosa revisão de
-código e certificação por organizações externas. É comum também exigir
+código e certificação por organizações externas. É comum exigir
 redundância não apenas em hardware, mas também no próprio software. Por
 exemplo, o sistema roda de forma paralela em duas máquinas e uma decisão
 somente é tomada caso ambas instâncias cheguem ao mesmo resultado. Por
-fim, esses sistemas às vezes são especificados em uma linguagem formal,
-baseadas em teoria de conjuntos, lógica, etc.
+fim, esses sistemas muitas vezes são especificados em uma linguagem formal,
+baseada em teoria de conjuntos ou lógica.
 
 ```{=latex}
 \begin{aviso}
@@ -1075,8 +1076,7 @@ exemplo, sistemas com menor quantidade de bugs em produção).
 
 ## Próximos Capítulos
 
-Este livro terá **10 capítulos**: \[estrutura provisória e sujeita a
-mudanças\]
+Este livro possui **10 capítulos** e **um apêndice**:
 
 **Capítulo 2: Processos**, com foco em processos ágeis de
 desenvolvimento, especificamente XP, Scrum e Kanban. Tomamos a decisão
@@ -1172,30 +1172,30 @@ como desempenho, falhas e usabilidade.
 
 **Capítulo 9: Refactoring**, cujo principal conteúdo é uma apresentação
 dos principais refactorings que podem ser realizados para melhor a
-qualidade interna de um sistema de software. Essa apresentação inclui
+qualidade interna de um sistema de software. A apresentação inclui
 vários exemplos de código fonte, alguns deles de refactorings reais,
 realizados em sistemas de código aberto. O objetivo é transmitir ao
 leitor uma experiência prática de refatoração, que o ajude a desenvolver
 o hábito de frequentemente alocar tempo para melhor a qualidade interna
 do código que ele vai desenvolver. No capítulo, também apresentamos uma
-lista de code smells, isto é, indicadores de que uma determinada
+lista de code smells, isto é, indicadores de que uma 
 estrutura de código não está "cheirando bem" e que, portanto, poderia
 ser objeto de uma refatoração.
 
-**Capítulo 10: DevOps** \[a ser escrito\]
+**Capítulo 10: DevOps**, que é um movimento que tenta aproximar os times de desenvolvimento (Devs) e de operações (Ops) de uma empresa desenvolvedora de software. O time de operações é responsável por manter o software em funcionamento, sendo formado por administradores de rede, administradores de bancos de dados, técnicos de suporte, etc. Em uma cultura tradicional, esses dois times tendem a atuar de forma independente. Ou seja, o time de desenvolvimento desenvolve o sistema e depois "joga ele por cima da parede" (*throw it over the wall*) que separa o departamento de desenvolvimento do departamento de operações. Ou seja, os dois times não conversam nem no momento da "passagem de bastão" de uma área para outra. Para resolver esse problema, DevOps propõe uma interação constante entre as áreas Devs e Ops, desde os primeiros dias do desenvolvimento. O objetivo é acelerar a entrada em produção de um sistema. Além de uma introdução a DevOps, vamos estudar no Capítulo 9 algumas práticas essenciais quando uma empresa adota essa cultura, incluindo Controle de Versões, Integração Contínua e Deployment/Entrega Contínua.
 
 **Apêndice A: Git**, que apresenta e mostra exemplos de uso dos principais comandos do sistema git. Atualmente, é inconcebível não usar controle de versões em qualquer sistema, mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar esse apêndice no livro. Git é o sistema de controle de versões mais usado atualmente.
 
 ## Bibliografia {.unnumbered}
 
-* Pierre Bourque, Richard Fairley. Guide to the Software
+Pierre Bourque, Richard Fairley. Guide to the Software
 Engineering Body of Knowledge, Version 3.0, IEEE Computer Society, 2014.
 
-* Armando Fox, David Patterson. Construindo Software como Serviço: Uma
+Armando Fox, David Patterson. Construindo Software como Serviço: Uma
 Abordagem Ágil Usando Computação em Nuvem. Strawberry Canyon LLC. 1a
 edição, 2014.
 
-* Frederick Brooks. O Mítico Homem-Mês. Ensaios Sobre Engenharia de
+Frederick Brooks. O Mítico Homem-Mês. Ensaios Sobre Engenharia de
 Software. Alta Books, 1a edição, 2018.
 
 ## Exercícios de Fixação {.unnumbered}
@@ -1253,9 +1253,10 @@ provavelmente incluía uma estrutura de decisão como a seguinte
 (meramente ilustrativa, para fins deste exercício):
 
 ```
-if Carro sendo testado em um laboratorio
-   then Emita poluentes dentro das normas
-   else Emita poluentes fora das normas
+if "Carro sendo testado em um laboratório"
+   "Emita poluentes dentro das normas"
+else 
+   "Emita poluentes fora das normas"
 ```
 O que você faria se seu chefe pedisse para escrever um *if* como o
 acima? (para mais informações sobre esse episódio com automóveis

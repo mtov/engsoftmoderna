@@ -12,7 +12,7 @@ Como resultado, preparei mais de 600 slides, que considero conter o principal ma
 
 Assim, surgiu a ideia de transformar os slides em livro, que pudesse desempenhar o papel do sonhado livro texto, já visando futuras ofertas da disciplina. E que fosse útil também para outros professores, que devem enfrentar problemas semelhantes ao meu, quando têm que ministrar um curso de Engenharia de Software. 
 
-Gostaria, então, de destacar os seguintes pontos sobre o conteúdo e organização do livro:
+Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organização e a estratégia usada na escrita do livro:
 
 * Ele foi escrito para ser um livro moderno, com ênfase em técnicas e princípios que são largamente usados na construção de software nos dias de hoje. 
 
@@ -28,33 +28,39 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo e organizaç
 
 * Cada vez mais, engenheiros de software têm que escrever código. Hoje, há pouco espaço para dizer que eu não preciso programar, pois sou arquiteto ou analista. Por isso, nos capítulos de projeto, testes e refatoração procuramos seguir a recomendação de Linus Torvalds (criador do Linux): "falar é fácil, mas mostre-me o código". Assim, esses capítulos incluem dezenas de exemplos de código, que simulam problemas e soluções típicos de sistemas reais.
 
-* Ao longo da escrita, procuramos praticar o que enfatizamos no livro, principalmente no que diz respeito à prevalência atual de métodos de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios ágeis. Cada capítulo foi tratado com sendo um sprint; uma vez pronto, ele foi disponibilizado para uso, para receber críticas e sugestões. Como ocorre com software, acho arriscado, nos dias de hoje, passar anos escrevendo um manuscrito, trancado em minha sala, para só então torná-lo público. Outra prática ágil que se mostrou muito interessante foi deployment contínuo, isto é, toda atualização, em qualquer capítulo, era imediatamente propagada para a versão Web do livro.
+* Ao longo da escrita, procuramos praticar o que enfatizamos no livro, principalmente no que diz respeito à prevalência atual de métodos de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios ágeis. Cada capítulo foi tratado com sendo um sprint; uma vez pronto, ele foi disponibilizado para uso, para receber críticas e sugestões. Como ocorre com software, acho arriscado, nos dias de hoje, passar anos escrevendo um manuscrito, trancado em minha sala, para só então torná-lo público. 
+
+<!--
+Outra prática ágil que se mostrou muito interessante foi deployment contínuo, isto é, toda atualização, em qualquer capítulo, era imediatamente propagada para a versão Web do livro.
+-->
 
 ## Público Alvo {.unnumbered}
 
-O livro se destina a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
+O livro destina-se a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
 
-Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem bastante clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro.
-
-Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software. De forma nenhuma, este é um livro descolado do estado da prática em Engenharia de Software.
+Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro. Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software. De forma nenhuma, este é um livro descolado do estado da prática em Engenharia de Software.
 
 ## Pré-requisitos {.unnumbered}
 
-Espera-se que os leitores tenham domínio de conceitos básicos de programação e algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Idealmente, supondo um curso de graduação de 4 anos, os alunos devem estar na metade final do curso para que possam aproveitar os conceitos e métodos tratados no livro.
+Espera-se que os leitores tenham domínio de conceitos básicos de programação e de algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Supondo um curso de graduação de 4 anos, os alunos devem estar na metade final para que possam aproveitar o conteúdo do livro.
 
-## Próximos Passos {.unnumbered}
+## Website {.unnumbered}
 
-Até o presente momento, temos 9 capítulos prontos, de um total previsto de 10 capítulos. Logo, estamos perto de terminar! Para conhecer esses capítulos, recomendamos consultar a última seção do Capítulo 1, onde apresentamos a estrutura do livro. 
-
-Vamos sempre manter uma versão aberta do livro, em HTML, no endereço:
+O livro  possui uma versão online, em HTML, disponível em:
 
 [https://engsoftmoderna.info](https://engsoftmoderna.info/)
 
-Mas também pretendemos, em algum momento, ter uma versão em papel.
+Nesse site, estão também disponíveis diversos exercícios de múltipla escolha e alguns
+roteiros de aula prática.
 
+Não menos importante: para reportar qualquer erro, mesmo que um simples erro ortográfico, você pode usar este [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7).
+
+\vspace{0.8cm}
 Marco Tulio Valente
 
-Belo Horizonte, 11 de novembro de 2019.
+Belo Horizonte, 23 de janeiro de 2020.
+
+\newpage
 
 ## Sobre o Autor {.unnumbered}
 

@@ -15,18 +15,23 @@
 
 \usepackage{listings}
 \usepackage{xcolor}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+%\definecolor{backcolor}{rgb}{0.96,0.96,0.96}
+\definecolor{backcolor}{gray}{0.95}
+
 \lstdefinestyle{mystyle}{
    aboveskip=0.25in,
    language=java,
    basicstyle=\footnotesize\ttfamily\upshape,
    commentstyle=\footnotesize\ttfamily\upshape,
-   backgroundcolor=\color{backcolour},
+   %backgroundcolor=\color{backcolor},
    keywordstyle=\color{blue},
    frame=single,
-   xrightmargin=0.25in,
-   xleftmargin=0.25in,
-   showstringspaces=false
+   xrightmargin=0.2in,
+   xleftmargin=0.2in,
+   showstringspaces=false,
+   extendedchars=true,
+   literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {ú}{{\'u}}1 {ó}{{\'o}}1 {í}{{\'i} }1 {ê}{{\^e}}1
 }
 \lstset{style=mystyle}
 
@@ -41,7 +46,7 @@
 
 \renewenvironment{quote}{\centering \vspace{1.5ex} \begin{tcolorbox}[colback=green!7!white, width=5.31in]}{\end{tcolorbox}}
 
-\newenvironment{esmbox}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=gray!7!white, width=5.31in]}{\end{tcolorbox} \vspace{1.5ex}}
+\newenvironment{esmbox}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=backcolor, width=5.31in]}{\end{tcolorbox} \vspace{1.5ex}}
 
 \newenvironment{aviso}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=yellow!10!white, , width=5.31in]}{\end{tcolorbox} \vspace{1.5ex}}
 
@@ -58,3 +63,4 @@
     \endorigfigure
 }
 
+\AtBeginDocument{\let\maketitle\relax}
