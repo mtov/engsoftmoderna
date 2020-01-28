@@ -246,21 +246,30 @@ Mostra-se a seguir um exemplo de caso de uso, referente a um sistema bancário, 
 >
 > **Fluxo normal:**
 >
-> 1. Autenticar Cliente
-> 2. Cliente informa agência e conta de destino da transferência
-> 3. Ciente informa valor que deseja transferir
-> 4. Cliente informa a data em que pretende realizar a operação
-> 5. Sistema efetua transferência
-> 6. Sistema pergunta se o cliente deseja realizar uma nova transferência
+> 1 - \underline{Autenticar Cliente}
+>
+> 2 - Cliente informa agência e conta de destino da transferência
+>
+> 3 - Ciente informa valor que deseja transferir
+>
+> 4 - Cliente informa a data em que pretende realizar a operação
+>
+> 5 - Sistema efetua transferência
+>
+> 6 - Sistema pergunta se o cliente deseja realizar uma nova transferência
 >
 >
 > **Extensões:**    
 >        
-> 2. a. Se conta e agência incorretas, solicitar nova conta e agência
-> 3. a. Se valor acima do saldo atual, solicitar novo valor
-> 4. a. Data informada deve ser a data atual ou no máximo um ano a frente
-> 5. a. Se data informada é a data atual, transferência é imediata
-> 5. b. Se data informada é uma data futura, sistema agenda transferência
+> 2a - Se conta e agência incorretas, solicitar nova conta e agência
+>
+> 3a - Se valor acima do saldo atual, solicitar novo valor
+>
+> 4a - Data informada deve ser a data atual ou no máximo um ano a frente
+>
+> 5a - Se data informada é a data atual, transferir imediatamente
+>
+> 5b - Se data informada é uma data futura, agendar transferência
 
 Vamos agora detalhar alguns pontos pendentes sobre casos de uso, usando o exemplo anterior. Primeiro, todo caso de uso deve ter um nome, cuja primeira palavra deve ser um verbo no infinitivo. Em seguida, ele deve informar o ator principal do caso de uso. Um caso de uso pode também incluir um outro caso de uso. No nosso exemplo, o passo 1 do fluxo normal inclui o caso de uso "autenticar cliente". A sintaxe para tratar inclusões é simples: menciona-se o nome do caso de uso a ser incluído, que deve estar sublinhado. A semântica também é clara: todos os passos do caso de uso incluído devem ser executados antes de prosseguir. Ou seja, a semântica é a mesma de macros em linguagens de programação.
 
@@ -397,7 +406,7 @@ Para rodar testes A/B, precisamos também de uma métrica para medir os ganhos o
 
 Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo este trecho de código:
 
-```java
+```
 version = Math.Random(); // número aleatório entre 0 e 1
 if (version < 0.5)
    "execute a versão de controle"
@@ -453,8 +462,7 @@ Jake Knapp, John Zeratsky, Braden Kowitz. Sprint: How to Solve Big Problems and 
 
 Ian Sommerville. Engenharia de Software. Pearson, 10a edição, 2019.
 
-Hans van Vliet. Software Engineering: Principles and Practice. 3rd
-Edition. Wiley, 2008.
+Hans van Vliet. Software Engineering: Principles and Practice. Wiley, 2008.
 
 ## Exercícios de Fixação {.unnumbered}
 
@@ -504,7 +512,7 @@ recomendáveis.
 8\. Escreva um caso de uso para um Sistema de Controle de Bibliotecas
 (similar ao que usamos para ilustrar a escrita de histórias).
 
-9\. O seguinte caso de uso possui apenas o fluxo normal. Escreva algumas
+9\. O seguinte caso de uso tem apenas o fluxo normal. Escreva
 extensões para ele.
 
 
@@ -543,4 +551,8 @@ extensões para ele.
 (c) Elabore um rascunho rápido da sua interface com o usuário. 
 (d) Quais métricas você usaria para medir o sucesso/fracasso do MVP?
 
-15\. Suponha que você seja responsável por um sistema de comércio eletrônico. Suponha que na versão atual desse sistema (versão A) a mensagem do carrinho de compra seja "Adicionar ao Carrinho". Suponha que você pretenda fazer um teste A/B testando a mensagem alternativa "Compre Já", a qual vai corresponder à versão B do teste. (1) Qual seria a métrica usada como taxa de conversão nesse teste? (2) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder à segunda questão, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
+15\. Suponha que você seja responsável por um sistema de comércio eletrônico. Suponha que na versão atual desse sistema (versão A) a mensagem do carrinho de compra seja "Adicionar ao Carrinho". Suponha que você pretenda fazer um teste A/B testando a mensagem alternativa "Compre Já", a qual vai corresponder à versão B do teste. 
+
+(a) Qual seria a métrica usada como taxa de conversão nesse teste? 
+
+(b) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder a essa questão, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
