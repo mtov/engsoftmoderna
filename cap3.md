@@ -1,3 +1,4 @@
+
 # Requisitos
 
 > *The hardest single part of building a software system is deciding precisely what to build.* -- Frederick Brooks
@@ -113,7 +114,7 @@ Documentos de requisitos tradicionais, como aqueles produzidos quando se usa Wat
 
 Os profissionais da indústria que propuseram métodos ágeis perceberam  —  ou sofreram com  —  tais problemas e propuseram uma técnica pragmática para solucioná-los, que ficou conhecida pelo nome de **Histórias de Usuários**. Conforme sugerido por Ron Jeffries em um livro sobre desenvolvimento ágil ([link](https://dl.acm.org/citation.cfm?id=557459)), uma história de usuário é composta de três partes, todas começando com a letra C e que vamos documentar usando a seguinte equação:
 
-História de Usuário = Cartão + Conversas + Confirmação
+> História de Usuário = Cartão + Conversas + Confirmação
 
 A seguir, exploramos cada uma dessas partes de uma história:
 
@@ -121,7 +122,7 @@ A seguir, exploramos cada uma dessas partes de uma história:
 
 * **Conversas** entre clientes e desenvolvedores, por meio das quais os clientes explicam e detalham o que escreveram em cada cartão. Como dito antes, a visão de métodos ágeis sobre Engenharia de     Requisitos é pragmática: como especificações textuais e completas de requisitos não funcionam, elas foram eliminadas e substituídas por comunicação verbal entre desenvolvedores e clientes. Por isso, métodos ágeis  —  conforme estudamos no Capítulo 2  —  incluem  nos times de desenvolvimento um representante dos clientes, que participa do time em tempo integral.
 
-* **Confirmação**, que é basicamente um teste de alto nível  —  de novo especificado pelo cliente  —  para verificar se a história foi implementada conforme esperado. Portanto, não se trata de um teste automatizado, como um teste de unidades, por exemplo. Mas a descrição dos cenários, exemplos e casos de teste que o cliente irá usar para confirmar a implementação da história. Por isso, são também chamados de **testes de aceitação** de histórias. Eles devem ser escritos o quanto antes, preferencialmente logo no início de uma iteração. Alguns autores recomendam escrevê-los no verso dos cartões da história.
+* **Confirmação**, que é basicamente um teste de alto nível  —  de novo especificado pelo cliente  —  para verificar se a história foi implementada conforme esperado. Portanto, não se trata de um teste automatizado, como um teste de unidades, por exemplo. Mas a descrição dos cenários, exemplos e casos de teste que o cliente irá usar para confirmar a implementação da história. Por isso, são também chamados de **testes de aceitação** de histórias. Eles devem ser escritos o quanto antes, preferencialmente no início de uma iteração. Alguns autores recomendam escrevê-los no verso dos cartões da história.
 
 Portanto, especificações de requisitos por meio de histórias não consistem apenas de duas ou três sentenças, como alguns críticos de métodos ágeis podem afirmar. A maneira correta de interpretar uma história de usuário é a seguinte: a história que se escreve no cartão é um lembrete do representante dos clientes para os desenvolvedores. Por meio dele, o representante dos clientes declara que gostaria de ver um determinado requisito funcional implementado na próxima iteração (ou sprint). Mais ainda, durante todo o sprint ele se compromete a estar disponível para refinar a história e explicá-la para os desenvolvedores. Por fim, ele também se compromete a considerar a história implementada desde que ela satisfaça os testes de confirmação que ele mesmo especificou.
 
@@ -143,7 +144,7 @@ Boas histórias devem possuir as seguintes características (cujas iniciais em i
 
 * Histórias devem ser **testáveis**, isto é, elas devem ter critérios de aceitação objetivos. Como exemplo, podemos citar: "o cliente pode pagar com cartões de crédito". Uma vez definidas as bandeiras de cartões de crédito que serão aceitas, essa história é testável. Por outro lado, a seguinte história é um contra-exemplo: "um cliente não deve esperar muito para ter sua compra confirmada". Essa é uma história vaga e, portanto, com um critério de aceitação também vago.
 
-Antes de começar a escrever histórias, recomenda-se pensar e listar os principais usuários que vão interagir com o sistema. Assim, evita-se que as histórias fiquem enviesadas e cubram as necessidades de apenas certos tipos de usuários. Definidos esses **papéis de usuários** (*user roles*), costuma-se escrever as histórias no seguinte modelo:
+Antes de começar a escrever histórias, recomenda-se listar os principais usuários que vão interagir com o sistema. Assim, evita-se que as histórias fiquem enviesadas e atendam às necessidades de apenas certos usuários. Definidos esses **papéis de usuários** (*user roles*), costuma-se escrever as histórias no seguinte formato:
 
 > Como um [papel de usuário], eu gostaria de [realizar algo com o sistema]
 
@@ -177,7 +178,7 @@ Em seguida, mostramos as histórias propostas por professores. É importante men
 >
 > Como professor, eu gostaria de doar livros para a biblioteca
 >
-> Como professor, eu gostaria de devolver livros em outras bibliotecas da universidade
+> Como professor, eu gostaria de devolver livros em outras bibliotecas
 
 Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, durante o workshop de escrita de histórias. Veja que, geralmente, são histórias relacionadas com a organização da biblioteca e também para garantir o seu bom funcionamento.
 
@@ -185,9 +186,9 @@ Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, du
 >
 > Como funcionário da biblioteca, eu gostaria de cadastrar novos livros
 >
-> Como funcionário da biblioteca, eu gostaria de dar baixa em livros que estão estragados
+> Como funcionário da biblioteca, eu gostaria de dar baixa em livros estragados
 >
-> Como funcionário da biblioteca, eu gostaria de obter estatísticas sobre o acervo atual
+> Como funcionário da biblioteca, eu gostaria de obter estatísticas sobre o acervo
 >
 > Como funcionário da biblioteca, eu gostaria que o sistema envie e-mails de cobrança para alunos com empréstimos atrasados
 >
@@ -233,7 +234,7 @@ vamos responder algumas perguntas sobre histórias de usuários:
 
 **Casos de uso** (*use cases*) são documentos textuais de especificação de requisitos. Como veremos nesta seção, eles incluem descrições mais detalhadas do que histórias de usuário. Recomenda-se que casos de uso sejam escritos na fase de Especificação de Requisitos, considerando que estamos seguindo um processo de desenvolvimento do tipo Waterfall. Eles são escritos pelos próprios desenvolvedores do sistema  —  às vezes, chamados de Engenheiros de Requisitos durante essa fase do desenvolvimento. Para isso, os desenvolvedores podem se valer, por exemplo, de entrevistas com os usuários do sistema. Apesar de escritos pelos desenvolvedores, casos de uso podem ser lidos, entendidos e validados pelos usuários, antes de as fases de design e implementação terem início.
 
-Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema para realizar um determinado objetivo. Tipicamente, esse ator é um usuário humano (embora, mais raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o importante é que os atores sejam entidades externas ao sistema.
+Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema com um determinado objetivo. Tipicamente, esse ator é um usuário humano (embora, raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o importante é que os atores sejam entidades externas ao sistema.
 
 Explicando com mais detalhes, um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o **fluxo normal** de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário onde tudo dá certo, às vezes chamado também de "fluxo feliz". Já a segunda lista inclui **extensões ao fluxo normal**, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos  —  normal e extensões  —  serão posteriormente implementados no sistema.
 
@@ -293,7 +294,7 @@ No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto,
 
 Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é mostrado a seguir. Nele estão representados dois atores: Cliente e Gerente. Cliente participa dos seguintes casos de uso: Sacar Dinheiro e Transferir Valores. E Gerente é o ator principal do caso de uso Abrir Conta. O diagrama também deixa explícito que Transferir Valores inclui o caso de uso Autenticar Cliente. Por fim, veja que os casos de uso são representados dentro de um retângulo, que delimita as fronteiras do sistema. Os dois atores são representados fora dessa fronteira.
 
-![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=60%}
+![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=76%}
 
 ```{=latex}
 \begin{esmbox}
@@ -307,13 +308,13 @@ Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é 
 
 Vamos responder agora duas perguntas sobre casos de uso.
 
-**Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Um resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações (sprints) e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
+**Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Um resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
 **Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 90, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP). Mais especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme afirmamos no Capítulo 2, métodos como o UP dão ênfase à comunicação escrita entre usuários e desenvolvedores, na forma de documentos como casos de uso.
 
 ## Produto Mínimo Viável (MVP)
 
-O conceito de MVP foi popularizado no livro **Lean Startup**, de Eric Ries ([link](https://isbnsearch.org/isbn/0307887898)). Por sua vez, o conceito de Lean Startup é inspirado nos princípios de Manufatura Lean, desenvolvidos por fabricantes japoneses de automóveis, como a Toyota, desde o início dos anos 50. Já comentamos sobre Manufatura Lean no Capítulo 2, pois o processo de desenvolvimento Kanban também foi adaptado de princípios de gerenciamento de produção originados do que ficou conhecido depois como Manufatura Lean. Um dos princípios de Manufatura Lean recomenda eliminar desperdícios em uma linha de montagem ou cadeia de suprimentos. No caso de uma empresa de desenvolvimento de software, o maior desperdício que pode existir é passar anos levantando requisitos e implementando um sistema que depois não vai ser usado, pois ele resolve um problema que não interessa mais a seus usuários. Em outras palavras, se é para um sistema falhar  —  por não ter sucesso, usuários, mercado, etc  —  é melhor falhar rapidamente, pois o desperdício de recursos será menor.
+O conceito de MVP foi popularizado no livro **Lean Startup**, de Eric Ries ([link](https://isbnsearch.org/isbn/0307887898)). Por sua vez, o conceito de Lean Startup é inspirado nos princípios de Manufatura Lean, desenvolvidos por fabricantes japoneses de automóveis, como a Toyota, desde o início dos anos 50. Já comentamos sobre Manufatura Lean no Capítulo 2, pois o processo de desenvolvimento Kanban também foi adaptado de princípios de gerenciamento de produção originados do que ficou conhecido depois como Manufatura Lean. Um dos princípios de Manufatura Lean recomenda eliminar desperdícios em uma linha de montagem ou cadeia de suprimentos. No caso de uma empresa de desenvolvimento de software, o maior desperdício que pode existir é passar anos levantando requisitos e implementando um sistema que depois não vai ser usado, pois ele resolve um problema que não interessa mais a seus usuários. Portanto, se é para um sistema falhar  —  por não ter sucesso, usuários ou mercado  —  é melhor falhar rapidamente, pois o desperdício de recursos será menor.
 
 Sistemas de software que não atraem interesse podem ser produzidos por qualquer empresa. No entanto, eles são mais comuns em **startups**, pois por definição elas são empresas que operam em ambientes de grande incerteza. No entanto, Eric Ries também lembra que a definição de startup não restringe-se a uma empresa formada por dois universitários que desenvolvem em uma garagem um novo produto de sucesso instantâneo. Segundo ele, "qualquer pessoa que está criando um novo produto ou negócio sob condições de extrema incerteza é um empreendedor, quer saiba ou não, e quer trabalhe em uma entidade governamental, em uma empresa apoiada por capital de risco, em uma organização sem fins lucrativos ou em uma empresa com investidores financeiros decididamente voltada para o lucro."
 
@@ -327,25 +328,25 @@ Lean startup propõe um método sistemático e científico para construção e v
 
 O aprendizado obtido com um MVP pode resultar em três decisões:
 
-* Pode-se concluir que ainda são necessários mais testes com o MVP, possivelmente alterando seu conjunto de requisitos, sua interface com os usuários ou o mercado alvo. Nesse caso, repete-se o ciclo, voltando para o passo construir.
+* Pode-se concluir que ainda são necessários mais testes com o MVP, possivelmente alterando seu conjunto de requisitos, sua interface com os usuários ou o mercado alvo. Logo, repete-se o ciclo, voltando para o passo construir.
 
-* Pode-se concluir que o teste foi bem sucedido e que achou-se um mercado para o sistema (um *market fit*). Neste caso, é hora de investir mais recursos, para implementar um sistema com um conjunto mais robusto e completo de features.
+* Pode-se concluir que o teste foi bem sucedido e que achou-se um mercado para o sistema (um *market fit*). Neste caso, é hora de investir mais recursos, para implementar um sistema com um conjunto mais robusto e completo de funcionalidades.
 
 * Por fim, pode-se concluir que que o MVP falhou, após várias tentativas. Nesse caso, restam duas alternativas: (1) perecer, isto é, desistir do empreendimento, principalmente se não existirem mais recursos financeiros para mantê-lo vivo; ou (2) realizar um **pivô**, isto é, abandonar a visão original e tentar um novo MVP, com novos requisitos e para um novo mercado, mas sem esquecer o que se aprendeu com o MVP anterior.
 
 Ao tomar as decisões acima, um risco é usar apenas **métricas de vaidade** (*vanity metrics*). Essas são métricas superficiais que fazem bem para o ego dos desenvolvedores e gerentes de produto, mas que não ajudam a entender e aprimorar uma estratégia de mercado. O exemplo clássico é o número de pageviews em um site de comércio eletrônico. Pode fazer muito bem dizer que o site atrai milhões de clientes por mês, mas somente isso não vai ajudar a pagar as contas do empreendimento. Por outro lado, métricas que ajudam a tomar decisões sobre o futuro de um MVP são chamadas de **métricas acionáveis** (*actionable metrics*). No caso de um sistema de comércio eletrônico, essas métricas incluiriam o percentual de visitantes que fecham compras, o valor de cada ordem de compra, o número de itens comprados, o custo de captação de novos clientes, etc. Ao monitorar essas métricas, pode-se concluir, por exemplo, que a maioria dos clientes compra apenas um item ao fechar uma compra. Como resultado concreto  —  ou acionável  —  pode-se decidir incorporar um sistema de recomendação ao site ou, então, investigar o uso de um sistema de recomendação mais eficiente. Tais sistemas, dada uma compra em andamento, são capazes de sugerir novos itens para serem comprados. Assim, eles têm o potencial de incrementar o número de itens comprados em uma mesma transação.
 
-Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar também **métricas de funil** (*funnel metrics*), que capturam o nível de interação dos usuários com um sistema. Por exemplo, um "funil" pode incluir as seguintes métricas:
+Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar também **métricas de funil** (*funnel metrics*), que capturam o nível de interação dos usuários com um sistema. Um "funil" pode incluir as seguintes métricas:
 
 * Aquisição: número de clientes que visitaram o seu sistema.
 
-* Ativação: número de clientes que, por exemplo, criaram uma conta no sistema.
+* Ativação: número de clientes que criaram uma conta no sistema.
 
-* Retenção: número de clientes que retornaram ao sistema, após criarem uma conta.
+* Retenção: clientes que retornaram ao sistema, após criarem uma conta.
 
-* Receita: número de clientes que fizeram uma compra e, portanto, geraram receita.
+* Receita: número de clientes que fizeram uma compra.
 
-* Recomendação: número de clientes que recomendaram o sistema para outros clientes.
+* Recomendação: clientes que recomendaram o sistema para terceiros.
 
 ### Exemplos de MVP
 
@@ -368,7 +369,7 @@ Para finalizar, vamos responder algumas perguntas sobre MVPs.
 
 **Qual a diferença entre MVPs e prototipação?** Prototipação é uma técnica conhecida em Engenharia de Software para elicitação e validação de requisitos. A diferença entre protótipos e MVPs está nas três letras da sigla, isto é, tanto no M, como no V e no P. Primeiro, protótipos não são necessariamente sistemas mínimos. Por exemplo, eles podem incluir toda a interface de um sistema, com milhares de funcionalidades. Segundo, protótipos não são necessariamente implementados para testar a viabilidade de um sistema junto aos seus usuários finais. Por exemplo, eles podem ser construídos para demonstrar o sistema apenas para os executivos de uma empresa contratante. Por isso mesmo, eles também não são produtos.
 
-**Um MVP é um produto de baixa qualidade?** Essa pergunta é mais complexa de ser respondida. Porém, é verdade que um MVP deve ter apenas a qualidade mínima necessária para avaliar um conjunto de hipóteses de negócio. Por exemplo, o código de um MVP não precisa ser de fácil manutenção e usar os mais modernos padrões de design e frameworks de desenvolvimento, pois pode ser que o produto se mostre inviável e seja descartado. Na verdade, em um MVP, qualquer nível de qualidade a mais do que o necessário para iniciar o laço construir-medir-aprender é considerado desperdício. Por outro lado, é importante que a qualidade de um MVP não seja tão ruim a ponto de impactar negativamente a experiência do usuário. Por exemplo, um MVP hospedado em um servidor Web com problemas de disponibilidade pode dar origem a resultados chamados de falsos negativos. Eles ocorrem quando a hipótese de negócio é falsamente invalidada. No nosso exemplo, o motivo do insucesso não estaria no MVP, mas sim no fato de os usuários não conseguirem acessar o sistema, pois o servidor Web frequentemente estava fora do ar.
+**Um MVP é um produto de baixa qualidade?** Essa pergunta é mais complexa de ser respondida. Porém, é verdade que um MVP deve ter apenas a qualidade mínima necessária para avaliar um conjunto de hipóteses de negócio. Por exemplo, o código de um MVP não precisa ser de fácil manutenção e usar os mais modernos padrões de design e frameworks de desenvolvimento, pois pode ser que o produto se mostre inviável e seja descartado. Na verdade, em um MVP, qualquer nível de qualidade a mais do que o necessário para iniciar o laço construir-medir-aprender é considerado desperdício. Por outro lado, é importante que a qualidade de um MVP não seja tão ruim a ponto de impactar negativamente a experiência do usuário. Por exemplo, um MVP hospedado em um servidor Web com problemas de disponibilidade pode dar origem a resultados chamados de falsos negativos. Eles ocorrem quando a hipótese de negócio é falsamente invalidada. No nosso exemplo, o motivo do insucesso não estaria no MVP, mas sim no fato de os usuários não conseguirem acessar o sistema, pois o servidor frequentemente estava fora do ar.
 
 ### Construindo o Primeiro MVP
 
@@ -394,17 +395,17 @@ Para aplicar testes A/B, precisamos de duas versões de um sistema, que vamos ch
 
 Para rodar testes A/B, precisamos também de uma métrica para medir os ganhos obtidos com a versão de tratamento. Essa métrica é genericamente chamada de **taxa de conversão**. No nosso exemplo, vamos assumir que ela é o percentual de visitas que se convertem em compra por meio de links recomendados. A expectativa é que o novo algoritmo de recomendação aumente esse percentual.
 
-Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é muito importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo o seguinte trecho de código:
+Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo este trecho de código:
 
 ```java
 version = Math.Random(); // número aleatório entre 0 e 1
 if (version < 0.5)
-    "execute a versão de controle"
+   "execute a versão de controle"
 else                                                 
-    "execute a versão de tratamento"
+   "execute a versão de tratamento"
 ```
 
-Após um certo número de acessos, o teste é encerrado e verificamos se a versão de tratamento, de fato, aumentou a taxa de conversão de usuários. Se sim, passaremos a usar essa versão em todos os clientes. Se não, continuaremos com a versão de controle.
+Após um certo número de acessos, o teste é encerrado e verificamos se a versão de tratamento, de fato, aumentou a taxa de conversão de usuários. Se sim, passaremos a usá-la em todos os clientes. Se não, continuaremos com a versão de controle.
 
 Uma questão fundamental em testes A/B é a determinação do tamanho da amostra. Em outras palavras, quantos clientes deveremos testar com cada uma das versões. Não iremos nos aprofundar na Estatística desse cálculo, pois ela está fora do escopo do livro. Além disso, existem calculadoras de tamanho de amostras de testes A/B disponíveis na Web. No entanto, gostaríamos de mencionar que os testes podem demandar um número extremamente elevado de clientes, que somente estão ao alcance de sistemas populares, como grandes lojas de comércio eletrônico, serviços de busca, redes sociais, portais de notícias, etc. Para dar um exemplo, suponha que a taxa de conversão de clientes seja de 1% e que desejamos verificar se o tratamento introduz um ganho mínimo de 10% nessa taxa. Nesse caso, os grupos de controle e de tratamento devem possuir no mínimo 200 mil clientes, cada um, para que os resultados do teste tenham relevância estatística, considerando um nível de significância de 95%. Sendo um pouco mais claro:
 
@@ -431,11 +432,11 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 ```
 **Mundo Real**: Testes A/B são usados por todas as grandes empresas da Internet. A seguir, reproduzimos depoimentos de desenvolvedores e cientistas de três empresas sobre esses testes:
 
-No Facebook, "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). \... Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+* No Facebook, "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). \... Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
-Na Netflix, "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
+* Na Netflix, "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
 
-Na Microsoft, especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
+* Na Microsoft, especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
 ```{=latex}
 \end{esmbox}
 ```
@@ -491,7 +492,7 @@ Pense agora em mais um papel de usuário e escreva pelo menos duas
 histórias para ele.
 
 5\. Em Engenharia de Software, anti-patterns são soluções não
-recomendadas para um certo problema. Escreva pelo menos 5 anti-patterns
+recomendadas para um certo problema. Escreva pelo menos cinco anti-patterns
 para histórias de usuário. Em outras palavras, descreva formatos de
 histórias que não são recomendados ou que não possuem propriedades
 recomendáveis.
@@ -533,12 +534,12 @@ extensões para ele.
 
 12\. O artigo *Failures to be celebrated: an analysis of major pivots of software startups* ([link](https://arxiv.org/abs/1710.04037)) apresenta uma discussão sobre quase 50 casos reais de pivôs em startups da área de software. Na Seção 2.3, o artigo apresenta uma classificação de dez tipos de pivô comuns nessas startups. Leia essa parte do artigo, liste pelo menos cinco tipos de pivôs e faça uma breve descrição de cada um deles.
 
-13\. Quando começou, a EasyTaxi  —  a empresa brasileira de aplicativos para solicitação de táxis  —  construiu um MVP que usava um software muito simples e uma parte operacional realizada de forma manual. Pesquise na Internet sobre esse MVP (basta usar as palavras EasyTaxi e MVP no Google) e faça uma descrição do mesmo.
+13\. Quando começou, a EasyTaxi  —  a empresa brasileira de aplicativos para solicitação de táxis  —  construiu um MVP que usava um software muito simples e uma parte operacional realizada de forma manual. Pesquise na Internet sobre esse MVP (basta usar as palavras EasyTaxi e MVP) e faça uma descrição do mesmo.
 
 14\. Suponha que estamos em 2008, quando ainda não existia Spotify, e você decidiu criar uma startup para oferecer um serviço de streaming de músicas na Internet. Então, como primeiro passo, você decidiu começar com um MVP. 
 
-(a) Quais seriam as features desse MVP? 
-(b) Ele seria desenvolvido para quais plataformas de hardware e sistemas operacionais? 
+(a) Quais seriam as principais funcionalidades desse MVP? 
+(b) Ele seria desenvolvido para qual hardware e sistema operacional? 
 (c) Elabore um rascunho rápido da sua interface com o usuário. 
 (d) Quais métricas você usaria para medir o sucesso/fracasso do MVP?
 

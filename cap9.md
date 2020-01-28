@@ -1590,7 +1590,7 @@ renomeação de método. Quais as vantagens de se realizar refactorings com
 o suporte de IDEs?
 
 10\. Use uma IDE para testar o exemplo de Movimentação de Classe
-discutido no parágrafo de aprofundamento da Seção 9.4.1 (isto é, o exemplo
-com classes A e B e pacotes P1 e P2). Se realizar a Movimentação de
+discutido na Seção 9.4.1, isto é, o exemplo
+com classes `A` e `B` e pacotes `P1` e `P2`. Se realizar a Movimentação de
 Classe discutida nesse exemplo via IDE, ocorrerá algum erro? Se sim,
 descreva o erro detectado pela IDE.
