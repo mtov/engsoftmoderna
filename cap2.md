@@ -723,7 +723,7 @@ uma diferença entre analistas e programadores. Analistas eram
 encarregados de elaborar o projeto em alto nível de um sistema,
 definindo seus principais componentes, classes e interfaces. Para isso,
 recomendava-se o uso de uma linguagem de modelagem gráfica, como UML,
-que veremos em um dos próximos capítulos desse livro. Concluída a fase
+que veremos no Capítulo 4 deste livro. Concluída a fase
 de análise e projeto, começava a fase de codificação, que ficava a cargo
 dos programadores. Assim, na prática, existia uma hierarquia nesses
 papéis, sendo o papel de analista o de maior prestígio. Métodos ágeis
@@ -855,10 +855,9 @@ preferem parear com uma pessoa que o ajude a superar seus pontos fracos.
 Mais recentemente, diversas empresas passaram a adotar a prática de
 **revisão de código**. A ideia é que todo código produzido por um
 desenvolvedor tem que ser revisado e comentado por um outro
-desenvolvedor, porém de forma offline e assíncrona. Ou seja, nesses
-casos, o revisor não trabalha fisicamente ao lado do líder. Iremos
-comentar mais sobre revisão de código no capítulo sobre Qualidade de
-Software.
+desenvolvedor, porém de forma *offline* e assíncrona. Ou seja, nesses
+casos, o revisor não estará fisicamente ao lado do líder. 
+
 
 **Propriedade Coletiva do Código**. A ideia é que qualquer desenvolvedor
 — ou par de desenvolvedores trabalhando junto — pode modificar
@@ -879,8 +878,8 @@ esperadas. Essa prática prosperou porque, mais ou menos na mesma época
 de sua proposição, foram desenvolvidos os primeiros frameworks de testes
 de unidade — como o JUnit, cuja primeira versão, implementada por
 Kent Beck e Erich Gamma, é de 1997. No momento, não iremos estender a
-discussão sobre testes automatizados porque vamos ter um capítulo
-exclusivo para isso no livro.
+discussão sobre testes automatizados porque temos um capítulo
+exclusivo para isso no livro (Capítulo 8).
 
 **Desenvolvimento Dirigido por Testes (TDD).** Essa é outra prática de
 programação inovadora proposta por XP. A ideia é simples: se em XP todo
@@ -1105,8 +1104,8 @@ O **Dono do Produto** tem exatamente o mesmo papel do Representante dos
 Clientes em XP, por isso não vamos explicar de novo a sua função em
 detalhes. Mas ele, como o próprio nome indica, deve possuir a visão do
 produto que será construído, sendo responsável também por maximizar o
-retorno do investimento feito no projeto. Assim como em XP, cabe ao Dono
-do Produto escrever as histórias do usuário e, por isso, ele deve estar
+retorno do investimento feito no projeto. Como em XP, cabe ao Dono
+do Produto escrever as histórias dos usuários e, por isso, ele deve estar
 sempre disponível para tirar dúvidas do time.
 
 O **Scrum Master** é um papel característico e único de Scrum. Trata-se
@@ -1160,9 +1159,9 @@ descreveremos a seguir.
      todo método ágil, Scrum é um método iterativo, no qual o
      desenvolvimento é dividido em sprints, de até um mês. Ao final de
      um sprint, deve-se entregar um produto com valor tangível para o
-     cliente. O resultado de um sprint é frequentemente chamado de um
+     cliente. O resultado de um sprint é chamado de um
      produto potencialmente pronto para entrar em produção
-     (*potentially shippable product*). Lembre que o adjetivo potencial
+     (*potentially shippable product*). Lembre que o adjetivo "potencial"
      não torna a entrada em produção obrigatória, conforme discutido na
      Seção 2.2.
 
@@ -1232,60 +1231,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.
 
-![Exemplo de Gráfico de Burndown, assumindo um sprint com duração de 15 dias. O sprint foi bem sucedido, pois conseguiu-se implementar todas as tarefas previstas.](figs/cap2/burndown){width=65%}
-
-```{=latex}
-\begin{esmbox}
-```
-**Mundo Real**: Este livro está sendo escrito usando artefatos e
-eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
-autor que, em certa medida, desempenha todos os papéis previstos por
-Scrum. Logo no início do projeto, os capítulos do livro foram
-planejados, constituindo assim o Backlog do Produto. A escrita de cada
-capítulo é considerada como sendo um sprint. Na reunião de Planejamento
-do Sprint, define-se a divisão do capítulo em seções, que são
-equivalentes às tarefas. Então começa-se a escrita de cada capítulo,
-isto é, tem início um sprint. Via de regra, os sprints são planejados
-para ter uma duração de três meses. Para ficar mais claro, mostra-se a
-seguir o backlog do sprint atual, bem como o estado de cada tarefa,
-exatamente no momento em que se está escrevendo este parágrafo:
-
-+-----------------+----------------+----------------+----------------+
-| **História**    | **A fazer**    | **Em           | **Concluídas** |
-|                 |                | andamento**    |                |
-+=================+================+================+================+
-| Cap. 2 -        | Kanban         | Scrum          | Introdução     |
-| Processos de    |                |                |                |
-| Desenvolvimento | Quando não     |                | Manifesto Ágil |
-|                 | usar Métodos   |                |                |
-|                 | Ágeis          |                | XP             |
-|                 |                |                |                |
-|                 | Outros         |                |                |
-|                 | Processos      |                |                |
-|                 |                |                |                |
-|                 | Exercícios     |                |                |
-+-----------------+----------------+----------------+----------------+
-
-Decidiu-se adotar um método ágil para escrita do livro para minimizar os
-riscos de desenvolver um produto que não atenda às necessidades de
-nossos clientes, que, nesta primeira versão, são estudantes e
-professores brasileiros de disciplinas de Engenharia de Software,
-principalmente em nível de graduação. Assim, ao final de cada sprint, um
-capítulo é lançado e divulgado publicamente, de forma a receber
-feedback. Com isso, evita-se uma solução Waterfall, onde o livro seria
-escrito por cerca de dois anos, sem receber qualquer feedback.
-
-Para finalizar, vamos comentar sobre o critério para conclusão de um
-capítulo, ou seja, para definir que um capítulo está finalizado
-(*done*). Esse critério requer a leitura e revisão completa do capítulo,
-pelo autor do livro. Concluída essa revisão, o capítulo é divulgado
-preliminarmente para os membros do Grupo de Pesquisa em Engenharia de
-Software Aplicada, do DCC/UFMG.
-
-```{=latex}
-\end{esmbox}
-```
-
+![Gráfico de Burndown, assumindo um sprint com duração de 15 dias.](figs/cap2/burndown){width=65%}
 
 ### Outros Eventos
 
@@ -1304,12 +1250,10 @@ sério, isto é, um impedimento, na sua tarefa. Essas reuniões têm como
 objetivo melhorar a comunicação entre os membros do time, fazendo com
 que eles compartilhem e socializem o andamento do projeto. Por exemplo,
 dois desenvolvedores podem tomar ciência, durante a reunião diária, que
-eles vão começar a modificar o mesmo componente de código. Portanto,
+eles vão começar a modificar o mesmo trecho de código. Portanto,
 seria recomendável que eles se reunissem, separadamente do resto do
-time, para discutir as modificações que pretendem realizar. E, com isso,
+time, para discutir essas modificações. E, com isso,
 minimizar as chances de possíveis conflitos de integração.
-
-
 
 A **Revisão do Sprint** *(Sprint Review*) é uma reunião para mostrar os
 resultados de um sprint. Dela devem participar todos os membros do time
@@ -1361,6 +1305,56 @@ sugerido deve ser também menor.
   Reunião Diária           15 minutos
   Revisão do Sprint        máximo de 4 horas
   Retrospectiva            máximo de 3 horas
+
+### Exemplo: Escrita de um Livro
+
+Este livro está sendo escrito usando artefatos e
+eventos de Scrum. Claro que apenas alguns, pois o livro tem um único
+autor que, em certa medida, desempenha todos os papéis previstos por
+Scrum. Logo no início do projeto, os capítulos do livro foram
+planejados, constituindo assim o Backlog do Produto. A escrita de cada
+capítulo é considerada como sendo um sprint. Na reunião de Planejamento
+do Sprint, define-se a divisão do capítulo em seções, que são
+equivalentes às tarefas. Então começa-se a escrita de cada capítulo,
+isto é, tem início um sprint. Via de regra, os sprints são planejados
+para ter uma duração de três meses. Para ficar mais claro, mostra-se a
+seguir o backlog do sprint atual, bem como o estado de cada tarefa,
+exatamente no momento em que se está escrevendo este parágrafo:
+
++-----------------+----------------+----------------+----------------+
+| **História**    | **A fazer**    | **Em           | **Concluídas** |
+|                 |                | andamento**    |                |
++=================+================+================+================+
+| Cap. 2 -        | Kanban         | Scrum          | Introdução     |
+| Processos de    |                |                |                |
+| Desenvolvimento | Quando não     |                | Manifesto Ágil |
+|                 | usar Métodos   |                |                |
+|                 | Ágeis          |                | XP             |
+|                 |                |                |                |
+|                 | Outros         |                |                |
+|                 | Processos      |                |                |
+|                 |                |                |                |
+|                 | Exercícios     |                |                |
++-----------------+----------------+----------------+----------------+
+
+Decidiu-se adotar um método ágil para escrita do livro para minimizar os
+riscos de desenvolver um produto que não atenda às necessidades de
+nossos clientes, que, nesta primeira versão, são estudantes e
+professores brasileiros de disciplinas de Engenharia de Software,
+principalmente em nível de graduação. Assim, ao final de cada sprint, um
+capítulo é lançado e divulgado publicamente, de forma a receber
+feedback. Com isso, evita-se uma solução Waterfall, onde o livro seria
+escrito por cerca de dois anos, sem receber qualquer feedback.
+
+
+Para finalizar, vamos comentar sobre o critério para conclusão de um
+capítulo, ou seja, para definir que um capítulo está finalizado
+(*done*). Esse critério requer a leitura e revisão completa do capítulo,
+pelo autor do livro. Concluída essa revisão, o capítulo é divulgado
+preliminarmente para os membros do Grupo de Pesquisa em Engenharia de
+Software Aplicada, do DCC/UFMG.
+
+
 
 
 ### Perguntas Frequentes
@@ -1435,13 +1429,13 @@ seguintes:
      eles vão trabalhar. Essa é uma decisão de mais alto nível e,
      portanto, tomada por gerentes.
 
-* Decidir os objetivos e responsabilidades de cada time, incluindo, o
+* Decidir os objetivos e responsabilidades de cada time, incluindo o
      sistema — ou parte de um sistema — que o time irá
      desenvolver usando Scrum. Por exemplo, um time não decide, por
      conta própria, que a organização precisa de um novo sistema de
      contabilidade e então começa a desenvolvê-lo. Essa é uma decisão
-     estratégica da organização, que é tomada pelos seus gerentes e
-     executivos.
+     estratégica, que cabe aos gerentes e
+     executivos da organização.
 
 * Gerenciar e administrar questões de recursos humanos, incluindo
      contratações de novos funcionários, desligamentos de funcionários,
@@ -1808,6 +1802,9 @@ Cada iteração, ou "volta completa" na espiral, inclui quatro etapas
      pois o que já foi construído é suficiente para atender às
      necessidades da organização.
 
+
+![Modelo Espiral. Cada iteração é dividida em quatro etapas.](figs/cap2/espiral.jpg){width=55%}
+
 Assim, o Modelo em Espiral produz, a cada iteração, versões mais
 completas de um sistema, começando da versão gerada no centro da
 espiral. Porém, cada iteração, somando-se as quatro fases, pode levar de
@@ -1816,7 +1813,6 @@ característica importante é a existência de uma fase explícita de
 análise de riscos, da qual devem resultar medidas concretas para mitigar
 os riscos identificados no projeto.
 
-![Modelo Espiral. Cada iteração é dividida em quatro etapas.](figs/cap2/espiral.jpg){width=55%}
 
 
 O **Processo Unificado (UP)**, proposto no final da década de 90, é
@@ -1870,7 +1866,7 @@ das fases. Por exemplo, construção — em uma dada iteração — pode
 ser dividida em duas sub-fases, cada uma construindo uma parte do
 produto. A próxima figura ilustra o modelo de iterações de UP.
 
-![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=60%}
+![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=70%}
 
 UP define também um conjunto de disciplinas de engenharia que incluem
 por exemplo: modelagem de negócios, definição de requisitos, análise e
@@ -1882,7 +1878,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=70%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=80%}
 
 ## Bibliografia {.unnumbered}
 
@@ -1977,7 +1973,7 @@ edição, 2014.
      uma margem de erro? Em outros palavras, quais eventos podem
      originar esses erros na estimativa dos WIPs?
 
-15. Seja um processo Kanban, dividido em quatro passos. A tabela abaixo
+15. Seja um processo Kanban, dividido em quatro passos. A tabela a seguir
      informa o *lead time* de cada um deles e o throughout do passo C,
      que é o passo mais lento. Com base nesses valores, calcule o WIP
      de cada passo (última coluna da tabela).
