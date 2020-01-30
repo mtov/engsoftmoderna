@@ -40,7 +40,7 @@ responsável por verificar se a implementação atendia aos requisitos do
 sistema. Para garantir isso, frequentemente os testes eram manuais, isto
 é, uma pessoa usava o sistema, informava dados de entrada e verificava
 se as saídas eram aquelas esperadas. Assim, o objetivo de tais testes
-era exclusivamente detectar bugs em um sistema, antes que ele entrasse
+era apenas detectar bugs, antes que o sistema entrasse
 em produção.
 
 Com métodos ágeis, a prática de testes de software foi profundamente
@@ -85,7 +85,7 @@ com sua granularidade.
 
 Particularmente, os testes são divididos em três grupos. **Testes de
 unidade** verificam automaticamente pequenas partes de um código,
-normalmente uma classe apenas (acompanhe também pela figura abaixo).
+normalmente uma classe apenas (acompanhe também pelas figuras da próxma página).
 Eles formam a base da pirâmide, ou seja, a maior parte dos testes estão
 nessa categoria. Testes de unidade são simples, mais fáceis de
 implementar e executam rapidamente. No próximo nível, temos **testes de
@@ -102,11 +102,11 @@ caros, mais lentos e menos numerosos. Testes de interface costumam ser
 também frágeis, isto é, mínimas alterações nos componentes da interface
 podem demandar modificações nesses testes.
 
-![Testes de unidade](figs/cap8/teste-unidade){width=25%}
+![Escopo de testes de unidade](figs/cap8/teste-unidade){width=25%}
 
-![Testes de integração](figs/cap8/teste-integracao){width=25%}
+![Escopo de testes de integração](figs/cap8/teste-integracao){width=25%}
 
-![Testes de sistema](figs/cap8/teste-sistema){width=25%}
+![Escopo de testes de sistema](figs/cap8/teste-sistema){width=25%}
 
 Uma recomendação genérica é que esses três testes sejam implementados na
 seguinte proporção: 70% como testes de unidades; 20% como testes de
@@ -163,14 +163,13 @@ desenvolvedores não precisam aprender uma nova linguagem de programação,
 pois os testes são implementados na mesma linguagem do sistema que
 pretende-se testar.
 
-Para explicar os conceitos básicos de testes de unidade, vamos nos
-basear na seguinte classe `Stack`:
+Para explicar os conceitos de testes de unidade, vamos usar a seguinte classe `Stack`:
 
 ```java
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
-public class Stack<T>{
+public class Stack<T> {
 
   private ArrayList<T> elements = new ArrayList<T>();
 
@@ -180,16 +179,16 @@ public class Stack<T>{
     return size;
   }
 
-  public boolean isEmpty(){
+  public boolean isEmpty() {
     return (size == 0);
   }
 
-  public void push(T elem){
+  public void push(T elem) {
     elements.add(elem);
     size++;
   }
 
-  public T pop() throws EmptyStackException{
+  public T pop() throws EmptyStackException {
     if (isEmpty())
       throw new EmptyStackException();
     T elem = elements.get(size-1);
@@ -201,13 +200,13 @@ public class Stack<T>{
 ```
 
 JUnit permite implementar classes que vão testar — de forma
-automática — classes da aplicação, como a classe Stack. Por
+automática — classes da aplicação, como a classe `Stack`. Por
 convenção, classes de teste têm o mesmo nome das classes testadas, mas
-com um sufixo Test. Portanto, nossa primeira classe de teste vai se
-chamar StackTest. Já os métodos de teste começam com o prefixo test e
+com um sufixo `Test`. Portanto, nossa primeira classe de teste vai se
+chamar `StackTest`. Já os métodos de teste começam com o prefixo `test` e
 devem, obrigatoriamente, atender às seguintes condições: (1) serem
 públicos, pois eles serão chamados pelo JUnit; (2) não possuírem
-parâmetros; (3) possuírem a anotação \@Test, a qual identifica métodos
+parâmetros; (3) possuírem a anotação `@Test`, a qual identifica métodos
 que deverão ser executados durante um teste.
 
 Mostramos a seguir nosso primeiro teste de unidade:
@@ -216,10 +215,10 @@ Mostramos a seguir nosso primeiro teste de unidade:
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
-public class StackTest{
+public class StackTest {
 
   @Test
-  public void testEmptyStack(){
+  public void testEmptyStack() {
     Stack<Integer> stack = new Stack<Integer>();
     boolean empty = stack.isEmpty();
     assertTrue(empty);
@@ -227,8 +226,9 @@ public class StackTest{
 
 }
 ```
-Nessa primeira versão, a classe StackTest possui um único método de
-teste, público, anotado com \@Test e chamado testEmptyStack(). Esse
+
+Nessa primeira versão, a classe `StackTest` possui um único método de
+teste, público, anotado com `@Test` e chamado `testEmptyStack()`. Esse
 método apenas cria uma pilha e testa se ela está vazia.
 
 Métodos de teste têm a seguinte estrutura:
@@ -237,53 +237,51 @@ Métodos de teste têm a seguinte estrutura:
     **fixture**. Para isso, deve-se instanciar os objetos que se
     pretende testar e, se for o caso, inicializá-los. No nosso
     primeiro exemplo, essa parte do teste inclui apenas a criação de
-    uma pilha de nome stack.
+    uma pilha de nome `stack`.
 
 -   Em seguida, o teste deve chamar um dos métodos da classe que está
-    sendo testada. No exemplo, chamamos o método isEmpty() e
+    sendo testada. No exemplo, chamamos o método `isEmpty()` e
     armazenamos o seu resultado em uma variável local.
 
 -   Por fim, devemos testar se o resultado do método é aquele esperado.
     Para isso, deve-se usar um comando chamado **assert**. Na verdade,
-    o JUnit oferece diversas variações de assert, mas todas têm o
+    o JUnit oferece diversas variações de `assert`, mas todas têm o
     mesmo objetivo: testar se um determinado resultado é igual a um
-    valor esperado. No exemplo, usamos assertTrue, que verifica se o
+    valor esperado. No exemplo, usamos `assertTrue`, que verifica se o
     valor passado como parâmetro é verdadeiro.
 
 IDEs oferecem opções para rodar apenas os testes de um sistema, por
 exemplo, por meio de uma opção de menu chamada "Run as Test". Ou seja,
 se o desenvolvedor chamar "Run", ele irá executar o seu programa
-normalmente, começando pelo método main. No entanto, se ele optar pela
+normalmente, começando pelo método `main`. No entanto, se ele optar pela
 opção "Run as Test" ele não irá executar o programa, mas apenas os
 seus testes de unidade.
 
 A próxima figura mostra o resultado da execução do nosso primeiro teste.
 O resultado é mostrado na própria IDE e a barra verde informa que todos
-os testes passaram. Pode-se observar que o teste roda muito rapidamente,
+os testes passaram. Pode-se observar que o teste roda rapidamente,
 em 0.025 segundos.
 
-![](media/image8.png){width="4.511458880139982in"
-height="1.0847779965004374in"}
+![](figs/cap8/run1.png){width=80%}
 
 Porém, suponha que tivéssemos cometido um erro na implementação da
-classe Stack. Por exemplo, suponha que o atributo size fosse
+classe `Stack`. Por exemplo, suponha que o atributo `size` fosse
 inicializado com o valor 1, em vez de zero. Nesse caso, a execução dos
 testes iria falhar, como mostrado pela barra vermelha na IDE:
 
-![](media/image1.png){width="4.521875546806649in"
-height="1.3797255030621172in"}
+![](figs/cap8/run2.png){width=80%}
 
 A mensagem de erro informa que houve uma falha durante a execução de
-testEmptyStack. Falha (*failure*) é o termo usado pelo JUnit para
+`testEmptyStack`. Falha (*failure*) é o termo usado pelo JUnit para
 indicar testes cujo comando assert não foi satisfeito.
 
 Em uma outra janela da IDE, pode-se descobrir que a asserção responsável
-pela falha encontra-se na linha 19 do arquivo StackTest.java.
+pela falha encontra-se na linha 19 do arquivo `StackTest.java`.
 
-![](media/image13.png){width="4.573958880139982in"
-height="0.8409514435695538in"}
+![](figs/cap8/run3.png){width=80%}
 
 Para concluir, vamos mostrar o código completo do teste de unidade:
+
 ```java
 import org.junit.Test;
 import org.junit.Before;
@@ -340,16 +338,16 @@ public class StackTest{
 }
 ```
 
-A classe StackTest tem cinco métodos de teste — todos com anotações
-\@Test. Existe ainda um método, chamado init(), com uma anotação
-\@Before. Esse método é executado pelo JUnit antes de qualquer método de
+A classe `StackTest` tem cinco métodos de teste — todos com anotações
+`@Test`. Existe ainda um método, chamado `init()`, com uma anotação
+`@Before`. Esse método é executado pelo JUnit antes de qualquer método de
 teste. O JUnit funciona do seguinte modo: para cada classe de teste, ele
-chama cada um de seus métodos \@Test. Cada método executa em uma
+chama cada um de seus métodos `@Test`. Cada método executa em uma
 instância diferente da classe de teste. Ou seja, antes de chamar um
-método \@Test, o JUnit instancia um objeto da sua classe. Se essa classe
-tiver um método \@Before, ele é executado antes do método \@Test. No
-exemplo, usamos um método \@Before para criar uma instância de Stack, a
-qual é usada depois pelos métodos \@Test. Assim, evitamos repetir esse
+método `@Test`, o JUnit instancia um objeto da sua classe. Se essa classe
+tiver um método `@Before`, ele é executado antes do método `@Test`. No
+exemplo, usamos um método `@Before` para criar uma instância de `Stack`, a
+qual é usada depois pelos métodos `@Test`. Assim, evitamos repetir esse
 código de instanciação nos testes.
 
 Para ficar um pouco mais claro, mostramos a seguir o algoritmo usado
@@ -359,33 +357,33 @@ pelo JUnit para executar os testes de um programa:
 ```java
 para cada classe de teste TC
   para cada método m de TC com anotação @Test
-    o = new TC();// instancia objeto de teste
+    o = new TC();    // instancia objeto de teste
     se C possui um método b com anotação @Before
-      então o.b();// chama método @Before, se existir
-    o.m();// chamada método @Test
+         então o.b();   // chama método @Before, se existir
+    o.m();           // chamada método @Test
 ```
 
-Voltando à classe StackTest, outro método interessante é aquele que
-testa a situação na qual a execução de um pop()levanta uma
-EmptyStackException. Veja que esse método — o último do nosso teste
-— não possui assert. O motivo é que um assert seria um código morto
-na sua implementação. A chamada de um pop() em uma pilha vazia
-terminaria a execução do método com uma exceção EmptyStackException. Ou
-seja, o assert não seria executado. Por isso, a anotação \@Test tem um
+Voltando à classe `StackTest`, outro método interessante é aquele que
+testa a situação na qual a execução de um `pop()` levanta uma
+`EmptyStackException`. Veja que esse método — o último do nosso teste
+— não possui `assert`. O motivo é que um `assert` seria um código morto
+na sua implementação. A chamada de um `pop()` em uma pilha vazia
+terminaria a execução do método com uma exceção `EmptyStackException`. Ou
+seja, o `assert` não seria executado. Por isso, a anotação `@Test` tem um
 atributo especial que serve para especificar a exceção que deve ser
-levantada pelo método de teste. Em resumo, testEmptyException vai passar
-se a sua execução levantar uma EmptyStackException. Caso contrário, ele
+levantada pelo método de teste. Em resumo, `testEmptyException` vai passar
+se a sua execução levantar uma `EmptyStackException`. Caso contrário, ele
 vai falhar.
 
-**Código Fonte**: O código fonte das classes Stack e StackTest está
+**Código Fonte**: O código fonte de `Stack` e `StackTest` está
 disponível neste
 [link](https://gist.github.com/mtov/3601acd0b32a1d0a85b4a81a43af4284).
 
 ```{=latex}
 \begin{aviso}
 ```
-**Aviso:** JUnit possui diversas versões. Neste capítulo, estamos
-usando a versão 4.12.
+**Aviso:** JUnit possui várias versões. No capítulo, vamos
+usar a versão 4.12.
 ```{=latex}
 \end{aviso}
 ```
@@ -396,7 +394,7 @@ usando a versão 4.12.
 Antes de avançar, vamos apresentar algumas definições:
 
 -   **Teste**: método que implementa um teste. O nome deriva da
-    anotação \@Test. São também chamados de método de teste (*test
+    anotação `@Test`. São também chamados de método de teste (*test
     method*).
 
 -   **Fixture**: estado do sistema que será testado por um ou mais
@@ -411,7 +409,7 @@ Antes de avançar, vamos apresentar algumas definições:
 -   **Casos de Teste (Test Case)**: classe com os métodos de teste. O
     nome tem origem nas primeiras versões do JUnit. Nessas versões, os
     métodos de testes eram implementados em classes que herdavam de
-    uma classe TestCase.
+    uma classe `TestCase`.
 
 -   **Suíte de Testes (Test Suite)**: conjunto de casos de teste, os
     quais são executados pelo framework de testes de unidade (no nosso
@@ -421,7 +419,7 @@ Antes de avançar, vamos apresentar algumas definições:
     sendo testado. É um nome genérico, usado também em outros tipos de
     testes, não necessariamente de unidades. Às vezes, usa-se também o
     termo **código de produção**, ou seja, código que vai ser
-    disponibilizado para os clientes do sistema.
+    executado pelos clientes do sistema.
 
 ### Quando Escrever Testes de Unidade?  
 
@@ -509,19 +507,19 @@ destacar os casos de duas grandes empresas de software: Google e
 Facebook. Os comentários foram extraídos de artigos que documentam o
 processo e as práticas de desenvolvimento de software dessas empresas:
 
-* Testes de unidade são fortemente encorajados e amplamente
+* "Testes de unidade são fortemente encorajados e amplamente
     praticados no Google. Todo código de produção deve ter testes de
     unidade e nossa ferramenta de revisão de código automaticamente
     destaca código submetido sem os correspondentes testes. Os
     revisores de código normalmente exigem que qualquer mudança que
     adiciona novas funcionalidades deve também adicionar os
-    respectivos testes.*
+    respectivos testes."
     ([link](https://arxiv.org/abs/1702.01715))
 
-* No Facebook, engenheiros são responsáveis pelos teste de unidade de
+* "No Facebook, engenheiros são responsáveis pelos teste de unidade de
     qualquer código novo que eles desenvolvam. Além disso, esse código
     deve passar por testes de regressão, os quais são executados
-    automaticamente, como parte dos processos de commit e push.*
+    automaticamente, como parte dos processos de commit e push."
     ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 ```{=latex}
 \end{esmbox}
@@ -539,16 +537,16 @@ possam ser facilmente mantidos e entendidos.
 Testes de unidades devem satisfazer às seguintes propriedades (cujas
 iniciais dão origem à palavra FIRST, em Inglês):
 
-**Rápidos ([F]{.underline}ast)**: desenvolvedores devem executar testes
+**Rápidos (Fast)**: desenvolvedores devem executar testes
 de unidades frequentemente, para obter feedback rápido sobre bugs e
 regressões no código. Por isso, é importante que eles sejam executados
 rapidamente, em questões de milisegundos. Se isso não for possível,
-pode-se optar por dividir uma suíte de testes em dois grupos: testes que
+pode-se dividir uma suíte de testes em dois grupos: testes que
 executam rapidamente e que, portanto, serão frequentemente chamados; e
 testes mais demorados, que serão, por exemplo, executados uma vez por
 dia.
 
-**[I]{.underline}ndependentes**: a ordem de execução dos testes de
+**Independentes**: a ordem de execução dos testes de
 unidade não é importante. Para quaisquer testes T1 e T2, a execução de
 T1 seguida de T2 deve ter o mesmo resultado da execução de T2 e depois
 T1. Pode acontecer ainda de T1 e T2 serem executados de forma
@@ -556,7 +554,7 @@ concorrente. Para que os testes sejam independentes, T1 não deve alterar
 alguma parte do estado global do sistema que depois será usada para
 computar o resultado de T2 e vice-versa.
 
-**Determinísticos ([R]{.underline}epeatable)**: testes de unidade devem
+**Determinísticos (Repeatable)**: testes de unidade devem
 ter sempre o mesmo resultado. Ou seja, se um teste T é chamado *n*
 vezes, o resultado deve ser o mesmo nas *n* execuções. Isto é, ou T
 passa em todas as execuções; ou ele sempre falha. Testes com resultados
@@ -578,7 +576,7 @@ public void exemploTesteFlaky{
 Esse teste chama uma função que calcula o valor de PI, com uma certa
 precisão, e de forma assíncrona — isto é, a função realiza o seu
 cálculo em uma nova thread, que ela mesmo cria internamente. No exemplo,
-a precisão requerida são 10 casas decimais. O teste faz uso de um sleep
+a precisão requerida são 10 casas decimais. O teste faz uso de um `sleep`
 para esperar que a função assíncrona termine. No entanto, isso torna o
 seu comportamento não-determinístico: se a função terminar antes de 1000
 milissegundos, o teste irá passar; mas se a execução, por alguma
@@ -598,7 +596,7 @@ que levou mais tempo para executar. Testes flaky são ruins porque eles
 atrasam o desenvolvimento: os programadores perdem um tempo para
 investigar a falha, para então descobrir que ela é um alarme falso.
 
-**Auto-verificáveis ([S]{.underline}elf-checking)**: O resultado de um
+**Auto-verificáveis (Self-checking)**: O resultado de um
 teste de unidades deve ser facilmente verificável. Para interpretar o
 resultado do teste, o desenvolvedor não deve, por exemplo, ter que abrir
 e analisar um arquivo de saída ou fornecer dados manualmente. Em vez
@@ -607,11 +605,11 @@ normalmente por meio de componentes que ficam com a cor verde (para
 indicar que todos os testes passaram) ou com a cor vermelha (para
 indicar que algum teste falhou). Adicionalmente, quando um teste falha,
 deve ser possível identificar essa falha de forma rápida, incluindo a
-localização do comando assert que falhou.
+localização do comando `assert` que falhou.
 
-**Escritos o quanto antes ([T]{.underline}imely)**, se possível antes
+**Escritos o quanto antes (Timely)**, se possível antes
 mesmo do código que vai ser testado, como já comentamos no final da
-Seção 8.2 e iremos discutir com mais profundidade na Seção sobre
+Seção 8.2 e iremos discutir com mais profundidade na seção sobre
 Desenvolvimento Dirigido por Testes (Seção 8.6).
 
 ### Test Smells
@@ -621,7 +619,7 @@ Desenvolvimento Dirigido por Testes (Seção 8.6).
 deveriam ser evitadas. O nome é uma adaptação, para o contexto de
 testes, do conceito de **Code Smells** ou **Bad Smells**, que iremos
 estudar no Capítulo 9. No entanto, neste capítulo, vamos aproveitar e já
-comentar sobre smells que podem ocorrer no código de testes de unidade.
+comentar sobre smells que podem ocorrer no código de testes.
 
 Um **Teste Obscuro** é um teste longo, complexo e difícil de entender.
 Como afirmamos, testes devem ser usados também para auxiliar na
@@ -630,7 +628,7 @@ tenham uma lógica clara e de rápido entendimento. Idealmente, um teste
 deve, por exemplo, testar um único requisito do sistema sob teste.
 
 Um **Teste com Lógica Condicional** inclui código que pode ou não ser
-executado. Isto é, são testes com comandos if, laços, etc, quando o
+executado. Isto é, são testes com comandos `if`, laços, etc, quando o
 ideal é que os testes de unidade sejam lineares. Lógica condicional em
 testes é considerada um smell porque ela prejudica o entendimento do
 teste.
@@ -640,13 +638,13 @@ quando temos código repetido em diversos métodos de teste.
 
 No entanto, um test smell não deve ser interpretado ao pé da letra, isto
 é, como sendo uma situação que deve ser evitada a todo custo. Em vez
-disso, eles devem ser considerados como sendo um alerta para os
+disso, eles devem ser considerados como um alerta para os
 implementadores do teste. Ao identificar um test smell, os
 desenvolvedores devem refletir sobre se não é possível ter um teste mais
 simples e menor, com um código linear e sem duplicação de comandos.
 
 Por fim, assim como ocorre com código de produção, código de testes deve
-também ser frequentemente refatorado, de modo a garantir que ele
+ser frequentemente refatorado, de modo a garantir que ele
 permaneça simples, fácil de entender e livre dos test smells que
 comentamos nesta seção.
 
@@ -654,8 +652,9 @@ comentamos nesta seção.
 
 Alguns autores
 ([link](https://dl.acm.org/citation.cfm?id=1388398))
-recomendam que deve existir no máximo um assert por teste, como
-ilustrado a seguir.
+recomendam que deve existir no máximo um `assert`
+por teste. Ou seja,
+eles recomendam escrever um código como o seguinte.
 
 ```java
 @Test
@@ -670,6 +669,9 @@ public void testNotEmptyStack(){
 }
 ```
 
+Em vez de concentrar dois comandos `assert` no mesmo método, como no código a seguir:
+\newpage
+
 ```java
 @Test
 public void testEmptyStack(){
@@ -679,19 +681,18 @@ public void testEmptyStack(){
 }
 ```
 
-O programa da esquerda, que divide o teste de pilha vazia em dois
+O primeiro exemplo, que divide o teste de pilha vazia em dois
 testes, tende a ser mais legível e fácil de entender do que o segundo,
-que faz tudo em um único teste. Além disso, quando o teste da esquerda
-falha, é mais simples detectar o motivo da falha do que no teste da
-direita, que pode falhar por dois motivos distintos.
+que faz tudo em um único teste. Além disso, quando o teste do primeiro exemplo
+falha, é mais simples detectar o motivo da falha do que no segundo exemplo, que pode falhar por dois motivos.
 
 No entanto, não devemos ser dogmáticos no emprego dessa regra
 ([link](https://dl.acm.org/citation.cfm?id=1076526),
 Capítulo 4). O motivo é que existem casos onde justifica-se ter mais de
-um assert por método. Por exemplo, suponha que precisamos testar uma
-função getBook que retorna um objeto com dados de um livro, incluindo
+um `assert` por método. Por exemplo, suponha que precisamos testar uma
+função `getBook`  que retorna um objeto com dados de um livro, incluindo
 título, autor, ano e editora. Nesse caso, justifica-se ter quatro
-comandos assert no mesmo teste, cada um verificando um dos campos do
+comandos `assert` no mesmo teste, cada um verificando um dos campos do
 objeto retornado pela função, como mostra o seguinte código.
 
 ```java
@@ -707,8 +708,8 @@ public void testBookService(){
 ```
 
 Uma segunda exceção é quando temos um método simples, que pode ser
-testado por meio de um único assert. Para ilustrar, mostramos o teste da
-função repeat da classe Strings da biblioteca google/guava
+testado por meio de um único `assert`. Para ilustrar, mostramos o teste da
+função `repeat` da classe `Strings` da biblioteca `google/guava`
 ([link](https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/base/StringsTest.java)):
 
 ```java
@@ -723,7 +724,7 @@ public void testRepeat(){
 }
 ```
 
-Nesse teste, temos quatro comandos assertEquals, os quais testam,
+Nesse teste, temos quatro comandos `assertEquals`, os quais testam,
 respectivamente, o resultado da repetição de uma determinada string
 zero, uma, duas e três vezes.
 
@@ -733,40 +734,37 @@ Cobertura de testes é uma métrica que ajuda a definir o número de testes
 que precisamos escrever para um programa. Ela mede o percentual de
 comandos de um programa que são cobertos por testes, isto é:
 
-cobertura de testes = (número de comandos executados pelos testes) /
+> cobertura de testes = (número de comandos executados pelos testes) /
 (total de comandos do programa)
 
 Existem ferramentas para cálculo de cobertura de testes. Na próxima
 figura, mostramos um exemplo de uso da ferramenta que acompanha a IDE
 Eclipse. As linhas com fundo verde — coloridas automaticamente por
 essa ferramenta — indicam as linhas cobertas pelos cinco testes
-implementados em StackTest. As únicas linhas não coloridas de verde são
-responsáveis pela assinatura dos métodos de Stack e, portanto, não
+implementados em `StackTest`. As únicas linhas não coloridas de verde são
+responsáveis pela assinatura dos métodos de `Stack` e, portanto, não
 correspondem a comandos executáveis. Assim, a cobertura dos testes do
 nosso primeiro exemplo é de 100%, pois a execução dos métodos de testes
-implica na execução de todos os comandos da classe Stack.
+implica na execução de todos os comandos da classe `Stack`.
 
-![](media/image2.png){width="4.271875546806649in"
-height="3.9018700787401577in"}
+![](figs/cap8/cobertura1.png){width=70%}
 
-Suponha agora que não tivéssemos implementado o quinto teste,
-testEmptyStackException. Isto é, não iríamos testar o levantamento de
-uma exceção pelo método pop(), quando chamado com uma pilha vazia. Nesse
+Suponha agora que não tivéssemos implementado o teste
+`testEmptyStackException`. Isto é, não iríamos testar o levantamento de
+uma exceção pelo método `pop()`, quando chamado com uma pilha vazia. Nesse
 caso, a cobertura dos testes cairia para 92.9%, como ilustrado a seguir:
 
-![](media/image9.png){width="6.865625546806649in"
-height="0.9852023184601925in"}
+![](figs/cap8/cobertura3.png){width=100%}
 
 Nesse caso, a ferramenta de cálculo de cobertura de testes marcaria as
-linhas da classe Stack da seguinte forma:
+linhas da classe `Stack` da seguinte forma:
 
-![](media/image3.png){width="4.266844925634295in"
-height="3.8489588801399823in"}
+![](figs/cap8/cobertura2.png){width=70%}
 
 Como afirmamos, as linhas verdes são cobertas pela execução dos testes.
 Porém, existe um comando marcado de amarelo. Essa cor indica que o
-comando é um desvio (no caso, um if) e que apenas um dos caminhos
-possíveis do desvio (no caso, o caminho false) foi exercitado pelos
+comando é um desvio (no caso, um `if`) e que apenas um dos caminhos
+possíveis do desvio (no caso, o caminho `false`) foi exercitado pelos
 testes de unidade. Por fim, o leitor já deve ter observado que existe
 uma linha em vermelho. Essa cor indica linhas que não foram cobertas
 pelos testes de unidade.
@@ -777,12 +775,14 @@ com as estatísticas de cobertura, o programa anterior, após compilado,
 possui 52 instruções cobertas por testes de unidade, de um total de 56
 instruções. Portanto, sua cobertura é 52 / 56 = 92.9%.
 
-**Qual a cobertura de testes preciso ter no meu projeto**? Não existe um
+### Qual a cobertura de testes ideal? 
+
+Não existe um
 número mágico e absoluto para cobertura de testes. A resposta varia de
 projeto para projeto, dependendo da complexidade dos requisitos, da
 criticidade do projeto, etc. Mas, em geral, não precisa ser 100%, pois
-sempre existem métodos triviais em um sistema; por exemplo, getters e
-setters. Também sempre temos métodos cujo teste é mais desafiador, como
+sempre existem métodos triviais em um sistema; por exemplo, *getters* e
+*setters*. Também sempre temos métodos cujo teste é mais desafiador, como
 métodos de interface com o usuário ou métodos com comportamento
 assíncrono.
 
@@ -832,11 +832,11 @@ funções** (percentual de funções que são executadas por um teste),
 **cobertura de chamadas de funções** (dentre todas as linhas de um
 programa que chamam funções, quantas são de fato, exercitadas por
 testes), **cobertura de branches** (% de branches de um programa que são
-executados por testes; um comando if sempre gera dois branches: quando a
+executados por testes; um comando `if` sempre gera dois branches: quando a
 condição é verdadeira e quando ela é falsa). Cobertura de comandos e de
 branches são também chamadas de **Cobertura C0** e **Cobertura C1**,
 respectivamente. Para ilustrar a diferença entre ambas vamos usar o
-seguinte programa (à esquerda) e seu teste de unidade (à direita):
+seguinte programa (primeiro código) e seu teste de unidade (segundo código):
 
 ```java
 public class Math{
@@ -865,17 +865,17 @@ public class MathTest{
 
 Supondo cobertura de comandos, temos uma cobertura de 100%. Porém,
 supondo uma cobertura de branches, o valor é 50%, pois dentre as duas
-condições possíveis do comando if(x \< 0), testamos apenas uma delas (a
+condições possíveis do comando `if(x \< 0)`, testamos apenas uma delas (a
 condição verdadeira). Se quisermos ter uma cobertura de branches de 100%
-teríamos que adicionar mais um comando assert, como:
-assertEquals(1,m.abs(1)). Logo, cobertura de branches é mais rigorosa do
+teríamos que adicionar mais um comando `assert`, como:
+`assertEquals(1,m.abs(1))`. Logo, cobertura de branches é mais rigorosa do
 que cobertura de comandos.
 
 ## Testabilidade
 
 Testabilidade é uma medida de quão fácil é implementar testes para um
 sistema. Como vimos, é importante que os testes sigam os princípios
-FIRST, que eles tenham poucos assert e uma alta cobertura. No entanto, é
+FIRST, que eles tenham poucos `assert` e uma alta cobertura. No entanto, é
 importante também que o projeto do código de produção favoreça a
 implementação de testes. O termo em inglês para isso é **design for
 testability**. Em outras palavras, às vezes, parte relevante do esforço
@@ -886,9 +886,7 @@ A boa notícia é que código que segue as propriedades e princípios de
 projeto que discutimos no Capítulo 5 — tais como coesão alta,
 acoplamento baixo, responsabilidade única, separação entre apresentação
 e modelo, inversão de dependências, Demeter, dentre outros — tende a
-apresentar boa testabilidade. Ou seja, normalmente, não precisamos tomar
-cuidados extras ou seguir novos princípios de projeto para produzir
-código que seja fácil de ser testado.
+apresentar boa testabilidade. 
 
 ### Exemplo: Servlet 
 
@@ -896,15 +894,16 @@ Servlet é uma tecnologia de Java para implementação de páginas Web
 dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa
 corporal de uma pessoa, dado o seu peso e altura. O nosso objetivo é
 didático. Logo, não vamos detalhar todo o protocolo para implementação
-de servlets. Além disso, a lógica de domínio desse exemplo é muito
-simples, consistindo na seguinte fórmula: peso / (altura \* altura). Mas
+de servlets. Além disso, a lógica de domínio desse exemplo é
+simples, consistindo na seguinte fórmula: `peso / (altura * altura)`. Mas
 tente imaginar que essa lógica poderia ser mais complexa e que, mesmo
 assim, a solução que vamos apresentar continuaria válida.
 
 ```java
 public class IMCServlet extends HttpServtet{
 
-  public void doGet(HttpServletRequest req, HttpServletResponse res){
+  public void doGet(HttpServletRequest req, 
+                    HttpServletResponse res){
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -922,43 +921,41 @@ public class IMCServlet extends HttpServtet{
 }  
 ```
 
-Primeiro, veja que não é simples escrever um teste para IMCServlet, pois
+Primeiro, veja que não é simples escrever um teste para `IMCServlet`, pois
 essa classe depende de diversos tipos do pacote de Servlets de Java. Por
-exemplo, não é trivial instanciar um objeto do tipo IMCServlet e depois
-chamar doGet. Se tomarmos esse caminho, teríamos que criar também
-objetos dos tipos HTTPServletRequest e HTTPServletResponse, para passar
-como parâmetro de doGet. No entanto, esses dois tipos podem depender de
+exemplo, não é trivial instanciar um objeto do tipo `IMCServlet` e depois
+chamar `doGet`. Se tomarmos esse caminho, teríamos que criar também
+objetos dos tipos `HTTPServletRequest` e `HTTPServletResponse`, para passar
+como parâmetro de `doGet`. No entanto, esses dois tipos podem depender de
 outros tipos e assim sucessivamente. Portanto, a testabilidade de
-IMCServlet é baixa.
+`IMCServlet` é baixa.
 
 Uma alternativa para testar o exemplo mostrado seria extrair a sua
 lógica de domínio para uma classe separada, como feito no código a
 seguir. Ou seja, a ideia consiste em separar apresentação (via Servlet)
 de lógica de domínio. Com isso, fica mais fácil testar a classe
-extraída, chamada IMCModel, pois ela não depende de tipos relacionados
+extraída, chamada `IMCModel`, pois ela não depende de tipos relacionados
 com Servlet. Por exemplo, é mais fácil instanciar um objeto da classe
-IMCModel do que da classe IMCServlet. É verdade que com essa refatoração
+`IMCModel` do que da classe `IMCServlet`. É verdade que com essa refatoração
 não vamos testar o código completo. Porém, é melhor testar a parte de
 domínio do sistema do que deixar o código inteiramente descoberto de
 testes.
 
 ```java
 class IMCModel{
-
-  public double calculaIMC(String p1, String a1) throws NumberFormatException{
+  public double calculaIMC(String p1, String a1) 
+                throws NumberFormatException{
     double p = Double.parseDouble(p1);
     double a = Double.parseDouble(a1);
     return p / (a * a);
   }
-
 }
 
 public class IMCServlet extends HttpServtet{
-  
   IMCModel model = new IMCModel();
 
-  public void doGet(HttpServletRequest req, HttpServletResponse res){
-
+  public void doGet(HttpServletRequest req, 
+                    HttpServletResponse res){
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -971,7 +968,6 @@ public class IMCServlet extends HttpServtet{
       out.println("Dados devem ser numéricos");
     }
   }
-
 }  
 ```
 
@@ -991,7 +987,7 @@ uso desse comando torna o teste não-determinístico.
 ```java
 public class MyMath{
 
-  public void asyncPI(int prec, TaskResult task){ // baixa testabilidade
+  public void asyncPI(int prec, TaskResult task){ 
     new Thread (new Runnable(){
       public void run(){
         double pi = "calcula PI com precisão prec"
@@ -1005,21 +1001,19 @@ public class MyMath{
 
 A seguir mostramos uma solução para incrementar a testabilidade dessa
 classe. Primeiro, extraímos o código que implementa a computação de PI
-para uma função separada e síncrona, chamada syncPI. Assim, apenas essa
-função seria testada por um teste de unidade. Em suma, vale novamente a
-observação que fizemos no exemplo anterior: é melhor extrair uma função
-que seja fácil de ser testada, do que deixar o código descoberto de
+para uma função separada, chamada `syncPI`. Assim, apenas essa
+função seria testada por um teste de unidade. Em suma, vale a
+observação que fizemos antes: é melhor extrair uma função
+que seja fácil de ser testada, do que deixar o código sem
 testes.
 
 ```java
 public class MyMath{
-
-  public double syncPI(int prec){// alta testabilidade
+  public double syncPI(int prec){
     double pi = "calcula PI com precisão prec"
     return pi;
   }
-
-  public void asyncPI(int prec, TaskResult task){ // baixa testabilidade
+  public void asyncPI(int prec, TaskResult task){ 
     new Thread (new Runnable(){
       public void run(){
         double pi = syncPI(prec);
@@ -1027,7 +1021,6 @@ public class MyMath{
       }    
     }).start();
   }
-
 }  
 ```
 
@@ -1054,21 +1047,20 @@ alguns autores fazem uma distinção entre esses termos.
 
 **Exemplo Motivador:** Para explicar o conceito de mocks, vamos partir
 de uma classe simples para pesquisa de livros, cujo código é mostrado a
-seguir. Essa classe, chamada BookSearch, implementa um método getBook,
+seguir. Essa classe, chamada `BookSearch`, implementa um método `getBook`,
 que pesquisa os dados de um livro em um serviço remoto. Esse serviço,
-por sua vez, implementa a interface BookService, mostrada no programa da
-direita. Para o exemplo ficar mais real, suponha que BookService é uma
+por sua vez, implementa a interface `BookService`. Para o exemplo ficar mais real, suponha que `BookService` é uma
 API REST ou uma base de dados. O importante é que a pesquisa é realizada
-em outro sistema, que fica abstraído pela interface BookService. Esse
+em outro sistema, que fica abstraído pela interface `BookService`. Esse
 serviço retorna o seu resultado como um documento JSON, isto é, um
-documento textual. Assim, cabe ao método getBook acessar o serviço
+documento textual. Assim, cabe ao método `getBook` acessar o serviço
 remoto, obter a resposta em formato JSON e criar um objeto da classe
-Book para armazenar a resposta. Para simplificar o exemplo, não
-mostramos o código da classe Book, mas ela é apenas uma classe com dados
-de livros e seus respectivos métodos get. Na verdade, para simplificar
-um pouco mais, o exemplo considera que Book possui um único campo,
-relativo ao seu título. Em um programa real, Book teria outros campos,
-que também seriam tratados em getBook.
+`Book` para armazenar a resposta. Para simplificar o exemplo, não
+mostramos o código da classe `Book`, mas ela é apenas uma classe com dados
+de livros e seus respectivos métodos `get`. Na verdade, para simplificar
+um pouco mais, o exemplo considera que `Book` possui um único campo,
+relativo ao seu título. Em um programa real, `Book` teria outros campos,
+que também seriam tratados em `getBook`.
 
 ```java
 import org.json.JSONObject;
@@ -1090,28 +1082,23 @@ public class BookSearch{
   }
 
 }
-```
 
-```java
 public interface BookService{
-
   String search(int isbn);
-
 }
 ```
 
 **Problema**: Precisamos implementar um teste de unidade para
-BookSearch. Porém, por definição, um teste de unidade exercita um
+`BookSearch`. Porém, por definição, um teste de unidade exercita um
 componente pequeno do código, como uma única classe. O problema é que
-para testar BookSearch precisamos de um BookService, que é um serviço
-externo. Ou seja, se não tomarmos cuidado, o teste de getBook vai
+para testar `BookSearch` precisamos de um `BookService`, que é um serviço
+externo. Ou seja, se não tomarmos cuidado, o teste de `getBook` vai
 alcançar um serviço externo. Isso é ruim por dois motivos: (1) o escopo
 do teste ficará maior do que uma única unidade de código; (2) o teste
 ficará mais lento, pois o serviço externo pode ser uma base de dados,
 armazenada em disco, ou então um serviço remoto, acessado via HTTP ou um
 protocolo similar. E devemos lembrar que testes de unidades devem
-executar rapidamente, conforme recomendado pelos princípios FIRST, que
-estudamos na Seção 8.3.
+executar rapidamente, conforme recomendado pelos princípios FIRST (Seção 8.3).
 
 **Solução**: Uma solução consiste em criar um objeto que "emula" o
 objeto real, mas apenas para permitir o teste do programa. Esse tipo de
@@ -1128,7 +1115,8 @@ import static org.junit.Assert.*;
 
 class BookConst{
 
-  public static String ESM = "{ \"titulo\": \"Eng Soft Moderna\" }";        
+  public static String ESM = 
+                "{ \"titulo\": \"Eng Soft Moderna\" }";        
 
   public static String NULLBOOK = "NULL";
 
@@ -1163,27 +1151,27 @@ public class BookSearchTest{
 }
 ```
 
-Nesse exemplo, MockBookService é uma classe usada para criar mocks de
-BookService, isto é, objetos que implementam essa interface, mas com um
-comportamento trivial. No exemplo, o objeto mock, de nome service,
+Nesse exemplo, `MockBookService` é uma classe usada para criar mocks de
+`BookService`, isto é, objetos que implementam essa interface, mas com um
+comportamento trivial. No exemplo, o objeto mock, de nome `service`,
 somente retorna dados do livro cujo ISBN é 1234. O leitor pode então
 estar se perguntando: qual a utilidade de um serviço que pesquisa dados
 de um único livro? A resposta é que esse mock nos permite implementar um
 teste de unidade que não precisa acessar um serviço remoto, externo e
-lento. No método testGetBook, usa-se o mock para criar um objeto do tipo
-BookSearch. Em seguida, chama-se o método getBook para pesquisar por um
-livro e retornar o seu título. Por fim, executa-se um assert. Como o
-teste é baseado em um MockBookService, ele verifica se o título
+lento. No método `testGetBook`, usa-se o mock para criar um objeto do tipo
+`BookSearch`. Em seguida, chama-se o método `getBook` para pesquisar por um
+livro e retornar o seu título. Por fim, executa-se um `assert`. Como o
+teste é baseado em um `MockBookService`, ele verifica se o título
 retornado é aquele do único livro "pesquisado" por tal mock.
 
-Porém, talvez ainda reste uma pergunta: o que, de fato, testGetBook
+Porém, talvez ainda reste uma pergunta: o que, de fato, `testGetBook`
 testa? Em outras palavras, qual requisito do sistema está sendo testado
 por meio de um objeto mock tão simples? Claro, nesse caso, não estamos
 testando o acesso ao serviço remoto. Como foi afirmado, esse é um
 requisito muito "extenso" para ser verificado via testes de unidade.
-Em vez disso, estamos testando se a lógica de instanciar um Book a
+Em vez disso, estamos testando se a lógica de instanciar um `Book` a
 partir de um documento JSON está funcionando. Em um teste mais real,
-poderíamos incluir mais campos em Book, além do título. Poderíamos
+poderíamos incluir mais campos em `Book`, além do título. Poderíamos
 também testar com mais alguns livros, bastando estender a capacidade do
 mock: em vez de retornar sempre o JSON do mesmo livro, ele retornaria
 dados de mais livros, dependendo do ISBN.
@@ -1208,7 +1196,6 @@ import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 import static org.mockito.Matchers.anyInt;
 
-
 public class BookSearchTest{
 
   private BookService service;
@@ -1216,7 +1203,8 @@ public class BookSearchTest{
   @Before
   public void init(){
     service = Mockito.mock(BookService.class);
-    when(service.search(anyInt())).thenReturn(BookConst.NULLBOOK);
+    when(service.search(anyInt())).
+                 thenReturn(BookConst.NULLBOOK);
     when(service.search(1234)).thenReturn(BookConst.ESM);
   }        
 
@@ -1230,38 +1218,34 @@ public class BookSearchTest{
 }
 ```
 
-Primeiro, podemos ver que não existe mais uma classe MockBookService. O
+Primeiro, podemos ver que não existe mais uma classe `MockBookService`. O
 principal ganho de se usar um framework como o mockito é exatamente
 esse: não ter mais que escrever classes de mock manualmente. Em vez
-disso, um mock para BookService é criado pelo próprio framework
+disso, um mock para `BookService` é criado pelo próprio framework
 usando-se dos recursos de **reflexão computacional** de Java. Para isso,
-basta usar a função mock(type), como a seguir:
+basta usar a função `mock(type)`, como a seguir:
 
-```java
-service = Mockito.mock(BookService.**class**);
-```
+`service = Mockito.mock(BookService.class);`
 
-No entanto, o mock service ainda está vazio e sem nenhum comportamento.
+No entanto, o mock `service` ainda está vazio e sem nenhum comportamento.
 Temos então que ensiná-lo a se comportar pelo menos em algumas
 situações. Especificamente, temos que ensiná-lo a responder a algumas
 pesquisas de livros. Para isso, o mockito oferece uma **linguagem de
 domínio específico** simples, baseada na mesma sintaxe de Java. Um
 exemplo é mostrado a seguir:
 
-```java
-*when(service.*search*(*anyInt*())).*thenReturn*(BookConst.**NULLBOOK**);*
+`when(service.search(anyInt())).thenReturn(BookConst.NULLBOOK);`
 
-*when*(service.search(1234)).thenReturn(BookConst.***ESM***);
-```
+`when(service.search(1234)).thenReturn(BookConst.ESM);`
 
-Essa duas linhas "programam" o mock service. Primeiro, dizemos para
-ele retornar BookConst.NULLBOOK quando o seu método search for chamado
+Essa duas linhas "programam" o mock `service`. Primeiro, dizemos para
+ele retornar `BookConst.NULLBOOK` quando o seu método `search` for chamado
 com qualquer inteiro como argumento. Em seguida, abrimos uma exceção a
-essa regra geral: quando search for chamado com o inteiro 1234, ele deve
-retornar a string JSON com os dados do livro BookConst.ESM.
+essa regra geral: quando `search` for chamado com o inteiro 1234, ele deve
+retornar a string JSON com os dados do livro `BookConst.ESM`.
 
-**Código Fonte**: O código desse exemplo, baseado no framework
-mockito, está disponível neste
+**Código Fonte**: O código desse exemplo, usando o
+mockito, está neste
 [link](https://gist.github.com/mtov/f7781e3f164a62c85cf4294271b9c2fd).
 
 ### Mocks vs Stubs
@@ -1277,7 +1261,6 @@ ser chamados de stubs. No entanto, neste livro, não vamos fazer essa
 distinção, pois achamos que ela é sutil e, portanto, os benefícios não
 compensam o custo de páginas extras para explicar e diferenciar
 conceitos semelhantes.
-
 Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
 verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte
 teste:
@@ -1290,9 +1273,9 @@ testBehaviour{
 }
 ```
 
-Nesse exemplo, o comando verify — implementado pelo mockito — é
-parecido com um assert. No entanto, ele verifica se um evento ocorreu
-com o mock passado como argumento. No caso, verificamos se o método send
+Nesse exemplo, o comando `verify` — implementado pelo mockito — é
+parecido com um `assert`. No entanto, ele verifica se um evento ocorreu
+com o mock passado como argumento. No caso, verificamos se o método `send`
 do mock foi executado pelo menos uma vez, usando qualquer string como
 argumento.
 
@@ -1329,7 +1312,8 @@ public class IMCServlet extends HttpServlet{
 
   IMCModel model = new IMCModel();
 
-  public void doGet(HttpServletRequest req, HttpServletResponse res){
+  public void doGet(HttpServletRequest req, 
+                    HttpServletResponse res){
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -1345,16 +1329,16 @@ Segue então o novo teste dessa servlet (ele é uma adaptação de um
 exemplo disponível em um
 [artigo](https://doi.ieeecomputersociety.org/10.1109/MS.2002.1003449)
 de autoria de Dave Thomas e Andy Hunt). Primeiro, podemos ver, no método
-init, que foram criados mocks para objetos dos tipos HttpServletRequest
-e HttpServletResponse. Esses mocks serão usados como parâmetros da
-chamada de doGet que faremos no método de teste. Ainda em init, criamos
-um objeto do tipo StringWriter que permite gerar saídas na forma de uma
+`init`, que foram criados mocks para objetos dos tipos `HttpServletRequest`
+e `HttpServletResponse`. Esses mocks serão usados como parâmetros da
+chamada de `doGet` que faremos no método de teste. Ainda em `init`, criamos
+um objeto do tipo `StringWriter` que permite gerar saídas na forma de uma
 lista de Strings. Em seguida, esse objeto é encapsulado por um
-PrintWriter, que é o objeto usado como saída pela servlet — ou seja,
+`PrintWriter`, que é o objeto usado como saída pela servlet — ou seja,
 trata-se de uma aplicação padrão de projeto Decorador, que estudamos no
 Capítulo 6. Por fim, programamos o mock de resposta: quando a servlet
-pedir um objeto de saída, por meio de uma chamada a getWriter(), ele
-deve retornar o objeto PrintWriter que acabamos de criar. Em resumo,
+pedir um objeto de saída, por meio de uma chamada a `getWriter()`, ele
+deve retornar o objeto `PrintWriter` que acabamos de criar. Em resumo,
 fizemos tudo isso com o objetivo de alterar a saída da servlet para uma
 lista de strings.
 
@@ -1362,7 +1346,6 @@ lista de strings.
 public class IMCServletTest{
 
   HttpServletRequest req;
-
   HttpServletResponse res;
 
   StringWriter sw;
@@ -1378,13 +1361,7 @@ public class IMCServletTest{
   // ...continua a seguir
 ```
 
-Para concluir, temos o método de teste, mostrado a seguir. Nele,
-começamos programando o mock do objeto com os parâmetros de entrada da
-servlet. Quando a servlet pedir o parâmetro "peso", o mock vai
-retornar 82; quando a servlet pedir o parâmetro "altura", ele deve
-retornar 1.80. Feito isso, o teste segue o fluxo normal de testes de
-unidades: chamamos o método que queremos testar, doGet, e verificamos se
-ele retorna o resultado esperado.
+Para concluir, temos o método de teste, mostrado a seguir. 
 
 ```java
   // continuação de IMCServletTest
@@ -1399,6 +1376,14 @@ ele retorna o resultado esperado.
 }
 ```
 
+Nesse teste,
+começamos programando o mock do objeto com os parâmetros de entrada da
+servlet. Quando a servlet pedir o parâmetro "peso", o mock vai
+retornar 82; quando a servlet pedir o parâmetro "altura", ele deve
+retornar 1.80. Feito isso, o teste segue o fluxo normal de testes de
+unidades: chamamos o método que queremos testar, `doGet`, e verificamos se
+ele retorna o resultado esperado.
+
 Esse exemplo serve também para ilustrar as desvantagens do uso de mocks.
 A principal delas é o fato de mocks aumentarem o acoplamento entre o
 teste e o método testado. Tipicamente, em testes de unidade, o método de
@@ -1409,7 +1394,7 @@ modificado. No entanto, quando usamos mocks, isso deixa de ser verdade,
 pois o mock pode depender de estruturas internas do método testado, o
 que torna os testes mais frágeis. Por exemplo, suponha que a saída da
 servlet mude para "Índice de Massa Corporal (IMC): " \[valor\]. Nesse
-caso, teremos que lembrar de atualizar também o assertEquals do teste de
+caso, teremos que lembrar de atualizar também o `assertEquals` do teste de
 unidade.
 
 Por fim, não conseguimos criar mocks para todos objetos e métodos. Em
@@ -1447,7 +1432,7 @@ TDD foi proposto com três objetivos principais em mente:
      momento.
 
 -   TDD favorece a escrita de código com alta testabilidade. Essa
-     característica também é uma consequência natural da inversão do
+     característica é uma consequência natural da inversão do
      fluxo de trabalho proposta por TDD: como o desenvolvedor sabe que
      ele terá que escrever o teste T e depois a classe C, é natural que
      desde o início ele planeje C de forma a facilitar a escrita de seu
@@ -1461,14 +1446,13 @@ TDD foi proposto com três objetivos principais em mente:
      primeiro usuário da classe é seu próprio desenvolvedor —
      lembre que T é um cliente de C, pois ele chama métodos de C. Por
      isso, espera-se que o desenvolvedor simplifique a interface de C,
-     use nomes de métodos e parâmetros legíveis, evite listas de
-     parâmetros longas, etc.
+     use nomes de identificadores legíveis, evite muitos
+     parâmetros, etc.
 
 Quando trabalha-se com TDD, o desenvolvedor segue um um ciclo composto
-por três estados, conforme mostra a próxima.
+por três estados, conforme mostra a próxima figura.
 
-![](media/image10.png){width="5.146875546806649in"
-height="2.2387751531058617in"}
+![Ciclos de TDD](figs/cap8/ciclos-tdd){width=75%}
 
 De acordo com esse diagrama, a primeira meta é chegar no estado
 vermelho, quando o teste ainda não está passando. Pode parecer estranho,
@@ -1504,15 +1488,15 @@ reiniciar o ciclo, para implementar mais alguma funcionalidade.
 
 Para concluir, vamos ilustrar uma sessão de uso de TDD. Para isso,
 usaremos como exemplo o sistema de uma livraria virtual. Nesse sistema,
-temos uma classe Book, com atributos título, isbn e preço. E temos
-também a classe ShoppingCart, que armazena os livros que um cliente
+temos uma classe `Book`, com atributos `titulo`, `isbn` e `preco`. E temos
+também a classe `ShoppingCart`, que armazena os livros que um cliente
 deseja comprar. Essa classe deve implementar métodos para: adicionar um
 livro no carrinho; retornar o preço total dos livros no carrinho; e
-remover um livro do carrinho. A seguir, ilustramos a implementação
+remover um livro do carrinho. A seguir, mostramos a implementação
 desses métodos usando TDD.
 
-**Estado Vermelho:** Começamos definindo que ShoppingCart terá um método
-add e um método getTotal. Além de decidir o nome de tais métodos,
+**Estado Vermelho:** Começamos definindo que `ShoppingCart` terá um método
+`add` e um método `getTotal`. Além de decidir o nome de tais métodos,
 definimos os seus parâmetros e escrevemos o primeiro teste:
 
 ```java
@@ -1528,16 +1512,13 @@ void testAddGetTotal(){
 ```
 
 Apesar de simples e de fácil entendimento, esse teste ainda não compila,
-pois não existe implementação para as classes Book e ShoppingCart.
+pois não existe implementação para as classes `Book` e `ShoppingCart`.
 Então, temos que providenciar isso, como mostrado a seguir:
 
 ```java
 public class Book {
-
   public String title;
-
   public double price;
-
   public String isbn;
 
   public Book(String title, double price, String isbn){
@@ -1547,9 +1528,7 @@ public class Book {
   }
 
 }
-```
 
-```java
 public class ShoppingCart{
 
   public ShoppingCart(){}
@@ -1559,45 +1538,40 @@ public class ShoppingCart{
   double getTotal(){
     return 0.0;
   }
-
 }
 ```
 
 A implementação de ambas as classes é muito simples. Implementamos
 apenas o mínimo para que o programa e o teste compilem. Observe, por
-exemplo, o método getTotal de ShoppingCart. Nessa primeira
+exemplo, o método `getTotal` de `ShoppingCart`. Nessa
 implementação, ele sempre retorna 0.0. Apesar disso atingimos nosso
 objetivo: temos um teste compilando, executando e falhando! Ou seja,
 chegamos ao estado vermelho.
 
 **Estado Verde**: o teste anterior funciona como uma especificação. Isto
-é, ele define o que temos que implementar em ShoppingCart. Logo, mãos à
+é, ele define o que temos que implementar em `ShoppingCart`. Logo, mãos à
 obra:
 
 ```java
 public class ShoppingCart{
-
   public ShoppingCart(){}
-
   public void add(Book b){}
-
   double getTotal(){
     return 30.0;
   }
-
 }
 ```
 
 Porém, o leitor deve estar agora surpreso: essa implementação está
-incorreta! A construtora de ShoppingCart está vazia, a classe não possui
-nenhuma estrutura de dados para armazenar os itens do carrinho, getTotal
+incorreta! A construtora de `ShoppingCart` está vazia, a classe não possui
+nenhuma estrutura de dados para armazenar os itens do carrinho, `getTotal`
 retorna sempre 30.0, etc. Tudo isso é verdade, mas já temos uma nova
 pequena vitória: o teste mudou de cor, de vermelho para verde. Ou seja,
-ele está passando. Com TDD, os avanços são sempre pequenos. Na verdade,
-esses avanços em XP são chamados de **baby steps**.
+ele está passando. Com TDD, os avanços são sempre pequenos. Em XP,
+esses avanços são chamados de **baby steps**.
 
 Mas temos que prosseguir e dar uma implementação mais realista para
-ShoppingCart. Segue ela:
+`ShoppingCart`. Segue ela:
 
 ```java
 public class ShoppingCart{
@@ -1625,8 +1599,8 @@ public class ShoppingCart{
 
 Agora dispomos de uma estrutura de dados para armazenar os itens do
 carrinho, um atributo para armazenar o valor total do carrinho, uma
-classe construtora, um método add que adiciona os livros na estrutura de
-dados e incrementa o total do carrinho e assim por diante. No melhor do
+classe construtora, um método `add` que adiciona os livros na estrutura de
+dados e incrementa o `total` do carrinho e assim por diante. No melhor do
 nosso juízo, essa implementação já implementa o que foi pedido e, por
 isso, podemos declarar que chegamos ao estado verde.
 
@@ -1635,10 +1609,10 @@ implementado — um teste e duas classes — e colocar em prática as
 propriedades, princípios e padrões de projeto que aprendemos em
 capítulos anteriores. Ou seja: existe alguma coisa que podemos fazer
 para tornar esse código mais legível, fácil de entender e de manter? No
-caso, a ideia que pode surgir é encapsular os campos de Book. Todos eles
+caso, a ideia que pode surgir é encapsular os campos de `Book`. Todos eles
 atualmente são públicos e, por isso, seria melhor implementar apenas
 métodos get e set para dar acesso a eles. Como essa implementação é
-simples, não vamos mostrar o código refatorado de Book.
+simples, não vamos mostrar o código refatorado de `Book`.
 
 Então, fechamos uma volta no ciclo vermelho-verde-refatorar de TDD.
 Agora, podemos parar ou então pensar em implementar mais um requisito.
@@ -1665,23 +1639,17 @@ menor frequência.
 Suponha uma agenda simples que permita adicionar, remover e editar
 compromissos, conforme ilustrado na próxima figura.
 
-![](media/image5.png){width="3.751042213473316in"
-height="2.7044542869641295in"}
+![Interface da Agenda de Compromissos](figs/cap8/myappointments.png){width=60%}
 
 Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
 
 ```java
 public class AgendaFacade{
-
   int addAppointment(Appointment p);
-
   void removeAppointment(int id);
-
   void editAppointment(int id);
-
   Appointmemt[] listAppointments();
-
 }
 ```
 Assim, podemos escrever o seguinte teste de integração para essa classe:
@@ -1708,9 +1676,9 @@ estudamos neste capítulo. Ou seja, JUnit poder ser usado tanto para
 testes de unidade como para testes de integração. Segundo, ele é um
 teste de integração, pois a classe é testada com dependências reais, no
 caso para um banco de dados. No início do teste, cria-se um banco de
-dados com todas as suas tabelas vazias. Em seguida, três objetos são
-persistidos e depois lidos do banco de dados. Por fim, realiza-se um
-assert. Assim, esse teste exercita os principais serviços da agenda,
+dados com todas as tabelas vazias. Em seguida, três objetos são
+persistidos e depois lidos do banco de dados. Por fim, chama-se um
+`assert`. Assim, esse teste exercita os principais serviços da agenda,
 exceto aqueles relacionados com sua interface gráfica. Por isso, ele
 ainda não é um teste de sistema.
 
@@ -1723,7 +1691,7 @@ Testes de sistema são também chamados de testes **ponta-a-ponta**
 caros, que demandam maior esforço para implementação e que executam em
 mais tempo.
 
-### Exemplo: Teste de Sistemas Web {.unnumbered}
+### Exemplo: Teste de Sistemas Web 
 
 Selenium é um framework para automatizar testes de sistemas Web. O
 framework permite criar programas que funcionam como robôs que abrem
@@ -1739,7 +1707,6 @@ resultados da pesquisa.
 public class SeleniumExample{
 
   public static void main(String[] args){
-
     // cria um driver para acessar um servidor Web
     WebDriver driver = new FirefoxDriver();
 
@@ -1755,8 +1722,9 @@ public class SeleniumExample{
     // submete os dados; como se fosse dado um "enter" no campo
     element.submit();
 
-    // espera a página de resposta carregar (com um timeout de 8s)
-    (new WebDriverWait(driver,8)).until(new ExpectedCondition<Boolean>(){
+    // espera a página de resposta carregar (com timeout de 8s)
+    (new WebDriverWait(driver,8)).
+         until(new ExpectedCondition<Boolean>(){
       public Boolean apply(WebDriver d){
         return d.getTitle().toLowerCase().startsWith("cheese!");
       }
@@ -1768,7 +1736,6 @@ public class SeleniumExample{
     // fecha o navegador
     driver.quit();
   }
-
 }
 ```
 
@@ -1811,7 +1778,7 @@ incorreta.
 
 ## Outros Tipos de Testes
 
-### Testes Caixa Preta (Funcional) e Caixa Branca (Estrutural)
+### Testes Caixa Preta e Caixa Branca 
 
 
 Técnicas de teste podem ser classificadas como caixa preta ou caixa
@@ -1841,16 +1808,16 @@ para elaboração de testes mais efetivos).
 Uma observação semelhante pode ser feita sobre a relação entre TDD e
 testes caixa preta/branca. Para esclarecer essa relação, vamos usar
 algumas frases do do próprio Kent Beck, isto é, do inventor da ideia de
-TDD:
+TDD (fonte: *Test-Driven Development Violates the
+Dichotomies of Testing, Kent Beck*, Three Rivers Institute, June 2007):
 
-> *No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa
+> "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa
 > preta e testes caixa branca. Como testes em TDD são escritos antes do
 > código que eles testam, eles talvez pudessem ser considerados como
 > testes caixa preta. No entanto, eu normalmente ganho inspiração para
 > escrever o próximo teste depois que implemento e analiso o código
 > verificado pelo teste anterior, o que é uma característica marcante de
-> testes caixa branca. (fonte: Test-Driven Development Violates the
-> Dichotomies of Testing, Kent Beck, Three Rivers Institute, June 2007)*
+> testes caixa branca."
 
 ### Seleção de Dados de Teste
 
@@ -1868,10 +1835,10 @@ salários, um de cada faixa salarial.
 
   **Salário**                **Alíquota**   **Parcela a Deduzir**
   -------------------------- -------------- -----------------------
-  De 1.903,99 até 2.826,65   7,5%           142,80
-  De 2.826,66 até 3.751,05   15%            354,80
-  De 3.751,06 até 4.664,68   22,5%          636,13
-  Acima de 4.664,68          27,5%          869,36
+  De 1.903,99 até 2.826,65   7,5%            142,80
+  De 2.826,66 até 3.751,05   15%             354,80
+  De 3.751,06 até 4.664,68   22,5%           636,13
+  Acima de 4.664,68          27,5%           869,36
 
 **Análise de Valor Limite** (*Boundary Value Analysis*) é uma técnica
 complementar que recomenda testar uma unidade com os valores limites de
@@ -1881,11 +1848,10 @@ tratamento inadequado desses valores de fronteira. Assim, no nosso
 exemplo, para a primeira faixa salarial, deveríamos testar com os
 seguintes valores:
 
-  1.903,98   Valor imediatamente inferior ao limite inferior da primeira faixa salarial
-  ---------- ----------------------------------------------------------------------------
-  1.903,99   Limite inferior da primeira faixa salarial
-  2.826,65   Limite superior da primeira faixa salarial
-  2.826,66   Valor imediatamente superior ao limite superior da primeira faixa salarial
+* 1.903,98: valor imediatamente inferior ao limite inferior da 1a faixa salarial
+* 1.903,99: limite inferior da primeira faixa salarial
+* 2.826,65: limite superior da primeira faixa salarial
+* 2.826,66: valor imediatamente superior ao limite superior da 1a faixa salarial
 
 No entanto, como o leitor deve estar pensando, nem sempre é trivial
 encontrar as classes de equivalência para o domínio de entrada de uma
@@ -1975,17 +1941,17 @@ um sistema. Os testes envolvem a verificação de diversos componentes
 individualmente, bem como das interfaces entre eles. Essa equipe está
 realizando testes de:
 
-\(A\) unidade; (B) aceitação; (C) sistema e aceitação; (D) integração e
-sistema; (E) unidade e integração
+\(a\) unidade; (b) aceitação; (c) sistema e aceitação; (d) integração e
+sistema; (e) unidade e integração
 
 2\. Descreva três benefícios associados ao uso de testes de unidade.
 
-3\. Suponha uma função fib(n), que retorna o n-ésimo termo da sequência
-de Fibonacci, isto é, fib(0) = 0, fib(1) = 1, fib(2) = 1, fib(3) = 2,
-fib(4) = 3, etc. Escreva um teste de unidade para essa função.
+3\. Suponha uma função `fib(n)`, que retorna o n-ésimo termo da sequência
+de Fibonacci, isto é, `fib(0) = 0`, `fib(1) = 1`, `fib(2) = 1`, `fib(3) = 2`,
+`fib(4) = 3`, etc. Escreva um teste de unidade para essa função.
 
 4\. Reescreva o seguinte teste, que verifica o levantamento de uma
-exceção EmptyStackException, para que ele fique mais simples e fácil de
+exceção `EmptyStackException`, para que ele fique mais simples e fácil de
 entender.
 
 ```java
@@ -2005,8 +1971,8 @@ public void testEmptyStackException(){
 ```
 
 5\. Suponha que um programador escreveu o teste a seguir para a classe
-ArrayList de Java. Como você irá perceber, no código são usados diversos
-System.out.println. Ou seja, no fundo, ele é um teste manual, pois o
+`ArrayList` de Java. Como você irá perceber, no código são usados diversos
+`System.out.println`. Ou seja, no fundo, ele é um teste manual, pois o
 desenvolvedor tem que conferir o seu resultado manualmente. Reescreva
 então cada um dos testes (de 1 a 6) como um teste de unidade, usando a
 sintaxe e os comandos do JUnit. Observação: se quiser executar o código,
@@ -2075,7 +2041,7 @@ public class Main{
 ```
 
 6\. Seja a seguinte função. Observe que ela possui quatro comandos,
-sendo dois deles if. Logo, esses dois ifs geram quatro branches:
+sendo dois deles `if`. Logo, esses dois `ifs` geram quatro branches:
 
 ```java
 void f(int x, int y){
@@ -2088,11 +2054,12 @@ void f(int x, int y){
 }
 ```
 
-Supondo o código acima, preencha a tabela a seguir, com os valores da
-cobertura de comandos e cobertura de branches obtidas com os testes
-especificados na primeira coluna.
+Supondo o código acima, preencha a próxima tabela, com os valores da
+cobertura de comandos e cobertura de branches obtidos com os testes
+especificados na primeira coluna (ou seja, a primeira coluna define
+as chamadas da função `f` que o teste realiza).
 
-|Chamadas da função feitas pela suíte de testes | Cobertura de comandos | Cobertura de branches
+|Chamada feita pelo teste | Cobertura de comandos | Cobertura de branches
  - | - | - |
 | f(0,0) | | |
 | f(1,1) | | |
@@ -2100,8 +2067,10 @@ especificados na primeira coluna.
            
 
 7\. Suponha o seguinte requisito: alunos recebem conceito A em uma
-disciplina se tiverem nota maior ou igual a 90. Seja a seguinte função
+disciplina se tiverem nota maior ou igual a 90. Seja então a seguinte função
 que implementa esse requisito:
+
+\newpage
 
 ```java
 boolean isConceitoA(int nota){
@@ -2111,23 +2080,23 @@ boolean isConceitoA(int nota){
 }
 ```
 
-O código dessa função possui três comandos, sendo um deles um if; logo,
+O código dessa função possui três comandos, sendo um deles um `if`; logo,
 ela possui dois branches.
 
 Responda agora às seguintes perguntas.
 
 (a) A implementação dessa função possui um bug? Se sim, quando esse bug
-    > resulta em falha?
+    resulta em falha?
 
 (b) Suponha que essa função — exatamente como ela está implementada
-    > — seja testada com duas notas: 85 e 95. Qual a cobertura de
-    > comandos desse teste? E a cobertura de branches?
+    — seja testada com duas notas: 85 e 95. Qual a cobertura de
+    comandos desse teste? E a cobertura de branches?
 
 (c) Seja a seguinte afirmação: se um programa possui 100% de cobertura
-    > de testes, em nível de comandos, ele está livre de bugs. Ela é
-    > verdadeira ou falsa? Justifique.
+    de testes, em nível de comandos, ele está livre de bugs. Ela é
+    verdadeira ou falsa? Justifique.
 
-8\. Complete os comandos assert nos trechos indicados.
+8\. Complete os comandos `assert` nos trechos indicados.
 
 ```java
 public void test1(){

@@ -348,7 +348,7 @@ Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Soft
    * Administração de servidores em Cloud (AWS e Azure) 
    * Sistemas Operacionais (Ubuntu, CentOS e Red Hat)
    * Banco de dados (DynamoDB, Aurora Mysql) 
-   * Docker e orquestração de docker (Kubernetes, Mesos, Swarm) 
+   * Docker e orquestração de Docker (Kubernetes, Mesos, Swarm) 
    * Desenvolvimento com APIs REST, Java
 
    Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
