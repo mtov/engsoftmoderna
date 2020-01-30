@@ -23,8 +23,7 @@ ou seja, Testes de Integração (Seção 8.8) e Testes de Sistemas (Seção
 tipos de testes, tais como: testes caixa preta e caixa branca, testes de
 aceitação e testes de requisitos não-funcionais.
 
-8.1 Introdução
-==============
+## Introdução
 
 Software é uma das construções humanas mais complexas, como discutimos
 na Introdução deste livro. Portanto, é compreensível que sistemas de
@@ -50,23 +49,23 @@ Com métodos ágeis, a prática de testes de software foi profundamente
 reformulada:
 
 -   Grande parte dos testes passou a ser automatizada, isto é, além de
-    > implementar as classes de um sistema, os desenvolvedores passaram
-    > a implementar também código para testar tais classes. Assim, os
-    > programas tornaram-se **auto-testáveis**.
+    implementar as classes de um sistema, os desenvolvedores passaram
+    a implementar também código para testar tais classes. Assim, os
+    programas tornaram-se **auto-testáveis**.
 
 -   Testes não são mais implementados após todas as classes de um
-    > sistema ficarem prontas. Muitas vezes, eles são implementados até
-    > mesmo antes dessas classes.
+    sistema ficarem prontas. Muitas vezes, eles são implementados até
+    mesmo antes dessas classes.
 
 -   Não existem mais grandes equipes de testes — ou elas são
-    > responsáveis por testes específicos. Em vez disso, o desenvolvedor
-    > que implementa uma classe também deve implementar os seus testes.
+    responsáveis por testes específicos. Em vez disso, o desenvolvedor
+    que implementa uma classe também deve implementar os seus testes.
 
 -   Testes não são mais um instrumento exclusivo para detecção de bugs.
-    > Claro, isso continua sendo importante, mas testes ganharam novas
-    > funções, como garantir que uma classe continuará funcionando após
-    > um bug ser corrigido em uma outra parte do sistema. E testes são
-    > também usados como documentação para o código de produção.
+    Claro, isso continua sendo importante, mas testes ganharam novas
+    funções, como garantir que uma classe continuará funcionando após
+    um bug ser corrigido em uma outra parte do sistema. E testes são
+    também usados como documentação para o código de produção.
 
 Essas transformações tornaram testes uma das práticas de programação
 mais valorizadas em desenvolvimento moderno de software. É nesse
@@ -127,8 +126,7 @@ acordo com a sua especificação. Se um código com defeito for executado e
 levar o programa a apresentar um resultado ou comportamento incorreto,
 dizemos que ocorreu uma **falha** (*failure*).
 
-8.2 Testes de Unidade
-=====================
+## Testes de Unidade
 
 Testes de unidade são testes automatizados de pequenas unidades de
 código, normalmente classes, as quais são testadas de forma isolada do
@@ -170,53 +168,39 @@ pretende-se testar.
 Para explicar os conceitos básicos de testes de unidade, vamos nos
 basear na seguinte classe Stack:
 
-+-----------------------------------------------------------------+
-| **import** java.util.ArrayList;                                 |
-|                                                                 |
-| **import** java.util.EmptyStackException;                       |
-|                                                                 |
-| **public class** Stack\<T\> {                                   |
-|                                                                 |
-| **private** ArrayList\<T\> elements = **new** ArrayList\<T\>(); |
-|                                                                 |
-| **private int** size = 0;                                       |
-|                                                                 |
-| **public int** size() {                                         |
-|                                                                 |
-| **retur**n size;                                                |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| **public** **boolean** isEmpty(){                               |
-|                                                                 |
-| **return** (size == 0);                                         |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| **public** **void** push(T elem) {                              |
-|                                                                 |
-| elements.add(elem);                                             |
-|                                                                 |
-| size++;                                                         |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| **public** T pop() **throws** EmptyStackException {             |
-|                                                                 |
-| **if** (isEmpty())                                              |
-|                                                                 |
-| **throw** **new** EmptyStackException();                        |
-|                                                                 |
-| T elem = elements.get(size-1);                                  |
-|                                                                 |
-| size\--;                                                        |
-|                                                                 |
-| **return** elem;                                                |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| }                                                               |
-+-----------------------------------------------------------------+
+```java
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+
+public class Stack<T>{
+
+  private ArrayList<T> elements = new ArrayList<T>();
+
+  private int size = 0;
+
+  public int size(){
+    return size;
+  }
+
+  public boolean isEmpty(){
+    return (size == 0);
+  }
+
+  public void push(T elem){
+    elements.add(elem);
+    size++;
+  }
+
+  public T pop() throws EmptyStackException{
+    if (isEmpty())
+      throw new EmptyStackException();
+    T elem = elements.get(size-1);
+    size--;
+    return elem;
+  }
+
+}
+```
 
 JUnit permite implementar classes que vão testar — de forma
 automática — classes da aplicação, como a classe Stack. Por
@@ -230,28 +214,21 @@ que deverão ser executados durante um teste.
 
 Mostramos a seguir nosso primeiro teste de unidade:
 
-+------------------------------------------------------+
-| **import** org.junit.Test;                           |
-|                                                      |
-| **import** static org.junit.Assert.assertTrue;       |
-|                                                      |
-| **public class** StackTest {                         |
-|                                                      |
-| \@Test                                               |
-|                                                      |
-| **public void** testEmptyStack() {                   |
-|                                                      |
-| Stack\<Integer\> stack = **new** Stack\<Integer\>(); |
-|                                                      |
-| **boolean** empty = stack.isEmpty();                 |
-|                                                      |
-| assertTrue(empty);                                   |
-|                                                      |
-| }                                                    |
-|                                                      |
-| }                                                    |
-+------------------------------------------------------+
+```java
+import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
+public class StackTest{
+
+  @Test
+  public void testEmptyStack(){
+    Stack<Integer> stack = new Stack<Integer>();
+    boolean empty = stack.isEmpty();
+    assertTrue(empty);
+  }
+
+}
+```
 Nessa primeira versão, a classe StackTest possui um único método de
 teste, público, anotado com \@Test e chamado testEmptyStack(). Esse
 método apenas cria uma pilha e testa se ela está vazia.
@@ -259,21 +236,21 @@ método apenas cria uma pilha e testa se ela está vazia.
 Métodos de teste têm a seguinte estrutura:
 
 -   Primeiro, cria-se o contexto do teste, também chamado de
-    > **fixture**. Para isso, deve-se instanciar os objetos que se
-    > pretende testar e, se for o caso, inicializá-los. No nosso
-    > primeiro exemplo, essa parte do teste inclui apenas a criação de
-    > uma pilha de nome stack.
+    **fixture**. Para isso, deve-se instanciar os objetos que se
+    pretende testar e, se for o caso, inicializá-los. No nosso
+    primeiro exemplo, essa parte do teste inclui apenas a criação de
+    uma pilha de nome stack.
 
 -   Em seguida, o teste deve chamar um dos métodos da classe que está
-    > sendo testada. No exemplo, chamamos o método isEmpty() e
-    > armazenamos o seu resultado em uma variável local.
+    sendo testada. No exemplo, chamamos o método isEmpty() e
+    armazenamos o seu resultado em uma variável local.
 
 -   Por fim, devemos testar se o resultado do método é aquele esperado.
-    > Para isso, deve-se usar um comando chamado **assert**. Na verdade,
-    > o JUnit oferece diversas variações de assert, mas todas têm o
-    > mesmo objetivo: testar se um determinado resultado é igual a um
-    > valor esperado. No exemplo, usamos assertTrue, que verifica se o
-    > valor passado como parâmetro é verdadeiro.
+    Para isso, deve-se usar um comando chamado **assert**. Na verdade,
+    o JUnit oferece diversas variações de assert, mas todas têm o
+    mesmo objetivo: testar se um determinado resultado é igual a um
+    valor esperado. No exemplo, usamos assertTrue, que verifica se o
+    valor passado como parâmetro é verdadeiro.
 
 IDEs oferecem opções para rodar apenas os testes de um sistema, por
 exemplo, por meio de uma opção de menu chamada "Run as Test". Ou seja,
@@ -309,96 +286,61 @@ pela falha encontra-se na linha 19 do arquivo StackTest.java.
 height="0.8409514435695538in"}
 
 Para concluir, vamos mostrar o código completo do teste de unidade:
+```java
+import org.junit.Test;
+import org.junit.Before;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 
-+--------------------------------------------------------+
-| **import** org.junit.Test;                             |
-|                                                        |
-| **import** org.junit.Before;                           |
-|                                                        |
-| **import** static org.junit.Assert.assertTrue;         |
-|                                                        |
-| **import** static org.junit.Assert.assertFalse;        |
-|                                                        |
-| **import** static org.junit.Assert.assertEquals;       |
-|                                                        |
-| **public class** StackTest {                           |
-|                                                        |
-| Stack\<Integer\> stack;                                |
-|                                                        |
-| \@Before                                               |
-|                                                        |
-| **public void** init() {                               |
-|                                                        |
-| stack = new Stack\<Integer\>();                        |
-|                                                        |
-| }                                                      |
-|                                                        |
-| \@Test                                                 |
-|                                                        |
-| **public void** testEmptyStack() {                     |
-|                                                        |
-| assertTrue(stack.isEmpty());                           |
-|                                                        |
-| }                                                      |
-|                                                        |
-| \@Test                                                 |
-|                                                        |
-| **public void** testNotEmptyStack() {                  |
-|                                                        |
-| stack.push(10);                                        |
-|                                                        |
-| assertFalse(stack.isEmpty());                          |
-|                                                        |
-| }                                                      |
-|                                                        |
-| \@Test                                                 |
-|                                                        |
-| **public void** testSizeStack() {                      |
-|                                                        |
-| stack.push(10);                                        |
-|                                                        |
-| stack.push(20);                                        |
-|                                                        |
-| stack.push(30);                                        |
-|                                                        |
-| int size = stack.size();                               |
-|                                                        |
-| assertEquals(3,size);                                  |
-|                                                        |
-| }                                                      |
-|                                                        |
-| \@Test                                                 |
-|                                                        |
-| **public void** testPushPopStack() {                   |
-|                                                        |
-| stack.push(10);                                        |
-|                                                        |
-| stack.push(20);                                        |
-|                                                        |
-| stack.push(30);                                        |
-|                                                        |
-| **int** result = stack.pop();                          |
-|                                                        |
-| result = stack.pop();                                  |
-|                                                        |
-| assertEquals(20,result);                               |
-|                                                        |
-| }                                                      |
-|                                                        |
-| \@Test(expected = java.util.EmptyStackException.class) |
-|                                                        |
-| **public void** testEmptyStackException() {            |
-|                                                        |
-| stack.push(10);                                        |
-|                                                        |
-| **int** result = stack.pop();                          |
-|                                                        |
-| result = stack.pop();                                  |
-|                                                        |
-| }                                                      |
-|                                                        |
-| }                                                      |
-+--------------------------------------------------------+
+public class StackTest{
+
+  Stack<Integer> stack;
+
+  @Before
+  public void init(){
+    stack = new Stack<Integer>();
+  }
+
+  @Test
+  public void testEmptyStack(){
+    assertTrue(stack.isEmpty());
+  }
+
+  @Test
+  public void testNotEmptyStack(){
+    stack.push(10);
+    assertFalse(stack.isEmpty());
+  }
+
+  @Test
+  public void testSizeStack(){
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    int size = stack.size();
+    assertEquals(3,size);
+  }
+
+  @Test
+  public void testPushPopStack(){
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    int result = stack.pop();
+    result = stack.pop();
+    assertEquals(20,result);
+  }
+
+  @Test(expected = java.util.EmptyStackException.class)
+  public void testEmptyStackException(){
+    stack.push(10);
+    int result = stack.pop();
+    result = stack.pop();
+  }
+
+}
+```
 
 A classe StackTest tem cinco métodos de teste — todos com anotações
 \@Test. Existe ainda um método, chamado init(), com uma anotação
@@ -415,19 +357,15 @@ código de instanciação nos testes.
 Para ficar um pouco mais claro, mostramos a seguir o algoritmo usado
 pelo JUnit para executar os testes de um programa:
 
-+---------------------------------------------------+
-| para cada classe de teste TC                      |
-|                                                   |
-| para cada método m de TC com anotação \@Test      |
-|                                                   |
-| o = new TC(); // instancia objeto de teste        |
-|                                                   |
-| se C possui um método b com anotação \@Before     |
-|                                                   |
-| então o.b(); // chama método \@Before, se existir |
-|                                                   |
-| o.m(); // chamada método \@Test                   |
-+---------------------------------------------------+
+
+```java
+para cada classe de teste TC
+  para cada método m de TC com anotação @Test
+    o = new TC();// instancia objeto de teste
+    se C possui um método b com anotação @Before
+      então o.b();// chama método @Before, se existir
+    o.m();// chamada método @Test
+```
 
 Voltando à classe StackTest, outro método interessante é aquele que
 testa a situação na qual a execução de um pop()levanta uma
@@ -448,41 +386,40 @@ disponível neste
 **⚠️ Aviso:** JUnit possui diversas versões. Neste capítulo, estamos
 usando a versão 4.12.
 
-Definições
-----------
+### Definições {.unnumbered}
+
 
 Antes de avançar, vamos apresentar algumas definições:
 
 -   **Teste**: método que implementa um teste. O nome deriva da
-    > anotação \@Test. São também chamados de método de teste (*test
-    > method*).
+    anotação \@Test. São também chamados de método de teste (*test
+    method*).
 
 -   **Fixture**: estado do sistema que será testado por um ou mais
-    > métodos de teste, incluindo dados, objetos, etc. O termo é reusado
-    > da indústria manufatureira, onde *fixture* é um equipamento que
-    > "fixa" uma peça que se pretende construir (veja uma
-    > [[foto]{.underline}](https://en.wikipedia.org/wiki/Fixture_(tool))
-    > na Wikipedia). No contexto de testes de unidade, a função de uma
-    > fixture é "fixar" o estado — isto é, os dados e objetos
-    > — exercitados no teste.
+    métodos de teste, incluindo dados, objetos, etc. O termo é reusado
+    da indústria manufatureira, onde *fixture* é um equipamento que
+    "fixa" uma peça que se pretende construir (veja uma
+    [foto](https://en.wikipedia.org/wiki/Fixture_(tool))
+    na Wikipedia). No contexto de testes de unidade, a função de uma
+    fixture é "fixar" o estado — isto é, os dados e objetos
+    — exercitados no teste.
 
 -   **Casos de Teste (Test Case)**: classe com os métodos de teste. O
-    > nome tem origem nas primeiras versões do JUnit. Nessas versões, os
-    > métodos de testes eram implementados em classes que herdavam de
-    > uma classe TestCase.
+    nome tem origem nas primeiras versões do JUnit. Nessas versões, os
+    métodos de testes eram implementados em classes que herdavam de
+    uma classe TestCase.
 
 -   **Suíte de Testes (Test Suite)**: conjunto de casos de teste, os
-    > quais são executados pelo framework de testes de unidade (no nosso
-    > caso, JUnit).
+    quais são executados pelo framework de testes de unidade (no nosso
+    caso, JUnit).
 
 -   **Sistema sob Teste (System Under Test, SUT)**: sistema que está
-    > sendo testado. É um nome genérico, usado também em outros tipos de
-    > testes, não necessariamente de unidades. Às vezes, usa-se também o
-    > termo **código de produção**, ou seja, código que vai ser
-    > disponibilizado para os clientes do sistema.
+    sendo testado. É um nome genérico, usado também em outros tipos de
+    testes, não necessariamente de unidades. Às vezes, usa-se também o
+    termo **código de produção**, ou seja, código que vai ser
+    disponibilizado para os clientes do sistema.
 
-Quando Escrever Testes de Unidade?
-----------------------------------
+### Quando Escrever Testes de Unidade?   {.unnumbered}
 
 Existem duas respostas principais para essa pergunta. Primeiro, pode-se
 escrever os testes após implementar uma pequena funcionalidade. Por
@@ -526,8 +463,7 @@ desenvolvimento. Em vez disso, recomenda-se que o desenvolvedor de uma
 classe seja também responsável pela implementação de seus testes de
 unidade.
 
-Benefícios 
-----------
+### Benefícios {.unnumbered}
 
 O principal benefício de testes de unidade é encontrar bugs, ainda na
 fase de desenvolvimento e antes que o código entre em produção, quando
@@ -557,7 +493,7 @@ comportamento da classe Stack. Por isso, muitas vezes, antes de manter
 um código com o qual ele não tenha familiaridade, um desenvolvedor
 começa analisando os seus testes.
 
-**🌎** **Mundo Real**: Dentre as práticas de desenvolvimento propostas
+🌎 **Mundo Real**: Dentre as práticas de desenvolvimento propostas
 originalmente por métodos ágeis, testes de unidade é provavelmente a que
 alcançou o maior impacto e que é mais largamente usada. Hoje, os mais
 diversos sistemas de software, de empresas dos mais diferentes tamanhos,
@@ -566,31 +502,29 @@ destacar os casos de duas grandes empresas de software: Google e
 Facebook. Os comentários foram extraídos de artigos que documentam o
 processo e as práticas de desenvolvimento de software dessas empresas:
 
--   *Testes de unidade são fortemente encorajados e amplamente
-    > praticados no Google. Todo código de produção deve ter testes de
-    > unidade e nossa ferramenta de revisão de código automaticamente
-    > destaca código submetido sem os correspondentes testes. Os
-    > revisores de código normalmente exigem que qualquer mudança que
-    > adiciona novas funcionalidades deve também adicionar os
-    > respectivos testes.*
-    > ([link](https://arxiv.org/abs/1702.01715))
+* Testes de unidade são fortemente encorajados e amplamente
+    praticados no Google. Todo código de produção deve ter testes de
+    unidade e nossa ferramenta de revisão de código automaticamente
+    destaca código submetido sem os correspondentes testes. Os
+    revisores de código normalmente exigem que qualquer mudança que
+    adiciona novas funcionalidades deve também adicionar os
+    respectivos testes.*
+    ([link](https://arxiv.org/abs/1702.01715))
 
--   *No Facebook, engenheiros são responsáveis pelos teste de unidade de
-    > qualquer código novo que eles desenvolvam. Além disso, esse código
-    > deve passar por testes de regressão, os quais são executados
-    > automaticamente, como parte dos processos de commit e push.*
-    > ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+* No Facebook, engenheiros são responsáveis pelos teste de unidade de
+    qualquer código novo que eles desenvolvam. Além disso, esse código
+    deve passar por testes de regressão, os quais são executados
+    automaticamente, como parte dos processos de commit e push.*
+    ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
-8.3 Princípios e Smells
-=======================
+## Princípios e Smells
 
 Nesta seção, vamos agrupar a apresentação de princípios e anti-padrões
 para implementação de testes de unidade. O objetivo é discutir questões
 importantes para a implementação de testes que tenham qualidade e que
 possam ser facilmente mantidos e entendidos.
 
-Princípios FIRST
-----------------
+### Princípios FIRST {.unnumbered}
 
 Testes de unidades devem satisfazer às seguintes propriedades (cujas
 iniciais dão origem à palavra FIRST, em Inglês):
@@ -620,23 +554,16 @@ não-determinísticos são chamados de **Testes Flaky** (ou **Testes
 Erráticos**). Concorrência é uma das principais responsáveis por
 comportamento flaky. Um exemplo é mostrado a seguir:
 
-+----------------------------------------------+
-| \@Test                                       |
-|                                              |
-| **public void** exemploTesteFlaky {          |
-|                                              |
-| TaskResult resultado;                        |
-|                                              |
-| MyMath m = new MyMath();                     |
-|                                              |
-| m.asyncPI(10,resultado);                     |
-|                                              |
-| Thread.sleep(1000);                          |
-|                                              |
-| assertEquals(3.1415926535, resultado.get()); |
-|                                              |
-| }                                            |
-+----------------------------------------------+
+```java
+@Test
+public void exemploTesteFlaky{
+  TaskResult resultado;
+  MyMath m = new MyMath();
+  m.asyncPI(10,resultado);
+  Thread.sleep(1000);
+  assertEquals(3.1415926535, resultado.get());
+}
+```
 
 Esse teste chama uma função que calcula o valor de PI, com uma certa
 precisão, e de forma assíncrona — isto é, a função realiza o seu
@@ -677,8 +604,7 @@ mesmo do código que vai ser testado, como já comentamos no final da
 Seção 8.2 e iremos discutir com mais profundidade na Seção sobre
 Desenvolvimento Dirigido por Testes (Seção 8.6).
 
-Test Smells
------------
+### Test Smells {.unnumbered}
 
 **Test Smells** representam estruturas e características
 "preocupantes" no código de testes de unidade, as quais, a princípio
@@ -714,35 +640,34 @@ também ser frequentemente refatorado, de modo a garantir que ele
 permaneça simples, fácil de entender e livre dos test smells que
 comentamos nesta seção.
 
-Número de assert por Teste
---------------------------
+### Número de assert por Teste {.unnumbered}
 
 Alguns autores
 ([link](https://dl.acm.org/citation.cfm?id=1388398))
 recomendam que deve existir no máximo um assert por teste, como
 ilustrado a seguir.
 
-+---------------------------------------+------------------------------------+
-| **Um assert por \@Test**              | **Mais de um assert por \@Test**   |
-+=======================================+====================================+
-| \@Test                                | \@Test                             |
-|                                       |                                    |
-| **public void** testEmptyStack() {    | **public void** testEmptyStack() { |
-|                                       |                                    |
-| assertTrue(stack.isEmpty());          | assertTrue(stack.isEmpty());       |
-|                                       |                                    |
-| }                                     | stack.push(10);                    |
-|                                       |                                    |
-| \@Test                                | assertFalse(stack.isEmpty());      |
-|                                       |                                    |
-| **public void** testNotEmptyStack() { | }                                  |
-|                                       |                                    |
-| stack.push(10);                       |                                    |
-|                                       |                                    |
-| assertFalse(stack.isEmpty());         |                                    |
-|                                       |                                    |
-| }                                     |                                    |
-+---------------------------------------+------------------------------------+
+```java
+@Test
+public void testEmptyStack(){
+  assertTrue(stack.isEmpty());
+}
+
+@Test
+public void testNotEmptyStack(){
+  stack.push(10);
+  assertFalse(stack.isEmpty());
+}
+```
+
+```java
+@Test
+public void testEmptyStack(){
+  assertTrue(stack.isEmpty());
+  stack.push(10);
+  assertFalse(stack.isEmpty());
+}
+```
 
 O programa da esquerda, que divide o teste de pilha vazia em dois
 testes, tende a ser mais legível e fácil de entender do que o segundo,
@@ -759,57 +684,40 @@ título, autor, ano e editora. Nesse caso, justifica-se ter quatro
 comandos assert no mesmo teste, cada um verificando um dos campos do
 objeto retornado pela função, como mostra o seguinte código.
 
-+--------------------------------------------------------------+
-| \@Test                                                       |
-|                                                              |
-| **public void** testBookService() {                          |
-|                                                              |
-| BookService bs = new BookService();                          |
-|                                                              |
-| Book b = bs.getBook(1234);                                   |
-|                                                              |
-| assertEquals("Engenharia Software Moderna", b.getTitle()); |
-|                                                              |
-| assertEquals("Marco Tulio Valente", b.getAuthor());        |
-|                                                              |
-| assertEquals("2020", g.getYear());                         |
-|                                                              |
-| assertEquals("ASERG/DCC/UFMG", g.getPublisher());          |
-|                                                              |
-| }                                                            |
-+--------------------------------------------------------------+
+```java
+@Test
+public void testBookService(){
+  BookService bs = new BookService();
+  Book b = bs.getBook(1234);
+  assertEquals("Engenharia Software Moderna", b.getTitle());
+  assertEquals("Marco Tulio Valente", b.getAuthor());
+  assertEquals("2020", g.getYear());
+  assertEquals("ASERG/DCC/UFMG", g.getPublisher());
+}
+```
 
 Uma segunda exceção é quando temos um método simples, que pode ser
 testado por meio de um único assert. Para ilustrar, mostramos o teste da
 função repeat da classe Strings da biblioteca google/guava
 ([link](https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/base/StringsTest.java)):
 
-+-----------------------------------------------------+
-| \@Test                                              |
-|                                                     |
-| **public void** testRepeat() {                      |
-|                                                     |
-| String input = "20";                              |
-|                                                     |
-| assertEquals("", Strings.repeat(input, 0));       |
-|                                                     |
-| assertEquals("20", Strings.repeat(input, 1));     |
-|                                                     |
-| assertEquals("2020", Strings.repeat(input, 2));   |
-|                                                     |
-| assertEquals("202020", Strings.repeat(input, 3)); |
-|                                                     |
-| \...                                                |
-|                                                     |
-| }                                                   |
-+-----------------------------------------------------+
+```java
+@Test
+public void testRepeat(){
+  String input = "20";
+  assertEquals("", Strings.repeat(input,0));
+  assertEquals("20", Strings.repeat(input,1));
+  assertEquals("2020", Strings.repeat(input,2));
+  assertEquals("202020", Strings.repeat(input,3));
+  ...
+}
+```
 
 Nesse teste, temos quatro comandos assertEquals, os quais testam,
 respectivamente, o resultado da repetição de uma determinada string
 zero, uma, duas e três vezes.
 
-8.4 Cobertura de Testes
-=======================
+## Cobertura de Testes
 
 Cobertura de testes é uma métrica que ajuda a definir o número de testes
 que precisamos escrever para um programa. Ela mede o percentual de
@@ -885,11 +793,11 @@ Por fim, mesmo quando se usa TDD, a cobertura de testes costuma não
 chegar a 100%, embora normalmente fique acima de 90%
 ([link](https://dl.acm.org/citation.cfm?id=2808995)).
 
-**🌎** **Mundo Real**: Em uma conferência de desenvolvedores do Google,
+🌎 **Mundo Real**: Em uma conferência de desenvolvedores do Google,
 em 2014, foram apresentadas algumas estatísticas sobre a cobertura de
 testes dos sistemas da empresa (veja os
-[[slides]{.underline}](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit?usp=sharing)
-e também o [[vídeo]{.underline}](https://youtu.be/4bublRBCLVQ)). Na
+[slides](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit?usp=sharing)
+e também o [vídeo](https://youtu.be/4bublRBCLVQ)). Na
 mediana, os sistemas do Google tinham 78% de cobertura, em nível de
 comandos. Segundo afirmou-se na palestra, a recomendação seria atingir
 85% de cobertura na maioria dos sistemas, embora essa recomendação não
@@ -912,23 +820,30 @@ branches são também chamadas de **Cobertura C0** e **Cobertura C1**,
 respectivamente. Para ilustrar a diferença entre ambas vamos usar o
 seguinte programa (à esquerda) e seu teste de unidade (à direita):
 
-+-----------------------------+-----------------------------+
-| **public class** Math {     | **public class** MathTest { |
-|                             |                             |
-| **public** int abs(int x) { | \@Test                      |
-|                             |                             |
-| **if** (x \< 0) {           | **public** void testAbs() { |
-|                             |                             |
-| x = -x;                     | Math m = new Math();        |
-|                             |                             |
-| }                           | assertEquals(1,m.abs(-1));  |
-|                             |                             |
-| **return** x;               | }                           |
-|                             |                             |
-| }                           | }                           |
-|                             |                             |
-| }                           |                             |
-+-----------------------------+-----------------------------+
+```java
+public class Math{
+
+  public int abs(int x){
+    if (x < 0) {  
+      x = -x;
+    }  
+    return x;
+  }
+
+}
+```
+
+```java
+public class MathTest{
+
+  @Test
+  public void testAbs(){
+    Math m = new Math();
+    assertEquals(1,m.abs(-1));
+  }
+
+}
+```
 
 Supondo cobertura de comandos, temos uma cobertura de 100%. Porém,
 supondo uma cobertura de branches, o valor é 50%, pois dentre as duas
@@ -938,8 +853,7 @@ teríamos que adicionar mais um comando assert, como:
 assertEquals(1,m.abs(1)). Logo, cobertura de branches é mais rigorosa do
 que cobertura de comandos.
 
-8.5 Testabilidade
-=================
+## Testabilidade
 
 Testabilidade é uma medida de quão fácil é implementar testes para um
 sistema. Como vimos, é importante que os testes sigam os princípios
@@ -958,8 +872,7 @@ apresentar boa testabilidade. Ou seja, normalmente, não precisamos tomar
 cuidados extras ou seguir novos princípios de projeto para produzir
 código que seja fácil de ser testado.
 
-Exemplo: Servlet
-----------------
+### Exemplo: Servlet {.unnumbered}
 
 Servlet é uma tecnologia de Java para implementação de páginas Web
 dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa
@@ -970,41 +883,26 @@ simples, consistindo na seguinte fórmula: peso / (altura \* altura). Mas
 tente imaginar que essa lógica poderia ser mais complexa e que, mesmo
 assim, a solução que vamos apresentar continuaria válida.
 
-+--------------------------------------------------------------------------+
-| **public class** IMCServlet **extends** HttpServtet {                    |
-|                                                                          |
-| **public** void doGet(HttpServletRequest req, HttpServletResponse res) { |
-|                                                                          |
-| res.setContentType("text/html");                                       |
-|                                                                          |
-| PrintWriter out = res.getWriter();                                       |
-|                                                                          |
-| String peso = req.getParameter("peso");                                |
-|                                                                          |
-| String altura = req.getParameter("altura");                            |
-|                                                                          |
-| **try** {                                                                |
-|                                                                          |
-| double p = Double.parseDouble(peso);                                     |
-|                                                                          |
-| double a = Double.parseDouble(altura);                                   |
-|                                                                          |
-| double imc = p / (a \* a);                                               |
-|                                                                          |
-| out.println("Índice de Massa Corporal (IMC): " + imc);                 |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| **catch** (NumberFormatException e) {                                    |
-|                                                                          |
-| out.println("Dados devem ser numéricos");                              |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-+--------------------------------------------------------------------------+
+```java
+public class IMCServlet extends HttpServtet{
+
+  public void doGet(HttpServletRequest req, HttpServletResponse res){
+    res.setContentType("text/html");
+    PrintWriter out = res.getWriter();
+    String peso = req.getParameter("peso");
+    String altura = req.getParameter("altura");
+      try{
+        double p = Double.parseDouble(peso);
+        double a = Double.parseDouble(altura);
+        double imc = p / (a * a);
+        out.println("Índice de Massa Corporal (IMC): " + imc);
+      }
+      catch (NumberFormatException e) {
+        out.println("Dados devem ser numéricos");
+      }
+  }
+}  
+```
 
 Primeiro, veja que não é simples escrever um teste para IMCServlet, pois
 essa classe depende de diversos tipos do pacote de Servlets de Java. Por
@@ -1026,55 +924,38 @@ não vamos testar o código completo. Porém, é melhor testar a parte de
 domínio do sistema do que deixar o código inteiramente descoberto de
 testes.
 
-+--------------------------------------------------------------------------+
-| **class** IMCModel {                                                     |
-|                                                                          |
-| **public** double calculaIMC(String p1, String a1)                       |
-|                                                                          |
-| **throws** NumberFormatException {                                       |
-|                                                                          |
-| double p = Double.parseDouble(p1);                                       |
-|                                                                          |
-| double a = Double.parseDouble(a1);                                       |
-|                                                                          |
-| return p / (a \* a);                                                     |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| **public class** IMCServlet **extends** HttpServtet {                    |
-|                                                                          |
-| IMCModel model = new IMCModel();                                         |
-|                                                                          |
-| **public** void doGet(HttpServletRequest req, HttpServletResponse res) { |
-|                                                                          |
-| res.setContentType("text/html");                                       |
-|                                                                          |
-| PrintWriter out = res.getWriter();                                       |
-|                                                                          |
-| String peso = req.getParameter("peso");                                |
-|                                                                          |
-| String altura = req.getParameter("altura");                            |
-|                                                                          |
-| **try** {                                                                |
-|                                                                          |
-| double imc = model.calculaIMC(peso, altura);                             |
-|                                                                          |
-| out.println("Índice de Massa Corporal (IMC): " + imc);                 |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| **catch** (NumberFormatException e) {                                    |
-|                                                                          |
-| out.println("Dados devem ser numéricos");                              |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-+--------------------------------------------------------------------------+
+```java
+class IMCModel{
+
+  public double calculaIMC(String p1, String a1) throws NumberFormatException{
+    double p = Double.parseDouble(p1);
+    double a = Double.parseDouble(a1);
+    return p / (a * a);
+  }
+
+}
+
+public class IMCServlet extends HttpServtet{
+  
+  IMCModel model = new IMCModel();
+
+  public void doGet(HttpServletRequest req, HttpServletResponse res){
+
+    res.setContentType("text/html");
+    PrintWriter out = res.getWriter();
+    String peso = req.getParameter("peso");
+    String altura = req.getParameter("altura");
+    try {
+      double imc = model.calculaIMC(peso, altura);
+      out.println("Índice de Massa Corporal (IMC): " + imc);
+    }
+    catch (NumberFormatException e){
+      out.println("Dados devem ser numéricos");
+    }
+  }
+
+}  
+```
 
 👨‍💻 **Código Fonte**: O código dessa servlet está disponível neste
 [link](https://gist.github.com/mtov/72a7da4aed79818fbd6aae4e0774d6a5).
@@ -1090,26 +971,20 @@ computado por uma thread independente. O exemplo que mostramos na Seção
 8.3 usava um sleep para esperar o resultado ficar disponível. Porém, o
 uso desse comando torna o teste não-determinístico.
 
-+----------------------------------------------------------------------+
-| **public** **class** MyMath {                                        |
-|                                                                      |
-| **public** **void** asyncPI(**int** prec, TaskResult task) { //      |
-| baixa testabilidade                                                  |
-|                                                                      |
-| **new** Thread (**new** Runnable() {                                 |
-|                                                                      |
-| **public** **void** run() {                                          |
-|                                                                      |
-| **double** pi = "calcula PI com precisão prec"                     |
-|                                                                      |
-| task.setResult(pi);                                                  |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }).start();                                                          |
-|                                                                      |
-| }                                                                    |
-+----------------------------------------------------------------------+
+```java
+public class MyMath{
+
+  public void asyncPI(int prec, TaskResult task){ // baixa testabilidade
+    new Thread (new Runnable(){
+      public void run(){
+        double pi = "calcula PI com precisão prec"
+        task.setResult(pi);
+      }
+    }).start();
+  }
+
+} 
+```
 
 A seguir mostramos uma solução para incrementar a testabilidade dessa
 classe. Primeiro, extraímos o código que implementa a computação de PI
@@ -1119,41 +994,31 @@ observação que fizemos no exemplo anterior: é melhor extrair uma função
 que seja fácil de ser testada, do que deixar o código descoberto de
 testes.
 
-+----------------------------------------------------------------------+
-| **public** **class** MyMath {                                        |
-|                                                                      |
-| **public** **double** syncPI(**int** prec) { // alta testabilidade   |
-|                                                                      |
-| **double** pi = "calcula PI com precisão prec"                     |
-|                                                                      |
-| **return** pi;                                                       |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| **public** **void** asyncPI(**int** prec, TaskResult task) { //      |
-| baixa testabilidade                                                  |
-|                                                                      |
-| **new** Thread (**new** Runnable() {                                 |
-|                                                                      |
-| **public** **void** run() {                                          |
-|                                                                      |
-| **double** pi = syncPI(prec);                                        |
-|                                                                      |
-| task.setResult(pi);                                                  |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }).start();                                                          |
-|                                                                      |
-| }                                                                    |
-+----------------------------------------------------------------------+
+```java
+public class MyMath{
+
+  public double syncPI(int prec){// alta testabilidade
+    double pi = "calcula PI com precisão prec"
+    return pi;
+  }
+
+  public void asyncPI(int prec, TaskResult task){ // baixa testabilidade
+    new Thread (new Runnable(){
+      public void run(){
+        double pi = syncPI(prec);
+        task.setResult(pi);
+      }    
+    }).start();
+  }
+
+}  
+```
 
 👨‍💻 **Código Fonte**: O código desse exemplo de chamada assíncrona está
 disponível neste
 [link](https://gist.github.com/mtov/a3f73350010758925172a7f433e2ba71).
 
-8.6 Mocks
-=========
+## Mocks
 
 Para explicar o papel desempenhado por mocks em testes de unidade, vamos
 começar com um exemplo motivador e discutir porque é difícil escrever um
@@ -1182,40 +1047,35 @@ um pouco mais, o exemplo considera que Book possui um único campo,
 relativo ao seu título. Em um programa real, Book teria outros campos,
 que também seriam tratados em getBook.
 
-+----------------------------------+----------------------------------+
-| **import**                       | **public** **interface**         |
-| org.json.JSONObject**;**         | BookService{                     |
-|                                  |                                  |
-| **public class** BookSearch {    | String search(int isbn);         |
-|                                  |                                  |
-| BookService rbs**;**             | }                                |
-|                                  |                                  |
-| **public**                       |                                  |
-| BookSearch(BookService rbs) {    |                                  |
-|                                  |                                  |
-| **this**.rbs = rbs;              |                                  |
-|                                  |                                  |
-| }                                |                                  |
-|                                  |                                  |
-| **public** Book getBook(**int**  |                                  |
-| isbn) {                          |                                  |
-|                                  |                                  |
-| String json = rbs.search(isbn);  |                                  |
-|                                  |                                  |
-| JSONObject obj = **new**         |                                  |
-| JSONObject(json);                |                                  |
-|                                  |                                  |
-| String titulo;                   |                                  |
-|                                  |                                  |
-| titulo =                         |                                  |
-| (String)obj.get("titulo");     |                                  |
-|                                  |                                  |
-| **return** **new** Book(titulo); |                                  |
-|                                  |                                  |
-| }                                |                                  |
-|                                  |                                  |
-| }                                |                                  |
-+----------------------------------+----------------------------------+
+```java
+import org.json.JSONObject;
+
+public class BookSearch{
+
+  BookService rbs;
+
+  public BookSearch(BookService rbs){
+    this.rbs = rbs;
+  }
+
+  public Book getBook(int isbn){
+    String json = rbs.search(isbn);
+    JSONObject obj = new JSONObject(json);
+    String titulo;
+    titulo = (String)obj.get("titulo");
+    return new Book(titulo);
+  }
+
+}
+```
+
+```java
+public interface BookService{
+
+  String search(int isbn);
+
+}
+```
 
 **Problema**: Precisamos implementar um teste de unidade para
 BookSearch. Porém, por definição, um teste de unidade exercita um
@@ -1238,62 +1098,47 @@ search. Porém, essa implementação é parcial, pois o mock retorna apenas
 os títulos de alguns livros, sem acessar servidores remotos ou bancos de
 dados. Um exemplo é mostrado a seguir:
 
-+----------------------------------------------------------------------+
-| **import** **static** org.junit.Assert.\*;                           |
-|                                                                      |
-| **import** org.junit.\*;                                             |
-|                                                                      |
-| **import** **static** org.junit.Assert.\*;                           |
-|                                                                      |
-| **class** BookConst {                                                |
-|                                                                      |
-| **public** **static** String ***ESM*** = "{ \\"titulo\\": \\"Eng |
-| Soft Moderna\\" }";                                                |
-|                                                                      |
-| **public static** String NULLBOOK = "NULL";                        |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| **class** MockBookService **implements** BookService {               |
-|                                                                      |
-| **public** String search(**int** isbn) {                             |
-|                                                                      |
-| if (isbn == 1234)                                                    |
-|                                                                      |
-| **return** BookConst.ESM;                                            |
-|                                                                      |
-| **return** BookConst.NULLBOOK;                                       |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| **public** **class** BookSearchTest {                                |
-|                                                                      |
-| **private** BookService service;                                     |
-|                                                                      |
-| \@Before                                                             |
-|                                                                      |
-| **public** **void** init() {                                         |
-|                                                                      |
-| service = **new** MockBookService();                                 |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| \@Test                                                               |
-|                                                                      |
-| **public** **void** testGetBook() {                                  |
-|                                                                      |
-| BookSearch bs = **new** BookSearch(service);                         |
-|                                                                      |
-| String titulo = bs.getBook(1234).getTitulo();                        |
-|                                                                      |
-| *assertEquals*("Eng Soft Moderna", titulo);                        |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }                                                                    |
-+----------------------------------------------------------------------+
+```java
+import static org.junit.Assert.*;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+class BookConst{
+
+  public static String ESM = "{ \"titulo\": \"Eng Soft Moderna\" }";        
+
+  public static String NULLBOOK = "NULL";
+
+}
+
+class MockBookService implements BookService{
+
+   public String search(int isbn){
+      if (isbn == 1234)
+        return BookConst.ESM;
+      return BookConst.NULLBOOK;
+   }
+
+}
+
+public class BookSearchTest{
+
+  private BookService service;
+
+  @Before
+  public void init(){
+    service = new MockBookService();
+  }        
+
+  @Test
+  public void testGetBook(){
+    BookSearch bs = new BookSearch(service);
+    String titulo = bs.getBook(1234).getTitulo();
+    assertEquals("Eng Soft Moderna", titulo);
+  }
+
+}
+```
 
 Nesse exemplo, MockBookService é uma classe usada para criar mocks de
 BookService, isto é, objetos que implementam essa interface, mas com um
@@ -1324,8 +1169,7 @@ dados de mais livros, dependendo do ISBN.
 disponível neste
 [link](https://gist.github.com/mtov/c162dce743cc2cb8fdbc25605c35cc2b).
 
-Frameworks de Mocks
--------------------
+### Frameworks de Mocks {.unnumbered}
 
 Mocks são tão comuns em testes de unidade que existem frameworks para
 facilitar a criação e "programação" de mocks (e/ou stubs). Não vamos
@@ -1334,47 +1178,34 @@ anterior, mas com um mock instanciado por um framework chamado
 **mockito** ([link](https://site.mockito.org/)), muito
 usado quando se escreve testes de unidade em Java que demandam mocks.
 
-+------------------------------------------------------------------------+
-| **import** org.junit.\*;                                               |
-|                                                                        |
-| **import** **static** org.junit.Assert.\*;                             |
-|                                                                        |
-| **import** org.mockito.Mockito;                                        |
-|                                                                        |
-| **import** **static** org.mockito.Mockito.*when*;                      |
-|                                                                        |
-| **import** **static** org.mockito.Matchers.*anyInt*;                   |
-|                                                                        |
-| **public** **class** BookSearchTest {                                  |
-|                                                                        |
-| **private** BookService service;                                       |
-|                                                                        |
-| \@Before                                                               |
-|                                                                        |
-| **public** **void** init() {                                           |
-|                                                                        |
-| service = Mockito.*mock*(BookService.**class**);                       |
-|                                                                        |
-| *when*(service.search(anyInt())).thenReturn(BookConst.***NULLBOOK***); |
-|                                                                        |
-| *when*(service.search(1234)).thenReturn(BookConst.***ESM***);          |
-|                                                                        |
-| }                                                                      |
-|                                                                        |
-| \@Test                                                                 |
-|                                                                        |
-| **public** **void** testGetBook() {                                    |
-|                                                                        |
-| BookSearch bs = **new** BookSearch(service);                           |
-|                                                                        |
-| String titulo = bs.getBook(1234).getTitulo();                          |
-|                                                                        |
-| *assertEquals*("Eng Soft Moderna", titulo);                          |
-|                                                                        |
-| }                                                                      |
-|                                                                        |
-| }                                                                      |
-+------------------------------------------------------------------------+
+```java
+import org.junit.*;
+import static org.junit.Assert.*;
+import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.anyInt;
+
+
+public class BookSearchTest{
+
+  private BookService service;
+
+  @Before
+  public void init(){
+    service = Mockito.mock(BookService.class);
+    when(service.search(anyInt())).thenReturn(BookConst.NULLBOOK);
+    when(service.search(1234)).thenReturn(BookConst.ESM);
+  }        
+
+  @Test
+  public void testGetBook(){
+    BookSearch bs = new BookSearch(service);
+    String titulo = bs.getBook(1234).getTitulo();
+    assertEquals("Eng Soft Moderna", titulo);
+  }
+
+}
+```
 
 Primeiro, podemos ver que não existe mais uma classe MockBookService. O
 principal ganho de se usar um framework como o mockito é exatamente
@@ -1383,7 +1214,9 @@ disso, um mock para BookService é criado pelo próprio framework
 usando-se dos recursos de **reflexão computacional** de Java. Para isso,
 basta usar a função mock(type), como a seguir:
 
+```java
 service = Mockito.mock(BookService.**class**);
+```
 
 No entanto, o mock service ainda está vazio e sem nenhum comportamento.
 Temos então que ensiná-lo a se comportar pelo menos em algumas
@@ -1392,9 +1225,11 @@ pesquisas de livros. Para isso, o mockito oferece uma **linguagem de
 domínio específico** simples, baseada na mesma sintaxe de Java. Um
 exemplo é mostrado a seguir:
 
+```java
 *when(service.*search*(*anyInt*())).*thenReturn*(BookConst.**NULLBOOK**);*
 
 *when*(service.search(1234)).thenReturn(BookConst.***ESM***);
+```
 
 Essa duas linhas "programam" o mock service. Primeiro, dizemos para
 ele retornar BookConst.NULLBOOK quando o seu método search for chamado
@@ -1406,8 +1241,7 @@ retornar a string JSON com os dados do livro BookConst.ESM.
 mockito, está disponível neste
 [link](https://gist.github.com/mtov/f7781e3f164a62c85cf4294271b9c2fd).
 
-Mocks vs Stubs
---------------
+### Mocks vs Stubs {.unnumbered}
 
 Alguns autores, como Martin Fowler
 ([link](https://martinfowler.com/articles/mocksArentStubs.html))
@@ -1425,17 +1259,13 @@ Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
 verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte
 teste:
 
-+--------------------------------+
-| testBehaviour {                |
-|                                |
-| Mailer m = mock(Mailer.class); |
-|                                |
-| sut.someBusinessLogic(m);      |
-|                                |
-| verify(m).send(anyString());   |
-|                                |
-| }                              |
-+--------------------------------+
+```java
+testBehaviour{
+  Mailer m = mock(Mailer.class);
+  sut.someBusinessLogic(m);
+  verify(m).send(anyString());
+}
+```
 
 Nesse exemplo, o comando verify — implementado pelo mockito — é
 parecido com um assert. No entanto, ele verifica se um evento ocorreu
@@ -1449,17 +1279,16 @@ Segundo Meszaros, existem pelo menos mais dois outros tipos de objetos
 dublê:
 
 -   **Objetos Dummy** são objetos que são passados como argumento para
-    > um método, mas que não são usados. Trata-se, portanto, de uma
-    > forma de dublê usada apenas para satisfazer o sistema de tipos da
-    > linguagem.
+     um método, mas que não são usados. Trata-se, portanto, de uma
+     forma de dublê usada apenas para satisfazer o sistema de tipos da
+     linguagem.
 
 -   **Objeto Fake** são objetos que possuem uma implementação mais
-    > simples do que o objeto real. Por exemplo, um objeto que simula em
-    > memória principal, por meio de tabelas hash, um objeto de acesso a
-    > bancos de dados.
+     simples do que o objeto real. Por exemplo, um objeto que simula em
+     memória principal, por meio de tabelas hash, um objeto de acesso a
+     bancos de dados.
 
-Exemplo: Servlet
-----------------
+### Exemplo: Servlet {.unnumbered}
 
 Na seção anterior, mostramos o teste de uma servlet que calcula o Índice
 de Massa Corporal (IMC) de uma pessoa. No entanto, argumentamos que não
@@ -1471,34 +1300,27 @@ que precisamos no teste.
 
 Primeiro, vamos reapresentar o código da servlet que queremos testar:
 
-+----------------------------------------------------------------------+
-| **public** **class** IMCServlet **extends** HttpServlet {            |
-|                                                                      |
-| IMCModel model = **new** IMCModel();                                 |
-|                                                                      |
-| **public** **void** doGet(HttpServletRequest req,                    |
-| HttpServletResponse res) {                                           |
-|                                                                      |
-| res.setContentType("text/html");                                   |
-|                                                                      |
-| PrintWriter out = res.getWriter();                                   |
-|                                                                      |
-| String peso = req.getParameter("peso");                            |
-|                                                                      |
-| String altura = req.getParameter("altura");                        |
-|                                                                      |
-| **double** imc = model.calculaIMC(peso,altura);                      |
-|                                                                      |
-| out.println("IMC: " + imc);                                        |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }                                                                    |
-+----------------------------------------------------------------------+
+
+```java
+public class IMCServlet extends HttpServlet{
+
+  IMCModel model = new IMCModel();
+
+  public void doGet(HttpServletRequest req, HttpServletResponse res){
+    res.setContentType("text/html");
+    PrintWriter out = res.getWriter();
+    String peso = req.getParameter("peso");
+    String altura = req.getParameter("altura");
+    double imc = model.calculaIMC(peso,altura);
+    out.println("IMC: " + imc);
+  }
+
+}
+```
 
 Segue então o novo teste dessa servlet (ele é uma adaptação de um
 exemplo disponível em um
-[[artigo]{.underline}](https://doi.ieeecomputersociety.org/10.1109/MS.2002.1003449)
+[artigo](https://doi.ieeecomputersociety.org/10.1109/MS.2002.1003449)
 de autoria de Dave Thomas e Andy Hunt). Primeiro, podemos ver, no método
 init, que foram criados mocks para objetos dos tipos HttpServletRequest
 e HttpServletResponse. Esses mocks serão usados como parâmetros da
@@ -1513,33 +1335,25 @@ deve retornar o objeto PrintWriter que acabamos de criar. Em resumo,
 fizemos tudo isso com o objetivo de alterar a saída da servlet para uma
 lista de strings.
 
-+------------------------------------------------------+
-| **public** **class** IMCServletTest {                |
-|                                                      |
-| HttpServletRequest req;                              |
-|                                                      |
-| HttpServletResponse res;                             |
-|                                                      |
-| StringWriter sw;                                     |
-|                                                      |
-| \@Before                                             |
-|                                                      |
-| **public** **void** init() {                         |
-|                                                      |
-| req = Mockito.*mock*(HttpServletRequest.**class**);  |
-|                                                      |
-| res = Mockito.*mock*(HttpServletResponse.**class**); |
-|                                                      |
-| sw = **new** StringWriter();                         |
-|                                                      |
-| PrintWriter pw = **new** PrintWriter(sw);            |
-|                                                      |
-| *when*(res.getWriter()).thenReturn(pw);              |
-|                                                      |
-| }                                                    |
-|                                                      |
-| // ... continua a seguir                             |
-+------------------------------------------------------+
+```java
+public class IMCServletTest{
+
+  HttpServletRequest req;
+
+  HttpServletResponse res;
+
+  StringWriter sw;
+
+  @Before
+  public void init(){
+    req = Mockito.mock(HttpServletRequest.class);
+    res = Mockito.mock(HttpServletResponse.class);
+    sw = new StringWriter();
+    PrintWriter pw = new PrintWriter(sw);
+    when(res.getWriter()).thenReturn(pw);
+  }
+  // ...continua a seguir
+```
 
 Para concluir, temos o método de teste, mostrado a seguir. Nele,
 começamos programando o mock do objeto com os parâmetros de entrada da
@@ -1549,25 +1363,18 @@ retornar 1.80. Feito isso, o teste segue o fluxo normal de testes de
 unidades: chamamos o método que queremos testar, doGet, e verificamos se
 ele retorna o resultado esperado.
 
-+------------------------------------------------------------+
-| // continuação de IMCServletTest                           |
-|                                                            |
-| \@Test                                                     |
-|                                                            |
-| **public** **void** testDoGet() {                          |
-|                                                            |
-| *when*(req.getParameter("peso")).thenReturn("82");     |
-|                                                            |
-| *when*(req.getParameter("altura")).thenReturn("1.80"); |
-|                                                            |
-| **new** IMCServlet().doGet(req,res);                       |
-|                                                            |
-| *assertEquals*("IMC: 25.3\\n", sw.toString());           |
-|                                                            |
-| }                                                          |
-|                                                            |
-| }                                                          |
-+------------------------------------------------------------+
+```java
+  // continuação de IMCServletTest
+  @Test
+  public void testDoGet(){
+    when(req.getParameter("peso")).thenReturn("82");
+    when(req.getParameter("altura")).thenReturn("1.80");
+    new IMCServlet().doGet(req,res);
+    assertEquals("IMC: 25.3\n", sw.toString());
+  }
+
+}
+```
 
 Esse exemplo serve também para ilustrar as desvantagens do uso de mocks.
 A principal delas é o fato de mocks aumentarem o acoplamento entre o
@@ -1590,8 +1397,7 @@ finais, métodos estáticos e construtores.
 está disponível neste
 [link](https://gist.github.com/mtov/5372c7ffebe79c21768d0b1290c409b1).
 
-8.7 Desenvolvimento Dirigido por Testes (TDD)
-=============================================
+## Desenvolvimento Dirigido por Testes (TDD)
 
 Desenvolvimento Dirigido por Testes (*Test Driven Development*, TDD) é
 uma das práticas de programação propostas por Extreme Programming (XP).
@@ -1611,29 +1417,29 @@ projeto, etc.
 TDD foi proposto com três objetivos principais em mente:
 
 -   TDD ajuda a evitar que os desenvolvedores esqueçam de escrever
-    > testes. Para isso, TDD promove testes à primeira atividade de
-    > qualquer tarefa de programação, seja ela corrigir um bug ou
-    > implementar uma nova funcionalidade. Sendo a primeira atividade, é
-    > mais difícil que a escrita de testes seja deixada para um segundo
-    > momento.
+     testes. Para isso, TDD promove testes à primeira atividade de
+     qualquer tarefa de programação, seja ela corrigir um bug ou
+     implementar uma nova funcionalidade. Sendo a primeira atividade, é
+     mais difícil que a escrita de testes seja deixada para um segundo
+     momento.
 
 -   TDD favorece a escrita de código com alta testabilidade. Essa
-    > característica também é uma consequência natural da inversão do
-    > fluxo de trabalho proposta por TDD: como o desenvolvedor sabe que
-    > ele terá que escrever o teste T e depois a classe C, é natural que
-    > desde o início ele planeje C de forma a facilitar a escrita de seu
-    > teste. De fato, como mencionamos na Seção 8.4, sistemas que usam
-    > TDD têm alta cobertura de testes, normalmente acima de 90%.
+     característica também é uma consequência natural da inversão do
+     fluxo de trabalho proposta por TDD: como o desenvolvedor sabe que
+     ele terá que escrever o teste T e depois a classe C, é natural que
+     desde o início ele planeje C de forma a facilitar a escrita de seu
+     teste. De fato, como mencionamos na Seção 8.4, sistemas que usam
+     TDD têm alta cobertura de testes, normalmente acima de 90%.
 
 -   TDD é uma prática relacionada não apenas com testes, mas também com
-    > a melhoria do design de um sistema. Isso acontece porque o
-    > desenvolvedor, ao começar pela escrita de um teste T, coloca-se na
-    > posição de um usuário da classe C. Em outras palavras, com TDD, o
-    > primeiro usuário da classe é seu próprio desenvolvedor —
-    > lembre que T é um cliente de C, pois ele chama métodos de C. Por
-    > isso, espera-se que o desenvolvedor simplifique a interface de C,
-    > use nomes de métodos e parâmetros legíveis, evite listas de
-    > parâmetros longas, etc.
+     a melhoria do design de um sistema. Isso acontece porque o
+     desenvolvedor, ao começar pela escrita de um teste T, coloca-se na
+     posição de um usuário da classe C. Em outras palavras, com TDD, o
+     primeiro usuário da classe é seu próprio desenvolvedor —
+     lembre que T é um cliente de C, pois ele chama métodos de C. Por
+     isso, espera-se que o desenvolvedor simplifique a interface de C,
+     use nomes de métodos e parâmetros legíveis, evite listas de
+     parâmetros longas, etc.
 
 Quando trabalha-se com TDD, o desenvolvedor segue um um ciclo composto
 por três estados, conforme mostra a próxima.
@@ -1671,8 +1477,7 @@ em métodos menores, se algum método pode ser movido para uma classe
 diferente, etc. Terminado o passo de refatoração, podemos parar ou então
 reiniciar o ciclo, para implementar mais alguma funcionalidade.
 
-Exemplo: Carrinho de Compras
-----------------------------
+### Exemplo: Carrinho de Compras {.unnumbered}
 
 Para concluir, vamos ilustrar uma sessão de uso de TDD. Para isso,
 usaremos como exemplo o sistema de uma livraria virtual. Nesse sistema,
@@ -1687,54 +1492,53 @@ desses métodos usando TDD.
 add e um método getTotal. Além de decidir o nome de tais métodos,
 definimos os seus parâmetros e escrevemos o primeiro teste:
 
-+-----------------------------------------------+
-| \@Test                                        |
-|                                               |
-| void testAddGetTotal() {                      |
-|                                               |
-| Book b1 = **new** Book("book1", 10, "1"); |
-|                                               |
-| Book b2 = **new** Book("book2", 20, "2"); |
-|                                               |
-| ShoppingCart cart = **new** ShoppingCart();   |
-|                                               |
-| cart.add(b1);                                 |
-|                                               |
-| cart.add(b2);                                 |
-|                                               |
-| assertEquals(30.0,cart.getTotal());           |
-|                                               |
-| }                                             |
-+-----------------------------------------------+
+```java
+@Test
+void testAddGetTotal(){
+  Book b1 = new Book("book1", 10, "1");
+  Book b2 = new Book("book2", 20, "2");
+  ShoppingCart cart = new ShoppingCart();
+  cart.add(b1);
+  cart.add(b2);
+  assertEquals(30.0,cart.getTotal());
+}
+```
 
 Apesar de simples e de fácil entendimento, esse teste ainda não compila,
 pois não existe implementação para as classes Book e ShoppingCart.
 Então, temos que providenciar isso, como mostrado a seguir:
 
-+-----------------------------------+---------------------------------+
-| **public** **class** Book {       | **public class** ShoppingCart { |
-|                                   |                                 |
-| **public** String title;          | **public** ShoppingCart() {}    |
-|                                   |                                 |
-| **public** double price;          | **public** void add(Book b) {}  |
-|                                   |                                 |
-| **public** String isbn;           | **double** getTotal() {         |
-|                                   |                                 |
-| **public** Book(String title,     | **return** 0.0;                 |
-| double price,                     |                                 |
-|                                   | }                               |
-| String isbn) {                    |                                 |
-|                                   | }                               |
-| **this**.title = title;           |                                 |
-|                                   |                                 |
-| **this**.price = price;           |                                 |
-|                                   |                                 |
-| **this**.isbn = isbn;             |                                 |
-|                                   |                                 |
-| }                                 |                                 |
-|                                   |                                 |
-| }                                 |                                 |
-+-----------------------------------+---------------------------------+
+```java
+public class Book {
+
+  public String title;
+
+  public double price;
+
+  public String isbn;
+
+  public Book(String title, double price, String isbn){
+    this.title = title;
+    this.price = price;
+    this.isbn = isbn;
+  }
+
+}
+```
+
+```java
+public class ShoppingCart{
+
+  public ShoppingCart(){}
+
+  public void add(Book b){}
+
+  double getTotal(){
+    return 0.0;
+  }
+
+}
+```
 
 A implementação de ambas as classes é muito simples. Implementamos
 apenas o mínimo para que o programa e o teste compilem. Observe, por
@@ -1747,21 +1551,19 @@ chegamos ao estado vermelho.
 é, ele define o que temos que implementar em ShoppingCart. Logo, mãos à
 obra:
 
-+---------------------------------+
-| **public class** ShoppingCart { |
-|                                 |
-| **public** ShoppingCart() {}    |
-|                                 |
-| **public** void add(Book b) {}  |
-|                                 |
-| double getTotal() {             |
-|                                 |
-| **return** 30.0;                |
-|                                 |
-| }                               |
-|                                 |
-| }                               |
-+---------------------------------+
+```java
+public class ShoppingCart{
+
+  public ShoppingCart(){}
+
+  public void add(Book b){}
+
+  double getTotal(){
+    return 30.0;
+  }
+
+}
+```
 
 Porém, o leitor deve estar agora surpreso: essa implementação está
 incorreta! A construtora de ShoppingCart está vazia, a classe não possui
@@ -1774,37 +1576,29 @@ esses avanços em XP são chamados de **baby steps**.
 Mas temos que prosseguir e dar uma implementação mais realista para
 ShoppingCart. Segue ela:
 
-+--------------------------------------+
-| **public class** ShoppingCart {      |
-|                                      |
-| **private** ArrayList\<Book\> items; |
-|                                      |
-| **private** double total;            |
-|                                      |
-| **public** ShoppingCart() {          |
-|                                      |
-| items = new ArrayList\<Book\>();     |
-|                                      |
-| total = 0.0;                         |
-|                                      |
-| }                                    |
-|                                      |
-| **public** void add(Book b) {        |
-|                                      |
-| items.add(b);                        |
-|                                      |
-| total += b.price();                  |
-|                                      |
-| }                                    |
-|                                      |
-| **double** getTotal() {              |
-|                                      |
-| return total;                        |
-|                                      |
-| }                                    |
-|                                      |
-| }                                    |
-+--------------------------------------+
+```java
+public class ShoppingCart{
+
+  private ArrayList<Book> items;
+
+  private double total;
+
+  public ShoppingCart(){
+    items = new ArrayList<Book>();  
+    total = 0.0;  
+  }
+
+  public void add(Book b){
+    items.add(b);
+    total += b.price();
+  }
+
+  double getTotal(){
+    return total;
+  }
+
+}
+```
 
 Agora dispomos de uma estrutura de dados para armazenar os itens do
 carrinho, um atributo para armazenar o valor total do carrinho, uma
@@ -1828,8 +1622,7 @@ Agora, podemos parar ou então pensar em implementar mais um requisito.
 Por exemplo, podemos implementar um método para remover livros do
 carrinho. Para isso, temos que começar mais um ciclo.
 
-8.8 Testes de Integração
-========================
+## Testes de Integração
 
 Com testes de integração — também chamados de **testes de serviços**
 — subimos para um nível intermediário da pirâmide de testes (veja
@@ -1844,8 +1637,7 @@ não faz mais sentido usar mocks ou stubs. Como são testes maiores, eles
 levam mais tempo para executar e, consequentemente, são chamados com
 menor frequência.
 
-Exemplo: Agenda de Compromissos
--------------------------------
+### Exemplo: Agenda de Compromissos {.unnumbered}
 
 Suponha uma agenda simples que permita adicionar, remover e editar
 compromissos, conforme ilustrado na próxima figura.
@@ -1856,49 +1648,36 @@ height="2.7044542869641295in"}
 Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
 
-+-------------------------------------+
-| **public** **class** AgendaFacade { |
-|                                     |
-| int addAppointment(Appointment p);  |
-|                                     |
-| void removeAppointment(int id);     |
-|                                     |
-| void editAppointment(int id);       |
-|                                     |
-| Appointmemt\[\] listAppointments(); |
-|                                     |
-| }                                   |
-+-------------------------------------+
+```java
+public class AgendaFacade{
 
+  int addAppointment(Appointment p);
+
+  void removeAppointment(int id);
+
+  void editAppointment(int id);
+
+  Appointmemt[] listAppointments();
+
+}
+```
 Assim, podemos escrever o seguinte teste de integração para essa classe:
 
-+----------------------------------------------------+
-| \@Test                                             |
-|                                                    |
-| void AgendaFacadeTest() {                          |
-|                                                    |
-| DB db = DB.create();                               |
-|                                                    |
-| AgendaFacade agenda = new AgendaFacade();          |
-|                                                    |
-| Appointment app1 = new Appointmemt(\...);          |
-|                                                    |
-| Appointment app2 = new Appointmemt(\...);          |
-|                                                    |
-| Appointment app3 = new Appointmemt(\...);          |
-|                                                    |
-| int id1= agenda.addAppointmemt(app1);              |
-|                                                    |
-| int id2= agenda.addAppointmemt(app2);              |
-|                                                    |
-| int id3= agenda.addAppointmemt(app3);              |
-|                                                    |
-| Appointment \[\] apps = agenda.listAppointments(); |
-|                                                    |
-| assertEquals(3,apps.length);                       |
-|                                                    |
-| }                                                  |
-+----------------------------------------------------+
+```java
+@Test
+void AgendaFacadeTest(){
+  DB db = DB.create();
+  AgendaFacade agenda = new AgendaFacade();
+  Appointment app1 = new Appointmemt(...);
+  Appointment app2 = new Appointmemt(...);
+  Appointment app3 = new Appointmemt(...);
+  int id1= agenda.addAppointmemt(app1);
+  int id2= agenda.addAppointmemt(app2);
+  int id3= agenda.addAppointmemt(app3);
+  Appointment [] apps = agenda.listAppointments();
+  assertEquals(3,apps.length);
+}
+```
 
 Vale a pena mencionar dois pontos sobre esse teste. Primeiro, ele é
 implementado usando o JUnit, como os testes anteriores, de unidade, que
@@ -1912,8 +1691,7 @@ assert. Assim, esse teste exercita os principais serviços da agenda,
 exceto aqueles relacionados com sua interface gráfica. Por isso, ele
 ainda não é um teste de sistema.
 
-8.9 Testes de Sistema
-=====================
+## Testes de Sistema
 
 Testes de sistema estão posicionados no topo da pirâmide de testes.
 Trata-se de testes que simulam o uso de um sistema por um usuário real.
@@ -1922,8 +1700,7 @@ Testes de sistema são também chamados de testes **ponta-a-ponta**
 caros, que demandam maior esforço para implementação e que executam em
 mais tempo.
 
-Exemplo: Teste de Sistemas Web
-------------------------------
+### Exemplo: Teste de Sistemas Web {.unnumbered}
 
 Selenium é um framework para automatizar testes de sistemas Web. O
 framework permite criar programas que funcionam como robôs que abrem
@@ -1935,55 +1712,42 @@ Firefox fazendo uma pesquisa no Google pela palavra "software". O
 código também imprime na console o título da página que lista os
 resultados da pesquisa.
 
-+--------------------------------------------------------------------------+
-| **public class** SeleniumExample {                                       |
-|                                                                          |
-| **public** static void main(String\[\] args) {                           |
-|                                                                          |
-| // cria um driver para acessar um servidor Web                           |
-|                                                                          |
-| WebDriver driver = new FirefoxDriver();                                  |
-|                                                                          |
-| // instrui o driver para "navegar" pela página do Google               |
-|                                                                          |
-| driver.navigate().to("http://www.google.com");                         |
-|                                                                          |
-| // obtém um campo de entrada de dados, de nome "q"                     |
-|                                                                          |
-| WebElement element = driver.findElement(By.name("q"));                 |
-|                                                                          |
-| // preenche esse campo com as palavras "software"                      |
-|                                                                          |
-| element.sendKeys("software");                                          |
-|                                                                          |
-| // submete os dados; como se fosse dado um "enter" no campo            |
-|                                                                          |
-| element.submit();                                                        |
-|                                                                          |
-| // espera a página de resposta carregar (com um timeout de 8s)           |
-|                                                                          |
-| (new WebDriverWait(driver,8)).until(new ExpectedCondition\<Boolean\>() { |
-|                                                                          |
-| public Boolean apply(WebDriver d) {                                      |
-|                                                                          |
-| return d.getTitle().toLowerCase().startsWith("cheese!");               |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| });                                                                      |
-|                                                                          |
-| // resultado deve ser: "software - Google Search"                      |
-|                                                                          |
-| System.out.println("Page title is: " + driver.getTitle());             |
-|                                                                          |
-| // fecha o navegador                                                     |
-|                                                                          |
-| driver.quit();                                                           |
-|                                                                          |
-| }                                                                        |
-|                                                                          |
-| }                                                                        |
-+--------------------------------------------------------------------------+
+```java
+public class SeleniumExample{
+
+  public static void main(String[] args){
+
+    // cria um driver para acessar um servidor Web
+    WebDriver driver = new FirefoxDriver();
+
+    // instrui o driver para "navegar" pela página do Google
+    driver.navigate().to("http://www.google.com");
+
+    // obtém um campo de entrada de dados, de nome "q"
+    WebElement element = driver.findElement(By.name("q"));
+
+    // preenche esse campo com as palavras "software"
+    element.sendKeys("software");
+
+    // submete os dados; como se fosse dado um "enter" no campo
+    element.submit();
+
+    // espera a página de resposta carregar (com um timeout de 8s)
+    (new WebDriverWait(driver,8)).until(new ExpectedCondition<Boolean>(){
+      public Boolean apply(WebDriver d){
+        return d.getTitle().toLowerCase().startsWith("cheese!");
+      }
+    });
+
+    // resultado deve ser: "software - Google Search"
+    System.out.println("Page title is: " + driver.getTitle());
+
+    // fecha o navegador
+    driver.quit();
+  }
+
+}
+```
 
 Testes de interface são mais difíceis de escrever, pelo menos do que
 testes de unidade e mesmo do que testes de integração. Por exemplo, a
@@ -1996,8 +1760,7 @@ de pesquisa da tela principal do Google mudar, o teste acima terá que
 ser atualizado. Porém, se compararmos com a alternativa — realizar o
 teste manualmente — eles ainda são competitivos e apresentam ganhos.
 
-Exemplo: Teste de um Compilador
--------------------------------
+### Exemplo: Teste de um Compilador {.unnumbered}
 
 Quando desenvolve-se um compilador, pode-se usar testes de unidade ou de
 integração. Já os testes de sistema de um compilador tendem a ser
@@ -2023,11 +1786,10 @@ não está executando corretamente. Porém, normalmente não é trivial
 mapear essa falha para a unidade do compilador que gerou código de forma
 incorreta.
 
-8.10 Outros Tipos de Testes
-===========================
+## Outros Tipos de Testes
 
-Testes Caixa Preta (Funcional) e Caixa Branca (Estrutural)
-----------------------------------------------------------
+### Testes Caixa Preta (Funcional) e Caixa Branca (Estrutural) {.unnumbered}
+
 
 Técnicas de teste podem ser classificadas como caixa preta ou caixa
 branca. Quando se usa uma **técnica caixa preta**, os testes são
@@ -2067,8 +1829,7 @@ TDD:
 > testes caixa branca. (fonte: Test-Driven Development Violates the
 > Dichotomies of Testing, Kent Beck, Three Rivers Institute, June 2007)*
 
-Seleção de Dados de Teste
--------------------------
+### Seleção de Dados de Teste {.unnumbered}
 
 Quando se adota testes caixa preta existem técnicas para auxiliar na
 seleção das entradas que serão verificadas no teste. Partição via
@@ -2123,8 +1884,7 @@ diferentes valores de uma mesma classe de equivalência, o que não é
 necessário. Por outro lado, algumas classes de equivalência podem ficar
 sem testes.
 
-Testes de Aceitação
--------------------
+### Testes de Aceitação {.unnumbered}
 
 São testes realizados pelo cliente, com dados do cliente. Os resultados
 desse teste irão determinar se o cliente está de acordo ou não com a
@@ -2151,8 +1911,7 @@ aprovado nos testes alfa, pode-se realizar um teste com um grupo maior
 de usuários e não mais em um ambiente controlado. Esses testes são
 chamados de **testes beta**.
 
-Testes de Requisitos Não-Funcionais
------------------------------------
+### Testes de Requisitos Não-Funcionais {.unnumbered}
 
 Os testes anteriores, com exceção dos testes de aceitação, verificam
 apenas requisitos funcionais; logo, eles têm como objetivo encontrar
@@ -2168,8 +1927,7 @@ sistema. **Testes de falhas** simulam eventos anormais em um sistema,
 por exemplo a queda de alguns serviços ou mesmo de um data-center
 inteiro.
 
-Bibliografia
-============
+## Bibliografia {.unnumbered}
 
 Gerard Meszaros. xUnit Test Patterns: Refactoring Test Code.
 Addison-Wesley, 2007.
@@ -2187,8 +1945,7 @@ do Código, 2015.
 Jeff Langr, Andy Hunt, Dave Thomas. Pragmatic Unit Testing in Java 8
 with Junit. O′Reilly, 2015.
 
-Exercícios de Fixação
-=====================
+## Exercícios de Fixação {.unnumbered}
 
 1\. (ENADE 2011) Uma equipe está realizando testes com o código-fonte de
 um sistema. Os testes envolvem a verificação de diversos componentes
@@ -2208,33 +1965,21 @@ fib(4) = 3, etc. Escreva um teste de unidade para essa função.
 exceção EmptyStackException, para que ele fique mais simples e fácil de
 entender.
 
-+----------------------------------------------+
-| \@Test                                       |
-|                                              |
-| **public** void testEmptyStackException() {  |
-|                                              |
-| boolean sucesso = false;                     |
-|                                              |
-| **try** {                                    |
-|                                              |
-| Stack s\<Integer\> = new Stack\<Integer\>(); |
-|                                              |
-| s.push(10);                                  |
-|                                              |
-| int r = stack.pop();                         |
-|                                              |
-| r = stack.pop();                             |
-|                                              |
-| } **catch** (EmptyStackException e) {        |
-|                                              |
-| sucesso = true;                              |
-|                                              |
-| }                                            |
-|                                              |
-| assertTrue(sucesso);                         |
-|                                              |
-| }                                            |
-+----------------------------------------------+
+```java
+@Test
+public void testEmptyStackException(){
+  boolean sucesso = false;
+  try{
+    Stack s<Integer> = new Stack<Integer>();
+    s.push(10);
+    int r = stack.pop();
+    r = stack.pop();
+  } catch (EmptyStackException e){
+    sucesso = true;
+  }
+  assertTrue(sucesso);
+}
+```
 
 5\. Suponha que um programador escreveu o teste a seguir para a classe
 ArrayList de Java. Como você irá perceber, no código são usados diversos
@@ -2245,148 +1990,103 @@ sintaxe e os comandos do JUnit. Observação: se quiser executar o código,
 ele está disponível neste
 [link](https://gist.github.com/mtov/11d9dce2bd37fe462003992835ebb1ba).
 
-+----------------------------------------------------+
-| **import** java.util.List;                         |
-|                                                    |
-| **import** java.util.ArrayList;                    |
-|                                                    |
-| **public** class Main {                            |
-|                                                    |
-| **public** **static** void main(String\[\] args) { |
-|                                                    |
-| // teste 1                                         |
-|                                                    |
-| List\<Integer\> s = new ArrayList\<Integer\>();    |
-|                                                    |
-| System.out.println(s.isEmpty());                   |
-|                                                    |
-| // teste 2                                         |
-|                                                    |
-| s = new ArrayList\<Integer\>();                    |
-|                                                    |
-| s.add(1);                                          |
-|                                                    |
-| System.out.println(s.isEmpty());                   |
-|                                                    |
-| // teste 3                                         |
-|                                                    |
-| s = new ArrayList\<Integer\>();                    |
-|                                                    |
-| s.add(1);                                          |
-|                                                    |
-| s.add(2);                                          |
-|                                                    |
-| s.add(3);                                          |
-|                                                    |
-| System.out.println(s.size());                      |
-|                                                    |
-| System.out.println(s.get(0));                      |
-|                                                    |
-| System.out.println(s.get(1));                      |
-|                                                    |
-| System.out.println(s.get(2));                      |
-|                                                    |
-| // teste 4                                         |
-|                                                    |
-| s = new ArrayList\<Integer\>();                    |
-|                                                    |
-| s.add(1);                                          |
-|                                                    |
-| s.add(2);                                          |
-|                                                    |
-| s.add(3);                                          |
-|                                                    |
-| int elem = s.remove(2);                            |
-|                                                    |
-| System.out.println(elem);                          |
-|                                                    |
-| System.out.println(s.get(0));                      |
-|                                                    |
-| System.out.println(s.get(1));                      |
-|                                                    |
-| // teste 5                                         |
-|                                                    |
-| s = new ArrayList\<Integer\>();                    |
-|                                                    |
-| s.add(1);                                          |
-|                                                    |
-| s.remove(0);                                       |
-|                                                    |
-| System.out.println(s.size());                      |
-|                                                    |
-| System.out.println(s.isEmpty());                   |
-|                                                    |
-| // teste 6                                         |
-|                                                    |
-| **try** {                                          |
-|                                                    |
-| s = new ArrayList\<Integer\>();                    |
-|                                                    |
-| s.add(1);                                          |
-|                                                    |
-| s.add(2);                                          |
-|                                                    |
-| s.remove(2);                                       |
-|                                                    |
-| }                                                  |
-|                                                    |
-| **catch** (IndexOutOfBoundsException e) {          |
-|                                                    |
-| System.out.println("IndexOutOfBound");           |
-|                                                    |
-| }                                                  |
-|                                                    |
-| }                                                  |
-|                                                    |
-| }                                                  |
-+----------------------------------------------------+
+```java
+import java.util.List;
+import java.util.ArrayList;
+
+public class Main{
+
+  public static void main(String[] args){
+
+    // teste 1  
+    List<Integer> s = new ArrayList<Integer>();
+    System.out.println(s.isEmpty());
+
+    // teste 2
+    s = new ArrayList<Integer>();
+    s.add(1);
+    System.out.println(s.isEmpty());
+
+    // teste 3
+    s = new ArrayList<Integer>();
+    s.add(1);
+    s.add(2);
+    s.add(3);
+    System.out.println(s.size());
+    System.out.println(s.get(0));
+    System.out.println(s.get(1));
+    System.out.println(s.get(2));
+
+    // teste 4
+    s = new ArrayList<Integer>();
+    s.add(1);
+    s.add(2);
+    s.add(3);
+    int elem = s.remove(2);
+    System.out.println(elem);
+    System.out.println(s.get(0));
+    System.out.println(s.get(1));
+
+    // teste 5
+    s = new ArrayList<Integer>();
+    s.add(1);
+    s.remove(0);
+    System.out.println(s.size());
+    System.out.println(s.isEmpty());
+
+    // teste 6
+    try {
+      s = new ArrayList<Integer>();
+      s.add(1);
+      s.add(2);
+      s.remove(2);        
+    }
+
+    catch (IndexOutOfBoundsException e){
+      System.out.println("IndexOutOfBound");
+    }
+
+  }
+
+}
+```
 
 6\. Seja a seguinte função. Observe que ela possui quatro comandos,
 sendo dois deles if. Logo, esses dois ifs geram quatro branches:
 
-+------------------------+
-| void f(int x, int y) { |
-|                        |
-| if (x \> 0) {          |
-|                        |
-| x = 2 \* x;            |
-|                        |
-| if (y \> 0) {          |
-|                        |
-| y = 2 \* y;            |
-|                        |
-| }                      |
-|                        |
-| }                      |
-|                        |
-| }                      |
-+------------------------+
+```java
+void f(int x, int y){
+  if (x > 0){
+     x = 2 * x;
+     if (y > 0){
+        y = 2 * y;
+     }
+   }
+}
+```
 
 Supondo o código acima, preencha a tabela a seguir, com os valores da
 cobertura de comandos e cobertura de branches obtidas com os testes
 especificados na primeira coluna.
 
-  **Chamadas da função feitas pela suíte de testes**   **Cobertura de comandos**   **Cobertura de branches**
-  ---------------------------------------------------- --------------------------- ---------------------------
-  f(0,0)                                                                           
-  f(1,1)                                                                           
-  f(0,0) e f(1,1)                                                                  
+|Chamadas da função feitas pela suíte de testes | Cobertura de comandos | Cobertura de branches
+ - | - | - |
+| f(0,0) | | |
+| f(1,1) | | |
+| f(0,0) e f(1,1) | | |
+           
 
 7\. Suponha o seguinte requisito: alunos recebem conceito A em uma
 disciplina se tiverem nota maior ou igual a 90. Seja a seguinte função
 que implementa esse requisito:
 
-+---------------------------------+
-| boolean isConceitoA(int nota) { |
-|                                 |
-| if (nota \> 90)                 |
-|                                 |
-| return true;                    |
-|                                 |
-| else return false;              |
-|                                 |
-| }                               |
-+---------------------------------+
+```java
+boolean isConceitoA(int nota){
+  if (nota > 90)
+    return true;
+  else return false;
+}
+```
 
 O código dessa função possui três comandos, sendo um deles um if; logo,
 ela possui dois branches.
@@ -2406,31 +2106,21 @@ Responda agora às seguintes perguntas.
 
 8\. Complete os comandos assert nos trechos indicados.
 
-+----------------------------------------------------------------+
-| **public** void test1(){                                       |
-|                                                                |
-| LinkedList list = mock(LinkedList.class);                      |
-|                                                                |
-| when(list.size()).thenReturn(10);                              |
-|                                                                |
-| assertEquals(\_\_\_\_\_\_\_\_\_\_\_, \_\_\_\_\_\_\_\_\_\_\_ ); |
-|                                                                |
-| }                                                              |
-|                                                                |
-| **public** void test2(){                                       |
-|                                                                |
-| LinkedList list = mock(LinkedList.class);                      |
-|                                                                |
-| when(list.get(0)).thenReturn("Engenharia");                  |
-|                                                                |
-| when(list.get(1)).thenReturn("Software");                    |
-|                                                                |
-| String result = list.get(0) + " " + list.get(1);             |
-|                                                                |
-| assertEquals(\_\_\_\_\_\_\_\_\_\_\_, \_\_\_\_\_\_\_\_\_\_\_ ); |
-|                                                                |
-| }                                                              |
-+----------------------------------------------------------------+
+```java
+public void test1(){
+   LinkedList list = mock(LinkedList.class);
+   when(list.size()).thenReturn(10);
+   assertEquals(___________, ___________);
+}
+
+public void test2(){
+   LinkedList list = mock(LinkedList.class);
+   when(list.get(0)).thenReturn("Engenharia");
+   when(list.get(1)).thenReturn("Software");
+   String result = list.get(0) + " " + list.get(1);
+   assertEquals(___________, ___________);
+}
+```
 
 9\. Suponha duas unidades de código A e B, sendo que A depende de B.
 Para permitir o teste de unidade de A foi criado um mock para B, chamado
