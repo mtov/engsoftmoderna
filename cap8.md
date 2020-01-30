@@ -1,9 +1,7 @@
 
 # Testes
 
-*Code without tests is bad code.*
-
-*Michael Feathers*
+> *Code without tests is bad code.* -- Michael Feathers
 
 Este capítulo inicia com uma introdução a testes, na qual usamos uma
 pirâmide para classificar os principais tipos de testes, de acordo com a
@@ -83,8 +81,7 @@ uma **pirâmide de testes**, originalmente proposta por Mike Cohn
 mostra a próxima figura, essa pirâmide particiona os testes de acordo
 com sua granularidade.
 
-![](media/image12.png){width="4.749963910761155in"
-height="3.088542213473316in"}
+![Pirâmide de testes](figs/cap8/piramide-testes){width=70%}
 
 Particularmente, os testes são divididos em três grupos. **Testes de
 unidade** verificam automaticamente pequenas partes de um código,
@@ -105,9 +102,11 @@ caros, mais lentos e menos numerosos. Testes de interface costumam ser
 também frágeis, isto é, mínimas alterações nos componentes da interface
 podem demandar modificações nesses testes.
 
-  ![](media/image4.png){width="1.8125in" height="2.236111111111111in"}   ![](media/image11.png){width="1.532292213473316in" height="2.0786417322834647in"}   ![](media/image7.png){width="1.5666458880139982in" height="1.9114588801399826in"}
-  ---------------------------------------------------------------------- ----------------------------------------------------------------------------------- -----------------------------------------------------------------------------------
-  Teste de Unidade                                                       Teste de Integração                                                                 Teste de Sistema
+![Testes de unidade](figs/cap8/teste-unidade){width=25%}
+
+![Testes de integração](figs/cap8/teste-integracao){width=25%}
+
+![Testes de sistema](figs/cap8/teste-sistema){width=25%}
 
 Uma recomendação genérica é que esses três testes sejam implementados na
 seguinte proporção: 70% como testes de unidades; 20% como testes de
@@ -121,7 +120,7 @@ seu espaço na pirâmide. Ou seja, falaremos mais de testes de unidade do
 que de testes de sistema, pois os primeiros são muito mais comuns. Antes
 de começar de fato, gostaríamos de relembrar alguns conceitos que
 apresentamos na Introdução. Diz-se que um código possui um **defeito**
-\-- ou um **bug**, de modo mais informal — quando ele não está de
+— ou um **bug**, de modo mais informal — quando ele não está de
 acordo com a sua especificação. Se um código com defeito for executado e
 levar o programa a apresentar um resultado ou comportamento incorreto,
 dizemos que ocorreu uma **falha** (*failure*).
@@ -137,8 +136,7 @@ dividido em dois grupos: um conjunto de classes — que implementam os
 requisitos do sistema — e um conjunto de testes, conforme ilustrado
 na próxima figura.
 
-![](media/image6.png){width="3.063847331583552in"
-height="3.8489588801399823in"}
+![](figs/cap8/testes-classes-unidade){width=55%}
 
 A figura mostra um sistema com *n* classes e *m* testes. Como pode ser
 observado, não existe uma correspondência de 1 para 1 entre classes e
@@ -166,7 +164,7 @@ pois os testes são implementados na mesma linguagem do sistema que
 pretende-se testar.
 
 Para explicar os conceitos básicos de testes de unidade, vamos nos
-basear na seguinte classe Stack:
+basear na seguinte classe `Stack`:
 
 ```java
 import java.util.ArrayList;
@@ -379,14 +377,20 @@ levantada pelo método de teste. Em resumo, testEmptyException vai passar
 se a sua execução levantar uma EmptyStackException. Caso contrário, ele
 vai falhar.
 
-👨‍💻 **Código Fonte**: O código fonte das classes Stack e StackTest está
+**Código Fonte**: O código fonte das classes Stack e StackTest está
 disponível neste
 [link](https://gist.github.com/mtov/3601acd0b32a1d0a85b4a81a43af4284).
 
-**⚠️ Aviso:** JUnit possui diversas versões. Neste capítulo, estamos
+```{=latex}
+\begin{aviso}
+```
+**Aviso:** JUnit possui diversas versões. Neste capítulo, estamos
 usando a versão 4.12.
+```{=latex}
+\end{aviso}
+```
 
-### Definições {.unnumbered}
+### Definições
 
 
 Antes de avançar, vamos apresentar algumas definições:
@@ -419,7 +423,7 @@ Antes de avançar, vamos apresentar algumas definições:
     termo **código de produção**, ou seja, código que vai ser
     disponibilizado para os clientes do sistema.
 
-### Quando Escrever Testes de Unidade?   {.unnumbered}
+### Quando Escrever Testes de Unidade?  
 
 Existem duas respostas principais para essa pergunta. Primeiro, pode-se
 escrever os testes após implementar uma pequena funcionalidade. Por
@@ -463,7 +467,7 @@ desenvolvimento. Em vez disso, recomenda-se que o desenvolvedor de uma
 classe seja também responsável pela implementação de seus testes de
 unidade.
 
-### Benefícios {.unnumbered}
+### Benefícios
 
 O principal benefício de testes de unidade é encontrar bugs, ainda na
 fase de desenvolvimento e antes que o código entre em produção, quando
@@ -493,7 +497,10 @@ comportamento da classe Stack. Por isso, muitas vezes, antes de manter
 um código com o qual ele não tenha familiaridade, um desenvolvedor
 começa analisando os seus testes.
 
-🌎 **Mundo Real**: Dentre as práticas de desenvolvimento propostas
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Dentre as práticas de desenvolvimento propostas
 originalmente por métodos ágeis, testes de unidade é provavelmente a que
 alcançou o maior impacto e que é mais largamente usada. Hoje, os mais
 diversos sistemas de software, de empresas dos mais diferentes tamanhos,
@@ -516,6 +523,9 @@ processo e as práticas de desenvolvimento de software dessas empresas:
     deve passar por testes de regressão, os quais são executados
     automaticamente, como parte dos processos de commit e push.*
     ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+```{=latex}
+\end{esmbox}
+```
 
 ## Princípios e Smells
 
@@ -524,7 +534,7 @@ para implementação de testes de unidade. O objetivo é discutir questões
 importantes para a implementação de testes que tenham qualidade e que
 possam ser facilmente mantidos e entendidos.
 
-### Princípios FIRST {.unnumbered}
+### Princípios FIRST
 
 Testes de unidades devem satisfazer às seguintes propriedades (cujas
 iniciais dão origem à palavra FIRST, em Inglês):
@@ -604,7 +614,7 @@ mesmo do código que vai ser testado, como já comentamos no final da
 Seção 8.2 e iremos discutir com mais profundidade na Seção sobre
 Desenvolvimento Dirigido por Testes (Seção 8.6).
 
-### Test Smells {.unnumbered}
+### Test Smells
 
 **Test Smells** representam estruturas e características
 "preocupantes" no código de testes de unidade, as quais, a princípio
@@ -640,7 +650,7 @@ também ser frequentemente refatorado, de modo a garantir que ele
 permaneça simples, fácil de entender e livre dos test smells que
 comentamos nesta seção.
 
-### Número de assert por Teste {.unnumbered}
+### Número de assert por Teste 
 
 Alguns autores
 ([link](https://dl.acm.org/citation.cfm?id=1388398))
@@ -793,7 +803,10 @@ Por fim, mesmo quando se usa TDD, a cobertura de testes costuma não
 chegar a 100%, embora normalmente fique acima de 90%
 ([link](https://dl.acm.org/citation.cfm?id=2808995)).
 
-🌎 **Mundo Real**: Em uma conferência de desenvolvedores do Google,
+```{=latex}
+\begin{esmbox}
+```
+**Mundo Real**: Em uma conferência de desenvolvedores do Google,
 em 2014, foram apresentadas algumas estatísticas sobre a cobertura de
 testes dos sistemas da empresa (veja os
 [slides](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit?usp=sharing)
@@ -806,8 +819,13 @@ dogmática. Mostrou-se também que a cobertura variava por linguagem de
 programação. A menor cobertura era dos sistemas em C++, um pouco
 inferior a 60% na média dos projetos. A maior foi medida para sistemas
 implementados em Python, um pouco acima de 80%.
+```{=latex}
+\end{esmbox}
+```
 
-📚 **Aprofundamento:** A definição de métrica de cobertura, apresentada
+### Outras Definições de Cobertura
+
+A definição de métrica de cobertura, apresentada
 acima, foi baseada em comandos, pois trata-se de sua definição mais
 comum. Porém, existem definições alternativas, tais como **cobertura de
 funções** (percentual de funções que são executadas por um teste),
@@ -872,7 +890,7 @@ apresentar boa testabilidade. Ou seja, normalmente, não precisamos tomar
 cuidados extras ou seguir novos princípios de projeto para produzir
 código que seja fácil de ser testado.
 
-### Exemplo: Servlet {.unnumbered}
+### Exemplo: Servlet 
 
 Servlet é uma tecnologia de Java para implementação de páginas Web
 dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa
@@ -957,11 +975,10 @@ public class IMCServlet extends HttpServtet{
 }  
 ```
 
-👨‍💻 **Código Fonte**: O código dessa servlet está disponível neste
+**Código Fonte**: O código dessa servlet está disponível neste
 [link](https://gist.github.com/mtov/72a7da4aed79818fbd6aae4e0774d6a5).
 
-Exemplo: Chamada Assíncrona
----------------------------
+### Exemplo: Chamada Assíncrona
 
 O próximo código mostra a implementação da função asyncPI que
 mencionamos na Seção 8.3 quando tratamos dos princípios FIRST e,
@@ -1014,7 +1031,7 @@ public class MyMath{
 }  
 ```
 
-👨‍💻 **Código Fonte**: O código desse exemplo de chamada assíncrona está
+**Código Fonte**: O código desse exemplo de chamada assíncrona está
 disponível neste
 [link](https://gist.github.com/mtov/a3f73350010758925172a7f433e2ba71).
 
@@ -1025,9 +1042,15 @@ começar com um exemplo motivador e discutir porque é difícil escrever um
 teste de unidade para ele. Em seguida, vamos introduzir o conceito de
 mocks como uma possível solução para testar esse exemplo.
 
-**⚠️ Aviso:** Neste capítulo, usamos **mock** como sinônimo de **stub**.
+```{=latex}
+\begin{aviso}
+```
+**Aviso:** Neste capítulo, usamos **mock** como sinônimo de **stub**.
 No entanto, incluímos uma subseção mais à frente para ressaltar que
 alguns autores fazem uma distinção entre esses termos.
+```{=latex}
+\end{aviso}
+```
 
 **Exemplo Motivador:** Para explicar o conceito de mocks, vamos partir
 de uma classe simples para pesquisa de livros, cujo código é mostrado a
@@ -1165,11 +1188,11 @@ também testar com mais alguns livros, bastando estender a capacidade do
 mock: em vez de retornar sempre o JSON do mesmo livro, ele retornaria
 dados de mais livros, dependendo do ISBN.
 
-👨‍💻 **Código Fonte**: O código do exemplo de mock usado nesta seção está
+**Código Fonte**: O código do exemplo de mock usado nesta seção está
 disponível neste
 [link](https://gist.github.com/mtov/c162dce743cc2cb8fdbc25605c35cc2b).
 
-### Frameworks de Mocks {.unnumbered}
+### Frameworks de Mocks 
 
 Mocks são tão comuns em testes de unidade que existem frameworks para
 facilitar a criação e "programação" de mocks (e/ou stubs). Não vamos
@@ -1237,11 +1260,11 @@ com qualquer inteiro como argumento. Em seguida, abrimos uma exceção a
 essa regra geral: quando search for chamado com o inteiro 1234, ele deve
 retornar a string JSON com os dados do livro BookConst.ESM.
 
-👨‍💻 **Código Fonte**: O código desse exemplo, baseado no framework
+**Código Fonte**: O código desse exemplo, baseado no framework
 mockito, está disponível neste
 [link](https://gist.github.com/mtov/f7781e3f164a62c85cf4294271b9c2fd).
 
-### Mocks vs Stubs {.unnumbered}
+### Mocks vs Stubs
 
 Alguns autores, como Martin Fowler
 ([link](https://martinfowler.com/articles/mocksArentStubs.html))
@@ -1288,7 +1311,7 @@ dublê:
      memória principal, por meio de tabelas hash, um objeto de acesso a
      bancos de dados.
 
-### Exemplo: Servlet {.unnumbered}
+### Exemplo: Servlet
 
 Na seção anterior, mostramos o teste de uma servlet que calcula o Índice
 de Massa Corporal (IMC) de uma pessoa. No entanto, argumentamos que não
@@ -1393,7 +1416,7 @@ Por fim, não conseguimos criar mocks para todos objetos e métodos. Em
 geral, as seguintes construções não são "mockáveis": classes e métodos
 finais, métodos estáticos e construtores.
 
-👨‍💻 **Código Fonte**: O código do teste dessa servlet, usando mocks,
+**Código Fonte**: O código do teste dessa servlet, usando mocks,
 está disponível neste
 [link](https://gist.github.com/mtov/5372c7ffebe79c21768d0b1290c409b1).
 
@@ -1477,7 +1500,7 @@ em métodos menores, se algum método pode ser movido para uma classe
 diferente, etc. Terminado o passo de refatoração, podemos parar ou então
 reiniciar o ciclo, para implementar mais alguma funcionalidade.
 
-### Exemplo: Carrinho de Compras {.unnumbered}
+### Exemplo: Carrinho de Compras 
 
 Para concluir, vamos ilustrar uma sessão de uso de TDD. Para isso,
 usaremos como exemplo o sistema de uma livraria virtual. Nesse sistema,
@@ -1760,7 +1783,7 @@ de pesquisa da tela principal do Google mudar, o teste acima terá que
 ser atualizado. Porém, se compararmos com a alternativa — realizar o
 teste manualmente — eles ainda são competitivos e apresentam ganhos.
 
-### Exemplo: Teste de um Compilador {.unnumbered}
+### Exemplo: Teste de um Compilador
 
 Quando desenvolve-se um compilador, pode-se usar testes de unidade ou de
 integração. Já os testes de sistema de um compilador tendem a ser
@@ -1788,7 +1811,7 @@ incorreta.
 
 ## Outros Tipos de Testes
 
-### Testes Caixa Preta (Funcional) e Caixa Branca (Estrutural) {.unnumbered}
+### Testes Caixa Preta (Funcional) e Caixa Branca (Estrutural)
 
 
 Técnicas de teste podem ser classificadas como caixa preta ou caixa
@@ -1829,7 +1852,7 @@ TDD:
 > testes caixa branca. (fonte: Test-Driven Development Violates the
 > Dichotomies of Testing, Kent Beck, Three Rivers Institute, June 2007)*
 
-### Seleção de Dados de Teste {.unnumbered}
+### Seleção de Dados de Teste
 
 Quando se adota testes caixa preta existem técnicas para auxiliar na
 seleção das entradas que serão verificadas no teste. Partição via
@@ -1884,7 +1907,7 @@ diferentes valores de uma mesma classe de equivalência, o que não é
 necessário. Por outro lado, algumas classes de equivalência podem ficar
 sem testes.
 
-### Testes de Aceitação {.unnumbered}
+### Testes de Aceitação 
 
 São testes realizados pelo cliente, com dados do cliente. Os resultados
 desse teste irão determinar se o cliente está de acordo ou não com a
@@ -1911,7 +1934,7 @@ aprovado nos testes alfa, pode-se realizar um teste com um grupo maior
 de usuários e não mais em um ambiente controlado. Esses testes são
 chamados de **testes beta**.
 
-### Testes de Requisitos Não-Funcionais {.unnumbered}
+### Testes de Requisitos Não-Funcionais 
 
 Os testes anteriores, com exceção dos testes de aceitação, verificam
 apenas requisitos funcionais; logo, eles têm como objetivo encontrar
@@ -1927,7 +1950,7 @@ sistema. **Testes de falhas** simulam eventos anormais em um sistema,
 por exemplo a queda de alguns serviços ou mesmo de um data-center
 inteiro.
 
-## Bibliografia {.unnumbered}
+## Bibliografia 
 
 Gerard Meszaros. xUnit Test Patterns: Refactoring Test Code.
 Addison-Wesley, 2007.
@@ -1943,9 +1966,9 @@ Maurício Aniche. Testes automatizados de software: um guia prático. Casa
 do Código, 2015.
 
 Jeff Langr, Andy Hunt, Dave Thomas. Pragmatic Unit Testing in Java 8
-with Junit. O′Reilly, 2015.
+with Junit. O'Reilly, 2015.
 
-## Exercícios de Fixação {.unnumbered}
+## Exercícios de Fixação 
 
 1\. (ENADE 2011) Uma equipe está realizando testes com o código-fonte de
 um sistema. Os testes envolvem a verificação de diversos componentes
