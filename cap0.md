@@ -68,3 +68,9 @@ Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Fede
 [CSIndexbr](https://csindexbr.org/), sistema que oferece dados transparentes sobre a produção científica brasileira em Ciência da Computação.
 
 ![](figs/cap0/mtov.png){width=25%}
+
+\newpage
+
+## Agradecimentos {.unnumbered}
+
+Gostaria de agradecer aos mais de 30 alunos que passaram pelo ASERG/DCC/UFMG, na última década. Pode parecer que não, mas muito do conteúdo desse livro tem sua origem nos artigos, dissertações, teses e seminários de nosso grupo. Gostaria de agradecer também aos mais de 20 professores que começaram a usar nosso material quando ele era um embrião de livro. Não vou listar todos aqui, mas os nomes estão na seguinte [página](https://engsoftmoderna/early-adopters.html). Gostaria de agradecer os alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar este livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer Aline Brito, que ajudou na conversão de todos os capítulos para o formato final, e João Eduardo Montandon, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda Osvaldo e Cynthia Valente, pela revisão ortográfica e gramatical de partes do livro.

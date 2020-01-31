@@ -243,9 +243,19 @@ else
 <p>Esse código vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, você pode habilitar a nova página, fazendo <code>nova_pag</code> receber <code>true</code>.</p>
 <p>Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga pode ser removido. Ou seja, a duplicação de código foi temporária.</p>
 <p><strong>Mundo Real:</strong> Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento (<a href="https://doi.org/10.1145/2901739.2901745">link</a>). Nesse período, eles encontraram mais de 2.400 feature flags distintas no código do navegador. Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adicionava 73 novos flags e removia 43 flags. Por isso, o crescimento observado no estudo.</p>
-<p>No entanto, pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.</p>
+<p>Pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.</p>
 <p>Primeiro, feature flags ajudam a implementar o que chama-se de <strong>release canário</strong>. Nessa modalidade de release, uma nova funcionalidade — guardada por uma feature flag — é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, eventuais prejuízos causados por bugs não detectados nos testes da nova funcionalidade são minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam rapidamente recuar e evitar uma intoxicação.</p>
 <p>Adicionalmente, feature flags ajudam a viabilizar <strong>Testes A/B</strong>, tal como estudamos no Capítulo 3. Apenas para relembrar, nesses testes, libera-se simultaneamente duas versões de uma funcionalidade (antiga e nova, por exemplo) para grupos distintos de usuários, com o objetivo de verificar se a nova funcionalidade de fato agrega valor ao sistema.</p>
+<p>Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar as features e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:</p>
+<pre><code>FeatureFlagsTable fft = new FeatureFlagsTable();
+fft.addFeature(&quot;novo-carrinho-compras&quot;, false);
+...
+if (fft.IsEnabled(&quot;novo-carrinho-compras&quot;))
+   // processa comprar usando novo carrinho
+else 
+   // continua usando código anterior
+...      </code></pre>
+<p>Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a <code>FeatureFlagsTable</code> do código acima. A vantagem nesse caso é que as features podem ser setadas externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando a feature é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
 <p>Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018.</p>
 <p>Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.</p>
@@ -265,12 +275,20 @@ else
 <li>Desenvolvimento com APIs REST, Java</li>
 </ul>
 <p>Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja <q>Engenheiro DevOps</q>? Justifique a sua resposta.</p></li>
+<li><p>Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.</p></li>
+<li><p>Descreva uma desvantagem importante relacionada com o uso de mono-repositórios.</p></li>
 <li><p>Defina (e diferencie) os seguintes termos: integração contínua (<em>continuous integration</em>); entrega contínua (<em>continuous delivery</em>) e deployment contínuo (<em>continuous deployment</em>).</p></li>
 <li><p>Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.</p></li>
 <li><p>Pesquise o significado da expressão <q>Teatro de CI</q> (<em>CI Theater</em>) e então descreva-o com suas próprias palavras.</p></li>
+<li><p>Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Você adotaria deployment ou delivery contínuo nessa empresa? Justifique sua resposta.</p></li>
 <li><p>Descreva um problema (ou dificuldade) que surge quando decide-se usar <em>feature flags</em> para delimitar código que ainda não está pronto para entrar em produção.</p></li>
 <li><p>Linguagens como C possuem suporte a diretivas de compilação condicional do tipo <code>#ifdef</code> e <code>#endif</code>. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e <em>feature flags</em>?</p></li>
 <li><p>Quando uma empresa usa CI, normalmente ela não usa mais branches de funcionalidades (<em>feature branches</em>). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada <em>Trunk Based Development</em> ou TBD, conforme estudamos neste capítulo. No entanto, TBD não significa que branches deixam de ser usados em tais empresas. Descreva então um outro uso para branches, que não seja como <em>feature branches</em>.</p></li>
+<li><p>Leia o seguinte <a href="https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html">artigo</a> do blog oficial do Gmail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de <q>trocar os pneus de um carro com ele em movimento</q>.</p></li>
+</ol>
+<ol type="a">
+<li><p>Qual tecnologia — que estudamos neste capítulo — foi fundamental para viabilizar essa atualização de interface? Qual o nome que o artigo dá para essa tecnologia?</p></li>
+<li><p>E qual o nome que usamos no capítulo para referenciá-la?</p></li>
 </ol>
 </div>
 </div>

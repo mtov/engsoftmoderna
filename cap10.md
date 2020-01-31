@@ -327,11 +327,26 @@ Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o
 \end{esmbox}
 ```
 
-No entanto, pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.
+Pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.
 
 Primeiro, feature flags ajudam a implementar o que chama-se de **release canário**. Nessa modalidade de release, uma nova funcionalidade --- guardada por uma feature flag --- é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, eventuais prejuízos causados por bugs não detectados nos testes da nova funcionalidade são minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam rapidamente recuar e evitar uma intoxicação.
 
 Adicionalmente, feature flags ajudam a viabilizar **Testes A/B**, tal como estudamos no Capítulo 3. Apenas para relembrar, nesses testes, libera-se simultaneamente duas versões de uma funcionalidade (antiga e nova, por exemplo) para grupos distintos de usuários, com o objetivo de verificar se a nova funcionalidade de fato agrega valor ao sistema.
+
+Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar as features e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:
+
+```
+FeatureFlagsTable fft = new FeatureFlagsTable();
+fft.addFeature("novo-carrinho-compras", false);
+...
+if (fft.IsEnabled("novo-carrinho-compras"))
+   // processa comprar usando novo carrinho
+else 
+   // continua usando código anterior
+...      
+```
+
+Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a `FeatureFlagsTable` do código acima. A vantagem nesse caso é que as features podem ser setadas externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando a feature é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.
 
 
 ## Bibliografia {.unnumbered}
@@ -359,14 +374,29 @@ Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Soft
 
    Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
 
-3. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuous delivery*) e deployment contínuo (*continuous deployment*).
+3. Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.
 
-4. Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.
+4. Descreva uma desvantagem importante relacionada com o uso de mono-repositórios.
 
-5. Pesquise o significado da expressão "Teatro de CI" (*CI Theater*) e então descreva-o com suas próprias palavras.
+5. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuous delivery*) e deployment contínuo (*continuous deployment*).
 
-6. Descreva um problema (ou dificuldade) que surge quando decide-se usar *feature flags* para delimitar código que ainda não está pronto para entrar em produção. 
+6. Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.
 
-7. Linguagens como C possuem suporte a diretivas de compilação condicional do tipo `#ifdef` e `#endif`. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e *feature flags*?
+7. Pesquise o significado da expressão "Teatro de CI" (*CI Theater*) e então descreva-o com suas próprias palavras.
 
-8. Quando uma empresa usa CI, normalmente ela não usa mais branches de funcionalidades (*feature branches*). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada *Trunk Based Development* ou TBD, conforme estudamos neste capítulo. No entanto, TBD não significa que branches deixam de ser usados em tais empresas. Descreva então um outro uso para branches, que não seja como *feature branches*.
+8. Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Você adotaria deployment ou delivery contínuo nessa empresa? Justifique sua resposta.
+
+9. Descreva um problema (ou dificuldade) que surge quando decide-se usar *feature flags* para delimitar código que ainda não está pronto para entrar em produção. 
+
+10. Linguagens como C possuem suporte a diretivas de compilação condicional do tipo `#ifdef` e `#endif`. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e *feature flags*?
+
+11. Quando uma empresa usa CI, normalmente ela não usa mais branches de funcionalidades (*feature branches*). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada *Trunk Based Development* ou TBD, conforme estudamos neste capítulo. No entanto, TBD não significa que branches deixam de ser usados em tais empresas. Descreva então um outro uso para branches, que não seja como *feature branches*.
+
+12. Leia o seguinte [artigo](https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html) do blog oficial do Gmail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de "trocar os pneus de um carro com ele em movimento". 
+
+   a. Qual tecnologia --- que estudamos neste capítulo --- foi fundamental para viabilizar
+   essa atualização de interface? Qual o nome que o artigo dá para essa tecnologia? 
+
+   b. E qual o nome que usamos no capítulo para referenciá-la?
+
+    
