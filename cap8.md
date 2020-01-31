@@ -1941,8 +1941,11 @@ um sistema. Os testes envolvem a verificação de diversos componentes
 individualmente, bem como das interfaces entre eles. Essa equipe está
 realizando testes de:
 
-\(a\) unidade; (b) aceitação; (c) sistema e aceitação; (d) integração e
-sistema; (e) unidade e integração
+(a) unidade; 
+(b) aceitação; 
+(c) sistema e aceitação; 
+(d) integração e sistema; 
+(e) unidade e integração
 
 2\. Descreva três benefícios associados ao uso de testes de unidade.
 
