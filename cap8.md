@@ -273,7 +273,7 @@ testes iria falhar, como mostrado pela barra vermelha na IDE:
 
 A mensagem de erro informa que houve uma falha durante a execução de
 `testEmptyStack`. Falha (*failure*) é o termo usado pelo JUnit para
-indicar testes cujo comando assert não foi satisfeito.
+indicar testes cujo comando `assert` não foi satisfeito.
 
 Em uma outra janela da IDE, pode-se descobrir que a asserção responsável
 pela falha encontra-se na linha 19 do arquivo `StackTest.java`.
@@ -446,9 +446,9 @@ bug. Se a correção for bem sucedida, o teste vai passar e ganhamos mais
 um teste para a suíte de testes.
 
 Pode-se escrever testes também quando se estiver depurando um trecho de
-código. Por exemplo, evite escrever um System.out.println para testar
+código. Por exemplo, evite escrever um `System.out.println` para testar
 manualmente o resultado de um método. Em vez disso, escreva um método de
-teste. Quando usa-se um println, ele em algum momento é removido. Já um
+teste. Quando usa-se um `println`, ele em algum momento é removido. Já um
 teste tem a vantagem de contribuir com mais um teste para a suíte de
 testes.
 
@@ -775,7 +775,7 @@ com as estatísticas de cobertura, o programa anterior, após compilado,
 possui 52 instruções cobertas por testes de unidade, de um total de 56
 instruções. Portanto, sua cobertura é 52 / 56 = 92.9%.
 
-### Qual a cobertura de testes ideal? 
+### Qual a Cobertura de Testes Ideal? 
 
 Não existe um
 número mágico e absoluto para cobertura de testes. A resposta varia de
@@ -823,7 +823,7 @@ implementados em Python, um pouco acima de 80%.
 \end{esmbox}
 ```
 
-### Outras Definições de Cobertura
+### Outras Definições de Cobertura de Testes
 
 A definição de métrica de cobertura, apresentada
 acima, foi baseada em comandos, pois trata-se de sua definição mais
@@ -1916,7 +1916,7 @@ sistema. **Testes de falhas** simulam eventos anormais em um sistema,
 por exemplo a queda de alguns serviços ou mesmo de um data-center
 inteiro.
 
-## Bibliografia 
+## Bibliografia {.unnumbered}
 
 Gerard Meszaros. xUnit Test Patterns: Refactoring Test Code.
 Addison-Wesley, 2007.
@@ -1934,7 +1934,7 @@ do Código, 2015.
 Jeff Langr, Andy Hunt, Dave Thomas. Pragmatic Unit Testing in Java 8
 with Junit. O'Reilly, 2015.
 
-## Exercícios de Fixação 
+## Exercícios de Fixação {.unnumbered}
 
 1\. (ENADE 2011) Uma equipe está realizando testes com o código-fonte de
 um sistema. Os testes envolvem a verificação de diversos componentes
