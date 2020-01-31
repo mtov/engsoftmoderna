@@ -136,7 +136,7 @@ dividido em dois grupos: um conjunto de classes — que implementam os
 requisitos do sistema — e um conjunto de testes, conforme ilustrado
 na próxima figura.
 
-![](figs/cap8/testes-classes-unidade){width=55%}
+![Correspondência entre classes e testes](figs/cap8/testes-classes-unidade){width=55%}
 
 A figura mostra um sistema com *n* classes e *m* testes. Como pode ser
 observado, não existe uma correspondência de 1 para 1 entre classes e
@@ -669,7 +669,7 @@ public void testNotEmptyStack(){
 }
 ```
 
-Em vez de concentrar dois comandos `assert` no mesmo método, como no código a seguir:
+Em outras palavras, *não* recomenda-se dois comandos `assert` no mesmo método, como no código a seguir:
 \newpage
 
 ```java
