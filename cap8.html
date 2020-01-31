@@ -770,9 +770,9 @@
 <span id="cb28-5"><a href="#cb28-5"></a>  Appointment app1 = <span class="kw">new</span> <span class="fu">Appointmemt</span>(...);</span>
 <span id="cb28-6"><a href="#cb28-6"></a>  Appointment app2 = <span class="kw">new</span> <span class="fu">Appointmemt</span>(...);</span>
 <span id="cb28-7"><a href="#cb28-7"></a>  Appointment app3 = <span class="kw">new</span> <span class="fu">Appointmemt</span>(...);</span>
-<span id="cb28-8"><a href="#cb28-8"></a>  <span class="dt">int</span> id1= agenda.<span class="fu">addAppointmemt</span>(app1);</span>
-<span id="cb28-9"><a href="#cb28-9"></a>  <span class="dt">int</span> id2= agenda.<span class="fu">addAppointmemt</span>(app2);</span>
-<span id="cb28-10"><a href="#cb28-10"></a>  <span class="dt">int</span> id3= agenda.<span class="fu">addAppointmemt</span>(app3);</span>
+<span id="cb28-8"><a href="#cb28-8"></a>  <span class="dt">int</span> id1 = agenda.<span class="fu">addAppointmemt</span>(app1);</span>
+<span id="cb28-9"><a href="#cb28-9"></a>  <span class="dt">int</span> id2 = agenda.<span class="fu">addAppointmemt</span>(app2);</span>
+<span id="cb28-10"><a href="#cb28-10"></a>  <span class="dt">int</span> id3 = agenda.<span class="fu">addAppointmemt</span>(app3);</span>
 <span id="cb28-11"><a href="#cb28-11"></a>  Appointment [] apps = agenda.<span class="fu">listAppointments</span>();</span>
 <span id="cb28-12"><a href="#cb28-12"></a>  <span class="fu">assertEquals</span>(<span class="dv">3</span>,apps.<span class="fu">length</span>);</span>
 <span id="cb28-13"><a href="#cb28-13"></a>}</span></code></pre></div>
@@ -802,9 +802,9 @@
 <span id="cb29-19"><a href="#cb29-19"></a>    <span class="co">// espera a página de resposta carregar (com timeout de 8s)</span></span>
 <span id="cb29-20"><a href="#cb29-20"></a>    (<span class="kw">new</span> <span class="fu">WebDriverWait</span>(driver,<span class="dv">8</span>)).</span>
 <span id="cb29-21"><a href="#cb29-21"></a>         <span class="fu">until</span>(<span class="kw">new</span> ExpectedCondition&lt;<span class="bu">Boolean</span>&gt;(){</span>
-<span id="cb29-22"><a href="#cb29-22"></a>      <span class="kw">public</span> <span class="bu">Boolean</span> <span class="fu">apply</span>(WebDriver d){</span>
-<span id="cb29-23"><a href="#cb29-23"></a>        <span class="kw">return</span> d.<span class="fu">getTitle</span>().<span class="fu">toLowerCase</span>().<span class="fu">startsWith</span>(<span class="st">&quot;software&quot;</span>);</span>
-<span id="cb29-24"><a href="#cb29-24"></a>      }</span>
+<span id="cb29-22"><a href="#cb29-22"></a>     <span class="kw">public</span> <span class="bu">Boolean</span> <span class="fu">apply</span>(WebDriver d){</span>
+<span id="cb29-23"><a href="#cb29-23"></a>      <span class="kw">return</span> d.<span class="fu">getTitle</span>().<span class="fu">toLowerCase</span>().<span class="fu">startsWith</span>(<span class="st">&quot;software&quot;</span>);</span>
+<span id="cb29-24"><a href="#cb29-24"></a>     }</span>
 <span id="cb29-25"><a href="#cb29-25"></a>    });</span>
 <span id="cb29-26"><a href="#cb29-26"></a></span>
 <span id="cb29-27"><a href="#cb29-27"></a>    <span class="co">// resultado deve ser: &quot;software - Google Search&quot;</span></span>

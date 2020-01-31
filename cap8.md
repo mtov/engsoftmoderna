@@ -1662,9 +1662,9 @@ void AgendaFacadeTest(){
   Appointment app1 = new Appointmemt(...);
   Appointment app2 = new Appointmemt(...);
   Appointment app3 = new Appointmemt(...);
-  int id1= agenda.addAppointmemt(app1);
-  int id2= agenda.addAppointmemt(app2);
-  int id3= agenda.addAppointmemt(app3);
+  int id1 = agenda.addAppointmemt(app1);
+  int id2 = agenda.addAppointmemt(app2);
+  int id3 = agenda.addAppointmemt(app3);
   Appointment [] apps = agenda.listAppointments();
   assertEquals(3,apps.length);
 }
@@ -1725,9 +1725,9 @@ public class SeleniumExample{
     // espera a página de resposta carregar (com timeout de 8s)
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition<Boolean>(){
-      public Boolean apply(WebDriver d){
-        return d.getTitle().toLowerCase().startsWith("software");
-      }
+     public Boolean apply(WebDriver d){
+      return d.getTitle().toLowerCase().startsWith("software");
+     }
     });
 
     // resultado deve ser: "software - Google Search"
