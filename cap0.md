@@ -58,7 +58,7 @@ Não menos importante: para reportar qualquer erro, mesmo que um simples erro or
 \vspace{0.8cm}
 Marco Tulio Valente
 
-Belo Horizonte, 23 de janeiro de 2020.
+Belo Horizonte, 2 de março de 2020.
 
 \newpage
 
