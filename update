@@ -1,3 +1,5 @@
+rm esm-book.pdf
+
 pandoc --defaults=defaults.yaml cap0.md -o cap0.html
 pandoc --number-offset=0 --defaults=defaults.yaml cap1.md -o cap1.html
 pandoc --number-offset=1 --defaults=defaults.yaml cap2.md -o cap2.html

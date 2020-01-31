@@ -1,6 +1,5 @@
-```{=latex}
+
 \appendix
-```
 
 # Git 
 
@@ -152,6 +151,17 @@ git commit -m "Removendo arq1.txt"
 
 Além de remover do repositório git local, o comando `rm` também remove
 o arquivo do diretório de trabalho.
+
+## Status
+
+O comando **status** é um dos comandos git mais usados. Dentre outras informações, ele mostra o estado do diretório de trabalho e do index. Por exemplo, pode-se usar esse comando para obter informações sobre:
+
+* Arquivos do diretório de trabalho que foram alterados pelo desenvolvedor, mas que ele ainda não adicionou no index.
+
+* Arquivos do diretório de trabalho que não são rastreados pelo git, ou seja, eles ainda não foram objetos de num `add`.
+
+* Arquivos que encontram-se no index, aguardando um `commit`.
+
 
 ## Push & Pull
 
