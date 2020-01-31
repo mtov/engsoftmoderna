@@ -175,7 +175,7 @@ public class Stack<T> {
 
   private int size = 0;
 
-  public int size(){
+  public int size() {
     return size;
   }
 
@@ -289,28 +289,28 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertEquals;
 
-public class StackTest{
+public class StackTest {
 
   Stack<Integer> stack;
 
   @Before
-  public void init(){
+  public void init() {
     stack = new Stack<Integer>();
   }
 
   @Test
-  public void testEmptyStack(){
+  public void testEmptyStack() {
     assertTrue(stack.isEmpty());
   }
 
   @Test
-  public void testNotEmptyStack(){
+  public void testNotEmptyStack() {
     stack.push(10);
     assertFalse(stack.isEmpty());
   }
 
   @Test
-  public void testSizeStack(){
+  public void testSizeStack() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
@@ -319,7 +319,7 @@ public class StackTest{
   }
 
   @Test
-  public void testPushPopStack(){
+  public void testPushPopStack() {
     stack.push(10);
     stack.push(20);
     stack.push(30);
@@ -329,7 +329,7 @@ public class StackTest{
   }
 
   @Test(expected = java.util.EmptyStackException.class)
-  public void testEmptyStackException(){
+  public void testEmptyStackException() {
     stack.push(10);
     int result = stack.pop();
     result = stack.pop();
@@ -490,8 +490,8 @@ estavam passando, mas após a mudança algum teste começou a falhar.
 Além de serem usados para detecção prematura de bugs e regressões no
 código, testes de unidade também ajudam na documentação e especificação
 do código de produção. De fato, ao olhar e analisar os testes
-implementados em StackTest podemos entender diversos aspectos do
-comportamento da classe Stack. Por isso, muitas vezes, antes de manter
+implementados em `StackTest` podemos entender diversos aspectos do
+comportamento da classe `Stack`. Por isso, muitas vezes, antes de manter
 um código com o qual ele não tenha familiaridade, um desenvolvedor
 começa analisando os seus testes.
 
@@ -564,7 +564,7 @@ comportamento flaky. Um exemplo é mostrado a seguir:
 
 ```java
 @Test
-public void exemploTesteFlaky{
+public void exemploTesteFlaky {
   TaskResult resultado;
   MyMath m = new MyMath();
   m.asyncPI(10,resultado);
@@ -658,12 +658,12 @@ eles recomendam escrever um código como o seguinte.
 
 ```java
 @Test
-public void testEmptyStack(){
+public void testEmptyStack() {
   assertTrue(stack.isEmpty());
 }
 
 @Test
-public void testNotEmptyStack(){
+public void testNotEmptyStack() {
   stack.push(10);
   assertFalse(stack.isEmpty());
 }
@@ -674,7 +674,7 @@ Em outras palavras, *não* recomenda-se dois comandos `assert` no mesmo método,
 
 ```java
 @Test
-public void testEmptyStack(){
+public void testEmptyStack() {
   assertTrue(stack.isEmpty());
   stack.push(10);
   assertFalse(stack.isEmpty());
@@ -697,7 +697,7 @@ objeto retornado pela função, como mostra o seguinte código.
 
 ```java
 @Test
-public void testBookService(){
+public void testBookService() {
   BookService bs = new BookService();
   Book b = bs.getBook(1234);
   assertEquals("Engenharia Software Moderna", b.getTitle());
@@ -714,7 +714,7 @@ função `repeat` da classe `Strings` da biblioteca `google/guava`
 
 ```java
 @Test
-public void testRepeat(){
+public void testRepeat() {
   String input = "20";
   assertEquals("", Strings.repeat(input,0));
   assertEquals("20", Strings.repeat(input,1));
@@ -839,9 +839,9 @@ respectivamente. Para ilustrar a diferença entre ambas vamos usar o
 seguinte programa (primeiro código) e seu teste de unidade (segundo código):
 
 ```java
-public class Math{
+public class Math {
 
-  public int abs(int x){
+  public int abs(int x) {
     if (x < 0) {  
       x = -x;
     }  
@@ -852,10 +852,10 @@ public class Math{
 ```
 
 ```java
-public class MathTest{
+public class MathTest {
 
   @Test
-  public void testAbs(){
+  public void testAbs() {
     Math m = new Math();
     assertEquals(1,m.abs(-1));
   }
@@ -900,10 +900,10 @@ tente imaginar que essa lógica poderia ser mais complexa e que, mesmo
 assim, a solução que vamos apresentar continuaria válida.
 
 ```java
-public class IMCServlet extends HttpServtet{
+public class IMCServlet extends HttpServtet {
 
   public void doGet(HttpServletRequest req, 
-                    HttpServletResponse res){
+                    HttpServletResponse res) {
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -944,18 +944,18 @@ testes.
 ```java
 class IMCModel{
   public double calculaIMC(String p1, String a1) 
-                throws NumberFormatException{
+                throws NumberFormatException {
     double p = Double.parseDouble(p1);
     double a = Double.parseDouble(a1);
     return p / (a * a);
   }
 }
 
-public class IMCServlet extends HttpServtet{
+public class IMCServlet extends HttpServtet {
   IMCModel model = new IMCModel();
 
   public void doGet(HttpServletRequest req, 
-                    HttpServletResponse res){
+                    HttpServletResponse res) {
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -964,7 +964,7 @@ public class IMCServlet extends HttpServtet{
       double imc = model.calculaIMC(peso, altura);
       out.println("Índice de Massa Corporal (IMC): " + imc);
     }
-    catch (NumberFormatException e){
+    catch (NumberFormatException e) {
       out.println("Dados devem ser numéricos");
     }
   }
@@ -985,11 +985,11 @@ computado por uma thread independente. O exemplo que mostramos na Seção
 uso desse comando torna o teste não-determinístico.
 
 ```java
-public class MyMath{
+public class MyMath {
 
-  public void asyncPI(int prec, TaskResult task){ 
-    new Thread (new Runnable(){
-      public void run(){
+  public void asyncPI(int prec, TaskResult task) { 
+    new Thread (new Runnable() {
+      public void run() {
         double pi = "calcula PI com precisão prec"
         task.setResult(pi);
       }
@@ -1009,13 +1009,13 @@ testes.
 
 ```java
 public class MyMath{
-  public double syncPI(int prec){
+  public double syncPI(int prec) {
     double pi = "calcula PI com precisão prec"
     return pi;
   }
-  public void asyncPI(int prec, TaskResult task){ 
-    new Thread (new Runnable(){
-      public void run(){
+  public void asyncPI(int prec, TaskResult task) { 
+    new Thread (new Runnable() {
+      public void run() {
         double pi = syncPI(prec);
         task.setResult(pi);
       }    
@@ -1065,15 +1065,15 @@ que também seriam tratados em `getBook`.
 ```java
 import org.json.JSONObject;
 
-public class BookSearch{
+public class BookSearch {
 
   BookService rbs;
 
-  public BookSearch(BookService rbs){
+  public BookSearch(BookService rbs) {
     this.rbs = rbs;
   }
 
-  public Book getBook(int isbn){
+  public Book getBook(int isbn) {
     String json = rbs.search(isbn);
     JSONObject obj = new JSONObject(json);
     String titulo;
@@ -1083,7 +1083,7 @@ public class BookSearch{
 
 }
 
-public interface BookService{
+public interface BookService {
   String search(int isbn);
 }
 ```
@@ -1113,7 +1113,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-class BookConst{
+class BookConst {
 
   public static String ESM = 
                 "{ \"titulo\": \"Eng Soft Moderna\" }";        
@@ -1122,9 +1122,9 @@ class BookConst{
 
 }
 
-class MockBookService implements BookService{
+class MockBookService implements BookService {
 
-   public String search(int isbn){
+   public String search(int isbn) {
       if (isbn == 1234)
         return BookConst.ESM;
       return BookConst.NULLBOOK;
@@ -1132,17 +1132,17 @@ class MockBookService implements BookService{
 
 }
 
-public class BookSearchTest{
+public class BookSearchTest {
 
   private BookService service;
 
   @Before
-  public void init(){
+  public void init() {
     service = new MockBookService();
   }        
 
   @Test
-  public void testGetBook(){
+  public void testGetBook() {
     BookSearch bs = new BookSearch(service);
     String titulo = bs.getBook(1234).getTitulo();
     assertEquals("Eng Soft Moderna", titulo);
@@ -1196,12 +1196,12 @@ import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 import static org.mockito.Matchers.anyInt;
 
-public class BookSearchTest{
+public class BookSearchTest {
 
   private BookService service;
 
   @Before
-  public void init(){
+  public void init() {
     service = Mockito.mock(BookService.class);
     when(service.search(anyInt())).
                  thenReturn(BookConst.NULLBOOK);
@@ -1209,7 +1209,7 @@ public class BookSearchTest{
   }        
 
   @Test
-  public void testGetBook(){
+  public void testGetBook() {
     BookSearch bs = new BookSearch(service);
     String titulo = bs.getBook(1234).getTitulo();
     assertEquals("Eng Soft Moderna", titulo);
@@ -1266,7 +1266,7 @@ verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte
 teste:
 
 ```java
-testBehaviour{
+testBehaviour {
   Mailer m = mock(Mailer.class);
   sut.someBusinessLogic(m);
   verify(m).send(anyString());
@@ -1308,12 +1308,12 @@ Primeiro, vamos reapresentar o código da servlet que queremos testar:
 
 
 ```java
-public class IMCServlet extends HttpServlet{
+public class IMCServlet extends HttpServlet {
 
   IMCModel model = new IMCModel();
 
   public void doGet(HttpServletRequest req, 
-                    HttpServletResponse res){
+                    HttpServletResponse res) {
     res.setContentType("text/html");
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
@@ -1343,7 +1343,7 @@ fizemos tudo isso com o objetivo de alterar a saída da servlet para uma
 lista de strings.
 
 ```java
-public class IMCServletTest{
+public class IMCServletTest {
 
   HttpServletRequest req;
   HttpServletResponse res;
@@ -1351,7 +1351,7 @@ public class IMCServletTest{
   StringWriter sw;
 
   @Before
-  public void init(){
+  public void init() {
     req = Mockito.mock(HttpServletRequest.class);
     res = Mockito.mock(HttpServletResponse.class);
     sw = new StringWriter();
@@ -1366,7 +1366,7 @@ Para concluir, temos o método de teste, mostrado a seguir.
 ```java
   // continuação de IMCServletTest
   @Test
-  public void testDoGet(){
+  public void testDoGet() {
     when(req.getParameter("peso")).thenReturn("82");
     when(req.getParameter("altura")).thenReturn("1.80");
     new IMCServlet().doGet(req,res);
@@ -1501,7 +1501,7 @@ definimos os seus parâmetros e escrevemos o primeiro teste:
 
 ```java
 @Test
-void testAddGetTotal(){
+void testAddGetTotal() {
   Book b1 = new Book("book1", 10, "1");
   Book b2 = new Book("book2", 20, "2");
   ShoppingCart cart = new ShoppingCart();
@@ -1521,7 +1521,7 @@ public class Book {
   public double price;
   public String isbn;
 
-  public Book(String title, double price, String isbn){
+  public Book(String title, double price, String isbn) {
     this.title = title;
     this.price = price;
     this.isbn = isbn;
@@ -1531,11 +1531,11 @@ public class Book {
 
 public class ShoppingCart{
 
-  public ShoppingCart(){}
+  public ShoppingCart() {}
 
-  public void add(Book b){}
+  public void add(Book b) {}
 
-  double getTotal(){
+  double getTotal() {
     return 0.0;
   }
 }
@@ -1553,10 +1553,10 @@ chegamos ao estado vermelho.
 obra:
 
 ```java
-public class ShoppingCart{
-  public ShoppingCart(){}
-  public void add(Book b){}
-  double getTotal(){
+public class ShoppingCart {
+  public ShoppingCart() {}
+  public void add(Book b) {}
+  double getTotal() {
     return 30.0;
   }
 }
@@ -1574,23 +1574,23 @@ Mas temos que prosseguir e dar uma implementação mais realista para
 `ShoppingCart`. Segue ela:
 
 ```java
-public class ShoppingCart{
+public class ShoppingCart {
 
   private ArrayList<Book> items;
 
   private double total;
 
-  public ShoppingCart(){
+  public ShoppingCart() {
     items = new ArrayList<Book>();  
     total = 0.0;  
   }
 
-  public void add(Book b){
+  public void add(Book b) {
     items.add(b);
     total += b.price();
   }
 
-  double getTotal(){
+  double getTotal() {
     return total;
   }
 
@@ -1656,7 +1656,7 @@ Assim, podemos escrever o seguinte teste de integração para essa classe:
 
 ```java
 @Test
-void AgendaFacadeTest(){
+void AgendaFacadeTest() {
   DB db = DB.create();
   AgendaFacade agenda = new AgendaFacade();
   Appointment app1 = new Appointmemt(...);
@@ -1704,9 +1704,9 @@ código também imprime na console o título da página que lista os
 resultados da pesquisa.
 
 ```java
-public class SeleniumExample{
+public class SeleniumExample {
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     // cria um driver para acessar um servidor Web
     WebDriver driver = new FirefoxDriver();
 
@@ -1724,8 +1724,8 @@ public class SeleniumExample{
 
     // espera a página de resposta carregar (com timeout de 8s)
     (new WebDriverWait(driver,8)).
-         until(new ExpectedCondition<Boolean>(){
-     public Boolean apply(WebDriver d){
+         until(new ExpectedCondition<Boolean>() {
+     public Boolean apply(WebDriver d) {
       return d.getTitle().toLowerCase().startsWith("software");
      }
     });
@@ -1956,14 +1956,14 @@ entender.
 
 ```java
 @Test
-public void testEmptyStackException(){
+public void testEmptyStackException() {
   boolean sucesso = false;
   try{
     Stack s<Integer> = new Stack<Integer>();
     s.push(10);
     int r = stack.pop();
     r = stack.pop();
-  } catch (EmptyStackException e){
+  } catch (EmptyStackException e) {
     sucesso = true;
   }
   assertTrue(sucesso);
@@ -1985,7 +1985,7 @@ import java.util.ArrayList;
 
 public class Main{
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
 
     // teste 1  
     List<Integer> s = new ArrayList<Integer>();
@@ -2031,7 +2031,7 @@ public class Main{
       s.remove(2);        
     }
 
-    catch (IndexOutOfBoundsException e){
+    catch (IndexOutOfBoundsException e) {
       System.out.println("IndexOutOfBound");
     }
 
@@ -2044,10 +2044,10 @@ public class Main{
 sendo dois deles `if`. Logo, esses dois `ifs` geram quatro branches:
 
 ```java
-void f(int x, int y){
-  if (x > 0){
+void f(int x, int y) {
+  if (x > 0) {
      x = 2 * x;
-     if (y > 0){
+     if (y > 0) {
         y = 2 * y;
      }
    }
@@ -2073,7 +2073,7 @@ que implementa esse requisito:
 \newpage
 
 ```java
-boolean isConceitoA(int nota){
+boolean isConceitoA(int nota) {
   if (nota > 90)
     return true;
   else return false;
@@ -2099,13 +2099,13 @@ Responda agora às seguintes perguntas.
 8\. Complete os comandos `assert` nos trechos indicados.
 
 ```java
-public void test1(){
+public void test1() {
    LinkedList list = mock(LinkedList.class);
    when(list.size()).thenReturn(10);
    assertEquals(___________, ___________);
 }
 
-public void test2(){
+public void test2() {
    LinkedList list = mock(LinkedList.class);
    when(list.get(0)).thenReturn("Engenharia");
    when(list.get(1)).thenReturn("Software");
