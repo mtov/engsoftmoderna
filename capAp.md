@@ -158,7 +158,7 @@ O comando **status** é um dos comandos git mais usados. Dentre outras informaç
 
 * Arquivos do diretório de trabalho que foram alterados pelo desenvolvedor, mas que ele ainda não adicionou no index.
 
-* Arquivos do diretório de trabalho que não são rastreados pelo git, ou seja, eles ainda não foram objetos de num `add`.
+* Arquivos do diretório de trabalho que não são rastreados pelo git, ou seja, eles ainda não foram objetos de um `add`.
 
 * Arquivos que encontram-se no index, aguardando um `commit`.
 

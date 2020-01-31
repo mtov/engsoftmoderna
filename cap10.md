@@ -327,6 +327,12 @@ Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o
 \end{esmbox}
 ```
 
+No entanto, pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.
+
+Primeiro, feature flags ajudam a implementar o que chama-se de **release canário**. Nessa modalidade de release, uma nova funcionalidade --- guardada por uma feature flag --- é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, eventuais prejuízos causados por bugs não detectados nos testes da nova funcionalidade são minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam rapidamente recuar e evitar uma intoxicação.
+
+Adicionalmente, feature flags ajudam a viabilizar **Testes A/B**, tal como estudamos no Capítulo 3. Apenas para relembrar, nesses testes, libera-se simultaneamente duas versões de uma funcionalidade (antiga e nova, por exemplo) para grupos distintos de usuários, com o objetivo de verificar se a nova funcionalidade de fato agrega valor ao sistema.
+
 
 ## Bibliografia {.unnumbered}
 
