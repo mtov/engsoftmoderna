@@ -1726,7 +1726,7 @@ public class SeleniumExample{
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition<Boolean>(){
       public Boolean apply(WebDriver d){
-        return d.getTitle().toLowerCase().startsWith("cheese!");
+        return d.getTitle().toLowerCase().startsWith("software");
       }
     });
 
