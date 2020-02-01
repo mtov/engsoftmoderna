@@ -1344,8 +1344,8 @@ final public class Data { // final => não pode ter subclasses
    
   private void check(int dia, int mes, int ano) 
                throws InvalidDateException {
-     // verifica se data valida
-     // se nao for, lanca InvalidDateException
+     // verifica se data válida
+     // se não for, lança InvalidDateException
   } 
    
   public Data(int dia, int mes, int ano) 
