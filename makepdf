@@ -10,3 +10,5 @@ cat cap10.md >> esm-book.md
 cat capAp.md >> esm-book.md
 pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.pdf
 rm esm-book.md
+
+cp esm-book.pdf ../Dropbox

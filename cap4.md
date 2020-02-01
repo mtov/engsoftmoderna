@@ -404,7 +404,7 @@ por isso, o compartimento de atributos e métodos está vazio):
 Para ficar ainda mais claro, vamos mostrar como seria o código das
 classes A e B:
 
-```
+```java
 class A {
    ...
    private B b;
@@ -452,7 +452,7 @@ Neste segundo exemplo com informações de multiplicidade, o
 tipo do atributo `fone` deve ser um vetor de `Fone`. Para que fique
 claro, mostramos o código das classes:
 
-```
+```java
 class Pessoa {
    private Fone[] fone;
    ...
@@ -500,7 +500,7 @@ que conecta as classes, como mostrado no próximo diagrama.
 Para não deixar dúvidas sobre a semântica de uma associação
 bidirecional, mostramos também o código das duas classes:
 
-```
+```java
 class Pessoa {
    ...
    private Fone fone;
@@ -594,7 +594,7 @@ ocorrem por meio de associação e herança.
 Para ilustrar o uso de dependências em diagramas de classes, considere o
 seguinte trecho de código:
 
-```
+```java
 import java.util.Stack;
 
 class MinhaClasse {
@@ -723,7 +723,7 @@ quando um objeto chama um método dele mesmo, isto é, quando ele chama um
 método usando this. Para ilustrar esse caso, suponha o seguinte
 programa.
 
-```
+```java
 class A {
 
   void g() {
@@ -901,7 +901,7 @@ classes para representar as seguintes classes e associações:
 
 \(a\)
 
-```
+```java
 public class HelloWorldSwing { 
    public static void main(String[] args) {
      JFrame frame = new JFrame("Hello world!6);
@@ -913,7 +913,7 @@ public class HelloWorldSwing {
 
 \(b\)
 
-```
+```java
 class HelloWorldSwing extends JFrame {
    public HelloWorldSwing() {
      super("Hello world!");
@@ -928,7 +928,7 @@ class HelloWorldSwing extends JFrame {
 6\. Mostre o diagrama de sequência relativo ao seguinte código. O
 diagrama deve começar com a seguinte chamada *a*.*m5()*.
 
-```
+```java
 A a = new A(); // variaveis globais
 B b = new B();
 C c = new C();

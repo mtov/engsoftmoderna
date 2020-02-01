@@ -148,7 +148,7 @@ extrair um trecho de código de um método `f` e levá-lo para um novo método
 g. Então, o método `f` passa a incluir uma chamada de `g`. O próximo código
 ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:
 
-```
+```java
 void f () {
   ... // A
   ... // B 
@@ -158,7 +158,7 @@ void f () {
 
 E agora o código após a extração do método `g`:
 
-```
+```java
 void g() {  // método extraído
   ... // B
 }
@@ -205,7 +205,7 @@ edições, simplificações e remoções de comentários — é mostrado a
 seguir. O código fonte original possui mais de 200 linhas.
 
 
-```
+```java
 void onCreate(SQLiteDatabase database) {// antes da extração
   // cria tabela 1
   database.execSQL("CREATE TABLE " +
@@ -245,7 +245,7 @@ extraídos, como mostrado a seguir. O tamanho do método caiu de mais de
 métodos extraídos têm como um parâmetro que representa o banco de dados
 no qual as tabelas serão criadas.
 
-```
+```java
 public void onCreate(SQLiteDatabase database) { 
   createCellSignalTable(database);
   createSilentSmsTable(database);
@@ -324,7 +324,7 @@ que faz o logging de uma string em um arquivo.
 
 Primeiro vamos mostrar o código original:
 
-```
+```java
 void log(String msg) {
   // salva msg em arquivo
 }
@@ -333,7 +333,7 @@ void log(String msg) {
 O desenvolvedor decidiu então prover uma versão alternativa desse método com um parâmetro
 booleano, que indica se a string também deve ser mostrada na console. Veja o código após a extração desse segundo método `log`:
 
-```
+```java
 void log(String msg, boolean console) {
   if (console)
      System.out.println(msg);
@@ -368,7 +368,7 @@ realizado no sistema IntelliJ, uma IDE para Java. Primeiro, segue o
 código antes do inline. Podemos ver que o método `writeContentToFile` tem
 uma única linha de código e é chamado apenas uma vez, pelo método `write`.
 
-```
+```java
 private void writeContentToFile(final byte[] revision) {
   getVirtualFile().setBinaryContent(revision);
 }
@@ -388,7 +388,7 @@ Os desenvolvedores do IntelliJ decidiram então remover
 `writeContentToFile` e expandir o seu corpo no único ponto de chamada. O
 código após o refactoring é mostrado a seguir.
 
-```
+```java
 private void write(byte[] revision) {
   VirtualFile virtualFile = getVirtualFile();
   ...
@@ -429,7 +429,7 @@ execução de testes de unidade. Por exemplo, ele não usa métodos e
 atributos de `PlatformTestUtil`. Ou seja, ele é independente do resto da
 classe.
 
-```
+```java
 class PlatformTestUtil {
   ...
   public static long averageAmongMedians(long[] time, 
@@ -471,7 +471,7 @@ cliente precisará ser alterado.
 
 Um exemplo é mostrado a seguir. Primeiro, o código original:
 
-```
+```java
 class A {
   B b = new B();
   void f { ... }
@@ -495,7 +495,7 @@ class Cliente {
 
 E agora o código após a refatoração:
 
-```
+```java
 class A {
   B b = new B();
   void f {
@@ -538,7 +538,7 @@ implementação para `B1`, como mostrado a seguir:
 Para concluir, operações de refactoring podem ser feitas em sequência.
 Por exemplo, suponha a seguinte classe `A` com um método `f`: 
 
-```
+```java
 class A {
   B b = new B();
 
@@ -558,7 +558,7 @@ class B {
 
 Primeiro, vamos extrair um método `g` com o comando `S2` de `f`: 
 
-```
+```java
 class A {
   B b = new B();
 
@@ -580,7 +580,7 @@ class B {
 
 Na sequência, vamos mover `g` para uma classe `B`, como ilustrado a seguir:
 
-```
+```java
 class A {
   B b = new B();
 
@@ -611,7 +611,7 @@ B.
 atributos, que foram omitidos do exemplo, ela armazena dados do telefone
 fixo e celular da pessoa em questão, incluindo código de área e número.
 
-```
+```java
 class Pessoa {
   String codigoArea;
   String fone;
@@ -627,7 +627,7 @@ Após o refactoring, `Pessoa` passou a ter dois atributos do novo tipo,
 destinados a armazenar o telefone fixo e o telefone celular de uma
 pessoa.
 
-```
+```java
 class Fone { // classe extraída
   String codigoArea;
   String numero; 
@@ -671,7 +671,7 @@ manter o nome antigo, mas depreciado.
 
 Para mostrar um exemplo, suponha o seguinte método `f`:
 
-```
+```java
 void f () {
   // A
 }
@@ -680,7 +680,7 @@ void f () {
 Segue agora o código após o refactoring. Veja que extraímos um método
 `g`, com o código antigo de `f`, que foi então depreciado.
 
-```
+```java
 void g() {    // novo nome do método
   // A
 }
@@ -721,13 +721,13 @@ descrever resumidamente alguns desses refactorings.
 torná-las mais fáceis de ler e entender. Seja o seguinte código 
 de exemplo:
 
-```
+```java
 x1 = (-b + sqrt(b*b-4*a*c)) / (2*a);
 ```
 
 Esse código pode ser refatorado para:
 
-```
+```java
 delta = b*b-4*a*c; // variável extraída
 x1 = (-b + sqrt(delta)) / (2*a);
 
@@ -740,7 +740,7 @@ Veja que uma variável `delta` foi criada e inicializada com uma parte de uma ex
 `break` ou `return`, em vez de variáveis de controle, também chamadas de
 flags. Seja o seguinte código de exemplo:
 
-```
+```java
 boolean search(int x, int[]a) {
    boolean achou = false;
    i = 0;
@@ -754,7 +754,7 @@ boolean search(int x, int[]a) {
 ```
 Esse código pode ser refatorado da seguinte forma:
 
-```
+```java
 boolean search(int x, int[]a) {
   for (i = 0; i < a.length; i++)
     if (a[i] == x)
@@ -773,7 +773,7 @@ condicionais. Um deles é chamado de **Substituição de Condicional por
 Polimorfismo**. Para entendê-lo, suponha um comando `switch` que retorna o
 valor da bolsa de pesquisa de um aluno, dependendo do seu tipo:
 
-```
+```java
 switch (aluno.type) {
    case "graduacao": 
       bolsa = 500;
@@ -940,7 +940,7 @@ implementadas em arquivos distintos, mas pertencentes a um mesmo pacote
 `P1`. Assim, a chamada de `m("abc")` no primeiro arquivo irá resultar
 na execução do método `m(String)` da classe `B`.
 
-```
+```java
 // arquivo A.java
 package P1;
 
@@ -952,7 +952,7 @@ public class A {
 
 ```
 
-```
+```java
 // arquivo B.java
 package P1;
 
@@ -966,7 +966,7 @@ public class B {
 No entanto, suponha que a classe `B` seja movida para um novo pacote; por
 exemplo, para um pacote `P2`:
 
-```
+```java
 // arquivo B.java
 package P2;   // novo pacote de B
 
@@ -1042,7 +1042,7 @@ seguir:
 
 **Exemplo**: Para ilustrar esses tipos de clones, vamos usar a seguinte função:
 
-```
+```java
 int fatorial(int n) {
   fat = 1;
   for (i = 1; i <= n; i++)
@@ -1055,7 +1055,7 @@ A seguir, mostramos quatro clones dessa função.
 
 - Clone Tipo 1: insere um comentário e remove espaços entre os operadores.
 
-```
+```java
 int fatorial(int n) {
   fat=1;
   for (i=1; i<=n; i++) 
@@ -1067,7 +1067,7 @@ int fatorial(int n) {
 
 - Clone Tipo 2: renomeia algumas variáveis.
 
-```
+```java
 int fatorial(int n) {
   f = 1;
   for (j = 1; j <= n; j++) 
@@ -1078,7 +1078,7 @@ int fatorial(int n) {
 
 - Clone Tipo 3: insere um comando simples, para imprimir o valor do fatorial.
 
-```
+```java
 int fatorial(int n) {
   fat = 1;
   for (j = 1; j <= n; j++)
@@ -1090,7 +1090,7 @@ int fatorial(int n) {
 
 - Clone Tipo 4: implementa uma versão recursiva da função.
 
-```
+```java
 int fatorial(int n) {
   if (n == 0)
      return 1;
@@ -1171,7 +1171,7 @@ métodos, mas todas têm como alvo um mesmo objeto `abt` do tipo
 qualquer método da sua classe atual. Logo, deve-se analisar a
 conveniência de mover esse método para `AbstractTool`.
 
-```
+```java
 public class DrawingEditorProxy 
              extends AbstractBean implements DrawingEditor {
   ...
@@ -1194,7 +1194,7 @@ pode ser eliminado de duas formas principais. Primeiro, deve-se
 verificar se um dos parâmetros pode ser obtido diretamente pelo método
 chamado, como mostrado a seguir:
 
-```
+```java
 p2 = p1.f();
 g(p1, p2);
 ```
@@ -1202,7 +1202,7 @@ g(p1, p2);
 Nesse caso, `p2` é desnecessário, pois ele pode ser obtido logo no início
 de `g`, da seguinte forma:
 
-```
+```java
 void g(p1) {
   p2 = p1.g();
 }
@@ -1213,7 +1213,7 @@ void g(p1) {
 Uma outra possibilidade é criar um tipo que agrupe alguns dos parâmetros
 de um método. Por exemplo, suponha o seguinte método:
 
-```
+```java
 void f(Date inicio, Date fim) {
   ...
 }
@@ -1221,7 +1221,7 @@ void f(Date inicio, Date fim) {
 
 Pode-se criar uma classe `DateRange` para representar uma faixa de datas. O código refatorado ficaria assim:
 
-```
+```java
 class DateRange {
    Date inicio;
    Date fim;
@@ -1242,7 +1242,7 @@ principal motivo é que variáveis globais dificultam o entendimento de um
 módulo de forma independente dos demais módulos de um sistema. Suponha a
 seguinte função:
 
-```
+```java
 void f(...) {
   // computa um determinado valor x
   return x + g; // onde g é uma variável global.
@@ -1296,7 +1296,7 @@ desejado.
 Por exemplo, objetos do tipo `String` em Java são imutáveis, como ilustra
 o seguinte programa.
 
-```
+```java
 class Main {
   public static void main(String[] args) {
     String s1 = "Hello World";
@@ -1336,7 +1336,7 @@ simples e pequenos, como aqueles das classes `CEP`, `Moeda`, `Endereco`, `Data`,
 `Hora`, `Fone`, `Cor`, `Email`, etc. Para ilustrar, mostramos a seguir a
 implementação de uma classe `Data` imutável:
 
-```
+```java
 final public class Data { // final => não pode ter subclasses
   final private int dia; // final => inicializado uma única vez
   final private int mes;
@@ -1380,7 +1380,7 @@ forma certeira, a esclarecer essa dúvida. Eles recomendam o seguinte:
 
 A ideia é que comentários não devem ser usados para explicar código ruim. Em vez disso, deve-se refatorar o código e, com isso, melhorar sua qualidade e legibilidade. Feito isso, existe uma boa chance de que o comentário não seja mais necessário. Um exemplo são métodos longos como aquele do programa a seguir.
 
-```
+```java
 void f() {
   // task1
   ... 
@@ -1393,7 +1393,7 @@ void f() {
 
 Se usarmos Extração de Método para extrair o código comentado, teremos o código a seguir de melhor qualidade:
 
-```
+```java
 void task1 { ... }
 void task2 { ... }
 void taskn { ... }
@@ -1464,7 +1464,7 @@ apenas ele) para um método `g`.
 
 (a)
 
-```
+```java
 class A {
   void f() {
     int x = 10
@@ -1476,7 +1476,7 @@ class A {
 
 (b)
 
-```
+```java
 class A {
   void f() {
     int x = 10
@@ -1488,7 +1488,7 @@ class A {
 
 (c)
 
-```
+```java
 class A {
   void f() {
     int x = 10
@@ -1504,7 +1504,7 @@ class A {
 
 (d)
 
-```
+```java
 class A {
   void f() {
     int x = 10
@@ -1521,7 +1521,7 @@ class A {
 O primeiro termo dessa sequência é 0; o segundo termo é 1; e a partir
 daí o n-ésimo termo é a soma dos dois termos anteriores.
 
-```
+```java
 int fib(int n) {
    if (n == 1)
       return 0;
@@ -1538,7 +1538,7 @@ indicar as diferenças entre cada clone e o código acima.
 7\. Seja o seguinte trecho de código de uma classe `Moeda`, que vai
 armazenar um determinado valor em reais.
 
-```
+```java
 class Moeda {
   ...
   private double valor = 0.0;
@@ -1563,7 +1563,7 @@ situações, o ideal é tornar o código mais claro e, então, remover os
 comentários. A seguir, mostramos mais um caso de comentário que pode ser
 deletado. Explique porque esses comentários são desnecessários.
 
-```
+```java
 // classe Aluno
 class Aluno {
    

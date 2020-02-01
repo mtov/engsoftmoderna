@@ -14,6 +14,68 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -69,63 +131,61 @@
 <p>Nesta seção, vamos apresentar os principais refactorings do catálogo de Fowler. Assim como adotado nesse catálogo, vamos comentar sobre os seguintes tópicos na apresentação de cada refactoring: nome, motivação, mecânica de aplicação e exemplos de uso. Além disso, vamos usar alguns exemplos de refactorings reais, realizados por desenvolvedores de sistemas de código aberto disponíveis no GitHub.</p>
 <h3 data-number="1.2.1" id="extração-de-método" data-number="1.2.1"><span class="header-section-number">9.2.1</span> Extração de Método</h3>
 <p>Extração de Método é um dos principais refactorings, tendo como objetivo extrair um trecho de código de um método <code>f</code> e levá-lo para um novo método g. Então, o método <code>f</code> passa a incluir uma chamada de <code>g</code>. O próximo código ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:</p>
-<pre><code>void f () {
-  ... // A
-  ... // B 
-  ... // C
-}</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="dt">void</span> <span class="fu">f</span> () {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="kw">... </span><span class="co">// A</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="kw">... </span><span class="co">// B </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">... </span><span class="co">// C</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>}</span></code></pre></div>
 <p>E agora o código após a extração do método <code>g</code>:</p>
-<pre><code>void g() {  // método extraído
-  ... // B
-}
-
-void f () {
-  ...  // A
-  g(); // chama método extraído
-  ...  // C
-}
-</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="dt">void</span> <span class="fu">g</span>() {  <span class="co">// método extraído</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">... </span><span class="co">// B</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>}</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="dt">void</span> <span class="fu">f</span> () {</span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">...  </span><span class="co">// A</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">g</span>(); <span class="co">// chama método extraído</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="kw">...  </span><span class="co">// C</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>}</span></code></pre></div>
 <p>Existem também variações na mecânica de funcionamento de uma extração de método. Por exemplo, pode-se extrair de uma vez vários métodos <code>g1</code>, <code>g2</code>, …, <code>gn</code> de um método <code>f</code>. Pode-se também extrair o mesmo código g de vários métodos <code>f1</code>, <code>f2</code>, …, <code>fn</code>. Nesse caso, a extração é usada para eliminar <strong>duplicação de código</strong>, pois o código de g estava aparecendo em diversos métodos.</p>
 <p>Para realizar uma Extração de Método pode ser necessário passar parâmetros para o método extraído. Isso ocorre, por exemplo, se o método precisar acessar variáveis locais do método original. O método extraído pode ter ainda que retornar algumas dessas variáveis, caso elas sejam usados depois pelo método original. Por fim, se existirem variáveis locais que somente são usadas no método extraído, deve-se extrair também a declaração delas do método original. Ou seja, elas não serão mais necessárias no método original.</p>
 <p>Extração de Método é conhecido como o <q>canivete suíço</q> dos refactorings, pois ele é um dos refactorings com mais aplicações. Por exemplo, Extração de Método pode ser usado para quebrar um método grande em métodos menores. Cada um desses métodos tem uma função específica, que deve ficar clara em seu nome. Assim, fica mais fácil entender o método original, pois ele passará a conter apenas uma sequência de chamadas dos métodos extraídos. Vamos mostrar um exemplo a seguir. Outras aplicações de Extração de Método são discutidas em uma seção <q>Mundo Real</q>, após o exemplo.</p>
 <p><strong>Exemplo:</strong> A seguir, mostramos um exemplo real de Extração de Método, realizada em um sistema Android. Esse sistema possui um método onCreate, que usa comandos SQL para criar as tabelas do banco de dados que ele manipula. O código dessa primeira versão de <code>onCreate</code> — após algumas edições, simplificações e remoções de comentários — é mostrado a seguir. O código fonte original possui mais de 200 linhas.</p>
-<pre><code>void onCreate(SQLiteDatabase database) {// antes da extração
-  // cria tabela 1
-  database.execSQL(&quot;CREATE TABLE &quot; +
-            CELL_SIGNAL_TABLE + &quot; (&quot; + COLUMN_ID +
-            &quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot; + ...
-  database.execSQL(&quot;CREATE INDEX cellID_index ON &quot; + ...);
-  database.execSQL(&quot;CREATE INDEX cellID_timestamp ON &quot; + ... );
-
-  // cria tabela 2
-  String SMS_DATABASE_CREATE = &quot;CREATE TABLE &quot; + 
-            SILENT_SMS_TABLE + &quot; (&quot; + COLUMN_ID +
-            &quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot; + ...
-  database.execSQL(SMS_DATABASE_CREATE);
-  String ZeroSMS = &quot;INSERT INTO &quot; + SILENT_SMS_TABLE + 
-            &quot; (Address,Display,Class,ServiceCtr,Message) &quot; +
-            &quot;VALUES (&#39;&quot;+ ...
-  database.execSQL(ZeroSMS);
-
-  // cria tabela 3
-  String LOC_DATABASE_CREATE = &quot;CREATE TABLE &quot; +      
-            LOCATION_TABLE + &quot; (&quot; + COLUMN_ID +
-            &quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot; + ...
-  database.execSQL(LOC_DATABASE_CREATE);
-
-  // mais 200 linhas, criando outras tabelas
-}
-</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="dt">void</span> <span class="fu">onCreate</span>(SQLiteDatabase database) {<span class="co">// antes da extração</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="co">// cria tabela 1</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  database.<span class="fu">execSQL</span>(<span class="st">&quot;CREATE TABLE &quot;</span> +</span>
+<span id="cb3-4"><a href="#cb3-4"></a>            CELL_SIGNAL_TABLE + <span class="st">&quot; (&quot;</span> + COLUMN_ID +</span>
+<span id="cb3-5"><a href="#cb3-5"></a>            <span class="st">&quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot;</span> + ...</span>
+<span id="cb3-6"><a href="#cb3-6"></a>  database.<span class="fu">execSQL</span>(<span class="st">&quot;CREATE INDEX cellID_index ON &quot;</span> + ...);</span>
+<span id="cb3-7"><a href="#cb3-7"></a>  database.<span class="fu">execSQL</span>(<span class="st">&quot;CREATE INDEX cellID_timestamp ON &quot;</span> + <span class="kw">... </span>);</span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="co">// cria tabela 2</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="bu">String</span> SMS_DATABASE_CREATE = <span class="st">&quot;CREATE TABLE &quot;</span> + </span>
+<span id="cb3-11"><a href="#cb3-11"></a>            SILENT_SMS_TABLE + <span class="st">&quot; (&quot;</span> + COLUMN_ID +</span>
+<span id="cb3-12"><a href="#cb3-12"></a>            <span class="st">&quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot;</span> + ...</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  database.<span class="fu">execSQL</span>(SMS_DATABASE_CREATE);</span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="bu">String</span> ZeroSMS = <span class="st">&quot;INSERT INTO &quot;</span> + SILENT_SMS_TABLE + </span>
+<span id="cb3-15"><a href="#cb3-15"></a>            <span class="st">&quot; (Address,Display,Class,ServiceCtr,Message) &quot;</span> +</span>
+<span id="cb3-16"><a href="#cb3-16"></a>            <span class="st">&quot;VALUES (&#39;&quot;</span>+ ...</span>
+<span id="cb3-17"><a href="#cb3-17"></a>  database.<span class="fu">execSQL</span>(ZeroSMS);</span>
+<span id="cb3-18"><a href="#cb3-18"></a></span>
+<span id="cb3-19"><a href="#cb3-19"></a>  <span class="co">// cria tabela 3</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a>  <span class="bu">String</span> LOC_DATABASE_CREATE = <span class="st">&quot;CREATE TABLE &quot;</span> +      </span>
+<span id="cb3-21"><a href="#cb3-21"></a>            LOCATION_TABLE + <span class="st">&quot; (&quot;</span> + COLUMN_ID +</span>
+<span id="cb3-22"><a href="#cb3-22"></a>            <span class="st">&quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot;</span> + ...</span>
+<span id="cb3-23"><a href="#cb3-23"></a>  database.<span class="fu">execSQL</span>(LOC_DATABASE_CREATE);</span>
+<span id="cb3-24"><a href="#cb3-24"></a></span>
+<span id="cb3-25"><a href="#cb3-25"></a>  <span class="co">// mais 200 linhas, criando outras tabelas</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>}</span></code></pre></div>
 <p>Para simplificar o entendimento desse método, um dos desenvolvedores do IntelliJ resolveu realizar sete Extrações de Método. Cada método extraído ficou responsável pela criação de uma das tabelas. Apenas olhando para o nome de tais métodos, pode-se ter uma ideia das tabelas que eles criam. Após as extrações, o método <code>onCreate</code> chama os métodos extraídos, como mostrado a seguir. O tamanho do método caiu de mais de 200 linhas de código para apenas sete linhas. Observe também que os métodos extraídos têm como um parâmetro que representa o banco de dados no qual as tabelas serão criadas.</p>
-<pre><code>public void onCreate(SQLiteDatabase database) { 
-  createCellSignalTable(database);
-  createSilentSmsTable(database);
-  createLocationTable(database);
-  createCellTable(database);
-  createOpenCellIDTable(database);
-  createDefaultMCCTable(database);
-  createEventLogTable(database);
- }</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">public</span> <span class="dt">void</span> <span class="fu">onCreate</span>(SQLiteDatabase database) { </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">createCellSignalTable</span>(database);</span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">createSilentSmsTable</span>(database);</span>
+<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">createLocationTable</span>(database);</span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">createCellTable</span>(database);</span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">createOpenCellIDTable</span>(database);</span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="fu">createDefaultMCCTable</span>(database);</span>
+<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">createEventLogTable</span>(database);</span>
+<span id="cb4-9"><a href="#cb4-9"></a> }</span></code></pre></div>
 <h3 data-number="1.2.2" id="motivações-para-extração-de-métodos" data-number="1.2.2"><span class="header-section-number">9.2.2</span> Motivações para Extração de Métodos</h3>
 <p>Em 2016, junto com Danilo Silva (na época aluno de doutorado do ASERG/DCC/ UFMG) e com o Prof. Nikolaos Tsantalis (da Universidade Concordia, em Montreal, no Canadá), realizamos um estudo com desenvolvedores de sistemas GitHub para descobrir suas reais motivações para realização de refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>). No estudo, revelamos 11 motivações distintas para Extrações de Métodos, conforme mostrado na tabela a seguir.</p>
 <table>
@@ -192,65 +252,63 @@ void f () {
 </blockquote>
 <p>Como pode ser conferido na tabela anterior, a segunda motivação mais frequente consiste em introduzir uma assinatura alternativa para um método. Um exemplo hipotético é mostrado a seguir, envolvendo um método que faz o logging de uma string em um arquivo.</p>
 <p>Primeiro vamos mostrar o código original:</p>
-<pre><code>void log(String msg) {
-  // salva msg em arquivo
-}</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">void</span> <span class="fu">log</span>(<span class="bu">String</span> msg) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="co">// salva msg em arquivo</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>}</span></code></pre></div>
 <p>O desenvolvedor decidiu então prover uma versão alternativa desse método com um parâmetro booleano, que indica se a string também deve ser mostrada na console. Veja o código após a extração desse segundo método <code>log</code>:</p>
-<pre><code>void log(String msg, boolean console) {
-  if (console)
-     System.out.println(msg);
-  // salva msg em um arquivo
-}
-
-void log(String msg) {
-  log(msg, false);
-}</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="dt">void</span> <span class="fu">log</span>(<span class="bu">String</span> msg, <span class="dt">boolean</span> console) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">if</span> (console)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>     <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(msg);</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="co">// salva msg em um arquivo</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="dt">void</span> <span class="fu">log</span>(<span class="bu">String</span> msg) {</span>
+<span id="cb6-8"><a href="#cb6-8"></a>  <span class="fu">log</span>(msg, <span class="kw">false</span>);</span>
+<span id="cb6-9"><a href="#cb6-9"></a>}</span></code></pre></div>
 <p>O leitor deve observar que, tecnicamente, a transformação mostrada no exemplo anterior é uma Extração de Método. Primeiro, todo o código de <code>log(String)</code> foi extraído para <code>log(String,boolean)</code>, que é um novo método. Em seguida, pequenos ajustes foram realizados no código extraído. Especificamente, foi adicionado um comando <code>if</code>. Tais ajustes são comuns e não descaracterizam a transformação como uma Extração de Método.</p>
 <h3 data-number="1.2.3" id="inline-de-método" data-number="1.2.3"><span class="header-section-number">9.2.3</span> Inline de Método</h3>
 <p>Esse refactoring funciona no sentido contrário a uma extração de método. Suponha um método pequeno, com uma ou duas linhas de código, e que seja chamado poucas vezes. O benefício proporcionado por esse método — em termos de reúso e incremento de legibilidade do código — é pequeno. Portanto, ele pode ser removido do sistema e seu corpo incorporado nos pontos de chamada. No entanto, é importante ressaltar que Inline de Métodos é uma operação mais rara e menos importante do que Extração.</p>
 <p><strong>Exemplo:</strong> A seguir, mostramos um exemplo de Inline de Método, realizado no sistema IntelliJ, uma IDE para Java. Primeiro, segue o código antes do inline. Podemos ver que o método <code>writeContentToFile</code> tem uma única linha de código e é chamado apenas uma vez, pelo método <code>write</code>.</p>
-<pre><code>private void writeContentToFile(final byte[] revision) {
-  getVirtualFile().setBinaryContent(revision);
-}
- 
-private void write(byte[] revision) {
-  VirtualFile virtualFile = getVirtualFile();
-  ...
-  if (document == null) {
-       writeContentToFile(revision); // única chamada      
-  }
-   ...
- }
-</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">writeContentToFile</span>(<span class="dt">final</span> <span class="dt">byte</span>[] revision) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">getVirtualFile</span>().<span class="fu">setBinaryContent</span>(revision);</span>
+<span id="cb7-3"><a href="#cb7-3"></a>}</span>
+<span id="cb7-4"><a href="#cb7-4"></a> </span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">write</span>(<span class="dt">byte</span>[] revision) {</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  VirtualFile virtualFile = <span class="fu">getVirtualFile</span>();</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  ...</span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="kw">if</span> (document == <span class="kw">null</span>) {</span>
+<span id="cb7-9"><a href="#cb7-9"></a>       <span class="fu">writeContentToFile</span>(revision); <span class="co">// única chamada      </span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>  }</span>
+<span id="cb7-11"><a href="#cb7-11"></a>   ...</span>
+<span id="cb7-12"><a href="#cb7-12"></a> }</span></code></pre></div>
 <p>Os desenvolvedores do IntelliJ decidiram então remover <code>writeContentToFile</code> e expandir o seu corpo no único ponto de chamada. O código após o refactoring é mostrado a seguir.</p>
-<pre><code>private void write(byte[] revision) {
-  VirtualFile virtualFile = getVirtualFile();
-  ...
-  if (document == null) {
-     virtualFile.setBinaryContent(revision);  // após inline
-  }
-  ...
-}
-</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">private</span> <span class="dt">void</span> <span class="fu">write</span>(<span class="dt">byte</span>[] revision) {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  VirtualFile virtualFile = <span class="fu">getVirtualFile</span>();</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  ...</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="kw">if</span> (document == <span class="kw">null</span>) {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>     virtualFile.<span class="fu">setBinaryContent</span>(revision);  <span class="co">// após inline</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>  }</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  ...</span>
+<span id="cb8-8"><a href="#cb8-8"></a>}</span></code></pre></div>
 <h3 data-number="1.2.4" id="movimentação-de-método" data-number="1.2.4"><span class="header-section-number">9.2.4</span> Movimentação de Método</h3>
 <p>Não é raro encontrar um método implementado na classe errada. Ou seja, apesar de implementado em uma classe A, um método <code>f</code> pode usar mais serviços de uma classe B. Por exemplo, ele pode ter mais dependências para elementos de B do que de sua classe A. Nesses casos, deve-se avaliar a possibilidade de mover f para a classe B. Esse refactoring pode melhorar a coesão da classe A, diminuir o acoplamento entre A e B e, em última instância, tornar ambas as classes mais fáceis de serem entendidas e modificadas.</p>
 <p>Pelas suas características, Movimentação de Métodos é um dos refactorings com maior potencial para melhorar a modularização de um sistema. Como sua atuação não está restrita a uma única classe, Movimentação de Métodos pode ter um impacto positivo na arquitetura do sistema, garantindo que os métodos estejam nas classes apropriadas, tanto do ponto de vista funcional como arquitetural.</p>
 <p><strong>Exemplo:</strong> O sistema IntelliJ possui um pacote para execução de testes de unidade, via IDE. Esse pacote, por sua vez, possui uma classe com métodos de uso geral, chamada <code>PlatformTestUtil</code>. Conforme mostra o código a seguir, essa classe tinha um método chamado <code>averageAmongMedians</code>, que calcula a média das medianas de uma parte de um vetor de inteiros. No entanto, esse método não possui relação com a execução de testes de unidade. Por exemplo, ele não usa métodos e atributos de <code>PlatformTestUtil</code>. Ou seja, ele é independente do resto da classe.</p>
-<pre><code>class PlatformTestUtil {
-  ...
-  public static long averageAmongMedians(long[] time, 
-                                         int part) {
-    int n = time.length;
-    Arrays.sort(time);
-    long total = 0;
-    for (int i= n/2-n/part/2; i&lt; n/2+n/part/2; i++) {
-      total += time[i];
-    }
-    int middlePartLength = n/part;
-    return middlePartLength == 0 ? 0 : total/middlePartLength;
-  }
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">class</span> PlatformTestUtil {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  ...</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">long</span> <span class="fu">averageAmongMedians</span>(<span class="dt">long</span>[] time, </span>
+<span id="cb9-4"><a href="#cb9-4"></a>                                         <span class="dt">int</span> part) {</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="dt">int</span> n = time.<span class="fu">length</span>;</span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="bu">Arrays</span>.<span class="fu">sort</span>(time);</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    <span class="dt">long</span> total = <span class="dv">0</span>;</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="kw">for</span> (<span class="dt">int</span> i= n/<span class="dv">2</span>-n/part/<span class="dv">2</span>; i&lt; n/<span class="dv">2</span>+n/part/<span class="dv">2</span>; i++) {</span>
+<span id="cb9-9"><a href="#cb9-9"></a>      total += time[i];</span>
+<span id="cb9-10"><a href="#cb9-10"></a>    }</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    <span class="dt">int</span> middlePartLength = n/part;</span>
+<span id="cb9-12"><a href="#cb9-12"></a>    <span class="kw">return</span> middlePartLength == <span class="dv">0</span> ? <span class="dv">0</span> : total/middlePartLength;</span>
+<span id="cb9-13"><a href="#cb9-13"></a>  }</span>
+<span id="cb9-14"><a href="#cb9-14"></a>  ...</span>
+<span id="cb9-15"><a href="#cb9-15"></a>}</span></code></pre></div>
 <p>Pelos motivos expostos no parágrafo anterior, um dos desenvolvedores do IntelliJ decidiu mover <code>averageAmongMedians</code> para uma classe chamada <code>ArrayUtil</code>, que tem como objetivo disponibilizar funções utilitárias para manipulação de vetores. Logo, trata-se de uma classe mais relacionada com a funcionalidade provida por <code>averageAmongMedians</code>.</p>
 <p>Após a movimentação para a nova classe, as chamadas de <code>averageAmongMedians</code> tiveram que ser atualizadas, como mostrado na figura a seguir. No entanto, como o leitor pode observar nesse diff, isso não foi difícil, pois <code>averageAmongMedians</code> é um método estático. Logo, apenas o nome de sua classe teve que ser atualizado em cada ponto de chamada.</p>
 <figure>
@@ -258,43 +316,43 @@ private void write(byte[] revision) {
 </figure>
 <p>Em outros casos, no entanto, pode não ser tão simples atualizar as chamadas de um método após ele ser movido para uma nova classe. Isso acontece quando nos pontos de chamada não existem referências para objetos da nova classe do método. Uma solução consiste então em deixar uma implementação simples do método na classe de origem. Essa implementação apenas delega as chamadas para a nova classe do método. Consequentemente, nenhum cliente precisará ser alterado.</p>
 <p>Um exemplo é mostrado a seguir. Primeiro, o código original:</p>
-<pre><code>class A {
-  B b = new B();
-  void f { ... }
-}
-
-class B { 
-  ... 
-}
-
-class Cliente {
-  A a = new A();
-  void g() {
-    ... 
-    a.g(); 
-    ...
-  }
-}</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">class</span> A {</span>
+<span id="cb10-2"><a href="#cb10-2"></a>  B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="dt">void</span> f { <span class="kw">... </span>}</span>
+<span id="cb10-4"><a href="#cb10-4"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="kw">class</span> B { </span>
+<span id="cb10-7"><a href="#cb10-7"></a>  <span class="kw">... </span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>}</span>
+<span id="cb10-9"><a href="#cb10-9"></a></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="kw">class</span> Cliente {</span>
+<span id="cb10-11"><a href="#cb10-11"></a>  A a = <span class="kw">new</span> <span class="fu">A</span>();</span>
+<span id="cb10-12"><a href="#cb10-12"></a>  <span class="dt">void</span> <span class="fu">g</span>() {</span>
+<span id="cb10-13"><a href="#cb10-13"></a>    <span class="kw">... </span></span>
+<span id="cb10-14"><a href="#cb10-14"></a>    a.<span class="fu">g</span>(); </span>
+<span id="cb10-15"><a href="#cb10-15"></a>    ...</span>
+<span id="cb10-16"><a href="#cb10-16"></a>  }</span>
+<span id="cb10-17"><a href="#cb10-17"></a>}</span></code></pre></div>
 <p>E agora o código após a refatoração:</p>
-<pre><code>class A {
-  B b = new B();
-  void f {
-    b.g(); // apenas delega chamada para B
-  }
-}
-
-class B {    // f foi movido de A para B
-   void f { ... }
-}
-
-class Cliente {
-  A a = new A();
-  void g() {
-    ... 
-    a.g();    // não precisa mudar
-    ...
-  }
-}</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">class</span> A {</span>
+<span id="cb11-2"><a href="#cb11-2"></a>  B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="dt">void</span> f {</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    b.<span class="fu">g</span>(); <span class="co">// apenas delega chamada para B</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  }</span>
+<span id="cb11-6"><a href="#cb11-6"></a>}</span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="kw">class</span> B {    <span class="co">// f foi movido de A para B</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>   <span class="dt">void</span> f { <span class="kw">... </span>}</span>
+<span id="cb11-10"><a href="#cb11-10"></a>}</span>
+<span id="cb11-11"><a href="#cb11-11"></a></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="kw">class</span> Cliente {</span>
+<span id="cb11-13"><a href="#cb11-13"></a>  A a = <span class="kw">new</span> <span class="fu">A</span>();</span>
+<span id="cb11-14"><a href="#cb11-14"></a>  <span class="dt">void</span> <span class="fu">g</span>() {</span>
+<span id="cb11-15"><a href="#cb11-15"></a>    <span class="kw">... </span></span>
+<span id="cb11-16"><a href="#cb11-16"></a>    a.<span class="fu">g</span>();    <span class="co">// não precisa mudar</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a>    ...</span>
+<span id="cb11-18"><a href="#cb11-18"></a>  }</span>
+<span id="cb11-19"><a href="#cb11-19"></a>}</span></code></pre></div>
 <p>Observe que o método <code>f</code> foi movido da classe <code>A</code> para a classe <code>B</code>. Porém, em <code>A</code> ficou uma versão do método que apenas repassa (ou delega) a chamada para <code>B</code>. Por isso, o código da classe <code>Cliente</code> não precisou ser alterado.</p>
 <p>Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de <strong>Pull Up Method</strong>. Para ilustrar, suponha um mesmo método <code>f</code> implementado em duas subclasses <code>B1</code> e <code>B2</code>. Para evitar <strong>duplicação de código</strong>, pode-se então <q>subir</q> com ambas implementações para a superclasse <code>A</code>, como mostra o seguinte diagrama de classes:</p>
 <figure>
@@ -305,134 +363,132 @@ class Cliente {
 <img src="figs/cap9/push-down.svg" style="width:80.0%" alt="" /><figcaption>Push Down Method</figcaption>
 </figure>
 <p>Para concluir, operações de refactoring podem ser feitas em sequência. Por exemplo, suponha a seguinte classe <code>A</code> com um método <code>f</code>:</p>
-<pre><code>class A {
-  B b = new B();
-
-  void f(){
-    S1;
-    S2;
-  }
-
-}
-
-class B {
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">class</span> A {</span>
+<span id="cb12-2"><a href="#cb12-2"></a>  B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb12-3"><a href="#cb12-3"></a></span>
+<span id="cb12-4"><a href="#cb12-4"></a>  <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb12-5"><a href="#cb12-5"></a>    S1;</span>
+<span id="cb12-6"><a href="#cb12-6"></a>    S2;</span>
+<span id="cb12-7"><a href="#cb12-7"></a>  }</span>
+<span id="cb12-8"><a href="#cb12-8"></a></span>
+<span id="cb12-9"><a href="#cb12-9"></a>}</span>
+<span id="cb12-10"><a href="#cb12-10"></a></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="kw">class</span> B {</span>
+<span id="cb12-12"><a href="#cb12-12"></a>  ...</span>
+<span id="cb12-13"><a href="#cb12-13"></a>}</span></code></pre></div>
 <p>Primeiro, vamos extrair um método <code>g</code> com o comando <code>S2</code> de <code>f</code>:</p>
-<pre><code>class A {
-  B b = new B();
-
-  void g() { // novo método extraído de f()
-    S2;
-  }
-
-  void f(){
-    S1;
-    g();
-  }
-}
-
-class B {
-  ...
-}
-</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">class</span> A {</span>
+<span id="cb13-2"><a href="#cb13-2"></a>  B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>  <span class="dt">void</span> <span class="fu">g</span>() { <span class="co">// novo método extraído de f()</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a>    S2;</span>
+<span id="cb13-6"><a href="#cb13-6"></a>  }</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a>  <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb13-9"><a href="#cb13-9"></a>    S1;</span>
+<span id="cb13-10"><a href="#cb13-10"></a>    <span class="fu">g</span>();</span>
+<span id="cb13-11"><a href="#cb13-11"></a>  }</span>
+<span id="cb13-12"><a href="#cb13-12"></a>}</span>
+<span id="cb13-13"><a href="#cb13-13"></a></span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="kw">class</span> B {</span>
+<span id="cb13-15"><a href="#cb13-15"></a>  ...</span>
+<span id="cb13-16"><a href="#cb13-16"></a>}</span></code></pre></div>
 <p>Na sequência, vamos mover <code>g</code> para uma classe <code>B</code>, como ilustrado a seguir:</p>
-<pre><code>class A {
-  B b = new B();
-
-  void f(){
-    S1;
-    b.g();
-  }
-}
-
-class B {
-
-  void g() { // movido de A para B
-    S2;
-  }
-
-}</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">class</span> A {</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb14-3"><a href="#cb14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb14-5"><a href="#cb14-5"></a>    S1;</span>
+<span id="cb14-6"><a href="#cb14-6"></a>    b.<span class="fu">g</span>();</span>
+<span id="cb14-7"><a href="#cb14-7"></a>  }</span>
+<span id="cb14-8"><a href="#cb14-8"></a>}</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="kw">class</span> B {</span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a>  <span class="dt">void</span> <span class="fu">g</span>() { <span class="co">// movido de A para B</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a>    S2;</span>
+<span id="cb14-14"><a href="#cb14-14"></a>  }</span>
+<span id="cb14-15"><a href="#cb14-15"></a></span>
+<span id="cb14-16"><a href="#cb14-16"></a>}</span></code></pre></div>
 <h3 data-number="1.2.5" id="extração-de-classes" data-number="1.2.5"><span class="header-section-number">9.2.5</span> Extração de Classes</h3>
 <p>Esse refactoring é recomendado quando um sistema possui uma classe A com muitas responsabilidades e atributos. Alguns desses atributos são relacionados e poderiam ter vida própria. Logo, eles podem ser extraídos para uma nova classe B. Em seguida, declaramos em A um atributo do tipo B.</p>
 <p><strong>Exemplo:</strong> Seja a classe <code>Pessoa</code> mostrada a seguir. Além de outros atributos, que foram omitidos do exemplo, ela armazena dados do telefone fixo e celular da pessoa em questão, incluindo código de área e número.</p>
-<pre><code>class Pessoa {
-  String codigoArea;
-  String fone;
-  String codigoAreaCelular;
-  String celular;
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">class</span> Pessoa {</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="bu">String</span> codigoArea;</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="bu">String</span> fone;</span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="bu">String</span> codigoAreaCelular;</span>
+<span id="cb15-5"><a href="#cb15-5"></a>  <span class="bu">String</span> celular;</span>
+<span id="cb15-6"><a href="#cb15-6"></a>  ...</span>
+<span id="cb15-7"><a href="#cb15-7"></a>}</span></code></pre></div>
 <p>Assim, podemos extrair de <code>Pessoa</code> uma nova classe, chamada <code>Fone</code>, dedicada a armazenar informações sobre telefones, conforme mostrado a seguir. Após o refactoring, <code>Pessoa</code> passou a ter dois atributos do novo tipo, destinados a armazenar o telefone fixo e o telefone celular de uma pessoa.</p>
-<pre><code>class Fone { // classe extraída
-  String codigoArea;
-  String numero; 
-}
-
-class Pessoa {
-  Fone foneFixo;
-  Fone foneCelular
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">class</span> Fone { <span class="co">// classe extraída</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>  <span class="bu">String</span> codigoArea;</span>
+<span id="cb16-3"><a href="#cb16-3"></a>  <span class="bu">String</span> numero; </span>
+<span id="cb16-4"><a href="#cb16-4"></a>}</span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="kw">class</span> Pessoa {</span>
+<span id="cb16-7"><a href="#cb16-7"></a>  Fone foneFixo;</span>
+<span id="cb16-8"><a href="#cb16-8"></a>  Fone foneCelular</span>
+<span id="cb16-9"><a href="#cb16-9"></a>  ...</span>
+<span id="cb16-10"><a href="#cb16-10"></a>}</span></code></pre></div>
 <p>Um refactoring similar a <strong>Extração de Classes</strong> é chamado de <strong>Extração de Interfaces</strong>. Por exemplo, suponha que uma biblioteca de estruturas de dados implemente as classes <code>LinkedList</code> e <code>ArrayList</code>. Dessas duas classes podemos extrair uma interface <code>List</code>, com os métodos comuns a elas. Assim, os clientes de tais classes podem começar a praticar o princípio de projeto <q>Prefira Interfaces a Classes Concretas</q>, que estudamos no Capítulo 5.</p>
 <h3 data-number="1.2.6" id="renomeação" data-number="1.2.6"><span class="header-section-number">9.2.6</span> Renomeação</h3>
 <p>Existe uma frase provocativa, atribuída a Phil Karlton, que afirma que <q>existem apenas duas coisas difíceis em Ciência da Computação: invalidação de cache e dar nomes às coisas.</q> Como dar nomes é difícil, frequentemente temos que renomear um elemento de código, seja ele uma variável, função, método, parâmetro, atributo, classe, etc. Isso pode ocorrer porque o nome dado ao elemento não foi uma boa escolha. Um outro motivo é que a responsabilidade desse elemento pode ter mudado com o tempo e assim seu nome ficou desatualizado. Em ambos os casos, recomenda-se realizar um dos refactorings mais populares que existe: <strong>renomeação</strong>. Isto é, dar um nome mais adequado e significativo para o elemento de código.</p>
 <p>Quando esse refactoring é aplicado, a parte mais complexa não é renomear o elemento, mas atualizar os pontos do código em que ele é referenciado. Por exemplo, se um método <code>f</code> é renomeado para <code>g</code>, todas as chamadas de <code>f</code> devem ser atualizadas. Na verdade, se <code>f</code> for muito usado, pode ser interessante extraí-lo para um novo método, com o novo nome, e manter o nome antigo, mas depreciado.</p>
 <p>Para mostrar um exemplo, suponha o seguinte método <code>f</code>:</p>
-<pre><code>void f () {
-  // A
-}</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1"></a><span class="dt">void</span> <span class="fu">f</span> () {</span>
+<span id="cb17-2"><a href="#cb17-2"></a>  <span class="co">// A</span></span>
+<span id="cb17-3"><a href="#cb17-3"></a>}</span></code></pre></div>
 <p>Segue agora o código após o refactoring. Veja que extraímos um método <code>g</code>, com o código antigo de <code>f</code>, que foi então depreciado.</p>
-<pre><code>void g() {    // novo nome do método
-  // A
-}
-
-@deprecated
-void f() {    // mantêm nome antigo
-  g();        // mas delega chamada para novo nome
-}</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1"></a><span class="dt">void</span> <span class="fu">g</span>() {    <span class="co">// novo nome do método</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>  <span class="co">// A</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>}</span>
+<span id="cb18-4"><a href="#cb18-4"></a></span>
+<span id="cb18-5"><a href="#cb18-5"></a><span class="at">@deprecated</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a><span class="dt">void</span> <span class="fu">f</span>() {    <span class="co">// mantêm nome antigo</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>  <span class="fu">g</span>();        <span class="co">// mas delega chamada para novo nome</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>}</span></code></pre></div>
 <p>Depreciação é um mecanismo oferecido por linguagens de programação para indicar que um elemento de código está desatualizado e, portanto, desencorajar seu uso. Quando o compilador descobre que um trecho de código está usando um elemento depreciado, ele emite um <em>warning</em>. No exemplo anterior, o método <code>f</code> não foi simplesmente renomeado para <code>g</code>. Em vez disso, primeiro criou-se um método g com o código original de <code>f</code>. Em seguida, <code>f</code> foi depreciado e seu código modificado para apenas chamar <code>g</code>.</p>
 <p>A estratégia baseada em depreciação torna a renomeação mais segura, pois ela não obriga a atualização de uma só vez de todas as chamadas de <code>f</code>, que podem ser muitas e espalhadas em diversos programas. Ou seja, ela dá tempo para que os clientes se adaptem à mudança e passem a usar o novo nome. Na verdade, refactorings — mesmo os mais simples, como uma renomeação — devem ser realizado em pequenos passos, ou em <strong>baby steps</strong>, para ter certeza que eles não vão prejudicar o correto funcionamento de um sistema.</p>
 <h3 data-number="1.2.7" id="outros-refactorings" data-number="1.2.7"><span class="header-section-number">9.2.7</span> Outros Refactorings</h3>
 <p>Os refactorings apresentados anteriormente têm maior potencial para melhorar o projeto de um sistema, pois eles envolvem operações com um escopo global, como Movimentação de Métodos ou Extração de Classes. Porém, existem refactorings com escopo local, que melhoraram, por exemplo, a implementação interna de um único método. Vamos a seguir descrever resumidamente alguns desses refactorings.</p>
 <p><strong>Extração de Variáveis</strong> é usado para simplificar expressões e torná-las mais fáceis de ler e entender. Seja o seguinte código de exemplo:</p>
-<pre><code>x1 = (-b + sqrt(b*b-4*a*c)) / (2*a);</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1"></a>x1 = (-b + <span class="fu">sqrt</span>(b*b-<span class="dv">4</span>*a*c)) / (<span class="dv">2</span>*a);</span></code></pre></div>
 <p>Esse código pode ser refatorado para:</p>
-<pre><code>delta = b*b-4*a*c; // variável extraída
-x1 = (-b + sqrt(delta)) / (2*a);
-</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1"></a>delta = b*b-<span class="dv">4</span>*a*c; <span class="co">// variável extraída</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>x1 = (-b + <span class="fu">sqrt</span>(delta)) / (<span class="dv">2</span>*a);</span></code></pre></div>
 <p>Veja que uma variável <code>delta</code> foi criada e inicializada com uma parte de uma expressão maior. Com isso, o código da expressão, após a refatoração, ficou menor e mais fácil de entender.</p>
 <p><strong>Remoção de Flags</strong> é um refactoring que sugere usar comandos como <code>break</code> ou <code>return</code>, em vez de variáveis de controle, também chamadas de flags. Seja o seguinte código de exemplo:</p>
-<pre><code>boolean search(int x, int[]a) {
-   boolean achou = false;
-   i = 0;
-   while (i &lt; a.length) &amp;&amp; (!achou) {
-     if (a[i] == x);
-        achou = true;
-     i++;
-   }
-   return achou;
-}</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1"></a><span class="dt">boolean</span> <span class="fu">search</span>(<span class="dt">int</span> x, <span class="dt">int</span>[]a) {</span>
+<span id="cb21-2"><a href="#cb21-2"></a>   <span class="dt">boolean</span> achou = <span class="kw">false</span>;</span>
+<span id="cb21-3"><a href="#cb21-3"></a>   i = <span class="dv">0</span>;</span>
+<span id="cb21-4"><a href="#cb21-4"></a>   <span class="kw">while</span> (i &lt; a.<span class="fu">length</span>) &amp;&amp; (!achou) {</span>
+<span id="cb21-5"><a href="#cb21-5"></a>     <span class="kw">if</span> (a[i] == x);</span>
+<span id="cb21-6"><a href="#cb21-6"></a>        achou = <span class="kw">true</span>;</span>
+<span id="cb21-7"><a href="#cb21-7"></a>     i++;</span>
+<span id="cb21-8"><a href="#cb21-8"></a>   }</span>
+<span id="cb21-9"><a href="#cb21-9"></a>   <span class="kw">return</span> achou;</span>
+<span id="cb21-10"><a href="#cb21-10"></a>}</span></code></pre></div>
 <p>Esse código pode ser refatorado da seguinte forma:</p>
-<pre><code>boolean search(int x, int[]a) {
-  for (i = 0; i &lt; a.length; i++)
-    if (a[i] == x)
-       return true;
-  return false;
-}</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1"></a><span class="dt">boolean</span> <span class="fu">search</span>(<span class="dt">int</span> x, <span class="dt">int</span>[]a) {</span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="kw">for</span> (i = <span class="dv">0</span>; i &lt; a.<span class="fu">length</span>; i++)</span>
+<span id="cb22-3"><a href="#cb22-3"></a>    <span class="kw">if</span> (a[i] == x)</span>
+<span id="cb22-4"><a href="#cb22-4"></a>       <span class="kw">return</span> <span class="kw">true</span>;</span>
+<span id="cb22-5"><a href="#cb22-5"></a>  <span class="kw">return</span> <span class="kw">false</span>;</span>
+<span id="cb22-6"><a href="#cb22-6"></a>}</span></code></pre></div>
 <p>Observe que a função após a refatoração ficou menor e com uma lógica mais clara, graças ao uso de um comando <code>return</code> para retornar imediatamente assim que um determinado valor tenha sido encontrado em um vetor.</p>
 <p>Existe também refactorings que tratam da simplificação de comandos condicionais. Um deles é chamado de <strong>Substituição de Condicional por Polimorfismo</strong>. Para entendê-lo, suponha um comando <code>switch</code> que retorna o valor da bolsa de pesquisa de um aluno, dependendo do seu tipo:</p>
-<pre><code>switch (aluno.type) {
-   case &quot;graduacao&quot;: 
-      bolsa = 500;
-      break;
-   case &quot;mestrado&quot;: 
-      bolsa = 1500;
-      break;
-   case &quot;doutorado&quot;: 
-      bolsa = 2500;
-      break;
-}</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">switch</span> (aluno.<span class="fu">type</span>) {</span>
+<span id="cb23-2"><a href="#cb23-2"></a>   <span class="kw">case</span> <span class="st">&quot;graduacao&quot;</span>: </span>
+<span id="cb23-3"><a href="#cb23-3"></a>      bolsa = <span class="dv">500</span>;</span>
+<span id="cb23-4"><a href="#cb23-4"></a>      <span class="kw">break</span>;</span>
+<span id="cb23-5"><a href="#cb23-5"></a>   <span class="kw">case</span> <span class="st">&quot;mestrado&quot;</span>: </span>
+<span id="cb23-6"><a href="#cb23-6"></a>      bolsa = <span class="dv">1500</span>;</span>
+<span id="cb23-7"><a href="#cb23-7"></a>      <span class="kw">break</span>;</span>
+<span id="cb23-8"><a href="#cb23-8"></a>   <span class="kw">case</span> <span class="st">&quot;doutorado&quot;</span>: </span>
+<span id="cb23-9"><a href="#cb23-9"></a>      bolsa = <span class="dv">2500</span>;</span>
+<span id="cb23-10"><a href="#cb23-10"></a>      <span class="kw">break</span>;</span>
+<span id="cb23-11"><a href="#cb23-11"></a>}</span></code></pre></div>
 <p>Em uma linguagem orientada a objetos, esse comando pode ser refatorado para apenas uma linha de código:</p>
 <p><code>bolsa = aluno.getBolsa();</code></p>
 <p>Na versão refatorada, o atributo <code>type</code> de Aluno não é mais necessário e, portanto, pode ser removido. Além disso, temos que implementar nas subclasses de <code>Aluno</code> — por exemplo, <code>AlunoGraduacao</code>, <code>AlunoMestrado</code> e <code>AlunoDoutorado</code> — um método <code>getBolsa()</code>. Por fim, na superclasse <code>Aluno</code> esse método deve ser abstrato.</p>
@@ -470,31 +526,29 @@ a seguinte:
 --->
 <h3 data-number="1.4.1" id="verificação-de-pré-condições-de-refactorings" data-number="1.4.1"><span class="header-section-number">9.4.1</span> Verificação de Pré-condições de Refactorings</h3>
 <p>A verificação das pré-condições de refactorings não é uma tarefa trivial. Para ilustrar a complexidade dessa tarefa, vamos reusar um pequeno programa em Java, proposto por Friedrich Steimann and Andreas Thies (<a href="https://doi.org/10.1007/978-3-642-03013-0_19">link</a>). Conforme mostrado a seguir, esse programa inclui duas classes, <code>A</code> e <code>B</code>, implementadas em arquivos distintos, mas pertencentes a um mesmo pacote <code>P1</code>. Assim, a chamada de <code>m("abc")</code> no primeiro arquivo irá resultar na execução do método <code>m(String)</code> da classe <code>B</code>.</p>
-<pre><code>// arquivo A.java
-package P1;
-
-public class A {
-  void n() { 
-    new B().m(&quot;abc&quot;); // executa m(String) de B
-  }
-}
-</code></pre>
-<pre><code>// arquivo B.java
-package P1;
-
-public class B {
-  public void m(Object o) {...}
-  void m(String s) {...}
-}
-</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">// arquivo A.java</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">package</span><span class="im"> P1;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a></span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="kw">public</span> <span class="kw">class</span> A {</span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="dt">void</span> <span class="fu">n</span>() { </span>
+<span id="cb24-6"><a href="#cb24-6"></a>    <span class="kw">new</span> <span class="fu">B</span>().<span class="fu">m</span>(<span class="st">&quot;abc&quot;</span>); <span class="co">// executa m(String) de B</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>  }</span>
+<span id="cb24-8"><a href="#cb24-8"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">// arquivo B.java</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">package</span><span class="im"> P1;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a></span>
+<span id="cb25-4"><a href="#cb25-4"></a><span class="kw">public</span> <span class="kw">class</span> B {</span>
+<span id="cb25-5"><a href="#cb25-5"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">m</span>(<span class="bu">Object</span> o) {...}</span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="dt">void</span> <span class="fu">m</span>(<span class="bu">String</span> s) {...}</span>
+<span id="cb25-7"><a href="#cb25-7"></a>}</span></code></pre></div>
 <p>No entanto, suponha que a classe <code>B</code> seja movida para um novo pacote; por exemplo, para um pacote <code>P2</code>:</p>
-<pre><code>// arquivo B.java
-package P2;   // novo pacote de B
-
-public class B {
-  public void m(Object o) {...}
-  void m(String s) {...}
-} </code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">// arquivo B.java</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="kw">package</span><span class="im"> P2;</span>   <span class="co">// novo pacote de B</span></span>
+<span id="cb26-3"><a href="#cb26-3"></a></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="kw">public</span> <span class="kw">class</span> B {</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">m</span>(<span class="bu">Object</span> o) {...}</span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="dt">void</span> <span class="fu">m</span>(<span class="bu">String</span> s) {...}</span>
+<span id="cb26-7"><a href="#cb26-7"></a>} </span></code></pre></div>
 <p>Apesar de parecer inofensiva, essa Movimentação de Classe muda o comportamento do programa. Na nova versão, a chamada de <code>m("abc")</code> resulta na execução de <code>m(Object)</code> e não mais de <code>m(String)</code>. O motivo é que a classe <code>B</code> não está mais no mesmo pacote da classe <code>A</code>. Por isso, <code>m(String)</code> deixou de ser visível para <code>A</code>, pois ele não é um método público. Para leitores que não conhecem Java, um método público de uma classe pública, como <code>m(Object)</code>, pode ser chamado em qualquer parte do código. Mas métodos sem modificador de visibilidade, como <code>m(String)</code>, somente podem ser chamados por código do mesmo pacote.</p>
 <p>Em resumo, o exemplo de Movimentação de Classes que apresentamos não é um refactoring, pois ele não preserva o comportamento do programa. Se realizado com o apoio de uma IDE, caberia a ela detectar tal fato e avisar ao usuário que o refactoring não poderá ser realizado, pois ele muda o comportamento do programa.</p>
 <h2 data-number="1.5" id="code-smells" data-number="1.5"><span class="header-section-number">9.5</span> Code Smells</h2>
@@ -510,50 +564,49 @@ public class B {
 <li><p>Clone do Tipo 4: quando A e B são semanticamente equivalentes, mas suas implementações são baseadas em algoritmos diferentes.</p></li>
 </ul>
 <p><strong>Exemplo</strong>: Para ilustrar esses tipos de clones, vamos usar a seguinte função:</p>
-<pre><code>int fatorial(int n) {
-  fat = 1;
-  for (i = 1; i &lt;= n; i++)
-    fat = fat * i;
-  return fat;
-}</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1"></a><span class="dt">int</span> <span class="fu">fatorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb27-2"><a href="#cb27-2"></a>  fat = <span class="dv">1</span>;</span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="kw">for</span> (i = <span class="dv">1</span>; i &lt;= n; i++)</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    fat = fat * i;</span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">return</span> fat;</span>
+<span id="cb27-6"><a href="#cb27-6"></a>}</span></code></pre></div>
 <p>A seguir, mostramos quatro clones dessa função.</p>
 <ul>
 <li>Clone Tipo 1: insere um comentário e remove espaços entre os operadores.</li>
 </ul>
-<pre><code>int fatorial(int n) {
-  fat=1;
-  for (i=1; i&lt;=n; i++) 
-    fat=fat*i;
-  return fat; // retorna fatorial
-}
-</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1"></a><span class="dt">int</span> <span class="fu">fatorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  fat=<span class="dv">1</span>;</span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="kw">for</span> (i=<span class="dv">1</span>; i&lt;=n; i++) </span>
+<span id="cb28-4"><a href="#cb28-4"></a>    fat=fat*i;</span>
+<span id="cb28-5"><a href="#cb28-5"></a>  <span class="kw">return</span> fat; <span class="co">// retorna fatorial</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>}</span></code></pre></div>
 <ul>
 <li>Clone Tipo 2: renomeia algumas variáveis.</li>
 </ul>
-<pre><code>int fatorial(int n) {
-  f = 1;
-  for (j = 1; j &lt;= n; j++) 
-    f = f * j;
-  return f; 
-}</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1"></a><span class="dt">int</span> <span class="fu">fatorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  f = <span class="dv">1</span>;</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="kw">for</span> (j = <span class="dv">1</span>; j &lt;= n; j++) </span>
+<span id="cb29-4"><a href="#cb29-4"></a>    f = f * j;</span>
+<span id="cb29-5"><a href="#cb29-5"></a>  <span class="kw">return</span> f; </span>
+<span id="cb29-6"><a href="#cb29-6"></a>}</span></code></pre></div>
 <ul>
 <li>Clone Tipo 3: insere um comando simples, para imprimir o valor do fatorial.</li>
 </ul>
-<pre><code>int fatorial(int n) {
-  fat = 1;
-  for (j = 1; j &lt;= n; j++)
-    fat = fat * j;
-  System.out.println(fat); // novo comando
-  return fat;
-}</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1"></a><span class="dt">int</span> <span class="fu">fatorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  fat = <span class="dv">1</span>;</span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="kw">for</span> (j = <span class="dv">1</span>; j &lt;= n; j++)</span>
+<span id="cb30-4"><a href="#cb30-4"></a>    fat = fat * j;</span>
+<span id="cb30-5"><a href="#cb30-5"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(fat); <span class="co">// novo comando</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="kw">return</span> fat;</span>
+<span id="cb30-7"><a href="#cb30-7"></a>}</span></code></pre></div>
 <ul>
 <li>Clone Tipo 4: implementa uma versão recursiva da função.</li>
 </ul>
-<pre><code>int fatorial(int n) {
-  if (n == 0)
-     return 1;
-  else return n*fatorial(n-1);
-}</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1"></a><span class="dt">int</span> <span class="fu">fatorial</span>(<span class="dt">int</span> n) {</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="kw">if</span> (n == <span class="dv">0</span>)</span>
+<span id="cb31-3"><a href="#cb31-3"></a>     <span class="kw">return</span> <span class="dv">1</span>;</span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="kw">else</span> <span class="kw">return</span> n*<span class="fu">fatorial</span>(n-<span class="dv">1</span>);</span>
+<span id="cb31-5"><a href="#cb31-5"></a>}</span></code></pre></div>
 <p>Em todos esses casos, não precisaríamos ter duas ou mais funções <code>fatorial</code> no sistema. Apenas uma delas poderia ficar no código e a outra seria removida.</p>
 <p><strong>Mundo Real</strong>: Em 2013, Auki Yamashita e Leon Moonen, dois pesquisadores de um laboratório de pesquisa na Noruega, publicaram os resultados de um estudo exploratório sobre code smells envolvendo 85 desenvolvedores de software (<a href="https://doi.org/10.1109/WCRE.2013.6671299">link</a>). Quando esses desenvolvedores foram questionados sobre os code smells com os quais eles tinham mais preocupação, a resposta mais comum foi Código Duplicado, com quase 20 pontos na escala usada pelos pesquisadores para ordenar as respostas. Em segundo lugar, com metade dos pontos, ficou Métodos Longos, que é o code smell que estudaremos a seguir.</p>
 <h3 data-number="1.5.2" id="métodos-longos" data-number="1.5.2"><span class="header-section-number">9.5.2</span> Métodos Longos</h3>
@@ -564,84 +617,82 @@ public class B {
 <h3 data-number="1.5.4" id="feature-envy" data-number="1.5.4"><span class="header-section-number">9.5.4</span> Feature Envy</h3>
 <p>Esse smell designa um método que parece <q>invejar</q> os dados e métodos de uma outra classe. Dizendo de outro modo, ele acessa mais atributos e métodos de uma classe B do que de sua atual classe A. Portanto, deve-se analisar a possibilidade de usar Movimentação de Método para migrá-lo para a classe <q>invejada</q>.</p>
 <p>O método <code>fireAreaInvalidated2</code>, mostrado no código a seguir, é um exemplo de Feature Envy. Podemos observar que ele realiza três chamadas de métodos, mas todas têm como alvo um mesmo objeto <code>abt</code> do tipo <code>AbstractTool</code>. Por outro lado, ele não acessa nenhum atributo ou chama qualquer método da sua classe atual. Logo, deve-se analisar a conveniência de mover esse método para <code>AbstractTool</code>.</p>
-<pre><code>public class DrawingEditorProxy 
-             extends AbstractBean implements DrawingEditor {
-  ...
-  void fireAreaInvalidated2 (AbstractTool abt , Double r ){
-    Point p1 = abt.getView().drawingToView (...);
-    Point p2 = abt.getView().drawingToView (...);
-    Rectangle r = new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y)
-    abt.fireAreaInvalidated (r);
-  }
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">public</span> <span class="kw">class</span> DrawingEditorProxy </span>
+<span id="cb32-2"><a href="#cb32-2"></a>             <span class="kw">extends</span> AbstractBean <span class="kw">implements</span> DrawingEditor {</span>
+<span id="cb32-3"><a href="#cb32-3"></a>  ...</span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="dt">void</span> <span class="fu">fireAreaInvalidated2</span> (AbstractTool abt , <span class="bu">Double</span> r ){</span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="bu">Point</span> p1 = abt.<span class="fu">getView</span>().<span class="fu">drawingToView</span> (...);</span>
+<span id="cb32-6"><a href="#cb32-6"></a>    <span class="bu">Point</span> p2 = abt.<span class="fu">getView</span>().<span class="fu">drawingToView</span> (...);</span>
+<span id="cb32-7"><a href="#cb32-7"></a>    <span class="bu">Rectangle</span> r = <span class="kw">new</span> <span class="bu">Rectangle</span>(p1.<span class="fu">x</span>,p1.<span class="fu">y</span>,p2.<span class="fu">x</span>-p1.<span class="fu">x</span> p2.<span class="fu">y</span>-p1.<span class="fu">y</span>)</span>
+<span id="cb32-8"><a href="#cb32-8"></a>    abt.<span class="fu">fireAreaInvalidated</span> (r);</span>
+<span id="cb32-9"><a href="#cb32-9"></a>  }</span>
+<span id="cb32-10"><a href="#cb32-10"></a>  ...</span>
+<span id="cb32-11"><a href="#cb32-11"></a>}</span></code></pre></div>
 <h3 data-number="1.5.5" id="métodos-com-muitos-parâmetros" data-number="1.5.5"><span class="header-section-number">9.5.5</span> Métodos com Muitos Parâmetros</h3>
 <p>Além de pequenos, métodos, na medida do possível, devem ter poucos parâmetros. Isto é, <strong>Métodos com Muitos Parâmetros</strong> é um smell, que pode ser eliminado de duas formas principais. Primeiro, deve-se verificar se um dos parâmetros pode ser obtido diretamente pelo método chamado, como mostrado a seguir:</p>
-<pre><code>p2 = p1.f();
-g(p1, p2);</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1"></a>p2 = p1.<span class="fu">f</span>();</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">g</span>(p1, p2);</span></code></pre></div>
 <p>Nesse caso, <code>p2</code> é desnecessário, pois ele pode ser obtido logo no início de <code>g</code>, da seguinte forma:</p>
-<pre><code>void g(p1) {
-  p2 = p1.g();
-}
-</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href="#cb34-1"></a><span class="dt">void</span> <span class="fu">g</span>(p1) {</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  p2 = p1.<span class="fu">g</span>();</span>
+<span id="cb34-3"><a href="#cb34-3"></a>}</span></code></pre></div>
 <p>Uma outra possibilidade é criar um tipo que agrupe alguns dos parâmetros de um método. Por exemplo, suponha o seguinte método:</p>
-<pre><code>void f(Date inicio, Date fim) {
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1"></a><span class="dt">void</span> <span class="fu">f</span>(<span class="bu">Date</span> inicio, <span class="bu">Date</span> fim) {</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  ...</span>
+<span id="cb35-3"><a href="#cb35-3"></a>}</span></code></pre></div>
 <p>Pode-se criar uma classe <code>DateRange</code> para representar uma faixa de datas. O código refatorado ficaria assim:</p>
-<pre><code>class DateRange {
-   Date inicio;
-   Date fim;
-}
-
-void f(DateRange range} {
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">class</span> DateRange {</span>
+<span id="cb36-2"><a href="#cb36-2"></a>   <span class="bu">Date</span> inicio;</span>
+<span id="cb36-3"><a href="#cb36-3"></a>   <span class="bu">Date</span> fim;</span>
+<span id="cb36-4"><a href="#cb36-4"></a>}</span>
+<span id="cb36-5"><a href="#cb36-5"></a></span>
+<span id="cb36-6"><a href="#cb36-6"></a><span class="dt">void</span> <span class="fu">f</span>(DateRange range} {</span>
+<span id="cb36-7"><a href="#cb36-7"></a>  ...</span>
+<span id="cb36-8"><a href="#cb36-8"></a>}</span></code></pre></div>
 <h3 data-number="1.5.6" id="variáveis-globais" data-number="1.5.6"><span class="header-section-number">9.5.6</span> Variáveis Globais</h3>
 <p>Conforme estudamos no capítulo sobre princípios de projeto, variáveis globais devem ser evitadas, pois elas dão origem a um tipo de <strong>acoplamento ruim</strong>. Por isso, elas também constituem um code smell. O principal motivo é que variáveis globais dificultam o entendimento de um módulo de forma independente dos demais módulos de um sistema. Suponha a seguinte função:</p>
-<pre><code>void f(...) {
-  // computa um determinado valor x
-  return x + g; // onde g é uma variável global.
-}</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1"></a><span class="dt">void</span> <span class="fu">f</span>(...) {</span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="co">// computa um determinado valor x</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="kw">return</span> x + g; <span class="co">// onde g é uma variável global.</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>}</span></code></pre></div>
 <p>Apenas analisando e estudando esse código, você consegue dizer o valor que f retorna? A resposta é negativa, pois não basta entender o código que precede o comando <code>return</code> da função. Precisamos conhecer também o valor de <code>g</code>. Porém, como <code>g</code> é uma variável global, seu valor pode ser alterado em qualquer parte do programa. Tal situação pode facilmente introduzir bugs nessa função, pois agora uma única linha de código distante e não relacionada com <code>f</code> pode influir no seu resultado. Para isso, basta que essa linha altere o valor de <code>g</code>. Antes de concluir, em linguagens como Java, atributos estáticos de classes funcionam exatamente como variáveis globais. Logo, eles também representam um code smell.</p>
 <h3 data-number="1.5.7" id="obsessão-por-tipos-primitivos" data-number="1.5.7"><span class="header-section-number">9.5.7</span> Obsessão por Tipos Primitivos</h3>
 <p>Este code smell ocorre quando tipos primitivos (isto é, <code>int</code>, <code>float</code>, <code>String</code>, etc) são usados no lugar de classes. Por exemplo, suponha que precisamos declarar uma variável para armazenar o CEP de um endereço. Na pressa para usar rapidamente a variável, podemos declará-la como sendo do tipo <code>String</code>, em vez de criar uma classe dedicada — por exemplo, CEP — para esse fim. A principal vantagem é que uma classe pode oferecer métodos para manipular os valores que a variável vai armazenar. Por exemplo, a construtora da classe pode verificar se o CEP informado é válido antes de inicializar o objeto. Dessa forma, a classe assume essa responsabilidade e, consequentemente, evita que ela seja uma preocupação de seus clientes. Em resumo, não devemos ficar <q>obcecados</q> com tipos primitivos. Em vez disso, devemos analisar a possibilidade de criar classes que encapsulem valores primitivos e que ofereçam operações para manipulá-los. No próximo code smell, iremos complementar essa recomendação e sugerir que tais objetos, sempre que possível, devem ser também imutáveis.</p>
 <h3 data-number="1.5.8" id="objetos-mutáveis" data-number="1.5.8"><span class="header-section-number">9.5.8</span> Objetos Mutáveis</h3>
 <p>Na segunda versão de seu livro, Fowler considera que <strong>Objetos Mutáveis</strong> são um code smell. Um objeto mutável é aquele cujo estado pode ser modificado. Por outro lado, um objeto imutável, uma vez criado, não pode mais ser alterado. Para viabilizar a criação de objetos imutáveis, classes devem declarar todos os seus atributos como privados e final (um atributo final somente pode ser usado para leitura). A classe também deve ser declarada final, para proibir a criação de subclasses. Se precisarmos alterar um objeto imutável, a única alternativa consiste em criar uma nova instância do objeto com o estado desejado.</p>
 <p>Por exemplo, objetos do tipo <code>String</code> em Java são imutáveis, como ilustra o seguinte programa.</p>
-<pre><code>class Main {
-  public static void main(String[] args) {
-    String s1 = &quot;Hello World&quot;;
-    String s2 = s1.toUpperCase();
-    System.out.println(s1);
-    System.out.println(s2);
-  }
-}</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">class</span> Main {</span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb38-3"><a href="#cb38-3"></a>    <span class="bu">String</span> s1 = <span class="st">&quot;Hello World&quot;</span>;</span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="bu">String</span> s2 = s1.<span class="fu">toUpperCase</span>();</span>
+<span id="cb38-5"><a href="#cb38-5"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s1);</span>
+<span id="cb38-6"><a href="#cb38-6"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(s2);</span>
+<span id="cb38-7"><a href="#cb38-7"></a>  }</span>
+<span id="cb38-8"><a href="#cb38-8"></a>}</span></code></pre></div>
 <p>Esse programa vai imprimir <q>Hello World</q> e depois <q>HELLO WORLD</q>. O motivo é que o método <code>toUpperCase</code> não altera a string <code>s1</code>, mas apenas retorna uma cópia dela com as letras em maiúsculo.</p>
 <p>Sempre que possível devemos criar objetos imutáveis, pois eles podem ser compartilhados de forma livre e segura com outras funções. Por exemplo, em Java, você pode passar uma string como parâmetro de uma função e ter certeza de que essa função não vai mudar o seu conteúdo. Isso não ocorreria se strings fossem mutáveis, pois sempre haveria o risco de a função chamada alterar a string recebida como parâmetro. Como uma segunda vantagem, objetos imutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos. O motivo é também simples: os problemas clássicos de sistemas concorrentes, como condições de corrida, ocorrem apenas quando múltiplas threads alteram o estado de um objeto. Se esse estado for imutável, tais problemas ficam automaticamente eliminados.</p>
 <p>No entanto, precisamos entender esse code smell no contexto da linguagem de programação usada em um sistema. Por exemplo, em linguagens funcionais, objetos são imutáveis por definição, ou seja, esse code smell nunca vai ocorrer. Por outro lado, em linguagens imperativas, é normal ter um certo número de objetos mutáveis. Ou seja, nessas linguagens, o que temos que fazer é minimizar o número de tais objetos, sem, no entanto, imaginar que vamos eliminá-los por completo. Por exemplo, devemos considerar a possibilidade de tornar imutáveis objetos simples e pequenos, como aqueles das classes <code>CEP</code>, <code>Moeda</code>, <code>Endereco</code>, <code>Data</code>, <code>Hora</code>, <code>Fone</code>, <code>Cor</code>, <code>Email</code>, etc. Para ilustrar, mostramos a seguir a implementação de uma classe <code>Data</code> imutável:</p>
-<pre><code>final public class Data { // final =&gt; não pode ter subclasses
-  final private int dia; // final =&gt; inicializado uma única vez
-  final private int mes;
-  final private int ano;
-   
-  private void check(int dia, int mes, int ano) 
-               throws InvalidDateException {
-     // verifica se data valida
-     // se nao for, lanca InvalidDateException
-  } 
-   
-  public Data(int dia, int mes, int ano) 
-         throws InvalidDateException {
-    check(dia, mes, ano);
-    this.dia = dia;
-    this.mes = mes;
-    this.ano = ano;
-  }
-   
-  // outros metodos
-}
-</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb39-1"><a href="#cb39-1"></a><span class="dt">final</span> <span class="kw">public</span> <span class="kw">class</span> <span class="bu">Data</span> { <span class="co">// final =&gt; não pode ter subclasses</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="dt">final</span> <span class="kw">private</span> <span class="dt">int</span> dia; <span class="co">// final =&gt; inicializado uma única vez</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="dt">final</span> <span class="kw">private</span> <span class="dt">int</span> mes;</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="dt">final</span> <span class="kw">private</span> <span class="dt">int</span> ano;</span>
+<span id="cb39-5"><a href="#cb39-5"></a>   </span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">check</span>(<span class="dt">int</span> dia, <span class="dt">int</span> mes, <span class="dt">int</span> ano) </span>
+<span id="cb39-7"><a href="#cb39-7"></a>               <span class="kw">throws</span> InvalidDateException {</span>
+<span id="cb39-8"><a href="#cb39-8"></a>     <span class="co">// verifica se data valida</span></span>
+<span id="cb39-9"><a href="#cb39-9"></a>     <span class="co">// se nao for, lanca InvalidDateException</span></span>
+<span id="cb39-10"><a href="#cb39-10"></a>  } </span>
+<span id="cb39-11"><a href="#cb39-11"></a>   </span>
+<span id="cb39-12"><a href="#cb39-12"></a>  <span class="kw">public</span> <span class="bu">Data</span>(<span class="dt">int</span> dia, <span class="dt">int</span> mes, <span class="dt">int</span> ano) </span>
+<span id="cb39-13"><a href="#cb39-13"></a>         <span class="kw">throws</span> InvalidDateException {</span>
+<span id="cb39-14"><a href="#cb39-14"></a>    <span class="fu">check</span>(dia, mes, ano);</span>
+<span id="cb39-15"><a href="#cb39-15"></a>    <span class="kw">this</span>.<span class="fu">dia</span> = dia;</span>
+<span id="cb39-16"><a href="#cb39-16"></a>    <span class="kw">this</span>.<span class="fu">mes</span> = mes;</span>
+<span id="cb39-17"><a href="#cb39-17"></a>    <span class="kw">this</span>.<span class="fu">ano</span> = ano;</span>
+<span id="cb39-18"><a href="#cb39-18"></a>  }</span>
+<span id="cb39-19"><a href="#cb39-19"></a>   </span>
+<span id="cb39-20"><a href="#cb39-20"></a>  <span class="co">// outros metodos</span></span>
+<span id="cb39-21"><a href="#cb39-21"></a>}</span></code></pre></div>
 <h3 data-number="1.5.9" id="classes-de-dados" data-number="1.5.9"><span class="header-section-number">9.5.9</span> Classes de Dados</h3>
 <p>Tais classes possuem apenas atributos e nenhum método. No máximo, elas possuem getters e setters. Porém, como recorrente com code smells, não devemos considerar que <strong>Classes de Dados</strong> são sempre um erro de projeto. Em vez disso, o importante é analisar o código e verificar a possibilidade de mover comportamento para essas classes. Isto é, criar métodos nessas classes, para realizar operações que já estão sendo realizadas, mas de forma espalhada em outras classes.</p>
 <h3 data-number="1.5.10" id="comentários" data-number="1.5.10"><span class="header-section-number">9.5.10</span> Comentários</h3>
@@ -650,25 +701,25 @@ void f(DateRange range} {
 <p><q>Não comente código ruim, reescreva-o</q>.</p>
 </blockquote>
 <p>A ideia é que comentários não devem ser usados para explicar código ruim. Em vez disso, deve-se refatorar o código e, com isso, melhorar sua qualidade e legibilidade. Feito isso, existe uma boa chance de que o comentário não seja mais necessário. Um exemplo são métodos longos como aquele do programa a seguir.</p>
-<pre><code>void f() {
-  // task1
-  ... 
-  // task2
-  ... 
-  // taskn
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb40-1"><a href="#cb40-1"></a><span class="dt">void</span> <span class="fu">f</span>() {</span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="co">// task1</span></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  <span class="kw">... </span></span>
+<span id="cb40-4"><a href="#cb40-4"></a>  <span class="co">// task2</span></span>
+<span id="cb40-5"><a href="#cb40-5"></a>  <span class="kw">... </span></span>
+<span id="cb40-6"><a href="#cb40-6"></a>  <span class="co">// taskn</span></span>
+<span id="cb40-7"><a href="#cb40-7"></a>  ...</span>
+<span id="cb40-8"><a href="#cb40-8"></a>}</span></code></pre></div>
 <p>Se usarmos Extração de Método para extrair o código comentado, teremos o código a seguir de melhor qualidade:</p>
-<pre><code>void task1 { ... }
-void task2 { ... }
-void taskn { ... }
-
-void f { 
-  task1();
-  task2();
-  ...
-  taskn();
-}</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb41-1"><a href="#cb41-1"></a><span class="dt">void</span> task1 { <span class="kw">... </span>}</span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="dt">void</span> task2 { <span class="kw">... </span>}</span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="dt">void</span> taskn { <span class="kw">... </span>}</span>
+<span id="cb41-4"><a href="#cb41-4"></a></span>
+<span id="cb41-5"><a href="#cb41-5"></a><span class="dt">void</span> f { </span>
+<span id="cb41-6"><a href="#cb41-6"></a>  <span class="fu">task1</span>();</span>
+<span id="cb41-7"><a href="#cb41-7"></a>  <span class="fu">task2</span>();</span>
+<span id="cb41-8"><a href="#cb41-8"></a>  ...</span>
+<span id="cb41-9"><a href="#cb41-9"></a>  <span class="fu">taskn</span>();</span>
+<span id="cb41-10"><a href="#cb41-10"></a>}</span></code></pre></div>
 <p>Observe que, no método <code>f</code>, após a refatoração, comentários não são mais necessários, pois os nomes dos métodos chamados já revelam muito do que eles fazem.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
 <p>Martin Fowler. Improving the Design of Existing Code, Addison-Wesley, 2000.</p>
@@ -693,87 +744,87 @@ void f {
 <ol type="a">
 <li></li>
 </ol>
-<pre><code>class A {
-  void f() {
-    int x = 10
-    x++;
-    print x;
-  }
-}</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">class</span> A {</span>
+<span id="cb42-2"><a href="#cb42-2"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="dt">int</span> x = <span class="dv">10</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a>    x++;</span>
+<span id="cb42-5"><a href="#cb42-5"></a>    print x;</span>
+<span id="cb42-6"><a href="#cb42-6"></a>  }</span>
+<span id="cb42-7"><a href="#cb42-7"></a>}</span></code></pre></div>
 <ol start="2" type="a">
 <li></li>
 </ol>
-<pre><code>class A {
-  void f() {
-    int x = 10
-    x++;
-    print x;
-  }
-}</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">class</span> A {</span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
+<span id="cb43-3"><a href="#cb43-3"></a>    <span class="dt">int</span> x = <span class="dv">10</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    x++;</span>
+<span id="cb43-5"><a href="#cb43-5"></a>    print x;</span>
+<span id="cb43-6"><a href="#cb43-6"></a>  }</span>
+<span id="cb43-7"><a href="#cb43-7"></a>}</span></code></pre></div>
 <ol start="3" type="a">
 <li></li>
 </ol>
-<pre><code>class A {
-  void f() {
-    int x = 10
-    x++;
-    print x;
-    int y = x+1;
-    ...
-  }
-}</code></pre>
+<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">class</span> A {</span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
+<span id="cb44-3"><a href="#cb44-3"></a>    <span class="dt">int</span> x = <span class="dv">10</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a>    x++;</span>
+<span id="cb44-5"><a href="#cb44-5"></a>    print x;</span>
+<span id="cb44-6"><a href="#cb44-6"></a>    <span class="dt">int</span> y = x+<span class="dv">1</span>;</span>
+<span id="cb44-7"><a href="#cb44-7"></a>    ...</span>
+<span id="cb44-8"><a href="#cb44-8"></a>  }</span>
+<span id="cb44-9"><a href="#cb44-9"></a>}</span></code></pre></div>
 <ol start="4" type="a">
 <li></li>
 </ol>
-<pre><code>class A {
-  void f() {
-    int x = 10
-    int y;
-    y = h()*2;
-    print y;
-    int z = y+1;
-    ...
-  }
-}</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">class</span> A {</span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    <span class="dt">int</span> x = <span class="dv">10</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>    <span class="dt">int</span> y;</span>
+<span id="cb45-5"><a href="#cb45-5"></a>    y = <span class="fu">h</span>()*<span class="dv">2</span>;</span>
+<span id="cb45-6"><a href="#cb45-6"></a>    print y;</span>
+<span id="cb45-7"><a href="#cb45-7"></a>    <span class="dt">int</span> z = y+<span class="dv">1</span>;</span>
+<span id="cb45-8"><a href="#cb45-8"></a>    ...</span>
+<span id="cb45-9"><a href="#cb45-9"></a>  }</span>
+<span id="cb45-10"><a href="#cb45-10"></a>}</span></code></pre></div>
 <p>6. A seguinte função calcula o n-ésimo termo da sequência de Fibonacci. O primeiro termo dessa sequência é 0; o segundo termo é 1; e a partir daí o n-ésimo termo é a soma dos dois termos anteriores.</p>
-<pre><code>int fib(int n) {
-   if (n == 1)
-      return 0;
-   if (n == 2)
-      return 1;
-   return fib(n-1) + fib(n-2);
-}</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb46-1"><a href="#cb46-1"></a><span class="dt">int</span> <span class="fu">fib</span>(<span class="dt">int</span> n) {</span>
+<span id="cb46-2"><a href="#cb46-2"></a>   <span class="kw">if</span> (n == <span class="dv">1</span>)</span>
+<span id="cb46-3"><a href="#cb46-3"></a>      <span class="kw">return</span> <span class="dv">0</span>;</span>
+<span id="cb46-4"><a href="#cb46-4"></a>   <span class="kw">if</span> (n == <span class="dv">2</span>)</span>
+<span id="cb46-5"><a href="#cb46-5"></a>      <span class="kw">return</span> <span class="dv">1</span>;</span>
+<span id="cb46-6"><a href="#cb46-6"></a>   <span class="kw">return</span> <span class="fu">fib</span>(n-<span class="dv">1</span>) + <span class="fu">fib</span>(n-<span class="dv">2</span>);</span>
+<span id="cb46-7"><a href="#cb46-7"></a>}</span></code></pre></div>
 <p>Descreva clones dos Tipos 1, 2, 3 e 4 para essa função. Não precisa implementar o código do clone, mas seja bem preciso na sua resposta ao indicar as diferenças entre cada clone e o código acima.</p>
 <p>7. Seja o seguinte trecho de código de uma classe <code>Moeda</code>, que vai armazenar um determinado valor em reais.</p>
-<pre><code>class Moeda {
-  ...
-  private double valor = 0.0;
-  void add(Moeda m) {
-    this.valor = this.valor + m.getValor();
-  } 
-  ...
-}</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb47-1"><a href="#cb47-1"></a><span class="kw">class</span> Moeda {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  ...</span>
+<span id="cb47-3"><a href="#cb47-3"></a>  <span class="kw">private</span> <span class="dt">double</span> valor = <span class="fl">0.</span><span class="dv">0</span>;</span>
+<span id="cb47-4"><a href="#cb47-4"></a>  <span class="dt">void</span> <span class="fu">add</span>(Moeda m) {</span>
+<span id="cb47-5"><a href="#cb47-5"></a>    <span class="kw">this</span>.<span class="fu">valor</span> = <span class="kw">this</span>.<span class="fu">valor</span> + m.<span class="fu">getValor</span>();</span>
+<span id="cb47-6"><a href="#cb47-6"></a>  } </span>
+<span id="cb47-7"><a href="#cb47-7"></a>  ...</span>
+<span id="cb47-8"><a href="#cb47-8"></a>}</span></code></pre></div>
 <p>(a) Descreva porque objetos da classe <code>Moeda</code> são mutáveis.</p>
 <p>(b) Reimplemente esse trecho da classe <code>Moeda</code> de forma a assegurar que os seus objetos sejam imutáveis (como vimos no capítulo, objetos mutáveis tendem a ser um code smell, principalmente no caso de objetos pequenos e simples, como provavelmente é o caso de objetos da classe em questão).</p>
 <p>8. Como discutido no final da Seção 9.5, comentários que são usados para explicar <q>código ruim</q> são considerados um code smell. Nessas situações, o ideal é tornar o código mais claro e, então, remover os comentários. A seguir, mostramos mais um caso de comentário que pode ser deletado. Explique porque esses comentários são desnecessários.</p>
-<pre><code>// classe Aluno
-class Aluno {
-   
-   // matrícula do aluno
-   int matricula;
-   
-   // data de nascimento do aluno
-   Date dataNascimento;
-   
-   // endereço do aluno
-   Endereco endereco;
-   
-   // construtor default da classe Aluno
-   Aluno() {
-     ...
-   } 
-   ...  
-}</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb48-1"><a href="#cb48-1"></a><span class="co">// classe Aluno</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a><span class="kw">class</span> Aluno {</span>
+<span id="cb48-3"><a href="#cb48-3"></a>   </span>
+<span id="cb48-4"><a href="#cb48-4"></a>   <span class="co">// matrícula do aluno</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>   <span class="dt">int</span> matricula;</span>
+<span id="cb48-6"><a href="#cb48-6"></a>   </span>
+<span id="cb48-7"><a href="#cb48-7"></a>   <span class="co">// data de nascimento do aluno</span></span>
+<span id="cb48-8"><a href="#cb48-8"></a>   <span class="bu">Date</span> dataNascimento;</span>
+<span id="cb48-9"><a href="#cb48-9"></a>   </span>
+<span id="cb48-10"><a href="#cb48-10"></a>   <span class="co">// endereço do aluno</span></span>
+<span id="cb48-11"><a href="#cb48-11"></a>   Endereco endereco;</span>
+<span id="cb48-12"><a href="#cb48-12"></a>   </span>
+<span id="cb48-13"><a href="#cb48-13"></a>   <span class="co">// construtor default da classe Aluno</span></span>
+<span id="cb48-14"><a href="#cb48-14"></a>   <span class="fu">Aluno</span>() {</span>
+<span id="cb48-15"><a href="#cb48-15"></a>     ...</span>
+<span id="cb48-16"><a href="#cb48-16"></a>   } </span>
+<span id="cb48-17"><a href="#cb48-17"></a>   <span class="kw">...  </span></span>
+<span id="cb48-18"><a href="#cb48-18"></a>}</span></code></pre></div>
 <p>9. Use uma IDE, como o Eclipse ou IntelliJ para Java, para realizar um refactoring simples, em um de seus programas. Por exemplo, realize uma renomeação de método. Quais as vantagens de se realizar refactorings com o suporte de IDEs?</p>
 <p>10. Use uma IDE para testar o exemplo de Movimentação de Classe discutido na Seção 9.4.1, isto é, o exemplo com classes <code>A</code> e <code>B</code> e pacotes <code>P1</code> e <code>P2</code>. Se realizar a Movimentação de Classe discutida nesse exemplo via IDE, ocorrerá algum erro? Se sim, descreva o erro detectado pela IDE.</p>
 </div>
