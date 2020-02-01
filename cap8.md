@@ -835,8 +835,8 @@ testes), **cobertura de branches** (% de branches de um programa que são
 executados por testes; um comando `if` sempre gera dois branches: quando a
 condição é verdadeira e quando ela é falsa). Cobertura de comandos e de
 branches são também chamadas de **Cobertura C0** e **Cobertura C1**,
-respectivamente. Para ilustrar a diferença entre ambas vamos usar o
-seguinte programa (primeiro código) e seu teste de unidade (segundo código):
+respectivamente. Para ilustrar a diferença entre ambas vamos usar a
+seguinte classe (primeiro código) e seu teste de unidade (segundo código):
 
 ```java
 public class Math {
@@ -865,7 +865,7 @@ public class MathTest {
 
 Supondo cobertura de comandos, temos uma cobertura de 100%. Porém,
 supondo uma cobertura de branches, o valor é 50%, pois dentre as duas
-condições possíveis do comando `if(x \< 0)`, testamos apenas uma delas (a
+condições possíveis do comando `if(x < 0)`, testamos apenas uma delas (a
 condição verdadeira). Se quisermos ter uma cobertura de branches de 100%
 teríamos que adicionar mais um comando `assert`, como:
 `assertEquals(1,m.abs(1))`. Logo, cobertura de branches é mais rigorosa do
@@ -976,7 +976,7 @@ public class IMCServlet extends HttpServtet {
 
 ### Exemplo: Chamada Assíncrona
 
-O próximo código mostra a implementação da função asyncPI que
+O próximo código mostra a implementação da função `asyncPI` que
 mencionamos na Seção 8.3 quando tratamos dos princípios FIRST e,
 especificamente, de testes determinísticos. Conforme explicamos nessa
 seção, não é simples testar uma função assíncrona, pois seu resultado é
@@ -1103,8 +1103,8 @@ executar rapidamente, conforme recomendado pelos princípios FIRST (Seção 8.3)
 **Solução**: Uma solução consiste em criar um objeto que "emula" o
 objeto real, mas apenas para permitir o teste do programa. Esse tipo de
 objeto é chamado de **mock** (ou então **stub**). No nosso exemplo, o
-mock deve implementar a interface BookService e, portanto, o método
-search. Porém, essa implementação é parcial, pois o mock retorna apenas
+mock deve implementar a interface `BookService` e, portanto, o método
+`search`. Porém, essa implementação é parcial, pois o mock retorna apenas
 os títulos de alguns livros, sem acessar servidores remotos ou bancos de
 dados. Um exemplo é mostrado a seguir:
 
@@ -1184,10 +1184,10 @@ disponível neste
 
 Mocks são tão comuns em testes de unidade que existem frameworks para
 facilitar a criação e "programação" de mocks (e/ou stubs). Não vamos
-entrar em detalhes desses frameworks, mas abaixo mostramos o mesmo teste
+entrar em detalhes desses frameworks, mas abaixo mostramos o teste
 anterior, mas com um mock instanciado por um framework chamado
 **mockito** ([link](https://site.mockito.org/)), muito
-usado quando se escreve testes de unidade em Java que demandam mocks.
+usado quando se escreve testes de unidade em Java que requerem mocks.
 
 ```java
 import org.junit.*;
@@ -1571,7 +1571,7 @@ ele está passando. Com TDD, os avanços são sempre pequenos. Em XP,
 esses avanços são chamados de **baby steps**.
 
 Mas temos que prosseguir e dar uma implementação mais realista para
-`ShoppingCart`. Segue ela:
+`ShoppingCart`. Segue então ela:
 
 ```java
 public class ShoppingCart {
