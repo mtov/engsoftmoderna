@@ -259,11 +259,11 @@ motivados, pois eles não ficam meses trabalhando sem receber feedback. Em vez d
 
 Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas demandam um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web. 
 
-No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais *fraca* de CD, chamada de **Entrega Contínua (Continuous Delivery)**. A ideia é simples: todo commit *pode* entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.
+No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais *fraca* de CD, chamada de **Entrega Contínua (Continuous Delivery)**. A ideia é simples: quando se usa entrega contínua, todo commit *pode* entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.
 
 Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:
 
-* **Deployment to production** é o processo de liberar uma nova versão de um sistema para seus usuários.
+* **Deployment** é o processo de liberar uma nova versão de um sistema para seus usuários.
 
 * **Delivery** é o processo de liberar uma nova versão de um sistema para ser objeto de deployment.
 
@@ -280,29 +280,29 @@ não-Web. Por exemplo, o Google libera novas releases do navegador Chrome para o
 
 ### Feature Flags
 
-Nem sempre todo commit estará pronto para entrar imediatamente em produção. Por exemplo, o desenvolvedor pode estar trabalhando em uma funcionalidade X, mas ainda falta implementar parte de seus requisitos. Portanto, um desenvolvedor pode se perguntar:
+Nem sempre todo commit estará pronto para entrar imediatamente em produção. Por exemplo, um desenvolvedor pode estar trabalhando em uma nova funcionalidade X, mas ainda falta implementar parte de seus requisitos. Portanto, esse desenvolvedor pode se perguntar:
 
-> Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram completamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais? 
+> Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram devidamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais? 
 
-Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais retroceder e usar essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI).
+Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI) e Desenvolvimento Baseado no Trunk (TBD).
 
-A solução para esse problema é simples: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará "guardado" por uma variável booleana (um *flag*) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:
+Uma solução para esse problema é a seguinte: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará "guardado" por uma variável booleana (um *flag*) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:
 
 ```
 featureX = false;
 ...
 if (featureX) 
-   "aqui tem codigo incompleto de X"
+   "aqui tem código incompleto de X"
 
 ...
 
 if (featureX)
-   "aqui tem mais codigo incompleto de X"
+   "mais código incompleto de X"
 ```    
 
-No contexto de deployment contínuo, variáveis usadas para desativar a execução de implementações parciais de funcionalidades são chamadas de **Feature Flags** ou **Feature Toggles**.
+No contexto de deployment contínuo, variáveis usadas para evitar a entrada em produção de implementações parciais de funcionalidades são chamadas de **Feature Flags** ou **Feature Toggles**.
 
-Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um certo sistema. Então, você pode declarar uma feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:
+Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um certo sistema. Então, você pode declarar um feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:
 
 ```
 nova_pag = false;
@@ -313,45 +313,52 @@ else
    "carregue página antiga"
 ```    
 
-Esse código vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, você pode habilitar a nova página, fazendo `nova_pag` receber `true`. 
+Esse é o código que vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, na sua máquina, você pode habilitar a nova página, fazendo o flag `nova_pag` receber `true`. 
 
-Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga pode ser removido. Ou seja, a duplicação de código foi temporária.
+Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga e o feature flag (`nova_pag`) podem ser removido. Ou seja, a duplicação de código foi temporária.
 
 
 ```{=latex}
 \begin{esmbox}
 ```
-**Mundo Real:** Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento ([link](https://doi.org/10.1145/2901739.2901745)). Nesse período, eles encontraram mais de 2.400 feature flags distintas no código do navegador.
+**Mundo Real:** Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento ([link](https://doi.org/10.1145/2901739.2901745)). Nesse período, eles encontraram mais de 2.400 feature flags distintos no código do navegador.
 Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adicionava 73 novos flags e removia 43 flags. Por isso, o crescimento observado no estudo.
 ```{=latex}
 \end{esmbox}
 ```
 
-Pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.
+No entanto, alguns feature flags podem ser mantidos no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.
 
-Primeiro, feature flags ajudam a implementar o que chama-se de **release canário**. Nessa modalidade de release, uma nova funcionalidade --- guardada por uma feature flag --- é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, eventuais prejuízos causados por bugs não detectados nos testes da nova funcionalidade são minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam rapidamente recuar e evitar uma intoxicação.
+Primeiro, feature flags ajudam a implementar o que chama-se de **release canário**. Nessa modalidade de release, uma nova funcionalidade --- guardada por um feature flag --- é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, os prejuízos causados por eventuais bugs não detectados nos testes da nova funcionalidade serão minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários do sistema. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam recuar e evitar uma intoxicação.
 
 Adicionalmente, feature flags ajudam a viabilizar **Testes A/B**, tal como estudamos no Capítulo 3. Apenas para relembrar, nesses testes, libera-se simultaneamente duas versões de uma funcionalidade (antiga e nova, por exemplo) para grupos distintos de usuários, com o objetivo de verificar se a nova funcionalidade de fato agrega valor ao sistema.
 
-Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar as features e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:
+Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar os flags e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:
 
 ```
 FeatureFlagsTable fft = new FeatureFlagsTable();
 fft.addFeature("novo-carrinho-compras", false);
 ...
 if (fft.IsEnabled("novo-carrinho-compras"))
-   // processa comprar usando novo carrinho
+   // processa compra usando novo carrinho
 else 
-   // continua usando código anterior
+   // processa compra usando carrinho atual
 ...      
 ```
 
-Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a `FeatureFlagsTable` do código acima. A vantagem nesse caso é que as features podem ser setadas externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando a feature é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.
+Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a `FeatureFlagsTable` do código acima. A vantagem nesse caso é que os flags podem ser setados externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando o flag é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.
 
+```{=latex}
+\begin{esmbox}
+```
+**Aprofundamento**: Nesta seção, nosso foco foi no uso de feature flags para evitar a entrada em produção de um determinado trecho de código, em um cenário de deployment contínuo. Feature flags com esse propósito são chamados também de **release flags**. No entanto, feature flags podem ser usados com outros propósitos. Um deles é gerar diferentes versões de um mesmo sistema de software. Por exemplo, suponha um sistema que tenha uma versão gratuita e uma versão paga. Os clientes da versão paga têm acesso a mais funcionalidades, cujo código é delimitado por feature flags. Nesse caso específico, os flags são chamadas de **flags de negócio** (**business flags**).
+```{=latex}
+\end{esmbox}
+```
 
 ## Bibliografia {.unnumbered}
 
-Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
+Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de DevOps. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018. 
 
 Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.
 
@@ -359,9 +366,9 @@ Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Soft
 
 ## Exercícios de Fixação {.unnumbered}
 
-1. Defina e descreva os objetivos de DevOps.
+1\. Defina e descreva os objetivos de DevOps.
 
-2. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para "Engenheiro DevOps", requerendo habilidades como as seguintes:
+2\. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para "Engenheiro DevOps", requerendo habilidades como as seguintes:
 
    * Ferramentas de controle de versão (Git, Bitbucket, SVN, etc)
    * Gerenciadores de dependência e build (Maven, Gradle e etc)
@@ -374,29 +381,31 @@ Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Soft
 
    Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja "Engenheiro DevOps"? Justifique a sua resposta.
 
-3. Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.
+3\. Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.
 
-4. Descreva uma desvantagem importante relacionada com o uso de mono-repositórios.
+4\. Descreva uma desvantagem relacionada com o uso de mono-repositórios.
 
-5. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuous delivery*) e deployment contínuo (*continuous deployment*).
+5\. Defina (e diferencie) os seguintes termos: integração contínua (*continuous integration*); entrega contínua (*continuous delivery*) e deployment contínuo (*continuous deployment*).
 
-6. Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.
+6\. Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que usou no primeiro exercício desta lista.
 
-7. Pesquise o significado da expressão "Teatro de CI" (*CI Theater*) e então descreva-o com suas próprias palavras.
+7\. Pesquise o significado da expressão "Teatro de CI" (*CI Theater*) e então descreva-o com suas próprias palavras.
 
-8. Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Você adotaria deployment ou delivery contínuo nessa empresa? Justifique sua resposta.
+8\. Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Qual das seguintes práticas você adotaria nessa empresa: deployment contínuo ou delivery contínuo? Justifique sua resposta.
 
-9. Descreva um problema (ou dificuldade) que surge quando decide-se usar *feature flags* para delimitar código que ainda não está pronto para entrar em produção. 
+9\. Descreva um problema (ou dificuldade) que surge quando decide-se usar feature flags para delimitar código que ainda não está pronto para entrar em produção. 
 
-10. Linguagens como C possuem suporte a diretivas de compilação condicional do tipo `#ifdef` e `#endif`. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e *feature flags*?
+10\. Linguagens como C possuem suporte a diretivas de compilação condicional do tipo `#ifdef` e `#endif`. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e feature flags?
 
-11. Quando uma empresa usa CI, normalmente ela não usa mais branches de funcionalidades (*feature branches*). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada *Trunk Based Development* ou TBD, conforme estudamos neste capítulo. No entanto, TBD não significa que branches deixam de ser usados em tais empresas. Descreva então um outro uso para branches, que não seja como *feature branches*.
+11\. Qual tipo de feature flags possui maior tempo de vida (isto é, permanece no código por mais tempo): *release flags* ou *business flags*? Justifique sua resposta.
 
-12. Leia o seguinte [artigo](https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html) do blog oficial do Gmail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de "trocar os pneus de um carro com ele em movimento". 
+12\. Quando uma empresa migra para CI, normalmente ela não usa mais branches de funcionalidades (*feature branches*). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada Desenvolvimento Baseado no Trunk (ou TBD), conforme estudamos neste capítulo. No entanto, TBD não significa que branches não são mais usados nessas empresas. Descreva então um outro uso para branches, que não seja como *feature branches*.
+
+13\. Leia o seguinte [artigo](https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html) do blog oficial do GMail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de "trocar os pneus de um carro com ele em movimento". Sobre esse artigo, responda então:
 
    a. Qual tecnologia --- que estudamos neste capítulo --- foi fundamental para viabilizar
-   essa atualização de interface? Qual o nome que o artigo dá para essa tecnologia? 
+   essa atualização na interface do GMail? Qual nome o artigo dá para essa tecnologia? 
 
-   b. E qual o nome que usamos no capítulo para referenciá-la?
+   b. E qual nome usamos no capítulo para referenciá-la?
 
     

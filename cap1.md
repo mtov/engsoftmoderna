@@ -162,11 +162,11 @@ Segundo Brooks, as dificuldades essenciais são as seguintes:
 As dificuldades (2), (3) e (4) são específicas de sistemas de software,
 isto é, elas não ocorrem em outros produtos de Engenharia, pelo menos na
 mesma intensidade. Por exemplo, quando a legislação ambiental muda, os
-fabricantes de automóveis tem anos para se conformar às novas leis.
+fabricantes de automóveis têm anos para se conformar às novas leis.
 Adicionalmente, carros não são alterados, pelo menos de forma essencial,
 com novas funcionalidades, após serem vendidos. Por fim, um carro é um produto
 físico e visível, possuindo peso, altura, largura, número de assentos,
-forma geométrica, etc; o que facilita sua avaliação e precificação por
+forma geométrica, etc, o que facilita sua avaliação e precificação por
 consumidores finais.
 
 Ainda segundo Brooks, desenvolvimento de software enfrenta também

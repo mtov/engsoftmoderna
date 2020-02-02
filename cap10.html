@@ -208,62 +208,62 @@
 <p><strong>Mundo Real</strong>: Diversas empresas que desenvolvem sistemas Web usam CD. Por exemplo, Savor e colegas reportam que no Facebook cada desenvolvedor coloca em produção, na média, 3.5 atualizações de software por semana (<a href="https://doi.org/10.1145/2889160.2889223">link</a>). Em cada atualização, na média, 92 linhas de código são adicionadas ou modificadas. Esses números revelam que, para funcionar bem, CD requer que as atualizações de código sejam pequenas. Portanto, os desenvolvedores têm que desenvolver a habilidade de quebrar qualquer tarefa de programação (por exemplo, uma nova funcionalidade, mesmo que complexa) em partes pequenas, que possam ser implementadas, testadas, integradas e entregues rapidamente.</p>
 <h3 data-number="1.4.1" id="entrega-contínua-continuous-delivery" data-number="1.4.1"><span class="header-section-number">10.4.1</span> Entrega Contínua (Continuous Delivery)</h3>
 <p>Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas demandam um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web.</p>
-<p>No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais <em>fraca</em> de CD, chamada de <strong>Entrega Contínua (Continuous Delivery)</strong>. A ideia é simples: todo commit <em>pode</em> entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.</p>
+<p>No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais <em>fraca</em> de CD, chamada de <strong>Entrega Contínua (Continuous Delivery)</strong>. A ideia é simples: quando se usa entrega contínua, todo commit <em>pode</em> entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.</p>
 <p>Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:</p>
 <ul>
-<li><p><strong>Deployment to production</strong> é o processo de liberar uma nova versão de um sistema para seus usuários.</p></li>
+<li><p><strong>Deployment</strong> é o processo de liberar uma nova versão de um sistema para seus usuários.</p></li>
 <li><p><strong>Delivery</strong> é o processo de liberar uma nova versão de um sistema para ser objeto de deployment.</p></li>
 </ul>
 <p>Quando adota-se Deployment Contínuo, ambos os processos são automáticos e contínuos. Porém, com Entrega Contínua, a entrega é realizada com frequência, mas o deployment depende de uma autorização manual.</p>
 <p><strong>Mundo Real:</strong> Vamos citar alguns dados sobre a frequência de deployments em sistemas não-Web. Por exemplo, o Google libera novas releases do navegador Chrome para o público a cada seis semanas. Até 2019, a IDE Eclipse tinha uma única nova release por ano. A partir de 2019, o sistema passou a ter uma nova release a cada 13 semanas. Um dos motivos foi <q>permitir que os desenvolvedores liberem novas funcionalidades de forma rápida</q>. Como um terceiro exemplo, a versão para Android do Facebook sofria uma atualização a cada oito semanas. Mais recentemente, o Facebook encurtou esse tempo para uma semana (<a href="https://doi.org/10.1145/2950290.2994157">link</a>). Ou seja, as empresas estão lançando releases de forma mais rápida, para agradar os usuários, receber feedback, manter os desenvolvedores motivados e continuarem competitivas no mercado.</p>
 <h3 data-number="1.4.2" id="feature-flags" data-number="1.4.2"><span class="header-section-number">10.4.2</span> Feature Flags</h3>
-<p>Nem sempre todo commit estará pronto para entrar imediatamente em produção. Por exemplo, o desenvolvedor pode estar trabalhando em uma funcionalidade X, mas ainda falta implementar parte de seus requisitos. Portanto, um desenvolvedor pode se perguntar:</p>
+<p>Nem sempre todo commit estará pronto para entrar imediatamente em produção. Por exemplo, um desenvolvedor pode estar trabalhando em uma nova funcionalidade X, mas ainda falta implementar parte de seus requisitos. Portanto, esse desenvolvedor pode se perguntar:</p>
 <blockquote>
-<p>Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram completamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais?</p>
+<p>Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram devidamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais?</p>
 </blockquote>
-<p>Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais retroceder e usar essa prática, pois ela leva ao que chamamos de <em>integration (ou merge) hell</em>. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI).</p>
-<p>A solução para esse problema é simples: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará <q>guardado</q> por uma variável booleana (um <em>flag</em>) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:</p>
+<p>Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de <em>integration (ou merge) hell</em>. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI) e Desenvolvimento Baseado no Trunk (TBD).</p>
+<p>Uma solução para esse problema é a seguinte: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará <q>guardado</q> por uma variável booleana (um <em>flag</em>) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:</p>
 <pre><code>featureX = false;
 ...
 if (featureX) 
-   &quot;aqui tem codigo incompleto de X&quot;
+   &quot;aqui tem código incompleto de X&quot;
 
 ...
 
 if (featureX)
-   &quot;aqui tem mais codigo incompleto de X&quot;</code></pre>
-<p>No contexto de deployment contínuo, variáveis usadas para desativar a execução de implementações parciais de funcionalidades são chamadas de <strong>Feature Flags</strong> ou <strong>Feature Toggles</strong>.</p>
-<p>Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um certo sistema. Então, você pode declarar uma feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:</p>
+   &quot;mais código incompleto de X&quot;</code></pre>
+<p>No contexto de deployment contínuo, variáveis usadas para evitar a entrada em produção de implementações parciais de funcionalidades são chamadas de <strong>Feature Flags</strong> ou <strong>Feature Toggles</strong>.</p>
+<p>Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um certo sistema. Então, você pode declarar um feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:</p>
 <pre><code>nova_pag = false;
 ...
 if (nova_pag) 
    &quot;carregue nova página&quot;
 else
    &quot;carregue página antiga&quot;</code></pre>
-<p>Esse código vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, você pode habilitar a nova página, fazendo <code>nova_pag</code> receber <code>true</code>.</p>
-<p>Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga pode ser removido. Ou seja, a duplicação de código foi temporária.</p>
-<p><strong>Mundo Real:</strong> Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento (<a href="https://doi.org/10.1145/2901739.2901745">link</a>). Nesse período, eles encontraram mais de 2.400 feature flags distintas no código do navegador. Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adicionava 73 novos flags e removia 43 flags. Por isso, o crescimento observado no estudo.</p>
-<p>Pode ser que determinadas feature flags sejam mantidas no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.</p>
-<p>Primeiro, feature flags ajudam a implementar o que chama-se de <strong>release canário</strong>. Nessa modalidade de release, uma nova funcionalidade — guardada por uma feature flag — é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, eventuais prejuízos causados por bugs não detectados nos testes da nova funcionalidade são minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam rapidamente recuar e evitar uma intoxicação.</p>
+<p>Esse é o código que vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, na sua máquina, você pode habilitar a nova página, fazendo o flag <code>nova_pag</code> receber <code>true</code>.</p>
+<p>Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga e o feature flag (<code>nova_pag</code>) podem ser removido. Ou seja, a duplicação de código foi temporária.</p>
+<p><strong>Mundo Real:</strong> Pesquisadores de duas universidades canadenses, liderados pelos professores Peter Rigby e Bram Adams, realizaram um estudo sobre o uso de feature flags ao longo de 39 releases do navegador Chrome, relativas a cinco anos de desenvolvimento (<a href="https://doi.org/10.1145/2901739.2901745">link</a>). Nesse período, eles encontraram mais de 2.400 feature flags distintos no código do navegador. Na primeira versão analisada, eles catalogaram 263 flags; na última versão, o número aumentou para 2.409 flags. Na média, uma nova release adicionava 73 novos flags e removia 43 flags. Por isso, o crescimento observado no estudo.</p>
+<p>No entanto, alguns feature flags podem ser mantidos no código durante o processo de release do software. Isso pode ocorrer por dois motivos, conforme descrito a seguir.</p>
+<p>Primeiro, feature flags ajudam a implementar o que chama-se de <strong>release canário</strong>. Nessa modalidade de release, uma nova funcionalidade — guardada por um feature flag — é disponibilizada inicialmente para um grupo pequeno de usuários. Por exemplo, para apenas 5% dos usuários. Com isso, os prejuízos causados por eventuais bugs não detectados nos testes da nova funcionalidade serão minimizados. Em seguida, caso a implantação seja bem sucedida, pode-se ampliar a base de usuários que terá acesso à nova funcionalidade de forma gradativa, até alcançar todos os usuários do sistema. O nome release canário é uma referência a uma prática comum na exploração de novas minas de carvão. Os mineiros costumavam adentrar essas minas com um canário em uma gaiola. Caso a mina possuísse algum gás tóxico, ele mataria primeiro o canário e, então, os mineiros poderiam recuar e evitar uma intoxicação.</p>
 <p>Adicionalmente, feature flags ajudam a viabilizar <strong>Testes A/B</strong>, tal como estudamos no Capítulo 3. Apenas para relembrar, nesses testes, libera-se simultaneamente duas versões de uma funcionalidade (antiga e nova, por exemplo) para grupos distintos de usuários, com o objetivo de verificar se a nova funcionalidade de fato agrega valor ao sistema.</p>
-<p>Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar as features e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:</p>
+<p>Para facilitar a execução de releases canários e testes A/B, pode-se usar uma estrutura de dados para armazenar os flags e seu estado (ligado ou desligado). Um exemplo é mostrado a seguir:</p>
 <pre><code>FeatureFlagsTable fft = new FeatureFlagsTable();
 fft.addFeature(&quot;novo-carrinho-compras&quot;, false);
 ...
 if (fft.IsEnabled(&quot;novo-carrinho-compras&quot;))
-   // processa comprar usando novo carrinho
+   // processa compra usando novo carrinho
 else 
-   // continua usando código anterior
+   // processa compra usando carrinho atual
 ...      </code></pre>
-<p>Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a <code>FeatureFlagsTable</code> do código acima. A vantagem nesse caso é que as features podem ser setadas externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando a feature é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.</p>
+<p>Existem bibliotecas dedicadas a gerenciar feature flags, as quais disponibilizam classes semelhantes a <code>FeatureFlagsTable</code> do código acima. A vantagem nesse caso é que os flags podem ser setados externamente ao código, por exemplo, em um arquivo de configuração. Por outro lado, quando o flag é uma variável booleana, para alterar seu valor precisa-se editar e recompilar o código.</p>
+<p><strong>Aprofundamento</strong>: Nesta seção, nosso foco foi no uso de feature flags para evitar a entrada em produção de um determinado trecho de código, em um cenário de deployment contínuo. Feature flags com esse propósito são chamados também de <strong>release flags</strong>. No entanto, feature flags podem ser usados com outros propósitos. Um deles é gerar diferentes versões de um mesmo sistema de software. Por exemplo, suponha um sistema que tenha uma versão gratuita e uma versão paga. Os clientes da versão paga têm acesso a mais funcionalidades, cujo código é delimitado por feature flags. Nesse caso específico, os flags são chamadas de <strong>flags de negócio</strong> (<strong>business flags</strong>).</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
-<p>Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de Devops. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018.</p>
+<p>Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de DevOps. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018.</p>
 <p>Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.</p>
 <p>Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.</p>
 <h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
-<ol type="1">
-<li><p>Defina e descreva os objetivos de DevOps.</p></li>
-<li><p>Em sites de oferta de empregos na área de TI, é comum encontrar vagas para <q>Engenheiro DevOps</q>, requerendo habilidades como as seguintes:</p>
+<p>1. Defina e descreva os objetivos de DevOps.</p>
+<p>2. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para <q>Engenheiro DevOps</q>, requerendo habilidades como as seguintes:</p>
 <ul>
 <li>Ferramentas de controle de versão (Git, Bitbucket, SVN, etc)</li>
 <li>Gerenciadores de dependência e build (Maven, Gradle e etc)</li>
@@ -274,21 +274,21 @@ else
 <li>Docker e orquestração de Docker (Kubernetes, Mesos, Swarm)</li>
 <li>Desenvolvimento com APIs REST, Java</li>
 </ul>
-<p>Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja <q>Engenheiro DevOps</q>? Justifique a sua resposta.</p></li>
-<li><p>Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.</p></li>
-<li><p>Descreva uma desvantagem importante relacionada com o uso de mono-repositórios.</p></li>
-<li><p>Defina (e diferencie) os seguintes termos: integração contínua (<em>continuous integration</em>); entrega contínua (<em>continuous delivery</em>) e deployment contínuo (<em>continuous deployment</em>).</p></li>
-<li><p>Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que deu no primeiro exercício.</p></li>
-<li><p>Pesquise o significado da expressão <q>Teatro de CI</q> (<em>CI Theater</em>) e então descreva-o com suas próprias palavras.</p></li>
-<li><p>Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Você adotaria deployment ou delivery contínuo nessa empresa? Justifique sua resposta.</p></li>
-<li><p>Descreva um problema (ou dificuldade) que surge quando decide-se usar <em>feature flags</em> para delimitar código que ainda não está pronto para entrar em produção.</p></li>
-<li><p>Linguagens como C possuem suporte a diretivas de compilação condicional do tipo <code>#ifdef</code> e <code>#endif</code>. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e <em>feature flags</em>?</p></li>
-<li><p>Quando uma empresa usa CI, normalmente ela não usa mais branches de funcionalidades (<em>feature branches</em>). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada <em>Trunk Based Development</em> ou TBD, conforme estudamos neste capítulo. No entanto, TBD não significa que branches deixam de ser usados em tais empresas. Descreva então um outro uso para branches, que não seja como <em>feature branches</em>.</p></li>
-<li><p>Leia o seguinte <a href="https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html">artigo</a> do blog oficial do Gmail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de <q>trocar os pneus de um carro com ele em movimento</q>.</p></li>
-</ol>
+<p>Considerando a definição de DevOps que usou como resposta no exercício anterior, você considera adequado que a função de um funcionário seja <q>Engenheiro DevOps</q>? Justifique a sua resposta.</p>
+<p>3. Descreva duas vantagens de um Sistema de Controle de Versões Distribuído (DVCS), como o git.</p>
+<p>4. Descreva uma desvantagem relacionada com o uso de mono-repositórios.</p>
+<p>5. Defina (e diferencie) os seguintes termos: integração contínua (<em>continuous integration</em>); entrega contínua (<em>continuous delivery</em>) e deployment contínuo (<em>continuous deployment</em>).</p>
+<p>6. Por que integração contínua, entrega contínua e deployment contínuo são práticas importantes em DevOps? Na sua resposta, considere a definição de DevOps que usou no primeiro exercício desta lista.</p>
+<p>7. Pesquise o significado da expressão <q>Teatro de CI</q> (<em>CI Theater</em>) e então descreva-o com suas próprias palavras.</p>
+<p>8. Suponha que você foi contratado por uma empresa que fabrica impressoras. E que você ficou responsável por definir as práticas de DevOps que a empresa vai adotar. Qual das seguintes práticas você adotaria nessa empresa: deployment contínuo ou delivery contínuo? Justifique sua resposta.</p>
+<p>9. Descreva um problema (ou dificuldade) que surge quando decide-se usar feature flags para delimitar código que ainda não está pronto para entrar em produção.</p>
+<p>10. Linguagens como C possuem suporte a diretivas de compilação condicional do tipo <code>#ifdef</code> e <code>#endif</code>. Pesquise o funcionamento e o uso dessas diretivas. Qual a diferença entre elas e feature flags?</p>
+<p>11. Qual tipo de feature flags possui maior tempo de vida (isto é, permanece no código por mais tempo): <em>release flags</em> ou <em>business flags</em>? Justifique sua resposta.</p>
+<p>12. Quando uma empresa migra para CI, normalmente ela não usa mais branches de funcionalidades (<em>feature branches</em>). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada Desenvolvimento Baseado no Trunk (ou TBD), conforme estudamos neste capítulo. No entanto, TBD não significa que branches não são mais usados nessas empresas. Descreva então um outro uso para branches, que não seja como <em>feature branches</em>.</p>
+<p>13. Leia o seguinte <a href="https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html">artigo</a> do blog oficial do GMail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de <q>trocar os pneus de um carro com ele em movimento</q>. Sobre esse artigo, responda então:</p>
 <ol type="a">
-<li><p>Qual tecnologia — que estudamos neste capítulo — foi fundamental para viabilizar essa atualização de interface? Qual o nome que o artigo dá para essa tecnologia?</p></li>
-<li><p>E qual o nome que usamos no capítulo para referenciá-la?</p></li>
+<li><p>Qual tecnologia — que estudamos neste capítulo — foi fundamental para viabilizar essa atualização na interface do GMail? Qual nome o artigo dá para essa tecnologia?</p></li>
+<li><p>E qual nome usamos no capítulo para referenciá-la?</p></li>
 </ol>
 </div>
 </div>
