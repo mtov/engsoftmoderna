@@ -30,8 +30,7 @@ moderno. Prosseguindo, Ousterhout sugere como devemos proceder para
 chegar a essa solução: devemos decompor, isto é, quebrar o problema
 inicial, que pode ser bastante complexo, em partes menores. Por fim, a
 frase impõe uma restrição a essa decomposição: ela deve permitir que
-cada uma das partes do projeto possa ser resolvida (ou implementada, no
-nosso contexto) de forma independente.
+cada uma das partes do projeto possa ser resolvida (ou implementada) de forma independente.
 
 Essa explicação pode passar a impressão de que projeto é uma atividade
 simples. No entanto, no projeto de software temos que combater um grande
@@ -53,7 +52,7 @@ Em resumo, o primeiro objetivo de projeto de software é decompor um
 problema em partes menores. Além disso, deve ser possível implementar
 tais partes de forma independente. Por fim, mas não menos importante,
 essas partes devem ser abstratas. Em outras palavras, a implementação
-delas pode ser extremamente desafiadora e complexa, mas apenas para os
+delas pode ser desafiadora e complexa, mas apenas para os
 desenvolvedores envolvidos em tal tarefa. Para os demais
 desenvolvedores, deve ser simples usar a abstração que foi criada.
 
@@ -62,10 +61,10 @@ desenvolvedores, deve ser simples usar a abstração que foi criada.
 Para ilustrar essa introdução a projetos de software, vamos usar o
 exemplo de um compilador. Os requisitos no caso são claros: dado um
 programa em uma linguagem X devemos convertê-lo em um programa em uma
-linguagem Y, que costuma ser a linguagem de uma máquina. Evidentemente,
-o projeto de um compilador não é trivial. Porém, após anos de pesquisa,
+linguagem Y, que costuma ser a linguagem de uma máquina. No entanto,
+o projeto de um compilador não é trivial. Então, após anos de pesquisa,
 descobriu-se uma solução — ou projeto — para esse tipo de sistema,
-a qual é ilustrada no diagrama a seguir:
+a qual é ilustrada na figura da próxima página.
 
 ![Principais módulos de um compilador](figs/cap5/compiler-design){width=100%}
 
@@ -78,8 +77,8 @@ ler o arquivo de entrada e dividi-lo em tokens (como `if`, `for`, `while`, `x`,
 Depois, temos que implementar um analisador sintático, que vai analisar
 as tokens e verificar se elas respeitam a gramática da linguagem fonte.
 Feito isso, ele deve "hierarquizar" essas tokens, isto é,
-transformá-las em uma estrutura conhecida como árvore de sintaxe
-abstrata. Por fim, temos o analisador semântico, que detecta, por
+transformá-las em uma estrutura conhecida como Árvore de Sintaxe
+Abstrata (AST). Por fim, temos o analisador semântico, que detecta, por
 exemplo, erros de tipo; e o gerador de código, que vai converter a
 representação do programa para uma linguagem de mais baixo nível, que
 possa ser executada por um determinado hardware.
@@ -102,13 +101,13 @@ deve ser possível usar o analisador léxico da forma mais simples
 possível. Por exemplo, apenas chamando uma função que retorna a próxima
 token do arquivo de entrada, como no seguinte código:
 
-`String token = Scanner.next\_token();`
+`String token = Scanner.next_token();`
  
 Em resumo, a complexidade envolvida na implementação de um analisador
 léxico está abstraída (ou, se preferir, encapsulada) na função
-next\_token(), cujo uso é muito simples.
+`next_token()`, cujo uso é bem simples.
 
-### O que vamos estudar?
+### O Que Vamos Estudar?
 
 É verdade que o projeto de sistemas de software depende de experiência
 e, em alguma medida, também de talento e criatividade. No entanto,
@@ -119,14 +118,14 @@ capítulo, iremos estudar as seguintes propriedades de projetos de
 software: integridade conceitual, ocultamento de informação, coesão e
 acoplamento. Para tornar o estudo mais prático, iremos, em seguida,
 enunciar alguns **princípios de projeto**, os quais representam
-diretrizes para se garantir que um projeto atende a uma determinada
-propriedade. Finalmente, vamos descrever algumas métricas para
-quantificar propriedades como coesão, acoplamento, complexidade, etc.
+diretrizes para se garantir que um projeto atende a determinadas
+propriedades. Para concluir, vamos descrever métricas para
+quantificar propriedades como coesão, acoplamento e complexidade.
 
 ```{=latex} 
 \begin{aviso} 
 ```
-Aviso: Os assuntos discutidos neste capítulo aplicam-se a
+**Aviso:** Os assuntos discutidos neste capítulo aplicam-se a
 **projeto orientado a objetos**. Ou seja, a suposição é que o sistema
 será implementado em linguagens como Java, C++, C\#, Python, Go, Ruby,
 etc. Certamente, alguns dos temas discutidos valem para projetos que
@@ -205,9 +204,9 @@ e evoluir o sistema. A seguir, mencionamos alguns exemplos de falta de
 integridade conceitual em nível de código ou design:
 
 -   Quando uma parte do sistema usa um padrão de nomes para variáveis
-    (por exemplo, *camel case*, como em *notaTotal*), enquanto em
+    (por exemplo, *camel case*, como em `notaTotal`), enquanto em
     outra parte usa-se um outro padrão (por exemplo, *snake case*,
-    como em *nota\_total*).
+    como em `nota_total`).
 
 -   Quando uma parte do sistema usa um determinado framework para
     manipulação de páginas Web, enquanto em outra parte usa-se um
@@ -218,14 +217,14 @@ integridade conceitual em nível de código ou design:
     estrutura de dados X, enquanto que, em outra parte, um problema
     parecido é resolvido por meio de uma estrutura Y.
 
--   Quando as funções de uma parte do sistema que precisam de um
+-   Quando funções de uma parte do sistema que precisam de uma
     determinada informação — por exemplo, o endereço de um
-    servidor Web — a obtém diretamente de um arquivo de
+    servidor — a obtém diretamente de um arquivo de
     configuração. Porém, em outras funções, de outras partes do
     sistema, a mesma informação deve ser passada como parâmetro.
 
-Esses exemplos revelam uma falta de padronização e, portanto, de
-integridade conceitual. Eles constituem um problema porque tornam mais
+Esses exemplos revelam uma falta de padronização e, logo, de
+integridade conceitual. Eles são um problema porque tornam mais
 difícil um desenvolvedor acostumado a manter uma parte do sistema ser
 alocado para manter uma outra parte.
 
@@ -249,7 +248,7 @@ funcionalidades parecidas: comentários (em posts normais) e respostas
 \end{esmbox} 
 ```
 
-## 5.3 Ocultamento de Informação
+## Ocultamento de Informação
 
 Essa propriedade, uma tradução da expressão *information hiding*, foi
 discutida pela primeira vez em 1972, por David Parnas, em um dos artigos
@@ -259,21 +258,20 @@ decomposing systems into modules*
 ([link](https://dl.acm.org/citation.cfm?id=361623)). O
 resumo do artigo começa da seguinte forma:
 
-> "Este artigo discute modularização como um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento dos mesmos. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
+> "Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
 
-**Aviso**: Parnas usa o termo módulo no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
+**Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
 
-Ocultamento de informação traz as seguintes vantagens para o
-desenvolvimento de um sistema:
+Ocultamento de informação traz as seguintes vantagens para um sistema:
 
--   Desenvolvimento em paralelo. Suponha que um sistema X foi
+-   **Desenvolvimento em paralelo.** Suponha que um sistema X foi
     implementado por meio de classes C1, C2, ..., Cn. Quando essas
     classes ocultam suas principais informações, fica mais fácil
     implementá-las em paralelo, por desenvolvedores diferentes.
     Consequentemente, teremos uma redução no tempo total de
     implementação do sistema.
 
--   Flexibilidade a mudanças. Por exemplo, suponha que descobrimos que a
+-   **Flexibilidade a mudanças.** Por exemplo, suponha que descobrimos que a
     classe Ci é responsável pelos problemas de desempenho do sistema.
     Quando detalhes de implementação de Ci são ocultados do resto do
     sistema, fica mais fácil trocar sua implementação por uma classe
@@ -282,7 +280,7 @@ desenvolvimento de um sistema:
     independentes, diminui-se o risco de a mudança introduzir bugs em
     outras classes.
 
--   Facilidade de entendimento. Por exemplo, um novo desenvolvedor
+-   **Facilidade de entendimento.** Por exemplo, um novo desenvolvedor
     contratado pela empresa pode ser alocado para trabalhar em algumas
     classes apenas. Portanto, ele não precisará entender toda a
     complexidade do sistema, mas apenas a implementação das classes
@@ -354,7 +352,7 @@ seguinte:
 Essa classe tem um problema de exposição excessiva de informação ou, em
 outras palavras, ela não oculta estruturas que podem mudar no futuro.
 Especificamente, a tabela hash que armazena os veículos estacionados no
-estacionamento é pública. Com isso, clientes — como o método main
+estacionamento é pública. Com isso, clientes — como o método `main`
 — têm acesso direto a ela para, por exemplo, adicionar veículos no
 estacionamento. Se, futuramente, decidirmos usar uma outra estrutura de
 dados para armazenar os veículos, todos os clientes deverão ser
@@ -362,7 +360,7 @@ modificados.
 
 Suponha que o sistema de estacionamento fosse manual, com o nome dos
 veículos anotados em uma folha de papel. Fazendo uma comparação, essa
-primeira versão da classe Estacionamento corresponderia — no caso
+primeira versão da classe `Estacionamento` corresponderia — no caso
 desse sistema manual — ao cliente do estacionamento, após estacionar
 seu carro, entrar na cabine de controle e escrever ele mesmo a placa e o
 modelo do seu carro na folha de controle.
@@ -372,7 +370,7 @@ de dados responsável por armazenar os veículos. Para estacionar um
 veículo, existe agora o método estaciona. Com isso, os desenvolvedores
 da classe têm liberdade para trocar de estrutura de dados, sem causar
 impacto nos seus clientes. A única restrição é que a assinatura do
-método estaciona deve ser preservada.
+método `estaciona` deve ser preservada.
 
 +---------------------------------------------------------------+
 | **import** java.util.Hashtable;                               |
@@ -408,11 +406,11 @@ método estaciona deve ser preservada.
 | }                                                             |
 +---------------------------------------------------------------+
 
-Em resumo, com essa nova versão ocultamos uma estrutura de dados —
+Em resumo, essa nova versão oculta uma estrutura de dados —
 sujeita a alterações durante a evolução do sistema — e
-disponibilizamos uma interface estável para os clientes da classe —
-representada pelo método estaciona, que só requer dois parâmetros do
-tipo String.
+disponibiliza uma interface estável para os clientes da classe —
+representada pelo método `estaciona`, que só requer dois parâmetros do
+tipo `String`.
 
 ```{=latex} 
 \begin{esmbox} 
@@ -424,7 +422,7 @@ obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na
 tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar
 mais clara em Português; essa mesma mensagem é mencionada no livro de
 Fox e Patterson ([link](http://www.saasbook.info/),
-Capítulo 1, Seção 1.4)):
+Cap. 1, Seção 1.4):
 
 1. Todos os times devem, daqui em diante, garantir que os sistemas exponham seus dados e funcionalidades por meio de interfaces.
 
@@ -440,25 +438,24 @@ Capítulo 1, Seção 1.4)):
 
 7. Obrigado; tenham um excelente dia!
 ```{=latex} 
+
+Essas recomendações podem ser resumidas da seguinte forma: todos os desenvolvedores da Amazon deveriam, após receber a mensagem, seguir o princípio de ocultamento de informação, enunciado por David Parnas em 1972.
+
 \end{esmbox} 
 ```
 
-As recomendações de Bezos — contidas no mail que reproduzimos —
-podem ser resumidas da seguinte forma: todos os desenvolvedores da
-Amazon deveriam, após receber a mensagem, seguir o princípio de
-ocultamento de informação, enunciado por David Parnas em 1972.
 
 ### Getters e Setters
 
-Métodos get e set — muitas vezes chamados apenas de getters e
-setters — são muito usados em linguagens orientadas a objetos, como
+Métodos `get` e `set` — muitas vezes chamados apenas de *getters* e
+*setters* — são muito usados em linguagens orientadas a objetos, como
 Java e C++. A recomendação para uso desses métodos é a seguinte: todos
 os dados de uma classe devem ser privados e o acesso a eles — se
 necessário — deve ocorrer por meio de getters (acesso de leitura) e
 setters (acesso de escrita).
 
-Veja um exemplo a seguir, onde foram criados métodos get e set para
-acessar o atributo matricula da classe Aluno.
+Veja um exemplo a seguir, onde métodos `get` e `set` são usados para
+acessar o atributo `matricula` de uma classe `Aluno`.
 
 +------------------------------------------+
 | **class** Aluno {                        |
@@ -492,16 +489,16 @@ esses métodos
 ([link](https://dl.acm.org/citation.cfm?id=3288797), Seção
 19.6):
 
-> "Embora possa fazer sentido o uso de getters e setters se você precisar expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe."
+> "Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe."
 
-Em resumo: certifique-se de que é mesmo imprescindível liberar
+Em resumo: certifique-se de que é imprescindível liberar
 informação privativa de uma classe. Se isso for, de fato, importante,
 considere a ideia de implementar essa liberação por meio de getters e
 setters — e não tornando o atributo público.
 
 No nosso exemplo, vamos então assumir que é imprescindível que os
 clientes possam ler e alterar a matrícula de alunos. Assim, é melhor que
-o acesso a esse atributo seja feito por meio de métodos get e set, pois
+o acesso a esse atributo seja feito por meio de métodos `get` e `set`, pois
 eles constituem uma interface mais estável para tal acesso, pelos
 seguintes motivos:
 
@@ -595,7 +592,7 @@ Trata-se de uma classe coesa, pois todos os seus métodos implementam
 operações importantes em uma estrutura de dados do tipo Pilha.
 
 **Exemplo 3:** Para concluir a lista de exemplos, vamos voltar à classe
-Estacionamento, na qual foram adicionados quatro atributos com
+`Estacionamento`, na qual foram adicionados agora quatro atributos com
 informações sobre o gerente do estacionamento:
 
 +---------------------------------------+
@@ -617,11 +614,11 @@ informações sobre o gerente do estacionamento:
 +---------------------------------------+
 
 A principal responsabilidade dessa classe é gerenciar a operação do
-estacionamento, incluindo métodos como estaciona(), calcula\_preco(),
-libera\_veiculo(), etc. Portanto, ela não deveria assumir
+estacionamento, incluindo métodos como `estaciona()`, `calcula_preco()`,
+`libera_veiculo()`, etc. Portanto, ela não deveria assumir
 responsabilidades relacionadas com o gerenciamento dos funcionários do
 estacionamento. Para isso, poderia ser criada uma segunda classe,
-chamada, por exemplo, Funcionario.
+chamada, por exemplo, `Funcionario`.
 
 ## Acoplamento
 
@@ -674,7 +671,7 @@ classe de origem.
 Frequentemente, as recomendações sobre acoplamento e coesão são reunidas
 em uma única recomendação:
 
->  Maxime a coesão das classes de um sistema e minimize o acoplamento entre elas.
+>  Maxime a coesão das classes e minimize o acoplamento entre elas.
 
 De fato, se uma classe depende de muitas outras classes, por exemplo, de
 dezenas de classes, ela pode estar assumindo responsabilidades demais,
@@ -684,33 +681,33 @@ Por outro lado, devemos tomar cuidado com o significado do verbo
 minimizar. O objetivo não deve ser eliminar completamente o acoplamento
 de uma classe com outras classes, pois é natural que uma classe precise
 de outras classes, principalmente daquelas que implementam serviços
-básicos, como estruturas de dados, acesso a arquivos, etc.
+básicos, como estruturas de dados, entrada/saída, etc.
 
 ### Exemplos
 
-**Exemplo 1:** Suponha a classe Estacionamento, usada na Seção 5.2, a
-qual possui um atributo que é uma Hashtable. Logo, dizemos que
-Estacionamento está acoplada a Hashtable. No entanto, na nossa
+**Exemplo 1:** Suponha a classe `Estacionamento`, usada na Seção 5.2, a
+qual possui um atributo que é uma `Hashtable`. Logo, dizemos que
+`Estacionamento` está acoplada a `Hashtable`. No entanto, na nossa
 classificação, trata-se de um acoplamento aceitável, isto é, ele não
 deve ser motivo de preocupação, pelos seguintes motivos:
 
--   Estacionamento só usa métodos públicos de Hashtable.
+-   `Estacionamento` só usa métodos públicos de `Hashtable`.
 
--   A interface de Hashtable é estável, já que ela faz parte do pacote
+-   A interface de `Hashtable` é estável, já que ela faz parte do pacote
     oficial de estruturas de dados de Java (estamos supondo que o
     sistema será implementado nessa linguagem). Assim, uma alteração
-    na assinatura dos métodos públicos de Hashtable quebraria não
-    apenas nossa classe Estacionamento, mas talvez milhões de outras
+    na assinatura dos métodos públicos de `Hashtable` quebraria não
+    apenas nossa classe `Estacionamento`, mas talvez milhões de outras
     classes de diversos sistemas Java ao redor do mundo.
 
 **Exemplo 2:** Suponha o seguinte trecho de código, no qual existe um
-arquivo compartilhado por duas classes, A e B, mantidas por
-desenvolvedores distintos. O método B.g() grava um inteiro no arquivo,
-que é lido por A.f(). Essa forma de comunicação origina um acoplamento
-ruim entre as classes. Por exemplo, o desenvolvedor que implementa B
-pode não saber que o arquivo é lido por A. Assim, ele pode decidir mudar
+arquivo compartilhado por duas classes, `A` e `B`, mantidas por
+desenvolvedores distintos. O método `B.g()` grava um inteiro no arquivo,
+que é lido por `A.f()`. Essa forma de comunicação origina um acoplamento
+ruim entre as classes. Por exemplo, o desenvolvedor que implementa `B`
+pode não saber que o arquivo é lido por `A`. Assim, ele pode decidir mudar
 o formato do arquivo por conta própria, sem comunicar o desenvolvedor da
-classe A.
+classe `A`.
 
 +----------------------------------+----------------------------------+
 | **class** A {                    | **class** B {                    |
@@ -735,13 +732,13 @@ classe A.
 +----------------------------------+----------------------------------+
 
 Antes de avançar, um pequeno comentário: no exemplo, existe também um
-acoplamento entre B e File. Porém, ele é um acoplamento aceitável, pois
-B realmente precisa persistir seus dados. Então, para conseguir isso,
+acoplamento entre `B` e `File`. Porém, ele é um acoplamento aceitável, pois
+`B` realmente precisa persistir seus dados. Então, para conseguir isso,
 nada melhor do que usar uma classe da biblioteca de entrada e saída da
 linguagem.
 
-**Exemplo 3:** Uma solução melhor para o acoplamento entre as classes A
-e B do exemplo anterior é mostrada no código a seguir.
+**Exemplo 3:** Uma solução melhor para o acoplamento entre as classes `A`
+e `B` do exemplo anterior é mostrada no código a seguir.
 
 +---------------------------+-------------------------------+
 | **class** A {             | **class** B {                 |
@@ -769,31 +766,31 @@ e B do exemplo anterior é mostrada no código a seguir.
 |                           | }                             |
 +---------------------------+-------------------------------+
 
-Nessa nova versão, a dependência entre A e B é tornada explícita. Agora,
-B possui um método público que retorna o valor total. E a classe A
-possui uma dependência para a classe B, por meio de um parâmetro do
-método f. Esse parâmetro é usado para requisitar explicitamente o valor
-de total, chamando-se o método getTotal(). Como esse método foi
+Nessa nova versão, a dependência entre `A` e `B` é tornada explícita. Agora,
+`B` possui um método público que retorna o valor `total`. E a classe `A`
+possui uma dependência para a classe `B`, por meio de um parâmetro do
+método `f`. Esse parâmetro é usado para requisitar explicitamente o valor
+de `total`, chamando-se o método `getTotal()`. Como esse método foi
 declarado público em B, espera-se que o desenvolvedor dessa classe se
 esforce para não alterar a sua assinatura. Por isso, nessa nova versão,
-dizemos que, apesar de existir uma dependência de A para B, o
+dizemos que, apesar de existir uma dependência de `A` para `B`, o
 acoplamento criado por ela é aceitável. Em outras palavras, não é um
 acoplamento que gera preocupações.
 
 Ainda sobre o exemplo anterior, é interessante mencionar que, na
-primeira versão, o código de A não declara nenhuma variável ou atributo
-do tipo B. E, mesmo assim, temos um acoplamento ruim entre as classes.
-Na segunda versão, ocorre o contrário, pois o método A.f() declara um
-parâmetro do tipo B. Mesmo assim, o acoplamento entre as classes é de
-melhor qualidade, pois é mais fácil estudar e manter o código de A sem
-conhecer detalhes de B.
+primeira versão, o código de `A` não declara nenhuma variável ou atributo
+do tipo `B`. E, mesmo assim, temos um acoplamento ruim entre as classes.
+Na segunda versão, ocorre o contrário, pois o método `A.f()` declara um
+parâmetro do tipo `B`. Mesmo assim, o acoplamento entre as classes é de
+melhor qualidade, pois é mais fácil estudar e manter o código de `A` sem
+conhecer detalhes de `B`.
 
 Alguns autores usam ainda os termos acoplamento estrutural e acoplamento
 evolutivo (ou lógico), com o seguinte significado:
 
 -   **Acoplamento estrutural** entre A e B ocorre quando uma classe A
     possui uma referência explícita em seu código para uma classe B.
-    Por exemplo, o acoplamento entre Estacionamento e Hashtable é
+    Por exemplo, o acoplamento entre `Estacionamento` e `Hashtable` é
     estrutural.
 
 -   **Acoplamento evolutivo (ou lógico)** entre A e B ocorre quando
@@ -801,9 +798,8 @@ evolutivo (ou lógico), com o seguinte significado:
     exemplo mencionado, no qual a classe A depende de um inteiro
     armazenado em um arquivo interno de B, não existe acoplamento
     estrutural entre A e B, pois A não declara nenhuma variável do
-    tipo B, mas pode existir acoplamento evolutivo. Por exemplo,
-    mudanças no formato do arquivo criado por B terão impacto na
-    classe A.
+    tipo B, mas existe acoplamento evolutivo. Por exemplo,
+    mudanças no formato do arquivo criado por B terão impacto em A.
 
 Acoplamento estrutural pode ser aceitável ou ruim, dependendo da
 estabilidade da interface da classe de destino. Acoplamento evolutivo,
@@ -847,7 +843,7 @@ bibliotecas node.js/JavaScript. A biblioteca removida — chamada
 leftPad — tinha uma única função JavaScript, de nome leftPad, com
 apenas 11 linhas de código. Ela preenchia uma string com brancos à
 esquerda. Por exemplo, `leftPad('foo', 5)` iria retornar `'  foo'`, ou
-seja, `'foo` com dois brancos à esquerda.
+seja, `'foo'` com dois brancos à esquerda.
 
 Milhares de sistemas Web dependiam dessa função trivial, porém a
 dependência ocorria de modo indireto. Os sistemas usavam o npm para
@@ -881,17 +877,17 @@ contempladas ao seguir cada um desses princípios.
 +==============================+============================+
 | Responsabilidade Única       | Coesão                     |
 |                              |                            |
-| Segregação de Interfaces     |                            |
+| Segregação de Interfaces     | Coesão                     |
 +------------------------------+----------------------------+
 | Inversão de Dependências     | Acoplamento                |
 |                              |                            |
-| Prefira Composição a Herança |                            |
+| Prefira Composição a Herança | Acoplamento                |
 +------------------------------+----------------------------+
 | Demeter                      | Ocultamento de Informação  |
 +------------------------------+----------------------------+
 | Aberto/Fechado               | Extensibilidade            |
 |                              |                            |
-| Substituição de Liskov       |                            |
+| Substituição de Liskov       | Extensibilidade            |
 +------------------------------+----------------------------+
 
 Cinco dos princípios que vamos estudar são conhecidos como **Princípios
@@ -899,12 +895,11 @@ SOLID**, que é uma sigla cunhada por Robert Martin e Michael Feathers
 ([link](https://dl.acm.org/citation.cfm?id=3175742)). Ela
 deriva da letra inicial de cada princípio, em inglês:
 
-  **S**   Single Responsibility Principle
-  ------- ---------------------------------
-  **O**   Open Closed/Principle
-  **L**   Liskov Substitution Principle
-  **I**   Interface Segregation Principle
-  **D**   Dependency Inversion Principle
+*  **S**ingle Responsibility Principle
+*  **O**pen Closed/Principle
+*  **L**iskov Substitution Principle
+*  **I**nterface Segregation Principle
+*  **D**ependency Inversion Principle
 
 Os princípios de projeto que vamos estudar têm um ponto em comum: eles
 não visam apenas "resolver" um problema, mas também assegurar que a
@@ -936,14 +931,14 @@ etc. E classes responsáveis por regras de negócio, isto é, que vão
 realizar as computações, processamento, análises, etc. São interesses e
 responsabilidades diferentes. E que podem evoluir e sofrer modificações
 por razões distintas. Portanto, elas devem ser implementadas em classes
-diferentes. Por esse motivo, não é surpresa que existam atualmente
+diferentes. Por esse motivo, não é surpresa que existam 
 desenvolvedores que tratam apenas de requisitos de *front-end* (isto é,
 de classes de apresentação) e desenvolvedores que tratam de requisitos
 de *backend* (isto é, de classes com regras de negócio).
 
 **Exemplo:** A próxima classe ilustra uma violação do Princípio da
-Responsabilidade Única. O método calculaIndiceDesistencia da classe
-Disciplina possui duas responsabilidades: calcular o índice de
+Responsabilidade Única. O método `calculaIndiceDesistencia` da classe
+`Disciplina` possui duas responsabilidades: calcular o índice de
 desistência de uma disciplina e imprimi-lo na console do sistema.
 
 +--------------------------------------------+
@@ -961,8 +956,8 @@ desistência de uma disciplina e imprimi-lo na console do sistema.
 +--------------------------------------------+
 
 Uma solução consiste em dividir essas responsabilidades entre duas
-classes: uma classe de interface com o usuário (Console) e uma classe de
-"regra de negócio" (Disciplina). Dentre outros benefícios, essa
+classes: uma classe de interface com o usuário (`Console`) e uma classe de
+"regra de negócio" (`Disciplina`). Dentre outros benefícios, essa
 solução permite reusar a classe de negócio com outras classes de
 interface, como classes de interface gráfica, interface web, interface
 para celular, etc.
@@ -1005,14 +1000,15 @@ interfaces específicas podem, por exemplo, substituir uma interface de
 propósito geral.
 
 Uma violação do princípio ocorre, por exemplo, quando uma interface
-possui dois conjuntos de métodos Mx e My. O primeiro conjunto é usado
-por clientes Cx (que então não usam os métodos My). De forma inversa, os
-métodos My são usados apenas por clientes Cy (que não usam os métodos
-Mx). Consequentemente, essa interface deveria ser quebrada em duas
+possui dois conjuntos de métodos M~x~ e M~y~. O primeiro conjunto é usado
+por clientes C~x~ (que então não usam os métodos M~y~). De forma inversa, os
+métodos M~y~ são usados apenas por clientes C~y~ (que não usam os métodos
+M~x~). Consequentemente, essa interface deveria ser quebrada em duas
 interfaces menores e específicas: uma interface contendo apenas os
-métodos Mx e a segunda interface contendo apenas os métodos My.
+métodos M~x~ e a segunda interface contendo apenas os métodos M~y~.
 
-**Exemplo:** Suponha uma interface Funcionario com os seguintes métodos:
+
+**Exemplo:** Suponha uma interface `Funcionario` com os seguintes métodos:
 (1) retornar salário, (2) retornar contribuição mensal para o FGTS
 (Fundo de Garantia por Tempo de Serviço) e (3) retornar SIAPE (isto é, o
 "número de matrícula" de todo funcionário público federal). Essa
@@ -1037,8 +1033,8 @@ uma matrícula no SIAPE.
 
 Uma alternativa — que atende ao Princípio de Segregação de
 Interfaces — consiste em criar interfaces específicas
-(FuncionarioCLT e FuncionarioPublico) que estendem a interface genérica
-(Funcionario).
+(`FuncionarioCLT` e `FuncionarioPublico`) que estendem a interface genérica
+(`Funcionario`).
 
 +------------------------------------------------------------+
 | **interface** Funcionario {                                |
@@ -1084,9 +1080,9 @@ Por exemplo, em vez de C1, pode-se mudar a implementação para C2, que
 isso não terá impacto no cliente em questão.
 
 **Exemplo 1:** O código a seguir ilustra o cenário que acabamos de
-descrever. Nesse código, o mesmo Cliente pode "trabalhar" com objetos
-concretos das classes C1 e C2. Ele não precisa conhecer a classe
-concreta que está por trás — ou que implementa — a interface I
+descrever. Nesse código, o mesmo `Cliente` pode "trabalhar" com objetos
+concretos das classes `C1` e `C2`. Ele não precisa conhecer a classe
+concreta que está por trás — ou que implementa — a interface `I`
 que ele referencia em seu código.
 
 +---------------------------------+---------------------+-------------------+
@@ -1113,9 +1109,9 @@ que ele referencia em seu código.
 
 **Exemplo 2:** Agora, mostramos um exemplo de código que segue o
 Princípio de Inversão de Dependências. Esse princípio justifica a
-escolha de Projetor como tipo do parâmetro do método g. Amanhã, o tipo
-da variável local projetor no método f pode mudar para, por exemplo,
-ProjetorSamsung. Se isso vier a acontecer, a implementação de g
+escolha de `Projetor` como tipo do parâmetro do método `g`. Amanhã, o tipo
+da variável local `projetor` no método `f` pode mudar para, por exemplo,
+`ProjetorSamsung`. Se isso vier a acontecer, a implementação de g
 permanecerá válida, pois ao usarmos um tipo interface estamos nos
 preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
@@ -1135,14 +1131,14 @@ implementam essa interface.
 +-----------------------------------------+-----------------------------+
 
 **Exemplo 3:** Como um exemplo final, suponha um pacote de estruturas de
-dados que oferece uma interface List e algumas implementações concretas
-(classes) para ela, como `ArrayList`, LinkedList e Vector. Sempre que
+dados que oferece uma interface `List` e algumas implementações concretas
+(classes) para ela, como `ArrayList`, `LinkedList` e `Vector`. Sempre que
 possível, em código cliente desse pacote, declare variáveis, parâmetros
-ou atributos usando o tipo List, pois assim você estará criando código
+ou atributos usando o tipo `List`, pois assim você estará criando código
 compatível com as diversas implementações concretas dessa interface.
 
 ### Prefira Composição a Herança
--
+
 Antes de explicar o princípio, vamos esclarecer que existem dois tipos
 de herança:
 
@@ -1197,19 +1193,19 @@ composição — conforme mostra o seguinte código:
 |                                         | }                                |
 +-----------------------------------------+----------------------------------+
 
-A solução via herança não é recomendada por vários motivos, sendo que os
+A solução por meio de herança não é recomendada por vários motivos, sendo que os
 principais são os seguintes: (1) um `Stack`, em termos conceituais, não é
 um `ArrayList`, mas sim uma estrutura que pode usar um `ArrayList` na sua
-implementação interna; (2) quando se força uma solução via herança a
-class `Stack` irá herdar métodos como get e set, que não fazem parte da
+implementação interna; (2) quando se força uma solução via herança, a
+class `Stack` irá herdar métodos como `get` e `set`, que não fazem parte da
 especificação de pilhas. Portanto, nesse caso, devemos preferir a
-solução via composição, em detrimento da solução baseada em herança.
+solução baseada em composição.
 
 Uma segunda vantagem de composição é que a relação entre as classes não
 é estática, como no caso de herança. No exemplo, se optássemos por
 herança, a classe `Stack` estaria acoplada estaticamente a `ArrayList`; e
 não seria possível mudar essa decisão em tempo de execução. Por outro
-lado, quando se opta por uma solução baseada em composição, isso fica
+lado, quando adota-se uma solução baseada em composição, isso fica
 mais fácil, como mostra o exemplo a seguir:
 
 +-----------------------------+
@@ -1250,7 +1246,7 @@ que discutimos sobre "Prefira Composição a Herança":
     Decorador, que vamos estudar no próximo capítulo.
 
 -   Por conta dos problemas discutidos nesta seção, linguagens de
-    programação mais recentes — como as linguagens Go e Rust
+    programação mais recentes — como Go e Rust
     — não incluem suporte a herança.
 
 ### Princípio de Demeter
@@ -1276,8 +1272,8 @@ métodos:
 
 -   de atributos da classe do método (caso 4)
 
-**Exemplo:** O seguinte código mostra um método, m1, com quatro chamadas
-que respeitam o Princípio de Demeter. E, em seguida, temos um método m2,
+**Exemplo:** O seguinte código mostra um método, `m1`, com quatro chamadas
+que respeitam o Princípio de Demeter. E, em seguida, temos um método `m2`,
 com uma chamada que não obedece ao princípio.
 
 +----------------------------------------------+
@@ -1312,16 +1308,16 @@ com uma chamada que não obedece ao princípio.
 | }                                            |
 +----------------------------------------------+
 
-O método m2, ao chamar três métodos get em sequência, viola o Princípio
+O método `m2`, ao chamar três métodos `get` em sequência, viola o Princípio
 de Demeter. O motivo é que os objetos intermediários — retornados
-pelos métodos get — são usados apenas como "passagem" para se
+pelos métodos `get` — são usados apenas como "passagem" para se
 chegar ao objeto final, que é aquele que de fato nos interessa e sobre o
 qual vamos executar uma operação "útil"— no exemplo,
-doSomething(). No entanto, esses objetos intermediários podem existir
+`doSomething()`. No entanto, esses objetos intermediários podem existir
 apenas para liberar informação interna sobre o estado de suas classes.
 Além de tornar a chamada mais complexa, a informação liberada pode estar
 sujeita a mudanças. Se isso ocorrer, um dos "elos" da sequência de
-chamadas será quebrado e o cliente — o método m2, no exemplo —
+chamadas será quebrado e o cliente — o método `m2`, no exemplo —
 terá que descobrir um outro modo de atingir o método final. Em resumo,
 chamadas que violam o Princípio de Demeter têm grande chance de quebrar
 o encapsulamento dos objetos de passagem.
@@ -1329,8 +1325,8 @@ o encapsulamento dos objetos de passagem.
 Costuma-se dizer que o Princípio de Demeter recomenda que os métodos de
 uma classe devem falar apenas com seus "amigos", isto é, com métodos
 da própria classe ou então com métodos de objetos que eles recebem como
-parâmetro ou que eles criam. Dizendo de outro modo, não é recomendável
-falar com os "amigos dos amigos", por exemplo.
+parâmetro ou que eles criam. Por outro lado, não é recomendável
+falar com os "amigos dos amigos".
 
 Um exemplo — formulado por David Bock
 ([link](https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf))
@@ -1357,7 +1353,7 @@ executar o seguinte código:
 +------------------------------------------------------------+
 
 Veja que o jornaleiro têm acesso à carteira do seu cliente — via
-método getCarteira() — e então ele mesmo retira o valor do jornal
+método `getCarteira()` — e então ele mesmo retira o valor do jornal
 dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse
 tamanha liberdade ... Portanto, uma solução mais realista é a seguinte:
 
@@ -1379,9 +1375,9 @@ tamanha liberdade ... Portanto, uma solução mais realista é a seguinte:
 
 No novo código, o cliente não libera o acesso à sua carteira. Pelo
 contrário, o jornaleiro nem fica ciente de que o cliente possui uma
-carteira. Essa informação está encapsulada na classe Cliente. Em vez
+carteira. Essa informação está encapsulada na classe `Cliente`. Em vez
 disso, o cliente oferece um método pagar, que deve ser chamado pelo
-jornaleiro. Finalmente, uma exceção sinaliza quando o Cliente não possui
+jornaleiro. Finalmente, uma exceção sinaliza quando o `Cliente` não possui
 recursos suficientes para pagar pelo jornal.
 
 ### Princípio Aberto/Fechado
@@ -1405,7 +1401,7 @@ classes flexíveis e extensíveis, capazes de se adaptarem a diversos
 cenários de uso, sem modificações no seu código fonte.
 
 **Exemplo 1:** Um exemplo de classe que segue o Princípio Aberto/Fechado
-é a classe Collections de Java. Ela possui um método estático para
+é a classe `Collections` de Java. Ela possui um método estático para
 ordenar uma lista em ordem crescente de seus elementos. Um exemplo de
 uso desse método é mostrado a seguir:
 
@@ -1419,10 +1415,10 @@ uso desse método é mostrado a seguir:
 | \["alexandre","joao","maria","ze"\]                          |
 +----------------------------------------------------------------------+
 
-No entanto, futuramente, podemos precisar de usar o método sort para
+No entanto, futuramente, podemos precisar de usar o método `sort` para
 ordenar as strings de acordo com seu tamanho em caracteres. Felizmente,
-a classe Collections está preparada para esse novo cenário de uso. Mas
-para isso precisamos implementar um objeto Comparator, que irá comparar
+a classe `Collections` está preparada para esse novo cenário de uso. Mas
+para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
 +-------------------------------------------------------------------------+
@@ -1441,7 +1437,7 @@ as strings pelo seu tamanho, como no seguinte código:
 | System.out.println(nomes); // resultado: \[ze, joao, maria, alexandre\] |
 +-------------------------------------------------------------------------+
 
-Ou seja, a classe Collections se mostrou "aberta" a lidar com esse
+Ou seja, a classe `Collections` se mostrou "aberta" a lidar com esse
 novo requisito, mas mantendo o seu código "fechado", isto é, o código
 fonte da classe não teve que ser modificado.
 
@@ -1478,8 +1474,8 @@ Princípio Aberto/Fechado.
 | }                                                      |
 +--------------------------------------------------------+
 
-Se amanhã tivermos que criar mais uma subclasse de Aluno, por exemplo,
-AlunoDoutorado, o código de calcTotalBolsas terá que ser adaptado. Ou
+Se amanhã tivermos que criar mais uma subclasse de `Aluno`, por exemplo,
+`AlunoDoutorado`, o código de `calcTotalBolsas` terá que ser adaptado. Ou
 seja, a função não está preparada para acomodar extensões (isto é, ela
 não está aberta), nem imune a alterações no seu código (isto é, ela
 também não está fechada).
@@ -1489,7 +1485,7 @@ antecipe os seus pontos de extensão. Por isso, não é possível a uma
 classe acomodar todos os possíveis tipos de extensões que podem
 aparecer. Mas apenas aqueles para os quais são oferecidos pontos de
 extensão, seja via herança, funções de mais alta ordem ou padrões de
-projeto. Por exemplo, a implementação da classe Collections (no exemplo
+projeto. Por exemplo, a implementação da classe `Collections` (no exemplo
 1) usa um algoritmo de ordenação que é uma versão do MergeSort. Porém,
 os clientes da classe não podem alterar e customizar esse algoritmo,
 tendo que se contentar com a implementação default que é oferecida.
@@ -1530,8 +1526,8 @@ seguinte exemplo:
 | }             |
 +---------------+
 
-O método f pode ser chamado passando-se como parâmetros objetos de
-subclasses B1, B2, ..., Bn da classe base A, como mostrado a seguir:
+O método `f` pode ser chamado passando-se como parâmetros objetos de
+subclasses `B1`, `B2`, ..., `Bn` da classe base `A`, como mostrado a seguir:
 
 +-----------------------------------------------------------------------+
 | f(new B1()); // f pode receber objetos da subclasse B1 como parâmetro |
@@ -1549,32 +1545,32 @@ O Princípio de Substituição de Liskov determina as condições —
 semânticas e não sintáticas — que as subclasses devem atender para
 que um programa como o anterior funcione.
 
-Suponha que as subclasses B1, B2, ...., Bn redefinam o método g() de A,
-que é um método chamado no corpo de f. O Princípio de Substituição de
+Suponha que as subclasses `B1`, `B2`, ...., `Bn` redefinam o método `g()` de `A`,
+que é um método chamado no corpo de `f`. O Princípio de Substituição de
 Liskov prescreve que essas redefinições não podem violar o contrato da
-implementação original de g em A.
+implementação original de `g` em A.
 
 **Exemplo 1:** Suponha uma classe base que calcula números primos.
 Suponha ainda algumas subclasses que implementam outros algoritmos com o
-mesmo propósito. Especificamente, o método getPrimo(n) é um método que
+mesmo propósito. Especificamente, o método `getPrimo(n)` é um método que
 retorna o n-ésimo número primo. Esse método existe na classe base e é
 redefinido em todas as subclasses.
 
-Suponha ainda que o contrato do método getPrimo(n) especifique o
+Suponha ainda que o contrato do método `getPrimo(n)` especifique o
 seguinte: 1 <= n <= 1 milhão. Ou seja, o método deve ser capaz de retornar
 qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo,
-uma violação do contrato de getPrimo(n) ocorre, por exemplo, se, em uma
+uma violação do contrato de `getPrimo(n)` ocorre, por exemplo, se, em uma
 das classes, o algoritmo implementado calcule apenas números primos até
 900 mil.
 
 De forma mais concreta, o Princípio de Substituição de Liskov define o
-seguinte: suponha que um cliente chame um método getPrimo(n) de um
-objeto p da classe NumeroPrimo. Suponha agora que o objeto p seja
-"substituído" por um objeto de uma subclasse de NumeroPrimo. Nesse
-caso, o cliente vai passar a executar o método getPrimo(n) dessa
+seguinte: suponha que um cliente chame um método `getPrimo(n)` de um
+objeto `p` da classe `NumeroPrimo`. Suponha agora que o objeto `p` seja
+"substituído" por um objeto de uma subclasse de `NumeroPrimo`. Nesse
+caso, o cliente vai passar a executar o método `getPrimo(n)` dessa
 subclasse. Porém, essa "substituição" de métodos não deve ter impacto
-no comportamento do cliente. Para tanto, todos os métodos getPrimo(n)das
-subclasses de NumeroPrimo devem realizar as mesmas tarefas que o método
+no comportamento do cliente. Para tanto, todos os métodos `getPrimo(n)` das
+subclasses de `NumeroPrimo` devem realizar as mesmas tarefas que o método
 original, possivelmente de modo mais eficiente.
 
 **Exemplo 2:** Vamos mostrar um segundo exemplo de violação, dessa vez
@@ -1640,8 +1636,8 @@ Substituição de Liskov.
 Nesse exemplo, o método que soma dois inteiros foi redefinido na
 subclasse com uma semântica de concatenação dos respectivos valores
 convertidos para strings. Logo, para um desenvolvedor encarregado de
-manter a classe Cliente a situação fica bastante confusa. Em uma
-execução, a chamada soma(1,2) retorna 3 (isto é, 1+2); na execução
+manter a classe `Cliente` a situação fica bastante confusa. Em uma
+execução, a chamada `soma(1,2)` retorna 3 (isto é, 1+2); na execução
 seguinte, a mesma chamada irá retornar 12 (isto é, "1"+ "2" = "12"
 ou 12, como inteiro).
 
@@ -1734,7 +1730,7 @@ Isto é, LCOM(C) é o número de pares de métodos — dentre todos os
 possíveis pares de métodos de C — que não usam atributos em comum.
 
 **Exemplo:** Para deixar a explicação mais clara, suponha a seguinte
-classe hipotética:
+classe:
 
 +-------------------------+
 | **class** A {           |
@@ -1793,7 +1789,7 @@ da interseção que define o valor de LCOM.
 Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis
 pares de métodos, mas dois deles acessam pelo menos um atributo em comum
 (veja terceira coluna da tabela). Resta um único par de métodos que não
-têm atributos em comum.
+tem atributos em comum.
 
 Portanto, LCOM parte do pressuposto que, em uma classe coesa, qualquer
 par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o
@@ -1843,7 +1839,7 @@ quando:
 
 -   A cria um objeto do tipo B.
 
-Seja uma classe A com dois métodos (metodo1 e metodo2):
+Seja uma classe A com dois métodos (`metodo1` e `metodo2`):
 
 +------------------------------------------------+
 | **class** A **extends** T1 **implements** T2 { |
@@ -1950,10 +1946,10 @@ Languages, and Applications (OOPSLA), 1991.
 
 ## Exercícios de Fixação {.unnumbered}
 
-1.  Descreva três benefícios da propriedade de projeto chamada
+1\.  Descreva três benefícios da propriedade de projeto chamada
     ocultamento de informação (*information hiding*)?
 
-2.  Suponha que um programador adote a seguinte estratégia: ao
+2\.  Suponha que um programador adote a seguinte estratégia: ao
     implementar qualquer nova funcionalidade ou corrigir um bug que
     implique na modificação de duas classes A e B localizadas em
     arquivos diferentes, ele conclui a tarefa movendo as classes para
@@ -1964,27 +1960,27 @@ Languages, and Applications (OOPSLA), 1991.
     propriedade de projeto? Por outro lado, qual propriedade de
     projeto estará sendo afetada de modo negativo? Justifique.
 
-3.  **Classitis** é o nome dado por John Ousterhout à proliferação de
+3\.  **Classitis** é o nome dado por John Ousterhout à proliferação de
     pequenas classes em um sistema. Segundo ele, *classitis* pode
     resultar em classes que individualmente são simples, mas que
     aumentam a complexidade total de um sistema. Usando os conceitos
     de acoplamento e coesão, como podemos explicar o problema causado
     por essa "doença"?
 
-4.  Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c)
+4\.  Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c)
     acoplamento estrutural; (d) acoplamento evolutivo (ou lógico).
 
-5.  Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2)
+5\.  Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2)
     acoplamento estrutural e ruim.
 
-6.  É possível que uma classe A esteja acoplada a uma classe B sem ter
+6\.  É possível que uma classe A esteja acoplada a uma classe B sem ter
     uma referência para B em seu código? Se sim, esse acoplamento será
     aceitável ou ruim?
 
-7.  Suponha um programa onde todo o código está implementado no método
+7\.  Suponha um programa onde todo o código está implementado no método
     main. Ele tem um problema de coesão ou acoplamento? Justifique.
 
-8.  Qual princípio de projeto é violado pelo seguinte código?
+8\.  Qual princípio de projeto é violado pelo seguinte código?
 
 +-----------------------------+
 | void onclick() {            |
@@ -2020,14 +2016,14 @@ Languages, and Applications (OOPSLA), 1991.
 | }                           |
 +-----------------------------+
 
-9.  Costuma-se afirmar que existem três conceitos chaves em orientação a
+9\.  Costuma-se afirmar que existem três conceitos chaves em orientação a
     objetos: encapsulamento, polimorfismo e herança. Suponha que você
     tenha sido encarregado de projetar uma nova linguagem de
     programação. Suponha ainda que você poderá escolher apenas dois
     dos três conceitos que mencionamos. Qual dos conceitos eliminaria
     então da sua nova linguagem? Justifique sua resposta.
 
-10. Qual princípio de projeto é violado pelo seguinte código? Como você
+10\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
 +--------------------------------------------------+
@@ -2042,7 +2038,7 @@ Languages, and Applications (OOPSLA), 1991.
 | }                                                |
 +--------------------------------------------------+
 
-11. Qual princípio de projeto é violado pelo seguinte código? Como você
+11\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
 +-------------------------------------------------+
@@ -2057,7 +2053,7 @@ Languages, and Applications (OOPSLA), 1991.
 | }                                               |
 +-------------------------------------------------+
 
-12. As pré-condições de um método são expressões booleanas envolvendo
+12\. As pré-condições de um método são expressões booleanas envolvendo
     seus parâmetros (e, possivelmente, o estado de sua classe) que
     devem ser verdadeiras antes da sua execução. De forma semelhante,
     as pós-condições são expressões booleanas envolvendo o resultado
@@ -2080,10 +2076,10 @@ Languages, and Applications (OOPSLA), 1991.
 | }                             | }                              |
 +-------------------------------+--------------------------------+
 
-13. Por que a métrica LCOM mede a ausência e não a presença de coesão?
+13\. Por que a métrica LCOM mede a ausência e não a presença de coesão?
     Justifique.
 
-14. Qual das seguintes classes é mais coesa? Justifique computando os
+14\. Qual das seguintes classes é mais coesa? Justifique computando os
     valores de LCOM de cada uma delas.
 
 +----------------+----------------+
@@ -2116,10 +2112,10 @@ Languages, and Applications (OOPSLA), 1991.
 |                | }              |
 +----------------+----------------+
 
-15. Todos os métodos de uma classe devem ser considerados no cálculo de
+15\. Todos os métodos de uma classe devem ser considerados no cálculo de
     LCOM? Sim ou não? Justifique.
 
-16. Calcule o CBO e LCOM da seguinte classe:
+16\. Calcule o CBO e LCOM da seguinte classe:
 
 +-----------------------------+
 | **class** A **extends** B { |
@@ -2147,13 +2143,13 @@ Languages, and Applications (OOPSLA), 1991.
 | }                           |
 +-----------------------------+
 
-17. A definição de complexidade ciclomática é independente de linguagem
+17\. A definição de complexidade ciclomática é independente de linguagem
     de programação. Sim ou não? Justifique.
 
-18. Dê um exemplo de código com complexidade ciclomática mínima. Qual é
+18\. Dê um exemplo de código com complexidade ciclomática mínima. Qual é
     essa complexidade?
 
-19. Cristina Lopes — professora da Universidade da Califórnia, em
+19\. Cristina Lopes — professora da Universidade da Califórnia, em
     Irvine, nos EUA — é autora de um livro sobre estilos de
     programação
     ([link](https://dl.acm.org/citation.cfm?id=2648631)).
