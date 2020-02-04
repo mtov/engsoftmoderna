@@ -2,7 +2,7 @@
 
 # Padrões de Projeto
 
-*A design that doesn't take change into account risks major redesign in
+> *A design that doesn't take change into account risks major redesign in
 the future.* --  Gang of Four
 
 Este capítulo inicia com uma introdução ao conceito e objetivos de
@@ -18,7 +18,7 @@ padrões. Terminamos o capítulo alertando que padrões de projeto não são
 uma bala-de-prata, ou seja, discutimos situações onde o uso de padrões
 de projeto não é recomendado (Seção 6.13).
 
-# Introdução 
+## Introdução 
 
 Padrões de projeto são inspirados em uma ideia proposta por Cristopher
 Alexander, um arquiteto — de construções civis e não de software
@@ -72,14 +72,14 @@ Um desenvolvedor pode se beneficiar do domínio de padrões de projeto em
 dois cenários principais:
 
 -   Quando ele estiver implementando o seu próprio sistema. Nesse caso,
-    > conhecer padrões de projeto pode ajudá-lo a adotar, no seu
-    > sistema, uma solução de projeto já testada e validada.
+    conhecer padrões de projeto pode ajudá-lo a adotar, no seu
+    sistema, uma solução de projeto já testada e validada.
 
 -   Quando ele estiver usando um sistema de terceiros, como o pacote de
-    > Java que implementa a classe DocumentBuilderFactor da figura.
-    > Nesse caso, conhecimento de padrões de projeto pode ajudá-lo a
-    > entender o comportamento e a estrutura da classe que ele precisa
-    > usar.
+    Java que implementa a classe DocumentBuilderFactor da figura.
+    Nesse caso, conhecimento de padrões de projeto pode ajudá-lo a
+    entender o comportamento e a estrutura da classe que ele precisa
+    usar.
 
 É importante entender que padrões de projeto visam a criação de projetos
 de software flexíveis e extensíveis. Neste livro, antes de explicar cada
@@ -101,80 +101,50 @@ No livro sobre padrões de projeto, são propostos 23 padrões, divididos
 em três categorias:
 
 -   **Criacionais**: padrões que propõem soluções flexíveis para criação
-    > de objetos.
+    de objetos.
 
 -   **Estruturais**: padrões que propõem soluções flexíveis para
-    > composição de classes e objetos.
+    composição de classes e objetos.
 
 -   **Comportamentais**: padrões que propõem soluções flexíveis para
-    > interação e divisão de responsabilidades entre classes e objetos.
+    interação e divisão de responsabilidades entre classes e objetos.
 
 A próxima tabela apresenta os 23 padrões originais, organizados segundo
 as categorias descritas. Os padrões que estudaremos neste capítulo estão
 em negrito, seguido do número da seção onde eles são apresentados.
 
-+----------------------------+---------------------+----------------------------+
-| **Criacionais**            | **Estruturais**     | **Comportamentais**        |
-+============================+=====================+============================+
-| **Abstract Factory (6.2)** | **Proxy (6.4)**     | **Strategy (6.8)**         |
-|                            |                     |                            |
-| Factory Method             | **Adapter (6.5)**   | **Observer (6.9)**         |
-|                            |                     |                            |
-| **Singleton (6.3)**        | **Facade (6.6)**    | **Template Method (6.10)** |
-|                            |                     |                            |
-| **Builder (6.12)**         | **Decorator (6.7)** | **Visitor (6.11)**         |
-|                            |                     |                            |
-| Prototype                  | Bridge              | Chain of Responsibility    |
-|                            |                     |                            |
-|                            | Composite           | Command                    |
-|                            |                     |                            |
-|                            | Flyweight           | Interpreter                |
-|                            |                     |                            |
-|                            |                     | **Iterator (6.12)**        |
-|                            |                     |                            |
-|                            |                     | Mediator                   |
-|                            |                     |                            |
-|                            |                     | Memento                    |
-|                            |                     |                            |
-|                            |                     | State                      |
-+----------------------------+---------------------+----------------------------+
+| Criacionais | Estruturais | Comportamentais
+|-|-|-
+| **Abstract Factory (6.2)**, Factory Method,**Singleton (6.3)**, **Builder (6.12)**, Prototype | **Proxy (6.4)**, **Adapter (6.5)**, **Facade (6.6)**, **Decorator (6.7)**, Bridge, Composite, Flyweight | **Strategy (6.8)**, **Observer (6.9)**, **Template Method (6.10)**, **Visitor (6.11)**, Chain of Responsibility, Command, Interpreter, **Iterator (6.12)**, Mediator, Memento, State
+ 
 
 **Tradução**: Por achar que a tradução é direta, vamos traduzir os
 nomes de alguns dos padrões de projeto, da seguinte forma: Fábrica
 Abstrata, Método Fábrica, Adaptador, Decorador, Observador e Iterador.
 Os demais serão referenciados usando o nome original.
 
-# Fábrica
+## Fábrica
 
 **Contexto**: Suponha um sistema distribuído baseado em TCP/IP. Nesse
 sistema, três funções f, g e h criam objetos do tipo TCPChannel para
 comunicação remota, como mostra o próximo código.
 
-+--------------------------------------+
-| void f() {                           |
-|                                      |
-| TCPChannel c = **new** TCPChannel(); |
-|                                      |
-| \...                                 |
-|                                      |
-| }                                    |
-|                                      |
-| void g() {                           |
-|                                      |
-| TCPChannel c = **new** TCPChannel(); |
-|                                      |
-| \...                                 |
-|                                      |
-| }                                    |
-|                                      |
-| void h() {                           |
-|                                      |
-| TCPChannel c = **new** TCPChannel(); |
-|                                      |
-| \...                                 |
-|                                      |
-| }                                    |
-+--------------------------------------+
+```java
+void f(){
+  TCPChannel c = new TCPChannel();  
+  ...
+}
+
+void g(){
+  TCPChannel c = new TCPChannel();
+  ...
+}
+
+void h() {
+  TCPChannel c = new TCPChannel();
+  ...
+}
+```
 
 **Problema**: Suponha que — em determinadas configurações do sistema
 — precisaremos usar UDP para comunicação. Portanto, se considerarmos
@@ -196,41 +166,28 @@ problema vamos adotar um método estático que: (1) apenas cria e retorna
 objetos de uma determinada classe; (2) e também oculta o tipo desses
 objetos por trás de uma interface. Um exemplo é mostrado a seguir:
 
-+-----------------------------------------------------------------+
-| **class** ChannelFactory {                                      |
-|                                                                 |
-| **public** static Channel create() { // método fábrica estático |
-|                                                                 |
-| **return** **new** TCPChannel();                                |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| void f() {                                                      |
-|                                                                 |
-| Channel c = ChannelFactory.create();                            |
-|                                                                 |
-| \...                                                            |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| void g() {                                                      |
-|                                                                 |
-| Channel c = ChannelFactory.create();                            |
-|                                                                 |
-| \...                                                            |
-|                                                                 |
-| }                                                               |
-|                                                                 |
-| void h() {                                                      |
-|                                                                 |
-| Channel c = ChannelFactory.create();                            |
-|                                                                 |
-| \...                                                            |
-|                                                                 |
-| }                                                               |
-+-----------------------------------------------------------------+
+```java
+class ChannelFactory{
+   public static Channel create(){// método fábrica estático
+     return new TCPChannel();
+   }
+}
+
+void f(){
+  Channel c = ChannelFactory.create();  
+  ...
+}
+
+void g(){
+  Channel c = ChannelFactory.create();
+  ...
+}
+
+void h(){
+  Channel c = ChannelFactory.create();
+  ...
+}
+```
 
 Nessa nova versão, as funções f, g e h não tem consciência do tipo de
 Channel que vão criar e usar. Elas chamam um **Método Fábrica
@@ -256,27 +213,19 @@ classe abstrata é usada para concentrar vários métodos fábrica. Essa
 classe recebe então o nome de **Fábrica Abstrata**. Um exemplo é
 mostrado a seguir:
 
-+--------------------------------------------------------------+
-| **abstract** **class** ProtocolFactory { // Fábrica Abstrata |
-|                                                              |
-| **abstract** Channel createChannel();                        |
-|                                                              |
-| **abstract** Port createPort();                              |
-|                                                              |
-| \...                                                         |
-|                                                              |
-| }                                                            |
-|                                                              |
-| void f(ProtocolFactory pf) {                                 |
-|                                                              |
-| Channel c = pf.createChannel();                              |
-|                                                              |
-| Port p = pf.createPort();                                    |
-|                                                              |
-| \...                                                         |
-|                                                              |
-| }                                                            |
-+--------------------------------------------------------------+
+```java
+abstract class ProtocolFactory{// Fábrica Abstrata
+  abstract Channel createChannel();
+  abstract Port createPort();  
+  ...
+}
+
+void f(ProtocolFactory pf){
+  Channel c = pf.createChannel();
+  Port p = pf.createPort();
+  ...
+}
+```
 
 No exemplo acima, omitimos as classes que estendem a classe abstrata
 ProtocolFactory e que vão implementar, de fato, os métodos concretos
@@ -289,37 +238,25 @@ ter duas subclasses: TCPProtocolFactory e UDPProtocolFactory.
 operações realizadas em um sistema. Um uso dessa classe é mostrado a
 seguir:
 
-+--------------------------------+
-| void f() {                     |
-|                                |
-| Logger log = **new** Logger(); |
-|                                |
-| log.println("Executando f"); |
-|                                |
-| \....                          |
-|                                |
-| }                              |
-|                                |
-| void g() {                     |
-|                                |
-| Logger log = **new** Logger(); |
-|                                |
-| log.println("Executando g"); |
-|                                |
-| \....                          |
-|                                |
-| }                              |
-|                                |
-| void h() {                     |
-|                                |
-| Logger log = **new** Logger(); |
-|                                |
-| log.println("Executando h"); |
-|                                |
-| \....                          |
-|                                |
-| }                              |
-+--------------------------------+
+```java
+void f(){
+  Logger log = new Logger();  
+  log.println("Executando f");
+  ...
+}
+
+void g(){
+  Logger log = new Logger();  
+  log.println("Executando g");
+  ...
+}
+
+void h(){
+  Logger log = new Logger();  
+  log.println("Executando h");
+  ...
+}
+```
 
 **Problema**: No código anterior, cada método que precisa registrar
 eventos cria sua própria instância de Logger. No entanto, gostaríamos
@@ -339,33 +276,25 @@ implementar classes que terão, como o próprio nome indica, no máximo uma
 instância. Mostramos a seguir a versão de Logger que funciona como um
 Singleton:
 
-+----------------------------------------------------------------------+
-| **class** Logger {                                                   |
-|                                                                      |
-| **private** Logger() {} // proíbe clientes de chamar new Logger()‏   |
-|                                                                      |
-| **private** **static** Logger instance; // instância única da classe |
-|                                                                      |
-| **public** **static** Logger getInstance() {                         |
-|                                                                      |
-| if(instance == null)‏ // primeira vez que chama-se getInstance       |
-|                                                                      |
-| instance = **new** Logger();                                         |
-|                                                                      |
-| **return** instance;                                                 |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| **public** void println(String msg) {                                |
-|                                                                      |
-| // registra msg na console, mas poderia ser em arquivo também        |
-|                                                                      |
-| System.out.println(msg);                                             |
-|                                                                      |
-| }                                                                    |
-|                                                                      |
-| }                                                                    |
-+----------------------------------------------------------------------+
+```java
+class Logger{
+
+  private Logger(){} // proíbe clientes de chamar new Logger()‏
+
+  private static Logger instance; // instância única da classe
+
+  public static Logger getInstance(){
+    if(instance == null)‏ // primeira vez que chama-se getInstance
+      instance = new Logger();
+    return instance;
+  }
+
+  public void println(String msg){
+    // registra msg na console, mas poderia ser em arquivo também
+    System.out.println(msg);      
+  }
+}
+```
 
 Primeiro, essa classe tem um construtor default privado. Com isso, um
 erro de compilação ocorrerá em qualquer código fora da classe que tente
@@ -374,37 +303,25 @@ instância única da classe. Quando precisarmos dessa instância, devemos
 chamar o método público e estático getInstance(). Um exemplo é mostrado
 a seguir:
 
-+------------------------------------+
-| void f() {                         |
-|                                    |
-| Logger log = Logger.getInstance(); |
-|                                    |
-| log.println("Executando f");     |
-|                                    |
-| \...                               |
-|                                    |
-| }                                  |
-|                                    |
-| void g() {                         |
-|                                    |
-| Logger log = Logger.getInstance(); |
-|                                    |
-| log.println("Executando g");     |
-|                                    |
-| \...                               |
-|                                    |
-| }                                  |
-|                                    |
-| void h() {                         |
-|                                    |
-| Logger log = Logger.getInstance(); |
-|                                    |
-| log.println("Executando h");     |
-|                                    |
-| \...                               |
-|                                    |
-| }                                  |
-+------------------------------------+
+```java
+void f(){
+  Logger log = Logger.getInstance();  
+  log.println("Executando f");
+  ...
+}
+
+void g(){
+  Logger log = Logger.getInstance();  
+  log.println("Executando g");
+  ...
+}
+
+void h(){
+  Logger log = Logger.getInstance();  
+  log.println("Executando h");
+  ...
+}
+```
 
 Nesse novo código, temos certeza de que as três chamadas de getInstance
 retornam a mesma instância de Logger. Todas as mensagens serão então
@@ -451,17 +368,13 @@ está disponível neste
 **Contexto**: Suponha uma classe BookSearch, cujo principal método
 pesquisa por um livro, dado o seu ISBN:
 
-+------------------------------------+
-| **class** BookSearch {             |
-|                                    |
-| \...                               |
-|                                    |
-| Book getBook(String ISBN) { \... } |
-|                                    |
-| \...                               |
-|                                    |
-| }                                  |
-+------------------------------------+
+```java
+class BookSearch{
+  ...
+  Book getBook(String ISBN){ ... }
+  ...
+}
+```
 
 **Problema**: Suponha que nosso serviço de pesquisa de livros esteja
 ficando popular e ganhando usuários. Para melhorar seu desempenho,
@@ -492,41 +405,28 @@ funcionalidades, sem que ele tome conhecimento disso. No nosso caso, o
 objeto base é do tipo BookSearch; a funcionalidade que pretendemos
 agregar é um cache; e o proxy é um objeto da seguinte classe:
 
-+----------------------------------------------------------------+
-| **class** BookSearchProxy **implements** BookSearchInterface { |
-|                                                                |
-| **private** BookSearchInterface base;                          |
-|                                                                |
-| BookSearchProxy (BookSearchInterface base) {                   |
-|                                                                |
-| this.base = base;                                              |
-|                                                                |
-| }                                                              |
-|                                                                |
-| Book getBook(String ISBN) {                                    |
-|                                                                |
-| **if** ("livro com ISBN no cache")                           |
-|                                                                |
-| **return** "livro do cache"                                  |
-|                                                                |
-| **else** {                                                     |
-|                                                                |
-| Book book = base.getBook(ISBN);                                |
-|                                                                |
-| **if** (book != null)                                          |
-|                                                                |
-| "adicione book no cache"                                     |
-|                                                                |
-| **return** book;                                               |
-|                                                                |
-| }                                                              |
-|                                                                |
-| }                                                              |
-|                                                                |
-| \...                                                           |
-|                                                                |
-| }                                                              |
-+----------------------------------------------------------------+
+```java
+class BookSearchProxy implements BookSearchInterface{
+
+  private BookSearchInterface base;
+
+  BookSearchProxy (BookSearchInterface base){
+    this.base = base;
+  }
+
+  Book getBook(String ISBN){
+    if("livro com ISBN no cache")
+      return "livro do cache"
+    else{
+      Book book = base.getBook(ISBN);
+      if(book != null)
+        "adicione book no cache"
+      return book;
+    }
+  }
+  ...
+}
+```
 
 Deve ser criada também uma interface BookSearchInterface, não mostrada
 no código. Tanto a classe base como a classe do proxy devem implementar
@@ -544,28 +444,25 @@ direita). Além disso, View passou a receber como parâmetro de sua
 construtora uma referência para o proxy, em vez de uma referência para o
 objeto base.
 
-+----------------------------------+----------------------------------+
-| **Programa Principal antes do    | **Programa Principal com Proxy** |
-| Proxy**                          |                                  |
-+==================================+==================================+
-| void main () {                   | void main () {                   |
-|                                  |                                  |
-| BookSearch bs = **new**          | BookSearch bs = **new**          |
-| BookSearch();                    | BookSearch();                    |
-|                                  |                                  |
-| \...                             | BookSearchProxy pbs;             |
-|                                  |                                  |
-| View view = **new** View(bs);    | pbs = **new**                    |
-|                                  | BookSearchProxy(bs);             |
-| \...                             |                                  |
-|                                  | \...                             |
-| }                                |                                  |
-|                                  | View view = new View(pbs);       |
-|                                  |                                  |
-|                                  | \...                             |
-|                                  |                                  |
-|                                  | }                                |
-+----------------------------------+----------------------------------+
+```java
+void main(){
+  BookSearch bs = new BookSearch();
+  ...
+  View view = new View(bs);
+  ...
+}
+```
+
+```java
+void main(){
+  BookSearch bs = new BookSearch();
+  BookSearchProxy pbs;
+  pbs = new BookSearchProxy(bs);
+  ...
+  View view = new View(pbs);
+  ...
+}
+```
 
 A próxima figura ilustra os objetos e as referências entre eles,
 considerando a solução que usa um proxy:
@@ -577,21 +474,21 @@ Além de ajudar na implementação de caches, proxies podem ser usados para
 implementar outros requisitos não-funcionais. Alguns exemplos incluem:
 
 -   Comunicação com um cliente remoto, isto é, pode-se usar um proxy
-    > para encapsular protocolos e detalhes de comunicação. Esses
-    > proxies são chamados de **stubs**.
+    para encapsular protocolos e detalhes de comunicação. Esses
+    proxies são chamados de **stubs**.
 
 -   Alocação de memória por demanda para objetos que consomem muita
-    > memória. Por exemplo, uma classe pode manipular uma imagem em alta
-    > resolução. Então, podemos usar um proxy para evitar que a imagem
-    > fique carregada o tempo todo na memória principal. Ela somente
-    > será carregada, possivelmente do disco, antes da execução de
-    > alguns métodos.
+    memória. Por exemplo, uma classe pode manipular uma imagem em alta
+    resolução. Então, podemos usar um proxy para evitar que a imagem
+    fique carregada o tempo todo na memória principal. Ela somente
+    será carregada, possivelmente do disco, antes da execução de
+    alguns métodos.
 
 -   Controlar o acesso de diversos clientes a um objeto base. Por
-    > exemplo, os clientes devem estar autenticados e ter permissão para
-    > executar certas operações do objeto base. Com isso, a classe do
-    > objeto base pode se concentrar na implementação de requisitos
-    > funcionais.
+    exemplo, os clientes devem estar autenticados e ter permissão para
+    executar certas operações do objeto base. Com isso, a classe do
+    objeto base pode se concentrar na implementação de requisitos
+    funcionais.
 
 ## Adaptador
 
@@ -599,25 +496,19 @@ implementar outros requisitos não-funcionais. Alguns exemplos incluem:
 multimídia. Para isso ele deve instanciar objetos de classes fornecidas
 pelos fabricantes de cada projetor, como ilustrado a seguir:
 
-+-----------------------------------+
-| **class** ProjetorLG {            |
-|                                   |
-| **public** void turnOn() { \... } |
-|                                   |
-| \...                              |
-|                                   |
-| }                                 |
-+-----------------------------------+
+```java
+class ProjetorLG{
+  public void turnOn(){ ... }
+  ...
+}
+```
 
-+--------------------------------------------+
-| **class** ProjetorSamsung {                |
-|                                            |
-| **public** void enable(int timer) { \... } |
-|                                            |
-| \...                                       |
-|                                            |
-| }                                          |
-+--------------------------------------------+
+```java
+class ProjetorSamsung{
+  public void enable(int timer){ ... }
+  ...
+}
+```
 
 Para simplificar, estamos mostrando apenas duas classes. Porém, um
 cenário real pode envolver classes de outros fabricantes de projetores.
@@ -634,25 +525,21 @@ usar uma interface única para ligar os projetores, independentemente de
 marca. O próximo código mostra essa interface e uma classe cliente do
 sistema:
 
-+-------------------------------------------------------------------+
-| **interface** Projetor {                                          |
-|                                                                   |
-| void liga() { \... }                                              |
-|                                                                   |
-| }                                                                 |
-|                                                                   |
-| \...                                                              |
-|                                                                   |
-| **class** SistemaControleProjetores {                             |
-|                                                                   |
-| void init(Projetor projetor) {                                    |
-|                                                                   |
-| projetor.liga(); // liga qualquer projetor, independente de marca |
-|                                                                   |
-| }                                                                 |
-|                                                                   |
-| }                                                                 |
-+-------------------------------------------------------------------+
+```java
+interface Projetor{
+
+  void liga(){ ... }
+
+}
+...
+class SistemaControleProjetores{
+
+   void init(Projetor projetor){
+     projetor.liga();  // liga qualquer projetor, independente de marca
+   }
+
+}
+```
 
 Porém, as classes de cada projetor — mostradas anteriormente —
 foram implementadas pelos seus fabricantes e estão prontas para uso. Ou
@@ -670,25 +557,21 @@ públicos) das classes implementadas pelos fabricantes dos projetores.
 Um exemplo de classe adaptadora — de ProjetorSamsung para Projetor
 — é mostrado a seguir:
 
-+--------------------------------------------------------------+
-| **class** AdaptadorProjetorSamsung **implements** Projetor { |
-|                                                              |
-| **private** ProjetorSamung projetor;                         |
-|                                                              |
-| AdaptadorProjetorSamsung (ProjetorSamung projetor) {         |
-|                                                              |
-| this.projetor = projetor;                                    |
-|                                                              |
-| }                                                            |
-|                                                              |
-| **public** void liga() {                                     |
-|                                                              |
-| projetor.turnOn();                                           |
-|                                                              |
-| }                                                            |
-|                                                              |
-| }                                                            |
-+--------------------------------------------------------------+
+```java
+class AdaptadorProjetorSamsung implements Projetor{
+
+   private ProjetorSamung projetor;
+
+   AdaptadorProjetorSamsung (ProjetorSamung projetor){
+     this.projetor = projetor;
+   }
+
+   public void liga(){
+     projetor.turnOn();
+   }
+
+}
+```
 
 A classe AdaptadorProjetorSamsung implementa a interface Projetor. Logo,
 objetos dessa classe podem ser passados como parâmetro do método init()
@@ -718,17 +601,13 @@ real, imagine que X é uma linguagem para consulta a dados, semelhante a
 SQL. Para executar programas X, a partir de Java, os seguintes passos
 são necessários:
 
-+--------------------------------------------------+
-| Scanner s = **new** Scanner("prog1.x");        |
-|                                                  |
-| Parser p = **new** Parser(s);                    |
-|                                                  |
-| AST ast = p.parse();                             |
-|                                                  |
-| CodeGenerator code = **new** CodeGenerator(ast); |
-|                                                  |
-| code.eval();                                     |
-+--------------------------------------------------+
+```java
+Scanner s = new Scanner("prog1.x");
+Parser p = new Parser(s);
+AST ast = p.parse();
+CodeGenerator code = new CodeGenerator(ast);
+code.eval();
+```
 
 **Problema**: Como a linguagem X está ficando popular, os
 desenvolvedores estão reclamando da complexidade do código acima, pois
@@ -745,40 +624,32 @@ encapsuladas por trás da Fachada.
 
 No nosso problema, a Fachada poderia ser:
 
-+--------------------------------------------------+
-| **class** InterpretadorX {                       |
-|                                                  |
-| **private** String arq;                          |
-|                                                  |
-| InterpretadorX(arq) {                            |
-|                                                  |
-| this.arq = arq;                                  |
-|                                                  |
-| }                                                |
-|                                                  |
-| void eval() {                                    |
-|                                                  |
-| Scanner s = **new** Scanner(arq);                |
-|                                                  |
-| Parser p = **new** Parser(s);                    |
-|                                                  |
-| AST ast = p.parse();                             |
-|                                                  |
-| CodeGenerator code = **new** CodeGenerator(ast); |
-|                                                  |
-| code.eval();                                     |
-|                                                  |
-| }                                                |
-|                                                  |
-| }                                                |
-+--------------------------------------------------+
+```java
+class InterpretadorX{
+
+  private String arq;
+
+  InterpretadorX(arq){
+    this.arq = arq;
+  }
+
+  void eval(){
+    Scanner s = new Scanner(arq);
+    Parser p = new Parser(s);
+    AST ast = p.parse();
+    CodeGenerator code = new CodeGenerator(ast);
+    code.eval();
+  }
+
+}
+```
 
 Assim, os desenvolvedores que precisam executar programas X, a partir de
 Java, poderão fazê-lo por meio de uma única linha de código:
 
-  ---------------------------------------------
-  **new** InterpretadorX("prog1.x").eval();
-  ---------------------------------------------
+```java
+ new InterpretadorX("prog1.x").eval();
+```
 
 Antes de implementar a fachada, os clientes precisavam criar três
 objetos de tipos internos do interpretador e chamar dois métodos. Agora,
@@ -791,27 +662,20 @@ basta criar um único objeto e chamar eval.
 explicar o Padrão Fábrica. Suponha que as classes TCPChannel e
 UDPChannel implementam uma interface Channel:
 
-+-----------------------------------------------+
-| **interface** Channel {                       |
-|                                               |
-| void send(String msg);                        |
-|                                               |
-| String receive();                             |
-|                                               |
-| }                                             |
-|                                               |
-| **class** TCPChannel **implements** Channel { |
-|                                               |
-| \...                                          |
-|                                               |
-| }                                             |
-|                                               |
-| **class** UDPChannel **implements** Channel { |
-|                                               |
-| \...                                          |
-|                                               |
-| }                                             |
-+-----------------------------------------------+
+```java
+interface Channel{
+   void send(String msg);
+   String receive();
+}
+
+class TCPChannel implements Channel{
+   ...
+}
+
+class UDPChannel implements Channel{
+   ...
+}
+```
 
 **Problema**: Os clientes dessas classes precisam adicionar
 funcionalidades extras em canais, tais como buffers, compactação das
@@ -822,29 +686,25 @@ no uso de herança para criar subclasses com cada possível seleção de
 funcionalidades. No quadro abaixo, mostramos algumas das subclasses que
 teríamos que criar (as setas representam herança):
 
-+----------------------------------------------------------------------+
-| TCPZipChannel ⇒ TCPChannel                                           |
-|                                                                      |
-| TCPBufferedChannel ⇒ TCPChannel                                      |
-|                                                                      |
-| TCPBufferedZipChannel ⇒ TCPZipChannel ⇒ TCPChannel                   |
-|                                                                      |
-| TCPLogChannel ⇒ TCPChannel                                           |
-|                                                                      |
-| TCPLogBufferedZipChannel ⇒ TCPBufferedZipChannel ⇒ TCPZipChannel ⇒   |
-| TCPChannel                                                           |
-|                                                                      |
-| UDPZipChannel ⇒ UDPChannel                                           |
-|                                                                      |
-| UDPBufferedChannel ⇒ UDPChannel                                      |
-|                                                                      |
-| UDPBufferedZipChannel ⇒ UDPZipChannel ⇒ UDPChannel                   |
-|                                                                      |
-| UDPLogChannel ⇒ UDPChannel                                           |
-|                                                                      |
-| UDPLogBufferedZipChannel ⇒ UDPBufferedZipChannel ⇒ UDPZipChannel ⇒   |
-| UDPChannel                                                           |
-+----------------------------------------------------------------------+
+> TCPZipChannel ⇒ TCPChannel
+>
+> TCPBufferedChannel ⇒ TCPChannel
+>
+> TCPBufferedZipChannel ⇒ TCPZipChannel ⇒ TCPChannel
+>
+> TCPLogChannel ⇒ TCPChannel
+>
+> TCPLogBufferedZipChannel ⇒ TCPBufferedZipChannel ⇒ TCPZipChannel ⇒ TCPChannel
+>
+> UDPZipChannel ⇒ UDPChannel
+>
+> UDPBufferedChannel ⇒ UDPChannel
+>
+> UDPBufferedZipChannel ⇒ UDPZipChannel ⇒ UDPChannel
+>
+> UDPLogChannel ⇒ UDPChannel
+>
+> UDPLogBufferedZipChannel ⇒ UDPBufferedZipChannel ⇒ UDPZipChannel ⇒ UDPChannel
 
 Nessa solução, usamos herança para implementar subclasses para cada
 conjunto de funcionalidades. Suponha que o usuário precise de um canal
@@ -865,24 +725,19 @@ Herança", que estudamos no capítulo anterior.
 No nosso problema, ao optarmos por decoradores, o cliente poderá
 configurar um Channel da seguinte forma:
 
-+----------------------------------------------------------------------+
-| channel = **new** ZipChannel (**new** TCPChannel());                 |
-|                                                                      |
-| // TCPChannel que compacte/descompacte os dados enviados/recebidos   |
-|                                                                      |
-| channel = **new** BufferChannel (**new** TCPChannel());              |
-|                                                                      |
-| // TCPChannel com um buffer associado                                |
-|                                                                      |
-| channel = **new** BufferChannel (**new** UDPChannel());              |
-|                                                                      |
-| // UDPChannel com um buffer associado                                |
-|                                                                      |
-| channel= **new** BufferChannel (**new** ZipChannel (**new**          |
-| TCPChannel());                                                       |
-|                                                                      |
-| // TCPChannel com compactação e um buffer associado                  |
-+----------------------------------------------------------------------+
+```java
+channel = new ZipChannel (new TCPChannel());
+// TCPChannel que compacte/descompacte os dados enviados/recebidos
+
+channel = new BufferChannel (new TCPChannel());
+// TCPChannel com um buffer associado
+
+channel = new BufferChannel (new UDPChannel());
+// UDPChannel com um buffer associado
+
+channel= new BufferChannel (new ZipChannel (new TCPChannel());
+// TCPChannel com compactação e um buffer associado
+```
 
 Portanto, em uma solução com decoradores, a configuração de um Channel é
 feita no momento da sua instanciação, por meio de uma seqüência aninhada
@@ -896,88 +751,72 @@ ditos, como ZipChannel e BufferChannel. Primeiro, elas são subclasses da
 seguinte classe que não aparece no exemplo, mas que é fundamental para o
 funcionamento do padrão Decorador:
 
-+-----------------------------------------------------+
-| **class** ChannelDecorator **implements** Channel { |
-|                                                     |
-| **protected** Channel channel;                      |
-|                                                     |
-| **public** ChannelDecorator(Channel channel) {      |
-|                                                     |
-| this.channel = channel;                             |
-|                                                     |
-| }                                                   |
-|                                                     |
-| **public** void send(String msg) {                  |
-|                                                     |
-| channel.send(msg);                                  |
-|                                                     |
-| }                                                   |
-|                                                     |
-| **public** String receive() {                       |
-|                                                     |
-| **return** channel.receive();                       |
-|                                                     |
-| }                                                   |
-|                                                     |
-| }                                                   |
-+-----------------------------------------------------+
+```java
+class ChannelDecorator implements Channel{
+
+  protected Channel channel;
+
+  public ChannelDecorator(Channel channel){
+    this.channel = channel;
+  }
+
+  public void send(String msg){
+    channel.send(msg);
+  }
+
+  public String receive(){
+    return channel.receive();
+  }
+
+}
+```
 
 Essa classe tem duas características importantes:
 
 -   Ela é uma Channel, isto é, ela implementa essa interface e,
-    > portanto, os seus dois métodos. Assim, sempre que for esperado um
-    > objeto do tipo Channel podemos passar um objeto do tipo
-    > ChannelDecorator no lugar.
+    portanto, os seus dois métodos. Assim, sempre que for esperado um
+    objeto do tipo Channel podemos passar um objeto do tipo
+    ChannelDecorator no lugar.
 
 -   Ela possui internamente um objeto do tipo Channel para o qual delega
-    > as chamadas aos métodos send e receive. Em outras palavras, um
-    > decorador, no nosso caso, vai sempre referenciar um outro
-    > decorador. Após implementar a funcionalidade que lhe cabe — um
-    > buffer, compactação, etc — ele repassa a chamada para esse
-    > decorador.
+    as chamadas aos métodos send e receive. Em outras palavras, um
+    decorador, no nosso caso, vai sempre referenciar um outro
+    decorador. Após implementar a funcionalidade que lhe cabe — um
+    buffer, compactação, etc — ele repassa a chamada para esse
+    decorador.
 
 Por fim, chegamos aos decoradores reais. Eles são subclasses de
 ChannelDecorator, como no código a seguir, que implementa um decorador
 que compacta e descompacta as mensagens trafegadas pelo canal:
 
-+-----------------------------------------------------+
-| **class** ZipChannel **extends** ChannelDecorator { |
-|                                                     |
-| **public** ZipChannel(Channel c) {                  |
-|                                                     |
-| super(c);                                           |
-|                                                     |
-| }                                                   |
-|                                                     |
-| **public** void send(String msg) {                  |
-|                                                     |
-| "compacta mensagem msg"                           |
-|                                                     |
-| super.channel.send(msg);                            |
-|                                                     |
-| }                                                   |
-|                                                     |
-| **public** String receive() {                       |
-|                                                     |
-| String msg = super.channel.receive();               |
-|                                                     |
-| "descompacta mensagem msg"                        |
-|                                                     |
-| **return** msg;                                     |
-|                                                     |
-| }                                                   |
-|                                                     |
-| }                                                   |
-+-----------------------------------------------------+
+```java
+class ZipChannel extends ChannelDecorator{
+
+   public ZipChannel(Channel c){
+    super(c);
+   }  
+
+   public void send(String msg){
+    "compacta mensagem msg"
+    super.channel.send(msg);
+   }
+
+   public String receive(){
+    String msg = super.channel.receive();
+    "descompacta mensagem msg"
+    return msg;
+   }
+
+}
+```
 
 Para entender o funcionamento de ZipChannel, suponha o seguinte código
 cliente:
 
-+-------------------------------------------------------+
-| Channel c = **new** ZipChannel(**new** TCPChannel()); |
-|                                                       |
-| c.send("Hello, world");                             |
-+-------------------------------------------------------+
+```java
+Channel c = new ZipChannel(new TCPChannel());
+c.send("Hello, world")
+```
 
 A chamada de send na última linha do exemplo dispara as seguintes
 execuções de métodos:
@@ -985,14 +824,14 @@ execuções de métodos:
 -   Primeiro, executa-se ZipChannel.send, que vai compactar a mensagem.
 
 -   Após a compactação, ZipChannel.send chama super.channel.send, que
-    > vai executar ChannelDecorator.send, pois ChannelDecorator é a
-    > superclasse de ZipChannel.
+    vai executar ChannelDecorator.send, pois ChannelDecorator é a
+    superclasse de ZipChannel.
 
 -   ChannelDecorator.send apenas repassa a chamada para o Channel por
-    > ele referenciado, que no caso é um TCPChannel.
+    ele referenciado, que no caso é um TCPChannel.
 
 -   Finalmente, chegamos a TCPChannel.send, que vai transmitir a
-    > mensagem via TCP.
+    mensagem via TCP.
 
 **Código Fonte**: O código do exemplo de Decorador usado nesta seção
 está disponível neste
@@ -1004,21 +843,18 @@ está disponível neste
 **Contexto**: Suponha que estamos implementando um pacote de estruturas
 de dados, com a seguinte classe lista:
 
-+-----------------------------------------------------+
-| **class** MyList {                                  |
-|                                                     |
-| > \... // dados de uma lista                        |
-| >                                                   |
-| > \... // métodos de uma lista: add, delete, search |
-| >                                                   |
-| > **public** void sort() {                          |
-| >                                                   |
-| > \... // ordena a lista usando Quicksort           |
-| >                                                   |
-| > }                                                 |
-|                                                     |
-| }                                                   |
-+-----------------------------------------------------+
+```java
+class MyList{
+
+  ... // dados de uma lista
+  ... // métodos de uma lista: add, delete, search
+
+  public void sort(){
+    ... // ordena a lista usando Quicksort
+  }
+
+}
+```
 
 **Problema**: os nossos clientes estão solicitando que novos algoritmos
 de ordenação possam ser usados para ordenar os elementos da lista.
@@ -1043,35 +879,28 @@ MyList.
 Mostra-se a seguir o novo código de MyList, usando o Padrão Strategy
 para configuração do algoritmo de ordenação:
 
-+-------------------------------------------------------------+
-| **class** MyList {                                          |
-|                                                             |
-| > \... // dados de uma lista                                |
-| >                                                           |
-| > \... // métodos de uma lista: add, delete, search         |
-| >                                                           |
-| > **private** SortStrategy strategy;                        |
-| >                                                           |
-| > **public** MyList() {                                     |
-| >                                                           |
-| > strategy = **new** QuickSortStrategy();                   |
-| >                                                           |
-| > }                                                         |
-| >                                                           |
-| > **public** void setSortStrategy (SortStrategy strategy) { |
-| >                                                           |
-| > this.strategy = strategy;                                 |
-| >                                                           |
-| > }                                                         |
-| >                                                           |
-| > **public** void sort() {                                  |
-| >                                                           |
-| > strategy.sort(this);                                      |
-| >                                                           |
-| > }                                                         |
-|                                                             |
-| }                                                           |
-+-------------------------------------------------------------+
+```java
+class MyList{
+
+  ... // dados de uma lista
+  ... // métodos de uma lista: add, delete, search
+
+  private SortStrategy strategy;
+
+  public MyList(){
+    strategy = new QuickSortStrategy();
+  }
+
+  public void setSortStrategy(SortStrategy strategy){
+    this.strategy = strategy;
+  }
+
+  public void sort(){
+    strategy.sort(this);
+  }
+
+}
+```
 
 Nessa nova versão, o algoritmo de ordenação transformou-se em um
 atributo da classe MyList e um método set foi criado para configurar
@@ -1084,25 +913,19 @@ Para encerrar a apresentação do padrão, mostramos o código das classes
 que implementam as estratégias — isto é, os algoritmos — de
 ordenação:
 
-+--------------------------------------------------------+
-| **abstract** **class** SortStrategy {                  |
-|                                                        |
-| **abstract** void sort (MyList list);                  |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **class** QuickSortStrategy **extends** SortStrategy { |
-|                                                        |
-| void sort (MyList list) { \... }                       |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **class** ShellSortStrategy **extends** SortStrategy { |
-|                                                        |
-| void sort (MyList list) { \... }                       |
-|                                                        |
-| }                                                      |
-+--------------------------------------------------------+
+```java
+abstract class SortStrategy{
+  abstract void sort(MyList list);
+}
+
+class QuickSortStrategy extends SortStrategy{
+  void sort(MyList list){ ... }
+}
+
+class ShellSortStrategy extends SortStrategy{
+  void sort(MyList list){ ... }
+}
+```
 
 ## Observador
 
@@ -1138,19 +961,14 @@ notificados.
 Primeiro, vamos mostrar um possível programa principal para o nosso
 problema:
 
-+--------------------------------------------------+
-| > void main() {                                  |
-| >                                                |
-| > Temperatura t = **new** Temperatura();         |
-| >                                                |
-| > t.addObserver(**new** TermometroCelsius());    |
-| >                                                |
-| > t.addObserver(**new** TermometroFahrenheit()); |
-| >                                                |
-| > t.setTemp(100.0);                              |
-| >                                                |
-| > }                                              |
-+--------------------------------------------------+
+```java
+void main(){
+  Temperatura t = new Temperatura();
+  t.addObserver(new TermometroCelsius());
+  t.addObserver(new TermometroFahrenheit());
+  t.setTemp(100.0);
+}
+```
 
 Esse programa cria um objeto do tipo Temperatura (um sujeito) e então
 adiciona dois observadores nele: um TermometroCelsius e um
@@ -1160,51 +978,43 @@ monitoradas na escala Celsius.
 
 As classes Temperatura e TermometroCelsius são mostradas a seguir:
 
-+-------------------------------------------------------+
-| **class** Temperatura **extends** Subject {           |
-|                                                       |
-| **private** double temp;                              |
-|                                                       |
-| **public** double getTemp() {                         |
-|                                                       |
-| return temp;                                          |
-|                                                       |
-| }                                                     |
-|                                                       |
-| **public** void setTemp(double temp) {                |
-|                                                       |
-| this.temp = temp;                                     |
-|                                                       |
-| notifyObservers();                                    |
-|                                                       |
-| }                                                     |
-|                                                       |
-| }                                                     |
-|                                                       |
-| **class** TermometroCelsius **implements** Observer { |
-|                                                       |
-| **public** void update(Subject s) {                   |
-|                                                       |
-| double temp = ((Temperatura) s).getTemp();            |
-|                                                       |
-| System.out.println("Temperatura Celsius: " + temp); |
-|                                                       |
-| }                                                     |
-|                                                       |
-| }                                                     |
-+-------------------------------------------------------+
+```java
+class Temperatura extends Subject{
+
+  private double temp;
+
+  public double getTemp(){
+    return temp;
+  }
+
+  public void setTemp(double temp){
+    this.temp = temp;
+    notifyObservers();
+  }
+
+}
+
+class TermometroCelsius implements Observer{
+
+  public void update(Subject s){
+    double temp = ((Temperatura) s).getTemp();
+    System.out.println("Temperatura Celsius: " + temp);
+  }
+
+}
+```
 
 Veja que Temperatura herda de uma classe chamada Subject. Na solução
 proposta, todos os sujeitos devem estender essa classe. Ao fazer isso,
 eles herdam dois métodos:
 
 -   addObserver. No exemplo, esse método é usado no programa principal
-    > para adicionar dois termômetros como observadores de uma instância
-    > de Temperatura.
+    para adicionar dois termômetros como observadores de uma instância
+    de Temperatura.
 
 -   notifyObservers. No exemplo, esse método é chamado por Temperatura
-    > para notificar seus observadores de que o seu valor foi alterado
-    > no método setTemp.
+    para notificar seus observadores de que o seu valor foi alterado
+    no método setTemp.
 
 A implementação de notifyObservers — que é omitida no exemplo —
 chama o método update dos objetos que se registraram como observadores
@@ -1224,20 +1034,20 @@ height="3.020330271216098in"}
 O padrão Observador possui as seguintes vantagens principais:
 
 -   Ele não acopla os sujeitos a seus observadores. Na verdade, os
-    > sujeitos — como Temperatura, no exemplo — não conhecem os
-    > seus observadores. De forma genérica, os sujeitos publicam um
-    > evento anunciando a mudança de seu estado — chamando
-    > notifyObservers — e os observadores interessados são
-    > notificados. Esse comportamento facilita o reúso dos sujeitos em
-    > diversos cenários e, também, a implementação de diversos tipos de
-    > observadores para o mesmo tipo de sujeito.
+    sujeitos — como Temperatura, no exemplo — não conhecem os
+    seus observadores. De forma genérica, os sujeitos publicam um
+    evento anunciando a mudança de seu estado — chamando
+     notifyObservers — e os observadores interessados são
+     notificados. Esse comportamento facilita o reúso dos sujeitos em
+     diversos cenários e, também, a implementação de diversos tipos de
+     observadores para o mesmo tipo de sujeito.
 
 -   Uma vez implementado, o padrão Observador disponibiliza um mecanismo
-    > de notificação que pode ser reusado por diferentes pares de
-    > sujeito-observador. Por exemplo, podemos reusar a classe Subject e
-    > a interface Observer para notificações envolvendo pressão
-    > atmosférica e barômetros, umidade do ar e higrômetros, velocidade
-    > do vento e anemômetros, etc.
+     de notificação que pode ser reusado por diferentes pares de
+     sujeito-observador. Por exemplo, podemos reusar a classe Subject e
+     a interface Observer para notificações envolvendo pressão
+     atmosférica e barômetros, umidade do ar e higrômetros, velocidade
+     do vento e anemômetros, etc.
 
 **Código Fonte**: Se quiser conferir o código completo do nosso
 exemplo de Observador, incluindo o código das classes Subject e da
@@ -1269,33 +1079,24 @@ implementada na classe base.
 Um exemplo de Template Method para o nosso contexto e problema é
 mostrado a seguir:
 
-+---------------------------------------------------------------+
-| > **abstract class** Funcionario {                            |
-| >                                                             |
-| > double salario;                                             |
-| >                                                             |
-| > **\...**                                                    |
-| >                                                             |
-| > **private** **abstract** double calcDescontosPrevidencia(); |
-| >                                                             |
-| > **private** **abstract** double calcDescontosPlanoSaude();  |
-| >                                                             |
-| > **private** **abstract** double calcOutrosDescontos();      |
-| >                                                             |
-| > **public** double calcSalarioLiquido { // template method   |
-| >                                                             |
-| > double prev = calcDescontosPrevidencia();                   |
-| >                                                             |
-| > double saude = calcDescontosPlanoSaude();                   |
-| >                                                             |
-| > double outros = calcOutrosDescontos();                      |
-| >                                                             |
-| > **return** salario - prev - saude - outros;                 |
-| >                                                             |
-| > }                                                           |
-| >                                                             |
-| > }                                                           |
-+---------------------------------------------------------------+
+```java
+abstract class Funcionario{
+
+   double salario;
+   ...
+   private abstract double calcDescontosPrevidencia();
+   private abstract double calcDescontosPlanoSaude();
+   private abstract double calcOutrosDescontos();
+
+   public double calcSalarioLiquido{ // template method
+     double prev = calcDescontosPrevidencia();
+     double saude = calcDescontosPlanoSaude();
+     double outros = calcOutrosDescontos();
+     return salario - prev - saude - outros;
+   }
+
+}
+```
 
 Nesse exemplo, calcSalarioLiquido é um método template para cálculo do
 salário de funcionários. Ele padroniza que temos que calcular três
@@ -1347,42 +1148,31 @@ veículos.
 No entanto, o objetivo é implementar essas operações fora das classes de
 Veiculo por meio de um código como o seguinte:
 
-+--------------------------------------------------------------------------+
-| > **interface** Visitor {                                                |
-| >                                                                        |
-| > void visit(Carro c);                                                   |
-| >                                                                        |
-| > void visit(Onibus o);                                                  |
-| >                                                                        |
-| > void visit(Motocicleta m);                                             |
-| >                                                                        |
-| > }                                                                      |
-| >                                                                        |
-| > **class** PrintVisitor **implements** Visitor {                        |
-| >                                                                        |
-| > **public** void visit(Carro c) { "imprime dados de um carro" }       |
-| >                                                                        |
-| > **public** void visit(Onibus o) { "imprime dados de um onibus" }     |
-| >                                                                        |
-| > **public** void visit(Motocicleta m) { "imprime dados de uma moto" } |
-| >                                                                        |
-| > }                                                                      |
-+--------------------------------------------------------------------------+
+```java
+interface Visitor{
+   void visit(Carro c);
+   void visit(Onibus o);
+   void visit(Motocicleta m);
+}  
+
+class PrintVisitor implements Visitor{
+   public void visit(Carro c){ "imprime dados de um carro" }
+   public void visit(Onibus o{ "imprime dados de um onibus" }
+   public void visit(Motocicleta m){ "imprime dados de uma moto" }
+}
+```
 
 Nesse código, a classe PrintVisitor inclui métodos que imprimem os dados
 de um Carro, Onibus e Motocicleta. Uma vez implementada essa classe,
 gostaríamos de usar o seguinte código para "visitar" todos os veículos
 do estacionamento::
 
-+--------------------------------------------------------------------+
-| PrintVisitor visitor = new PrintVisitor();                         |
-|                                                                    |
-| foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {           |
-|                                                                    |
-| visitor.visit(veiculo); // erro de compilação (double dispatching) |
-|                                                                    |
-| }                                                                  |
-+--------------------------------------------------------------------+
+```java
+PrintVisitor visitor = new PrintVisitor();
+foreach (Veiculo veiculo: listaDeVeiculosEstacionados){
+   visitor.visit(veiculo); // erro de compilação (double dispatching)
+}
+```
 
 No entanto, no código mostrado, o método visit a ser chamado depende do
 tipo dinâmico do objeto alvo da chamada (visitor) e do tipo dinâmico de
@@ -1396,19 +1186,16 @@ visit deve ser chamada.
 Para ficar mais claro, o seguinte erro ocorre ao compilar o código
 anterior:
 
-+------------------------------------------------------------+
-| visitor.visit(veiculo);                                    |
-|                                                            |
-| \^                                                         |
-|                                                            |
-| method PrintVisitor.visit(Carro) is not applicable         |
-|                                                            |
-| (argument mismatch; Veiculo cannot be converted to Carro)  |
-|                                                            |
-| method PrintVisitor.visit(Onibus) is not applicable        |
-|                                                            |
-| (argument mismatch; Veiculo cannot be converted to Onibus) |
-+------------------------------------------------------------+
+
+```
+visitor.visit(veiculo);  
+         ^
+method PrintVisitor.visit(Carro) is not applicable
+  (argument mismatch; Veiculo cannot be converted to Carro)
+method PrintVisitor.visit(Onibus) is not applicable
+  (argument mismatch; Veiculo cannot be converted to Onibus)
+```
+
 
 Na verdade, esse código somente compila em linguagens que oferecem
 **despacho duplo** de chamadas de métodos (*double dispatch*). Nessas
@@ -1440,57 +1227,40 @@ alvo da chamada (v). Porém, isso não é um problema, pois significa que
 temos um caso de single dispatch, que é permitido em linguagens como
 Java.
 
-+-------------------------------------------------+
-| **abstract class** Veiculo {                    |
-|                                                 |
-| **abstract** **public** void accept(Visitor v); |
-|                                                 |
-| }                                               |
-|                                                 |
-| **class** Carro **extends** Veiculo {           |
-|                                                 |
-| \...                                            |
-|                                                 |
-| > **public** void accept(Visitor v) {           |
-| >                                               |
-| > v.visit(this);                                |
-|                                                 |
-| }                                               |
-|                                                 |
-| \...                                            |
-|                                                 |
-| }                                               |
-|                                                 |
-| **class** Onibus **extends** Veiculo {          |
-|                                                 |
-| \...                                            |
-|                                                 |
-| > **public** void accept(Visitor v) {           |
-| >                                               |
-| > v.visit(this);                                |
-|                                                 |
-| }                                               |
-|                                                 |
-| \...                                            |
-|                                                 |
-| }                                               |
-|                                                 |
-| // Idem para Motocicleta                        |
-+-------------------------------------------------+
+```java
+abstract class Veiculo{
+  abstract public void accept(Visitor v);
+}
+
+class Carro extends Veiculo{
+  ...
+  public void accept(Visitor v){
+   v.visit(this);
+  }
+  ...
+}
+
+class Onibus extends Veiculo{
+  ...
+  public void accept(Visitor v){
+    v.visit(this);
+  }
+  ...
+}
+
+// Idem para Motocicleta
+```
 
 Por último, temos que modificar o laço que percorre a lista de veículos
 estacionados. Agora, chamaremos os métodos accept de cada veículo,
 passando o visitor como parâmetro.
 
-+------------------------------------------------------------+
-| > PrintVisitor visitor = new PrintVisitor();               |
-| >                                                          |
-| > foreach (Veiculo veiculo: listaDeVeiculosEstacionados) { |
-| >                                                          |
-| > veiculo.accept(visitor);                                 |
-| >                                                          |
-| > }                                                        |
-+------------------------------------------------------------+
+```java
+PrintVisitor visitor = new PrintVisitor();
+foreach (Veiculo veiculo: listaDeVeiculosEstacionados){
+  veiculo.accept(visitor);
+}
+```
 
 Resumindo, visitors facilitam a adição de um método em uma hierarquia de
 classes. Um visitor congrega operações relacionadas — no exemplo,
@@ -1517,19 +1287,14 @@ caminhar sobre uma estrutura de dados. Normalmente, essa interface
 inclui métodos como hasNext() e next(), como mostrado no seguinte
 exemplo:
 
-+---------------------------------------------------------+
-| List\<String\> list = Arrays.asList("a","b","c"); |
-|                                                         |
-| Iterator it = list.iterator();                          |
-|                                                         |
-| **while** (it.hasNext()) {                              |
-|                                                         |
-| String s = (String) it.next();                          |
-|                                                         |
-| System.out.println(s);                                  |
-|                                                         |
-| }                                                       |
-+---------------------------------------------------------+
+```java
+List<String> list = Arrays.asList("a","b","c");
+Iterator it = list.iterator();
+while(it.hasNext()){
+  String s = (String) it.next();
+  System.out.println(s);
+}
+```
 
 Um iterador permite percorrer uma estrutura de dados sem conhecer o seu
 tipo concreto. Em vez disso, basta conhecer os métodos da interface
@@ -1545,15 +1310,13 @@ podemos delegar o processo de inicialização dos campos de um objeto para
 uma classe Builder. Um exemplo é mostrado a seguir, para uma classe
 Livro.
 
-+-----------------------------------------------------------------------+
-| Livro esm = new Livro.Builder().setNome("Engenharia Soft Moderna"). |
-|                                                                       |
-| .setEditora("UFMG").setAno(2020).build();                           |
-|                                                                       |
-| Livro gof = new Livro.Builder().setName("Design Patterns").         |
-|                                                                       |
-| .setAutores("GoF").setAno(1995).build();                            |
-+-----------------------------------------------------------------------+
+```java
+Livro esm = new Livro.Builder().setNome("Engenharia Soft Moderna").
+                  .setEditora("UFMG").setAno(2020).build();
+
+Livro gof = new Livro.Builder().setName("Design Patterns").
+                  .setAutores("GoF").setAno(1995).build();
+```
 
 Uma primeira alternativa ao uso de um Builder seria implementar a
 instanciação por meio de construtores. Porém, teríamos que criar
@@ -1585,8 +1348,8 @@ pública e estática de Livro. Por isso, é que podemos chamar new
 Livro.Builder() diretamente, sem precisar de instanciar antes um objeto
 do tipo Livro.
 
-6.13 Quando Não Usar Padrões de Projeto
-=======================================
+## Quando Não Usar Padrões de Projeto
+
 
 Padrões de projeto têm como objetivo tornar o projeto de um sistema mais
 flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos
@@ -1604,19 +1367,19 @@ cuidadosa. Para ilustrar esse tipo de análise, vamos continuar a usar os
 exemplos de Fábrica e Strategy:
 
 -   Antes de usar uma fábrica, devemos fazer (e responder) a seguinte
-    > pergunta: vamos mesmo precisar criar objetos de tipos diferentes
-    > no nosso sistema? Existem boas chances de que tais objetos sejam,
-    > de fato, necessários? Se sim, então vale a pena usar uma Fábrica
-    > para encapsular a criação de tais objetos. Caso contrário, é
-    > melhor criar os objetos usando o operador new, que é a solução
-    > nativa para criação de objetos em linguagens como Java.
+     pergunta: vamos mesmo precisar criar objetos de tipos diferentes
+     no nosso sistema? Existem boas chances de que tais objetos sejam,
+     de fato, necessários? Se sim, então vale a pena usar uma Fábrica
+     para encapsular a criação de tais objetos. Caso contrário, é
+     melhor criar os objetos usando o operador new, que é a solução
+     nativa para criação de objetos em linguagens como Java.
 
 -   De forma semelhante, antes de incluir o padrão Strategy em uma certa
-    > classe devemos nos perguntar: vamos mesmo precisar de parametrizar
-    > os algoritmos usados na implementação dessa classe? Existem, de
-    > fato, usuários que vão precisar de algoritmos alternativos? Se
-    > sim, vale a pena usar o padrão Strategy. Caso contrário, é
-    > preferível implementar o algoritmo diretamente no corpo da classe.
+     classe devemos nos perguntar: vamos mesmo precisar de parametrizar
+     os algoritmos usados na implementação dessa classe? Existem, de
+     fato, usuários que vão precisar de algoritmos alternativos? Se
+     sim, vale a pena usar o padrão Strategy. Caso contrário, é
+     preferível implementar o algoritmo diretamente no corpo da classe.
 
 Apesar de usarmos apenas dois padrões como exemplo, perguntas
 semelhantes podem ser feita para outros padrões.
@@ -1643,15 +1406,11 @@ Ousterhout ilustra seu argumento citando o emprego de decoradores
 durante a abertura de arquivos em Java, como mostrado no seguinte trecho
 de código:
 
-+----------------------------------------------------------------------+
-| FileInputStream fileStream = **new** FileInputStream(fileName);      |
-|                                                                      |
-| BufferedInputStream bufferedStream = **new**                         |
-| BufferedInputStream(fileStream);                                     |
-|                                                                      |
-| ObjectInputStream objectStream = **new**                             |
-| ObjectInputStream(bufferedStream);                                   |
-+----------------------------------------------------------------------+
+```java
+FileInputStream fileStream = new FileInputStream(fileName);
+BufferedInputStream bufferedStream = new BufferedInputStream(fileStream);
+ObjectInputStream objectStream = new ObjectInputStream(bufferedStream);
+```
 
 Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao
 processo de criação de arquivos em Java. O principal motivo é que, via
@@ -1661,8 +1420,7 @@ default, em vez de por meio de uma classe decoradora específica. Assim,
 as classes FileInputStream e BufferedInputStream poderiam ser fundidas
 em uma única classe.
 
-Vídeos Complementares
-=====================
+## Vídeos Complementares {.unnumbered}
 
 Para complementar o conteúdo deste capítulo recomendamos uma palestra de
 Ralph Johnson ([link](https://youtu.be/ALxQdnOdYXQ)), um
@@ -1670,8 +1428,8 @@ dos autores do livro da GoF. A palestra, com duração de 72 minutos, foi
 realizada em Ilhabela (SP), em 2014, durante uma conferência
 latino-americana de padrões de projeto, chamada SugarLoafPLoP.
 
-Bibliografia
-============
+## Bibliografia  {.unnumbered}
+
 
 Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. Design
 Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley,
@@ -1693,8 +1451,8 @@ Fabio Tirelo, Roberto Bigonha, Mariza Bigonha, Marco Tulio Valente.
 Desenvolvimento de Software Orientado por Aspectos. XXIII Jornada de
 Atualização em Informática (JAI), 2004.
 
-Exercícios de Fixação
-=====================
+## Exercícios de Fixação {.unnumbered}
+
 
 1\. (ENADE 2011, adaptado) Em relação a padrões de projeto, assinale V
 ou F.
@@ -1713,21 +1471,32 @@ de um objeto agregado sem expor sua representação subjacente.
 
 2\. Dê o nome dos seguintes padrões de projeto:
 
-      **Descrição do Padrão**                                                                                                                                                                         **Nome**
-  --- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------
-  a   Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema                                                                                                        
-  b   Garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela                                                                                                      
-  c   Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais                                                                                                   
-  d   Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces   
-  e   Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados                                                                                                    
-  f   Oferece um método para centralizar a criação de um tipo de objeto                                                                                                                               
-  g   Funciona como um intermediário que controla o acesso a um objeto base                                                                                                                           
-  h   Permite adicionar dinamicamente novas funcionalidades a uma classe                                                                                                                              
-  i   Oferece uma interface padronizada para caminhar em estruturas de dados                                                                                                                          
-  j   Permite parametrizar os algoritmos usados por uma classe                                                                                                                                        
-  k   Torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos                    
-  l   Permite que um objeto avise outros objetos de que seu estado mudou                                                                                                                              
-  m   Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses                                                                                 
+a) Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema: _______________________
+
+b) Garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela: _______________________
+
+c) Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais: _______________________
+
+d) Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces: _______________________
+
+e) Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados: _______________________
+
+f) Oferece um método para centralizar a criação de um tipo de objeto: _______________________
+
+g) Funciona como um intermediário que controla o acesso a um objeto base: _______________________
+
+h) Permite adicionar dinamicamente novas funcionalidades a uma classe: _______________________
+
+i) Oferece uma interface padronizada para caminhar em estruturas de dados: _______________________
+
+j) Permite parametrizar os algoritmos usados por uma classe: _______________________
+
+k) Torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos: _______________________
+
+l) Permite que um objeto avise outros objetos de que seu estado mudou: _______________________
+
+m) Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses: _______________________  
+
 
 3\. Dentre os padrões de projeto que respondeu na questão (2), quais são
 padrões criacionais?
@@ -1736,13 +1505,13 @@ padrões criacionais?
 projeto que:
 
 a)  Ajudam a tornar uma classe aberta a extensões, sem que seja preciso
-    > modificar o seu código fonte (isto é, padrões que colocam em
-    > prática o princípio Aberto/Fechado).
+     modificar o seu código fonte (isto é, padrões que colocam em
+     prática o princípio Aberto/Fechado).
 
 b)  Ajudam a desacoplar dois tipos de classes.
 
 c)  Ajudam a incrementar a coesão de uma classe (isto é, fazem com que a
-    > classe tenha Responsabilidade Única).
+     classe tenha Responsabilidade Única).
 
 d)  Simplificam o uso de um sistema.
 
@@ -1770,46 +1539,38 @@ de LogChannel.
 
 9\. Dado o código abaixo de uma classe Subject (do padrão Observador):
 
-+-----------------------------------------------------------------------+
-| **interface** Observer {                                              |
-|                                                                       |
-| **public** void update(Subject s);                                    |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| **class** Subject {                                                   |
-|                                                                       |
-| **private** List\<Observer\> observers = new ArrayList\<Observer\>(); |
-|                                                                       |
-| **public** void addObserver(Observer observer) {                      |
-|                                                                       |
-| observers.add(observer);                                              |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| **public** void notifyObservers() {                                   |
-|                                                                       |
-| **(A)**                                                               |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| }                                                                     |
-+-----------------------------------------------------------------------+
+```java
+interface Observer{
+  public void update(Subject s);
+}
+
+class Subject{
+
+  private List<Observer> observers = new ArrayList<Observer>();
+
+  public void addObserver(Observer observer){
+    observers.add(observer);
+  }
+
+  public void notifyObservers(){
+    (A)
+  }
+
+}
+```
 
 Implemente o código de notifyObserver*s*, comentado com um (A) acima.
 
 10\. Suponha o exemplo de Visitor que usamos na Seção 6.11.
 Especificamente, suponha o seguinte código, mostrado no final da seção.
 
-+------------------------------------------------------------+
-| > PrintVisitor visitor = new PrintVisitor();               |
-| >                                                          |
-| > foreach (Veiculo veiculo: listaDeVeiculosEstacionados) { |
-| >                                                          |
-| > veiculo.accept(visitor);                                 |
-| >                                                          |
-| > }                                                        |
-+------------------------------------------------------------+
+```java
+PrintVisitor visitor = new PrintVisitor();
+
+foreach(Veiculo veiculo: listaDeVeiculosEstacionados){
+  veiculo.accept(visitor);
+}
+```
 
 Suponha que listaDeVeiculosEstacionados armazene quatro objetos:
 umCarro, umOnibus, umOutroCarro e umOutroOnibus. Desenhe um diagrama de
