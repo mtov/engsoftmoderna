@@ -51,3 +51,11 @@ relacionados com microsserviços:
 **Vídeo Complementar**: Mike Cohn é o autor de um conhecido livro sobre histórias de usuário ([link](https://dl.acm.org/citation.cfm?id=984017)). Nesta palestra de 2012 ([link](https://youtu.be/6q5-cVeNjCE))  —  com 52 minutos e realizada em uma conferência norueguesa de desenvolvedores de software  —  ele apresenta uma introdução ao conceito de histórias de usuários.
 
 **Vídeo Complementar**: O MVP em forma de vídeo do Dropbox está no YouTube ([link](https://youtu.be/7QmCUDHpNzE)).
+
+## Vídeos Complementares {.unnumbered}
+
+Para complementar o conteúdo deste capítulo recomendamos uma palestra de
+Ralph Johnson ([link](https://youtu.be/ALxQdnOdYXQ)), um
+dos autores do livro da GoF. A palestra, com duração de 72 minutos, foi
+realizada em Ilhabela (SP), em 2014, durante uma conferência
+latino-americana de padrões de projeto, chamada SugarLoafPLoP.
