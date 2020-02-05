@@ -5,7 +5,7 @@
 > *A design that doesn't take change into account risks major redesign in
 the future.* --  Gang of Four
 
-Este capítulo inicia com uma introdução ao conceito e objetivos de
+Este capítulo inicia com uma introdução ao conceito e aos objetivos de
 padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez
 padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada,
 Decorador, Strategy, Observador, Template Method e Visitor. Cada um
@@ -16,7 +16,7 @@ problema no projeto desse sistema; (3) uma solução para esse problema
 por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
 padrões. Terminamos o capítulo alertando que padrões de projeto não são
 uma bala-de-prata, ou seja, discutimos situações onde o uso de padrões
-de projeto não é recomendado (Seção 6.13).
+não é recomendado (Seção 6.13).
 
 ## Introdução 
 
@@ -26,8 +26,8 @@ Alexander, um arquiteto — de construções civis e não de software
 um livro chamado *A Patterns Language*, no qual ele documenta diversos
 padrões para construção de cidades e prédios. Segundo Alexander:
 
-> Cada padrão descreve um problema que ocorre sempre em nosso contexto
-e uma solução para esse problema, de forma que possamos usá-la um
+> Cada padrão descreve um problema que sempre ocorre em nosso contexto
+e uma solução para ele, de forma que possamos usá-la um
 milhão de vezes.
 
 Em 1995, Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides
@@ -57,14 +57,14 @@ que um segundo problema foi resolvido por meio de decoradores. Ou seja,
 eles apenas mencionam o nome do padrão e subentendem que a solução
 adotada já está clara. De forma semelhante, o vocabulário de padrões de
 projeto é muito usado na documentação de sistemas. Por exemplo, a
-próxima figura mostra a documentação de uma das classes da biblioteca
-padrão de Java. Podemos ver que o nome da classe termina em Factory
+figura da próxima página mostra a documentação de uma das classes da biblioteca
+padrão de Java. Podemos ver que o nome da classe termina em `Factory`
 — que é um dos padrões de projeto que vamos estudar daqui a pouco.
 Na descrição da classe, volta-se a mencionar que ela é uma fábrica.
 Portanto, desenvolvedores que conhecem esse padrão de projeto terão mais
 facilidade para entender e usar a classe em questão.
 
-![](figs/cap6/doc-pattern.png){width=55%}
+![Documentação de uma classe `Factory` da API de Java](figs/cap6/doc-pattern.png){width=55%}
 
 Um desenvolvedor pode se beneficiar do domínio de padrões de projeto em
 dois cenários principais:
@@ -112,15 +112,15 @@ em negrito, seguido do número da seção onde eles são apresentados):
     interação e divisão de responsabilidades entre classes e objetos.
     São eles: **Strategy (6.8)**, **Observer (6.9)**, **Template Method (6.10)**, **Visitor (6.11)**, Chain of Responsibility, Command, Interpreter, **Iterator (6.12)**, Mediator, Memento e State.
 
-**Tradução**: Por achar que a tradução é direta, vamos traduzir os
-nomes de alguns dos padrões de projeto, da seguinte forma: Fábrica
+**Tradução**: Pelo fato de a tradução ser direta, vamos traduzir os
+nomes dos seguintes padrões: Fábrica
 Abstrata, Método Fábrica, Adaptador, Decorador, Observador e Iterador.
 Os demais serão referenciados usando o nome original.
 
 ## Fábrica
 
 **Contexto**: Suponha um sistema distribuído baseado em TCP/IP. Nesse
-sistema, três funções f, g e h criam objetos do tipo TCPChannel para
+sistema, três funções `f`, `g` e `h` criam objetos do tipo `TCPChannel` para
 comunicação remota, como mostra o próximo código.
 
 ```java
@@ -184,7 +184,7 @@ void h() {
 ```
 
 Nessa nova versão, as funções `f`, `g` e `h` não tem consciência do tipo de
-Channel que vão criar e usar. Elas chamam um **Método Fábrica
+`Channel` que vão criar e usar. Elas chamam um **Método Fábrica
 Estático**, que instancia e retorna um objeto de uma classe concreta
 — para ser claro, essa variante do padrão Fábrica não foi proposta
 no livro da Gangue dos Quatro, mas sim alguns anos depois por Joshua
@@ -238,13 +238,11 @@ void f() {
   log.println("Executando f");
   ...
 }
-
 void g() {
   Logger log = new Logger();  
   log.println("Executando g");
   ...
 }
-
 void h() {
   Logger log = new Logger();  
   log.println("Executando h");
@@ -290,8 +288,8 @@ class Logger {
 }
 ```
 
-Primeiro, essa classe tem um construtor default privado. Com isso, um
-erro de compilação ocorrerá em qualquer código fora da classe que tente
+Primeiro, essa classe tem um construtor *default* privado. Com isso, um
+erro de compilação ocorrerá quando qualquer código fora da classe tentar
 chamar `new Logger()`. Além disso, um atributo estático armazena a
 instância única da classe. Quando precisarmos dessa instância, devemos
 chamar o método público e estático `getInstance()`. Um exemplo é mostrado
@@ -317,7 +315,7 @@ void h() {
 }
 ```
 
-Nesse novo código, temos certeza de que as três chamadas de getInstance
+Nesse novo código, temos certeza de que as três chamadas de `getInstance`
 retornam a mesma instância de `Logger`. Todas as mensagens serão então
 registradas usando-se essa instância.
 
@@ -329,7 +327,7 @@ uma variável global que pode ser lida e alterada em qualquer parte do
 programa. Para isso, basta chamar `Logger.getInstance()`. Como vimos no
 Capítulo 5, variáveis globais representam uma forma de acoplamento ruim
 (ou forte) entre classes, isto é, uma forma de acoplamento que não é
-mediada por meio de interfaces estáveis. Porém, no caso de Logger, o uso
+mediada por meio de interfaces estáveis. Porém, no caso de `Logger`, o uso
 de Singleton não gera preocupações, pois ele é exatamente aquele
 recomendado pelo padrão: temos um recurso que é único — um arquivo
 de log, no caso — e queremos refletir essa característica no
@@ -428,15 +426,7 @@ essa interface. Isso permitirá que os clientes não tomem conhecimento da
 existência de um proxy entre eles e o objeto base. Mais uma vez, estamos
 lançando mão do Princípio "Prefira Interfaces a Classes".
 
-O próximo código ilustra a instanciação do proxy. Primeiro, no programa
-da esquerda, mostramos o código antes do proxy. Nele, um objeto
-`BookSearch` é criado no programa principal e depois passado como
-parâmetro de qualquer classe ou função que precise do serviço de
-pesquisa de livros, como a classe `View`. Com a decisão de usar um proxy,
-tivemos que modificar esse código para instanciar o proxy (código da
-direita). Além disso, `View` passou a receber como parâmetro de sua
-construtora uma referência para o proxy, em vez de uma referência para o
-objeto base.
+O próximo código ilustra a instanciação do proxy. Primeiro, mostramos o código antes do proxy. Nesse código (a seguir), um objeto `BookSearch` é criado no programa principal e depois passado como parâmetro de qualquer classe ou função que precise do serviço de pesquisa de livros, como a classe `View`.
 
 ```java
 void main() {
@@ -446,6 +436,8 @@ void main() {
   ...
 }
 ```
+
+Com a decisão de usar um proxy, vamos ter que modificar esse código para instanciar o proxy (código a seguir). Além disso, `View` passou a receber como parâmetro de sua construtora uma referência para o proxy, em vez de uma referência para o objeto base.
 
 ```java
 void main() {
@@ -494,9 +486,7 @@ class ProjetorLG {
   public void turnOn() { ... }
   ...
 }
-```
 
-```java
 class ProjetorSamsung {
   public void enable(int timer) { ... }
   ...
@@ -536,7 +526,7 @@ class SistemaControleProjetores {
 
 Porém, as classes de cada projetor — mostradas anteriormente —
 foram implementadas pelos seus fabricantes e estão prontas para uso. Ou
-seja, não temos acesso ao código fonte dessas classes para fazer com que
+seja, não temos acesso ao código dessas classes para fazer com que
 elas implementem a interface `Projetor`.
 
 **Solução**: O padrão de projeto **Adaptador** — também conhecido
@@ -547,8 +537,7 @@ ele pode ser usado para converter a interface `Projetor` — usada no
 sistema de controle de projetores — para as interfaces (métodos
 públicos) das classes implementadas pelos fabricantes dos projetores.
 
-Um exemplo de classe adaptadora — de `ProjetorSamsung` para `Projetor`
-— é mostrado a seguir:
+Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, é o seguinte:
 
 ```java
 class AdaptadorProjetorSamsung implements Projetor {
@@ -616,6 +605,8 @@ encapsuladas por trás da Fachada.
 
 No nosso problema, a Fachada poderia ser:
 
+\newpage
+
 ```java
 class InterpretadorX {
 
@@ -632,7 +623,6 @@ class InterpretadorX {
     CodeGenerator code = new CodeGenerator(ast);
     code.eval();
   }
-
 }
 ```
 
@@ -663,7 +653,6 @@ interface Channel {
 class TCPChannel implements Channel {
    ...
 }
-
 class UDPChannel implements Channel {
    ...
 }
@@ -731,12 +720,12 @@ channel = new BufferChannel (new TCPChannel());
 channel = new BufferChannel (new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel= new BufferChannel (new ZipChannel (new TCPChannel());
+channel = new BufferChannel (new ZipChannel (new TCPChannel()));
 // TCPChannel com compactação e um buffer associado
 ```
 
 Portanto, em uma solução com decoradores, a configuração de um `Channel` é
-feita no momento da sua instanciação, por meio de uma seqüência aninhada
+feita no momento da sua instanciação, por meio de uma sequência aninhada
 de operadores `new`. O `new` mais interno sempre cria uma classe base, no
 nosso exemplo `TCPChannel` ou `UDPChannel`. Feito isso, os operadores mais
 externos são usados para "decorar" o objeto criado com novas
@@ -775,7 +764,7 @@ Essa classe tem duas características importantes:
     `ChannelDecorator` no lugar.
 
 -   Ela possui internamente um objeto do tipo `Channel` para o qual delega
-    as chamadas aos métodos send e receive. Em outras palavras, um
+    as chamadas aos métodos `send` e `receive. Em outras palavras, um
     decorador, no nosso caso, vai sempre referenciar um outro
     decorador. Após implementar a funcionalidade que lhe cabe — um
     buffer, compactação, etc — ele repassa a chamada para esse
@@ -901,8 +890,8 @@ class MyList {
 Nessa nova versão, o algoritmo de ordenação transformou-se em um
 atributo da classe `MyList` e um método `set` foi criado para configurar
 esse algoritmo. O método `sort` repassa a tarefa de ordenação para um
-método de mesmo nome do objeto com a estratégia de ordenacão. Nessa
-chamada, passa-se this como parâmetro, pois o algoritmo a ser executado
+método de mesmo nome do objeto com a estratégia de ordenação. Nessa
+chamada, passa-se `this` como parâmetro, pois o algoritmo a ser executado
 deve ter acesso à lista para ordenar seus elementos.
 
 Para encerrar a apresentação do padrão, mostramos o código das classes
@@ -913,11 +902,9 @@ ordenação:
 abstract class SortStrategy {
   abstract void sort(MyList list);
 }
-
 class QuickSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }
-
 class ShellSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }
@@ -969,10 +956,12 @@ void main() {
 Esse programa cria um objeto do tipo `Temperatura` (um sujeito) e então
 adiciona dois observadores nele: um `TermometroCelsius` e um
 `TermometroFahrenheit`. Por fim, define-se o valor da temperatura para 100
-graus Celsius. A suposição é que temperaturas são, por default,
+graus Celsius. A suposição é que temperaturas são, por *default*,
 monitoradas na escala Celsius.
 
 As classes `Temperatura` e `TermometroCelsius` são mostradas a seguir:
+
+\newpage 
 
 ```java
 class Temperatura extends Subject {
@@ -1018,7 +1007,7 @@ de uma determinada instância de `Temperatura`. O método `update` faz parte
 da interface `Observer`, que deve ser implementada por todo observador,
 como é o caso de `TermometroCelsius`.
 
-A próxima figura mostra um diagrama de sequência UML que ilustra a
+A figura da próxima página mostra um diagrama de sequência UML que ilustra a
 comunicação entre uma temperatura (sujeito) e três possíveis termômetros
 (observadores). Assume-se que os três termômetros estão registrados como
 observadores da temperatura. A sequência de chamadas começa com
@@ -1103,7 +1092,7 @@ tipo de funcionário (público ou CLT). Logo, são criados métodos
 abstratos para representar cada um desses passos da rotina de cálculo de
 salários. Como eles são abstratos, a classe `Funcionario` também foi
 declarada como abstrata. Como o leitor já deve ter percebido, subclasses
-de Funcionario — como `FuncionarioPublico` e `FuncionarioCLT` — vão
+de `Funcionario` — como `FuncionarioPublico` e `FuncionarioCLT` — vão
 herdar o método `calcSalarioLiquido`, que não precisará sofrer nenhuma
 modificação. No entanto, caberá às subclasses implementar os três passos
 (métodos) abstratos: `calcDescontosPrevidencia`, `calcDescontosPlanoSaude` e
@@ -1132,16 +1121,18 @@ armazenar informações sobre os veículos estacionados no estacionamento.
 Suponha ainda que todos esses veículos estão armazenados em uma lista.
 Dizemos que essa lista é uma estrutura de dados **polimórfica**, pois
 ela pode armazenar objetos de classes diferentes, desde que eles sejam
-subclasses de Veiculo.
+subclasses de `Veiculo`.
 
 **Problema:** Com frequência, no sistema de estacionamentos, temos que
 realizar uma operação em todos os veículos estacionados. Como exemplo,
 podemos citar: imprimir informações sobre os veículos estacionados,
-persistir os dados dos veículos ou enviar um mail para os donos dos
+persistir os dados dos veículos ou enviar uma mensagem para os donos dos
 veículos.
 
 No entanto, o objetivo é implementar essas operações fora das classes de
 `Veiculo` por meio de um código como o seguinte:
+
+\newpage
 
 ```java
 interface Visitor {
@@ -1152,7 +1143,7 @@ interface Visitor {
 
 class PrintVisitor implements Visitor {
    public void visit(Carro c) { "imprime dados de um carro" }
-   public void visit(Onibus) o { "imprime dados de um onibus" }
+   public void visit(Onibus o) { "imprime dados de um onibus" }
    public void visit(Motocicleta m) { "imprime dados de moto" }
 }
 ```
@@ -1198,7 +1189,7 @@ são usados para escolher o método que será invocado. No entanto,
 despacho duplo somente está disponível em linguagens mais antigas e
 menos conhecidas hoje em dia, como Common Lisp.
 
-Portanto, o nosso problema é o seguinte: como simular double dispatch em
+Portanto, o nosso problema é o seguinte: como simular *double dispatch* em
 uma linguagem como Java? Se conseguirmos fazer isso, poderemos contornar
 o erro de compilação que ocorre no código que mostramos.
 
@@ -1206,7 +1197,7 @@ o erro de compilação que ocorre no código que mostramos.
 de projeto **Visitor**. Esse padrão define como "adicionar" uma
 operação em uma família de objetos, sem que seja preciso modificar as
 classes dos mesmos. Além disso, o padrão Visitor deve funcionar mesmo em
-linguagens com single dispatching de métodos, como Java.
+linguagens com *single dispatching* de métodos, como Java.
 
 Como primeiro passo, temos que implementar um método `accept` em cada
 classe da hierarquia. Na classe raiz, ele é abstrato. Nas subclasses,
@@ -1218,14 +1209,13 @@ compilador sabe que o tipo de `this` é `Carro`. Logo, ele sabe que deve
 chamar a implementação de `visit` que tem `Carro` como parâmetro. Para ser
 preciso, o método exato a ser chamado depende do tipo dinâmico do objeto
 alvo da chamada (`v`). Porém, isso não é um problema, pois significa que
-temos um caso de single dispatch, que é permitido em linguagens como
+temos um caso de *single dispatch*, que é permitido em linguagens como
 Java.
 
 ```java
 abstract class Veiculo {
   abstract public void accept(Visitor v);
 }
-
 class Carro extends Veiculo {
   ...
   public void accept(Visitor v) {
@@ -1233,7 +1223,6 @@ class Carro extends Veiculo {
   }
   ...
 }
-
 class Onibus extends Veiculo {
   ...
   public void accept(Visitor v) {
@@ -1298,7 +1287,7 @@ realizadas de forma simultânea em cima da mesma estrutura de dados.
 **Builder** é um padrão de projeto que facilita a instanciação de
 objetos que têm muitos atributos, sendo alguns deles opcionais. Se o
 valor desses atributos opcionais não for informado, eles devem ser
-inicializados com um valor default. Em vez de criar diversos métodos
+inicializados com um valor *default*. Em vez de criar diversos métodos
 construtores, um método para cada combinação possível de parâmetros,
 podemos delegar o processo de inicialização dos campos de um objeto para
 uma classe `Builder`. Um exemplo é mostrado a seguir, para uma classe
@@ -1309,8 +1298,8 @@ Livro esm = new Livro.Builder().
                   setNome("Engenharia Soft Moderna").
                   setEditora("UFMG").setAno(2020).build();
 
-Livro gof = new Livro.Builder().setName("Design Patterns")
-                  .setAutores("GoF").setAno(1995).build();
+Livro gof = new Livro.Builder().setName("Design Patterns").
+                  setAutores("GoF").setAno(1995).build();
 ```
 
 Uma primeira alternativa ao uso de um Builder seria implementar a
@@ -1365,7 +1354,7 @@ exemplos de Fábrica e Strategy:
      no nosso sistema? Existem boas chances de que tais objetos sejam,
      de fato, necessários? Se sim, então vale a pena usar uma Fábrica
      para encapsular a criação de tais objetos. Caso contrário, é
-     melhor criar os objetos usando o operador new, que é a solução
+     melhor criar os objetos usando o operador `new`, que é a solução
      nativa para criação de objetos em linguagens como Java.
 
 -   De forma semelhante, antes de incluir o padrão Strategy em uma certa
@@ -1387,7 +1376,7 @@ de padrões de projeto.
 John Ousterhout tem um comentário relacionado a essa "doença":
 
 > "O maior risco de padrões de projetos é a sua super-aplicação
-(over-application). Nem todo problema precisa ser resolvido por meio
+(*over-application*). Nem todo problema precisa ser resolvido por meio
 dos padrões de projeto; por isso, não tente forçar um problema a
 caber em um padrão de projeto quando uma abordagem tradicional
 funcionar melhor. O uso de padrões de projeto não necessariamente
@@ -1410,7 +1399,7 @@ Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao
 processo de criação de arquivos em Java. O principal motivo é que, via
 de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer
 arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por
-default, em vez de por meio de uma classe decoradora específica. Assim,
+*default*, em vez de por meio de uma classe decoradora específica. Assim,
 as classes `FileInputStream` e `BufferedInputStream` poderiam ser fundidas
 em uma única classe.
 
@@ -1484,8 +1473,7 @@ l) Permite que um objeto avise outros objetos de que seu estado mudou:
 m) Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses:   
 
 
-3\. Dentre os padrões de projeto que respondeu na questão (2), quais são
-padrões criacionais?
+3\. Dentre os padrões de projeto que respondeu na questão (2), quais são criacionais?
 
 4\. Considerando as respostas da questão (2), liste o nome de padrões de
 projeto que:
@@ -1566,7 +1554,7 @@ sequência UML que mostre os métodos executados por esse trecho de código
 11\. Suponha a API de Java para E/S. Suponha que para evitar o que
 chamamos de paternite, você fez a união das classes `FileInputStream` e
 `BufferedInputStream` em uma única classe. Como discutimos na Seção 6.13,
-o mecanismo de buffer será ativado por default na classe que você criou.
+o mecanismo de buffer será ativado por *default* na classe que você criou.
 Porém, como você tornaria possível ativar buffers na nova classe, caso
 isso fosse necessário?
 
@@ -1579,7 +1567,7 @@ edição, em 1994. Um dos novos padrões que eles mencionaram na entrevista
 é chamado de **Null Object**. Estude e explique o funcionamento e os
 benefícios desse padrão de projeto. Para isso, você vai encontrar
 diversos artigos na Web. Mas se preferir consultar um livro, uma boa
-referência é o Capítulo 25 do livro Agile Principles, Patterns, and
-Practices in C\#, de Robert C. Martin e Micah Martin. Ou então o
+referência é o Capítulo 25 do livro *Agile Principles, Patterns, and
+Practices in C\#*, de Robert C. Martin e Micah Martin. Ou então o
 refactoring chamado "Introduce Null Object" do livro de Refactoring de
 Martin Fowler.

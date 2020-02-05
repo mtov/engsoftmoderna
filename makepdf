@@ -3,6 +3,7 @@ cat cap1.md >> esm-book.md
 cat cap2.md >> esm-book.md
 cat cap3.md >> esm-book.md
 cat cap4.md >> esm-book.md
+cat cap6.md >> esm-book.md
 cat cap7.md >> esm-book.md
 cat cap8.md >> esm-book.md
 cat cap9.md >> esm-book.md
