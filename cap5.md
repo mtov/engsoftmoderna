@@ -362,7 +362,7 @@ modelo do seu carro na folha de controle.
 
 Já a próxima versão da classe é melhor, pois ela encapsula a estrutura
 de dados responsável por armazenar os veículos. Para estacionar um
-veículo, existe agora o método estaciona. Com isso, os desenvolvedores
+veículo, existe agora o método `estaciona`. Com isso, os desenvolvedores
 da classe têm liberdade para trocar de estrutura de dados, sem causar
 impacto nos seus clientes. A única restrição é que a assinatura do
 método `estaciona` deve ser preservada.

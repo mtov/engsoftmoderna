@@ -14,6 +14,68 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -47,25 +109,29 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 data-number="1" id="princípios-de-projeto" data-number="1"><span class="header-section-number">5</span> Princípios de Projeto</h1>
+<blockquote>
 <p><em>The most fundamental problem in computer science is problem decomposition: how to take a complex problem and divide it up into pieces that can be solved independently.</em> – John Ousterhout</p>
+</blockquote>
 <p>Este capítulo inicia com uma introdução ao projeto de software, na qual procuramos definir e motivar a importância desse tipo de atividade (Seção 5.1). Em seguida, discutimos diversas considerações relevantes em projetos de software. Especificamente, tratamos de Integridade Conceitual (Seção 5.2), Ocultamento de Informação (Seção 5.3), Coesão (Seção 5.4) e Acoplamento (Seção 5.5). Na Seção 5.6 discutimos um conjunto de princípios de projeto, incluindo: Responsabilidade Única, Segregação de Interfaces, Inversão de Dependências, Prefira Composição a Herança, Demeter, Aberto/Fechado e Substituição de Liskov. Por fim, tratamos de métricas para avaliar a qualidade de projetos de software (Seção 5.7).</p>
 <h2 data-number="1.1" id="introdução" data-number="1.1"><span class="header-section-number">5.1</span> Introdução</h2>
-<p>A afirmação de John Ousterhout que abre este capítulo é uma excelente definição para <strong>projeto de software</strong>. Apesar de não afirmar explicitamente, a citação assume que quando falamos de projeto estamos procurando uma solução para um determinado problema. No contexto de Engenharia de Software, esse problema consiste na implementação de um sistema que atenda aos requisitos funcionais e não-funcionais definidos por um cliente — ou Dono do Produto, para usar um termo mais moderno. Prosseguindo, Ousterhout sugere como devemos proceder para chegar a essa solução: devemos decompor, isto é, quebrar o problema inicial, que pode ser bastante complexo, em partes menores. Por fim, a frase impõe uma restrição a essa decomposição: ela deve permitir que cada uma das partes do projeto possa ser resolvida (ou implementada, no nosso contexto) de forma independente.</p>
+<p>A afirmação de John Ousterhout que abre este capítulo é uma excelente definição para <strong>projeto de software</strong>. Apesar de não afirmar explicitamente, a citação assume que quando falamos de projeto estamos procurando uma solução para um determinado problema. No contexto de Engenharia de Software, esse problema consiste na implementação de um sistema que atenda aos requisitos funcionais e não-funcionais definidos por um cliente — ou Dono do Produto, para usar um termo mais moderno. Prosseguindo, Ousterhout sugere como devemos proceder para chegar a essa solução: devemos decompor, isto é, quebrar o problema inicial, que pode ser bastante complexo, em partes menores. Por fim, a frase impõe uma restrição a essa decomposição: ela deve permitir que cada uma das partes do projeto possa ser resolvida (ou implementada) de forma independente.</p>
 <p>Essa explicação pode passar a impressão de que projeto é uma atividade simples. No entanto, no projeto de software temos que combater um grande inimigo: a <strong>complexidade</strong> que caracteriza sistemas modernos de software. Talvez, por isso, Ousterhout mencione que a decomposição de um problema em partes independentes é uma questão fundamental, não apenas em Engenharia de Software, mas em toda Ciência da Computação!</p>
 <p>Uma estratégia importante para combater a complexidade de sistemas de software passa pela criação de <strong>abstrações</strong>. Uma abstração — pelo menos em Computação — é uma representação simplificada de uma entidade. Apesar de simplificada, ela nos permite interagir e tirar proveito da entidade abstraída, sem que tenhamos que dominar todos os detalhes envolvidos na sua implementação. Funções, classes, interfaces, pacotes, bibliotecas, etc são os instrumentos clássicos oferecidos por linguagens de programação para criação de abstrações.</p>
-<p>Em resumo, o primeiro objetivo de projeto de software é decompor um problema em partes menores. Além disso, deve ser possível implementar tais partes de forma independente. Por fim, mas não menos importante, essas partes devem ser abstratas. Em outras palavras, a implementação delas pode ser extremamente desafiadora e complexa, mas apenas para os desenvolvedores envolvidos em tal tarefa. Para os demais desenvolvedores, deve ser simples usar a abstração que foi criada.</p>
+<p>Em resumo, o primeiro objetivo de projeto de software é decompor um problema em partes menores. Além disso, deve ser possível implementar tais partes de forma independente. Por fim, mas não menos importante, essas partes devem ser abstratas. Em outras palavras, a implementação delas pode ser desafiadora e complexa, mas apenas para os desenvolvedores envolvidos em tal tarefa. Para os demais desenvolvedores, deve ser simples usar a abstração que foi criada.</p>
 <h3 data-number="1.1.1" id="exemplo" data-number="1.1.1"><span class="header-section-number">5.1.1</span> Exemplo</h3>
-<p>Para ilustrar essa introdução a projetos de software, vamos usar o exemplo de um compilador. Os requisitos no caso são claros: dado um programa em uma linguagem X devemos convertê-lo em um programa em uma linguagem Y, que costuma ser a linguagem de uma máquina. Evidentemente, o projeto de um compilador não é trivial. Porém, após anos de pesquisa, descobriu-se uma solução — ou projeto -- para esse tipo de sistema, a qual é ilustrada no diagrama a seguir:</p>
-<p><img src="media/image1.png" style="width:6.97083in;height:1.125in" /></p>
-<p>O problema inicial — projetar um compilador — foi decomposto em quatro problemas menores, que vamos descrever brevemente neste parágrafo. Primeiro, temos que implementar um analisador léxico, que vai ler o arquivo de entrada e dividi-lo em tokens (como if, for, while, x, +, etc).</p>
-<p>Depois, temos que implementar um analisador sintático, que vai analisar as tokens e verificar se elas respeitam a gramática da linguagem fonte. Feito isso, ele deve <q>hierarquizar</q> essas tokens, isto é, transformá-las em uma estrutura conhecida como árvore de sintaxe abstrata. Por fim, temos o analisador semântico, que detecta, por exemplo, erros de tipo; e o gerador de código, que vai converter a representação do programa para uma linguagem de mais baixo nível, que possa ser executada por um determinado hardware.</p>
+<p>Para ilustrar essa introdução a projetos de software, vamos usar o exemplo de um compilador. Os requisitos no caso são claros: dado um programa em uma linguagem X devemos convertê-lo em um programa em uma linguagem Y, que costuma ser a linguagem de uma máquina. No entanto, o projeto de um compilador não é trivial. Então, após anos de pesquisa, descobriu-se uma solução — ou projeto — para esse tipo de sistema, a qual é ilustrada na figura da próxima página.</p>
+<figure>
+<img src="figs/cap5/compiler-design.svg" style="width:100.0%" alt="" /><figcaption>Principais módulos de um compilador</figcaption>
+</figure>
+<p>O problema inicial — projetar um compilador — foi decomposto em quatro problemas menores, que vamos descrever brevemente neste parágrafo. Primeiro, temos que implementar um analisador léxico, que vai ler o arquivo de entrada e dividi-lo em tokens (como <code>if</code>, <code>for</code>, <code>while</code>, <code>x</code>, <code>+</code>, etc).</p>
+<p>Depois, temos que implementar um analisador sintático, que vai analisar as tokens e verificar se elas respeitam a gramática da linguagem fonte. Feito isso, ele deve <q>hierarquizar</q> essas tokens, isto é, transformá-las em uma estrutura conhecida como Árvore de Sintaxe Abstrata (AST). Por fim, temos o analisador semântico, que detecta, por exemplo, erros de tipo; e o gerador de código, que vai converter a representação do programa para uma linguagem de mais baixo nível, que possa ser executada por um determinado hardware.</p>
 <p>Essa descrição do projeto de um compilador é bastante simples e resumida. Mesmo assim, ela deixa claro o primeiro objetivo do projeto de um software: decompor um problema em partes menores. No nosso exemplo, o problema inicial tornou-se mais concreto, pois agora temos quatro problemas menores para resolver. Isto é, temos que (1) projetar e implementar um analisador léxico, (2) um analisador sintático, (3) um analisador semântico e (4) um gerador de código. Ainda existem desafios importantes em cada uma dessas tarefas, mas estamos mais perto de uma solução para o problema proposto inicialmente.</p>
 <p>Continuando com o exemplo, vamos agora focar na implementação de um analisador léxico, a qual envolve certos desafios. No entanto, eles devem ser uma preocupação apenas dos desenvolvedores que ficaram responsáveis por essa parte do sistema. Para os demais desenvolvedores, deve ser possível usar o analisador léxico da forma mais simples possível. Por exemplo, apenas chamando uma função que retorna a próxima token do arquivo de entrada, como no seguinte código:</p>
-<p><code>String token = Scanner.next\_token();</code></p>
-<p>Em resumo, a complexidade envolvida na implementação de um analisador léxico está abstraída (ou, se preferir, encapsulada) na função next_token(), cujo uso é muito simples.</p>
-<h3 data-number="1.1.2" id="o-que-vamos-estudar" data-number="1.1.2"><span class="header-section-number">5.1.2</span> O que vamos estudar?</h3>
-<p>É verdade que o projeto de sistemas de software depende de experiência e, em alguma medida, também de talento e criatividade. No entanto, existem algumas propriedades importantes no projeto de sistemas. Por isso, estudar e conhecer essas <strong>propriedades de projeto</strong> pode ajudar na concepção de sistemas com maior qualidade. No restante deste capítulo, iremos estudar as seguintes propriedades de projetos de software: integridade conceitual, ocultamento de informação, coesão e acoplamento. Para tornar o estudo mais prático, iremos, em seguida, enunciar alguns <strong>princípios de projeto</strong>, os quais representam diretrizes para se garantir que um projeto atende a uma determinada propriedade. Finalmente, vamos descrever algumas métricas para quantificar propriedades como coesão, acoplamento, complexidade, etc.</p>
-<p>Aviso: Os assuntos discutidos neste capítulo aplicam-se a <strong>projeto orientado a objetos</strong>. Ou seja, a suposição é que o sistema será implementado em linguagens como Java, C++, C#, Python, Go, Ruby, etc. Certamente, alguns dos temas discutidos valem para projetos que serão implementados em linguagens estruturadas (como C) ou em linguagens funcionais (como Haskell, Clojure ou Erlang). Mas não podemos garantir que oferecemos uma cobertura completa dos aspectos de projeto mais importantes em tais casos.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="bu">String</span> token = <span class="bu">Scanner</span>.<span class="fu">next_token</span>();</span></code></pre></div>
+<p>Em resumo, a complexidade envolvida na implementação de um analisador léxico está abstraída (ou, se preferir, encapsulada) na função <code>next_token()</code>, cujo uso é bem simples.</p>
+<h3 data-number="1.1.2" id="o-que-vamos-estudar" data-number="1.1.2"><span class="header-section-number">5.1.2</span> O Que Vamos Estudar?</h3>
+<p>É verdade que o projeto de sistemas de software depende de experiência e, em alguma medida, também de talento e criatividade. No entanto, existem algumas propriedades importantes no projeto de sistemas. Por isso, estudar e conhecer essas <strong>propriedades de projeto</strong> pode ajudar na concepção de sistemas com maior qualidade. No restante deste capítulo, iremos estudar as seguintes propriedades de projetos de software: integridade conceitual, ocultamento de informação, coesão e acoplamento. Para tornar o estudo mais prático, iremos, em seguida, enunciar alguns <strong>princípios de projeto</strong>, os quais representam diretrizes para se garantir que um projeto atende a determinadas propriedades. Para concluir, vamos descrever métricas para quantificar propriedades como coesão, acoplamento e complexidade.</p>
+<p><strong>Aviso:</strong> Os assuntos discutidos neste capítulo aplicam-se a <strong>projeto orientado a objetos</strong>. Ou seja, a suposição é que o sistema será implementado em linguagens como Java, C++, C#, Python, Go, Ruby, etc. Certamente, alguns dos temas discutidos valem para projetos que serão implementados em linguagens estruturadas (como C) ou em linguagens funcionais (como Haskell, Clojure ou Erlang). Mas não podemos garantir que oferecemos uma cobertura completa dos aspectos de projeto mais importantes em tais casos.</p>
 <h2 data-number="1.2" id="integridade-conceitual" data-number="1.2"><span class="header-section-number">5.2</span> Integridade Conceitual</h2>
 <p>Integridade conceitual é uma propriedade de projeto proposta por Frederick Brooks — o mesmo da Lei de Brooks mencionada no Capítulo 1. O princípio foi enunciado em 1975, na primeira edição do livro <em>The Mythical Man-Month</em> (<a href="https://dl.acm.org/citation.cfm?id=540031">link</a>). Brooks defende que um sistema não pode ser um amontoado de funcionalidades, sem coerência e coesão entre elas. Integridade conceitual é importante porque facilita o uso e entendimento de um sistema por parte de seus usuários. Por exemplo, com integridade conceitual, o usuário acostumado a usar uma parte de um sistema se sente confortável a usar uma outra parte, pois as funcionalidades e a interface implementadas ao longo do produto são consistentes.</p>
 <p>Para citar um contra-exemplo, isto é, um caso de ausência de integridade conceitual, vamos assumir um sistema que usa tabelas para apresentar seus resultados. Dependendo da tela do sistema na qual são usadas, essas tabelas possuem leiautes diferentes, em termos de tamanho de fontes, uso de negrito, espaçamento entre linhas, etc. Além disso, em algumas tabelas pode-se ordenar os dados clicando-se no título das colunas, mas em outras tabelas essa funcionalidade não está disponível. Por fim, os valores são mostrados em moedas distintas. Em algumas tabelas, os valores referem-se a reais; em outras tabelas, eles referem-se a dólares. Essa falta de padronização é um sinal de falta de integridade conceitual e, como afirmamos, ela adiciona complexidade acidental no uso e entendimento do sistema.</p>
@@ -80,133 +146,110 @@
 <p>Sempre que falamos de integridade conceitual, surge uma discussão sobre se o princípio requer que uma autoridade central — um único arquiteto ou gerente de produto, por exemplo — seja responsável por decidir quais funcionalidades serão incluídas no sistema. Sobre essa questão, temos que ressaltar que essa pré-condição — o projeto ser liderado por uma pessoa apenas — não faz parte da definição de integridade conceitual. No entanto, existe um certo consenso de que decisões importantes de projeto não devem ficar nas mãos de um grande comitê, onde cada membro tem direito a um voto. Quando isso ocorre, a tendência é a produção de sistemas com mais funcionalidades do que o necessário, isto é, sistemas sobrecarregados (<em>bloated systems</em>). Por exemplo, um grupo pode defender uma funcionalidade A e outro grupo defender uma funcionalidade B. Talvez, as duas não sejam necessárias; porém, para obter consenso, o comitê acaba decidindo que ambas devem ser implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a integridade conceitual do sistema ficará comprometida. Existe uma frase que resume o que acabamos de discutir; ela afirma que <q>um camelo é um cavalo que foi projetado por um comitê</q>.</p>
 <p>Nos parágrafos anteriores, enfatizamos o impacto da falta de integridade conceitual nos usuários finais de um sistema. No entanto, o princípio se aplica também ao design e código de um sistema. Nesse caso, os afetados são os desenvolvedores, que terão mais dificuldade para entender, manter e evoluir o sistema. A seguir, mencionamos alguns exemplos de falta de integridade conceitual em nível de código ou design:</p>
 <ul>
-<li><p>Quando uma parte do sistema usa um padrão de nomes para variáveis (por exemplo, <em>camel case</em>, como em <em>notaTotal</em>), enquanto em outra parte usa-se um outro padrão (por exemplo, <em>snake case</em>, como em <em>nota_total</em>).</p></li>
+<li><p>Quando uma parte do sistema usa um padrão de nomes para variáveis (por exemplo, <em>camel case</em>, como em <code>notaTotal</code>), enquanto em outra parte usa-se um outro padrão (por exemplo, <em>snake case</em>, como em <code>nota_total</code>).</p></li>
 <li><p>Quando uma parte do sistema usa um determinado framework para manipulação de páginas Web, enquanto em outra parte usa-se um segundo framework ou então uma versão diferente do primeiro framework.</p></li>
 <li><p>Quando em uma parte do sistema resolve-se um problema usando-se uma estrutura de dados X, enquanto que, em outra parte, um problema parecido é resolvido por meio de uma estrutura Y.</p></li>
-<li><p>Quando as funções de uma parte do sistema que precisam de um determinada informação — por exemplo, o endereço de um servidor Web — a obtém diretamente de um arquivo de configuração. Porém, em outras funções, de outras partes do sistema, a mesma informação deve ser passada como parâmetro.</p></li>
+<li><p>Quando funções de uma parte do sistema que precisam de uma determinada informação — por exemplo, o endereço de um servidor — a obtém diretamente de um arquivo de configuração. Porém, em outras funções, de outras partes do sistema, a mesma informação deve ser passada como parâmetro.</p></li>
 </ul>
-<p>Esses exemplos revelam uma falta de padronização e, portanto, de integridade conceitual. Eles constituem um problema porque tornam mais difícil um desenvolvedor acostumado a manter uma parte do sistema ser alocado para manter uma outra parte.</p>
+<p>Esses exemplos revelam uma falta de padronização e, logo, de integridade conceitual. Eles são um problema porque tornam mais difícil um desenvolvedor acostumado a manter uma parte do sistema ser alocado para manter uma outra parte.</p>
 <p><strong>Mundo Real</strong>: Samuel Roso e Daniel Jackson, pesquisadores do MIT, nos EUA, dão um exemplo real de sistema que implementa duas funcionalidades com propósitos semelhantes — o que também revela uma falta de integridade conceitual (<a href="https://doi.org/10.1145/2509578.2509584">link</a>). Segundo eles, em um conhecido sistema de blogs, quando um usuário incluía um sinal de interrogação no título de um post, uma janela era aberta, solicitando que ele informasse se desejava receber respostas para esse post. No entanto, os pesquisadores argumentam que essa possibilidade deixava os usuários confusos, pois já existia no sistema a possibilidade de comentar posts. Logo, a confusão acontecia devido a duas funcionalidades parecidas: comentários (em posts normais) e respostas (em posts cujos títulos terminavam com um ponto de interrogação).</p>
-<h2 data-number="1.3" id="ocultamento-de-informação" data-number="1.3"><span class="header-section-number">5.3</span> 5.3 Ocultamento de Informação</h2>
+<h2 data-number="1.3" id="ocultamento-de-informação" data-number="1.3"><span class="header-section-number">5.3</span> Ocultamento de Informação</h2>
 <p>Essa propriedade, uma tradução da expressão <em>information hiding</em>, foi discutida pela primeira vez em 1972, por David Parnas, em um dos artigos mais importantes e influentes da área de Engenharia de Software, de todos os tempos, cujo título é <em>On the criteria to be used in decomposing systems into modules</em> (<a href="https://dl.acm.org/citation.cfm?id=361623">link</a>). O resumo do artigo começa da seguinte forma:</p>
 <blockquote>
-<p><q>Este artigo discute modularização como um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento dos mesmos. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos.</q></p>
+<p><q>Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos.</q></p>
 </blockquote>
-<p><strong>Aviso</strong>: Parnas usa o termo módulo no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo <strong>classe</strong>, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.</p>
-<p>Ocultamento de informação traz as seguintes vantagens para o desenvolvimento de um sistema:</p>
+<p><strong>Aviso</strong>: Parnas usa o termo <em>módulo</em> no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo <strong>classe</strong>, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.</p>
+<p>Ocultamento de informação traz as seguintes vantagens para um sistema:</p>
 <ul>
-<li><p>Desenvolvimento em paralelo. Suponha que um sistema X foi implementado por meio de classes C1, C2, …, Cn. Quando essas classes ocultam suas principais informações, fica mais fácil implementá-las em paralelo, por desenvolvedores diferentes. Consequentemente, teremos uma redução no tempo total de implementação do sistema.</p></li>
-<li><p>Flexibilidade a mudanças. Por exemplo, suponha que descobrimos que a classe Ci é responsável pelos problemas de desempenho do sistema. Quando detalhes de implementação de Ci são ocultados do resto do sistema, fica mais fácil trocar sua implementação por uma classe Ci', que use estruturas de dados e algoritmos mais eficientes. Essa troca também é mais segura, pois como as classes são independentes, diminui-se o risco de a mudança introduzir bugs em outras classes.</p></li>
-<li><p>Facilidade de entendimento. Por exemplo, um novo desenvolvedor contratado pela empresa pode ser alocado para trabalhar em algumas classes apenas. Portanto, ele não precisará entender toda a complexidade do sistema, mas apenas a implementação das classes pelas quais ficou responsável.</p></li>
+<li><p><strong>Desenvolvimento em paralelo.</strong> Suponha que um sistema X foi implementado por meio de classes C1, C2, …, Cn. Quando essas classes ocultam suas principais informações, fica mais fácil implementá-las em paralelo, por desenvolvedores diferentes. Consequentemente, teremos uma redução no tempo total de implementação do sistema.</p></li>
+<li><p><strong>Flexibilidade a mudanças.</strong> Por exemplo, suponha que descobrimos que a classe Ci é responsável pelos problemas de desempenho do sistema. Quando detalhes de implementação de Ci são ocultados do resto do sistema, fica mais fácil trocar sua implementação por uma classe Ci', que use estruturas de dados e algoritmos mais eficientes. Essa troca também é mais segura, pois como as classes são independentes, diminui-se o risco de a mudança introduzir bugs em outras classes.</p></li>
+<li><p><strong>Facilidade de entendimento.</strong> Por exemplo, um novo desenvolvedor contratado pela empresa pode ser alocado para trabalhar em algumas classes apenas. Portanto, ele não precisará entender toda a complexidade do sistema, mas apenas a implementação das classes pelas quais ficou responsável.</p></li>
 </ul>
 <p>No entanto, para se atingir os benefícios acima, classes devem satisfazer à seguinte condição (ou critério): elas devem esconder decisões de projeto que são sujeitas a mudanças. Devemos entender decisão de projeto como qualquer aspecto de projeto da classe, como os requisitos que ela implementa ou os algoritmos e estruturas de dados que serão usados no seu código. Portanto, ocultamento de informação recomenda que classes devem esconder detalhes de implementação que estão sujeitos a mudanças. Modernamente, os atributos e métodos que uma classe pretende encapsular são declarados com o modificador de visibilidade <strong>privado</strong>, disponível em linguagens como Java, C++, C# e Ruby.</p>
 <p>Porém, se uma classe encapsular toda a sua implementação ela não será útil. Dito de outra forma, uma classe para ser útil deve tornar alguns de seus métodos públicos, isto é, permitir que eles possam ser chamados por código externo. Código externo que chama métodos de uma classe é dito ser <strong>cliente</strong> da classe. Dizemos também que o conjunto de métodos públicos de uma classe define a sua <strong>interface</strong>. A definição da interface de uma classe é muito importante, pois ela constitui a sua parte visível.</p>
 <p>Interfaces devem ser estáveis, pois mudanças na interface de uma classe podem implicar em atualizações em seus clientes. Para ser mais claro, suponha uma classe Math, com métodos que realizam operações matemáticas. Suponha um método sqrt, que calcula a raiz quadrada de seu parâmetro. Suponha ainda que a assinatura desse método seja alterada — para, por exemplo, retornar uma exceção caso o valor do parâmetro seja negativo. Essa alteração terá impacto em todo código cliente do método sqrt, que deverá ser alterado para tratar a nova exceção.</p>
 <h3 data-number="1.3.1" id="exemplo-1" data-number="1.3.1"><span class="header-section-number">5.3.1</span> Exemplo</h3>
 <p>Suponha um sistema para controle de estacionamentos. Suponha ainda que, em uma primeira versão, a classe principal desse sistema seja a seguinte:</p>
-<table style="width:79%;">
-<colgroup>
-<col style="width: 79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>import</strong> java.util.Hashtable;</p>
-<p><strong>public</strong> <strong>class</strong> Estacionamento {</p>
-<p><strong>public</strong> Hashtable&lt;String, String&gt; veiculos;</p>
-<p><strong>public</strong> Estacionamento() {</p>
-<p>veiculos = <strong>new</strong> Hashtable&lt;String, String&gt;();</p>
-<p>}</p>
-<p><strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) {</p>
-<p>Estacionamento e = <strong>new</strong> Estacionamento();</p>
-<p>e.veiculos.put(<q>TCP-7030</q>, <q>Uno</q>);</p>
-<p>e.veiculos.put(<q>BNF-4501</q>, <q>Gol</q>);</p>
-<p>e.veiculos.put(<q>JKL-3481</q>, <q>Corsa</q>);</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Essa classe tem um problema de exposição excessiva de informação ou, em outras palavras, ela não oculta estruturas que podem mudar no futuro. Especificamente, a tabela hash que armazena os veículos estacionados no estacionamento é pública. Com isso, clientes — como o método main — têm acesso direto a ela para, por exemplo, adicionar veículos no estacionamento. Se, futuramente, decidirmos usar uma outra estrutura de dados para armazenar os veículos, todos os clientes deverão ser modificados.</p>
-<p>Suponha que o sistema de estacionamento fosse manual, com o nome dos veículos anotados em uma folha de papel. Fazendo uma comparação, essa primeira versão da classe Estacionamento corresponderia — no caso desse sistema manual — ao cliente do estacionamento, após estacionar seu carro, entrar na cabine de controle e escrever ele mesmo a placa e o modelo do seu carro na folha de controle.</p>
-<p>Já a próxima versão da classe é melhor, pois ela encapsula a estrutura de dados responsável por armazenar os veículos. Para estacionar um veículo, existe agora o método estaciona. Com isso, os desenvolvedores da classe têm liberdade para trocar de estrutura de dados, sem causar impacto nos seus clientes. A única restrição é que a assinatura do método estaciona deve ser preservada.</p>
-<table style="width:89%;">
-<colgroup>
-<col style="width: 88%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>import</strong> java.util.Hashtable;</p>
-<p><strong>public class</strong> Estacionamento {</p>
-<p><strong>private</strong> Hashtable&lt;String,String&gt; veiculos;</p>
-<p><strong>public</strong> Estacionamento() {</p>
-<p>veiculos = <strong>new</strong> Hashtable&lt;String, String&gt;();</p>
-<p>}</p>
-<p><strong>public</strong> <strong>void</strong> estaciona(String veiculo, String placa) {</p>
-<p>veiculos.put(veiculo, placa);</p>
-<p>}</p>
-<p><strong>public</strong> <strong>static</strong> <strong>void</strong> main(String[] args) {</p>
-<p>Estacionamento e = <strong>new</strong> Estacionamento();</p>
-<p>e.estaciona(<q>TCP-7030</q>, <q>Uno</q>);</p>
-<p>e.estaciona(<q>BNF-4501</q>, <q>Gol</q>);</p>
-<p>e.estaciona(<q>JKL-3481</q>, <q>Corsa</q>);</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Em resumo, com essa nova versão ocultamos uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibilizamos uma interface estável para os clientes da classe — representada pelo método estaciona, que só requer dois parâmetros do tipo String.</p>
-<p><strong>Mundo Real</strong>: Em 2002, consta que Jeff Bezos, dono da Amazon, enviou um mail para todos os desenvolvedores da empresa, com um conjunto de diretrizes para projeto de software que eles deveriam obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar mais clara em Português; essa mesma mensagem é mencionada no livro de Fox e Patterson (<a href="http://www.saasbook.info/">link</a>, Capítulo 1, Seção 1.4)):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">import</span><span class="im"> java.util.Hashtable;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">public</span> <span class="kw">class</span> Estacionamento{</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">public</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt; veiculos;</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">public</span> <span class="fu">Estacionamento</span>(){</span>
+<span id="cb2-8"><a href="#cb2-8"></a>    veiculos = <span class="kw">new</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt;();</span>
+<span id="cb2-9"><a href="#cb2-9"></a>  }</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</span>
+<span id="cb2-12"><a href="#cb2-12"></a>    Estacionamento e = <span class="kw">new</span> <span class="fu">Estacionamento</span>();</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;TCP-7030&quot;</span>, <span class="st">&quot;Uno&quot;</span>);</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;BNF-4501&quot;</span>, <span class="st">&quot;Gol&quot;</span>);</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;JKL-3481&quot;</span>, <span class="st">&quot;Corsa&quot;</span>);</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  }</span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a>}</span></code></pre></div>
+<p>Essa classe tem um problema de exposição excessiva de informação ou, em outras palavras, ela não oculta estruturas que podem mudar no futuro. Especificamente, a tabela hash que armazena os veículos estacionados no estacionamento é pública. Com isso, clientes — como o método <code>main</code> — têm acesso direto a ela para, por exemplo, adicionar veículos no estacionamento. Se, futuramente, decidirmos usar uma outra estrutura de dados para armazenar os veículos, todos os clientes deverão ser modificados.</p>
+<p>Suponha que o sistema de estacionamento fosse manual, com o nome dos veículos anotados em uma folha de papel. Fazendo uma comparação, essa primeira versão da classe <code>Estacionamento</code> corresponderia — no caso desse sistema manual — ao cliente do estacionamento, após estacionar seu carro, entrar na cabine de controle e escrever ele mesmo a placa e o modelo do seu carro na folha de controle.</p>
+<p>Já a próxima versão da classe é melhor, pois ela encapsula a estrutura de dados responsável por armazenar os veículos. Para estacionar um veículo, existe agora o método <code>estaciona</code>. Com isso, os desenvolvedores da classe têm liberdade para trocar de estrutura de dados, sem causar impacto nos seus clientes. A única restrição é que a assinatura do método <code>estaciona</code> deve ser preservada.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">import</span><span class="im"> java.util.Hashtable;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">public</span> <span class="kw">class</span> Estacionamento{</span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="kw">private</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>,<span class="bu">String</span>&gt; veiculos;</span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="kw">public</span> <span class="fu">Estacionamento</span>(){</span>
+<span id="cb3-8"><a href="#cb3-8"></a>    veiculos = <span class="kw">new</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt;();</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  }</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">estaciona</span>(<span class="bu">String</span> veiculo, <span class="bu">String</span> placa){</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    veiculos.<span class="fu">put</span>(veiculo, placa);</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  }</span>
+<span id="cb3-14"><a href="#cb3-14"></a></span>
+<span id="cb3-15"><a href="#cb3-15"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args){</span>
+<span id="cb3-16"><a href="#cb3-16"></a>    Estacionamento e = <span class="kw">new</span> <span class="fu">Estacionamento</span>();</span>
+<span id="cb3-17"><a href="#cb3-17"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;TCP-7030&quot;</span>, <span class="st">&quot;Uno&quot;</span>);</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;BNF-4501&quot;</span>, <span class="st">&quot;Gol&quot;</span>);</span>
+<span id="cb3-19"><a href="#cb3-19"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;JKL-3481&quot;</span>, <span class="st">&quot;Corsa&quot;</span>);</span>
+<span id="cb3-20"><a href="#cb3-20"></a>  }</span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a>}</span></code></pre></div>
+<p>Em resumo, essa nova versão oculta uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibiliza uma interface estável para os clientes da classe — representada pelo método <code>estaciona</code>, que só requer dois parâmetros do tipo <code>String</code>.</p>
+<p><strong>Mundo Real</strong>: Em 2002, consta que Jeff Bezos, dono da Amazon, enviou um mail para todos os desenvolvedores da empresa, com um conjunto de diretrizes para projeto de software que eles deveriam obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar mais clara em Português; essa mesma mensagem é mencionada no livro de Fox e Patterson (<a href="http://www.saasbook.info/">link</a>, Cap. 1, Seção 1.4):</p>
 <ol type="1">
 <li><p>Todos os times devem, daqui em diante, garantir que os sistemas exponham seus dados e funcionalidades por meio de interfaces.</p></li>
 <li><p>Os sistemas devem se comunicar apenas por meio de interfaces.</p></li>
-<li><p>Não deve haver outra forma de comunicação: sem links diretos,<br />
-sem leituras diretas em bases de dados de outros sistemas, sem memória compartilha ou variáveis globais ou qualquer tipo de<br />
-back-doors. A única forma de comunicação permitida é por meio<br />
-de interfaces.</p></li>
-<li><p>Não importa qual tecnologia vocês vão usar: HTTP, CORBA, Pubsub, protocolos específicos — isso não interessa. Bezos não<br />
-liga para isso.</p></li>
-<li><p>Todas as interfaces, sem exceção, devem ser projetadas para uso<br />
-externo. Ou seja, os times devem planejar e projetar<br />
-interfaces pensando em usuários externos. Sem nenhuma exceção<br />
-à regra.</p></li>
+<li><p>Não deve haver outra forma de comunicação: sem links diretos, sem leituras diretas em bases de dados de outros sistemas, sem memória compartilha ou variáveis globais ou qualquer tipo de back-doors. A única forma de comunicação permitida é por meio de interfaces.</p></li>
+<li><p>Não importa qual tecnologia vocês vão usar: HTTP, CORBA, Pubsub, protocolos específicos — isso não interessa. Bezos não liga para isso.</p></li>
+<li><p>Todas as interfaces, sem exceção, devem ser projetadas para uso externo. Ou seja, os times devem planejar e projetar interfaces pensando em usuários externos. Sem nenhuma exceção à regra.</p></li>
 <li><p>Quem não seguir essas recomendações está demitido.</p></li>
-<li><p>Obrigado; tenham um excelente dia!<br />
-</p></li>
+<li><p>Obrigado; tenham um excelente dia!</p></li>
 </ol>
-<p>As recomendações de Bezos — contidas no mail que reproduzimos — podem ser resumidas da seguinte forma: todos os desenvolvedores da Amazon deveriam, após receber a mensagem, seguir o princípio de ocultamento de informação, enunciado por David Parnas em 1972.</p>
 <h3 data-number="1.3.2" id="getters-e-setters" data-number="1.3.2"><span class="header-section-number">5.3.2</span> Getters e Setters</h3>
-<p>Métodos get e set — muitas vezes chamados apenas de getters e setters — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
-<p>Veja um exemplo a seguir, onde foram criados métodos get e set para acessar o atributo matricula da classe Aluno.</p>
-<table style="width:60%;">
-<colgroup>
-<col style="width: 59%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Aluno {</p>
-<p><strong>private</strong> int matricula;</p>
-<p>...</p>
-<p><strong>public</strong> int getMatricula() {</p>
-<blockquote>
-<p><strong>return</strong> matricula;</p>
-</blockquote>
-<p>}</p>
-<p><strong>public</strong> setMatricula(int matricula) {</p>
-<blockquote>
-<p>this.matricula = matricula;</p>
-</blockquote>
-<p>}</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados apenas de <em>getters</em> e <em>setters</em> — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
+<p>Veja um exemplo a seguir, onde métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">class</span> Aluno{</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="kw">private</span> <span class="dt">int</span> matricula;</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>  ...</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getMatricula</span>(){</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="kw">return</span> matricula;</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  }</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="kw">public</span> <span class="fu">setMatricula</span>(<span class="dt">int</span> matricula){</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="kw">this</span>.<span class="fu">matricula</span> = matricula;  </span>
+<span id="cb4-13"><a href="#cb4-13"></a>  }</span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a>  ...</span>
+<span id="cb4-16"><a href="#cb4-16"></a></span>
+<span id="cb4-17"><a href="#cb4-17"></a>}</span></code></pre></div>
 <p>No entanto, getters e setters não são uma garantia de que estamos ocultando dados da classe, como mencionado em alguns livros e discussões pela Internet. Pelo contrário, eles são um instrumento de liberação de informação (<em>information leakage</em>). Veja o que John Ousterhout diz sobre esses métodos (<a href="https://dl.acm.org/citation.cfm?id=3288797">link</a>, Seção 19.6):</p>
 <blockquote>
-<p><q>Embora possa fazer sentido o uso de getters e setters se você precisar expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe.</q></p>
+<p><q>Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe.</q></p>
 </blockquote>
-<p>Em resumo: certifique-se de que é mesmo imprescindível liberar informação privativa de uma classe. Se isso for, de fato, importante, considere a ideia de implementar essa liberação por meio de getters e setters — e não tornando o atributo público.</p>
-<p>No nosso exemplo, vamos então assumir que é imprescindível que os clientes possam ler e alterar a matrícula de alunos. Assim, é melhor que o acesso a esse atributo seja feito por meio de métodos get e set, pois eles constituem uma interface mais estável para tal acesso, pelos seguintes motivos:</p>
+<p>Em resumo: certifique-se de que é imprescindível liberar informação privativa de uma classe. Se isso for, de fato, importante, considere a ideia de implementar essa liberação por meio de getters e setters — e não tornando o atributo público.</p>
+<p>No nosso exemplo, vamos então assumir que é imprescindível que os clientes possam ler e alterar a matrícula de alunos. Assim, é melhor que o acesso a esse atributo seja feito por meio de métodos <code>get</code> e <code>set</code>, pois eles constituem uma interface mais estável para tal acesso, pelos seguintes motivos:</p>
 <ul>
 <li><p>No futuro, podemos precisar de recuperar a matrícula de um banco de dados, ou seja, ela não estará mais em memória. Essa nova lógica poderá, então, ser implementada no método get, sem impactar nenhum cliente da classe.</p></li>
 <li><p>No futuro, podemos precisar de adicionar um dígito verificador nas matrículas. Essa lógica — cálculo e incorporação do dígito verificador — poderá ser implementada no método set, sem impactar os seus clientes.</p></li>
@@ -223,58 +266,31 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <p><strong>Separação de interesses</strong> (<em>separation of concerns</em>) é uma outra propriedade desejável em projeto de software, a qual é muito semelhante ao conceito de coesão. Ela defende que uma classe deve implementar apenas um <strong>interesse</strong> (<em>concern</em>). Nesse contexto, o termo interesse se refere a qualquer funcionalidade, requisito ou responsabilidade da classe. Portanto, as seguintes recomendações são equivalentes: (1) uma classe deve ter uma única responsabilidade; (2) uma classe deve implementar um único interesse; (3) uma classe deve ser coesa.</p>
 <h3 data-number="1.4.1" id="exemplos" data-number="1.4.1"><span class="header-section-number">5.4.1</span> Exemplos</h3>
 <p><strong>Exemplo 1:</strong> A discussão anterior foi voltada para coesão de classes. No entanto, o conceito se adapta também a métodos ou funções. Por exemplo, suponha uma função como a seguinte:</p>
-<table style="width:57%;">
-<colgroup>
-<col style="width: 56%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>float sin_or_cos(double x, int op) {</p>
-<p><strong>if</strong> (op == 1)</p>
-<p><q>calcula e retorna seno de x</q></p>
-<p><strong>else</strong></p>
-<p><q>calcula e retorna cosseno de x</q></p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="dt">float</span> <span class="fu">sin_or_cos</span>(<span class="dt">double</span> x, <span class="dt">int</span> op){</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="kw">if</span> (op == <span class="dv">1</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="st">&quot;calcula e retorna seno de x&quot;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="kw">else</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="st">&quot;calcula e retorna cosseno de x&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>}</span></code></pre></div>
 <p>Essa função — que consiste em um exemplo extremo e, queremos acreditar, pouco comum na prática — apresenta um problema sério de coesão, pois ela faz duas coisas: calcula o seno ou o cosseno de seu argumento. O recomendável, em casos como esse, é criar funções separadas para cada uma dessas tarefas.</p>
 <p><strong>Exemplo 2:</strong> Suponha agora a seguinte classe:</p>
-<table style="width:38%;">
-<colgroup>
-<col style="width: 37%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Stack&lt;T&gt; {</p>
-<p>boolean empty() { ... }</p>
-<p>T pop() { ... }</p>
-<p>push (T) { ... }</p>
-<p>int size() { ... }</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">class</span> <span class="bu">Stack</span>&lt;T&gt;{</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="dt">boolean</span> <span class="fu">empty</span>(){ <span class="kw">... </span>}</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  T <span class="fu">pop</span>(){ <span class="kw">... </span>}</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">push</span> (T){ <span class="kw">... </span>}</span>
+<span id="cb6-5"><a href="#cb6-5"></a>  <span class="dt">int</span> <span class="fu">size</span>(){ <span class="kw">... </span>}</span>
+<span id="cb6-6"><a href="#cb6-6"></a>}</span></code></pre></div>
 <p>Trata-se de uma classe coesa, pois todos os seus métodos implementam operações importantes em uma estrutura de dados do tipo Pilha.</p>
-<p><strong>Exemplo 3:</strong> Para concluir a lista de exemplos, vamos voltar à classe Estacionamento, na qual foram adicionados quatro atributos com informações sobre o gerente do estacionamento:</p>
-<table style="width:56%;">
-<colgroup>
-<col style="width: 55%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Estacionamento {</p>
-<p>...</p>
-<p><strong>private</strong> String nome_gerente;</p>
-<p><strong>private</strong> String fone_gerente;</p>
-<p><strong>private</strong> String cpf_gerente;</p>
-<p><strong>private</strong> String endereco_gerente;</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>A principal responsabilidade dessa classe é gerenciar a operação do estacionamento, incluindo métodos como estaciona(), calcula_preco(), libera_veiculo(), etc. Portanto, ela não deveria assumir responsabilidades relacionadas com o gerenciamento dos funcionários do estacionamento. Para isso, poderia ser criada uma segunda classe, chamada, por exemplo, Funcionario.</p>
+<p><strong>Exemplo 3:</strong> Para concluir a lista de exemplos, vamos voltar à classe <code>Estacionamento</code>, na qual foram adicionados agora quatro atributos com informações sobre o gerente do estacionamento:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">class</span> Estacionamento{</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  ...</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="kw">private</span> <span class="bu">String</span> nome_gerente;</span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="kw">private</span> <span class="bu">String</span> fone_gerente;</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="kw">private</span> <span class="bu">String</span> cpf_gerente;</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="kw">private</span> <span class="bu">String</span> endereco_gerente;</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  ...</span>
+<span id="cb7-8"><a href="#cb7-8"></a>}  </span></code></pre></div>
+<p>A principal responsabilidade dessa classe é gerenciar a operação do estacionamento, incluindo métodos como <code>estaciona()</code>, <code>calcula_preco()</code>, <code>libera_veiculo()</code>, etc. Portanto, ela não deveria assumir responsabilidades relacionadas com o gerenciamento dos funcionários do estacionamento. Para isso, poderia ser criada uma segunda classe, chamada, por exemplo, <code>Funcionario</code>.</p>
 <h2 data-number="1.5" id="acoplamento" data-number="1.5"><span class="header-section-number">5.5</span> Acoplamento</h2>
 <p>Acoplamento é a força (<em>strength</em>) da conexão entre duas classes. Apesar de parecer simples, o conceito possui algumas nuances, as quais derivam da existência de dois tipos de acoplamento entre classes: acoplamento aceitável e acoplamento ruim.</p>
 <p>Dizemos que existe um <strong>acoplamento aceitável</strong> de uma classe A para uma classe B quando:</p>
@@ -292,115 +308,99 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <p>Resumindo: acoplamento pode ser de grande utilidade, principalmente quando ocorre com a interface de uma classe estável que presta um serviço relevante para a classe de origem. Já o acoplamento ruim deve ser evitado, pois é um acoplamento não mediado por interfaces. Mudanças na classe de destino do acoplamento podem facilmente se propagar para a classe de origem.</p>
 <p>Frequentemente, as recomendações sobre acoplamento e coesão são reunidas em uma única recomendação:</p>
 <blockquote>
-<p>Maxime a coesão das classes de um sistema e minimize o acoplamento entre elas.</p>
+<p>Maxime a coesão das classes e minimize o acoplamento entre elas.</p>
 </blockquote>
-<p>De fato, se uma classe depende de muitas outras classes, por exemplo, de dezenas de classes, ela pode estar assumindo responsabilidades demais, na forma de funcionalidades não coesas. Lembre-se que uma classe deve ter uma única responsabilidade (ou um único motivo para ser modificada). Por outro lado, devemos tomar cuidado com o significado do verbo minimizar. O objetivo não deve ser eliminar completamente o acoplamento de uma classe com outras classes, pois é natural que uma classe precise de outras classes, principalmente daquelas que implementam serviços básicos, como estruturas de dados, acesso a arquivos, etc.</p>
+<p>De fato, se uma classe depende de muitas outras classes, por exemplo, de dezenas de classes, ela pode estar assumindo responsabilidades demais, na forma de funcionalidades não coesas. Lembre-se que uma classe deve ter uma única responsabilidade (ou um único motivo para ser modificada). Por outro lado, devemos tomar cuidado com o significado do verbo minimizar. O objetivo não deve ser eliminar completamente o acoplamento de uma classe com outras classes, pois é natural que uma classe precise de outras classes, principalmente daquelas que implementam serviços básicos, como estruturas de dados, entrada/saída, etc.</p>
 <h3 data-number="1.5.1" id="exemplos-1" data-number="1.5.1"><span class="header-section-number">5.5.1</span> Exemplos</h3>
-<p><strong>Exemplo 1:</strong> Suponha a classe Estacionamento, usada na Seção 5.2, a qual possui um atributo que é uma Hashtable. Logo, dizemos que Estacionamento está acoplada a Hashtable. No entanto, na nossa classificação, trata-se de um acoplamento aceitável, isto é, ele não deve ser motivo de preocupação, pelos seguintes motivos:</p>
+<p><strong>Exemplo 1:</strong> Suponha a classe <code>Estacionamento</code>, usada na Seção 5.2, a qual possui um atributo que é uma <code>Hashtable</code>. Logo, dizemos que <code>Estacionamento</code> está acoplada a <code>Hashtable</code>. No entanto, na nossa classificação, trata-se de um acoplamento aceitável, isto é, ele não deve ser motivo de preocupação, pelos seguintes motivos:</p>
 <ul>
-<li><p>Estacionamento só usa métodos públicos de Hashtable.</p></li>
-<li><p>A interface de Hashtable é estável, já que ela faz parte do pacote oficial de estruturas de dados de Java (estamos supondo que o sistema será implementado nessa linguagem). Assim, uma alteração na assinatura dos métodos públicos de Hashtable quebraria não apenas nossa classe Estacionamento, mas talvez milhões de outras classes de diversos sistemas Java ao redor do mundo.</p></li>
+<li><p><code>Estacionamento</code> só usa métodos públicos de <code>Hashtable</code>.</p></li>
+<li><p>A interface de <code>Hashtable</code> é estável, já que ela faz parte do pacote oficial de estruturas de dados de Java (estamos supondo que o sistema será implementado nessa linguagem). Assim, uma alteração na assinatura dos métodos públicos de <code>Hashtable</code> quebraria não apenas nossa classe <code>Estacionamento</code>, mas talvez milhões de outras classes de diversos sistemas Java ao redor do mundo.</p></li>
 </ul>
-<p><strong>Exemplo 2:</strong> Suponha o seguinte trecho de código, no qual existe um arquivo compartilhado por duas classes, A e B, mantidas por desenvolvedores distintos. O método B.g() grava um inteiro no arquivo, que é lido por A.f(). Essa forma de comunicação origina um acoplamento ruim entre as classes. Por exemplo, o desenvolvedor que implementa B pode não saber que o arquivo é lido por A. Assim, ele pode decidir mudar o formato do arquivo por conta própria, sem comunicar o desenvolvedor da classe A.</p>
-<table style="width:97%;">
-<colgroup>
-<col style="width: 48%" />
-<col style="width: 48%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p><strong>private</strong> void f() {</p>
-<p>int total;</p>
-<p>...</p>
-<p>File f = File.open(<q>arq1.db</q>);</p>
-<p>total = f.readInt();</p>
-<p>...</p>
-<p>}</p>
-<p>}</p></td>
-<td><p><strong>class</strong> B {</p>
-<p><strong>private</strong> void g() {</p>
-<p>int total;</p>
-<p>// computa valor de total</p>
-<p>File f = File.open(<q>arq1.db</q>);</p>
-<p>f.writeInt(total);</p>
-<p>...</p>
-<p>f.close();</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Antes de avançar, um pequeno comentário: no exemplo, existe também um acoplamento entre B e File. Porém, ele é um acoplamento aceitável, pois B realmente precisa persistir seus dados. Então, para conseguir isso, nada melhor do que usar uma classe da biblioteca de entrada e saída da linguagem.</p>
-<p><strong>Exemplo 3:</strong> Uma solução melhor para o acoplamento entre as classes A e B do exemplo anterior é mostrada no código a seguir.</p>
-<table style="width:83%;">
-<colgroup>
-<col style="width: 38%" />
-<col style="width: 44%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p><strong>private</strong> void f(B b) {</p>
-<p>int total;</p>
-<p>total = b.getTotal();</p>
-<p>...</p>
-<p>}</p>
-<p>}</p></td>
-<td><p><strong>class</strong> B {</p>
-<p>int total;</p>
-<p><strong>public</strong> int getTotal(){</p>
-<p><strong>return</strong> total;</p>
-<p>}</p>
-<p><strong>private</strong> void g() {</p>
-<p>// computa valor de total</p>
-<p>File f = File.open(<q>arq1</q>);</p>
-<p>f.writeInt(total);</p>
-<p>...</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Nessa nova versão, a dependência entre A e B é tornada explícita. Agora, B possui um método público que retorna o valor total. E a classe A possui uma dependência para a classe B, por meio de um parâmetro do método f. Esse parâmetro é usado para requisitar explicitamente o valor de total, chamando-se o método getTotal(). Como esse método foi declarado público em B, espera-se que o desenvolvedor dessa classe se esforce para não alterar a sua assinatura. Por isso, nessa nova versão, dizemos que, apesar de existir uma dependência de A para B, o acoplamento criado por ela é aceitável. Em outras palavras, não é um acoplamento que gera preocupações.</p>
-<p>Ainda sobre o exemplo anterior, é interessante mencionar que, na primeira versão, o código de A não declara nenhuma variável ou atributo do tipo B. E, mesmo assim, temos um acoplamento ruim entre as classes. Na segunda versão, ocorre o contrário, pois o método A.f() declara um parâmetro do tipo B. Mesmo assim, o acoplamento entre as classes é de melhor qualidade, pois é mais fácil estudar e manter o código de A sem conhecer detalhes de B.</p>
+<p><strong>Exemplo 2:</strong> Suponha o seguinte trecho de código, no qual existe um arquivo compartilhado por duas classes, <code>A</code> e <code>B</code>, mantidas por desenvolvedores distintos. O método <code>B.g()</code> grava um inteiro no arquivo, que é lido por <code>A.f()</code>. Essa forma de comunicação origina um acoplamento ruim entre as classes. Por exemplo, o desenvolvedor que implementa <code>B</code> pode não saber que o arquivo é lido por <code>A</code>. Assim, ele pode decidir mudar o formato do arquivo por conta própria, sem comunicar o desenvolvedor da classe <code>A</code>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">class</span> A {</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb8-4"><a href="#cb8-4"></a>    <span class="dt">int</span> total;</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    ...</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1.db&quot;</span>);</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    total = f.<span class="fu">readInt</span>();</span>
+<span id="cb8-8"><a href="#cb8-8"></a>    ...</span>
+<span id="cb8-9"><a href="#cb8-9"></a>  }</span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">class</span> B{</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">g</span>(){</span>
+<span id="cb9-4"><a href="#cb9-4"></a>    <span class="dt">int</span> total;</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="co">// computa valor de total</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1.db&quot;</span>);</span>
+<span id="cb9-7"><a href="#cb9-7"></a>    f.<span class="fu">writeInt</span>(total);</span>
+<span id="cb9-8"><a href="#cb9-8"></a>    ...</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    f.<span class="fu">close</span>();</span>
+<span id="cb9-10"><a href="#cb9-10"></a>  }</span>
+<span id="cb9-11"><a href="#cb9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a>}</span></code></pre></div>
+<p>Antes de avançar, um pequeno comentário: no exemplo, existe também um acoplamento entre <code>B</code> e <code>File</code>. Porém, ele é um acoplamento aceitável, pois <code>B</code> realmente precisa persistir seus dados. Então, para conseguir isso, nada melhor do que usar uma classe da biblioteca de entrada e saída da linguagem.</p>
+<p><strong>Exemplo 3:</strong> Uma solução melhor para o acoplamento entre as classes <code>A</code> e <code>B</code> do exemplo anterior é mostrada no código a seguir.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">class</span> A{</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">f</span>(B b){</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="dt">int</span> total;</span>
+<span id="cb10-5"><a href="#cb10-5"></a>    total = b.<span class="fu">getTotal</span>();</span>
+<span id="cb10-6"><a href="#cb10-6"></a>    ...</span>
+<span id="cb10-7"><a href="#cb10-7"></a>  }</span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">class</span> B{</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="dt">int</span> total;</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getTotal</span>(){</span>
+<span id="cb11-6"><a href="#cb11-6"></a>    <span class="kw">return</span> total;</span>
+<span id="cb11-7"><a href="#cb11-7"></a>  }</span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">g</span>() {</span>
+<span id="cb11-10"><a href="#cb11-10"></a>    <span class="co">// computa valor de total</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1&quot;</span>);</span>
+<span id="cb11-12"><a href="#cb11-12"></a>    f.<span class="fu">writeInt</span>(total);</span>
+<span id="cb11-13"><a href="#cb11-13"></a>    ...</span>
+<span id="cb11-14"><a href="#cb11-14"></a>  }</span>
+<span id="cb11-15"><a href="#cb11-15"></a></span>
+<span id="cb11-16"><a href="#cb11-16"></a>}</span></code></pre></div>
+<p>Nessa nova versão, a dependência entre <code>A</code> e <code>B</code> é tornada explícita. Agora, <code>B</code> possui um método público que retorna o valor <code>total</code>. E a classe <code>A</code> possui uma dependência para a classe <code>B</code>, por meio de um parâmetro do método <code>f</code>. Esse parâmetro é usado para requisitar explicitamente o valor de <code>total</code>, chamando-se o método <code>getTotal()</code>. Como esse método foi declarado público em B, espera-se que o desenvolvedor dessa classe se esforce para não alterar a sua assinatura. Por isso, nessa nova versão, dizemos que, apesar de existir uma dependência de <code>A</code> para <code>B</code>, o acoplamento criado por ela é aceitável. Em outras palavras, não é um acoplamento que gera preocupações.</p>
+<p>Ainda sobre o exemplo anterior, é interessante mencionar que, na primeira versão, o código de <code>A</code> não declara nenhuma variável ou atributo do tipo <code>B</code>. E, mesmo assim, temos um acoplamento ruim entre as classes. Na segunda versão, ocorre o contrário, pois o método <code>A.f()</code> declara um parâmetro do tipo <code>B</code>. Mesmo assim, o acoplamento entre as classes é de melhor qualidade, pois é mais fácil estudar e manter o código de <code>A</code> sem conhecer detalhes de <code>B</code>.</p>
 <p>Alguns autores usam ainda os termos acoplamento estrutural e acoplamento evolutivo (ou lógico), com o seguinte significado:</p>
 <ul>
-<li><p><strong>Acoplamento estrutural</strong> entre A e B ocorre quando uma classe A possui uma referência explícita em seu código para uma classe B. Por exemplo, o acoplamento entre Estacionamento e Hashtable é estrutural.</p></li>
-<li><p><strong>Acoplamento evolutivo (ou lógico)</strong> entre A e B ocorre quando mudanças na classe B tendem a se propagar para a classe A. No exemplo mencionado, no qual a classe A depende de um inteiro armazenado em um arquivo interno de B, não existe acoplamento estrutural entre A e B, pois A não declara nenhuma variável do tipo B, mas pode existir acoplamento evolutivo. Por exemplo, mudanças no formato do arquivo criado por B terão impacto na classe A.</p></li>
+<li><p><strong>Acoplamento estrutural</strong> entre A e B ocorre quando uma classe A possui uma referência explícita em seu código para uma classe B. Por exemplo, o acoplamento entre <code>Estacionamento</code> e <code>Hashtable</code> é estrutural.</p></li>
+<li><p><strong>Acoplamento evolutivo (ou lógico)</strong> entre A e B ocorre quando mudanças na classe B tendem a se propagar para a classe A. No exemplo mencionado, no qual a classe A depende de um inteiro armazenado em um arquivo interno de B, não existe acoplamento estrutural entre A e B, pois A não declara nenhuma variável do tipo B, mas existe acoplamento evolutivo. Por exemplo, mudanças no formato do arquivo criado por B terão impacto em A.</p></li>
 </ul>
 <p>Acoplamento estrutural pode ser aceitável ou ruim, dependendo da estabilidade da interface da classe de destino. Acoplamento evolutivo, principalmente quando qualquer mudança em B se propaga para a classe de origem A, representa um acoplamento ruim.</p>
-<p><strong>Mundo Real</strong>: Kent Beck — na época em que trabalhou no Facebook — criou um glossário de termos relacionados com projeto de software. Nesse glossário, acoplamento é definido da seguinte forma (<a href="https://engineering.fb.com/uncategorized/software-design-glossary/">link</a>):</p>
+<p>Kent Beck — na época em que trabalhou no Facebook — criou um glossário de termos relacionados com projeto de software. Nesse glossário, acoplamento é definido da seguinte forma (<a href="https://engineering.fb.com/uncategorized/software-design-glossary/">link</a>):</p>
 <blockquote>
 <p><q>Dois elementos estão acoplados quando mudanças em um elemento implicam em mudanças em um outro elemento … Acoplamento pode dar origem a uma relação bem sutil entre classes, como frequentemente observamos no Facebook. Certos eventos que interrompem o funcionamento de uma parte do sistema normalmente são causados por pequenos bits de acoplamento que não são esperados — por exemplo, mudanças na configuração do sistema A causam um time-out no sistema B, que causa uma sobrecarga no sistema C.</q></p>
 </blockquote>
 <p>A definição de acoplamento proposta por Beck — <q>quando mudanças em um elemento implicam em mudanças em um outro elemento</q> — corresponde à definição de acoplamento evolutivo. Ou seja, parece que Beck não se preocupa com o acoplamento aceitável (isto é, estrutural e estável) entre duas classes; pois ele, de fato, não deve ser motivo de preocupação.</p>
 <p>O comentário também deixa claro que acoplamento pode ser indireto. Isto é, mudanças em A podem ser propagar para B, e então alcançar C. Nesse caso, C está acoplado a A, mas de forma indireta.</p>
-<p>Um exemplo de problema real causado por acoplamento indireto ficou conhecido como <strong>episódio do left-pad</strong>. Em 2016, uma disputa de direitos autorais motivou um desenvolvedor a remover uma de suas bibliotecas do diretório npm, muito usado para armazenar e distribuir bibliotecas node.js/JavaScript. A biblioteca removida — chamada leftPad — tinha uma única função JavaScript, de nome leftPad, com apenas 11 linhas de código. Ela preenchia uma string com brancos à esquerda. Por exemplo, <code>leftPad("foo", 5)</code> iria retornar <code>"  foo"</code>, ou seja, <code>"foo"</code> com dois brancos à esquerda.</p>
+<p><strong>Mundo Real</strong>: Um exemplo de problema real causado por acoplamento indireto ficou conhecido como <strong>episódio do left-pad</strong>. Em 2016, uma disputa de direitos autorais motivou um desenvolvedor a remover uma de suas bibliotecas do diretório npm, muito usado para armazenar e distribuir bibliotecas node.js/JavaScript. A biblioteca removida — chamada leftPad — tinha uma única função JavaScript, de nome leftPad, com apenas 11 linhas de código. Ela preenchia uma string com brancos à esquerda. Por exemplo, <code>leftPad('foo', 5)</code> iria retornar <code>'  foo'</code>, ou seja, <code>'foo'</code> com dois brancos à esquerda.</p>
 <p>Milhares de sistemas Web dependiam dessa função trivial, porém a dependência ocorria de modo indireto. Os sistemas usavam o npm para baixar dinamicamente o código JavaScript de uma biblioteca B1, que por sua vez dependia de uma biblioteca B2 cujo código também estava no npm e, assim por diante, até alcançar uma biblioteca Bn que dependia do left-pad. Como resultado, todos os sistemas que dependiam do left-pad — de forma direta ou indireta — ficaram fora do ar por algumas horas, até que a biblioteca fosse inserida de novo no npm. Em resumo, os sistemas foram afetados por um problema em uma biblioteca trivial; e eles não tinham a menor ideia de que estavam acoplados a ela.</p>
-<h2 data-number="1.6" id="princípios-de-projeto-1" data-number="1.6"><span class="header-section-number">5.6</span> 5.6 Princípios de Projeto</h2>
+<h2 data-number="1.6" id="princípios-de-projeto-1" data-number="1.6"><span class="header-section-number">5.6</span> Princípios de Projeto</h2>
 <p>Princípios de projeto são recomendações mais concretas que desenvolvedores de software devem seguir para atender às propriedades de projeto que estudamos na seção anterior. Assim, propriedades de projeto podem ser vistas como recomendações ainda genéricas (ou táticas), enquanto que os princípios que estudaremos agora estão em um nível operacional.</p>
 <p>Nesta seção, iremos estudar os sete princípios de projeto listados na próxima tabela. A tabela mostra ainda as propriedades de projeto que são contempladas ao seguir cada um desses princípios.</p>
-<table style="width:86%;">
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 43%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
-<th><strong>Princípio de Projeto</strong></th>
-<th><strong>Propriedade de Projeto</strong></th>
+<th>Princípio de Projeto</th>
+<th>Propriedade de Projeto</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Responsabilidade Única</p>
-<p>Segregação de Interfaces</p></td>
+<td>Responsabilidade Única, Segregação de Interfaces</td>
 <td>Coesão</td>
 </tr>
 <tr class="even">
-<td><p>Inversão de Dependências</p>
-<p>Prefira Composição a Herança</p></td>
+<td>Inversão de Dependências, Prefira Composição a Herança</td>
 <td>Acoplamento</td>
 </tr>
 <tr class="odd">
@@ -408,184 +408,126 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <td>Ocultamento de Informação</td>
 </tr>
 <tr class="even">
-<td><p>Aberto/Fechado</p>
-<p>Substituição de Liskov</p></td>
+<td>Aberto/Fechado, Substituição de Liskov</td>
 <td>Extensibilidade</td>
 </tr>
 </tbody>
 </table>
 <p>Cinco dos princípios que vamos estudar são conhecidos como <strong>Princípios SOLID</strong>, que é uma sigla cunhada por Robert Martin e Michael Feathers (<a href="https://dl.acm.org/citation.cfm?id=3175742">link</a>). Ela deriva da letra inicial de cada princípio, em inglês:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;"><strong>S</strong></th>
-<th style="text-align: left;">Single Responsibility Principle</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>O</strong></td>
-<td style="text-align: left;">Open Closed/Principle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>L</strong></td>
-<td style="text-align: left;">Liskov Substitution Principle</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>I</strong></td>
-<td style="text-align: left;">Interface Segregation Principle</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>D</strong></td>
-<td style="text-align: left;">Dependency Inversion Principle</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li><strong>S</strong>ingle Responsibility Principle</li>
+<li><strong>O</strong>pen Closed/Principle</li>
+<li><strong>L</strong>iskov Substitution Principle</li>
+<li><strong>I</strong>nterface Segregation Principle</li>
+<li><strong>D</strong>ependency Inversion Principle</li>
+</ul>
 <p>Os princípios de projeto que vamos estudar têm um ponto em comum: eles não visam apenas <q>resolver</q> um problema, mas também assegurar que a solução encontrada possa ser mantida e evoluída com sucesso, no futuro. Os maiores problemas com projetos de software costumam ocorrer após a implementação, quando o sistema precisa ser mantido. Normalmente, existe uma tendência de que essa manutenção fique gradativamente mais lenta, custosa e arriscada. Portanto, os princípios de projeto que estudaremos tentam reduzir ou postergar essa contínua degradação da qualidade interna de sistemas de software. Em resumo, o objetivo não é apenas entregar um projeto capaz de resolver um problema, mas também que facilite manutenções futuras. Lembre-se que a principal regra sobre requisitos de software é que eles mudam com freqüência. O mesmo acontece com tecnologias de implementação, como bibliotecas e frameworks.</p>
 <h3 data-number="1.6.1" id="princípio-da-responsabilidade-única" data-number="1.6.1"><span class="header-section-number">5.6.1</span> Princípio da Responsabilidade Única</h3>
 <p>Esse princípio é uma aplicação direta da ideia de coesão. Ele propõe o seguinte: toda classe deve ter uma única responsabilidade. Mais ainda, responsabilidade, no contexto do princípio, significa <q>motivo para modificar uma classe</q>. Ou seja, deve existir um único motivo para modificar qualquer classe em um sistema.</p>
-<p>Um corolário desse princípio recomenda separar <strong>apresentação</strong> de <strong>regras de negócio</strong>. Portanto, um sistema deve possuir classes de apresentação, que vão tratar de aspectos de sua interface com os usuários, formato das mensagens, meio onde as mensagens serão exibidas, etc. E classes responsáveis por regras de negócio, isto é, que vão realizar as computações, processamento, análises, etc. São interesses e responsabilidades diferentes. E que podem evoluir e sofrer modificações por razões distintas. Portanto, elas devem ser implementadas em classes diferentes. Por esse motivo, não é surpresa que existam atualmente desenvolvedores que tratam apenas de requisitos de <em>front-end</em> (isto é, de classes de apresentação) e desenvolvedores que tratam de requisitos de <em>backend</em> (isto é, de classes com regras de negócio).</p>
-<p><strong>Exemplo:</strong> A próxima classe ilustra uma violação do Princípio da Responsabilidade Única. O método calculaIndiceDesistencia da classe Disciplina possui duas responsabilidades: calcular o índice de desistência de uma disciplina e imprimi-lo na console do sistema.</p>
-<table style="width:62%;">
-<colgroup>
-<col style="width: 62%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Disciplina {</p>
-<p>void calculaIndiceDesistencia() {</p>
-<p>indice = <q>calcula índice de desistência</q></p>
-<p>System.out.println(indice);</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (Console) e uma classe de <q>regra de negócio</q> (Disciplina). Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.</p>
-<table style="width:79%;">
-<colgroup>
-<col style="width: 79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Console {</p>
-<p>void imprimeIndiceDesistencia(Disciplina disciplina) {</p>
-<p>double indice = disciplina.calculaIndiceDesistencia();</p>
-<p>System.out.println(indice);</p>
-<p>}</p>
-<p>}</p>
-<p><strong>class</strong> Disciplina {</p>
-<p>double calculaIndiceDesistencia() {</p>
-<p>double indice = <q>calcula índice de desistência</q></p>
-<p><strong>return</strong> indice;</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<p>Um corolário desse princípio recomenda separar <strong>apresentação</strong> de <strong>regras de negócio</strong>. Portanto, um sistema deve possuir classes de apresentação, que vão tratar de aspectos de sua interface com os usuários, formato das mensagens, meio onde as mensagens serão exibidas, etc. E classes responsáveis por regras de negócio, isto é, que vão realizar as computações, processamento, análises, etc. São interesses e responsabilidades diferentes. E que podem evoluir e sofrer modificações por razões distintas. Portanto, elas devem ser implementadas em classes diferentes. Por esse motivo, não é surpresa que existam desenvolvedores que tratam apenas de requisitos de <em>front-end</em> (isto é, de classes de apresentação) e desenvolvedores que tratam de requisitos de <em>backend</em> (isto é, de classes com regras de negócio).</p>
+<p><strong>Exemplo:</strong> A próxima classe ilustra uma violação do Princípio da Responsabilidade Única. O método <code>calculaIndiceDesistencia</code> da classe <code>Disciplina</code> possui duas responsabilidades: calcular o índice de desistência de uma disciplina e imprimi-lo na console do sistema.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">class</span> Disciplina {</span>
+<span id="cb12-2"><a href="#cb12-2"></a></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="dt">void</span> <span class="fu">calculaIndiceDesistencia</span>(){</span>
+<span id="cb12-4"><a href="#cb12-4"></a>    indice = <span class="st">&quot;calcula índice de desistência&quot;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(indice);</span>
+<span id="cb12-6"><a href="#cb12-6"></a>  }</span>
+<span id="cb12-7"><a href="#cb12-7"></a></span>
+<span id="cb12-8"><a href="#cb12-8"></a>}</span></code></pre></div>
+<p>Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (<code>Console</code>) e uma classe de <q>regra de negócio</q> (<code>Disciplina</code>). Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">class</span> <span class="bu">Console</span>{</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="dt">void</span> <span class="fu">imprimeIndiceDesistencia</span>(Disciplina disciplina){</span>
+<span id="cb13-4"><a href="#cb13-4"></a>    <span class="dt">double</span> indice = disciplina.<span class="fu">calculaIndiceDesistencia</span>();</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(indice);</span>
+<span id="cb13-6"><a href="#cb13-6"></a>  }</span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a>}</span>
+<span id="cb13-9"><a href="#cb13-9"></a></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="kw">class</span> Disciplina{</span>
+<span id="cb13-11"><a href="#cb13-11"></a></span>
+<span id="cb13-12"><a href="#cb13-12"></a>  <span class="dt">double</span> <span class="fu">calculaIndiceDesistencia</span>(){</span>
+<span id="cb13-13"><a href="#cb13-13"></a>    <span class="dt">double</span> indice = <span class="st">&quot;calcula índice de desistência&quot;</span></span>
+<span id="cb13-14"><a href="#cb13-14"></a>    <span class="kw">return</span> indice;</span>
+<span id="cb13-15"><a href="#cb13-15"></a>  }</span>
+<span id="cb13-16"><a href="#cb13-16"></a></span>
+<span id="cb13-17"><a href="#cb13-17"></a>}</span></code></pre></div>
 <h3 data-number="1.6.2" id="princípio-da-segregação-de-interfaces" data-number="1.6.2"><span class="header-section-number">5.6.2</span> Princípio da Segregação de Interfaces</h3>
 <p>Assim como o princípio anterior, esse princípio é uma aplicação da ideia de coesão. Melhor dizendo, ele é um caso particular de Responsabilidade Única com foco em interfaces. O princípio define que interfaces tem que ser pequenas, coesas e, mais importante ainda, específicas para cada tipo de cliente. O objetivo é evitar que clientes dependam de interfaces com métodos que eles não vão usar. Para evitar isso, duas ou mais interfaces específicas podem, por exemplo, substituir uma interface de propósito geral.</p>
-<p>Uma violação do princípio ocorre, por exemplo, quando uma interface possui dois conjuntos de métodos Mx e My. O primeiro conjunto é usado por clientes Cx (que então não usam os métodos My). De forma inversa, os métodos My são usados apenas por clientes Cy (que não usam os métodos Mx). Consequentemente, essa interface deveria ser quebrada em duas interfaces menores e específicas: uma interface contendo apenas os métodos Mx e a segunda interface contendo apenas os métodos My.</p>
-<p><strong>Exemplo:</strong> Suponha uma interface Funcionario com os seguintes métodos: (1) retornar salário, (2) retornar contribuição mensal para o FGTS (Fundo de Garantia por Tempo de Serviço) e (3) retornar SIAPE (isto é, o <q>número de matrícula</q> de todo funcionário público federal). Essa interface viola o Princípio de Segregação de Interfaces, pois apenas funcionários de empresas privadas, contratados em regime de CLT, possuem uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem uma matrícula no SIAPE.</p>
-<table style="width:69%;">
-<colgroup>
-<col style="width: 69%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>interface</strong> Funcionario {</p>
-<p>double getSalario();</p>
-<p>double getFGTS(); // apenas funcionários CLT</p>
-<p>int getSIAPE(); // apenas funcionários públicos</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Uma alternativa — que atende ao Princípio de Segregação de Interfaces — consiste em criar interfaces específicas (FuncionarioCLT e FuncionarioPublico) que estendem a interface genérica (Funcionario).</p>
-<table style="width:85%;">
-<colgroup>
-<col style="width: 84%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>interface</strong> Funcionario {</p>
-<p>double getSalario();</p>
-<p>...</p>
-<p>}</p>
-<p><strong>interface</strong> FuncionarioCLT <strong>extends</strong> Funcionario {</p>
-<p>double getFGTS();</p>
-<p>...</p>
-<p>}</p>
-<p><strong>interface</strong> FuncionarioPublico <strong>extends</strong> Funcionario {</p>
-<p>int getSIAPE();</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<p>Uma violação do princípio ocorre, por exemplo, quando uma interface possui dois conjuntos de métodos M<sub>x</sub> e M<sub>y</sub>. O primeiro conjunto é usado por clientes C<sub>x</sub> (que então não usam os métodos M<sub>y</sub>). De forma inversa, os métodos M<sub>y</sub> são usados apenas por clientes C<sub>y</sub> (que não usam os métodos M<sub>x</sub>). Consequentemente, essa interface deveria ser quebrada em duas interfaces menores e específicas: uma interface contendo apenas os métodos M<sub>x</sub> e a segunda interface contendo apenas os métodos M<sub>y</sub>.</p>
+<p><strong>Exemplo:</strong> Suponha uma interface <code>Funcionario</code> com os seguintes métodos: (1) retornar salário, (2) retornar contribuição mensal para o FGTS (Fundo de Garantia por Tempo de Serviço) e (3) retornar SIAPE (isto é, o <q>número de matrícula</q> de todo funcionário público federal). Essa interface viola o Princípio de Segregação de Interfaces, pois apenas funcionários de empresas privadas, contratados em regime de CLT, possuem uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem uma matrícula no SIAPE.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">interface</span> Funcionario{</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="dt">double</span> <span class="fu">getSalario</span>();</span>
+<span id="cb14-4"><a href="#cb14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="dt">double</span> <span class="fu">getFGTS</span>();<span class="co">// apenas funcionários CLT</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a></span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="dt">int</span> <span class="fu">getSIAPE</span>();<span class="co">// apenas funcionários públicos</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a>  ...</span>
+<span id="cb14-10"><a href="#cb14-10"></a>}</span></code></pre></div>
+<p>Uma alternativa — que atende ao Princípio de Segregação de Interfaces — consiste em criar interfaces específicas (<code>FuncionarioCLT</code> e <code>FuncionarioPublico</code>) que estendem a interface genérica (<code>Funcionario</code>).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">interface</span> Funcionario{</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="dt">double</span> <span class="fu">getSalario</span>();</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  ...</span>
+<span id="cb15-4"><a href="#cb15-4"></a>}</span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="kw">interface</span> FuncionarioCLT <span class="kw">extends</span> Funcionario{</span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="dt">double</span> <span class="fu">getFGTS</span>();</span>
+<span id="cb15-8"><a href="#cb15-8"></a>  ...</span>
+<span id="cb15-9"><a href="#cb15-9"></a>}</span>
+<span id="cb15-10"><a href="#cb15-10"></a></span>
+<span id="cb15-11"><a href="#cb15-11"></a><span class="kw">interface</span> FuncionarioPublico <span class="kw">extends</span> Funcionario{</span>
+<span id="cb15-12"><a href="#cb15-12"></a>  <span class="dt">int</span> <span class="fu">getSIAPE</span>();</span>
+<span id="cb15-13"><a href="#cb15-13"></a>  ...</span>
+<span id="cb15-14"><a href="#cb15-14"></a>}</span></code></pre></div>
 <h3 data-number="1.6.3" id="princípio-de-inversão-de-dependências" data-number="1.6.3"><span class="header-section-number">5.6.3</span> Princípio de Inversão de Dependências</h3>
 <p>Esse princípio recomenda que uma classe cliente deve estabelecer dependências prioritariamente com abstrações e não com implementações concretas, pois abstrações (isto é, interfaces) são mais estáveis do que implementações concretas (isto é, classes). A ideia é então trocar (ou <q>inverter</q>) as dependências: em vez de depender de classes concretas, clientes devem depender de interfaces. Portanto, um nome mais intuitivo para o princípio seria <strong>Prefira Interfaces a Classes</strong>.</p>
 <p>Para detalhar a ideia do princípio, suponha que exista uma interface I e uma classe C1 que a implementa. Se puder escolher, um cliente deve se acoplar a I e não a C1. O motivo é que quando um cliente se acopla a uma interface I ele fica imune a mudanças na implementação dessa interface. Por exemplo, em vez de C1, pode-se mudar a implementação para C2, que isso não terá impacto no cliente em questão.</p>
-<p><strong>Exemplo 1:</strong> O código a seguir ilustra o cenário que acabamos de descrever. Nesse código, o mesmo Cliente pode <q>trabalhar</q> com objetos concretos das classes C1 e C2. Ele não precisa conhecer a classe concreta que está por trás — ou que implementa — a interface I que ele referencia em seu código.</p>
-<table>
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 28%" />
-<col style="width: 28%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>interface</strong> I { ... }</p>
-<p><strong>class</strong> C1 <strong>implements</strong> I {</p>
-<p>...</p>
-<p>}</p>
-<p><strong>class</strong> C2 <strong>implements</strong> I {</p>
-<p>...</p>
-<p>}</p></td>
-<td><p><strong>class</strong> Cliente {</p>
-<p>I i;</p>
-<p>Cliente (I i) {</p>
-<p>this.i = i;</p>
-<p>...</p>
-<p>}</p>
-<p>...</p>
-<p>}</p></td>
-<td><p><strong>class</strong> Main {</p>
-<p>void main () {</p>
-<p>C1 c1 = new C1();</p>
-<p>new Cliente(c1);</p>
-<p>...</p>
-<p>C2 c2 = new C2();</p>
-<p>new Cliente(c2);</p>
-<p>...</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Exemplo 2:</strong> Agora, mostramos um exemplo de código que segue o Princípio de Inversão de Dependências. Esse princípio justifica a escolha de Projetor como tipo do parâmetro do método g. Amanhã, o tipo da variável local projetor no método f pode mudar para, por exemplo, ProjetorSamsung. Se isso vier a acontecer, a implementação de g permanecerá válida, pois ao usarmos um tipo interface estamos nos preparando para receber parâmetros de vários tipos concretos que implementam essa interface.</p>
-<table>
-<colgroup>
-<col style="width: 58%" />
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>void f() {</p>
-<p>...</p>
-<p>ProjetorLG projetor = new ProjetorLG();</p>
-<p>...</p>
-<p>g(projetor);</p>
-<p>}</p></td>
-<td><p>void g(Projetor projetor) {</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Exemplo 3:</strong> Como um exemplo final, suponha um pacote de estruturas de dados que oferece uma interface List e algumas implementações concretas (classes) para ela, como ArrayList, LinkedList e Vector. Sempre que possível, em código cliente desse pacote, declare variáveis, parâmetros ou atributos usando o tipo List, pois assim você estará criando código compatível com as diversas implementações concretas dessa interface.</p>
-<h2 data-number="1.7" id="prefira-composição-a-herança" data-number="1.7"><span class="header-section-number">5.7</span> ### Prefira Composição a Herança</h2>
+<p><strong>Exemplo 1:</strong> O código a seguir ilustra o cenário que acabamos de descrever. Nesse código, o mesmo <code>Cliente</code> pode <q>trabalhar</q> com objetos concretos das classes <code>C1</code> e <code>C2</code>. Ele não precisa conhecer a classe concreta que está por trás — ou que implementa — a interface <code>I</code> que ele referencia em seu código.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">interface</span> I{ <span class="kw">... </span>}</span>
+<span id="cb16-2"><a href="#cb16-2"></a></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">class</span> C1 <span class="kw">implements</span> I{</span>
+<span id="cb16-4"><a href="#cb16-4"></a>  ...</span>
+<span id="cb16-5"><a href="#cb16-5"></a>}</span>
+<span id="cb16-6"><a href="#cb16-6"></a></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="kw">class</span> C2 <span class="kw">implements</span> I{</span>
+<span id="cb16-8"><a href="#cb16-8"></a>  ...</span>
+<span id="cb16-9"><a href="#cb16-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">class</span> Cliente{</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a>  I i;</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a>  <span class="fu">Cliente</span> (I i){</span>
+<span id="cb17-6"><a href="#cb17-6"></a>    <span class="kw">this</span>.<span class="fu">i</span> = i;</span>
+<span id="cb17-7"><a href="#cb17-7"></a>    ...</span>
+<span id="cb17-8"><a href="#cb17-8"></a>  }</span>
+<span id="cb17-9"><a href="#cb17-9"></a>  ...</span>
+<span id="cb17-10"><a href="#cb17-10"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">class</span> Main{</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a>  <span class="dt">void</span> <span class="fu">main</span> (){</span>
+<span id="cb18-4"><a href="#cb18-4"></a>    C1 c1 = <span class="kw">new</span> <span class="fu">C1</span>();</span>
+<span id="cb18-5"><a href="#cb18-5"></a>    <span class="kw">new</span> <span class="fu">Cliente</span>(c1);</span>
+<span id="cb18-6"><a href="#cb18-6"></a>    ...</span>
+<span id="cb18-7"><a href="#cb18-7"></a>    C2 c2 = <span class="kw">new</span> <span class="fu">C2</span>();</span>
+<span id="cb18-8"><a href="#cb18-8"></a>    <span class="kw">new</span> <span class="fu">Cliente</span>(c2);</span>
+<span id="cb18-9"><a href="#cb18-9"></a>    ...</span>
+<span id="cb18-10"><a href="#cb18-10"></a>  }</span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a>}</span></code></pre></div>
+<p><strong>Exemplo 2:</strong> Agora, mostramos um exemplo de código que segue o Princípio de Inversão de Dependências. Esse princípio justifica a escolha de <code>Projetor</code> como tipo do parâmetro do método <code>g</code>. Amanhã, o tipo da variável local <code>projetor</code> no método <code>f</code> pode mudar para, por exemplo, <code>ProjetorSamsung</code>. Se isso vier a acontecer, a implementação de g permanecerá válida, pois ao usarmos um tipo interface estamos nos preparando para receber parâmetros de vários tipos concretos que implementam essa interface.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1"></a><span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  ...</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  ProjetorLG projetor = <span class="kw">new</span> <span class="fu">ProjetorLG</span>();</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  ...</span>
+<span id="cb19-5"><a href="#cb19-5"></a>  <span class="fu">g</span>(projetor);</span>
+<span id="cb19-6"><a href="#cb19-6"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1"></a><span class="dt">void</span> <span class="fu">g</span>(Projetor projetor){</span>
+<span id="cb20-2"><a href="#cb20-2"></a>  ...</span>
+<span id="cb20-3"><a href="#cb20-3"></a>}</span></code></pre></div>
+<p><strong>Exemplo 3:</strong> Como um exemplo final, suponha um pacote de estruturas de dados que oferece uma interface <code>List</code> e algumas implementações concretas (classes) para ela, como <code>ArrayList</code>, <code>LinkedList</code> e <code>Vector</code>. Sempre que possível, em código cliente desse pacote, declare variáveis, parâmetros ou atributos usando o tipo <code>List</code>, pois assim você estará criando código compatível com as diversas implementações concretas dessa interface.</p>
+<h3 data-number="1.6.4" id="prefira-composição-a-herança" data-number="1.6.4"><span class="header-section-number">5.6.4</span> Prefira Composição a Herança</h3>
 <p>Antes de explicar o princípio, vamos esclarecer que existem dois tipos de herança:</p>
 <ul>
 <li><p><strong>Herança de classes</strong> (exemplo: <code>class A extends B</code>), que é aquela que envolve reúso de código. Não apenas neste capítulo, mas em todo o livro, quando mencionarmos apenas o termo herança estaremos nos referindo a herança de classes.</p></li>
@@ -596,56 +538,35 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <p><q>Herança expõe para subclasses detalhes de implementação das classes pai. Logo, frequentemente diz-se que herança viola o encapsulamento das classes pai. A implementação das subclasses se torna tão acoplada à implementação da classe pai que qualquer mudança nessas últimas pode forçar modificações nas subclasses.</q></p>
 </blockquote>
 <p>O princípio, porém, não proíbe o uso de herança. Mas ele recomenda: se existirem duas soluções de projeto, uma baseada em herança e outra em composição, a solução por meio de composição, normalmente, é a melhor. Só para deixar claro, existe uma relação de <strong>composição</strong> entre duas classes A e B quando a classe A possui um atributo do tipo B.</p>
-<p><strong>Exemplo:</strong> Suponha que temos que implementar uma classe Stack. Existem pelo menos duas soluções — por meio de herança ou por meio de composição — conforme mostra o seguinte código:</p>
-<table>
-<colgroup>
-<col style="width: 54%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Solução via Herança</strong></th>
-<th><strong>Solução via Composição</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Stack <strong>extends</strong> ArrayList {</p>
-<p>...</p>
-<p>}</p></td>
-<td><p><strong>class</strong> Stack {</p>
-<p><strong>private</strong> ArrayList elementos;</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>A solução via herança não é recomendada por vários motivos, sendo que os principais são os seguintes: (1) um Stack, em termos conceituais, não é um ArrayList, mas sim uma estrutura que pode usar um ArrayList na sua implementação interna; (2) quando se força uma solução via herança a class Stack irá herdar métodos como get e set, que não fazem parte da especificação de pilhas. Portanto, nesse caso, devemos preferir a solução via composição, em detrimento da solução baseada em herança.</p>
-<p>Uma segunda vantagem de composição é que a relação entre as classes não é estática, como no caso de herança. No exemplo, se optássemos por herança, a classe Stack estaria acoplada estaticamente a ArrayList; e não seria possível mudar essa decisão em tempo de execução. Por outro lado, quando se opta por uma solução baseada em composição, isso fica mais fácil, como mostra o exemplo a seguir:</p>
-<table style="width:42%;">
-<colgroup>
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> Stack {</p>
-<p><strong>private</strong> List elementos;</p>
-<p>Stack(List elementos) {</p>
-<p>this.elementos = elementos;</p>
-<p>}</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe Stack. Com isso, torna-se possível instanciar objetos Stack com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um ArrayList e outro objeto onde eles são armazenado em um Vector. Como uma observação final, veja que o tipo do atributo elementos de Stack passou a ser um List; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
+<p><strong>Exemplo:</strong> Suponha que temos que implementar uma classe <code>Stack</code>. Existem pelo menos duas soluções — por meio de herança ou por meio de composição — conforme mostra o seguinte código:</p>
+<p><strong>Solução via Herança:</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">class</span> <span class="bu">Stack</span> <span class="kw">extends</span> <span class="bu">ArrayList</span>{</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  ...</span>
+<span id="cb21-3"><a href="#cb21-3"></a>}</span></code></pre></div>
+<p><strong>Solução via Composição:</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">class</span> <span class="bu">Stack</span>{</span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="kw">private</span> <span class="bu">ArrayList</span> elementos;</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  ...</span>
+<span id="cb22-4"><a href="#cb22-4"></a>}</span></code></pre></div>
+<p>A solução por meio de herança não é recomendada por vários motivos, sendo que os principais são os seguintes: (1) um <code>Stack</code>, em termos conceituais, não é um <code>ArrayList</code>, mas sim uma estrutura que pode usar um <code>ArrayList</code> na sua implementação interna; (2) quando se força uma solução via herança, a class <code>Stack</code> irá herdar métodos como <code>get</code> e <code>set</code>, que não fazem parte da especificação de pilhas. Portanto, nesse caso, devemos preferir a solução baseada em composição.</p>
+<p>Uma segunda vantagem de composição é que a relação entre as classes não é estática, como no caso de herança. No exemplo, se optássemos por herança, a classe <code>Stack</code> estaria acoplada estaticamente a <code>ArrayList</code>; e não seria possível mudar essa decisão em tempo de execução. Por outro lado, quando adota-se uma solução baseada em composição, isso fica mais fácil, como mostra o exemplo a seguir:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">class</span> <span class="bu">Stack</span>{</span>
+<span id="cb23-2"><a href="#cb23-2"></a></span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="kw">private</span> <span class="bu">List</span> elementos;</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="bu">Stack</span>(<span class="bu">List</span> elementos){</span>
+<span id="cb23-6"><a href="#cb23-6"></a>    <span class="kw">this</span>.<span class="fu">elementos</span> = elementos;</span>
+<span id="cb23-7"><a href="#cb23-7"></a>  }</span>
+<span id="cb23-8"><a href="#cb23-8"></a>  ...</span>
+<span id="cb23-9"><a href="#cb23-9"></a>}</span></code></pre></div>
+<p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto onde eles são armazenado em um Vector. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um List; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
 <p>Antes de concluir, gostaríamos de mencionar três pontos suplementares ao que discutimos sobre <q>Prefira Composição a Herança</q>:</p>
 <ul>
 <li><p>Herança é classificada como um mecanismo de <strong>reuso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base. Por outro lado, composição é um mecanismo de <strong>reuso caixa-preta</strong>.</p></li>
 <li><p>Um padrão de projeto que ajuda a substituir uma solução baseada em herança por uma solução baseada em composição é o Padrão Decorador, que vamos estudar no próximo capítulo.</p></li>
-<li><p>Por conta dos problemas discutidos nesta seção, linguagens de programação mais recentes — como as linguagens Go e Rust — não incluem suporte a herança.</p></li>
+<li><p>Por conta dos problemas discutidos nesta seção, linguagens de programação mais recentes — como Go e Rust — não incluem suporte a herança.</p></li>
 </ul>
-<h3 data-number="1.7.1" id="princípio-de-demeter" data-number="1.7.1"><span class="header-section-number">5.7.1</span> Princípio de Demeter</h3>
+<h3 data-number="1.6.5" id="princípio-de-demeter" data-number="1.6.5"><span class="header-section-number">5.6.5</span> Princípio de Demeter</h3>
 <p>O nome desse princípio faz referência a um grupo de pesquisa da Northeastern University, em Boston, EUA. Esse grupo, chamado Demeter, desenvolvia pesquisas na área de modularização de software. No final da década de 80, em uma de suas pesquisas, o grupo enunciou um conjunto de regras para evitar problemas de encapsulamento em projeto de sistemas orientados a objetos, as quais ficaram conhecidas como Princípio ou Lei de Demeter.</p>
 <p>O Princípio de Demeter — também chamado de <strong>Princípio do Menor Privilégio</strong> (<em>Principle of Least Privilege</em>) — defende que a implementação de um método deve invocar apenas os seguintes outros métodos:</p>
 <ul>
@@ -654,262 +575,189 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <li><p>de objetos criados pelo próprio método (caso 3)</p></li>
 <li><p>de atributos da classe do método (caso 4)</p></li>
 </ul>
-<p><strong>Exemplo:</strong> O seguinte código mostra um método, m1, com quatro chamadas que respeitam o Princípio de Demeter. E, em seguida, temos um método m2, com uma chamada que não obedece ao princípio.</p>
-<table style="width:65%;">
-<colgroup>
-<col style="width: 65%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> PrincipioDemeter {</p>
-<p>T1 attr;</p>
-<p>void f1() {</p>
-<p>...</p>
-<p>}</p>
-<p>void m1(T2 p) { // método que segue Demeter</p>
-<p>f1(); // caso 1: própria classe</p>
-<p>p.f2(); // caso 2: parâmetro</p>
-<p>new T3().f3(); // caso 3: criado pelo método</p>
-<p>attr.f4(); // caso 4: atributo da classe</p>
-<p>}</p>
-<p>void m2(T4 p) { // método que viola Demeter</p>
-<p>p.getX().getY().getZ().doSomething();</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>O método m2, ao chamar três métodos get em sequência, viola o Princípio de Demeter. O motivo é que os objetos intermediários — retornados pelos métodos get — são usados apenas como <q>passagem</q> para se chegar ao objeto final, que é aquele que de fato nos interessa e sobre o qual vamos executar uma operação <q>útil</q>— no exemplo, doSomething(). No entanto, esses objetos intermediários podem existir apenas para liberar informação interna sobre o estado de suas classes. Além de tornar a chamada mais complexa, a informação liberada pode estar sujeita a mudanças. Se isso ocorrer, um dos <q>elos</q> da sequência de chamadas será quebrado e o cliente — o método m2, no exemplo — terá que descobrir um outro modo de atingir o método final. Em resumo, chamadas que violam o Princípio de Demeter têm grande chance de quebrar o encapsulamento dos objetos de passagem.</p>
-<p>Costuma-se dizer que o Princípio de Demeter recomenda que os métodos de uma classe devem falar apenas com seus <q>amigos</q>, isto é, com métodos da própria classe ou então com métodos de objetos que eles recebem como parâmetro ou que eles criam. Dizendo de outro modo, não é recomendável falar com os <q>amigos dos amigos</q>, por exemplo.</p>
+<p><strong>Exemplo:</strong> O seguinte código mostra um método, <code>m1</code>, com quatro chamadas que respeitam o Princípio de Demeter. E, em seguida, temos um método <code>m2</code>, com uma chamada que não obedece ao princípio.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">class</span> PrincipioDemeter{</span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a>  T1 attr;</span>
+<span id="cb24-4"><a href="#cb24-4"></a></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="dt">void</span> <span class="fu">f1</span>(){</span>
+<span id="cb24-6"><a href="#cb24-6"></a>    ...</span>
+<span id="cb24-7"><a href="#cb24-7"></a>  }</span>
+<span id="cb24-8"><a href="#cb24-8"></a></span>
+<span id="cb24-9"><a href="#cb24-9"></a>  <span class="dt">void</span> <span class="fu">m1</span>(T2 p){   <span class="co">// método que segue Demeter</span></span>
+<span id="cb24-10"><a href="#cb24-10"></a>    <span class="fu">f1</span>();           <span class="co">// caso 1: própria classe</span></span>
+<span id="cb24-11"><a href="#cb24-11"></a>    p.<span class="fu">f2</span>();         <span class="co">// caso 2: parâmetro</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>    <span class="kw">new</span> <span class="fu">T3</span>().<span class="fu">f3</span>();  <span class="co">// caso 3: criado pelo método</span></span>
+<span id="cb24-13"><a href="#cb24-13"></a>    attr.<span class="fu">f4</span>();      <span class="co">// caso 4: atributo da classe</span></span>
+<span id="cb24-14"><a href="#cb24-14"></a>  }</span>
+<span id="cb24-15"><a href="#cb24-15"></a></span>
+<span id="cb24-16"><a href="#cb24-16"></a>  <span class="dt">void</span> <span class="fu">m2</span>(T4 p){   <span class="co">// método que viola Demeter</span></span>
+<span id="cb24-17"><a href="#cb24-17"></a>    p.<span class="fu">getX</span>().<span class="fu">getY</span>().<span class="fu">getZ</span>().<span class="fu">doSomething</span>();</span>
+<span id="cb24-18"><a href="#cb24-18"></a>  }</span>
+<span id="cb24-19"><a href="#cb24-19"></a></span>
+<span id="cb24-20"><a href="#cb24-20"></a>}</span></code></pre></div>
+<p>O método <code>m2</code>, ao chamar três métodos <code>get</code> em sequência, viola o Princípio de Demeter. O motivo é que os objetos intermediários — retornados pelos métodos <code>get</code> — são usados apenas como <q>passagem</q> para se chegar ao objeto final, que é aquele que de fato nos interessa e sobre o qual vamos executar uma operação <q>útil</q>— no exemplo, <code>doSomething()</code>. No entanto, esses objetos intermediários podem existir apenas para liberar informação interna sobre o estado de suas classes. Além de tornar a chamada mais complexa, a informação liberada pode estar sujeita a mudanças. Se isso ocorrer, um dos <q>elos</q> da sequência de chamadas será quebrado e o cliente — o método <code>m2</code>, no exemplo — terá que descobrir um outro modo de atingir o método final. Em resumo, chamadas que violam o Princípio de Demeter têm grande chance de quebrar o encapsulamento dos objetos de passagem.</p>
+<p>Costuma-se dizer que o Princípio de Demeter recomenda que os métodos de uma classe devem falar apenas com seus <q>amigos</q>, isto é, com métodos da própria classe ou então com métodos de objetos que eles recebem como parâmetro ou que eles criam. Por outro lado, não é recomendável falar com os <q>amigos dos amigos</q>.</p>
 <p>Um exemplo — formulado por David Bock (<a href="https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf">link</a>) — ilustra com clareza os benefícios do Princípio de Demeter. O exemplo baseia-se em um cenário com três <q>objetos</q>: um entregador de jornais, um cliente e sua carteira. Uma violação do Princípio de Demeter ocorre se, para receber o valor de um jornal, o entregador tiver que executar o seguinte código:</p>
-<table style="width:85%;">
-<colgroup>
-<col style="width: 84%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>preco = 6.00;</p>
-<p>Carteira carteira = cliente.getCarteira();</p>
-<p>if (carteira.getValorTotal() &gt;= preco) { // viola Demeter</p>
-<p>carteira.debita(preco); // viola Demeter</p>
-<p>} else {</p>
-<p>// volto amanhã, para cobrar o valor do jornal</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Veja que o jornaleiro têm acesso à carteira do seu cliente — via método getCarteira() — e então ele mesmo retira o valor do jornal dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse tamanha liberdade … Portanto, uma solução mais realista é a seguinte:</p>
-<table style="width:68%;">
-<colgroup>
-<col style="width: 68%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>preco = 6.00;</p>
-<p>try {</p>
-<p>cliente.pagar(preco);</p>
-<p>}</p>
-<p>catch (ExcecaoValorInsuficiente e) {</p>
-<p>// volto amanhã, para cobrar o valor do jornal</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe Cliente. Em vez disso, o cliente oferece um método pagar, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o Cliente não possui recursos suficientes para pagar pelo jornal.</p>
-<h3 data-number="1.7.2" id="princípio-abertofechado" data-number="1.7.2"><span class="header-section-number">5.7.2</span> Princípio Aberto/Fechado</h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
+<span id="cb25-2"><a href="#cb25-2"></a>Carteira carteira = cliente.<span class="fu">getCarteira</span>();</span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="kw">if</span>(carteira.<span class="fu">getValorTotal</span>() &gt;= preco){   <span class="co">// viola Demeter</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>  carteira.<span class="fu">debita</span>(preco);                 <span class="co">// viola Demeter</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>} <span class="kw">else</span>{</span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="co">// volto amanhã, para cobrar o valor do jornal</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>}</span></code></pre></div>
+<p>Veja que o jornaleiro têm acesso à carteira do seu cliente — via método <code>getCarteira()</code> — e então ele mesmo retira o valor do jornal dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse tamanha liberdade … Portanto, uma solução mais realista é a seguinte:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
+<span id="cb26-2"><a href="#cb26-2"></a></span>
+<span id="cb26-3"><a href="#cb26-3"></a><span class="kw">try</span>{</span>
+<span id="cb26-4"><a href="#cb26-4"></a>  cliente.<span class="fu">pagar</span>(preco);</span>
+<span id="cb26-5"><a href="#cb26-5"></a>}</span>
+<span id="cb26-6"><a href="#cb26-6"></a><span class="kw">catch</span> (ExcecaoValorInsuficiente e){</span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="co">// volto amanhã, para cobrar o valor do jornal</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>}</span></code></pre></div>
+<p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe <code>Cliente</code>. Em vez disso, o cliente oferece um método pagar, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o <code>Cliente</code> não possui recursos suficientes para pagar pelo jornal.</p>
+<h3 data-number="1.6.6" id="princípio-abertofechado" data-number="1.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado</h3>
 <p>Esse princípio, originalmente proposto por Bertrand Meyer ainda na década de 80 (<a href="https://dl.acm.org/citation.cfm?id=261119">link</a>), defende algo que pode parecer paradoxal: uma classe deve estar fechada para modificações e aberta para extensões.</p>
 <p>No entanto, o aparente paradoxo se esclarece quando o projeto da classe prevê a possibilidade de extensões e customizações. Para isso, o projetista pode se valer de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto, como Abstract Factory, Template Method e Strategy. Especificamente, no próximo capítulo, iremos tratar de padrões de projeto que permitem customizar e estender uma classe sem modificar o seu código.</p>
 <p>Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.</p>
-<p><strong>Exemplo 1:</strong> Um exemplo de classe que segue o Princípio Aberto/Fechado é a classe Collections de Java. Ela possui um método estático para ordenar uma lista em ordem crescente de seus elementos. Um exemplo de uso desse método é mostrado a seguir:</p>
-<table style="width:99%;">
-<colgroup>
-<col style="width: 98%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>List&lt;String&gt; nomes = Arrays.asList(<q>joao</q>, <q>maria</q>, <q>alexandre</q>, <q>ze</q>);</p>
-<p>Collections.sort(nomes);</p>
-<p>System.out.println(nomes); // resultado: [<q>alexandre</q>,<q>joao</q>,<q>maria</q>,<q>ze</q>]</p></td>
-</tr>
-</tbody>
-</table>
-<p>No entanto, futuramente, podemos precisar de usar o método sort para ordenar as strings de acordo com seu tamanho em caracteres. Felizmente, a classe Collections está preparada para esse novo cenário de uso. Mas para isso precisamos implementar um objeto Comparator, que irá comparar as strings pelo seu tamanho, como no seguinte código:</p>
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Comparator&lt;String&gt; comparador = <strong>new</strong> Comparator&lt;String&gt;() {</p>
-<p><strong>public</strong> int compare(String s1, String s2) {</p>
-<p><strong>return</strong> s1.length() - s2.length();</p>
-<p>}</p>
-<p>};</p>
-<p>Collections.sort(nomes, comparador);</p>
-<p>System.out.println(nomes); // resultado: [ze, joao, maria, alexandre]</p></td>
-</tr>
-</tbody>
-</table>
-<p>Ou seja, a classe Collections se mostrou <q>aberta</q> a lidar com esse novo requisito, mas mantendo o seu código <q>fechado</q>, isto é, o código fonte da classe não teve que ser modificado.</p>
+<p><strong>Exemplo 1:</strong> Um exemplo de classe que segue o Princípio Aberto/Fechado é a classe <code>Collections</code> de Java. Ela possui um método estático para ordenar uma lista em ordem crescente de seus elementos. Um exemplo de uso desse método é mostrado a seguir:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; nomes = <span class="bu">Arrays</span>.<span class="fu">asList</span>(<span class="st">&quot;joao&quot;</span>, <span class="st">&quot;maria&quot;</span>, <span class="st">&quot;alexandre&quot;</span>, <span class="st">&quot;ze&quot;</span>);</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="bu">Collections</span>.<span class="fu">sort</span>(nomes);</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(nomes);  <span class="co">// resultado: [&quot;alexandre&quot;,&quot;joao&quot;,&quot;maria&quot;,&quot;ze&quot;]</span></span></code></pre></div>
+<p>No entanto, futuramente, podemos precisar de usar o método <code>sort</code> para ordenar as strings de acordo com seu tamanho em caracteres. Felizmente, a classe <code>Collections</code> está preparada para esse novo cenário de uso. Mas para isso precisamos implementar um objeto <code>Comparator</code>, que irá comparar as strings pelo seu tamanho, como no seguinte código:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">Comparator</span>&lt;<span class="bu">String</span>&gt; comparador = <span class="kw">new</span> <span class="bu">Comparator</span>&lt;<span class="bu">String</span>&gt;(){</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span>(<span class="bu">String</span> s1, <span class="bu">String</span> s2) {</span>
+<span id="cb28-3"><a href="#cb28-3"></a>    <span class="kw">return</span> s1.<span class="fu">length</span>() - s2.<span class="fu">length</span>();</span>
+<span id="cb28-4"><a href="#cb28-4"></a>  }</span>
+<span id="cb28-5"><a href="#cb28-5"></a>};</span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="bu">Collections</span>.<span class="fu">sort</span>(nomes, comparador);</span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(nomes);   <span class="co">// resultado: [ze, joao, maria, alexandre]</span></span></code></pre></div>
+<p>Ou seja, a classe <code>Collections</code> se mostrou <q>aberta</q> a lidar com esse novo requisito, mas mantendo o seu código <q>fechado</q>, isto é, o código fonte da classe não teve que ser modificado.</p>
 <p><strong>Exemplo 2</strong>: Mostramos agora um exemplo de função que não segue o Princípio Aberto/Fechado.</p>
-<table style="width:79%;">
-<colgroup>
-<col style="width: 79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>double calcTotalBolsas(Aluno[] lista) {</p>
-<p>double total = 0.0;</p>
-<p><strong>foreach</strong> (Aluno aluno <strong>in</strong> lista) {</p>
-<p><strong>if</strong> (aluno <strong>instanceof</strong> AlunoGrad) {</p>
-<p>AlunoGrad grad = (AlunoGrad) aluno;</p>
-<p>total += <q>código que calcula bolsa de grad</q>;</p>
-<p>}</p>
-<p><strong>else</strong> <strong>if</strong> (aluno <strong>instanceof</strong> AlunoMestrado) {</p>
-<p>AlunoMestrado mestrando = (AlunoMestrado) aluno;</p>
-<p>total += <q>código que calcula bolsa de mestrando</q>;</p>
-<p>}</p>
-<p>}</p>
-<p><strong>return</strong> total;</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Se amanhã tivermos que criar mais uma subclasse de Aluno, por exemplo, AlunoDoutorado, o código de calcTotalBolsas terá que ser adaptado. Ou seja, a função não está preparada para acomodar extensões (isto é, ela não está aberta), nem imune a alterações no seu código (isto é, ela também não está fechada).</p>
-<p>O Princípio Aberto/Fechado requer que o projetista de uma classe antecipe os seus pontos de extensão. Por isso, não é possível a uma classe acomodar todos os possíveis tipos de extensões que podem aparecer. Mas apenas aqueles para os quais são oferecidos pontos de extensão, seja via herança, funções de mais alta ordem ou padrões de projeto. Por exemplo, a implementação da classe Collections (no exemplo 1) usa um algoritmo de ordenação que é uma versão do MergeSort. Porém, os clientes da classe não podem alterar e customizar esse algoritmo, tendo que se contentar com a implementação default que é oferecida. Logo, sob o critério de customização do algoritmo de ordenação, o método sort não atende ao Princípio Aberto/Fechado.</p>
-<h3 data-number="1.7.3" id="princípio-de-substituição-de-liskov" data-number="1.7.3"><span class="header-section-number">5.7.3</span> Princípio de Substituição de Liskov</h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1"></a><span class="dt">double</span> <span class="fu">calcTotalBolsas</span>(Aluno[] lista){</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="dt">double</span>  total = <span class="fl">0.</span><span class="dv">0</span>;</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">foreach</span> (Aluno aluno in lista){</span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="kw">if</span> (aluno <span class="kw">instanceof</span> AlunoGrad){</span>
+<span id="cb29-5"><a href="#cb29-5"></a>      AlunoGrad grad = (AlunoGrad) aluno;</span>
+<span id="cb29-6"><a href="#cb29-6"></a>      total += <span class="st">&quot;código que calcula bolsa de grad&quot;</span>;</span>
+<span id="cb29-7"><a href="#cb29-7"></a>    }</span>
+<span id="cb29-8"><a href="#cb29-8"></a>    <span class="kw">else</span> <span class="kw">if</span> (aluno <span class="kw">instanceof</span> AlunoMestrado){</span>
+<span id="cb29-9"><a href="#cb29-9"></a>      AlunoMestrado mestrando = (AlunoMestrado) aluno;</span>
+<span id="cb29-10"><a href="#cb29-10"></a>      total += <span class="st">&quot;código que calcula bolsa de mestrando&quot;</span>;</span>
+<span id="cb29-11"><a href="#cb29-11"></a>    }</span>
+<span id="cb29-12"><a href="#cb29-12"></a>  }</span>
+<span id="cb29-13"><a href="#cb29-13"></a>  <span class="kw">return</span> total;</span>
+<span id="cb29-14"><a href="#cb29-14"></a>}</span></code></pre></div>
+<p>Se amanhã tivermos que criar mais uma subclasse de <code>Aluno</code>, por exemplo, <code>AlunoDoutorado</code>, o código de <code>calcTotalBolsas</code> terá que ser adaptado. Ou seja, a função não está preparada para acomodar extensões (isto é, ela não está aberta), nem imune a alterações no seu código (isto é, ela também não está fechada).</p>
+<p>O Princípio Aberto/Fechado requer que o projetista de uma classe antecipe os seus pontos de extensão. Por isso, não é possível a uma classe acomodar todos os possíveis tipos de extensões que podem aparecer. Mas apenas aqueles para os quais são oferecidos pontos de extensão, seja via herança, funções de mais alta ordem ou padrões de projeto. Por exemplo, a implementação da classe <code>Collections</code> (no exemplo 1) usa um algoritmo de ordenação que é uma versão do MergeSort. Porém, os clientes da classe não podem alterar e customizar esse algoritmo, tendo que se contentar com a implementação default que é oferecida. Logo, sob o critério de customização do algoritmo de ordenação, o método sort não atende ao Princípio Aberto/Fechado.</p>
+<h3 data-number="1.6.7" id="princípio-de-substituição-de-liskov" data-number="1.6.7"><span class="header-section-number">5.6.7</span> Princípio de Substituição de Liskov</h3>
 <p>Conforme já discutimos ao falar do princípio <q>Prefira Composição a Herança</q>, herança não é mais um conceito popular como foi na década de 80. Hoje, o emprego de herança é mais restrito e raro. No entanto, alguns casos de uso ainda são justificados. Herança define uma relação <q>é-um</q> entre objetos de uma classe base e objetos de subclasses. A vantagem é que comportamentos (isto é, métodos) comuns a essas classes podem ser implementados uma única vez, na classe base. Feito isso, eles são herdados em todas as subclasses.</p>
 <p>O Princípio de Substituição de Liskov explicita regras para redefinição de métodos de classes base em classes filhas. O nome do princípio é uma referência a Barbara Liskov, professora do MIT e ganhadora da edição de 2008 do Prêmio Turing. Dentre outros trabalhos, Liskov desenvolveu pesquisas sobre sistemas de tipos para linguagens orientadas a objetos. Foi em um desses trabalhos que ela enunciou o princípio que depois ganhou seu nome.</p>
 <p>Para explicar o Princípio de Substituição de Liskov vamos nos basear no seguinte exemplo:</p>
-<table style="width:22%;">
-<colgroup>
-<col style="width: 22%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>void f(A a) {</p>
-<p>...</p>
-<p>a.g(int n);</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>O método f pode ser chamado passando-se como parâmetros objetos de subclasses B1, B2, …, Bn da classe base A, como mostrado a seguir:</p>
-<table>
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>f(new B1()); // f pode receber objetos da subclasse B1 como parâmetro</p>
-<p>...</p>
-<p>f(new B2()); // e de qualquer outra subclasse de A, como B2</p>
-<p>...</p>
-<p>f(new B3()); // e B3</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1"></a><span class="dt">void</span> <span class="fu">f</span>(A a){</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  ...</span>
+<span id="cb30-3"><a href="#cb30-3"></a>  a.<span class="fu">g</span>(<span class="dt">int</span> n);</span>
+<span id="cb30-4"><a href="#cb30-4"></a>  ...</span>
+<span id="cb30-5"><a href="#cb30-5"></a>}</span></code></pre></div>
+<p>O método <code>f</code> pode ser chamado passando-se como parâmetros objetos de subclasses <code>B1</code>, <code>B2</code>, …, <code>Bn</code> da classe base <code>A</code>, como mostrado a seguir:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B1</span>());  <span class="co">// f pode receber objetos da subclasse B1 como parâmetro</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>...</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B2</span>());  <span class="co">// e de qualquer outra subclasse de A, como B2</span></span>
+<span id="cb31-4"><a href="#cb31-4"></a>...</span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B3</span>());   <span class="co">// e B3</span></span></code></pre></div>
 <p>O Princípio de Substituição de Liskov determina as condições — semânticas e não sintáticas — que as subclasses devem atender para que um programa como o anterior funcione.</p>
-<p>Suponha que as subclasses B1, B2, …., Bn redefinam o método g() de A, que é um método chamado no corpo de f. O Princípio de Substituição de Liskov prescreve que essas redefinições não podem violar o contrato da implementação original de g em A.</p>
-<p><strong>Exemplo 1:</strong> Suponha uma classe base que calcula números primos. Suponha ainda algumas subclasses que implementam outros algoritmos com o mesmo propósito. Especificamente, o método getPrimo(n) é um método que retorna o n-ésimo número primo. Esse método existe na classe base e é redefinido em todas as subclasses.</p>
-<p>Suponha ainda que o contrato do método getPrimo(n) especifique o seguinte: 1 ≤ n ≤ 1 milhão. Ou seja, o método deve ser capaz de retornar qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo, uma violação do contrato de getPrimo(n) ocorre, por exemplo, se, em uma das classes, o algoritmo implementado calcule apenas números primos até 900 mil.</p>
-<p>De forma mais concreta, o Princípio de Substituição de Liskov define o seguinte: suponha que um cliente chame um método getPrimo(n) de um objeto p da classe NumeroPrimo. Suponha agora que o objeto p seja <q>substituído</q> por um objeto de uma subclasse de NumeroPrimo. Nesse caso, o cliente vai passar a executar o método getPrimo(n) dessa subclasse. Porém, essa <q>substituição</q> de métodos não deve ter impacto no comportamento do cliente. Para tanto, todos os métodos getPrimo(n)das subclasses de NumeroPrimo devem realizar as mesmas tarefas que o método original, possivelmente de modo mais eficiente.</p>
+<p>Suponha que as subclasses <code>B1</code>, <code>B2</code>, …., <code>Bn</code> redefinam o método <code>g()</code> de <code>A</code>, que é um método chamado no corpo de <code>f</code>. O Princípio de Substituição de Liskov prescreve que essas redefinições não podem violar o contrato da implementação original de <code>g</code> em A.</p>
+<p><strong>Exemplo 1:</strong> Suponha uma classe base que calcula números primos. Suponha ainda algumas subclasses que implementam outros algoritmos com o mesmo propósito. Especificamente, o método <code>getPrimo(n)</code> é um método que retorna o n-ésimo número primo. Esse método existe na classe base e é redefinido em todas as subclasses.</p>
+<p>Suponha ainda que o contrato do método <code>getPrimo(n)</code> especifique o seguinte: 1 &lt;= n &lt;= 1 milhão. Ou seja, o método deve ser capaz de retornar qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo, uma violação do contrato de <code>getPrimo(n)</code> ocorre, por exemplo, se, em uma das classes, o algoritmo implementado calcule apenas números primos até 900 mil.</p>
+<p>De forma mais concreta, o Princípio de Substituição de Liskov define o seguinte: suponha que um cliente chame um método <code>getPrimo(n)</code> de um objeto <code>p</code> da classe <code>NumeroPrimo</code>. Suponha agora que o objeto <code>p</code> seja <q>substituído</q> por um objeto de uma subclasse de <code>NumeroPrimo</code>. Nesse caso, o cliente vai passar a executar o método <code>getPrimo(n)</code> dessa subclasse. Porém, essa <q>substituição</q> de métodos não deve ter impacto no comportamento do cliente. Para tanto, todos os métodos <code>getPrimo(n)</code> das subclasses de <code>NumeroPrimo</code> devem realizar as mesmas tarefas que o método original, possivelmente de modo mais eficiente.</p>
 <p><strong>Exemplo 2:</strong> Vamos mostrar um segundo exemplo de violação, dessa vez bem forte, exatamente para reforçar o sentido do Princípio de Substituição de Liskov.</p>
-<table style="width:72%;">
-<colgroup>
-<col style="width: 72%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p>int soma(int a, int b) {</p>
-<p><strong>return</strong> a+b;</p>
-<p>}</p>
-<p>}</p>
-<p><strong>class</strong> B <strong>extends</strong> A {</p>
-<p>int soma(int a, int b) {</p>
-<p>String r = String.valueOf(a) + String.valueOf(b);</p>
-<p><strong>return</strong> Integer.parseInt(r);</p>
-<p>}</p>
-<p>}</p>
-<p><strong>class</strong> Cliente {</p>
-<p>void f(A a) {</p>
-<p>...</p>
-<p>a.soma(1,2); // pode retornar 3 ou 12</p>
-<p>...</p>
-<p>}</p>
-<p>}</p>
-<p><strong>class</strong> Main {</p>
-<p>void main() {</p>
-<p>A a = new A();</p>
-<p>B b = new B();</p>
-<p>Cliente cliente = new Cliente();</p>
-<p>cliente.f(a);</p>
-<p>cliente.f(b);</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<p>Nesse exemplo, o método que soma dois inteiros foi redefinido na subclasse com uma semântica de concatenação dos respectivos valores convertidos para strings. Logo, para um desenvolvedor encarregado de manter a classe Cliente a situação fica bastante confusa. Em uma execução, a chamada soma(1,2) retorna 3 (isto é, 1+2); na execução seguinte, a mesma chamada irá retornar 12 (isto é, <q>1</q>+ <q>2</q> = <q>12</q> ou 12, como inteiro).</p>
-<h2 data-number="1.8" id="métricas" data-number="1.8"><span class="header-section-number">5.8</span> 5.7 Métricas</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">class</span> A{</span>
+<span id="cb32-2"><a href="#cb32-2"></a></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="dt">int</span> <span class="fu">soma</span>(<span class="dt">int</span> a, <span class="dt">int</span> b){</span>
+<span id="cb32-4"><a href="#cb32-4"></a>    <span class="kw">return</span> a+b;</span>
+<span id="cb32-5"><a href="#cb32-5"></a>  }</span>
+<span id="cb32-6"><a href="#cb32-6"></a></span>
+<span id="cb32-7"><a href="#cb32-7"></a>}</span>
+<span id="cb32-8"><a href="#cb32-8"></a></span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="kw">class</span> B <span class="kw">extends</span> A{</span>
+<span id="cb32-10"><a href="#cb32-10"></a></span>
+<span id="cb32-11"><a href="#cb32-11"></a>  <span class="dt">int</span> <span class="fu">soma</span>(<span class="dt">int</span> a, <span class="dt">int</span> b){</span>
+<span id="cb32-12"><a href="#cb32-12"></a>    <span class="bu">String</span> r = <span class="bu">String</span>.<span class="fu">valueOf</span>(a) + <span class="bu">String</span>.<span class="fu">valueOf</span>(b);</span>
+<span id="cb32-13"><a href="#cb32-13"></a>    <span class="kw">return</span> <span class="bu">Integer</span>.<span class="fu">parseInt</span>(r);</span>
+<span id="cb32-14"><a href="#cb32-14"></a>  }</span>
+<span id="cb32-15"><a href="#cb32-15"></a></span>
+<span id="cb32-16"><a href="#cb32-16"></a>}</span>
+<span id="cb32-17"><a href="#cb32-17"></a></span>
+<span id="cb32-18"><a href="#cb32-18"></a><span class="kw">class</span> Cliente{</span>
+<span id="cb32-19"><a href="#cb32-19"></a></span>
+<span id="cb32-20"><a href="#cb32-20"></a>  <span class="dt">void</span> <span class="fu">f</span>(A a){</span>
+<span id="cb32-21"><a href="#cb32-21"></a>    ...</span>
+<span id="cb32-22"><a href="#cb32-22"></a>    a.<span class="fu">soma</span>(<span class="dv">1</span>,<span class="dv">2</span>); <span class="co">// pode retornar 3 ou 12</span></span>
+<span id="cb32-23"><a href="#cb32-23"></a>    ...</span>
+<span id="cb32-24"><a href="#cb32-24"></a>  }</span>
+<span id="cb32-25"><a href="#cb32-25"></a></span>
+<span id="cb32-26"><a href="#cb32-26"></a>}</span>
+<span id="cb32-27"><a href="#cb32-27"></a></span>
+<span id="cb32-28"><a href="#cb32-28"></a><span class="kw">class</span> Main{</span>
+<span id="cb32-29"><a href="#cb32-29"></a></span>
+<span id="cb32-30"><a href="#cb32-30"></a>  <span class="dt">void</span> <span class="fu">main</span>(){</span>
+<span id="cb32-31"><a href="#cb32-31"></a>    A a = <span class="kw">new</span> <span class="fu">A</span>();</span>
+<span id="cb32-32"><a href="#cb32-32"></a>    B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
+<span id="cb32-33"><a href="#cb32-33"></a>    Cliente cliente = <span class="kw">new</span> <span class="fu">Cliente</span>();</span>
+<span id="cb32-34"><a href="#cb32-34"></a>    cliente.<span class="fu">f</span>(a);</span>
+<span id="cb32-35"><a href="#cb32-35"></a>    cliente.<span class="fu">f</span>(b);</span>
+<span id="cb32-36"><a href="#cb32-36"></a>  }</span>
+<span id="cb32-37"><a href="#cb32-37"></a></span>
+<span id="cb32-38"><a href="#cb32-38"></a>}</span></code></pre></div>
+<p>Nesse exemplo, o método que soma dois inteiros foi redefinido na subclasse com uma semântica de concatenação dos respectivos valores convertidos para strings. Logo, para um desenvolvedor encarregado de manter a classe <code>Cliente</code> a situação fica bastante confusa. Em uma execução, a chamada <code>soma(1,2)</code> retorna 3 (isto é, 1+2); na execução seguinte, a mesma chamada irá retornar 12 (isto é, <q>1</q>+ <q>2</q> = <q>12</q> ou 12, como inteiro).</p>
+<h2 data-number="1.7" id="métricas" data-number="1.7"><span class="header-section-number">5.7</span> Métricas</h2>
 <p>Ao longo dos anos, diversas métricas foram propostas para quantificar propriedades de um projeto de software. Normalmente, essas métricas precisam do código fonte de um sistema, isto é, o projeto já deve ter sido implementado. Por meio da análise de características do código fonte, elas expressam de forma quantitativa — por meio de valores numéricos — propriedades como tamanho, coesão, acoplamento e complexidade do código. O objetivo é permitir a avaliação da qualidade de um projeto de forma mais objetiva.</p>
 <p>No entanto, a monitoração do projeto de um sistema por meio de métricas de código fonte não é uma prática tão comum nos dias de hoje. Um dos motivos é que diversas propriedades de um sistema de software — como coesão e acoplamento, por exemplo — possuem um grau de subjetividade, o que dificulta a sua mensuração. Além disso, a interpretação dos resultados de métricas de software depende de informações de contexto. Uma determinada faixa de valores de uma métrica pode ser admissível em um sistema, mas não ser em outro sistema, de um domínio diferente. Mesmo entre as classes de um sistema, a interpretação dos valores de uma determinada métrica pode ser bem distinta.</p>
 <p>Nesta seção, vamos estudar métricas para mensurar as seguintes propriedades de um projeto de software: tamanho, coesão, acoplamento e complexidade. Iremos detalhar os procedimentos de cálculo dessas métricas e dar alguns exemplos. Existem ainda ferramentas e plugins para IDEs que calculam essas métricas de forma automática.</p>
-<h3 data-number="1.8.1" id="tamanho" data-number="1.8.1"><span class="header-section-number">5.8.1</span> Tamanho</h3>
+<h3 data-number="1.7.1" id="tamanho" data-number="1.7.1"><span class="header-section-number">5.7.1</span> Tamanho</h3>
 <p>A métrica de código fonte mais popular é <strong>linhas de código</strong> (LOC, <em>lines of code</em>). Ela pode ser usada para medir o tamanho de uma função, classe, pacote ou de um sistema inteiro. Quando se reporta os resultados de LOC, deve-se tomar o cuidado de deixar claro quais linhas foram de fato contadas. Por exemplo, se comentários ou linhas em branco foram considerados ou não.</p>
 <p>Embora LOC possa dar uma ideia do tamanho de um sistema, ela não deve ser usada para medir a produtividade de programadores. Por exemplo, se um desenvolvedor implementou 1 KLOC em um mês e outro implementou 5 KLOC, não podemos afirmar que o segundo foi 5 vezes mais produtivo. Dentre outros motivos, os requisitos implementados por cada um deles podem ter complexidade diferente. Ken Thompson — um dos desenvolvedores do sistema operacional Unix — tem uma frase a esse respeito:</p>
 <blockquote>
 <p><q>Um dos dias mais produtivos da minha vida foi quando eu deletei 1.000 linhas de código de um sistema.</q></p>
 </blockquote>
-<p>Essa frase é atribuída a Thompson no seguinte <a href="https://dl.acm.org/citation.cfm?id=829549"><span class="underline">livro</span></a>, de Eric Raymond, página 24. Portanto, métricas de software, quaisquer que sejam, não devem ser vistas como uma meta. No caso de LOC, isso poderia, por exemplo, incentivar os desenvolvedores a gerar código duplicado apenas para cumprir a meta estabelecida.</p>
+<p>Essa frase é atribuída a Thompson no seguinte <a href="https://dl.acm.org/citation.cfm?id=829549">livro</a>, de Eric Raymond, página 24. Portanto, métricas de software, quaisquer que sejam, não devem ser vistas como uma meta. No caso de LOC, isso poderia, por exemplo, incentivar os desenvolvedores a gerar código duplicado apenas para cumprir a meta estabelecida.</p>
 <p>Outras metas de tamanho de um sistema incluem: número de métodos, número de atributos, número de classes e número de pacotes.</p>
-<h3 data-number="1.8.2" id="coesão-1" data-number="1.8.2"><span class="header-section-number">5.8.2</span> Coesão</h3>
+<h3 data-number="1.7.2" id="coesão-1" data-number="1.7.2"><span class="header-section-number">5.7.2</span> Coesão</h3>
 <p>Uma das métricas mais conhecidas para se calcular coesão é chamada de <strong>LCOM</strong> (<em>Lack of Cohesion Between Methods</em>). Na verdade, como seu nome indica, LCOM mede a <q>falta de coesão</q> de uma classe. Em geral, métricas de software são interpretadas da seguinte forma: quanto maior o valor da métrica, pior a qualidade do código ou do projeto. No entanto, coesão é uma exceção a essa regra, pois quanto maior a coesão de uma classe, melhor o ser seu projeto. Por isso, LCOM foi planejada para medir a falta de coesão de classes. Quanto maior o valor de LCOM, maior a falta de coesão de uma classe e, portanto, pior o seu projeto.</p>
 <p>Para calcular o valor de LCOM de uma classe C deve-se, primeiro, criar o seguinte conjunto:</p>
 <p>M(C) = { (f<sub>1</sub>, f<sub>2</sub>) | f<sub>1</sub> e f<sub>2</sub> são métodos de C }</p>
 <p>Ele é formado por todos os pares não-ordenados de métodos da classe C. Seja ainda o seguinte conjunto:</p>
 <p>A(f) = conjunto de atributos da classe que são acessados por um método f</p>
 <p>O valor de LCOM de C é assim definido:</p>
-<p>P = | { (f<sub>1</sub>, f<sub>2</sub>) ∈ M(C) | A(f<sub>1</sub>) ∩ A(f<sub>2</sub>) = ∅ } |</p>
-<p>Isto é, LCOM(C) é o número de pares de métodos — dentre todos os possíveis pares de métodos de C -— que não usam atributos em comum.</p>
-<p><strong>Exemplo:</strong> Para deixar a explicação mais clara, suponha a seguinte classe hipotética:</p>
-<table style="width:36%;">
-<colgroup>
-<col style="width: 36%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p>int a1;</p>
-<p>int a2;</p>
-<p>int a3;</p>
-<p>void m1(){</p>
-<p>a1 = 10;</p>
-<p>a2 = 20;</p>
-<p>}</p>
-<p>void m2(){</p>
-<p>System.out.println(a1);</p>
-<p>a3 = 30;</p>
-<p>}</p>
-<p>void m3(){</p>
-<p>System.out.println(a3);</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<p>P = | { (f<sub>1</sub>, f<sub>2</sub>) in M(C) | A(f<sub>1</sub>) inter A(f<sub>2</sub>) = empty } |</p>
+<p>Isto é, LCOM(C) é o número de pares de métodos — dentre todos os possíveis pares de métodos de C — que não usam atributos em comum.</p>
+<p><strong>Exemplo:</strong> Para deixar a explicação mais clara, suponha a seguinte classe:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">class</span> A{</span>
+<span id="cb33-2"><a href="#cb33-2"></a></span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="dt">int</span> a1;</span>
+<span id="cb33-4"><a href="#cb33-4"></a>  <span class="dt">int</span> a2;</span>
+<span id="cb33-5"><a href="#cb33-5"></a>  <span class="dt">int</span> a3;</span>
+<span id="cb33-6"><a href="#cb33-6"></a></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="dt">void</span> <span class="fu">m1</span>(){</span>
+<span id="cb33-8"><a href="#cb33-8"></a>    a1 = <span class="dv">10</span>;</span>
+<span id="cb33-9"><a href="#cb33-9"></a>    a2 = <span class="dv">20</span>;</span>
+<span id="cb33-10"><a href="#cb33-10"></a>  }</span>
+<span id="cb33-11"><a href="#cb33-11"></a></span>
+<span id="cb33-12"><a href="#cb33-12"></a>  <span class="dt">void</span> <span class="fu">m2</span>(){</span>
+<span id="cb33-13"><a href="#cb33-13"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a1);</span>
+<span id="cb33-14"><a href="#cb33-14"></a>    a3 = <span class="dv">30</span>;</span>
+<span id="cb33-15"><a href="#cb33-15"></a>  }</span>
+<span id="cb33-16"><a href="#cb33-16"></a></span>
+<span id="cb33-17"><a href="#cb33-17"></a>  <span class="dt">void</span> <span class="fu">m3</span>(){</span>
+<span id="cb33-18"><a href="#cb33-18"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a3);</span>
+<span id="cb33-19"><a href="#cb33-19"></a>  }</span>
+<span id="cb33-20"><a href="#cb33-20"></a></span>
+<span id="cb33-21"><a href="#cb33-21"></a>}</span></code></pre></div>
 <p>A próxima tabela mostra os elementos dos conjuntos M e A; e o resultado da interseção que define o valor de LCOM.</p>
-<table style="width:94%;">
-<colgroup>
-<col style="width: 31%" />
-<col style="width: 30%" />
-<col style="width: 31%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
-<th><strong>Pares de métodos (M)</strong></th>
+<th><strong>Pares de métodos</strong></th>
 <th><strong>Conjunto A</strong></th>
 <th><strong>Interseção dos Conjuntos A</strong></th>
 </tr>
@@ -917,29 +765,26 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <tbody>
 <tr class="odd">
 <td>(m1,m2)</td>
-<td><p>A(m1) = {<strong>a1</strong>,a2}</p>
-<p>A(m2) = {<strong>a1</strong>,a3}</p></td>
+<td>A(m1) = {<strong>a1</strong>,a2}, A(m2) = {<strong>a1</strong>,a3}</td>
 <td>{a1}</td>
 </tr>
 <tr class="even">
 <td>(m1,m3)</td>
-<td><p>A(m1) = {a1,a2}</p>
-<p>A(m3) = {a3}</p></td>
-<td>∅</td>
+<td>A(m1) = {a1,a2}, A(m3) = {a3}</td>
+<td>vazio</td>
 </tr>
 <tr class="odd">
 <td>(m2,m3)</td>
-<td><p>A(m2) = {a1,<strong>a3</strong>}</p>
-<p>A(m3) = {<strong>a3</strong>}</p></td>
+<td>A(m2) = {a1,<strong>a3</strong>}, A(m3) = {<strong>a3</strong>}</td>
 <td>{a3}</td>
 </tr>
 </tbody>
 </table>
-<p>Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis pares de métodos, mas dois deles acessam pelo menos um atributo em comum (veja terceira coluna da tabela). Resta um único par de métodos que não têm atributos em comum.</p>
+<p>Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis pares de métodos, mas dois deles acessam pelo menos um atributo em comum (veja terceira coluna da tabela). Resta um único par de métodos que não tem atributos em comum.</p>
 <p>Portanto, LCOM parte do pressuposto que, em uma classe coesa, qualquer par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o que dá coesão a uma classe é o fato de seus métodos trabalharem com os mesmos atributos. Por isso, a coesão de uma classe é prejudicada — isto é, seu LCOM aumenta em uma unidade — sempre que achamos um par de métodos (f<sub>1</sub>,f<sub>2</sub>), onde f<sub>1</sub> manipula alguns atributos e f<sub>2</sub> manipula atributos diferentes.</p>
 <p>Para cálculo de LCOM normalmente não são considerados métodos construtores e getters/setters. Construtores tendem a ter atributos em comum com a maioria dos outros métodos. E o contrário tende a acontecer com getters e setters.</p>
 <p>Por fim, é importante mencionar que existem propostas alternativas para o cálculo de LCOM. A versão que apresentamos é chamada de LCOM1 e foi proposta por Shyam Chidamber e Chris Kemerer, em 1991 (<a href="https://doi.org/10.1145/118014.117970">link</a>). As versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar valores de LCOM, é importante deixar claro qual versão da métrica está sendo adotada.</p>
-<h3 data-number="1.8.3" id="acoplamento-1" data-number="1.8.3"><span class="header-section-number">5.8.3</span> Acoplamento</h3>
+<h3 data-number="1.7.3" id="acoplamento-1" data-number="1.7.3"><span class="header-section-number">5.7.3</span> Acoplamento</h3>
 <p><strong>CBO</strong> (<em>Coupling Between Objects</em>) é uma métrica para medir <strong>acoplamento estrutural</strong> entre duas classes. Ela também foi proposta por Chidamber e Kemerer (<a href="https://doi.org/10.1145/118014.117970"><span class="underline">link1</span></a> e <a href="https://doi.org/10.1109/32.295895"><span class="underline">link2</span></a>).</p>
 <p>Dada uma classe A, CBO conta o número de classes das quais A depende de forma sintática (ou estrutural). Diz-se que A depende de uma classe B quando:</p>
 <ul>
@@ -951,33 +796,28 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <li><p>A levanta uma exceção do tipo B</p></li>
 <li><p>A cria um objeto do tipo B.</p></li>
 </ul>
-<p>Seja uma classe A com dois métodos (metodo1 e metodo2):</p>
-<table style="width:68%;">
-<colgroup>
-<col style="width: 68%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A <strong>extends</strong> T1 <strong>implements</strong> T2 {</p>
-<p>T3 a;</p>
-<p>T4 metodo1(T5 p) throws T6 {</p>
-<p>T7 v;</p>
-<p>...</p>
-<p>}</p>
-<p>void metodo2(){</p>
-<p>T8 = new T8();</p>
-<p><strong>try</strong> {</p>
-<p>...</p>
-<p>}</p>
-<p><strong>catch</strong> (T9 e) { ... }</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
+<p>Seja uma classe A com dois métodos (<code>metodo1</code> e <code>metodo2</code>):</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">class</span> A <span class="kw">extends</span> T1 <span class="kw">implements</span> T2{</span>
+<span id="cb34-2"><a href="#cb34-2"></a></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  T3 a;</span>
+<span id="cb34-4"><a href="#cb34-4"></a></span>
+<span id="cb34-5"><a href="#cb34-5"></a>  T4 <span class="fu">metodo1</span>(T5 p) <span class="kw">throws</span> T6{</span>
+<span id="cb34-6"><a href="#cb34-6"></a>    T7 v;</span>
+<span id="cb34-7"><a href="#cb34-7"></a>    ...</span>
+<span id="cb34-8"><a href="#cb34-8"></a>  }</span>
+<span id="cb34-9"><a href="#cb34-9"></a></span>
+<span id="cb34-10"><a href="#cb34-10"></a>  <span class="dt">void</span> <span class="fu">metodo2</span>(){</span>
+<span id="cb34-11"><a href="#cb34-11"></a>    T8 = <span class="kw">new</span> <span class="fu">T8</span>();</span>
+<span id="cb34-12"><a href="#cb34-12"></a>    <span class="kw">try</span>{</span>
+<span id="cb34-13"><a href="#cb34-13"></a>      ...</span>
+<span id="cb34-14"><a href="#cb34-14"></a>    }</span>
+<span id="cb34-15"><a href="#cb34-15"></a>    <span class="kw">catch</span> (T9 e){ <span class="kw">... </span>}</span>
+<span id="cb34-16"><a href="#cb34-16"></a>  }</span>
+<span id="cb34-17"><a href="#cb34-17"></a></span>
+<span id="cb34-18"><a href="#cb34-18"></a>}</span></code></pre></div>
 <p>Conforme indicamos numerando os tipos dos quais A depende, temos que CBO(A) = 9.</p>
 <p>A definição de CBO não distingue as classes das quais uma classe depende. Por exemplo, tanto faz se a dependência é para uma classe da biblioteca de Java (por exemplo, String) ou uma classe mais instável da própria aplicação que está sendo desenvolvida.</p>
-<h3 data-number="1.8.4" id="complexidade" data-number="1.8.4"><span class="header-section-number">5.8.4</span> Complexidade</h3>
+<h3 data-number="1.7.4" id="complexidade" data-number="1.7.4"><span class="header-section-number">5.7.4</span> Complexidade</h3>
 <p><strong>Complexidade Ciclomática</strong> (CC) é uma métrica proposta por Thomas McCabe em 1976 para medir a complexidade do código de uma função ou método (<a href="https://dl.acm.org/citation.cfm?id=1313586">link</a>). Às vezes, ela é chamada também de Complexidade de McCabe. No contexto dessa métrica, o conceito de complexidade relaciona-se com a dificuldade de manter e testar uma função. A definição de CC baseia-se no conceito de grafos de fluxo de controle. Em tais grafos, os nodos representam os comandos de uma função ou método; e as arestas representam os possíveis fluxos de controle. Portanto, comandos como if geram fluxos de controle alternativos. O nome da métrica deriva do fato de ser calculada usando um conceito de Teoria dos Grafos chamado de número ciclomático (<em>cyclomatic number</em>).</p>
 <p>Porém, existe uma alternativa simples para calcular o CC de uma função, a qual dispensa a construção de grafos de fluxo de controle. Essa alternativa define CC da seguinte forma:</p>
 <p>CC = <q>número de comandos de decisão em uma função</q> + 1</p>
@@ -995,173 +835,118 @@ interfaces pensando em usuários externos. Sem nenhuma exceção<br />
 <p>Shyam Chidamber and Chris Kemerer. A metrics suite for object oriented design. IEEE Transactions on Software Engineering, 1994.</p>
 <p>Shyam Chidamber and Chris Kemerer. Towards a metrics suite for object oriented design. Conference on Object-oriented Programming Systems, Languages, and Applications (OOPSLA), 1991.</p>
 <h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
-<ol type="1">
-<li><p>Descreva três benefícios da propriedade de projeto chamada ocultamento de informação (<em>information hiding</em>)?</p></li>
-<li><p>Suponha que um programador adote a seguinte estratégia: ao implementar qualquer nova funcionalidade ou corrigir um bug que implique na modificação de duas classes A e B localizadas em arquivos diferentes, ele conclui a tarefa movendo as classes para o mesmo arquivo. Explicando melhor: após terminar a tarefa de programação que ficou sob sua responsabilidade, ele escolhe uma das classes, digamos a classe B, e a move para o mesmo arquivo da classe A. Agindo dessa maneira, ele estará melhorando qual propriedade de projeto? Por outro lado, qual propriedade de projeto estará sendo afetada de modo negativo? Justifique.</p></li>
-<li><p><strong>Classitis</strong> é o nome dado por John Ousterhout à proliferação de pequenas classes em um sistema. Segundo ele, <em>classitis</em> pode resultar em classes que individualmente são simples, mas que aumentam a complexidade total de um sistema. Usando os conceitos de acoplamento e coesão, como podemos explicar o problema causado por essa <q>doença</q>?</p></li>
-<li><p>Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c) acoplamento estrutural; (d) acoplamento evolutivo (ou lógico).</p></li>
-<li><p>Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2) acoplamento estrutural e ruim.</p></li>
-<li><p>É possível que uma classe A esteja acoplada a uma classe B sem ter uma referência para B em seu código? Se sim, esse acoplamento será aceitável ou ruim?</p></li>
-<li><p>Suponha um programa onde todo o código está implementado no método main. Ele tem um problema de coesão ou acoplamento? Justifique.</p></li>
-<li><p>Qual princípio de projeto é violado pelo seguinte código?</p></li>
-</ol>
-<table style="width:42%;">
-<colgroup>
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>void onclick() {</p>
-<p>num1 = textfield1.value();</p>
-<p>c1 = BD.getConta(num1)</p>
-<p>num2 = textfield2.value();</p>
-<p>c2 = BD.getConta(num2)</p>
-<p>valor = textfield3.value();</p>
-<p>beginTransaction();</p>
-<p><strong>try</strong> {</p>
-<p>c1.retira(valor);</p>
-<p>c2.deposita(valor);</p>
-<p>commit();</p>
-<p>}</p>
-<p><strong>catch</strong>() {</p>
-<p>rollback();</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="9" type="1">
-<li><p>Costuma-se afirmar que existem três conceitos chaves em orientação a objetos: encapsulamento, polimorfismo e herança. Suponha que você tenha sido encarregado de projetar uma nova linguagem de programação. Suponha ainda que você poderá escolher apenas dois dos três conceitos que mencionamos. Qual dos conceitos eliminaria então da sua nova linguagem? Justifique sua resposta.</p></li>
-<li><p>Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</p></li>
-</ol>
-<table style="width:71%;">
-<colgroup>
-<col style="width: 70%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>void sendMail(ContaBancaria conta, String msg) {</p>
-<p>Cliente cliente = conta.getCliente();</p>
-<p>String mail = cliente.getMailAddress();</p>
-<p><q>Envia mail</q></p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="11" type="1">
-<li>Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</li>
-</ol>
-<table style="width:69%;">
-<colgroup>
-<col style="width: 69%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>void imprimeDataContratacao(Funcionario func) {</p>
-<p>Date data = func.getDataContratacao();</p>
-<p>String msg = data.format();</p>
-<p>System.out.println(msg);</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="12" type="1">
-<li>As pré-condições de um método são expressões booleanas envolvendo seus parâmetros (e, possivelmente, o estado de sua classe) que devem ser verdadeiras antes da sua execução. De forma semelhante, as pós-condições são expressões booleanas envolvendo o resultado do método. Considerando essas definições, qual princípio de projeto é violado pelo código abaixo?</li>
-</ol>
-<table style="width:90%;">
-<colgroup>
-<col style="width: 44%" />
-<col style="width: 45%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p>int f(int x) { // pre: x &gt; 0</p>
-<p>...</p>
-<p><strong>return</strong> exp;</p>
-<p>} // pos: exp &gt; 0</p>
-<p>...</p>
-<p>}</p></td>
-<td><p><strong>class</strong> B <strong>extends</strong> A {</p>
-<p>int f(int x) { // pre: x &gt; 10</p>
-<p>...</p>
-<p><strong>return</strong> exp;</p>
-<p>} // pos: exp &gt; -50</p>
-<p>...</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="13" type="1">
-<li><p>Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p></li>
-<li><p>Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p></li>
-</ol>
-<table style="width:47%;">
-<colgroup>
-<col style="width: 23%" />
-<col style="width: 23%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A {</p>
-<p>X x = new X();</p>
-<p>void f() {</p>
-<p>x.m1();</p>
-<p>}</p>
-<p>void g() {</p>
-<p>x.m2();</p>
-<p>}</p>
-<p>void h() {</p>
-<p>x.m3();</p>
-<p>}</p>
-<p>}</p></td>
-<td><p><strong>class</strong> B {</p>
-<p>X x = new X();</p>
-<p>Y y = new Y();</p>
-<p>Z z = new Z();</p>
-<p>void f() {</p>
-<p>x.m();</p>
-<p>}</p>
-<p>void g() {</p>
-<p>y.m();</p>
-<p>}</p>
-<p>void h() {</p>
-<p>z.m();</p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="15" type="1">
-<li><p>Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p></li>
-<li><p>Calcule o CBO e LCOM da seguinte classe:</p></li>
-</ol>
-<table style="width:42%;">
-<colgroup>
-<col style="width: 41%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p><strong>class</strong> A <strong>extends</strong> B {</p>
-<p>C f1, f2, f3;</p>
-<p>void m1(D p) {</p>
-<p><q>usa f1 e f2</q></p>
-<p>}</p>
-<p>void m2(E p) {</p>
-<p><q>usa f2 e f3</q></p>
-<p>}</p>
-<p>void m3(F p) {</p>
-<p><q>usa f3</q></p>
-<p>}</p>
-<p>}</p></td>
-</tr>
-</tbody>
-</table>
-<ol start="17" type="1">
-<li><p>A definição de complexidade ciclomática é independente de linguagem de programação. Sim ou não? Justifique.</p></li>
-<li><p>Dê um exemplo de código com complexidade ciclomática mínima. Qual é essa complexidade?</p></li>
-<li><p>Cristina Lopes — professora da Universidade da Califórnia, em Irvine, nos EUA — é autora de um livro sobre estilos de programação (<a href="https://dl.acm.org/citation.cfm?id=2648631">link</a>). Ela discute no livro diversos estilos para implementação de um mesmo problema, chamado frequência de termos. Dado um arquivo texto, deve-se listar as <em>n</em>-palavras mais frequentes em ordem decrescente de frequência e ignorando <em>stop words</em>, isto é, artigos, preposições, etc. O código fonte em Python de todas as versões analisadas no livro está publicamente disponível no GitHub (e, para esse exercício, fizemos um fork do repositório original). Faça uma análise de duas dessas versões:</p></li>
-</ol>
+<p>1. Descreva três benefícios da propriedade de projeto chamada ocultamento de informação (<em>information hiding</em>)?</p>
+<p>2. Suponha que um programador adote a seguinte estratégia: ao implementar qualquer nova funcionalidade ou corrigir um bug que implique na modificação de duas classes A e B localizadas em arquivos diferentes, ele conclui a tarefa movendo as classes para o mesmo arquivo. Explicando melhor: após terminar a tarefa de programação que ficou sob sua responsabilidade, ele escolhe uma das classes, digamos a classe B, e a move para o mesmo arquivo da classe A. Agindo dessa maneira, ele estará melhorando qual propriedade de projeto? Por outro lado, qual propriedade de projeto estará sendo afetada de modo negativo? Justifique.</p>
+<p>3. <strong>Classitis</strong> é o nome dado por John Ousterhout à proliferação de pequenas classes em um sistema. Segundo ele, <em>classitis</em> pode resultar em classes que individualmente são simples, mas que aumentam a complexidade total de um sistema. Usando os conceitos de acoplamento e coesão, como podemos explicar o problema causado por essa <q>doença</q>?</p>
+<p>4. Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c) acoplamento estrutural; (d) acoplamento evolutivo (ou lógico).</p>
+<p>5. Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2) acoplamento estrutural e ruim.</p>
+<p>6. É possível que uma classe A esteja acoplada a uma classe B sem ter uma referência para B em seu código? Se sim, esse acoplamento será aceitável ou ruim?</p>
+<p>7. Suponha um programa onde todo o código está implementado no método main. Ele tem um problema de coesão ou acoplamento? Justifique.</p>
+<p>8. Qual princípio de projeto é violado pelo seguinte código?</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1"></a><span class="dt">void</span> <span class="fu">onclick</span>(){</span>
+<span id="cb35-2"><a href="#cb35-2"></a>  num1 = textfield1.<span class="fu">value</span>();</span>
+<span id="cb35-3"><a href="#cb35-3"></a>  c1 = BD.<span class="fu">getConta</span>(num1)</span>
+<span id="cb35-4"><a href="#cb35-4"></a>  num2 = textfield2.<span class="fu">value</span>();</span>
+<span id="cb35-5"><a href="#cb35-5"></a>  c2 = BD.<span class="fu">getConta</span>(num2)</span>
+<span id="cb35-6"><a href="#cb35-6"></a>  valor = textfield3.<span class="fu">value</span>();</span>
+<span id="cb35-7"><a href="#cb35-7"></a>  <span class="fu">beginTransaction</span>();</span>
+<span id="cb35-8"><a href="#cb35-8"></a>  <span class="kw">try</span>{</span>
+<span id="cb35-9"><a href="#cb35-9"></a>    c1.<span class="fu">retira</span>(valor);</span>
+<span id="cb35-10"><a href="#cb35-10"></a>    c2.<span class="fu">deposita</span>(valor);</span>
+<span id="cb35-11"><a href="#cb35-11"></a>    <span class="fu">commit</span>();</span>
+<span id="cb35-12"><a href="#cb35-12"></a>  }          </span>
+<span id="cb35-13"><a href="#cb35-13"></a>  <span class="kw">catch</span>() {</span>
+<span id="cb35-14"><a href="#cb35-14"></a>    <span class="fu">rollback</span>();</span>
+<span id="cb35-15"><a href="#cb35-15"></a>  }</span>
+<span id="cb35-16"><a href="#cb35-16"></a>}  </span></code></pre></div>
+<p>9. Costuma-se afirmar que existem três conceitos chaves em orientação a objetos: encapsulamento, polimorfismo e herança. Suponha que você tenha sido encarregado de projetar uma nova linguagem de programação. Suponha ainda que você poderá escolher apenas dois dos três conceitos que mencionamos. Qual dos conceitos eliminaria então da sua nova linguagem? Justifique sua resposta.</p>
+<p>10. Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb36-1"><a href="#cb36-1"></a><span class="dt">void</span> <span class="fu">sendMail</span>(ContaBancaria conta, <span class="bu">String</span> msg){</span>
+<span id="cb36-2"><a href="#cb36-2"></a>  Cliente cliente = conta.<span class="fu">getCliente</span>();</span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="bu">String</span> mail = cliente.<span class="fu">getMailAddress</span>();</span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="st">&quot;Envia mail&quot;</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>}  </span></code></pre></div>
+<p>11. Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1"></a><span class="dt">void</span> <span class="fu">imprimeDataContratacao</span>(Funcionario func){</span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="bu">Date</span> data = func.<span class="fu">getDataContratacao</span>();</span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="bu">String</span> msg = data<span class="fu">.format</span>();</span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(msg);</span>
+<span id="cb37-5"><a href="#cb37-5"></a>}  </span></code></pre></div>
+<p>12. As pré-condições de um método são expressões booleanas envolvendo seus parâmetros (e, possivelmente, o estado de sua classe) que devem ser verdadeiras antes da sua execução. De forma semelhante, as pós-condições são expressões booleanas envolvendo o resultado do método. Considerando essas definições, qual princípio de projeto é violado pelo código abaixo?</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1"></a><span class="kw">class</span> A{  </span>
+<span id="cb38-2"><a href="#cb38-2"></a>  <span class="dt">int</span> <span class="fu">f</span>(<span class="dt">int</span> x){ <span class="co">// pre: x &gt; 0</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    ...</span>
+<span id="cb38-4"><a href="#cb38-4"></a>    <span class="kw">return</span> exp;</span>
+<span id="cb38-5"><a href="#cb38-5"></a>  }            <span class="co">// pos: exp &gt; 0</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a>  ...</span>
+<span id="cb38-7"><a href="#cb38-7"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb39-1"><a href="#cb39-1"></a><span class="kw">class</span> B <span class="kw">extends</span> A{  </span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="dt">int</span> <span class="fu">f</span>(<span class="dt">int</span> x){ <span class="co">// pre: x &gt; 10</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  ...</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="kw">return</span> exp;</span>
+<span id="cb39-5"><a href="#cb39-5"></a>  }            <span class="co">// pos: exp &gt; -50</span></span>
+<span id="cb39-6"><a href="#cb39-6"></a>  ...</span>
+<span id="cb39-7"><a href="#cb39-7"></a>}</span></code></pre></div>
+<p>13. Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p>
+<p>14. Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">class</span> A{</span>
+<span id="cb40-2"><a href="#cb40-2"></a></span>
+<span id="cb40-3"><a href="#cb40-3"></a>  X x = <span class="kw">new</span> <span class="fu">X</span>();</span>
+<span id="cb40-4"><a href="#cb40-4"></a></span>
+<span id="cb40-5"><a href="#cb40-5"></a>  <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb40-6"><a href="#cb40-6"></a>    x.<span class="fu">m1</span>();</span>
+<span id="cb40-7"><a href="#cb40-7"></a>  }</span>
+<span id="cb40-8"><a href="#cb40-8"></a></span>
+<span id="cb40-9"><a href="#cb40-9"></a>  <span class="dt">void</span> <span class="fu">g</span>(){</span>
+<span id="cb40-10"><a href="#cb40-10"></a>    x.<span class="fu">m2</span>();</span>
+<span id="cb40-11"><a href="#cb40-11"></a>  }</span>
+<span id="cb40-12"><a href="#cb40-12"></a></span>
+<span id="cb40-13"><a href="#cb40-13"></a>  <span class="dt">void</span> <span class="fu">h</span>(){</span>
+<span id="cb40-14"><a href="#cb40-14"></a>    x.<span class="fu">m3</span>();</span>
+<span id="cb40-15"><a href="#cb40-15"></a>  }</span>
+<span id="cb40-16"><a href="#cb40-16"></a></span>
+<span id="cb40-17"><a href="#cb40-17"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">class</span> B{</span>
+<span id="cb41-2"><a href="#cb41-2"></a></span>
+<span id="cb41-3"><a href="#cb41-3"></a>  X x = <span class="kw">new</span> <span class="fu">X</span>();</span>
+<span id="cb41-4"><a href="#cb41-4"></a>  Y y = <span class="kw">new</span> <span class="fu">Y</span>();</span>
+<span id="cb41-5"><a href="#cb41-5"></a>  Z z = <span class="kw">new</span> <span class="fu">Z</span>();</span>
+<span id="cb41-6"><a href="#cb41-6"></a></span>
+<span id="cb41-7"><a href="#cb41-7"></a>  <span class="dt">void</span> <span class="fu">f</span>(){</span>
+<span id="cb41-8"><a href="#cb41-8"></a>    x.<span class="fu">m</span>();</span>
+<span id="cb41-9"><a href="#cb41-9"></a>  }</span>
+<span id="cb41-10"><a href="#cb41-10"></a></span>
+<span id="cb41-11"><a href="#cb41-11"></a>  <span class="dt">void</span> <span class="fu">g</span>(){</span>
+<span id="cb41-12"><a href="#cb41-12"></a>    y.<span class="fu">m</span>();</span>
+<span id="cb41-13"><a href="#cb41-13"></a>  }</span>
+<span id="cb41-14"><a href="#cb41-14"></a></span>
+<span id="cb41-15"><a href="#cb41-15"></a>  <span class="dt">void</span> <span class="fu">h</span>(){</span>
+<span id="cb41-16"><a href="#cb41-16"></a>    z.<span class="fu">m</span>();</span>
+<span id="cb41-17"><a href="#cb41-17"></a>  }</span>
+<span id="cb41-18"><a href="#cb41-18"></a></span>
+<span id="cb41-19"><a href="#cb41-19"></a>}</span></code></pre></div>
+<p>15. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
+<p>16. Calcule o CBO e LCOM da seguinte classe:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">class</span> A <span class="kw">extends</span> B{</span>
+<span id="cb42-2"><a href="#cb42-2"></a></span>
+<span id="cb42-3"><a href="#cb42-3"></a>  C f1, f2, f3;</span>
+<span id="cb42-4"><a href="#cb42-4"></a></span>
+<span id="cb42-5"><a href="#cb42-5"></a>  <span class="dt">void</span> <span class="fu">m1</span>(D p){</span>
+<span id="cb42-6"><a href="#cb42-6"></a>    <span class="st">&quot;usa f1 e f2&quot;</span></span>
+<span id="cb42-7"><a href="#cb42-7"></a>  }</span>
+<span id="cb42-8"><a href="#cb42-8"></a></span>
+<span id="cb42-9"><a href="#cb42-9"></a>  <span class="dt">void</span> <span class="fu">m2</span>(E p){</span>
+<span id="cb42-10"><a href="#cb42-10"></a>    <span class="st">&quot;usa f2 e f3&quot;</span></span>
+<span id="cb42-11"><a href="#cb42-11"></a>  }</span>
+<span id="cb42-12"><a href="#cb42-12"></a></span>
+<span id="cb42-13"><a href="#cb42-13"></a>  <span class="dt">void</span> <span class="fu">m3</span>(F p){</span>
+<span id="cb42-14"><a href="#cb42-14"></a>    <span class="st">&quot;usa f3&quot;</span>  </span>
+<span id="cb42-15"><a href="#cb42-15"></a>  }</span>
+<span id="cb42-16"><a href="#cb42-16"></a></span>
+<span id="cb42-17"><a href="#cb42-17"></a>}</span></code></pre></div>
+<p>17. A definição de complexidade ciclomática é independente de linguagem de programação. Sim ou não? Justifique.</p>
+<p>18. Dê um exemplo de código com complexidade ciclomática mínima. Qual é essa complexidade?</p>
+<p>19. Cristina Lopes — professora da Universidade da Califórnia, em Irvine, nos EUA — é autora de um livro sobre estilos de programação (<a href="https://dl.acm.org/citation.cfm?id=2648631">link</a>). Ela discute no livro diversos estilos para implementação de um mesmo problema, chamado frequência de termos. Dado um arquivo texto, deve-se listar as <em>n</em>-palavras mais frequentes em ordem decrescente de frequência e ignorando <em>stop words</em>, isto é, artigos, preposições, etc. O código fonte em Python de todas as versões analisadas no livro está publicamente disponível no GitHub (e, para esse exercício, fizemos um fork do repositório original). Faça uma análise de duas dessas versões:</p>
 <ul>
 <li><p>Monolítica, disponível neste <a href="https://github.com/mtov/exercises-in-programming-style/tree/master/04-monolith">link</a>.</p></li>
 <li><p>Orientada a objetos, disponível neste <a href="https://github.com/mtov/exercises-in-programming-style/tree/master/11-things">link</a>.</p></li>

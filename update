@@ -5,6 +5,7 @@ pandoc --number-offset=0 --defaults=defaults.yaml cap1.md -o cap1.html
 pandoc --number-offset=1 --defaults=defaults.yaml cap2.md -o cap2.html
 pandoc --number-offset=2 --defaults=defaults.yaml cap3.md -o cap3.html
 pandoc --number-offset=3 --defaults=defaults.yaml cap4.md -o cap4.html
+pandoc --number-offset=4 --defaults=defaults.yaml cap5.md -o cap5.html
 pandoc --number-offset=5 --defaults=defaults.yaml cap6.md -o cap6.html
 pandoc --number-offset=6 --defaults=defaults.yaml cap7.md -o cap7.html
 pandoc --number-offset=7 --defaults=defaults.yaml cap8.md -o cap8.html

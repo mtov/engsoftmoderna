@@ -47,7 +47,8 @@ pelo qual ficaram conhecidos os autores e também o livro de padrões de
 projeto — precisamos entender: (1) o problema que o padrão pretende
 resolver; (2) o contexto em que esse problema ocorre; (3) a solução
 proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre
-focando nesses elementos: contexto, problema e solução.
+focando nesses elementos: contexto, problema e solução. Iremos também mostrar 
+vários exemplos de código.
 
 Além de oferecer soluções prontas para problemas de projeto, padrões de
 projeto transformaram-se em um vocabulário largamente adotado por
@@ -96,7 +97,7 @@ não for uma preocupação, os desenvolvedores correm o risco de em breve
 ter que planejar um profundo reprojeto de seus sistemas.
 
 No livro sobre padrões de projeto, são propostos 23 padrões, divididos
-em três categorias (os padrões que estudaremos neste capítulo estão
+nas seguintes três categorias (os padrões que estudaremos neste capítulo estão
 em negrito, seguido do número da seção onde eles são apresentados):
 
 -   **Criacionais**: padrões que propõem soluções flexíveis para criação
@@ -560,7 +561,7 @@ objetos dessa classe podem ser passados como parâmetro do método `init()`
 do sistema para controle de projetores. A classe
 `AdaptadorProjetorSamsung` também possui um atributo privado do tipo
 `ProjetorSamsung`. A sequência de chamadas é então a seguinte (acompanhe
-também pelo diagrama de sequência UML a seguir): primeiro, o cliente
+também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente
 — no nosso caso, representado pelo método `init` — chama `liga()` da
 classe adaptadora; em seguida, a execução desse método chama o método
 equivalente — no caso, `turnOn()` — do objeto que está sendo
@@ -711,16 +712,16 @@ No nosso problema, ao optarmos por decoradores, o cliente poderá
 configurar um `Channel` da seguinte forma:
 
 ```java
-channel = new ZipChannel (new TCPChannel());
+channel = new ZipChannel(new TCPChannel());
 // TCPChannel que compacte/descompacte dados enviados/recebidos
 
-channel = new BufferChannel (new TCPChannel());
+channel = new BufferChannel(new TCPChannel());
 // TCPChannel com um buffer associado
 
-channel = new BufferChannel (new UDPChannel());
+channel = new BufferChannel(new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel = new BufferChannel (new ZipChannel (new TCPChannel()));
+channel = new BufferChannel(new ZipChannel (new TCPChannel()));
 // TCPChannel com compactação e um buffer associado
 ```
 
@@ -1475,7 +1476,7 @@ m) Define o esqueleto de um algoritmo em uma classe base e delega a implementaç
 
 3\. Dentre os padrões de projeto que respondeu na questão (2), quais são criacionais?
 
-4\. Considerando as respostas da questão (2), liste o nome de padrões de
+4\. Considerando as respostas da questão (2), liste padrões de
 projeto que:
 
 a)  Ajudam a tornar uma classe aberta a extensões, sem que seja preciso
@@ -1493,10 +1494,10 @@ d)  Simplificam o uso de um sistema.
 diferença entre esses padrões?
 
 6\. No exemplo de Adaptador, mostramos o código de uma única classe
-adaptadora (AdaptadorProjetorSamsung). Escreva o código de uma classe
-semelhante, mas que adapte a interface Projetor para a interface
-ProjetorLG (o código de ambas interfaces é mostrado na Seção 6.5). Chame
-essa classe de AdaptadorProjetorLG.
+adaptadora (`AdaptadorProjetorSamsung`). Escreva o código de uma classe
+semelhante, mas que adapte a interface `Projetor` para a interface
+`ProjetorLG` (o código de ambas interfaces é mostrado na Seção 6.5). Chame
+essa classe de `AdaptadorProjetorLG`.
 
 7\. Suponha uma classe base A. Suponha que queremos adicionar quatro
 funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades

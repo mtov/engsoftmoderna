@@ -122,7 +122,7 @@
 <blockquote>
 <p>Padrões de projeto descrevem objetos e classes que se relacionam para resolver um problema de projeto genérico em um contexto particular.</p>
 </blockquote>
-<p>Assim, para entender os padrões propostos pela <em>Gang of Four</em> — nome pelo qual ficaram conhecidos os autores e também o livro de padrões de projeto — precisamos entender: (1) o problema que o padrão pretende resolver; (2) o contexto em que esse problema ocorre; (3) a solução proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre focando nesses elementos: contexto, problema e solução.</p>
+<p>Assim, para entender os padrões propostos pela <em>Gang of Four</em> — nome pelo qual ficaram conhecidos os autores e também o livro de padrões de projeto — precisamos entender: (1) o problema que o padrão pretende resolver; (2) o contexto em que esse problema ocorre; (3) a solução proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre focando nesses elementos: contexto, problema e solução. Iremos também mostrar vários exemplos de código.</p>
 <p>Além de oferecer soluções prontas para problemas de projeto, padrões de projeto transformaram-se em um vocabulário largamente adotado por desenvolvedores de software. Assim, é comum ouvir desenvolvedores dizendo que usaram uma fábrica para resolver um certo problema, enquanto que um segundo problema foi resolvido por meio de decoradores. Ou seja, eles apenas mencionam o nome do padrão e subentendem que a solução adotada já está clara. De forma semelhante, o vocabulário de padrões de projeto é muito usado na documentação de sistemas. Por exemplo, a figura da próxima página mostra a documentação de uma das classes da biblioteca padrão de Java. Podemos ver que o nome da classe termina em <code>Factory</code> — que é um dos padrões de projeto que vamos estudar daqui a pouco. Na descrição da classe, volta-se a mencionar que ela é uma fábrica. Portanto, desenvolvedores que conhecem esse padrão de projeto terão mais facilidade para entender e usar a classe em questão.</p>
 <figure>
 <img src="figs/cap6/doc-pattern.png" style="width:55.0%" alt="" /><figcaption>Documentação de uma classe <code>Factory</code> da API de Java</figcaption>
@@ -134,7 +134,7 @@
 </ul>
 <p>É importante entender que padrões de projeto visam a criação de projetos de software flexíveis e extensíveis. Neste livro, antes de explicar cada um dos padrões, vamos apresentar um contexto e um trecho de código que funciona e produz um resultado. Porém, ele não dá origem a um projeto flexível. Para deixar essa inflexibilidade clara, apresentaremos um cenário de extensão do código mostrado, envolvendo a implementação de novos requisitos. Então vamos argumentar que essa extensão exigirá algum esforço, que poderá ser minimizado se usarmos um padrão de projeto.</p>
 <p>Os quatro autores do livro de padrões de projeto defendem que devemos projetar um sistema pensando em mudanças que inevitavelmente vão ocorrer — eles chamam essa preocupação de <em>design for change</em>. Conforme afirmado por eles na frase que abre este capítulo, se design for change não for uma preocupação, os desenvolvedores correm o risco de em breve ter que planejar um profundo reprojeto de seus sistemas.</p>
-<p>No livro sobre padrões de projeto, são propostos 23 padrões, divididos em três categorias (os padrões que estudaremos neste capítulo estão em negrito, seguido do número da seção onde eles são apresentados):</p>
+<p>No livro sobre padrões de projeto, são propostos 23 padrões, divididos nas seguintes três categorias (os padrões que estudaremos neste capítulo estão em negrito, seguido do número da seção onde eles são apresentados):</p>
 <ul>
 <li><p><strong>Criacionais</strong>: padrões que propõem soluções flexíveis para criação de objetos. São eles: <strong>Abstract Factory (6.2)</strong>, Factory Method, <strong>Singleton (6.3)</strong>, <strong>Builder (6.12)</strong> e Prototype.</p></li>
 <li><p><strong>Estruturais</strong>: padrões que propõem soluções flexíveis para composição de classes e objetos. São eles: <strong>Proxy (6.4)</strong>, <strong>Adapter (6.5)</strong>, <strong>Facade (6.6)</strong>, <strong>Decorator (6.7)</strong>, Bridge, Composite e Flyweight.</p></li>
@@ -352,7 +352,7 @@
 <span id="cb13-11"><a href="#cb13-11"></a>   }</span>
 <span id="cb13-12"><a href="#cb13-12"></a></span>
 <span id="cb13-13"><a href="#cb13-13"></a>}</span></code></pre></div>
-<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML a seguir): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; no caso, um objeto que acessa projetores Samsung.</p>
+<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; no caso, um objeto que acessa projetores Samsung.</p>
 <figure>
 <img src="figs/cap6/padrao-adapter.svg" style="width:70.0%" alt="" /><figcaption>Padrão de projeto Adaptador</figcaption>
 </figure>
@@ -417,16 +417,16 @@
 <p>Nessa solução, usamos herança para implementar subclasses para cada conjunto de funcionalidades. Suponha que o usuário precise de um canal UDP com buffer e compactação. Para isso, tivemos que implementar <code>UDPBufferedZipChannel</code> como subclasse de <code>UDPZipChannel</code>, que por sua vez foi implementada como subclasse de <code>UDPChannel</code>. Como o leitor deve ter percebido, uma solução via herança é quase que inviável, pois ela gera uma explosão combinatória do número de classes relacionadas com canais de comunicação.</p>
 <p><strong>Solução</strong>: O Padrão Decorador representa uma alternativa a herança quando se precisa adicionar novas funcionalidades em uma classe base. Em vez de usar herança, usa-se composição para adicionar tais funcionalidades dinamicamente nas classes base. Portanto, Decorador é um exemplo de aplicação do princípio de projeto <q>Prefira Composição a Herança</q>, que estudamos no capítulo anterior.</p>
 <p>No nosso problema, ao optarmos por decoradores, o cliente poderá configurar um <code>Channel</code> da seguinte forma:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1"></a>channel = <span class="kw">new</span> <span class="fu">ZipChannel</span> (<span class="kw">new</span> <span class="fu">TCPChannel</span>());</span>
+<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1"></a>channel = <span class="kw">new</span> <span class="fu">ZipChannel</span>(<span class="kw">new</span> <span class="fu">TCPChannel</span>());</span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="co">// TCPChannel que compacte/descompacte dados enviados/recebidos</span></span>
 <span id="cb18-3"><a href="#cb18-3"></a></span>
-<span id="cb18-4"><a href="#cb18-4"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span> (<span class="kw">new</span> <span class="fu">TCPChannel</span>());</span>
+<span id="cb18-4"><a href="#cb18-4"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span>(<span class="kw">new</span> <span class="fu">TCPChannel</span>());</span>
 <span id="cb18-5"><a href="#cb18-5"></a><span class="co">// TCPChannel com um buffer associado</span></span>
 <span id="cb18-6"><a href="#cb18-6"></a></span>
-<span id="cb18-7"><a href="#cb18-7"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span> (<span class="kw">new</span> <span class="fu">UDPChannel</span>());</span>
+<span id="cb18-7"><a href="#cb18-7"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span>(<span class="kw">new</span> <span class="fu">UDPChannel</span>());</span>
 <span id="cb18-8"><a href="#cb18-8"></a><span class="co">// UDPChannel com um buffer associado</span></span>
 <span id="cb18-9"><a href="#cb18-9"></a></span>
-<span id="cb18-10"><a href="#cb18-10"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span> (<span class="kw">new</span> <span class="fu">ZipChannel</span> (<span class="kw">new</span> <span class="fu">TCPChannel</span>()));</span>
+<span id="cb18-10"><a href="#cb18-10"></a>channel = <span class="kw">new</span> <span class="fu">BufferChannel</span>(<span class="kw">new</span> <span class="fu">ZipChannel</span> (<span class="kw">new</span> <span class="fu">TCPChannel</span>()));</span>
 <span id="cb18-11"><a href="#cb18-11"></a><span class="co">// TCPChannel com compactação e um buffer associado</span></span></code></pre></div>
 <p>Portanto, em uma solução com decoradores, a configuração de um <code>Channel</code> é feita no momento da sua instanciação, por meio de uma sequência aninhada de operadores <code>new</code>. O <code>new</code> mais interno sempre cria uma classe base, no nosso exemplo <code>TCPChannel</code> ou <code>UDPChannel</code>. Feito isso, os operadores mais externos são usados para <q>decorar</q> o objeto criado com novas funcionalidades.</p>
 <p>Falta então explicar as classes que são os decoradores propriamente ditos, como <code>ZipChannel</code> e <code>BufferChannel</code>. Primeiro, elas são subclasses da seguinte classe que não aparece no exemplo, mas que é fundamental para o funcionamento do padrão Decorador:</p>
@@ -729,7 +729,7 @@ method PrintVisitor.visit(Onibus) is not applicable
 <li><p>Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses:</p></li>
 </ol>
 <p>3. Dentre os padrões de projeto que respondeu na questão (2), quais são criacionais?</p>
-<p>4. Considerando as respostas da questão (2), liste o nome de padrões de projeto que:</p>
+<p>4. Considerando as respostas da questão (2), liste padrões de projeto que:</p>
 <ol type="a">
 <li><p>Ajudam a tornar uma classe aberta a extensões, sem que seja preciso modificar o seu código fonte (isto é, padrões que colocam em prática o princípio Aberto/Fechado).</p></li>
 <li><p>Ajudam a desacoplar dois tipos de classes.</p></li>
@@ -737,7 +737,7 @@ method PrintVisitor.visit(Onibus) is not applicable
 <li><p>Simplificam o uso de um sistema.</p></li>
 </ol>
 <p>5. Qual a semelhança entre Proxy, Decorador e Visitor? E qual a diferença entre esses padrões?</p>
-<p>6. No exemplo de Adaptador, mostramos o código de uma única classe adaptadora (AdaptadorProjetorSamsung). Escreva o código de uma classe semelhante, mas que adapte a interface Projetor para a interface ProjetorLG (o código de ambas interfaces é mostrado na Seção 6.5). Chame essa classe de AdaptadorProjetorLG.</p>
+<p>6. No exemplo de Adaptador, mostramos o código de uma única classe adaptadora (<code>AdaptadorProjetorSamsung</code>). Escreva o código de uma classe semelhante, mas que adapte a interface <code>Projetor</code> para a interface <code>ProjetorLG</code> (o código de ambas interfaces é mostrado na Seção 6.5). Chame essa classe de <code>AdaptadorProjetorLG</code>.</p>
 <p>7. Suponha uma classe base A. Suponha que queremos adicionar quatro funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades podem ser adicionadas em qualquer ordem, isto é, a ordem não é importante. Se usarmos herança, quantas subclasses de A teremos que implementar? Se optarmos por uma solução por meio de decoradores, quantas classes teremos que implementar (sem contar a classe A). Justifique e explique sua resposta.</p>
 <p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida na console. Chame essa classe de <code>LogChannel</code>.</p>
 <p>9. Dado o código abaixo de uma classe <code>Subject</code> (do padrão Observador):</p>
