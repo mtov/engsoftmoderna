@@ -101,7 +101,9 @@ deve ser possível usar o analisador léxico da forma mais simples
 possível. Por exemplo, apenas chamando uma função que retorna a próxima
 token do arquivo de entrada, como no seguinte código:
 
-`String token = Scanner.next_token();`
+```java
+String token = Scanner.next_token();
+```
  
 Em resumo, a complexidade envolvida na implementação de um analisador
 léxico está abstraída (ou, se preferir, encapsulada) na função
@@ -321,33 +323,26 @@ Suponha um sistema para controle de estacionamentos. Suponha ainda que,
 em uma primeira versão, a classe principal desse sistema seja a
 seguinte:
 
-+--------------------------------------------------------+
-| **import** java.util.Hashtable;                        |
-|                                                        |
-| **public** **class** Estacionamento {                  |
-|                                                        |
-| **public** Hashtable\<String, String\> veiculos;       |
-|                                                        |
-| **public** Estacionamento() {                          |
-|                                                        |
-| veiculos = **new** Hashtable\<String, String\>();      |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **public** **static** **void** main(String\[\] args) { |
-|                                                        |
-| Estacionamento e = **new** Estacionamento();           |
-|                                                        |
-| e.veiculos.put("TCP-7030", "Uno");                 |
-|                                                        |
-| e.veiculos.put("BNF-4501", "Gol");                 |
-|                                                        |
-| e.veiculos.put("JKL-3481", "Corsa");               |
-|                                                        |
-| }                                                      |
-|                                                        |
-| }                                                      |
-+--------------------------------------------------------+
+```java
+import java.util.Hashtable;
+
+public class Estacionamento{
+
+  public Hashtable<String, String> veiculos;
+
+  public Estacionamento(){
+    veiculos = new Hashtable<String, String>();
+  }
+
+  public static void main(String[] args){
+    Estacionamento e = new Estacionamento();
+    e.veiculos.put("TCP-7030", "Uno");
+    e.veiculos.put("BNF-4501", "Gol");
+    e.veiculos.put("JKL-3481", "Corsa");
+  }
+
+}
+```
 
 Essa classe tem um problema de exposição excessiva de informação ou, em
 outras palavras, ela não oculta estruturas que podem mudar no futuro.
@@ -372,39 +367,30 @@ da classe têm liberdade para trocar de estrutura de dados, sem causar
 impacto nos seus clientes. A única restrição é que a assinatura do
 método `estaciona` deve ser preservada.
 
-+---------------------------------------------------------------+
-| **import** java.util.Hashtable;                               |
-|                                                               |
-| **public class** Estacionamento {                             |
-|                                                               |
-| **private** Hashtable\<String,String\> veiculos;              |
-|                                                               |
-| **public** Estacionamento() {                                 |
-|                                                               |
-| veiculos = **new** Hashtable\<String, String\>();             |
-|                                                               |
-| }                                                             |
-|                                                               |
-| **public** **void** estaciona(String veiculo, String placa) { |
-|                                                               |
-| veiculos.put(veiculo, placa);                                 |
-|                                                               |
-| }                                                             |
-|                                                               |
-| **public** **static** **void** main(String\[\] args) {        |
-|                                                               |
-| Estacionamento e = **new** Estacionamento();                  |
-|                                                               |
-| e.estaciona("TCP-7030", "Uno");                           |
-|                                                               |
-| e.estaciona("BNF-4501", "Gol");                           |
-|                                                               |
-| e.estaciona("JKL-3481", "Corsa");                         |
-|                                                               |
-| }                                                             |
-|                                                               |
-| }                                                             |
-+---------------------------------------------------------------+
+```java
+import java.util.Hashtable;
+
+public class Estacionamento{
+
+  private Hashtable<String,String> veiculos;
+
+  public Estacionamento(){
+    veiculos = new Hashtable<String, String>();
+  }
+
+  public void estaciona(String veiculo, String placa){
+    veiculos.put(veiculo, placa);
+  }
+
+  public static void main(String[] args){
+    Estacionamento e = new Estacionamento();
+    e.estaciona("TCP-7030", "Uno");
+    e.estaciona("BNF-4501", "Gol");
+    e.estaciona("JKL-3481", "Corsa");
+  }
+
+}
+```
 
 Em resumo, essa nova versão oculta uma estrutura de dados —
 sujeita a alterações durante a evolução do sistema — e
@@ -457,29 +443,25 @@ setters (acesso de escrita).
 Veja um exemplo a seguir, onde métodos `get` e `set` são usados para
 acessar o atributo `matricula` de uma classe `Aluno`.
 
-+------------------------------------------+
-| **class** Aluno {                        |
-|                                          |
-| **private** int matricula;               |
-|                                          |
-| \...                                     |
-|                                          |
-| **public** int getMatricula() {          |
-|                                          |
-|   **return** matricula;                  |
-|                                          |
-| }                                        |
-|                                          |
-| **public** setMatricula(int matricula) { |
-|                                          |
-|   this.matricula = matricula;            |
-|                                          |
-| }                                        |
-|                                          |
-| \...                                     |
-|                                          |
-| }                                        |
-+------------------------------------------+
+```java
+class Aluno{
+
+  private int matricula;
+
+  ...
+
+  public int getMatricula(){
+    return matricula;
+  }
+
+  public setMatricula(int matricula){
+    this.matricula = matricula;  
+  }
+
+  ...
+
+}
+```
 
 No entanto, getters e setters não são uma garantia de que estamos
 ocultando dados da classe, como mencionado em alguns livros e discussões
@@ -552,19 +534,14 @@ implementar um único interesse; (3) uma classe deve ser coesa.
 No entanto, o conceito se adapta também a métodos ou funções. Por
 exemplo, suponha uma função como a seguinte:
 
-+----------------------------------------+
-| float sin\_or\_cos(double x, int op) { |
-|                                        |
-| **if** (op == 1)                       |
-|                                        |
-| "calcula e retorna seno de x"          |
-|                                        |
-| **else**                               |
-|                                        |
-| "calcula e retorna cosseno de x"       |
-|                                        |
-| }                                      |
-+----------------------------------------+
+```java
+float sin_or_cos(double x, int op){
+  if (op == 1)
+    "calcula e retorna seno de x"
+  else
+    "calcula e retorna cosseno de x"
+}
+```
 
 Essa função — que consiste em um exemplo extremo e, queremos
 acreditar, pouco comum na prática — apresenta um problema sério de
@@ -574,19 +551,14 @@ para cada uma dessas tarefas.
 
 **Exemplo 2:** Suponha agora a seguinte classe:
 
-+--------------------------+
-| **class** Stack\<T\> {   |
-|                          |
-| boolean empty() { \... } |
-|                          |
-| T pop() { \... }         |
-|                          |
-| push (T) { \... }        |
-|                          |
-| int size() { \... }      |
-|                          |
-| }                        |
-+--------------------------+
+```java
+class Stack<T>{
+  boolean empty(){ ... }
+  T pop(){ ... }
+  push (T){ ... }
+  int size(){ ... }
+}
+```
 
 Trata-se de uma classe coesa, pois todos os seus métodos implementam
 operações importantes em uma estrutura de dados do tipo Pilha.
@@ -595,23 +567,16 @@ operações importantes em uma estrutura de dados do tipo Pilha.
 `Estacionamento`, na qual foram adicionados agora quatro atributos com
 informações sobre o gerente do estacionamento:
 
-+---------------------------------------+
-| **class** Estacionamento {            |
-|                                       |
-| \...                                  |
-|                                       |
-| **private** String nome\_gerente;     |
-|                                       |
-| **private** String fone\_gerente;     |
-|                                       |
-| **private** String cpf\_gerente;      |
-|                                       |
-| **private** String endereco\_gerente; |
-|                                       |
-| \...                                  |
-|                                       |
-| }                                     |
-+---------------------------------------+
+```java
+class Estacionamento{
+  ...
+  private String nome_gerente;
+  private String fone_gerente;
+  private String cpf_gerente;
+  private String endereco_gerente;
+  ...
+}  
+```
 
 A principal responsabilidade dessa classe é gerenciar a operação do
 estacionamento, incluindo métodos como `estaciona()`, `calcula_preco()`,
@@ -709,27 +674,35 @@ pode não saber que o arquivo é lido por `A`. Assim, ele pode decidir mudar
 o formato do arquivo por conta própria, sem comunicar o desenvolvedor da
 classe `A`.
 
-+----------------------------------+----------------------------------+
-| **class** A {                    | **class** B {                    |
-|                                  |                                  |
-| **private** void f() {           | **private** void g() {           |
-|                                  |                                  |
-| int total;                       | int total;                       |
-|                                  |                                  |
-| \...                             | // computa valor de total        |
-|                                  |                                  |
-| File f = File.open("arq1.db");   | File f = File.open("arq1.db");   |
-|                                  |                                  |
-| total = f.readInt();             | f.writeInt(total);               |
-|                                  |                                  |
-| \...                             | \...                             |
-|                                  |                                  |
-| }                                | f.close();                       |
-|                                  |                                  |
-| }                                | }                                |
-|                                  |                                  |
-|                                  | }                                |
-+----------------------------------+----------------------------------+
+
+```java
+class A {
+
+  private void f(){
+    int total;
+    ...
+    File f = File.open("arq1.db");
+    total = f.readInt();
+    ...
+  }
+
+}
+```
+
+```java
+class B{
+
+  private void g(){
+    int total;
+    // computa valor de total
+    File f = File.open("arq1.db");
+    f.writeInt(total);
+    ...
+    f.close();
+  }
+
+}
+```
 
 Antes de avançar, um pequeno comentário: no exemplo, existe também um
 acoplamento entre `B` e `File`. Porém, ele é um acoplamento aceitável, pois
@@ -740,31 +713,37 @@ linguagem.
 **Exemplo 3:** Uma solução melhor para o acoplamento entre as classes `A`
 e `B` do exemplo anterior é mostrada no código a seguir.
 
-+---------------------------+-------------------------------+
-| **class** A {             | **class** B {                 |
-|                           |                               |
-| **private** void f(B b) { | int total;                    |
-|                           |                               |
-| int total;                | **public** int getTotal(){    |
-|                           |                               |
-| total = b.getTotal();     | **return** total;             |
-|                           |                               |
-| \...                      | }                             |
-|                           |                               |
-| }                         | **private** void g() {        |
-|                           |                               |
-| }                         | // computa valor de total     |
-|                           |                               |
-|                           | File f = File.open("arq1");   |
-|                           |                               |
-|                           | f.writeInt(total);            |
-|                           |                               |
-|                           | \...                          |
-|                           |                               |
-|                           | }                             |
-|                           |                               |
-|                           | }                             |
-+---------------------------+-------------------------------+
+
+```java
+class A{
+
+  private void f(B b){
+    int total;
+    total = b.getTotal();
+    ...
+  }
+
+}
+```
+
+```java
+class B{
+
+  int total;
+
+  public int getTotal(){
+    return total;
+  }
+
+  private void g() {
+    // computa valor de total
+    File f = File.open("arq1");
+    f.writeInt(total);
+    ...
+  }
+
+}
+```
 
 Nessa nova versão, a dependência entre `A` e `B` é tornada explícita. Agora,
 `B` possui um método público que retorna o valor `total`. E a classe `A`
@@ -872,23 +851,13 @@ Nesta seção, iremos estudar os sete princípios de projeto listados na
 próxima tabela. A tabela mostra ainda as propriedades de projeto que são
 contempladas ao seguir cada um desses princípios.
 
-+------------------------------+----------------------------+
-| **Princípio de Projeto**     | **Propriedade de Projeto** |
-+==============================+============================+
-| Responsabilidade Única       | Coesão                     |
-|                              |                            |
-| Segregação de Interfaces     | Coesão                     |
-+------------------------------+----------------------------+
-| Inversão de Dependências     | Acoplamento                |
-|                              |                            |
-| Prefira Composição a Herança | Acoplamento                |
-+------------------------------+----------------------------+
-| Demeter                      | Ocultamento de Informação  |
-+------------------------------+----------------------------+
-| Aberto/Fechado               | Extensibilidade            |
-|                              |                            |
-| Substituição de Liskov       | Extensibilidade            |
-+------------------------------+----------------------------+
+|Princípio de Projeto|Propriedade de Projeto
+|-|-
+|Responsabilidade Única, Segregação de Interfaces | Coesão
+|Inversão de Dependências, Prefira Composição a Herança | Acoplamento
+|Demeter | Ocultamento de Informação
+| Aberto/Fechado, Substituição de Liskov| Extensibilidade
+
 
 Cinco dos princípios que vamos estudar são conhecidos como **Princípios
 SOLID**, que é uma sigla cunhada por Robert Martin e Michael Feathers
@@ -941,19 +910,16 @@ Responsabilidade Única. O método `calculaIndiceDesistencia` da classe
 `Disciplina` possui duas responsabilidades: calcular o índice de
 desistência de uma disciplina e imprimi-lo na console do sistema.
 
-+--------------------------------------------+
-| **class** Disciplina {                     |
-|                                            |
-| void calculaIndiceDesistencia() {          |
-|                                            |
-| indice = "calcula índice de desistência" |
-|                                            |
-| System.out.println(indice);                |
-|                                            |
-| }                                          |
-|                                            |
-| }                                          |
-+--------------------------------------------+
+```java
+class Disciplina {
+
+  void calculaIndiceDesistencia(){
+    indice = "calcula índice de desistência"
+    System.out.println(indice);
+  }
+
+}
+```
 
 Uma solução consiste em dividir essas responsabilidades entre duas
 classes: uma classe de interface com o usuário (`Console`) e uma classe de
@@ -962,31 +928,25 @@ solução permite reusar a classe de negócio com outras classes de
 interface, como classes de interface gráfica, interface web, interface
 para celular, etc.
 
-+--------------------------------------------------------+
-| **class** Console {                                    |
-|                                                        |
-| void imprimeIndiceDesistencia(Disciplina disciplina) { |
-|                                                        |
-| double indice = disciplina.calculaIndiceDesistencia(); |
-|                                                        |
-| System.out.println(indice);                            |
-|                                                        |
-| }                                                      |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **class** Disciplina {                                 |
-|                                                        |
-| double calculaIndiceDesistencia() {                    |
-|                                                        |
-| double indice = "calcula índice de desistência"      |
-|                                                        |
-| **return** indice;                                     |
-|                                                        |
-| }                                                      |
-|                                                        |
-| }                                                      |
-+--------------------------------------------------------+
+```java
+class Console{
+
+  void imprimeIndiceDesistencia(Disciplina disciplina){
+    double indice = disciplina.calculaIndiceDesistencia();
+    System.out.println(indice);
+  }
+
+}
+
+class Disciplina{
+
+  double calculaIndiceDesistencia(){
+    double indice = "calcula índice de desistência"
+    return indice;
+  }
+
+}
+```
 
 ### Princípio da Segregação de Interfaces 
 
@@ -1017,50 +977,40 @@ funcionários de empresas privadas, contratados em regime de CLT, possuem
 uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem
 uma matrícula no SIAPE.
 
-+-------------------------------------------------+
-| **interface** Funcionario {                     |
-|                                                 |
-| double getSalario();                            |
-|                                                 |
-| double getFGTS(); // apenas funcionários CLT    |
-|                                                 |
-| int getSIAPE(); // apenas funcionários públicos |
-|                                                 |
-| \...                                            |
-|                                                 |
-| }                                               |
-+-------------------------------------------------+
+```java
+interface Funcionario{
+
+  double getSalario();
+
+  double getFGTS();// apenas funcionários CLT
+
+  int getSIAPE();// apenas funcionários públicos
+
+  ...
+}
+```
 
 Uma alternativa — que atende ao Princípio de Segregação de
 Interfaces — consiste em criar interfaces específicas
 (`FuncionarioCLT` e `FuncionarioPublico`) que estendem a interface genérica
 (`Funcionario`).
 
-+------------------------------------------------------------+
-| **interface** Funcionario {                                |
-|                                                            |
-| double getSalario();                                       |
-|                                                            |
-| \...                                                       |
-|                                                            |
-| }                                                          |
-|                                                            |
-| **interface** FuncionarioCLT **extends** Funcionario {     |
-|                                                            |
-| double getFGTS();                                          |
-|                                                            |
-| \...                                                       |
-|                                                            |
-| }                                                          |
-|                                                            |
-| **interface** FuncionarioPublico **extends** Funcionario { |
-|                                                            |
-| int getSIAPE();                                            |
-|                                                            |
-| \...                                                       |
-|                                                            |
-| }                                                          |
-+------------------------------------------------------------+
+```java
+interface Funcionario{
+  double getSalario();
+  ...
+}
+
+interface FuncionarioCLT extends Funcionario{
+  double getFGTS();
+  ...
+}
+
+interface FuncionarioPublico extends Funcionario{
+  int getSIAPE();
+  ...
+}
+```
 
 ### Princípio de Inversão de Dependências
 
@@ -1085,27 +1035,45 @@ concretos das classes `C1` e `C2`. Ele não precisa conhecer a classe
 concreta que está por trás — ou que implementa — a interface `I`
 que ele referencia em seu código.
 
-+---------------------------------+---------------------+-------------------+
-| **interface** I { \... }        | **class** Cliente { | **class** Main {  |
-|                                 |                     |                   |
-| **class** C1 **implements** I { | I i;                | void main () {    |
-|                                 |                     |                   |
-| \...                            | Cliente (I i) {     | C1 c1 = new C1(); |
-|                                 |                     |                   |
-| }                               | this.i = i;         | new Cliente(c1);  |
-|                                 |                     |                   |
-| **class** C2 **implements** I { | \...                | \...              |
-|                                 |                     |                   |
-| \...                            | }                   | C2 c2 = new C2(); |
-|                                 |                     |                   |
-| }                               | \...                | new Cliente(c2);  |
-|                                 |                     |                   |
-|                                 | }                   | \...              |
-|                                 |                     |                   |
-|                                 |                     | }                 |
-|                                 |                     |                   |
-|                                 |                     | }                 |
-+---------------------------------+---------------------+-------------------+
+```java
+interface I{ ... }
+
+class C1 implements I{
+  ...
+}
+
+class C2 implements I{
+  ...
+}
+```
+
+```java
+class Cliente{
+
+  I i;
+
+  Cliente (I i){
+    this.i = i;
+    ...
+  }
+  ...
+}
+```
+
+```java
+class Main{
+
+  void main (){
+    C1 c1 = new C1();
+    new Cliente(c1);
+    ...
+    C2 c2 = new C2();
+    new Cliente(c2);
+    ...
+  }
+
+}
+```
 
 **Exemplo 2:** Agora, mostramos um exemplo de código que segue o
 Princípio de Inversão de Dependências. Esse princípio justifica a
@@ -1116,19 +1084,20 @@ permanecerá válida, pois ao usarmos um tipo interface estamos nos
 preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
 
-+-----------------------------------------+-----------------------------+
-| void f() {                              | void g(Projetor projetor) { |
-|                                         |                             |
-| \...                                    | \...                        |
-|                                         |                             |
-| ProjetorLG projetor = new ProjetorLG(); | }                           |
-|                                         |                             |
-| \...                                    |                             |
-|                                         |                             |
-| g(projetor);                            |                             |
-|                                         |                             |
-| }                                       |                             |
-+-----------------------------------------+-----------------------------+
+```java
+void f(){
+  ...
+  ProjetorLG projetor = new ProjetorLG();
+  ...
+  g(projetor);
+}
+```
+
+```java
+void g(Projetor projetor){
+  ...
+}
+```
 
 **Exemplo 3:** Como um exemplo final, suponha um pacote de estruturas de
 dados que oferece uma interface `List` e algumas implementações concretas
@@ -1181,17 +1150,20 @@ classes A e B quando a classe A possui um atributo do tipo B.
 pelo menos duas soluções — por meio de herança ou por meio de
 composição — conforme mostra o seguinte código:
 
-+-----------------------------------------+----------------------------------+
-| **Solução via Herança**                 | **Solução via Composição**       |
-+=========================================+==================================+
-| **class** Stack **extends** ArrayList { | **class** Stack {                |
-|                                         |                                  |
-| \...                                    | **private** ArrayList elementos; |
-|                                         |                                  |
-| }                                       | \...                             |
-|                                         |                                  |
-|                                         | }                                |
-+-----------------------------------------+----------------------------------+
+**Solução via Herança:**
+```java
+class Stack extends ArrayList{
+  ...
+}
+```
+
+**Solução via Composição:**
+```java
+class Stack{
+  private ArrayList elementos;
+  ...
+}
+```
 
 A solução por meio de herança não é recomendada por vários motivos, sendo que os
 principais são os seguintes: (1) um `Stack`, em termos conceituais, não é
@@ -1208,21 +1180,17 @@ não seria possível mudar essa decisão em tempo de execução. Por outro
 lado, quando adota-se uma solução baseada em composição, isso fica
 mais fácil, como mostra o exemplo a seguir:
 
-+-----------------------------+
-| **class** Stack {           |
-|                             |
-| **private** List elementos; |
-|                             |
-| Stack(List elementos) {     |
-|                             |
-| this.elementos = elementos; |
-|                             |
-| }                           |
-|                             |
-| \...                        |
-|                             |
-| }                           |
-+-----------------------------+
+```java
+class Stack{
+
+  private List elementos;
+
+  Stack(List elementos){
+    this.elementos = elementos;
+  }
+  ...
+}
+```
 
 No exemplo, a estrutura de dados que armazena os elementos da pilha
 passou a ser um parâmetro do construtor da classe `Stack`. Com isso,
@@ -1276,37 +1244,28 @@ métodos:
 que respeitam o Princípio de Demeter. E, em seguida, temos um método `m2`,
 com uma chamada que não obedece ao princípio.
 
-+----------------------------------------------+
-| **class** PrincipioDemeter {                 |
-|                                              |
-| T1 attr;                                     |
-|                                              |
-| void f1() {                                  |
-|                                              |
-| \...                                         |
-|                                              |
-| }                                            |
-|                                              |
-| void m1(T2 p) { // método que segue Demeter  |
-|                                              |
-| f1(); // caso 1: própria classe              |
-|                                              |
-| p.f2(); // caso 2: parâmetro                 |
-|                                              |
-| new T3().f3(); // caso 3: criado pelo método |
-|                                              |
-| attr.f4(); // caso 4: atributo da classe     |
-|                                              |
-| }                                            |
-|                                              |
-| void m2(T4 p) { // método que viola Demeter  |
-|                                              |
-| p.getX().getY().getZ().doSomething();        |
-|                                              |
-| }                                            |
-|                                              |
-| }                                            |
-+----------------------------------------------+
+```java
+class PrincipioDemeter{
+
+  T1 attr;
+
+  void f1(){
+    ...
+  }
+
+  void m1(T2 p){   // método que segue Demeter
+    f1();           // caso 1: própria classe
+    p.f2();         // caso 2: parâmetro
+    new T3().f3();  // caso 3: criado pelo método
+    attr.f4();      // caso 4: atributo da classe
+  }
+
+  void m2(T4 p){   // método que viola Demeter
+    p.getX().getY().getZ().doSomething();
+  }
+
+}
+```
 
 O método `m2`, ao chamar três métodos `get` em sequência, viola o Princípio
 de Demeter. O motivo é que os objetos intermediários — retornados
@@ -1336,42 +1295,31 @@ jornais, um cliente e sua carteira. Uma violação do Princípio de Demeter
 ocorre se, para receber o valor de um jornal, o entregador tiver que
 executar o seguinte código:
 
-+------------------------------------------------------------+
-| preco = 6.00;                                              |
-|                                                            |
-| Carteira carteira = cliente.getCarteira();                 |
-|                                                            |
-| if (carteira.getValorTotal() \>= preco) { // viola Demeter |
-|                                                            |
-| carteira.debita(preco); // viola Demeter                   |
-|                                                            |
-| } else {                                                   |
-|                                                            |
-| // volto amanhã, para cobrar o valor do jornal             |
-|                                                            |
-| }                                                          |
-+------------------------------------------------------------+
+```java
+preco = 6.00;
+Carteira carteira = cliente.getCarteira();
+if(carteira.getValorTotal() >= preco){   // viola Demeter
+  carteira.debita(preco);                 // viola Demeter
+} else{
+  // volto amanhã, para cobrar o valor do jornal
+}
+```
 
 Veja que o jornaleiro têm acesso à carteira do seu cliente — via
 método `getCarteira()` — e então ele mesmo retira o valor do jornal
 dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse
 tamanha liberdade ... Portanto, uma solução mais realista é a seguinte:
 
-+------------------------------------------------+
-| preco = 6.00;                                  |
-|                                                |
-| try {                                          |
-|                                                |
-| cliente.pagar(preco);                          |
-|                                                |
-| }                                              |
-|                                                |
-| catch (ExcecaoValorInsuficiente e) {           |
-|                                                |
-| // volto amanhã, para cobrar o valor do jornal |
-|                                                |
-| }                                              |
-+------------------------------------------------+
+```java
+preco = 6.00;
+
+try{
+  cliente.pagar(preco);
+}
+catch (ExcecaoValorInsuficiente e){
+  // volto amanhã, para cobrar o valor do jornal
+}
+```
 
 No novo código, o cliente não libera o acesso à sua carteira. Pelo
 contrário, o jornaleiro nem fica ciente de que o cliente possui uma
@@ -1405,15 +1353,11 @@ cenários de uso, sem modificações no seu código fonte.
 ordenar uma lista em ordem crescente de seus elementos. Um exemplo de
 uso desse método é mostrado a seguir:
 
-+----------------------------------------------------------------------+
-| List\<String\> nomes = Arrays.asList("joao", "maria",            |
-| "alexandre", "ze");                                              |
-|                                                                      |
-| Collections.sort(nomes);                                             |
-|                                                                      |
-| System.out.println(nomes); // resultado:                             |
-| \["alexandre","joao","maria","ze"\]                          |
-+----------------------------------------------------------------------+
+```java
+List<String> nomes = Arrays.asList("joao", "maria", "alexandre", "ze");
+Collections.sort(nomes);
+System.out.println(nomes);  // resultado: ["alexandre","joao","maria","ze"]
+```
 
 No entanto, futuramente, podemos precisar de usar o método `sort` para
 ordenar as strings de acordo com seu tamanho em caracteres. Felizmente,
@@ -1421,21 +1365,15 @@ a classe `Collections` está preparada para esse novo cenário de uso. Mas
 para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
-+-------------------------------------------------------------------------+
-| Comparator\<String\> comparador = **new** Comparator\<String\>() {      |
-|                                                                         |
-| **public** int compare(String s1, String s2) {                          |
-|                                                                         |
-| **return** s1.length() - s2.length();                                   |
-|                                                                         |
-| }                                                                       |
-|                                                                         |
-| };                                                                      |
-|                                                                         |
-| Collections.sort(nomes, comparador);                                    |
-|                                                                         |
-| System.out.println(nomes); // resultado: \[ze, joao, maria, alexandre\] |
-+-------------------------------------------------------------------------+
+```java
+Comparator<String> comparador = new Comparator<String>(){
+  public int compare(String s1, String s2) {
+    return s1.length() - s2.length();
+  }
+};
+Collections.sort(nomes, comparador);
+System.out.println(nomes);   // resultado: [ze, joao, maria, alexandre]
+```
 
 Ou seja, a classe `Collections` se mostrou "aberta" a lidar com esse
 novo requisito, mas mantendo o seu código "fechado", isto é, o código
@@ -1444,35 +1382,22 @@ fonte da classe não teve que ser modificado.
 **Exemplo 2**: Mostramos agora um exemplo de função que não segue o
 Princípio Aberto/Fechado.
 
-+--------------------------------------------------------+
-| double calcTotalBolsas(Aluno\[\] lista) {              |
-|                                                        |
-| double total = 0.0;                                    |
-|                                                        |
-| **foreach** (Aluno aluno **in** lista) {               |
-|                                                        |
-| **if** (aluno **instanceof** AlunoGrad) {              |
-|                                                        |
-| AlunoGrad grad = (AlunoGrad) aluno;                    |
-|                                                        |
-| total += "código que calcula bolsa de grad";         |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **else** **if** (aluno **instanceof** AlunoMestrado) { |
-|                                                        |
-| AlunoMestrado mestrando = (AlunoMestrado) aluno;       |
-|                                                        |
-| total += "código que calcula bolsa de mestrando";    |
-|                                                        |
-| }                                                      |
-|                                                        |
-| }                                                      |
-|                                                        |
-| **return** total;                                      |
-|                                                        |
-| }                                                      |
-+--------------------------------------------------------+
+```java
+double calcTotalBolsas(Aluno[] lista){
+  double  total = 0.0;
+  foreach (Aluno aluno in lista){
+    if (aluno instanceof AlunoGrad){
+      AlunoGrad grad = (AlunoGrad) aluno;
+      total += "código que calcula bolsa de grad";
+    }
+    else if (aluno instanceof AlunoMestrado){
+      AlunoMestrado mestrando = (AlunoMestrado) aluno;
+      total += "código que calcula bolsa de mestrando";
+    }
+  }
+  return total;
+}
+```
 
 Se amanhã tivermos que criar mais uma subclasse de `Aluno`, por exemplo,
 `AlunoDoutorado`, o código de `calcTotalBolsas` terá que ser adaptado. Ou
@@ -1514,32 +1439,24 @@ ganhou seu nome.
 Para explicar o Princípio de Substituição de Liskov vamos nos basear no
 seguinte exemplo:
 
-+---------------+
-| void f(A a) { |
-|               |
-| \...          |
-|               |
-| a.g(int n);   |
-|               |
-| \...          |
-|               |
-| }             |
-+---------------+
+```java
+void f(A a){
+  ...
+  a.g(int n);
+  ...
+}
+```
 
 O método `f` pode ser chamado passando-se como parâmetros objetos de
 subclasses `B1`, `B2`, ..., `Bn` da classe base `A`, como mostrado a seguir:
 
-+-----------------------------------------------------------------------+
-| f(new B1()); // f pode receber objetos da subclasse B1 como parâmetro |
-|                                                                       |
-| \...                                                                  |
-|                                                                       |
-| f(new B2()); // e de qualquer outra subclasse de A, como B2           |
-|                                                                       |
-| \...                                                                  |
-|                                                                       |
-| f(new B3()); // e B3                                                  |
-+-----------------------------------------------------------------------+
+```java
+f(new B1());  // f pode receber objetos da subclasse B1 como parâmetro
+...
+f(new B2());  // e de qualquer outra subclasse de A, como B2
+...
+f(new B3());   // e B3
+```
 
 O Princípio de Substituição de Liskov determina as condições —
 semânticas e não sintáticas — que as subclasses devem atender para
@@ -1577,61 +1494,46 @@ original, possivelmente de modo mais eficiente.
 bem forte, exatamente para reforçar o sentido do Princípio de
 Substituição de Liskov.
 
-+---------------------------------------------------+
-| **class** A {                                     |
-|                                                   |
-| int soma(int a, int b) {                          |
-|                                                   |
-| **return** a+b;                                   |
-|                                                   |
-| }                                                 |
-|                                                   |
-| }                                                 |
-|                                                   |
-| **class** B **extends** A {                       |
-|                                                   |
-| int soma(int a, int b) {                          |
-|                                                   |
-| String r = String.valueOf(a) + String.valueOf(b); |
-|                                                   |
-| **return** Integer.parseInt(r);                   |
-|                                                   |
-| }                                                 |
-|                                                   |
-| }                                                 |
-|                                                   |
-| **class** Cliente {                               |
-|                                                   |
-| void f(A a) {                                     |
-|                                                   |
-| \...                                              |
-|                                                   |
-| a.soma(1,2); // pode retornar 3 ou 12             |
-|                                                   |
-| \...                                              |
-|                                                   |
-| }                                                 |
-|                                                   |
-| }                                                 |
-|                                                   |
-| **class** Main {                                  |
-|                                                   |
-| void main() {                                     |
-|                                                   |
-| A a = new A();                                    |
-|                                                   |
-| B b = new B();                                    |
-|                                                   |
-| Cliente cliente = new Cliente();                  |
-|                                                   |
-| cliente.f(a);                                     |
-|                                                   |
-| cliente.f(b);                                     |
-|                                                   |
-| }                                                 |
-|                                                   |
-| }                                                 |
-+---------------------------------------------------+
+```java
+class A{
+
+  int soma(int a, int b){
+    return a+b;
+  }
+
+}
+
+class B extends A{
+
+  int soma(int a, int b){
+    String r = String.valueOf(a) + String.valueOf(b);
+    return Integer.parseInt(r);
+  }
+
+}
+
+class Cliente{
+
+  void f(A a){
+    ...
+    a.soma(1,2); // pode retornar 3 ou 12
+    ...
+  }
+
+}
+
+class Main{
+
+  void main(){
+    A a = new A();
+    B b = new B();
+    Cliente cliente = new Cliente();
+    cliente.f(a);
+    cliente.f(b);
+  }
+
+}
+```
 
 Nesse exemplo, o método que soma dois inteiros foi redefinido na
 subclasse com uma semântica de concatenação dos respectivos valores
@@ -1732,59 +1634,39 @@ possíveis pares de métodos de C — que não usam atributos em comum.
 **Exemplo:** Para deixar a explicação mais clara, suponha a seguinte
 classe:
 
-+-------------------------+
-| **class** A {           |
-|                         |
-| int a1;                 |
-|                         |
-| int a2;                 |
-|                         |
-| int a3;                 |
-|                         |
-| void m1(){              |
-|                         |
-| a1 = 10;                |
-|                         |
-| a2 = 20;                |
-|                         |
-| }                       |
-|                         |
-| void m2(){              |
-|                         |
-| System.out.println(a1); |
-|                         |
-| a3 = 30;                |
-|                         |
-| }                       |
-|                         |
-| void m3(){              |
-|                         |
-| System.out.println(a3); |
-|                         |
-| }                       |
-|                         |
-| }                       |
-+-------------------------+
+```java
+class A{
+
+  int a1;
+  int a2;
+  int a3;
+
+  void m1(){
+    a1 = 10;
+    a2 = 20;
+  }
+
+  void m2(){
+    System.out.println(a1);
+    a3 = 30;
+  }
+
+  void m3(){
+    System.out.println(a3);
+  }
+
+}
+```
 
 A próxima tabela mostra os elementos dos conjuntos M e A; e o resultado
 da interseção que define o valor de LCOM.
 
-+----------------------+---------------------+----------------------+
-| **Pares de métodos   | **Conjunto A**      | **Interseção dos     |
-| (M)**                |                     | Conjuntos A**        |
-+======================+=====================+======================+
-| (m1,m2)              | A(m1) = {**a1**,a2} | {a1}                 |
-|                      |                     |                      |
-|                      | A(m2) = {**a1**,a3} |                      |
-+----------------------+---------------------+----------------------+
-| (m1,m3)              | A(m1) = {a1,a2}     | vazio                    |
-|                      |                     |                      |
-|                      | A(m3) = {a3}        |                      |
-+----------------------+---------------------+----------------------+
-| (m2,m3)              | A(m2) = {a1,**a3**} | {a3}                 |
-|                      |                     |                      |
-|                      | A(m3) = {**a3**}    |                      |
-+----------------------+---------------------+----------------------+
+|**Pares de métodos**   | **Conjunto A**      | **Interseção dos Conjuntos A**
+| - | - | -
+| (m1,m2) | A(m1) = {**a1**,a2}, A(m2) = {**a1**,a3} | {a1}
+| (m1,m3) | A(m1) = {a1,a2}, A(m3) = {a3} | vazio
+| (m2,m3) | A(m2) = {a1,**a3**}, A(m3) = {**a3**} | {a3}
+
 
 Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis
 pares de métodos, mas dois deles acessam pelo menos um atributo em comum
@@ -1841,35 +1723,26 @@ quando:
 
 Seja uma classe A com dois métodos (`metodo1` e `metodo2`):
 
-+------------------------------------------------+
-| **class** A **extends** T1 **implements** T2 { |
-|                                                |
-| T3 a;                                          |
-|                                                |
-| T4 metodo1(T5 p) throws T6 {                   |
-|                                                |
-| T7 v;                                          |
-|                                                |
-| \...                                           |
-|                                                |
-| }                                              |
-|                                                |
-| void metodo2(){                                |
-|                                                |
-| T8 = new T8();                                 |
-|                                                |
-| **try** {                                      |
-|                                                |
-| \...                                           |
-|                                                |
-| }                                              |
-|                                                |
-| **catch** (T9 e) { \... }                      |
-|                                                |
-| }                                              |
-|                                                |
-| }                                              |
-+------------------------------------------------+
+```java
+class A extends T1 implements T2{
+
+  T3 a;
+
+  T4 metodo1(T5 p) throws T6{
+    T7 v;
+    ...
+  }
+
+  void metodo2(){
+    T8 = new T8();
+    try{
+      ...
+    }
+    catch (T9 e){ ... }
+  }
+
+}
+```
 
 Conforme indicamos numerando os tipos dos quais A depende, temos que
 CBO(A) = 9.
@@ -1982,39 +1855,24 @@ Languages, and Applications (OOPSLA), 1991.
 
 8\.  Qual princípio de projeto é violado pelo seguinte código?
 
-+-----------------------------+
-| void onclick() {            |
-|                             |
-| num1 = textfield1.value();  |
-|                             |
-| c1 = BD.getConta(num1)      |
-|                             |
-| num2 = textfield2.value();  |
-|                             |
-| c2 = BD.getConta(num2)      |
-|                             |
-| valor = textfield3.value(); |
-|                             |
-| beginTransaction();         |
-|                             |
-| **try** {                   |
-|                             |
-| c1.retira(valor);           |
-|                             |
-| c2.deposita(valor);         |
-|                             |
-| commit();                   |
-|                             |
-| }                           |
-|                             |
-| **catch**() {               |
-|                             |
-| rollback();                 |
-|                             |
-| }                           |
-|                             |
-| }                           |
-+-----------------------------+
+```java
+void onclick(){
+  num1 = textfield1.value();
+  c1 = BD.getConta(num1)
+  num2 = textfield2.value();
+  c2 = BD.getConta(num2)
+  valor = textfield3.value();
+  beginTransaction();
+  try{
+    c1.retira(valor);
+    c2.deposita(valor);
+    commit();
+  }          
+  catch() {
+    rollback();
+  }
+}  
+```
 
 9\.  Costuma-se afirmar que existem três conceitos chaves em orientação a
     objetos: encapsulamento, polimorfismo e herança. Suponha que você
@@ -2026,32 +1884,24 @@ Languages, and Applications (OOPSLA), 1991.
 10\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
-+--------------------------------------------------+
-| void sendMail(ContaBancaria conta, String msg) { |
-|                                                  |
-| Cliente cliente = conta.getCliente();            |
-|                                                  |
-| String mail = cliente.getMailAddress();          |
-|                                                  |
-| "Envia mail"                                   |
-|                                                  |
-| }                                                |
-+--------------------------------------------------+
+```java
+void sendMail(ContaBancaria conta, String msg){
+  Cliente cliente = conta.getCliente();
+  String mail = cliente.getMailAddress();
+  "Envia mail"
+}  
+```
 
 11\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
-+-------------------------------------------------+
-| void imprimeDataContratacao(Funcionario func) { |
-|                                                 |
-| Date data = func.getDataContratacao();          |
-|                                                 |
-| String msg = data.format();                     |
-|                                                 |
-| System.out.println(msg);                        |
-|                                                 |
-| }                                               |
-+-------------------------------------------------+
+```java
+void imprimeDataContratacao(Funcionario func){
+  Date data = func.getDataContratacao();
+  String msg = data.format();
+  System.out.println(msg);
+}  
+```
 
 12\. As pré-condições de um método são expressões booleanas envolvendo
     seus parâmetros (e, possivelmente, o estado de sua classe) que
@@ -2060,21 +1910,25 @@ Languages, and Applications (OOPSLA), 1991.
     do método. Considerando essas definições, qual princípio de
     projeto é violado pelo código abaixo?
 
-+-------------------------------+--------------------------------+
-| **class** A {                 | **class** B **extends** A {    |
-|                               |                                |
-| int f(int x) { // pre: x \> 0 | int f(int x) { // pre: x \> 10 |
-|                               |                                |
-| \...                          | \...                           |
-|                               |                                |
-| **return** exp;               | **return** exp;                |
-|                               |                                |
-| } // pos: exp \> 0            | } // pos: exp \> -50           |
-|                               |                                |
-| \...                          | \...                           |
-|                               |                                |
-| }                             | }                              |
-+-------------------------------+--------------------------------+
+```java
+class A{  
+  int f(int x){ // pre: x > 0
+    ...
+    return exp;
+  }            // pos: exp > 0
+  ...
+}
+```
+
+```java
+class B extends A{  
+  int f(int x){ // pre: x > 10
+  ...
+  return exp;
+  }            // pos: exp > -50
+  ...
+}
+```
 
 13\. Por que a métrica LCOM mede a ausência e não a presença de coesão?
     Justifique.
@@ -2082,66 +1936,72 @@ Languages, and Applications (OOPSLA), 1991.
 14\. Qual das seguintes classes é mais coesa? Justifique computando os
     valores de LCOM de cada uma delas.
 
-+----------------+----------------+
-| **class** A {  | **class** B {  |
-|                |                |
-| X x = new X(); | X x = new X(); |
-|                |                |
-| void f() {     | Y y = new Y(); |
-|                |                |
-| x.m1();        | Z z = new Z(); |
-|                |                |
-| }              | void f() {     |
-|                |                |
-| void g() {     | x.m();         |
-|                |                |
-| x.m2();        | }              |
-|                |                |
-| }              | void g() {     |
-|                |                |
-| void h() {     | y.m();         |
-|                |                |
-| x.m3();        | }              |
-|                |                |
-| }              | void h() {     |
-|                |                |
-| }              | z.m();         |
-|                |                |
-|                | }              |
-|                |                |
-|                | }              |
-+----------------+----------------+
+```java
+class A{
+
+  X x = new X();
+
+  void f(){
+    x.m1();
+  }
+
+  void g(){
+    x.m2();
+  }
+
+  void h(){
+    x.m3();
+  }
+
+}
+```
+
+```java
+class B{
+
+  X x = new X();
+  Y y = new Y();
+  Z z = new Z();
+
+  void f(){
+    x.m();
+  }
+
+  void g(){
+    y.m();
+  }
+
+  void h(){
+    z.m();
+  }
+
+}
+```
 
 15\. Todos os métodos de uma classe devem ser considerados no cálculo de
     LCOM? Sim ou não? Justifique.
 
 16\. Calcule o CBO e LCOM da seguinte classe:
 
-+-----------------------------+
-| **class** A **extends** B { |
-|                             |
-| C f1, f2, f3;               |
-|                             |
-| void m1(D p) {              |
-|                             |
-| "usa f1 e f2"             |
-|                             |
-| }                           |
-|                             |
-| void m2(E p) {              |
-|                             |
-| "usa f2 e f3"             |
-|                             |
-| }                           |
-|                             |
-| void m3(F p) {              |
-|                             |
-| "usa f3"                  |
-|                             |
-| }                           |
-|                             |
-| }                           |
-+-----------------------------+
+```java
+class A extends B{
+
+  C f1, f2, f3;
+
+  void m1(D p){
+    "usa f1 e f2"
+  }
+
+  void m2(E p){
+    "usa f2 e f3"
+  }
+
+  void m3(F p){
+    "usa f3"  
+  }
+
+}
+```
 
 17\. A definição de complexidade ciclomática é independente de linguagem
     de programação. Sim ou não? Justifique.
