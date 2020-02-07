@@ -101,11 +101,9 @@ deve ser possível usar o analisador léxico da forma mais simples
 possível. Por exemplo, apenas chamando uma função que retorna a próxima
 token do arquivo de entrada, como no seguinte código:
 
-```java
-String token = Scanner.next_token();
-```
+`String token = Scanner.next_token();`
  
-Em resumo, a complexidade envolvida na implementação de um analisador
+Portanto, a complexidade envolvida na implementação de um analisador
 léxico está abstraída (ou, se preferir, encapsulada) na função
 `next_token()`, cujo uso é bem simples.
 
@@ -202,8 +200,8 @@ Nos parágrafos anteriores, enfatizamos o impacto da falta de integridade
 conceitual nos usuários finais de um sistema. No entanto, o princípio se
 aplica também ao design e código de um sistema. Nesse caso, os afetados
 são os desenvolvedores, que terão mais dificuldade para entender, manter
-e evoluir o sistema. A seguir, mencionamos alguns exemplos de falta de
-integridade conceitual em nível de código ou design:
+e evoluir o sistema. A seguir, mencionamos exemplos de falta de
+integridade conceitual em nível de código:
 
 -   Quando uma parte do sistema usa um padrão de nomes para variáveis
     (por exemplo, *camel case*, como em `notaTotal`), enquanto em
@@ -267,17 +265,17 @@ resumo do artigo começa da seguinte forma:
 Ocultamento de informação traz as seguintes vantagens para um sistema:
 
 -   **Desenvolvimento em paralelo.** Suponha que um sistema X foi
-    implementado por meio de classes C1, C2, ..., Cn. Quando essas
+    implementado por meio de classes C~1~, C~2~, ..., C~n~. Quando essas
     classes ocultam suas principais informações, fica mais fácil
     implementá-las em paralelo, por desenvolvedores diferentes.
     Consequentemente, teremos uma redução no tempo total de
     implementação do sistema.
 
 -   **Flexibilidade a mudanças.** Por exemplo, suponha que descobrimos que a
-    classe Ci é responsável pelos problemas de desempenho do sistema.
-    Quando detalhes de implementação de Ci são ocultados do resto do
+    classe C~i~ é responsável pelos problemas de desempenho do sistema.
+    Quando detalhes de implementação de C~i~ são ocultados do resto do
     sistema, fica mais fácil trocar sua implementação por uma classe
-    Ci\', que use estruturas de dados e algoritmos mais eficientes.
+    C~i~\', que use estruturas de dados e algoritmos mais eficientes.
     Essa troca também é mais segura, pois como as classes são
     independentes, diminui-se o risco de a mudança introduzir bugs em
     outras classes.
@@ -326,15 +324,15 @@ seguinte:
 ```java
 import java.util.Hashtable;
 
-public class Estacionamento{
+public class Estacionamento {
 
   public Hashtable<String, String> veiculos;
 
-  public Estacionamento(){
+  public Estacionamento() {
     veiculos = new Hashtable<String, String>();
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     Estacionamento e = new Estacionamento();
     e.veiculos.put("TCP-7030", "Uno");
     e.veiculos.put("BNF-4501", "Gol");
@@ -370,19 +368,19 @@ método `estaciona` deve ser preservada.
 ```java
 import java.util.Hashtable;
 
-public class Estacionamento{
+public class Estacionamento {
 
   private Hashtable<String,String> veiculos;
 
-  public Estacionamento(){
+  public Estacionamento() {
     veiculos = new Hashtable<String, String>();
   }
 
-  public void estaciona(String veiculo, String placa){
+  public void estaciona(String veiculo, String placa) {
     veiculos.put(veiculo, placa);
   }
 
-  public static void main(String[] args){
+  public static void main(String[] args) {
     Estacionamento e = new Estacionamento();
     e.estaciona("TCP-7030", "Uno");
     e.estaciona("BNF-4501", "Gol");
@@ -447,19 +445,15 @@ acessar o atributo `matricula` de uma classe `Aluno`.
 class Aluno{
 
   private int matricula;
-
   ...
-
-  public int getMatricula(){
+  public int getMatricula() {
     return matricula;
   }
 
-  public setMatricula(int matricula){
+  public setMatricula(int matricula) {
     this.matricula = matricula;  
   }
-
   ...
-
 }
 ```
 
@@ -535,7 +529,7 @@ No entanto, o conceito se adapta também a métodos ou funções. Por
 exemplo, suponha uma função como a seguinte:
 
 ```java
-float sin_or_cos(double x, int op){
+float sin_or_cos(double x, int op) {
   if (op == 1)
     "calcula e retorna seno de x"
   else
@@ -552,11 +546,11 @@ para cada uma dessas tarefas.
 **Exemplo 2:** Suponha agora a seguinte classe:
 
 ```java
-class Stack<T>{
-  boolean empty(){ ... }
-  T pop(){ ... }
-  push (T){ ... }
-  int size(){ ... }
+class Stack<T> {
+  boolean empty() { ... }
+  T pop() { ... }
+  push (T) { ... }
+  int size() { ... }
 }
 ```
 
@@ -678,7 +672,7 @@ classe `A`.
 ```java
 class A {
 
-  private void f(){
+  private void f() {
     int total;
     ...
     File f = File.open("arq1.db");
@@ -690,9 +684,8 @@ class A {
 ```
 
 ```java
-class B{
-
-  private void g(){
+class B {
+  private void g() {
     int total;
     // computa valor de total
     File f = File.open("arq1.db");
@@ -700,7 +693,6 @@ class B{
     ...
     f.close();
   }
-
 }
 ```
 
@@ -715,23 +707,22 @@ e `B` do exemplo anterior é mostrada no código a seguir.
 
 
 ```java
-class A{
+class A {
 
-  private void f(B b){
+  private void f(B b) {
     int total;
     total = b.getTotal();
     ...
   }
-
 }
 ```
 
 ```java
-class B{
+class B {
 
   int total;
 
-  public int getTotal(){
+  public int getTotal() {
     return total;
   }
 
@@ -741,7 +732,6 @@ class B{
     f.writeInt(total);
     ...
   }
-
 }
 ```
 
@@ -753,7 +743,7 @@ de `total`, chamando-se o método `getTotal()`. Como esse método foi
 declarado público em B, espera-se que o desenvolvedor dessa classe se
 esforce para não alterar a sua assinatura. Por isso, nessa nova versão,
 dizemos que, apesar de existir uma dependência de `A` para `B`, o
-acoplamento criado por ela é aceitável. Em outras palavras, não é um
+acoplamento criado por ela é aceitável. Ou seja, não é um
 acoplamento que gera preocupações.
 
 Ainda sobre o exemplo anterior, é interessante mencionar que, na
@@ -851,12 +841,15 @@ Nesta seção, iremos estudar os sete princípios de projeto listados na
 próxima tabela. A tabela mostra ainda as propriedades de projeto que são
 contempladas ao seguir cada um desses princípios.
 
-|Princípio de Projeto|Propriedade de Projeto
+|**Princípio de Projeto**|**Propriedade de Projeto**
 |-|-
-|Responsabilidade Única, Segregação de Interfaces | Coesão
-|Inversão de Dependências, Prefira Composição a Herança | Acoplamento
-|Demeter | Ocultamento de Informação
-| Aberto/Fechado, Substituição de Liskov| Extensibilidade
+| Responsabilidade Única | Coesão
+| Segregação de Interfaces | Coesão
+| Inversão de Dependências | Acoplamento
+| Prefira Composição a Herança | Acoplamento
+| Demeter | Ocultamento de Informação
+| Aberto/Fechado| Extensibilidade
+| Substituição de Liskov| Extensibilidade
 
 
 Cinco dos princípios que vamos estudar são conhecidos como **Princípios
@@ -913,7 +906,7 @@ desistência de uma disciplina e imprimi-lo na console do sistema.
 ```java
 class Disciplina {
 
-  void calculaIndiceDesistencia(){
+  void calculaIndiceDesistencia() {
     indice = "calcula índice de desistência"
     System.out.println(indice);
   }
@@ -921,26 +914,23 @@ class Disciplina {
 }
 ```
 
-Uma solução consiste em dividir essas responsabilidades entre duas
-classes: uma classe de interface com o usuário (`Console`) e uma classe de
-"regra de negócio" (`Disciplina`). Dentre outros benefícios, essa
-solução permite reusar a classe de negócio com outras classes de
-interface, como classes de interface gráfica, interface web, interface
-para celular, etc.
+Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (`Console`) e uma classe de "regra de negócio" (`Disciplina`), conforme mostrado no código a seguir. Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.
+
+\newpage
 
 ```java
-class Console{
+class Console {
 
-  void imprimeIndiceDesistencia(Disciplina disciplina){
+  void imprimeIndiceDesistencia(Disciplina disciplina) {
     double indice = disciplina.calculaIndiceDesistencia();
     System.out.println(indice);
   }
 
 }
 
-class Disciplina{
+class Disciplina {
 
-  double calculaIndiceDesistencia(){
+  double calculaIndiceDesistencia() {
     double indice = "calcula índice de desistência"
     return indice;
   }
@@ -978,7 +968,7 @@ uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem
 uma matrícula no SIAPE.
 
 ```java
-interface Funcionario{
+interface Funcionario {
 
   double getSalario();
 
@@ -996,7 +986,7 @@ Interfaces — consiste em criar interfaces específicas
 (`Funcionario`).
 
 ```java
-interface Funcionario{
+interface Funcionario {
   double getSalario();
   ...
 }
@@ -1036,23 +1026,23 @@ concreta que está por trás — ou que implementa — a interface `I`
 que ele referencia em seu código.
 
 ```java
-interface I{ ... }
+interface I { ... }
 
-class C1 implements I{
+class C1 implements I {
   ...
 }
 
-class C2 implements I{
+class C2 implements I {
   ...
 }
 ```
 
 ```java
-class Cliente{
+class Cliente {
 
   I i;
 
-  Cliente (I i){
+  Cliente (I i) {
     this.i = i;
     ...
   }
@@ -1061,9 +1051,9 @@ class Cliente{
 ```
 
 ```java
-class Main{
+class Main {
 
-  void main (){
+  void main () {
     C1 c1 = new C1();
     new Cliente(c1);
     ...
@@ -1085,7 +1075,7 @@ preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
 
 ```java
-void f(){
+void f() {
   ...
   ProjetorLG projetor = new ProjetorLG();
   ...
@@ -1094,7 +1084,7 @@ void f(){
 ```
 
 ```java
-void g(Projetor projetor){
+void g(Projetor projetor) {
   ...
 }
 ```
@@ -1150,16 +1140,16 @@ classes A e B quando a classe A possui um atributo do tipo B.
 pelo menos duas soluções — por meio de herança ou por meio de
 composição — conforme mostra o seguinte código:
 
-**Solução via Herança:**
+Solução via Herança:
 ```java
-class Stack extends ArrayList{
+class Stack extends ArrayList {
   ...
 }
 ```
 
-**Solução via Composição:**
+Solução via Composição:
 ```java
-class Stack{
+class Stack {
   private ArrayList elementos;
   ...
 }
@@ -1181,11 +1171,11 @@ lado, quando adota-se uma solução baseada em composição, isso fica
 mais fácil, como mostra o exemplo a seguir:
 
 ```java
-class Stack{
+class Stack {
 
   private List elementos;
 
-  Stack(List elementos){
+  Stack(List elementos) {
     this.elementos = elementos;
   }
   ...
@@ -1198,7 +1188,7 @@ torna-se possível instanciar objetos `Stack` com estruturas de dados
 distintas. Por exemplo, um objeto no qual os elementos da pilha são
 armazenados em um `ArrayList` e outro objeto onde eles são armazenado em
 um Vector. Como uma observação final, veja que o tipo do atributo
-elementos de `Stack` passou a ser um List; ou seja, fizemos uso também do
+elementos de `Stack` passou a ser um `List`; ou seja, fizemos uso também do
 Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).
 
 Antes de concluir, gostaríamos de mencionar três pontos suplementares ao
@@ -1245,22 +1235,22 @@ que respeitam o Princípio de Demeter. E, em seguida, temos um método `m2`,
 com uma chamada que não obedece ao princípio.
 
 ```java
-class PrincipioDemeter{
+class PrincipioDemeter {
 
   T1 attr;
 
-  void f1(){
+  void f1(){ 
     ...
   }
 
-  void m1(T2 p){   // método que segue Demeter
+  void m1(T2 p) {  // método que segue Demeter
     f1();           // caso 1: própria classe
     p.f2();         // caso 2: parâmetro
     new T3().f3();  // caso 3: criado pelo método
     attr.f4();      // caso 4: atributo da classe
   }
 
-  void m2(T4 p){   // método que viola Demeter
+  void m2(T4 p) {  // método que viola Demeter
     p.getX().getY().getZ().doSomething();
   }
 
@@ -1298,25 +1288,24 @@ executar o seguinte código:
 ```java
 preco = 6.00;
 Carteira carteira = cliente.getCarteira();
-if(carteira.getValorTotal() >= preco){   // viola Demeter
+if(carteira.getValorTotal() >= preco) {  // viola Demeter
   carteira.debita(preco);                 // viola Demeter
-} else{
+} else {
   // volto amanhã, para cobrar o valor do jornal
 }
 ```
 
-Veja que o jornaleiro têm acesso à carteira do seu cliente — via
-método `getCarteira()` — e então ele mesmo retira o valor do jornal
+O jornaleiro têm acesso à carteira do seu cliente — via
+`getCarteira()` — e então ele mesmo retira o valor do jornal
 dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse
-tamanha liberdade ... Portanto, uma solução mais realista é a seguinte:
+tamanha liberdade. Uma solução mais realista é a seguinte:
 
 ```java
 preco = 6.00;
-
 try{
   cliente.pagar(preco);
 }
-catch (ExcecaoValorInsuficiente e){
+catch (ExcecaoValorInsuficiente e) {
   // volto amanhã, para cobrar o valor do jornal
 }
 ```
@@ -1354,9 +1343,12 @@ ordenar uma lista em ordem crescente de seus elementos. Um exemplo de
 uso desse método é mostrado a seguir:
 
 ```java
-List<String> nomes = Arrays.asList("joao", "maria", "alexandre", "ze");
+List<String> nomes;
+nomes = Arrays.asList("joao", "maria", "alexandre", "ze");
 Collections.sort(nomes);
-System.out.println(nomes);  // resultado: ["alexandre","joao","maria","ze"]
+
+System.out.println(nomes);  
+// resultado: ["alexandre","joao","maria","ze"]
 ```
 
 No entanto, futuramente, podemos precisar de usar o método `sort` para
@@ -1365,14 +1357,18 @@ a classe `Collections` está preparada para esse novo cenário de uso. Mas
 para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
+\newpage
+
 ```java
-Comparator<String> comparador = new Comparator<String>(){
+Comparator<String> comparador = new Comparator<String>() {
   public int compare(String s1, String s2) {
     return s1.length() - s2.length();
   }
 };
 Collections.sort(nomes, comparador);
-System.out.println(nomes);   // resultado: [ze, joao, maria, alexandre]
+
+System.out.println(nomes);   
+// resultado: [ze, joao, maria, alexandre]
 ```
 
 Ou seja, a classe `Collections` se mostrou "aberta" a lidar com esse
@@ -1383,14 +1379,14 @@ fonte da classe não teve que ser modificado.
 Princípio Aberto/Fechado.
 
 ```java
-double calcTotalBolsas(Aluno[] lista){
+double calcTotalBolsas(Aluno[] lista) {
   double  total = 0.0;
-  foreach (Aluno aluno in lista){
-    if (aluno instanceof AlunoGrad){
+  foreach (Aluno aluno in lista) {
+    if (aluno instanceof AlunoGrad) {
       AlunoGrad grad = (AlunoGrad) aluno;
       total += "código que calcula bolsa de grad";
     }
-    else if (aluno instanceof AlunoMestrado){
+    else if (aluno instanceof AlunoMestrado) {
       AlunoMestrado mestrando = (AlunoMestrado) aluno;
       total += "código que calcula bolsa de mestrando";
     }
@@ -1415,7 +1411,7 @@ projeto. Por exemplo, a implementação da classe `Collections` (no exemplo
 os clientes da classe não podem alterar e customizar esse algoritmo,
 tendo que se contentar com a implementação default que é oferecida.
 Logo, sob o critério de customização do algoritmo de ordenação, o método
-sort não atende ao Princípio Aberto/Fechado.
+`sort` não atende ao Princípio Aberto/Fechado.
 
 ### Princípio de Substituição de Liskov
 
@@ -1440,7 +1436,7 @@ Para explicar o Princípio de Substituição de Liskov vamos nos basear no
 seguinte exemplo:
 
 ```java
-void f(A a){
+void f(A a) {
   ...
   a.g(int n);
   ...
@@ -1451,11 +1447,11 @@ O método `f` pode ser chamado passando-se como parâmetros objetos de
 subclasses `B1`, `B2`, ..., `Bn` da classe base `A`, como mostrado a seguir:
 
 ```java
-f(new B1());  // f pode receber objetos da subclasse B1 como parâmetro
+f(new B1());  // f pode receber objetos da subclasse B1 
 ...
 f(new B2());  // e de qualquer outra subclasse de A, como B2
 ...
-f(new B3());   // e B3
+f(new B3());  // e B3
 ```
 
 O Princípio de Substituição de Liskov determina as condições —
@@ -1474,7 +1470,7 @@ retorna o n-ésimo número primo. Esse método existe na classe base e é
 redefinido em todas as subclasses.
 
 Suponha ainda que o contrato do método `getPrimo(n)` especifique o
-seguinte: 1 <= n <= 1 milhão. Ou seja, o método deve ser capaz de retornar
+seguinte: *1 <= n <= 1 milhão*. Ou seja, o método deve ser capaz de retornar
 qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo,
 uma violação do contrato de `getPrimo(n)` ocorre, por exemplo, se, em uma
 das classes, o algoritmo implementado calcule apenas números primos até
@@ -1495,36 +1491,44 @@ bem forte, exatamente para reforçar o sentido do Princípio de
 Substituição de Liskov.
 
 ```java
-class A{
+class A {
 
-  int soma(int a, int b){
+  int soma(int a, int b) {
     return a+b;
   }
 
 }
+```
+\newpage
 
-class B extends A{
+```java
+class B extends A {
 
-  int soma(int a, int b){
+  int soma(int a, int b) {
     String r = String.valueOf(a) + String.valueOf(b);
     return Integer.parseInt(r);
   }
 
 }
+```
 
-class Cliente{
+```java
+class Cliente {
 
-  void f(A a){
+  void f(A a) {
     ...
     a.soma(1,2); // pode retornar 3 ou 12
     ...
   }
 
 }
+```
 
-class Main{
+```java
 
-  void main(){
+class Main {
+
+  void main() {
     A a = new A();
     B b = new B();
     Cliente cliente = new Cliente();
@@ -1568,8 +1572,8 @@ dos valores de uma determinada métrica pode ser bem distinta.
 Nesta seção, vamos estudar métricas para mensurar as seguintes
 propriedades de um projeto de software: tamanho, coesão, acoplamento e
 complexidade. Iremos detalhar os procedimentos de cálculo dessas
-métricas e dar alguns exemplos. Existem ainda ferramentas e plugins para
-IDEs que calculam essas métricas de forma automática.
+métricas e dar alguns exemplos. Existem ainda ferramentas 
+que calculam essas métricas de forma automática.
 
 ### Tamanho
 
@@ -1614,44 +1618,45 @@ classe, melhor o ser seu projeto. Por isso, LCOM foi planejada para
 medir a falta de coesão de classes. Quanto maior o valor de LCOM, maior
 a falta de coesão de uma classe e, portanto, pior o seu projeto.
 
-Para calcular o valor de LCOM de uma classe C deve-se, primeiro, criar o
+Para calcular o valor de LCOM de uma classe C deve-se, primeiro, computar o
 seguinte conjunto:
 
-M(C) = { (f~1~, f~2~) \| f~1~ e f~2~ são métodos de C }
+*M(C) = { (f~1~, f~2~) \| f~1~ e f~2~ são métodos de C }*
 
 Ele é formado por todos os pares não-ordenados de métodos da classe C.
 Seja ainda o seguinte conjunto:
 
-A(f) = conjunto de atributos da classe que são acessados por um método f
+*A(f) = conjunto de atributos da classe que são acessados por um método f*
 
 O valor de LCOM de C é assim definido:
 
-P = \| { (f~1~, f~2~) in M(C) \| A(f~1~) inter A(f~2~) = empty } \|
+*P = \| { (f~1~, f~2~) in M(C) \| A(f~1~) e A(f~2~) são conjuntos disjuntos } \|*
 
 Isto é, LCOM(C) é o número de pares de métodos — dentre todos os
-possíveis pares de métodos de C — que não usam atributos em comum.
+possíveis pares de métodos de C — que não usam atributos em comum, isto é,
+a interseção deles é vazia.
 
 **Exemplo:** Para deixar a explicação mais clara, suponha a seguinte
 classe:
 
 ```java
-class A{
+class A {
 
   int a1;
   int a2;
   int a3;
 
-  void m1(){
+  void m1() {
     a1 = 10;
     a2 = 20;
   }
 
-  void m2(){
+  void m2() {
     System.out.println(a1);
     a3 = 30;
   }
 
-  void m3(){
+  void m3() {
     System.out.println(a3);
   }
 
@@ -1661,11 +1666,7 @@ class A{
 A próxima tabela mostra os elementos dos conjuntos M e A; e o resultado
 da interseção que define o valor de LCOM.
 
-|**Pares de métodos**   | **Conjunto A**      | **Interseção dos Conjuntos A**
-| - | - | -
-| (m1,m2) | A(m1) = {**a1**,a2}, A(m2) = {**a1**,a3} | {a1}
-| (m1,m3) | A(m1) = {a1,a2}, A(m3) = {a3} | vazio
-| (m2,m3) | A(m2) = {a1,**a3**}, A(m3) = {**a3**} | {a3}
+![Exemplo de cálculo de LCOM](figs/cap5/lcom.jpg){width=80%}
 
 
 Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis
@@ -1724,28 +1725,27 @@ quando:
 Seja uma classe A com dois métodos (`metodo1` e `metodo2`):
 
 ```java
-class A extends T1 implements T2{
+class A extends T1 implements T2 {
 
   T3 a;
 
-  T4 metodo1(T5 p) throws T6{
+  T4 metodo1(T5 p) throws T6 {
     T7 v;
     ...
   }
 
-  void metodo2(){
+  void metodo2() {
     T8 = new T8();
     try{
       ...
     }
-    catch (T9 e){ ... }
+    catch (T9 e) { ... }
   }
 
 }
 ```
 
-Conforme indicamos numerando os tipos dos quais A depende, temos que
-CBO(A) = 9.
+Conforme indicamos numerando os tipos dos quais A depende, CBO(A) = 9.
 
 A definição de CBO não distingue as classes das quais uma classe
 depende. Por exemplo, tanto faz se a dependência é para uma classe da
@@ -1772,7 +1772,7 @@ Porém, existe uma alternativa simples para calcular o CC de uma função,
 a qual dispensa a construção de grafos de fluxo de controle. Essa
 alternativa define CC da seguinte forma:
 
-CC = "número de comandos de decisão em uma função" + 1
+*CC = "número de comandos de decisão em uma função" + 1*
 
 Onde comandos de decisão podem ser if, while, case, for, etc. A intuição
 subjacente a essa fórmula é que comandos de decisão tornam o código mais
@@ -1856,14 +1856,14 @@ Languages, and Applications (OOPSLA), 1991.
 8\.  Qual princípio de projeto é violado pelo seguinte código?
 
 ```java
-void onclick(){
+void onclick() {
   num1 = textfield1.value();
   c1 = BD.getConta(num1)
   num2 = textfield2.value();
   c2 = BD.getConta(num2)
   valor = textfield3.value();
   beginTransaction();
-  try{
+  try {
     c1.retira(valor);
     c2.deposita(valor);
     commit();
@@ -1885,7 +1885,7 @@ void onclick(){
     poderia alterar o código do método para atender a esse princípio?
 
 ```java
-void sendMail(ContaBancaria conta, String msg){
+void sendMail(ContaBancaria conta, String msg) {
   Cliente cliente = conta.getCliente();
   String mail = cliente.getMailAddress();
   "Envia mail"
@@ -1896,7 +1896,7 @@ void sendMail(ContaBancaria conta, String msg){
     poderia alterar o código do método para atender a esse princípio?
 
 ```java
-void imprimeDataContratacao(Funcionario func){
+void imprimeDataContratacao(Funcionario func) {
   Date data = func.getDataContratacao();
   String msg = data.format();
   System.out.println(msg);
@@ -1911,21 +1911,21 @@ void imprimeDataContratacao(Funcionario func){
     projeto é violado pelo código abaixo?
 
 ```java
-class A{  
-  int f(int x){ // pre: x > 0
+class A {  
+  int f(int x) { // pre: x > 0
     ...
     return exp;
-  }            // pos: exp > 0
+  }              // pos: exp > 0
   ...
 }
 ```
 
 ```java
-class B extends A{  
-  int f(int x){ // pre: x > 10
+class B extends A {  
+  int f(int x) { // pre: x > 10
   ...
   return exp;
-  }            // pos: exp > -50
+  }              // pos: exp > -50
   ...
 }
 ```
@@ -1937,19 +1937,19 @@ class B extends A{
     valores de LCOM de cada uma delas.
 
 ```java
-class A{
+class A {
 
   X x = new X();
 
-  void f(){
+  void f() {
     x.m1();
   }
 
-  void g(){
+  void g() {
     x.m2();
   }
 
-  void h(){
+  void h() {
     x.m3();
   }
 
@@ -1957,21 +1957,21 @@ class A{
 ```
 
 ```java
-class B{
+class B {
 
   X x = new X();
   Y y = new Y();
   Z z = new Z();
 
-  void f(){
+  void f() {
     x.m();
   }
 
-  void g(){
+  void g() {
     y.m();
   }
 
-  void h(){
+  void h() {
     z.m();
   }
 
@@ -1983,20 +1983,22 @@ class B{
 
 16\. Calcule o CBO e LCOM da seguinte classe:
 
+\newpage
+
 ```java
-class A extends B{
+class A extends B {
 
   C f1, f2, f3;
 
-  void m1(D p){
+  void m1(D p) {
     "usa f1 e f2"
   }
 
-  void m2(E p){
+  void m2(E p) {
     "usa f2 e f3"
   }
 
-  void m3(F p){
+  void m3(F p) {
     "usa f3"  
   }
 
