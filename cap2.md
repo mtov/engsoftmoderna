@@ -150,7 +150,7 @@ validada pelo cliente. Se ela for aprovada, um novo ciclo — ou
 **iteração** — inicia-se, com mais algumas funcionalidades, também
 priorizadas pelos clientes. Normalmente, esses ciclos são curtos, com
 duração de um mês, talvez até um pouco menos. Assim, o sistema vai sendo
-construído de forma incremental; sendo cada incremento devidamente
+construído de forma incremental, sendo cada incremento devidamente
 aprovado pelos clientes. O desenvolvimento termina quando o cliente
 decide que todos os requisitos estão implementados.
 
