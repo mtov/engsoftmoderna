@@ -152,7 +152,7 @@ git commit -m "Removendo arq1.txt"
 Além de remover do repositório git local, o comando `rm` também remove
 o arquivo do diretório de trabalho.
 
-## Status
+## Status, Diff e Log
 
 O comando **status** é um dos comandos git mais usados. Dentre outras informações, ele mostra o estado do diretório de trabalho e do index. Por exemplo, pode-se usar esse comando para obter informações sobre:
 
@@ -161,6 +161,10 @@ O comando **status** é um dos comandos git mais usados. Dentre outras informaç
 * Arquivos do diretório de trabalho que não são rastreados pelo git, ou seja, eles ainda não foram objetos de um `add`.
 
 * Arquivos que encontram-se no index, aguardando um `commit`.
+
+O comando `git diff` é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram alvo de um commit. Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-), após o último commit. Muitas vezes, usamos um `git diff` antes de um `git commit` para ter certeza das mudanças que iremos "perpetuar" no sistema de controle de versões.
+
+Já o comando `git log` lista informações sobre os últimos commits, como data, autor, hora e descrição do commit.
 
 
 ## Push & Pull
@@ -558,7 +562,7 @@ requests por meio de um exemplo.
 mantém um repositório chamado awesome-git, com uma lista de links
 interessantes sobre git. Os links ficam armazenados no arquivo README.md
 desse repositório, isto é, na sua página principal, cujo endereço é
-github.com/aserg-ufmg/awesome-git. Qualquer membro da organização pode
+`github.com/aserg-ufmg/awesome-git`. Qualquer membro da organização pode
 sugerir a adição de links nessa página. Mas veja que estamos usando a
 palavra sugerir. Isto é, eles não podem fazer um  `push` diretamente no
 branch master. Em vez disso, a sugestão de link precisa ser revisada e
@@ -677,7 +681,7 @@ nossa conta do GitHub, chamado, por exemplo, mtov/linux.
 Como fazemos sempre, vamos usar um exemplo para explicar
 essa operação.
 
-**Exemplo**: Suponha o repositório github.com/aserg-ufmg/awesome-git,
+**Exemplo**: Suponha o repositório `github.com/aserg-ufmg/awesome-git`,
 usado no exemplo sobre pull requests. Suponha ainda uma terceira
 desenvolvedora, chamada Carol. Porém, como Carol não é membro da
 organização ASERG/UFMG, ela não tem permissão para realizar  `push` nesse
