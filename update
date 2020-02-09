@@ -1,17 +1,17 @@
 rm esm-book.pdf
 
-pandoc --defaults=defaults.yaml cap0.md -o cap0.html
-pandoc --number-offset=0 --defaults=defaults.yaml cap1.md -o cap1.html
-pandoc --number-offset=1 --defaults=defaults.yaml cap2.md -o cap2.html
-pandoc --number-offset=2 --defaults=defaults.yaml cap3.md -o cap3.html
-pandoc --number-offset=3 --defaults=defaults.yaml cap4.md -o cap4.html
-pandoc --number-offset=4 --defaults=defaults.yaml cap5.md -o cap5.html
-pandoc --number-offset=5 --defaults=defaults.yaml cap6.md -o cap6.html
-pandoc --number-offset=6 --defaults=defaults.yaml cap7.md -o cap7.html
-pandoc --number-offset=7 --defaults=defaults.yaml cap8.md -o cap8.html
-pandoc --number-offset=8 --defaults=defaults.yaml cap9.md -o cap9.html
-pandoc --number-offset=9 --defaults=defaults.yaml cap10.md -o cap10.html
-pandoc --defaults=defaults.yaml capAp.md -o capAp.html
+pandoc --defaults=defaults.yaml -T "Prefácio" cap0.md -o cap0.html
+pandoc --number-offset=0 --defaults=defaults.yaml -T "Cap. 1: Introdução" cap1.md -o cap1.html
+pandoc --number-offset=1 --defaults=defaults.yaml -T "Cap. 2: Processos" cap2.md -o cap2.html
+pandoc --number-offset=2 --defaults=defaults.yaml -T "Cap. 3: Requisitos" cap3.md -o cap3.html
+pandoc --number-offset=3 --defaults=defaults.yaml -T "Cap. 4: Modelos" cap4.md -o cap4.html
+pandoc --number-offset=4 --defaults=defaults.yaml -T "Cap. 5: Princípios de Projeto" cap5.md -o cap5.html
+pandoc --number-offset=5 --defaults=defaults.yaml -T "Cap. 6: Padrões de Projeto" cap6.md -o cap6.html
+pandoc --number-offset=6 --defaults=defaults.yaml -T "Cap. 7: Arquitetura" cap7.md -o cap7.html
+pandoc --number-offset=7 --defaults=defaults.yaml -T "Cap. 8: Testes" cap8.md -o cap8.html
+pandoc --number-offset=8 --defaults=defaults.yaml -T "Cap. 9: Refactoring" cap9.md -o cap9.html
+pandoc --number-offset=9 --defaults=defaults.yaml -T "Cap. 10: DevOps" cap10.md -o cap10.html
+pandoc --defaults=defaults.yaml -T "Apêndice A: Git" capAp.md -o capAp.html
 
 git add .
 
