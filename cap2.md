@@ -1911,28 +1911,28 @@ edição, 2014.
 
 ## Exercícios de Fixação {.unnumbered}
 
-1.  Como XP preconiza que devem ser os contratos de desenvolvimento de
+1\.  Como XP preconiza que devem ser os contratos de desenvolvimento de
      software.
 
-2.  Quais as diferenças entre XP e Scrum?
+2\.  Quais as diferenças entre XP e Scrum?
 
-3.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por que?
+3\.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por que?
      Defina esses termos.
 
-4.  Qual a diferença entre as histórias do "topo" e do "fundo" do
+4\.  Qual a diferença entre as histórias do "topo" e do "fundo" do
      Backlog do Produto, em Scrum?
 
-5.  O que são e para que servem story points?
+5\.  O que são e para que servem story points?
 
-6.  Em Scrum, qual a diferença entre uma sprint review e uma
+6\.  Em Scrum, qual a diferença entre uma sprint review e uma
      retrospectiva?
 
-7.  Um sprint pode ser cancelado? Se sim, por quem e por qual motivo?
+7\.  Um sprint pode ser cancelado? Se sim, por quem e por qual motivo?
      Para responder a essa questão, consulte antes o Scrum Guide
      ([link](https://www.scrum.org/resources/scrum-guide)),
      que é o guia que documenta a versão oficial de Scrum.
 
-8.  Procure pensar em um sistema de uma área da qual tenha algum
+8\.  Procure pensar em um sistema de uma área da qual tenha algum
      conhecimento. (a) Escreva então uma história para esse sistema
      (veja que histórias são especificações resumidas de
      funcionalidades, com 2-3 sentenças). (b) Em seguida, quebre a
@@ -1941,7 +1941,7 @@ edição, 2014.
      exemplo na seção sobre XP). (c) Existem dependências entre essas
      tarefas? Ou elas podem ser implementadas em qualquer ordem?
 
-9.  Suponha dois times, A e B, atuando em projetos diferentes,
+9\.  Suponha dois times, A e B, atuando em projetos diferentes,
      contratados por empresas distintas, sem conexões entre eles.
      Porém, ambos os times adotam sprints de 15 dias e ambos possuem 5
      desenvolvedores. Nos seus projetos, o time A considera que sua
@@ -1949,15 +1949,15 @@ edição, 2014.
      pontos. Pode-se afirmar que A é 50% mais produtivo que B?
      Justifique sua resposta.
 
-10. Quais são as principais diferenças entre Scrum e Kanban?
+10\. Quais são as principais diferenças entre Scrum e Kanban?
 
-11. Quais são as diferenças entre um Quadro Scrum e um Quadro Kanban?
+11\. Quais são as diferenças entre um Quadro Scrum e um Quadro Kanban?
 
-12. Qual o erro existe no seguinte Quadro Kanban?
+12\. Qual o erro existe no seguinte Quadro Kanban?
 
-    ![](figs/cap2/kanban4.png){width=80%}
+![](figs/cap2/kanban4.png){width=80%}
 
-13. Suponha o seguinte quadro Kanban. Neste momento, o time não consegue
+13\. Suponha o seguinte quadro Kanban. Neste momento, o time não consegue
      trabalhar na especificação de novas histórias, pois o WIP do passo
      Especificação está sendo totalmente preenchido por itens esperando
      movimentação para o passo seguinte (Implementação). O que seria
@@ -1966,14 +1966,19 @@ edição, 2014.
      time nas três tarefas em Validação, de forma a desbloquear o fluxo
      do processo.
 
-     ![](figs/cap2/kanban5.png){width=80%}
+![](figs/cap2/kanban5.png){width=80%}
 
-14. Por que se recomenda que os limites WIP calculados usando a Lei de
+14\. Por que se recomenda que os limites WIP calculados usando a Lei de
      Little sejam incrementados, por exemplo em 50%, de forma a admitir
      uma margem de erro? Em outros palavras, quais eventos podem
      originar esses erros na estimativa dos WIPs?
 
-15. Seja um processo Kanban, dividido em quatro passos. A tabela a seguir
+15\. Descreva os principais recursos oferecidos por Waterfall, Scrum e
+     Kanban para controlar riscos e garantir um fluxo de trabalho
+     sustentável e que propicie o desenvolvimento de software com
+     qualidade.
+
+16\. Seja um processo Kanban, dividido em quatro passos. A tabela a seguir
      informa o *lead time* de cada um deles e o throughout do passo C,
      que é o passo mais lento. Com base nesses valores, calcule o WIP
      de cada passo (última coluna da tabela).
@@ -1986,22 +1991,16 @@ edição, 2014.
     C               10                           0.5
     D                5                           -
 
-
-16. Descreva os principais recursos oferecidos por Waterfall, Scrum e
-     Kanban para controlar riscos e garantir um fluxo de trabalho
-     sustentável e que propicie o desenvolvimento de software com
-     qualidade.
-
-17. Seja o seguinte gráfico, que mostra — para um determinado
+17\. Seja o seguinte gráfico, que mostra — para um determinado
      sistema — como os custos de mudanças variam conforme a fase do
      desenvolvimento em que elas são realizadas. (a) Qual método de
      desenvolvimento você recomendaria para esse sistema? Justifique
      sua resposta. (b) Sistemas de quais domínios podem ter uma curva
      de custos de mudanças semelhante a essa?
 
-     ![](figs/cap2/custo-mudancas.png){width=45%}
+![](figs/cap2/custo-mudancas.png){width=45%}
 
-18. O artigo "*Development and Deployment at Facebook*"
+18\. O artigo "*Development and Deployment at Facebook*"
      ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
      apresenta os métodos e práticas de desenvolvimento de software
      usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2),
@@ -2020,6 +2019,6 @@ edição, 2014.
   Facebook                            
   Deployment Contínuo                                 
 
-19. Por que métodos como o Processo Unificado (UP) e Espiral não são
+19\. Por que métodos como o Processo Unificado (UP) e Espiral não são
      considerados ágeis? E qual a diferença deles para o Modelo
      Waterfall?

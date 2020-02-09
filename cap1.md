@@ -17,9 +17,9 @@ capítulos restantes do livro (Seção 1.4).
 
 ## Definições, Contexto e História
 
-No mundo moderno, tudo é software. Por exemplo, hoje em dia, empresas de
+No mundo moderno, tudo é software. Hoje em dia, por exemplo, empresas de
 qualquer tamanho dependem dos mais diversos sistemas de informação para
-automatizar seus processos. Governos interagem com cidadãos por meio de
+automatizar seus processos. Governos também interagem com os cidadãos por meio de
 sistemas computacionais, por exemplo, para coletar impostos ou realizar
 eleições. Empresas vendem, por meio de sistemas de comércio eletrônico,
 uma gama imensa de produtos, diretamente para os consumidores. Software
@@ -94,8 +94,8 @@ deve ser construído em fases estritamente sequenciais, como ocorre com
 produtos tradicionais de engenharia, tais como Engenharia Civil,
 Engenharia Mecânica, Engenharia Eletrônica, etc. Já existem também
 padrões que podem ser usados por Engenheiros de Software em seus novos
-sistemas, de forma que eles não precisam "reinventar a roda" toda vez
-que enfrentam um novo problema de projeto. Bibliotecas e frameworks para
+sistemas, de forma que eles não precisem "reinventar a roda" toda vez
+que enfrentarem um novo problema de projeto. Bibliotecas e frameworks para
 os mais diversos fins estão largamente disponíveis, de forma que
 desenvolvedores de software podem reusar código sem se preocupar com
 detalhes inerentes a tarefas como implementar interfaces gráficas, criar
@@ -136,13 +136,13 @@ vendidas como se fossem balas de prata.
 
 Segundo Brooks, as dificuldades essenciais são as seguintes:
 
-* Complexidade: dentre as construções que o homem se propõe a
+* **Complexidade**: dentre as construções que o homem se propõe a
     realizar, software é uma das mais desafiadoras e mais complexas
     que existe. Na verdade, como dissemos antes, mesmo construções de
     engenharia tradicional, como um satélite, uma usina nuclear ou um
     foguete, são cada vez mais dependentes de software.
 
-*  Conformidade: pela sua natureza software tem que se adaptar ao seu
+*  **Conformidade**: pela sua natureza software tem que se adaptar ao seu
     ambiente, que muda a todo momento no mundo moderno. Por exemplo,
     se as leis para recolhimento de impostos mudam, normalmente
     espera-se que os sistemas sejam rapidamente adaptados à nova
@@ -150,12 +150,12 @@ Segundo Brooks, as dificuldades essenciais são as seguintes:
     Física, pois as leis da natureza não mudam de acordo com os
     caprichos dos homens.
 
-*  Facilidade de mudanças (*changeability*): que consiste na
+*  **Facilidade de mudanças**: que consiste na
     necessidade de evoluir sempre, incorporando novas funcionalidades.
     Na verdade, quanto mais bem sucedido for um sistema de software,
     mais demanda por mudanças ele recebe.
 
-*  Invisibilidade: devido à sua natureza abstrata, é difícil
+*  **Invisibilidade**: devido à sua natureza abstrata, é difícil
     visualizar o tamanho e consequentemente estimar o desafio de
     construir um sistema de software.
 
@@ -194,7 +194,7 @@ bilhões de linhas de código, distribuídas por 9 milhões de arquivos, em
 janeiro de 2015 ([link](https://doi.org/10.1145/2854146)).
 Nesta época, cerca de 40 mil solicitações de mudanças de código
 (commits) eram realizadas, em média, por dia, pelos cerca de 25 mil
-Engenheiros de Software empregados pelo Google.
+Engenheiros de Software empregados pelo Google nessa época.
 ```{=latex}
 \end{esmbox}
 ```
