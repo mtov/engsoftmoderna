@@ -1188,7 +1188,7 @@ descreveremos a seguir.
      sprint** (*sprint goal*), isto é, a lista de histórias que o dono
      do produto selecionou para o sprint e que o time de
      desenvolvimento se comprometeu a implementar na duração do mesmo.
-     Assim, Scrum é um método adaptativo a mudanças, mas desde que elas
+     Assim, Scrum é um método adaptável a mudanças, mas desde que elas
      ocorram entre sprints. Ou seja, no time-box de um sprint, a equipe
      de desenvolvimento deve ter tranquilidade e segurança para
      trabalhar com uma lista fechada de histórias.
