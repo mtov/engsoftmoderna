@@ -1069,7 +1069,7 @@ editores de imagens, etc) e sistemas de software básico (como
 compiladores, gerenciadores de bancos de dados, IDEs, etc). Nesses
 sistemas, as técnicas de Engenharia de Software estudadas neste livro
 podem contribuir com dois benefícios principais: (1) elas podem tornar
-mais produtivo o desenvolvimento de Sistemas B; (b) elas podem propiciar
+mais produtivo o desenvolvimento de Sistemas B; (2) elas podem propiciar
 a construção de Sistemas B com melhor qualidade, tanto interna (por
 exemplo, sistemas mais fáceis de serem mantidos) como externa (por
 exemplo, sistemas com menor quantidade de bugs em produção).

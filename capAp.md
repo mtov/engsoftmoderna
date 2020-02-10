@@ -162,7 +162,7 @@ O comando **status** é um dos comandos git mais usados. Dentre outras informaç
 
 * Arquivos que encontram-se no index, aguardando um `commit`.
 
-O comando `git diff` é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram alvo de um commit. Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-), após o último commit. Muitas vezes, usamos um `git diff` antes de um `git commit` para ter certeza das mudanças que iremos "perpetuar" no sistema de controle de versões.
+O comando `git diff` é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um `git diff` antes de um `add`/`commit` para ter certeza das mudanças que iremos "perpetuar", em seguida, no sistema de controle de versões.
 
 Já o comando `git log` lista informações sobre os últimos commits, como data, autor, hora e descrição do commit.
 
