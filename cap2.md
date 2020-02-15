@@ -6,6 +6,7 @@ is no perfect process. There is no perfect design. There are no perfect
 stories. You can, however, perfect your process, your design, and your
 stories.* -- Kent Beck
 
+\index{Processos de Software}
 Este capítulo inicia com uma apresentação sobre a importância de
 processos de software (Seção 2.1). Em seguida, discutimos questões
 gerais e preliminares sobre processos ágeis de desenvolvimento de
@@ -76,6 +77,7 @@ alguns métodos de desenvolvimento de software.
 
 ## Manifesto Ágil
 
+\index{Manifesto Ágil}
 Os primeiros processos de desenvolvimento de software — do tipo Waterfall, propostos ainda na década de 70 — eram estritamente sequenciais, começando com uma fase de especificação de requisitos até chegar às fases finais de implementação, testes e manutenção do sistema.
 
 Se considerarmos o contexto histórico, essa primeira visão de processo era natural, visto que projetos de Engenharia tradicional também são sequenciais e precedidos de um planejamento detalhado. Todas as fases também geram documentações detalhadas do produto que está sendo desenvolvido. Por isso, nada mais natural que a nascente Engenharia de Software se espelhasse nos processos de áreas mais tradicionais, como a Engenharia Eletrônica, Civil, Mecânica, Aeronáutica, etc.
@@ -88,6 +90,7 @@ orçamentos desses projetos não eram obedecidos. Não raro, projetos
 inteiros eram cancelados, após um ou mais anos de trabalho, sem entregar
 um sistema funcional para os clientes.
 
+\index{CHAOS Report}
 Em 1994, um relatório produzido pela empresa de consultoria Standish
 Group revelou informações mais detalhadas sobre os projetos de software
 da época. Por exemplo, o relatório, que ficou conhecido pelo sugestivo
@@ -125,6 +128,7 @@ extensos; assim, rapidamente se tornavam obsoletos, pois quando os
 requisitos mudavam os desenvolvedores não propagavam as alterações para
 a documentação, mas apenas para o código fonte.
 
+\index{Manifesto Ágil}
 Então eles decidiram lançar as bases para um novo conceito de processo
 de software, as quais foram registradas em um documento que chamaram de
 **Manifesto Ágil**. Por ser curto, iremos reproduzir o texto do
@@ -140,6 +144,7 @@ manifesto a seguir:
 > 
 > **Resposta a mudanças**, mais do que seguir um plano.
 
+\index{Métodos Ágeis}
 A característica principal de processos ágeis é a adoção de **ciclos
 curtos e iterativos de desenvolvimento**, por meio dos quais um sistema
 é implementado de forma gradativa; começando por aquilo que é mais
@@ -154,6 +159,7 @@ construído de forma incremental, sendo cada incremento devidamente
 aprovado pelos clientes. O desenvolvimento termina quando o cliente
 decide que todos os requisitos estão implementados.
 
+\index{Waterfall}
 As próximas figuras comparam desenvolvimento em Waterfall e Ágil.
 
 ![Desenvolvimento usando um Processo Waterfall. O sistema fica
@@ -197,9 +203,11 @@ No entanto, as características acima são genéricas e abrangentes; por isso al
 
 Neste capítulo, vamos estudar três métodos ágeis:
 
+\index{Kent Beck}
 *  **Extreme Programming (XP)**, proposto por Kent Beck, em um livro lançado em 1999 ([link](https://dl.acm.org/citation.cfm?id=318762)). Uma segunda edição do livro, incluindo uma grande revisão, foi lançada em 2004. Neste capítulo, vamos nos basear nessa edição mais recente.
 
-
+\index{Jeffrey Sutherland}
+\index{Ken Schwaber}
 *  **Scrum**, proposto por Jeffrey Sutherland e Ken Schwaber, em um artigo publicado em 1995 ([link](https://dl.acm.org/citation.cfm?id=260274)).
 
 *  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
@@ -248,6 +256,7 @@ usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
 
 ## Extreme Programming
 
+\index{Extreme Programming}
 Segundo seu autor, XP é um método leve recomendado para desenvolver
 software com requisitos vagos ou sujeitos a mudanças; isto é,
 basicamente sistemas comerciais, na classificação que adotamos no
@@ -293,6 +302,7 @@ de projetos. Veja a seguir uma lista das práticas em cada grupo:
 
 ### Valores
 
+\index{Extreme Programming!Valores}
 XP defende que o desenvolvimento de projetos de software seja norteado
 por três valores principais: comunicação, simplicidade e feedback. Na
 verdade, argumenta-se que esses valores são universais, para convívio
@@ -320,6 +330,7 @@ mencionados, XP também defende outros valores, como **coragem**,
 
 ### Princípios
 
+\index{Extreme Programming!Princípios}
 Os valores que mencionamos são abstratos e universais. Por outro lado,
 as práticas que vamos mencionar mais adiante são procedimentos concretos
 e pragmáticos. Assim, para unir esses dois extremos, XP defende que
@@ -388,6 +399,7 @@ devem ser acobertadas. Porém, elas não devem ser usadas para punir
 membros de um time. Pelo contrário, falhas fazem parte do jogo, se um
 time pretende avançar, inovar e entregar software com rapidez.
 
+\index{Baby Steps}
 **Baby Steps**. É melhor progressos seguros, testados e validados, mesmo
 que pequenos, do que grandes implementações com riscos de serem
 descartadas pelos usuários. O mesmo vale para testes (que são úteis
@@ -419,6 +431,7 @@ versus operadores, com um grupo empurrando a responsabilidade pelos
 problemas para o outro.
 -->
 
+\index{Chrysler}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -438,6 +451,9 @@ poucos anos depois receberia o nome de XP.
 
 ### Práticas sobre o Processo de Desenvolvimento
 
+\index{Extreme Programming!Práticas}
+\index{Extreme Programming!Representante dos Clientes}
+\index{Histórias de Usuários}
 XP — como outros métodos ágeis — recomenda o envolvimento dos
 clientes com o projeto. Ou seja, além de desenvolvedores, os times
 incluem pelo menos um **representante dos clientes**, que deve entender
@@ -459,6 +475,8 @@ Como exemplo, mostramos a seguir uma história de um sistema de perguntas e resp
 *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
 --------------------------------------------------------------  
 
+\index{Story Points}
+\index{Histórias de Usuários!Story Points}
 Depois de escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
 definem, mesmo que preliminarmente, quanto tempo será necessário para
@@ -481,6 +499,8 @@ story points) e mais uma tarefa na próxima escala inferior (3 pontos)?
 Se isso for verdade, 8 story points é uma boa estimativa. Caso
 contrário, o melhor é estimar a história com 5 story points.
 
+\index{Planning Poker}
+\index{Histórias de Usuários!Planning Poker}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -504,6 +524,7 @@ seja alcançado.
 \end{esmbox}
 ```
 
+\index{Extreme Programming!Releases}
 A implementação das histórias ocorre em **iterações**, as quais têm uma
 duração fixa e bem definida, variando de uma a três semanas, por
 exemplo. As iterações, por sua vez, formam ciclos mais longos, chamados
@@ -617,6 +638,7 @@ de uma iteração, as histórias devem ser mostradas para o representante
 dos clientes, que deve concordar que elas, de fato, atendem ao que ele
 especificou.
 
+\index{Slacks}
 XP defende ainda que os times, durante uma iteração, programem algumas
 **folgas** (*slacks*), que são tarefas que podem ser adiadas, caso
 necessário. Como exemplos, podemos citar o estudo de uma nova
@@ -675,6 +697,8 @@ três perfis de representante dos clientes:
 
 *   Suponha que o time de desenvolvimento de uma empresa X foi designado para fazer um sistema para um público externo à empresa. Por exemplo, um sistema como aquele usado neste capítulo, similar ao Stack Overflow. Logo, os clientes do sistema não são funcionários de X, mas sim clientes externos. Nesse caso, o representante dos clientes deve ser alguém da área de marketing, vendas ou negócios da empresa X. Em última instância, pode ser o dono da empresa. Em qualquer caso, a sugestão é que seja uma pessoa próxima do problema e o mais distante possível da solução. Por isso mesmo, deve-se evitar que ele seja um desenvolvedor ou um gerente de projeto. O tipo de representante dos clientes que mencionamos neste item é, às vezes, chamado de um **user proxy**.
 
+\index{Velocidade}
+\index{Histórias de Usuários!Velocidade}
 **Como definir a velocidade do time?** Não existe bala de prata para
 essa questão. Essa definição depende da experiência do time e de seus
 membros. Se eles já participaram de projetos semelhantes àquele que
@@ -742,6 +766,8 @@ um método ágil.
 
 Nessa seção, vamos estudar as práticas de programação de XP.
 
+\index{Design Incremental}
+\index{Big Design Upfront}
 **Design Incremental**. Como afirmado nos parágrafos anteriores, em XP
 não há uma fase de design e análise detalhados, conhecida como *big
 design upfront* (BDUF), a qual é uma das principais fases de processos
@@ -783,6 +809,7 @@ a qualidade do design. Por isso, toda oportunidade de refatoração,
 visando facilitar o entendimento e a evolução do código, não pode ser
 deixada para depois.
 
+\index{Programação em Pares}
 **Programação em Pares**. Junto com design incremental, programação em
 pares é uma das práticas mais polêmicas de XP. Apesar de polêmica, a
 ideia é simples: toda tarefa de codificação — incluindo
@@ -829,6 +856,7 @@ licença CC-BY.
 ](figs/cap2/pair-programming.png){width=40%}
 --->
 
+\index{Microsoft}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -852,6 +880,7 @@ preferem parear com uma pessoa que o ajude a superar seus pontos fracos.
 \end{esmbox}
 ```
 
+\index{Revisão de Código}
 Mais recentemente, diversas empresas passaram a adotar a prática de
 **revisão de código**. A ideia é que todo código produzido por um
 desenvolvedor tem que ser revisado e comentado por um outro
@@ -859,6 +888,7 @@ desenvolvedor, porém de forma *offline* e assíncrona. Ou seja, nesses
 casos, o revisor não estará fisicamente ao lado do líder. 
 
 
+\index{Propriedade Coletiva do Código}
 **Propriedade Coletiva do Código**. A ideia é que qualquer desenvolvedor
 — ou par de desenvolvedores trabalhando junto — pode modificar
 qualquer parte do código, seja para implementar uma nova feature, para
@@ -867,6 +897,7 @@ descobriu um bug em algum ponto do código, vá em frente e corrija-o.
 Para isso, você não precisa de autorização de quem implementou esse
 código ou de quem realizou a última manutenção nele.
 
+\index{Testes de Software}
 **Testes Automatizados**. Essa é uma das práticas de XP que alcançou
 maior sucesso. A ideia é que testes manuais — um ser humano
 executando o programa, fornecendo entradas e checando as saídas
@@ -881,6 +912,8 @@ Kent Beck e Erich Gamma, é de 1997. No momento, não iremos estender a
 discussão sobre testes automatizados porque temos um capítulo
 exclusivo para isso no livro (Capítulo 8).
 
+\index{Desenvolvimento Dirigido por Testes (TDD)}
+\index{Test Driven Design (TDD)}
 **Desenvolvimento Dirigido por Testes (TDD).** Essa é outra prática de
 programação inovadora proposta por XP. A ideia é simples: se em XP todo
 método deve possuir testes, por que não escrevê-los primeiro? Isto é,
@@ -896,6 +929,7 @@ interface provida para os clientes. Não iremos alongar a explicação
 sobre TDD, pois dedicaremos uma seção inteira para essa prática no
 capítulo de Testes.
 
+\index{Build Automatizado}
 **Build Automatizado**. Build é o nome que se dá para a geração de uma
 versão de um sistema que seja executável e que possa ser colocada em
 produção. Logo, inclui não apenas a compilação do código, mas a execução
@@ -919,6 +953,7 @@ programação, pode ser difícil atender a esse limite. Por isso, o mais
 importante é focar na regra geral: sempre procurar automatizar e
 reduzir o tempo de build.
 
+\index{Integração Contínua}
 **Integração Contínua**. Sistemas de software são desenvolvidos com o
 apoio de sistemas de controle de versões (VCS, ou *Version Control
 System*), que armazenam o código fonte do sistema e de arquivos
@@ -992,6 +1027,8 @@ pares (score médio 3.3).
 
 ### Práticas de Gerenciamento de Projetos
 
+\index{Ambiente de Trabalho}
+\index{Extreme Programming!Ambiente de Trabalho}
 **Ambiente de Trabalho**. XP defende que o projeto seja desenvolvido com
 um time pequeno, com menos de 10 desenvolvedores, por exemplo. Todos
 eles devem estar dedicados ao projeto. Isto é, deve-se evitar times
@@ -1020,6 +1057,8 @@ outros problemas, elas podem causar danos à saúde física e mental dos
 desenvolvedores, assim como incentivar a rotatividade do time, cujos
 membros vão estar sempre pensando em um novo emprego.
 
+\index{Contratos com Escopo Aberto}
+\index{Extreme Programming!Contratos com Escopo Aberto}
 **Contratos com Escopo Aberto**. Quando uma empresa terceiriza o
 desenvolvimento, existem duas possibilidades de contrato: com escopo
 fechado ou com escopo aberto. Em contratos com escopo fechado, a empresa
@@ -1046,6 +1085,7 @@ verdade, contratos com escopo aberto são mais compatíveis com os
 princípios do Manifesto Ágil, que explicitamente valoriza "colaboração
 com o cliente, mais que negociação de contratos".
 
+\index{Extreme Programmig!Métricas de Processo}
 **Métricas de Processo**. Para que gerentes e executivos possam
 acompanhar um projeto XP recomenda-se o uso de duas métricas principais:
 número de bugs em produção (que deve ser idealmente da ordem de poucos
@@ -1057,6 +1097,9 @@ exemplo).
 
 ## Scrum
 
+\index{Scrum}
+\index{Jeffrey Sutherland}
+\index{Ken Schwaber}
 Scrum é um método ágil, iterativo e incremental para gerenciamento de
 projetos. Foi proposto por Jeffrey Sutherland e Ken Schwaber, em um
 artigo publicado pela primeira vez em 1995
@@ -1097,8 +1140,14 @@ desta seção, vamos explicar cada um deles.
 
 ### Papéis 
 
+\index{Scrum!Papéis}
 Times Scrum são formados por um Dono de Produto (*Product
 Owner*), um Scrum Master e de três a nove desenvolvedores.
+
+\index{Dono do Produto}
+\index{Product Ownwer}
+\index{Scrum!Dono do Produto}
+\index{Scrum!Product Ownwer}
 
 O **Dono do Produto** tem exatamente o mesmo papel do Representante dos
 Clientes em XP, por isso não vamos explicar de novo a sua função em
@@ -1108,6 +1157,8 @@ retorno do investimento feito no projeto. Como em XP, cabe ao Dono
 do Produto escrever as histórias dos usuários e, por isso, ele deve estar
 sempre disponível para tirar dúvidas do time.
 
+\index{Scrum Master}
+\index{Scrum!Scrum Master}
 O **Scrum Master** é um papel característico e único de Scrum. Trata-se
 do especialista em Scrum do time, sendo responsável por garantir que as
 regras do método estão sendo seguidas. Para isso, ele deve continuamente
@@ -1141,6 +1192,9 @@ principais são o Backlog do Produto e o Backlog do Sprint e os
 principais eventos são sprints e o planejamento de sprints, conforme
 descreveremos a seguir.
 
+\index{Backlog do Produto}
+\index{Scrum!Backlog do Produto}
+
 *   O **Backlog do Produto** é uma lista de histórias, ordenada por
      prioridades. Assim como em XP, as histórias são escritas e
      priorizadas pelo Dono do Produto e constituem uma descrição
@@ -1155,6 +1209,9 @@ descreveremos a seguir.
      dono do Backlog do Produto que faz o Dono do Produto receber esse
      nome.
 
+\index{Sprint}
+\index{Scrum!Sprint}
+
 *   **Sprint** é o nome dado por Scrum para uma iteração. Ou seja, como
      todo método ágil, Scrum é um método iterativo, no qual o
      desenvolvimento é dividido em sprints, de até um mês. Ao final de
@@ -1164,6 +1221,9 @@ descreveremos a seguir.
      (*potentially shippable product*). Lembre que o adjetivo "potencial"
      não torna a entrada em produção obrigatória, conforme discutido na
      Seção 2.2.
+
+\index{Planejamento do Sprint}
+\index{Scrum!Planejamento do Sprint}
 
 *   O **Planejamento do Sprint** é uma reunião na qual todo o time se
      reúne para decidir as histórias que serão implementadas no sprint
@@ -1177,6 +1237,9 @@ descreveremos a seguir.
      parte final, para tirar dúvidas sobre as histórias selecionadas
      para o sprint. Por exemplo, pode-se decidir cancelar uma história,
      pois ela se revelou mais complexa ao ser quebrada em tarefas.
+
+\index{Backlog do Sprint}
+\index{Scrum!Backlog do Sprint}
 
 *   O **Backlog** **do** **Sprint** é o artefato gerado ao final do
      Planejamento do Sprint. Ele é uma lista com as tarefas do sprint,
@@ -1199,6 +1262,11 @@ cross-funcionais, os times Scrum são **auto-organizáveis**, isto é, eles
 têm autonomia para decidir como e por quem as histórias serão
 implementadas.
 
+\index{Quadro Scrum}
+\index{Scrum Board}
+\index{Scrum!Quadro Scrum}
+\index{Scrum!Scrum Board}
+
 Ao lado do Backlog do Sprint, costuma-se anexar um quadro com tarefas *a
 fazer*, *em andamento* e *finalizadas*. Esse quadro — também chamado
 de **Quadro** **Scrum** (*Scrum Board*) — pode ser fixado nas
@@ -1211,6 +1279,8 @@ sprint e as tarefas nas quais elas foram quebradas. Cada tarefa nesse
 quadro pode estar em um dos seguintes estados: a fazer, em andamento, em
 teste ou concluída.](figs/cap2/scrum-board){width=60%}
 
+\index{Scrum!Critérios de Conclusão}
+
 Uma decisão importante em projetos Scrum envolve os critérios para
 considerar uma história ou tarefa como concluídas (*done*). Esses
 critérios devem ser combinados com o time e ser do conhecimento de todos
@@ -1222,6 +1292,9 @@ disso, o código deve ter sido integrado com sucesso no repositório do
 projeto. O objetivo desses critérios é evitar que os membros — de
 forma apressada e valendo-se de código de baixa qualidade — consigam
 mover suas tarefas para a coluna concluído.
+
+\index{Gráfico de Burndown}
+\index{Scrum!Gráfico de Burndown}
 
 Um outro artefato comum em Scrum é o **Gráfico de Burndown**. A cada dia
 do sprint, esse gráfico mostra quantas horas são necessárias para se
@@ -1239,6 +1312,11 @@ Vamos agora descrever mais três eventos
 Scrum, especificamente Reuniões Diárias, Revisão do Sprint e
 Retrospectiva.
 
+\index{Reunião Diária}
+\index{Daily Scrum}
+\index{Scrum!Reunião Diária}
+\index{Scrum!Daily Scrum}
+
 Scrum propõe que sejam realizadas **Reuniões Diárias,** de cerca de 15
 minutos, das quais devem participar todos os membros do time. Essas
 reuniões para serem rápidas devem ocorrer com os membros em pé, daí
@@ -1255,6 +1333,8 @@ seria recomendável que eles se reunissem, separadamente do resto do
 time, para discutir essas modificações. E, com isso,
 minimizar as chances de possíveis conflitos de integração.
 
+\index{Revisão do Sprint}
+\index{Scrum!Revisão}
 A **Revisão do Sprint** *(Sprint Review*) é uma reunião para mostrar os
 resultados de um sprint. Dela devem participar todos os membros do time
 e idealmente outros stakeholders, convidados pelo Dono do Produto, que
@@ -1266,6 +1346,8 @@ voltar para o Backlog do Produto, para ser retrabalhada em um próximo
 sprint. O mesmo deve ocorrer com as histórias que o time não conseguiu
 concluir durante o sprint.
 
+\index{Retrospectiva do Sprint}
+\index{Scrum!Retrospectiva}
 A **Retrospectiva** é a última atividade de um sprint. Trata-se de uma
 reunião do time Scrum, com o objetivo de refletir sobre o sprint que
 está terminando e, se possível, identificar pontos de melhorias no
@@ -1280,6 +1362,8 @@ particular, em outras reuniões ou com a presença de gerentes da
 organização. Depois da retrospectiva, o ciclo se repete, com um novo
 sprint.
 
+\index{Time-box}
+\index{Scrum!Time-box}
 Uma característica marcante de todos os eventos Scrum é terem uma
 duração bem definida, que é chamada de **time-box** da atividade. Por
 isso, esse termo aparece sempre em documentos Scrum. Por exemplo, veja
@@ -1346,15 +1430,12 @@ capítulo é lançado e divulgado publicamente, de forma a receber
 feedback. Com isso, evita-se uma solução Waterfall, onde o livro seria
 escrito por cerca de dois anos, sem receber qualquer feedback.
 
-
 Para finalizar, vamos comentar sobre o critério para conclusão de um
 capítulo, ou seja, para definir que um capítulo está finalizado
 (*done*). Esse critério requer a leitura e revisão completa do capítulo,
 pelo autor do livro. Concluída essa revisão, o capítulo é divulgado
 preliminarmente para os membros do Grupo de Pesquisa em Engenharia de
 Software Aplicada, do DCC/UFMG.
-
-
 
 
 ### Perguntas Frequentes
@@ -1371,6 +1452,7 @@ Veja uma foto a seguir.
 ![Scrum em uma partida de rugby, foto: [Flickr](https://flic.kr/p/gB9tsA), licença CC-BY.](figs/cap2/scrum.jpg){width=45%}
 ---->
 
+\index{Squad}
 **O que é um squad**? Esse termo é um sinônimo para
 time ágil ou time Scrum. O nome foi popularizado pela Spotify. Assim
 como times Scrum, squads são pequenos, cross-funcionais e
@@ -1390,6 +1472,7 @@ alguns colaboradores da organização. Cabe então ao Dono do Produto
 intermediar as conversas entre os desenvolvedores e tais
 usuários.
 
+\index{Scrum!Scrum Master}
 **O Scrum Master deve exercer seu papel em tempo integral**? Idealmente,
 sim. Porém, em times maduros, que conhecem e praticam Scrum há bastante
 tempo, às vezes não é necessário ter um Scrum Master em tempo integral.
@@ -1447,6 +1530,7 @@ seguintes:
 
 
 ## Kanban
+\index{Kanban}
 
 A palavra japonesa *kanban* significa "cartão visual" ou "cartão de
 sinalização". Desde a década de 50, o nome também é usado para denotar
@@ -1602,6 +1686,11 @@ por gerentes da organização, por exemplo.
 
 ### Calculando os Limites WIP
 
+\index{Limites WIP}
+\index{Working in Progress (WIP)}
+\index{Kanban!Limites WIP}
+\index{Kanban!Working in Progress (WIP)}
+
 Resta-nos agora explicar como os limites WIP são definidos. Existe mais
 de uma alternativa, mas vamos adotar uma adaptação de um algoritmo
 proposto por Eric Brechner — um engenheiro da Microsoft
@@ -1669,6 +1758,9 @@ implementar.
 
 ### Lei de Little
 
+\index{Lei de Little}
+\index{Kanban!Lei de Little}
+
 O procedimento para cálculo de WIPs explicado
 anteriormente é uma aplicação direta da **Lei de Little**, um dos
 resultados mais importantes da Teoria de Filas
@@ -1731,6 +1823,7 @@ gerentes e executivos da organização.
 
 ## Quando não Usar Métodos Ágeis?
 
+\index{Métodos Ágeis}
 Apesar de métodos ágeis — como aqueles estudados nas seções
 anteriores — terem alcançado um sucesso inquestionável, é bom
 lembrar que não existe bala-de-prata em Engenharia de Software, conforme
@@ -1780,6 +1873,8 @@ duram alguns meses. Por outro lado, eles preservam características
 relevantes de Waterfall, como ênfase em documentação e em uma fase
 inicial de levantamento de requisitos e depois de design.
 
+\index{Modelo em Espiral}
+\index{Barry Boehm}
 Um exemplo de proposta de processo surgida nesta época é o **Modelo em
 Espiral**, proposto por Barry Boehm, em 1986
 ([link](https://doi.org/10.1145/12944.12948)). Nesse
@@ -1814,7 +1909,10 @@ análise de riscos, da qual devem resultar medidas concretas para mitigar
 os riscos identificados no projeto.
 
 
-
+\index{Processo Unificado (UP)}
+\index{Rational Software}
+\index{IBM}
+\index{Rational Unified Process (RUP)}
 O **Processo Unificado (UP)**, proposto no final da década de 90, é
 outro exemplo de método iterativo de desenvolvimento. UP foi proposto
 por profissionais ligados a uma empresa de consultoria e de ferramentas
@@ -1831,6 +1929,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
      modelagem "unificada" (UML) e também um processo "unificado"
      (UP), ambos propostos pelo mesmo grupo de profissionais.
 
+\index{CASE}
 *   UP é associado a ferramentas de apoio ao projeto e análise de
      software, conhecidas como **ferramentas CASE** (*Computer-Aided
      Software Engineering*). O nome é uma analogia com ferramentas CAD
@@ -1851,6 +1950,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 UP propõe que o desenvolvimento seja decomposto nas
 seguintes fases:
 
+\index{Inception}
 * **Inception** (às vezes, traduzida como iniciação ou concepção): que inclui análise de viabilidade, definição de orçamentos, análise de riscos e definição de escopo do sistema. Ao final dessa fase, o caso de negócio (*business case*) do sistema deve estar bem claro. Pode-se inclusive decidir que não vale a pena desenvolver o sistema, mas sim comprar um sistema pronto.
 
 *  **Elaboração**: que incluiu especificação de requisitos (via casos de uso de UML), definição da arquitetura do sistema, bem como de um plano para o seu desenvolvimento. Ao final dessa fase, todos os riscos identificados na fase anterior devem estar devidamente controlados e mitigados.
@@ -2000,6 +2100,7 @@ edição, 2014.
 
 ![](figs/cap2/custo-mudancas.png){width=45%}
 
+\index{Facebook}
 18\. O artigo "*Development and Deployment at Facebook*"
      ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
      apresenta os métodos e práticas de desenvolvimento de software

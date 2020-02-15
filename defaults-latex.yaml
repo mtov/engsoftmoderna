@@ -1,5 +1,5 @@
 from: markdown
-to: pdf
+to: latex
    
 pdf-engine: pdflatex
 

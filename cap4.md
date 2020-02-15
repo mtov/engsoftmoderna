@@ -15,6 +15,7 @@ quatro diagramas UML com um maior nível de detalhes: Diagramas de
 Classes (Seção 4.3), Diagramas de Pacotes (Seção 4.4), Diagramas de
 Sequência (Seção 4.5) e Diagramas de Atividades (Seção 4.6).
 
+\index{Modelos de Software}
 ## Modelos de Software
 
 Como vimos no capítulo anterior, requisitos documentam "o que" um
@@ -83,6 +84,7 @@ começar descrevendo a história e o contexto que levou à criação da UML.
 Em seguida, vamos estudar alguns dos principais diagramas UML com um
 pouco mais de detalhe.
 
+\index{Métodos Formais}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -109,6 +111,7 @@ crítica.
 ```
 
 ## UML
+\index{UML}
 
 UML é uma notação gráfica para modelagem de software. A linguagem define
 um conjunto de diagramas para documentar e ajudar no design de sistemas
@@ -122,6 +125,7 @@ grande e longa fase de design. A proposta de UML era que nessa fase
 seriam criados modelos gráficos, que depois seriam repassados para os
 programadores, para serem convertidos em código fonte.
 
+\index{CASE}
 Na verdade, UML é o resultado de um esforço para unificar as notações
 gráficas que surgiram no final das décadas de 80 e início da década de
 90. Especificamente, a primeira versão de UML foi proposta em 1995, como
@@ -144,6 +148,7 @@ comprada pela IBM.
 
 ### Como usar UML? {.unnumbered}
 
+\index{Martin Fowler}
 Martin Fowler, em seu livro sobre UML
 ([link](https://dl.acm.org/citation.cfm?id=861282)),
 propõe uma classificação sobre formas de uso dessa linguagem de
@@ -151,6 +156,7 @@ modelagem. Segundo ele, existem três formas principais de uso de UML:
 como blueprint, como linguagem de programação ou como esboço. Vamos
 descrever cada uma delas nos próximos parágrafos.
 
+\index{UML!como Blueprint}
 **UML como blueprint** corresponde ao uso de UML vislumbrado por seus
 criadores, ainda na década de 90. Nessa forma de uso, defende-se que,
 após o levantamento de requisitos, seja produzido um conjunto de modelos
@@ -169,6 +175,7 @@ longo do desenvolvimento, em cada uma das iterações (ou *sprints*). Por
 isso, não iremos neste capítulo nos aprofundar no uso de UML como
 *blueprint*.
 
+\index{UML!como Linguagem de Programação}
 **UML como linguagem de programação** corresponde ao uso de UML
 vislumbrado pela OMG, após a padronização da linguagem de modelagem. De
 forma ambiciosa e pelo menos durante um período, vislumbrou-se a geração
@@ -182,12 +189,14 @@ linguagem ganhou a reputação de ser pesada e complexa. Porém, mesmo com
 adição de complexidade extra, o uso de UML para geração de código não se
 tornou comum, pelo menos na grande maioria dos sistemas.
 
+\index{UML!como Esboço}
 Resta então o terceiro uso, **UML como esboço**, que corresponde à forma
 que vamos estudar neste capítulo. Nela, usamos UML para construir
 diagramas leves e informais de partes de um sistema, vindo daí o nome
 esboço (*sketch*). Esses diagramas são usados para comunicação entre os
 desenvolvedores, em duas situações principais:
 
+\index{Engenharia Avante}
 -   **Engenharia Avante** (*Forward Engineering*): quando os
     desenvolvedores usam modelos UML para discutir e analisar
     alternativas de design, antes que exista qualquer código. Por
@@ -198,6 +207,7 @@ desenvolvedores, em duas situações principais:
     elas. O objetivo é validar a proposta de tais classes antes de
     começar a codificar.
 
+\index{Engenharia Reversa}
 -   **Engenharia Reversa** (*Reverse Engineering*): quando os
     desenvolvedores usam modelos UML para analisar e discutir uma
     funcionalidade que já se encontra implementada no código fonte.
@@ -296,6 +306,10 @@ desenvolvimento de software, conforme descrito a seguir:
 
 ### Diagramas UML {.unnumbered}
 
+\index{UML!Tipos de Diagramas}
+\index{UML!Diagramas Estáticos}
+\index{UML!Diagramas Dinâmicos}
+
 Os diagramas UML são classificados em dois grandes grupos:
 
 -   **Diagramas Estáticos (ou Estruturais)** modelam a estrutura e
@@ -332,6 +346,7 @@ requisitos.
 \begin{aviso}
 ```
 
+\index{Martin Fowler}
 **Aviso:** Existem diversas versões de UML. No restante deste
 capítulo vamos usar a **versão de UML que é adotada na 3a edição do
 livro UML Distilled, de Martin Fowler**
@@ -352,6 +367,8 @@ no site da OMG ([link](https://www.omg.org/)).
 ```
 
 ## Diagramas de Classes
+\index{UML!Diagrama de Classes}
+\index{Diagramas UML!Classes}
 
 Diagramas de classes são os diagramas mais usados da UML.
 Eles oferecem uma representação gráfica para um conjunto de classes,
@@ -391,6 +408,7 @@ usadas para representar três tipos de relacionamentos: **associação**,
 próximos parágrafos.
 
 ### Associações 
+\index{UML!Associações}
 
 Quando uma classe A possui um atributo b de um tipo B, dizemos que
 existe uma associação de A para B, a qual é representada por meio de uma
@@ -425,6 +443,7 @@ diagrama:
 
 As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
 
+\index{UML!Multiplicidade}
 Frequentemente, associações incluem informações de **multiplicidade**,
 que indicam quantos objetos podem estar associados ao atributo
 responsável pela associação. As informações de multiplicidade mais
@@ -568,6 +587,7 @@ diagramas"
 ```
 
 ### Herança 
+\index{UML!Herança}
 
 Em diagramas de classes, relações de herança são representadas por meio
 de setas com a extremidade não preenchida. Essas setas são
@@ -580,6 +600,7 @@ exemplo, apenas `PessoaFisica` tem `cpf` e apenas `PessoaJuridica` tem `cnpj`.
 ![](figs/cap4/class10){width=85%}
 
 ### Dependências {.unnumbered}
+\index{UML!Dependências}
 
 Existe uma dependência de uma classe A para uma classe B, representada
 por uma seta com uma linha tracejada de A para B, quando a classe A usa
@@ -628,6 +649,8 @@ mas apenas as mais importantes e que estão diretamente relacionadas com
 a funcionalidade ou propriedade do sistema que pretendemos esboçar.
 
 ## Diagramas de Pacotes
+\index{UML!Diagrama de Pacotes}
+\index{Diagramas UML!Pacotes}
 
 Diagrama de pacotes são recomendados quando se pretende oferecer um
 modelo de mais alto nível de um sistema, que mostre apenas grupos de
@@ -674,6 +697,8 @@ Para concluir, gostaríamos de acrescentar duas observações:
     meio de setas tracejadas.
 
 ## Diagramas de Sequência
+\index{UML!Diagrama de Sequência}
+\index{Diagramas UML!Sequência}
 
 Diagramas de sequência são diagramas dinâmicos, também chamados de
 comportamentais. Por isso, em vez de classes, eles modelam objetos de um
@@ -706,7 +731,7 @@ uma seta na horizontal, com o nome do método chamado. O retorno da
 chamada é indicado por uma seta tracejada, com o nome do objeto
 retornado. No entanto, às vezes a seta de retorno é omitida, como no
 caso da chamada do método `g`. Existem dois motivos para essa omissão: (1)
-o tipo de retorno é void; ou (2) o objeto de retorno não é relevante, a
+o tipo de retorno é `void`; ou (2) o objeto de retorno não é relevante, a
 ponto de merecer ser representado no diagrama.
 
 No diagrama de sequência mostrado acima representamos apenas dois
@@ -759,6 +784,8 @@ solicita um depósito de certo valor em sua conta.
 
 
 ### Diagramas de Atividades
+\index{UML!Diagrama de Atividades}
+\index{Diagramas UML!Atividades}
 
 Diagramas de atividades são usados para representar, em alto nível, um
 processo ou fluxo de execução. Os principais elementos desses diagramas
@@ -804,18 +831,21 @@ assumindo a existência dessa ficha.
 
 ![](figs/cap4/activity-t-final)
 
+
 ```{=latex}
 \begin{esmbox}
 ```
 **Aprofundamento**: Existem pelo menos três outras alternativas para
 modelagem de fluxos e processos:
 
+\index{Fluxogramas}
 -   **Fluxogramas,** os quais foram propostos tão logo se começou a
     desenvolver os primeiros programas para computadores modernos.
     Diagramas de atividades são parecidos com fluxogramas; porém, eles
     incluem suporte a concorrência, por meio de *forks* e *joins*. Por
     outro lado, fluxogramas modelam processos sequenciais.
 
+\index{Redes de Petri}
 -   **Redes de Petri** é uma notação gráfica, proposta pelo matemático
     alemão Carl Adam Petri, em 1962, para modelagem de sistemas
     concorrentes. Redes de Petri possuem uma representação gráfica e
@@ -825,6 +855,7 @@ modelagem de fluxos e processos:
     diagramas de sequência. Por outro lado, esses últimos tendem a
     oferecer uma notação mais simples e fácil de entender.
 
+\index{BPMN}
 -   **BPMN** (*Business Process Model and Notation*) é um esforço mais
     recente, que teve início nos anos 2000, visando a proposição de
     uma notação gráfica mais amigável para modelagem de processos de
@@ -904,7 +935,7 @@ classes para representar as seguintes classes e associações:
 ```java
 public class HelloWorldSwing { 
    public static void main(String[] args) {
-     JFrame frame = new JFrame("Hello world!6);
+     JFrame frame = new JFrame("Hello world!");
      frame.setVisible(true);
    }
 }

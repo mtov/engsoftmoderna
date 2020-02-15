@@ -726,3 +726,6 @@ deles. Nos exemplos que envolvem repositórios remotos, a sugestão é usar
 um repositório do GitHub. Nos exemplos que envolvem dois usuários (Alice
 e Bob, por exemplo), a sugestão é criar dois diretórios locais e usá-los
 para reproduzir os comandos de cada usuário.
+
+\printindex
+

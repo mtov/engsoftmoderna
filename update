@@ -13,8 +13,6 @@ pandoc --number-offset=8 --defaults=defaults.yaml -T "Cap. 9: Refactoring" cap9.
 pandoc --number-offset=9 --defaults=defaults.yaml -T "Cap. 10: DevOps" cap10.md -o cap10.html
 pandoc --defaults=defaults.yaml -T "Apêndice A: Git" capAp.md -o capAp.html
 
-git add .
-
 git commit -a -m "update"
 
 git push origin master

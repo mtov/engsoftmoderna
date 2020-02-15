@@ -10,7 +10,11 @@ cat cap8.md >> esm-book.md
 cat cap9.md >> esm-book.md
 cat cap10.md >> esm-book.md
 cat capAp.md >> esm-book.md
-pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.pdf
+
+pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.tex
+
+pdflatex esm-book.tex
+
 rm esm-book.md
 
 cp esm-book.pdf ../Dropbox

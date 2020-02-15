@@ -64,6 +64,7 @@ computadores atuais. Dentre essas novas aplicações, as principais eram
 sistemas comerciais, como folha de pagamento, controle de clientes,
 controle de estoques, etc.
 
+\index{Conferência da OTAN}
 **Conferência da OTAN**: Em outubro de 1968, um grupo de cerca de 50
 renomados Cientistas da Computação se reuniu durante uma semana em
 Garmisch, na Alemanha, em uma conferência patrocinada por um comitê
@@ -111,6 +112,7 @@ mesmo com o passar dos anos.
 
 ### Não existe bala de prata {.unnumbered}
 
+\index{Fred Brooks}
 Como começamos a afirmar no parágrafo anterior, desenvolvimento de
 software é diferente de qualquer outro produto de Engenharia,
 principalmente quando se compara software com hardware. Frederick
@@ -121,6 +123,8 @@ Essência e Acidentes em Engenharia de Software*
 ([link](https://doi.org/10.1109/MC.1987.1663532)), ele
 discorreu sobre as particularidades da área de Engenharia de Software.
 
+\index{Dificuldades Essenciais}
+\index{Dificuldades Acidentais}
 Segundo Brooks, existem dois tipos de dificuldades em desenvolvimento de
 software: **dificuldades essenciais** e **dificuldades acidentais**. As
 essenciais são da natureza da área e dificilmente serão superadas por
@@ -180,6 +184,8 @@ documentação, uma aplicação Web com uma interface pouco intuitiva, etc.
 Todas essas dificuldades dizem respeito à solução adotada e, portanto,
 não são uma característica inerente dos sistema mencionados.
 
+\index{Linux}
+\index{Google}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -201,6 +207,7 @@ Engenheiros de Software empregados pelo Google nessa época.
 
 ## O que se Estuda em Engenharia de Software?
 
+\index{SWEBOK}
 Para responder a essa pergunta, vamos nos basear no *Guide to the
 Software Engineering Body of Knowledge*, também conhecido pela sigla
 SWEBOK ([link](http://www.swebok.org)). Trata-se de um
@@ -249,15 +256,18 @@ nessa área.
 
 ### Engenharia de Requisitos 
 
+\index{Engenharia de Requisitos}
 Os requisitos de um sistema definem *o que* ele deve fazer e *como* ele
 deve operar. Assim, a Engenharia de Requisitos inclui o conjunto 
 de atividades realizadas com o objetivo de definir, analisar, documentar 
 e validar os requisitos de um sistema. Em uma primeira classificação, 
 os requisitos podem ser **funcionais** ou **não-funcionais**.
 
+\index{Requisitos!Funcionais}
 Requisitos funcionais definem *o que* um sistema deve fazer; isto é,
 quais funcionalidades ou serviços ele deve implementar.
 
+\index{Requisitos!Não-Funcionais}
 Já os requisitos não-funcionais definem *como* um sistema deve operar,
 sob quais restrições e com qual qualidade de serviço. São exemplos de
 requisitos não-funcionais: desempenho, disponibilidade, tolerância a
@@ -289,6 +299,7 @@ não-funcionais, dentre outros, incluem:
 
 ### Projeto de Software
 
+\index{Projeto de Software}
 Durante o projeto de um sistema de software, são definidas suas
 principais unidades de código, porém apenas no nível de interfaces,
 incluindo **interfaces providas** e **interfaces requeridas**.
@@ -329,6 +340,7 @@ interface de `Cliente` é uma interface requerida por `ContaBancaria`. Muitas
 vezes, interfaces requeridas são chamadas de dependências. Isto
 é, `ContaBancaria` possui uma dependência para `Cliente`.
 
+\index{Arquitetura de Software}
 Quando o projeto é realizado em um nível mais alto e as unidades de
 código possuem maior granularidade — são pacotes, por exemplo
 — ele é classificado como um projeto arquitetural. Ou seja,
@@ -338,6 +350,7 @@ construções semelhantes.
 
 ### Construção de Software 
 
+\index{Construção de Software}
 Construção trata da implementação, isto é, codificação do sistema. Neste
 momento, existem diversas decisões que precisam ser tomadas, como, por
 exemplo: definir os algoritmos e estruturas de dados que serão usados,
@@ -351,6 +364,8 @@ construção de interfaces, etc.
 
 ### Testes de Software 
 
+\index{Testes de Software}
+\index{Edsger W. Dijkstra}
 Teste consiste na execução de um programa com um conjunto finito de
 casos, com o objetivo de verificar se ele possui o comportamento
 esperado. A seguinte frase, bastante famosa, de Edsger W. Dijkstra —
@@ -397,6 +412,9 @@ aceitação, ao lado do cliente, isto é, mostrando para ele os resultados
 e funcionalidades do sistema, estamos realizando uma atividade de
 validação.
 
+\index{Defeitos}
+\index{Bugs}
+\index{Falhas}
 Terceiro, é importante definir e distinguir três conceitos relacionados
 a testes: **defeitos**, **bugs** e **falhas**. Para ilustrar a diferença
 entre eles, suponha o seguinte código para calcular a área de um
@@ -439,6 +457,7 @@ e *bug* são sinônimos.
 \end{esmbox}
 ```
 
+\index{Explosão do Ariane}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -467,6 +486,7 @@ funcionasse de forma errática, causando a explosão.
 
 ### Manutenção e Evolução de Software 
 
+\index{Manutenção de Software}
 Assim como sistemas tradicionais de Engenharia, software também precisa
 de manutenção. Neste livro, vamos usar a seguinte classificação para os
 tipos de manutenção que podem ser realizadas em sistemas de software:
@@ -480,6 +500,7 @@ Por sua vez, manutenção preventiva tem com objetivo corrigir bugs
 latentes no código, que ainda não causaram falhas junto aos usuários do
 sistema.
 
+\index{Bug do Milênio}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -533,6 +554,7 @@ melhorias. Hoje, esses sistemas possuem interfaces Web e
 para celulares, que se integram aos módulos principais, implementados há
 dezenas de anos.
 
+\index{Sistemas Legados}
 **Sistemas legados** são sistemas antigos, baseados em linguagens,
 sistemas operacionais e bancos de dados tecnologicamente ultrapassados.
 Por esse motivo, a manutenção desses sistemas costuma ser mais custosa e
@@ -563,6 +585,7 @@ no Capítulo 9.
 
 ### Gerência de Configuração 
 
+\index{Gerência de Configuração}
 Atualmente, é inconcebível desenvolver um software sem um sistema de
 controle de versões, como git. Esses sistemas armazenam todas as versões
 de um software, não só do código fonte, mas também de documentação,
@@ -571,6 +594,7 @@ uma determinada versão. Por exemplo, se foi realizada uma mudança no
 código que introduziu um bug crítico, pode-se com relativa facilidade
 recuperar e retornar para a versão antiga, anterior à introdução do bug.
 
+\index{Versionamento Semântico}
 No entanto, gerência de configuração é mais do que apenas usar um
 sistema com o git. Ela inclui a definição de um conjunto de políticas
 para gerenciar as diversas versões de um sistema. Por exemplo,
@@ -588,9 +612,10 @@ muito diferentes daquelas da última release (normalmente,
 chamada de versão *major*). Esse esquema de numeração de releases é
 conhecido como **versionamento semântico**.
 
-
 ### Gerência de Projetos 
 
+\index{Gerência de Projetos}
+\index{Stakeholders}
 Desenvolvimento de software requer o uso de práticas e atividades de
 gerência de projetos, por exemplo, para negociação de contratos com
 clientes (com definição de prazos, valores, cronogramas, etc), gerência
@@ -605,11 +630,13 @@ incluem, obviamente, seus desenvolvedores e seus clientes; mas também,
 gerentes da equipe de desenvolvimento, empresas subcontratadas,
 fornecedores de qualquer natureza, talvez algum nível de governo, etc.
 
+\index{Fred Brooks}
 Existe uma frase muito conhecida, também de Frederick Brooks, que
 captura uma peculiaridade de projetos de software. Segundo Brooks:
 
 > "A inclusão de novos desenvolvedores em um projeto que está atrasado contribui para torná-lo ainda mais atrasado."
 
+\index{Lei de Brooks}
 Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
 desenvolvedores terão primeiro que entender e compreender todo o
@@ -660,6 +687,7 @@ Computação.
 
 ### Processos de Desenvolvimento de Software 
 
+\index{Processos de Software}
 Um processo de desenvolvimento define quais atividades e etapas devem
 ser seguidas para construir e entregar um sistema de software. Uma
 analogia pode ser feita, por exemplo, com a construção de prédios, que
@@ -674,6 +702,7 @@ adotados na construção de sistemas de software:
 
 *  **Processos Ágeis** (ou incrementais ou iterativos).
 
+\index{Waterfall}
 Processos Waterfall foram os primeiros a serem propostos, ainda na
 década de 70, quando a Engenharia de Software começava a ganhar
 envergadura. De forma compreensível, eles foram inspirados nos processos
@@ -696,6 +725,8 @@ pelos seus usuários, conforme ilustrado na próxima figura.
 
 ![Fases de um processo Waterfall.](figs/cap1/waterfall){width=80%}
 
+\index{Métodos Ágeis}
+\index{Manifesto Ágil}
 No entanto, processos Waterfall, a partir do final da década de 90,
 passaram a ser muito criticados, devido aos atrasos e problemas
 recorrentes em projetos de software, que ocorriam com frequência nessa
@@ -738,6 +769,7 @@ modificado pelo primeiro.
 
 ### Modelos de Software 
 
+\index{Modelos de Software}
 Um modelo oferece uma representação em mais alto nível de um sistema do
 que o seu código fonte. O objetivo é permitir que desenvolvedores possam
 analisar propriedades e características essenciais de um sistema, de
@@ -752,6 +784,7 @@ ajudar a entender uma base de código existente; nesse caso, eles são um
 instrumento de **Engenharia Reversa** (*Reverse Engineering*). Em ambos
 os casos, modelos são uma forma de documentar o código de um sistema.
 
+\index{UML}
 Frequentemente, modelos de software são baseados em notações gráficas.
 Por exemplo, **UML** (*Unified Modelling Language*) é uma notação que
 define mais de uma dezena de diagramas gráficos para representar
@@ -767,9 +800,9 @@ Avante.
 ![Exemplo de Diagrama de Classe UML com duas classes, `Cliente` e `ContaBancaria`.](figs/cap1/uml){width=75%}
 
 
-
 ### Qualidade de Software 
 
+\index{Qualidade de Software}
 Qualidade é um objetivo recorrente em produtos de engenharia.
 Fabricantes de automóveis, celulares, computadores, empresas de
 construção civil, etc, todos almejam e dizem que possuem produtos de
@@ -780,6 +813,7 @@ Bertrand Meyer
 qualidade de software pode ser avaliada em duas dimensões: 
 **qualidade externa** ou **qualidade interna**.
 
+\index{Qualidade Externa}
 Qualidade externa considera fatores que podem ser aferidos sem analisar
 o código de um sistema. Assim, a qualidade externa de um software pode
 ser avaliada mesmo por usuários comuns, que não são
@@ -814,6 +848,7 @@ seguintes fatores (ou atributos) de qualidade externa:
     de dados de sua área? Por exemplo, se o software for uma planilha
     eletrônica, ele importa arquivos em formatos XLS e CSV?
 
+\index{Qualidade Interna}
 Por outro lado, qualidade interna considera propriedades e
 características relacionadas com a implementação de um sistema.
 Portanto, a qualidade interna de um sistema somente pode ser avaliada
@@ -830,6 +865,7 @@ tamanho. Métricas de processo incluem, por exemplo, o número de defeitos
 reportados em produção por usuários finais em um certo intervalo de
 tempo.
 
+\index{Revisão de Código}
 Existem ainda práticas que podem ser adotadas para garantir a produção
 de software com qualidade. Modernamente, por exemplo, diversas
 organizações usam **revisões de código**, isto é, o código produzido por
@@ -858,6 +894,7 @@ pelo GitHub.
 
 ### Prática Profissional 
 
+\index{Prática Profissional}
 Como afirmado na frase de Bjarne Stroustrup que abre este capítulo,
 *nossa sociedade funciona a base de software*. Isso gera diversas
 oportunidades para os profissionais da área, mas também implica em
@@ -871,6 +908,7 @@ também questões sobre a formação em nível técnico e tecnológico,
 anterior à formação universitária. Após a etapa de formação, existem
 questões sobre a regulamentação da profissão, por exemplo.
 
+\index{Ética Profissional}
 Por fim, mas muito atual e relevante, existem questionamentos sobre o
 papel e a **responsabilidade ética** dos profissionais formados em
 Computação, em uma sociedade onde os relacionamentos humanos são cada
@@ -887,6 +925,7 @@ Engenharia de Software. Por exemplo, ele prescreve que:
 
 > "Engenheiros de Software devem se comprometer em fazer da análise, especificação, projeto, desenvolvimento, teste e manutenção de software uma profissão benéfica e respeitada."
 
+\index{Código de Ética da SBC}
 No Brasil, existe o Código de Ética da Sociedade Brasileira de
 Computação (SBC), que por ser sintético, mas ao mesmo tempo claro,
 resolvemos reproduzir a seguir:
@@ -957,6 +996,7 @@ dependeria do código requisitado.
 
 ### Aspectos Econômicos 
 
+\index{Economia de Software}
 Diversas decisões e questões econômicas se entrelaçam com o
 desenvolvimento de sistemas. Por exemplo, uma startup de software deve
 decidir qual o modelo de rentabilização pretende adotar, se baseado em
@@ -985,6 +1025,7 @@ decisão econômica.
 
 ## Sistemas ABC: Acute, Business e Casuais
 
+\index{Sistemas ABC}
 Atualmente, como estamos ressaltando nesta Introdução, software permeia
 as mais distintas atividades humanas. Ou seja, temos software de todos
 os tamanhos, em todas as atividades, com os mais diferentes requisitos
@@ -995,6 +1036,7 @@ todo software deve ser construído usando o mesmo processo de
 desenvolvimento, os mesmos princípios de projeto, os mesmos mecanismos
 de garantia de qualidade, etc.
 
+\index{Bertrand Meyer}
 Uma classificação proposta por Bertrand Meyer
 ([link](https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/))
 ajuda a distinguir e entender os diferentes sistemas de software que
@@ -1011,6 +1053,7 @@ classificação, existem três tipos principais de software:
 Vamos discutir primeiro os Sistemas C e A (isto é, os sistemas em cada
 um dos extremos da classificação) e depois os Sistemas B.
 
+\index{Over-engineering}
 Sistemas C (Casuais) não sofrem pressão para terem níveis altos de
 qualidade. São sistemas que podem ter alguns bugs, os quais não vão
 comprometer fundamentalmente o seu funcionamento. Como exemplo, podemos
@@ -1031,6 +1074,7 @@ em um contexto que não demanda tanta preocupação. Como se diz
 coloquialmente, Engenharia de Software nesse contexto equivale a "usar
 uma bala de canhão, para matar formigas".
 
+\index{Sistemas de Missão Críticos}
 No outro extremo, temos os Sistemas A (de *acute*, ou de missão
 crítica). São sistemas onde qualquer falha pode causar um imenso
 prejuízo, incluindo a perda de vidas humanas. São sistemas para
@@ -1244,6 +1288,7 @@ comerciais) com os quais já tenha interagido.
 
 10\. Dê exemplos de sistemas C (casuais) que você já tenha desenvolvido.
 
+\index{Êscandalo Volkswagen}
 11\. Em 2015, descobriu-se que o software instalado em mais de 11
 milhões de carros da Volkswagen detectava quando eles estavam sendo
 testados em um laboratório de certificação. Nessas situações, o carro
