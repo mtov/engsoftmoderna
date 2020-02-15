@@ -25,7 +25,7 @@ Então, para facilitar a implantação e entrega de sistemas, foi proposto o con
 
 > "Em vez de iniciar as implantações à meia-noite de sexta-feira e passar o fim de semana trabalhando para concluí-las, as implantações ocorrem em qualquer dia útil, quando todos estão na empresa e sem que os clientes percebam — exceto quando encontram novas funcionalidades e correções de bugs." 
 
-No entanto, DevOps não advoga a criação de um profissional novo, que fique responsável tanto pelo desenvolvimento como pela implantação de sistemas. Em vez disso, defende-se uma aproximação entre o  pessoal de desenvolvimento e o pessoal de operações e vice-versa, visando fazer com que a implantação de sistemas seja mais ágil e menos traumática. Tentando explicar com outras palavras, a ideia é evitar dois silos independentes: desenvolvedores e operadores, com pouca ou nenhuma iteração eles, como ilustrado na figura a seguir. 
+No entanto, DevOps não advoga a criação de um profissional novo, que fique responsável tanto pelo desenvolvimento como pela implantação de sistemas. Em vez disso, defende-se uma aproximação entre o  pessoal de desenvolvimento e o pessoal de operações e vice-versa, visando fazer com que a implantação de sistemas seja mais ágil e menos traumática. Tentando explicar com outras palavras, a ideia é evitar dois silos independentes: desenvolvedores e operadores, com pouca ou nenhuma interação entre eles, como ilustrado na figura a seguir. 
 
 ![Organização que **não** é baseada em DevOps, pois existe pouca comunicação entre Dev e Ops.](figs/cap10/no-devops){width=35%}
 
@@ -96,11 +96,11 @@ No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git.
 
 ### Multirepos vs Monorepos {.unnumbered}
 
-Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **multirepos** e **monorepo** — são ilustradas nas próximas duas figuras.
+Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **multirepos** e **monorepos** — são ilustradas nas próximas duas figuras.
 
 ![Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.](figs/cap10/multirepos){width=35%}
 
-![Monorepo: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=35%}
+![Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=35%}
 
 Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:
 
@@ -315,7 +315,7 @@ else
 
 Esse é o código que vai para produção enquanto a nova página não estiver pronta. Porém, durante a implementação, localmente, na sua máquina, você pode habilitar a nova página, fazendo o flag `nova_pag` receber `true`. 
 
-Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga e o feature flag (`nova_pag`) podem ser removido. Ou seja, a duplicação de código foi temporária.
+Observe que durante um certo intervalo de tempo vai existir duplicação de código entre as duas páginas. Porém, após a nova página ser aprovada, entrar em produção e receber feedback positivo dos clientes, o código da página antiga e o feature flag (`nova_pag`) podem ser removidos. Ou seja, a duplicação de código foi temporária.
 
 
 ```{=latex}

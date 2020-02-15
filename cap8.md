@@ -85,7 +85,7 @@ com sua granularidade.
 
 Particularmente, os testes são divididos em três grupos. **Testes de
 unidade** verificam automaticamente pequenas partes de um código,
-normalmente uma classe apenas (acompanhe também pelas figuras da próxma página).
+normalmente uma classe apenas (acompanhe também pelas figuras da próxima página).
 Eles formam a base da pirâmide, ou seja, a maior parte dos testes estão
 nessa categoria. Testes de unidade são simples, mais fáceis de
 implementar e executam rapidamente. No próximo nível, temos **testes de
