@@ -85,3 +85,10 @@ height="2.224663167104112in"}
 
 ![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/linus.png){width=25%}
 --->
+
+====
+
+<!---
+![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
+usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
+--->

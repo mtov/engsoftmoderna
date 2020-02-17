@@ -253,10 +253,6 @@ participantes marcaram Waterfall como resposta.
 \end{esmbox}
 ```
 
-<!---
-![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
-usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
---->
 
 ## Extreme Programming
 

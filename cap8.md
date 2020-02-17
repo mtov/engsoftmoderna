@@ -159,7 +159,6 @@ menos importante.
 \index{Smalltalk}
 \index{Beck, Kent}
 \index{Gamma, Erich}
-
 Testes de unidade são implementados usando-se frameworks construídos
 especificamente para esse fim. Os mais conhecidos são chamados de
 frameworks **xUnit**, onde o *x* designa a linguagem usada na
@@ -436,6 +435,7 @@ Antes de avançar, vamos apresentar algumas definições:
     quais são executados pelo framework de testes de unidade (no nosso
     caso, JUnit).
 
+\index{Sistema sob Teste (SUT)}
 -   **Sistema sob Teste (System Under Test, SUT)**: sistema que está
     sendo testado. É um nome genérico, usado também em outros tipos de
     testes, não necessariamente de unidades. Às vezes, usa-se também o
@@ -490,12 +490,14 @@ unidade.
 ### Benefícios
 \index{Testes de Unidade!Benefícios}
 
+
 O principal benefício de testes de unidade é encontrar bugs, ainda na
 fase de desenvolvimento e antes que o código entre em produção, quando
 os custos de correção e os prejuízos podem ser maiores. Portanto, se um
 sistema tem bons testes, é mais difícil que os usuários finais sejam
 surpreendidos com bugs.
 
+\index{Testes de Unidade!Regressões}
 Porém, existem dois outros benefícios que também são muito importantes.
 Primeiro, testes de unidade funcionam como uma rede de proteção contra
 **regressões** no código. Dizemos que uma regressão ocorre quando uma
@@ -551,7 +553,6 @@ processo e as práticas de desenvolvimento de software dessas empresas:
 ```
 
 ## Princípios e Smells
-\index{Testes de Unidade! Princípios e Smells}
 
 Nesta seção, vamos agrupar a apresentação de princípios e anti-padrões
 para implementação de testes de unidade. O objetivo é discutir questões
@@ -911,6 +912,7 @@ que cobertura de comandos.
 
 ## Testabilidade
 \index{Testes de Software!Testabilidade}
+\index{Testabilidade}
 
 Testabilidade é uma medida de quão fácil é implementar testes para um
 sistema. Como vimos, é importante que os testes sigam os princípios
@@ -928,7 +930,6 @@ e modelo, inversão de dependências, Demeter, dentre outros — tende a
 apresentar boa testabilidade. 
 
 ### Exemplo: Servlet 
-\index{Servlet}
 
 Servlet é uma tecnologia de Java para implementação de páginas Web
 dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa
@@ -1228,7 +1229,6 @@ disponível neste
 \index{Mocks!Mockito}
 \index{Mockito}
 
-
 Mocks são tão comuns em testes de unidade que existem frameworks para
 facilitar a criação e "programação" de mocks (e/ou stubs). Não vamos
 entrar em detalhes desses frameworks, mas abaixo mostramos o teste
@@ -1330,10 +1330,9 @@ com o mock passado como argumento. No caso, verificamos se o método `send`
 do mock foi executado pelo menos uma vez, usando qualquer string como
 argumento.
 
-\index{Meszaros, Gerado}
+
 \index{Mocks!Objetos Dummy}
 \index{Mocks!Objetos Fake}
-
 Segundo Gerado Meszaros, mocks e stubs são casos especiais de **objetos
 dublê** (*double*). O termo é inspirado em dublês de atores em filmes.
 Segundo Meszaros, existem pelo menos mais dois outros tipos de objetos
@@ -1755,6 +1754,7 @@ mais tempo.
 
 ### Exemplo: Teste de Sistemas Web 
 \index{Testes de Sistema!Selenium}
+\index{Testes de Sistemas Web}
 \index{Selenium}
 
 Selenium é um framework para automatizar testes de sistemas Web. O
@@ -1846,7 +1846,7 @@ incorreta.
 \index{Testes de Software!Caixa Preta}
 \index{Testes de Software!Caixa Branca}
 \index{Testes de Software!Funcional}
-\index{Testes de Software!Estruturais}
+\index{Testes de Software!Estrutural}
 
 Técnicas de teste podem ser classificadas como caixa preta ou caixa
 branca. Quando se usa uma **técnica caixa preta**, os testes são
@@ -1946,7 +1946,8 @@ necessário. Por outro lado, algumas classes de equivalência podem ficar
 sem testes.
 
 ### Testes de Aceitação 
-\index{Testes de Software!Aceitação}
+\index{Testes de Software!Testes de Aceitação}
+\index{Testes de Software!Testes Manuais}
 
 São testes realizados pelo cliente, com dados do cliente. Os resultados
 desse teste irão determinar se o cliente está de acordo ou não com a
@@ -1966,8 +1967,8 @@ fizemos o sistema corretamente, isto é, de acordo com a sua
 especificação e/ou requisitos. Já validação testa se fizemos o sistema
 correto, isto é, aquele que o cliente pediu e precisa.
 
-\index{Testes de Software!Alfa}
-\index{Testes de Software!Beta}
+\index{Testes de Software!Testes Alfa}
+\index{Testes de Software!Testes Beta}
 
 Em alguns casos, testes de aceitação podem ser divididos em duas fases.
 **Testes alfa** são realizados com alguns usuários, mas em um ambiente
@@ -1977,7 +1978,7 @@ de usuários e não mais em um ambiente controlado. Esses testes são
 chamados de **testes beta**.
 
 ### Testes de Requisitos Não-Funcionais 
-\index{Testes de Software!Requisitos Não-Funcionais}
+\index{Testes de Software!Testes Requisitos Não-Funcionais}
 
 Os testes anteriores, com exceção dos testes de aceitação, verificam
 apenas requisitos funcionais; logo, eles têm como objetivo encontrar

@@ -73,6 +73,7 @@ forma breve outros padrões arquiteturais, como pipes e filtros (Seção
 7.7). Vamos também dar um exemplo de um anti-padrão arquitetural,
 conhecido como *big ball of mud* (Seção 7.8).
 
+\index{Arquitetura de Software!Estilos}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -94,6 +95,7 @@ chamaremos todos eles de padrões arquiteturais.
 
 ### Debate Tanenbaum-Torvalds
 
+\index{Arquitetura de Software!Debate Tanenbaum-Torvalds}
 \index{Debate Tanenbaum-Torvalds}
 \index{Tanenbaum, Andrew}
 \index{Torvalds, Linus}
@@ -108,8 +110,8 @@ sistemas operacionais, autor de livros-texto na área e professor da
 Vrije Universiteit, em Amsterdã, na Holanda. E Torvalds (Linus) na época
 era estudante de Computação na Universidade de Helsinki, na Finlândia.
 
-\index{Arquitetura Monolítica}
-\index{Arquitetura Microkernel}
+\index{Monolitos}
+\index{Microkernel}
 \index{Linux}
 A discussão começou quando Tanenbaum postou uma mensagem no grupo com o
 título "Linux está obsoleto". O seu principal argumento era que o
@@ -145,7 +147,7 @@ reverter. Muitas vezes, são também decisões que levam anos para que seus
 efeitos negativos fiquem mais claros e comecem a causar problemas.
 
 ## Arquitetura em Camadas
-\index{Arquitetura de Software!em Camadas}
+\index{Arquitetura de Software!Camadas}
 
 **Arquitetura em camadas** é um dos padrões arquiteturais mais usados,
 desde que os primeiros sistemas de software de maior porte foram
@@ -175,7 +177,7 @@ transporte pode ser usada por vários protocolos de aplicação, como HTTP,
 SMTP, DHCP, etc.
 
 \index{Dijkstra, Edsger W.}
-\index{Sistema Operacional THE}
+\index{THE, Sistema Operacional}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -396,7 +398,7 @@ histórica dessas arquiteturas:
     visão como resposta e modelo, que é a camada que persiste os dados
     em um banco de dados.
 
-    ![Arquitetura MVC Web](figs/cap7/mvc-web){width=55%}
+![Arquitetura MVC Web](figs/cap7/mvc-web){width=55%}
 
 Logo, apesar de sistemas Web serem parecidos com sistemas três camadas,
 os frameworks Web mais populares optaram por usar termos típicos de MVC
@@ -510,6 +512,7 @@ Scrum — ela vai enfrentar um "gargalo" arquitetural quando
 precisar lançar novas releases de um produto de forma frequente.
 
 \index{Microsserviços!Monolitos}
+\index{Monolitos}
 Esse gargalo ocorre porque sistemas, via de regra, seguem em tempo de
 execução uma arquitetura monolítica. Ou seja, mesmo que o
 desenvolvimento tenha sido particionado em módulos M1, M2, M3, ..., Mn,
@@ -575,7 +578,7 @@ grandes serviços.
 
 \index{Escalabilidade}
 \index{Microsserviços!Escalabilidade}
-\index{Escalabilidade Horizontal}
+\index{Escalabilidade!Horizontal}
 Uma segunda vantagem de microsserviços é **escalabilidade**. Quando um
 monolito enfrenta problemas de performance, uma solução consiste em
 disponibilizar instâncias do sistema em máquinas diferentes, como mostra
@@ -732,6 +735,7 @@ sistema distribuído. Dentre eles, podemos citar:
     essa chamada terá que passar pelo cabo da rede — ou pelo ar e
     pela fibra ótica — até chegar à máquina de destino.
 
+\index{Microsserviços!Two-Phase Commit}
 \index{Two-Phase Commit}
 *   Transações Distribuídas: Como vimos, microsserviços devem ser
     autônomos também do ponto de vista de dados. Isso torna mais
@@ -786,14 +790,14 @@ Além de permitirem comunicação assíncrona entre clientes e servidores,
 filas de mensagens viabilizam duas formas de desacoplamento entre os
 componentes de uma aplicação distribuída:
 
-\index{Arquitetura Orientadas a Mensagens!Desacoplamento no espaço}
+\index{Arquitetura Orientada a Mensagens!Desacoplamento no espaço}
 *   **Desacoplamento no espaço**: clientes não precisam conhecer os
     servidores e vice-versa. Em outras palavras, o cliente é
     exclusivamente um produtor de informações. Mas ele não precisa
     saber quem vai consumir essa informação. O raciocínio inverso vale
     para servidores.
 
-\index{Arquitetura Orientadas a Mensagens!Desacoplamento no tempo}
+\index{Arquitetura Orientada a Mensagens!Desacoplamento no tempo}
 *   **Desacoplamento no tempo**: clientes e servidores não precisam
     estar simultaneamente disponíveis para se comunicarem. Se o
     servidor estiver fora do ar, os clientes podem continuar
@@ -852,8 +856,6 @@ ativado.
 ## Arquiteturas Publish/Subscribe
 \index{Arquitetura de Software!Publish/Subscribe}
 \index{Publish/Subscribe}
-\index{Arquitetura Publish/Subscribe}
-
 Em arquiteturas publish/subscribe, as mensagens são chamadas de
 **eventos**. Os componentes da arquitetura são chamados de
 **publicadores** (*publishers*) e **assinantes** (*subscribers*) de
@@ -886,16 +888,16 @@ filas de mensagens:
     — isto é, os consumidores das mensagens — têm que
     "puxar" (*pull*) as mensagens da fila.
 
-\index{Arquitetura Publish/Subscribe!Tópicos}
+\index{Publish/Subscribe!Tópicos}
 Em alguns sistemas publish/subscribe, eventos são organizados em
 **tópicos**, que funcionam como categorias de eventos. Quando um
 publicador produz um evento, ele deve informar seu tópico. Assim,
 clientes não precisam assinar todos eventos que ocorrem no sistema, mas
 apenas eventos de um certo tópico.
 
-\index{Arquitetura Orientada a Eventos}
-\index{Arquitetura Publish/Subscribe!Broker}
-
+\index{Eventos}
+\index{Publish/Subscribe!Broker}
+\index{Publish/Subscribe!Eventos}
 Arquiteturas publish/subscribe são, às vezes, chamadas de **arquiteturas
 orientadas a eventos**. O serviço de publish/subscribe, às vezes, é
 chamado também de **broker de eventos**, pois ele funciona como um
@@ -941,6 +943,7 @@ publish/subscribe sobre a ocorrência dos eventos de interesse.
 ## Outros Padrões Arquiteturais
 
 \index{Arquitetura de Software!Pipes e Filtros}
+\index{Pipes e Filtros}
 
 **Pipes e Filtros** é um tipo de arquitetura orientada a dados, na qual
 os programas \-- chamados de **filtros** — têm como função processar
@@ -962,6 +965,7 @@ dois pipes (barras verticais). No caso dos comandos Unix, as entradas e
 saídas são sempre arquivos texto.
 
 \index{Arquitetura de Software!Cliente/Servidor}
+\index{Cliente/Servidor}
 **Cliente/Servidor** é um uma arquitetura muito usada na implementação
 de serviços básicos de rede. Clientes e servidores são os dois únicos
 módulos desse tipo de arquitetura e eles se comunicam por meio de uma
@@ -977,6 +981,7 @@ Web, que permite que clientes (navegadores) acessem recursos (páginas
 HTML) armazenadas e providas por um servidor Web.
 
 \index{Arquitetura de Software!Peer-to-Peer}
+\index{Peer-to-Peer}
 Arquiteturas **peer-to-peer** são arquiteturas distribuídas nas quais os
 módulos da aplicação podem desempenhar tanto o papel de cliente, como o
 papel de servidor. Em outras palavras, esses módulos — chamados de

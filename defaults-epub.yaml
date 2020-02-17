@@ -1,10 +1,13 @@
 from: markdown
 to: epub
    
-default-image-extension: ".png"
+default-image-extension: ".svg"
 
 top-level-division: chapter
 number-sections: true
+toc: true
+toc-depth: 2
+
 
 epub-cover-image: figs/capa/capa.jpg
 
