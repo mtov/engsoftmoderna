@@ -17,6 +17,7 @@ estrutura de código não está "cheirando bem" e que, portanto, poderia
 ser objeto de uma refatoração.
 
 ## Introdução
+\index{Refactoring}
 
 No capítulo anterior, vimos que software precisa ser testado, como
 qualquer produto de engenharia. A mesma recomendação vale para
@@ -29,6 +30,9 @@ funcionalidade, temos que realizar uma **manutenção evolutiva**. Quando
 uma regra de negócio ou alguma tecnologia usada pelo sistema muda, temos
 que reservar tempo para uma **manutenção** **adaptativa**.
 
+\index{Leis de Lehman}
+\index{Leis da Evolução de Software}
+\index{Lehman, Meir}
 Além disso, sistemas de software também envelhecem, como ocorre com os
 seres vivos. Ainda no início da década de 1970, Meir Lehman — então
 trabalhando na IBM — começou a observar e analisar esse fenômeno e,
@@ -61,6 +65,7 @@ trabalho pode ser realizado para estabilizar ou mesmo evitar esse
 declínio natural da qualidade interna de sistemas de software.
 Modernamente, esse trabalho é chamado de **refactoring**.
 
+\index{Refactoring!Definição}
 Refactorings são transformações de código que melhoram a
 manutenibilidade de um sistema, mas sem afetar o seu funcionamento. Para
 explicar essa definição, vamos dividi-la em três partes. Primeiro,
@@ -78,6 +83,7 @@ sistema funcionando exatamente como antes das transformações. Uma outra
 maneira de dizer isso é afirmando que refactorings devem preservar o
 comportamento ou a semântica do sistema.
 
+\index{Opdyke, William}
 No entanto, nas décadas de 70 e 80, quando as Leis de Lehman foram
 formuladas, o termo refactoring ainda não era usado. Um dos primeiros
 usos do termo em Engenharia de Software ocorreu em 1992, em uma tese de
@@ -91,6 +97,7 @@ sistemas, sem mudar o comportamento deles e sim para remover duplicação
 de código, melhorar a comunicação com outros desenvolvedores,
 simplificar o código ou torná-lo mais flexível".
 
+\index{Fowler, Martin}
 Em 2000, Martin Fowler lançou a primeira edição de um livro dedicado
 exclusivamente a refactoring, que alcançou grande sucesso e contribuiu
 para popularizar essa prática de programação. Um dos motivos desse
@@ -102,6 +109,7 @@ vocabulário sobre refactoring. No livro, Fowler também apresenta a
 mecânica de funcionamento de cada refactoring, inclui exemplos de código
 e discute os benefícios e desvantagens dos refactorings.
 
+\index{Beck, Kent}
 Em seu livro, Fowler cita também a frase de Kent Beck que abre esse
 capítulo e que ressalta a importância de seguir "bons hábitos de
 programação", os quais são fundamentais para preservar a saúde de um
@@ -142,6 +150,7 @@ que melhoram a sua manutenibilidade.
 Nesta seção, vamos apresentar os principais refactorings do catálogo de Fowler. Assim como adotado nesse catálogo, vamos comentar sobre os seguintes tópicos na apresentação de cada refactoring: nome, motivação, mecânica de aplicação e exemplos de uso. Além disso, vamos usar alguns exemplos de refactorings reais, realizados por desenvolvedores de sistemas de código aberto disponíveis no GitHub.
 
 ### Extração de Método
+\index{Refactoring!Extração de Método}
 
 Extração de Método é um dos principais refactorings, tendo como objetivo
 extrair um trecho de código de um método `f` e levá-lo para um novo método
@@ -171,6 +180,7 @@ void f () {
 
 ```
 
+\index{Duplicação de Código}
 Existem também variações na mecânica de funcionamento de uma extração de
 método. Por exemplo, pode-se extrair de uma vez vários métodos `g1`, `g2`,
 ..., `gn` de um método `f`. Pode-se também extrair o mesmo código g de
@@ -354,6 +364,7 @@ não descaracterizam a transformação como uma Extração de
 Método.
 
 ### Inline de Método
+\index{Refactoring!Inline de Método}
 
 Esse refactoring funciona no sentido contrário a uma extração de método.
 Suponha um método pequeno, com uma ou duas linhas de código, e que seja
@@ -401,6 +412,7 @@ private void write(byte[] revision) {
 ```
 
 ### Movimentação de Método
+\index{Refactoring!Movimentação de Método}
 
 Não é raro encontrar um método implementado na classe errada. Ou seja,
 apesar de implementado em uma classe A, um método `f` pode usar mais
@@ -522,9 +534,13 @@ classe `A` para a classe `B`. Porém, em `A` ficou uma versão do método que
 apenas repassa (ou delega) a chamada para `B`. Por isso, o código da classe `Cliente` 
 não precisou ser alterado.
 
+\index{Refactoring!Pull Up Method}
+
 Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de **Pull Up Method**. Para ilustrar, suponha um mesmo método `f` implementado em duas subclasses `B1` e `B2`. Para evitar **duplicação de código**, pode-se então "subir" com ambas implementações para a superclasse `A`, como mostra o seguinte diagrama de classes:
 
 ![Pull Up Method](figs/cap9/pull-up){width="80%"}
+
+\index{Refactoring!Push Down Method}
 
 Por outro lado, quando um método é movido para baixo na hierarquia de
 classes, isto é, de uma superclasse para uma subclasse, dizemos que foi
@@ -600,6 +616,7 @@ class B {
 ```
 
 ### Extração de Classes
+\index{Refactoring!Extração de Classes}
 
 Esse refactoring é recomendado quando um sistema possui uma classe A com
 muitas responsabilidades e atributos. Alguns desses atributos são
@@ -649,6 +666,7 @@ princípio de projeto "Prefira Interfaces a Classes Concretas", que
 estudamos no Capítulo 5.
 
 ### Renomeação
+\index{Refactoring!Renomeação}
 
 Existe uma frase provocativa, atribuída a Phil Karlton, que afirma que
 "existem apenas duas coisas difíceis em Ciência da Computação:
@@ -717,6 +735,7 @@ Porém, existem refactorings com escopo local, que melhoraram, por
 exemplo, a implementação interna de um único método. Vamos a seguir
 descrever resumidamente alguns desses refactorings.
 
+\index{Refactoring!Extração de Variáveis}
 **Extração de Variáveis** é usado para simplificar expressões e
 torná-las mais fáceis de ler e entender. Seja o seguinte código 
 de exemplo:
@@ -735,7 +754,7 @@ x1 = (-b + sqrt(delta)) / (2*a);
 
 Veja que uma variável `delta` foi criada e inicializada com uma parte de uma expressão maior. Com isso, o código da expressão, após a refatoração, ficou menor e mais fácil de entender.
 
-
+\index{Refactoring!Remoção de Flags}
 **Remoção de Flags** é um refactoring que sugere usar comandos como
 `break` ou `return`, em vez de variáveis de controle, também chamadas de
 flags. Seja o seguinte código de exemplo:
@@ -768,6 +787,7 @@ uma lógica mais clara, graças ao uso de um comando `return` para retornar
 imediatamente assim que um determinado valor tenha sido encontrado em um
 vetor.
 
+\index{Refactoring!Substituição de Condicional por Polimorfismo}
 Existe também refactorings que tratam da simplificação de comandos
 condicionais. Um deles é chamado de **Substituição de Condicional por
 Polimorfismo**. Para entendê-lo, suponha um comando `switch` que retorna o
@@ -798,6 +818,7 @@ subclasses de `Aluno` — por exemplo, `AlunoGraduacao`, `AlunoMestrado` e
 `AlunoDoutorado` — um método `getBolsa()`. Por fim, na superclasse `Aluno`
 esse método deve ser abstrato.
 
+\index{Refactoring!Remoção de Código Morto}
 **Remoção de Código Morto** recomenda deletar métodos, classes,
 variáveis, atributos, etc que não estão sendo mais usados. Por exemplo,
 no caso de um método, pode não existir mais chamadas para ele. No caso
@@ -822,6 +843,7 @@ caso de refactorings. John Ousterhout tem o seguinte comentário sobre a
 importância de testes durante atividades de refactoring
 ([link](https://dl.acm.org/citation.cfm?id=3288797)):
 
+\index{Ousterhout, John}
 > "Testes, particularmente testes de unidade, desempenham um papel
 importante no projeto de software porque eles facilitam a realização
 de refactorings. Sem uma suíte de testes, torna-se arriscado realizar
@@ -838,6 +860,7 @@ Uma segunda questão importante diz respeito ao momento em que o código
 deve ser refatorado. Existem dois modos principais de realizar
 refactorings: de forma oportunista ou de forma estratégica.
 
+\index{Refactoring!Oportunistas}
 **Refactorings oportunistas** são realizados no meio de uma tarefa de
 programação, quando descobre-se que um trecho de código não está bem
 implementado e que, portanto, pode ser melhorado. Isso pode acontecer
@@ -854,6 +877,7 @@ que parte desse tempo — talvez 20% ou mais — seja investido em
 refactorings. Kent Beck tem um frase interessante sobre refactorings
 oportunistas:
 
+\index{Beck, Kent}
 > "Para cada mudança que você tiver que realizar em um sistema, primeiro torne essa mudança fácil (aviso: isso pode ser difícil), então realize a mudança facilmente."
 
 A ideia de fundo dessa recomendação é que um desenvolvedor pode estar
@@ -864,6 +888,8 @@ para tornar a mudança em questão "fácil". Feito isso, ele terá aberto
 caminho para dar dois passos a frente e implementar a mudança que ficou
 sob sua responsabilidade.
 
+\index{Refactoring!Planejados}
+\index{Fowler, Martin}
 Na maior parte das vezes, os refactorings são oportunistas. No entanto,
 é possível ter também **refactorings planejados**. Normalmente, eles são
 mudanças mais profundas, demoradas e complexas, que não valem a pena
@@ -880,6 +906,7 @@ parte do esforço de refactoring deve ser do tipo normal e
 oportunista."
 
 ## Refactorings Automatizados
+\index{Refactoring!Automatizados}
 
 Diversas IDEs oferecem suporte para automatizar a realização de
 refactorings, da seguinte forma: o usuário seleciona o trecho de código
@@ -913,6 +940,7 @@ informações sobre esse refactoring. Por exemplo, o novo nome do
 identificador, no caso de uma renomeação. A partir daí é que o
 refactoring torna-se automatizado.
 
+\index{Refactoring!Pré-condições}
 Antes de aplicar o refactoring, a IDE verifica se as suas
 **pré-condições** são verdadeiras, isto é, se a execução do refactoring
 — conforme requisitado pelo usuário — não vai causar um erro de
@@ -993,6 +1021,8 @@ avisar ao usuário que o refactoring não poderá ser realizado, pois ele
 muda o comportamento do programa.
 
 ## Code Smells
+\index{Code Smells}
+\index{Bad Smells}
 
 Code Smells — também conhecidos como **bad smells** — são
 indicadores de código de baixa qualidade, isto é, código difícil de
@@ -1006,6 +1036,8 @@ Feita essa ressalva, vamos apresentar, no restante desta seção, alguns
 dos principais code smells.
 
 ### Código Duplicado
+\index{Code Smells!Código Duplicado}
+\index{Código Duplicado}
 
 Duplicação de código é o principal code smell e aquele com o maior
 potencial para prejudicar a evolução de um sistema. Código duplicado
@@ -1022,6 +1054,9 @@ quando o código duplicado refere-se a atributos e métodos que aparecem
 em mais de uma classe) e Pull Up Method (recomendado quando o código
 duplicado é um método presente em duas ou mais subclasses).
 
+\index{Code Smells!Clones de Código}
+\index{Clones de Código}
+\index{Clones de Código!Classificação}
 Trechos de código que possuem código idêntico são chamados de
 **clones**. No entanto, diferentes critérios podem ser usados para
 definir quando dois trechos de código A e B são, de fato, idênticos.
@@ -1118,6 +1153,7 @@ Métodos Longos, que é o code smell que estudaremos a seguir.
 ```
 
 ### Métodos Longos
+\index{Code Smells!Métodos Longos}
 
 Em qualquer sistema, métodos devem ser pequenos, com nomes
 auto-explicativos e poucas linhas de código. **Métodos Longos** são
@@ -1132,6 +1168,7 @@ tendência em escrever métodos pequenos, com menos de 20 linhas de
 código, por exemplo.
 
 ### Classes Grandes
+\index{Code Smells!Classes Grandes}
 
 Assim como métodos, classes não devem assumir muitas responsabilidades e
 prover serviços que não são coesos. Por isso, **Classes Grandes**
@@ -1144,6 +1181,9 @@ consiste em usar Extração de Classe para extrair uma classe menor A\' a
 partir de uma classe grande A. Em seguida, a classe A passa a ter um
 atributo do tipo para A\'.
 
+\index{Code Smells!God Class}
+\index{Code Smells!Blob}
+\index{Blob}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -1157,6 +1197,8 @@ instâncias desse smell.
 ```
 
 ### Feature Envy
+\index{Code Smells!Feature Envy}
+\index{Feature Envy}
 
 Esse smell designa um método que parece "invejar" os dados e métodos
 de uma outra classe. Dizendo de outro modo, ele acessa mais atributos e
@@ -1187,6 +1229,7 @@ public class DrawingEditorProxy
 
 
 ### Métodos com Muitos Parâmetros
+\index{Code Smells!Métodos com Muitos Parâmetros}
 
 Além de pequenos, métodos, na medida do possível, devem ter poucos
 parâmetros. Isto é, **Métodos com Muitos Parâmetros** é um smell, que
@@ -1234,6 +1277,8 @@ void f(DateRange range} {
 
 
 ### Variáveis Globais
+\index{Code Smells!Variáveis Globais}
+\index{Variáveis Globais}
 
 Conforme estudamos no capítulo sobre princípios de projeto, variáveis
 globais devem ser evitadas, pois elas dão origem a um tipo de
@@ -1262,6 +1307,7 @@ exatamente como variáveis globais. Logo, eles também representam um code
 smell.
 
 ### Obsessão por Tipos Primitivos
+\index{Code Smells!Obsessão por Tipos Primitivos}
 
 Este code smell ocorre quando tipos primitivos (isto é, `int`, `float`,
 `String`, etc) são usados no lugar de classes. Por exemplo, suponha que
@@ -1281,6 +1327,7 @@ recomendação e sugerir que tais objetos, sempre que possível, devem ser
 também imutáveis.
 
 ### Objetos Mutáveis
+\index{Code Smells!Objetos Mutáveis}
 
 Na segunda versão de seu livro, Fowler considera que **Objetos
 Mutáveis** são um code smell. Um objeto mutável é aquele cujo estado
@@ -1362,10 +1409,13 @@ final public class Data { // final => não pode ter subclasses
 ```
 
 ### Classes de Dados
+\index{Code Smells!Classes de Dados}
 
 Tais classes possuem apenas atributos e nenhum método. No máximo, elas possuem getters e setters. Porém, como recorrente com code smells, não devemos considerar que **Classes de Dados** são sempre um erro de projeto. Em vez disso, o importante é analisar o código e verificar a possibilidade de mover comportamento para essas classes. Isto é, criar métodos nessas classes, para realizar operações que já estão sendo realizadas, mas de forma espalhada em outras classes.
 
 ### Comentários
+\index{Code Smells!Comentários}
+\index{Comentários}
 
 Pode soar estranho ver comentários incluídos em uma lista de code
 smells. Por exemplo, em cursos de Introdução a Programação, os alunos

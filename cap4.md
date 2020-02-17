@@ -47,6 +47,7 @@ Prata \..."*
 
 > "A complexidade de um software é uma propriedade essencial e não acidental. Portanto, representações de uma entidade de software que abstraem sua complexidade normalmente também abstraem sua essência. Por três séculos, matemáticos e físicos obtiveram grandes avanços construindo modelos simplificados de um fenômeno complexo, derivando propriedades de tais modelos e verificando tais propriedade por meio de experimentos. Esse paradigma funcionou porque as complexidades ignoradas não são propriedades essenciais do fenômeno sob estudo. Porém, essa abordagem não funciona quando as complexidades são essenciais."
 
+\index{Box, George}
 A frase que abre esse capítulo, do estatístico britânico George Box,
 também remete a uma reflexão sobre o uso prático de modelos. Apesar de a
 frase se referir a modelos matemáticos, ela se aplica a outros modelos,
@@ -125,7 +126,7 @@ grande e longa fase de design. A proposta de UML era que nessa fase
 seriam criados modelos gráficos, que depois seriam repassados para os
 programadores, para serem convertidos em código fonte.
 
-\index{CASE}
+\index{CASE (Computer-Aided Software Engineering)}
 Na verdade, UML é o resultado de um esforço para unificar as notações
 gráficas que surgiram no final das décadas de 80 e início da década de
 90. Especificamente, a primeira versão de UML foi proposta em 1995, como
@@ -148,7 +149,7 @@ comprada pela IBM.
 
 ### Como usar UML? {.unnumbered}
 
-\index{Martin Fowler}
+\index{Fowler, Martin}
 Martin Fowler, em seu livro sobre UML
 ([link](https://dl.acm.org/citation.cfm?id=861282)),
 propõe uma classificação sobre formas de uso dessa linguagem de
@@ -196,7 +197,9 @@ diagramas leves e informais de partes de um sistema, vindo daí o nome
 esboço (*sketch*). Esses diagramas são usados para comunicação entre os
 desenvolvedores, em duas situações principais:
 
+\index{UML!Engenharia Avante}
 \index{Engenharia Avante}
+
 -   **Engenharia Avante** (*Forward Engineering*): quando os
     desenvolvedores usam modelos UML para discutir e analisar
     alternativas de design, antes que exista qualquer código. Por
@@ -207,7 +210,9 @@ desenvolvedores, em duas situações principais:
     elas. O objetivo é validar a proposta de tais classes antes de
     começar a codificar.
 
+\index{UML!Engenharia Reversa}
 \index{Engenharia Reversa}
+
 -   **Engenharia Reversa** (*Reverse Engineering*): quando os
     desenvolvedores usam modelos UML para analisar e discutir uma
     funcionalidade que já se encontra implementada no código fonte.
@@ -225,17 +230,6 @@ caras, como ferramentas CASE. Muito menos se cogita a geração automática
 de código a partir desses esboços. Muitas vezes, os diagramas são
 desenhados em um quadro e, depois, fotografados e apagados.
 Adicionalmente, usa-se apenas um subconjunto dos diagramas UML.
-
-<!----
-A próxima figura mostra um esboço de software, provavelmente usado para
-apoiar uma discussão sobre as classes de um sistema para uma editora de
-livros. Veja que o esboço é informal (feito à mão, por exemplo). Além
-disso, no caso de algumas classes, informa-se apenas o seu nome. Iremos
-estudar mais sobre diagramas de classes na próxima seção.
-
-![](media/image28.jpg){width="3.7927088801399824in"
-height="2.224663167104112in"}
----->
 
 Como os esboços são pequenos e informais, pode-se questionar a
 necessidade de uma linguagem padronizada nos cenários que mencionamos.
@@ -346,7 +340,7 @@ requisitos.
 \begin{aviso}
 ```
 
-\index{Martin Fowler}
+\index{Fowler, Martin}
 **Aviso:** Existem diversas versões de UML. No restante deste
 capítulo vamos usar a **versão de UML que é adotada na 3a edição do
 livro UML Distilled, de Martin Fowler**
@@ -855,7 +849,7 @@ modelagem de fluxos e processos:
     diagramas de sequência. Por outro lado, esses últimos tendem a
     oferecer uma notação mais simples e fácil de entender.
 
-\index{BPMN}
+\index{BPMN (Business Process Model and Notation)}
 -   **BPMN** (*Business Process Model and Notation*) é um esforço mais
     recente, que teve início nos anos 2000, visando a proposição de
     uma notação gráfica mais amigável para modelagem de processos de

@@ -65,5 +65,23 @@ Assíncrona: o sistema cliente envia uma mensagem para o sistema servidor, mas n
 Uma forma de implementar comunicação assíncrona em arquiteturas distribuídas é por meio de arquitetura orientada a mensagens. Na próxima seção, iremos estudar uma segunda forma, baseada em arquiteturas do tipo Publish/Subscribe.
 
 
+======
 
+<!----
+A próxima figura mostra um esboço de software, provavelmente usado para
+apoiar uma discussão sobre as classes de um sistema para uma editora de
+livros. Veja que o esboço é informal (feito à mão, por exemplo). Além
+disso, no caso de algumas classes, informa-se apenas o seu nome. Iremos
+estudar mais sobre diagramas de classes na próxima seção.
 
+![](media/image28.jpg){width="3.7927088801399824in"
+height="2.224663167104112in"}
+---->
+
+======
+
+<!---
+![Andrew S. Tanenbaum, professor da Vrije Universiteit, e defensor de arquiteturas microkernel para sistemas operacionais (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/tanembaum.png){width=25%}
+
+![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/linus.png){width=25%}
+--->

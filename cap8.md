@@ -22,6 +22,7 @@ tipos de testes, tais como: testes caixa preta e caixa branca, testes de
 aceitação e testes de requisitos não-funcionais.
 
 ## Introdução
+\index{Testes de Software}
 
 Software é uma das construções humanas mais complexas, como discutimos
 na Introdução deste livro. Portanto, é compreensível que sistemas de
@@ -75,6 +76,8 @@ Neste capítulo, vamos focar em **testes automatizados**, pois testes
 manuais dão muito trabalho, são demorados e caros. Pior ainda, eles
 devem ser repetidos toda vez que o sistema sofrer uma modificação.
 
+\index{Testes de Software!Pirâmide de Testes}
+\index{Pirâmide de Testes}
 Uma forma interessante de classificar testes automatizados é por meio de
 uma **pirâmide de testes**, originalmente proposta por Mike Cohn
 ([link](https://dl.acm.org/citation.cfm?id=1667109)). Como
@@ -83,6 +86,7 @@ com sua granularidade.
 
 ![Pirâmide de testes](figs/cap8/piramide-testes){width=70%}
 
+\index{Testes de Software!Tipos de Testes}
 Particularmente, os testes são divididos em três grupos. **Testes de
 unidade** verificam automaticamente pequenas partes de um código,
 normalmente uma classe apenas (acompanhe também pelas figuras da próxima página).
@@ -126,6 +130,8 @@ levar o programa a apresentar um resultado ou comportamento incorreto,
 dizemos que ocorreu uma **falha** (*failure*).
 
 ## Testes de Unidade
+\index{Testes de Software!Testes de Unidade}
+\index{Testes de Unidade}
 
 Testes de unidade são testes automatizados de pequenas unidades de
 código, normalmente classes, as quais são testadas de forma isolada do
@@ -146,6 +152,13 @@ C1 é uma classe importante, que precisa ser testada em diferentes
 contextos. Por outro lado, C2 não possui testes, ou porque os
 desenvolvedores esqueceram de implementar ou porque ela é uma classe
 menos importante.
+
+\index{Testes de Unidade!xUnit}
+\index{Testes de Unidade!JUnit}
+\index{JUnit}
+\index{Smalltalk}
+\index{Beck, Kent}
+\index{Gamma, Erich}
 
 Testes de unidade são implementados usando-se frameworks construídos
 especificamente para esse fim. Os mais conhecidos são chamados de
@@ -233,6 +246,7 @@ método apenas cria uma pilha e testa se ela está vazia.
 
 Métodos de teste têm a seguinte estrutura:
 
+\index{Testes de Unidade!Fixture}
 -   Primeiro, cria-se o contexto do teste, também chamado de
     **fixture**. Para isso, deve-se instanciar os objetos que se
     pretende testar e, se for o caso, inicializá-los. No nosso
@@ -243,6 +257,7 @@ Métodos de teste têm a seguinte estrutura:
     sendo testada. No exemplo, chamamos o método `isEmpty()` e
     armazenamos o seu resultado em uma variável local.
 
+\index{Testes de Unidade!assert}
 -   Por fim, devemos testar se o resultado do método é aquele esperado.
     Para isso, deve-se usar um comando chamado **assert**. Na verdade,
     o JUnit oferece diversas variações de `assert`, mas todas têm o
@@ -250,6 +265,8 @@ Métodos de teste têm a seguinte estrutura:
     valor esperado. No exemplo, usamos `assertTrue`, que verifica se o
     valor passado como parâmetro é verdadeiro.
 
+\index{Testes de Unidade!JUnit}
+\index{JUnit}
 IDEs oferecem opções para rodar apenas os testes de um sistema, por
 exemplo, por meio de uma opção de menu chamada "Run as Test". Ou seja,
 se o desenvolvedor chamar "Run", ele irá executar o seu programa
@@ -389,7 +406,7 @@ usar a versão 4.12.
 ```
 
 ### Definições
-
+\index{Testes de Unidade!Definições}
 
 Antes de avançar, vamos apresentar algumas definições:
 
@@ -397,6 +414,7 @@ Antes de avançar, vamos apresentar algumas definições:
     anotação `@Test`. São também chamados de método de teste (*test
     method*).
 
+\index{Testes de Unidade!Fixture}
 -   **Fixture**: estado do sistema que será testado por um ou mais
     métodos de teste, incluindo dados, objetos, etc. O termo é reusado
     da indústria manufatureira, onde *fixture* é um equipamento que
@@ -406,11 +424,14 @@ Antes de avançar, vamos apresentar algumas definições:
     fixture é "fixar" o estado — isto é, os dados e objetos
     — exercitados no teste.
 
+\index{Testes de Unidade!Casos de Teste}
+
 -   **Casos de Teste (Test Case)**: classe com os métodos de teste. O
     nome tem origem nas primeiras versões do JUnit. Nessas versões, os
     métodos de testes eram implementados em classes que herdavam de
     uma classe `TestCase`.
 
+\index{Testes de Unidade!Suíte de Testes}
 -   **Suíte de Testes (Test Suite)**: conjunto de casos de teste, os
     quais são executados pelo framework de testes de unidade (no nosso
     caso, JUnit).
@@ -422,6 +443,7 @@ Antes de avançar, vamos apresentar algumas definições:
     executado pelos clientes do sistema.
 
 ### Quando Escrever Testes de Unidade?  
+\index{Testes de Unidade!Quando Escrever}
 
 Existem duas respostas principais para essa pergunta. Primeiro, pode-se
 escrever os testes após implementar uma pequena funcionalidade. Por
@@ -466,6 +488,7 @@ classe seja também responsável pela implementação de seus testes de
 unidade.
 
 ### Benefícios
+\index{Testes de Unidade!Benefícios}
 
 O principal benefício de testes de unidade é encontrar bugs, ainda na
 fase de desenvolvimento e antes que o código entre em produção, quando
@@ -495,6 +518,8 @@ comportamento da classe `Stack`. Por isso, muitas vezes, antes de manter
 um código com o qual ele não tenha familiaridade, um desenvolvedor
 começa analisando os seus testes.
 
+\index{Google}
+\index{Facebook}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -526,6 +551,7 @@ processo e as práticas de desenvolvimento de software dessas empresas:
 ```
 
 ## Princípios e Smells
+\index{Testes de Unidade! Princípios e Smells}
 
 Nesta seção, vamos agrupar a apresentação de princípios e anti-padrões
 para implementação de testes de unidade. O objetivo é discutir questões
@@ -533,6 +559,7 @@ importantes para a implementação de testes que tenham qualidade e que
 possam ser facilmente mantidos e entendidos.
 
 ### Princípios FIRST
+\index{Testes de Unidade!Princípios FIRST}
 
 Testes de unidades devem satisfazer às seguintes propriedades (cujas
 iniciais dão origem à palavra FIRST, em Inglês):
@@ -554,6 +581,8 @@ concorrente. Para que os testes sejam independentes, T1 não deve alterar
 alguma parte do estado global do sistema que depois será usada para
 computar o resultado de T2 e vice-versa.
 
+\index{Testes de Unidade!Flaky}
+\index{Testes Flaky}
 **Determinísticos (Repeatable)**: testes de unidade devem
 ter sempre o mesmo resultado. Ou seja, se um teste T é chamado *n*
 vezes, o resultado deve ser o mesmo nas *n* execuções. Isto é, ou T
@@ -613,6 +642,7 @@ Seção 8.2 e iremos discutir com mais profundidade na seção sobre
 Desenvolvimento Dirigido por Testes (Seção 8.6).
 
 ### Test Smells
+\index{Testes de Unidade!Smells}
 
 **Test Smells** representam estruturas e características
 "preocupantes" no código de testes de unidade, as quais, a princípio
@@ -649,6 +679,7 @@ permaneça simples, fácil de entender e livre dos test smells que
 comentamos nesta seção.
 
 ### Número de assert por Teste 
+\index{Testes de Unidade!Número de asserts}
 
 Alguns autores
 ([link](https://dl.acm.org/citation.cfm?id=1388398))
@@ -729,7 +760,10 @@ respectivamente, o resultado da repetição de uma determinada string
 zero, uma, duas e três vezes.
 
 ## Cobertura de Testes
+\index{Testes de Software!Cobertura}
+\index{Cobertura de Testes}
 
+\index{Cobertura de Testes!Comandos}
 Cobertura de testes é uma métrica que ajuda a definir o número de testes
 que precisamos escrever para um programa. Ela mede o percentual de
 comandos de um programa que são cobertos por testes, isto é:
@@ -803,6 +837,7 @@ Por fim, mesmo quando se usa TDD, a cobertura de testes costuma não
 chegar a 100%, embora normalmente fique acima de 90%
 ([link](https://dl.acm.org/citation.cfm?id=2808995)).
 
+\index{Google}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -825,6 +860,9 @@ implementados em Python, um pouco acima de 80%.
 
 ### Outras Definições de Cobertura de Testes
 
+\index{Cobertura de Testes!Funções}
+\index{Cobertura de Testes!Chamadas de Funções}
+\index{Cobertura de Testes!Branches}
 A definição de métrica de cobertura, apresentada
 acima, foi baseada em comandos, pois trata-se de sua definição mais
 comum. Porém, existem definições alternativas, tais como **cobertura de
@@ -872,6 +910,7 @@ teríamos que adicionar mais um comando `assert`, como:
 que cobertura de comandos.
 
 ## Testabilidade
+\index{Testes de Software!Testabilidade}
 
 Testabilidade é uma medida de quão fácil é implementar testes para um
 sistema. Como vimos, é importante que os testes sigam os princípios
@@ -889,6 +928,7 @@ e modelo, inversão de dependências, Demeter, dentre outros — tende a
 apresentar boa testabilidade. 
 
 ### Exemplo: Servlet 
+\index{Servlet}
 
 Servlet é uma tecnologia de Java para implementação de páginas Web
 dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa
@@ -1029,12 +1069,15 @@ disponível neste
 [link](https://gist.github.com/mtov/a3f73350010758925172a7f433e2ba71).
 
 ## Mocks
+\index{Testes de Software!Mocks}
+\index{Mocks}
 
 Para explicar o papel desempenhado por mocks em testes de unidade, vamos
 começar com um exemplo motivador e discutir porque é difícil escrever um
 teste de unidade para ele. Em seguida, vamos introduzir o conceito de
 mocks como uma possível solução para testar esse exemplo.
 
+\index{Stubs}
 ```{=latex}
 \begin{aviso}
 ```
@@ -1181,6 +1224,10 @@ disponível neste
 [link](https://gist.github.com/mtov/c162dce743cc2cb8fdbc25605c35cc2b).
 
 ### Frameworks de Mocks 
+\index{Mocks!Frameworks}
+\index{Mocks!Mockito}
+\index{Mockito}
+
 
 Mocks são tão comuns em testes de unidade que existem frameworks para
 facilitar a criação e "programação" de mocks (e/ou stubs). Não vamos
@@ -1249,7 +1296,11 @@ mockito, está neste
 [link](https://gist.github.com/mtov/f7781e3f164a62c85cf4294271b9c2fd).
 
 ### Mocks vs Stubs
+\index{Stubs}
+\index{Testes de Software!Comportamental}
+\index{Teste Comportamental}
 
+\index{Meszaros, Gerado}
 Alguns autores, como Martin Fowler
 ([link](https://martinfowler.com/articles/mocksArentStubs.html))
 e também Gerard Meszaros
@@ -1278,6 +1329,10 @@ parecido com um `assert`. No entanto, ele verifica se um evento ocorreu
 com o mock passado como argumento. No caso, verificamos se o método `send`
 do mock foi executado pelo menos uma vez, usando qualquer string como
 argumento.
+
+\index{Meszaros, Gerado}
+\index{Mocks!Objetos Dummy}
+\index{Mocks!Objetos Fake}
 
 Segundo Gerado Meszaros, mocks e stubs são casos especiais de **objetos
 dublê** (*double*). O termo é inspirado em dublês de atores em filmes.
@@ -1406,6 +1461,7 @@ está disponível neste
 [link](https://gist.github.com/mtov/5372c7ffebe79c21768d0b1290c409b1).
 
 ## Desenvolvimento Dirigido por Testes (TDD)
+\index{Desenvolvimento Dirigido por Testes (TDD)}
 
 Desenvolvimento Dirigido por Testes (*Test Driven Development*, TDD) é
 uma das práticas de programação propostas por Extreme Programming (XP).
@@ -1448,6 +1504,8 @@ TDD foi proposto com três objetivos principais em mente:
      isso, espera-se que o desenvolvedor simplifique a interface de C,
      use nomes de identificadores legíveis, evite muitos
      parâmetros, etc.
+
+\index{Desenvolvimento Dirigido por Testes (TDD)!Ciclo}
 
 Quando trabalha-se com TDD, o desenvolvedor segue um um ciclo composto
 por três estados, conforme mostra a próxima figura.
@@ -1620,6 +1678,8 @@ Por exemplo, podemos implementar um método para remover livros do
 carrinho. Para isso, temos que começar mais um ciclo.
 
 ## Testes de Integração
+\index{Testes de Software!Testes de Integração}
+\index{Testes de Integração}
 
 Com testes de integração — também chamados de **testes de serviços**
 — subimos para um nível intermediário da pirâmide de testes (veja
@@ -1683,6 +1743,8 @@ exceto aqueles relacionados com sua interface gráfica. Por isso, ele
 ainda não é um teste de sistema.
 
 ## Testes de Sistema
+\index{Testes de Software!Testes de Sistema}
+\index{Testes de Sistema}
 
 Testes de sistema estão posicionados no topo da pirâmide de testes.
 Trata-se de testes que simulam o uso de um sistema por um usuário real.
@@ -1692,6 +1754,8 @@ caros, que demandam maior esforço para implementação e que executam em
 mais tempo.
 
 ### Exemplo: Teste de Sistemas Web 
+\index{Testes de Sistema!Selenium}
+\index{Selenium}
 
 Selenium é um framework para automatizar testes de sistemas Web. O
 framework permite criar programas que funcionam como robôs que abrem
@@ -1779,7 +1843,10 @@ incorreta.
 ## Outros Tipos de Testes
 
 ### Testes Caixa Preta e Caixa Branca 
-
+\index{Testes de Software!Caixa Preta}
+\index{Testes de Software!Caixa Branca}
+\index{Testes de Software!Funcional}
+\index{Testes de Software!Estruturais}
 
 Técnicas de teste podem ser classificadas como caixa preta ou caixa
 branca. Quando se usa uma **técnica caixa preta**, os testes são
@@ -1805,6 +1872,7 @@ apenas a sua interface e requisitos externos) ou na forma de uma caixa
 branca (conhecendo-se e tirando-se proveito da sua estrutura interna,
 para elaboração de testes mais efetivos).
 
+\index{Beck, Kent}
 Uma observação semelhante pode ser feita sobre a relação entre TDD e
 testes caixa preta/branca. Para esclarecer essa relação, vamos usar
 algumas frases do do próprio Kent Beck, isto é, do inventor da ideia de
@@ -1820,6 +1888,8 @@ Dichotomies of Testing, Kent Beck*, Three Rivers Institute, June 2007):
 > testes caixa branca."
 
 ### Seleção de Dados de Teste
+\index{Testes de Software!Classes de Equivalência}
+\index{Classes de Equivalência}
 
 Quando se adota testes caixa preta existem técnicas para auxiliar na
 seleção das entradas que serão verificadas no teste. Partição via
@@ -1840,6 +1910,8 @@ salários, um de cada faixa salarial.
   De 3.751,06 até 4.664,68   22,5%           636,13
   Acima de 4.664,68          27,5%           869,36
 
+\index{Testes de Software!Análise de Valor Limite}
+\index{Análise de Valor Limite}
 **Análise de Valor Limite** (*Boundary Value Analysis*) é uma técnica
 complementar que recomenda testar uma unidade com os valores limites de
 cada classe de equivalência e seus valores subsequentes (ou
@@ -1874,6 +1946,7 @@ necessário. Por outro lado, algumas classes de equivalência podem ficar
 sem testes.
 
 ### Testes de Aceitação 
+\index{Testes de Software!Aceitação}
 
 São testes realizados pelo cliente, com dados do cliente. Os resultados
 desse teste irão determinar se o cliente está de acordo ou não com a
@@ -1893,6 +1966,9 @@ fizemos o sistema corretamente, isto é, de acordo com a sua
 especificação e/ou requisitos. Já validação testa se fizemos o sistema
 correto, isto é, aquele que o cliente pediu e precisa.
 
+\index{Testes de Software!Alfa}
+\index{Testes de Software!Beta}
+
 Em alguns casos, testes de aceitação podem ser divididos em duas fases.
 **Testes alfa** são realizados com alguns usuários, mas em um ambiente
 controlado, como a própria máquina do desenvolvedor. Se o sistema for
@@ -1901,6 +1977,7 @@ de usuários e não mais em um ambiente controlado. Esses testes são
 chamados de **testes beta**.
 
 ### Testes de Requisitos Não-Funcionais 
+\index{Testes de Software!Requisitos Não-Funcionais}
 
 Os testes anteriores, com exceção dos testes de aceitação, verificam
 apenas requisitos funcionais; logo, eles têm como objetivo encontrar

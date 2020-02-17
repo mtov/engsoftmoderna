@@ -5,9 +5,13 @@
 
 > *The best way to learn git is probably to first only do very basic things and not even look at some of the things you can do until you are familiar and confident about the basics.* -- Linus Torvalds
 
+\index{Git}
+\index{Torvalds, Linus}
 Neste apêndice, apresentamos e discutimos exemplos de uso do sistema Git, que é o sistema de controle de versões mais usado atualmente. Inspirados pela frase acima, de Linus Torvalds, criador do Git, vamos focar nos conceitos e comandos básicos desse sistema. Como sugere a frase, é importante dominar esses comandos antes de se aventurar no uso de comandos mais avançados. Caso o leitor não tenha conhecimento dos objetivos e vantagens proporcionados por um sistema de controle de versões, recomendamos primeiro a leitura da seção "Controle de Versões", do Capítulo 10 deste livro.
 
 ## Init & Clone
+\index{Git!Clone}
+\index{Git!Init}
 
 Para começar a usar o git para gerenciar as versões de um sistema
 devemos executar um dos seguintes comandos: **init** ou **clone**. O
@@ -25,6 +29,7 @@ em um repositório central. No exemplo, esse repositório é
 disponibilizado pelo GitHub.
 
 ## Commit
+\index{Git!Commit}
 
 Commits são usados para criar snapshots (ou fotografias) dos arquivos de
 um sistema. Uma vez tiradas essas fotografias, elas são armazenadas no
@@ -69,9 +74,11 @@ hexadecimal. Esses bytes correspondem a uma verificação de consistência
 hash SHA-1.
 
 ## Add 
+\index{Git!Add}
 
 Na máquina local, o sistema git manipula três áreas distintas:
 
+\index{Git!Diretório de Trabalho}
 *   Um **diretório de trabalho**, onde devemos salvar os arquivos que
     pretendemos versionar. Às vezes, essa área é chamada também de
     árvore de trabalho (*working tree*).
@@ -79,6 +86,8 @@ Na máquina local, o sistema git manipula três áreas distintas:
 *   O **repositório** propriamente dito, que armazena o histórico de
     commits.
 
+\index{Git!Index}
+\index{Git!Stage}
 *   Uma área intermediária, chamada de **index** ou **stage**, que
     armazena temporariamente os arquivos que se pretende versionar.
     Tais arquivos são ditos rastreáveis (**tracked)**.
@@ -154,6 +163,7 @@ o arquivo do diretório de trabalho.
 
 ## Status, Diff & Log
 
+\index{Git!Status}
 O comando **status** é um dos comandos git mais usados. Dentre outras informações, ele mostra o estado do diretório de trabalho e do index. Por exemplo, pode-se usar esse comando para obter informações sobre:
 
 * Arquivos do diretório de trabalho que foram alterados pelo desenvolvedor, mas que ele ainda não adicionou no index.
@@ -162,13 +172,17 @@ O comando **status** é um dos comandos git mais usados. Dentre outras informaç
 
 * Arquivos que encontram-se no index, aguardando um `commit`.
 
+\index{Git!Diff}
 O comando `git diff` é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um `git diff` antes de um `add`/`commit` para ter certeza das mudanças que iremos "perpetuar", em seguida, no sistema de controle de versões.
 
+\index{Git!Log}
 Já o comando `git log` lista informações sobre os últimos commits, como data, autor, hora e descrição do commit.
 
 
 ## Push & Pull
 
+\index{Git!Push}
+\index{Git!Pull}
 O comando **push** copia os commits mais recentes do repositório local
 para o repositório remoto. Portanto, ele é uma operação mais lenta, pois
 envolve comunicação pela rede. Um  `push` deve ser usado quando o
@@ -237,6 +251,8 @@ da Alice, para incluir a função `g` implementada por Bob.
 
 
 ## Conflitos de Merge
+\index{Git!Conflitos de Merge}
+\index{Conflitos de Merge}
 
 Conflitos de merge acontecem quando dois desenvolvedores alteram o mesmo
 trecho de código ao mesmo tempo. Para entender melhor essa situação,
@@ -336,6 +352,10 @@ conflitos mais complexos. Por exemplo, um mesmo arquivo pode apresentar
 vários conflitos. E também podemos ter conflitos em mais de um arquivo.
 
 ## Branches
+\index{Git!Branches}
+\index{Branches}
+\index{Branches!Branch Master}
+\index{Git!Master}
 
 O git organiza o diretório de trabalho em "diretórios virtuais",
 chamados de **branches**. Até agora, não precisamos comentar sobre
@@ -406,6 +426,7 @@ que está em produção — ele deve se certificar de que o branch
 corrente é o `master`. Independentemente do branch em que estiver, Bob
 deve usar  `add` e  `commit` para salvar o estado do seu trabalho.
 
+\index{Git!Merge}
 Bob vai continuar nesse fluxo, alternando entre os branches `f-novo` e
 `master`, até que a nova implementação de `f` esteja concluída. Quando isso
 acontecer, Bob vai precisar copiar o novo código de `f` para o código
@@ -436,6 +457,8 @@ seguinte comando no master:
 `git branch -d f-novo`
 
 ### Grafo de Commits
+\index{Git!Grafo de Commits}
+\index{Grafo de Commits}
 
 Commits podem possuir zero, um ou mais pais (ou
 antecessores). Como ilustra a próxima figura, o primeiro commit de um
@@ -445,6 +468,7 @@ possuem exatamente um pai.
 
 ![](figs/capAp/branches){width=60%}
 
+\index{Git!HEAD}
 Um branch nada mais é do que uma variável interna do git que contém o
 identificador do último commit realizado no branch. Existe ainda uma
 variável chamada `HEAD`, que aponta para a variável do branch atual. Ou
@@ -453,6 +477,7 @@ seja, `HEAD` contém o nome da variável que contém o identificador do
 
 ![](figs/capAp/head1){width=65%}
 
+\index{Git!Master}
 Nesse exemplo, existem dois branches, representados
 pelas variáveis `MASTER` e `ISSUE-45`. Cada uma delas aponta para o último
 commit de seu respectivo branch. A variável `HEAD`
@@ -478,6 +503,7 @@ fazer com que o próximo commit seja realizado nesse branch, isto é, que
 ela tenha o commit 6 como pai.
 
 ## Branches Remotos
+\index{Git!Branches Remotos}
 
 Até esse momento, trabalhamos com branches localmente, isto é, os
 branches que discutimos existem apenas no repositório local. No entanto,
@@ -534,6 +560,9 @@ E Alice também pode deletar seu branch local, chamando apenas:
 
 
 ## Pull Requests
+\index{Git!Pull Requests}
+\index{Git!GitHub}
+\index{GitHub}
 
 Pull requests é um mecanismo que viabiliza que um branch seja
 revisado e discutido antes de ser integrado no branch principal. Quando
@@ -615,6 +644,7 @@ integrar o código no master, bastando para isso clicar em um dos botões
 da página de revisão de pull requests.
 
 ## Squash
+\index{Git!Squash}
 
 Squash é um comando que permite unir diversos commits em um único
 commit. É uma operação recomendada, por exemplo, antes de submeter pull
@@ -670,6 +700,9 @@ mensagem, Bob deve salvar o arquivo e, então, o squash estará
 finalizado.
 
 ## Forks
+\index{Git!Fork}
+\index{Git!GitHub}
+\index{GitHub}
 
 Fork é o mecanismo que o GitHub oferece para clonar repositórios
 remotos, isto é, repositórios armazenados pelo próprio GitHub. Um fork é

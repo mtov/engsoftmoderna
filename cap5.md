@@ -5,6 +5,9 @@
 decomposition: how to take a complex problem and divide it up into
 pieces that can be solved independently.* -- John Ousterhout
 
+\index{Projeto de Software}
+\index{Princípios de Projeto}
+
 Este capítulo inicia com uma introdução ao projeto de software, na qual
 procuramos definir e motivar a importância desse tipo de atividade
 (Seção 5.1). Em seguida, discutimos diversas considerações relevantes em
@@ -19,6 +22,7 @@ tratamos de métricas para avaliar a qualidade de projetos de software
 
 ## Introdução 
 
+\index{Ousterhout, John}
 A afirmação de John Ousterhout que abre este capítulo é uma excelente
 definição para **projeto de software**. Apesar de não afirmar
 explicitamente, a citação assume que quando falamos de projeto estamos
@@ -39,6 +43,7 @@ software. Talvez, por isso, Ousterhout mencione que a decomposição de um
 problema em partes independentes é uma questão fundamental, não apenas
 em Engenharia de Software, mas em toda Ciência da Computação!
 
+\index{Abstração}
 Uma estratégia importante para combater a complexidade de sistemas de
 software passa pela criação de **abstrações**. Uma abstração — pelo
 menos em Computação — é uma representação simplificada de uma
@@ -109,6 +114,9 @@ léxico está abstraída (ou, se preferir, encapsulada) na função
 
 ### O Que Vamos Estudar?
 
+\index{Propriedades de Projeto}
+\index{Princípios de Projeto}
+
 É verdade que o projeto de sistemas de software depende de experiência
 e, em alguma medida, também de talento e criatividade. No entanto,
 existem algumas propriedades importantes no projeto de sistemas. Por
@@ -122,6 +130,7 @@ diretrizes para se garantir que um projeto atende a determinadas
 propriedades. Para concluir, vamos descrever métricas para
 quantificar propriedades como coesão, acoplamento e complexidade.
 
+\index{Projeto Orientado a Objetos}
 ```{=latex} 
 \begin{aviso} 
 ```
@@ -139,6 +148,7 @@ importantes em tais casos.
 
 ## Integridade Conceitual
 
+\index{Integridade Conceitual}
 Integridade conceitual é uma propriedade de projeto proposta por
 Frederick Brooks — o mesmo da Lei de Brooks mencionada no Capítulo
 1. O princípio foi enunciado em 1975, na primeira edição do livro *The
@@ -165,6 +175,7 @@ dólares. Essa falta de padronização é um sinal de falta de integridade
 conceitual e, como afirmamos, ela adiciona complexidade acidental no uso
 e entendimento do sistema.
 
+\index{Brooks, Frederick}
 Na primeira edição do seu livro, Brooks faz uma defesa enfática do
 princípio, afirmando que:
 
@@ -250,6 +261,9 @@ funcionalidades parecidas: comentários (em posts normais) e respostas
 
 ## Ocultamento de Informação
 
+\index{Ocultamento de Informação}
+\index{Information Hiding}
+\index{Parnas, David}
 Essa propriedade, uma tradução da expressão *information hiding*, foi
 discutida pela primeira vez em 1972, por David Parnas, em um dos artigos
 mais importantes e influentes da área de Engenharia de Software, de
@@ -260,6 +274,7 @@ resumo do artigo começa da seguinte forma:
 
 > "Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
 
+\index{Módulo}
 **Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
 
 Ocultamento de informação traz as seguintes vantagens para um sistema:
@@ -396,6 +411,8 @@ disponibiliza uma interface estável para os clientes da classe —
 representada pelo método `estaciona`, que só requer dois parâmetros do
 tipo `String`.
 
+\index{Amazon}
+\index{Bezos, Jeff}
 ```{=latex} 
 \begin{esmbox} 
 ```
@@ -430,6 +447,8 @@ Essas recomendações podem ser resumidas da seguinte forma: todos os desenvolve
 
 
 ### Getters e Setters
+\index{Getters}
+\index{Setters}
 
 Métodos `get` e `set` — muitas vezes chamados apenas de *getters* e
 *setters* — são muito usados em linguagens orientadas a objetos, como
@@ -465,6 +484,7 @@ esses métodos
 ([link](https://dl.acm.org/citation.cfm?id=3288797), Seção
 19.6):
 
+\index{Ousterhout, John}
 > "Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe."
 
 Em resumo: certifique-se de que é imprescindível liberar
@@ -493,6 +513,7 @@ tais como bibliotecas de depuração, serialização e mocks (iremos estudar
 mais sobre mocks no capítulo de Testes).
 
 ## Coesão
+\index{Coesão}
 
 A implementação de qualquer classe deve ser coesa, isto é, toda classe
 deve implementar uma única funcionalidade ou serviço. Especificamente,
@@ -513,6 +534,7 @@ Coesão tem as seguintes vantagens:
     testar uma classe coesa do que uma classe com várias
     responsabilidades.
 
+\index{Separação de Interesses}
 **Separação de interesses** (*separation of concerns*) é uma outra
 propriedade desejável em projeto de software, a qual é muito semelhante
 ao conceito de coesão. Ela defende que uma classe deve implementar
@@ -580,6 +602,7 @@ estacionamento. Para isso, poderia ser criada uma segunda classe,
 chamada, por exemplo, `Funcionario`.
 
 ## Acoplamento
+\index{Acoplamento}
 
 Acoplamento é a força (*strength*) da conexão entre duas classes. Apesar
 de parecer simples, o conceito possui algumas nuances, as quais derivam
@@ -597,6 +620,7 @@ classe B quando:
     externo de tais métodos. Por isso, são raras as mudanças em B que
     terão impacto na classe A.
 
+\index{Variáveis Globais}
 Por outro lado, existe um **acoplamento ruim** de uma classe A para uma
 classe B quando mudanças em B podem facilmente impactar A. Isso ocorre
 principalmente nas seguintes situações:
@@ -754,6 +778,9 @@ parâmetro do tipo `B`. Mesmo assim, o acoplamento entre as classes é de
 melhor qualidade, pois é mais fácil estudar e manter o código de `A` sem
 conhecer detalhes de `B`.
 
+\index{Acoplamento!Estrutural}
+\index{Acoplamento!Lógico}
+\index{Acoplamento!Evolutivo}
 Alguns autores usam ainda os termos acoplamento estrutural e acoplamento
 evolutivo (ou lógico), com o seguinte significado:
 
@@ -775,6 +802,8 @@ estabilidade da interface da classe de destino. Acoplamento evolutivo,
 principalmente quando qualquer mudança em B se propaga para a classe de
 origem A, representa um acoplamento ruim.
 
+\index{Facebook}
+\index{Beck, Kent}
 Kent Beck — na época em que trabalhou no
 Facebook — criou um glossário de termos relacionados com projeto de
 software. Nesse glossário, acoplamento é definido da seguinte forma
@@ -800,6 +829,8 @@ O comentário também deixa claro que acoplamento pode ser indireto. Isto
 é, mudanças em A podem ser propagar para B, e então alcançar C. Nesse
 caso, C está acoplado a A, mas de forma indireta.
 
+\index{Episódio do left-pad}
+\index{Left-pad}
 ```{=latex} 
 \begin{esmbox} 
 ```
@@ -829,6 +860,7 @@ eles não tinham a menor ideia de que estavam acoplados a ela.
 ```
 
 ## Princípios de Projeto
+\index{Princípios de Projeto}
 
 Princípios de projeto são recomendações mais concretas que
 desenvolvedores de software devem seguir para atender às propriedades de
@@ -852,6 +884,8 @@ contempladas ao seguir cada um desses princípios.
 | Substituição de Liskov| Extensibilidade
 
 
+\index{Princípios de Projeto!SOLID}
+\index{Martin, Robert}
 Cinco dos princípios que vamos estudar são conhecidos como **Princípios
 SOLID**, que é uma sigla cunhada por Robert Martin e Michael Feathers
 ([link](https://dl.acm.org/citation.cfm?id=3175742)). Ela
@@ -878,6 +912,8 @@ requisitos de software é que eles mudam com freqüência. O mesmo acontece
 com tecnologias de implementação, como bibliotecas e frameworks.
 
 ### Princípio da Responsabilidade Única
+\index{Princípios de Projeto!Responsabilidade Única}
+\index{Responsabilidade Única}
 
 Esse princípio é uma aplicação direta da ideia de coesão. Ele propõe o
 seguinte: toda classe deve ter uma única responsabilidade. Mais ainda,
@@ -939,6 +975,8 @@ class Disciplina {
 ```
 
 ### Princípio da Segregação de Interfaces 
+\index{Princípios de Projeto!Segregação de Interfaces}
+\index{Segregação de Interfaces}
 
 Assim como o princípio anterior, esse princípio é uma aplicação da ideia
 de coesão. Melhor dizendo, ele é um caso particular de Responsabilidade
@@ -956,7 +994,6 @@ métodos M~y~ são usados apenas por clientes C~y~ (que não usam os métodos
 M~x~). Consequentemente, essa interface deveria ser quebrada em duas
 interfaces menores e específicas: uma interface contendo apenas os
 métodos M~x~ e a segunda interface contendo apenas os métodos M~y~.
-
 
 **Exemplo:** Suponha uma interface `Funcionario` com os seguintes métodos:
 (1) retornar salário, (2) retornar contribuição mensal para o FGTS
@@ -1003,6 +1040,10 @@ interface FuncionarioPublico extends Funcionario{
 ```
 
 ### Princípio de Inversão de Dependências
+\index{Princípios de Projeto!Inversão de Dependências}
+\index{Princípios de Projeto!Prefira Interfaces a Classes}
+\index{Inversão de Dependências}
+\index{Prefira Interfaces a Classes}
 
 Esse princípio recomenda que uma classe cliente deve estabelecer
 dependências prioritariamente com abstrações e não com implementações
@@ -1097,15 +1138,19 @@ ou atributos usando o tipo `List`, pois assim você estará criando código
 compatível com as diversas implementações concretas dessa interface.
 
 ### Prefira Composição a Herança
+\index{Princípios de Projeto!Prefira Composição a Herança}
+\index{Prefira Composição a Herança}
 
 Antes de explicar o princípio, vamos esclarecer que existem dois tipos
 de herança:
 
+\index{Herança!de Classes}
 -   **Herança de classes** (exemplo: `class A extends B`), que é aquela
     que envolve reúso de código. Não apenas neste capítulo, mas em
     todo o livro, quando mencionarmos apenas o termo herança estaremos
     nos referindo a herança de classes.
 
+\index{Herança!de Interfaces}
 -   **Herança de interfaces** (exemplo: `interface I implements J`), que
     não envolve reúso de código. Essa forma de herança é mais simples
     e não suscita preocupações. Quando precisarmos de nos referir a
@@ -1124,12 +1169,14 @@ origem no forte acoplamento que existe entre subclasses e superclasses,
 conforme descrito por Gamma e colegas no livro sobre padrões de projeto
 ([link](https://dl.acm.org/citation.cfm?id=186897)):
 
+\index{Gangue dos Quatro}
 > "Herança expõe para subclasses detalhes de implementação das classes
 pai. Logo, frequentemente diz-se que herança viola o
 encapsulamento das classes pai. A implementação das subclasses se
 torna tão acoplada à implementação da classe pai que qualquer mudança
 nessas últimas pode forçar modificações nas subclasses."
 
+\index{Composição}
 O princípio, porém, não proíbe o uso de herança. Mas ele recomenda: se
 existirem duas soluções de projeto, uma baseada em herança e outra em
 composição, a solução por meio de composição, normalmente, é a melhor.
@@ -1194,6 +1241,8 @@ Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).
 Antes de concluir, gostaríamos de mencionar três pontos suplementares ao
 que discutimos sobre "Prefira Composição a Herança":
 
+\index{Reuso!Caixa-Preta}
+\index{Reuso!Caixa-Branca}
 -   Herança é classificada como um mecanismo de **reuso caixa-branca**,
     pois as subclasses costumam ter acesso a detalhes de implementação
     da classe base. Por outro lado, composição é um mecanismo de
@@ -1203,11 +1252,16 @@ que discutimos sobre "Prefira Composição a Herança":
     herança por uma solução baseada em composição é o Padrão
     Decorador, que vamos estudar no próximo capítulo.
 
+\index{Go}
+\index{Rust}
 -   Por conta dos problemas discutidos nesta seção, linguagens de
     programação mais recentes — como Go e Rust
     — não incluem suporte a herança.
 
 ### Princípio de Demeter
+\index{Princípios de Projeto!Demeter}
+\index{Demeter}
+\index{Princípio do Menor Privilégio}
 
 O nome desse princípio faz referência a um grupo de pesquisa da
 Northeastern University, em Boston, EUA. Esse grupo, chamado Demeter,
@@ -1318,6 +1372,9 @@ jornaleiro. Finalmente, uma exceção sinaliza quando o `Cliente` não possui
 recursos suficientes para pagar pelo jornal.
 
 ### Princípio Aberto/Fechado
+\index{Princípios de Projeto!Aberto/Fechado}
+\index{Aberto/Fechado}
+\index{Meyer, Bertrand}
 
 Esse princípio, originalmente proposto por Bertrand Meyer ainda na
 década de 80
@@ -1414,6 +1471,8 @@ Logo, sob o critério de customização do algoritmo de ordenação, o método
 `sort` não atende ao Princípio Aberto/Fechado.
 
 ### Princípio de Substituição de Liskov
+\index{Princípios de Projeto!Substituição de Liskov}
+\index{Substituição de Liskov}
 
 Conforme já discutimos ao falar do princípio "Prefira Composição a
 Herança", herança não é mais um conceito popular como foi na década de
@@ -1424,6 +1483,7 @@ vantagem é que comportamentos (isto é, métodos) comuns a essas classes
 podem ser implementados uma única vez, na classe base. Feito isso, eles
 são herdados em todas as subclasses.
 
+\index{Liskov, Barbara}
 O Princípio de Substituição de Liskov explicita regras para redefinição
 de métodos de classes base em classes filhas. O nome do princípio é uma
 referência a Barbara Liskov, professora do MIT e ganhadora da edição de
@@ -1547,7 +1607,8 @@ execução, a chamada `soma(1,2)` retorna 3 (isto é, 1+2); na execução
 seguinte, a mesma chamada irá retornar 12 (isto é, "1"+ "2" = "12"
 ou 12, como inteiro).
 
-## Métricas
+## Métricas de Código Fonte
+\index{Métricas de Código Fonte} 
 
 Ao longo dos anos, diversas métricas foram propostas para quantificar
 propriedades de um projeto de software. Normalmente, essas métricas
@@ -1577,6 +1638,9 @@ que calculam essas métricas de forma automática.
 
 ### Tamanho
 
+\index{Métricas de Código Fonte!Tamanho} 
+\index{Métricas de Código Fonte!Linhas de Código (LOC)} 
+\index{Linhas de Código (LOC)}
 A métrica de código fonte mais popular é **linhas de código** (LOC,
 *lines of code*). Ela pode ser usada para medir o tamanho de uma função,
 classe, pacote ou de um sistema inteiro. Quando se reporta os resultados
@@ -1593,6 +1657,7 @@ podem ter complexidade diferente. Ken Thompson — um dos
 desenvolvedores do sistema operacional Unix — tem uma frase a esse
 respeito:
 
+\index{Thompson, Ken}
 > "Um dos dias mais produtivos da minha vida foi quando eu deletei 1.000
 linhas de código de um sistema."
 
@@ -1607,6 +1672,9 @@ Outras metas de tamanho de um sistema incluem: número de métodos, número
 de atributos, número de classes e número de pacotes.
 
 ### Coesão
+\index{Métricas de Código Fonte!Coesão}
+\index{Métricas de Código Fonte!LCOM (Lack of Cohesion Between Methods)}
+\index{LCOM (Lack of Cohesion Between Methods)}
 
 Uma das métricas mais conhecidas para se calcular coesão é chamada de
 **LCOM** (*Lack of Cohesion Between Methods*). Na verdade, como seu nome
@@ -1668,7 +1736,6 @@ da interseção que define o valor de LCOM.
 
 ![Exemplo de cálculo de LCOM](figs/cap5/lcom.jpg){width=80%}
 
-
 Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis
 pares de métodos, mas dois deles acessam pelo menos um atributo em comum
 (veja terceira coluna da tabela). Resta um único par de métodos que não
@@ -1696,6 +1763,10 @@ reportar valores de LCOM, é importante deixar claro qual versão da
 métrica está sendo adotada.
 
 ### Acoplamento
+
+\index{Métricas de Código Fonte!Acoplamento}
+\index{Métricas de Código Fonte!CBO (Coupling Between Objects)}
+\index{CBO (Coupling Between Objects)}
 
 **CBO** (*Coupling Between Objects*) é uma métrica para medir
 **acoplamento estrutural** entre duas classes. Ela também foi proposta
@@ -1753,6 +1824,11 @@ biblioteca de Java (por exemplo, String) ou uma classe mais instável da
 própria aplicação que está sendo desenvolvida.
 
 ### Complexidade
+
+\index{Métricas de Código Fonte!Complexidade Ciclomática}
+\index{Métricas de Código Fonte!Complexidade de McCabe}
+\index{Complexidade Ciclomática}
+\index{Complexidade de McCabe}
 
 **Complexidade Ciclomática** (CC) é uma métrica proposta por Thomas
 McCabe em 1976 para medir a complexidade do código de uma função ou
@@ -1833,6 +1909,7 @@ Languages, and Applications (OOPSLA), 1991.
     propriedade de projeto? Por outro lado, qual propriedade de
     projeto estará sendo afetada de modo negativo? Justifique.
 
+\index{Ousterhout, John}
 3\.  **Classitis** é o nome dado por John Ousterhout à proliferação de
     pequenas classes em um sistema. Segundo ele, *classitis* pode
     resultar em classes que individualmente são simples, mas que

@@ -20,6 +20,9 @@ não é recomendado (Seção 6.13).
 
 ## Introdução 
 
+\index{Padrões de Projeto}
+\index{Alexander, Cristopher}
+
 Padrões de projeto são inspirados em uma ideia proposta por Cristopher
 Alexander, um arquiteto — de construções civis e não de software
 — e professor da Universidade de Berkeley. Em 1977, Alexander lançou
@@ -29,6 +32,11 @@ padrões para construção de cidades e prédios. Segundo Alexander:
 > Cada padrão descreve um problema que sempre ocorre em nosso contexto
 e uma solução para ele, de forma que possamos usá-la um
 milhão de vezes.
+
+\index{Gamma, Erich}
+\index{Helm, Richard}
+\index{Johnson, Ralph}
+\index{Vlissides, John}
 
 Em 1995, Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides
 lançaram um livro adaptando as ideias de Alexander para o mundo de
@@ -42,6 +50,7 @@ projeto da seguinte forma:
 
 > Padrões de projeto descrevem objetos e classes que se relacionam para resolver um problema de projeto genérico em um contexto particular.
 
+\index{Gangue dos Quatro}
 Assim, para entender os padrões propostos pela *Gang of Four* — nome
 pelo qual ficaram conhecidos os autores e também o livro de padrões de
 projeto — precisamos entender: (1) o problema que o padrão pretende
@@ -89,6 +98,7 @@ cenário de extensão do código mostrado, envolvendo a implementação de
 novos requisitos. Então vamos argumentar que essa extensão exigirá algum
 esforço, que poderá ser minimizado se usarmos um padrão de projeto.
 
+\index{Design for Change}
 Os quatro autores do livro de padrões de projeto defendem que devemos
 projetar um sistema pensando em mudanças que inevitavelmente vão ocorrer
 — eles chamam essa preocupação de *design for change*. Conforme
@@ -100,15 +110,18 @@ No livro sobre padrões de projeto, são propostos 23 padrões, divididos
 nas seguintes três categorias (os padrões que estudaremos neste capítulo estão
 em negrito, seguido do número da seção onde eles são apresentados):
 
+\index{Padrões de Projeto!Criacionais}
 -   **Criacionais**: padrões que propõem soluções flexíveis para criação
     de objetos. São eles: **Abstract Factory (6.2)**, Factory Method, 
     **Singleton (6.3)**, **Builder (6.12)** e Prototype.
 
+\index{Padrões de Projeto!Estruturais}
 -   **Estruturais**: padrões que propõem soluções flexíveis para
     composição de classes e objetos. São eles: **Proxy (6.4)**, 
     **Adapter (6.5)**, **Facade (6.6)**, **Decorator (6.7)**, Bridge, 
     Composite e Flyweight.
 
+\index{Padrões de Projeto!Comportamentais}
 -   **Comportamentais**: padrões que propõem soluções flexíveis para
     interação e divisão de responsabilidades entre classes e objetos.
     São eles: **Strategy (6.8)**, **Observer (6.9)**, **Template Method (6.10)**, **Visitor (6.11)**, Chain of Responsibility, Command, Interpreter, **Iterator (6.12)**, Mediator, Memento e State.
@@ -119,6 +132,8 @@ Abstrata, Método Fábrica, Adaptador, Decorador, Observador e Iterador.
 Os demais serão referenciados usando o nome original.
 
 ## Fábrica
+\index{Padrões de Projeto!Fábrica}
+\index{Fábrica}
 
 **Contexto**: Suponha um sistema distribuído baseado em TCP/IP. Nesse
 sistema, três funções `f`, `g` e `h` criam objetos do tipo `TCPChannel` para
@@ -184,6 +199,9 @@ void h() {
 }
 ```
 
+\index{Padrões de Projeto!Método Fábrica Estático}
+\index{Método Fábrica Estático}
+\index{Prefira Interfaces a Classes}
 Nessa nova versão, as funções `f`, `g` e `h` não tem consciência do tipo de
 `Channel` que vão criar e usar. Elas chamam um **Método Fábrica
 Estático**, que instancia e retorna um objeto de uma classe concreta
@@ -228,6 +246,8 @@ para criação de canais e portas de comunicação. Podemos, por exemplo,
 ter duas subclasses: `TCPProtocolFactory` e `UDPProtocolFactory`.
 
 ## Singleton
+\index{Padrões de Projeto!Singleton}
+\index{Singleton}
 
 **Contexto**: Suponha uma classe `Logger`, usada para registrar as
 operações realizadas em um sistema. Um uso dessa classe é mostrado a
@@ -357,6 +377,8 @@ está disponível neste
 [link](https://gist.github.com/mtov/704348e216e85918d7375a6b3d40dcdb).
 
 ## Proxy
+\index{Padrões de Projeto!Proxy}
+\index{Proxy}
 
 **Contexto**: Suponha uma classe `BookSearch`, cujo principal método
 pesquisa por um livro, dado o seu ISBN:
@@ -459,6 +481,7 @@ considerando a solução que usa um proxy:
 Além de ajudar na implementação de caches, proxies podem ser usados para
 implementar outros requisitos não-funcionais. Alguns exemplos incluem:
 
+\index{Stubs}
 -   Comunicação com um cliente remoto, isto é, pode-se usar um proxy
     para encapsular protocolos e detalhes de comunicação. Esses
     proxies são chamados de **stubs**.
@@ -477,6 +500,8 @@ implementar outros requisitos não-funcionais. Alguns exemplos incluem:
     funcionais.
 
 ## Adaptador
+\index{Padrões de Projeto!Adaptador}
+\index{Adaptador}
 
 **Contexto**: Suponha um sistema que tenha que controlar projetores
 multimídia. Para isso ele deve instanciar objetos de classes fornecidas
@@ -530,6 +555,7 @@ foram implementadas pelos seus fabricantes e estão prontas para uso. Ou
 seja, não temos acesso ao código dessas classes para fazer com que
 elas implementem a interface `Projetor`.
 
+\index{Wrapper}
 **Solução**: O padrão de projeto **Adaptador** — também conhecido
 como **Wrapper** — é uma solução para o nosso problema. Recomenda-se
 usar esse padrão quando temos que converter a interface de uma classe
@@ -574,7 +600,8 @@ segunda classe adaptadora. No entanto, seu código será parecido com
 `AdaptadorProjetorSamsung`.
 
 ## Fachada
-
+\index{Padrões de Projeto!Fachada}
+\index{Fachada}
 
 **Contexto**: Suponha que implementamos um interpretador para uma
 linguagem X. Esse interpretador permite executar programas X a partir de
@@ -639,7 +666,8 @@ objetos de tipos internos do interpretador e chamar dois métodos. Agora,
 basta criar um único objeto e chamar `eval`.
 
 ## Decorador
-
+\index{Padrões de Projeto!Decorador}
+\index{Decorador}
 
 **Contexto**: Vamos voltar ao sistema de comunicação remota usado para
 explicar o Padrão Fábrica. Suponha que as classes `TCPChannel` e
@@ -765,7 +793,7 @@ Essa classe tem duas características importantes:
     `ChannelDecorator` no lugar.
 
 -   Ela possui internamente um objeto do tipo `Channel` para o qual delega
-    as chamadas aos métodos `send` e `receive. Em outras palavras, um
+    as chamadas aos métodos `send` e `receive`. Em outras palavras, um
     decorador, no nosso caso, vai sempre referenciar um outro
     decorador. Após implementar a funcionalidade que lhe cabe — um
     buffer, compactação, etc — ele repassa a chamada para esse
@@ -823,8 +851,10 @@ execuções de métodos:
 está disponível neste
 [link](https://gist.github.com/mtov/c8d65378a2904af01c20c53922f5ae1d).
 
-## Strategy
 
+## Strategy
+\index{Padrões de Projeto!Strategy}
+\index{Strategy}
 
 **Contexto**: Suponha que estamos implementando um pacote de estruturas
 de dados, com a seguinte classe lista:
@@ -912,7 +942,8 @@ class ShellSortStrategy extends SortStrategy {
 ```
 
 ## Observador
-
+\index{Padrões de Projeto!Observador}
+\index{Observador}
 
 **Contexto**: Suponha que estamos implementando um sistema para
 controlar uma estação meteorológica. Nesse sistema, temos que manipular
@@ -1040,7 +1071,8 @@ interface `Observer`, acesse o seguinte
 [link](https://gist.github.com/mtov/5fadb0e599cb84fd6bd124b2ff37c03c).
 
 ## Template Method
-
+\index{Padrões de Projeto!Template Method}
+\index{Template Method}
 
 **Contexto**: Suponha que estamos desenvolvendo uma folha de pagamento.
 Nela, temos uma classe `Funcionario`, com duas subclasses:
@@ -1099,6 +1131,8 @@ modificação. No entanto, caberá às subclasses implementar os três passos
 (métodos) abstratos: `calcDescontosPrevidencia`, `calcDescontosPlanoSaude` e
 `calcOutrosDescontos`.
 
+\index{Frameworks}
+\index{Inversão de Controle}
 Métodos template permitem que "código antigo" chame "código novo".
 No exemplo, a classe `Funcionario` provavelmente foi implementada antes de
 `FuncionarioPublico` e `FuncionarioCLT`. Logo, dizemos que `Funcionario` é
@@ -1113,7 +1147,8 @@ uma alternativa interessante para que um cliente implemente o código
 faltante em um framework.
 
 ## Visitor
-
+\index{Padrões de Projeto!Visitor}
+\index{Visitor}
 
 **Contexto**: Suponha o sistema de estacionamentos que usamos no
 Capítulo 5. Suponha que nesse sistema existe uma classe `Veiculo`, com
@@ -1182,7 +1217,9 @@ method PrintVisitor.visit(Onibus) is not applicable
   (argument mismatch; Veiculo cannot be converted to Onibus)
 ```
 
-
+\index{Despacho Duplo}
+\index{Double Dispatch}
+\index{Common Lisp}
 Na verdade, esse código somente compila em linguagens que oferecem
 **despacho duplo** de chamadas de métodos (*double dispatch*). Nessas
 linguagens, os tipos do objeto alvo e de um dos parâmetros de chamada
@@ -1200,6 +1237,7 @@ operação em uma família de objetos, sem que seja preciso modificar as
 classes dos mesmos. Além disso, o padrão Visitor deve funcionar mesmo em
 linguagens com *single dispatching* de métodos, como Java.
 
+\index{Single Dispatch}
 Como primeiro passo, temos que implementar um método `accept` em cada
 classe da hierarquia. Na classe raiz, ele é abstrato. Nas subclasses,
 ele recebe como parâmetro um objeto do tipo `Visitor`. E a sua
@@ -1266,6 +1304,9 @@ está disponível neste
 
 ## Outros Padrões de Projeto
 
+\index{Padrões de Projeto!Iterador}
+\index{Iterador}
+
 **Iterador** é um padrão de projeto que padroniza uma interface para
 caminhar sobre uma estrutura de dados. Normalmente, essa interface
 inclui métodos como `hasNext()` e `next()`, como mostrado no seguinte
@@ -1284,6 +1325,9 @@ Um iterador permite percorrer uma estrutura de dados sem conhecer o seu
 tipo concreto. Em vez disso, basta conhecer os métodos da interface
 Iterator. Iteradores também permitem que múltiplos caminhamentos sejam
 realizadas de forma simultânea em cima da mesma estrutura de dados.
+
+\index{Padrões de Projeto!Builder}
+\index{Builder}
 
 **Builder** é um padrão de projeto que facilita a instanciação de
 objetos que têm muitos atributos, sendo alguns deles opcionais. Se o
@@ -1374,6 +1418,7 @@ são questionáveis. Existe até um termo para se referir a essa situação:
 **paternite**, isto é, uma "inflamação" associada ao uso precipitado
 de padrões de projeto.
 
+\index{Ousterhout, John}
 John Ousterhout tem um comentário relacionado a essa "doença":
 
 > "O maior risco de padrões de projetos é a sua super-aplicação
@@ -1558,6 +1603,9 @@ chamamos de paternite, você fez a união das classes `FileInputStream` e
 o mecanismo de buffer será ativado por *default* na classe que você criou.
 Porém, como você tornaria possível ativar buffers na nova classe, caso
 isso fosse necessário?
+
+\index{Padrões de Projeto!Null Object}
+\index{Null Object}
 
 12\. Em uma entrevista dada ao site InformIT, em 2009, por ocasião dos
 15 anos do lançamento da primeira edição do GoF, três dos autores do

@@ -3,7 +3,7 @@
 
 > *The hardest single part of building a software system is deciding precisely what to build.* -- Frederick Brooks
 
-\index{Requisitos de Software}
+\index{Requisitos}
 Este capítulo inicia com uma apresentação sobre a importância e os diversos tipos de requisitos de software (Seção 3.1). Em seguida, caracterizamos e apresentamos as atividades que compõem o que chamamos de Engenharia de Requisitos (Seção 3.2). As quatro seções seguintes apresentam quatro técnicas e documentos para especificação e validação de requisitos. Na Seção 3.3, tratamos de histórias de usuário, as quais são os principais instrumentos de Engenharia de Requisitos quando se usa Métodos Ágeis de Desenvenvolvimento. Em seguida, na Seção 3.4 tratamos de casos de uso, que são documentos tradicionais e mais detalhados para especificação de requisitos. Na Seção 3.5, vamos tratar de Produto Mínimo Viável (MVP), muito usados modernamente para prospectar e validar requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também muito usados hoje em dia para validar e definir os requisitos de produtos de software.
 
 ## Introdução
@@ -14,7 +14,7 @@ Este capítulo inicia com uma apresentação sobre a importância e os diversos 
 \index{Requisitos!Não-Funcionais}
 Vamos usar novamente o exemplo do Capítulo 1, relativo a um sistema de home-banking, para ilustrar a diferença entre esses dois tipos de requisitos. Em um sistema de home-banking, os requisitos funcionais incluem informar o saldo e extrato de uma conta, realizar transferências entre contas, pagar um boleto bancário, cancelar um cartão de débito, dentre outros. Já os requisitos não-funcionais estão relacionados com a qualidade do serviço prestado pelo sistema, incluindo características como desempenho, disponibilidade, níveis de segurança, portabilidade, privacidade, consumo de memória e disco, dentre outros. Portanto, os requisitos não-funcionais definem restrições ao funcionamento do sistema. Por exemplo, não basta que o sistema de home-banking implemente todas as funcionalidades requeridas pelo banco. Adicionalmente, ele deve ter uma disponibilidade de 99,9%  —  a qual funciona, portanto, como uma restrição ao seu funcionamento.
 
-\index{Fred Brooks}
+\index{Brooks, Frederick}
 Como expresso por Frederick Brooks na sentença que abre este capítulo, a definição dos requisitos é uma etapa crucial da construção de qualquer sistema de software. De nada adianta ter um sistema com o melhor design, implementado na mais moderna linguagem, usando o melhor processo de desenvolvimento, com alta cobertura de testes, etc e ele não atender às necessidades de seus usuários.
 Problemas na especificação de requisitos também têm um custo alto. Eles podem requerer trabalho extra, quando se descobre — após o sistema ficar pronto  —  que os requisitos foram especificados de forma incorreta ou que requisitos importantes não foram especificados. No limite, corre-se o risco de entregar um sistema que vai ser rejeitado pelos seus usuários, pois ele não resolve os seus problemas.
 
@@ -31,7 +31,7 @@ Requisitos funcionais, na maioria das vezes, são especificados em linguagem nat
 
 O uso de métricas evita especificações genéricas, como "o sistema deve ser rápido e ter alta disponibilidade". Em vez disso, é preferível definir que o sistema deve ter 99,99% de disponibilidade e que 99% de todas as transações realizadas em qualquer janela de 5 minutos devem ter um tempo de resposta máximo de 1 segundo.
 
-\index{Ian Sommerville}
+\index{Sommerville, Ian}
 Alguns autores, como Ian Sommerville ([link](https://iansommerville.com/software-engineering-book/)), também classificam requisitos em **requisitos de usuário** e **requisitos de sistema**. Requisitos de usuários são requisitos de mais alto nível, escritos por usuários, normalmente em linguagem natural e sem entrar em detalhes técnicos. Já requisitos de sistema são técnicos, precisos e escritos pelos próprios desenvolvedores. Normalmente, um requisito de usuário é expandido em um conjunto de requisitos de sistema. Suponha, por exemplo, um sistema bancário. Um requisito de usuário  —  especificado pelos funcionários do banco  —  pode ser o seguinte: "o sistema deve permitir transferências de valores para uma conta corrente de outro banco, por meio de TEDs". Esse requisito dá origem a um conjunto de requisitos de sistema, os quais vão detalhar e especificar o protocolo a ser usado para realização de tais transferências entre bancos. Portanto, requisitos de usuário estão mais próximos do problema, enquanto que requisitos de sistema estão mais próximos da solução.
 
 ## Engenharia de Requisitos
@@ -181,7 +181,7 @@ Primeiro, mostramos histórias propostas por usuários típicos (veja a a seguir
 >
 > Como usuário típico, eu gostaria de receber e-mails com novas aquisições
 
-\index{Histórias de Usuários!Épicas}
+\index{Histórias de Usuários!Épico}
 Em seguida, mostramos as histórias propostas por professores. É importante mencionar que, de fato, os professores foram os usuários que lembraram de requisitar as histórias a seguir. Eles podem ter feito isso, por exemplo, em um workshop de escrita de histórias. Mas isso não implica que apenas professores poderão fazer uso dessas histórias. Por exemplo, ao detalhar as histórias em um sprint, o representante dos clientes (*product owner*) pode achar interessante permitir que qualquer usuário faça doações de livros e não apenas professores. Por fim, a última história sugerida por professores  —  permitir devoluções em outras bibliotecas da universidade  —  pode ser considerada como um **épico**, isto é, uma história mais complexa. Como a universidade possui mais de uma biblioteca, o professor gostaria de realizar um empréstimo na Biblioteca Central e devolver o livro na biblioteca do seu departamento, por exemplo. No entanto, essa funcionalidade requer a integração dos sistemas das duas bibliotecas e, também, pessoal disponível para transportar o livro para sua biblioteca original.
 
 > Como professor, eu gostaria de realizar empréstimos de maior duração
@@ -248,8 +248,11 @@ vamos responder algumas perguntas sobre histórias de usuários:
 \index{Casos de Uso}
 **Casos de uso** (*use cases*) são documentos textuais de especificação de requisitos. Como veremos nesta seção, eles incluem descrições mais detalhadas do que histórias de usuário. Recomenda-se que casos de uso sejam escritos na fase de Especificação de Requisitos, considerando que estamos seguindo um processo de desenvolvimento do tipo Waterfall. Eles são escritos pelos próprios desenvolvedores do sistema  —  às vezes, chamados de Engenheiros de Requisitos durante essa fase do desenvolvimento. Para isso, os desenvolvedores podem se valer, por exemplo, de entrevistas com os usuários do sistema. Apesar de escritos pelos desenvolvedores, casos de uso podem ser lidos, entendidos e validados pelos usuários, antes de as fases de design e implementação terem início.
 
+\index{Casos de Uso!Ator}
 Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema com um determinado objetivo. Tipicamente, esse ator é um usuário humano (embora, raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o importante é que os atores sejam entidades externas ao sistema.
 
+\index{Casos de Uso!Fluxo Normal}
+\index{Casos de Uso!Extensões}
 Explicando com mais detalhes, um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o **fluxo normal** de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário onde tudo dá certo, às vezes chamado também de "fluxo feliz". Já a segunda lista inclui **extensões ao fluxo normal**, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos  —  normal e extensões  —  serão posteriormente implementados no sistema.
 
 Mostra-se a seguir um exemplo de caso de uso, referente a um sistema bancário, e que especifica uma transferência entre contas, realizada por um cliente do banco.
@@ -301,6 +304,7 @@ Para concluir, vamos descrever algumas boas práticas de escrita de casos de uso
 
 * As ações de um caso de uso devem ser escritas em uma linguagem simples e direta. "Escreva casos de uso como se estivesse no início do ensino fundamental" é uma sugestão ouvida com frequência. Sempre que possível, use o ator principal como sujeito das ações, seguido de um verbo. Por exemplo, "o cliente insere o cartão no caixa eletrônico". Porém, se a ação for realizada pelo sistema, escreva algo como: "o sistema valida o cartão inserido".
 
+\index{Cockburn, Alistair}
 * Casos de uso devem ser pequenos, com poucos passos, principalmente no fluxo normal, para facilitar o entendimento. Alistair Cockburn, autor de um conhecido livro sobre casos de uso ([link](https://dl.acm.org/citation.cfm?id=517669)), recomenda que eles devem ter no máximo 9 passos no fluxo normal. Ele afirma literalmente o seguinte: "eu raramente encontro um caso de uso bem escrito com mais de 9 passos no cenário principal de sucesso." Portanto, se você estiver escrevendo um caso de uso e ele começar a ficar extenso, tente quebrá-lo em dois casos de uso menores. Outra alternativa consiste em agrupar alguns passos. Por exemplo, os passos "usuário informa login" e "usuário informa senha" podem ser agrupados em "usuário informa login e senha".
 
 * Casos de uso não são algoritmos escritos em pseudo-código. O nível de abstração é maior do que aquele necessário em algoritmos. Lembre-se de que os usuários do sistema cujos requisitos estão sendo documentados devem ser capazes de ler, entender e descobrir problemas em casos de uso. Por isso, evite os comandos "se", "repita até", etc. Por exemplo, em vez de um comando de repetição, você pode usar algo como: "o cliente pesquisa o catálogo até encontrar um produto que pretenda comprar".
@@ -313,8 +317,8 @@ Para concluir, vamos descrever algumas boas práticas de escrita de casos de uso
 
 ### Diagramas de Casos de Uso
 
-\index{Diagramas de Casos de Uso}
-\index{UML!Diagramas de Casos de Uso}
+\index{Diagramas UML!Casos de Uso}
+\index{UML!Diagrama de Casos de Uso}
 
 No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto, gostaríamos de adiantar e comentar sobre um dos diagramas UML, chamado **Diagrama de Casos de Uso**. Esse diagrama é um "índice gráfico" de casos de uso. Ele representa os atores de um sistema (como pequenos bonecos) e os casos de uso (como elipses). Mostram-se também dois tipos de relacionamento: (1) ligando ator com caso de uso, que indicam que um ator participa de um determinado caso de uso; (2) ligando dois casos de uso, que indicam que um caso de uso inclui ou estende outro caso de uso.
 
@@ -322,7 +326,7 @@ Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é 
 
 ![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=76%}
 
-\index{Martin Fowler}
+\index{Fowler, Martin}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -368,10 +372,10 @@ O aprendizado obtido com um MVP pode resultar em três decisões:
 
 * Por fim, pode-se concluir que que o MVP falhou, após várias tentativas. Nesse caso, restam duas alternativas: (1) perecer, isto é, desistir do empreendimento, principalmente se não existirem mais recursos financeiros para mantê-lo vivo; ou (2) realizar um **pivô**, isto é, abandonar a visão original e tentar um novo MVP, com novos requisitos e para um novo mercado, mas sem esquecer o que se aprendeu com o MVP anterior.
 
-\index{Métricas de Vaidade}
+\index{Produto Mínimo Viável (MVP)!Métricas de Vaidade}
 Ao tomar as decisões acima, um risco é usar apenas **métricas de vaidade** (*vanity metrics*). Essas são métricas superficiais que fazem bem para o ego dos desenvolvedores e gerentes de produto, mas que não ajudam a entender e aprimorar uma estratégia de mercado. O exemplo clássico é o número de pageviews em um site de comércio eletrônico. Pode fazer muito bem dizer que o site atrai milhões de clientes por mês, mas somente isso não vai ajudar a pagar as contas do empreendimento. Por outro lado, métricas que ajudam a tomar decisões sobre o futuro de um MVP são chamadas de **métricas acionáveis** (*actionable metrics*). No caso de um sistema de comércio eletrônico, essas métricas incluiriam o percentual de visitantes que fecham compras, o valor de cada ordem de compra, o número de itens comprados, o custo de captação de novos clientes, etc. Ao monitorar essas métricas, pode-se concluir, por exemplo, que a maioria dos clientes compra apenas um item ao fechar uma compra. Como resultado concreto  —  ou acionável  —  pode-se decidir incorporar um sistema de recomendação ao site ou, então, investigar o uso de um sistema de recomendação mais eficiente. Tais sistemas, dada uma compra em andamento, são capazes de sugerir novos itens para serem comprados. Assim, eles têm o potencial de incrementar o número de itens comprados em uma mesma transação.
 
-\index{Métricas de Funil}
+\index{Produto Mínimo Viável (MVP)!Métricas de Funil}
 Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar também **métricas de funil** (*funnel metrics*), que capturam o nível de interação dos usuários com um sistema. Um "funil" pode incluir as seguintes métricas:
 
 * Aquisição: número de clientes que visitaram o seu sistema.
@@ -389,16 +393,16 @@ Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar t
 Um MVP não precisa ser um software real, implementado em uma linguagem de programação, com bancos de dados, integração com outros sistemas, etc. Dois exemplos de MVP que não são sistemas são frequentemente mencionados nos artigos sobre Lean Startup.
 
 \index{Zappos}
-\index{MVP!Zappos}
+\index{Produto Mínimo Viável (MVP)!Zappos}
 O primeiro é o caso da Zappos, uma das primeiras empresas a tentar vender sapatos pela Internet nos Estados Unidos. Em 1999, para testar de forma pioneira a viabilidade de uma loja de sapatos virtual, o fundador da empresa concebeu um MVP simples e original. Ele visitou algumas lojas de sapatos de sua cidade, fotografou diversos pares de sapato e criou uma página Web bastante simples, onde os clientes poderiam selecionar os sapatos que desejassem comprar. Porém, todo o processamento era feito de forma manual, incluindo a comunicação com a empresa de cartões de crédito, a compra dos sapatos nas lojas da cidade e a remessa para os clientes. Não existia nenhum sistema para automatizar essas tarefas. No entanto, com esse MVP baseado em tarefas manuais, o dono da Zappos conseguiu validar de forma rápida e barata a sua hipótese inicial, isto é, de que havia mercado para venda de sapatos pela Internet. Anos mais tarde, a Zappos foi adquirida pela Amazon, por mais de um bilhão de dólares.
 
 \index{Dropbox}
-\index{MVP!Dropbox}
+\index{Produto Mínimo Viável (MVP)!Dropbox}
 
 Um segundo exemplo de MVP que não envolveu a disponibilização de um software real para os usuários vem do Dropbox. Para receber feedback sobre o produto que estavam desenvolvendo, um dos fundadores da empresa gravou um vídeo simples, quase amador, demonstrando em 3 minutos as principais funcionalidades e vantagens do sistema que estavam desenvolvendo. O vídeo viralizou e contribuiu para aumentar a lista de usuários interessados em realizar um teste do sistema (de 5 mil para 75 mil usuários). Outro fato interessante é que os arquivos usados no vídeo tinham nomes engraçados e que faziam referência a personagens de histórias em quadrinhos. O objetivo era chamar a atenção de adotantes iniciais (*early adopters*), que são aquelas pessoas aficionadas por novas tecnologias e que se dispõem a serem as primeiras a testar e comprar novos produtos. A hipótese que se queria validar com o MVP em forma de vídeo é que havia usuários interessados em instalar um sistema de sincronização e backup de arquivos. Essa hipótese se revelou verdadeira pela atração de um grande número de adotantes iniciais dispostos a fazer um teste beta do Dropbox.
 
 \index{CSIndexbr}
-\index{MVP!CSIndexbr}
+\index{Produto Mínimo Viável (MVP)!CSIndexbr}
 No entanto, MVPs também podem ser implementados na forma de sistemas de software reais, embora mínimos. Por exemplo, no início de 2018, nosso grupo de pesquisa na UFMG iniciou o projeto de um sistema para catalogar a produção científica brasileira em Ciência da Computação. A primeira decisão foi construir um MVP, cobrindo apenas artigos em cerca de 15 conferências da área de Engenharia de Software. Nessa primeira versão, o código implementado em Python tinha menos de 200 linhas. Os gráficos mostrados pelo sistema, por exemplo, eram planilhas do Google Spreadsheets embutidas em páginas HTML. Esse sistema  —  inicialmente chamado CoreBR  —  foi divulgado e promovido em uma lista de e-mails da qual participam os professores brasileiros de Engenharia de Software. Como o sistema atraiu um bom interesse, medido por meio de métricas como duração das sessões de uso, decidimos investir mais tempo na sua construção. Primeiro, seu nome foi alterado para CSIndexbr ([link](https://csindexbr.org)). Depois, expandimos gradativamente a cobertura para mais 20 áreas de pesquisa em Ciência da Computação e quase duas centenas de conferências. Passamos a cobrir também artigos publicados em mais de 170 periódicos. O número de professores com artigos indexados aumentou de menos de 100 para mais de 900 professores. A interface do usuário deixou de ser um conjunto de planilhas e passou a ser um conjunto de gráficos implementados em JavaScript.
 
 
@@ -410,6 +414,7 @@ Para finalizar, vamos responder algumas perguntas sobre MVPs.
 
 **Quando não vale a pena usar MVPs**? De certo modo, essa pergunta foi respondida na questão anterior. Quando o mercado de um produto de software é estável e conhecido, não há necessidade de validar hipóteses de negócio e, portanto, de construir MVPs. Em sistemas de missão crítica, também não se cogita a construção de MVPs. Por exemplo, está fora de cogitação construir um MVP para um software de monitoramento de pacientes de UTIs.
 
+\index{Produto Mínimo Viável (MVP)!Prototipação}
 \index{Prototipação}
 **Qual a diferença entre MVPs e prototipação?** Prototipação é uma técnica conhecida em Engenharia de Software para elicitação e validação de requisitos. A diferença entre protótipos e MVPs está nas três letras da sigla, isto é, tanto no M, como no V e no P. Primeiro, protótipos não são necessariamente sistemas mínimos. Por exemplo, eles podem incluir toda a interface de um sistema, com milhares de funcionalidades. Segundo, protótipos não são necessariamente implementados para testar a viabilidade de um sistema junto aos seus usuários finais. Por exemplo, eles podem ser construídos para demonstrar o sistema apenas para os executivos de uma empresa contratante. Por isso mesmo, eles também não são produtos.
 
@@ -420,7 +425,7 @@ Para finalizar, vamos responder algumas perguntas sobre MVPs.
 Lean startup não define como construir o primeiro MVP de um sistema. Em alguns casos isso não é um problema, pois os proponentes do MVP têm uma ideia precisa de suas funcionalidades e requisitos. Então, eles já conseguem implementar o primeiro MVP e, assim, iniciar o ciclo construir-medir-aprender. Por outro lado, em certos casos, mesmo a ideia do sistema pode não estar clara. Nesses casos, recomenda-se construir um protótipo antes de implementar o primeiro MVP.
 
 \index{Design Sprint}
-\index{MVP!Design Sprint}
+\index{Produto Mínimo Viável (MVP)!Design Sprint}
 
 **Design Sprint** é um método proposto por Jake Knapp, John Zeratsky e Braden Kowitz para testar e validar novos produtos por meio de protótipos, não necessariamente de software ([link](https://isbnsearch.org/isbn/8551001523)). As principais características de um design sprint  —  não confundir com um sprint, de Scrum  —  são as seguintes:
 
@@ -439,6 +444,9 @@ Antes de concluir, é importante mencionar que design sprint não é voltado ape
 
 Testes A/B podem ser usados, por exemplo, quando se constrói um MVP (com requisitos A) e, depois de um ciclo construir-medir-aprender pretende-se testar um novo MVP (com requisitos B). Um outro cenário muito comum são testes A/B envolvendo componentes de interfaces com o usuário. Por exemplo, dados dois layouts da página de entrada de um site, um teste A/B pode ser usado para decidir qual resulta em maior engajamento por parte dos usuários. Pode-se testar também a cor ou posição de um botão da interface, as mensagens usadas, a ordem de apresentação dos elementos de uma lista, etc.
 
+\index{Testes A/B}
+\index{Testes A/B!Versão de Controle}
+\index{Testes A/B!Versão de Tratamento}
 Para aplicar testes A/B, precisamos de duas versões de um sistema, que vamos chamar de **versão de controle** (sistema original, com os requisitos A) e **versão de tratamento** (sistema com novos requisitos B). Para ser mais claro, e usando o exemplo do final da Seção 3.5, suponha que a versão de controle consiste de um sistema de comércio eletrônico que faz uso de um algoritmo de recomendação tradicional e a versão de tratamento consiste do mesmo sistema, mas com um algoritmo de recomendação supostamente mais eficaz. Logo, nesse caso, o teste A/B terá como objetivo definir se o novo algoritmo de recomendação é realmente melhor e, portanto, deve ser incorporado ao sistema.
 
 Para rodar testes A/B, precisamos também de uma métrica para medir os ganhos obtidos com a versão de tratamento. Essa métrica é genericamente chamada de **taxa de conversão**. No nosso exemplo, vamos assumir que ela é o percentual de visitas que se convertem em compra por meio de links recomendados. A expectativa é que o novo algoritmo de recomendação aumente esse percentual.
@@ -471,7 +479,7 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 **Posso terminar o teste A/B antes, se ele apresentar o ganho esperado**? Não, esse é um erro frequente e grave. Se o tamanho da amostra for de 20 mil usuários, o teste  —  de cada grupo  —  somente pode ser encerrado quando alcançarmos exatamente esse número de usuários. Sendo mais preciso, ele não deve terminar antes, com menos usuários, nem depois, com mais usuários. Um possível erro de desenvolvedores quando começam a usar testes A/B consiste em encerrar o teste no primeiro dia em que o ganho mínimo esperado for alcançado, sem testar o resto da amostra.
 
-\index{Testes A/A}
+\index{Testes A/B!Testes A/A}
 **O que é um teste A/A?** É um teste onde os dois grupos, controle e tratamento, executam a mesma versão do sistema. Logo, assumindo-se uma significância estatística de 95%, eles deveriam quase sempre falhar, pois a versão A não pode ser melhor do que ela mesma. Testes A/A são recomendados para testar e validar os procedimentos e decisões metodológicas que foram tomadas em um teste A/B. Alguns autores chegam a recomendar que não se deve iniciar testes A/B ante se realizar alguns testes A/A ([link](https://dl.acm.org/citation.cfm?id=3339916)). Caso os testes A/A não fahem, deve-se depurar o sistema de experimentação até descobrir a causa raiz (*root cause*) que está fazendo com que uma versão A seja considerada melhor do que ela mesmo.
 
 **Qual a origem dos termos grupos de controle e de tratamento?** Os termos têm sua origem na área médica, mais especificamente em experimentos randomizados controlados (*randomized control experiments*). Por exemplo, para lançar uma nova droga no mercado, empresas farmacêuticas devem realizar esse tipo de experimento. São escolhidas duas amostras, chamadas de controle e de tratamento. Os participantes da amostra de controle recebem um placebo e os participantes da amostra de tratamento são tratados com a droga. Após o teste, comparam-se os resultados para verificar se o uso da droga foi efetivo. Experimentos randomizados controlados são um modo cientificamente aceito de provar causalidade. No nosso exemplo, eles podem, por exemplo, provar que a droga testada causou a cura de uma doença.

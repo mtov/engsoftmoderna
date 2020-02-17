@@ -18,6 +18,7 @@ exemplo de anti-padrão arquitetural (Seção 7.8).
 
 ## Introdução 
 
+\index{Arquitetura de Software}
 Existe mais de uma definição para arquitetura de software. Uma das mais
 comuns considera que arquitetura preocupa-se com "projeto em mais alto
 nível". Ou seja, o foco deixa de ser a organização e interfaces de
@@ -58,6 +59,7 @@ Prova disso é que ainda hoje temos exemplos de sistemas críticos que
 funcionam com bancos de dados não-relacionais e que são implementados em
 linguagens como COBOL.
 
+\index{Padrões Arquiteturais}
 **Padrões arquiteturais** propõem uma organização de mais alto nível
 para sistemas de software, incluindo seus principais módulos e as
 relações entre eles. Essas relações definem, por exemplo, que um módulo
@@ -92,6 +94,9 @@ chamaremos todos eles de padrões arquiteturais.
 
 ### Debate Tanenbaum-Torvalds
 
+\index{Debate Tanenbaum-Torvalds}
+\index{Tanenbaum, Andrew}
+\index{Torvalds, Linus}
 No início de 1992, um debate acalorado sobre a
 arquitetura de sistemas operacionais tomou conta de um grupo de
 discussão da Internet. Apesar de vários desenvolvedores e pesquisadores
@@ -103,12 +108,9 @@ sistemas operacionais, autor de livros-texto na área e professor da
 Vrije Universiteit, em Amsterdã, na Holanda. E Torvalds (Linus) na época
 era estudante de Computação na Universidade de Helsinki, na Finlândia.
 
-<!---
-![Andrew S. Tanenbaum, professor da Vrije Universiteit, e defensor de arquiteturas microkernel para sistemas operacionais (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/tanembaum.png){width=25%}
-
-![Linus Torvalds, criador do sistema operacional Linux, que  possui uma arquitetura monolítica (foto da Wikipedia, licença CC-BY-SA)](figs/cap7/linus.png){width=25%}
---->
-
+\index{Arquitetura Monolítica}
+\index{Arquitetura Microkernel}
+\index{Linux}
 A discussão começou quando Tanenbaum postou uma mensagem no grupo com o
 título "Linux está obsoleto". O seu principal argumento era que o
 Linux seguia uma **arquitetura monolítica**, na qual todas as funções do
@@ -143,6 +145,7 @@ reverter. Muitas vezes, são também decisões que levam anos para que seus
 efeitos negativos fiquem mais claros e comecem a causar problemas.
 
 ## Arquitetura em Camadas
+\index{Arquitetura de Software!em Camadas}
 
 **Arquitetura em camadas** é um dos padrões arquiteturais mais usados,
 desde que os primeiros sistemas de software de maior porte foram
@@ -171,6 +174,8 @@ uma camada por mais de uma camada superior. Por exemplo, a camada de
 transporte pode ser usada por vários protocolos de aplicação, como HTTP,
 SMTP, DHCP, etc.
 
+\index{Dijkstra, Edsger W.}
+\index{Sistema Operacional THE}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -189,7 +194,9 @@ projetos de maior porte.
 ```
 
 ### Arquitetura em Três Camadas
+\index{Arquitetura de Software!Três Camadas}
 
+\index{Mainframes}
 Esse tipo de arquitetura é comum na construção de sistemas de informação
 corporativos. Até o final da década de 80, aplicações corporativas —
 como folhas de pagamento, controle de estoque, sistemas financeiros, etc
@@ -243,6 +250,7 @@ módulos, incluindo uma fachada, para facilitar o acesso ao sistema pelos
 clientes, e um módulo de persistência, com a função de isolar o banco de
 dados dos demais módulos.
 
+\index{Arquitetura de Software!Duas Camadas}
 Por fim, gostaríamos de mencionar que é possível ter sistemas em **duas
 camadas**. Nesses casos, as camadas de interface e de aplicação são
 unidas em uma única camada, que executa no cliente. A camada restante
@@ -251,6 +259,8 @@ camadas é que todo o processamento ocorre nos clientes, que, portanto,
 devem ter um maior poder de computação.
 
 ## Arquitetura MVC
+\index{Arquitetura de Software!MVC (Model-View-Controller)}
+\index{MVC (Model-View-Controller)}
 
 O padrão arquitetural MVC (Model-View-Controller) foi proposto no final
 da década de 70 e, em seguida, usado na implementação de Smalltalk-80,
@@ -262,6 +272,7 @@ operacionais ofereciam apenas interfaces de linha de comando e os
 programas tinham uma interface textual, isto é, as telas eram uma matriz
 de caracteres, com, por exemplo, 25 linhas e 80 colunas.
 
+\index{Smalltalk}
 MVC foi o padrão arquitetural escolhido pelos projetistas de Smalltalk
 para implementação de interfaces gráficas. Especificamente, MVC define
 que as classes de um sistema devem ser organizadas em três grupos:
@@ -331,6 +342,8 @@ Dentre as vantagens de arquiteturas MVC, podemos citar:
     de apresentação de objetos de Modelo, fica mais fácil testar esses
     últimos.
 
+\index{Fowler, Martin}
+\index{Beck, Kent}
 Vamos concluir com um resumo sobre MVC, na visão de Fowler e Beck
 ([link](https://dl.acm.org/citation.cfm?id=311424), Cap.
 12, pág. 370):
@@ -366,6 +379,9 @@ histórica dessas arquiteturas:
     aplicação, como um todo segue, uma arquitetura em três camadas,
     mas usa MVC na camada de interface com o usuário.
 
+\index{Ruby on Rails}
+\index{Django}
+\index{CakePHP}
 *   No início dos anos 2000, a Web se popularizou e a interface das
     aplicações migrou para HTML e, depois, para HTML e JavaScript. A
     confusão entre os termos MVC e três camadas surgiu então nessa
@@ -391,6 +407,8 @@ tornou comum na década de 90 e início dos anos 2000. Essa última
 vertente lembra bastante sistemas três camadas.
 
 ### Exemplo: Single Page Applications
+\index{Arquitetura de Software!Single Page Applications}
+\index{Single Page Applications}
 
 Em uma aplicação Web tradicional, com formulários, menus, botões, etc,
 toda vez que o usuário gera um evento — por exemplo, clica em um
@@ -401,6 +419,7 @@ usuário. Essas aplicações são então menos interativas e responsivas,
 devido ao atraso da comunicação entre navegador e servidor
 Web.
 
+\index{GMail}
 Recentemente, surgiu um novo tipo de sistema Web, chamado de **Single
 Page Applications (SPAs)**. Essas aplicações são mais parecidas com
 aplicações desktop do que com aplicações Web tradicionais. Ao se entrar
@@ -416,6 +435,8 @@ quando chega um novo e-mail o GMail atualiza a lista de mensagens na
 caixa de entrada. Para que isso ocorra de forma automática, a
 comunicação entre a SPA e o servidor deve ser assíncrona.
 
+\index{JavaScript}
+\index{Vue.js}
 Existem diversos frameworks — todos em JavaScript — para
 implementação de SPAs. A seguir, mostramos um exemplo usando
 Vue.js.
@@ -468,6 +489,7 @@ implementada em HTML, mais precisamente no código delimitado pela tag
 \<div\>. O modelo é implementado em JavaScript, usando-se Vue.js. O
 código do modelo está delimitado pela tag \<script\>.
 
+\index{Two-way Data Binding}
 Um segundo ponto interessante é que o framework Vue.js se encarrega de
 propagar para a visão qualquer alteração no modelo. Por exemplo, quando
 o método incTemperatura é executado, o valor da temperatura é
@@ -477,6 +499,8 @@ simples. Esse recurso de frameworks para construção de SPAs é chamado de
 **two-way data binding**.
 
 ## Microsserviços
+\index{Arquitetura de Software!Microsserviços}
+\index{Microsserviços}
 
 Como discutimos no Capítulo 2, métodos ágeis preconizam iterações
 rápidas, com entregas frequentes de novas releases, a fim de obter
@@ -485,6 +509,7 @@ uma empresa adote um método ágil — como
 Scrum — ela vai enfrentar um "gargalo" arquitetural quando
 precisar lançar novas releases de um produto de forma frequente.
 
+\index{Microsserviços!Monolitos}
 Esse gargalo ocorre porque sistemas, via de regra, seguem em tempo de
 execução uma arquitetura monolítica. Ou seja, mesmo que o
 desenvolvimento tenha sido particionado em módulos M1, M2, M3, ..., Mn,
@@ -548,6 +573,9 @@ times pequenos, com cerca de cinco desenvolvedores, por exemplo.
 Consequentemente, times pequenos não têm capacidade para implementar
 grandes serviços.
 
+\index{Escalabilidade}
+\index{Microsserviços!Escalabilidade}
+\index{Escalabilidade Horizontal}
 Uma segunda vantagem de microsserviços é **escalabilidade**. Quando um
 monolito enfrenta problemas de performance, uma solução consiste em
 disponibilizar instâncias do sistema em máquinas diferentes, como mostra
@@ -586,6 +614,7 @@ vantagens:
     relacional. Já o microsserviço de recomendação de novas compras
     pode ser implementado em Python com um banco de dados NoSQL.
 
+\index{Falhas Parciais}
 *   Quando se usa um monolito, falhas são totais. Se o banco de dados
     cair, todos os serviços ficam fora do ar. Por outro lado, em
     arquiteturas baseadas em microsserviços podemos ter **falhas
@@ -598,6 +627,7 @@ vantagens:
     será apresentada para os usuários durante o período em que o
     microsserviço de recomendações estiver fora do ar.
 
+\index{Computação em Nuvem}
 Arquiteturas baseadas em microsserviços tornaram-se possíveis devido ao
 aparecimento de plataformas de **computação em nuvem**. Com essas
 plataformas, empresas não precisam mais comprar e manter hardware e
@@ -607,6 +637,9 @@ plataforma de computação em nuvem e pagar por hora de utilização da
 máquina. Com isso, fica mais fácil escalar um microsserviço
 horizontalmente, acrescentando novas máquinas virtuais.
 
+\index{Lei de Conway}
+\index{Conway, Melvin}
+\index{Microsserviços!Lei de Conway}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -627,6 +660,7 @@ produzir inovações.
 ```
 
 ### Gerenciamento de Dados
+\index{Microsserviços!Gerenciamento de Dados}
 
 Pelo menos na sua forma pura, microsserviços devem ser autônomos também
 do ponto de vista de dados. Isto é, eles devem gerenciar os dados de que
@@ -667,6 +701,7 @@ desenvolvimento. Por isso, suas decisões podem se tornar lentas e
 burocráticas, atrasando a evolução do sistema.
 
 ### Quando não usar microsserviços? 
+\index{Microsserviços!Quando não Usar}
 
 Até esse momento, apresentamos as vantagens e benefícios de
 microsserviços. Mas é importante dizer que essa arquitetura é mais
@@ -676,6 +711,7 @@ dão origem a sistemas distribuídos. Logo, ao usar microsserviços, temos
 que enfrentar todos os desafios que aparecem quando se implementa um
 sistema distribuído. Dentre eles, podemos citar:
 
+\index{REST}
 *   Complexidade: quando dois módulos executam em um mesmo processo, a
     comunicação entre eles é por meio de chamadas de métodos. Quando
     esses módulos estão em máquinas diferentes, a comunicação entre
@@ -683,6 +719,7 @@ sistema distribuído. Dentre eles, podemos citar:
     Ou seja, os desenvolvedores terão que dominar e usar um conjunto
     de tecnologias para comunicação em redes.
 
+\index{Latência}
 *   Latência: a comunicação entre microsserviços também envolve um
     atraso maior, que chamamos de **latência**. Quando um cliente
     chama um método em um sistema monolítico, a latência é mínima. Por
@@ -695,6 +732,7 @@ sistema distribuído. Dentre eles, podemos citar:
     essa chamada terá que passar pelo cabo da rede — ou pelo ar e
     pela fibra ótica — até chegar à máquina de destino.
 
+\index{Two-Phase Commit}
 *   Transações Distribuídas: Como vimos, microsserviços devem ser
     autônomos também do ponto de vista de dados. Isso torna mais
     complexo garantir que operações que operam em dois ou mais bancos
@@ -713,6 +751,8 @@ sistema distribuído. Dentre eles, podemos citar:
 
 
 ## Arquiteturas Orientadas a Mensagens
+\index{Arquitetura de Software!Orientada a Mensagens}
+\index{Arquitetura Orientada a Mensagens}
 
 Neste tipo de arquitetura, a comunicação entre clientes e servidores é
 mediada por um terceiro serviço que têm a única função de prover uma
@@ -746,12 +786,14 @@ Além de permitirem comunicação assíncrona entre clientes e servidores,
 filas de mensagens viabilizam duas formas de desacoplamento entre os
 componentes de uma aplicação distribuída:
 
+\index{Arquitetura Orientadas a Mensagens!Desacoplamento no espaço}
 *   **Desacoplamento no espaço**: clientes não precisam conhecer os
     servidores e vice-versa. Em outras palavras, o cliente é
     exclusivamente um produtor de informações. Mas ele não precisa
     saber quem vai consumir essa informação. O raciocínio inverso vale
     para servidores.
 
+\index{Arquitetura Orientadas a Mensagens!Desacoplamento no tempo}
 *   **Desacoplamento no tempo**: clientes e servidores não precisam
     estar simultaneamente disponíveis para se comunicarem. Se o
     servidor estiver fora do ar, os clientes podem continuar
@@ -795,6 +837,7 @@ irá depositar uma mensagem na fila de mensagens, com as informações do
 pacote. Cabe ao sistema de engenharia ler essa mensagem e ativar o
 serviço que foi vendido.
 
+\index{Batch, Processamento}
 Ao optar por uma fila de mensagens, a integração entre os sistemas de
 vendas e de engenharia pode não ocorrer em tempo real. Por exemplo, se o
 serviço de engenharia estiver ocupado, com várias ativações complexas de
@@ -807,6 +850,9 @@ um cliente poderia ter que esperar quase 24 horas para ter seu serviço
 ativado.
 
 ## Arquiteturas Publish/Subscribe
+\index{Arquitetura de Software!Publish/Subscribe}
+\index{Publish/Subscribe}
+\index{Arquitetura Publish/Subscribe}
 
 Em arquiteturas publish/subscribe, as mensagens são chamadas de
 **eventos**. Os componentes da arquitetura são chamados de
@@ -840,11 +886,15 @@ filas de mensagens:
     — isto é, os consumidores das mensagens — têm que
     "puxar" (*pull*) as mensagens da fila.
 
+\index{Arquitetura Publish/Subscribe!Tópicos}
 Em alguns sistemas publish/subscribe, eventos são organizados em
 **tópicos**, que funcionam como categorias de eventos. Quando um
 publicador produz um evento, ele deve informar seu tópico. Assim,
 clientes não precisam assinar todos eventos que ocorrem no sistema, mas
 apenas eventos de um certo tópico.
+
+\index{Arquitetura Orientada a Eventos}
+\index{Arquitetura Publish/Subscribe!Broker}
 
 Arquiteturas publish/subscribe são, às vezes, chamadas de **arquiteturas
 orientadas a eventos**. O serviço de publish/subscribe, às vezes, é
@@ -890,6 +940,8 @@ publish/subscribe sobre a ocorrência dos eventos de interesse.
 
 ## Outros Padrões Arquiteturais
 
+\index{Arquitetura de Software!Pipes e Filtros}
+
 **Pipes e Filtros** é um tipo de arquitetura orientada a dados, na qual
 os programas \-- chamados de **filtros** — têm como função processar
 os dados recebidos na entrada e gerar uma nova saída. Os filtros são
@@ -909,6 +961,7 @@ especifica a execução de três comandos (filtros) que são conectados por
 dois pipes (barras verticais). No caso dos comandos Unix, as entradas e
 saídas são sempre arquivos texto.
 
+\index{Arquitetura de Software!Cliente/Servidor}
 **Cliente/Servidor** é um uma arquitetura muito usada na implementação
 de serviços básicos de rede. Clientes e servidores são os dois únicos
 módulos desse tipo de arquitetura e eles se comunicam por meio de uma
@@ -923,6 +976,7 @@ acessem um banco de dados instalado em uma outra máquina; (4) serviço
 Web, que permite que clientes (navegadores) acessem recursos (páginas
 HTML) armazenadas e providas por um servidor Web.
 
+\index{Arquitetura de Software!Peer-to-Peer}
 Arquiteturas **peer-to-peer** são arquiteturas distribuídas nas quais os
 módulos da aplicação podem desempenhar tanto o papel de cliente, como o
 papel de servidor. Em outras palavras, esses módulos — chamados de
@@ -933,6 +987,12 @@ prover arquivos como realizar o download de arquivos disponíveis na
 rede.
 
 ## Anti-padrões Arquiteturais
+\index{Arquitetura de Software!Anti-padrões}
+\index{Anti-padrões Arquiteturais}
+\index{Anti-padrões Arquiteturais!Big Ball of Mud}
+\index{Big Ball of Mud}
+\index{Foote, Brian} 
+\index{Yoder, Joseph}
 
 Vamos encerrar com a descrição de um **anti-padrão** arquitetural, isto
 é, uma organização de sistemas que não é recomendada. Talvez, o mais
@@ -949,6 +1009,7 @@ vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
 
+\index{InfoSys}
 ```{=latex}
 \begin{esmbox}
 ```

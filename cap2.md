@@ -34,6 +34,10 @@ esforço intelectual. Um processo de desenvolvimento de software define
 um conjunto de passos, tarefas, eventos e práticas que devem ser
 seguidos por desenvolvedores de software, na produção de um sistema.
 
+\index{Torvalds, Linus}
+\index{Knuth, Donald}
+\index{TeX}
+\index{Linux}
 Alguns críticos de processos de software costumam fazer a seguinte
 pergunta: por que eu preciso seguir um processo? E complementam,
 perguntando também o seguinte: Qual processo Linus Torvalds usou na
@@ -128,7 +132,6 @@ extensos; assim, rapidamente se tornavam obsoletos, pois quando os
 requisitos mudavam os desenvolvedores não propagavam as alterações para
 a documentação, mas apenas para o código fonte.
 
-\index{Manifesto Ágil}
 Então eles decidiram lançar as bases para um novo conceito de processo
 de software, as quais foram registradas em um documento que chamaram de
 **Manifesto Ágil**. Por ser curto, iremos reproduzir o texto do
@@ -203,11 +206,11 @@ No entanto, as características acima são genéricas e abrangentes; por isso al
 
 Neste capítulo, vamos estudar três métodos ágeis:
 
-\index{Kent Beck}
+\index{Beck, Kent}
 *  **Extreme Programming (XP)**, proposto por Kent Beck, em um livro lançado em 1999 ([link](https://dl.acm.org/citation.cfm?id=318762)). Uma segunda edição do livro, incluindo uma grande revisão, foi lançada em 2004. Neste capítulo, vamos nos basear nessa edição mais recente.
 
-\index{Jeffrey Sutherland}
-\index{Ken Schwaber}
+\index{Sutherland, Jeffrey}
+\index{Schwaber, Ken}
 *  **Scrum**, proposto por Jeffrey Sutherland e Ken Schwaber, em um artigo publicado em 1995 ([link](https://dl.acm.org/citation.cfm?id=260274)).
 
 *  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
@@ -230,6 +233,7 @@ Neste capítulo, vamos estudar três métodos ágeis:
 \end{aviso} 
 ```
 
+\index{Stack Overflow survey}
 ```{=latex} 
 \begin{esmbox} 
 ```
@@ -856,7 +860,7 @@ licença CC-BY.
 ](figs/cap2/pair-programming.png){width=40%}
 --->
 
-\index{Microsoft}
+\index{Microsoft Research}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -1085,7 +1089,7 @@ verdade, contratos com escopo aberto são mais compatíveis com os
 princípios do Manifesto Ágil, que explicitamente valoriza "colaboração
 com o cliente, mais que negociação de contratos".
 
-\index{Extreme Programmig!Métricas de Processo}
+\index{Extreme Programming!Métricas de Processo}
 **Métricas de Processo**. Para que gerentes e executivos possam
 acompanhar um projeto XP recomenda-se o uso de duas métricas principais:
 número de bugs em produção (que deve ser idealmente da ordem de poucos
@@ -1098,8 +1102,8 @@ exemplo).
 ## Scrum
 
 \index{Scrum}
-\index{Jeffrey Sutherland}
-\index{Ken Schwaber}
+\index{Sutherland, Jeffrey}
+\index{Schwaber, Ken}
 Scrum é um método ágil, iterativo e incremental para gerenciamento de
 projetos. Foi proposto por Jeffrey Sutherland e Ken Schwaber, em um
 artigo publicado pela primeira vez em 1995
@@ -1145,9 +1149,9 @@ Times Scrum são formados por um Dono de Produto (*Product
 Owner*), um Scrum Master e de três a nove desenvolvedores.
 
 \index{Dono do Produto}
-\index{Product Ownwer}
+\index{Product Owner}
 \index{Scrum!Dono do Produto}
-\index{Scrum!Product Ownwer}
+\index{Scrum!Product Owner}
 
 O **Dono do Produto** tem exatamente o mesmo papel do Representante dos
 Clientes em XP, por isso não vamos explicar de novo a sua função em
@@ -1192,7 +1196,7 @@ principais são o Backlog do Produto e o Backlog do Sprint e os
 principais eventos são sprints e o planejamento de sprints, conforme
 descreveremos a seguir.
 
-\index{Backlog do Produto}
+\index{Backlog!Produto}
 \index{Scrum!Backlog do Produto}
 
 *   O **Backlog do Produto** é uma lista de histórias, ordenada por
@@ -1238,7 +1242,7 @@ descreveremos a seguir.
      para o sprint. Por exemplo, pode-se decidir cancelar uma história,
      pois ela se revelou mais complexa ao ser quebrada em tarefas.
 
-\index{Backlog do Sprint}
+\index{Backlog!Sprint}
 \index{Scrum!Backlog do Sprint}
 
 *   O **Backlog** **do** **Sprint** é o artefato gerado ao final do
@@ -1335,6 +1339,7 @@ minimizar as chances de possíveis conflitos de integração.
 
 \index{Revisão do Sprint}
 \index{Scrum!Revisão}
+
 A **Revisão do Sprint** *(Sprint Review*) é uma reunião para mostrar os
 resultados de um sprint. Dela devem participar todos os membros do time
 e idealmente outros stakeholders, convidados pelo Dono do Produto, que
@@ -1348,6 +1353,7 @@ concluir durante o sprint.
 
 \index{Retrospectiva do Sprint}
 \index{Scrum!Retrospectiva}
+
 A **Retrospectiva** é a última atividade de um sprint. Trata-se de uma
 reunião do time Scrum, com o objetivo de refletir sobre o sprint que
 está terminando e, se possível, identificar pontos de melhorias no
@@ -1364,6 +1370,7 @@ sprint.
 
 \index{Time-box}
 \index{Scrum!Time-box}
+
 Uma característica marcante de todos os eventos Scrum é terem uma
 duração bem definida, que é chamada de **time-box** da atividade. Por
 isso, esse termo aparece sempre em documentos Scrum. Por exemplo, veja
@@ -1531,7 +1538,7 @@ seguintes:
 
 ## Kanban
 \index{Kanban}
-
+\index{Toyota}
 A palavra japonesa *kanban* significa "cartão visual" ou "cartão de
 sinalização". Desde a década de 50, o nome também é usado para denotar
 o processo de produção *just-in-time* usado em fábricas japonesas,
@@ -1540,6 +1547,7 @@ O processo também é conhecido como Sistema de Produção da Toyota (TPS)
 ou, mais recentemente, por manufatura *lean*. Em uma linha de montagem,
 os cartões são usados para controlar o fluxo de produção.
 
+\index{Microsoft}
 No caso de desenvolvimento de software, Kanban foi usado pela primeira
 vez na Microsoft, em 2004, como parte de um esforço liderado por David
 Anderson, então um funcionário da empresa
@@ -1690,7 +1698,7 @@ por gerentes da organização, por exemplo.
 \index{Working in Progress (WIP)}
 \index{Kanban!Limites WIP}
 \index{Kanban!Working in Progress (WIP)}
-
+\index{Brechner, Eric}
 Resta-nos agora explicar como os limites WIP são definidos. Existe mais
 de uma alternativa, mas vamos adotar uma adaptação de um algoritmo
 proposto por Eric Brechner — um engenheiro da Microsoft
@@ -1858,7 +1866,7 @@ atualmente adotadas na grande maioria de projetos de software:
 
 * Times pequenos, pois o esforço de sincronização cresce muito quando os times são compostos por dezenas de membros.
 
-* Iterações (ou sprints), mesmo que com duração maior do que aquela típica de métodos ágeis. Por exemplo, iterações com duração de dois ou três meses, em vez de iterações com menos de 30 dias. Na verdade, entre o surgimento de Waterfall e de métodos ágeis, alguns métodos iterativos foram propostos, isto é, métodos com pontos de validação ao longo do desenvolvimento. Na próxima seção, iremos estudar dois destes métodos.
+* Iterações (ou sprints), mesmo que com duração maior do que aquela típica de métodos ágeis. Por exemplo, iterações com duração de dois ou três meses, em vez de iterações com menos de 30 dias. Na verdade, entre o surgimento de Waterfall e de métodos ágeis, alguns métodos iterativos foram propostos, isto é, métodos com pontos de validação ao longo do desenvolvimento. Na próxima seção, iremos estudar dois desses métodos.
 
 ## Outros Métodos Iterativos
 
@@ -1874,7 +1882,7 @@ relevantes de Waterfall, como ênfase em documentação e em uma fase
 inicial de levantamento de requisitos e depois de design.
 
 \index{Modelo em Espiral}
-\index{Barry Boehm}
+\index{Boehm, Barry}
 Um exemplo de proposta de processo surgida nesta época é o **Modelo em
 Espiral**, proposto por Barry Boehm, em 1986
 ([link](https://doi.org/10.1145/12944.12948)). Nesse
@@ -1929,7 +1937,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
      modelagem "unificada" (UML) e também um processo "unificado"
      (UP), ambos propostos pelo mesmo grupo de profissionais.
 
-\index{CASE}
+\index{CASE (Computer-Aided Software Engineering)}
 *   UP é associado a ferramentas de apoio ao projeto e análise de
      software, conhecidas como **ferramentas CASE** (*Computer-Aided
      Software Engineering*). O nome é uma analogia com ferramentas CAD

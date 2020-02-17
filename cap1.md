@@ -112,7 +112,7 @@ mesmo com o passar dos anos.
 
 ### Não existe bala de prata {.unnumbered}
 
-\index{Fred Brooks}
+\index{Brooks, Frederick}
 Como começamos a afirmar no parágrafo anterior, desenvolvimento de
 software é diferente de qualquer outro produto de Engenharia,
 principalmente quando se compara software com hardware. Frederick
@@ -123,8 +123,8 @@ Essência e Acidentes em Engenharia de Software*
 ([link](https://doi.org/10.1109/MC.1987.1663532)), ele
 discorreu sobre as particularidades da área de Engenharia de Software.
 
-\index{Dificuldades Essenciais}
-\index{Dificuldades Acidentais}
+\index{Dificuldades!Essenciais}
+\index{Dificuldades!Acidentais}
 Segundo Brooks, existem dois tipos de dificuldades em desenvolvimento de
 software: **dificuldades essenciais** e **dificuldades acidentais**. As
 essenciais são da natureza da área e dificilmente serão superadas por
@@ -257,6 +257,7 @@ nessa área.
 ### Engenharia de Requisitos 
 
 \index{Engenharia de Requisitos}
+\index{Requisitos!Engenharia de Requisitos}
 Os requisitos de um sistema definem *o que* ele deve fazer e *como* ele
 deve operar. Assim, a Engenharia de Requisitos inclui o conjunto 
 de atividades realizadas com o objetivo de definir, analisar, documentar 
@@ -365,7 +366,7 @@ construção de interfaces, etc.
 ### Testes de Software 
 
 \index{Testes de Software}
-\index{Edsger W. Dijkstra}
+\index{Dijkstra, Edsger W.}
 Teste consiste na execução de um programa com um conjunto finito de
 casos, com o objetivo de verificar se ele possui o comportamento
 esperado. A seguinte frase, bastante famosa, de Edsger W. Dijkstra —
@@ -457,7 +458,7 @@ e *bug* são sinônimos.
 \end{esmbox}
 ```
 
-\index{Explosão do Ariane}
+\index{Ariane, Explosão do}
 ```{=latex}
 \begin{esmbox}
 ```
@@ -487,15 +488,18 @@ funcionasse de forma errática, causando a explosão.
 ### Manutenção e Evolução de Software 
 
 \index{Manutenção de Software}
+
 Assim como sistemas tradicionais de Engenharia, software também precisa
 de manutenção. Neste livro, vamos usar a seguinte classificação para os
 tipos de manutenção que podem ser realizadas em sistemas de software:
 **corretiva**, **preventiva**, **adaptativa**, **refactoring** e
 **evolutiva**.
 
+\index{Manutenção de Software!Corretiva}
 Manutenção corretiva tem como objetivo corrigir bugs reportados por
 usuários ou outros desenvolvedores.
 
+\index{Manutenção de Software!Preventiva}
 Por sua vez, manutenção preventiva tem com objetivo corrigir bugs
 latentes no código, que ainda não causaram falhas junto aos usuários do
 sistema.
@@ -520,6 +524,7 @@ preventiva.
 \end{esmbox}
 ```
 
+\index{Manutenção de Software!Adaptativa}
 Manutenção adaptativa tem como objetivo adaptar um sistema a uma mudança
 em seu ambiente, incluindo tecnologia, legislação, regras de integração
 com outros sistemas ou demandas de novos clientes. Como exemplos de
@@ -543,6 +548,7 @@ divisão de um método longo em dois métodos menores (para facilitar o
 entendimento) ou movimentação de um método para uma classe mais
 apropriada.
 
+\index{Manutenção de Software!Evolutiva}
 Manutenção evolutiva é aquela realizada para incluir uma nova
 funcionalidade ou introduzir aperfeiçoamentos importantes em
 funcionalidades existentes. Sistemas de software podem ser usados por
@@ -630,13 +636,14 @@ incluem, obviamente, seus desenvolvedores e seus clientes; mas também,
 gerentes da equipe de desenvolvimento, empresas subcontratadas,
 fornecedores de qualquer natureza, talvez algum nível de governo, etc.
 
-\index{Fred Brooks}
+\index{Brooks, Frederick}
 Existe uma frase muito conhecida, também de Frederick Brooks, que
 captura uma peculiaridade de projetos de software. Segundo Brooks:
 
 > "A inclusão de novos desenvolvedores em um projeto que está atrasado contribui para torná-lo ainda mais atrasado."
 
 \index{Lei de Brooks}
+\index{Gerência de Projetos!Lei de Brooks}
 Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
 desenvolvedores terão primeiro que entender e compreender todo o
@@ -813,7 +820,7 @@ Bertrand Meyer
 qualidade de software pode ser avaliada em duas dimensões: 
 **qualidade externa** ou **qualidade interna**.
 
-\index{Qualidade Externa}
+\index{Qualidade de Software!Externa}
 Qualidade externa considera fatores que podem ser aferidos sem analisar
 o código de um sistema. Assim, a qualidade externa de um software pode
 ser avaliada mesmo por usuários comuns, que não são
@@ -848,7 +855,7 @@ seguintes fatores (ou atributos) de qualidade externa:
     de dados de sua área? Por exemplo, se o software for uma planilha
     eletrônica, ele importa arquivos em formatos XLS e CSV?
 
-\index{Qualidade Interna}
+\index{Qualidade de Software!Interna}
 Por outro lado, qualidade interna considera propriedades e
 características relacionadas com a implementação de um sistema.
 Portanto, a qualidade interna de um sistema somente pode ser avaliada
@@ -908,7 +915,7 @@ também questões sobre a formação em nível técnico e tecnológico,
 anterior à formação universitária. Após a etapa de formação, existem
 questões sobre a regulamentação da profissão, por exemplo.
 
-\index{Ética Profissional}
+\index{Etica Profissional}
 Por fim, mas muito atual e relevante, existem questionamentos sobre o
 papel e a **responsabilidade ética** dos profissionais formados em
 Computação, em uma sociedade onde os relacionamentos humanos são cada
@@ -925,7 +932,7 @@ Engenharia de Software. Por exemplo, ele prescreve que:
 
 > "Engenheiros de Software devem se comprometer em fazer da análise, especificação, projeto, desenvolvimento, teste e manutenção de software uma profissão benéfica e respeitada."
 
-\index{Código de Ética da SBC}
+\index{Código de Ética}
 No Brasil, existe o Código de Ética da Sociedade Brasileira de
 Computação (SBC), que por ser sintético, mas ao mesmo tempo claro,
 resolvemos reproduzir a seguir:
@@ -1036,7 +1043,7 @@ todo software deve ser construído usando o mesmo processo de
 desenvolvimento, os mesmos princípios de projeto, os mesmos mecanismos
 de garantia de qualidade, etc.
 
-\index{Bertrand Meyer}
+\index{Meyer, Bertrand}
 Uma classificação proposta por Bertrand Meyer
 ([link](https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/))
 ajuda a distinguir e entender os diferentes sistemas de software que
@@ -1054,6 +1061,7 @@ Vamos discutir primeiro os Sistemas C e A (isto é, os sistemas em cada
 um dos extremos da classificação) e depois os Sistemas B.
 
 \index{Over-engineering}
+\index{Sistemas Casuais}
 Sistemas C (Casuais) não sofrem pressão para terem níveis altos de
 qualidade. São sistemas que podem ter alguns bugs, os quais não vão
 comprometer fundamentalmente o seu funcionamento. Como exemplo, podemos
@@ -1074,7 +1082,7 @@ em um contexto que não demanda tanta preocupação. Como se diz
 coloquialmente, Engenharia de Software nesse contexto equivale a "usar
 uma bala de canhão, para matar formigas".
 
-\index{Sistemas de Missão Críticos}
+\index{Sistemas de Missão Crítica}
 No outro extremo, temos os Sistemas A (de *acute*, ou de missão
 crítica). São sistemas onde qualquer falha pode causar um imenso
 prejuízo, incluindo a perda de vidas humanas. São sistemas para
@@ -1288,7 +1296,7 @@ comerciais) com os quais já tenha interagido.
 
 10\. Dê exemplos de sistemas C (casuais) que você já tenha desenvolvido.
 
-\index{Êscandalo Volkswagen}
+\index{Volkswagen, Escândalo}
 11\. Em 2015, descobriu-se que o software instalado em mais de 11
 milhões de carros da Volkswagen detectava quando eles estavam sendo
 testados em um laboratório de certificação. Nessas situações, o carro
