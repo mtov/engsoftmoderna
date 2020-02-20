@@ -15,8 +15,9 @@ quatro diagramas UML com um maior nível de detalhes: Diagramas de
 Classes (Seção 4.3), Diagramas de Pacotes (Seção 4.4), Diagramas de
 Sequência (Seção 4.5) e Diagramas de Atividades (Seção 4.6).
 
-\index{Modelos de Software}
+
 ## Modelos de Software
+\index{Modelos de Software}
 
 Como vimos no capítulo anterior, requisitos documentam "o que" um
 sistema deve fazer, valendo-se de um nível de abstração próximo do
