@@ -206,14 +206,19 @@ No entanto, as características acima são genéricas e abrangentes; por isso al
 
 Neste capítulo, vamos estudar três métodos ágeis:
 
+*  **Extreme Programming (XP)**, proposto por Kent Beck, 
 \index{Beck, Kent}
-*  **Extreme Programming (XP)**, proposto por Kent Beck, em um livro lançado em 1999 ([link](https://dl.acm.org/citation.cfm?id=318762)). Uma segunda edição do livro, incluindo uma grande revisão, foi lançada em 2004. Neste capítulo, vamos nos basear nessa edição mais recente.
+em um livro lançado em 1999 ([link](https://dl.acm.org/citation.cfm?id=318762)). Uma segunda edição do livro, incluindo uma grande revisão, foi lançada em 2004. Neste capítulo, vamos nos basear nessa edição mais recente.
 
+
+*  **Scrum**, proposto por Jeffrey Sutherland e Ken Schwaber, 
 \index{Sutherland, Jeffrey}
 \index{Schwaber, Ken}
-*  **Scrum**, proposto por Jeffrey Sutherland e Ken Schwaber, em um artigo publicado em 1995 ([link](https://dl.acm.org/citation.cfm?id=260274)).
+em um artigo publicado em 1995 ([link](https://dl.acm.org/citation.cfm?id=260274)).
 
-*  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
+*  **Kanban**, cujas origens remontam a um sistema de controle de produção que começou a ser usado nas fábricas da Toyota, 
+\index{Toyota}
+ainda na década de 50 ([link](https://hbr.org/1986/01/the-new-new-product-development-game)). Nos últimos 10 anos, Kanban tem sido gradativamente adaptado para uso no desenvolvimento de software.
 
 ```{=latex}
 \begin{esmbox}
@@ -422,14 +427,6 @@ aceite. Por isso, XP defende que o engenheiro de software que implementa
 uma *história* — termo que o método usa para requisitos — deve
 ser também aquele que vai testá-la e mantê-la. 
 
-<!--
-Mais recentemente, times
-de desenvolvimento estão trabalhando em conjunto com opera. Quando isso ocorre, eles são chamados de times
-*devops*, que é uma junção das palavras desenvolvedor e operador. Nesses
-casos, a ideia é evitar dois grupos em uma organização, desenvolvedores
-versus operadores, com um grupo empurrando a responsabilidade pelos
-problemas para o outro.
--->
 
 \index{Chrysler}
 ```{=latex}
@@ -849,13 +846,6 @@ Assim, se em uma sessão você atuou como revisor do programador X, na
 sessão seguinte você passará a ser o líder, mas tendo outro
 desenvolvedor Y como revisor.
 
-<!---
-![Programação em pares, tal como proposto por XP. Foto da
-[Wikipedia](https://commons.wikimedia.org/wiki/File:Pair_programming_1.jpg),
-licença CC-BY.
-](figs/cap2/pair-programming.png){width=40%}
---->
-
 \index{Microsoft Research}
 ```{=latex}
 \begin{esmbox}
@@ -1192,10 +1182,11 @@ principais são o Backlog do Produto e o Backlog do Sprint e os
 principais eventos são sprints e o planejamento de sprints, conforme
 descreveremos a seguir.
 
-\index{Backlog!Produto}
-\index{Scrum!Backlog do Produto}
 
-*   O **Backlog do Produto** é uma lista de histórias, ordenada por
+*   O **Backlog do Produto** 
+     \index{Backlog!Produto}
+     \index{Scrum!Backlog do Produto}
+     é uma lista de histórias, ordenada por
      prioridades. Assim como em XP, as histórias são escritas e
      priorizadas pelo Dono do Produto e constituem uma descrição
      resumida das funcionalidades que devem ser implementadas no
@@ -1209,10 +1200,10 @@ descreveremos a seguir.
      dono do Backlog do Produto que faz o Dono do Produto receber esse
      nome.
 
-\index{Sprint}
-\index{Scrum!Sprint}
-
-*   **Sprint** é o nome dado por Scrum para uma iteração. Ou seja, como
+*   **Sprint** é o 
+     \index{Sprint}
+     \index{Scrum!Sprint}
+     nome dado por Scrum para uma iteração. Ou seja, como
      todo método ágil, Scrum é um método iterativo, no qual o
      desenvolvimento é dividido em sprints, de até um mês. Ao final de
      um sprint, deve-se entregar um produto com valor tangível para o
@@ -1222,10 +1213,10 @@ descreveremos a seguir.
      não torna a entrada em produção obrigatória, conforme discutido na
      Seção 2.2.
 
-\index{Planejamento do Sprint}
-\index{Scrum!Planejamento do Sprint}
-
-*   O **Planejamento do Sprint** é uma reunião na qual todo o time se
+*   O **Planejamento do Sprint** 
+     \index{Planejamento do Sprint}
+     \index{Scrum!Planejamento do Sprint}
+     é uma reunião na qual todo o time se
      reúne para decidir as histórias que serão implementadas no sprint
      que vai se iniciar. Portanto, ele é o evento que marca o início de
      um sprint. Essa reunião é dividida em duas partes. A primeira é
@@ -1238,10 +1229,10 @@ descreveremos a seguir.
      para o sprint. Por exemplo, pode-se decidir cancelar uma história,
      pois ela se revelou mais complexa ao ser quebrada em tarefas.
 
-\index{Backlog!Sprint}
-\index{Scrum!Backlog do Sprint}
-
-*   O **Backlog** **do** **Sprint** é o artefato gerado ao final do
+*   O **Backlog do Sprint** é 
+     \index{Backlog!Sprint}
+     \index{Scrum!Backlog do Sprint}
+     o artefato gerado ao final do
      Planejamento do Sprint. Ele é uma lista com as tarefas do sprint,
      bem como inclui a duração das mesmas. Como o Backlog do Produto, o
      Backlog do Sprint também é dinâmico. Por exemplo, tarefas podem se
@@ -1449,11 +1440,6 @@ algumas perguntas sobre Scrum:
 **O que significa a palavra Scrum**? O nome não é uma sigla, mas uma
 referência à "reunião" de jogadores realizada em uma partida de rugby
 para decidir quem vai ficar com a bola, após uma infração involuntária.
-
-<!---
-Veja uma foto a seguir.
-![Scrum em uma partida de rugby, foto: [Flickr](https://flic.kr/p/gB9tsA), licença CC-BY.](figs/cap2/scrum.jpg){width=45%}
----->
 
 \index{Squad}
 **O que é um squad**? Esse termo é um sinônimo para
@@ -1776,9 +1762,13 @@ processo Kanban e os itens são tarefas. Assim, temos também que:
 
 * WIP: número de tarefas em um dado passo de um processo Kanban
 
-* Throughput (TP): taxa de chegada dessas tarefas nesse passo
+* Throughput (TP): 
+  \index{Throughput}
+  taxa de chegada dessas tarefas nesse passo
 
-* Lead Time (LT): tempo que cada tarefa fica nesse passo
+* Lead Time (LT): 
+  \index{Lead Time} 
+  tempo que cada tarefa fica nesse passo
 
 Ou seja, de acordo com a Lei de Little: **WIP = TP * LT**. Visualmente,
 podemos representar a Lei de Little da seguinte forma:
@@ -1926,42 +1916,39 @@ seria comprada pela IBM. Por isso, o método é também chamado de
 
 Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 
-*   UP é baseado na linguagem de modelagem UML. Todos os seus resultados
-     são documentados e representados usando-se diagramas gráficos de
-     UML. No Capítulo 4, iremos estudar UML com mais calma. Por
-     enquanto, vamos ressaltar que a proposta era ter uma linguagem de
-     modelagem "unificada" (UML) e também um processo "unificado"
-     (UP), ambos propostos pelo mesmo grupo de profissionais.
+* UP é baseado na linguagem de modelagem UML. Todos os seus resultados são documentados e representados usando-se diagramas gráficos de UML. No Capítulo 4, iremos estudar UML com mais calma. Por enquanto, vamos ressaltar que a proposta era ter uma linguagem de modelagem "unificada" (UML) e também um processo "unificado"(UP), ambos propostos pelo mesmo grupo de profissionais.
 
+* UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como **ferramentas CASE** (*Computer-Aided Software Engineering*). 
 \index{CASE (Computer-Aided Software Engineering)}
-*   UP é associado a ferramentas de apoio ao projeto e análise de
-     software, conhecidas como **ferramentas CASE** (*Computer-Aided
-     Software Engineering*). O nome é uma analogia com ferramentas CAD
-     (*Computer Aided-Design*), usadas em projetos de Engenharia Civil,
-     Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e
-     análise de um sistema deveriam ser integralmente baseados em
-     diagramas UML. Mas esses diagramas não seriam desenhados em papel
-     e sim usando-se ferramentas computacionais (veja um exemplo de
-     tela de uma ferramenta CASE na próxima figura). A Rational, além
-     de propor o método UP, também desenvolvia e vendia licenças de uso
-     de ferramentas CASE.
+O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo de tela de uma ferramenta CASE na próxima figura). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
-
-<!-- end of list -->
 
 ![Exemplo de diagrama UML desenhado usando uma ferramenta CASE. Imagem extraída de [link](https://umbrello.kde.org/screenshots.php).](figs/cap2/case.png){width=55%}
+
 
 UP propõe que o desenvolvimento seja decomposto nas
 seguintes fases:
 
-\index{Inception}
-* **Inception** (às vezes, traduzida como iniciação ou concepção): que inclui análise de viabilidade, definição de orçamentos, análise de riscos e definição de escopo do sistema. Ao final dessa fase, o caso de negócio (*business case*) do sistema deve estar bem claro. Pode-se inclusive decidir que não vale a pena desenvolver o sistema, mas sim comprar um sistema pronto.
+* **Inception** 
+  \index{Inception}
+  (às vezes, traduzida como iniciação ou concepção): que inclui análise de viabilidade,
+  definição de orçamentos, análise de riscos e definição de escopo do sistema. Ao final 
+  dessa fase, o caso de negócio (*business case*) do sistema deve estar bem claro. Pode-se 
+  inclusive decidir que não vale a pena desenvolver o sistema, mas sim comprar um sistema
+  pronto.
+ 
+*  **Elaboração**: que incluiu especificação de requisitos (via casos de uso de UML), 
+   definição da arquitetura do sistema, bem como de um plano para o seu desenvolvimento. Ao
+   final dessa fase, todos os riscos identificados na fase anterior devem estar devidamente 
+   controlados e mitigados.
 
-*  **Elaboração**: que incluiu especificação de requisitos (via casos de uso de UML), definição da arquitetura do sistema, bem como de um plano para o seu desenvolvimento. Ao final dessa fase, todos os riscos identificados na fase anterior devem estar devidamente controlados e mitigados.
+*  **Construção**: na qual se realiza o projeto de mais baixo nível, implementação e testes 
+   do sistema. Ao final dessa fase, deve ser disponibilizado um sistema funcional, incluindo
+   documentação e manuais, que possam ser validados pelos usuários.
 
-*  **Construção**: na qual se realiza o projeto de mais baixo nível, implementação e testes do sistema. Ao final dessa fase, deve ser disponibilizado um sistema funcional, incluindo documentação e manuais, que possam ser validados pelos usuários.
-
-*  **Transição**: na qual ocorre a disponibilização do sistema para produção, incluindo a definição de todas as rotinas de implantação, como políticas de backup, migração de dados de sistemas legados, treinamento da equipe de operação, etc.
+*  **Transição**: na qual ocorre a disponibilização do sistema para produção, incluindo a 
+   definição de todas as rotinas de implantação, como políticas de backup, migração de dados 
+   de sistemas legados, treinamento da equipe de operação, etc.
 
 Assim como no Modelo Espiral, pode-se repetir várias vezes o processo;
 ou seja, o desenvolvimento é incremental, com novas funcionalidades
@@ -2104,10 +2091,10 @@ edição, 2014.
 
 ![](figs/cap2/custo-mudancas.png){width=45%}
 
-\index{Facebook}
 18\. O artigo "*Development and Deployment at Facebook*"
      ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
      apresenta os métodos e práticas de desenvolvimento de software
+     \index{Facebook}
      usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2),
      os autores fazem uma distinção entre alguns métodos de
      desenvolvimento, baseando-se na frequência com que versões de um

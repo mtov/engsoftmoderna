@@ -527,12 +527,6 @@
 <p>Primeiro, o nome do método na classe <code>A</code> foi renomeado para <code>m11</code>. Além disso, as chamadas feitas em <code>m3</code> e <code>m4</code> foram atualizadas para usar o novo nome.</p>
 <p>Apesar de chamado de refactoring automatizado, o exemplo que mostramos deixa claro que cabe ao usuário indicar o trecho de código que deseja refatorar e o refactoring que deseja realizar. Ele também deve dar informações sobre esse refactoring. Por exemplo, o novo nome do identificador, no caso de uma renomeação. A partir daí é que o refactoring torna-se automatizado.</p>
 <p> Antes de aplicar o refactoring, a IDE verifica se as suas <strong>pré-condições</strong> são verdadeiras, isto é, se a execução do refactoring — conforme requisitado pelo usuário — não vai causar um erro de compilação ou então mudar o comportamento do programa. No exemplo anterior, se o usuário pedir para renomear <code>m1</code> para <code>m2</code>, a IDE vai informar que esse refactoring não pode ser realizado, pois a classe já tem um método chamado <code>m2</code>.</p>
-<!---
-Uma possível mensagem informada pela IDE é
-a seguinte:
-
-![](figs/cap9/automatizado5.png){width="95%"}
---->
 <h3 data-number="1.4.1" id="verificação-de-pré-condições-de-refactorings" data-number="1.4.1"><span class="header-section-number">9.4.1</span> Verificação de Pré-condições de Refactorings</h3>
 <p>A verificação das pré-condições de refactorings não é uma tarefa trivial. Para ilustrar a complexidade dessa tarefa, vamos reusar um pequeno programa em Java, proposto por Friedrich Steimann and Andreas Thies (<a href="https://doi.org/10.1007/978-3-642-03013-0_19">link</a>). Conforme mostrado a seguir, esse programa inclui duas classes, <code>A</code> e <code>B</code>, implementadas em arquivos distintos, mas pertencentes a um mesmo pacote <code>P1</code>. Assim, a chamada de <code>m("abc")</code> no primeiro arquivo irá resultar na execução do método <code>m(String)</code> da classe <code>B</code>.</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">// arquivo A.java</span></span>

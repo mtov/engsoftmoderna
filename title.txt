@@ -1,2 +1,6 @@
-% Engenharia de Software Moderna
-% Marco Tulio Valente
+---
+title: Engenharia de Software Moderna
+author: Marco Tulio Valente
+rights: Direitos autorais protegidos pela Lei 9.610, de 10/02/1998. Versão para  uso pessoal e individual, sendo proibida qualquer forma de redistribuição.
+language: pt-BR
+---

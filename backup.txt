@@ -92,3 +92,34 @@ height="2.224663167104112in"}
 ![Stack Overflow survey 2018: Qual método de desenvolvimento você costuma
 usar? Resultados relativos a 57 mil respostas.](figs/cap2/so-survey){width=60%}
 --->
+
+=====
+
+<!--
+Mais recentemente, times
+de desenvolvimento estão trabalhando em conjunto com opera. Quando isso ocorre, eles são chamados de times
+*devops*, que é uma junção das palavras desenvolvedor e operador. Nesses
+casos, a ideia é evitar dois grupos em uma organização, desenvolvedores
+versus operadores, com um grupo empurrando a responsabilidade pelos
+problemas para o outro.
+-->
+
+<!---
+![Programação em pares, tal como proposto por XP. Foto da
+[Wikipedia](https://commons.wikimedia.org/wiki/File:Pair_programming_1.jpg),
+licença CC-BY.
+](figs/cap2/pair-programming.png){width=40%}
+--->
+
+<!---
+Veja uma foto a seguir.
+![Scrum em uma partida de rugby, foto: [Flickr](https://flic.kr/p/gB9tsA), licença CC-BY.](figs/cap2/scrum.jpg){width=45%}
+---->
+
+<!---
+Uma possível mensagem informada pela IDE é
+a seguinte:
+
+![](figs/cap9/automatizado5.png){width="95%"}
+--->
+

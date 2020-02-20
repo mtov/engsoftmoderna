@@ -304,8 +304,9 @@ Para concluir, vamos descrever algumas boas práticas de escrita de casos de uso
 
 * As ações de um caso de uso devem ser escritas em uma linguagem simples e direta. "Escreva casos de uso como se estivesse no início do ensino fundamental" é uma sugestão ouvida com frequência. Sempre que possível, use o ator principal como sujeito das ações, seguido de um verbo. Por exemplo, "o cliente insere o cartão no caixa eletrônico". Porém, se a ação for realizada pelo sistema, escreva algo como: "o sistema valida o cartão inserido".
 
+* Casos de uso devem ser pequenos, com poucos passos, principalmente no fluxo normal, para facilitar o entendimento. Alistair Cockburn, 
 \index{Cockburn, Alistair}
-* Casos de uso devem ser pequenos, com poucos passos, principalmente no fluxo normal, para facilitar o entendimento. Alistair Cockburn, autor de um conhecido livro sobre casos de uso ([link](https://dl.acm.org/citation.cfm?id=517669)), recomenda que eles devem ter no máximo 9 passos no fluxo normal. Ele afirma literalmente o seguinte: "eu raramente encontro um caso de uso bem escrito com mais de 9 passos no cenário principal de sucesso." Portanto, se você estiver escrevendo um caso de uso e ele começar a ficar extenso, tente quebrá-lo em dois casos de uso menores. Outra alternativa consiste em agrupar alguns passos. Por exemplo, os passos "usuário informa login" e "usuário informa senha" podem ser agrupados em "usuário informa login e senha".
+autor de um conhecido livro sobre casos de uso ([link](https://dl.acm.org/citation.cfm?id=517669)), recomenda que eles devem ter no máximo 9 passos no fluxo normal. Ele afirma literalmente o seguinte: "eu raramente encontro um caso de uso bem escrito com mais de 9 passos no cenário principal de sucesso." Portanto, se você estiver escrevendo um caso de uso e ele começar a ficar extenso, tente quebrá-lo em dois casos de uso menores. Outra alternativa consiste em agrupar alguns passos. Por exemplo, os passos "usuário informa login" e "usuário informa senha" podem ser agrupados em "usuário informa login e senha".
 
 * Casos de uso não são algoritmos escritos em pseudo-código. O nível de abstração é maior do que aquele necessário em algoritmos. Lembre-se de que os usuários do sistema cujos requisitos estão sendo documentados devem ser capazes de ler, entender e descobrir problemas em casos de uso. Por isso, evite os comandos "se", "repita até", etc. Por exemplo, em vez de um comando de repetição, você pode usar algo como: "o cliente pesquisa o catálogo até encontrar um produto que pretenda comprar".
 
@@ -489,14 +490,17 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 ```
 **Mundo Real**: Testes A/B são usados por todas as grandes empresas da Internet. A seguir, reproduzimos depoimentos de desenvolvedores e cientistas de três empresas sobre esses testes:
 
-\index{Facebook}
-* No Facebook, "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). \... Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+* No Facebook, 
+  \index{Facebook}
+  "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
-\index{Netflix}
-* Na Netflix, "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
+* Na Netflix, 
+  \index{Netflix}
+  "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
 
-\index{Microsoft}
-* Na Microsoft, especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
+* Na Microsoft, 
+   \index{Facebook}
+   especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
 ```{=latex}
 \end{esmbox}
 ```

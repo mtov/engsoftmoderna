@@ -21,3 +21,4 @@ rm esm-book.md
 
 cp esm-book.pdf ../Dropbox
 cp esm-book.epub ../Dropbox
+cp esm-book.mobi ../Dropbox

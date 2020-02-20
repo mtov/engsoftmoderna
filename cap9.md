@@ -949,12 +949,6 @@ anterior, se o usuário pedir para renomear `m1` para `m2`, a IDE vai
 informar que esse refactoring não pode ser realizado, pois a classe já
 tem um método chamado `m2`. 
 
-<!---
-Uma possível mensagem informada pela IDE é
-a seguinte:
-
-![](figs/cap9/automatizado5.png){width="95%"}
---->
 
 ### Verificação de Pré-condições de Refactorings
 

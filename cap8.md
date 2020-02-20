@@ -245,9 +245,10 @@ método apenas cria uma pilha e testa se ela está vazia.
 
 Métodos de teste têm a seguinte estrutura:
 
-\index{Testes de Unidade!Fixture}
 -   Primeiro, cria-se o contexto do teste, também chamado de
-    **fixture**. Para isso, deve-se instanciar os objetos que se
+    **fixture**. 
+    \index{Testes de Unidade!Fixture}
+    Para isso, deve-se instanciar os objetos que se
     pretende testar e, se for o caso, inicializá-los. No nosso
     primeiro exemplo, essa parte do teste inclui apenas a criação de
     uma pilha de nome `stack`.
@@ -256,9 +257,10 @@ Métodos de teste têm a seguinte estrutura:
     sendo testada. No exemplo, chamamos o método `isEmpty()` e
     armazenamos o seu resultado em uma variável local.
 
-\index{Testes de Unidade!assert}
 -   Por fim, devemos testar se o resultado do método é aquele esperado.
-    Para isso, deve-se usar um comando chamado **assert**. Na verdade,
+    Para isso, deve-se usar um comando chamado **assert**. 
+    \index{Testes de Unidade!assert}
+    Na verdade,
     o JUnit oferece diversas variações de `assert`, mas todas têm o
     mesmo objetivo: testar se um determinado resultado é igual a um
     valor esperado. No exemplo, usamos `assertTrue`, que verifica se o
@@ -375,7 +377,7 @@ para cada classe de teste TC
   para cada método m de TC com anotação @Test
     o = new TC();    // instancia objeto de teste
     se C possui um método b com anotação @Before
-         então o.b();   // chama método @Before, se existir
+         então o.b();   // chama método @Before
     o.m();           // chamada método @Test
 ```
 
@@ -413,30 +415,33 @@ Antes de avançar, vamos apresentar algumas definições:
     anotação `@Test`. São também chamados de método de teste (*test
     method*).
 
-\index{Testes de Unidade!Fixture}
 -   **Fixture**: estado do sistema que será testado por um ou mais
     métodos de teste, incluindo dados, objetos, etc. O termo é reusado
-    da indústria manufatureira, onde *fixture* é um equipamento que
+    da indústria manufatureira, onde *fixture* 
+    \index{Testes de Unidade!Fixture}
+    é um equipamento que
     "fixa" uma peça que se pretende construir (veja uma
     [foto](https://en.wikipedia.org/wiki/Fixture_(tool))
     na Wikipedia). No contexto de testes de unidade, a função de uma
     fixture é "fixar" o estado — isto é, os dados e objetos
     — exercitados no teste.
 
-\index{Testes de Unidade!Casos de Teste}
-
--   **Casos de Teste (Test Case)**: classe com os métodos de teste. O
+-   **Casos de Teste (Test Case)**: 
+    \index{Testes de Unidade!Casos de Teste}
+    classe com os métodos de teste. O
     nome tem origem nas primeiras versões do JUnit. Nessas versões, os
     métodos de testes eram implementados em classes que herdavam de
     uma classe `TestCase`.
 
-\index{Testes de Unidade!Suíte de Testes}
--   **Suíte de Testes (Test Suite)**: conjunto de casos de teste, os
+-   **Suíte de Testes (Test Suite)**: 
+    \index{Testes de Unidade!Suíte de Testes}
+    conjunto de casos de teste, os
     quais são executados pelo framework de testes de unidade (no nosso
     caso, JUnit).
 
-\index{Sistema sob Teste (SUT)}
--   **Sistema sob Teste (System Under Test, SUT)**: sistema que está
+-   **Sistema sob Teste (System Under Test, SUT)**: 
+    \index{Sistema sob Teste (SUT)}
+    sistema que está
     sendo testado. É um nome genérico, usado também em outros tipos de
     testes, não necessariamente de unidades. Às vezes, usa-se também o
     termo **código de produção**, ou seja, código que vai ser
@@ -1049,7 +1054,7 @@ que seja fácil de ser testada, do que deixar o código sem
 testes.
 
 ```java
-public class MyMath{
+public class MyMath {
   public double syncPI(int prec) {
     double pi = "calcula PI com precisão prec"
     return pi;
@@ -1160,7 +1165,7 @@ import static org.junit.Assert.*;
 class BookConst {
 
   public static String ESM = 
-                "{ \"titulo\": \"Eng Soft Moderna\" }";        
+          "{ \"titulo\": \"Eng Soft Moderna\" }";        
 
   public static String NULLBOOK = "NULL";
 
@@ -1300,7 +1305,7 @@ mockito, está neste
 \index{Testes de Software!Comportamental}
 \index{Teste Comportamental}
 
-\index{Meszaros, Gerado}
+\index{Meszaros, Gerard}
 Alguns autores, como Martin Fowler
 ([link](https://martinfowler.com/articles/mocksArentStubs.html))
 e também Gerard Meszaros
@@ -1333,7 +1338,7 @@ argumento.
 
 \index{Mocks!Objetos Dummy}
 \index{Mocks!Objetos Fake}
-Segundo Gerado Meszaros, mocks e stubs são casos especiais de **objetos
+Segundo Gerard Meszaros, mocks e stubs são casos especiais de **objetos
 dublê** (*double*). O termo é inspirado em dublês de atores em filmes.
 Segundo Meszaros, existem pelo menos mais dois outros tipos de objetos
 dublê:
@@ -1704,10 +1709,10 @@ Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
 
 ```java
-public class AgendaFacade{
+public class AgendaFacade {
+  public AgendaFacade(DB db);
   int addAppointment(Appointment p);
   void removeAppointment(int id);
-  void editAppointment(int id);
   Appointmemt[] listAppointments();
 }
 ```
@@ -1717,7 +1722,7 @@ Assim, podemos escrever o seguinte teste de integração para essa classe:
 @Test
 void AgendaFacadeTest() {
   DB db = DB.create();
-  AgendaFacade agenda = new AgendaFacade();
+  AgendaFacade agenda = new AgendaFacade(db);
   Appointment app1 = new Appointmemt(...);
   Appointment app2 = new Appointmemt(...);
   Appointment app3 = new Appointmemt(...);
@@ -1774,7 +1779,7 @@ public class SeleniumExample {
     // cria um driver para acessar um servidor Web
     WebDriver driver = new FirefoxDriver();
 
-    // instrui o driver para "navegar" pela página do Google
+    // instrui o driver para "navegar" pelo Google
     driver.navigate().to("http://www.google.com");
 
     // obtém um campo de entrada de dados, de nome "q"
@@ -1783,10 +1788,10 @@ public class SeleniumExample {
     // preenche esse campo com as palavras "software"
     element.sendKeys("software");
 
-    // submete os dados; como se fosse dado um "enter" no campo
+    // submete os dados; como se fosse dado um "enter"
     element.submit();
 
-    // espera a página de resposta carregar (com timeout de 8s)
+    // espera a página de resposta carregar (timeout de 8s)
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition<Boolean>() {
      public Boolean apply(WebDriver d) {

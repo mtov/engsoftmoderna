@@ -31,11 +31,8 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organiza�
 
 * Ao longo da escrita, procuramos praticar o que enfatizamos no livro, principalmente no que diz respeito à prevalência atual de métodos de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios ágeis. Cada capítulo foi tratado com sendo um sprint; uma vez pronto, ele foi disponibilizado para uso, para receber críticas e sugestões. Como ocorre com software, acho arriscado, nos dias de hoje, passar anos escrevendo um manuscrito, trancado em minha sala, para só então torná-lo público. 
 
-<!--
-Outra prática ágil que se mostrou muito interessante foi deployment contínuo, isto é, toda atualização, em qualquer capítulo, era imediatamente propagada para a versão Web do livro.
--->
 
-## Público Alvo {.unnumbered}
+## Público-Alvo {.unnumbered}
 
 O livro destina-se a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
 

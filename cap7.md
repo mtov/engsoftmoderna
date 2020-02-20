@@ -380,23 +380,25 @@ histórica dessas arquiteturas:
     último caso, usando-se frameworks como Swing). Resumindo, a
     aplicação, como um todo segue, uma arquitetura em três camadas,
     mas usa MVC na camada de interface com o usuário.
-
-\index{Ruby on Rails}
-\index{Django}
-\index{CakePHP}
+  
 *   No início dos anos 2000, a Web se popularizou e a interface das
     aplicações migrou para HTML e, depois, para HTML e JavaScript. A
     confusão entre os termos MVC e três camadas surgiu então nessa
     época, principalmente devido ao aparecimento de frameworks para
     implementação de sistemas Web que se denominaram frameworks MVC.
     Como exemplo, podemos citar Spring (para Java), Ruby on Rails,
-    Django (para Python) e CakePHP. Na verdade, esses frameworks
+    Django (para Python) e CakePHP. 
+    \index{Ruby on Rails}
+    \index{Django}
+    \index{CakePHP}
+    Na verdade, esses frameworks
     expandiram e adaptaram o conceito de MVC para Web. Por exemplo,
     eles forçam a organização de um sistema Web em três partes (veja
     também na próxima figura): visão, composta por páginas HTML;
     controladores, que processam uma solicitação e geram uma nova
     visão como resposta e modelo, que é a camada que persiste os dados
     em um banco de dados.
+  
 
 ![Arquitetura MVC Web](figs/cap7/mvc-web){width=55%}
 
@@ -617,11 +619,11 @@ vantagens:
     relacional. Já o microsserviço de recomendação de novas compras
     pode ser implementado em Python com um banco de dados NoSQL.
 
-\index{Falhas Parciais}
 *   Quando se usa um monolito, falhas são totais. Se o banco de dados
     cair, todos os serviços ficam fora do ar. Por outro lado, em
     arquiteturas baseadas em microsserviços podemos ter **falhas
-    parciais**. Por exemplo, suponha que o microsserviço de
+    parciais**. \index{Falhas Parciais}
+    Por exemplo, suponha que o microsserviço de
     recomendação de compras do exemplo do item anterior fique fora do
     ar. Os clientes ainda conseguirão pesquisar por produtos, fazer
     compras, etc. Mas eles irão receber uma mensagem na área de
@@ -714,17 +716,20 @@ dão origem a sistemas distribuídos. Logo, ao usar microsserviços, temos
 que enfrentar todos os desafios que aparecem quando se implementa um
 sistema distribuído. Dentre eles, podemos citar:
 
-\index{REST}
+
 *   Complexidade: quando dois módulos executam em um mesmo processo, a
     comunicação entre eles é por meio de chamadas de métodos. Quando
     esses módulos estão em máquinas diferentes, a comunicação entre
     eles deve usar algum protocolo de comunicação, como **HTTP/REST**.
+    \index{REST}
     Ou seja, os desenvolvedores terão que dominar e usar um conjunto
     de tecnologias para comunicação em redes.
 
-\index{Latência}
+
 *   Latência: a comunicação entre microsserviços também envolve um
-    atraso maior, que chamamos de **latência**. Quando um cliente
+    atraso maior, que chamamos de **latência**. 
+    \index{Latência}
+    Quando um cliente
     chama um método em um sistema monolítico, a latência é mínima. Por
     exemplo, é raro um desenvolvedor deixar de usar uma chamada de
     método apenas para melhorar o desempenho de seu sistema. Porém,
@@ -735,8 +740,7 @@ sistema distribuído. Dentre eles, podemos citar:
     essa chamada terá que passar pelo cabo da rede — ou pelo ar e
     pela fibra ótica — até chegar à máquina de destino.
 
-\index{Microsserviços!Two-Phase Commit}
-\index{Two-Phase Commit}
+
 *   Transações Distribuídas: Como vimos, microsserviços devem ser
     autônomos também do ponto de vista de dados. Isso torna mais
     complexo garantir que operações que operam em dois ou mais bancos
@@ -750,6 +754,8 @@ sistema distribuído. Dentre eles, podemos citar:
     atômicas: ou os dois cartões são debitados ou nenhum deles é
     debitado. Por isso, em arquiteturas baseadas em microsserviços,
     protocolos de transações distribuídas, como **two-phase commit**,
+    \index{Microsserviços!Two-Phase Commit}
+    \index{Two-Phase Commit}
     podem ser necessários para garantir uma semântica de transações em
     operações que escrevem em mais de um banco de dados.
 
@@ -790,15 +796,19 @@ Além de permitirem comunicação assíncrona entre clientes e servidores,
 filas de mensagens viabilizam duas formas de desacoplamento entre os
 componentes de uma aplicação distribuída:
 
-\index{Arquitetura Orientada a Mensagens!Desacoplamento no espaço}
-*   **Desacoplamento no espaço**: clientes não precisam conhecer os
+
+*   **Desacoplamento no espaço**: 
+    \index{Arquitetura Orientada a Mensagens!Desacoplamento no espaço}
+    clientes não precisam conhecer os
     servidores e vice-versa. Em outras palavras, o cliente é
     exclusivamente um produtor de informações. Mas ele não precisa
     saber quem vai consumir essa informação. O raciocínio inverso vale
     para servidores.
 
-\index{Arquitetura Orientada a Mensagens!Desacoplamento no tempo}
-*   **Desacoplamento no tempo**: clientes e servidores não precisam
+
+*   **Desacoplamento no tempo**: 
+    \index{Arquitetura Orientada a Mensagens!Desacoplamento no tempo}
+    clientes e servidores não precisam
     estar simultaneamente disponíveis para se comunicarem. Se o
     servidor estiver fora do ar, os clientes podem continuar
     produzindo mensagens e colocando-as na fila. Quando o servidor
@@ -946,7 +956,7 @@ publish/subscribe sobre a ocorrência dos eventos de interesse.
 \index{Pipes e Filtros}
 
 **Pipes e Filtros** é um tipo de arquitetura orientada a dados, na qual
-os programas \-- chamados de **filtros** — têm como função processar
+os programas — chamados de **filtros** — têm como função processar
 os dados recebidos na entrada e gerar uma nova saída. Os filtros são
 conectados por meio de **pipes**, que agem como buffers. Isto é, pipes
 são usados para armazenar a saída de um filtro, enquanto ela não é lida
