@@ -198,10 +198,11 @@ diagramas leves e informais de partes de um sistema, vindo daí o nome
 esboço (*sketch*). Esses diagramas são usados para comunicação entre os
 desenvolvedores, em duas situações principais:
 
-\index{UML!Engenharia Avante}
-\index{Engenharia Avante}
 
--   **Engenharia Avante** (*Forward Engineering*): quando os
+-   **Engenharia Avante** (*Forward Engineering*): 
+    \index{UML!Engenharia Avante}
+    \index{Engenharia Avante}
+    quando os
     desenvolvedores usam modelos UML para discutir e analisar
     alternativas de design, antes que exista qualquer código. Por
     exemplo, suponha que uma história tenha sido alocada para o sprint
@@ -211,10 +212,10 @@ desenvolvedores, em duas situações principais:
     elas. O objetivo é validar a proposta de tais classes antes de
     começar a codificar.
 
-\index{UML!Engenharia Reversa}
-\index{Engenharia Reversa}
-
--   **Engenharia Reversa** (*Reverse Engineering*): quando os
+-   **Engenharia Reversa** (*Reverse Engineering*): 
+    \index{UML!Engenharia Reversa}
+    \index{Engenharia Reversa}
+    quando os
     desenvolvedores usam modelos UML para analisar e discutir uma
     funcionalidade que já se encontra implementada no código fonte.
     Por exemplo, um desenvolvedor mais experiente pode desenhar alguns
@@ -833,15 +834,17 @@ assumindo a existência dessa ficha.
 **Aprofundamento**: Existem pelo menos três outras alternativas para
 modelagem de fluxos e processos:
 
-\index{Fluxogramas}
--   **Fluxogramas,** os quais foram propostos tão logo se começou a
+-   **Fluxogramas,** 
+    \index{Fluxogramas}
+    os quais foram propostos tão logo se começou a
     desenvolver os primeiros programas para computadores modernos.
     Diagramas de atividades são parecidos com fluxogramas; porém, eles
     incluem suporte a concorrência, por meio de *forks* e *joins*. Por
     outro lado, fluxogramas modelam processos sequenciais.
 
-\index{Redes de Petri}
--   **Redes de Petri** é uma notação gráfica, proposta pelo matemático
+-   **Redes de Petri** 
+    \index{Redes de Petri}
+    é uma notação gráfica, proposta pelo matemático
     alemão Carl Adam Petri, em 1962, para modelagem de sistemas
     concorrentes. Redes de Petri possuem uma representação gráfica e
     também usam fichas (*tokens*) para marcar o estado corrente do
@@ -850,8 +853,9 @@ modelagem de fluxos e processos:
     diagramas de sequência. Por outro lado, esses últimos tendem a
     oferecer uma notação mais simples e fácil de entender.
 
-\index{BPMN (Business Process Model and Notation)}
--   **BPMN** (*Business Process Model and Notation*) é um esforço mais
+-   **BPMN** (*Business Process Model and Notation*) 
+    \index{BPMN (Business Process Model and Notation)}
+    é um esforço mais
     recente, que teve início nos anos 2000, visando a proposição de
     uma notação gráfica mais amigável para modelagem de processos de
     negócio do que aquela oferecida por diagramas de atividades. Um
