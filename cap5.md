@@ -476,6 +476,7 @@ class Aluno{
 }
 ```
 
+\index{Ousterhout, John}
 No entanto, getters e setters não são uma garantia de que estamos
 ocultando dados da classe, como mencionado em alguns livros e discussões
 pela Internet. Pelo contrário, eles são um instrumento de liberação de
@@ -484,7 +485,6 @@ esses métodos
 ([link](https://dl.acm.org/citation.cfm?id=3288797), Seção
 19.6):
 
-\index{Ousterhout, John}
 > "Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe."
 
 Em resumo: certifique-se de que é imprescindível liberar
@@ -1144,14 +1144,17 @@ compatível com as diversas implementações concretas dessa interface.
 Antes de explicar o princípio, vamos esclarecer que existem dois tipos
 de herança:
 
-\index{Herança!de Classes}
--   **Herança de classes** (exemplo: `class A extends B`), que é aquela
+
+-   **Herança de classes**
+    \index{Herança!de Classes} 
+    (exemplo: `class A extends B`), que é aquela
     que envolve reúso de código. Não apenas neste capítulo, mas em
     todo o livro, quando mencionarmos apenas o termo herança estaremos
     nos referindo a herança de classes.
 
-\index{Herança!de Interfaces}
--   **Herança de interfaces** (exemplo: `interface I implements J`), que
+-   **Herança de interfaces**
+    \index{Herança!de Interfaces} 
+    (exemplo: `interface I implements J`), que
     não envolve reúso de código. Essa forma de herança é mais simples
     e não suscita preocupações. Quando precisarmos de nos referir a
     ela, iremos usar o nome completo: herança de interfaces.
@@ -1170,6 +1173,7 @@ conforme descrito por Gamma e colegas no livro sobre padrões de projeto
 ([link](https://dl.acm.org/citation.cfm?id=186897)):
 
 \index{Gangue dos Quatro}
+
 > "Herança expõe para subclasses detalhes de implementação das classes
 pai. Logo, frequentemente diz-se que herança viola o
 encapsulamento das classes pai. A implementação das subclasses se
@@ -1241,20 +1245,23 @@ Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).
 Antes de concluir, gostaríamos de mencionar três pontos suplementares ao
 que discutimos sobre "Prefira Composição a Herança":
 
-\index{Reuso!Caixa-Preta}
-\index{Reuso!Caixa-Branca}
+
 -   Herança é classificada como um mecanismo de **reuso caixa-branca**,
     pois as subclasses costumam ter acesso a detalhes de implementação
-    da classe base. Por outro lado, composição é um mecanismo de
+    da classe base. 
+    \index{Reuso!Caixa-Preta}
+    \index{Reuso!Caixa-Branca}
+    Por outro lado, composição é um mecanismo de
     **reuso caixa-preta**.
 
 -   Um padrão de projeto que ajuda a substituir uma solução baseada em
     herança por uma solução baseada em composição é o Padrão
     Decorador, que vamos estudar no próximo capítulo.
 
-\index{Go}
-\index{Rust}
--   Por conta dos problemas discutidos nesta seção, linguagens de
+-   Por conta dos problemas discutidos nesta seção, 
+    \index{Go}
+    \index{Rust}
+    linguagens de
     programação mais recentes — como Go e Rust
     — não incluem suporte a herança.
 
@@ -1658,6 +1665,7 @@ desenvolvedores do sistema operacional Unix — tem uma frase a esse
 respeito:
 
 \index{Thompson, Ken}
+
 > "Um dos dias mais produtivos da minha vida foi quando eu deletei 1.000
 linhas de código de um sistema."
 
@@ -1909,8 +1917,10 @@ Languages, and Applications (OOPSLA), 1991.
     propriedade de projeto? Por outro lado, qual propriedade de
     projeto estará sendo afetada de modo negativo? Justifique.
 
-\index{Ousterhout, John}
-3\.  **Classitis** é o nome dado por John Ousterhout à proliferação de
+
+3\.  **Classitis** é o nome dado por John Ousterhout 
+    \index{Ousterhout, John}
+    à proliferação de
     pequenas classes em um sistema. Segundo ele, *classitis* pode
     resultar em classes que individualmente são simples, mas que
     aumentam a complexidade total de um sistema. Usando os conceitos

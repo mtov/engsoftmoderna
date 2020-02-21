@@ -110,19 +110,24 @@ No livro sobre padrões de projeto, são propostos 23 padrões, divididos
 nas seguintes três categorias (os padrões que estudaremos neste capítulo estão
 em negrito, seguido do número da seção onde eles são apresentados):
 
-\index{Padrões de Projeto!Criacionais}
--   **Criacionais**: padrões que propõem soluções flexíveis para criação
+
+-   **Criacionais**: padrões
+    \index{Padrões de Projeto!Criacionais}
+    que propõem soluções flexíveis para criação
     de objetos. São eles: **Abstract Factory (6.2)**, Factory Method, 
     **Singleton (6.3)**, **Builder (6.12)** e Prototype.
 
-\index{Padrões de Projeto!Estruturais}
--   **Estruturais**: padrões que propõem soluções flexíveis para
+-   **Estruturais**: 
+    \index{Padrões de Projeto!Estruturais}
+    padrões que propõem soluções flexíveis para
     composição de classes e objetos. São eles: **Proxy (6.4)**, 
     **Adapter (6.5)**, **Facade (6.6)**, **Decorator (6.7)**, Bridge, 
     Composite e Flyweight.
 
-\index{Padrões de Projeto!Comportamentais}
--   **Comportamentais**: padrões que propõem soluções flexíveis para
+
+-   **Comportamentais**: padrões 
+    \index{Padrões de Projeto!Comportamentais}
+    que propõem soluções flexíveis para
     interação e divisão de responsabilidades entre classes e objetos.
     São eles: **Strategy (6.8)**, **Observer (6.9)**, **Template Method (6.10)**, **Visitor (6.11)**, Chain of Responsibility, Command, Interpreter, **Iterator (6.12)**, Mediator, Memento e State.
 
@@ -481,10 +486,11 @@ considerando a solução que usa um proxy:
 Além de ajudar na implementação de caches, proxies podem ser usados para
 implementar outros requisitos não-funcionais. Alguns exemplos incluem:
 
-\index{Stubs}
 -   Comunicação com um cliente remoto, isto é, pode-se usar um proxy
     para encapsular protocolos e detalhes de comunicação. Esses
-    proxies são chamados de **stubs**.
+    proxies 
+    \index{Stubs}
+    são chamados de **stubs**.
 
 -   Alocação de memória por demanda para objetos que consomem muita
     memória. Por exemplo, uma classe pode manipular uma imagem em alta

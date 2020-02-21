@@ -249,8 +249,10 @@
 <span id="cb3-11"><a href="#cb3-11"></a>  }</span>
 <span id="cb3-12"><a href="#cb3-12"></a>  ...</span>
 <span id="cb3-13"><a href="#cb3-13"></a>}</span></code></pre></div>
-<p>No entanto, getters e setters não são uma garantia de que estamos ocultando dados da classe, como mencionado em alguns livros e discussões pela Internet. Pelo contrário, eles são um instrumento de liberação de informação (<em>information leakage</em>). Veja o que John Ousterhout diz sobre esses métodos (<a href="https://dl.acm.org/citation.cfm?id=3288797">link</a>, Seção 19.6):</p>
-<p> &gt; <q>Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe.</q></p>
+<p> No entanto, getters e setters não são uma garantia de que estamos ocultando dados da classe, como mencionado em alguns livros e discussões pela Internet. Pelo contrário, eles são um instrumento de liberação de informação (<em>information leakage</em>). Veja o que John Ousterhout diz sobre esses métodos (<a href="https://dl.acm.org/citation.cfm?id=3288797">link</a>, Seção 19.6):</p>
+<blockquote>
+<p><q>Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe.</q></p>
+</blockquote>
 <p>Em resumo: certifique-se de que é imprescindível liberar informação privativa de uma classe. Se isso for, de fato, importante, considere a ideia de implementar essa liberação por meio de getters e setters — e não tornando o atributo público.</p>
 <p>No nosso exemplo, vamos então assumir que é imprescindível que os clientes possam ler e alterar a matrícula de alunos. Assim, é melhor que o acesso a esse atributo seja feito por meio de métodos <code>get</code> e <code>set</code>, pois eles constituem uma interface mais estável para tal acesso, pelos seguintes motivos:</p>
 <ul>
@@ -548,10 +550,15 @@
 <h3 data-number="1.6.4" id="prefira-composição-a-herança" data-number="1.6.4"><span class="header-section-number">5.6.4</span> Prefira Composição a Herança</h3>
 <p> </p>
 <p>Antes de explicar o princípio, vamos esclarecer que existem dois tipos de herança:</p>
-<p> - <strong>Herança de classes</strong> (exemplo: <code>class A extends B</code>), que é aquela que envolve reúso de código. Não apenas neste capítulo, mas em todo o livro, quando mencionarmos apenas o termo herança estaremos nos referindo a herança de classes.</p>
-<p> - <strong>Herança de interfaces</strong> (exemplo: <code>interface I implements J</code>), que não envolve reúso de código. Essa forma de herança é mais simples e não suscita preocupações. Quando precisarmos de nos referir a ela, iremos usar o nome completo: herança de interfaces.</p>
+<ul>
+<li><p><strong>Herança de classes</strong>  (exemplo: <code>class A extends B</code>), que é aquela que envolve reúso de código. Não apenas neste capítulo, mas em todo o livro, quando mencionarmos apenas o termo herança estaremos nos referindo a herança de classes.</p></li>
+<li><p><strong>Herança de interfaces</strong>  (exemplo: <code>interface I implements J</code>), que não envolve reúso de código. Essa forma de herança é mais simples e não suscita preocupações. Quando precisarmos de nos referir a ela, iremos usar o nome completo: herança de interfaces.</p></li>
+</ul>
 <p>Voltando ao princípio, quando orientação a objetos se tornou comum, na década de 80, houve um incentivo ao uso de herança. Acreditava-se que o conceito seria talvez uma <q>bala de prata</q> capaz de resolver os problemas de reúso de software. Argumentava-se que hierarquias de classes profundas, com vários níveis, seriam um indicativo de um bom projeto, no qual foi possível atingir elevados índices de reúso. No entanto, com o tempo, percebeu-se que herança não era a tal <q>bala de prata</q>. Pelo contrário, herança tende a introduzir problemas na manutenção e evolução das classes de um sistema. Esses problemas têm sua origem no forte acoplamento que existe entre subclasses e superclasses, conforme descrito por Gamma e colegas no livro sobre padrões de projeto (<a href="https://dl.acm.org/citation.cfm?id=186897">link</a>):</p>
-<p> &gt; <q>Herança expõe para subclasses detalhes de implementação das classes pai. Logo, frequentemente diz-se que herança viola o encapsulamento das classes pai. A implementação das subclasses se torna tão acoplada à implementação da classe pai que qualquer mudança nessas últimas pode forçar modificações nas subclasses.</q></p>
+<p></p>
+<blockquote>
+<p><q>Herança expõe para subclasses detalhes de implementação das classes pai. Logo, frequentemente diz-se que herança viola o encapsulamento das classes pai. A implementação das subclasses se torna tão acoplada à implementação da classe pai que qualquer mudança nessas últimas pode forçar modificações nas subclasses.</q></p>
+</blockquote>
 <p> O princípio, porém, não proíbe o uso de herança. Mas ele recomenda: se existirem duas soluções de projeto, uma baseada em herança e outra em composição, a solução por meio de composição, normalmente, é a melhor. Só para deixar claro, existe uma relação de <strong>composição</strong> entre duas classes A e B quando a classe A possui um atributo do tipo B.</p>
 <p><strong>Exemplo:</strong> Suponha que temos que implementar uma classe <code>Stack</code>. Existem pelo menos duas soluções — por meio de herança ou por meio de composição — conforme mostra o seguinte código:</p>
 <p>Solução via Herança:</p>
@@ -576,11 +583,11 @@
 <span id="cb22-9"><a href="#cb22-9"></a>}</span></code></pre></div>
 <p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto onde eles são armazenado em um Vector. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um <code>List</code>; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
 <p>Antes de concluir, gostaríamos de mencionar três pontos suplementares ao que discutimos sobre <q>Prefira Composição a Herança</q>:</p>
-<p>  - Herança é classificada como um mecanismo de <strong>reuso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base. Por outro lado, composição é um mecanismo de <strong>reuso caixa-preta</strong>.</p>
 <ul>
-<li>Um padrão de projeto que ajuda a substituir uma solução baseada em herança por uma solução baseada em composição é o Padrão Decorador, que vamos estudar no próximo capítulo.</li>
+<li><p>Herança é classificada como um mecanismo de <strong>reuso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base.   Por outro lado, composição é um mecanismo de <strong>reuso caixa-preta</strong>.</p></li>
+<li><p>Um padrão de projeto que ajuda a substituir uma solução baseada em herança por uma solução baseada em composição é o Padrão Decorador, que vamos estudar no próximo capítulo.</p></li>
+<li><p>Por conta dos problemas discutidos nesta seção,   linguagens de programação mais recentes — como Go e Rust — não incluem suporte a herança.</p></li>
 </ul>
-<p>  - Por conta dos problemas discutidos nesta seção, linguagens de programação mais recentes — como Go e Rust — não incluem suporte a herança.</p>
 <h3 data-number="1.6.5" id="princípio-de-demeter" data-number="1.6.5"><span class="header-section-number">5.6.5</span> Princípio de Demeter</h3>
 <p>  </p>
 <p>O nome desse princípio faz referência a um grupo de pesquisa da Northeastern University, em Boston, EUA. Esse grupo, chamado Demeter, desenvolvia pesquisas na área de modularização de software. No final da década de 80, em uma de suas pesquisas, o grupo enunciou um conjunto de regras para evitar problemas de encapsulamento em projeto de sistemas orientados a objetos, as quais ficaram conhecidas como Princípio ou Lei de Demeter.</p>
@@ -738,7 +745,10 @@
 <h3 data-number="1.7.1" id="tamanho" data-number="1.7.1"><span class="header-section-number">5.7.1</span> Tamanho</h3>
 <p>   A métrica de código fonte mais popular é <strong>linhas de código</strong> (LOC, <em>lines of code</em>). Ela pode ser usada para medir o tamanho de uma função, classe, pacote ou de um sistema inteiro. Quando se reporta os resultados de LOC, deve-se tomar o cuidado de deixar claro quais linhas foram de fato contadas. Por exemplo, se comentários ou linhas em branco foram considerados ou não.</p>
 <p>Embora LOC possa dar uma ideia do tamanho de um sistema, ela não deve ser usada para medir a produtividade de programadores. Por exemplo, se um desenvolvedor implementou 1 KLOC em um mês e outro implementou 5 KLOC, não podemos afirmar que o segundo foi 5 vezes mais produtivo. Dentre outros motivos, os requisitos implementados por cada um deles podem ter complexidade diferente. Ken Thompson — um dos desenvolvedores do sistema operacional Unix — tem uma frase a esse respeito:</p>
-<p> &gt; <q>Um dos dias mais produtivos da minha vida foi quando eu deletei 1.000 linhas de código de um sistema.</q></p>
+<p></p>
+<blockquote>
+<p><q>Um dos dias mais produtivos da minha vida foi quando eu deletei 1.000 linhas de código de um sistema.</q></p>
+</blockquote>
 <p>Essa frase é atribuída a Thompson no seguinte <a href="https://dl.acm.org/citation.cfm?id=829549">livro</a>, de Eric Raymond, página 24. Portanto, métricas de software, quaisquer que sejam, não devem ser vistas como uma meta. No caso de LOC, isso poderia, por exemplo, incentivar os desenvolvedores a gerar código duplicado apenas para cumprir a meta estabelecida.</p>
 <p>Outras metas de tamanho de um sistema incluem: número de métodos, número de atributos, número de classes e número de pacotes.</p>
 <h3 data-number="1.7.2" id="coesão-1" data-number="1.7.2"><span class="header-section-number">5.7.2</span> Coesão</h3>
@@ -836,7 +846,7 @@
 <h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
 <p>1. Descreva três benefícios da propriedade de projeto chamada ocultamento de informação (<em>information hiding</em>)?</p>
 <p>2. Suponha que um programador adote a seguinte estratégia: ao implementar qualquer nova funcionalidade ou corrigir um bug que implique na modificação de duas classes A e B localizadas em arquivos diferentes, ele conclui a tarefa movendo as classes para o mesmo arquivo. Explicando melhor: após terminar a tarefa de programação que ficou sob sua responsabilidade, ele escolhe uma das classes, digamos a classe B, e a move para o mesmo arquivo da classe A. Agindo dessa maneira, ele estará melhorando qual propriedade de projeto? Por outro lado, qual propriedade de projeto estará sendo afetada de modo negativo? Justifique.</p>
-<p> 3. <strong>Classitis</strong> é o nome dado por John Ousterhout à proliferação de pequenas classes em um sistema. Segundo ele, <em>classitis</em> pode resultar em classes que individualmente são simples, mas que aumentam a complexidade total de um sistema. Usando os conceitos de acoplamento e coesão, como podemos explicar o problema causado por essa <q>doença</q>?</p>
+<p>3. <strong>Classitis</strong> é o nome dado por John Ousterhout  à proliferação de pequenas classes em um sistema. Segundo ele, <em>classitis</em> pode resultar em classes que individualmente são simples, mas que aumentam a complexidade total de um sistema. Usando os conceitos de acoplamento e coesão, como podemos explicar o problema causado por essa <q>doença</q>?</p>
 <p>4. Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c) acoplamento estrutural; (d) acoplamento evolutivo (ou lógico).</p>
 <p>5. Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2) acoplamento estrutural e ruim.</p>
 <p>6. É possível que uma classe A esteja acoplada a uma classe B sem ter uma referência para B em seu código? Se sim, esse acoplamento será aceitável ou ruim?</p>

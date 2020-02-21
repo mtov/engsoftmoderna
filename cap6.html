@@ -141,9 +141,11 @@
 <p>É importante entender que padrões de projeto visam a criação de projetos de software flexíveis e extensíveis. Neste livro, antes de explicar cada um dos padrões, vamos apresentar um contexto e um trecho de código que funciona e produz um resultado. Porém, ele não dá origem a um projeto flexível. Para deixar essa inflexibilidade clara, apresentaremos um cenário de extensão do código mostrado, envolvendo a implementação de novos requisitos. Então vamos argumentar que essa extensão exigirá algum esforço, que poderá ser minimizado se usarmos um padrão de projeto.</p>
 <p> Os quatro autores do livro de padrões de projeto defendem que devemos projetar um sistema pensando em mudanças que inevitavelmente vão ocorrer — eles chamam essa preocupação de <em>design for change</em>. Conforme afirmado por eles na frase que abre este capítulo, se design for change não for uma preocupação, os desenvolvedores correm o risco de em breve ter que planejar um profundo reprojeto de seus sistemas.</p>
 <p>No livro sobre padrões de projeto, são propostos 23 padrões, divididos nas seguintes três categorias (os padrões que estudaremos neste capítulo estão em negrito, seguido do número da seção onde eles são apresentados):</p>
-<p> - <strong>Criacionais</strong>: padrões que propõem soluções flexíveis para criação de objetos. São eles: <strong>Abstract Factory (6.2)</strong>, Factory Method, <strong>Singleton (6.3)</strong>, <strong>Builder (6.12)</strong> e Prototype.</p>
-<p> - <strong>Estruturais</strong>: padrões que propõem soluções flexíveis para composição de classes e objetos. São eles: <strong>Proxy (6.4)</strong>, <strong>Adapter (6.5)</strong>, <strong>Facade (6.6)</strong>, <strong>Decorator (6.7)</strong>, Bridge, Composite e Flyweight.</p>
-<p> - <strong>Comportamentais</strong>: padrões que propõem soluções flexíveis para interação e divisão de responsabilidades entre classes e objetos. São eles: <strong>Strategy (6.8)</strong>, <strong>Observer (6.9)</strong>, <strong>Template Method (6.10)</strong>, <strong>Visitor (6.11)</strong>, Chain of Responsibility, Command, Interpreter, <strong>Iterator (6.12)</strong>, Mediator, Memento e State.</p>
+<ul>
+<li><p><strong>Criacionais</strong>: padrões  que propõem soluções flexíveis para criação de objetos. São eles: <strong>Abstract Factory (6.2)</strong>, Factory Method, <strong>Singleton (6.3)</strong>, <strong>Builder (6.12)</strong> e Prototype.</p></li>
+<li><p><strong>Estruturais</strong>:  padrões que propõem soluções flexíveis para composição de classes e objetos. São eles: <strong>Proxy (6.4)</strong>, <strong>Adapter (6.5)</strong>, <strong>Facade (6.6)</strong>, <strong>Decorator (6.7)</strong>, Bridge, Composite e Flyweight.</p></li>
+<li><p><strong>Comportamentais</strong>: padrões  que propõem soluções flexíveis para interação e divisão de responsabilidades entre classes e objetos. São eles: <strong>Strategy (6.8)</strong>, <strong>Observer (6.9)</strong>, <strong>Template Method (6.10)</strong>, <strong>Visitor (6.11)</strong>, Chain of Responsibility, Command, Interpreter, <strong>Iterator (6.12)</strong>, Mediator, Memento e State.</p></li>
+</ul>
 <p><strong>Tradução</strong>: Pelo fato de a tradução ser direta, vamos traduzir os nomes dos seguintes padrões: Fábrica Abstrata, Método Fábrica, Adaptador, Decorador, Observador e Iterador. Os demais serão referenciados usando o nome original.</p>
 <h2 data-number="1.2" id="fábrica" data-number="1.2"><span class="header-section-number">6.2</span> Fábrica</h2>
 <p> </p>
@@ -312,8 +314,8 @@
 <img src="figs/cap6/padrao-proxy.svg" style="width:70.0%" alt="" /><figcaption>Padrão de projeto Proxy</figcaption>
 </figure>
 <p>Além de ajudar na implementação de caches, proxies podem ser usados para implementar outros requisitos não-funcionais. Alguns exemplos incluem:</p>
-<p> - Comunicação com um cliente remoto, isto é, pode-se usar um proxy para encapsular protocolos e detalhes de comunicação. Esses proxies são chamados de <strong>stubs</strong>.</p>
 <ul>
+<li><p>Comunicação com um cliente remoto, isto é, pode-se usar um proxy para encapsular protocolos e detalhes de comunicação. Esses proxies  são chamados de <strong>stubs</strong>.</p></li>
 <li><p>Alocação de memória por demanda para objetos que consomem muita memória. Por exemplo, uma classe pode manipular uma imagem em alta resolução. Então, podemos usar um proxy para evitar que a imagem fique carregada o tempo todo na memória principal. Ela somente será carregada, possivelmente do disco, antes da execução de alguns métodos.</p></li>
 <li><p>Controlar o acesso de diversos clientes a um objeto base. Por exemplo, os clientes devem estar autenticados e ter permissão para executar certas operações do objeto base. Com isso, a classe do objeto base pode se concentrar na implementação de requisitos funcionais.</p></li>
 </ul>
