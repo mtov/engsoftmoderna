@@ -1760,15 +1760,15 @@ de chegada desses itens multiplicado pelo tempo que cada item fica no
 sistema. Traduzindo para o nosso contexto, o sistema é um passo de um
 processo Kanban e os itens são tarefas. Assim, temos também que:
 
-* WIP: número de tarefas em um dado passo de um processo Kanban
+* WIP: número de tarefas em um dado passo de um processo Kanban.
 
 * Throughput (TP): 
   \index{Throughput}
-  taxa de chegada dessas tarefas nesse passo
+  taxa de chegada dessas tarefas nesse passo.
 
 * Lead Time (LT): 
   \index{Lead Time} 
-  tempo que cada tarefa fica nesse passo
+  tempo que cada tarefa fica nesse passo.
 
 Ou seja, de acordo com a Lei de Little: **WIP = TP * LT**. Visualmente,
 podemos representar a Lei de Little da seguinte forma:
