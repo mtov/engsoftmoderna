@@ -461,7 +461,7 @@ Veja um exemplo a seguir, onde métodos `get` e `set` são usados para
 acessar o atributo `matricula` de uma classe `Aluno`.
 
 ```java
-class Aluno{
+class Aluno {
 
   private int matricula;
   ...
@@ -584,7 +584,7 @@ operações importantes em uma estrutura de dados do tipo Pilha.
 informações sobre o gerente do estacionamento:
 
 ```java
-class Estacionamento{
+class Estacionamento {
   ...
   private String nome_gerente;
   private String fone_gerente;
@@ -1028,12 +1028,12 @@ interface Funcionario {
   ...
 }
 
-interface FuncionarioCLT extends Funcionario{
+interface FuncionarioCLT extends Funcionario {
   double getFGTS();
   ...
 }
 
-interface FuncionarioPublico extends Funcionario{
+interface FuncionarioPublico extends Funcionario {
   int getSIAPE();
   ...
 }
@@ -1300,7 +1300,7 @@ class PrincipioDemeter {
 
   T1 attr;
 
-  void f1(){ 
+  void f1() { 
     ...
   }
 
@@ -1349,8 +1349,8 @@ executar o seguinte código:
 ```java
 preco = 6.00;
 Carteira carteira = cliente.getCarteira();
-if(carteira.getValorTotal() >= preco) {  // viola Demeter
-  carteira.debita(preco);                 // viola Demeter
+if (carteira.getValorTotal() >= preco) {  // viola Demeter
+   carteira.debita(preco);                // viola Demeter
 } else {
   // volto amanhã, para cobrar o valor do jornal
 }
@@ -1363,7 +1363,7 @@ tamanha liberdade. Uma solução mais realista é a seguinte:
 
 ```java
 preco = 6.00;
-try{
+try {
   cliente.pagar(preco);
 }
 catch (ExcecaoValorInsuficiente e) {
@@ -1815,7 +1815,7 @@ class A extends T1 implements T2 {
 
   void metodo2() {
     T8 = new T8();
-    try{
+    try {
       ...
     }
     catch (T9 e) { ... }

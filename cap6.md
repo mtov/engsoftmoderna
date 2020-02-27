@@ -297,7 +297,7 @@ Singleton:
 ```java
 class Logger {
 
-  private Logger() {} // proíbe clientes de chamar new Logger()
+  private Logger() {} // proíbe clientes chamar new Logger()
 
   private static Logger instance; // instância única da classe
 

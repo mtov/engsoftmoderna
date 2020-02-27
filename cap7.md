@@ -632,9 +632,10 @@ vantagens:
     será apresentada para os usuários durante o período em que o
     microsserviço de recomendações estiver fora do ar.
 
-\index{Computação em Nuvem}
 Arquiteturas baseadas em microsserviços tornaram-se possíveis devido ao
-aparecimento de plataformas de **computação em nuvem**. Com essas
+aparecimento de plataformas de **computação em nuvem**. 
+\index{Computação em Nuvem}
+Com essas
 plataformas, empresas não precisam mais comprar e manter hardware e
 software básico, como sistema operacional, bancos de dados e servidores
 Web. Em vez disso, elas podem alugar uma máquina virtual em uma
@@ -797,7 +798,7 @@ filas de mensagens viabilizam duas formas de desacoplamento entre os
 componentes de uma aplicação distribuída:
 
 
-*   **Desacoplamento no espaço**: 
+*   **Desacoplamento no espaço**:
     \index{Arquitetura Orientada a Mensagens!Desacoplamento no espaço}
     clientes não precisam conhecer os
     servidores e vice-versa. Em outras palavras, o cliente é
@@ -805,8 +806,7 @@ componentes de uma aplicação distribuída:
     saber quem vai consumir essa informação. O raciocínio inverso vale
     para servidores.
 
-
-*   **Desacoplamento no tempo**: 
+*   **Desacoplamento no tempo**:
     \index{Arquitetura Orientada a Mensagens!Desacoplamento no tempo}
     clientes e servidores não precisam
     estar simultaneamente disponíveis para se comunicarem. Se o
@@ -898,9 +898,10 @@ filas de mensagens:
     — isto é, os consumidores das mensagens — têm que
     "puxar" (*pull*) as mensagens da fila.
 
-\index{Publish/Subscribe!Tópicos}
 Em alguns sistemas publish/subscribe, eventos são organizados em
-**tópicos**, que funcionam como categorias de eventos. Quando um
+**tópicos**,
+\index{Publish/Subscribe!Tópicos}
+que funcionam como categorias de eventos. Quando um
 publicador produz um evento, ele deve informar seu tópico. Assim,
 clientes não precisam assinar todos eventos que ocorrem no sistema, mas
 apenas eventos de um certo tópico.

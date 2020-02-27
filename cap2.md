@@ -472,14 +472,15 @@ Como exemplo, mostramos a seguir uma história de um sistema de perguntas e resp
 *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
 --------------------------------------------------------------  
 
-\index{Story Points}
-\index{Histórias de Usuários!Story Points}
 Depois de escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
 definem, mesmo que preliminarmente, quanto tempo será necessário para
 implementar as histórias escritas pelo representante dos clientes.
 Frequentemente, a duração de uma história é estimada em **story
-points**, em vez de horas ou homens/hora. Nesses casos, usa-se uma
+points**,
+\index{Story Points}
+\index{Histórias de Usuários!Story Points}
+em vez de horas ou homens/hora. Nesses casos, usa-se uma
 escala inteira para classificar histórias como possuindo um certo número
 de story points. O objetivo é definir uma ordem relativa entre as
 histórias. As histórias mais simples são estimadas como tendo tamanho

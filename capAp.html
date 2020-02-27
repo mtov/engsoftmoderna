@@ -74,11 +74,11 @@
 <h2 data-number="1.3" id="add" data-number="1.3"><span class="header-section-number">1.3</span> Add</h2>
 <p></p>
 <p>Na máquina local, o sistema git manipula três áreas distintas:</p>
-<p> * Um <strong>diretório de trabalho</strong>, onde devemos salvar os arquivos que pretendemos versionar. Às vezes, essa área é chamada também de árvore de trabalho (<em>working tree</em>).</p>
 <ul>
-<li>O <strong>repositório</strong> propriamente dito, que armazena o histórico de commits.</li>
+<li><p>Um <strong>diretório de trabalho</strong>,  onde devemos salvar os arquivos que pretendemos versionar. Às vezes, essa área é chamada também de árvore de trabalho (<em>working tree</em>).</p></li>
+<li><p>O <strong>repositório</strong> propriamente dito, que armazena o histórico de commits.</p></li>
+<li><p>Uma área intermediária, chamada de <strong>index</strong> ou <strong>stage</strong>, que    armazena temporariamente os arquivos que se pretende versionar. Tais arquivos são ditos rastreáveis (<strong>tracked)</strong>.</p></li>
 </ul>
-<p>  * Uma área intermediária, chamada de <strong>index</strong> ou <strong>stage</strong>, que armazena temporariamente os arquivos que se pretende versionar. Tais arquivos são ditos rastreáveis (<strong>tracked)</strong>.</p>
 <p>Dentre essas três áreas, o desenvolvedor acessa apenas o diretório de trabalho, que funciona como um diretório comum do sistema operacional. As duas outras áreas são internas ao git e manipuladas exclusivamente por ele. Como qualquer diretório, o diretório de trabalho pode conter diversos arquivos. Porém, apenas aqueles adicionados ao index, por meio de um <strong>add</strong>, serão gerenciados pelo git.</p>
 <p>Além de armazenar a lista de arquivos versionados, o index também armazena o conteúdo deles. Por isso, antes de fazer um <code>commit</code> devemos executar um <code>add</code>, para salvar o conteúdo do arquivo no index. Feito isso, podemos usar um <code>commit</code> para salvar no repositório local a versão adicionada ao index. Esse fluxo é ilustrado na próxima figura.</p>
 <figure>
@@ -109,7 +109,7 @@ git commit -m &quot;Removendo arq1.txt&quot;</code></pre>
 <li><p>Arquivos do diretório de trabalho que não são rastreados pelo git, ou seja, eles ainda não foram objetos de um <code>add</code>.</p></li>
 <li><p>Arquivos que encontram-se no index, aguardando um <code>commit</code>.</p></li>
 </ul>
-<p> O comando <code>git diff</code> é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um <code>git diff</code> antes de um <code>add</code>/<code>commit</code> para ter certeza das mudanças que iremos <q>perpetuar</q>, em seguida, no sistema de controle de versões.</p>
+<p>O comando <code>git diff</code>  é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um <code>git diff</code> antes de um <code>add</code>/<code>commit</code> para ter certeza das mudanças que iremos <q>perpetuar</q>, em seguida, no sistema de controle de versões.</p>
 <p> Já o comando <code>git log</code> lista informações sobre os últimos commits, como data, autor, hora e descrição do commit.</p>
 <h2 data-number="1.5" id="push-pull" data-number="1.5"><span class="header-section-number">1.5</span> Push &amp; Pull</h2>
 <p>  O comando <strong>push</strong> copia os commits mais recentes do repositório local para o repositório remoto. Portanto, ele é uma operação mais lenta, pois envolve comunicação pela rede. Um <code>push</code> deve ser usado quando o desenvolvedor deseja tornar uma modificação visível para os demais desenvolvedores. Para atualizar seu repositório local, os outros desenvolvedores do time devem executar um comando <strong>pull</strong>. Esse comando realiza duas operações principais:</p>

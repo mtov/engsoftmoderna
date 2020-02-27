@@ -1,0 +1,21 @@
+cat dedicatoria.md > esm-book.md
+cat cap0.md >> esm-book.md
+cat cap1.md >> esm-book.md
+cat cap2.md >> esm-book.md
+cat cap3.md >> esm-book.md
+cat cap4.md >> esm-book.md
+cat cap5.md >> esm-book.md
+cat cap6.md >> esm-book.md
+cat cap7.md >> esm-book.md
+cat cap8.md >> esm-book.md
+cat cap9.md >> esm-book.md
+cat cap10.md >> esm-book.md
+cat capAp.md >> esm-book.md
+
+pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
+
+../kindlegen/kindlegen -verbose -c0 esm-book.epub -o esm-book.mobi
+
+rm esm-book.md
+
+cp esm-book.mobi ../Dropbox

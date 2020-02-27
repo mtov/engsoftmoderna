@@ -1,7 +1,7 @@
 from: markdown
 to: epub
    
-default-image-extension: ".svg"
+default-image-extension: ".png"
 
 top-level-division: chapter
 number-sections: true

@@ -844,6 +844,7 @@ importância de testes durante atividades de refactoring
 ([link](https://dl.acm.org/citation.cfm?id=3288797)):
 
 \index{Ousterhout, John}
+
 > "Testes, particularmente testes de unidade, desempenham um papel
 importante no projeto de software porque eles facilitam a realização
 de refactorings. Sem uma suíte de testes, torna-se arriscado realizar
@@ -878,6 +879,7 @@ refactorings. Kent Beck tem um frase interessante sobre refactorings
 oportunistas:
 
 \index{Beck, Kent}
+
 > "Para cada mudança que você tiver que realizar em um sistema, primeiro torne essa mudança fácil (aviso: isso pode ser difícil), então realize a mudança facilmente."
 
 A ideia de fundo dessa recomendação é que um desenvolvedor pode estar

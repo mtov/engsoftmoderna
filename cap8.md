@@ -426,20 +426,20 @@ Antes de avançar, vamos apresentar algumas definições:
     fixture é "fixar" o estado — isto é, os dados e objetos
     — exercitados no teste.
 
--   **Casos de Teste (Test Case)**: 
+-   **Casos de Teste (Test Case)**:
     \index{Testes de Unidade!Casos de Teste}
     classe com os métodos de teste. O
     nome tem origem nas primeiras versões do JUnit. Nessas versões, os
     métodos de testes eram implementados em classes que herdavam de
     uma classe `TestCase`.
 
--   **Suíte de Testes (Test Suite)**: 
+-   **Suíte de Testes (Test Suite)**:
     \index{Testes de Unidade!Suíte de Testes}
     conjunto de casos de teste, os
     quais são executados pelo framework de testes de unidade (no nosso
     caso, JUnit).
 
--   **Sistema sob Teste (System Under Test, SUT)**: 
+-   **Sistema sob Teste (System Under Test, SUT)**:
     \index{Sistema sob Teste (SUT)}
     sistema que está
     sendo testado. É um nome genérico, usado também em outros tipos de
@@ -1591,7 +1591,7 @@ public class Book {
 
 }
 
-public class ShoppingCart{
+public class ShoppingCart {
 
   public ShoppingCart() {}
 
@@ -1884,13 +1884,8 @@ algumas frases do do próprio Kent Beck, isto é, do inventor da ideia de
 TDD (fonte: *Test-Driven Development Violates the
 Dichotomies of Testing, Kent Beck*, Three Rivers Institute, June 2007):
 
-> "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa
-> preta e testes caixa branca. Como testes em TDD são escritos antes do
-> código que eles testam, eles talvez pudessem ser considerados como
-> testes caixa preta. No entanto, eu normalmente ganho inspiração para
-> escrever o próximo teste depois que implemento e analiso o código
-> verificado pelo teste anterior, o que é uma característica marcante de
-> testes caixa branca."
+> "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa preta e testes caixa branca. Como testes em TDD são escritos antes do código que eles testam, eles talvez pudessem ser considerados como testes caixa preta. No entanto, eu normalmente ganho inspiração para escrever o próximo teste depois que implemento e analiso o código verificado pelo teste anterior, o que é uma característica marcante de testes caixa branca."
+
 
 ### Seleção de Dados de Teste
 \index{Testes de Software!Classes de Equivalência}

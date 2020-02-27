@@ -15,10 +15,6 @@ pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.tex
 
 pdflatex esm-book.tex
 
-pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
-
 rm esm-book.md
 
 cp esm-book.pdf ../Dropbox
-cp esm-book.epub ../Dropbox
-cp esm-book.mobi ../Dropbox

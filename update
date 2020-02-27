@@ -1,4 +1,6 @@
-rm esm-book.*
+rm esm-book.pdf
+rm esm-book.epub
+rm esm.book.mobi
 
 pandoc --defaults=defaults.yaml -T "Prefácio" cap0.md -o cap0.html
 pandoc --number-offset=0 --defaults=defaults.yaml -T "Cap. 1: Introdução" cap1.md -o cap1.html

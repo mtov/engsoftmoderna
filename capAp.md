@@ -78,17 +78,19 @@ hash SHA-1.
 
 Na máquina local, o sistema git manipula três áreas distintas:
 
-\index{Git!Diretório de Trabalho}
-*   Um **diretório de trabalho**, onde devemos salvar os arquivos que
+*   Um **diretório de trabalho**, 
+    \index{Git!Diretório de Trabalho}
+    onde devemos salvar os arquivos que
     pretendemos versionar. Às vezes, essa área é chamada também de
     árvore de trabalho (*working tree*).
 
 *   O **repositório** propriamente dito, que armazena o histórico de
     commits.
 
-\index{Git!Index}
-\index{Git!Stage}
 *   Uma área intermediária, chamada de **index** ou **stage**, que
+    \index{Git!Index}
+    \index{Git!Stage}
+    \index{Git!Arquivos Rastreáveis}
     armazena temporariamente os arquivos que se pretende versionar.
     Tais arquivos são ditos rastreáveis (**tracked)**.
 
@@ -172,8 +174,10 @@ O comando **status** é um dos comandos git mais usados. Dentre outras informaç
 
 * Arquivos que encontram-se no index, aguardando um `commit`.
 
+
+O comando `git diff`
 \index{Git!Diff}
-O comando `git diff` é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um `git diff` antes de um `add`/`commit` para ter certeza das mudanças que iremos "perpetuar", em seguida, no sistema de controle de versões.
+é muito usado para destacar as modificações realizados nos arquivos do diretório de trabalho e que ainda não foram movidas para o index (ou stage). Para cada arquivo modificado, ele mostra as linhas que foram adicionadas (+) e removidas (-). Muitas vezes, usamos um `git diff` antes de um `add`/`commit` para ter certeza das mudanças que iremos "perpetuar", em seguida, no sistema de controle de versões.
 
 \index{Git!Log}
 Já o comando `git log` lista informações sobre os últimos commits, como data, autor, hora e descrição do commit.

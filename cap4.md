@@ -959,7 +959,7 @@ class HelloWorldSwing extends JFrame {
 diagrama deve começar com a seguinte chamada *a*.*m5()*.
 
 ```java
-A a = new A(); // variaveis globais
+A a = new A(); // variáveis globais
 B b = new B();
 C c = new C();
 

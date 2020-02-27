@@ -223,7 +223,7 @@
 <p><strong>Solução</strong>: A solução para esse problema consiste em transformar a classe <code>Logger</code> em um <strong>Singleton</strong>. Esse padrão de projeto define como implementar classes que terão, como o próprio nome indica, no máximo uma instância. Mostramos a seguir a versão de <code>Logger</code> que funciona como um Singleton:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">class</span> <span class="bu">Logger</span> {</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">private</span> <span class="bu">Logger</span>() {} <span class="co">// proíbe clientes de chamar new Logger()</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="kw">private</span> <span class="bu">Logger</span>() {} <span class="co">// proíbe clientes chamar new Logger()</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a></span>
 <span id="cb5-5"><a href="#cb5-5"></a>  <span class="kw">private</span> <span class="dt">static</span> <span class="bu">Logger</span> instance; <span class="co">// instância única da classe</span></span>
 <span id="cb5-6"><a href="#cb5-6"></a></span>

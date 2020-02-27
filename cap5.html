@@ -236,7 +236,7 @@
 <p> </p>
 <p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados apenas de <em>getters</em> e <em>setters</em> — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
 <p>Veja um exemplo a seguir, onde métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">class</span> Aluno{</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">class</span> Aluno {</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">private</span> <span class="dt">int</span> matricula;</span>
 <span id="cb3-4"><a href="#cb3-4"></a>  ...</span>
@@ -288,7 +288,7 @@
 <span id="cb5-6"><a href="#cb5-6"></a>}</span></code></pre></div>
 <p>Trata-se de uma classe coesa, pois todos os seus métodos implementam operações importantes em uma estrutura de dados do tipo Pilha.</p>
 <p><strong>Exemplo 3:</strong> Para concluir a lista de exemplos, vamos voltar à classe <code>Estacionamento</code>, na qual foram adicionados agora quatro atributos com informações sobre o gerente do estacionamento:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">class</span> Estacionamento{</span>
+<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">class</span> Estacionamento {</span>
 <span id="cb6-2"><a href="#cb6-2"></a>  ...</span>
 <span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">private</span> <span class="bu">String</span> nome_gerente;</span>
 <span id="cb6-4"><a href="#cb6-4"></a>  <span class="kw">private</span> <span class="bu">String</span> fone_gerente;</span>
@@ -491,12 +491,12 @@
 <span id="cb14-3"><a href="#cb14-3"></a>  ...</span>
 <span id="cb14-4"><a href="#cb14-4"></a>}</span>
 <span id="cb14-5"><a href="#cb14-5"></a></span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">interface</span> FuncionarioCLT <span class="kw">extends</span> Funcionario{</span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">interface</span> FuncionarioCLT <span class="kw">extends</span> Funcionario {</span>
 <span id="cb14-7"><a href="#cb14-7"></a>  <span class="dt">double</span> <span class="fu">getFGTS</span>();</span>
 <span id="cb14-8"><a href="#cb14-8"></a>  ...</span>
 <span id="cb14-9"><a href="#cb14-9"></a>}</span>
 <span id="cb14-10"><a href="#cb14-10"></a></span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="kw">interface</span> FuncionarioPublico <span class="kw">extends</span> Funcionario{</span>
+<span id="cb14-11"><a href="#cb14-11"></a><span class="kw">interface</span> FuncionarioPublico <span class="kw">extends</span> Funcionario {</span>
 <span id="cb14-12"><a href="#cb14-12"></a>  <span class="dt">int</span> <span class="fu">getSIAPE</span>();</span>
 <span id="cb14-13"><a href="#cb14-13"></a>  ...</span>
 <span id="cb14-14"><a href="#cb14-14"></a>}</span></code></pre></div>
@@ -603,7 +603,7 @@
 <span id="cb23-2"><a href="#cb23-2"></a></span>
 <span id="cb23-3"><a href="#cb23-3"></a>  T1 attr;</span>
 <span id="cb23-4"><a href="#cb23-4"></a></span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="dt">void</span> <span class="fu">f1</span>(){ </span>
+<span id="cb23-5"><a href="#cb23-5"></a>  <span class="dt">void</span> <span class="fu">f1</span>() { </span>
 <span id="cb23-6"><a href="#cb23-6"></a>    ...</span>
 <span id="cb23-7"><a href="#cb23-7"></a>  }</span>
 <span id="cb23-8"><a href="#cb23-8"></a></span>
@@ -624,14 +624,14 @@
 <p>Um exemplo — formulado por David Bock (<a href="https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf">link</a>) — ilustra com clareza os benefícios do Princípio de Demeter. O exemplo baseia-se em um cenário com três <q>objetos</q>: um entregador de jornais, um cliente e sua carteira. Uma violação do Princípio de Demeter ocorre se, para receber o valor de um jornal, o entregador tiver que executar o seguinte código:</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
 <span id="cb24-2"><a href="#cb24-2"></a>Carteira carteira = cliente.<span class="fu">getCarteira</span>();</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">if</span>(carteira.<span class="fu">getValorTotal</span>() &gt;= preco) {  <span class="co">// viola Demeter</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a>  carteira.<span class="fu">debita</span>(preco);                 <span class="co">// viola Demeter</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">if</span> (carteira.<span class="fu">getValorTotal</span>() &gt;= preco) {  <span class="co">// viola Demeter</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>   carteira.<span class="fu">debita</span>(preco);                <span class="co">// viola Demeter</span></span>
 <span id="cb24-5"><a href="#cb24-5"></a>} <span class="kw">else</span> {</span>
 <span id="cb24-6"><a href="#cb24-6"></a>  <span class="co">// volto amanhã, para cobrar o valor do jornal</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a>}</span></code></pre></div>
 <p>O jornaleiro têm acesso à carteira do seu cliente — via <code>getCarteira()</code> — e então ele mesmo retira o valor do jornal dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse tamanha liberdade. Uma solução mais realista é a seguinte:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">try</span>{</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">try</span> {</span>
 <span id="cb25-3"><a href="#cb25-3"></a>  cliente.<span class="fu">pagar</span>(preco);</span>
 <span id="cb25-4"><a href="#cb25-4"></a>}</span>
 <span id="cb25-5"><a href="#cb25-5"></a><span class="kw">catch</span> (ExcecaoValorInsuficiente e) {</span>
@@ -816,7 +816,7 @@
 <span id="cb36-9"><a href="#cb36-9"></a></span>
 <span id="cb36-10"><a href="#cb36-10"></a>  <span class="dt">void</span> <span class="fu">metodo2</span>() {</span>
 <span id="cb36-11"><a href="#cb36-11"></a>    T8 = <span class="kw">new</span> <span class="fu">T8</span>();</span>
-<span id="cb36-12"><a href="#cb36-12"></a>    <span class="kw">try</span>{</span>
+<span id="cb36-12"><a href="#cb36-12"></a>    <span class="kw">try</span> {</span>
 <span id="cb36-13"><a href="#cb36-13"></a>      ...</span>
 <span id="cb36-14"><a href="#cb36-14"></a>    }</span>
 <span id="cb36-15"><a href="#cb36-15"></a>    <span class="kw">catch</span> (T9 e) { <span class="kw">... </span>}</span>
