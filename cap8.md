@@ -375,10 +375,10 @@ pelo JUnit para executar os testes de um programa:
 ```java
 para cada classe de teste TC
   para cada método m de TC com anotação @Test
-    o = new TC();    // instancia objeto de teste
+    o = new TC();       // instancia objeto de teste
     se C possui um método b com anotação @Before
          então o.b();   // chama método @Before
-    o.m();           // chamada método @Test
+    o.m();              // chamada método @Test
 ```
 
 Voltando à classe `StackTest`, outro método interessante é aquele que
@@ -1666,7 +1666,7 @@ dados e incrementa o `total` do carrinho e assim por diante. No melhor do
 nosso juízo, essa implementação já implementa o que foi pedido e, por
 isso, podemos declarar que chegamos ao estado verde.
 
-**Estado de refatoração**: agora temos que olhar para o código que foi
+**Estado Amarelo**: agora temos que olhar para o código que foi
 implementado — um teste e duas classes — e colocar em prática as
 propriedades, princípios e padrões de projeto que aprendemos em
 capítulos anteriores. Ou seja: existe alguma coisa que podemos fazer
