@@ -182,7 +182,7 @@ compilador que produz mensagens de erro obscuras, uma IDE que possui
 muitos bugs e frequentemente sofre crashes, um framework que não possui
 documentação, uma aplicação Web com uma interface pouco intuitiva, etc.
 Todas essas dificuldades dizem respeito à solução adotada e, portanto,
-não são uma característica inerente dos sistema mencionados.
+não são uma característica inerente dos sistemas mencionados.
 
 \index{Linux}
 \index{Google}
@@ -305,7 +305,7 @@ Durante o projeto de um sistema de software, são definidas suas
 principais unidades de código, porém apenas no nível de interfaces,
 incluindo **interfaces providas** e **interfaces requeridas**.
 Interfaces providas são aqueles serviços que uma unidade de código torna
-público, para uso pelo resto de sistema. Interfaces requeridas são
+público para uso pelo resto do sistema. Interfaces requeridas são
 aquelas interfaces das quais uma unidade de código depende para
 funcionar.
 

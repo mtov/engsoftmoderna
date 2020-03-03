@@ -575,7 +575,7 @@ Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, é o segu
 ```java
 class AdaptadorProjetorSamsung implements Projetor {
 
-   private ProjetorSamung projetor;
+   private ProjetorSamsung projetor;
 
    AdaptadorProjetorSamsung (ProjetorSamung projetor) {
      this.projetor = projetor;
