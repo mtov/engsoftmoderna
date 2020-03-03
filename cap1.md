@@ -844,7 +844,7 @@ seguintes fatores (ou atributos) de qualidade externa:
     plataformas e sistemas operacionais? Ele, por exemplo, possui
     versões para os principais sistemas operacionais, como Windows,
     Linux e Mac OS? Ou então, se for um app, ele possui versões para
-    Android e iOS.
+    Android e iOS?
 
 *  Facilidade de Uso: o software possui uma interface amigável,
     mensagens de erro claras, suporta mais de uma língua, etc? Pode
@@ -1080,7 +1080,7 @@ livro. Pelo contrário, no caso de Sistemas C, o maior risco é
 **over-engineering***,* ou seja*,* o uso de recursos mais sofisticados
 em um contexto que não demanda tanta preocupação. Como se diz
 coloquialmente, Engenharia de Software nesse contexto equivale a "usar
-uma bala de canhão, para matar formigas".
+uma bala de canhão para matar formigas".
 
 \index{Sistemas de Missão Crítica}
 No outro extremo, temos os Sistemas A (de *acute*, ou de missão
@@ -1181,7 +1181,7 @@ vamos estudar os principais padrões de projeto definidos no livro
 clássico sobre o tema. A discussão de cada padrão será dividida em três
 partes: (1) um contexto, isto é, um sistema onde o padrão pode ser útil;
 (2) um problema no projeto desse sistema; (3) uma solução para esse
-problema por meio padrões. Iremos também apresentar diversos exemplos de
+problema por meio de padrões. Iremos também apresentar diversos exemplos de
 código, para facilitar o entendimento e a discussão prática do uso de
 cada padrão. O código completo de alguns exemplos mais complexos será
 disponibilizado no GitHub.
