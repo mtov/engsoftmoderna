@@ -11,7 +11,7 @@ baseada em Microsserviços (Seção 7.4). No caso de microsserviços,
 procuramos mostrar o contexto que levou ao surgimento desse padrão
 arquitetural, bem como discutimos seus principais benefícios e desafios.
 Em seguida, discutimos dois padrões arquiteturais usados para garantir
-escalabilidade e desacoplamento em sistemas distribuídas: Filas de
+escalabilidade e desacoplamento em sistemas distribuídos: Filas de
 Mensagens (Seção 7.5) e Publish/Subscribe (Seção 7.6). Terminamos o
 capítulo discutindo outros padrões arquiteturais (Seção 7.7) e dando um
 exemplo de anti-padrão arquitetural (Seção 7.8).
@@ -903,7 +903,7 @@ Em alguns sistemas publish/subscribe, eventos são organizados em
 \index{Publish/Subscribe!Tópicos}
 que funcionam como categorias de eventos. Quando um
 publicador produz um evento, ele deve informar seu tópico. Assim,
-clientes não precisam assinar todos eventos que ocorrem no sistema, mas
+clientes não precisam assinar todos os eventos que ocorrem no sistema, mas
 apenas eventos de um certo tópico.
 
 \index{Eventos}
@@ -977,7 +977,7 @@ saídas são sempre arquivos texto.
 
 \index{Arquitetura de Software!Cliente/Servidor}
 \index{Cliente/Servidor}
-**Cliente/Servidor** é um uma arquitetura muito usada na implementação
+**Cliente/Servidor** é uma arquitetura muito usada na implementação
 de serviços básicos de rede. Clientes e servidores são os dois únicos
 módulos desse tipo de arquitetura e eles se comunicam por meio de uma
 rede. Os clientes solicitam serviços ao módulo servidor e aguardam o
@@ -985,7 +985,7 @@ processamento. Arquiteturas cliente/servidor são usadas para implementar
 serviços como os seguintes: (1) serviço de impressão, que possibilita
 que clientes imprimam em uma impressora remota, que não está fisicamente
 conectada à máquina deles; (2) serviço de arquivos, que possibilita que
-clientes acessem o sistemas de arquivos (isto é, o disco) de uma máquina
+clientes acessem o sistema de arquivos (isto é, o disco) de uma máquina
 servidora; (3) serviço de bancos de dados, que permite que clientes
 acessem um banco de dados instalado em uma outra máquina; (4) serviço
 Web, que permite que clientes (navegadores) acessem recursos (páginas

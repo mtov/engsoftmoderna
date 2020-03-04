@@ -475,7 +475,7 @@ um teste para a suíte de testes.
 Pode-se escrever testes também quando se estiver depurando um trecho de
 código. Por exemplo, evite escrever um `System.out.println` para testar
 manualmente o resultado de um método. Em vez disso, escreva um método de
-teste. Quando usa-se um `println`, ele em algum momento é removido. Já um
+teste. Quando se usa um `println`, ele em algum momento é removido. Já um
 teste tem a vantagem de contribuir com mais um teste para a suíte de
 testes.
 
@@ -548,7 +548,7 @@ processo e as práticas de desenvolvimento de software dessas empresas:
     respectivos testes."
     ([link](https://arxiv.org/abs/1702.01715))
 
-* "No Facebook, engenheiros são responsáveis pelos teste de unidade de
+* "No Facebook, engenheiros são responsáveis pelos testes de unidade de
     qualquer código novo que eles desenvolvam. Além disso, esse código
     deve passar por testes de regressão, os quais são executados
     automaticamente, como parte dos processos de commit e push."
@@ -706,7 +706,7 @@ public void testNotEmptyStack() {
 }
 ```
 
-Em outras palavras, *não* recomenda-se dois comandos `assert` no mesmo método, como no código a seguir:
+Em outras palavras, *não* se recomenda usar dois comandos `assert` no mesmo método, como no código a seguir:
 \newpage
 
 ```java
@@ -1456,7 +1456,7 @@ servlet mude para "Índice de Massa Corporal (IMC): " \[valor\]. Nesse
 caso, teremos que lembrar de atualizar também o `assertEquals` do teste de
 unidade.
 
-Por fim, não conseguimos criar mocks para todos objetos e métodos. Em
+Por fim, não conseguimos criar mocks para todos os objetos e métodos. Em
 geral, as seguintes construções não são "mockáveis": classes e métodos
 finais, métodos estáticos e construtores.
 
@@ -1511,7 +1511,7 @@ TDD foi proposto com três objetivos principais em mente:
 
 \index{Desenvolvimento Dirigido por Testes (TDD)!Ciclo}
 
-Quando trabalha-se com TDD, o desenvolvedor segue um um ciclo composto
+Quando se trabalha com TDD, o desenvolvedor segue um ciclo composto
 por três estados, conforme mostra a próxima figura.
 
 ![Ciclos de TDD](figs/cap8/ciclos-tdd){width=75%}
@@ -1821,7 +1821,7 @@ teste manualmente — eles ainda são competitivos e apresentam ganhos.
 
 ### Exemplo: Teste de um Compilador
 
-Quando desenvolve-se um compilador, pode-se usar testes de unidade ou de
+Quando se desenvolve um compilador, pode-se usar testes de unidade ou de
 integração. Já os testes de sistema de um compilador tendem a ser
 conceitualmente mais simples. O motivo é que a interface de um
 compilador não inclui janelas e telas com elementos gráficos. Em vez
@@ -1880,7 +1880,7 @@ para elaboração de testes mais efetivos).
 \index{Beck, Kent}
 Uma observação semelhante pode ser feita sobre a relação entre TDD e
 testes caixa preta/branca. Para esclarecer essa relação, vamos usar
-algumas frases do do próprio Kent Beck, isto é, do inventor da ideia de
+algumas frases do próprio Kent Beck, isto é, do inventor da ideia de
 TDD (fonte: *Test-Driven Development Violates the
 Dichotomies of Testing, Kent Beck*, Three Rivers Institute, June 2007):
 

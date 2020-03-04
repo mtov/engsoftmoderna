@@ -71,7 +71,7 @@ manutenibilidade de um sistema, mas sem afetar o seu funcionamento. Para
 explicar essa definição, vamos dividi-la em três partes. Primeiro,
 quando a definição menciona "transformações de código", ela está se
 referindo a modificações no código, como dividir uma função em duas,
-renomear uma variável, mover um função para outra classe, extrair uma
+renomear uma variável, mover uma função para outra classe, extrair uma
 interface de uma classe, etc. Em seguida, a definição menciona o
 objetivo de tais transformações: "melhorar a manutenibilidade" do
 sistema, isto é, melhorar sua modularidade, melhorar seu projeto ou
@@ -863,7 +863,7 @@ refactorings: de forma oportunista ou de forma estratégica.
 
 \index{Refactoring!Oportunistas}
 **Refactorings oportunistas** são realizados no meio de uma tarefa de
-programação, quando descobre-se que um trecho de código não está bem
+programação, quando se descobre que um trecho de código não está bem
 implementado e que, portanto, pode ser melhorado. Isso pode acontecer
 quando se está corrigindo um bug ou implementando uma nova
 funcionalidade. Por exemplo, no meio dessas tarefas, pode-se perceber
@@ -875,7 +875,7 @@ código, ele deve refatorá-lo imediatamente. Tentando explicar de um modo
 mais claro, suponha que um desenvolvedor trabalhe por uma hora na
 implementação de uma nova funcionalidade. É compreensível e desejável
 que parte desse tempo — talvez 20% ou mais — seja investido em
-refactorings. Kent Beck tem um frase interessante sobre refactorings
+refactorings. Kent Beck tem uma frase interessante sobre refactorings
 oportunistas:
 
 \index{Beck, Kent}
