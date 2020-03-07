@@ -449,7 +449,7 @@ exclusivos. Ou seja, queremos decidir qual requisito vamos de fato
 adotar no sistema. Para isso, as versões A e B são liberadas para grupos
 distintos de usuários. Ao final do teste, decide-se qual versão
 despertou maior interesse desses usuários. Portanto, testes A/B
-constituem em uma abordagem dirigida por dados para seleção de
+constituem uma abordagem dirigida por dados para seleção de
 requisitos (ou funcionalidades) que serão oferecidos em um sistema. O
 requisito vencedor será mantido no sistema e a versão com o requisito
 perdedor será descartada.
