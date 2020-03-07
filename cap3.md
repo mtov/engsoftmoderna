@@ -441,16 +441,49 @@ Antes de concluir, é importante mencionar que design sprint não é voltado ape
 ## Testes A/B
 
 \index{Testes A/B}
-**Testes A/B** (ou *split tests*) são usados para escolher, dentre duas versões de um sistema, aquela que desperta maior interesse dos usuários. As duas versões são idênticas, exceto que uma implementa um requisito A e outra implementa um requisito B, sendo que A e B são mutuamente exclusivos. Ou seja, queremos decidir qual requisito vamos de fato adotar no sistema. Para isso, as versões A e B são liberadas para uso por grupos distintos de usuário. Ao final do teste, decide-se qual versão despertou maior interesse desses usuários. Portanto, testes A/B consistem em uma abordagem dirigida por dados para seleção de requisitos (ou funcionalidades) que serão oferecidos em um sistema. O requisito vencedor será mantido no sistema e a versão com o requisito perdedor será descartada.
+**Testes A/B** (ou *split tests*) são usados para escolher, dentre duas
+versões de um sistema, aquela que desperta maior interesse dos usuários.
+As duas versões são idênticas, exceto que uma implementa um requisito A
+e outra implementa um requisito B, sendo que A e B são mutuamente
+exclusivos. Ou seja, queremos decidir qual requisito vamos de fato
+adotar no sistema. Para isso, as versões A e B são liberadas para grupos
+distintos de usuários. Ao final do teste, decide-se qual versão
+despertou maior interesse desses usuários. Portanto, testes A/B
+constituem em uma abordagem dirigida por dados para seleção de
+requisitos (ou funcionalidades) que serão oferecidos em um sistema. O
+requisito vencedor será mantido no sistema e a versão com o requisito
+perdedor será descartada.
 
-Testes A/B podem ser usados, por exemplo, quando se constrói um MVP (com requisitos A) e, depois de um ciclo construir-medir-aprender pretende-se testar um novo MVP (com requisitos B). Um outro cenário muito comum são testes A/B envolvendo componentes de interfaces com o usuário. Por exemplo, dados dois layouts da página de entrada de um site, um teste A/B pode ser usado para decidir qual resulta em maior engajamento por parte dos usuários. Pode-se testar também a cor ou posição de um botão da interface, as mensagens usadas, a ordem de apresentação dos elementos de uma lista, etc.
+Testes A/B podem ser usados, por exemplo, quando se constrói um MVP (com
+requisitos A) e, depois de um ciclo construir-medir-aprender pretende-se
+testar um novo MVP (com requisitos B). Um outro cenário muito comum são
+testes A/B envolvendo componentes de interfaces com o usuário. Por
+exemplo, dados dois layouts da página de entrada de um site, um teste
+A/B pode ser usado para decidir qual resulta em maior engajamento por
+parte dos usuários. Pode-se testar também a cor ou posição de um botão
+da interface, as mensagens usadas, a ordem de apresentação dos elementos
+de uma lista, etc.
 
-\index{Testes A/B}
-\index{Testes A/B!Versão de Controle}
-\index{Testes A/B!Versão de Tratamento}
-Para aplicar testes A/B, precisamos de duas versões de um sistema, que vamos chamar de **versão de controle** (sistema original, com os requisitos A) e **versão de tratamento** (sistema com novos requisitos B). Para ser mais claro, e usando o exemplo do final da Seção 3.5, suponha que a versão de controle consiste de um sistema de comércio eletrônico que faz uso de um algoritmo de recomendação tradicional e a versão de tratamento consiste do mesmo sistema, mas com um algoritmo de recomendação supostamente mais eficaz. Logo, nesse caso, o teste A/B terá como objetivo definir se o novo algoritmo de recomendação é realmente melhor e, portanto, deve ser incorporado ao sistema.
+\index{Testes A/B} 
+\index{Testes A/B!Versão de Controle} 
+\index{Testes A/B!Versão de Tratamento} 
+Para aplicar testes A/B, precisamos de duas
+versões de um sistema, que vamos chamar de **versão de controle**
+(sistema original, com os requisitos A) e **versão de tratamento**
+(sistema com novos requisitos B). Para ser mais claro, e usando o
+exemplo do final da Seção 3.5, suponha que a versão de controle consiste
+de um sistema de comércio eletrônico que faz uso de um algoritmo de
+recomendação tradicional e a versão de tratamento consiste do mesmo
+sistema, mas com um algoritmo de recomendação supostamente mais eficaz.
+Logo, nesse caso, o teste A/B terá como objetivo definir se o novo
+algoritmo de recomendação é realmente melhor e, portanto, deve ser
+incorporado ao sistema.
 
-Para rodar testes A/B, precisamos também de uma métrica para medir os ganhos obtidos com a versão de tratamento. Essa métrica é genericamente chamada de **taxa de conversão**. No nosso exemplo, vamos assumir que ela é o percentual de visitas que se convertem em compra por meio de links recomendados. A expectativa é que o novo algoritmo de recomendação aumente esse percentual.
+Para rodar testes A/B, precisamos de uma métrica para medir os ganhos
+obtidos com a versão de tratamento. Essa métrica é genericamente chamada de
+**taxa de conversão**. No nosso exemplo, vamos assumir que ela é o percentual
+de visitas que se convertem em compras por meio de links recomendados. A
+expectativa é que o novo algoritmo de recomendação aumente esse percentual.
 
 Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo este trecho de código:
 
@@ -462,15 +495,32 @@ else
    "execute a versão de tratamento"
 ```
 
-Após um certo número de acessos, o teste é encerrado e verificamos se a versão de tratamento, de fato, aumentou a taxa de conversão de usuários. Se sim, passaremos a usá-la em todos os clientes. Se não, continuaremos com a versão de controle.
+Após um certo número de acessos, o teste é encerrado e verificamos se a versão
+de tratamento, de fato, aumentou a taxa de conversão de usuários. Se sim,
+passaremos a usá-la em todos os clientes. Se não, continuaremos com a versão
+de controle.
 
-Uma questão fundamental em testes A/B é a determinação do tamanho da amostra. Em outras palavras, quantos clientes deveremos testar com cada uma das versões. Não iremos nos aprofundar na Estatística desse cálculo, pois ela está fora do escopo do livro. Além disso, existem calculadoras de tamanho de amostras de testes A/B disponíveis na Web. No entanto, gostaríamos de mencionar que os testes podem demandar um número extremamente elevado de clientes, que somente estão ao alcance de sistemas populares, como grandes lojas de comércio eletrônico, serviços de busca, redes sociais, portais de notícias, etc. Para dar um exemplo, suponha que a taxa de conversão de clientes seja de 1% e que desejamos verificar se o tratamento introduz um ganho mínimo de 10% nessa taxa. Nesse caso, os grupos de controle e de tratamento devem possuir no mínimo 200 mil clientes, cada um, para que os resultados do teste tenham relevância estatística, considerando um nível de significância de 95%. Sendo um pouco mais claro:
+Uma questão fundamental em testes A/B é a determinação do tamanho da
+amostra. Em outras palavras, quantos clientes deveremos testar com cada
+uma das versões. Não iremos nos aprofundar na estatística desse cálculo,
+pois ela está fora do escopo do livro. Além disso, existem calculadoras
+de tamanho de amostras de testes A/B disponíveis na Web. No entanto,
+gostaríamos de mencionar que os testes podem demandar um número
+extremamente elevado de clientes, que somente estão ao alcance de
+sistemas populares, como grandes lojas de comércio eletrônico, serviços
+de busca, redes sociais, portais de notícias, etc. Para dar um exemplo,
+suponha que a taxa de conversão de clientes seja de 1% e que desejamos
+verificar se o tratamento introduz um ganho mínimo de 10% nessa taxa.
+Nesse caso, os grupos de controle e de tratamento devem possuir no
+mínimo 200 mil clientes, cada um, para que os resultados do teste tenham
+relevância estatística, considerando um nível de significância de 95%.
+Sendo um pouco mais claro:
 
 * Se após 200K acessos, a versão B aumentar a taxa de conversão em pelo menos 10% podemos ter certeza estatística de que esse ganho é causado pelo tratamento B (na verdade, podemos ter 95% de certeza). Logo, dizemos que o teste foi bem sucedido, isto é, ele foi ganho pela versão B.
 
 * Caso contrário, não podemos ter certeza de que esse ganho é causado pelo tratamento B. Por isso, dizemos que o teste A/B falhou.
 
-O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem eventos com maior taxa de conversão e que testam ganhos de maior proporção. No exemplo anterior, se a taxa de conversão fosse de 10% e a melhoria a ser testada fosse de 25%, o tamanho da amostra cairia para 1,800 clientes, para cada grupo. Esses valores foram estimados usando a calculadora de testes A/B da empresa Optimizely, disponível neste [link](https://www.optimizely.com/sample-size-calculator/).
+O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem eventos com maior taxa de conversão e que testam ganhos de maior proporção. No exemplo anterior, se a taxa de conversão fosse de 10% e a melhoria a ser testada fosse de 25%, o tamanho da amostra cairia para 1.800 clientes, para cada grupo. Esses valores foram estimados usando a calculadora de testes A/B da empresa Optimizely, disponível neste [link](https://www.optimizely.com/sample-size-calculator/).
 
 ### Perguntas Frequentes
 
@@ -478,10 +528,11 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 **Posso testar mais de duas variações?** Sim, a metodologia que explicamos adapta-se a mais de dois testes. Basta dividir os acessos em três grupos aleatórias, por exemplo, se quiser testar três versões de um sistema. Esses testes, com mais de um tratamento, são chamados de Testes A/B/n.
 
-**Posso terminar o teste A/B antes, se ele apresentar o ganho esperado**? Não, esse é um erro frequente e grave. Se o tamanho da amostra for de 20 mil usuários, o teste  —  de cada grupo  —  somente pode ser encerrado quando alcançarmos exatamente esse número de usuários. Sendo mais preciso, ele não deve terminar antes, com menos usuários, nem depois, com mais usuários. Um possível erro de desenvolvedores quando começam a usar testes A/B consiste em encerrar o teste no primeiro dia em que o ganho mínimo esperado for alcançado, sem testar o resto da amostra.
+**Posso terminar o teste A/B antes, se ele apresentar o ganho esperado**? Não, esse é um erro frequente e grave. Se o tamanho da amostra for de 200 mil usuários, o teste  —  de cada grupo  —  somente pode ser encerrado quando alcançarmos exatamente esse número de usuários. Sendo mais preciso, ele não deve terminar antes, com menos usuários, nem depois, com mais usuários. Um possível erro de desenvolvedores quando começam a usar testes A/B consiste em encerrar o teste no primeiro dia em que o ganho mínimo esperado for alcançado, sem testar o resto da amostra.
 
 \index{Testes A/B!Testes A/A}
-**O que é um teste A/A?** É um teste onde os dois grupos, controle e tratamento, executam a mesma versão do sistema. Logo, assumindo-se uma significância estatística de 95%, eles deveriam quase sempre falhar, pois a versão A não pode ser melhor do que ela mesma. Testes A/A são recomendados para testar e validar os procedimentos e decisões metodológicas que foram tomadas em um teste A/B. Alguns autores chegam a recomendar que não se deve iniciar testes A/B ante se realizar alguns testes A/A ([link](https://dl.acm.org/citation.cfm?id=3339916)). Caso os testes A/A não fahem, deve-se depurar o sistema de experimentação até descobrir a causa raiz (*root cause*) que está fazendo com que uma versão A seja considerada melhor do que ela mesmo.
+
+**O que é um teste A/A?** É um teste onde os dois grupos, controle e tratamento, executam a mesma versão do sistema. Logo, assumindo-se uma significância estatística de 95%, eles deveriam quase sempre falhar, pois a versão A não pode ser melhor do que ela mesma. Testes A/A são recomendados para testar e validar os procedimentos e decisões metodológicas que foram tomados em um teste A/B. Alguns autores chegam a recomendar que não se deve iniciar testes A/B antes de realizar alguns testes A/A ([link](https://dl.acm.org/citation.cfm?id=3339916)). Caso os testes A/A não falhem, deve-se depurar o sistema de experimentação até descobrir a causa raiz (*root cause*) que está fazendo com que uma versão A seja considerada melhor do que ela mesmo.
 
 **Qual a origem dos termos grupos de controle e de tratamento?** Os termos têm sua origem na área médica, mais especificamente em experimentos randomizados controlados (*randomized control experiments*). Por exemplo, para lançar uma nova droga no mercado, empresas farmacêuticas devem realizar esse tipo de experimento. São escolhidas duas amostras, chamadas de controle e de tratamento. Os participantes da amostra de controle recebem um placebo e os participantes da amostra de tratamento são tratados com a droga. Após o teste, comparam-se os resultados para verificar se o uso da droga foi efetivo. Experimentos randomizados controlados são um modo cientificamente aceito de provar causalidade. No nosso exemplo, eles podem, por exemplo, provar que a droga testada causou a cura de uma doença.
 
@@ -492,7 +543,7 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 * No Facebook, 
   \index{Facebook}
-  "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas features de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que tais usuários têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+  "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários onde os usuários começam a usar novas funcionalidades de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que eles têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
 * Na Netflix, 
   \index{Netflix}
