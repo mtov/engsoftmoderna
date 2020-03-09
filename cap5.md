@@ -391,8 +391,8 @@ public class Estacionamento {
     veiculos = new Hashtable<String, String>();
   }
 
-  public void estaciona(String veiculo, String placa) {
-    veiculos.put(veiculo, placa);
+  public void estaciona(String placa, String veiculo) {
+    veiculos.put(placa, veiculo);
   }
 
   public static void main(String[] args) {
