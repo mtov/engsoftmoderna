@@ -273,7 +273,7 @@ desenvolvimento de software, conforme descrito a seguir:
     último esboço no mesmo dia em que responderam ao questionário e
     39% no intervalo de tempo máximo de uma semana, antes da resposta.
     Portanto, esses percentuais indicam que esboços são criados com
-    freqüência por desenvolvedores de software.
+    frequência por desenvolvedores de software.
 
 -   58% dos últimos esboços criados pelos participantes foram depois
     arquivados, seja em papel (6%), digitalmente (42%) ou de ambas as
@@ -317,7 +317,7 @@ Os diagramas UML são classificados em dois grandes grupos:
 -   **Diagramas Dinâmicos (ou Comportamentais)** modelam eventos que
     ocorrem durante a execução de um sistema. Por exemplo, eles podem
     modelar uma sequência de chamadas de métodos. Neste capítulo,
-    vamos estudar dois diagramas dinâmicos: Diagramas de Seqüência e
+    vamos estudar dois diagramas dinâmicos: Diagramas de Sequência e
     Diagramas de Atividades.
 
 Para entender melhor a diferença entre esses grupos de diagramas,
@@ -374,7 +374,7 @@ existem entre as classes modeladas.
 Um diagrama de classes é desenhado usando-se retângulos e setas. Cada
 uma das classes é representada por meio de um retângulo com três
 compartimentos, conforme mostra a figura a seguir. Esses compartimentos
-contém o nome da classe (normalmente, em negrito), seus atributos e
+contêm o nome da classe (normalmente, em negrito), seus atributos e
 métodos.
 
 ![](figs/cap4/class0){width=28%}
@@ -788,7 +788,7 @@ processo ou fluxo de execução. Os principais elementos desses diagramas
 são **ações** representadas por quadrados. Existem ainda elementos de
 **controle**, que definem a ordem de execução das ações. A próxima
 figura mostra um diagrama de atividades que modela o processo seguido
-após um usuário fechar uma compra em um loja virtual. Para isso,
+após um usuário fechar uma compra em uma loja virtual. Para isso,
 assume-se que os produtos comprados já estão no carrinho de compra.
 
 ![](figs/cap4/activity01){width=40%}
@@ -803,7 +803,7 @@ assumindo a existência dessa ficha.
 
 ![](figs/cap4/activity-t-inicial)
 
-**Ações:** Possuem um único fluxo de entrada e um único fluxo de saída. Para um ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
+**Ações:** Possuem um único fluxo de entrada e um único fluxo de saída. Para uma ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
 
 ![](figs/cap4/activity-t-acao)
 

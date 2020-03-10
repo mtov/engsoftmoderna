@@ -292,7 +292,7 @@ Veja uma lista deles a seguir:
 
 * **Valores**: comunicação, simplicidade, feedback, coragem, respeito e qualidade de vida. 
 
-* **Princípios**: humanidade, economicidade, benefícios mútuos, melhorias contínuas, falhas acontecem, baby steps, responsabilidade pessoal
+* **Princípios**: humanidade, economicidade, benefícios mútuos, melhorias contínuas, falhas acontecem, baby steps e responsabilidade pessoal.
 
 Em seguida, vamos descrever as práticas. Para facilitar a explicação
 delas, resolvemos organizá-las em três grupos: práticas sobre o processo
@@ -721,7 +721,7 @@ sistema de exemplo o representante dos clientes tenha alocado a história
 "Postar Pergunta" para a iteração 2 e a história "Postar Resposta"
 para a iteração 1. A pergunta então é a seguinte: o time deve respeitar
 essa alocação? Sim, pois a regra é clara: o representante dos clientes é
-a autoridade final quando trata-se de definir a ordem de implementação
+a autoridade final quando se trata de definir a ordem de implementação
 das histórias. Logo, pode-se perguntar em seguida: como que vamos postar
 respostas, sem ter as perguntas? Para isso, basta implementar algumas
 perguntas "fixas", que não possam ser modificadas pelos usuários. Na
@@ -816,7 +816,7 @@ implementação de uma nova história, de um teste, ou a correção de um bug
 compartilhando o mesmo teclado e monitor.
 Um dos desenvolvedores é o **líder** (ou *driver*) da sessão, ficando
 com o teclado e o mouse. Ao segundo desenvolvedor cabe a função de
-revisor e questionador, no bom sentido, do trabalho do líder. Às vezes ,
+revisor e questionador, no bom sentido, do trabalho do líder. Às vezes,
 esse segundo desenvolvedor é chamado de **navegador**. A inspiração vem
 dos ralis automobilísticos, onde os pilotos são acompanhados de um
 navegador.
@@ -1862,7 +1862,7 @@ e métodos ágeis — que começaram a surgir na década de 90, mas que só
 ganharam popularidade no final dos anos 2000 — foi gradativa. Como
 em métodos ágeis, esses métodos surgidos nesse período de transição
 possuem o conceito de iterações. Ou seja, eles não são estritamente
-sequenciais, como em Waterfall. Porém, as iterações tem duração maior do
+sequenciais, como em Waterfall. Porém, as iterações têm duração maior do
 que aquela usual em desenvolvimento ágil. Em vez de poucas semanas, elas
 duram alguns meses. Por outro lado, eles preservam características
 relevantes de Waterfall, como ênfase em documentação e em uma fase
