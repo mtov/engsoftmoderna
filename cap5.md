@@ -633,7 +633,7 @@ principalmente nas seguintes situações:
     variável global que a classe A usa no seu código.
 
 -   Quando a interface da classe B não é estável. Por exemplo, os
-    métodos públicos de B são renomeados com freqüência.
+    métodos públicos de B são renomeados com frequência.
 
 Em essência, o que caracteriza o acoplamento ruim é o fato de que a
 dependência entre as classes não é mediada por uma interface estável.
@@ -908,7 +908,7 @@ tentam reduzir ou postergar essa contínua degradação da qualidade
 interna de sistemas de software. Em resumo, o objetivo não é apenas
 entregar um projeto capaz de resolver um problema, mas também que
 facilite manutenções futuras. Lembre-se que a principal regra sobre
-requisitos de software é que eles mudam com freqüência. O mesmo acontece
+requisitos de software é que eles mudam com frequência. O mesmo acontece
 com tecnologias de implementação, como bibliotecas e frameworks.
 
 ### Princípio da Responsabilidade Única
