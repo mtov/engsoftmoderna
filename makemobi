@@ -19,3 +19,4 @@ pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
 rm esm-book.md
 
 cp esm-book.mobi ../Dropbox
+cp esm-book.epub ../Dropbox

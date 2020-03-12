@@ -603,7 +603,7 @@ aprovada por um outro membro do time.
 
 Bob resolveu então sugerir a adição, nessa página, de um link para o presente
 apêndice do livro Engenharia de Software Moderna. Para isso, ele
-primeiro clonou o repositório e criou um um branch, chamado `livro-esm`,
+primeiro clonou o repositório e criou um branch, chamado `livro-esm`,
 por meio dos seguintes comandos:
 
 `git clone https://github.com/aserg-ufmg/awesome-git.git`                    
@@ -637,7 +637,7 @@ Na página do GitHub para criação de pull requests, Bob pode informar que
 deseja que seu código seja revisado pela Alice. Ela será então
 notificada que existe um pull request esperando sua revisão. Também via
 interface do GitHub, Alice pode revisar os commits do pull request
-criado por Bob, inclusive por meio de um um diff entre o código novo e o
+criado por Bob, inclusive por meio de um diff entre o código novo e o
 código antigo. Se for o caso, Alice pode trocar mensagens com Bob, para
 esclarecer dúvidas sobre o novo código. Mais ainda, ela pode solicitar
 mudanças no código. Nesse caso, Bob deve providenciar as mudanças e
