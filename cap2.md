@@ -2004,7 +2004,7 @@ edição, 2014.
 ## Exercícios de Fixação {.unnumbered}
 
 1\.  Como XP preconiza que devem ser os contratos de desenvolvimento de
-     software.
+     software?
 
 2\.  Quais as diferenças entre XP e Scrum?
 
