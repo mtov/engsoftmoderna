@@ -1602,7 +1602,7 @@ significa que eles têm autonomia para definir qual tarefa vai ser puxada
 para o próximo passo. Eles também são cross-funcionais, isto é, devem
 incluir membros capazes de realizar todos os passos do Quadro Kanban.
 
-Por fim, resta explicar o conceito de **Limites WIP** (*Working in
+Por fim, resta explicar o conceito de **Limites WIP** (*Work in
 Progress*). Via de regra, métodos de gerenciamento de projetos têm como
 objetivo garantir um ritmo sustentável de trabalho. Para isso, deve-se
 evitar duas situações extremas: (1) o time ficar ocioso boa parte do
@@ -2008,7 +2008,7 @@ edição, 2014.
 
 2\.  Quais as diferenças entre XP e Scrum?
 
-3\.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por que?
+3\.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por quê?
      Defina esses termos.
 
 4\.  Qual a diferença entre as histórias do "topo" e do "fundo" do
