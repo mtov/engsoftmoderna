@@ -859,7 +859,7 @@ eles não tinham a menor ideia de que estavam acoplados a ela.
 \end{esmbox} 
 ```
 
-## Princípios de Projeto
+## SOLID e Outros Princípios de Projeto
 \index{Princípios de Projeto}
 
 Princípios de projeto são recomendações mais concretas que

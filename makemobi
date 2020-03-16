@@ -14,7 +14,7 @@ cat capAp.md >> esm-book.md
 
 pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
 
-../kindlegen/kindlegen -verbose -c0 esm-book.epub -o esm-book.mobi
+../kindlegen/kindlegen esm-book.epub -o esm-book.mobi
 
 rm esm-book.md
 
