@@ -104,13 +104,13 @@ mostrou que mais de 55% dos projetos estourava os prazos planejados
 entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
 conforme mostra o próximo gráfico:
 
-![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para cada faixa de estouro).](figs/cap2/chaos2){width=55%}
+![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para cada faixa de estouro).](figs/cap2/chaos2){width=95%}
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, como mostra
 o gráfico:
 
-![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos** (para cada faixa de estouro).](figs/cap2/chaos1){width=55%}
+![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos** (para cada faixa de estouro).](figs/cap2/chaos1){width=95%}
 
 Em 2001, um grupo de profissionais da indústria se reuniu na cidade de
 Snowbird, no estado norte-americano de Utah, para discutir e propor uma
@@ -510,7 +510,7 @@ representante dos clientes para tirar possíveis dúvidas e conhecer
 melhor a história. Feito isso, cada desenvolvedor faz sua estimativa
 para o tamanho da história, de forma independente. Depois disso, eles ao
 mesmo tempo levantam cartões com a estimativa que pensaram, em story
-points. Esses cartões foram distribuídos antes e deles constam os
+points. Esses cartões foram distribuídos antes e neles constam os
 números 1, 2, 3, 5, etc. Se houver consenso, o tamanho da história está
 estimado e passa-se para a próxima história. Senão, o time deve iniciar
 uma discussão, para esclarecer a razão das diferentes estimativas. Por
@@ -1297,7 +1297,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.
 
-![Gráfico de Burndown, assumindo um sprint com duração de 15 dias.](figs/cap2/burndown){width=65%}
+![Gráfico de Burndown, assumindo um sprint com duração de 15 dias.](figs/cap2/burndown){width=85%}
 
 ### Outros Eventos
 
