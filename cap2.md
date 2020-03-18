@@ -405,8 +405,8 @@ membros de um time. Pelo contrário, falhas fazem parte do jogo, se um
 time pretende avançar, inovar e entregar software com rapidez.
 
 \index{Baby Steps}
-**Baby Steps**. É melhor progressos seguros, testados e validados, mesmo
-que pequenos, do que grandes implementações com riscos de serem
+**Baby Steps**. É melhor um progresso seguro, testado e validado, mesmo
+que pequeno, do que grandes implementações com riscos de serem
 descartadas pelos usuários. O mesmo vale para testes (que são úteis
 mesmo quando as unidades testadas são de menor granularidade),
 integração de código (é melhor integrar diariamente, do que passar pelo
@@ -785,9 +785,10 @@ surgir ao longo do projeto, tornando o design inicial desatualizado.
 
 Por isso, XP defende que o momento ideal para pensar em *design* é
 quando ele se revelar importante. Frequentemente, duas frases são usadas
-para motivar e justificar essa prática: *do the simplest thing that
-could possibly work* e *you aren't going to need it*, essa última
-conhecida pela sigla YAGNI.
+para motivar e justificar essa prática: "faça a coisa mais simples que
+possa funcionar" (*do the simplest thing that
+could possibly work*) e "você não vai precisar disso" (*you aren't going 
+to need it*), essa última conhecida pela sigla YAGNI.
 
 Duas observações são importantes para melhor entender a proposta de
 design incremental. Primeiro, times experientes costumam ter uma boa
@@ -1917,14 +1918,11 @@ seria comprada pela IBM. Por isso, o método é também chamado de
 
 Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 
-* UP é baseado na linguagem de modelagem UML. Todos os seus resultados são documentados e representados usando-se diagramas gráficos de UML. No Capítulo 4, iremos estudar UML com mais calma. Por enquanto, vamos ressaltar que a proposta era ter uma linguagem de modelagem "unificada" (UML) e também um processo "unificado"(UP), ambos propostos pelo mesmo grupo de profissionais.
+* UP é baseado na linguagem de modelagem UML. Todos os seus resultados são documentados e representados usando-se diagramas gráficos de UML. No Capítulo 4, iremos estudar UML com mais calma. Por enquanto, vamos ressaltar que a proposta era ter uma linguagem de modelagem "unificada" (UML) e também um processo "unificado" (UP), ambos propostos pelo mesmo grupo de profissionais.
 
 * UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como **ferramentas CASE** (*Computer-Aided Software Engineering*). 
 \index{CASE (Computer-Aided Software Engineering)}
-O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo de tela de uma ferramenta CASE na próxima figura). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
-
-
-![Exemplo de diagrama UML desenhado usando uma ferramenta CASE. Imagem extraída de [link](https://umbrello.kde.org/screenshots.php).](figs/cap2/case.png){width=55%}
+O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais. A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
 
 UP propõe que o desenvolvimento seja decomposto nas

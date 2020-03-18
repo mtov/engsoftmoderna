@@ -57,7 +57,7 @@ universidades norte-americanas e europeias e já chegavam também em
 algumas grandes empresas. Os cientistas da computação dessa época se
 viram diante de um novo desafio: como os computadores estavam se
 tornando mais populares, novas aplicações não apenas se tornavam
-possíveis, mas começaram a ser demandadas pelos usuários dos grandes
+possíveis, mas começavam a ser demandadas pelos usuários dos grandes
 computadores da época. Na verdade, os computadores eram grandes no
 sentido físico e não em poder de processamento, se comparado com os
 computadores atuais. Dentre essas novas aplicações, as principais eram
@@ -816,7 +816,7 @@ construção civil, etc, todos almejam e dizem que possuem produtos de
 qualidade. Esse contexto não é diferente quando o produto em questão é
 um software. Segundo uma classificação inicialmente proposta por
 Bertrand Meyer
-[link](https://dl.acm.org/citation.cfm?id=261119),
+([link](https://dl.acm.org/citation.cfm?id=261119)),
 qualidade de software pode ser avaliada em duas dimensões: 
 **qualidade externa** ou **qualidade interna**.
 
