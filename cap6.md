@@ -15,7 +15,7 @@ contexto, isto é, um sistema onde o padrão poderia ser útil; (2) um
 problema no projeto desse sistema; (3) uma solução para esse problema
 por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
 padrões. Terminamos o capítulo alertando que padrões de projeto não são
-uma bala-de-prata, ou seja, discutimos situações onde o uso de padrões
+uma bala de prata, ou seja, discutimos situações onde o uso de padrões
 não é recomendado (Seção 6.13).
 
 ## Introdução 
@@ -1017,7 +1017,7 @@ class Temperatura extends Subject {
 
 }
 
-class TermometroCelsius implements Observer{
+class TermometroCelsius implements Observer {
 
   public void update(Subject s){
     double temp = ((Temperatura) s).getTemp();

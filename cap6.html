@@ -116,7 +116,7 @@
 <blockquote>
 <p><em>A design that doesn’t take change into account risks major redesign in the future.</em> – Gang of Four</p>
 </blockquote>
-<p>Este capítulo inicia com uma introdução ao conceito e aos objetivos de padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada, Decorador, Strategy, Observador, Template Method e Visitor. Cada um desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A apresentação de cada padrão é organizada em três partes: (1) um contexto, isto é, um sistema onde o padrão poderia ser útil; (2) um problema no projeto desse sistema; (3) uma solução para esse problema por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns padrões. Terminamos o capítulo alertando que padrões de projeto não são uma bala-de-prata, ou seja, discutimos situações onde o uso de padrões não é recomendado (Seção 6.13).</p>
+<p>Este capítulo inicia com uma introdução ao conceito e aos objetivos de padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada, Decorador, Strategy, Observador, Template Method e Visitor. Cada um desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A apresentação de cada padrão é organizada em três partes: (1) um contexto, isto é, um sistema onde o padrão poderia ser útil; (2) um problema no projeto desse sistema; (3) uma solução para esse problema por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns padrões. Terminamos o capítulo alertando que padrões de projeto não são uma bala de prata, ou seja, discutimos situações onde o uso de padrões não é recomendado (Seção 6.13).</p>
 <h2 data-number="1.1" id="introdução" data-number="1.1"><span class="header-section-number">6.1</span> Introdução</h2>
 <p> </p>
 <p>Padrões de projeto são inspirados em uma ideia proposta por Cristopher Alexander, um arquiteto — de construções civis e não de software — e professor da Universidade de Berkeley. Em 1977, Alexander lançou um livro chamado <em>A Patterns Language</em>, no qual ele documenta diversos padrões para construção de cidades e prédios. Segundo Alexander:</p>
@@ -570,7 +570,7 @@
 <span id="cb26-13"><a href="#cb26-13"></a></span>
 <span id="cb26-14"><a href="#cb26-14"></a>}</span>
 <span id="cb26-15"><a href="#cb26-15"></a></span>
-<span id="cb26-16"><a href="#cb26-16"></a><span class="kw">class</span> TermometroCelsius <span class="kw">implements</span> <span class="bu">Observer</span>{</span>
+<span id="cb26-16"><a href="#cb26-16"></a><span class="kw">class</span> TermometroCelsius <span class="kw">implements</span> <span class="bu">Observer</span> {</span>
 <span id="cb26-17"><a href="#cb26-17"></a></span>
 <span id="cb26-18"><a href="#cb26-18"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">update</span>(<span class="bu">Subject</span> s){</span>
 <span id="cb26-19"><a href="#cb26-19"></a>    <span class="dt">double</span> temp = ((Temperatura) s).<span class="fu">getTemp</span>();</span>

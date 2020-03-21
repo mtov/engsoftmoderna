@@ -1822,7 +1822,7 @@ gerentes e executivos da organização.
 \index{Métodos Ágeis}
 Apesar de métodos ágeis — como aqueles estudados nas seções
 anteriores — terem alcançado um sucesso inquestionável, é bom
-lembrar que não existe bala-de-prata em Engenharia de Software, conforme
+lembrar que não existe bala de prata em Engenharia de Software, conforme
 comentamos no Capítulo 1. Assim, neste capítulo vamos discutir cenários
 e domínios nos quais práticas ágeis podem não ser adequadas.
 
@@ -1922,7 +1922,10 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 
 * UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como **ferramentas CASE** (*Computer-Aided Software Engineering*). 
 \index{CASE (Computer-Aided Software Engineering)}
-O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais. A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
+O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
+
+
+![Projeto usando ferramenta CASE (figura gentilmente cedida pelos mantenedores do sistema ArgoUML).](figs/cap2/case.png){width=85%}
 
 
 UP propõe que o desenvolvimento seja decomposto nas

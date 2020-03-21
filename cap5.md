@@ -1161,7 +1161,7 @@ de herança:
 
 Voltando ao princípio, quando orientação a objetos se tornou comum, na
 década de 80, houve um incentivo ao uso de herança. Acreditava-se que o
-conceito seria talvez uma "bala de prata" capaz de resolver os
+conceito seria talvez uma bala de prata capaz de resolver os
 problemas de reúso de software. Argumentava-se que hierarquias de
 classes profundas, com vários níveis, seriam um indicativo de um bom
 projeto, no qual foi possível atingir elevados índices de reúso. No
