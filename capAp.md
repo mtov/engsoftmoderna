@@ -408,7 +408,7 @@ comandos `ls` e `pwd`. Também para reforçar essa comparação, existem certos
 comandos que permitem adicionar ao prompt do sistema operacional não
 apenas o nome do diretório corrente mas também o nome do branch
 corrente. Assim, o prompt pode ser exibido como
-`c:\projetos\sistema1\master>`.
+`~/projetos/sistema/master>`.
 
 Por outro lado, existe também uma diferença importante entre branches e
 diretórios. Um desenvolvedor somente pode alterar o branch corrente de A
