@@ -1618,7 +1618,7 @@ coluna (concluídos) do passo. A exceção é o último passo, onde o WIP
 aplica-se apenas à primeira sub-coluna, já que não faz sentido aplicar
 um limite ao número de tarefas concluídas pelo time.
 
-Abaixo, reproduzimos o último Quadro Kanban, mas com os limites WIP.
+A seguir, reproduzimos o último Quadro Kanban, mas com os limites WIP.
 Eles são os números que aparecem abaixo do nome de cada passo, na
 primeira linha do quadro. Ou seja, nesse Quadro Kanban, admite-se um
 máximo de 2 histórias em especificação; 5 tarefas em implementação; e 3
@@ -1925,7 +1925,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
 
-![Projeto usando ferramenta CASE (figura gentilmente cedida pelos mantenedores do sistema ArgoUML).](figs/cap2/case.png){width=85%}
+![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=85%}
 
 
 UP propõe que o desenvolvimento seja decomposto nas
