@@ -193,7 +193,7 @@ Outras características de processos ágeis incluem:
 
 *  **Menor ênfase em planos detalhados**, pois muitas vezes nem o cliente, nem os Engenheiros de Software têm, no início de um projeto, uma ideia clara dos requisitos que devem ser implementados. Esse entendimento vai surgir ao longo do caminho, à medida que incrementos de produto sejam produzidos e validados. Em outras palavras, o importante em desenvolvimento ágil é conseguir avançar, mesmo em ambientes com informações imperfeitas, parciais e sujeitas a mudanças.
 
-*  **Inexistência de uma fase dedicada a design** (*big upfront design*). Em vez disso, o design também é incremental. Ele evolui à medida que o sistema vai nascendo, ao final de cada iteração.
+*  **Inexistência de uma fase dedicada a design** (*big design up front*). Em vez disso, o design também é incremental. Ele evolui à medida que o sistema vai nascendo, ao final de cada iteração.
 
 *  **Desenvolvimento em times pequenos**, com cerca de uma dezena de desenvolvedores. Ou, em outras palavras, times que possam ser alimentados com duas pizzas, conforme popularizado pelo CEO da Amazon, Jeff Bezos.
 
@@ -767,8 +767,8 @@ Nessa seção, vamos estudar as práticas de programação de XP.
 \index{Design Incremental}
 \index{Big Design Upfront}
 **Design Incremental**. Como afirmado nos parágrafos anteriores, em XP
-não há uma fase de design e análise detalhados, conhecida como *big
-design upfront* (BDUF), a qual é uma das principais fases de processos
+não há uma fase de design e análise detalhados, conhecida como *Big
+Design Up Front* (BDUF), a qual é uma das principais fases de processos
 do tipo Waterfall. A ideia é que o time deve reservar tempo para definir
 o design do sistema que está sendo desenvolvido. Porém, isso deve ser
 uma atividade contínua e incremental, em vez de estar concentrada no

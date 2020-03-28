@@ -31,7 +31,7 @@ Para cumprir essa missão, os modelos usados em Engenharia de Software
 são mais detalhados do que requisitos, mas ainda menos complexos do que
 o código fonte de um sistema.
 
-Modelos são largamente usados também em outras Engenharias. Por exemplo,
+Modelos são largamente usados também em outras engenharias. Por exemplo,
 uma engenheira civil pode decidir criar uma maquete para mostrar como
 será a ponte que ela foi contratada para construir. Em seguida, ela pode
 criar um modelo matemático e físico da ponte e usá-lo para simular e
@@ -40,7 +40,7 @@ ventos, ondas, terremotos, etc.
 
 Infelizmente, modelos de software — pelo menos até hoje — são
 menos efetivos do que os modelos matemáticos e físicos usados em outras
-Engenharias. O motivo é que ao abstrair detalhes eles também descartam
+engenharias. O motivo é que ao abstrair detalhes eles também descartam
 parte da complexidade que é essencial aos sistemas modelados. Frederick
 Brooks comenta sobre essa questão em seu ensaio "*Não Existe Bala de
 Prata \..."*
@@ -74,7 +74,7 @@ Se pensarmos em termos de atividades de desenvolvimento de software, a
 criação de modelos é considerada uma atividade de projeto (*design*).
 Durante o levantamento de requisitos, as atenções estão voltadas para a
 definição do problema que será resolvido pelo sistema. Quando se avança
-para atividades de design, o problema já deve estar devidamente
+para atividades de projeto, o problema já deve estar devidamente
 entendido e as atenções se voltam para a concepção de uma solução capaz
 de resolvê-lo. Após essa solução ser projetada, ela deve ser
 implementada, usando-se linguagens de programação, bibliotecas,
@@ -165,7 +165,7 @@ após o levantamento de requisitos, seja produzido um conjunto de modelos
 — ou plantas técnicas (*blueprints*) — documentando diversos
 aspectos de um sistema e sempre usando diagramas UML. Esses modelos
 seriam criados por analistas de sistemas, usando-se ferramentas CASE e,
-depois, repassados a programadores, para codificação. Logo, UML como
+depois, repassados a programadores para codificação. Logo, UML como
 *blueprint* é recomendado quando se emprega processos de desenvolvimento
 do tipo Waterfall ou quando se adota o Processo Unificado (UP). Na
 verdade, UP foi proposto por pessoas com forte ligação com UML. No
@@ -222,7 +222,7 @@ desenvolvedores, em duas situações principais:
     diagramas UML para explicar para um desenvolvedor recém-contratado
     como uma funcionalidade está implementada. Normalmente, é mais
     fácil conduzir essa explicação usando modelos e diagramas
-    gráficos, do que analisar e explicar cada linha de código. Ou
+    gráficos do que analisar e explicar cada linha de código. Ou
     seja, aplica-se aqui o ditado segundo o qual "uma figura vale
     mais do que mil palavras".
 
@@ -354,7 +354,7 @@ os recursos de cada um deles. O nosso desafio ao escrever este capítulo
 foi selecionar os 20% (ou menos) dos recursos de UML que são
 responsáveis por 80% (ou mais) de seu uso prático nos dias de hoje. Para
 se ter uma ideia do nível de detalhe alcançado por UML, a especificação
-da versão mais recente da linguagem — versão 2.5.1, quando da
+da versão mais recente da linguagem — versão 2.5.1, no momento da
 escrita deste capítulo — possui 796 páginas. Ela pode ser encontrada
 no site da OMG ([link](https://www.omg.org/)).
 
@@ -482,8 +482,8 @@ Talvez o leitor possa se perguntar o que é mais correto: uma `Pessoa` ter
 no máximo um `Fone` (isto é, 0..1) ou uma `Pessoa` ter qualquer quantidade
 de `Fone` (isto é, \*)? A resposta é simples: depende dos requisitos do
 sistema. Ou seja, quem deve responder a essa pergunta são os usuários do
-sistema que estamos modelando. Para nós, o que importa é que Diagramas
-de Classe são capazes de modelar qualquer um dos dois cenários.
+sistema que estamos modelando. Para nós, o que importa é que diagramas
+de classe são capazes de modelar qualquer um dos dois cenários.
 
 Em alguns casos, informações de multiplicidade são também mostradas na
 extremidade contrária da seta, como no exemplo abaixo:
@@ -539,7 +539,7 @@ No último diagrama de classes, omitimos todos os símbolos de
 visibilidade, tanto pública (+) como privada (-). Isso foi feito, de
 forma deliberada, para destacar que estamos tratando do uso de UML para
 criação de esboços, quando os diagramas são criados para discutir e
-ilustrar uma ideia de design. Logo, nesse contexto, não faz sentido
+ilustrar uma ideia de projeto. Logo, nesse contexto, não faz sentido
 exigir que os diagramas sejam sintaticamente perfeitos. Por isso,
 pequenos erros ou omissões são tolerados, principalmente quando não há
 prejuízo para o propósito que levou à criação do diagrama.
@@ -785,7 +785,7 @@ solicita um depósito de certo valor em sua conta.
 
 Diagramas de atividades são usados para representar, em alto nível, um
 processo ou fluxo de execução. Os principais elementos desses diagramas
-são **ações** representadas por quadrados. Existem ainda elementos de
+são **ações** representadas por retângulos. Existem ainda elementos de
 **controle**, que definem a ordem de execução das ações. A próxima
 figura mostra um diagrama de atividades que modela o processo seguido
 após um usuário fechar uma compra em uma loja virtual. Para isso,
