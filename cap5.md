@@ -336,7 +336,7 @@ Suponha um sistema para controle de estacionamentos. Suponha ainda que,
 em uma primeira versão, a classe principal desse sistema seja a
 seguinte:
 
-```java
+```
 import java.util.Hashtable;
 
 public class Estacionamento {
@@ -380,7 +380,7 @@ da classe têm liberdade para trocar de estrutura de dados, sem causar
 impacto nos seus clientes. A única restrição é que a assinatura do
 método `estaciona` deve ser preservada.
 
-```java
+```
 import java.util.Hashtable;
 
 public class Estacionamento {
@@ -460,7 +460,7 @@ setters (acesso de escrita).
 Veja um exemplo a seguir, onde métodos `get` e `set` são usados para
 acessar o atributo `matricula` de uma classe `Aluno`.
 
-```java
+```
 class Aluno {
 
   private int matricula;
@@ -550,7 +550,7 @@ implementar um único interesse; (3) uma classe deve ser coesa.
 No entanto, o conceito se adapta também a métodos ou funções. Por
 exemplo, suponha uma função como a seguinte:
 
-```java
+```
 float sin_or_cos(double x, int op) {
   if (op == 1)
     "calcula e retorna seno de x"
@@ -567,7 +567,7 @@ para cada uma dessas tarefas.
 
 **Exemplo 2:** Suponha agora a seguinte classe:
 
-```java
+```
 class Stack<T> {
   boolean empty() { ... }
   T pop() { ... }
@@ -583,7 +583,7 @@ operações importantes em uma estrutura de dados do tipo Pilha.
 `Estacionamento`, na qual foram adicionados agora quatro atributos com
 informações sobre o gerente do estacionamento:
 
-```java
+```
 class Estacionamento {
   ...
   private String nome_gerente;
@@ -693,7 +693,7 @@ o formato do arquivo por conta própria, sem comunicar o desenvolvedor da
 classe `A`.
 
 
-```java
+```
 class A {
 
   private void f() {
@@ -707,7 +707,7 @@ class A {
 }
 ```
 
-```java
+```
 class B {
   private void g() {
     int total;
@@ -730,7 +730,7 @@ linguagem.
 e `B` do exemplo anterior é mostrada no código a seguir.
 
 
-```java
+```
 class A {
 
   private void f(B b) {
@@ -741,7 +741,7 @@ class A {
 }
 ```
 
-```java
+```
 class B {
 
   int total;
@@ -939,7 +939,7 @@ Responsabilidade Única. O método `calculaIndiceDesistencia` da classe
 `Disciplina` possui duas responsabilidades: calcular o índice de
 desistência de uma disciplina e imprimi-lo na console do sistema.
 
-```java
+```
 class Disciplina {
 
   void calculaIndiceDesistencia() {
@@ -954,7 +954,7 @@ Uma solução consiste em dividir essas responsabilidades entre duas classes: um
 
 \newpage
 
-```java
+```
 class Console {
 
   void imprimeIndiceDesistencia(Disciplina disciplina) {
@@ -1004,7 +1004,7 @@ funcionários de empresas privadas, contratados em regime de CLT, possuem
 uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem
 uma matrícula no SIAPE.
 
-```java
+```
 interface Funcionario {
 
   double getSalario();
@@ -1022,7 +1022,7 @@ Interfaces — consiste em criar interfaces específicas
 (`FuncionarioCLT` e `FuncionarioPublico`) que estendem a interface genérica
 (`Funcionario`).
 
-```java
+```
 interface Funcionario {
   double getSalario();
   ...
@@ -1066,7 +1066,7 @@ concretos das classes `C1` e `C2`. Ele não precisa conhecer a classe
 concreta que está por trás — ou que implementa — a interface `I`
 que ele referencia em seu código.
 
-```java
+```
 interface I { ... }
 
 class C1 implements I {
@@ -1078,7 +1078,7 @@ class C2 implements I {
 }
 ```
 
-```java
+```
 class Cliente {
 
   I i;
@@ -1091,7 +1091,7 @@ class Cliente {
 }
 ```
 
-```java
+```
 class Main {
 
   void main () {
@@ -1115,7 +1115,7 @@ permanecerá válida, pois ao usarmos um tipo interface estamos nos
 preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
 
-```java
+```
 void f() {
   ...
   ProjetorLG projetor = new ProjetorLG();
@@ -1124,7 +1124,7 @@ void f() {
 }
 ```
 
-```java
+```
 void g(Projetor projetor) {
   ...
 }
@@ -1192,14 +1192,14 @@ pelo menos duas soluções — por meio de herança ou por meio de
 composição — conforme mostra o seguinte código:
 
 Solução via Herança:
-```java
+```
 class Stack extends ArrayList {
   ...
 }
 ```
 
 Solução via Composição:
-```java
+```
 class Stack {
   private ArrayList elementos;
   ...
@@ -1221,7 +1221,7 @@ não seria possível mudar essa decisão em tempo de execução. Por outro
 lado, quando adota-se uma solução baseada em composição, isso fica
 mais fácil, como mostra o exemplo a seguir:
 
-```java
+```
 class Stack {
 
   private List elementos;
@@ -1295,7 +1295,7 @@ métodos:
 que respeitam o Princípio de Demeter. E, em seguida, temos um método `m2`,
 com uma chamada que não obedece ao princípio.
 
-```java
+```
 class PrincipioDemeter {
 
   T1 attr;
@@ -1346,7 +1346,7 @@ jornais, um cliente e sua carteira. Uma violação do Princípio de Demeter
 ocorre se, para receber o valor de um jornal, o entregador tiver que
 executar o seguinte código:
 
-```java
+```
 preco = 6.00;
 Carteira carteira = cliente.getCarteira();
 if (carteira.getValorTotal() >= preco) {  // viola Demeter
@@ -1361,7 +1361,7 @@ O jornaleiro têm acesso à carteira do seu cliente — via
 dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse
 tamanha liberdade. Uma solução mais realista é a seguinte:
 
-```java
+```
 preco = 6.00;
 try {
   cliente.pagar(preco);
@@ -1406,7 +1406,7 @@ cenários de uso, sem modificações no seu código fonte.
 ordenar uma lista em ordem crescente de seus elementos. Um exemplo de
 uso desse método é mostrado a seguir:
 
-```java
+```
 List<String> nomes;
 nomes = Arrays.asList("joao", "maria", "alexandre", "ze");
 Collections.sort(nomes);
@@ -1423,7 +1423,7 @@ as strings pelo seu tamanho, como no seguinte código:
 
 \newpage
 
-```java
+```
 Comparator<String> comparador = new Comparator<String>() {
   public int compare(String s1, String s2) {
     return s1.length() - s2.length();
@@ -1442,7 +1442,7 @@ fonte da classe não teve que ser modificado.
 **Exemplo 2**: Mostramos agora um exemplo de função que não segue o
 Princípio Aberto/Fechado.
 
-```java
+```
 double calcTotalBolsas(Aluno[] lista) {
   double  total = 0.0;
   foreach (Aluno aluno in lista) {
@@ -1502,7 +1502,7 @@ ganhou seu nome.
 Para explicar o Princípio de Substituição de Liskov vamos nos basear no
 seguinte exemplo:
 
-```java
+```
 void f(A a) {
   ...
   a.g(int n);
@@ -1513,7 +1513,7 @@ void f(A a) {
 O método `f` pode ser chamado passando-se como parâmetros objetos de
 subclasses `B1`, `B2`, ..., `Bn` da classe base `A`, como mostrado a seguir:
 
-```java
+```
 f(new B1());  // f pode receber objetos da subclasse B1 
 ...
 f(new B2());  // e de qualquer outra subclasse de A, como B2
@@ -1557,7 +1557,7 @@ original, possivelmente de modo mais eficiente.
 bem forte, exatamente para reforçar o sentido do Princípio de
 Substituição de Liskov.
 
-```java
+```
 class A {
 
   int soma(int a, int b) {
@@ -1568,7 +1568,7 @@ class A {
 ```
 \newpage
 
-```java
+```
 class B extends A {
 
   int soma(int a, int b) {
@@ -1579,7 +1579,7 @@ class B extends A {
 }
 ```
 
-```java
+```
 class Cliente {
 
   void f(A a) {
@@ -1591,7 +1591,7 @@ class Cliente {
 }
 ```
 
-```java
+```
 
 class Main {
 
@@ -1715,7 +1715,7 @@ a interseção deles é vazia.
 **Exemplo:** Para deixar a explicação mais clara, suponha a seguinte
 classe:
 
-```java
+```
 class A {
 
   int a1;
@@ -1803,7 +1803,7 @@ quando:
 
 Seja uma classe A com dois métodos (`metodo1` e `metodo2`):
 
-```java
+```
 class A extends T1 implements T2 {
 
   T3 a;
@@ -1942,7 +1942,7 @@ Languages, and Applications (OOPSLA), 1991.
 
 8\.  Qual princípio de projeto é violado pelo seguinte código?
 
-```java
+```
 void onclick() {
   num1 = textfield1.value();
   c1 = BD.getConta(num1)
@@ -1971,7 +1971,7 @@ void onclick() {
 10\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
-```java
+```
 void sendMail(ContaBancaria conta, String msg) {
   Cliente cliente = conta.getCliente();
   String mail = cliente.getMailAddress();
@@ -1982,7 +1982,7 @@ void sendMail(ContaBancaria conta, String msg) {
 11\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
-```java
+```
 void imprimeDataContratacao(Funcionario func) {
   Date data = func.getDataContratacao();
   String msg = data.format();
@@ -1997,7 +1997,7 @@ void imprimeDataContratacao(Funcionario func) {
     do método. Considerando essas definições, qual princípio de
     projeto é violado pelo código abaixo?
 
-```java
+```
 class A {  
   int f(int x) { // pre: x > 0
     ...
@@ -2007,7 +2007,7 @@ class A {
 }
 ```
 
-```java
+```
 class B extends A {  
   int f(int x) { // pre: x > 10
   ...
@@ -2023,7 +2023,7 @@ class B extends A {
 14\. Qual das seguintes classes é mais coesa? Justifique computando os
     valores de LCOM de cada uma delas.
 
-```java
+```
 class A {
 
   X x = new X();
@@ -2043,7 +2043,7 @@ class A {
 }
 ```
 
-```java
+```
 class B {
 
   X x = new X();
@@ -2072,7 +2072,7 @@ class B {
 
 \newpage
 
-```java
+```
 class A extends B {
 
   C f1, f2, f3;

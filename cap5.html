@@ -14,68 +14,6 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -177,49 +115,49 @@
 <p>Interfaces devem ser estáveis, pois mudanças na interface de uma classe podem implicar em atualizações em seus clientes. Para ser mais claro, suponha uma classe Math, com métodos que realizam operações matemáticas. Suponha um método sqrt, que calcula a raiz quadrada de seu parâmetro. Suponha ainda que a assinatura desse método seja alterada — para, por exemplo, retornar uma exceção caso o valor do parâmetro seja negativo. Essa alteração terá impacto em todo código cliente do método sqrt, que deverá ser alterado para tratar a nova exceção.</p>
 <h3 data-number="1.3.1" id="exemplo-1" data-number="1.3.1"><span class="header-section-number">5.3.1</span> Exemplo</h3>
 <p>Suponha um sistema para controle de estacionamentos. Suponha ainda que, em uma primeira versão, a classe principal desse sistema seja a seguinte:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">import</span><span class="im"> java.util.Hashtable;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">public</span> <span class="kw">class</span> Estacionamento {</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>  <span class="kw">public</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt; veiculos;</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>  <span class="kw">public</span> <span class="fu">Estacionamento</span>() {</span>
-<span id="cb1-8"><a href="#cb1-8"></a>    veiculos = <span class="kw">new</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt;();</span>
-<span id="cb1-9"><a href="#cb1-9"></a>  }</span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
-<span id="cb1-12"><a href="#cb1-12"></a>    Estacionamento e = <span class="kw">new</span> <span class="fu">Estacionamento</span>();</span>
-<span id="cb1-13"><a href="#cb1-13"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;TCP-7030&quot;</span>, <span class="st">&quot;Uno&quot;</span>);</span>
-<span id="cb1-14"><a href="#cb1-14"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;BNF-4501&quot;</span>, <span class="st">&quot;Gol&quot;</span>);</span>
-<span id="cb1-15"><a href="#cb1-15"></a>    e.<span class="fu">veiculos</span>.<span class="fu">put</span>(<span class="st">&quot;JKL-3481&quot;</span>, <span class="st">&quot;Corsa&quot;</span>);</span>
-<span id="cb1-16"><a href="#cb1-16"></a>  }</span>
-<span id="cb1-17"><a href="#cb1-17"></a></span>
-<span id="cb1-18"><a href="#cb1-18"></a>}</span></code></pre></div>
+<pre><code>import java.util.Hashtable;
+
+public class Estacionamento {
+
+  public Hashtable&lt;String, String&gt; veiculos;
+
+  public Estacionamento() {
+    veiculos = new Hashtable&lt;String, String&gt;();
+  }
+
+  public static void main(String[] args) {
+    Estacionamento e = new Estacionamento();
+    e.veiculos.put(&quot;TCP-7030&quot;, &quot;Uno&quot;);
+    e.veiculos.put(&quot;BNF-4501&quot;, &quot;Gol&quot;);
+    e.veiculos.put(&quot;JKL-3481&quot;, &quot;Corsa&quot;);
+  }
+
+}</code></pre>
 <p>Essa classe tem um problema de exposição excessiva de informação ou, em outras palavras, ela não oculta estruturas que podem mudar no futuro. Especificamente, a tabela hash que armazena os veículos estacionados no estacionamento é pública. Com isso, clientes — como o método <code>main</code> — têm acesso direto a ela para, por exemplo, adicionar veículos no estacionamento. Se, futuramente, decidirmos usar uma outra estrutura de dados para armazenar os veículos, todos os clientes deverão ser modificados.</p>
 <p>Suponha que o sistema de estacionamento fosse manual, com o nome dos veículos anotados em uma folha de papel. Fazendo uma comparação, essa primeira versão da classe <code>Estacionamento</code> corresponderia — no caso desse sistema manual — ao cliente do estacionamento, após estacionar seu carro, entrar na cabine de controle e escrever ele mesmo a placa e o modelo do seu carro na folha de controle.</p>
 <p>Já a próxima versão da classe é melhor, pois ela encapsula a estrutura de dados responsável por armazenar os veículos. Para estacionar um veículo, existe agora o método <code>estaciona</code>. Com isso, os desenvolvedores da classe têm liberdade para trocar de estrutura de dados, sem causar impacto nos seus clientes. A única restrição é que a assinatura do método <code>estaciona</code> deve ser preservada.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">import</span><span class="im"> java.util.Hashtable;</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">public</span> <span class="kw">class</span> Estacionamento {</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">private</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>,<span class="bu">String</span>&gt; veiculos;</span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>  <span class="kw">public</span> <span class="fu">Estacionamento</span>() {</span>
-<span id="cb2-8"><a href="#cb2-8"></a>    veiculos = <span class="kw">new</span> <span class="bu">Hashtable</span>&lt;<span class="bu">String</span>, <span class="bu">String</span>&gt;();</span>
-<span id="cb2-9"><a href="#cb2-9"></a>  }</span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">estaciona</span>(<span class="bu">String</span> placa, <span class="bu">String</span> veiculo) {</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    veiculos.<span class="fu">put</span>(placa, veiculo);</span>
-<span id="cb2-13"><a href="#cb2-13"></a>  }</span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a>  <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
-<span id="cb2-16"><a href="#cb2-16"></a>    Estacionamento e = <span class="kw">new</span> <span class="fu">Estacionamento</span>();</span>
-<span id="cb2-17"><a href="#cb2-17"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;TCP-7030&quot;</span>, <span class="st">&quot;Uno&quot;</span>);</span>
-<span id="cb2-18"><a href="#cb2-18"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;BNF-4501&quot;</span>, <span class="st">&quot;Gol&quot;</span>);</span>
-<span id="cb2-19"><a href="#cb2-19"></a>    e.<span class="fu">estaciona</span>(<span class="st">&quot;JKL-3481&quot;</span>, <span class="st">&quot;Corsa&quot;</span>);</span>
-<span id="cb2-20"><a href="#cb2-20"></a>  }</span>
-<span id="cb2-21"><a href="#cb2-21"></a></span>
-<span id="cb2-22"><a href="#cb2-22"></a>}</span></code></pre></div>
+<pre><code>import java.util.Hashtable;
+
+public class Estacionamento {
+
+  private Hashtable&lt;String,String&gt; veiculos;
+
+  public Estacionamento() {
+    veiculos = new Hashtable&lt;String, String&gt;();
+  }
+
+  public void estaciona(String placa, String veiculo) {
+    veiculos.put(placa, veiculo);
+  }
+
+  public static void main(String[] args) {
+    Estacionamento e = new Estacionamento();
+    e.estaciona(&quot;TCP-7030&quot;, &quot;Uno&quot;);
+    e.estaciona(&quot;BNF-4501&quot;, &quot;Gol&quot;);
+    e.estaciona(&quot;JKL-3481&quot;, &quot;Corsa&quot;);
+  }
+
+}</code></pre>
 <p>Em resumo, essa nova versão oculta uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibiliza uma interface estável para os clientes da classe — representada pelo método <code>estaciona</code>, que só requer dois parâmetros do tipo <code>String</code>.</p>
 <p> </p>
 <p><strong>Mundo Real</strong>: Em 2002, consta que Jeff Bezos, dono da Amazon, enviou um mail para todos os desenvolvedores da empresa, com um conjunto de diretrizes para projeto de software que eles deveriam obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar mais clara em Português; essa mesma mensagem é mencionada no livro de Fox e Patterson (<a href="http://www.saasbook.info/">link</a>, Cap. 1, Seção 1.4):</p>
@@ -236,19 +174,19 @@
 <p> </p>
 <p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados apenas de <em>getters</em> e <em>setters</em> — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
 <p>Veja um exemplo a seguir, onde métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">class</span> Aluno {</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>  <span class="kw">private</span> <span class="dt">int</span> matricula;</span>
-<span id="cb3-4"><a href="#cb3-4"></a>  ...</span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getMatricula</span>() {</span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="kw">return</span> matricula;</span>
-<span id="cb3-7"><a href="#cb3-7"></a>  }</span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a>  <span class="kw">public</span> <span class="fu">setMatricula</span>(<span class="dt">int</span> matricula) {</span>
-<span id="cb3-10"><a href="#cb3-10"></a>    <span class="kw">this</span>.<span class="fu">matricula</span> = matricula;  </span>
-<span id="cb3-11"><a href="#cb3-11"></a>  }</span>
-<span id="cb3-12"><a href="#cb3-12"></a>  ...</span>
-<span id="cb3-13"><a href="#cb3-13"></a>}</span></code></pre></div>
+<pre><code>class Aluno {
+
+  private int matricula;
+  ...
+  public int getMatricula() {
+    return matricula;
+  }
+
+  public setMatricula(int matricula) {
+    this.matricula = matricula;  
+  }
+  ...
+}</code></pre>
 <p> No entanto, getters e setters não são uma garantia de que estamos ocultando dados da classe, como mencionado em alguns livros e discussões pela Internet. Pelo contrário, eles são um instrumento de liberação de informação (<em>information leakage</em>). Veja o que John Ousterhout diz sobre esses métodos (<a href="https://dl.acm.org/citation.cfm?id=3288797">link</a>, Seção 19.6):</p>
 <blockquote>
 <p><q>Embora possa fazer sentido usar getters e setters para expor dados privados de uma classe, é melhor evitar essa exposição logo de início. Ela torna parte da implementação da classe visível externamente, o que viola a ideia de ocultamento de informação e aumenta a complexidade da interface da classe.</q></p>
@@ -272,30 +210,30 @@
 <p> <strong>Separação de interesses</strong> (<em>separation of concerns</em>) é uma outra propriedade desejável em projeto de software, a qual é muito semelhante ao conceito de coesão. Ela defende que uma classe deve implementar apenas um <strong>interesse</strong> (<em>concern</em>). Nesse contexto, o termo interesse se refere a qualquer funcionalidade, requisito ou responsabilidade da classe. Portanto, as seguintes recomendações são equivalentes: (1) uma classe deve ter uma única responsabilidade; (2) uma classe deve implementar um único interesse; (3) uma classe deve ser coesa.</p>
 <h3 data-number="1.4.1" id="exemplos" data-number="1.4.1"><span class="header-section-number">5.4.1</span> Exemplos</h3>
 <p><strong>Exemplo 1:</strong> A discussão anterior foi voltada para coesão de classes. No entanto, o conceito se adapta também a métodos ou funções. Por exemplo, suponha uma função como a seguinte:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">float</span> <span class="fu">sin_or_cos</span>(<span class="dt">double</span> x, <span class="dt">int</span> op) {</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="kw">if</span> (op == <span class="dv">1</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>    <span class="st">&quot;calcula e retorna seno de x&quot;</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="kw">else</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="st">&quot;calcula e retorna cosseno de x&quot;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>}</span></code></pre></div>
+<pre><code>float sin_or_cos(double x, int op) {
+  if (op == 1)
+    &quot;calcula e retorna seno de x&quot;
+  else
+    &quot;calcula e retorna cosseno de x&quot;
+}</code></pre>
 <p>Essa função — que consiste em um exemplo extremo e, queremos acreditar, pouco comum na prática — apresenta um problema sério de coesão, pois ela faz duas coisas: calcula o seno ou o cosseno de seu argumento. O recomendável, em casos como esse, é criar funções separadas para cada uma dessas tarefas.</p>
 <p><strong>Exemplo 2:</strong> Suponha agora a seguinte classe:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">class</span> <span class="bu">Stack</span>&lt;T&gt; {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="dt">boolean</span> <span class="fu">empty</span>() { <span class="kw">... </span>}</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  T <span class="fu">pop</span>() { <span class="kw">... </span>}</span>
-<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">push</span> (T) { <span class="kw">... </span>}</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  <span class="dt">int</span> <span class="fu">size</span>() { <span class="kw">... </span>}</span>
-<span id="cb5-6"><a href="#cb5-6"></a>}</span></code></pre></div>
+<pre><code>class Stack&lt;T&gt; {
+  boolean empty() { ... }
+  T pop() { ... }
+  push (T) { ... }
+  int size() { ... }
+}</code></pre>
 <p>Trata-se de uma classe coesa, pois todos os seus métodos implementam operações importantes em uma estrutura de dados do tipo Pilha.</p>
 <p><strong>Exemplo 3:</strong> Para concluir a lista de exemplos, vamos voltar à classe <code>Estacionamento</code>, na qual foram adicionados agora quatro atributos com informações sobre o gerente do estacionamento:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">class</span> Estacionamento {</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  ...</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="kw">private</span> <span class="bu">String</span> nome_gerente;</span>
-<span id="cb6-4"><a href="#cb6-4"></a>  <span class="kw">private</span> <span class="bu">String</span> fone_gerente;</span>
-<span id="cb6-5"><a href="#cb6-5"></a>  <span class="kw">private</span> <span class="bu">String</span> cpf_gerente;</span>
-<span id="cb6-6"><a href="#cb6-6"></a>  <span class="kw">private</span> <span class="bu">String</span> endereco_gerente;</span>
-<span id="cb6-7"><a href="#cb6-7"></a>  ...</span>
-<span id="cb6-8"><a href="#cb6-8"></a>}  </span></code></pre></div>
+<pre><code>class Estacionamento {
+  ...
+  private String nome_gerente;
+  private String fone_gerente;
+  private String cpf_gerente;
+  private String endereco_gerente;
+  ...
+}  </code></pre>
 <p>A principal responsabilidade dessa classe é gerenciar a operação do estacionamento, incluindo métodos como <code>estaciona()</code>, <code>calcula_preco()</code>, <code>libera_veiculo()</code>, etc. Portanto, ela não deveria assumir responsabilidades relacionadas com o gerenciamento dos funcionários do estacionamento. Para isso, poderia ser criada uma segunda classe, chamada, por exemplo, <code>Funcionario</code>.</p>
 <h2 data-number="1.5" id="acoplamento" data-number="1.5"><span class="header-section-number">5.5</span> Acoplamento</h2>
 <p></p>
@@ -325,52 +263,52 @@
 <li><p>A interface de <code>Hashtable</code> é estável, já que ela faz parte do pacote oficial de estruturas de dados de Java (estamos supondo que o sistema será implementado nessa linguagem). Assim, uma alteração na assinatura dos métodos públicos de <code>Hashtable</code> quebraria não apenas nossa classe <code>Estacionamento</code>, mas talvez milhões de outras classes de diversos sistemas Java ao redor do mundo.</p></li>
 </ul>
 <p><strong>Exemplo 2:</strong> Suponha o seguinte trecho de código, no qual existe um arquivo compartilhado por duas classes, <code>A</code> e <code>B</code>, mantidas por desenvolvedores distintos. O método <code>B.g()</code> grava um inteiro no arquivo, que é lido por <code>A.f()</code>. Essa forma de comunicação origina um acoplamento ruim entre as classes. Por exemplo, o desenvolvedor que implementa <code>B</code> pode não saber que o arquivo é lido por <code>A</code>. Assim, ele pode decidir mudar o formato do arquivo por conta própria, sem comunicar o desenvolvedor da classe <code>A</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">class</span> A {</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">f</span>() {</span>
-<span id="cb7-4"><a href="#cb7-4"></a>    <span class="dt">int</span> total;</span>
-<span id="cb7-5"><a href="#cb7-5"></a>    ...</span>
-<span id="cb7-6"><a href="#cb7-6"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1.db&quot;</span>);</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    total = f.<span class="fu">readInt</span>();</span>
-<span id="cb7-8"><a href="#cb7-8"></a>    ...</span>
-<span id="cb7-9"><a href="#cb7-9"></a>  }</span>
-<span id="cb7-10"><a href="#cb7-10"></a></span>
-<span id="cb7-11"><a href="#cb7-11"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">class</span> B {</span>
-<span id="cb8-2"><a href="#cb8-2"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">g</span>() {</span>
-<span id="cb8-3"><a href="#cb8-3"></a>    <span class="dt">int</span> total;</span>
-<span id="cb8-4"><a href="#cb8-4"></a>    <span class="co">// computa valor de total</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1.db&quot;</span>);</span>
-<span id="cb8-6"><a href="#cb8-6"></a>    f.<span class="fu">writeInt</span>(total);</span>
-<span id="cb8-7"><a href="#cb8-7"></a>    ...</span>
-<span id="cb8-8"><a href="#cb8-8"></a>    f.<span class="fu">close</span>();</span>
-<span id="cb8-9"><a href="#cb8-9"></a>  }</span>
-<span id="cb8-10"><a href="#cb8-10"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  private void f() {
+    int total;
+    ...
+    File f = File.open(&quot;arq1.db&quot;);
+    total = f.readInt();
+    ...
+  }
+
+}</code></pre>
+<pre><code>class B {
+  private void g() {
+    int total;
+    // computa valor de total
+    File f = File.open(&quot;arq1.db&quot;);
+    f.writeInt(total);
+    ...
+    f.close();
+  }
+}</code></pre>
 <p>Antes de avançar, um pequeno comentário: no exemplo, existe também um acoplamento entre <code>B</code> e <code>File</code>. Porém, ele é um acoplamento aceitável, pois <code>B</code> realmente precisa persistir seus dados. Então, para conseguir isso, nada melhor do que usar uma classe da biblioteca de entrada e saída da linguagem.</p>
 <p><strong>Exemplo 3:</strong> Uma solução melhor para o acoplamento entre as classes <code>A</code> e <code>B</code> do exemplo anterior é mostrada no código a seguir.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">class</span> A {</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">f</span>(B b) {</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    <span class="dt">int</span> total;</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    total = b.<span class="fu">getTotal</span>();</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    ...</span>
-<span id="cb9-7"><a href="#cb9-7"></a>  }</span>
-<span id="cb9-8"><a href="#cb9-8"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">class</span> B {</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a>  <span class="dt">int</span> total;</span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">getTotal</span>() {</span>
-<span id="cb10-6"><a href="#cb10-6"></a>    <span class="kw">return</span> total;</span>
-<span id="cb10-7"><a href="#cb10-7"></a>  }</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a>  <span class="kw">private</span> <span class="dt">void</span> <span class="fu">g</span>() {</span>
-<span id="cb10-10"><a href="#cb10-10"></a>    <span class="co">// computa valor de total</span></span>
-<span id="cb10-11"><a href="#cb10-11"></a>    <span class="bu">File</span> f = <span class="bu">File</span>.<span class="fu">open</span>(<span class="st">&quot;arq1&quot;</span>);</span>
-<span id="cb10-12"><a href="#cb10-12"></a>    f.<span class="fu">writeInt</span>(total);</span>
-<span id="cb10-13"><a href="#cb10-13"></a>    ...</span>
-<span id="cb10-14"><a href="#cb10-14"></a>  }</span>
-<span id="cb10-15"><a href="#cb10-15"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  private void f(B b) {
+    int total;
+    total = b.getTotal();
+    ...
+  }
+}</code></pre>
+<pre><code>class B {
+
+  int total;
+
+  public int getTotal() {
+    return total;
+  }
+
+  private void g() {
+    // computa valor de total
+    File f = File.open(&quot;arq1&quot;);
+    f.writeInt(total);
+    ...
+  }
+}</code></pre>
 <p>Nessa nova versão, a dependência entre <code>A</code> e <code>B</code> é tornada explícita. Agora, <code>B</code> possui um método público que retorna o valor <code>total</code>. E a classe <code>A</code> possui uma dependência para a classe <code>B</code>, por meio de um parâmetro do método <code>f</code>. Esse parâmetro é usado para requisitar explicitamente o valor de <code>total</code>, chamando-se o método <code>getTotal()</code>. Como esse método foi declarado público em B, espera-se que o desenvolvedor dessa classe se esforce para não alterar a sua assinatura. Por isso, nessa nova versão, dizemos que, apesar de existir uma dependência de <code>A</code> para <code>B</code>, o acoplamento criado por ela é aceitável. Ou seja, não é um acoplamento que gera preocupações.</p>
 <p>Ainda sobre o exemplo anterior, é interessante mencionar que, na primeira versão, o código de <code>A</code> não declara nenhuma variável ou atributo do tipo <code>B</code>. E, mesmo assim, temos um acoplamento ruim entre as classes. Na segunda versão, ocorre o contrário, pois o método <code>A.f()</code> declara um parâmetro do tipo <code>B</code>. Mesmo assim, o acoplamento entre as classes é de melhor qualidade, pois é mais fácil estudar e manter o código de <code>A</code> sem conhecer detalhes de <code>B</code>.</p>
 <p>   Alguns autores usam ainda os termos acoplamento estrutural e acoplamento evolutivo (ou lógico), com o seguinte significado:</p>
@@ -444,108 +382,108 @@
 <p>Esse princípio é uma aplicação direta da ideia de coesão. Ele propõe o seguinte: toda classe deve ter uma única responsabilidade. Mais ainda, responsabilidade, no contexto do princípio, significa <q>motivo para modificar uma classe</q>. Ou seja, deve existir um único motivo para modificar qualquer classe em um sistema.</p>
 <p>Um corolário desse princípio recomenda separar <strong>apresentação</strong> de <strong>regras de negócio</strong>. Portanto, um sistema deve possuir classes de apresentação, que vão tratar de aspectos de sua interface com os usuários, formato das mensagens, meio onde as mensagens serão exibidas, etc. E classes responsáveis por regras de negócio, isto é, que vão realizar as computações, processamento, análises, etc. São interesses e responsabilidades diferentes. E que podem evoluir e sofrer modificações por razões distintas. Portanto, elas devem ser implementadas em classes diferentes. Por esse motivo, não é surpresa que existam desenvolvedores que tratam apenas de requisitos de <em>front-end</em> (isto é, de classes de apresentação) e desenvolvedores que tratam de requisitos de <em>backend</em> (isto é, de classes com regras de negócio).</p>
 <p><strong>Exemplo:</strong> A próxima classe ilustra uma violação do Princípio da Responsabilidade Única. O método <code>calculaIndiceDesistencia</code> da classe <code>Disciplina</code> possui duas responsabilidades: calcular o índice de desistência de uma disciplina e imprimi-lo na console do sistema.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">class</span> Disciplina {</span>
-<span id="cb11-2"><a href="#cb11-2"></a></span>
-<span id="cb11-3"><a href="#cb11-3"></a>  <span class="dt">void</span> <span class="fu">calculaIndiceDesistencia</span>() {</span>
-<span id="cb11-4"><a href="#cb11-4"></a>    indice = <span class="st">&quot;calcula índice de desistência&quot;</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(indice);</span>
-<span id="cb11-6"><a href="#cb11-6"></a>  }</span>
-<span id="cb11-7"><a href="#cb11-7"></a></span>
-<span id="cb11-8"><a href="#cb11-8"></a>}</span></code></pre></div>
+<pre><code>class Disciplina {
+
+  void calculaIndiceDesistencia() {
+    indice = &quot;calcula índice de desistência&quot;
+    System.out.println(indice);
+  }
+
+}</code></pre>
 <p>Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (<code>Console</code>) e uma classe de <q>regra de negócio</q> (<code>Disciplina</code>), conforme mostrado no código a seguir. Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">class</span> <span class="bu">Console</span> {</span>
-<span id="cb12-2"><a href="#cb12-2"></a></span>
-<span id="cb12-3"><a href="#cb12-3"></a>  <span class="dt">void</span> <span class="fu">imprimeIndiceDesistencia</span>(Disciplina disciplina) {</span>
-<span id="cb12-4"><a href="#cb12-4"></a>    <span class="dt">double</span> indice = disciplina.<span class="fu">calculaIndiceDesistencia</span>();</span>
-<span id="cb12-5"><a href="#cb12-5"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(indice);</span>
-<span id="cb12-6"><a href="#cb12-6"></a>  }</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a>}</span>
-<span id="cb12-9"><a href="#cb12-9"></a></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="kw">class</span> Disciplina {</span>
-<span id="cb12-11"><a href="#cb12-11"></a></span>
-<span id="cb12-12"><a href="#cb12-12"></a>  <span class="dt">double</span> <span class="fu">calculaIndiceDesistencia</span>() {</span>
-<span id="cb12-13"><a href="#cb12-13"></a>    <span class="dt">double</span> indice = <span class="st">&quot;calcula índice de desistência&quot;</span></span>
-<span id="cb12-14"><a href="#cb12-14"></a>    <span class="kw">return</span> indice;</span>
-<span id="cb12-15"><a href="#cb12-15"></a>  }</span>
-<span id="cb12-16"><a href="#cb12-16"></a></span>
-<span id="cb12-17"><a href="#cb12-17"></a>}</span></code></pre></div>
+<pre><code>class Console {
+
+  void imprimeIndiceDesistencia(Disciplina disciplina) {
+    double indice = disciplina.calculaIndiceDesistencia();
+    System.out.println(indice);
+  }
+
+}
+
+class Disciplina {
+
+  double calculaIndiceDesistencia() {
+    double indice = &quot;calcula índice de desistência&quot;
+    return indice;
+  }
+
+}</code></pre>
 <h3 data-number="1.6.2" id="princípio-da-segregação-de-interfaces" data-number="1.6.2"><span class="header-section-number">5.6.2</span> Princípio da Segregação de Interfaces</h3>
 <p> </p>
 <p>Assim como o princípio anterior, esse princípio é uma aplicação da ideia de coesão. Melhor dizendo, ele é um caso particular de Responsabilidade Única com foco em interfaces. O princípio define que interfaces tem que ser pequenas, coesas e, mais importante ainda, específicas para cada tipo de cliente. O objetivo é evitar que clientes dependam de interfaces com métodos que eles não vão usar. Para evitar isso, duas ou mais interfaces específicas podem, por exemplo, substituir uma interface de propósito geral.</p>
 <p>Uma violação do princípio ocorre, por exemplo, quando uma interface possui dois conjuntos de métodos M<sub>x</sub> e M<sub>y</sub>. O primeiro conjunto é usado por clientes C<sub>x</sub> (que então não usam os métodos M<sub>y</sub>). De forma inversa, os métodos M<sub>y</sub> são usados apenas por clientes C<sub>y</sub> (que não usam os métodos M<sub>x</sub>). Consequentemente, essa interface deveria ser quebrada em duas interfaces menores e específicas: uma interface contendo apenas os métodos M<sub>x</sub> e a segunda interface contendo apenas os métodos M<sub>y</sub>.</p>
 <p><strong>Exemplo:</strong> Suponha uma interface <code>Funcionario</code> com os seguintes métodos: (1) retornar salário, (2) retornar contribuição mensal para o FGTS (Fundo de Garantia por Tempo de Serviço) e (3) retornar SIAPE (isto é, o <q>número de matrícula</q> de todo funcionário público federal). Essa interface viola o Princípio de Segregação de Interfaces, pois apenas funcionários de empresas privadas, contratados em regime de CLT, possuem uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem uma matrícula no SIAPE.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">interface</span> Funcionario {</span>
-<span id="cb13-2"><a href="#cb13-2"></a></span>
-<span id="cb13-3"><a href="#cb13-3"></a>  <span class="dt">double</span> <span class="fu">getSalario</span>();</span>
-<span id="cb13-4"><a href="#cb13-4"></a></span>
-<span id="cb13-5"><a href="#cb13-5"></a>  <span class="dt">double</span> <span class="fu">getFGTS</span>();<span class="co">// apenas funcionários CLT</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a></span>
-<span id="cb13-7"><a href="#cb13-7"></a>  <span class="dt">int</span> <span class="fu">getSIAPE</span>();<span class="co">// apenas funcionários públicos</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a></span>
-<span id="cb13-9"><a href="#cb13-9"></a>  ...</span>
-<span id="cb13-10"><a href="#cb13-10"></a>}</span></code></pre></div>
+<pre><code>interface Funcionario {
+
+  double getSalario();
+
+  double getFGTS();// apenas funcionários CLT
+
+  int getSIAPE();// apenas funcionários públicos
+
+  ...
+}</code></pre>
 <p>Uma alternativa — que atende ao Princípio de Segregação de Interfaces — consiste em criar interfaces específicas (<code>FuncionarioCLT</code> e <code>FuncionarioPublico</code>) que estendem a interface genérica (<code>Funcionario</code>).</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb14-1"><a href="#cb14-1"></a><span class="kw">interface</span> Funcionario {</span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="dt">double</span> <span class="fu">getSalario</span>();</span>
-<span id="cb14-3"><a href="#cb14-3"></a>  ...</span>
-<span id="cb14-4"><a href="#cb14-4"></a>}</span>
-<span id="cb14-5"><a href="#cb14-5"></a></span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="kw">interface</span> FuncionarioCLT <span class="kw">extends</span> Funcionario {</span>
-<span id="cb14-7"><a href="#cb14-7"></a>  <span class="dt">double</span> <span class="fu">getFGTS</span>();</span>
-<span id="cb14-8"><a href="#cb14-8"></a>  ...</span>
-<span id="cb14-9"><a href="#cb14-9"></a>}</span>
-<span id="cb14-10"><a href="#cb14-10"></a></span>
-<span id="cb14-11"><a href="#cb14-11"></a><span class="kw">interface</span> FuncionarioPublico <span class="kw">extends</span> Funcionario {</span>
-<span id="cb14-12"><a href="#cb14-12"></a>  <span class="dt">int</span> <span class="fu">getSIAPE</span>();</span>
-<span id="cb14-13"><a href="#cb14-13"></a>  ...</span>
-<span id="cb14-14"><a href="#cb14-14"></a>}</span></code></pre></div>
+<pre><code>interface Funcionario {
+  double getSalario();
+  ...
+}
+
+interface FuncionarioCLT extends Funcionario {
+  double getFGTS();
+  ...
+}
+
+interface FuncionarioPublico extends Funcionario {
+  int getSIAPE();
+  ...
+}</code></pre>
 <h3 data-number="1.6.3" id="princípio-de-inversão-de-dependências" data-number="1.6.3"><span class="header-section-number">5.6.3</span> Princípio de Inversão de Dependências</h3>
 <p>   </p>
 <p>Esse princípio recomenda que uma classe cliente deve estabelecer dependências prioritariamente com abstrações e não com implementações concretas, pois abstrações (isto é, interfaces) são mais estáveis do que implementações concretas (isto é, classes). A ideia é então trocar (ou <q>inverter</q>) as dependências: em vez de depender de classes concretas, clientes devem depender de interfaces. Portanto, um nome mais intuitivo para o princípio seria <strong>Prefira Interfaces a Classes</strong>.</p>
 <p>Para detalhar a ideia do princípio, suponha que exista uma interface I e uma classe C1 que a implementa. Se puder escolher, um cliente deve se acoplar a I e não a C1. O motivo é que quando um cliente se acopla a uma interface I ele fica imune a mudanças na implementação dessa interface. Por exemplo, em vez de C1, pode-se mudar a implementação para C2, que isso não terá impacto no cliente em questão.</p>
 <p><strong>Exemplo 1:</strong> O código a seguir ilustra o cenário que acabamos de descrever. Nesse código, o mesmo <code>Cliente</code> pode <q>trabalhar</q> com objetos concretos das classes <code>C1</code> e <code>C2</code>. Ele não precisa conhecer a classe concreta que está por trás — ou que implementa — a interface <code>I</code> que ele referencia em seu código.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">interface</span> I { <span class="kw">... </span>}</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="kw">class</span> C1 <span class="kw">implements</span> I {</span>
-<span id="cb15-4"><a href="#cb15-4"></a>  ...</span>
-<span id="cb15-5"><a href="#cb15-5"></a>}</span>
-<span id="cb15-6"><a href="#cb15-6"></a></span>
-<span id="cb15-7"><a href="#cb15-7"></a><span class="kw">class</span> C2 <span class="kw">implements</span> I {</span>
-<span id="cb15-8"><a href="#cb15-8"></a>  ...</span>
-<span id="cb15-9"><a href="#cb15-9"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb16"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">class</span> Cliente {</span>
-<span id="cb16-2"><a href="#cb16-2"></a></span>
-<span id="cb16-3"><a href="#cb16-3"></a>  I i;</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">Cliente</span> (I i) {</span>
-<span id="cb16-6"><a href="#cb16-6"></a>    <span class="kw">this</span>.<span class="fu">i</span> = i;</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    ...</span>
-<span id="cb16-8"><a href="#cb16-8"></a>  }</span>
-<span id="cb16-9"><a href="#cb16-9"></a>  ...</span>
-<span id="cb16-10"><a href="#cb16-10"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">class</span> Main {</span>
-<span id="cb17-2"><a href="#cb17-2"></a></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="dt">void</span> <span class="fu">main</span> () {</span>
-<span id="cb17-4"><a href="#cb17-4"></a>    C1 c1 = <span class="kw">new</span> <span class="fu">C1</span>();</span>
-<span id="cb17-5"><a href="#cb17-5"></a>    <span class="kw">new</span> <span class="fu">Cliente</span>(c1);</span>
-<span id="cb17-6"><a href="#cb17-6"></a>    ...</span>
-<span id="cb17-7"><a href="#cb17-7"></a>    C2 c2 = <span class="kw">new</span> <span class="fu">C2</span>();</span>
-<span id="cb17-8"><a href="#cb17-8"></a>    <span class="kw">new</span> <span class="fu">Cliente</span>(c2);</span>
-<span id="cb17-9"><a href="#cb17-9"></a>    ...</span>
-<span id="cb17-10"><a href="#cb17-10"></a>  }</span>
-<span id="cb17-11"><a href="#cb17-11"></a></span>
-<span id="cb17-12"><a href="#cb17-12"></a>}</span></code></pre></div>
+<pre><code>interface I { ... }
+
+class C1 implements I {
+  ...
+}
+
+class C2 implements I {
+  ...
+}</code></pre>
+<pre><code>class Cliente {
+
+  I i;
+
+  Cliente (I i) {
+    this.i = i;
+    ...
+  }
+  ...
+}</code></pre>
+<pre><code>class Main {
+
+  void main () {
+    C1 c1 = new C1();
+    new Cliente(c1);
+    ...
+    C2 c2 = new C2();
+    new Cliente(c2);
+    ...
+  }
+
+}</code></pre>
 <p><strong>Exemplo 2:</strong> Agora, mostramos um exemplo de código que segue o Princípio de Inversão de Dependências. Esse princípio justifica a escolha de <code>Projetor</code> como tipo do parâmetro do método <code>g</code>. Amanhã, o tipo da variável local <code>projetor</code> no método <code>f</code> pode mudar para, por exemplo, <code>ProjetorSamsung</code>. Se isso vier a acontecer, a implementação de g permanecerá válida, pois ao usarmos um tipo interface estamos nos preparando para receber parâmetros de vários tipos concretos que implementam essa interface.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb18-1"><a href="#cb18-1"></a><span class="dt">void</span> <span class="fu">f</span>() {</span>
-<span id="cb18-2"><a href="#cb18-2"></a>  ...</span>
-<span id="cb18-3"><a href="#cb18-3"></a>  ProjetorLG projetor = <span class="kw">new</span> <span class="fu">ProjetorLG</span>();</span>
-<span id="cb18-4"><a href="#cb18-4"></a>  ...</span>
-<span id="cb18-5"><a href="#cb18-5"></a>  <span class="fu">g</span>(projetor);</span>
-<span id="cb18-6"><a href="#cb18-6"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb19-1"><a href="#cb19-1"></a><span class="dt">void</span> <span class="fu">g</span>(Projetor projetor) {</span>
-<span id="cb19-2"><a href="#cb19-2"></a>  ...</span>
-<span id="cb19-3"><a href="#cb19-3"></a>}</span></code></pre></div>
+<pre><code>void f() {
+  ...
+  ProjetorLG projetor = new ProjetorLG();
+  ...
+  g(projetor);
+}</code></pre>
+<pre><code>void g(Projetor projetor) {
+  ...
+}</code></pre>
 <p><strong>Exemplo 3:</strong> Como um exemplo final, suponha um pacote de estruturas de dados que oferece uma interface <code>List</code> e algumas implementações concretas (classes) para ela, como <code>ArrayList</code>, <code>LinkedList</code> e <code>Vector</code>. Sempre que possível, em código cliente desse pacote, declare variáveis, parâmetros ou atributos usando o tipo <code>List</code>, pois assim você estará criando código compatível com as diversas implementações concretas dessa interface.</p>
 <h3 data-number="1.6.4" id="prefira-composição-a-herança" data-number="1.6.4"><span class="header-section-number">5.6.4</span> Prefira Composição a Herança</h3>
 <p> </p>
@@ -562,25 +500,25 @@
 <p> O princípio, porém, não proíbe o uso de herança. Mas ele recomenda: se existirem duas soluções de projeto, uma baseada em herança e outra em composição, a solução por meio de composição, normalmente, é a melhor. Só para deixar claro, existe uma relação de <strong>composição</strong> entre duas classes A e B quando a classe A possui um atributo do tipo B.</p>
 <p><strong>Exemplo:</strong> Suponha que temos que implementar uma classe <code>Stack</code>. Existem pelo menos duas soluções — por meio de herança ou por meio de composição — conforme mostra o seguinte código:</p>
 <p>Solução via Herança:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">class</span> <span class="bu">Stack</span> <span class="kw">extends</span> <span class="bu">ArrayList</span> {</span>
-<span id="cb20-2"><a href="#cb20-2"></a>  ...</span>
-<span id="cb20-3"><a href="#cb20-3"></a>}</span></code></pre></div>
+<pre><code>class Stack extends ArrayList {
+  ...
+}</code></pre>
 <p>Solução via Composição:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">class</span> <span class="bu">Stack</span> {</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="kw">private</span> <span class="bu">ArrayList</span> elementos;</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  ...</span>
-<span id="cb21-4"><a href="#cb21-4"></a>}</span></code></pre></div>
+<pre><code>class Stack {
+  private ArrayList elementos;
+  ...
+}</code></pre>
 <p>A solução por meio de herança não é recomendada por vários motivos, sendo que os principais são os seguintes: (1) um <code>Stack</code>, em termos conceituais, não é um <code>ArrayList</code>, mas sim uma estrutura que pode usar um <code>ArrayList</code> na sua implementação interna; (2) quando se força uma solução via herança, a class <code>Stack</code> irá herdar métodos como <code>get</code> e <code>set</code>, que não fazem parte da especificação de pilhas. Portanto, nesse caso, devemos preferir a solução baseada em composição.</p>
 <p>Uma segunda vantagem de composição é que a relação entre as classes não é estática, como no caso de herança. No exemplo, se optássemos por herança, a classe <code>Stack</code> estaria acoplada estaticamente a <code>ArrayList</code>; e não seria possível mudar essa decisão em tempo de execução. Por outro lado, quando adota-se uma solução baseada em composição, isso fica mais fácil, como mostra o exemplo a seguir:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">class</span> <span class="bu">Stack</span> {</span>
-<span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="kw">private</span> <span class="bu">List</span> elementos;</span>
-<span id="cb22-4"><a href="#cb22-4"></a></span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="bu">Stack</span>(<span class="bu">List</span> elementos) {</span>
-<span id="cb22-6"><a href="#cb22-6"></a>    <span class="kw">this</span>.<span class="fu">elementos</span> = elementos;</span>
-<span id="cb22-7"><a href="#cb22-7"></a>  }</span>
-<span id="cb22-8"><a href="#cb22-8"></a>  ...</span>
-<span id="cb22-9"><a href="#cb22-9"></a>}</span></code></pre></div>
+<pre><code>class Stack {
+
+  private List elementos;
+
+  Stack(List elementos) {
+    this.elementos = elementos;
+  }
+  ...
+}</code></pre>
 <p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto onde eles são armazenado em um Vector. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um <code>List</code>; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
 <p>Antes de concluir, gostaríamos de mencionar três pontos suplementares ao que discutimos sobre <q>Prefira Composição a Herança</q>:</p>
 <ul>
@@ -599,44 +537,44 @@
 <li><p>de atributos da classe do método (caso 4)</p></li>
 </ul>
 <p><strong>Exemplo:</strong> O seguinte código mostra um método, <code>m1</code>, com quatro chamadas que respeitam o Princípio de Demeter. E, em seguida, temos um método <code>m2</code>, com uma chamada que não obedece ao princípio.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">class</span> PrincipioDemeter {</span>
-<span id="cb23-2"><a href="#cb23-2"></a></span>
-<span id="cb23-3"><a href="#cb23-3"></a>  T1 attr;</span>
-<span id="cb23-4"><a href="#cb23-4"></a></span>
-<span id="cb23-5"><a href="#cb23-5"></a>  <span class="dt">void</span> <span class="fu">f1</span>() { </span>
-<span id="cb23-6"><a href="#cb23-6"></a>    ...</span>
-<span id="cb23-7"><a href="#cb23-7"></a>  }</span>
-<span id="cb23-8"><a href="#cb23-8"></a></span>
-<span id="cb23-9"><a href="#cb23-9"></a>  <span class="dt">void</span> <span class="fu">m1</span>(T2 p) {  <span class="co">// método que segue Demeter</span></span>
-<span id="cb23-10"><a href="#cb23-10"></a>    <span class="fu">f1</span>();           <span class="co">// caso 1: própria classe</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a>    p.<span class="fu">f2</span>();         <span class="co">// caso 2: parâmetro</span></span>
-<span id="cb23-12"><a href="#cb23-12"></a>    <span class="kw">new</span> <span class="fu">T3</span>().<span class="fu">f3</span>();  <span class="co">// caso 3: criado pelo método</span></span>
-<span id="cb23-13"><a href="#cb23-13"></a>    attr.<span class="fu">f4</span>();      <span class="co">// caso 4: atributo da classe</span></span>
-<span id="cb23-14"><a href="#cb23-14"></a>  }</span>
-<span id="cb23-15"><a href="#cb23-15"></a></span>
-<span id="cb23-16"><a href="#cb23-16"></a>  <span class="dt">void</span> <span class="fu">m2</span>(T4 p) {  <span class="co">// método que viola Demeter</span></span>
-<span id="cb23-17"><a href="#cb23-17"></a>    p.<span class="fu">getX</span>().<span class="fu">getY</span>().<span class="fu">getZ</span>().<span class="fu">doSomething</span>();</span>
-<span id="cb23-18"><a href="#cb23-18"></a>  }</span>
-<span id="cb23-19"><a href="#cb23-19"></a></span>
-<span id="cb23-20"><a href="#cb23-20"></a>}</span></code></pre></div>
+<pre><code>class PrincipioDemeter {
+
+  T1 attr;
+
+  void f1() { 
+    ...
+  }
+
+  void m1(T2 p) {  // método que segue Demeter
+    f1();           // caso 1: própria classe
+    p.f2();         // caso 2: parâmetro
+    new T3().f3();  // caso 3: criado pelo método
+    attr.f4();      // caso 4: atributo da classe
+  }
+
+  void m2(T4 p) {  // método que viola Demeter
+    p.getX().getY().getZ().doSomething();
+  }
+
+}</code></pre>
 <p>O método <code>m2</code>, ao chamar três métodos <code>get</code> em sequência, viola o Princípio de Demeter. O motivo é que os objetos intermediários — retornados pelos métodos <code>get</code> — são usados apenas como <q>passagem</q> para se chegar ao objeto final, que é aquele que de fato nos interessa e sobre o qual vamos executar uma operação <q>útil</q>— no exemplo, <code>doSomething()</code>. No entanto, esses objetos intermediários podem existir apenas para liberar informação interna sobre o estado de suas classes. Além de tornar a chamada mais complexa, a informação liberada pode estar sujeita a mudanças. Se isso ocorrer, um dos <q>elos</q> da sequência de chamadas será quebrado e o cliente — o método <code>m2</code>, no exemplo — terá que descobrir um outro modo de atingir o método final. Em resumo, chamadas que violam o Princípio de Demeter têm grande chance de quebrar o encapsulamento dos objetos de passagem.</p>
 <p>Costuma-se dizer que o Princípio de Demeter recomenda que os métodos de uma classe devem falar apenas com seus <q>amigos</q>, isto é, com métodos da própria classe ou então com métodos de objetos que eles recebem como parâmetro ou que eles criam. Por outro lado, não é recomendável falar com os <q>amigos dos amigos</q>.</p>
 <p>Um exemplo — formulado por David Bock (<a href="https://www2.ccs.neu.edu/research/demeter/demeter-method/LawOfDemeter/paper-boy/demeter.pdf">link</a>) — ilustra com clareza os benefícios do Princípio de Demeter. O exemplo baseia-se em um cenário com três <q>objetos</q>: um entregador de jornais, um cliente e sua carteira. Uma violação do Princípio de Demeter ocorre se, para receber o valor de um jornal, o entregador tiver que executar o seguinte código:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb24-1"><a href="#cb24-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
-<span id="cb24-2"><a href="#cb24-2"></a>Carteira carteira = cliente.<span class="fu">getCarteira</span>();</span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">if</span> (carteira.<span class="fu">getValorTotal</span>() &gt;= preco) {  <span class="co">// viola Demeter</span></span>
-<span id="cb24-4"><a href="#cb24-4"></a>   carteira.<span class="fu">debita</span>(preco);                <span class="co">// viola Demeter</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a>} <span class="kw">else</span> {</span>
-<span id="cb24-6"><a href="#cb24-6"></a>  <span class="co">// volto amanhã, para cobrar o valor do jornal</span></span>
-<span id="cb24-7"><a href="#cb24-7"></a>}</span></code></pre></div>
+<pre><code>preco = 6.00;
+Carteira carteira = cliente.getCarteira();
+if (carteira.getValorTotal() &gt;= preco) {  // viola Demeter
+   carteira.debita(preco);                // viola Demeter
+} else {
+  // volto amanhã, para cobrar o valor do jornal
+}</code></pre>
 <p>O jornaleiro têm acesso à carteira do seu cliente — via <code>getCarteira()</code> — e então ele mesmo retira o valor do jornal dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse tamanha liberdade. Uma solução mais realista é a seguinte:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb25-1"><a href="#cb25-1"></a>preco = <span class="fl">6.</span><span class="bn">00</span>;</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="kw">try</span> {</span>
-<span id="cb25-3"><a href="#cb25-3"></a>  cliente.<span class="fu">pagar</span>(preco);</span>
-<span id="cb25-4"><a href="#cb25-4"></a>}</span>
-<span id="cb25-5"><a href="#cb25-5"></a><span class="kw">catch</span> (ExcecaoValorInsuficiente e) {</span>
-<span id="cb25-6"><a href="#cb25-6"></a>  <span class="co">// volto amanhã, para cobrar o valor do jornal</span></span>
-<span id="cb25-7"><a href="#cb25-7"></a>}</span></code></pre></div>
+<pre><code>preco = 6.00;
+try {
+  cliente.pagar(preco);
+}
+catch (ExcecaoValorInsuficiente e) {
+  // volto amanhã, para cobrar o valor do jornal
+}</code></pre>
 <p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe <code>Cliente</code>. Em vez disso, o cliente oferece um método pagar, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o <code>Cliente</code> não possui recursos suficientes para pagar pelo jornal.</p>
 <h3 data-number="1.6.6" id="princípio-abertofechado" data-number="1.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado</h3>
 <p>  </p>
@@ -644,38 +582,38 @@
 <p>No entanto, o aparente paradoxo se esclarece quando o projeto da classe prevê a possibilidade de extensões e customizações. Para isso, o projetista pode se valer de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto, como Abstract Factory, Template Method e Strategy. Especificamente, no próximo capítulo, iremos tratar de padrões de projeto que permitem customizar e estender uma classe sem modificar o seu código.</p>
 <p>Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.</p>
 <p><strong>Exemplo 1:</strong> Um exemplo de classe que segue o Princípio Aberto/Fechado é a classe <code>Collections</code> de Java. Ela possui um método estático para ordenar uma lista em ordem crescente de seus elementos. Um exemplo de uso desse método é mostrado a seguir:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb26-1"><a href="#cb26-1"></a><span class="bu">List</span>&lt;<span class="bu">String</span>&gt; nomes;</span>
-<span id="cb26-2"><a href="#cb26-2"></a>nomes = <span class="bu">Arrays</span>.<span class="fu">asList</span>(<span class="st">&quot;joao&quot;</span>, <span class="st">&quot;maria&quot;</span>, <span class="st">&quot;alexandre&quot;</span>, <span class="st">&quot;ze&quot;</span>);</span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="bu">Collections</span>.<span class="fu">sort</span>(nomes);</span>
-<span id="cb26-4"><a href="#cb26-4"></a></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(nomes);  </span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="co">// resultado: [&quot;alexandre&quot;,&quot;joao&quot;,&quot;maria&quot;,&quot;ze&quot;]</span></span></code></pre></div>
+<pre><code>List&lt;String&gt; nomes;
+nomes = Arrays.asList(&quot;joao&quot;, &quot;maria&quot;, &quot;alexandre&quot;, &quot;ze&quot;);
+Collections.sort(nomes);
+
+System.out.println(nomes);  
+// resultado: [&quot;alexandre&quot;,&quot;joao&quot;,&quot;maria&quot;,&quot;ze&quot;]</code></pre>
 <p>No entanto, futuramente, podemos precisar de usar o método <code>sort</code> para ordenar as strings de acordo com seu tamanho em caracteres. Felizmente, a classe <code>Collections</code> está preparada para esse novo cenário de uso. Mas para isso precisamos implementar um objeto <code>Comparator</code>, que irá comparar as strings pelo seu tamanho, como no seguinte código:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb27-1"><a href="#cb27-1"></a><span class="bu">Comparator</span>&lt;<span class="bu">String</span>&gt; comparador = <span class="kw">new</span> <span class="bu">Comparator</span>&lt;<span class="bu">String</span>&gt;() {</span>
-<span id="cb27-2"><a href="#cb27-2"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">compare</span>(<span class="bu">String</span> s1, <span class="bu">String</span> s2) {</span>
-<span id="cb27-3"><a href="#cb27-3"></a>    <span class="kw">return</span> s1.<span class="fu">length</span>() - s2.<span class="fu">length</span>();</span>
-<span id="cb27-4"><a href="#cb27-4"></a>  }</span>
-<span id="cb27-5"><a href="#cb27-5"></a>};</span>
-<span id="cb27-6"><a href="#cb27-6"></a><span class="bu">Collections</span>.<span class="fu">sort</span>(nomes, comparador);</span>
-<span id="cb27-7"><a href="#cb27-7"></a></span>
-<span id="cb27-8"><a href="#cb27-8"></a><span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(nomes);   </span>
-<span id="cb27-9"><a href="#cb27-9"></a><span class="co">// resultado: [ze, joao, maria, alexandre]</span></span></code></pre></div>
+<pre><code>Comparator&lt;String&gt; comparador = new Comparator&lt;String&gt;() {
+  public int compare(String s1, String s2) {
+    return s1.length() - s2.length();
+  }
+};
+Collections.sort(nomes, comparador);
+
+System.out.println(nomes);   
+// resultado: [ze, joao, maria, alexandre]</code></pre>
 <p>Ou seja, a classe <code>Collections</code> se mostrou <q>aberta</q> a lidar com esse novo requisito, mas mantendo o seu código <q>fechado</q>, isto é, o código fonte da classe não teve que ser modificado.</p>
 <p><strong>Exemplo 2</strong>: Mostramos agora um exemplo de função que não segue o Princípio Aberto/Fechado.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb28-1"><a href="#cb28-1"></a><span class="dt">double</span> <span class="fu">calcTotalBolsas</span>(Aluno[] lista) {</span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="dt">double</span>  total = <span class="fl">0.</span><span class="dv">0</span>;</span>
-<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">foreach</span> (Aluno aluno in lista) {</span>
-<span id="cb28-4"><a href="#cb28-4"></a>    <span class="kw">if</span> (aluno <span class="kw">instanceof</span> AlunoGrad) {</span>
-<span id="cb28-5"><a href="#cb28-5"></a>      AlunoGrad grad = (AlunoGrad) aluno;</span>
-<span id="cb28-6"><a href="#cb28-6"></a>      total += <span class="st">&quot;código que calcula bolsa de grad&quot;</span>;</span>
-<span id="cb28-7"><a href="#cb28-7"></a>    }</span>
-<span id="cb28-8"><a href="#cb28-8"></a>    <span class="kw">else</span> <span class="kw">if</span> (aluno <span class="kw">instanceof</span> AlunoMestrado) {</span>
-<span id="cb28-9"><a href="#cb28-9"></a>      AlunoMestrado mestrando = (AlunoMestrado) aluno;</span>
-<span id="cb28-10"><a href="#cb28-10"></a>      total += <span class="st">&quot;código que calcula bolsa de mestrando&quot;</span>;</span>
-<span id="cb28-11"><a href="#cb28-11"></a>    }</span>
-<span id="cb28-12"><a href="#cb28-12"></a>  }</span>
-<span id="cb28-13"><a href="#cb28-13"></a>  <span class="kw">return</span> total;</span>
-<span id="cb28-14"><a href="#cb28-14"></a>}</span></code></pre></div>
+<pre><code>double calcTotalBolsas(Aluno[] lista) {
+  double  total = 0.0;
+  foreach (Aluno aluno in lista) {
+    if (aluno instanceof AlunoGrad) {
+      AlunoGrad grad = (AlunoGrad) aluno;
+      total += &quot;código que calcula bolsa de grad&quot;;
+    }
+    else if (aluno instanceof AlunoMestrado) {
+      AlunoMestrado mestrando = (AlunoMestrado) aluno;
+      total += &quot;código que calcula bolsa de mestrando&quot;;
+    }
+  }
+  return total;
+}</code></pre>
 <p>Se amanhã tivermos que criar mais uma subclasse de <code>Aluno</code>, por exemplo, <code>AlunoDoutorado</code>, o código de <code>calcTotalBolsas</code> terá que ser adaptado. Ou seja, a função não está preparada para acomodar extensões (isto é, ela não está aberta), nem imune a alterações no seu código (isto é, ela também não está fechada).</p>
 <p>O Princípio Aberto/Fechado requer que o projetista de uma classe antecipe os seus pontos de extensão. Por isso, não é possível a uma classe acomodar todos os possíveis tipos de extensões que podem aparecer. Mas apenas aqueles para os quais são oferecidos pontos de extensão, seja via herança, funções de mais alta ordem ou padrões de projeto. Por exemplo, a implementação da classe <code>Collections</code> (no exemplo 1) usa um algoritmo de ordenação que é uma versão do MergeSort. Porém, os clientes da classe não podem alterar e customizar esse algoritmo, tendo que se contentar com a implementação default que é oferecida. Logo, sob o critério de customização do algoritmo de ordenação, o método <code>sort</code> não atende ao Princípio Aberto/Fechado.</p>
 <h3 data-number="1.6.7" id="princípio-de-substituição-de-liskov" data-number="1.6.7"><span class="header-section-number">5.6.7</span> Princípio de Substituição de Liskov</h3>
@@ -683,59 +621,59 @@
 <p>Conforme já discutimos ao falar do princípio <q>Prefira Composição a Herança</q>, herança não é mais um conceito popular como foi na década de 80. Hoje, o emprego de herança é mais restrito e raro. No entanto, alguns casos de uso ainda são justificados. Herança define uma relação <q>é-um</q> entre objetos de uma classe base e objetos de subclasses. A vantagem é que comportamentos (isto é, métodos) comuns a essas classes podem ser implementados uma única vez, na classe base. Feito isso, eles são herdados em todas as subclasses.</p>
 <p> O Princípio de Substituição de Liskov explicita regras para redefinição de métodos de classes base em classes filhas. O nome do princípio é uma referência a Barbara Liskov, professora do MIT e ganhadora da edição de 2008 do Prêmio Turing. Dentre outros trabalhos, Liskov desenvolveu pesquisas sobre sistemas de tipos para linguagens orientadas a objetos. Foi em um desses trabalhos que ela enunciou o princípio que depois ganhou seu nome.</p>
 <p>Para explicar o Princípio de Substituição de Liskov vamos nos basear no seguinte exemplo:</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb29-1"><a href="#cb29-1"></a><span class="dt">void</span> <span class="fu">f</span>(A a) {</span>
-<span id="cb29-2"><a href="#cb29-2"></a>  ...</span>
-<span id="cb29-3"><a href="#cb29-3"></a>  a.<span class="fu">g</span>(<span class="dt">int</span> n);</span>
-<span id="cb29-4"><a href="#cb29-4"></a>  ...</span>
-<span id="cb29-5"><a href="#cb29-5"></a>}</span></code></pre></div>
+<pre><code>void f(A a) {
+  ...
+  a.g(int n);
+  ...
+}</code></pre>
 <p>O método <code>f</code> pode ser chamado passando-se como parâmetros objetos de subclasses <code>B1</code>, <code>B2</code>, …, <code>Bn</code> da classe base <code>A</code>, como mostrado a seguir:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B1</span>());  <span class="co">// f pode receber objetos da subclasse B1 </span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>...</span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B2</span>());  <span class="co">// e de qualquer outra subclasse de A, como B2</span></span>
-<span id="cb30-4"><a href="#cb30-4"></a>...</span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="fu">f</span>(<span class="kw">new</span> <span class="fu">B3</span>());  <span class="co">// e B3</span></span></code></pre></div>
+<pre><code>f(new B1());  // f pode receber objetos da subclasse B1 
+...
+f(new B2());  // e de qualquer outra subclasse de A, como B2
+...
+f(new B3());  // e B3</code></pre>
 <p>O Princípio de Substituição de Liskov determina as condições — semânticas e não sintáticas — que as subclasses devem atender para que um programa como o anterior funcione.</p>
 <p>Suponha que as subclasses <code>B1</code>, <code>B2</code>, …., <code>Bn</code> redefinam o método <code>g()</code> de <code>A</code>, que é um método chamado no corpo de <code>f</code>. O Princípio de Substituição de Liskov prescreve que essas redefinições não podem violar o contrato da implementação original de <code>g</code> em A.</p>
 <p><strong>Exemplo 1:</strong> Suponha uma classe base que calcula números primos. Suponha ainda algumas subclasses que implementam outros algoritmos com o mesmo propósito. Especificamente, o método <code>getPrimo(n)</code> é um método que retorna o n-ésimo número primo. Esse método existe na classe base e é redefinido em todas as subclasses.</p>
 <p>Suponha ainda que o contrato do método <code>getPrimo(n)</code> especifique o seguinte: <em>1 &lt;= n &lt;= 1 milhão</em>. Ou seja, o método deve ser capaz de retornar qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo, uma violação do contrato de <code>getPrimo(n)</code> ocorre, por exemplo, se, em uma das classes, o algoritmo implementado calcule apenas números primos até 900 mil.</p>
 <p>De forma mais concreta, o Princípio de Substituição de Liskov define o seguinte: suponha que um cliente chame um método <code>getPrimo(n)</code> de um objeto <code>p</code> da classe <code>NumeroPrimo</code>. Suponha agora que o objeto <code>p</code> seja <q>substituído</q> por um objeto de uma subclasse de <code>NumeroPrimo</code>. Nesse caso, o cliente vai passar a executar o método <code>getPrimo(n)</code> dessa subclasse. Porém, essa <q>substituição</q> de métodos não deve ter impacto no comportamento do cliente. Para tanto, todos os métodos <code>getPrimo(n)</code> das subclasses de <code>NumeroPrimo</code> devem realizar as mesmas tarefas que o método original, possivelmente de modo mais eficiente.</p>
 <p><strong>Exemplo 2:</strong> Vamos mostrar um segundo exemplo de violação, dessa vez bem forte, exatamente para reforçar o sentido do Princípio de Substituição de Liskov.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb31-1"><a href="#cb31-1"></a><span class="kw">class</span> A {</span>
-<span id="cb31-2"><a href="#cb31-2"></a></span>
-<span id="cb31-3"><a href="#cb31-3"></a>  <span class="dt">int</span> <span class="fu">soma</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
-<span id="cb31-4"><a href="#cb31-4"></a>    <span class="kw">return</span> a+b;</span>
-<span id="cb31-5"><a href="#cb31-5"></a>  }</span>
-<span id="cb31-6"><a href="#cb31-6"></a></span>
-<span id="cb31-7"><a href="#cb31-7"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">class</span> B <span class="kw">extends</span> A {</span>
-<span id="cb32-2"><a href="#cb32-2"></a></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="dt">int</span> <span class="fu">soma</span>(<span class="dt">int</span> a, <span class="dt">int</span> b) {</span>
-<span id="cb32-4"><a href="#cb32-4"></a>    <span class="bu">String</span> r = <span class="bu">String</span>.<span class="fu">valueOf</span>(a) + <span class="bu">String</span>.<span class="fu">valueOf</span>(b);</span>
-<span id="cb32-5"><a href="#cb32-5"></a>    <span class="kw">return</span> <span class="bu">Integer</span>.<span class="fu">parseInt</span>(r);</span>
-<span id="cb32-6"><a href="#cb32-6"></a>  }</span>
-<span id="cb32-7"><a href="#cb32-7"></a></span>
-<span id="cb32-8"><a href="#cb32-8"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb33-1"><a href="#cb33-1"></a><span class="kw">class</span> Cliente {</span>
-<span id="cb33-2"><a href="#cb33-2"></a></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="dt">void</span> <span class="fu">f</span>(A a) {</span>
-<span id="cb33-4"><a href="#cb33-4"></a>    ...</span>
-<span id="cb33-5"><a href="#cb33-5"></a>    a.<span class="fu">soma</span>(<span class="dv">1</span>,<span class="dv">2</span>); <span class="co">// pode retornar 3 ou 12</span></span>
-<span id="cb33-6"><a href="#cb33-6"></a>    ...</span>
-<span id="cb33-7"><a href="#cb33-7"></a>  }</span>
-<span id="cb33-8"><a href="#cb33-8"></a></span>
-<span id="cb33-9"><a href="#cb33-9"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb34"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb34-1"><a href="#cb34-1"></a></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="kw">class</span> Main {</span>
-<span id="cb34-3"><a href="#cb34-3"></a></span>
-<span id="cb34-4"><a href="#cb34-4"></a>  <span class="dt">void</span> <span class="fu">main</span>() {</span>
-<span id="cb34-5"><a href="#cb34-5"></a>    A a = <span class="kw">new</span> <span class="fu">A</span>();</span>
-<span id="cb34-6"><a href="#cb34-6"></a>    B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
-<span id="cb34-7"><a href="#cb34-7"></a>    Cliente cliente = <span class="kw">new</span> <span class="fu">Cliente</span>();</span>
-<span id="cb34-8"><a href="#cb34-8"></a>    cliente.<span class="fu">f</span>(a);</span>
-<span id="cb34-9"><a href="#cb34-9"></a>    cliente.<span class="fu">f</span>(b);</span>
-<span id="cb34-10"><a href="#cb34-10"></a>  }</span>
-<span id="cb34-11"><a href="#cb34-11"></a></span>
-<span id="cb34-12"><a href="#cb34-12"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  int soma(int a, int b) {
+    return a+b;
+  }
+
+}</code></pre>
+<pre><code>class B extends A {
+
+  int soma(int a, int b) {
+    String r = String.valueOf(a) + String.valueOf(b);
+    return Integer.parseInt(r);
+  }
+
+}</code></pre>
+<pre><code>class Cliente {
+
+  void f(A a) {
+    ...
+    a.soma(1,2); // pode retornar 3 ou 12
+    ...
+  }
+
+}</code></pre>
+<pre><code>
+class Main {
+
+  void main() {
+    A a = new A();
+    B b = new B();
+    Cliente cliente = new Cliente();
+    cliente.f(a);
+    cliente.f(b);
+  }
+
+}</code></pre>
 <p>Nesse exemplo, o método que soma dois inteiros foi redefinido na subclasse com uma semântica de concatenação dos respectivos valores convertidos para strings. Logo, para um desenvolvedor encarregado de manter a classe <code>Cliente</code> a situação fica bastante confusa. Em uma execução, a chamada <code>soma(1,2)</code> retorna 3 (isto é, 1+2); na execução seguinte, a mesma chamada irá retornar 12 (isto é, <q>1</q>+ <q>2</q> = <q>12</q> ou 12, como inteiro).</p>
 <h2 data-number="1.7" id="métricas-de-código-fonte" data-number="1.7"><span class="header-section-number">5.7</span> Métricas de Código Fonte</h2>
 <p></p>
@@ -762,27 +700,27 @@
 <p><em>P = | { (f<sub>1</sub>, f<sub>2</sub>) in M(C) | A(f<sub>1</sub>) e A(f<sub>2</sub>) são conjuntos disjuntos } |</em></p>
 <p>Isto é, LCOM(C) é o número de pares de métodos — dentre todos os possíveis pares de métodos de C — que não usam atributos em comum, isto é, a interseção deles é vazia.</p>
 <p><strong>Exemplo:</strong> Para deixar a explicação mais clara, suponha a seguinte classe:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb35-1"><a href="#cb35-1"></a><span class="kw">class</span> A {</span>
-<span id="cb35-2"><a href="#cb35-2"></a></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="dt">int</span> a1;</span>
-<span id="cb35-4"><a href="#cb35-4"></a>  <span class="dt">int</span> a2;</span>
-<span id="cb35-5"><a href="#cb35-5"></a>  <span class="dt">int</span> a3;</span>
-<span id="cb35-6"><a href="#cb35-6"></a></span>
-<span id="cb35-7"><a href="#cb35-7"></a>  <span class="dt">void</span> <span class="fu">m1</span>() {</span>
-<span id="cb35-8"><a href="#cb35-8"></a>    a1 = <span class="dv">10</span>;</span>
-<span id="cb35-9"><a href="#cb35-9"></a>    a2 = <span class="dv">20</span>;</span>
-<span id="cb35-10"><a href="#cb35-10"></a>  }</span>
-<span id="cb35-11"><a href="#cb35-11"></a></span>
-<span id="cb35-12"><a href="#cb35-12"></a>  <span class="dt">void</span> <span class="fu">m2</span>() {</span>
-<span id="cb35-13"><a href="#cb35-13"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a1);</span>
-<span id="cb35-14"><a href="#cb35-14"></a>    a3 = <span class="dv">30</span>;</span>
-<span id="cb35-15"><a href="#cb35-15"></a>  }</span>
-<span id="cb35-16"><a href="#cb35-16"></a></span>
-<span id="cb35-17"><a href="#cb35-17"></a>  <span class="dt">void</span> <span class="fu">m3</span>() {</span>
-<span id="cb35-18"><a href="#cb35-18"></a>    <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(a3);</span>
-<span id="cb35-19"><a href="#cb35-19"></a>  }</span>
-<span id="cb35-20"><a href="#cb35-20"></a></span>
-<span id="cb35-21"><a href="#cb35-21"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  int a1;
+  int a2;
+  int a3;
+
+  void m1() {
+    a1 = 10;
+    a2 = 20;
+  }
+
+  void m2() {
+    System.out.println(a1);
+    a3 = 30;
+  }
+
+  void m3() {
+    System.out.println(a3);
+  }
+
+}</code></pre>
 <p>A próxima tabela mostra os elementos dos conjuntos M e A; e o resultado da interseção que define o valor de LCOM.</p>
 <figure>
 <img src="figs/cap5/lcom.jpg" style="width:80.0%" alt="" /><figcaption>Exemplo de cálculo de LCOM</figcaption>
@@ -805,24 +743,24 @@
 <li><p>A cria um objeto do tipo B.</p></li>
 </ul>
 <p>Seja uma classe A com dois métodos (<code>metodo1</code> e <code>metodo2</code>):</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb36-1"><a href="#cb36-1"></a><span class="kw">class</span> A <span class="kw">extends</span> T1 <span class="kw">implements</span> T2 {</span>
-<span id="cb36-2"><a href="#cb36-2"></a></span>
-<span id="cb36-3"><a href="#cb36-3"></a>  T3 a;</span>
-<span id="cb36-4"><a href="#cb36-4"></a></span>
-<span id="cb36-5"><a href="#cb36-5"></a>  T4 <span class="fu">metodo1</span>(T5 p) <span class="kw">throws</span> T6 {</span>
-<span id="cb36-6"><a href="#cb36-6"></a>    T7 v;</span>
-<span id="cb36-7"><a href="#cb36-7"></a>    ...</span>
-<span id="cb36-8"><a href="#cb36-8"></a>  }</span>
-<span id="cb36-9"><a href="#cb36-9"></a></span>
-<span id="cb36-10"><a href="#cb36-10"></a>  <span class="dt">void</span> <span class="fu">metodo2</span>() {</span>
-<span id="cb36-11"><a href="#cb36-11"></a>    T8 = <span class="kw">new</span> <span class="fu">T8</span>();</span>
-<span id="cb36-12"><a href="#cb36-12"></a>    <span class="kw">try</span> {</span>
-<span id="cb36-13"><a href="#cb36-13"></a>      ...</span>
-<span id="cb36-14"><a href="#cb36-14"></a>    }</span>
-<span id="cb36-15"><a href="#cb36-15"></a>    <span class="kw">catch</span> (T9 e) { <span class="kw">... </span>}</span>
-<span id="cb36-16"><a href="#cb36-16"></a>  }</span>
-<span id="cb36-17"><a href="#cb36-17"></a></span>
-<span id="cb36-18"><a href="#cb36-18"></a>}</span></code></pre></div>
+<pre><code>class A extends T1 implements T2 {
+
+  T3 a;
+
+  T4 metodo1(T5 p) throws T6 {
+    T7 v;
+    ...
+  }
+
+  void metodo2() {
+    T8 = new T8();
+    try {
+      ...
+    }
+    catch (T9 e) { ... }
+  }
+
+}</code></pre>
 <p>Conforme indicamos numerando os tipos dos quais A depende, CBO(A) = 9.</p>
 <p>A definição de CBO não distingue as classes das quais uma classe depende. Por exemplo, tanto faz se a dependência é para uma classe da biblioteca de Java (por exemplo, String) ou uma classe mais instável da própria aplicação que está sendo desenvolvida.</p>
 <h3 data-number="1.7.4" id="complexidade" data-number="1.7.4"><span class="header-section-number">5.7.4</span> Complexidade</h3>
@@ -852,107 +790,107 @@
 <p>6. É possível que uma classe A esteja acoplada a uma classe B sem ter uma referência para B em seu código? Se sim, esse acoplamento será aceitável ou ruim?</p>
 <p>7. Suponha um programa onde todo o código está implementado no método main. Ele tem um problema de coesão ou acoplamento? Justifique.</p>
 <p>8. Qual princípio de projeto é violado pelo seguinte código?</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb37-1"><a href="#cb37-1"></a><span class="dt">void</span> <span class="fu">onclick</span>() {</span>
-<span id="cb37-2"><a href="#cb37-2"></a>  num1 = textfield1.<span class="fu">value</span>();</span>
-<span id="cb37-3"><a href="#cb37-3"></a>  c1 = BD.<span class="fu">getConta</span>(num1)</span>
-<span id="cb37-4"><a href="#cb37-4"></a>  num2 = textfield2.<span class="fu">value</span>();</span>
-<span id="cb37-5"><a href="#cb37-5"></a>  c2 = BD.<span class="fu">getConta</span>(num2)</span>
-<span id="cb37-6"><a href="#cb37-6"></a>  valor = textfield3.<span class="fu">value</span>();</span>
-<span id="cb37-7"><a href="#cb37-7"></a>  <span class="fu">beginTransaction</span>();</span>
-<span id="cb37-8"><a href="#cb37-8"></a>  <span class="kw">try</span> {</span>
-<span id="cb37-9"><a href="#cb37-9"></a>    c1.<span class="fu">retira</span>(valor);</span>
-<span id="cb37-10"><a href="#cb37-10"></a>    c2.<span class="fu">deposita</span>(valor);</span>
-<span id="cb37-11"><a href="#cb37-11"></a>    <span class="fu">commit</span>();</span>
-<span id="cb37-12"><a href="#cb37-12"></a>  }          </span>
-<span id="cb37-13"><a href="#cb37-13"></a>  <span class="kw">catch</span>() {</span>
-<span id="cb37-14"><a href="#cb37-14"></a>    <span class="fu">rollback</span>();</span>
-<span id="cb37-15"><a href="#cb37-15"></a>  }</span>
-<span id="cb37-16"><a href="#cb37-16"></a>}  </span></code></pre></div>
+<pre><code>void onclick() {
+  num1 = textfield1.value();
+  c1 = BD.getConta(num1)
+  num2 = textfield2.value();
+  c2 = BD.getConta(num2)
+  valor = textfield3.value();
+  beginTransaction();
+  try {
+    c1.retira(valor);
+    c2.deposita(valor);
+    commit();
+  }          
+  catch() {
+    rollback();
+  }
+}  </code></pre>
 <p>9. Costuma-se afirmar que existem três conceitos chaves em orientação a objetos: encapsulamento, polimorfismo e herança. Suponha que você tenha sido encarregado de projetar uma nova linguagem de programação. Suponha ainda que você poderá escolher apenas dois dos três conceitos que mencionamos. Qual dos conceitos eliminaria então da sua nova linguagem? Justifique sua resposta.</p>
 <p>10. Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb38-1"><a href="#cb38-1"></a><span class="dt">void</span> <span class="fu">sendMail</span>(ContaBancaria conta, <span class="bu">String</span> msg) {</span>
-<span id="cb38-2"><a href="#cb38-2"></a>  Cliente cliente = conta.<span class="fu">getCliente</span>();</span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="bu">String</span> mail = cliente.<span class="fu">getMailAddress</span>();</span>
-<span id="cb38-4"><a href="#cb38-4"></a>  <span class="st">&quot;Envia mail&quot;</span></span>
-<span id="cb38-5"><a href="#cb38-5"></a>}  </span></code></pre></div>
+<pre><code>void sendMail(ContaBancaria conta, String msg) {
+  Cliente cliente = conta.getCliente();
+  String mail = cliente.getMailAddress();
+  &quot;Envia mail&quot;
+}  </code></pre>
 <p>11. Qual princípio de projeto é violado pelo seguinte código? Como você poderia alterar o código do método para atender a esse princípio?</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb39-1"><a href="#cb39-1"></a><span class="dt">void</span> <span class="fu">imprimeDataContratacao</span>(Funcionario func) {</span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="bu">Date</span> data = func.<span class="fu">getDataContratacao</span>();</span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="bu">String</span> msg = data<span class="fu">.format</span>();</span>
-<span id="cb39-4"><a href="#cb39-4"></a>  <span class="bu">System</span>.<span class="fu">out</span>.<span class="fu">println</span>(msg);</span>
-<span id="cb39-5"><a href="#cb39-5"></a>}  </span></code></pre></div>
+<pre><code>void imprimeDataContratacao(Funcionario func) {
+  Date data = func.getDataContratacao();
+  String msg = data.format();
+  System.out.println(msg);
+}  </code></pre>
 <p>12. As pré-condições de um método são expressões booleanas envolvendo seus parâmetros (e, possivelmente, o estado de sua classe) que devem ser verdadeiras antes da sua execução. De forma semelhante, as pós-condições são expressões booleanas envolvendo o resultado do método. Considerando essas definições, qual princípio de projeto é violado pelo código abaixo?</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb40-1"><a href="#cb40-1"></a><span class="kw">class</span> A {  </span>
-<span id="cb40-2"><a href="#cb40-2"></a>  <span class="dt">int</span> <span class="fu">f</span>(<span class="dt">int</span> x) { <span class="co">// pre: x &gt; 0</span></span>
-<span id="cb40-3"><a href="#cb40-3"></a>    ...</span>
-<span id="cb40-4"><a href="#cb40-4"></a>    <span class="kw">return</span> exp;</span>
-<span id="cb40-5"><a href="#cb40-5"></a>  }              <span class="co">// pos: exp &gt; 0</span></span>
-<span id="cb40-6"><a href="#cb40-6"></a>  ...</span>
-<span id="cb40-7"><a href="#cb40-7"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb41-1"><a href="#cb41-1"></a><span class="kw">class</span> B <span class="kw">extends</span> A {  </span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="dt">int</span> <span class="fu">f</span>(<span class="dt">int</span> x) { <span class="co">// pre: x &gt; 10</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>  ...</span>
-<span id="cb41-4"><a href="#cb41-4"></a>  <span class="kw">return</span> exp;</span>
-<span id="cb41-5"><a href="#cb41-5"></a>  }              <span class="co">// pos: exp &gt; -50</span></span>
-<span id="cb41-6"><a href="#cb41-6"></a>  ...</span>
-<span id="cb41-7"><a href="#cb41-7"></a>}</span></code></pre></div>
+<pre><code>class A {  
+  int f(int x) { // pre: x &gt; 0
+    ...
+    return exp;
+  }              // pos: exp &gt; 0
+  ...
+}</code></pre>
+<pre><code>class B extends A {  
+  int f(int x) { // pre: x &gt; 10
+  ...
+  return exp;
+  }              // pos: exp &gt; -50
+  ...
+}</code></pre>
 <p>13. Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p>
 <p>14. Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">class</span> A {</span>
-<span id="cb42-2"><a href="#cb42-2"></a></span>
-<span id="cb42-3"><a href="#cb42-3"></a>  X x = <span class="kw">new</span> <span class="fu">X</span>();</span>
-<span id="cb42-4"><a href="#cb42-4"></a></span>
-<span id="cb42-5"><a href="#cb42-5"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
-<span id="cb42-6"><a href="#cb42-6"></a>    x.<span class="fu">m1</span>();</span>
-<span id="cb42-7"><a href="#cb42-7"></a>  }</span>
-<span id="cb42-8"><a href="#cb42-8"></a></span>
-<span id="cb42-9"><a href="#cb42-9"></a>  <span class="dt">void</span> <span class="fu">g</span>() {</span>
-<span id="cb42-10"><a href="#cb42-10"></a>    x.<span class="fu">m2</span>();</span>
-<span id="cb42-11"><a href="#cb42-11"></a>  }</span>
-<span id="cb42-12"><a href="#cb42-12"></a></span>
-<span id="cb42-13"><a href="#cb42-13"></a>  <span class="dt">void</span> <span class="fu">h</span>() {</span>
-<span id="cb42-14"><a href="#cb42-14"></a>    x.<span class="fu">m3</span>();</span>
-<span id="cb42-15"><a href="#cb42-15"></a>  }</span>
-<span id="cb42-16"><a href="#cb42-16"></a></span>
-<span id="cb42-17"><a href="#cb42-17"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb43-1"><a href="#cb43-1"></a><span class="kw">class</span> B {</span>
-<span id="cb43-2"><a href="#cb43-2"></a></span>
-<span id="cb43-3"><a href="#cb43-3"></a>  X x = <span class="kw">new</span> <span class="fu">X</span>();</span>
-<span id="cb43-4"><a href="#cb43-4"></a>  Y y = <span class="kw">new</span> <span class="fu">Y</span>();</span>
-<span id="cb43-5"><a href="#cb43-5"></a>  Z z = <span class="kw">new</span> <span class="fu">Z</span>();</span>
-<span id="cb43-6"><a href="#cb43-6"></a></span>
-<span id="cb43-7"><a href="#cb43-7"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
-<span id="cb43-8"><a href="#cb43-8"></a>    x.<span class="fu">m</span>();</span>
-<span id="cb43-9"><a href="#cb43-9"></a>  }</span>
-<span id="cb43-10"><a href="#cb43-10"></a></span>
-<span id="cb43-11"><a href="#cb43-11"></a>  <span class="dt">void</span> <span class="fu">g</span>() {</span>
-<span id="cb43-12"><a href="#cb43-12"></a>    y.<span class="fu">m</span>();</span>
-<span id="cb43-13"><a href="#cb43-13"></a>  }</span>
-<span id="cb43-14"><a href="#cb43-14"></a></span>
-<span id="cb43-15"><a href="#cb43-15"></a>  <span class="dt">void</span> <span class="fu">h</span>() {</span>
-<span id="cb43-16"><a href="#cb43-16"></a>    z.<span class="fu">m</span>();</span>
-<span id="cb43-17"><a href="#cb43-17"></a>  }</span>
-<span id="cb43-18"><a href="#cb43-18"></a></span>
-<span id="cb43-19"><a href="#cb43-19"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  X x = new X();
+
+  void f() {
+    x.m1();
+  }
+
+  void g() {
+    x.m2();
+  }
+
+  void h() {
+    x.m3();
+  }
+
+}</code></pre>
+<pre><code>class B {
+
+  X x = new X();
+  Y y = new Y();
+  Z z = new Z();
+
+  void f() {
+    x.m();
+  }
+
+  void g() {
+    y.m();
+  }
+
+  void h() {
+    z.m();
+  }
+
+}</code></pre>
 <p>15. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
 <p>16. Calcule o CBO e LCOM da seguinte classe:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb44-1"><a href="#cb44-1"></a><span class="kw">class</span> A <span class="kw">extends</span> B {</span>
-<span id="cb44-2"><a href="#cb44-2"></a></span>
-<span id="cb44-3"><a href="#cb44-3"></a>  C f1, f2, f3;</span>
-<span id="cb44-4"><a href="#cb44-4"></a></span>
-<span id="cb44-5"><a href="#cb44-5"></a>  <span class="dt">void</span> <span class="fu">m1</span>(D p) {</span>
-<span id="cb44-6"><a href="#cb44-6"></a>    <span class="st">&quot;usa f1 e f2&quot;</span></span>
-<span id="cb44-7"><a href="#cb44-7"></a>  }</span>
-<span id="cb44-8"><a href="#cb44-8"></a></span>
-<span id="cb44-9"><a href="#cb44-9"></a>  <span class="dt">void</span> <span class="fu">m2</span>(E p) {</span>
-<span id="cb44-10"><a href="#cb44-10"></a>    <span class="st">&quot;usa f2 e f3&quot;</span></span>
-<span id="cb44-11"><a href="#cb44-11"></a>  }</span>
-<span id="cb44-12"><a href="#cb44-12"></a></span>
-<span id="cb44-13"><a href="#cb44-13"></a>  <span class="dt">void</span> <span class="fu">m3</span>(F p) {</span>
-<span id="cb44-14"><a href="#cb44-14"></a>    <span class="st">&quot;usa f3&quot;</span>  </span>
-<span id="cb44-15"><a href="#cb44-15"></a>  }</span>
-<span id="cb44-16"><a href="#cb44-16"></a></span>
-<span id="cb44-17"><a href="#cb44-17"></a>}</span></code></pre></div>
+<pre><code>class A extends B {
+
+  C f1, f2, f3;
+
+  void m1(D p) {
+    &quot;usa f1 e f2&quot;
+  }
+
+  void m2(E p) {
+    &quot;usa f2 e f3&quot;
+  }
+
+  void m3(F p) {
+    &quot;usa f3&quot;  
+  }
+
+}</code></pre>
 <p>17. A definição de complexidade ciclomática é independente de linguagem de programação. Sim ou não? Justifique.</p>
 <p>18. Dê um exemplo de código com complexidade ciclomática mínima. Qual é essa complexidade?</p>
 <p>19. Cristina Lopes — professora da Universidade da Califórnia, em Irvine, nos EUA — é autora de um livro sobre estilos de programação (<a href="https://dl.acm.org/citation.cfm?id=2648631">link</a>). Ela discute no livro diversos estilos para implementação de um mesmo problema, chamado frequência de termos. Dado um arquivo texto, deve-se listar as <em>n</em>-palavras mais frequentes em ordem decrescente de frequência e ignorando <em>stop words</em>, isto é, artigos, preposições, etc. O código fonte em Python de todas as versões analisadas no livro está publicamente disponível no GitHub (e, para esse exercício, fizemos um fork do repositório original). Faça uma análise de duas dessas versões:</p>

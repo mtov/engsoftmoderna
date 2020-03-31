@@ -318,7 +318,7 @@ Por exemplo, durante o projeto de um sistema de *home-banking*, pode-se
 propor uma classe para representar contas bancárias, como a seguinte:
 
 
-```java
+```
 class ContaBancaria {                                                                          
    private Cliente cliente;                        
    private double saldo;                           
@@ -1305,7 +1305,7 @@ emitia-se mais poluentes, para melhorar o desempenho. Ou seja, o código
 provavelmente incluía uma estrutura de decisão como a seguinte
 (meramente ilustrativa, para fins deste exercício):
 
-```java
+```
 if "Carro sendo testado em um laboratório"
    "Emita poluentes dentro das normas"
 else 
