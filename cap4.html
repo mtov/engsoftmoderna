@@ -14,68 +14,6 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -179,16 +117,16 @@
 <p>Quando uma classe A possui um atributo b de um tipo B, dizemos que existe uma associação de A para B, a qual é representada por meio de uma seta, também de A para B. Na extremidade da seta, informa-se o nome do atributo de A responsável pela associação — no nosso caso, b. Veja o exemplo abaixo (nele, só mostramos as informações que nos interessam; por isso, o compartimento de atributos e métodos está vazio):</p>
 <p><img src="figs/cap4/class2.svg" style="width:35.0%" /></p>
 <p>Para ficar ainda mais claro, vamos mostrar como seria o código das classes A e B:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">class</span> A {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>   ...</span>
-<span id="cb1-3"><a href="#cb1-3"></a>   <span class="kw">private</span> B b;</span>
-<span id="cb1-4"><a href="#cb1-4"></a>   ...</span>
-<span id="cb1-5"><a href="#cb1-5"></a>}</span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">class</span> B {</span>
-<span id="cb1-9"><a href="#cb1-9"></a>   ...</span>
-<span id="cb1-10"><a href="#cb1-10"></a>}</span></code></pre></div>
+<pre><code>class A {
+   ...
+   private B b;
+   ...
+}
+
+
+class B {
+   ...
+}</code></pre>
 <p>Portanto, usando associações, podemos transformar o primeiro diagrama que mostramos nesta seção, com as classes <code>Pessoa</code> e <code>Fone</code>, no seguinte diagrama:</p>
 <p><img src="figs/cap4/class3.svg" style="width:80.0%" /></p>
 <p>As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem <q>ilhadas</q>. Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de <code>Pessoa</code> para <code>Fone</code>. Reforçando, em ambos diagramas, <code>Pessoa</code> tem um atributo fone do tipo <code>Fone</code>. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe <code>Pessoa</code>. Já na segunda versão, ele é apresentado <q>fora</q> desse compartimento. Mais especificamente, na extremidade da seta que liga <code>Pessoa</code> a <code>Fone</code>. O objetivo é deixar claro que o atributo pertence a <code>Pessoa</code>, mas ele <q>aponta</q> para um objeto do tipo <code>Fone</code>.</p>
@@ -198,13 +136,14 @@
 <p>No próximo exemplo, a semântica já é diferente. Nesse caso, uma <code>Pessoa</code> pode estar associada a múltiplos objetos do tipo <code>Fone</code>, inclusive nenhum. Essa multiplicidade é representada pelo * que adicionamos logo acima da seta da associação.</p>
 <p><img src="figs/cap4/class5.svg" style="width:80.0%" /></p>
 <p>Neste segundo exemplo com informações de multiplicidade, o tipo do atributo <code>fone</code> deve ser um vetor de <code>Fone</code>. Para que fique claro, mostramos o código das classes:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">class</span> Pessoa {</span>
-<span id="cb2-2"><a href="#cb2-2"></a>   <span class="kw">private</span> Fone[] fone;</span>
-<span id="cb2-3"><a href="#cb2-3"></a>   ...</span>
-<span id="cb2-4"><a href="#cb2-4"></a>}</span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">class</span> Fone {</span>
-<span id="cb2-6"><a href="#cb2-6"></a>   ...</span>
-<span id="cb2-7"><a href="#cb2-7"></a>}</span></code></pre></div>
+<pre><code>class Pessoa {
+   private Fone[] fone;
+   ...
+}
+class Fone {
+   ...
+}
+</code></pre>
 <p>Talvez o leitor possa se perguntar o que é mais correto: uma <code>Pessoa</code> ter no máximo um <code>Fone</code> (isto é, 0..1) ou uma <code>Pessoa</code> ter qualquer quantidade de <code>Fone</code> (isto é, *)? A resposta é simples: depende dos requisitos do sistema. Ou seja, quem deve responder a essa pergunta são os usuários do sistema que estamos modelando. Para nós, o que importa é que diagramas de classe são capazes de modelar qualquer um dos dois cenários.</p>
 <p>Em alguns casos, informações de multiplicidade são também mostradas na extremidade contrária da seta, como no exemplo abaixo:</p>
 <p><img src="figs/cap4/class6.svg" style="width:80.0%" /></p>
@@ -212,17 +151,17 @@
 <p>Para concluir, suponha que seja importante <q>navegar</q> nos dois sentidos da associação, isto é, de <code>Pessoa</code> para <code>Fone</code> e também de <code>Fone</code> para <code>Pessoa</code>. A solução para essa exigência é simples: basta tornar a <strong>associação bidirecional</strong>, isto é, adicionar uma seta em cada extremidade da linha que conecta as classes, como mostrado no próximo diagrama.</p>
 <p><img src="figs/cap4/class7.svg" style="width:80.0%" /></p>
 <p>Para não deixar dúvidas sobre a semântica de uma associação bidirecional, mostramos também o código das duas classes:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">class</span> Pessoa {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>   ...</span>
-<span id="cb3-3"><a href="#cb3-3"></a>   <span class="kw">private</span> Fone fone;</span>
-<span id="cb3-4"><a href="#cb3-4"></a>   ...</span>
-<span id="cb3-5"><a href="#cb3-5"></a>}</span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="kw">class</span> Fone {</span>
-<span id="cb3-8"><a href="#cb3-8"></a>   ...</span>
-<span id="cb3-9"><a href="#cb3-9"></a>   <span class="kw">private</span> Pessoa[] dono;</span>
-<span id="cb3-10"><a href="#cb3-10"></a>   ...</span>
-<span id="cb3-11"><a href="#cb3-11"></a>}</span></code></pre></div>
+<pre><code>class Pessoa {
+   ...
+   private Fone fone;
+   ...
+}
+
+class Fone {
+   ...
+   private Pessoa[] dono;
+   ...
+}</code></pre>
 <p>Nesse código, <code>Pessoa</code> possui um atributo privado fone do tipo <code>Fone</code>, que pode ser null; com isso, satisfazemos a extremidade 0..1 da associação bidirecional. Por outro lado, <code>Fone</code> possui um vetor privado, de nome dono, que vai referenciar objetos do tipo <code>Pessoa</code>; assim, satisfazemos a extremidade * da mesma associação.</p>
 <p>No último diagrama de classes, omitimos todos os símbolos de visibilidade, tanto pública (+) como privada (-). Isso foi feito, de forma deliberada, para destacar que estamos tratando do uso de UML para criação de esboços, quando os diagramas são criados para discutir e ilustrar uma ideia de projeto. Logo, nesse contexto, não faz sentido exigir que os diagramas sejam sintaticamente perfeitos. Por isso, pequenos erros ou omissões são tolerados, principalmente quando não há prejuízo para o propósito que levou à criação do diagrama.</p>
 <p><strong>Aprofundamento</strong>: UML — dependendo da versão que está sendo usada — admite notações diferentes para associações. Por exemplo, algumas vezes, informa-se um nome para a associação, o qual é mostrado logo acima e ao longo da seta que une as duas classes. Outras vezes, no caso de associações bidirecionais, as duas setas são omitidas — pois a padronização de UML define o seguinte: <q>uma associação em que nenhuma das extremidades é marcada com uma seta de navegabilidade é navegável em ambas as direções</q>. No entanto, essas notações alternativas tendem a ser confusas ou mesmo ambíguas. Por exemplo, Gonzalo Génova e mais dois pesquisadores da Universidade de Madrid, na Espanha, fazem a seguinte observação sobre o uso de associações bidirecionais sem setas: <q>infelizmente, isso pode introduzir ambiguidade na notação gráfica, porque não conseguimos mais distinguir entre associações bidirecionais e associações sem especificação de navegabilidade</q> em uma de suas extremidades. (<a href="http://www.jot.fm/issues/issue_2003_09/article4/">link</a>, Seção 3, quarto parágrafo). Existem ainda dois conceitos frequentemente mencionados quando estudamos associações em UML: composição e agregação. Composição é uma relação na qual a classe de destino <em>não</em> pode existir de forma independente da classe de origem. Por outro lado, quando as duas classes têm ciclos de vida independentes, temos uma relação de agregação. No entanto, na prática, esses conceitos também geram confusão e, por isso, resolvemos não incluí-los na explicação sobre diagramas de classes. A mesma opinião é compartilhada por outros autores. Por exemplo, Fowler afirma que <q>agregação é algo estritamente sem sentido; portanto, eu recomendo que você ignore esse conceito em seus diagramas</q> (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>, página 68).</p>
@@ -234,16 +173,16 @@
 <p></p>
 <p>Existe uma dependência de uma classe A para uma classe B, representada por uma seta com uma linha tracejada de A para B, quando a classe A usa a classe B, porém esse uso não ocorre por meio de associação (isto é, A não tem um atributo do tipo B) ou herança (isto é, A não é uma subclasse de B). Dependências ocorrem, por exemplo, quando um método de A declara um parâmetro ou variável local do tipo B ou quando um método de A lança uma exceção do tipo B. Uma dependência é considerada uma modalidade menos forte de relacionamento entre classes do que relacionamentos que ocorrem por meio de associação e herança.</p>
 <p>Para ilustrar o uso de dependências em diagramas de classes, considere o seguinte trecho de código:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">import</span><span class="im"> java.util.Stack;</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">class</span> MinhaClasse {</span>
-<span id="cb4-4"><a href="#cb4-4"></a>   ...</span>
-<span id="cb4-5"><a href="#cb4-5"></a>   <span class="kw">private</span> <span class="dt">void</span> <span class="fu">metodoX</span>() {</span>
-<span id="cb4-6"><a href="#cb4-6"></a>     <span class="bu">Stack</span> stack = <span class="kw">new</span> <span class="bu">Stack</span>();</span>
-<span id="cb4-7"><a href="#cb4-7"></a>     ...</span>
-<span id="cb4-8"><a href="#cb4-8"></a>   }</span>
-<span id="cb4-9"><a href="#cb4-9"></a>   ...</span>
-<span id="cb4-10"><a href="#cb4-10"></a>}</span></code></pre></div>
+<pre><code>import java.util.Stack;
+
+class MinhaClasse {
+   ...
+   private void metodoX() {
+     Stack stack = new Stack();
+     ...
+   }
+   ...
+}</code></pre>
 <p>Observe que o <code>metodoX</code> de <code>MinhaClasse</code> possui uma variável local do tipo <code>java.util.Stack</code>. Nesse caso, dizemos que existe uma dependência de <code>MinhaClasse</code> para <code>java.util.Stack</code>, a qual é modelada da seguinte forma:</p>
 <p><img src="figs/cap4/class9.svg" style="width:50.0%" /></p>
 <p>Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o tipo da dependência, usando-se palavras como create (para indicar que a classe de origem instancia objetos da classe de destino da dependência) ou call (para indicar que a classe de origem chama métodos da classe de destino). Essas palavras são escritas entre sinais de menor (&lt;&lt;) e maior (&gt;&gt;). No diagrama a seguir, por exemplo, fica claro o tipo de dependência que <code>ShapeFactory</code> estabelece com a classe <code>Shape</code>.</p>
@@ -270,23 +209,23 @@
 <p>Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes <code>a1</code> e <code>b1</code>. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método <code>g</code>. Existem dois motivos para essa omissão: (1) o tipo de retorno é <code>void</code>; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
 <p>No diagrama de sequência mostrado acima representamos apenas dois objetos (<code>a1</code> e <code>b1</code>). Mas um diagrama de sequência pode ter mais objetos. No entanto, esse número não pode crescer tanto, pois o diagrama acaba ficando complexo e de difícil entendimento. Por exemplo, pode não ser possível representá-lo em uma única folha de papel ou em uma tela de computador.</p>
 <p>Um objeto pode ficar ativo e inativo diversas vezes em um mesmo diagrama. Ou seja, ele pode executar um método; ficar inativo; executar um novo método; ficar inativo, etc. Existe ainda um caso especial, quando um objeto chama um método dele mesmo, isto é, quando ele chama um método usando this. Para ilustrar esse caso, suponha o seguinte programa.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">class</span> A {</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a>  <span class="dt">void</span> <span class="fu">g</span>() {</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    ...</span>
-<span id="cb5-5"><a href="#cb5-5"></a>  }   </span>
-<span id="cb5-6"><a href="#cb5-6"></a> </span>
-<span id="cb5-7"><a href="#cb5-7"></a>  <span class="dt">void</span> <span class="fu">f</span>() {</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    ...</span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="fu">g</span>();</span>
-<span id="cb5-10"><a href="#cb5-10"></a>    ...</span>
-<span id="cb5-11"><a href="#cb5-11"></a>  }</span>
-<span id="cb5-12"><a href="#cb5-12"></a></span>
-<span id="cb5-13"><a href="#cb5-13"></a>  <span class="fu">main</span>() {</span>
-<span id="cb5-14"><a href="#cb5-14"></a>    A a = <span class="kw">new</span> <span class="fu">A</span>();</span>
-<span id="cb5-15"><a href="#cb5-15"></a>    a.<span class="fu">f</span>();</span>
-<span id="cb5-16"><a href="#cb5-16"></a>  }</span>
-<span id="cb5-17"><a href="#cb5-17"></a>}</span></code></pre></div>
+<pre><code>class A {
+
+  void g() {
+    ...
+  }   
+ 
+  void f() {
+    ...
+    g();
+    ...
+  }
+
+  main() {
+    A a = new A();
+    a.f();
+  }
+}</code></pre>
 <p>A execução desse programa é representada pelo diagrama de sequência a seguir. Observe como a chamada de <code>g()</code> feita por <code>f()</code> é representada por meio de um novo retângulo, que <q>sai</q> do retângulo que representa a ativação de <code>f()</code>.</p>
 <p><img src="figs/cap4/sequence2.svg" style="width:30.0%" /></p>
 <p>Para concluir, o próximo diagrama mostra um cenário mais real, que ilustra os métodos chamados quando o cliente de uma caixa eletrônico solicita um depósito de certo valor em sua conta.</p>
@@ -348,38 +287,39 @@
 </ul>
 <p>5. Crie diagramas de classes para os seguintes trechos de código:</p>
 <p>(a)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">public</span> <span class="kw">class</span> HelloWorldSwing { </span>
-<span id="cb6-2"><a href="#cb6-2"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
-<span id="cb6-3"><a href="#cb6-3"></a>     <span class="bu">JFrame</span> frame = <span class="kw">new</span> <span class="bu">JFrame</span>(<span class="st">&quot;Hello world!&quot;</span>);</span>
-<span id="cb6-4"><a href="#cb6-4"></a>     frame.<span class="fu">setVisible</span>(<span class="kw">true</span>);</span>
-<span id="cb6-5"><a href="#cb6-5"></a>   }</span>
-<span id="cb6-6"><a href="#cb6-6"></a>}</span></code></pre></div>
+<pre><code>public class HelloWorldSwing { 
+   public static void main(String[] args) {
+     JFrame frame = new JFrame(&quot;Hello world!&quot;);
+     frame.setVisible(true);
+   }
+}</code></pre>
 <p>(b)</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">class</span> HelloWorldSwing <span class="kw">extends</span> <span class="bu">JFrame</span> {</span>
-<span id="cb7-2"><a href="#cb7-2"></a>   <span class="kw">public</span> <span class="fu">HelloWorldSwing</span>() {</span>
-<span id="cb7-3"><a href="#cb7-3"></a>     <span class="kw">super</span>(<span class="st">&quot;Hello world!&quot;</span>);</span>
-<span id="cb7-4"><a href="#cb7-4"></a>   }</span>
-<span id="cb7-5"><a href="#cb7-5"></a>   <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
-<span id="cb7-6"><a href="#cb7-6"></a>     HelloWorldSwing frame = <span class="kw">new</span> <span class="fu">HelloWorldSwing</span>();</span>
-<span id="cb7-7"><a href="#cb7-7"></a>     frame.<span class="fu">setVisible</span>(<span class="kw">true</span>);</span>
-<span id="cb7-8"><a href="#cb7-8"></a>   }</span>
-<span id="cb7-9"><a href="#cb7-9"></a>}</span></code></pre></div>
+<pre><code>class HelloWorldSwing extends JFrame {
+   public HelloWorldSwing() {
+     super(&quot;Hello world!&quot;);
+   }
+   public static void main(String[] args) {
+     HelloWorldSwing frame = new HelloWorldSwing();
+     frame.setVisible(true);
+   }
+}</code></pre>
 <p>6. Mostre o diagrama de sequência relativo ao seguinte código. O diagrama deve começar com a seguinte chamada <em>a</em>.<em>m5()</em>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb8-1"><a href="#cb8-1"></a>A a = <span class="kw">new</span> <span class="fu">A</span>(); <span class="co">// variáveis globais</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a>B b = <span class="kw">new</span> <span class="fu">B</span>();</span>
-<span id="cb8-3"><a href="#cb8-3"></a>C c = <span class="kw">new</span> <span class="fu">C</span>();</span>
-<span id="cb8-4"><a href="#cb8-4"></a></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="kw">class</span> C { </span>
-<span id="cb8-6"><a href="#cb8-6"></a>   <span class="dt">void</span> <span class="fu">m1</span>() { <span class="kw">... </span>} </span>
-<span id="cb8-7"><a href="#cb8-7"></a>}</span>
-<span id="cb8-8"><a href="#cb8-8"></a><span class="kw">class</span> B { </span>
-<span id="cb8-9"><a href="#cb8-9"></a>   <span class="dt">void</span> <span class="fu">m2</span>() { <span class="kw">... </span>c.<span class="fu">m1</span>(); <span class="kw">... this</span>.<span class="fu">m3</span>(); <span class="kw">... </span>}   </span>
-<span id="cb8-10"><a href="#cb8-10"></a>   <span class="dt">void</span> <span class="fu">m3</span>() { <span class="kw">... </span>c.<span class="fu">m1</span>(); <span class="kw">... </span>}</span>
-<span id="cb8-11"><a href="#cb8-11"></a>   <span class="dt">void</span> <span class="fu">m4</span>() { <span class="kw">... </span>}</span>
-<span id="cb8-12"><a href="#cb8-12"></a>}</span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="kw">class</span> A { </span>
-<span id="cb8-14"><a href="#cb8-14"></a>   <span class="dt">void</span> <span class="fu">m5</span>() { <span class="kw">... </span>b.<span class="fu">m2</span>(); <span class="kw">... </span>b.<span class="fu">m3</span>(); <span class="kw">... </span>b.<span class="fu">m4</span>(); <span class="kw">...  </span>}   </span>
-<span id="cb8-15"><a href="#cb8-15"></a>}     </span></code></pre></div>
+<pre><code>A a = new A(); // variáveis globais
+B b = new B();
+C c = new C();
+
+class C { 
+   void m1() { ... } 
+}
+class B { 
+   void m2() { ... c.m1(); ... this.m3(); ... }   
+   void m3() { ... c.m1(); ... }
+   void m4() { ... }
+}
+class A { 
+   void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }   
+}     
+</code></pre>
 <p>7. Em diagramas de atividades, explique a diferença entre um nodo de <em>merge</em> e um nodo de <em>join</em>.</p>
 <p>8. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama de forma a refletir corretamente a intenção do projetista.</p>
 <p><img src="figs/cap4/activity-exercicio.svg" style="width:35.0%" /></p>

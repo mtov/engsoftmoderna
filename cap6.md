@@ -144,7 +144,7 @@ Os demais serão referenciados usando o nome original.
 sistema, três funções `f`, `g` e `h` criam objetos do tipo `TCPChannel` para
 comunicação remota, como mostra o próximo código.
 
-```java
+```
 void f() {
   TCPChannel c = new TCPChannel();  
   ...
@@ -181,7 +181,7 @@ problema vamos adotar um método estático que: (1) apenas cria e retorna
 objetos de uma determinada classe; (2) e também oculta o tipo desses
 objetos por trás de uma interface. Um exemplo é mostrado a seguir:
 
-```java
+```
 class ChannelFactory {
    public static Channel create() { // método fábrica estático
      return new TCPChannel();
@@ -231,7 +231,7 @@ classe abstrata é usada para concentrar vários métodos fábrica. Essa
 classe recebe então o nome de **Fábrica Abstrata**. Um exemplo é
 mostrado a seguir:
 
-```java
+```
 abstract class ProtocolFactory { // Fábrica Abstrata
   abstract Channel createChannel();
   abstract Port createPort();  
@@ -258,7 +258,7 @@ ter duas subclasses: `TCPProtocolFactory` e `UDPProtocolFactory`.
 operações realizadas em um sistema. Um uso dessa classe é mostrado a
 seguir:
 
-```java
+```
 void f() {
   Logger log = new Logger();  
   log.println("Executando f");
@@ -294,7 +294,7 @@ implementar classes que terão, como o próprio nome indica, no máximo uma
 instância. Mostramos a seguir a versão de `Logger` que funciona como um
 Singleton:
 
-```java
+```
 class Logger {
 
   private Logger() {} // proíbe clientes chamar new Logger()
@@ -321,7 +321,7 @@ instância única da classe. Quando precisarmos dessa instância, devemos
 chamar o método público e estático `getInstance()`. Um exemplo é mostrado
 a seguir:
 
-```java
+```
 void f() {
   Logger log = Logger.getInstance();  
   log.println("Executando f");
@@ -388,7 +388,7 @@ está disponível neste
 **Contexto**: Suponha uma classe `BookSearch`, cujo principal método
 pesquisa por um livro, dado o seu ISBN:
 
-```java
+```
 class BookSearch {
   ...
   Book getBook(String ISBN) { ... }
@@ -425,7 +425,7 @@ funcionalidades, sem que ele tome conhecimento disso. No nosso caso, o
 objeto base é do tipo `BookSearch`; a funcionalidade que pretendemos
 agregar é um cache; e o proxy é um objeto da seguinte classe:
 
-```java
+```
 class BookSearchProxy implements BookSearchInterface {
 
   private BookSearchInterface base;
@@ -456,7 +456,7 @@ lançando mão do Princípio "Prefira Interfaces a Classes".
 
 O próximo código ilustra a instanciação do proxy. Primeiro, mostramos o código antes do proxy. Nesse código (a seguir), um objeto `BookSearch` é criado no programa principal e depois passado como parâmetro de qualquer classe ou função que precise do serviço de pesquisa de livros, como a classe `View`.
 
-```java
+```
 void main() {
   BookSearch bs = new BookSearch();
   ...
@@ -467,7 +467,7 @@ void main() {
 
 Com a decisão de usar um proxy, vamos ter que modificar esse código para instanciar o proxy (código a seguir). Além disso, `View` passou a receber como parâmetro de sua construtora uma referência para o proxy, em vez de uma referência para o objeto base.
 
-```java
+```
 void main() {
   BookSearch bs = new BookSearch();
   BookSearchProxy pbs;
@@ -513,7 +513,7 @@ implementar outros requisitos não-funcionais. Alguns exemplos incluem:
 multimídia. Para isso ele deve instanciar objetos de classes fornecidas
 pelos fabricantes de cada projetor, como ilustrado a seguir:
 
-```java
+```
 class ProjetorLG {
   public void turnOn() { ... }
   ...
@@ -540,7 +540,7 @@ usar uma interface única para ligar os projetores, independentemente de
 marca. O próximo código mostra essa interface e uma classe cliente do
 sistema:
 
-```java
+```
 interface Projetor {
 
   void liga() { ... }
@@ -572,7 +572,7 @@ públicos) das classes implementadas pelos fabricantes dos projetores.
 
 Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, é o seguinte:
 
-```java
+```
 class AdaptadorProjetorSamsung implements Projetor {
 
    private ProjetorSamsung projetor;
@@ -616,7 +616,7 @@ real, imagine que X é uma linguagem para consulta a dados, semelhante a
 SQL. Para executar programas X, a partir de Java, os seguintes passos
 são necessários:
 
-```java
+```
 Scanner s = new Scanner("prog1.x");
 Parser p = new Parser(s);
 AST ast = p.parse();
@@ -641,7 +641,7 @@ No nosso problema, a Fachada poderia ser:
 
 \newpage
 
-```java
+```
 class InterpretadorX {
 
   private String arq;
@@ -663,7 +663,7 @@ class InterpretadorX {
 Assim, os desenvolvedores que precisam executar programas X, a partir de
 Java, poderão fazê-lo por meio de uma única linha de código:
 
-```java
+```
  new InterpretadorX("prog1.x").eval();
 ```
 
@@ -679,7 +679,7 @@ basta criar um único objeto e chamar `eval`.
 explicar o Padrão Fábrica. Suponha que as classes `TCPChannel` e
 `UDPChannel` implementam uma interface `Channel`:
 
-```java
+```
 interface Channel {
    void send(String msg);
    String receive();
@@ -745,7 +745,7 @@ Herança", que estudamos no capítulo anterior.
 No nosso problema, ao optarmos por decoradores, o cliente poderá
 configurar um `Channel` da seguinte forma:
 
-```java
+```
 channel = new ZipChannel(new TCPChannel());
 // TCPChannel que compacte/descompacte dados enviados/recebidos
 
@@ -771,7 +771,7 @@ ditos, como `ZipChannel` e `BufferChannel`. Primeiro, elas são subclasses da
 seguinte classe que não aparece no exemplo, mas que é fundamental para o
 funcionamento do padrão Decorador:
 
-```java
+```
 class ChannelDecorator implements Channel {
 
   protected Channel channel;
@@ -809,7 +809,7 @@ Por fim, chegamos aos decoradores reais. Eles são subclasses de
 `ChannelDecorator`, como no código a seguir, que implementa um decorador
 que compacta e descompacta as mensagens trafegadas pelo canal:
 
-```java
+```
 class ZipChannel extends ChannelDecorator {
 
    public ZipChannel(Channel c) {
@@ -833,7 +833,7 @@ class ZipChannel extends ChannelDecorator {
 Para entender o funcionamento de `ZipChannel`, suponha o seguinte código
 cliente:
 
-```java
+```
 Channel c = new ZipChannel(new TCPChannel());
 c.send("Hello, world")
 ```
@@ -865,7 +865,7 @@ está disponível neste
 **Contexto**: Suponha que estamos implementando um pacote de estruturas
 de dados, com a seguinte classe lista:
 
-```java
+```
 class MyList {
 
   ... // dados de uma lista
@@ -901,7 +901,7 @@ apenas um deles no corpo da classe, como ocorre na primeira versão de
 Mostra-se a seguir o novo código de `MyList`, usando o Padrão Strategy
 para configuração do algoritmo de ordenação:
 
-```java
+```
 class MyList {
 
   ... // dados de uma lista
@@ -935,7 +935,7 @@ Para encerrar a apresentação do padrão, mostramos o código das classes
 que implementam as estratégias — isto é, os algoritmos — de
 ordenação:
 
-```java
+```
 abstract class SortStrategy {
   abstract void sort(MyList list);
 }
@@ -982,7 +982,7 @@ notificados.
 Primeiro, vamos mostrar um possível programa principal para o nosso
 problema:
 
-```java
+```
 void main() {
   Temperatura t = new Temperatura();
   t.addObserver(new TermometroCelsius());
@@ -1001,7 +1001,7 @@ As classes `Temperatura` e `TermometroCelsius` são mostradas a seguir:
 
 \newpage 
 
-```java
+```
 class Temperatura extends Subject {
 
   private double temp;
@@ -1102,7 +1102,7 @@ implementada na classe base.
 Um exemplo de Template Method para o nosso contexto e problema é
 mostrado a seguir:
 
-```java
+```
 abstract class Funcionario {
 
    double salario;
@@ -1176,7 +1176,7 @@ No entanto, o objetivo é implementar essas operações fora das classes de
 
 \newpage
 
-```java
+```
 interface Visitor {
    void visit(Carro c);
    void visit(Onibus o);
@@ -1195,7 +1195,7 @@ de um `Carro`, `Onibus` e `Motocicleta`. Uma vez implementada essa classe,
 gostaríamos de usar o seguinte código para "visitar" todos os veículos
 do estacionamento::
 
-```java
+```
 PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
    visitor.visit(veiculo); // erro de compilação
@@ -1257,7 +1257,7 @@ alvo da chamada (`v`). Porém, isso não é um problema, pois significa que
 temos um caso de *single dispatch*, que é permitido em linguagens como
 Java.
 
-```java
+```
 abstract class Veiculo {
   abstract public void accept(Visitor v);
 }
@@ -1283,7 +1283,7 @@ Por último, temos que modificar o laço que percorre a lista de veículos
 estacionados. Agora, chamaremos os métodos `accept` de cada veículo,
 passando o visitor como parâmetro.
 
-```java
+```
 PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
   veiculo.accept(visitor);
@@ -1318,7 +1318,7 @@ caminhar sobre uma estrutura de dados. Normalmente, essa interface
 inclui métodos como `hasNext()` e `next()`, como mostrado no seguinte
 exemplo:
 
-```java
+```
 List<String> list = Arrays.asList("a","b","c");
 Iterator it = list.iterator();
 while(it.hasNext()) {
@@ -1344,7 +1344,7 @@ podemos delegar o processo de inicialização dos campos de um objeto para
 uma classe `Builder`. Um exemplo é mostrado a seguir, para uma classe
 `Livro`.
 
-```java
+```
 Livro esm = new Livro.Builder().
                   setNome("Engenharia Soft Moderna").
                   setEditora("UFMG").setAno(2020).build();
@@ -1441,7 +1441,7 @@ Ousterhout ilustra seu argumento citando o emprego de decoradores
 durante a abertura de arquivos em Java, como mostrado no seguinte trecho
 de código:
 
-```java
+```
 FileInputStream fs = new FileInputStream(fileName);
 BufferedInputStream bs = new BufferedInputStream(fs);
 ObjectInputStream os = new ObjectInputStream(bs);
@@ -1565,7 +1565,7 @@ de `LogChannel`.
 
 9\. Dado o código abaixo de uma classe `Subject` (do padrão Observador):
 
-```java
+```
 interface Observer {
   public void update(Subject s);
 }
@@ -1590,7 +1590,7 @@ Implemente o código de `notifyObservers`, comentado com um (A) acima.
 10\. Suponha o exemplo de Visitor que usamos na Seção 6.11.
 Especificamente, suponha o seguinte código, mostrado no final da seção.
 
-```java
+```
 PrintVisitor visitor = new PrintVisitor();
 
 foreach(Veiculo veiculo: listaDeVeiculosEstacionados) {

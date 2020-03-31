@@ -177,7 +177,7 @@ pretende-se testar.
 
 Para explicar os conceitos de testes de unidade, vamos usar a seguinte classe `Stack`:
 
-```java
+```
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
@@ -223,7 +223,7 @@ que deverão ser executados durante um teste.
 
 Mostramos a seguir nosso primeiro teste de unidade:
 
-```java
+```
 import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
@@ -300,7 +300,7 @@ pela falha encontra-se na linha 19 do arquivo `StackTest.java`.
 
 Para concluir, vamos mostrar o código completo do teste de unidade:
 
-```java
+```
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.assertTrue;
@@ -372,7 +372,7 @@ Para ficar um pouco mais claro, mostramos a seguir o algoritmo usado
 pelo JUnit para executar os testes de um programa:
 
 
-```java
+```
 para cada classe de teste TC
   para cada método m de TC com anotação @Test
     o = new TC();       // instancia objeto de teste
@@ -597,7 +597,7 @@ não-determinísticos são chamados de **Testes Flaky** (ou **Testes
 Erráticos**). Concorrência é uma das principais responsáveis por
 comportamento flaky. Um exemplo é mostrado a seguir:
 
-```java
+```
 @Test
 public void exemploTesteFlaky {
   TaskResult resultado;
@@ -693,7 +693,7 @@ recomendam que deve existir no máximo um `assert`
 por teste. Ou seja,
 eles recomendam escrever um código como o seguinte.
 
-```java
+```
 @Test
 public void testEmptyStack() {
   assertTrue(stack.isEmpty());
@@ -709,7 +709,7 @@ public void testNotEmptyStack() {
 Em outras palavras, *não* se recomenda usar dois comandos `assert` no mesmo método, como no código a seguir:
 \newpage
 
-```java
+```
 @Test
 public void testEmptyStack() {
   assertTrue(stack.isEmpty());
@@ -732,7 +732,7 @@ título, autor, ano e editora. Nesse caso, justifica-se ter quatro
 comandos `assert` no mesmo teste, cada um verificando um dos campos do
 objeto retornado pela função, como mostra o seguinte código.
 
-```java
+```
 @Test
 public void testBookService() {
   BookService bs = new BookService();
@@ -749,7 +749,7 @@ testado por meio de um único `assert`. Para ilustrar, mostramos o teste da
 função `repeat` da classe `Strings` da biblioteca `google/guava`
 ([link](https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/base/StringsTest.java)):
 
-```java
+```
 @Test
 public void testRepeat() {
   String input = "20";
@@ -882,7 +882,7 @@ branches são também chamadas de **Cobertura C0** e **Cobertura C1**,
 respectivamente. Para ilustrar a diferença entre ambas vamos usar a
 seguinte classe (primeiro código) e seu teste de unidade (segundo código):
 
-```java
+```
 public class Math {
 
   public int abs(int x) {
@@ -895,7 +895,7 @@ public class Math {
 }
 ```
 
-```java
+```
 public class MathTest {
 
   @Test
@@ -945,7 +945,7 @@ simples, consistindo na seguinte fórmula: `peso / (altura * altura)`. Mas
 tente imaginar que essa lógica poderia ser mais complexa e que, mesmo
 assim, a solução que vamos apresentar continuaria válida.
 
-```java
+```
 public class IMCServlet extends HttpServtet {
 
   public void doGet(HttpServletRequest req, 
@@ -987,7 +987,7 @@ não vamos testar o código completo. Porém, é melhor testar a parte de
 domínio do sistema do que deixar o código inteiramente descoberto de
 testes.
 
-```java
+```
 class IMCModel{
   public double calculaIMC(String p1, String a1) 
                 throws NumberFormatException {
@@ -1030,7 +1030,7 @@ computado por uma thread independente. O exemplo que mostramos na Seção
 8.3 usava um sleep para esperar o resultado ficar disponível. Porém, o
 uso desse comando torna o teste não-determinístico.
 
-```java
+```
 public class MyMath {
 
   public void asyncPI(int prec, TaskResult task) { 
@@ -1053,7 +1053,7 @@ observação que fizemos antes: é melhor extrair uma função
 que seja fácil de ser testada, do que deixar o código sem
 testes.
 
-```java
+```
 public class MyMath {
   public double syncPI(int prec) {
     double pi = "calcula PI com precisão prec"
@@ -1111,7 +1111,7 @@ um pouco mais, o exemplo considera que `Book` possui um único campo,
 relativo ao seu título. Em um programa real, `Book` teria outros campos,
 que também seriam tratados em `getBook`.
 
-```java
+```
 import org.json.JSONObject;
 
 public class BookSearch {
@@ -1157,7 +1157,7 @@ mock deve implementar a interface `BookService` e, portanto, o método
 os títulos de alguns livros, sem acessar servidores remotos ou bancos de
 dados. Um exemplo é mostrado a seguir:
 
-```java
+```
 import static org.junit.Assert.*;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -1241,7 +1241,7 @@ anterior, mas com um mock instanciado por um framework chamado
 **mockito** ([link](https://site.mockito.org/)), muito
 usado quando se escreve testes de unidade em Java que requerem mocks.
 
-```java
+```
 import org.junit.*;
 import static org.junit.Assert.*;
 import org.mockito.Mockito;
@@ -1321,7 +1321,7 @@ Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
 verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte
 teste:
 
-```java
+```
 testBehaviour {
   Mailer m = mock(Mailer.class);
   sut.someBusinessLogic(m);
@@ -1366,7 +1366,7 @@ que precisamos no teste.
 Primeiro, vamos reapresentar o código da servlet que queremos testar:
 
 
-```java
+```
 public class IMCServlet extends HttpServlet {
 
   IMCModel model = new IMCModel();
@@ -1401,7 +1401,7 @@ deve retornar o objeto `PrintWriter` que acabamos de criar. Em resumo,
 fizemos tudo isso com o objetivo de alterar a saída da servlet para uma
 lista de strings.
 
-```java
+```
 public class IMCServletTest {
 
   HttpServletRequest req;
@@ -1422,7 +1422,7 @@ public class IMCServletTest {
 
 Para concluir, temos o método de teste, mostrado a seguir. 
 
-```java
+```
   // continuação de IMCServletTest
   @Test
   public void testDoGet() {
@@ -1561,7 +1561,7 @@ desses métodos usando TDD.
 `add` e um método `getTotal`. Além de decidir o nome de tais métodos,
 definimos os seus parâmetros e escrevemos o primeiro teste:
 
-```java
+```
 @Test
 void testAddGetTotal() {
   Book b1 = new Book("book1", 10, "1");
@@ -1577,7 +1577,7 @@ Apesar de simples e de fácil entendimento, esse teste ainda não compila,
 pois não existe implementação para as classes `Book` e `ShoppingCart`.
 Então, temos que providenciar isso, como mostrado a seguir:
 
-```java
+```
 public class Book {
   public String title;
   public double price;
@@ -1614,7 +1614,7 @@ chegamos ao estado vermelho.
 é, ele define o que temos que implementar em `ShoppingCart`. Logo, mãos à
 obra:
 
-```java
+```
 public class ShoppingCart {
   public ShoppingCart() {}
   public void add(Book b) {}
@@ -1635,7 +1635,7 @@ esses avanços são chamados de **baby steps**.
 Mas temos que prosseguir e dar uma implementação mais realista para
 `ShoppingCart`. Segue então ela:
 
-```java
+```
 public class ShoppingCart {
 
   private ArrayList<Book> items;
@@ -1708,7 +1708,7 @@ compromissos, conforme ilustrado na próxima figura.
 Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
 
-```java
+```
 public class AgendaFacade {
   public AgendaFacade(DB db);
   int addAppointment(Appointment p);
@@ -1718,7 +1718,7 @@ public class AgendaFacade {
 ```
 Assim, podemos escrever o seguinte teste de integração para essa classe:
 
-```java
+```
 @Test
 void AgendaFacadeTest() {
   DB db = DB.create();
@@ -1772,7 +1772,7 @@ Firefox fazendo uma pesquisa no Google pela palavra "software". O
 código também imprime na console o título da página que lista os
 resultados da pesquisa.
 
-```java
+```
 public class SeleniumExample {
 
   public static void main(String[] args) {
@@ -2035,7 +2035,7 @@ de Fibonacci, isto é, `fib(0) = 0`, `fib(1) = 1`, `fib(2) = 1`, `fib(3) = 2`,
 exceção `EmptyStackException`, para que ele fique mais simples e fácil de
 entender.
 
-```java
+```
 @Test
 public void testEmptyStackException() {
   boolean sucesso = false;
@@ -2060,7 +2060,7 @@ sintaxe e os comandos do JUnit. Observação: se quiser executar o código,
 ele está disponível neste
 [link](https://gist.github.com/mtov/11d9dce2bd37fe462003992835ebb1ba).
 
-```java
+```
 import java.util.List;
 import java.util.ArrayList;
 
@@ -2124,7 +2124,7 @@ public class Main{
 6\. Seja a seguinte função. Observe que ela possui quatro comandos,
 sendo dois deles `if`. Logo, esses dois `ifs` geram quatro branches:
 
-```java
+```
 void f(int x, int y) {
   if (x > 0) {
      x = 2 * x;
@@ -2152,7 +2152,7 @@ disciplina se tiverem nota maior ou igual a 90. Seja então a seguinte função
 que implementa esse requisito:
 
 
-```java
+```
 boolean isConceitoA(int nota) {
   if (nota > 90)
     return true;
@@ -2178,7 +2178,7 @@ Responda agora às seguintes perguntas.
 
 8\. Complete os comandos `assert` nos trechos indicados.
 
-```java
+```
 public void test1() {
    LinkedList list = mock(LinkedList.class);
    when(list.size()).thenReturn(10);
