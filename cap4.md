@@ -914,7 +914,7 @@ UML.Veja que as classes são grafadas em uma fonte diferente.
 4\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
 classes para representar as seguintes classes e associações:
 
--   Uma revista científica possui título, INSS e periodicidade;
+-   Uma revista científica possui título, ISSN e periodicidade;
 
 -   Essa revista publica diversas edições com os seguintes atributos:
     número da edição, volume da edição e data da edição. Importante
