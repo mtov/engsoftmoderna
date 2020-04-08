@@ -523,7 +523,7 @@ class C2 implements I {
 <p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto onde eles são armazenado em um Vector. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um <code>List</code>; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
 <p>Antes de concluir, gostaríamos de mencionar três pontos suplementares ao que discutimos sobre <q>Prefira Composição a Herança</q>:</p>
 <ul>
-<li><p>Herança é classificada como um mecanismo de <strong>reuso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base.   Por outro lado, composição é um mecanismo de <strong>reuso caixa-preta</strong>.</p></li>
+<li><p>Herança é classificada como um mecanismo de <strong>reúso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base.   Por outro lado, composição é um mecanismo de <strong>reúso caixa-preta</strong>.</p></li>
 <li><p>Um padrão de projeto que ajuda a substituir uma solução baseada em herança por uma solução baseada em composição é o Padrão Decorador, que vamos estudar no próximo capítulo.</p></li>
 <li><p>Por conta dos problemas discutidos nesta seção,   linguagens de programação mais recentes — como Go e Rust — não incluem suporte a herança.</p></li>
 </ul>

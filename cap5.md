@@ -1246,13 +1246,13 @@ Antes de concluir, gostaríamos de mencionar três pontos suplementares ao
 que discutimos sobre "Prefira Composição a Herança":
 
 
--   Herança é classificada como um mecanismo de **reuso caixa-branca**,
+-   Herança é classificada como um mecanismo de **reúso caixa-branca**,
     pois as subclasses costumam ter acesso a detalhes de implementação
     da classe base. 
     \index{Reuso!Caixa-Preta}
     \index{Reuso!Caixa-Branca}
     Por outro lado, composição é um mecanismo de
-    **reuso caixa-preta**.
+    **reúso caixa-preta**.
 
 -   Um padrão de projeto que ajuda a substituir uma solução baseada em
     herança por uma solução baseada em composição é o Padrão
