@@ -582,7 +582,7 @@ class AdaptadorProjetorSamsung implements Projetor {
    }
 
    public void liga() {
-     projetor.turnOn();
+     projetor.enable(0);
    }
 
 }
