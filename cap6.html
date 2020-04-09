@@ -261,16 +261,16 @@ void h() {
 <h2 data-number="1.5" id="adaptador" data-number="1.5"><span class="header-section-number">6.5</span> Adaptador</h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha um sistema que tenha que controlar projetores multimídia. Para isso ele deve instanciar objetos de classes fornecidas pelos fabricantes de cada projetor, como ilustrado a seguir:</p>
-<pre><code>class ProjetorLG {
+<pre><code>class ProjetorSamsung {
   public void turnOn() { ... }
   ...
 }
 
-class ProjetorSamsung {
+class ProjetorLG {
   public void enable(int timer) { ... }
   ...
 }</code></pre>
-<p>Para simplificar, estamos mostrando apenas duas classes. Porém, um cenário real pode envolver classes de outros fabricantes de projetores. Também estamos mostrando apenas um método de cada classe, mas elas podem conter outros métodos. Particularmente, o método mostrado é responsável por ligar o projetor. No caso dos projetores da LG, esse método não possui parâmetros. No caso dos projetores da Samsung podemos passar um intervalo em minutos para ligação do projetor. Se esse parâmetro for igual a zero, o projetor é ligado imediatamente. Veja ainda que o nome dos métodos é diferente nas duas classes.</p>
+<p>Para simplificar, estamos mostrando apenas duas classes. Porém, um cenário real pode envolver classes de outros fabricantes de projetores. Também estamos mostrando apenas um método de cada classe, mas elas podem conter outros métodos. Particularmente, o método mostrado é responsável por ligar o projetor. No caso dos projetores da Samsung, esse método não possui parâmetros. No caso dos projetores da LG podemos passar um intervalo em minutos para ligação do projetor. Se esse parâmetro for igual a zero, o projetor é ligado imediatamente. Veja ainda que o nome dos métodos é diferente nas duas classes.</p>
 <p><strong>Problema</strong>: No sistema de controle de projetores multimídia, queremos usar uma interface única para ligar os projetores, independentemente de marca. O próximo código mostra essa interface e uma classe cliente do sistema:</p>
 <pre><code>interface Projetor {
 
@@ -297,11 +297,11 @@ class SistemaControleProjetores {
    }
 
    public void liga() {
-     projetor.enable(0);
+     projetor.turnOn();
    }
 
 }</code></pre>
-<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; no caso, um objeto que acessa projetores Samsung.</p>
+<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; isto é, um objeto que acessa projetores Samsung.</p>
 <figure>
 <img src="figs/cap6/padrao-adapter.svg" style="width:70.0%" alt="" /><figcaption>Padrão de projeto Adaptador</figcaption>
 </figure>

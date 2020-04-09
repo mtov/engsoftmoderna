@@ -514,12 +514,12 @@ multimídia. Para isso ele deve instanciar objetos de classes fornecidas
 pelos fabricantes de cada projetor, como ilustrado a seguir:
 
 ```
-class ProjetorLG {
+class ProjetorSamsung {
   public void turnOn() { ... }
   ...
 }
 
-class ProjetorSamsung {
+class ProjetorLG {
   public void enable(int timer) { ... }
   ...
 }
@@ -529,8 +529,8 @@ Para simplificar, estamos mostrando apenas duas classes. Porém, um
 cenário real pode envolver classes de outros fabricantes de projetores.
 Também estamos mostrando apenas um método de cada classe, mas elas podem
 conter outros métodos. Particularmente, o método mostrado é responsável
-por ligar o projetor. No caso dos projetores da LG, esse método não
-possui parâmetros. No caso dos projetores da Samsung podemos passar um
+por ligar o projetor. No caso dos projetores da Samsung, esse método não
+possui parâmetros. No caso dos projetores da LG podemos passar um
 intervalo em minutos para ligação do projetor. Se esse parâmetro for
 igual a zero, o projetor é ligado imediatamente. Veja ainda que o nome
 dos métodos é diferente nas duas classes.
@@ -582,7 +582,7 @@ class AdaptadorProjetorSamsung implements Projetor {
    }
 
    public void liga() {
-     projetor.enable(0);
+     projetor.turnOn();
    }
 
 }
@@ -597,7 +597,7 @@ também pelo diagrama de sequência UML, mostrado na próxima página): primeiro
 — no nosso caso, representado pelo método `init` — chama `liga()` da
 classe adaptadora; em seguida, a execução desse método chama o método
 equivalente — no caso, `turnOn()` — do objeto que está sendo
-"adaptado"; no caso, um objeto que acessa projetores Samsung.
+"adaptado"; isto é, um objeto que acessa projetores Samsung.
 
 ![Padrão de projeto Adaptador](figs/cap6/padrao-adapter){width=70%}
 
