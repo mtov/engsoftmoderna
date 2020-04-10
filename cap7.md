@@ -1098,7 +1098,7 @@ Vol. 4, John Wiley & Sons, 2007.
 
 5\. Explique o que significa desacoplamento no espaço e desacoplamento
     no tempo. Por que arquiteturas baseadas em filas de mensagens e
-    arquiteturas Publish/Subscribe oferecem essa forma de
+    arquiteturas Publish/Subscribe oferecem essas formas de
     desacoplamento?
 
 6\. Quando uma empresa deve considerar o uso de uma arquitetura baseada

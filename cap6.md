@@ -1598,8 +1598,8 @@ foreach(Veiculo veiculo: listaDeVeiculosEstacionados) {
 }
 ```
 
-Suponha que `listaDeVeiculosEstacionados` armazene quatro objetos:
-`umCarro`, `umOnibus`, `umOutroCarro` e `umOutroOnibus`. Desenhe um diagrama de
+Suponha que `listaDeVeiculosEstacionados` armazene três objetos:
+`umCarro`, `umOnibus` e `umOutroCarro`. Desenhe um diagrama de
 sequência UML que mostre os métodos executados por esse trecho de código
 (suponha que ele é executado por um objeto `main`).
 
@@ -1607,7 +1607,7 @@ sequência UML que mostre os métodos executados por esse trecho de código
 chamamos de paternite, você fez a união das classes `FileInputStream` e
 `BufferedInputStream` em uma única classe. Como discutimos na Seção 6.13,
 o mecanismo de buffer será ativado por *default* na classe que você criou.
-Porém, como você tornaria possível ativar buffers na nova classe, caso
+Porém, como você tornaria possível desativar buffers nessa nova classe, caso
 isso fosse necessário?
 
 \index{Padrões de Projeto!Null Object}
