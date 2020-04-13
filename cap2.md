@@ -1925,7 +1925,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
 
-![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=85%}
+![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=75%}
 
 
 UP propõe que o desenvolvimento seja decomposto nas
@@ -1971,7 +1971,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=80%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=65%}
 
 ## Bibliografia {.unnumbered}
 

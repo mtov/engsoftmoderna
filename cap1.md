@@ -81,7 +81,7 @@ Conferência da OTAN é considerada o marco histórico de criação da área
 de Engenharia de Software.
 
 ![Cientistas na conferência da OTAN de 1968 sobre Engenharia de Software.
-Reprodução gentilmente autorizada pelo Prof. Robert McClure.](figs/cap1/otan.jpg){width=55%}
+Reprodução gentilmente autorizada pelo Prof. Robert McClure.](figs/cap1/otan.jpg){width=45%}
 
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
 ilustra os desafios que esperavam a recém criada área de pesquisa:

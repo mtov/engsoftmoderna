@@ -389,7 +389,7 @@ na sua implementação. A chamada de um `pop()` em uma pilha vazia
 terminaria a execução do método com uma exceção `EmptyStackException`. Ou
 seja, o `assert` não seria executado. Por isso, a anotação `@Test` tem um
 atributo especial que serve para especificar a exceção que deve ser
-levantada pelo método de teste. Em resumo, `testEmptyException` vai passar
+levantada pelo método de teste. Em resumo, `testEmptyStackException` vai passar
 se a sua execução levantar uma `EmptyStackException`. Caso contrário, ele
 vai falhar.
 
@@ -739,8 +739,8 @@ public void testBookService() {
   Book b = bs.getBook(1234);
   assertEquals("Engenharia Software Moderna", b.getTitle());
   assertEquals("Marco Tulio Valente", b.getAuthor());
-  assertEquals("2020", g.getYear());
-  assertEquals("ASERG/DCC/UFMG", g.getPublisher());
+  assertEquals("2020", b.getYear());
+  assertEquals("ASERG/DCC/UFMG", b.getPublisher());
 }
 ```
 

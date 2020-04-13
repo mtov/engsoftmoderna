@@ -16,8 +16,9 @@ number-sections: true
 variables:
   documentclass: book
   fontsize: 11pt
-  classoption: oneside
+  classoption: twoside
   colorlinks: true
   linkcolor: blue
   urlcolor: blue
+  links-as-notes: true
 
