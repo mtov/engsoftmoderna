@@ -22,10 +22,10 @@ principalmente o Processo Unificado.
 ## Importância de Processos
 
 A produção de um carro em uma fábrica de automóveis segue um processo
-bem definido. Sem estender muito a explicação, primeiro, as chapas de
+bem definido. Sem estender a explicação, primeiro, as chapas de
 aço são cortadas e prensadas, para ganhar a forma de portas, tetos e
 capôs. Depois, o carro é pintado e instalam-se painel, bancos, cintos de
-segurança e toda a fiação. Por fim, instala-se a parte mecânica,
+segurança e a fiação. Por fim, instala-se a parte mecânica,
 incluindo motor, suspensão e freios.
 
 Assim como carros, software também é produzido de acordo com um
@@ -72,7 +72,7 @@ fim, processos são importantes não apenas para a empresa, mas também
 para os desenvolvedores, pois permitem que eles tomem consciência das
 tarefas e resultados que se esperam deles. Sem um processo, os
 desenvolvedores podem se sentir perdidos, trabalhando de forma errática
-e sem alinhamento com os demais membros do time de desenvolvimento.
+e sem alinhamento com os demais membros do time.
 
 Neste capítulo, vamos estudar alguns processos de Software. Na verdade,
 no Capítulo 1 já comentamos sobre Processos Waterfall e Ágeis. Na
@@ -91,7 +91,7 @@ No entanto, após cerca de uma década, começou-se a perceber que software
 clara devido aos problemas frequentes enfrentados por projetos de
 software nas décadas de 70 a 90. Por exemplo, os cronogramas e
 orçamentos desses projetos não eram obedecidos. Não raro, projetos
-inteiros eram cancelados, após um ou mais anos de trabalho, sem entregar
+inteiros eram cancelados, após anos de trabalho, sem entregar
 um sistema funcional para os clientes.
 
 \index{CHAOS Report}
@@ -120,22 +120,22 @@ produtos tradicionais de Engenharia. Por isso, software também demanda
 um processo de desenvolvimento diferente.
 
 Por exemplo, os requisitos de um software mudam com frequência, mais do
-que os requisitos de um computador (hardware), de um avião ou de uma
+que os requisitos de um computador, de um avião ou de uma
 ponte. Além disso, os clientes frequentemente não têm uma ideia precisa
 do que querem. Ou seja, corre-se o risco de projetar por anos um produto
 que depois de pronto não será mais necessário, ou porque o mundo mudou
 ou porque os planos e as necessidades dos clientes mudaram. Eles
-diagnosticaram ainda problemas referentes aos documentos prescritos por
-processos do tipo Waterfall, incluindo documentos de requisitos,
+diagnosticaram ainda problemas nos documentos prescritos por
+processos Waterfall, incluindo documentos de requisitos,
 fluxogramas, diagramas, etc. Esses documentos eram detalhados, pesados e
-extensos; assim, rapidamente se tornavam obsoletos, pois quando os
+extensos. Assim, rapidamente se tornavam obsoletos, pois quando os
 requisitos mudavam os desenvolvedores não propagavam as alterações para
-a documentação, mas apenas para o código fonte.
+a documentação, mas apenas para o código.
 
 Então eles decidiram lançar as bases para um novo conceito de processo
 de software, as quais foram registradas em um documento que chamaram de
 **Manifesto Ágil**. Por ser curto, iremos reproduzir o texto do
-manifesto a seguir:
+manifesto:
 
 > Por meio desse trabalho, passamos a valorizar:
 >
@@ -345,16 +345,16 @@ práticas. Os princípios — que descreveremos agora — fazem o
 papel de uma ponte ligando esses dois lados. Alguns dos principais
 princípios de XP são os seguintes:
 
-**Humanidade** ("humanity", em inglês). Software é uma atividade
+**Humanidade** (*humanity*, em inglês). Software é uma atividade
 intensiva no uso de capital humano. O principal recurso de uma empresa
 de software não são seus bens físicos — computadores, prédios,
 móveis ou conexões de Internet, por exemplo — mas sim seus
-colaboradores. Um termo que reflete bem esse princípio é *peopleware,* o
-qual foi cunhado por Tom DeMarco, em um livro com o mesmo título
+colaboradores. Um termo que reflete bem esse princípio é *peopleware,* 
+que foi cunhado por Tom DeMarco, em um livro com o mesmo título
 ([link](https://dl.acm.org/citation.cfm?id=2505459)). A
 ideia é que a gestão de pessoas — incluindo fatores como
-expectativas, crescimento, motivação, transparência, responsabilidade,
-etc — é um princípio chave para o sucesso de projetos de software.
+expectativas, crescimento, motivação, transparência e 
+responsabilidade — é fundamental para o sucesso de projetos de software.
 
 **Economicidade** (*economics*, em inglês). Se por um lado, *peopleware*
 é fundamental, por outro lado software é uma atividade cara, que demanda
@@ -402,7 +402,7 @@ plenamente atendidos, como desempenho, usabilidade, privacidade,
 disponibilidade, etc. Evidentemente, XP não advoga que essas falhas
 devem ser acobertadas. Porém, elas não devem ser usadas para punir
 membros de um time. Pelo contrário, falhas fazem parte do jogo, se um
-time pretende avançar, inovar e entregar software com rapidez.
+time pretende entregar software com rapidez.
 
 \index{Baby Steps}
 **Baby Steps**. É melhor um progresso seguro, testado e validado, mesmo
@@ -463,14 +463,15 @@ representante dos clientes define o que ele deseja que o sistema faça,
 usando sua própria linguagem.
 
 Iremos aprofundar o estudo sobre histórias de usuários no Capítulo 3. Mas, por enquanto, gostaríamos de adiantar que as histórias são escritas em cartões de papel, normalmente a mão. Ou seja, em vez de documentos de requisitos detalhados, histórias são documentos simples, que focam nas funcionalidades do sistema, sempre na visão de seus usuários. 
-
-Como exemplo, mostramos a seguir uma história de um sistema de perguntas e respostas — semelhante ao famoso Stack Overflow ([link](https://stackoverflow.com)) — que usaremos neste capítulo para explicar XP. Observe que a história tem um título (Postar Pergunta) e uma breve descrição, que não ocupa mais do que duas ou três sentenças. Costuma-se dizer que histórias são um lembrete para que depois esse requisito seja verbalmente detalhado pelo representante dos clientes.
+Como exemplo, mostramos a seguir uma história de um sistema de perguntas e respostas — semelhante ao famoso Stack Overflow — que usaremos neste capítulo para explicar XP. 
 
 --------------------------------------------------------------  
 **Postar Pergunta**
 
 *Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
 --------------------------------------------------------------  
+
+Observe que a história tem um título (Postar Pergunta) e uma breve descrição, que não ocupa mais do que duas ou três sentenças. Costuma-se dizer que histórias são um lembrete para que depois esse requisito seja verbalmente detalhado pelo representante dos clientes.
 
 Depois de escritas pelo representante dos clientes, as histórias
 são estimadas pelos desenvolvedores. Ou seja, são os desenvolvedores que
@@ -486,7 +487,7 @@ de story points. O objetivo é definir uma ordem relativa entre as
 histórias. As histórias mais simples são estimadas como tendo tamanho
 igual a 1 story point; histórias que são cerca de duas vezes mais
 complexas do que as primeiras são estimadas como tendo 2 story points e
-assim por diante. Muitas vezes, usa-se também uma sequência de Fibonacci
+assim por diante. Muitas vezes, usa-se uma sequência de Fibonacci
 para definir a escala de possíveis story points, como em 1, 2, 3, 5, 8,
 13 story points. Nesse caso, o objetivo é criar uma escala que torne as
 tarefas progressivamente mais difíceis e, ao mesmo tempo, permita ao
@@ -494,8 +495,7 @@ time realizar comparações similares à seguinte: será que o esforço para
 implementar essa tarefa que planejamos estimar com 8 story points é
 equivalente ao esforço de implementar uma tarefa na escala anterior (5
 story points) e mais uma tarefa na próxima escala inferior (3 pontos)?
-Se isso for verdade, 8 story points é uma boa estimativa. Caso
-contrário, o melhor é estimar a história com 5 story points.
+Se sim, 8 story points é uma boa estimativa. Senão, o melhor é estimar a história com 5 story points.
 
 \index{Planning Poker}
 \index{Histórias de Usuários!Planning Poker}
@@ -572,14 +572,14 @@ somatório dos story points de cada iteração é exatamente igual a 21).
 
   **História**                               **Story Points**   **Iteração**   **Release**
   ----------------------------------------- ------------------ -------------- -------------
-  Cadastrar usuário                         8                  1              1
-  Postar perguntas                          5                  1              1
-  Postar respostas                          3                  1              1
-  Tela de abertura                          5                  1              1
-  Gamificar perguntas e respostas           5                  2              1
-  Pesquisar perguntas e respostas           8                  2              1
-  Adicionar tags em perguntas e respostas   5                  2              1
-  Comentar perguntas e respostas            3                  2              1
+  Cadastrar usuário                          8                  1              1
+  Postar perguntas                           5                  1              1
+  Postar respostas                           3                  1              1
+  Tela de abertura                           5                  1              1
+  Gamificar perguntas/respostas              5                  2              1
+  Pesquisar perguntas/respostas              8                  2              1
+  Adicionar tags                             5                  2              1
+  Comentar perguntas/respostas               3                  2              1
 
 A tabela anterior serve para reforçar dois pontos já mencionados: (1) as
 histórias em XP representam funcionalidades do sistema que se pretende
@@ -817,8 +817,8 @@ implementação de uma nova história, de um teste, ou a correção de um bug
 compartilhando o mesmo teclado e monitor.
 Um dos desenvolvedores é o **líder** (ou *driver*) da sessão, ficando
 com o teclado e o mouse. Ao segundo desenvolvedor cabe a função de
-revisor e questionador, no bom sentido, do trabalho do líder. Às vezes,
-esse segundo desenvolvedor é chamado de **navegador**. A inspiração vem
+revisor e questionador, no bom sentido, do trabalho do líder. 
+Esse segundo desenvolvedor é chamado de **navegador**. O nome vem
 dos ralis automobilísticos, onde os pilotos são acompanhados de um
 navegador.
 
@@ -991,7 +991,7 @@ que o código não possui erros de compilação e que ele passa em todos os
 testes. Existem diversos serviços de integração contínua, como Jenkins,
 TravisCI, CircleCI, etc. Por exemplo, quando se desenvolve um sistema
 usando o GitHub, pode-se ativar esses serviços na forma de plugins. Se o
-repositório GitHub for público, normalmente o serviço de integração
+repositório GitHub for público, o serviço de integração
 contínua é gratuito; se for privado, deve-se pagar uma assinatura.
 
 Iremos estudar mais sobre Integração Contínua no capítulo sobre DevOps.
@@ -1033,18 +1033,18 @@ mesma sala, para facilitar comunicação e feedback. Também propõe que o
 espaço de trabalho seja informativo, isto é, que sejam, por exemplo,
 fixados cartazes nas paredes, com as histórias da iteração, incluindo
 seu estado: histórias pendentes, histórias em andamento e histórias
-concluídas. A ideia é permitir que o time possa visualizar e sentir o
+concluídas. A ideia é permitir que o time possa visualizar o
 trabalho que está sendo realizado.
 
 Outra preocupação de XP é garantir jornadas de trabalho sustentáveis.
 Empresas de desenvolvimento de software são conhecidas por exigirem
 longas jornadas de trabalho, com diversas horas extras e trabalho nos
-finais de semana. XP defende explicitamente que essa prática não é
+finais de semana. XP defende que essa prática não é
 sustentável e que as jornadas de trabalho devem ser sempre próximas de
 40 horas, mesmo na véspera de entregas. O interessante é que XP é um
 método proposto por desenvolvedores, com grande experiência em projetos
-reais de desenvolvimento de software. Logo, eles já devem ter sentido na
-própria pele os efeitos nocivos de longas jornadas de trabalho. Dentre
+reais de desenvolvimento de software. Logo, eles devem ter sentido na
+própria pele os efeitos de longas jornadas de trabalho. Dentre
 outros problemas, elas podem causar danos à saúde física e mental dos
 desenvolvedores, assim como incentivar a rotatividade do time, cujos
 membros vão estar sempre pensando em um novo emprego.
@@ -1297,7 +1297,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.
 
-![Gráfico de Burndown, assumindo um sprint com duração de 15 dias.](figs/cap2/burndown){width=85%}
+![Gráfico de Burndown, assumindo um sprint de 15 dias.](figs/cap2/burndown){width=85%}
 
 ### Outros Eventos
 
@@ -1337,8 +1337,7 @@ time demonstra, ao vivo, o produto para os clientes. Como resultado,
 todas as histórias do sprint podem ser aprovadas pelo Dono do Produto.
 Por outro lado, caso ele detecte problema em alguma história, ela deve
 voltar para o Backlog do Produto, para ser retrabalhada em um próximo
-sprint. O mesmo deve ocorrer com as histórias que o time não conseguiu
-concluir durante o sprint.
+sprint. O mesmo deve ocorrer com as histórias que o time não concluiu durante o sprint.
 
 \index{Retrospectiva do Sprint}
 \index{Scrum!Retrospectiva}

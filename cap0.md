@@ -23,7 +23,7 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organiza�
 
 * O livro foi escrito em Português, pois o objetivo é contribuir, primeiro, com os cursos e alunos brasileiros. Porém, optamos por não traduzir alguns termos — como refactoring, branches, sprint, etc — pois achamos que eles são usados, também sem tradução, pelos desenvolvedores brasileiros no seu dia a dia.
 
-* Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, todos os trechos de código são mostrados em uma sintaxe bastante neutra. 
+* Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, os trechos de código são mostrados em uma sintaxe bastante neutra. 
 
 * Ele não é um livro extenso, com diversos capítulos que, na prática, tratam de assuntos que não são importantes nos cursos atuais.
 
@@ -44,7 +44,7 @@ Espera-se que os leitores tenham domínio de conceitos básicos de programação
 
 ## Website {.unnumbered}
 
-O livro  possui uma versão online, em HTML, disponível em:
+O livro  possui uma versão aberta, em HTML, disponível em:
 
 [https://engsoftmoderna.info](https://engsoftmoderna.info/)
 
@@ -71,7 +71,7 @@ Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Fede
 
 ## Agradecimentos {.unnumbered}
 
-Gostaria de agradecer aos mais de 30 alunos que passaram pelo ASERG/DCC/UFMG, na última década. Pode parecer que não, mas muito do conteúdo desse livro tem sua origem nos artigos, dissertações, teses e seminários do nosso grupo. Gostaria de agradecer também aos mais de 20 professores que começaram a usar nosso material quando ele ainda era um embrião de livro. Não vou listar todos aqui, mas os nomes estão na seguinte [página](https://engsoftmoderna.info/early-adopters.html). No entanto, especificamente, gostaria de agradecer aos professores Eduardo Figueiredo e André Hora, colegas de departamento, que revisaram alguns capítulos do livro. Gostaria de agradecer aos alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar este livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer a Aline Brito, que ajudou na conversão de todos os capítulos para o formato final, e a João Eduardo Montandon e Hudson Borges, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia Valente, pela revisão gramatical de partes do livro.
+Gostaria de agradecer aos mais de 30 alunos que passaram pelo ASERG/DCC/UFMG, na última década. Pode parecer que não, mas muito do conteúdo desse livro tem sua origem nos artigos, dissertações, teses e seminários do nosso grupo. Gostaria de agradecer também aos mais de 20 professores que começaram a usar nosso material quando ele ainda era um embrião de livro. Não vou listar todos aqui, mas os nomes estão na seguinte [página](https://engsoftmoderna.info/early-adopters.html). No entanto, especificamente, gostaria de agradecer aos professores Eduardo Figueiredo e André Hora, colegas de departamento, que revisaram alguns capítulos do livro. E ao Prof. José Luis Braga, que fez uma leitura cuidadosa e deu sugestões valiosas para melhoria do texto. Gostaria de agradecer aos alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar este livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer a Aline Brito, que ajudou na conversão de todos os capítulos para o formato final, e a João Eduardo Montandon e Hudson Borges, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia Valente, pela revisão gramatical de partes do livro.
 
 \mainmatter
 

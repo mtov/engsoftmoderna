@@ -812,8 +812,8 @@ Avante.
 Qualidade é um objetivo recorrente em produtos de engenharia.
 Fabricantes de automóveis, celulares, computadores, empresas de
 construção civil, etc, todos almejam e dizem que possuem produtos de
-qualidade. Esse contexto não é diferente quando o produto em questão é
-um software. Segundo uma classificação inicialmente proposta por
+qualidade. Esse contexto não é diferente quando o produto é
+um software. Segundo uma classificação proposta por
 Bertrand Meyer
 ([link](https://dl.acm.org/citation.cfm?id=261119)),
 qualidade de software pode ser avaliada em duas dimensões: 
@@ -895,7 +895,8 @@ pelo revisor. Existem diversas ferramentas para apoiar processos de
 revisão de código. No exemplo, usamos a ferramenta fornecida
 pelo GitHub.
 
-![Exemplo de revisão de código, com um comentário procurando esclarecer um possível bug detectado no código.](figs/cap1/github.jpg){width=60%}
+
+![Exemplo de revisão de código.](figs/cap1/github.jpg){width=60%}
 
 
 ### Prática Profissional 
@@ -1029,7 +1030,7 @@ poderiam ajudar a ampliar a base de clientes. O que é melhor? Corrigir
 os bugs ou implementar novas funcionalidades? No fundo, essa é uma
 decisão econômica.
 
-## Sistemas ABC: Acute, Business e Casuais
+## Classificação de Sistemas de Software
 
 \index{Sistemas ABC}
 Atualmente, como estamos ressaltando nesta Introdução, software permeia
@@ -1182,7 +1183,7 @@ partes: (1) um contexto, isto é, um sistema onde o padrão pode ser útil;
 (2) um problema no projeto desse sistema; (3) uma solução para esse
 problema por meio de padrões. Iremos também apresentar diversos exemplos de
 código, para facilitar o entendimento e a discussão prática do uso de
-cada padrão. O código completo de alguns exemplos mais complexos será
+cada padrão. O código de alguns exemplos mais complexos será
 disponibilizado no GitHub.
 
 **Capítulo 7: Arquitetura**, que inicia com uma apresentação e discussão
@@ -1271,13 +1272,11 @@ adequado se o objetivo for validar um sistema de software?
 5\. Suponha um programa que tenha uma única entrada: um inteiro de 64
 bits. Em um teste exaustivo, temos que testar esse programa com todos os
 possíveis inteiros (logo, 2^64^). Se cada teste levar 1 nanossegundo
-(10^-9^ segundos), quanto tempo levará esse teste exaustivo? (Exercício
-baseado em um comentário do livro de Fox & Patterson,
-[link](http://www.saasbook.info/))
+(10^-9^ segundos), quanto tempo levará esse teste exaustivo? 
 
-6\. Se considerarmos seu contexto histórico, por que foi natural que os
+6\. Se considerarmos o contexto histórico, por que foi natural que os
 primeiros processos de desenvolvimento de software tivessem
-características sequenciais e que fossem baseados em planejamento e
+características sequenciais e fossem baseados em planejamento e
 documentação detalhados?
 
 7\. Alguns estudos mostram que os custos com manutenção e evolução podem
@@ -1301,7 +1300,7 @@ milhões de carros da Volkswagen detectava quando eles estavam sendo
 testados em um laboratório de certificação. Nessas situações, o carro
 emitia poluentes dentro das normas legais. Fora do laboratório,
 emitia-se mais poluentes, para melhorar o desempenho. Ou seja, o código
-provavelmente incluía uma estrutura de decisão como a seguinte
+incluía uma estrutura de decisão como a seguinte
 (meramente ilustrativa, para fins deste exercício):
 
 ```
@@ -1311,6 +1310,5 @@ else
    "Emita poluentes fora das normas"
 ```
 O que você faria se seu chefe pedisse para escrever um *if* como o
-acima? (para mais informações sobre esse episódio com automóveis
-Volkswagen, consulte essa página da
+acima? (para mais informações sobre esse episódio, consulte essa página da
 [Wikipedia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal)).
