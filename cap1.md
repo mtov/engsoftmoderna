@@ -169,7 +169,7 @@ mesma intensidade. Por exemplo, quando a legislação ambiental muda, os
 fabricantes de automóveis têm anos para se conformar às novas leis.
 Adicionalmente, carros não são alterados, pelo menos de forma essencial,
 com novas funcionalidades, após serem vendidos. Por fim, um carro é um produto
-físico e visível, possuindo peso, altura, largura, número de assentos,
+físico, possuindo peso, altura, largura, número de assentos,
 forma geométrica, etc, o que facilita sua avaliação e precificação por
 consumidores finais.
 
@@ -285,7 +285,7 @@ não-funcionais, dentre outros, incluem:
 
 * Disponibilidade: estar no ar 99.99% do tempo;
 
-* Tolerância a falhas: continuar operando mesmo se um centro de dados
+* Tolerância a falhas: continuar operando mesmo se um determinado centro de dados
     cair;
 
 * Segurança: criptografar todos os dados trocados com as agências;
@@ -781,7 +781,6 @@ Um modelo oferece uma representação em mais alto nível de um sistema do
 que o seu código fonte. O objetivo é permitir que desenvolvedores possam
 analisar propriedades e características essenciais de um sistema, de
 modo mais fácil e rápido, sem ter que mergulhar nos detalhes do código.
-
 Modelos podem ser criados antes do código, por exemplo, ainda na fase de
 projeto. Nesse caso, eles são usados para apoiar **Engenharia Avante**
 (*Forward Engineering*); isto é, primeiro cria-se um modelo para ter um
@@ -804,7 +803,7 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![Exemplo de Diagrama de Classe UML com duas classes, `Cliente` e `ContaBancaria`.](figs/cap1/uml){width=75%}
+![Exemplo de Diagrama de Classe UML](figs/cap1/uml){width=75%}
 
 
 ### Qualidade de Software 
@@ -822,7 +821,7 @@ qualidade de software pode ser avaliada em duas dimensões:
 
 \index{Qualidade de Software!Externa}
 Qualidade externa considera fatores que podem ser aferidos sem analisar
-o código de um sistema. Assim, a qualidade externa de um software pode
+o código. Assim, a qualidade externa de um software pode
 ser avaliada mesmo por usuários comuns, que não são
 especialistas em Engenharia de Software. Como exemplo, temos os
 seguintes fatores (ou atributos) de qualidade externa:

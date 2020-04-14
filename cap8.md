@@ -1167,7 +1167,8 @@ class BookConst {
   public static String ESM = 
           "{ \"titulo\": \"Eng Soft Moderna\" }";        
 
-  public static String NULLBOOK = "NULL";
+  public static String NULLBOOK = 
+          "{ \"titulo\": \"NULL\" }";
 
 }
 
