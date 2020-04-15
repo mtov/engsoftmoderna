@@ -1297,7 +1297,7 @@ horas. Logo, a curva de um gráfico de burndown deve ser declinante,
 atingindo o valor zero ao final do sprint, caso ele seja bem sucedido.
 Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.
 
-![Gráfico de Burndown, assumindo um sprint de 15 dias.](figs/cap2/burndown){width=85%}
+![Gráfico de Burndown, assumindo um sprint de 15 dias.](figs/cap2/burndown){width=90%}
 
 ### Outros Eventos
 
@@ -1653,7 +1653,7 @@ Ainda no quadro anterior, e considerando os limites WIP, tem-se que:
      Especificação, pois o WIP desse passo está no limite.
 
 * Uma das tarefas já especificadas (T8 a T12) pode ser puxada para
-     implementação, pois o WIP desse passo está em 4, enquanto o limite
+     implementação, pois o WIP do passo está em 4, enquanto o limite
      é 5.
 
 * Uma ou mais tarefas em implementação (T4 a T7) podem ser
@@ -1759,7 +1759,7 @@ resultados mais importantes da Teoria de Filas
 Little diz que o número de itens em um sistema de filas é igual à taxa
 de chegada desses itens multiplicado pelo tempo que cada item fica no
 sistema. Traduzindo para o nosso contexto, o sistema é um passo de um
-processo Kanban e os itens são tarefas. Assim, temos também que:
+processo Kanban e os itens são tarefas. Assim, temos que:
 
 * WIP: número de tarefas em um dado passo de um processo Kanban.
 
@@ -1772,7 +1772,7 @@ processo Kanban e os itens são tarefas. Assim, temos também que:
   tempo que cada tarefa fica nesse passo.
 
 Ou seja, de acordo com a Lei de Little: **WIP = TP * LT**. Visualmente,
-podemos representar a Lei de Little da seguinte forma:
+podemos representar a Lei de Little como mostrado na próxima figura.
 
 ![Lei de Little: WIP = TP * LT](figs/cap2/lei-little){width=60%}
 
@@ -1924,7 +1924,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
 
-![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=75%}
+![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=60%}
 
 
 UP propõe que o desenvolvimento seja decomposto nas

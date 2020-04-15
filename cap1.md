@@ -160,7 +160,7 @@ Segundo Brooks, as dificuldades essenciais são as seguintes:
     mais demanda por mudanças ele recebe.
 
 *  **Invisibilidade**: devido à sua natureza abstrata, é difícil
-    visualizar o tamanho e consequentemente estimar o desafio de
+    visualizar o tamanho e consequentemente estimar o esforço de
     construir um sistema de software.
 
 As dificuldades (2), (3) e (4) são específicas de sistemas de software,
@@ -419,7 +419,7 @@ validação.
 Terceiro, é importante definir e distinguir três conceitos relacionados
 a testes: **defeitos**, **bugs** e **falhas**. Para ilustrar a diferença
 entre eles, suponha o seguinte código para calcular a área de um
-círculo, dependendo de uma condição:
+círculo, dependendo de uma determinada condição:
 
 ```
  if (condicao)
@@ -896,7 +896,7 @@ revisão de código. No exemplo, usamos a ferramenta fornecida
 pelo GitHub.
 
 
-![Exemplo de revisão de código.](figs/cap1/github.jpg){width=60%}
+![Exemplo de revisão de código.](figs/cap1/github.jpg){width=75%}
 
 
 ### Prática Profissional 
@@ -928,13 +928,13 @@ apenas Engenheiros de Software — a exercer seu ofício de forma
 Computer Society
 ([link](https://www.computer.org/education/code-of-ethics)).
 Esse último é interessante porque é específico para a prática de
-Engenharia de Software. Por exemplo, ele prescreve que:
+Engenharia de Software. Por exemplo, ele recomenda que:
 
 > "Engenheiros de Software devem se comprometer em fazer da análise, especificação, projeto, desenvolvimento, teste e manutenção de software uma profissão benéfica e respeitada."
 
 \index{Código de Ética}
 No Brasil, existe o Código de Ética da Sociedade Brasileira de
-Computação (SBC), que por ser sintético, mas ao mesmo tempo claro,
+Computação (SBC), que por ser sintético e, ao mesmo tempo, bastante claro
 resolvemos reproduzir a seguir:
 
 > São deveres dos profissionais de Informática:
@@ -1310,5 +1310,5 @@ else
    "Emita poluentes fora das normas"
 ```
 O que você faria se seu chefe pedisse para escrever um *if* como o
-acima? (para mais informações sobre esse episódio, consulte essa página da
-[Wikipedia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal)).
+acima? Para mais informações sobre esse episódio, consulte essa página da
+[Wikipedia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal).

@@ -23,7 +23,7 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organiza�
 
 * O livro foi escrito em Português, pois o objetivo é contribuir, primeiro, com os cursos e alunos brasileiros. Porém, optamos por não traduzir alguns termos — como refactoring, branches, sprint, etc — pois achamos que eles são usados, também sem tradução, pelos desenvolvedores brasileiros no seu dia a dia.
 
-* Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, os trechos de código são mostrados em uma sintaxe bastante neutra. 
+* Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, os trechos de código são mostrados em uma sintaxe neutra. 
 
 * Ele não é um livro extenso, com diversos capítulos que, na prática, tratam de assuntos que não são importantes nos cursos atuais.
 
@@ -46,7 +46,7 @@ Espera-se que os leitores tenham domínio de conceitos básicos de programação
 
 O livro  possui uma versão aberta, em HTML, disponível em:
 
-[https://engsoftmoderna.info](https://engsoftmoderna.info/)
+[https://engsoftmoderna.info](https://engsoftmoderna.info)
 
 Nesse site, estão também disponíveis diversos exercícios de múltipla escolha e alguns
 roteiros de aula prática.
@@ -62,8 +62,8 @@ Belo Horizonte, 10 de fevereiro de 2020.
 
 ## Sobre o Autor {.unnumbered}
 
-Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Federal de Minas Gerais, onde atualmente é Professor Associado do Departamento de Ciência da Computação. Seus interesses de pesquisa concentram-se em Engenharia de Software, especificamente nas áreas de Manutenção e Evolução de Software, Qualidade de Software e Mineração de Repositórios de Software. Ele é Bolsista de Produtividade Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG. É autor de mais de 100 artigos em periódicos e conferências internacionais, muitos deles em co-autoria com pesquisadores internacionais de renome. Orientou mais de 30 dissertações de mestrado e cerca de uma dezena de teses de doutorado. Desde 2010, coordena o Applied Software Engineering Research Group ([ASERG](http://aserg.labsoft.dcc.ufmg.br/)), do DCC/UFMG. É responsável também pelo 
-[CSIndexbr](https://csindexbr.org/), sistema que oferece dados transparentes sobre a produção científica brasileira em Ciência da Computação.
+Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Federal de Minas Gerais, onde atualmente é Professor Associado do Departamento de Ciência da Computação. Seus interesses de pesquisa concentram-se em Engenharia de Software, especificamente nas áreas de Manutenção e Evolução de Software, Qualidade de Software e Mineração de Repositórios de Software. Ele é Bolsista de Produtividade Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG. É autor de mais de 100 artigos em periódicos e conferências internacionais, muitos deles em co-autoria com pesquisadores internacionais de renome. Orientou mais de 30 dissertações de mestrado e cerca de uma dezena de teses de doutorado. Desde 2010, coordena o Applied Software Engineering Research Group ([ASERG](http://aserg.labsoft.dcc.ufmg.br)), do DCC/UFMG. É responsável também pelo 
+[CSIndexbr](https://csindexbr.org), sistema que oferece dados transparentes sobre a produção científica brasileira em Computação.
 
 ![](figs/cap0/mtov.png){width=25%}
 

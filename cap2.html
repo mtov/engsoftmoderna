@@ -340,7 +340,7 @@
 <p> </p>
 <p>Um outro artefato comum em Scrum é o <strong>Gráfico de Burndown</strong>. A cada dia do sprint, esse gráfico mostra quantas horas são necessárias para se implementar as tarefas que ainda não estão concluídas. Isto é, no dia X do sprint ele informa que restam tarefas a implementar que somam Y horas. Logo, a curva de um gráfico de burndown deve ser declinante, atingindo o valor zero ao final do sprint, caso ele seja bem sucedido. Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.</p>
 <figure>
-<img src="figs/cap2/burndown.svg" style="width:85.0%" alt="" /><figcaption>Gráfico de Burndown, assumindo um sprint de 15 dias.</figcaption>
+<img src="figs/cap2/burndown.svg" style="width:90.0%" alt="" /><figcaption>Gráfico de Burndown, assumindo um sprint de 15 dias.</figcaption>
 </figure>
 <h3 data-number="1.4.3" id="outros-eventos" data-number="1.4.3"><span class="header-section-number">2.4.3</span> Outros Eventos</h3>
 <p>Vamos agora descrever mais três eventos Scrum, especificamente Reuniões Diárias, Revisão do Sprint e Retrospectiva.</p>
@@ -453,7 +453,7 @@
 <p>Ainda no quadro anterior, e considerando os limites WIP, tem-se que:</p>
 <ul>
 <li><p>A história H3, que está no backlog, não pode ser puxada para o passo Especificação, pois o WIP desse passo está no limite.</p></li>
-<li><p>Uma das tarefas já especificadas (T8 a T12) pode ser puxada para implementação, pois o WIP desse passo está em 4, enquanto o limite é 5.</p></li>
+<li><p>Uma das tarefas já especificadas (T8 a T12) pode ser puxada para implementação, pois o WIP do passo está em 4, enquanto o limite é 5.</p></li>
 <li><p>Uma ou mais tarefas em implementação (T4 a T7) podem ser finalizadas, o que não altera o WIP do passo.</p></li>
 <li><p>A revisão de T3 pode ser finalizada.</p></li>
 </ul>
@@ -487,13 +487,13 @@
 <p>Conforme afirmado, limites WIPs são o recurso oferecido por Kanban para garantir um ritmo de trabalho sustentável e a entrega de sistemas de software com qualidade. O papel desses limites é contribuir para que os desenvolvedores não fiquem sobrecarregados de tarefas e, consequentemente, propensos a baixar a qualidade de seu trabalho. Na verdade, todo método de desenvolvimento de software tende a oferecer esse tipo de recurso. Por exemplo, em Scrum existe o conceito de sprints com time-boxes definidos, cujo objetivo é evitar que times aceitem trabalhar em histórias que ultrapassam a sua velocidade de entrega. Adicionalmente, uma vez iniciado, o objetivo de um sprint não pode ser alterado, de forma a blindar o time de mudanças diárias de prioridade. No caso de métodos Waterfall, o recurso para garantir um fluxo de trabalho sustentável e de qualidade é a existência de uma fase detalhada de especificação de requisitos. Com essa fase, a intenção era oferecer aos desenvolvedores uma ideia clara do sistema que eles deveriam implementar.</p>
 <h3 data-number="1.5.2" id="lei-de-little" data-number="1.5.2"><span class="header-section-number">2.5.2</span> Lei de Little</h3>
 <p> </p>
-<p>O procedimento para cálculo de WIPs explicado anteriormente é uma aplicação direta da <strong>Lei de Little</strong>, um dos resultados mais importantes da Teoria de Filas (<a href="https://isbnsearch.org/isbn/0471503363">link</a>). A Lei de Little diz que o número de itens em um sistema de filas é igual à taxa de chegada desses itens multiplicado pelo tempo que cada item fica no sistema. Traduzindo para o nosso contexto, o sistema é um passo de um processo Kanban e os itens são tarefas. Assim, temos também que:</p>
+<p>O procedimento para cálculo de WIPs explicado anteriormente é uma aplicação direta da <strong>Lei de Little</strong>, um dos resultados mais importantes da Teoria de Filas (<a href="https://isbnsearch.org/isbn/0471503363">link</a>). A Lei de Little diz que o número de itens em um sistema de filas é igual à taxa de chegada desses itens multiplicado pelo tempo que cada item fica no sistema. Traduzindo para o nosso contexto, o sistema é um passo de um processo Kanban e os itens são tarefas. Assim, temos que:</p>
 <ul>
 <li><p>WIP: número de tarefas em um dado passo de um processo Kanban.</p></li>
 <li><p>Throughput (TP):  taxa de chegada dessas tarefas nesse passo.</p></li>
 <li><p>Lead Time (LT):  tempo que cada tarefa fica nesse passo.</p></li>
 </ul>
-<p>Ou seja, de acordo com a Lei de Little: <strong>WIP = TP * LT</strong>. Visualmente, podemos representar a Lei de Little da seguinte forma:</p>
+<p>Ou seja, de acordo com a Lei de Little: <strong>WIP = TP * LT</strong>. Visualmente, podemos representar a Lei de Little como mostrado na próxima figura.</p>
 <figure>
 <img src="figs/cap2/lei-little.svg" style="width:60.0%" alt="" /><figcaption>Lei de Little: WIP = TP * LT</figcaption>
 </figure>
@@ -539,7 +539,7 @@
 <li><p>UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como <strong>ferramentas CASE</strong> (<em>Computer-Aided Software Engineering</em>).  O nome é uma analogia com ferramentas CAD (<em>Computer Aided-Design</em>), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.</p></li>
 </ul>
 <figure>
-<img src="figs/cap2/case.png" style="width:75.0%" alt="" /><figcaption>Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.</figcaption>
+<img src="figs/cap2/case.png" style="width:60.0%" alt="" /><figcaption>Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.</figcaption>
 </figure>
 <p>UP propõe que o desenvolvimento seja decomposto nas seguintes fases:</p>
 <ul>
