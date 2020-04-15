@@ -621,8 +621,8 @@ recomendáveis.
 8\. Escreva um caso de uso para um Sistema de Controle de Bibliotecas
 (similar ao que usamos para ilustrar a escrita de histórias).
 
-9\. O seguinte caso de uso tem apenas o fluxo normal. Escreva
-extensões para ele.
+9\. O seguinte caso de uso possui apenas o fluxo normal. Escreva
+então algumas extensões para ele.
 
 
 > **Comprar Livro**
@@ -653,7 +653,7 @@ extensões para ele.
 
 13\. Quando começou, a EasyTaxi  —  a empresa brasileira de aplicativos para solicitação de táxis  —  construiu um MVP que usava um software muito simples e uma parte operacional realizada de forma manual. Pesquise na Internet sobre esse MVP (basta usar as palavras EasyTaxi e MVP) e faça uma descrição do mesmo.
 
-14\. Suponha que estamos em 2008, quando ainda não existia Spotify, e você decidiu criar uma startup para oferecer um serviço de streaming de músicas na Internet. Então, como primeiro passo, você decidiu começar com um MVP. 
+14\. Suponha que estamos em 2008, quando ainda não existia Spotify, e você decidiu criar uma startup para oferecer um serviço de streaming de músicas na Internet. Então, como primeiro passo, você implementou um MVP. 
 
 (a) Quais seriam as principais funcionalidades desse MVP? 
 (b) Ele seria desenvolvido para qual hardware e sistema operacional? 
