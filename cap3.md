@@ -181,8 +181,7 @@ Primeiro, mostramos histórias propostas por usuários típicos (veja a seguir).
 >
 > Como usuário típico, eu gostaria de receber e-mails com novas aquisições
 
-\index{Histórias de Usuários!Épico}
-Em seguida, mostramos as histórias propostas por professores. É importante mencionar que, de fato, os professores foram os usuários que lembraram de requisitar as histórias a seguir. Eles podem ter feito isso, por exemplo, em um workshop de escrita de histórias. Mas isso não implica que apenas professores poderão fazer uso dessas histórias. Por exemplo, ao detalhar as histórias em um sprint, o representante dos clientes (*product owner*) pode achar interessante permitir que qualquer usuário faça doações de livros e não apenas professores. Por fim, a última história sugerida por professores  —  permitir devoluções em outras bibliotecas da universidade  —  pode ser considerada como um **épico**, isto é, uma história mais complexa. Como a universidade possui mais de uma biblioteca, o professor gostaria de realizar um empréstimo na Biblioteca Central e devolver o livro na biblioteca do seu departamento, por exemplo. No entanto, essa funcionalidade requer a integração dos sistemas das duas bibliotecas e, também, pessoal disponível para transportar o livro para sua biblioteca original.
+Em seguida, mostramos as histórias propostas por professores:
 
 > Como professor, eu gostaria de realizar empréstimos de maior duração
 >
@@ -191,6 +190,11 @@ Em seguida, mostramos as histórias propostas por professores. É importante men
 > Como professor, eu gostaria de doar livros para a biblioteca
 >
 > Como professor, eu gostaria de devolver livros em outras bibliotecas
+
+\index{Histórias de Usuários!Épico}
+É importante mencionar que, de fato, os professores foram os usuários que lembraram de requisitar as histórias a seguir. Eles podem ter feito isso, por exemplo, em um workshop de escrita de histórias. Mas isso não implica que apenas professores poderão fazer uso dessas histórias. Por exemplo, ao detalhar as histórias em um sprint, o representante dos clientes (*product owner*) pode achar interessante permitir que qualquer usuário faça doações de livros e não apenas professores. Por fim, a última história sugerida por professores  —  permitir devoluções em outras bibliotecas da universidade  —  pode ser considerada como um **épico**, isto é, uma história mais complexa. Como a universidade possui mais de uma biblioteca, o professor gostaria de realizar um empréstimo na Biblioteca Central e devolver o livro na biblioteca do seu departamento, por exemplo. No entanto, essa funcionalidade requer a integração dos sistemas das duas bibliotecas e, também, pessoal disponível para transportar o livro para sua biblioteca original.
+
+
 
 Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, durante o workshop de escrita de histórias. Veja que, geralmente, são histórias relacionadas com a organização da biblioteca e também para garantir o seu bom funcionamento.
 
@@ -206,7 +210,7 @@ Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, du
 >
 > Como funcionário da biblioteca, eu gostaria que o sistema aplicasse multas quando da devolução de empréstimos atrasados
 
-Antes de concluir, vamos mostrar um teste de aceitação para a história "pesquisar por livros". Para confirmar a implementação dessa história, o representante dos clientes definiu que gostaria de ver as seguintes pesquisas serem realizadas com sucesso. Elas serão demonstradas e testadas durante a reunião de entrega de histórias  —  chamada de sprint review quando se usa Scrum.
+Antes de concluir, vamos mostrar um teste de aceitação para a história "pesquisar por livros". Para confirmar a implementação dessa história, o representante dos clientes definiu que gostaria de ver as seguintes pesquisas serem realizadas com sucesso. Elas serão demonstradas e testadas durante a reunião de entrega de histórias  —  chamada de Revisão do Sprint em Scrum.
 
 >Pesquisa por livros, informando ISBN
 >
@@ -249,13 +253,12 @@ vamos responder algumas perguntas sobre histórias de usuários:
 **Casos de uso** (*use cases*) são documentos textuais de especificação de requisitos. Como veremos nesta seção, eles incluem descrições mais detalhadas do que histórias de usuário. Recomenda-se que casos de uso sejam escritos na fase de Especificação de Requisitos, considerando que estamos seguindo um processo de desenvolvimento do tipo Waterfall. Eles são escritos pelos próprios desenvolvedores do sistema  —  às vezes, chamados de Engenheiros de Requisitos durante essa fase do desenvolvimento. Para isso, os desenvolvedores podem se valer, por exemplo, de entrevistas com os usuários do sistema. Apesar de escritos pelos desenvolvedores, casos de uso podem ser lidos, entendidos e validados pelos usuários, antes de as fases de design e implementação terem início.
 
 \index{Casos de Uso!Ator}
-Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema com um determinado objetivo. Tipicamente, esse ator é um usuário humano (embora, raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o importante é que os atores sejam entidades externas ao sistema.
+Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema com um objetivo. Tipicamente, esse ator é um usuário humano (embora, raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o ator é uma entidade externa ao sistema.
 
 \index{Casos de Uso!Fluxo Normal}
 \index{Casos de Uso!Extensões}
 Explicando com mais detalhes, um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o **fluxo normal** de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário onde tudo dá certo, às vezes chamado também de "fluxo feliz". Já a segunda lista inclui **extensões ao fluxo normal**, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos  —  normal e extensões  —  serão posteriormente implementados no sistema.
-
-Mostra-se a seguir um exemplo de caso de uso, referente a um sistema bancário, e que especifica uma transferência entre contas, realizada por um cliente do banco.
+Mostra-se a seguir um caso de uso, referente a um sistema bancário e que especifica uma transferência entre contas, por um cliente do banco.
 
 > **Transferir Valores entre Contas**
 > 
@@ -300,7 +303,7 @@ Devido à existência de fluxos de extensão, recomenda-se evitar comandos de de
 
 Algumas vezes, descrições de casos de uso incluem seções adicionais, tais como: (1) propósito do caso de uso; (2) pré-condições, isto é, o que deve ser verdadeiro antes da execução do caso de uso; (3) pós-condições, isto é, o que deve ser verdadeiro após a execução do caso de uso; e (4) uma lista de casos de uso relacionados.
 
-Para concluir, vamos descrever algumas boas práticas de escrita de casos de uso:
+Para concluir, seguem algumas boas práticas de escrita de casos de uso:
 
 * As ações de um caso de uso devem ser escritas em uma linguagem simples e direta. "Escreva casos de uso como se estivesse no início do ensino fundamental" é uma sugestão ouvida com frequência. Sempre que possível, use o ator principal como sujeito das ações, seguido de um verbo. Por exemplo, "o cliente insere o cartão no caixa eletrônico". Porém, se a ação for realizada pelo sistema, escreva algo como: "o sistema valida o cartão inserido".
 
@@ -342,7 +345,7 @@ Vamos responder agora duas perguntas sobre casos de uso.
 
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Uma resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
-**Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 90, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP). Mais especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme afirmamos no Capítulo 2, métodos como o UP dão ênfase à comunicação escrita entre usuários e desenvolvedores, na forma de documentos como casos de uso.
+**Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 90, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP). Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme afirmamos no Capítulo 2, UP enfatiza a comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
 
 ## Produto Mínimo Viável (MVP)
 
@@ -371,13 +374,13 @@ O aprendizado obtido com um MVP pode resultar em três decisões:
 
 * Pode-se concluir que o teste foi bem sucedido e, portanto, achou-se um mercado para o sistema (um *market fit*). Neste caso, é hora de investir mais recursos, para implementar um sistema com um conjunto mais robusto e completo de funcionalidades.
 
-* Por fim, pode-se concluir que o MVP falhou, após várias tentativas. Nesse caso, restam duas alternativas: (1) perecer, isto é, desistir do empreendimento, principalmente se não existirem mais recursos financeiros para mantê-lo vivo; ou (2) realizar um **pivô**, isto é, abandonar a visão original e tentar um novo MVP, com novos requisitos e para um novo mercado, mas sem esquecer o que se aprendeu com o MVP anterior.
+* Por fim, pode-se concluir que o MVP falhou, após várias tentativas. Então, restam duas alternativas: (1) perecer, isto é, desistir do empreendimento, principalmente se não existirem mais recursos financeiros para mantê-lo vivo; ou (2) realizar um **pivô**, isto é, abandonar a visão original e tentar um novo MVP, com novos requisitos e para um novo mercado, mas sem esquecer o que se aprendeu com o MVP anterior.
 
 \index{Produto Mínimo Viável (MVP)!Métricas de Vaidade}
 Ao tomar as decisões acima, um risco é usar apenas **métricas de vaidade** (*vanity metrics*). Essas são métricas superficiais que fazem bem para o ego dos desenvolvedores e gerentes de produto, mas que não ajudam a entender e aprimorar uma estratégia de mercado. O exemplo clássico é o número de pageviews em um site de comércio eletrônico. Pode fazer muito bem dizer que o site atrai milhões de clientes por mês, mas somente isso não vai ajudar a pagar as contas do empreendimento. Por outro lado, métricas que ajudam a tomar decisões sobre o futuro de um MVP são chamadas de **métricas acionáveis** (*actionable metrics*). No caso de um sistema de comércio eletrônico, essas métricas incluiriam o percentual de visitantes que fecham compras, o valor de cada ordem de compra, o número de itens comprados, o custo de captação de novos clientes, etc. Ao monitorar essas métricas, pode-se concluir, por exemplo, que a maioria dos clientes compra apenas um item ao fechar uma compra. Como resultado concreto  —  ou acionável  —  pode-se decidir incorporar um sistema de recomendação ao site ou, então, investigar o uso de um sistema de recomendação mais eficiente. Tais sistemas, dada uma compra em andamento, são capazes de sugerir novos itens para serem comprados. Assim, eles têm o potencial de incrementar o número de itens comprados em uma mesma transação.
 
 \index{Produto Mínimo Viável (MVP)!Métricas de Funil}
-Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar também **métricas de funil** (*funnel metrics*), que capturam o nível de interação dos usuários com um sistema. Um "funil" pode incluir as seguintes métricas:
+Para avaliar MVPs que incluem vendas de produtos ou serviços, costuma-se usar **métricas de funil** (*funnel metrics*), que capturam o nível de interação dos usuários com um sistema. Um "funil" pode incluir as seguintes métricas:
 
 * Aquisição: número de clientes que visitaram o seu sistema.
 
@@ -461,7 +464,7 @@ testes A/B envolvendo componentes de interfaces com o usuário. Por
 exemplo, dados dois layouts da página de entrada de um site, um teste
 A/B pode ser usado para decidir qual resulta em maior engajamento por
 parte dos usuários. Pode-se testar também a cor ou posição de um botão
-da interface, as mensagens usadas, a ordem de apresentação dos elementos
+da interface, as mensagens usadas, a ordem de apresentação 
 de uma lista, etc.
 
 \index{Testes A/B} 
@@ -661,4 +664,4 @@ extensões para ele.
 
 (a) Qual seria a métrica usada como taxa de conversão nesse teste? 
 
-(b) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder a essa questão, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
+(b) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
