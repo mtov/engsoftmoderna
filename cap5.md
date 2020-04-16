@@ -96,7 +96,7 @@ problemas menores para resolver. Isto é, temos que (1) projetar e
 implementar um analisador léxico, (2) um analisador sintático, (3) um
 analisador semântico e (4) um gerador de código. Ainda existem desafios
 importantes em cada uma dessas tarefas, mas estamos mais perto de uma
-solução para o problema proposto inicialmente.
+solução para o problema inicial.
 
 Continuando com o exemplo, vamos agora focar na implementação de um
 analisador léxico, a qual envolve certos desafios. No entanto, eles

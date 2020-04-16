@@ -39,7 +39,7 @@ provar propriedades da mesma, tais como carga máxima, resistência a
 ventos, ondas, terremotos, etc.
 
 Infelizmente, modelos de software — pelo menos até hoje — são
-menos efetivos do que os modelos matemáticos e físicos usados em outras
+menos efetivos do que os modelos matemáticos usados em outras
 engenharias. O motivo é que ao abstrair detalhes eles também descartam
 parte da complexidade que é essencial aos sistemas modelados. Frederick
 Brooks comenta sobre essa questão em seu ensaio "*Não Existe Bala de
@@ -83,8 +83,8 @@ frameworks, bancos de dados, etc.
 Especificamente, neste capítulo, iremos estudar um subconjunto dos
 diagramas propostos pela UML (*Unified Modelling Language*). Vamos
 começar descrevendo a história e o contexto que levou à criação da UML.
-Em seguida, vamos estudar alguns dos principais diagramas UML com um
-pouco mais de detalhe.
+Em seguida, vamos estudar alguns dos principais diagramas UML com mais 
+detalhes.
 
 \index{Métodos Formais}
 ```{=latex}
@@ -154,7 +154,7 @@ comprada pela IBM.
 Martin Fowler, em seu livro sobre UML
 ([link](https://dl.acm.org/citation.cfm?id=861282)),
 propõe uma classificação sobre formas de uso dessa linguagem de
-modelagem. Segundo ele, existem três formas principais de uso de UML:
+modelagem. Segundo ele, existem três formas de uso de UML:
 como blueprint, como linguagem de programação ou como esboço. Vamos
 descrever cada uma delas nos próximos parágrafos.
 
@@ -334,7 +334,7 @@ interesse for modelar o comportamento de um programa — isto é, o que
 pode acontecer durante sua execução, quais métodos são de fato
 executados, etc — você deve usar algum diagrama dinâmico da UML.
 
-Por fim, gostaríamos de lembrar que já tratamos de Diagramas de Casos de
+Por fim, gostaríamos de lembrar que tratamos de Diagramas de Casos de
 Uso no Capítulo 3, quando apresentamos técnicas para especificação de
 requisitos.
 
@@ -375,7 +375,7 @@ Um diagrama de classes é desenhado usando-se retângulos e setas. Cada
 uma das classes é representada por meio de um retângulo com três
 compartimentos, conforme mostra a figura a seguir. Esses compartimentos
 contêm o nome da classe (normalmente, em negrito), seus atributos e
-métodos.
+métodos, como ilustrado a seguir:
 
 ![](figs/cap4/class0){width=28%}
 
@@ -465,7 +465,7 @@ seta da associação.
 
 Neste segundo exemplo com informações de multiplicidade, o
 tipo do atributo `fone` deve ser um vetor de `Fone`. Para que fique
-claro, mostramos o código das classes:
+claro, mostramos o código das classes a seguir:
 
 ```
 class Pessoa {
@@ -529,10 +529,10 @@ class Fone {
 }
 ```
 
-Nesse código, `Pessoa` possui um atributo privado fone do tipo `Fone`, que
+Nesse código, `Pessoa` possui um atributo privado `fone` do tipo `Fone`, que
 pode ser null; com isso, satisfazemos a extremidade 0..1 da associação
 bidirecional. Por outro lado, `Fone` possui um vetor privado, de nome
-dono, que vai referenciar objetos do tipo `Pessoa`; assim, satisfazemos a
+`dono`, que referencia objetos do tipo `Pessoa`; assim, satisfazemos a
 extremidade \* da mesma associação.
 
 No último diagrama de classes, omitimos todos os símbolos de
@@ -542,7 +542,7 @@ criação de esboços, quando os diagramas são criados para discutir e
 ilustrar uma ideia de projeto. Logo, nesse contexto, não faz sentido
 exigir que os diagramas sejam sintaticamente perfeitos. Por isso,
 pequenos erros ou omissões são tolerados, principalmente quando não há
-prejuízo para o propósito que levou à criação do diagrama.
+prejuízo para o propósito do diagrama.
 
 ```{=latex}
 \begin{esmbox}
@@ -637,7 +637,7 @@ destino). Essas palavras são escritas entre sinais de menor (\<\<) e
 maior (\>\>). No diagrama a seguir, por exemplo, fica claro o tipo de
 dependência que `ShapeFactory` estabelece com a classe `Shape`.
 
-![](figs/cap4/class11){width=70%}
+![](figs/cap4/class11){width=60%}
 
 Uma classe pode ter dependências para um grande número de classes. No
 entanto, não se costuma representar todas elas em diagramas de classes,
@@ -654,7 +654,7 @@ classes — isto é, pacotes — e as dependências entre eles. Para
 isso, UML define um retângulo especial para representar pacotes,
 mostrado abaixo:
 
-![](figs/cap4/package0){width=28%}
+![](figs/cap4/package0){width=25%}
 
 Ao contrário dos retângulos de classes, o retângulo de pacotes inclui
 apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na
@@ -672,7 +672,8 @@ setas que ligam os pacotes de `View` a `BusinessLayer` são bidirecionais.
 Por fim, apenas classes do pacote `BusinessLayer` usam classes do pacote
 `Persistence`.
 
-![](figs/cap4/package1){width=50%}
+
+![](figs/cap4/package1){width=45%}
 
 Para concluir, gostaríamos de acrescentar duas observações:
 
@@ -749,13 +750,11 @@ class A {
   void g() {
     ...
   }   
- 
   void f() {
     ...
     g();
     ...
   }
-
   main() {
     A a = new A();
     a.f();
@@ -795,9 +794,8 @@ imaginária que caminha pelos nodos do diagrama. A seguir,
 explicamos o comportamento de cada nodo de um diagrama de atividades,
 assumindo a existência dessa ficha.
 
-\newpage
 
-![](figs/cap4/activity01){width=40%}
+![](figs/cap4/activity01){width=45%}
 
 
 
@@ -889,7 +887,7 @@ Hall, 2004.
    (c) Como linguagem de programação.
 
 2\. Descreva cenários de uso de diagramas de classes UML como
-instrumento de:
+instrumento dos seguintes tipos de engenharia:
 
    (a) Engenharia Reversa
    (b) Engenharia Avante (*Forward Engineering*).
@@ -913,7 +911,24 @@ UML.Veja que as classes são grafadas em uma fonte diferente.
         privados); e métodos `getCurso()` e `cancelaMatricula()`, ambos
         públicos.
 
-4\. Crie diagramas de classes para os seguintes trechos de código:
+
+4\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
+classes para representar as seguintes classes e associações:
+
+-   Uma revista científica possui título, ISSN e periodicidade;
+
+-   Essa revista publica diversas edições com os seguintes atributos:
+    número da edição, volume da edição e data da edição. Importante
+    destacar que cada instância da classe edição relaciona-se única e
+    exclusivamente a uma instância da classe revista científica, não
+    podendo relacionar-se com nenhuma outra;
+
+-   Um artigo possui título e nome do autor. Um artigo é um conteúdo
+    exclusivo de uma edição. E uma edição obrigatoriamente tem que
+    possuir no mínimo 10 e no máximo 15 artigos.
+
+
+5\. Crie diagramas de classes para os seguintes trechos de código:
 
 \(a\)
 
@@ -940,22 +955,6 @@ class HelloWorldSwing extends JFrame {
    }
 }
 ```
-
-5\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
-classes para representar as seguintes classes e associações:
-
--   Uma revista científica possui título, ISSN e periodicidade;
-
--   Essa revista publica diversas edições com os seguintes atributos:
-    número da edição, volume da edição e data da edição. Importante
-    destacar que cada instância da classe edição relaciona-se única e
-    exclusivamente a uma instância da classe revista científica, não
-    podendo relacionar-se com nenhuma outra;
-
--   Um artigo possui título e nome do autor. Um artigo é um conteúdo
-    exclusivo de uma edição. E uma edição obrigatoriamente tem que
-    possuir no mínimo 10 e no máximo 15 artigos.
-
 
 
 6\. Mostre o diagrama de sequência relativo ao seguinte código. O
