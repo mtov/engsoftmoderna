@@ -159,7 +159,7 @@ public class Estacionamento {
   }
 
 }</code></pre>
-<p>Em resumo, essa nova versão oculta uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibiliza uma interface estável para os clientes da classe — representada pelo método <code>estaciona</code>, que só requer dois parâmetros do tipo <code>String</code>.</p>
+<p>Em resumo, essa nova versão oculta uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibiliza uma interface estável para os clientes da classe — representada pelo método <code>estaciona</code>.</p>
 <p> </p>
 <p><strong>Mundo Real</strong>: Em 2002, consta que Jeff Bezos, dono da Amazon, enviou um mail para todos os desenvolvedores da empresa, com um conjunto de diretrizes para projeto de software que eles deveriam obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar mais clara em Português; essa mesma mensagem é mencionada no livro de Fox e Patterson (<a href="http://www.saasbook.info/">link</a>, Cap. 1, Seção 1.4):</p>
 <ol type="1">
@@ -449,7 +449,6 @@ interface FuncionarioPublico extends Funcionario {
 class C1 implements I {
   ...
 }
-
 class C2 implements I {
   ...
 }</code></pre>
@@ -460,8 +459,7 @@ class C2 implements I {
   Cliente (I i) {
     this.i = i;
     ...
-  }
-  ...
+  } ...
 }</code></pre>
 <pre><code>class Main {
 
@@ -473,7 +471,6 @@ class C2 implements I {
     new Cliente(c2);
     ...
   }
-
 }</code></pre>
 <p><strong>Exemplo 2:</strong> Agora, mostramos um exemplo de código que segue o Princípio de Inversão de Dependências. Esse princípio justifica a escolha de <code>Projetor</code> como tipo do parâmetro do método <code>g</code>. Amanhã, o tipo da variável local <code>projetor</code> no método <code>f</code> pode mudar para, por exemplo, <code>ProjetorSamsung</code>. Se isso vier a acontecer, a implementação de g permanecerá válida, pois ao usarmos um tipo interface estamos nos preparando para receber parâmetros de vários tipos concretos que implementam essa interface.</p>
 <pre><code>void f() {
@@ -630,7 +627,7 @@ System.out.println(nomes);
 <p>O método <code>f</code> pode ser chamado passando-se como parâmetros objetos de subclasses <code>B1</code>, <code>B2</code>, …, <code>Bn</code> da classe base <code>A</code>, como mostrado a seguir:</p>
 <pre><code>f(new B1());  // f pode receber objetos da subclasse B1 
 ...
-f(new B2());  // e de qualquer outra subclasse de A, como B2
+f(new B2());  // e de qualquer subclasse de A, como B2
 ...
 f(new B3());  // e B3</code></pre>
 <p>O Princípio de Substituição de Liskov determina as condições — semânticas e não sintáticas — que as subclasses devem atender para que um programa como o anterior funcione.</p>
@@ -728,7 +725,7 @@ class Main {
 </figure>
 <p>Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis pares de métodos, mas dois deles acessam pelo menos um atributo em comum (veja terceira coluna da tabela). Resta um único par de métodos que não tem atributos em comum.</p>
 <p>Portanto, LCOM parte do pressuposto que, em uma classe coesa, qualquer par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o que dá coesão a uma classe é o fato de seus métodos trabalharem com os mesmos atributos. Por isso, a coesão de uma classe é prejudicada — isto é, seu LCOM aumenta em uma unidade — sempre que achamos um par de métodos (f<sub>1</sub>,f<sub>2</sub>), onde f<sub>1</sub> manipula alguns atributos e f<sub>2</sub> manipula atributos diferentes.</p>
-<p>Para cálculo de LCOM normalmente não são considerados métodos construtores e getters/setters. Construtores tendem a ter atributos em comum com a maioria dos outros métodos. E o contrário tende a acontecer com getters e setters.</p>
+<p>Para cálculo de LCOM não são considerados métodos construtores e getters/setters. Construtores tendem a ter atributos em comum com a maioria dos outros métodos. E o contrário tende a acontecer com getters e setters.</p>
 <p>Por fim, é importante mencionar que existem propostas alternativas para o cálculo de LCOM. A versão que apresentamos é chamada de LCOM1 e foi proposta por Shyam Chidamber e Chris Kemerer, em 1991 (<a href="https://doi.org/10.1145/118014.117970">link</a>). As versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar valores de LCOM, é importante deixar claro qual versão da métrica está sendo adotada.</p>
 <h3 data-number="1.7.3" id="acoplamento-1" data-number="1.7.3"><span class="header-section-number">5.7.3</span> Acoplamento</h3>
 <p>  </p>

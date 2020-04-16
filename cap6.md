@@ -197,7 +197,6 @@ void g() {
   Channel c = ChannelFactory.create();
   ...
 }
-
 void h() {
   Channel c = ChannelFactory.create();
   ...
@@ -299,7 +298,7 @@ class Logger {
 
   private Logger() {} // proíbe clientes chamar new Logger()
 
-  private static Logger instance; // instância única da classe
+  private static Logger instance; // instância única
 
   public static Logger getInstance() {
     if (instance == null) // 1a vez que chama-se getInstance
@@ -571,6 +570,7 @@ sistema de controle de projetores — para as interfaces (métodos
 públicos) das classes implementadas pelos fabricantes dos projetores.
 
 Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, é o seguinte:
+\newpage
 
 ```
 class AdaptadorProjetorSamsung implements Projetor {
@@ -639,7 +639,6 @@ encapsuladas por trás da Fachada.
 
 No nosso problema, a Fachada poderia ser:
 
-\newpage
 
 ```
 class InterpretadorX {
@@ -747,7 +746,7 @@ configurar um `Channel` da seguinte forma:
 
 ```
 channel = new ZipChannel(new TCPChannel());
-// TCPChannel que compacte/descompacte dados enviados/recebidos
+// TCPChannel que compacte/descompacte dados 
 
 channel = new BufferChannel(new TCPChannel());
 // TCPChannel com um buffer associado
@@ -755,7 +754,7 @@ channel = new BufferChannel(new TCPChannel());
 channel = new BufferChannel(new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel = new BufferChannel(new ZipChannel (new TCPChannel()));
+channel = new BufferChannel(new ZipChannel(new TCPChannel()));
 // TCPChannel com compactação e um buffer associado
 ```
 
@@ -809,6 +808,7 @@ Por fim, chegamos aos decoradores reais. Eles são subclasses de
 `ChannelDecorator`, como no código a seguir, que implementa um decorador
 que compacta e descompacta as mensagens trafegadas pelo canal:
 
+\newpage
 ```
 class ZipChannel extends ChannelDecorator {
 
@@ -999,8 +999,6 @@ monitoradas na escala Celsius.
 
 As classes `Temperatura` e `TermometroCelsius` são mostradas a seguir:
 
-\newpage 
-
 ```
 class Temperatura extends Subject {
 
@@ -1174,7 +1172,6 @@ veículos.
 No entanto, o objetivo é implementar essas operações fora das classes de
 `Veiculo` por meio de um código como o seguinte:
 
-\newpage
 
 ```
 interface Visitor {
@@ -1184,9 +1181,9 @@ interface Visitor {
 }  
 
 class PrintVisitor implements Visitor {
-   public void visit(Carro c) { "imprime dados de um carro" }
-   public void visit(Onibus o) { "imprime dados de um onibus" }
-   public void visit(Motocicleta m) { "imprime dados de moto" }
+   public void visit(Carro c) { "imprime dados de carro" }
+   public void visit(Onibus o) { "imprime dados de onibus" }
+   public void visit(Motocicleta m) {"imprime dados de moto"}
 }
 ```
 
@@ -1481,7 +1478,7 @@ Atualização em Informática (JAI), 2004.
 ## Exercícios de Fixação {.unnumbered}
 
 
-1\. (ENADE 2011, adaptado) Em relação a padrões de projeto, assinale V
+1\. (ENADE 2011, adaptado) Sobre padrões de projeto, assinale V
 ou F.
 
 ( ) Prototype é um tipo de padrão estrutural.
@@ -1587,7 +1584,15 @@ class Subject {
 
 Implemente o código de `notifyObservers`, comentado com um (A) acima.
 
-10\. Suponha o exemplo de Visitor que usamos na Seção 6.11.
+
+10\. Suponha a API de Java para E/S. Suponha que para evitar o que
+chamamos de paternite, você fez a união das classes `FileInputStream` e
+`BufferedInputStream` em uma única classe. Como discutimos na Seção 6.13,
+o mecanismo de buffer será ativado por *default* na classe que você criou.
+Porém, como você tornaria possível desativar buffers nessa nova classe, caso
+isso fosse necessário?
+
+11\. Suponha o exemplo de Visitor que usamos na Seção 6.11.
 Especificamente, suponha o seguinte código, mostrado no final da seção.
 
 ```
@@ -1603,12 +1608,7 @@ Suponha que `listaDeVeiculosEstacionados` armazene três objetos:
 sequência UML que mostre os métodos executados por esse trecho de código
 (suponha que ele é executado por um objeto `main`).
 
-11\. Suponha a API de Java para E/S. Suponha que para evitar o que
-chamamos de paternite, você fez a união das classes `FileInputStream` e
-`BufferedInputStream` em uma única classe. Como discutimos na Seção 6.13,
-o mecanismo de buffer será ativado por *default* na classe que você criou.
-Porém, como você tornaria possível desativar buffers nessa nova classe, caso
-isso fosse necessário?
+
 
 \index{Padrões de Projeto!Null Object}
 \index{Null Object}

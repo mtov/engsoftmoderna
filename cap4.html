@@ -187,16 +187,15 @@ class MinhaClasse {
 <p>Observe que o <code>metodoX</code> de <code>MinhaClasse</code> possui uma variável local do tipo <code>java.util.Stack</code>. Nesse caso, dizemos que existe uma dependência de <code>MinhaClasse</code> para <code>java.util.Stack</code>, a qual é modelada da seguinte forma:</p>
 <p><img src="figs/cap4/class9.svg" style="width:50.0%" /></p>
 <p>Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o tipo da dependência, usando-se palavras como create (para indicar que a classe de origem instancia objetos da classe de destino da dependência) ou call (para indicar que a classe de origem chama métodos da classe de destino). Essas palavras são escritas entre sinais de menor (&lt;&lt;) e maior (&gt;&gt;). No diagrama a seguir, por exemplo, fica claro o tipo de dependência que <code>ShapeFactory</code> estabelece com a classe <code>Shape</code>.</p>
-<p><img src="figs/cap4/class11.svg" style="width:60.0%" /></p>
+<p><img src="figs/cap4/class11.svg" style="width:70.0%" /></p>
 <p>Uma classe pode ter dependências para um grande número de classes. No entanto, não se costuma representar todas elas em diagramas de classes, mas apenas as mais importantes e que estão diretamente relacionadas com a funcionalidade ou propriedade do sistema que pretendemos esboçar.</p>
 <h2 data-number="1.4" id="diagramas-de-pacotes" data-number="1.4"><span class="header-section-number">4.4</span> Diagramas de Pacotes</h2>
 <p> </p>
 <p>Diagrama de pacotes são recomendados quando se pretende oferecer um modelo de mais alto nível de um sistema, que mostre apenas grupos de classes — isto é, pacotes — e as dependências entre eles. Para isso, UML define um retângulo especial para representar pacotes, mostrado abaixo:</p>
-<p><img src="figs/cap4/package0.svg" style="width:25.0%" /></p>
+<p><img src="figs/cap4/package0.svg" style="width:28.0%" /></p>
 <p>Ao contrário dos retângulos de classes, o retângulo de pacotes inclui apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na parte de cima, na forma de um trapézio, para melhor diferenciá-lo dos retângulos de classe.</p>
-<p>A próxima figura mostra um exemplo de diagrama de pacotes:</p>
+<p>A próxima figura mostra um exemplo de diagrama de pacotes: Nesse diagrama, podemos ver que o sistema possui quatro pacotes principais: <code>MobileView</code>, <code>WebView</code>, <code>BusinessLayer</code> e <code>Persistence</code>. Podemos ver ainda as dependências — setas tracejadas — que existem entre eles. Ambos os pacotes <code>View</code> usam classes de <code>BusinessLayer</code>. Por outro lado, as classes de <code>BusinessLayer</code> também usam classes da <code>View</code>, por exemplo, para notificá-las da ocorrência de algum evento. Por isso, as setas que ligam os pacotes de <code>View</code> a <code>BusinessLayer</code> são bidirecionais. Por fim, apenas classes do pacote <code>BusinessLayer</code> usam classes do pacote <code>Persistence</code>.</p>
 <p><img src="figs/cap4/package1.svg" style="width:50.0%" /></p>
-<p>Nesse diagrama, podemos ver que o sistema possui quatro pacotes principais: <code>MobileView</code>, <code>WebView</code>, <code>BusinessLayer</code> e <code>Persistence</code>. Podemos ver ainda as dependências — setas tracejadas — que existem entre eles. Ambos os pacotes <code>View</code> usam classes de <code>BusinessLayer</code>. Por outro lado, as classes de <code>BusinessLayer</code> também usam classes da <code>View</code>, por exemplo, para notificá-las da ocorrência de algum evento. Por isso, as setas que ligam os pacotes de <code>View</code> a <code>BusinessLayer</code> são bidirecionais. Por fim, apenas classes do pacote <code>BusinessLayer</code> usam classes do pacote <code>Persistence</code>.</p>
 <p>Para concluir, gostaríamos de acrescentar duas observações:</p>
 <ul>
 <li><p>Dependências não incluem informações sobre quantas classes do pacote de origem dependem de classes do pacote de destino. Por exemplo, suponha dois pacotes P1 e P2, ambos com 100 classes. Suponha ainda que uma única classe de P1 use uma única classe de P2. Mesmo nesse caso, dizemos que existe uma dependência de P1 para P2.</p></li>
@@ -227,15 +226,14 @@ class MinhaClasse {
     a.f();
   }
 }</code></pre>
-<p>A execução desse programa é representada pelo diagrama de sequência a seguir. Observe como a chamada de <code>g()</code> feita por <code>f()</code> é representada por meio de um novo retângulo, que <q>sai</q> do retângulo que representa a ativação de <code>f()</code>.</p>
+<p>A execução desse programa é representada pelo diagrama de sequência a seguir. Observe como a chamada de <code>g()</code> feita por <code>f()</code> é representada por meio de um novo retângulo, que <q>sai</q> do retângulo que representa a ativação da função <code>f()</code>.</p>
 <p><img src="figs/cap4/sequence2.svg" style="width:30.0%" /></p>
 <p>Para concluir, o próximo diagrama mostra um cenário mais real, que ilustra os métodos chamados quando o cliente de uma caixa eletrônico solicita um depósito de certo valor em sua conta.</p>
-<p><img src="figs/cap4/sequence3.svg" style="width:60.0%" /></p>
+<p><img src="figs/cap4/sequence3.svg" style="width:65.0%" /></p>
 <h3 data-number="1.5.1" id="diagramas-de-atividades" data-number="1.5.1"><span class="header-section-number">4.5.1</span> Diagramas de Atividades</h3>
 <p> </p>
-<p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por retângulos. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A próxima figura mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em uma loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra.</p>
+<p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por retângulos. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A próxima figura mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em uma loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra. Para entender o funcionamento de um diagrama de atividades (como aquele mostrado na figura), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
 <p><img src="figs/cap4/activity01.svg" style="width:40.0%" /></p>
-<p>Para entender o funcionamento de um diagrama de atividades (como aquele mostrado acima), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
 <p><strong>Nodo Inicial:</strong> Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.</p>
 <p><img src="figs/cap4/activity-t-inicial.svg" /></p>
 <p><strong>Ações:</strong> Possuem um único fluxo de entrada e um único fluxo de saída. Para uma ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.</p>
@@ -280,13 +278,7 @@ class MinhaClasse {
 <li><p>Um <code>ItemPedido</code> se refere a um único <code>Produto</code> (sem navegabilidade). Um <code>Produto</code> pode ter vários <code>ItemPedido</code> (com navegabilidade).</p></li>
 <li><p>A classe <code>Aluno</code> possui atributos <code>nome</code>, <code>matricula</code>, <code>curso</code> (todos privados); e métodos <code>getCurso()</code> e <code>cancelaMatricula()</code>, ambos públicos.</p></li>
 </ol>
-<p>4. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de classes para representar as seguintes classes e associações:</p>
-<ul>
-<li><p>Uma revista científica possui título, ISSN e periodicidade;</p></li>
-<li><p>Essa revista publica diversas edições com os seguintes atributos: número da edição, volume da edição e data da edição. Importante destacar que cada instância da classe edição relaciona-se única e exclusivamente a uma instância da classe revista científica, não podendo relacionar-se com nenhuma outra;</p></li>
-<li><p>Um artigo possui título e nome do autor. Um artigo é um conteúdo exclusivo de uma edição. E uma edição obrigatoriamente tem que possuir no mínimo 10 e no máximo 15 artigos.</p></li>
-</ul>
-<p>5. Crie diagramas de classes para os seguintes trechos de código:</p>
+<p>4. Crie diagramas de classes para os seguintes trechos de código:</p>
 <p>(a)</p>
 <pre><code>public class HelloWorldSwing { 
    public static void main(String[] args) {
@@ -304,6 +296,12 @@ class MinhaClasse {
      frame.setVisible(true);
    }
 }</code></pre>
+<p>5. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de classes para representar as seguintes classes e associações:</p>
+<ul>
+<li><p>Uma revista científica possui título, ISSN e periodicidade;</p></li>
+<li><p>Essa revista publica diversas edições com os seguintes atributos: número da edição, volume da edição e data da edição. Importante destacar que cada instância da classe edição relaciona-se única e exclusivamente a uma instância da classe revista científica, não podendo relacionar-se com nenhuma outra;</p></li>
+<li><p>Um artigo possui título e nome do autor. Um artigo é um conteúdo exclusivo de uma edição. E uma edição obrigatoriamente tem que possuir no mínimo 10 e no máximo 15 artigos.</p></li>
+</ul>
 <p>6. Mostre o diagrama de sequência relativo ao seguinte código. O diagrama deve começar com a seguinte chamada <em>a</em>.<em>m5()</em>.</p>
 <pre><code>A a = new A(); // variáveis globais
 B b = new B();

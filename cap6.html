@@ -120,7 +120,6 @@ void g() {
   Channel c = ChannelFactory.create();
   ...
 }
-
 void h() {
   Channel c = ChannelFactory.create();
   ...
@@ -164,7 +163,7 @@ void h() {
 
   private Logger() {} // proíbe clientes chamar new Logger()
 
-  private static Logger instance; // instância única da classe
+  private static Logger instance; // instância única
 
   public static Logger getInstance() {
     if (instance == null) // 1a vez que chama-se getInstance
@@ -287,7 +286,7 @@ class SistemaControleProjetores {
 }</code></pre>
 <p>Porém, as classes de cada projetor — mostradas anteriormente — foram implementadas pelos seus fabricantes e estão prontas para uso. Ou seja, não temos acesso ao código dessas classes para fazer com que elas implementem a interface <code>Projetor</code>.</p>
 <p> <strong>Solução</strong>: O padrão de projeto <strong>Adaptador</strong> — também conhecido como <strong>Wrapper</strong> — é uma solução para o nosso problema. Recomenda-se usar esse padrão quando temos que converter a interface de uma classe para outra interface, esperada pelos seus clientes. No nosso exemplo, ele pode ser usado para converter a interface <code>Projetor</code> — usada no sistema de controle de projetores — para as interfaces (métodos públicos) das classes implementadas pelos fabricantes dos projetores.</p>
-<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é o seguinte:</p>
+<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é o seguinte: </p>
 <pre><code>class AdaptadorProjetorSamsung implements Projetor {
 
    private ProjetorSamsung projetor;
@@ -369,7 +368,7 @@ class UDPChannel implements Channel {
 <p><strong>Solução</strong>: O Padrão Decorador representa uma alternativa a herança quando se precisa adicionar novas funcionalidades em uma classe base. Em vez de usar herança, usa-se composição para adicionar tais funcionalidades dinamicamente nas classes base. Portanto, Decorador é um exemplo de aplicação do princípio de projeto <q>Prefira Composição a Herança</q>, que estudamos no capítulo anterior.</p>
 <p>No nosso problema, ao optarmos por decoradores, o cliente poderá configurar um <code>Channel</code> da seguinte forma:</p>
 <pre><code>channel = new ZipChannel(new TCPChannel());
-// TCPChannel que compacte/descompacte dados enviados/recebidos
+// TCPChannel que compacte/descompacte dados 
 
 channel = new BufferChannel(new TCPChannel());
 // TCPChannel com um buffer associado
@@ -377,7 +376,7 @@ channel = new BufferChannel(new TCPChannel());
 channel = new BufferChannel(new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel = new BufferChannel(new ZipChannel (new TCPChannel()));
+channel = new BufferChannel(new ZipChannel(new TCPChannel()));
 // TCPChannel com compactação e um buffer associado</code></pre>
 <p>Portanto, em uma solução com decoradores, a configuração de um <code>Channel</code> é feita no momento da sua instanciação, por meio de uma sequência aninhada de operadores <code>new</code>. O <code>new</code> mais interno sempre cria uma classe base, no nosso exemplo <code>TCPChannel</code> ou <code>UDPChannel</code>. Feito isso, os operadores mais externos são usados para <q>decorar</q> o objeto criado com novas funcionalidades.</p>
 <p>Falta então explicar as classes que são os decoradores propriamente ditos, como <code>ZipChannel</code> e <code>BufferChannel</code>. Primeiro, elas são subclasses da seguinte classe que não aparece no exemplo, mas que é fundamental para o funcionamento do padrão Decorador:</p>
@@ -569,9 +568,9 @@ class TermometroCelsius implements Observer {
 }  
 
 class PrintVisitor implements Visitor {
-   public void visit(Carro c) { &quot;imprime dados de um carro&quot; }
-   public void visit(Onibus o) { &quot;imprime dados de um onibus&quot; }
-   public void visit(Motocicleta m) { &quot;imprime dados de moto&quot; }
+   public void visit(Carro c) { &quot;imprime dados de carro&quot; }
+   public void visit(Onibus o) { &quot;imprime dados de onibus&quot; }
+   public void visit(Motocicleta m) {&quot;imprime dados de moto&quot;}
 }</code></pre>
 <p>Nesse código, a classe <code>PrintVisitor</code> inclui métodos que imprimem os dados de um <code>Carro</code>, <code>Onibus</code> e <code>Motocicleta</code>. Uma vez implementada essa classe, gostaríamos de usar o seguinte código para <q>visitar</q> todos os veículos do estacionamento::</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
@@ -664,7 +663,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>Fernando Pereira, Marco Tulio Valente, Roberto Bigonha, Mariza Bigonha. Arcademis: A Framework for Object Oriented Communication Middleware Development. Software: Practice and Experience, 2006.</p>
 <p>Fabio Tirelo, Roberto Bigonha, Mariza Bigonha, Marco Tulio Valente. Desenvolvimento de Software Orientado por Aspectos. XXIII Jornada de Atualização em Informática (JAI), 2004.</p>
 <h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
-<p>1. (ENADE 2011, adaptado) Em relação a padrões de projeto, assinale V ou F.</p>
+<p>1. (ENADE 2011, adaptado) Sobre padrões de projeto, assinale V ou F.</p>
 <p>( ) Prototype é um tipo de padrão estrutural.</p>
 <p>( ) Singleton tem por objetivo garantir que uma classe tenha ao menos uma instância e fornecer um ponto global de acesso para ela.</p>
 <p>( ) Template Method tem por objetivo definir o esqueleto de um algoritmo em uma operação, postergando a definição de alguns passos para subclasses.</p>
@@ -716,14 +715,14 @@ class Subject {
 
 }</code></pre>
 <p>Implemente o código de <code>notifyObservers</code>, comentado com um (A) acima.</p>
-<p>10. Suponha o exemplo de Visitor que usamos na Seção 6.11. Especificamente, suponha o seguinte código, mostrado no final da seção.</p>
+<p>10. Suponha a API de Java para E/S. Suponha que para evitar o que chamamos de paternite, você fez a união das classes <code>FileInputStream</code> e <code>BufferedInputStream</code> em uma única classe. Como discutimos na Seção 6.13, o mecanismo de buffer será ativado por <em>default</em> na classe que você criou. Porém, como você tornaria possível desativar buffers nessa nova classe, caso isso fosse necessário?</p>
+<p>11. Suponha o exemplo de Visitor que usamos na Seção 6.11. Especificamente, suponha o seguinte código, mostrado no final da seção.</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
 
 foreach(Veiculo veiculo: listaDeVeiculosEstacionados) {
   veiculo.accept(visitor);
 }</code></pre>
 <p>Suponha que <code>listaDeVeiculosEstacionados</code> armazene três objetos: <code>umCarro</code>, <code>umOnibus</code> e <code>umOutroCarro</code>. Desenhe um diagrama de sequência UML que mostre os métodos executados por esse trecho de código (suponha que ele é executado por um objeto <code>main</code>).</p>
-<p>11. Suponha a API de Java para E/S. Suponha que para evitar o que chamamos de paternite, você fez a união das classes <code>FileInputStream</code> e <code>BufferedInputStream</code> em uma única classe. Como discutimos na Seção 6.13, o mecanismo de buffer será ativado por <em>default</em> na classe que você criou. Porém, como você tornaria possível desativar buffers nessa nova classe, caso isso fosse necessário?</p>
 <p> </p>
 <p>12. Em uma entrevista dada ao site InformIT, em 2009, por ocasião dos 15 anos do lançamento da primeira edição do GoF, três dos autores do livro mencionaram que — se tivessem que lançar uma segunda edição do trabalho — provavelmente manteriam os padrões originais e incluiriam alguns novos, que se tornaram comuns desde o lançamento da primeira edição, em 1994. Um dos novos padrões que eles mencionaram na entrevista é chamado de <strong>Null Object</strong>. Estude e explique o funcionamento e os benefícios desse padrão de projeto. Para isso, você vai encontrar diversos artigos na Web. Mas se preferir consultar um livro, uma boa referência é o Capítulo 25 do livro <em>Agile Principles, Patterns, and Practices in C#</em>, de Robert C. Martin e Micah Martin. Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de Refactoring de Martin Fowler.</p>
 </div>

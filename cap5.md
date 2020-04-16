@@ -408,8 +408,7 @@ public class Estacionamento {
 Em resumo, essa nova versão oculta uma estrutura de dados —
 sujeita a alterações durante a evolução do sistema — e
 disponibiliza uma interface estável para os clientes da classe —
-representada pelo método `estaciona`, que só requer dois parâmetros do
-tipo `String`.
+representada pelo método `estaciona`.
 
 \index{Amazon}
 \index{Bezos, Jeff}
@@ -440,7 +439,7 @@ Cap. 1, Seção 1.4):
 7. Obrigado; tenham um excelente dia!
 ```{=latex} 
 
-Essas recomendações podem ser resumidas da seguinte forma: todos os desenvolvedores da Amazon deveriam, após receber a mensagem, seguir o princípio de ocultamento de informação, enunciado por David Parnas em 1972.
+Essas recomendações podem ser assim resumidas: todos os desenvolvedores da Amazon deveriam, após receber a mensagem, seguir o princípio de ocultamento de informação, proposto por Parnas em 1972.
 
 \end{esmbox} 
 ```
@@ -952,8 +951,6 @@ class Disciplina {
 
 Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (`Console`) e uma classe de "regra de negócio" (`Disciplina`), conforme mostrado no código a seguir. Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.
 
-\newpage
-
 ```
 class Console {
 
@@ -1072,7 +1069,6 @@ interface I { ... }
 class C1 implements I {
   ...
 }
-
 class C2 implements I {
   ...
 }
@@ -1086,8 +1082,7 @@ class Cliente {
   Cliente (I i) {
     this.i = i;
     ...
-  }
-  ...
+  } ...
 }
 ```
 
@@ -1102,7 +1097,6 @@ class Main {
     new Cliente(c2);
     ...
   }
-
 }
 ```
 
@@ -1421,7 +1415,6 @@ a classe `Collections` está preparada para esse novo cenário de uso. Mas
 para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
-\newpage
 
 ```
 Comparator<String> comparador = new Comparator<String>() {
@@ -1516,7 +1509,7 @@ subclasses `B1`, `B2`, ..., `Bn` da classe base `A`, como mostrado a seguir:
 ```
 f(new B1());  // f pode receber objetos da subclasse B1 
 ...
-f(new B2());  // e de qualquer outra subclasse de A, como B2
+f(new B2());  // e de qualquer subclasse de A, como B2
 ...
 f(new B3());  // e B3
 ```
@@ -1757,7 +1750,7 @@ isto é, seu LCOM aumenta em uma unidade — sempre que achamos um par
 de métodos (f~1~,f~2~), onde f~1~ manipula alguns atributos e f~2~
 manipula atributos diferentes.
 
-Para cálculo de LCOM normalmente não são considerados métodos
+Para cálculo de LCOM não são considerados métodos
 construtores e getters/setters. Construtores tendem a ter atributos em
 comum com a maioria dos outros métodos. E o contrário tende a acontecer
 com getters e setters.
@@ -2022,6 +2015,8 @@ class B extends A {
 
 14\. Qual das seguintes classes é mais coesa? Justifique computando os
     valores de LCOM de cada uma delas.
+
+\newpage
 
 ```
 class A {

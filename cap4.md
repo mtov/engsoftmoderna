@@ -637,7 +637,7 @@ destino). Essas palavras são escritas entre sinais de menor (\<\<) e
 maior (\>\>). No diagrama a seguir, por exemplo, fica claro o tipo de
 dependência que `ShapeFactory` estabelece com a classe `Shape`.
 
-![](figs/cap4/class11){width=60%}
+![](figs/cap4/class11){width=70%}
 
 Uma classe pode ter dependências para um grande número de classes. No
 entanto, não se costuma representar todas elas em diagramas de classes,
@@ -654,7 +654,7 @@ classes — isto é, pacotes — e as dependências entre eles. Para
 isso, UML define um retângulo especial para representar pacotes,
 mostrado abaixo:
 
-![](figs/cap4/package0){width=25%}
+![](figs/cap4/package0){width=28%}
 
 Ao contrário dos retângulos de classes, o retângulo de pacotes inclui
 apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na
@@ -662,9 +662,6 @@ parte de cima, na forma de um trapézio, para melhor diferenciá-lo dos
 retângulos de classe.
 
 A próxima figura mostra um exemplo de diagrama de pacotes:
-
-![](figs/cap4/package1){width=50%}
-
 Nesse diagrama, podemos ver que o sistema possui quatro pacotes
 principais: `MobileView`, `WebView`, `BusinessLayer` e `Persistence`. Podemos
 ver ainda as dependências — setas tracejadas — que existem entre
@@ -674,6 +671,8 @@ exemplo, para notificá-las da ocorrência de algum evento. Por isso, as
 setas que ligam os pacotes de `View` a `BusinessLayer` são bidirecionais.
 Por fim, apenas classes do pacote `BusinessLayer` usam classes do pacote
 `Persistence`.
+
+![](figs/cap4/package1){width=50%}
 
 Para concluir, gostaríamos de acrescentar duas observações:
 
@@ -768,7 +767,7 @@ class A {
 A execução desse programa é representada pelo diagrama de sequência a
 seguir. Observe como a chamada de `g()` feita por `f()` é representada por
 meio de um novo retângulo, que "sai" do retângulo que representa a
-ativação de `f()`.
+ativação da função `f()`.
 
 ![](figs/cap4/sequence2){width=30%}
 
@@ -776,7 +775,7 @@ Para concluir, o próximo diagrama mostra um cenário mais real, que
 ilustra os métodos chamados quando o cliente de uma caixa eletrônico
 solicita um depósito de certo valor em sua conta.
 
-![](figs/cap4/sequence3){width=60%}
+![](figs/cap4/sequence3){width=65%}
 
 
 ### Diagramas de Atividades
@@ -790,14 +789,17 @@ são **ações** representadas por retângulos. Existem ainda elementos de
 figura mostra um diagrama de atividades que modela o processo seguido
 após um usuário fechar uma compra em uma loja virtual. Para isso,
 assume-se que os produtos comprados já estão no carrinho de compra.
-
-![](figs/cap4/activity01){width=40%}
-
 Para entender o funcionamento de um diagrama de atividades (como aquele
-mostrado acima), devemos assumir que existe uma ficha (*token*)
+mostrado na figura), devemos assumir que existe uma ficha (*token*)
 imaginária que caminha pelos nodos do diagrama. A seguir,
 explicamos o comportamento de cada nodo de um diagrama de atividades,
 assumindo a existência dessa ficha.
+
+\newpage
+
+![](figs/cap4/activity01){width=40%}
+
+
 
 **Nodo Inicial:** Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.
 
@@ -911,23 +913,7 @@ UML.Veja que as classes são grafadas em uma fonte diferente.
         privados); e métodos `getCurso()` e `cancelaMatricula()`, ambos
         públicos.
 
-4\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
-classes para representar as seguintes classes e associações:
-
--   Uma revista científica possui título, ISSN e periodicidade;
-
--   Essa revista publica diversas edições com os seguintes atributos:
-    número da edição, volume da edição e data da edição. Importante
-    destacar que cada instância da classe edição relaciona-se única e
-    exclusivamente a uma instância da classe revista científica, não
-    podendo relacionar-se com nenhuma outra;
-
--   Um artigo possui título e nome do autor. Um artigo é um conteúdo
-    exclusivo de uma edição. E uma edição obrigatoriamente tem que
-    possuir no mínimo 10 e no máximo 15 artigos.
-
-
-5\. Crie diagramas de classes para os seguintes trechos de código:
+4\. Crie diagramas de classes para os seguintes trechos de código:
 
 \(a\)
 
@@ -954,6 +940,23 @@ class HelloWorldSwing extends JFrame {
    }
 }
 ```
+
+5\. (ENADE 2014, Tec. e Análise de Sistemas) Construa um diagrama de
+classes para representar as seguintes classes e associações:
+
+-   Uma revista científica possui título, ISSN e periodicidade;
+
+-   Essa revista publica diversas edições com os seguintes atributos:
+    número da edição, volume da edição e data da edição. Importante
+    destacar que cada instância da classe edição relaciona-se única e
+    exclusivamente a uma instância da classe revista científica, não
+    podendo relacionar-se com nenhuma outra;
+
+-   Um artigo possui título e nome do autor. Um artigo é um conteúdo
+    exclusivo de uma edição. E uma edição obrigatoriamente tem que
+    possuir no mínimo 10 e no máximo 15 artigos.
+
+
 
 6\. Mostre o diagrama de sequência relativo ao seguinte código. O
 diagrama deve começar com a seguinte chamada *a*.*m5()*.
