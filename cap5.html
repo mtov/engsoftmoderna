@@ -833,6 +833,25 @@ class Main {
 }</code></pre>
 <p>13. Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p>
 <p>14. Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p>
+<p>15. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
+<p>16. Calcule o CBO e LCOM da seguinte classe:</p>
+<pre><code>class A extends B {
+
+  C f1, f2, f3;
+
+  void m1(D p) {
+    &quot;usa f1 e f2&quot;
+  }
+
+  void m2(E p) {
+    &quot;usa f2 e f3&quot;
+  }
+
+  void m3(F p) {
+    &quot;usa f3&quot;  
+  }
+
+}</code></pre>
 <pre><code>class A {
 
   X x = new X();
@@ -866,25 +885,6 @@ class Main {
 
   void h() {
     z.m();
-  }
-
-}</code></pre>
-<p>15. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
-<p>16. Calcule o CBO e LCOM da seguinte classe:</p>
-<pre><code>class A extends B {
-
-  C f1, f2, f3;
-
-  void m1(D p) {
-    &quot;usa f1 e f2&quot;
-  }
-
-  void m2(E p) {
-    &quot;usa f2 e f3&quot;
-  }
-
-  void m3(F p) {
-    &quot;usa f3&quot;  
   }
 
 }</code></pre>

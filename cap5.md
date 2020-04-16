@@ -2015,7 +2015,33 @@ class B extends A {
 14\. Qual das seguintes classes é mais coesa? Justifique computando os
     valores de LCOM de cada uma delas.
 
+15\. Todos os métodos de uma classe devem ser considerados no cálculo de
+    LCOM? Sim ou não? Justifique.
+
+16\. Calcule o CBO e LCOM da seguinte classe:
+
 \newpage
+
+```
+class A extends B {
+
+  C f1, f2, f3;
+
+  void m1(D p) {
+    "usa f1 e f2"
+  }
+
+  void m2(E p) {
+    "usa f2 e f3"
+  }
+
+  void m3(F p) {
+    "usa f3"  
+  }
+
+}
+```
+
 
 ```
 class A {
@@ -2059,32 +2085,6 @@ class B {
 }
 ```
 
-15\. Todos os métodos de uma classe devem ser considerados no cálculo de
-    LCOM? Sim ou não? Justifique.
-
-16\. Calcule o CBO e LCOM da seguinte classe:
-
-\newpage
-
-```
-class A extends B {
-
-  C f1, f2, f3;
-
-  void m1(D p) {
-    "usa f1 e f2"
-  }
-
-  void m2(E p) {
-    "usa f2 e f3"
-  }
-
-  void m3(F p) {
-    "usa f3"  
-  }
-
-}
-```
 
 17\. A definição de complexidade ciclomática é independente de linguagem
     de programação. Sim ou não? Justifique.
