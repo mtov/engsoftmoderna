@@ -57,7 +57,7 @@ projeto — precisamos entender: (1) o problema que o padrão pretende
 resolver; (2) o contexto em que esse problema ocorre; (3) a solução
 proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre
 focando nesses elementos: contexto, problema e solução. Iremos também mostrar 
-vários exemplos de código.
+vários exemplos de código fonte.
 
 Além de oferecer soluções prontas para problemas de projeto, padrões de
 projeto transformaram-se em um vocabulário largamente adotado por
@@ -228,7 +228,7 @@ de `new` migram para uma única chamada, no método fábrica estático.
 Existem ainda algumas variações do padrão Fábrica. Em uma delas, uma
 classe abstrata é usada para concentrar vários métodos fábrica. Essa
 classe recebe então o nome de **Fábrica Abstrata**. Um exemplo é
-mostrado a seguir:
+mostrado no código a seguir:
 
 ```
 abstract class ProtocolFactory { // Fábrica Abstrata
@@ -285,7 +285,7 @@ sistema que precisam registrar algum evento. Isso é importante, por
 exemplo, caso o registro de eventos seja feito em arquivos. Se for
 possível a criação de vários objetos `Logger`, todo novo objeto
 instanciado vai apagar o arquivo anterior, criado por outros objetos
-`Logger`.
+do tipo `Logger`.
 
 **Solução**: A solução para esse problema consiste em transformar a
 classe `Logger` em um **Singleton**. Esse padrão de projeto define como
@@ -569,7 +569,8 @@ ele pode ser usado para converter a interface `Projetor` — usada no
 sistema de controle de projetores — para as interfaces (métodos
 públicos) das classes implementadas pelos fabricantes dos projetores.
 
-Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, é o seguinte:
+Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, 
+é mostrado a seguir:
 \newpage
 
 ```
@@ -584,7 +585,6 @@ class AdaptadorProjetorSamsung implements Projetor {
    public void liga() {
      projetor.turnOn();
    }
-
 }
 ```
 
@@ -808,7 +808,6 @@ Por fim, chegamos aos decoradores reais. Eles são subclasses de
 `ChannelDecorator`, como no código a seguir, que implementa um decorador
 que compacta e descompacta as mensagens trafegadas pelo canal:
 
-\newpage
 ```
 class ZipChannel extends ChannelDecorator {
 
@@ -920,7 +919,6 @@ class MyList {
   public void sort() {
     strategy.sort(this);
   }
-
 }
 ```
 
@@ -980,7 +978,7 @@ Quando o estado de um sujeito muda, seus observadores devem ser
 notificados.
 
 Primeiro, vamos mostrar um possível programa principal para o nosso
-problema:
+problema original:
 
 ```
 void main() {
@@ -1211,6 +1209,7 @@ similares, o compilador somente conhece o tipo estático de `veiculo`, que
 Para ficar mais claro, o seguinte erro ocorre ao compilar o código
 anterior:
 
+\newpage
 ```
 visitor.visit(veiculo);  
          ^

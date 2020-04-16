@@ -67,7 +67,7 @@
 <blockquote>
 <p>Padrões de projeto descrevem objetos e classes que se relacionam para resolver um problema de projeto genérico em um contexto particular.</p>
 </blockquote>
-<p> Assim, para entender os padrões propostos pela <em>Gang of Four</em> — nome pelo qual ficaram conhecidos os autores e também o livro de padrões de projeto — precisamos entender: (1) o problema que o padrão pretende resolver; (2) o contexto em que esse problema ocorre; (3) a solução proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre focando nesses elementos: contexto, problema e solução. Iremos também mostrar vários exemplos de código.</p>
+<p> Assim, para entender os padrões propostos pela <em>Gang of Four</em> — nome pelo qual ficaram conhecidos os autores e também o livro de padrões de projeto — precisamos entender: (1) o problema que o padrão pretende resolver; (2) o contexto em que esse problema ocorre; (3) a solução proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre focando nesses elementos: contexto, problema e solução. Iremos também mostrar vários exemplos de código fonte.</p>
 <p>Além de oferecer soluções prontas para problemas de projeto, padrões de projeto transformaram-se em um vocabulário largamente adotado por desenvolvedores de software. Assim, é comum ouvir desenvolvedores dizendo que usaram uma fábrica para resolver um certo problema, enquanto que um segundo problema foi resolvido por meio de decoradores. Ou seja, eles apenas mencionam o nome do padrão e subentendem que a solução adotada já está clara. De forma semelhante, o vocabulário de padrões de projeto é muito usado na documentação de sistemas. Por exemplo, a figura da próxima página mostra a documentação de uma das classes da biblioteca padrão de Java. Podemos ver que o nome da classe termina em <code>Factory</code> — que é um dos padrões de projeto que vamos estudar daqui a pouco. Na descrição da classe, volta-se a mencionar que ela é uma fábrica. Portanto, desenvolvedores que conhecem esse padrão de projeto terão mais facilidade para entender e usar a classe em questão.</p>
 <figure>
 <img src="figs/cap6/doc-pattern.png" style="width:55.0%" alt="" /><figcaption>Documentação de uma classe <code>Factory</code> da API de Java</figcaption>
@@ -126,7 +126,7 @@ void h() {
 }</code></pre>
 <p>   Nessa nova versão, as funções <code>f</code>, <code>g</code> e <code>h</code> não tem consciência do tipo de <code>Channel</code> que vão criar e usar. Elas chamam um <strong>Método Fábrica Estático</strong>, que instancia e retorna um objeto de uma classe concreta — para ser claro, essa variante do padrão Fábrica não foi proposta no livro da Gangue dos Quatro, mas sim alguns anos depois por Joshua Bloch (<a href="https://dl.acm.org/citation.cfm?id=1377533">link</a>). É importante também destacar que as três funções usam sempre uma interface <code>Channel</code> para manipular os objetos criados pelo método fábrica estático. Ou seja, aplicamos o princípio <q>Prefira Interfaces a Classes</q> (ou Inversão de Dependências).</p>
 <p>No novo código, o sistema continua funcionando com canais do tipo <code>TCPChannel</code>. Porém, se quisermos mudar o tipo de canal, temos agora que modificar um único elemento do código: o método create da classe <code>ChannelFactory</code>. Dizendo de outra forma, um método fábrica estático funciona como um <q>aspirador</q> de métodos <code>new</code>: todas as chamadas antigas de <code>new</code> migram para uma única chamada, no método fábrica estático.</p>
-<p>Existem ainda algumas variações do padrão Fábrica. Em uma delas, uma classe abstrata é usada para concentrar vários métodos fábrica. Essa classe recebe então o nome de <strong>Fábrica Abstrata</strong>. Um exemplo é mostrado a seguir:</p>
+<p>Existem ainda algumas variações do padrão Fábrica. Em uma delas, uma classe abstrata é usada para concentrar vários métodos fábrica. Essa classe recebe então o nome de <strong>Fábrica Abstrata</strong>. Um exemplo é mostrado no código a seguir:</p>
 <pre><code>abstract class ProtocolFactory { // Fábrica Abstrata
   abstract Channel createChannel();
   abstract Port createPort();  
@@ -157,7 +157,7 @@ void h() {
   log.println(&quot;Executando h&quot;);
   ...
 }</code></pre>
-<p><strong>Problema</strong>: No código anterior, cada método que precisa registrar eventos cria sua própria instância de <code>Logger</code>. No entanto, gostaríamos que todos os usos de <code>Logger</code> tivessem como alvo a mesma instância da classe. Em outras palavras, não queremos uma proliferação de objetos <code>Logger</code>. Em vez disso, gostaríamos que existisse, no máximo, uma única instância dessa classe e que ela fosse usada em todas as partes do sistema que precisam registrar algum evento. Isso é importante, por exemplo, caso o registro de eventos seja feito em arquivos. Se for possível a criação de vários objetos <code>Logger</code>, todo novo objeto instanciado vai apagar o arquivo anterior, criado por outros objetos <code>Logger</code>.</p>
+<p><strong>Problema</strong>: No código anterior, cada método que precisa registrar eventos cria sua própria instância de <code>Logger</code>. No entanto, gostaríamos que todos os usos de <code>Logger</code> tivessem como alvo a mesma instância da classe. Em outras palavras, não queremos uma proliferação de objetos <code>Logger</code>. Em vez disso, gostaríamos que existisse, no máximo, uma única instância dessa classe e que ela fosse usada em todas as partes do sistema que precisam registrar algum evento. Isso é importante, por exemplo, caso o registro de eventos seja feito em arquivos. Se for possível a criação de vários objetos <code>Logger</code>, todo novo objeto instanciado vai apagar o arquivo anterior, criado por outros objetos do tipo <code>Logger</code>.</p>
 <p><strong>Solução</strong>: A solução para esse problema consiste em transformar a classe <code>Logger</code> em um <strong>Singleton</strong>. Esse padrão de projeto define como implementar classes que terão, como o próprio nome indica, no máximo uma instância. Mostramos a seguir a versão de <code>Logger</code> que funciona como um Singleton:</p>
 <pre><code>class Logger {
 
@@ -286,7 +286,7 @@ class SistemaControleProjetores {
 }</code></pre>
 <p>Porém, as classes de cada projetor — mostradas anteriormente — foram implementadas pelos seus fabricantes e estão prontas para uso. Ou seja, não temos acesso ao código dessas classes para fazer com que elas implementem a interface <code>Projetor</code>.</p>
 <p> <strong>Solução</strong>: O padrão de projeto <strong>Adaptador</strong> — também conhecido como <strong>Wrapper</strong> — é uma solução para o nosso problema. Recomenda-se usar esse padrão quando temos que converter a interface de uma classe para outra interface, esperada pelos seus clientes. No nosso exemplo, ele pode ser usado para converter a interface <code>Projetor</code> — usada no sistema de controle de projetores — para as interfaces (métodos públicos) das classes implementadas pelos fabricantes dos projetores.</p>
-<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é o seguinte: </p>
+<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é mostrado a seguir: </p>
 <pre><code>class AdaptadorProjetorSamsung implements Projetor {
 
    private ProjetorSamsung projetor;
@@ -298,7 +298,6 @@ class SistemaControleProjetores {
    public void liga() {
      projetor.turnOn();
    }
-
 }</code></pre>
 <p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; isto é, um objeto que acessa projetores Samsung.</p>
 <figure>
@@ -466,7 +465,6 @@ c.send(&quot;Hello, world&quot;)</code></pre>
   public void sort() {
     strategy.sort(this);
   }
-
 }</code></pre>
 <p>Nessa nova versão, o algoritmo de ordenação transformou-se em um atributo da classe <code>MyList</code> e um método <code>set</code> foi criado para configurar esse algoritmo. O método <code>sort</code> repassa a tarefa de ordenação para um método de mesmo nome do objeto com a estratégia de ordenação. Nessa chamada, passa-se <code>this</code> como parâmetro, pois o algoritmo a ser executado deve ter acesso à lista para ordenar seus elementos.</p>
 <p>Para encerrar a apresentação do padrão, mostramos o código das classes que implementam as estratégias — isto é, os algoritmos — de ordenação:</p>
@@ -484,7 +482,7 @@ class ShellSortStrategy extends SortStrategy {
 <p><strong>Contexto</strong>: Suponha que estamos implementando um sistema para controlar uma estação meteorológica. Nesse sistema, temos que manipular objetos de duas classes: <code>Temperatura</code>, que são objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na estação meteorológica; e <code>Termometro</code>, que é uma classe usada para criar objetos visuais que exibem as temperaturas sob monitoramento. Termômetros devem exibir a temperatura atual que foi monitorada. Se a temperatura mudar, os termômetros devem ser atualizados.</p>
 <p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius na console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nessas classes.</p>
 <p><strong>Solução:</strong> O padrão <strong>Observador</strong> é a solução recomendada para o nosso contexto e problema. Esse padrão define como implementar uma relação do tipo um-para-muitos entre objetos sujeito e observadores. Quando o estado de um sujeito muda, seus observadores devem ser notificados.</p>
-<p>Primeiro, vamos mostrar um possível programa principal para o nosso problema:</p>
+<p>Primeiro, vamos mostrar um possível programa principal para o nosso problema original:</p>
 <pre><code>void main() {
   Temperatura t = new Temperatura();
   t.addObserver(new TermometroCelsius());

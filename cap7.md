@@ -68,7 +68,9 @@ vamos estudar padrões arquiteturais que dão origem às seguintes
 arquiteturas: Arquitetura em Camadas (Seção 7.2), Arquitetura
 Model-View-Controller ou MVC (Seção 7.3), Microsserviços (Seção 7.4),
 Arquitetura Orientada a Mensagens (Seção 7.5) e Arquitetura
-Publish/Subscribe (Seção 7.6). Para finalizar, iremos apresentar de
+Publish/Subscribe (Seção 7.6). 
+
+Para finalizar, iremos apresentar de
 forma breve outros padrões arquiteturais, como pipes e filtros (Seção
 7.7). Vamos também dar um exemplo de um anti-padrão arquitetural,
 conhecido como *big ball of mud* (Seção 7.8).
@@ -596,13 +598,15 @@ específicos; por exemplo, apenas pelo serviço de autenticação de
 usuários. Então, microsserviços permitem replicar apenas os componentes
 diretamente relacionados com os problemas de performance. A próxima
 figura mostra uma nova instalação do nosso sistema baseado em
-microsserviços. O segundo servidor que foi disponibilizado inclui apenas
+microsserviços. 
+
+![Servidor 1, com todos os microsserviços, exceto M1. Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade){width=60%}
+
+O segundo servidor que foi disponibilizado inclui apenas
 instâncias do serviço M1. A suposição é que M1 é responsável pela maior
 parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
 instâncias, todas elas em um novo servidor.
-
-![Servidor 1, com todos os microsserviços, exceto M1. Servidor 2, executando seis processos, todos eles relativos a M1.](figs/cap7/escalabilidade){width=60%}
 
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
@@ -1017,13 +1021,12 @@ de lama"). Esse anti-padrão — proposto por Brian Foote e Joseph
 Yoder ([link](https://joeyoder.com/PDFs/mud.pdf)) —
 descreve sistemas nos quais qualquer módulo comunica-se com praticamente
 qualquer outro módulo, como mostra a próxima figura.
-
-![Anti-padrão *big ball of mud*](figs/cap7/big-ball-mud){width=40%}
-
 Ou seja, um "big ball of mud" não possui uma arquitetura definida. Em
 vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
+
+![Anti-padrão *big ball of mud*](figs/cap7/big-ball-mud){width=40%}
 
 \index{InfoSys}
 ```{=latex}
