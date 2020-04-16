@@ -205,7 +205,7 @@ porém, para obter consenso, o comitê acaba decidindo que ambas devem ser
 implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a
 integridade conceitual do sistema ficará comprometida. Existe uma frase
 que resume o que acabamos de discutir; ela afirma que "um camelo é um
-cavalo que foi projetado por um comitê".
+cavalo projetado por um comitê".
 
 Nos parágrafos anteriores, enfatizamos o impacto da falta de integridade
 conceitual nos usuários finais de um sistema. No entanto, o princípio se
@@ -275,7 +275,7 @@ resumo do artigo começa da seguinte forma:
 > "Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
 
 \index{Módulo}
-**Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
+**Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++ e Ruby. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
 
 Ocultamento de informação traz as seguintes vantagens para um sistema:
 
@@ -702,7 +702,6 @@ class A {
     total = f.readInt();
     ...
   }
-
 }
 ```
 
@@ -1350,10 +1349,10 @@ if (carteira.getValorTotal() >= preco) {  // viola Demeter
 }
 ```
 
-O jornaleiro têm acesso à carteira do seu cliente — via
+O jornaleiro tem acesso à carteira do seu cliente — via
 `getCarteira()` — e então ele mesmo retira o valor do jornal
-dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse
-tamanha liberdade. Uma solução mais realista é a seguinte:
+dela. Porém, nenhum cliente aceitaria que um jornaleiro tivesse
+essa liberdade. Uma solução mais realista é a seguinte:
 
 ```
 preco = 6.00;
@@ -1415,7 +1414,7 @@ a classe `Collections` está preparada para esse novo cenário de uso. Mas
 para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
-
+\newpage
 ```
 Comparator<String> comparador = new Comparator<String>() {
   public int compare(String s1, String s2) {
@@ -1559,7 +1558,6 @@ class A {
 
 }
 ```
-\newpage
 
 ```
 class B extends A {
@@ -1975,6 +1973,7 @@ void sendMail(ContaBancaria conta, String msg) {
 11\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
+\newpage
 ```
 void imprimeDataContratacao(Funcionario func) {
   Date data = func.getDataContratacao();

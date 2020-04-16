@@ -89,7 +89,7 @@
 <blockquote>
 <p><q>Hoje, eu estou mais convencido do que antes. Integridade conceitual é fundamental para qualidade de produtos de software.</q></p>
 </blockquote>
-<p>Sempre que falamos de integridade conceitual, surge uma discussão sobre se o princípio requer que uma autoridade central — um único arquiteto ou gerente de produto, por exemplo — seja responsável por decidir quais funcionalidades serão incluídas no sistema. Sobre essa questão, temos que ressaltar que essa pré-condição — o projeto ser liderado por uma pessoa apenas — não faz parte da definição de integridade conceitual. No entanto, existe um certo consenso de que decisões importantes de projeto não devem ficar nas mãos de um grande comitê, onde cada membro tem direito a um voto. Quando isso ocorre, a tendência é a produção de sistemas com mais funcionalidades do que o necessário, isto é, sistemas sobrecarregados (<em>bloated systems</em>). Por exemplo, um grupo pode defender uma funcionalidade A e outro grupo defender uma funcionalidade B. Talvez, as duas não sejam necessárias; porém, para obter consenso, o comitê acaba decidindo que ambas devem ser implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a integridade conceitual do sistema ficará comprometida. Existe uma frase que resume o que acabamos de discutir; ela afirma que <q>um camelo é um cavalo que foi projetado por um comitê</q>.</p>
+<p>Sempre que falamos de integridade conceitual, surge uma discussão sobre se o princípio requer que uma autoridade central — um único arquiteto ou gerente de produto, por exemplo — seja responsável por decidir quais funcionalidades serão incluídas no sistema. Sobre essa questão, temos que ressaltar que essa pré-condição — o projeto ser liderado por uma pessoa apenas — não faz parte da definição de integridade conceitual. No entanto, existe um certo consenso de que decisões importantes de projeto não devem ficar nas mãos de um grande comitê, onde cada membro tem direito a um voto. Quando isso ocorre, a tendência é a produção de sistemas com mais funcionalidades do que o necessário, isto é, sistemas sobrecarregados (<em>bloated systems</em>). Por exemplo, um grupo pode defender uma funcionalidade A e outro grupo defender uma funcionalidade B. Talvez, as duas não sejam necessárias; porém, para obter consenso, o comitê acaba decidindo que ambas devem ser implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a integridade conceitual do sistema ficará comprometida. Existe uma frase que resume o que acabamos de discutir; ela afirma que <q>um camelo é um cavalo projetado por um comitê</q>.</p>
 <p>Nos parágrafos anteriores, enfatizamos o impacto da falta de integridade conceitual nos usuários finais de um sistema. No entanto, o princípio se aplica também ao design e código de um sistema. Nesse caso, os afetados são os desenvolvedores, que terão mais dificuldade para entender, manter e evoluir o sistema. A seguir, mencionamos exemplos de falta de integridade conceitual em nível de código:</p>
 <ul>
 <li><p>Quando uma parte do sistema usa um padrão de nomes para variáveis (por exemplo, <em>camel case</em>, como em <code>notaTotal</code>), enquanto em outra parte usa-se um outro padrão (por exemplo, <em>snake case</em>, como em <code>nota_total</code>).</p></li>
@@ -104,7 +104,7 @@
 <blockquote>
 <p><q>Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos.</q></p>
 </blockquote>
-<p> <strong>Aviso</strong>: Parnas usa o termo <em>módulo</em> no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo <strong>classe</strong>, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++, Ruby, etc. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.</p>
+<p> <strong>Aviso</strong>: Parnas usa o termo <em>módulo</em> no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo <strong>classe</strong>, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++ e Ruby. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.</p>
 <p>Ocultamento de informação traz as seguintes vantagens para um sistema:</p>
 <ul>
 <li><p><strong>Desenvolvimento em paralelo.</strong> Suponha que um sistema X foi implementado por meio de classes C<sub>1</sub>, C<sub>2</sub>, …, C<sub>n</sub>. Quando essas classes ocultam suas principais informações, fica mais fácil implementá-las em paralelo, por desenvolvedores diferentes. Consequentemente, teremos uma redução no tempo total de implementação do sistema.</p></li>
@@ -273,7 +273,6 @@ public class Estacionamento {
     total = f.readInt();
     ...
   }
-
 }</code></pre>
 <pre><code>class B {
   private void g() {
@@ -565,7 +564,7 @@ if (carteira.getValorTotal() &gt;= preco) {  // viola Demeter
 } else {
   // volto amanhã, para cobrar o valor do jornal
 }</code></pre>
-<p>O jornaleiro têm acesso à carteira do seu cliente — via <code>getCarteira()</code> — e então ele mesmo retira o valor do jornal dela. Provavelmente, nenhum cliente aceitaria que um jornaleiro tivesse tamanha liberdade. Uma solução mais realista é a seguinte:</p>
+<p>O jornaleiro tem acesso à carteira do seu cliente — via <code>getCarteira()</code> — e então ele mesmo retira o valor do jornal dela. Porém, nenhum cliente aceitaria que um jornaleiro tivesse essa liberdade. Uma solução mais realista é a seguinte:</p>
 <pre><code>preco = 6.00;
 try {
   cliente.pagar(preco);
