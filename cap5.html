@@ -113,7 +113,7 @@
 </ul>
 <p>No entanto, para se atingir os benefícios acima, classes devem satisfazer à seguinte condição (ou critério): elas devem esconder decisões de projeto que são sujeitas a mudanças. Devemos entender decisão de projeto como qualquer aspecto de projeto da classe, como os requisitos que ela implementa ou os algoritmos e estruturas de dados que serão usados no seu código. Portanto, ocultamento de informação recomenda que classes devem esconder detalhes de implementação que estão sujeitos a mudanças. Modernamente, os atributos e métodos que uma classe pretende encapsular são declarados com o modificador de visibilidade <strong>privado</strong>, disponível em linguagens como Java, C++, C# e Ruby.</p>
 <p>Porém, se uma classe encapsular toda a sua implementação ela não será útil. Dito de outra forma, uma classe para ser útil deve tornar alguns de seus métodos públicos, isto é, permitir que eles possam ser chamados por código externo. Código externo que chama métodos de uma classe é dito ser <strong>cliente</strong> da classe. Dizemos também que o conjunto de métodos públicos de uma classe define a sua <strong>interface</strong>. A definição da interface de uma classe é muito importante, pois ela constitui a sua parte visível.</p>
-<p>Interfaces devem ser estáveis, pois mudanças na interface de uma classe podem implicar em atualizações em seus clientes. Para ser mais claro, suponha uma classe Math, com métodos que realizam operações matemáticas. Suponha um método sqrt, que calcula a raiz quadrada de seu parâmetro. Suponha ainda que a assinatura desse método seja alterada — para, por exemplo, retornar uma exceção caso o valor do parâmetro seja negativo. Essa alteração terá impacto em todo código cliente do método sqrt, que deverá ser alterado para tratar a nova exceção.</p>
+<p>Interfaces devem ser estáveis, pois mudanças na interface de uma classe podem implicar em atualizações em seus clientes. Para ser mais claro, suponha uma classe Math, com métodos que realizam operações matemáticas. Suponha um método <code>sqrt</code>, que calcula a raiz quadrada de seu parâmetro. Suponha ainda que a assinatura desse método seja alterada — para, por exemplo, retornar uma exceção caso o valor do parâmetro seja negativo. Essa alteração terá impacto em todo código cliente do método <code>sqrt</code>, que deverá ser alterado para tratar a nova exceção.</p>
 <h3 data-number="1.3.1" id="exemplo-1" data-number="1.3.1"><span class="header-section-number">5.3.1</span> Exemplo</h3>
 <p>Suponha um sistema para controle de estacionamentos. Suponha ainda que, em uma primeira versão, a classe principal desse sistema seja a seguinte:</p>
 <pre><code>import java.util.Hashtable;
@@ -132,11 +132,10 @@ public class Estacionamento {
     e.veiculos.put(&quot;BNF-4501&quot;, &quot;Gol&quot;);
     e.veiculos.put(&quot;JKL-3481&quot;, &quot;Corsa&quot;);
   }
-
 }</code></pre>
 <p>Essa classe tem um problema de exposição excessiva de informação ou, em outras palavras, ela não oculta estruturas que podem mudar no futuro. Especificamente, a tabela hash que armazena os veículos estacionados no estacionamento é pública. Com isso, clientes — como o método <code>main</code> — têm acesso direto a ela para, por exemplo, adicionar veículos no estacionamento. Se, futuramente, decidirmos usar uma outra estrutura de dados para armazenar os veículos, todos os clientes deverão ser modificados.</p>
 <p>Suponha que o sistema de estacionamento fosse manual, com o nome dos veículos anotados em uma folha de papel. Fazendo uma comparação, essa primeira versão da classe <code>Estacionamento</code> corresponderia — no caso desse sistema manual — ao cliente do estacionamento, após estacionar seu carro, entrar na cabine de controle e escrever ele mesmo a placa e o modelo do seu carro na folha de controle.</p>
-<p>Já a próxima versão da classe é melhor, pois ela encapsula a estrutura de dados responsável por armazenar os veículos. Para estacionar um veículo, existe agora o método <code>estaciona</code>. Com isso, os desenvolvedores da classe têm liberdade para trocar de estrutura de dados, sem causar impacto nos seus clientes. A única restrição é que a assinatura do método <code>estaciona</code> deve ser preservada.</p>
+<p>Já a próxima versão da classe é melhor, pois ela encapsula a estrutura de dados responsável por armazenar os veículos. Para estacionar um veículo, existe agora o método <code>estaciona</code>. Com isso, os desenvolvedores da classe têm liberdade para trocar de estrutura de dados, sem causar impacto nos seus clientes. A única restrição é que a assinatura de <code>estaciona</code> deve ser preservada.</p>
 <pre><code>import java.util.Hashtable;
 
 public class Estacionamento {
@@ -150,14 +149,12 @@ public class Estacionamento {
   public void estaciona(String placa, String veiculo) {
     veiculos.put(placa, veiculo);
   }
-
   public static void main(String[] args) {
     Estacionamento e = new Estacionamento();
     e.estaciona(&quot;TCP-7030&quot;, &quot;Uno&quot;);
     e.estaciona(&quot;BNF-4501&quot;, &quot;Gol&quot;);
     e.estaciona(&quot;JKL-3481&quot;, &quot;Corsa&quot;);
   }
-
 }</code></pre>
 <p>Em resumo, essa nova versão oculta uma estrutura de dados — sujeita a alterações durante a evolução do sistema — e disponibiliza uma interface estável para os clientes da classe — representada pelo método <code>estaciona</code>.</p>
 <p> </p>
@@ -208,7 +205,7 @@ public class Estacionamento {
 <li><p>Facilita a alocação de um único responsável por manter uma classe.</p></li>
 <li><p>Facilita o reúso e teste de uma classe, pois é mais simples reusar e testar uma classe coesa do que uma classe com várias responsabilidades.</p></li>
 </ul>
-<p> <strong>Separação de interesses</strong> (<em>separation of concerns</em>) é uma outra propriedade desejável em projeto de software, a qual é muito semelhante ao conceito de coesão. Ela defende que uma classe deve implementar apenas um <strong>interesse</strong> (<em>concern</em>). Nesse contexto, o termo interesse se refere a qualquer funcionalidade, requisito ou responsabilidade da classe. Portanto, as seguintes recomendações são equivalentes: (1) uma classe deve ter uma única responsabilidade; (2) uma classe deve implementar um único interesse; (3) uma classe deve ser coesa.</p>
+<p> <strong>Separação de interesses</strong> (<em>separation of concerns</em>) é uma outra propriedade desejável em projeto de software, a qual é semelhante ao conceito de coesão. Ela defende que uma classe deve implementar apenas um <strong>interesse</strong> (<em>concern</em>). Nesse contexto, o termo interesse se refere a qualquer funcionalidade, requisito ou responsabilidade da classe. Portanto, as seguintes recomendações são equivalentes: (1) uma classe deve ter uma única responsabilidade; (2) uma classe deve implementar um único interesse; (3) uma classe deve ser coesa.</p>
 <h3 data-number="1.4.1" id="exemplos" data-number="1.4.1"><span class="header-section-number">5.4.1</span> Exemplos</h3>
 <p><strong>Exemplo 1:</strong> A discussão anterior foi voltada para coesão de classes. No entanto, o conceito se adapta também a métodos ou funções. Por exemplo, suponha uma função como a seguinte:</p>
 <pre><code>float sin_or_cos(double x, int op) {
@@ -576,7 +573,7 @@ catch (ExcecaoValorInsuficiente e) {
 <h3 data-number="1.6.6" id="princípio-abertofechado" data-number="1.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado</h3>
 <p>  </p>
 <p>Esse princípio, originalmente proposto por Bertrand Meyer ainda na década de 80 (<a href="https://dl.acm.org/citation.cfm?id=261119">link</a>), defende algo que pode parecer paradoxal: uma classe deve estar fechada para modificações e aberta para extensões.</p>
-<p>No entanto, o aparente paradoxo se esclarece quando o projeto da classe prevê a possibilidade de extensões e customizações. Para isso, o projetista pode se valer de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto, como Abstract Factory, Template Method e Strategy. Especificamente, no próximo capítulo, iremos tratar de padrões de projeto que permitem customizar e estender uma classe sem modificar o seu código.</p>
+<p>No entanto, o aparente paradoxo se esclarece quando o projeto da classe prevê a possibilidade de extensões e customizações. Para isso, o projetista pode se valer de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto, como Abstract Factory, Template Method e Strategy. Especificamente, no próximo capítulo, iremos tratar de padrões de projeto que permitem customizar uma classe sem modificar o seu código.</p>
 <p>Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.</p>
 <p><strong>Exemplo 1:</strong> Um exemplo de classe que segue o Princípio Aberto/Fechado é a classe <code>Collections</code> de Java. Ela possui um método estático para ordenar uma lista em ordem crescente de seus elementos. Um exemplo de uso desse método é mostrado a seguir:</p>
 <pre><code>List&lt;String&gt; nomes;
@@ -723,9 +720,9 @@ class Main {
 <img src="figs/cap5/lcom.jpg" style="width:80.0%" alt="" /><figcaption>Exemplo de cálculo de LCOM</figcaption>
 </figure>
 <p>Logo, nesse exemplo, LCOM(C) = 1, pois a classe C tem três possíveis pares de métodos, mas dois deles acessam pelo menos um atributo em comum (veja terceira coluna da tabela). Resta um único par de métodos que não tem atributos em comum.</p>
-<p>Portanto, LCOM parte do pressuposto que, em uma classe coesa, qualquer par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o que dá coesão a uma classe é o fato de seus métodos trabalharem com os mesmos atributos. Por isso, a coesão de uma classe é prejudicada — isto é, seu LCOM aumenta em uma unidade — sempre que achamos um par de métodos (f<sub>1</sub>,f<sub>2</sub>), onde f<sub>1</sub> manipula alguns atributos e f<sub>2</sub> manipula atributos diferentes.</p>
+<p>LCOM parte do pressuposto que, em uma classe coesa, qualquer par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o que dá coesão a uma classe é o fato de seus métodos trabalharem com os mesmos atributos. Por isso, a coesão de uma classe é prejudicada — isto é, seu LCOM aumenta em uma unidade — sempre que achamos um par de métodos (f<sub>1</sub>,f<sub>2</sub>), onde f<sub>1</sub> manipula alguns atributos e f<sub>2</sub> manipula atributos diferentes.</p>
 <p>Para cálculo de LCOM não são considerados métodos construtores e getters/setters. Construtores tendem a ter atributos em comum com a maioria dos outros métodos. E o contrário tende a acontecer com getters e setters.</p>
-<p>Por fim, é importante mencionar que existem propostas alternativas para o cálculo de LCOM. A versão que apresentamos é chamada de LCOM1 e foi proposta por Shyam Chidamber e Chris Kemerer, em 1991 (<a href="https://doi.org/10.1145/118014.117970">link</a>). As versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar valores de LCOM, é importante deixar claro qual versão da métrica está sendo adotada.</p>
+<p>Por fim, é importante mencionar que existem propostas alternativas para cálculo de LCOM. A versão que apresentamos, chamada de LCOM1, foi proposta por Shyam Chidamber e Chris Kemerer, em 1991 (<a href="https://doi.org/10.1145/118014.117970">link</a>). As versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar valores de LCOM, é importante deixar claro qual versão da métrica está sendo adotada.</p>
 <h3 data-number="1.7.3" id="acoplamento-1" data-number="1.7.3"><span class="header-section-number">5.7.3</span> Acoplamento</h3>
 <p>  </p>
 <p><strong>CBO</strong> (<em>Coupling Between Objects</em>) é uma métrica para medir <strong>acoplamento estrutural</strong> entre duas classes. Ela também foi proposta por Chidamber e Kemerer (<a href="https://doi.org/10.1145/118014.117970"><span class="underline">link1</span></a> e <a href="https://doi.org/10.1109/32.295895"><span class="underline">link2</span></a>).</p>
@@ -831,10 +828,7 @@ class Main {
   }              // pos: exp &gt; -50
   ...
 }</code></pre>
-<p>13. Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p>
-<p>14. Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p>
-<p>15. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
-<p>16. Calcule o CBO e LCOM da seguinte classe:</p>
+<p>13. Calcule o CBO e LCOM da seguinte classe:</p>
 <pre><code>class A extends B {
 
   C f1, f2, f3;
@@ -842,16 +836,14 @@ class Main {
   void m1(D p) {
     &quot;usa f1 e f2&quot;
   }
-
   void m2(E p) {
     &quot;usa f2 e f3&quot;
   }
-
   void m3(F p) {
     &quot;usa f3&quot;  
   }
-
 }</code></pre>
+<p>14. Qual das seguintes classes é mais coesa? Justifique computando os valores de LCOM de cada uma delas.</p>
 <pre><code>class A {
 
   X x = new X();
@@ -888,6 +880,8 @@ class Main {
   }
 
 }</code></pre>
+<p>15. Por que a métrica LCOM mede a ausência e não a presença de coesão? Justifique.</p>
+<p>16. Todos os métodos de uma classe devem ser considerados no cálculo de LCOM? Sim ou não? Justifique.</p>
 <p>17. A definição de complexidade ciclomática é independente de linguagem de programação. Sim ou não? Justifique.</p>
 <p>18. Dê um exemplo de código com complexidade ciclomática mínima. Qual é essa complexidade?</p>
 <p>19. Cristina Lopes — professora da Universidade da Califórnia, em Irvine, nos EUA — é autora de um livro sobre estilos de programação (<a href="https://dl.acm.org/citation.cfm?id=2648631">link</a>). Ela discute no livro diversos estilos para implementação de um mesmo problema, chamado frequência de termos. Dado um arquivo texto, deve-se listar as <em>n</em>-palavras mais frequentes em ordem decrescente de frequência e ignorando <em>stop words</em>, isto é, artigos, preposições, etc. O código fonte em Python de todas as versões analisadas no livro está publicamente disponível no GitHub (e, para esse exercício, fizemos um fork do repositório original). Faça uma análise de duas dessas versões:</p>

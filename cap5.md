@@ -324,11 +324,11 @@ parte visível.
 Interfaces devem ser estáveis, pois mudanças na interface de uma classe
 podem implicar em atualizações em seus clientes. Para ser mais claro,
 suponha uma classe Math, com métodos que realizam operações matemáticas.
-Suponha um método sqrt, que calcula a raiz quadrada de seu parâmetro.
+Suponha um método `sqrt`, que calcula a raiz quadrada de seu parâmetro.
 Suponha ainda que a assinatura desse método seja alterada — para,
 por exemplo, retornar uma exceção caso o valor do parâmetro seja
 negativo. Essa alteração terá impacto em todo código cliente do método
-sqrt, que deverá ser alterado para tratar a nova exceção.
+`sqrt`, que deverá ser alterado para tratar a nova exceção.
 
 ### Exemplo
 
@@ -353,7 +353,6 @@ public class Estacionamento {
     e.veiculos.put("BNF-4501", "Gol");
     e.veiculos.put("JKL-3481", "Corsa");
   }
-
 }
 ```
 
@@ -377,8 +376,8 @@ Já a próxima versão da classe é melhor, pois ela encapsula a estrutura
 de dados responsável por armazenar os veículos. Para estacionar um
 veículo, existe agora o método `estaciona`. Com isso, os desenvolvedores
 da classe têm liberdade para trocar de estrutura de dados, sem causar
-impacto nos seus clientes. A única restrição é que a assinatura do
-método `estaciona` deve ser preservada.
+impacto nos seus clientes. A única restrição é que a assinatura de
+ `estaciona` deve ser preservada.
 
 ```
 import java.util.Hashtable;
@@ -394,14 +393,12 @@ public class Estacionamento {
   public void estaciona(String placa, String veiculo) {
     veiculos.put(placa, veiculo);
   }
-
   public static void main(String[] args) {
     Estacionamento e = new Estacionamento();
     e.estaciona("TCP-7030", "Uno");
     e.estaciona("BNF-4501", "Gol");
     e.estaciona("JKL-3481", "Corsa");
   }
-
 }
 ```
 
@@ -535,7 +532,7 @@ Coesão tem as seguintes vantagens:
 
 \index{Separação de Interesses}
 **Separação de interesses** (*separation of concerns*) é uma outra
-propriedade desejável em projeto de software, a qual é muito semelhante
+propriedade desejável em projeto de software, a qual é semelhante
 ao conceito de coesão. Ela defende que uma classe deve implementar
 apenas um **interesse** (*concern*). Nesse contexto, o termo interesse
 se refere a qualquer funcionalidade, requisito ou responsabilidade da
@@ -1000,6 +997,7 @@ funcionários de empresas privadas, contratados em regime de CLT, possuem
 uma conta no FGTS. Por outro lado, apenas funcionários públicos possuem
 uma matrícula no SIAPE.
 
+\newpage
 ```
 interface Funcionario {
 
@@ -1107,6 +1105,8 @@ da variável local `projetor` no método `f` pode mudar para, por exemplo,
 permanecerá válida, pois ao usarmos um tipo interface estamos nos
 preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
+
+\newpage
 
 ```
 void f() {
@@ -1387,7 +1387,7 @@ prevê a possibilidade de extensões e customizações. Para isso, o
 projetista pode se valer de recursos como herança, funções de mais alta
 ordem (ou funções lambda) e padrões de projeto, como Abstract Factory,
 Template Method e Strategy. Especificamente, no próximo capítulo, iremos
-tratar de padrões de projeto que permitem customizar e estender uma
+tratar de padrões de projeto que permitem customizar uma
 classe sem modificar o seu código.
 
 Em resumo, o Princípio Aberto/Fechado tem como objetivo a construção de
@@ -1740,7 +1740,7 @@ pares de métodos, mas dois deles acessam pelo menos um atributo em comum
 (veja terceira coluna da tabela). Resta um único par de métodos que não
 tem atributos em comum.
 
-Portanto, LCOM parte do pressuposto que, em uma classe coesa, qualquer
+LCOM parte do pressuposto que, em uma classe coesa, qualquer
 par de métodos deve acessar pelo menos um atributo em comum. Ou seja, o
 que dá coesão a uma classe é o fato de seus métodos trabalharem com os
 mesmos atributos. Por isso, a coesão de uma classe é prejudicada —
@@ -1753,8 +1753,8 @@ construtores e getters/setters. Construtores tendem a ter atributos em
 comum com a maioria dos outros métodos. E o contrário tende a acontecer
 com getters e setters.
 
-Por fim, é importante mencionar que existem propostas alternativas para
-o cálculo de LCOM. A versão que apresentamos é chamada de LCOM1 e foi
+Por fim, é importante mencionar que existem propostas alternativas para 
+cálculo de LCOM. A versão que apresentamos, chamada de LCOM1, foi
 proposta por Shyam Chidamber e Chris Kemerer, em 1991
 ([link](https://doi.org/10.1145/118014.117970)). As
 versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao
@@ -2009,18 +2009,8 @@ class B extends A {
 }
 ```
 
-13\. Por que a métrica LCOM mede a ausência e não a presença de coesão?
-    Justifique.
+13\. Calcule o CBO e LCOM da seguinte classe:
 
-14\. Qual das seguintes classes é mais coesa? Justifique computando os
-    valores de LCOM de cada uma delas.
-
-15\. Todos os métodos de uma classe devem ser considerados no cálculo de
-    LCOM? Sim ou não? Justifique.
-
-16\. Calcule o CBO e LCOM da seguinte classe:
-
-\newpage
 
 ```
 class A extends B {
@@ -2030,18 +2020,17 @@ class A extends B {
   void m1(D p) {
     "usa f1 e f2"
   }
-
   void m2(E p) {
     "usa f2 e f3"
   }
-
   void m3(F p) {
     "usa f3"  
   }
-
 }
 ```
 
+14\. Qual das seguintes classes é mais coesa? Justifique computando os
+    valores de LCOM de cada uma delas.
 
 ```
 class A {
@@ -2084,6 +2073,13 @@ class B {
 
 }
 ```
+
+15\. Por que a métrica LCOM mede a ausência e não a presença de coesão?
+    Justifique.
+
+
+16\. Todos os métodos de uma classe devem ser considerados no cálculo de
+    LCOM? Sim ou não? Justifique.
 
 
 17\. A definição de complexidade ciclomática é independente de linguagem
