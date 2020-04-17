@@ -229,7 +229,7 @@ representante dos clientes. Com isso, procura-se evitar o que se
 denomina de **gold plating**. Em Engenharia de Requisitos, a expressão
 designa a situação na qual os desenvolvedores decidem, por conta
 própria, sofisticar a implementação de algumas histórias  —  ou
-requisitos, de forma mais genérica  — , sem que isso tenha sido pedido
+requisitos, de forma mais genérica  —, sem que isso tenha sido pedido
 pelos clientes. Em uma tradução literal, os desenvolvedores ficam
 cobrindo as histórias com camadas de ouro, quando isso não irá gerar
 valor para os usuários do sistema.
@@ -575,8 +575,8 @@ Hans van Vliet. Software Engineering: Principles and Practice. Wiley, 2008.
 
 ## Exercícios de Fixação {.unnumbered}
 
-1\. \[POSCOMP 2010, adaptado\] Sobre Engenharia de Requisitos, marque V
-ou F.
+1\. \[POSCOMP 2010, adaptado\] Sobre Engenharia de Requisitos, marque 
+Verdadeiro (V) ou Falso (F).
 
 ( ) A Engenharia de Requisitos, como todas as outras atividades de
 Engenharia de Software, precisa ser adaptada às necessidades do
@@ -604,7 +604,7 @@ requisitos.
 o acrônimo 3C\'s.
 
 4\. Suponha uma rede social como o Facebook. (1) Escreva um conjunto de
-5 histórias para essa rede, assumindo o papel de um usuário típico; (2)
+cinco histórias para essa rede, assumindo o papel de um usuário típico; (2)
 Pense agora em mais um papel de usuário e escreva pelo menos duas
 histórias para ele.
 

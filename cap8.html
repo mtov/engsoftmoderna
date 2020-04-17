@@ -93,15 +93,14 @@
 </figure>
 <p>A figura mostra um sistema com <em>n</em> classes e <em>m</em> testes. Como pode ser observado, não existe uma correspondência de 1 para 1 entre classes e testes. Por exemplo, uma classe pode ter mais de um teste. É o caso da classe C1, que é testada por T1 e T2. Provavelmente, isso ocorre porque C1 é uma classe importante, que precisa ser testada em diferentes contextos. Por outro lado, C2 não possui testes, ou porque os desenvolvedores esqueceram de implementar ou porque ela é uma classe menos importante.</p>
 <p>      Testes de unidade são implementados usando-se frameworks construídos especificamente para esse fim. Os mais conhecidos são chamados de frameworks <strong>xUnit</strong>, onde o <em>x</em> designa a linguagem usada na implementação dos testes. O primeiro desses frameworks — chamado sUnit — foi implementado por Kent Beck no final da década de 80 para Smalltalk. Neste capítulo, nossos testes serão implementados em Java, usando o <strong>JUnit</strong>. A primeira versão do JUnit foi implementada em conjunto por Kent Beck e Erich Gamma, em 1997, durante uma viagem de avião entre a Suíça e os EUA.</p>
-<p>Hoje, existem versões de frameworks xUnit para as principais linguagens de programação. Logo, uma das vantagens de testes de unidade é que os desenvolvedores não precisam aprender uma nova linguagem de programação, pois os testes são implementados na mesma linguagem do sistema que pretende-se testar.</p>
-<p>Para explicar os conceitos de testes de unidade, vamos usar a seguinte classe <code>Stack</code>:</p>
+<p>Hoje, existem versões de frameworks xUnit para as principais linguagens. Logo, uma das vantagens de testes de unidade é que os desenvolvedores não precisam aprender uma nova linguagem de programação, pois os testes são implementados na mesma linguagem do sistema que pretende-se testar.</p>
+<p>Para explicar os conceitos de testes de unidade, vamos usar uma classe <code>Stack</code>:</p>
 <pre><code>import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 public class Stack&lt;T&gt; {
 
   private ArrayList&lt;T&gt; elements = new ArrayList&lt;T&gt;();
-
   private int size = 0;
 
   public int size() {
@@ -124,7 +123,6 @@ public class Stack&lt;T&gt; {
     size--;
     return elem;
   }
-
 }</code></pre>
 <p>JUnit permite implementar classes que vão testar — de forma automática — classes da aplicação, como a classe <code>Stack</code>. Por convenção, classes de teste têm o mesmo nome das classes testadas, mas com um sufixo <code>Test</code>. Portanto, nossa primeira classe de teste vai se chamar <code>StackTest</code>. Já os métodos de teste começam com o prefixo <code>test</code> e devem, obrigatoriamente, atender às seguintes condições: (1) serem públicos, pois eles serão chamados pelo JUnit; (2) não possuírem parâmetros; (3) possuírem a anotação <code>@Test</code>, a qual identifica métodos que deverão ser executados durante um teste.</p>
 <p>Mostramos a seguir nosso primeiro teste de unidade:</p>
@@ -149,12 +147,11 @@ public class StackTest {
 <li><p>Por fim, devemos testar se o resultado do método é aquele esperado. Para isso, deve-se usar um comando chamado <strong>assert</strong>.  Na verdade, o JUnit oferece diversas variações de <code>assert</code>, mas todas têm o mesmo objetivo: testar se um determinado resultado é igual a um valor esperado. No exemplo, usamos <code>assertTrue</code>, que verifica se o valor passado como parâmetro é verdadeiro.</p></li>
 </ul>
 <p>  IDEs oferecem opções para rodar apenas os testes de um sistema, por exemplo, por meio de uma opção de menu chamada <q>Run as Test</q>. Ou seja, se o desenvolvedor chamar <q>Run</q>, ele irá executar o seu programa normalmente, começando pelo método <code>main</code>. No entanto, se ele optar pela opção <q>Run as Test</q> ele não irá executar o programa, mas apenas os seus testes de unidade.</p>
-<p>A próxima figura mostra o resultado da execução do nosso primeiro teste. O resultado é mostrado na própria IDE e a barra verde informa que todos os testes passaram. Pode-se observar que o teste roda rapidamente, em 0.025 segundos.</p>
+<p>A próxima figura mostra o resultado da execução do nosso primeiro teste. O resultado é mostrado na própria IDE e a barra verde informa que todos os testes passaram. Pode-se observar também que o teste roda rapidamente, em 0.025 segundos.</p>
 <p><img src="figs/cap8/run1.png" style="width:80.0%" /></p>
 <p>Porém, suponha que tivéssemos cometido um erro na implementação da classe <code>Stack</code>. Por exemplo, suponha que o atributo <code>size</code> fosse inicializado com o valor 1, em vez de zero. Nesse caso, a execução dos testes iria falhar, como mostrado pela barra vermelha na IDE:</p>
 <p><img src="figs/cap8/run2.png" style="width:80.0%" /></p>
-<p>A mensagem de erro informa que houve uma falha durante a execução de <code>testEmptyStack</code>. Falha (<em>failure</em>) é o termo usado pelo JUnit para indicar testes cujo comando <code>assert</code> não foi satisfeito.</p>
-<p>Em uma outra janela da IDE, pode-se descobrir que a asserção responsável pela falha encontra-se na linha 19 do arquivo <code>StackTest.java</code>.</p>
+<p>A mensagem de erro informa que houve uma falha durante a execução de <code>testEmptyStack</code>. Falha (<em>failure</em>) é o termo usado pelo JUnit para indicar testes cujo comando <code>assert</code> não foi satisfeito. Em uma outra janela da IDE, pode-se descobrir que a asserção responsável pela falha encontra-se na linha 19 do arquivo <code>StackTest.java</code>.</p>
 <p><img src="figs/cap8/run3.png" style="width:80.0%" /></p>
 <p>Para concluir, vamos mostrar o código completo do teste de unidade:</p>
 <pre><code>import org.junit.Test;
@@ -290,7 +287,7 @@ public void testNotEmptyStack() {
   stack.push(10);
   assertFalse(stack.isEmpty());
 }</code></pre>
-<p>Em outras palavras, <em>não</em> se recomenda usar dois comandos <code>assert</code> no mesmo método, como no código a seguir: </p>
+<p>Em outras palavras, <em>não</em> se recomenda usar dois comandos <code>assert</code> no mesmo método, como no código a seguir:</p>
 <pre><code>@Test
 public void testEmptyStack() {
   assertTrue(stack.isEmpty());
@@ -559,7 +556,7 @@ public class BookSearchTest {
 <p><strong>Código Fonte</strong>: O código desse exemplo, usando o mockito, está neste <a href="https://gist.github.com/mtov/f7781e3f164a62c85cf4294271b9c2fd">link</a>.</p>
 <h3 data-number="1.6.2" id="mocks-vs-stubs" data-number="1.6.2"><span class="header-section-number">8.6.2</span> Mocks vs Stubs</h3>
 <p>  </p>
-<p> Alguns autores, como Martin Fowler (<a href="https://martinfowler.com/articles/mocksArentStubs.html">link</a>) e também Gerard Meszaros (<a href="https://dl.acm.org/citation.cfm?id=1076526">link</a>) fazem uma distinção entre <strong>mocks</strong> e <strong>stubs</strong>. Segundo eles, mocks devem verificar não apenas o estado do Sistema sob Testes (SUT), mas também o seu comportamento. Se os mocks verificam apenas o estado, eles deveriam ser chamados de stubs. No entanto, neste livro, não vamos fazer essa distinção, pois achamos que ela é sutil e, portanto, os benefícios não compensam o custo de páginas extras para explicar e diferenciar conceitos semelhantes. Porém, apenas para esclarecer um pouco mais, um <strong>teste comportamental</strong> verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte teste:</p>
+<p> Alguns autores, como Gerard Meszaros (<a href="https://dl.acm.org/citation.cfm?id=1076526">link</a>), fazem uma distinção entre <strong>mocks</strong> e <strong>stubs</strong>. Segundo eles, mocks devem verificar não apenas o estado do Sistema sob Testes (SUT), mas também o seu comportamento. Se os mocks verificam apenas o estado, eles deveriam ser chamados de stubs. No entanto, neste livro, não vamos fazer essa distinção, pois achamos que ela é sutil e, portanto, os benefícios não compensam o custo de páginas extras para explicar conceitos semelhantes. Porém, apenas para esclarecer um pouco mais, um <strong>teste comportamental</strong> verifica eventos que ocorreram no SUT. Um exemplo é o seguinte teste:</p>
 <pre><code>testBehaviour {
   Mailer m = mock(Mailer.class);
   sut.someBusinessLogic(m);
@@ -716,7 +713,7 @@ public class ShoppingCart {
 <h3 class="unnumbered" data-number="" id="exemplo-agenda-de-compromissos" class="unnumbered" data-number="">Exemplo: Agenda de Compromissos</h3>
 <p>Suponha uma agenda simples que permita adicionar, remover e editar compromissos, conforme ilustrado na próxima figura.</p>
 <figure>
-<img src="figs/cap8/myappointments.png" style="width:60.0%" alt="" /><figcaption>Interface da Agenda de Compromissos</figcaption>
+<img src="figs/cap8/myappointments.png" style="width:65.0%" alt="" /><figcaption>Interface da Agenda de Compromissos</figcaption>
 </figure>
 <p>Nesse sistema, existe uma classe com métodos para manipular a agenda, como mostrado a seguir:</p>
 <pre><code>public class AgendaFacade {
@@ -768,7 +765,7 @@ void AgendaFacadeTest() {
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition&lt;Boolean&gt;() {
      public Boolean apply(WebDriver d) {
-      return d.getTitle().toLowerCase().startsWith(&quot;software&quot;);
+     return d.getTitle().toLowerCase().startsWith(&quot;software&quot;);
      }
     });
 
@@ -788,7 +785,7 @@ void AgendaFacadeTest() {
 <p>   </p>
 <p>Técnicas de teste podem ser classificadas como caixa preta ou caixa branca. Quando se usa uma <strong>técnica caixa preta</strong>, os testes são escritos com base apenas na interface do sistema sob testes. Por exemplo, se a missão for testar um método como uma caixa preta, a única informação disponível incluirá seu nome, parâmetros, tipos e exceções de retorno. Por outro lado, quando se usa uma <strong>técnica caixa branca</strong>, a escrita dos testes considera informações sobre o código e a estrutura do sistema sob teste. Por isso, técnicas de teste caixa preta são também chamadas de <strong>testes funcionais</strong>. E técnicas caixa branca são chamadas de <strong>testes estruturais</strong>.</p>
 <p>No entanto, não é trivial classificar testes de unidade em uma dessas categorias. Na verdade, a classificação vai depender de como os testes são escritos. Se os testes de unidade forem escritos usando-se informações apenas sobre a interface dos métodos sob teste, eles são considerados como caixa preta. Porém, se a escrita considerar informações sobre a cobertura dos testes, desvios que são cobertos ou não, etc, então eles são testes caixa branca. Em resumo, testes de unidade sempre testam uma unidade pequena e isolada de código. Essa unidade pode ser testada na forma de uma caixa preta (conhecendo-se apenas a sua interface e requisitos externos) ou na forma de uma caixa branca (conhecendo-se e tirando-se proveito da sua estrutura interna, para elaboração de testes mais efetivos).</p>
-<p> Uma observação semelhante pode ser feita sobre a relação entre TDD e testes caixa preta/branca. Para esclarecer essa relação, vamos usar algumas frases do próprio Kent Beck, isto é, do inventor da ideia de TDD (fonte: <em>Test-Driven Development Violates the Dichotomies of Testing, Kent Beck</em>, Three Rivers Institute, June 2007):</p>
+<p> Uma observação semelhante pode ser feita sobre a relação entre TDD e testes caixa preta/branca. Para esclarecer essa relação, vamos usar um comentário do próprio Kent Beck (fonte: <em>Test-Driven Development Violates the Dichotomies of Testing</em>, Three Rivers Institute, 2007):</p>
 <blockquote>
 <p><q>No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa preta e testes caixa branca. Como testes em TDD são escritos antes do código que eles testam, eles talvez pudessem ser considerados como testes caixa preta. No entanto, eu normalmente ganho inspiração para escrever o próximo teste depois que implemento e analiso o código verificado pelo teste anterior, o que é uma característica marcante de testes caixa branca.</q></p>
 </blockquote>
@@ -840,7 +837,7 @@ void AgendaFacadeTest() {
 <p>São testes realizados pelo cliente, com dados do cliente. Os resultados desse teste irão determinar se o cliente está de acordo ou não com a implementação realizada. Se estiver de acordo, o sistema pode entrar em produção. Se não estiver de acordo, os devidos ajustes devem ser realizados. Por exemplo, quando se usa métodos ágeis, uma história somente é considerada completa após passar por testes de aceitação, realizados pelos usuários, ao final de um sprint.</p>
 <p>Testes de aceitação possuem duas características que os distinguem de todos os testes que estudamos antes neste capítulo. Primeiro, são <strong>testes manuais</strong>, realizados pelos clientes finais do sistema. Segundo, eles não constituem exclusivamente uma atividade de verificação (como os testes anteriores), mas também uma atividade de validação do sistema. Lembre-se do capítulo de Introdução: verificação testa se fizemos o sistema corretamente, isto é, de acordo com a sua especificação e/ou requisitos. Já validação testa se fizemos o sistema correto, isto é, aquele que o cliente pediu e precisa.</p>
 <p> </p>
-<p>Em alguns casos, testes de aceitação podem ser divididos em duas fases. <strong>Testes alfa</strong> são realizados com alguns usuários, mas em um ambiente controlado, como a própria máquina do desenvolvedor. Se o sistema for aprovado nos testes alfa, pode-se realizar um teste com um grupo maior de usuários e não mais em um ambiente controlado. Esses testes são chamados de <strong>testes beta</strong>.</p>
+<p>Testes de aceitação podem ser divididos em duas fases. <strong>Testes alfa</strong> são realizados com alguns usuários, mas em um ambiente controlado, como a própria máquina do desenvolvedor. Se o sistema for aprovado nos testes alfa, pode-se realizar um teste com um grupo maior de usuários e não mais em um ambiente controlado. Esses testes são chamados de <strong>testes beta</strong>.</p>
 <h3 data-number="1.10.4" id="testes-de-requisitos-não-funcionais" data-number="1.10.4"><span class="header-section-number">8.10.4</span> Testes de Requisitos Não-Funcionais</h3>
 <p></p>
 <p>Os testes anteriores, com exceção dos testes de aceitação, verificam apenas requisitos funcionais; logo, eles têm como objetivo encontrar bugs. Porém, é possível realizar também testes para verificar ou validar requisitos não-funcionais. Por exemplo, existem ferramentas que permitem a realização de <strong>testes de desempenho</strong>, para verificar o comportamento de um sistema com alguma carga. Uma empresa de comércio eletrônico pode usar uma dessas ferramentas para simular o desempenho de seu site durante um grande evento, como uma Black-Friday, por exemplo. Já <strong>testes de usabilidade</strong> são usados para avaliar a interface do sistema e, normalmente, envolvem a observação de usuários reais usando o sistema. <strong>Testes de falhas</strong> simulam eventos anormais em um sistema, por exemplo a queda de alguns serviços ou mesmo de um data-center inteiro.</p>

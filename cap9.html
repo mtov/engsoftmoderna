@@ -92,7 +92,7 @@ void f () {
   ...  // C
 }
 </code></pre>
-<p> Existem também variações na mecânica de funcionamento de uma extração de método. Por exemplo, pode-se extrair de uma vez vários métodos <code>g1</code>, <code>g2</code>, …, <code>gn</code> de um método <code>f</code>. Pode-se também extrair o mesmo código g de vários métodos <code>f1</code>, <code>f2</code>, …, <code>fn</code>. Nesse caso, a extração é usada para eliminar <strong>duplicação de código</strong>, pois o código de g estava aparecendo em diversos métodos.</p>
+<p> Existem também variações na mecânica de funcionamento de uma extração de método. Por exemplo, pode-se extrair de uma vez vários métodos <code>g1</code>, <code>g2</code>, …, <code>gn</code> de um método <code>f</code>. Pode-se também extrair o mesmo código <code>g</code> de vários métodos <code>f1</code>, <code>f2</code>, …, <code>fn</code>. Nesse caso, a extração é usada para eliminar <strong>duplicação de código</strong>, pois o código de <code>g</code> estava aparecendo no corpo de diversos métodos.</p>
 <p>Para realizar uma Extração de Método pode ser necessário passar parâmetros para o método extraído. Isso ocorre, por exemplo, se o método precisar acessar variáveis locais do método original. O método extraído pode ter ainda que retornar algumas dessas variáveis, caso elas sejam usados depois pelo método original. Por fim, se existirem variáveis locais que somente são usadas no método extraído, deve-se extrair também a declaração delas do método original. Ou seja, elas não serão mais necessárias no método original.</p>
 <p>Extração de Método é conhecido como o <q>canivete suíço</q> dos refactorings, pois ele é um dos refactorings com mais aplicações. Por exemplo, Extração de Método pode ser usado para quebrar um método grande em métodos menores. Cada um desses métodos tem uma função específica, que deve ficar clara em seu nome. Assim, fica mais fácil entender o método original, pois ele passará a conter apenas uma sequência de chamadas dos métodos extraídos. Vamos mostrar um exemplo a seguir. Outras aplicações de Extração de Método são discutidas em uma seção <q>Mundo Real</q>, após o exemplo.</p>
 <p><strong>Exemplo:</strong> A seguir, mostramos um exemplo real de Extração de Método, realizada em um sistema Android. Esse sistema possui um método onCreate, que usa comandos SQL para criar as tabelas do banco de dados que ele manipula. O código dessa primeira versão de <code>onCreate</code> — após algumas edições, simplificações e remoções de comentários — é mostrado a seguir. O código fonte original possui mais de 200 linhas.</p>
@@ -102,7 +102,7 @@ void f () {
             CELL_SIGNAL_TABLE + &quot; (&quot; + COLUMN_ID +
             &quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot; + ...
   database.execSQL(&quot;CREATE INDEX cellID_index ON &quot; + ...);
-  database.execSQL(&quot;CREATE INDEX cellID_timestamp ON &quot; + ... );
+  database.execSQL(&quot;CREATE INDEX cellID_timestamp ON &quot; + ...);
 
   // cria tabela 2
   String SMS_DATABASE_CREATE = &quot;CREATE TABLE &quot; + 
@@ -134,7 +134,7 @@ void f () {
   createEventLogTable(database);
  }</code></pre>
 <h3 data-number="1.2.2" id="motivações-para-extração-de-métodos" data-number="1.2.2"><span class="header-section-number">9.2.2</span> Motivações para Extração de Métodos</h3>
-<p>Em 2016, junto com Danilo Silva (na época aluno de doutorado do ASERG/DCC/ UFMG) e com o Prof. Nikolaos Tsantalis (da Universidade Concordia, em Montreal, no Canadá), realizamos um estudo com desenvolvedores de sistemas GitHub para descobrir suas reais motivações para realização de refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>). No estudo, revelamos 11 motivações distintas para Extrações de Métodos, conforme mostrado na tabela a seguir.</p>
+<p>Em 2016, junto com Danilo Silva e com o Prof. Nikolaos Tsantalis (da Universidade Concordia, em Montreal, no Canadá), realizamos um estudo com desenvolvedores de sistemas GitHub para descobrir suas reais motivações para realização de refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>). No estudo, revelamos 11 motivações distintas para Extrações de Métodos, conforme mostrado na tabela a seguir.</p>
 <table>
 <colgroup>
 <col style="width: 74%" />
@@ -261,25 +261,22 @@ private void write(byte[] revision) {
   ...
 }</code></pre>
 <p>Pelos motivos expostos no parágrafo anterior, um dos desenvolvedores do IntelliJ decidiu mover <code>averageAmongMedians</code> para uma classe chamada <code>ArrayUtil</code>, que tem como objetivo disponibilizar funções utilitárias para manipulação de vetores. Logo, trata-se de uma classe mais relacionada com a funcionalidade provida por <code>averageAmongMedians</code>.</p>
-<p>Após a movimentação para a nova classe, as chamadas de <code>averageAmongMedians</code> tiveram que ser atualizadas, como mostrado na figura a seguir. No entanto, como o leitor pode observar nesse diff, isso não foi difícil, pois <code>averageAmongMedians</code> é um método estático. Logo, apenas o nome de sua classe teve que ser atualizado em cada ponto de chamada.</p>
+<p>Após a movimentação para a nova classe, as chamadas de <code>averageAmongMedians</code> tiveram que ser atualizadas, como mostrado na figura a seguir.</p>
 <figure>
 <img src="figs/cap9/diff-intellij.png" style="width:100.0%" alt="" /><figcaption>Atualizando chamadas de método estático após movimentação. <code>averageAmongMedians</code> foi movido de <code>PlatformTestUtil</code> para <code>ArrayUtil</code>.</figcaption>
 </figure>
-<p>Em outros casos, no entanto, pode não ser tão simples atualizar as chamadas de um método após ele ser movido para uma nova classe. Isso acontece quando nos pontos de chamada não existem referências para objetos da nova classe do método. Uma solução consiste então em deixar uma implementação simples do método na classe de origem. Essa implementação apenas delega as chamadas para a nova classe do método. Consequentemente, nenhum cliente precisará ser alterado.</p>
-<p>Um exemplo é mostrado a seguir. Primeiro, o código original:</p>
+<p>No entanto, como o leitor pode observar nesse diff, isso não foi difícil, pois <code>averageAmongMedians</code> é um método estático. Logo, apenas o nome de sua classe teve que ser atualizado em cada ponto de chamada.</p>
+<p>Em outros casos, no entanto, pode não ser tão simples atualizar as chamadas de um método após ele ser movido para uma nova classe. Isso acontece quando nos pontos de chamada não existem referências para objetos da nova classe do método. Uma solução consiste então em deixar uma implementação simples do método na classe de origem. Essa implementação apenas delega as chamadas para a nova classe do método. Por isso, nenhum cliente precisará ser alterado. Um exemplo é mostrado a seguir. Primeiro, o código original:</p>
 <pre><code>class A {
   B b = new B();
   void f { ... }
 }
 
-class B { 
-  ... 
-}
+class B { ... }
 
 class Cliente {
   A a = new A();
   void g() {
-    ... 
     a.g(); 
     ...
   }
@@ -298,8 +295,7 @@ class B {    // f foi movido de A para B
 
 class Cliente {
   A a = new A();
-  void g() {
-    ... 
+  void g() { 
     a.g();    // não precisa mudar
     ...
   }
@@ -308,12 +304,12 @@ class Cliente {
 <p></p>
 <p>Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de <strong>Pull Up Method</strong>. Para ilustrar, suponha um mesmo método <code>f</code> implementado em duas subclasses <code>B1</code> e <code>B2</code>. Para evitar <strong>duplicação de código</strong>, pode-se então <q>subir</q> com ambas implementações para a superclasse <code>A</code>, como mostra o seguinte diagrama de classes:</p>
 <figure>
-<img src="figs/cap9/pull-up.svg" style="width:80.0%" alt="" /><figcaption>Pull Up Method</figcaption>
+<img src="figs/cap9/pull-up.svg" style="width:82.0%" alt="" /><figcaption>Pull Up Method</figcaption>
 </figure>
 <p></p>
 <p>Por outro lado, quando um método é movido para baixo na hierarquia de classes, isto é, de uma superclasse para uma subclasse, dizemos que foi realizado um <strong>Push Down Method</strong>. Por exemplo, apesar de implementado na superclasse <code>A</code>, um método <code>f</code> pode ser do interesse de uma única subclasse, digamos que <code>B1</code>. Logo, podemos <q>descer</q> com sua implementação para <code>B1</code>, como mostrado a seguir:</p>
 <figure>
-<img src="figs/cap9/push-down.svg" style="width:80.0%" alt="" /><figcaption>Push Down Method</figcaption>
+<img src="figs/cap9/push-down.svg" style="width:82.0%" alt="" /><figcaption>Push Down Method</figcaption>
 </figure>
 <p>Para concluir, operações de refactoring podem ser feitas em sequência. Por exemplo, suponha a seguinte classe <code>A</code> com um método <code>f</code>:</p>
 <pre><code>class A {
@@ -326,9 +322,7 @@ class Cliente {
 
 }
 
-class B {
-  ...
-}</code></pre>
+class B { ... }</code></pre>
 <p>Primeiro, vamos extrair um método <code>g</code> com o comando <code>S2</code> de <code>f</code>:</p>
 <pre><code>class A {
   B b = new B();
@@ -343,10 +337,7 @@ class B {
   }
 }
 
-class B {
-  ...
-}
-</code></pre>
+class B { ... }</code></pre>
 <p>Na sequência, vamos mover <code>g</code> para uma classe <code>B</code>, como ilustrado a seguir:</p>
 <pre><code>class A {
   B b = new B();
@@ -616,12 +607,12 @@ void f(DateRange range} {
 }</code></pre>
 <h3 data-number="1.5.6" id="variáveis-globais" data-number="1.5.6"><span class="header-section-number">9.5.6</span> Variáveis Globais</h3>
 <p> </p>
-<p>Conforme estudamos no capítulo sobre princípios de projeto, variáveis globais devem ser evitadas, pois elas dão origem a um tipo de <strong>acoplamento ruim</strong>. Por isso, elas também constituem um code smell. O principal motivo é que variáveis globais dificultam o entendimento de um módulo de forma independente dos demais módulos de um sistema. Suponha a seguinte função:</p>
+<p>Conforme estudamos no capítulo sobre princípios de projeto, variáveis globais devem ser evitadas, pois elas dão origem a um tipo de <strong>acoplamento ruim</strong>. Por isso, elas também constituem um code smell. O principal motivo é que variáveis globais dificultam o entendimento de um módulo de forma independente dos demais módulos de um sistema. Para entender melhor, suponha a seguinte função:</p>
 <pre><code>void f(...) {
   // computa um determinado valor x
   return x + g; // onde g é uma variável global.
 }</code></pre>
-<p>Apenas analisando e estudando esse código, você consegue dizer o valor que f retorna? A resposta é negativa, pois não basta entender o código que precede o comando <code>return</code> da função. Precisamos conhecer também o valor de <code>g</code>. Porém, como <code>g</code> é uma variável global, seu valor pode ser alterado em qualquer parte do programa. Tal situação pode facilmente introduzir bugs nessa função, pois agora uma única linha de código distante e não relacionada com <code>f</code> pode influir no seu resultado. Para isso, basta que essa linha altere o valor de <code>g</code>. Antes de concluir, em linguagens como Java, atributos estáticos de classes funcionam exatamente como variáveis globais. Logo, eles também representam um code smell.</p>
+<p>Apenas analisando e estudando esse código, você consegue dizer o valor que <code>f</code> retorna? A resposta é negativa, pois não basta entender o código que precede o comando <code>return</code> da função. Precisamos conhecer também o valor de <code>g</code>. Porém, como <code>g</code> é uma variável global, seu valor pode ser alterado em qualquer parte do programa. Tal situação pode facilmente introduzir bugs nessa função, pois agora uma única linha de código distante e não relacionada com <code>f</code> pode influir no seu resultado. Para isso, basta que essa linha altere o valor de <code>g</code>. Antes de concluir, em linguagens como Java, atributos estáticos de classes funcionam exatamente como variáveis globais. Logo, eles também representam um code smell.</p>
 <h3 data-number="1.5.7" id="obsessão-por-tipos-primitivos" data-number="1.5.7"><span class="header-section-number">9.5.7</span> Obsessão por Tipos Primitivos</h3>
 <p></p>
 <p>Este code smell ocorre quando tipos primitivos (isto é, <code>int</code>, <code>float</code>, <code>String</code>, etc) são usados no lugar de classes. Por exemplo, suponha que precisamos declarar uma variável para armazenar o CEP de um endereço. Na pressa para usar rapidamente a variável, podemos declará-la como sendo do tipo <code>String</code>, em vez de criar uma classe dedicada — por exemplo, CEP — para esse fim. A principal vantagem é que uma classe pode oferecer métodos para manipular os valores que a variável vai armazenar. Por exemplo, a construtora da classe pode verificar se o CEP informado é válido antes de inicializar o objeto. Dessa forma, a classe assume essa responsabilidade e, consequentemente, evita que ela seja uma preocupação de seus clientes. Em resumo, não devemos ficar <q>obcecados</q> com tipos primitivos. Em vez disso, devemos analisar a possibilidade de criar classes que encapsulem valores primitivos e que ofereçam operações para manipulá-los. No próximo code smell, iremos complementar essa recomendação e sugerir que tais objetos, sempre que possível, devem ser também imutáveis.</p>
@@ -640,8 +631,8 @@ void f(DateRange range} {
 <p>Esse programa vai imprimir <q>Hello World</q> e depois <q>HELLO WORLD</q>. O motivo é que o método <code>toUpperCase</code> não altera a string <code>s1</code>, mas apenas retorna uma cópia dela com as letras em maiúsculo.</p>
 <p>Sempre que possível devemos criar objetos imutáveis, pois eles podem ser compartilhados de forma livre e segura com outras funções. Por exemplo, em Java, você pode passar uma string como parâmetro de uma função e ter certeza de que essa função não vai mudar o seu conteúdo. Isso não ocorreria se strings fossem mutáveis, pois sempre haveria o risco de a função chamada alterar a string recebida como parâmetro. Como uma segunda vantagem, objetos imutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos. O motivo é também simples: os problemas clássicos de sistemas concorrentes, como condições de corrida, ocorrem apenas quando múltiplas threads alteram o estado de um objeto. Se esse estado for imutável, tais problemas ficam automaticamente eliminados.</p>
 <p>No entanto, precisamos entender esse code smell no contexto da linguagem de programação usada em um sistema. Por exemplo, em linguagens funcionais, objetos são imutáveis por definição, ou seja, esse code smell nunca vai ocorrer. Por outro lado, em linguagens imperativas, é normal ter um certo número de objetos mutáveis. Ou seja, nessas linguagens, o que temos que fazer é minimizar o número de tais objetos, sem, no entanto, imaginar que vamos eliminá-los por completo. Por exemplo, devemos considerar a possibilidade de tornar imutáveis objetos simples e pequenos, como aqueles das classes <code>CEP</code>, <code>Moeda</code>, <code>Endereco</code>, <code>Data</code>, <code>Hora</code>, <code>Fone</code>, <code>Cor</code>, <code>Email</code>, etc. Para ilustrar, mostramos a seguir a implementação de uma classe <code>Data</code> imutável:</p>
-<pre><code>final public class Data { // final =&gt; não pode ter subclasses
-  final private int dia; // final =&gt; inicializado uma única vez
+<pre><code>final public class Data { // final: não pode ter subclasses
+  final private int dia; // final: inicializado uma única vez
   final private int mes;
   final private int ano;
    
@@ -659,7 +650,7 @@ void f(DateRange range} {
     this.ano = ano;
   }
    
-  // outros metodos
+  // outros métodos
 }
 </code></pre>
 <h3 data-number="1.5.9" id="classes-de-dados" data-number="1.5.9"><span class="header-section-number">9.5.9</span> Classes de Dados</h3>

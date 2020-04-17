@@ -169,13 +169,13 @@ usando o **JUnit**. A primeira versão do JUnit foi implementada em
 conjunto por Kent Beck e Erich Gamma, em 1997, durante uma viagem de
 avião entre a Suíça e os EUA.
 
-Hoje, existem versões de frameworks xUnit para as principais linguagens
-de programação. Logo, uma das vantagens de testes de unidade é que os
+Hoje, existem versões de frameworks xUnit para as principais linguagens.
+Logo, uma das vantagens de testes de unidade é que os
 desenvolvedores não precisam aprender uma nova linguagem de programação,
 pois os testes são implementados na mesma linguagem do sistema que
 pretende-se testar.
 
-Para explicar os conceitos de testes de unidade, vamos usar a seguinte classe `Stack`:
+Para explicar os conceitos de testes de unidade, vamos usar uma classe `Stack`:
 
 ```
 import java.util.ArrayList;
@@ -184,7 +184,6 @@ import java.util.EmptyStackException;
 public class Stack<T> {
 
   private ArrayList<T> elements = new ArrayList<T>();
-
   private int size = 0;
 
   public int size() {
@@ -207,7 +206,6 @@ public class Stack<T> {
     size--;
     return elem;
   }
-
 }
 ```
 
@@ -277,7 +275,7 @@ seus testes de unidade.
 
 A próxima figura mostra o resultado da execução do nosso primeiro teste.
 O resultado é mostrado na própria IDE e a barra verde informa que todos
-os testes passaram. Pode-se observar que o teste roda rapidamente,
+os testes passaram. Pode-se observar também que o teste roda rapidamente,
 em 0.025 segundos.
 
 ![](figs/cap8/run1.png){width=80%}
@@ -292,7 +290,6 @@ testes iria falhar, como mostrado pela barra vermelha na IDE:
 A mensagem de erro informa que houve uma falha durante a execução de
 `testEmptyStack`. Falha (*failure*) é o termo usado pelo JUnit para
 indicar testes cujo comando `assert` não foi satisfeito.
-
 Em uma outra janela da IDE, pode-se descobrir que a asserção responsável
 pela falha encontra-se na linha 19 do arquivo `StackTest.java`.
 
@@ -707,7 +704,6 @@ public void testNotEmptyStack() {
 ```
 
 Em outras palavras, *não* se recomenda usar dois comandos `assert` no mesmo método, como no código a seguir:
-\newpage
 
 ```
 @Test
@@ -1307,19 +1303,17 @@ mockito, está neste
 \index{Teste Comportamental}
 
 \index{Meszaros, Gerard}
-Alguns autores, como Martin Fowler
-([link](https://martinfowler.com/articles/mocksArentStubs.html))
-e também Gerard Meszaros
-([link](https://dl.acm.org/citation.cfm?id=1076526)) fazem
+Alguns autores, como Gerard Meszaros
+([link](https://dl.acm.org/citation.cfm?id=1076526)), fazem
 uma distinção entre **mocks** e **stubs**. Segundo eles, mocks devem
 verificar não apenas o estado do Sistema sob Testes (SUT), mas também o
 seu comportamento. Se os mocks verificam apenas o estado, eles deveriam
 ser chamados de stubs. No entanto, neste livro, não vamos fazer essa
 distinção, pois achamos que ela é sutil e, portanto, os benefícios não
-compensam o custo de páginas extras para explicar e diferenciar
+compensam o custo de páginas extras para explicar
 conceitos semelhantes.
 Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
-verifica eventos que ocorreram no SUT. Um exemplo simples é o seguinte
+verifica eventos que ocorreram no SUT. Um exemplo é o seguinte
 teste:
 
 ```
@@ -1704,10 +1698,12 @@ menor frequência.
 Suponha uma agenda simples que permita adicionar, remover e editar
 compromissos, conforme ilustrado na próxima figura.
 
-![Interface da Agenda de Compromissos](figs/cap8/myappointments.png){width=60%}
+![Interface da Agenda de Compromissos](figs/cap8/myappointments.png){width=65%}
 
 Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
+
+\newpage
 
 ```
 public class AgendaFacade {
@@ -1796,7 +1792,7 @@ public class SeleniumExample {
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition<Boolean>() {
      public Boolean apply(WebDriver d) {
-      return d.getTitle().toLowerCase().startsWith("software");
+     return d.getTitle().toLowerCase().startsWith("software");
      }
     });
 
@@ -1881,9 +1877,8 @@ para elaboração de testes mais efetivos).
 \index{Beck, Kent}
 Uma observação semelhante pode ser feita sobre a relação entre TDD e
 testes caixa preta/branca. Para esclarecer essa relação, vamos usar
-algumas frases do próprio Kent Beck, isto é, do inventor da ideia de
-TDD (fonte: *Test-Driven Development Violates the
-Dichotomies of Testing, Kent Beck*, Three Rivers Institute, June 2007):
+um comentário do próprio Kent Beck (fonte: *Test-Driven Development Violates the
+Dichotomies of Testing*, Three Rivers Institute, 2007):
 
 > "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa preta e testes caixa branca. Como testes em TDD são escritos antes do código que eles testam, eles talvez pudessem ser considerados como testes caixa preta. No entanto, eu normalmente ganho inspiração para escrever o próximo teste depois que implemento e analiso o código verificado pelo teste anterior, o que é uma característica marcante de testes caixa branca."
 
@@ -1971,7 +1966,7 @@ correto, isto é, aquele que o cliente pediu e precisa.
 \index{Testes de Software!Testes Alfa}
 \index{Testes de Software!Testes Beta}
 
-Em alguns casos, testes de aceitação podem ser divididos em duas fases.
+Testes de aceitação podem ser divididos em duas fases.
 **Testes alfa** são realizados com alguns usuários, mas em um ambiente
 controlado, como a própria máquina do desenvolvedor. Se o sistema for
 aprovado nos testes alfa, pode-se realizar um teste com um grupo maior

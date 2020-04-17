@@ -183,10 +183,10 @@ void f () {
 \index{Duplicação de Código}
 Existem também variações na mecânica de funcionamento de uma extração de
 método. Por exemplo, pode-se extrair de uma vez vários métodos `g1`, `g2`,
-..., `gn` de um método `f`. Pode-se também extrair o mesmo código g de
+..., `gn` de um método `f`. Pode-se também extrair o mesmo código `g` de
 vários métodos `f1`, `f2`, ..., `fn`. Nesse caso, a extração é usada para
-eliminar **duplicação de código**, pois o código de g estava aparecendo
-em diversos métodos.
+eliminar **duplicação de código**, pois o código de `g` estava aparecendo
+no corpo de diversos métodos.
 
 Para realizar uma Extração de Método pode ser necessário passar
 parâmetros para o método extraído. Isso ocorre, por exemplo, se o método
@@ -222,7 +222,7 @@ void onCreate(SQLiteDatabase database) {// antes da extração
             CELL_SIGNAL_TABLE + " (" + COLUMN_ID +
             " INTEGER PRIMARY KEY AUTOINCREMENT, " + ...
   database.execSQL("CREATE INDEX cellID_index ON " + ...);
-  database.execSQL("CREATE INDEX cellID_timestamp ON " + ... );
+  database.execSQL("CREATE INDEX cellID_timestamp ON " + ...);
 
   // cria tabela 2
   String SMS_DATABASE_CREATE = "CREATE TABLE " + 
@@ -269,8 +269,7 @@ public void onCreate(SQLiteDatabase database) {
 
 ### Motivações para Extração de Métodos
 
-Em 2016, junto com Danilo Silva (na época aluno de
-doutorado do ASERG/DCC/ UFMG) e com o Prof. Nikolaos Tsantalis (da
+Em 2016, junto com Danilo Silva e com o Prof. Nikolaos Tsantalis (da
 Universidade Concordia, em Montreal, no Canadá), realizamos um estudo
 com desenvolvedores de sistemas GitHub para descobrir suas reais
 motivações para realização de refactorings
@@ -467,21 +466,21 @@ com a funcionalidade provida por `averageAmongMedians`.
 
 Após a movimentação para a nova classe, as chamadas de
 `averageAmongMedians` tiveram que ser atualizadas, como mostrado na figura
-a seguir. No entanto, como o leitor pode observar nesse diff, isso não
-foi difícil, pois `averageAmongMedians` é um método estático. Logo, apenas
-o nome de sua classe teve que ser atualizado em cada ponto de chamada.
+a seguir. 
 
 ![Atualizando chamadas de método estático após movimentação. `averageAmongMedians` foi movido de `PlatformTestUtil` para `ArrayUtil`.](figs/cap9/diff-intellij.png){width=100%}
+
+No entanto, como o leitor pode observar nesse diff, isso não
+foi difícil, pois `averageAmongMedians` é um método estático. Logo, apenas
+o nome de sua classe teve que ser atualizado em cada ponto de chamada.
 
 Em outros casos, no entanto, pode não ser tão simples atualizar as chamadas de
 um método após ele ser movido para uma nova classe. Isso acontece quando
 nos pontos de chamada não existem referências para objetos da nova
 classe do método. Uma solução consiste então em deixar uma implementação
 simples do método na classe de origem. Essa implementação apenas delega
-as chamadas para a nova classe do método. Consequentemente, nenhum
-cliente precisará ser alterado. 
-
-Um exemplo é mostrado a seguir. Primeiro, o código original:
+as chamadas para a nova classe do método. Por isso, nenhum
+cliente precisará ser alterado. Um exemplo é mostrado a seguir. Primeiro, o código original:
 
 ```
 class A {
@@ -489,21 +488,16 @@ class A {
   void f { ... }
 }
 
-class B { 
-  ... 
-}
+class B { ... }
 
 class Cliente {
   A a = new A();
   void g() {
-    ... 
     a.g(); 
     ...
   }
 }
 ```
-
-\newpage
 
 E agora o código após a refatoração:
 
@@ -521,8 +515,7 @@ class B {    // f foi movido de A para B
 
 class Cliente {
   A a = new A();
-  void g() {
-    ... 
+  void g() { 
     a.g();    // não precisa mudar
     ...
   }
@@ -538,7 +531,7 @@ não precisou ser alterado.
 
 Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de **Pull Up Method**. Para ilustrar, suponha um mesmo método `f` implementado em duas subclasses `B1` e `B2`. Para evitar **duplicação de código**, pode-se então "subir" com ambas implementações para a superclasse `A`, como mostra o seguinte diagrama de classes:
 
-![Pull Up Method](figs/cap9/pull-up){width="80%"}
+![Pull Up Method](figs/cap9/pull-up){width=82%}
 
 \index{Refactoring!Push Down Method}
 
@@ -549,11 +542,12 @@ na superclasse `A`, um método `f` pode ser do interesse de uma única
 subclasse, digamos que `B1`. Logo, podemos "descer" com sua
 implementação para `B1`, como mostrado a seguir:
 
-![Push Down Method](figs/cap9/push-down){width="80%"}
+![Push Down Method](figs/cap9/push-down){width=82%}
 
 Para concluir, operações de refactoring podem ser feitas em sequência.
 Por exemplo, suponha a seguinte classe `A` com um método `f`: 
 
+\newpage
 ```
 class A {
   B b = new B();
@@ -565,12 +559,8 @@ class A {
 
 }
 
-class B {
-  ...
-}
+class B { ... }
 ```
-
-\newpage
 
 Primeiro, vamos extrair um método `g` com o comando `S2` de `f`: 
 
@@ -588,10 +578,7 @@ class A {
   }
 }
 
-class B {
-  ...
-}
-
+class B { ... }
 ```
 
 Na sequência, vamos mover `g` para uma classe `B`, como ilustrado a seguir:
@@ -1260,6 +1247,8 @@ void f(Date inicio, Date fim) {
 
 Pode-se criar uma classe `DateRange` para representar uma faixa de datas. O código refatorado ficaria assim:
 
+\newpage
+
 ```
 class DateRange {
    Date inicio;
@@ -1280,8 +1269,8 @@ Conforme estudamos no capítulo sobre princípios de projeto, variáveis
 globais devem ser evitadas, pois elas dão origem a um tipo de
 **acoplamento ruim**. Por isso, elas também constituem um code smell. O
 principal motivo é que variáveis globais dificultam o entendimento de um
-módulo de forma independente dos demais módulos de um sistema. Suponha a
-seguinte função:
+módulo de forma independente dos demais módulos de um sistema. Para entender
+melhor, suponha a seguinte função:
 
 ```
 void f(...) {
@@ -1291,7 +1280,7 @@ void f(...) {
 ```
 
 Apenas analisando e estudando esse código, você consegue dizer o valor
-que f retorna? A resposta é negativa, pois não basta entender o código
+que `f` retorna? A resposta é negativa, pois não basta entender o código
 que precede o comando `return` da função. Precisamos conhecer também o
 valor de `g`. Porém, como `g` é uma variável global, seu valor pode ser
 alterado em qualquer parte do programa. Tal situação pode facilmente
@@ -1380,8 +1369,8 @@ simples e pequenos, como aqueles das classes `CEP`, `Moeda`, `Endereco`, `Data`,
 implementação de uma classe `Data` imutável:
 
 ```
-final public class Data { // final => não pode ter subclasses
-  final private int dia; // final => inicializado uma única vez
+final public class Data { // final: não pode ter subclasses
+  final private int dia; // final: inicializado uma única vez
   final private int mes;
   final private int ano;
    
@@ -1399,7 +1388,7 @@ final public class Data { // final => não pode ter subclasses
     this.ano = ano;
   }
    
-  // outros metodos
+  // outros métodos
 }
 
 ```
