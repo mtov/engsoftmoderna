@@ -472,7 +472,7 @@ um teste para a suíte de testes.
 Pode-se escrever testes também quando se estiver depurando um trecho de
 código. Por exemplo, evite escrever um `System.out.println` para testar
 manualmente o resultado de um método. Em vez disso, escreva um método de
-teste. Quando se usa um `println`, ele em algum momento é removido. Já um
+teste. Quando se usa um comando `println`, ele em algum momento é removido. Já um
 teste tem a vantagem de contribuir com mais um teste para a suíte de
 testes.
 
@@ -496,7 +496,7 @@ unidade.
 O principal benefício de testes de unidade é encontrar bugs, ainda na
 fase de desenvolvimento e antes que o código entre em produção, quando
 os custos de correção e os prejuízos podem ser maiores. Portanto, se um
-sistema tem bons testes, é mais difícil que os usuários finais sejam
+sistema de software tem bons testes, é mais difícil que os usuários finais sejam
 surpreendidos com bugs.
 
 \index{Testes de Unidade!Regressões}
@@ -846,7 +846,7 @@ chegar a 100%, embora normalmente fique acima de 90%
 **Mundo Real**: Em uma conferência de desenvolvedores do Google,
 em 2014, foram apresentadas algumas estatísticas sobre a cobertura de
 testes dos sistemas da empresa (veja os
-[slides](https://docs.google.com/presentation/d/1god5fDDd1aP6PwhPodOnAZSPpD80lqYDrHhuhyD7Tvg/edit?usp=sharing)
+[slides](https://bit.ly/2VhXlpg)
 e também o [vídeo](https://youtu.be/4bublRBCLVQ)). Na
 mediana, os sistemas do Google tinham 78% de cobertura, em nível de
 comandos. Segundo afirmou-se na palestra, a recomendação seria atingir

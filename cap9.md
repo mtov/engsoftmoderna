@@ -116,7 +116,7 @@ programação", os quais são fundamentais para preservar a saúde de um
 sistema, garantindo que ele continuará evoluindo por anos. Portanto,
 desenvolvedores não devem realizar apenas manutenções corretivas,
 adaptativas e evolutivas. É importante cuidar também da manutenibilidade
-do sistema, por meio da realização de refactorings.
+do sistema, por meio da realização frequente de refactorings.
 
 ```{=latex}
 \begin{aviso}
@@ -222,7 +222,7 @@ void onCreate(SQLiteDatabase database) {// antes da extração
             CELL_SIGNAL_TABLE + " (" + COLUMN_ID +
             " INTEGER PRIMARY KEY AUTOINCREMENT, " + ...
   database.execSQL("CREATE INDEX cellID_index ON " + ...);
-  database.execSQL("CREATE INDEX cellID_timestamp ON " + ...);
+  database.execSQL("CREATE INDEX cellID_timestamp ON " +...);
 
   // cria tabela 2
   String SMS_DATABASE_CREATE = "CREATE TABLE " + 
@@ -803,7 +803,7 @@ Na versão refatorada, o atributo `type` de Aluno não é mais necessário e,
 portanto, pode ser removido. Além disso, temos que implementar nas
 subclasses de `Aluno` — por exemplo, `AlunoGraduacao`, `AlunoMestrado` e
 `AlunoDoutorado` — um método `getBolsa()`. Por fim, na superclasse `Aluno`
-esse método deve ser abstrato.
+esse método deve ser abstrato, isto é, ter apenas uma assinatura, sem corpo.
 
 \index{Refactoring!Remoção de Código Morto}
 **Remoção de Código Morto** recomenda deletar métodos, classes,
@@ -819,8 +819,8 @@ existir uma quantidade considerável de código que não é mais chamado.
 ## Prática de Refactoring
 
 Tendo apresentado diversos refactorings na seção anterior, vamos agora
-discutir como a prática de refactoring pode ser adotada em projetos de
-software.
+discutir como a prática de refactoring pode ser adotada em projetos reais de
+desenvolvimento de software.
 
 Primeiro, a realização bem sucedida de refactorings depende da
 existência de bons testes, principalmente testes de unidade. Ou seja,
@@ -911,7 +911,7 @@ Em seguida, ele escolhe as opções de `Refactor` e `Rename` da sua IDE:
 
 ![](figs/cap9/automatizado2.png){width="50%"}
 
-Então a IDE pergunta o novo nome que ele pretende dar ao método (veja figura a seguir). Nessa mesma caixa de diálogo, o desenvolvedor informa que deseja atualizar as referências para esse método, para que elas usem o novo nome. 
+Então a IDE pergunta o novo nome que ele pretende dar ao método (acompanhe na figura a seguir). Nessa mesma caixa de diálogo, o desenvolvedor informa que deseja atualizar as referências para esse método, para que elas usem o novo nome. 
 
 ![](figs/cap9/automatizado3.png){width="50%"}
 
@@ -1203,7 +1203,7 @@ public class DrawingEditorProxy
   void fireAreaInvalidated2 (AbstractTool abt , Double r ){
     Point p1 = abt.getView().drawingToView (...);
     Point p2 = abt.getView().drawingToView (...);
-    Rectangle r = new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y)
+    Rectangle r= new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
     abt.fireAreaInvalidated (r);
   }
   ...
@@ -1275,7 +1275,7 @@ melhor, suponha a seguinte função:
 ```
 void f(...) {
   // computa um determinado valor x
-  return x + g; // onde g é uma variável global.
+  return x + g; // onde g é uma variável global
 }
 ```
 

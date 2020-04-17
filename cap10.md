@@ -93,7 +93,7 @@ Em teoria, quando se usa um DVCS, os clientes (ou *peers*) são funcionalmente e
 
 Quando comparado com VCS centralizados, um DVCS tem as seguintes vantagens:
 
-* Pode-se trabalhar e gerenciar versões de forma offline, sem estar conectado a uma rede, pois os commits são realizados primeiro no repositório local.
+* Pode-se trabalhar e gerenciar versões de forma offline, sem estar conectado a uma rede, pois os commits são realizados primeiro no repositório instalado localmente na máquina do desenvolvedor.
 
 * Pode-se realizar commits com mais frequência, incluindo commits com implementações parciais, pois eles não vão chegar imediatamente até o repositório central.
 
@@ -117,9 +117,9 @@ No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git.
 
 Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **multirepos** e **monorepos** — são ilustradas nas próximas duas figuras.
 
-![Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.](figs/cap10/multirepos){width=35%}
+![Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.](figs/cap10/multirepos){width=37%}
 
-![Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=35%}
+![Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=37%}
 
 Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:
 
@@ -211,7 +211,7 @@ Por fim, os builds e testes automatizados devem ser executados com frequência, 
 
   * Após a execução do build e dos testes, o servidor de CI notifica o usuário.
 
-![Servidor de Integração Contínua](figs/cap10/ci-server){width=55%}
+![Servidor de Integração Contínua](figs/cap10/ci-server){width=58%}
 
 O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Quando o build falha, costuma-se dizer que ele "quebrou". Com frequência, o build na máquina do desenvolvedor pode ter sido concluído com sucesso. Mas ao ser executado no servidor de CI, ele pode falhar. Isso ocorre, por exemplo, quando o desenvolvedor esquece de realizar o commit de algum arquivo. Dependências incorretas são um outro motivo para quebra de builds. Por exemplo, o código pode ter sido compilado e testado na máquina do desenvolvedor usando a versão 2.0 de uma determinada biblioteca, mas o servidor de CI realiza o build usando a versão 1.0.
 

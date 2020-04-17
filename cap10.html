@@ -107,7 +107,7 @@
 <p>Em teoria, quando se usa um DVCS, os clientes (ou <em>peers</em>) são funcionalmente equivalentes. Porém, na prática, costuma existir uma máquina principal, que armazena a versão de referência do código fonte. Na nossa figura, chamamos esse repositório de <strong>repositório central</strong>. Cada desenvolvedor pode trabalhar de forma independente e até mesmo offline em sua máquina cliente, realizando commits no seu repositório. De tempos em tempos, ele deve sincronizar esse repositório com o central, por meio de duas operações: <strong>pull</strong> e <strong>push</strong>. Um pull atualiza o repositório local com novos commits disponíveis no repositório central. Por sua vez, um push faz a operação contrária, isto é, ele envia para o repositório central os commits mais recentes realizados pelo desenvolvedor em seu repositório local.</p>
 <p>Quando comparado com VCS centralizados, um DVCS tem as seguintes vantagens:</p>
 <ul>
-<li><p>Pode-se trabalhar e gerenciar versões de forma offline, sem estar conectado a uma rede, pois os commits são realizados primeiro no repositório local.</p></li>
+<li><p>Pode-se trabalhar e gerenciar versões de forma offline, sem estar conectado a uma rede, pois os commits são realizados primeiro no repositório instalado localmente na máquina do desenvolvedor.</p></li>
 <li><p>Pode-se realizar commits com mais frequência, incluindo commits com implementações parciais, pois eles não vão chegar imediatamente até o repositório central.</p></li>
 <li><p>Commits são executados em menos tempo, isto é, eles são operações mais rápidas e leves. O motivo é que eles são realizados no repositório local de cada máquina.</p></li>
 <li><p>A sincronização não precisa ser sempre com o repositório central. Em vez disso, dois nodos podem também sincronizar os seus repositórios. Por exemplo, pode-se ter uma estrutura hierárquica dos repositórios. Nesses casos, os commits <q>nascem</q> nos repositórios que representam as folhas da hierarquia e vão subindo até chegar ao repositório central.</p></li>
@@ -119,10 +119,10 @@
 <p> </p>
 <p>Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de <strong>multirepos</strong> e <strong>monorepos</strong> — são ilustradas nas próximas duas figuras.</p>
 <figure>
-<img src="figs/cap10/multirepos.svg" style="width:35.0%" alt="" /><figcaption>Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.</figcaption>
+<img src="figs/cap10/multirepos.svg" style="width:37.0%" alt="" /><figcaption>Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.</figcaption>
 </figure>
 <figure>
-<img src="figs/cap10/monorepo.svg" style="width:35.0%" alt="" /><figcaption>Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.</figcaption>
+<img src="figs/cap10/monorepo.svg" style="width:37.0%" alt="" /><figcaption>Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.</figcaption>
 </figure>
 <p>Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:</p>
 <ul>
@@ -179,7 +179,7 @@
 <li><p>Após a execução do build e dos testes, o servidor de CI notifica o usuário.</p></li>
 </ul>
 <figure>
-<img src="figs/cap10/ci-server.svg" style="width:55.0%" alt="" /><figcaption>Servidor de Integração Contínua</figcaption>
+<img src="figs/cap10/ci-server.svg" style="width:58.0%" alt="" /><figcaption>Servidor de Integração Contínua</figcaption>
 </figure>
 <p>O objetivo principal de um servidor de integração contínua é evitar a integração de código com problemas, sejam eles de build ou de comportamento. Quando o build falha, costuma-se dizer que ele <q>quebrou</q>. Com frequência, o build na máquina do desenvolvedor pode ter sido concluído com sucesso. Mas ao ser executado no servidor de CI, ele pode falhar. Isso ocorre, por exemplo, quando o desenvolvedor esquece de realizar o commit de algum arquivo. Dependências incorretas são um outro motivo para quebra de builds. Por exemplo, o código pode ter sido compilado e testado na máquina do desenvolvedor usando a versão 2.0 de uma determinada biblioteca, mas o servidor de CI realiza o build usando a versão 1.0.</p>
 <p>Se o servidor de CI notificar o desenvolvedor de que seu código não passou nos testes ou quebrou o build, ele deve parar tudo o que está fazendo e providenciar a correção. Isso é importante porque um build quebrado impacta o trabalho dos outros desenvolvedores, pois eles não vão conseguir mais compilar ou executar o sistema. Costuma-se dizer que nada em uma empresa de software tem maior prioridade do que a correção de um build quebrado. No entanto, a solução pode ser simplesmente reverter o código para a versão anterior ao commit com problemas.</p>
