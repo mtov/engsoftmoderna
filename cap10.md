@@ -277,7 +277,7 @@ Porém, existe mais um passo da cadeia de automação proposta por DevOps, chama
 
 * Algumas vezes no dia, o servidor de CI realiza testes mais exaustivos com os novos commits que ainda não entraram em produção. Esses testes incluem, por exemplo, testes de integração, testes de interface e testes de desempenho.
 
-* Se todos os testes passarem, os commits entram imediatamente em produção. Isto é, os usuários já vão interagir com a nova versão do código.
+* Se todos os testes passarem, os commits entram imediatamente em produção. E os usuários já vão interagir com a nova versão do código fonte.
 
 Dentre as vantagens de CD, podemos citar:
 
