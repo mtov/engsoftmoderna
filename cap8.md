@@ -45,7 +45,7 @@ era apenas detectar bugs, antes que o sistema entrasse
 em produção.
 
 Com métodos ágeis, a prática de testes de software foi profundamente
-reformulada:
+reformulada, conforme explicamos a seguir:
 
 -   Grande parte dos testes passou a ser automatizada, isto é, além de
     implementar as classes de um sistema, os desenvolvedores passaram
@@ -127,7 +127,7 @@ apresentamos na Introdução. Diz-se que um código possui um **defeito**
 — ou um **bug**, de modo mais informal — quando ele não está de
 acordo com a sua especificação. Se um código com defeito for executado e
 levar o programa a apresentar um resultado ou comportamento incorreto,
-dizemos que ocorreu uma **falha** (*failure*).
+dizemos que ocorreu uma **falha** (*failure*, em inglês).
 
 ## Testes de Unidade
 \index{Testes de Software!Testes de Unidade}
@@ -433,8 +433,8 @@ Antes de avançar, vamos apresentar algumas definições:
 -   **Suíte de Testes (Test Suite)**:
     \index{Testes de Unidade!Suíte de Testes}
     conjunto de casos de teste, os
-    quais são executados pelo framework de testes de unidade (no nosso
-    caso, JUnit).
+    quais são executados pelo framework de testes de unidade (que no nosso
+    caso é o JUnit).
 
 -   **Sistema sob Teste (System Under Test, SUT)**:
     \index{Sistema sob Teste (SUT)}
