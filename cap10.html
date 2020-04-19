@@ -213,7 +213,7 @@
 <li><p>O desenvolvedor desenvolve e testa na sua máquina local.</p></li>
 <li><p>Ele realiza um commit e o servidor de CI executa novamente um build e os testes de unidade.</p></li>
 <li><p>Algumas vezes no dia, o servidor de CI realiza testes mais exaustivos com os novos commits que ainda não entraram em produção. Esses testes incluem, por exemplo, testes de integração, testes de interface e testes de desempenho.</p></li>
-<li><p>Se todos os testes passarem, os commits entram imediatamente em produção. E os usuários já vão interagir com a nova versão do código fonte.</p></li>
+<li><p>Se todos os testes passarem, os commits entram imediatamente em produção. E os usuários já vão interagir com a nova versão do código.</p></li>
 </ul>
 <p>Dentre as vantagens de CD, podemos citar:</p>
 <ul>
@@ -227,8 +227,7 @@
 <h3 data-number="1.4.1" id="entrega-contínua-continuous-delivery" data-number="1.4.1"><span class="header-section-number">10.4.1</span> Entrega Contínua (Continuous Delivery)</h3>
 <p> </p>
 <p>Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas demandam um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web.</p>
-<p>No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais <em>fraca</em> de CD, chamada de <strong>Entrega Contínua (Continuous Delivery)</strong>. A ideia é simples: quando se usa entrega contínua, todo commit <em>pode</em> entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.</p>
-<p>Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:</p>
+<p>No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais <em>fraca</em> de CD, chamada de <strong>Entrega Contínua (Continuous Delivery)</strong>. A ideia é simples: quando se usa entrega contínua, todo commit <em>pode</em> entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão. Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:</p>
 <ul>
 <li><p><strong>Deployment</strong> é o processo de liberar uma nova versão de um sistema para seus usuários.</p></li>
 <li><p><strong>Delivery</strong> é o processo de liberar uma nova versão de um sistema para ser objeto de deployment.</p></li>
@@ -242,15 +241,13 @@
 <blockquote>
 <p>Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram devidamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais?</p>
 </blockquote>
-<p>Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de <em>integration (ou merge) hell</em>. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI) e Desenvolvimento Baseado no Trunk (TBD).</p>
+<p>Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de <em>integration (ou merge) hell</em>. Dizendo de outro modo, não queremos abrir mão de Integração Contínua e Desenvolvimento Baseado no Trunk.</p>
 <p>Uma solução para esse problema é a seguinte: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará <q>guardado</q> por uma variável booleana (um <em>flag</em>) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:</p>
 <pre><code>featureX = false;
 ...
 if (featureX) 
    &quot;aqui tem código incompleto de X&quot;
-
 ...
-
 if (featureX)
    &quot;mais código incompleto de X&quot;</code></pre>
 <p>No contexto de deployment contínuo, variáveis usadas para evitar a entrada em produção de implementações parciais de funcionalidades são chamadas de <strong>Feature Flags</strong> ou <strong>Feature Toggles</strong>.</p>

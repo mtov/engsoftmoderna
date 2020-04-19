@@ -375,8 +375,8 @@ benefícios de testes, mas também suas limitações:
 
 > "Testes de software mostram a presença de bugs, mas não a sua ausência."
 
-Pelo menos três pontos podem ser comentados sobre testes, ainda nesta
-Introdução.
+Pelo menos três pontos podem ser comentados sobre testes, ainda neste
+capítulo de Introdução.
 
 Primeiro, existem diversos tipos de testes. Por exemplo, **testes de
 unidade** (quando se testa uma pequena unidade do código, como uma
@@ -1284,7 +1284,7 @@ alcançar 80% ou mais dos custos totais alocados a um sistema de
 software, durante todo o seu ciclo de vida. Explique porque esse valor é
 tão alto.
 
-8\. Refactoring é normalmente definido como uma transformação de código
+8\. Refactoring é uma transformação de código
 que preserva comportamento. Qual o significado da expressão *preservar
 comportamento*? Na prática, qual restrição ela impõe a uma operação de
 refactoring?

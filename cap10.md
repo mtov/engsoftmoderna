@@ -277,7 +277,7 @@ Porém, existe mais um passo da cadeia de automação proposta por DevOps, chama
 
 * Algumas vezes no dia, o servidor de CI realiza testes mais exaustivos com os novos commits que ainda não entraram em produção. Esses testes incluem, por exemplo, testes de integração, testes de interface e testes de desempenho.
 
-* Se todos os testes passarem, os commits entram imediatamente em produção. E os usuários já vão interagir com a nova versão do código fonte.
+* Se todos os testes passarem, os commits entram imediatamente em produção. E os usuários já vão interagir com a nova versão do código.
 
 Dentre as vantagens de CD, podemos citar:
 
@@ -306,7 +306,6 @@ motivados, pois eles não ficam meses trabalhando sem receber feedback. Em vez d
 Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE, um navegador Web, etc), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas demandam um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web. 
 
 No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais *fraca* de CD, chamada de **Entrega Contínua (Continuous Delivery)**. A ideia é simples: quando se usa entrega contínua, todo commit *pode* entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão.
-
 Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:
 
 * **Deployment** é o processo de liberar uma nova versão de um sistema para seus usuários.
@@ -338,7 +337,7 @@ Nem sempre todo commit estará pronto para entrar imediatamente em produção. P
 
 > Se novas releases são liberadas quase todo dia, como evitar que minhas implementações parciais, que ainda não foram devidamente testadas ou que têm problemas de desempenho, cheguem até os usuários finais? 
 
-Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*. Dizendo de outro modo, não queremos abrir mão de Integração Contínua (CI) e Desenvolvimento Baseado no Trunk (TBD).
+Uma solução seria não integrá-las no branch principal de desenvolvimento. Porém, não queremos mais usar essa prática, pois ela leva ao que chamamos de *integration (ou merge) hell*. Dizendo de outro modo, não queremos abrir mão de Integração Contínua e Desenvolvimento Baseado no Trunk.
 
 Uma solução para esse problema é a seguinte: integre continuamente o código parcial da funcionalidade X, mas com ela desabilitada, isto é, qualquer código relativo a X estará "guardado" por uma variável booleana (um *flag*) que, enquanto a implementação de X não estiver concluída, vai avaliar como falso. Um exemplo hipotético é mostrado a seguir:
 
@@ -347,9 +346,7 @@ featureX = false;
 ...
 if (featureX) 
    "aqui tem código incompleto de X"
-
 ...
-
 if (featureX)
    "mais código incompleto de X"
 ```    

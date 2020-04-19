@@ -36,7 +36,7 @@ um sistema. Uma vez tiradas essas fotografias, elas são armazenadas no
 sistema de controle de versões, de forma compactada e otimizada, para
 não ocupar muito espaço em disco. Posteriormente, pode-se recuperar
 qualquer uma das fotografias, para, por exemplo, restaurar uma
-implementação antiga de um arquivo.
+implementação antiga de um determinado arquivo.
 
 Recomenda-se que desenvolvedores realizem commits periodicamente, sempre
 que tiverem efetuado uma mudança importante no código. Em sistemas de controle
@@ -61,7 +61,7 @@ o refactoring é explicado em detalhes na mensagem do commit. Na última
 linha da figura, podemos ver o nome do autor do commit e a informação de
 que ele foi realizado há 13 dias.
 
-![Commit no GitHub](figs/capAp/commit.png){width=95%}
+![Commit no GitHub](figs/capAp/commit.png){width=93%}
 
 Na última linha da figura também podemos observar que todo commit possui
 um identificador único, no caso:
@@ -333,8 +333,9 @@ dar um  `pull`. `HEAD` designa que o código foi modificado no
 Cabe então a Bob resolver o conflito, o que é sempre uma tarefa manual.
 Para isso, ele tem que escolher o trecho de código que vai prevalecer
 — o seu código ou o da Alice — e editar o arquivo de acordo com
-tal escolha, para remover os delimitadores inseridos pelo git. Vamos
-supor que Bob decida que o código de Alice é o certo, pois agora o
+tal escolha, para remover os delimitadores inseridos pelo git. 
+
+Vamos supor que Bob decida que o código de Alice é o certo, pois agora o
 sistema está usando mensagens em Português. Logo, ele deve editar o
 arquivo, de forma que fique assim:
 
@@ -468,7 +469,7 @@ Commits podem possuir zero, um ou mais pais (ou
 antecessores). Como ilustra a próxima figura, o primeiro commit de um
 repositório não possui pai. Já um commit de merge possui dois ou mais
 pais, que representam os branches que foram unidos. Os demais commits
-possuem exatamente um pai.
+possuem exatamente um nodo pai.
 
 ![](figs/capAp/branches){width=60%}
 
@@ -497,14 +498,13 @@ apontar para o novo commit. Isso significa que, se não mudarmos de
 branch, o pai do próximo commit será o commit 7.
 
 Porém, se mudarmos para o branch `ISSUE-45`, a configuração será
-a seguinte:
-
-![](figs/capAp/head3){width=65%}
-
+aquela mostrada na próxima figura.
 A única mudança é que a variável `HEAD` passou a apontar para a variável
 do novo branch, isto é, para a variável `ISSUE-45`. Isso é suficiente para
 fazer com que o próximo commit seja realizado nesse branch, isto é, que
 ela tenha o commit 6 como pai.
+
+![](figs/capAp/head3){width=65%}
 
 ## Branches Remotos
 \index{Git!Branches Remotos}
@@ -623,7 +623,7 @@ na página do GitHub e selecionar o branch `livro-esm`. Feito isso, o GitHub
 mostrará um botão para criação de pull requests. Bob deve clicar nesse botão e
 descrever o seu pull request, como mostra a próxima figura.
 
-![Exemplo de pull request](figs/capAp/pull-request.png){width=70%}
+![Exemplo de pull request](figs/capAp/pull-request.png){width=75%}
 
 Um pull request é uma solicitação para que um outro desenvolvedor revise
 e, se for o caso, realize o merge de um branch que você criou.

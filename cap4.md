@@ -375,7 +375,7 @@ Um diagrama de classes é desenhado usando-se retângulos e setas. Cada
 uma das classes é representada por meio de um retângulo com três
 compartimentos, conforme mostra a figura a seguir. Esses compartimentos
 contêm o nome da classe (normalmente, em negrito), seus atributos e
-métodos, como ilustrado a seguir:
+métodos, como também ilustrado a seguir:
 
 ![](figs/cap4/class0){width=28%}
 
@@ -457,7 +457,7 @@ associado. Ou então ela pode se associar a um único objeto do tipo `Fone`.
 ![](figs/cap4/class4){width=80%}
 
 No próximo exemplo, a semântica já é diferente. Nesse caso, uma `Pessoa`
-pode estar associada a múltiplos objetos do tipo `Fone`, inclusive nenhum.
+pode estar associada a múltiplos objetos do tipo `Fone`, inclusive a nenhum.
 Essa multiplicidade é representada pelo \* que adicionamos logo acima da
 seta da associação.
 
@@ -874,8 +874,8 @@ Grady Booch, James Rumbaugh, Ivar Jacobson. The Unified Modeling
 Language User Guide. Addison-Wesley, 2005.
 
 Craig Larman. Applying UML and Patterns: An Introduction to
-Object-Oriented Analysis and Design and Iterative Development. Prentice
-Hall, 2004.
+Object-Oriented Analysis and Design and Iterative Development. 
+Prentice-Hall, 2004.
 
 ## Exercícios de Fixação {.unnumbered}
 

@@ -781,7 +781,8 @@ exemplo, pode-se supervalorizar alguns requisitos, que mais tarde irão
 se revelar menos importantes; de forma inversa, pode-se subvalorizar
 outros requisitos, que depois, com o decorrer da implementação, irão
 assumir um maior protagonismo. Isso sem falar que novos requisitos podem
-surgir ao longo do projeto, tornando o design inicial desatualizado.
+surgir ao longo do projeto, tornando o design inicial desatualizado
+e menos eficiente.
 
 Por isso, XP defende que o momento ideal para pensar em *design* é
 quando ele se revelar importante. Frequentemente, duas frases são usadas
@@ -943,7 +944,7 @@ recomenda-se um limite de 10 minutos para a conclusão de um build. No
 entanto, dependendo do tamanho do sistema e de sua linguagem de
 programação, pode ser difícil atender a esse limite. Por isso, o mais
 importante é focar na regra geral: sempre procurar automatizar e
-reduzir o tempo de build.
+reduzir o tempo de build de um sistema.
 
 \index{Integração Contínua}
 **Integração Contínua**. Sistemas de software são desenvolvidos com o
@@ -1109,7 +1110,7 @@ mas a principal delas é a seguinte:
      desenvolvimento de software. Para isso, XP inclui um conjunto de
      práticas de programação, como testes de unidade, programação em
      pares, integração contínua e design incremental, que foram
-     estudadas na seção anterior.
+     estudadas na seção anterior, dedicada a XP.
 
 *   Scrum é um método ágil para gerenciamento de projetos, que não
      necessariamente precisam ser projetos de desenvolvimento de
@@ -1494,7 +1495,7 @@ implementadas.
 **Existem gerentes quando se usa Scrum**? A resposta é sim! De fato,
 times Scrum são autônomos para implementar as histórias priorizadas pelo
 Dono do Produto. Porém, um projeto demanda diversas outras decisões que
-devem ser tomadas em um nível gerencial. Dentre elas, podemos citar as
+devem ser tomadas em um nível gerencial. Dentre essas decisões, podemos citar as
 seguintes:
 
 * Contratar e alocar membros para os times Scrum; ou seja, os
@@ -1875,7 +1876,7 @@ Espiral**, proposto por Barry Boehm, em 1986
 ([link](https://doi.org/10.1145/12944.12948)). Nesse
 modelo, um sistema é desenvolvido na forma de uma espiral de iterações.
 Cada iteração, ou "volta completa" na espiral, inclui quatro etapas
-(veja também a próxima figura):
+(acompanhe também na próxima figura):
 
 * Definição de objetivos e restrições, tais como custos, cronogramas,
      etc.
@@ -1924,7 +1925,7 @@ Devido a suas origens, UP é vinculado a duas tecnologias específicas:
 O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
 
 
-![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos mantenedores do sistema ArgoUML.](figs/cap2/case.png){width=60%}
+![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos desenvolvedores do sistema ArgoUML.](figs/cap2/case.png){width=60%}
 
 
 UP propõe que o desenvolvimento seja decomposto nas
@@ -1970,7 +1971,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da [Wikipedia](https://en.wikipedia.org/wiki/Rational_Unified_Process#/figs/cap2/File:Development-iterative.png), licença: domínio público).](figs/cap2/rup2.png){width=65%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da Wikipedia, licença: domínio público).](figs/cap2/rup2.png){width=65%}
 
 ## Bibliografia {.unnumbered}
 
@@ -2090,7 +2091,7 @@ edição, 2014.
      sua resposta. (b) Sistemas de quais domínios podem ter uma curva
      de custos de mudanças semelhante a essa?
 
-![](figs/cap2/custo-mudancas.png){width=45%}
+![](figs/cap2/custo-mudancas.png){width=48%}
 
 18\. O artigo "*Development and Deployment at Facebook*"
      ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
