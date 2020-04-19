@@ -267,7 +267,7 @@ projeto de software
 desenvolvedores estavam distribuídos por mais de 32 países, embora a
 maioria fosse da Alemanha (54%). A análise das respostas obtidas revelou
 resultados interessantes sobre o uso de esboços em atividades de
-desenvolvimento de software, conforme descrito a seguir:
+projeto e desenvolvimento de software, conforme descrito a seguir:
 
 -   24% dos desenvolvedores que participaram da pesquisa criaram o
     último esboço no mesmo dia em que responderam ao questionário e
@@ -777,7 +777,7 @@ solicita um depósito de certo valor em sua conta.
 ![](figs/cap4/sequence3){width=65%}
 
 
-### Diagramas de Atividades
+## Diagramas de Atividades
 \index{UML!Diagrama de Atividades}
 \index{Diagramas UML!Atividades}
 
@@ -801,31 +801,31 @@ assumindo a existência dessa ficha.
 
 **Nodo Inicial:** Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.
 
-![](figs/cap4/activity-t-inicial)
+![](figs/cap4/activity-t-inicial){width=15%}
 
 **Ações:** Possuem um único fluxo de entrada e um único fluxo de saída. Para uma ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
 
-![](figs/cap4/activity-t-acao)
+![](figs/cap4/activity-t-acao){width=22%}
 
 **Decisões:** Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.
 
-![](figs/cap4/activity-t-decisao)
+![](figs/cap4/activity-t-decisao){width=22%}
 
 **Merges:** Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.
 
-![](figs/cap4/activity-t-merge)
+![](figs/cap4/activity-t-merge){width=18%}
 
 **Forks:** Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
 
-![](figs/cap4/activity-t-fork)
+![](figs/cap4/activity-t-fork){width=18%}
 
 **Joins:** Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.
 
-![](figs/cap4/activity-t-join)
+![](figs/cap4/activity-t-join){width=18%}
 
 **Nodo Final:** Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.
 
-![](figs/cap4/activity-t-final)
+![](figs/cap4/activity-t-final){width=15%}
 
 
 ```{=latex}
