@@ -160,7 +160,7 @@ conceitual é importante porque facilita o uso e entendimento de um
 sistema por parte de seus usuários. Por exemplo, com integridade
 conceitual, o usuário acostumado a usar uma parte de um sistema se sente
 confortável a usar uma outra parte, pois as funcionalidades e a
-interface implementadas ao longo do produto são consistentes.
+interface implementadas ao longo do produto são sempre consistentes.
 
 Para citar um contra-exemplo, isto é, um caso de ausência de integridade
 conceitual, vamos assumir um sistema que usa tabelas para apresentar
@@ -275,7 +275,7 @@ resumo do artigo começa da seguinte forma:
 > "Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
 
 \index{Módulo}
-**Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++ e Ruby. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes.
+**Aviso**: Parnas usa o termo *módulo* no seu artigo, mas isso em uma época em que orientação a objetos ainda não havia surgido, pelo menos como conhecemos hoje. Já neste capítulo, escrito quase 50 anos após o trabalho de Parnas, optamos pelo termo **classe**, em vez de módulo. O motivo é que classes são a principal unidade de modularização de linguagens de programação modernas, como Java, C++ e Ruby. No entanto, o conteúdo do capítulo aplica-se a outras unidades de modularização, incluindo aquelas menores do que classes, como métodos e funções; e também a unidades maiores, como pacotes e componentes.
 
 Ocultamento de informação traz as seguintes vantagens para um sistema:
 
@@ -1531,7 +1531,7 @@ redefinido em todas as subclasses.
 Suponha ainda que o contrato do método `getPrimo(n)` especifique o
 seguinte: *1 <= n <= 1 milhão*. Ou seja, o método deve ser capaz de retornar
 qualquer número primo, para n variando de 1 até 1 milhão. Nesse exemplo,
-uma violação do contrato de `getPrimo(n)` ocorre, por exemplo, se, em uma
+uma possível violação do contrato de `getPrimo(n)` ocorre, por exemplo, se, em uma
 das classes, o algoritmo implementado calcule apenas números primos até
 900 mil.
 
@@ -1632,7 +1632,8 @@ Nesta seção, vamos estudar métricas para mensurar as seguintes
 propriedades de um projeto de software: tamanho, coesão, acoplamento e
 complexidade. Iremos detalhar os procedimentos de cálculo dessas
 métricas e dar alguns exemplos. Existem ainda ferramentas 
-que calculam essas métricas de forma automática.
+que calculam essas métricas de forma automática. Algumas delas
+funcionam como plugins de IDEs conhecidas.
 
 ### Tamanho
 
@@ -1926,7 +1927,7 @@ Languages, and Applications (OOPSLA), 1991.
 
 6\.  É possível que uma classe A esteja acoplada a uma classe B sem ter
     uma referência para B em seu código? Se sim, esse acoplamento será
-    aceitável ou ruim?
+    aceitável ou será um acoplamento ruim?
 
 7\.  Suponha um programa onde todo o código está implementado no método
     main. Ele tem um problema de coesão ou acoplamento? Justifique.

@@ -306,14 +306,14 @@ class SistemaControleProjetores {
 <p>Se quisermos manipular projetores LG, vamos ter que implementar uma segunda classe adaptadora. No entanto, seu código será parecido com <code>AdaptadorProjetorSamsung</code>.</p>
 <h2 data-number="1.6" id="fachada" data-number="1.6"><span class="header-section-number">6.6</span> Fachada</h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha que implementamos um interpretador para uma linguagem X. Esse interpretador permite executar programas X a partir de uma linguagem hospedeira, no caso Java. Se quiser tornar o exemplo mais real, imagine que X é uma linguagem para consulta a dados, semelhante a SQL. Para executar programas X, a partir de Java, os seguintes passos são necessários:</p>
+<p><strong>Contexto</strong>: Suponha que implementamos um interpretador para uma linguagem X. Esse interpretador permite executar programas X a partir de uma linguagem hospedeira, no caso Java. Se quiser tornar o exemplo mais real, imagine que X é uma linguagem para consulta a dados, semelhante a SQL. Para executar programas X, a partir de um código em Java, os seguintes passos são necessários:</p>
 <pre><code>Scanner s = new Scanner(&quot;prog1.x&quot;);
 Parser p = new Parser(s);
 AST ast = p.parse();
 CodeGenerator code = new CodeGenerator(ast);
 code.eval();</code></pre>
-<p><strong>Problema</strong>: Como a linguagem X está ficando popular, os desenvolvedores estão reclamando da complexidade do código acima, pois ele requer conhecimento de classes internas do interpretador de X. Logo, os usuários frequentemente pedem uma interface mais simples para usar o interpretador de X.</p>
-<p><strong>Solução</strong>: O padrão de projeto <strong>Fachada</strong> é uma solução para o nosso problema. Uma Fachada é uma classe que oferece uma interface mais simples para um sistema. O objetivo é evitar que os usuários tenham que conhecer classes internas desse sistema; em vez disso, eles precisam interagir apenas com a classe de Fachada. As classes internas ficam encapsuladas por trás da Fachada.</p>
+<p><strong>Problema</strong>: Como a linguagem X está ficando popular, os desenvolvedores estão reclamando da complexidade do código acima, pois ele requer conhecimento de classes internas do interpretador de X. Logo, os usuários frequentemente pedem uma interface mais simples para chamar o interpretador da linguagem X.</p>
+<p><strong>Solução</strong>: O padrão de projeto <strong>Fachada</strong> é uma solução para o nosso problema. Uma Fachada é uma classe que oferece uma interface mais simples para um sistema. O objetivo é evitar que os usuários tenham que conhecer classes internas desse sistema; em vez disso, eles precisam interagir apenas com a classe de Fachada. As classes internas ficam encapsuladas por trás dessa Fachada.</p>
 <p>No nosso problema, a Fachada poderia ser:</p>
 <pre><code>class InterpretadorX {
 
@@ -652,7 +652,7 @@ Livro gof = new Livro.Builder().setName(&quot;Design Patterns&quot;).
 <pre><code>FileInputStream fs = new FileInputStream(fileName);
 BufferedInputStream bs = new BufferedInputStream(fs);
 ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
-<p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao processo de criação de arquivos em Java. O principal motivo é que, via de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por <em>default</em>, em vez de por meio de uma classe decoradora específica. Assim, as classes <code>FileInputStream</code> e <code>BufferedInputStream</code> poderiam ser fundidas em uma única classe.</p>
+<p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao processo de criação de arquivos em Java. O principal motivo é que, via de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por <em>default</em>, em vez de por meio de uma classe decoradora específica. Assim, e de acordo com esse raciocínio, as classes <code>FileInputStream</code> e <code>BufferedInputStream</code> poderiam ser fundidas em uma única classe.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
 <p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
 <p>Joshua Bloch. Effective Java. 3rd edition. Prentice Hall, 2017.</p>
@@ -669,7 +669,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>2. Dê o nome dos seguintes padrões de projeto:</p>
 <ol type="a">
 <li><p>Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema:</p></li>
-<li><p>Garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela:</p></li>
+<li><p>Garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela:</p></li>
 <li><p>Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais:</p></li>
 <li><p>Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces:</p></li>
 <li><p>Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados:</p></li>
@@ -693,7 +693,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>5. Qual a semelhança entre Proxy, Decorador e Visitor? E qual a diferença entre esses padrões?</p>
 <p>6. No exemplo de Adaptador, mostramos o código de uma única classe adaptadora (<code>AdaptadorProjetorSamsung</code>). Escreva o código de uma classe semelhante, mas que adapte a interface <code>Projetor</code> para a interface <code>ProjetorLG</code> (o código de ambas interfaces é mostrado na Seção 6.5). Chame essa classe de <code>AdaptadorProjetorLG</code>.</p>
 <p>7. Suponha uma classe base A. Suponha que queremos adicionar quatro funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades podem ser adicionadas em qualquer ordem, isto é, a ordem não é importante. Se usarmos herança, quantas subclasses de A teremos que implementar? Se optarmos por uma solução por meio de decoradores, quantas classes teremos que implementar (sem contar a classe A). Justifique e explique sua resposta.</p>
-<p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida na console. Chame essa classe de <code>LogChannel</code>.</p>
+<p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida na console. Chame essa classe decoradora de <code>LogChannel</code>.</p>
 <p>9. Dado o código abaixo de uma classe <code>Subject</code> (do padrão Observador):</p>
 <pre><code>interface Observer {
   public void update(Subject s);
@@ -701,7 +701,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 
 class Subject {
 
-  private List&lt;Observer&gt; observers = new ArrayList&lt;Observer&gt;();
+  private List&lt;Observer&gt; observers= new ArrayList&lt;Observer&gt;();
 
   public void addObserver(Observer observer) {
     observers.add(observer);

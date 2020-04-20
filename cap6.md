@@ -613,7 +613,7 @@ segunda classe adaptadora. No entanto, seu código será parecido com
 linguagem X. Esse interpretador permite executar programas X a partir de
 uma linguagem hospedeira, no caso Java. Se quiser tornar o exemplo mais
 real, imagine que X é uma linguagem para consulta a dados, semelhante a
-SQL. Para executar programas X, a partir de Java, os seguintes passos
+SQL. Para executar programas X, a partir de um código em Java, os seguintes passos
 são necessários:
 
 ```
@@ -627,15 +627,15 @@ code.eval();
 **Problema**: Como a linguagem X está ficando popular, os
 desenvolvedores estão reclamando da complexidade do código acima, pois
 ele requer conhecimento de classes internas do interpretador de X. Logo,
-os usuários frequentemente pedem uma interface mais simples para usar o
-interpretador de X.
+os usuários frequentemente pedem uma interface mais simples para chamar o
+interpretador da linguagem X.
 
 **Solução**: O padrão de projeto **Fachada** é uma solução para o nosso
 problema. Uma Fachada é uma classe que oferece uma interface mais
 simples para um sistema. O objetivo é evitar que os usuários tenham que
 conhecer classes internas desse sistema; em vez disso, eles precisam
 interagir apenas com a classe de Fachada. As classes internas ficam
-encapsuladas por trás da Fachada.
+encapsuladas por trás dessa Fachada.
 
 No nosso problema, a Fachada poderia ser:
 
@@ -1314,6 +1314,7 @@ caminhar sobre uma estrutura de dados. Normalmente, essa interface
 inclui métodos como `hasNext()` e `next()`, como mostrado no seguinte
 exemplo:
 
+\newpage
 ```
 List<String> list = Arrays.asList("a","b","c");
 Iterator it = list.iterator();
@@ -1448,8 +1449,8 @@ processo de criação de arquivos em Java. O principal motivo é que, via
 de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer
 arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por
 *default*, em vez de por meio de uma classe decoradora específica. Assim,
-as classes `FileInputStream` e `BufferedInputStream` poderiam ser fundidas
-em uma única classe.
+e de acordo com esse raciocínio, as classes `FileInputStream` e 
+`BufferedInputStream` poderiam ser fundidas em uma única classe.
 
 ## Bibliografia  {.unnumbered}
 
@@ -1496,7 +1497,7 @@ de um objeto agregado sem expor sua representação subjacente.
 
 a) Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema: 
 
-b) Garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela: 
+b) Garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela: 
 
 c) Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais: 
 
@@ -1557,7 +1558,7 @@ Justifique e explique sua resposta.
 8\. No exemplo de Decorador, mostramos o código de um único decorador
 (`ZipChannel`). Escreva o código de uma classe semelhante, mas que imprima
 a mensagem a ser transmitida ou recebida na console. Chame essa classe
-de `LogChannel`.
+decoradora de `LogChannel`.
 
 9\. Dado o código abaixo de uma classe `Subject` (do padrão Observador):
 
@@ -1568,7 +1569,7 @@ interface Observer {
 
 class Subject {
 
-  private List<Observer> observers = new ArrayList<Observer>();
+  private List<Observer> observers= new ArrayList<Observer>();
 
   public void addObserver(Observer observer) {
     observers.add(observer);
