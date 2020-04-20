@@ -687,6 +687,7 @@ interface Channel {
 class TCPChannel implements Channel {
    ...
 }
+
 class UDPChannel implements Channel {
    ...
 }
@@ -829,8 +830,7 @@ class ZipChannel extends ChannelDecorator {
 }
 ```
 
-Para entender o funcionamento de `ZipChannel`, suponha o seguinte código
-cliente:
+Para entender o funcionamento de `ZipChannel`, suponha o seguinte código:
 
 ```
 Channel c = new ZipChannel(new TCPChannel());
@@ -873,7 +873,6 @@ class MyList {
   public void sort() {
     ... // ordena a lista usando Quicksort
   }
-
 }
 ```
 
@@ -937,9 +936,11 @@ ordenação:
 abstract class SortStrategy {
   abstract void sort(MyList list);
 }
+
 class QuickSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }
+
 class ShellSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }
@@ -968,8 +969,8 @@ interfaces de termômetros, tais como digital, analógico, etc. Por fim,
 temos mais classes semelhantes a `Temperatura` e `Termometro` em nosso
 sistema, tais como: `PressaoAtmosferica` e `Barometro`, `UmidadeDoAr` e
 `Higrometro`, `VelocidadeDoVento` e `Anemometro`, etc. Logo, na medida do
-possível, gostaríamos de reusar o mecanismo de notificação também nessas
-classes.
+possível, gostaríamos de reusar o mecanismo de notificação também nesses
+outros pares de classes.
 
 **Solução:** O padrão **Observador** é a solução recomendada para o
 nosso contexto e problema. Esse padrão define como implementar uma
@@ -1010,7 +1011,6 @@ class Temperatura extends Subject {
     this.temp = temp;
     notifyObservers();
   }
-
 }
 
 class TermometroCelsius implements Observer {
@@ -1019,7 +1019,6 @@ class TermometroCelsius implements Observer {
     double temp = ((Temperatura) s).getTemp();
     System.out.println("Temperatura Celsius: " + temp);
   }
-
 }
 ```
 
@@ -1455,7 +1454,7 @@ e de acordo com esse raciocínio, as classes `FileInputStream` e
 ## Bibliografia  {.unnumbered}
 
 
-Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. Design
+Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design
 Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley,
 1995.
 
@@ -1522,7 +1521,7 @@ l) Permite que um objeto avise outros objetos de que seu estado mudou:
 m) Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses:   
 
 
-3\. Dentre os padrões de projeto que respondeu na questão (2), quais são criacionais?
+3\. Dentre os padrões de projeto que respondeu na questão (2), quais são padrões criacionais?
 
 4\. Considerando as respostas da questão (2), liste padrões de
 projeto que:

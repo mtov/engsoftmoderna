@@ -345,6 +345,7 @@ code.eval();</code></pre>
 class TCPChannel implements Channel {
    ...
 }
+
 class UDPChannel implements Channel {
    ...
 }</code></pre>
@@ -420,7 +421,7 @@ channel = new BufferChannel(new ZipChannel(new TCPChannel()));
    }
 
 }</code></pre>
-<p>Para entender o funcionamento de <code>ZipChannel</code>, suponha o seguinte código cliente:</p>
+<p>Para entender o funcionamento de <code>ZipChannel</code>, suponha o seguinte código:</p>
 <pre><code>Channel c = new ZipChannel(new TCPChannel());
 c.send(&quot;Hello, world&quot;)</code></pre>
 <p>A chamada de <code>send</code> na última linha do exemplo dispara as seguintes execuções de métodos:</p>
@@ -442,7 +443,6 @@ c.send(&quot;Hello, world&quot;)</code></pre>
   public void sort() {
     ... // ordena a lista usando Quicksort
   }
-
 }</code></pre>
 <p><strong>Problema</strong>: os nossos clientes estão solicitando que novos algoritmos de ordenação possam ser usados para ordenar os elementos da lista. Explicando melhor, eles querem ter a opção de alterar e definir, por conta própria, o algoritmo de ordenação. No entanto, a versão atual da classe sempre ordena a lista usando o algoritmo Quicksort. Se lembrarmos dos princípios de projeto que estudamos no capítulo anterior, podemos dizer que a classe <code>MyList</code> não segue o princípio Aberto/Fechado, considerando o algoritmo de ordenação.</p>
 <p><strong>Solução</strong>: o Padrão <strong>Strategy</strong> é a solução para o nosso problema de <q>abrir</q> a classe <code>MyList</code> para novos algoritmos de ordenação, mas sem alterar o seu código fonte. O objetivo do padrão é parametrizar os algoritmos usados por uma classe. Ele prescreve como encapsular uma família de algoritmos e como torná-los intercambiáveis. Assim, seu uso é recomendado quando uma classe é usuária de um certo algoritmo (de ordenação, no nosso exemplo). Porém, como existem diversos algoritmos com esse propósito, não se quer antecipar uma decisão e implementar apenas um deles no corpo da classe, como ocorre na primeira versão de <code>MyList</code>.</p>
@@ -471,16 +471,18 @@ c.send(&quot;Hello, world&quot;)</code></pre>
 <pre><code>abstract class SortStrategy {
   abstract void sort(MyList list);
 }
+
 class QuickSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }
+
 class ShellSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }</code></pre>
 <h2 data-number="1.9" id="observador" data-number="1.9"><span class="header-section-number">6.9</span> Observador</h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um sistema para controlar uma estação meteorológica. Nesse sistema, temos que manipular objetos de duas classes: <code>Temperatura</code>, que são objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na estação meteorológica; e <code>Termometro</code>, que é uma classe usada para criar objetos visuais que exibem as temperaturas sob monitoramento. Termômetros devem exibir a temperatura atual que foi monitorada. Se a temperatura mudar, os termômetros devem ser atualizados.</p>
-<p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius na console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nessas classes.</p>
+<p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius na console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nesses outros pares de classes.</p>
 <p><strong>Solução:</strong> O padrão <strong>Observador</strong> é a solução recomendada para o nosso contexto e problema. Esse padrão define como implementar uma relação do tipo um-para-muitos entre objetos sujeito e observadores. Quando o estado de um sujeito muda, seus observadores devem ser notificados.</p>
 <p>Primeiro, vamos mostrar um possível programa principal para o nosso problema original:</p>
 <pre><code>void main() {
@@ -503,7 +505,6 @@ class ShellSortStrategy extends SortStrategy {
     this.temp = temp;
     notifyObservers();
   }
-
 }
 
 class TermometroCelsius implements Observer {
@@ -512,7 +513,6 @@ class TermometroCelsius implements Observer {
     double temp = ((Temperatura) s).getTemp();
     System.out.println(&quot;Temperatura Celsius: &quot; + temp);
   }
-
 }</code></pre>
 <p>Veja que <code>Temperatura</code> herda de uma classe chamada <code>Subject</code>. Na solução proposta, todos os sujeitos devem estender essa classe. Ao fazer isso, eles herdam dois métodos:</p>
 <ul>
@@ -654,7 +654,7 @@ BufferedInputStream bs = new BufferedInputStream(fs);
 ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao processo de criação de arquivos em Java. O principal motivo é que, via de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por <em>default</em>, em vez de por meio de uma classe decoradora específica. Assim, e de acordo com esse raciocínio, as classes <code>FileInputStream</code> e <code>BufferedInputStream</code> poderiam ser fundidas em uma única classe.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
-<p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
+<p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
 <p>Joshua Bloch. Effective Java. 3rd edition. Prentice Hall, 2017.</p>
 <p>Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns: A Brain-Friendly Guide. O'Reilly, 2004.</p>
 <p>Eduardo Guerra. Design Patterns com Java: Projeto Orientado a Objetos guiado por Padrões. Caso do Código, 2014.</p>
@@ -682,7 +682,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <li><p>Permite que um objeto avise outros objetos de que seu estado mudou:</p></li>
 <li><p>Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses:</p></li>
 </ol>
-<p>3. Dentre os padrões de projeto que respondeu na questão (2), quais são criacionais?</p>
+<p>3. Dentre os padrões de projeto que respondeu na questão (2), quais são padrões criacionais?</p>
 <p>4. Considerando as respostas da questão (2), liste padrões de projeto que:</p>
 <ol type="a">
 <li><p>Ajudam a tornar uma classe aberta a extensões, sem que seja preciso modificar o seu código fonte (isto é, padrões que colocam em prática o princípio Aberto/Fechado).</p></li>

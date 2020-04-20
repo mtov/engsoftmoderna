@@ -1930,7 +1930,7 @@ Languages, and Applications (OOPSLA), 1991.
     aceitável ou será um acoplamento ruim?
 
 7\.  Suponha um programa onde todo o código está implementado no método
-    main. Ele tem um problema de coesão ou acoplamento? Justifique.
+    `main`. Ele tem um problema de coesão ou acoplamento? Justifique.
 
 8\.  Qual princípio de projeto é violado pelo seguinte código?
 
