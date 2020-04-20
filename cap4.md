@@ -381,7 +381,7 @@ métodos, como também ilustrado a seguir:
 
 Mostra-se a seguir um diagrama com duas classes: `Pessoa` e `Fone`.
 
-![](figs/cap4/class1){width=80%}
+![](figs/cap4/class1){width=85%}
 
 Nesse diagrama, pode-se conferir que a classe `Pessoa` tem três atributos
 — `nome`, `sobrenome` e `fone` — e dois métodos — `setPessoa` e
@@ -435,7 +435,7 @@ Portanto, usando associações, podemos transformar o primeiro diagrama
 que mostramos nesta seção, com as classes `Pessoa` e `Fone`, no seguinte
 diagrama:
 
-![](figs/cap4/class3){width=80%}
+![](figs/cap4/class3){width=85%}
 
 As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
 
@@ -454,14 +454,14 @@ ou um único telefone. Usando termos de programação, o atributo fone de
 `Pessoa` pode ter o valor null, isto é, a `Pessoa` em questão não tem `Fone`
 associado. Ou então ela pode se associar a um único objeto do tipo `Fone`.
 
-![](figs/cap4/class4){width=80%}
+![](figs/cap4/class4){width=85%}
 
 No próximo exemplo, a semântica já é diferente. Nesse caso, uma `Pessoa`
 pode estar associada a múltiplos objetos do tipo `Fone`, inclusive a nenhum.
 Essa multiplicidade é representada pelo \* que adicionamos logo acima da
 seta da associação.
 
-![](figs/cap4/class5){width=80%}
+![](figs/cap4/class5){width=85%}
 
 Neste segundo exemplo com informações de multiplicidade, o
 tipo do atributo `fone` deve ser um vetor de `Fone`. Para que fique
@@ -488,7 +488,7 @@ de classe são capazes de modelar qualquer um dos dois cenários.
 Em alguns casos, informações de multiplicidade são também mostradas na
 extremidade contrária da seta, como no exemplo abaixo:
 
-![](figs/cap4/class6){width=80%}
+![](figs/cap4/class6){width=85%}
 
 Nesse diagrama, a multiplicidade 0..1 — da extremidade com a seta
 — indica que uma `Pessoa` pode ter zero ou um único `Fone`. Mas o mais
@@ -510,7 +510,7 @@ A solução para essa exigência é simples: basta tornar a **associação
 bidirecional**, isto é, adicionar uma seta em cada extremidade da linha
 que conecta as classes, como mostrado no próximo diagrama.
 
-![](figs/cap4/class7){width=80%}
+![](figs/cap4/class7){width=85%}
 
 Para não deixar dúvidas sobre a semântica de uma associação
 bidirecional, mostramos também o código das duas classes:
@@ -608,7 +608,7 @@ uma exceção do tipo B. Uma dependência é considerada uma modalidade
 menos forte de relacionamento entre classes do que relacionamentos que
 ocorrem por meio de associação e herança.
 
-Para ilustrar o uso de dependências em diagramas de classes, considere o
+Para ilustrar o uso de dependências, considere o
 seguinte trecho de código:
 
 ```
