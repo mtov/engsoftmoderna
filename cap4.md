@@ -413,7 +413,7 @@ atributo de A responsável pela associação — no nosso caso, b. Veja o
 exemplo abaixo (nele, só mostramos as informações que nos interessam;
 por isso, o compartimento de atributos e métodos está vazio):
 
-![](figs/cap4/class2){width=35%}
+![](figs/cap4/class2){width=40%}
 
 Para ficar ainda mais claro, vamos mostrar como seria o código das
 classes A e B:
@@ -593,7 +593,7 @@ Como usual em orientação a objetos, subclasses herdam todos os atributos
 e métodos da classe base, mas também podem adicionar novos membros. Por
 exemplo, apenas `PessoaFisica` tem `cpf` e apenas `PessoaJuridica` tem `cnpj`.
 
-![](figs/cap4/class10){width=85%}
+![](figs/cap4/class10){width=90%}
 
 ### Dependências {.unnumbered}
 \index{UML!Dependências}
@@ -619,15 +619,14 @@ class MinhaClasse {
    private void metodoX() {
      Stack stack = new Stack();
      ...
-   }
-   ...
+   } ...
 }
 ```
 Observe que o `metodoX` de `MinhaClasse` possui uma variável local do tipo
 `java.util.Stack`. Nesse caso, dizemos que existe uma dependência de
 `MinhaClasse` para `java.util.Stack`, a qual é modelada da seguinte forma:
 
-![](figs/cap4/class9){width=50%}
+![](figs/cap4/class9){width=60%}
 
 Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o
 tipo da dependência, usando-se palavras como create (para indicar que a
@@ -673,7 +672,7 @@ Por fim, apenas classes do pacote `BusinessLayer` usam classes do pacote
 `Persistence`.
 
 
-![](figs/cap4/package1){width=45%}
+![](figs/cap4/package1){width=50%}
 
 Para concluir, gostaríamos de acrescentar duas observações:
 
@@ -709,7 +708,7 @@ eletrônico e solicita uma operação de retirada de valores.
 Antes disso, para iniciar a apresentação de diagramas de sequência,
 vamos usar o seguinte diagrama:
 
-![](figs/cap4/sequence1){width=45%}
+![](figs/cap4/sequence1){width=50%}
 
 Apesar de simples, esse diagrama serve para mostrar a dinâmica e a
 notação usada por diagramas de sequência. Como já dissemos, diagramas de
@@ -768,13 +767,13 @@ seguir. Observe como a chamada de `g()` feita por `f()` é representada por
 meio de um novo retângulo, que "sai" do retângulo que representa a
 ativação da função `f()`.
 
-![](figs/cap4/sequence2){width=30%}
+![](figs/cap4/sequence2){width=35%}
 
 Para concluir, o próximo diagrama mostra um cenário mais real, que
 ilustra os métodos chamados quando o cliente de uma caixa eletrônico
 solicita um depósito de certo valor em sua conta.
 
-![](figs/cap4/sequence3){width=65%}
+![](figs/cap4/sequence3){width=75%}
 
 
 ## Diagramas de Atividades
@@ -784,16 +783,18 @@ solicita um depósito de certo valor em sua conta.
 Diagramas de atividades são usados para representar, em alto nível, um
 processo ou fluxo de execução. Os principais elementos desses diagramas
 são **ações** representadas por retângulos. Existem ainda elementos de
-**controle**, que definem a ordem de execução das ações. A próxima
-figura mostra um diagrama de atividades que modela o processo seguido
+**controle**, que definem a ordem de execução das ações. A
+figura da próxima página mostra um diagrama de atividades que modela o processo seguido
 após um usuário fechar uma compra em uma loja virtual. Para isso,
 assume-se que os produtos comprados já estão no carrinho de compra.
+
 Para entender o funcionamento de um diagrama de atividades (como aquele
 mostrado na figura), devemos assumir que existe uma ficha (*token*)
 imaginária que caminha pelos nodos do diagrama. A seguir,
 explicamos o comportamento de cada nodo de um diagrama de atividades,
 assumindo a existência dessa ficha.
 
+\newpage
 
 ![](figs/cap4/activity01){width=45%}
 
@@ -805,23 +806,23 @@ assumindo a existência dessa ficha.
 
 **Ações:** Possuem um único fluxo de entrada e um único fluxo de saída. Para uma ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.
 
-![](figs/cap4/activity-t-acao){width=22%}
+![](figs/cap4/activity-t-acao){width=25%}
 
 **Decisões:** Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.
 
-![](figs/cap4/activity-t-decisao){width=22%}
+![](figs/cap4/activity-t-decisao){width=25%}
 
 **Merges:** Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.
 
-![](figs/cap4/activity-t-merge){width=18%}
+![](figs/cap4/activity-t-merge){width=20%}
 
 **Forks:** Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
 
-![](figs/cap4/activity-t-fork){width=18%}
+![](figs/cap4/activity-t-fork){width=20%}
 
 **Joins:** Possuem vários fluxos de entrada, mas um único fluxo de saída. Atuam como sorvedouros de fichas: esperam que fichas cheguem em todos os fluxos de entrada. Quando isso acontece, repassam uma única ficha para o fluxo de saída. Logo, são usados para sincronizar processos. Em outras palavras, transformar vários fluxos de execução em um único fluxo.
 
-![](figs/cap4/activity-t-join){width=18%}
+![](figs/cap4/activity-t-join){width=20%}
 
 **Nodo Final:** Pode possuir mais de um fluxo de entrada; mas não possui fluxos de saída. Quando uma ficha chega em um dos fluxos de entrada, encerra-se a execução do diagrama de atividades.
 
@@ -968,15 +969,16 @@ C c = new C();
 class C { 
    void m1() { ... } 
 }
+
 class B { 
    void m2() { ... c.m1(); ... this.m3(); ... }   
    void m3() { ... c.m1(); ... }
    void m4() { ... }
 }
+
 class A { 
    void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }   
 }     
-
 ```
 
 7\. Em diagramas de atividades, explique a diferença entre um nodo de *merge*
@@ -985,4 +987,4 @@ e um nodo de *join*.
 8\. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama
 de forma a refletir corretamente a intenção do projetista.
 
-![](figs/cap4/activity-exercicio){width=35%}
+![](figs/cap4/activity-exercicio){width=45%}

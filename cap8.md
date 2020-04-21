@@ -397,7 +397,7 @@ disponível neste
 ```{=latex}
 \begin{aviso}
 ```
-**Aviso:** JUnit possui várias versões. No capítulo, vamos
+**Aviso:** O framework JUnit possui várias versões. Neste capítulo, vamos
 usar a versão 4.12.
 ```{=latex}
 \end{aviso}

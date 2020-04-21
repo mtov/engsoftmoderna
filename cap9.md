@@ -1444,6 +1444,29 @@ void f {
 Observe que, no método `f`, após a refatoração, comentários não são mais necessários, pois os nomes dos métodos chamados já revelam muito do que eles fazem.
 
 
+\index{Débito Técnico}
+```{=latex}
+\begin{esmbox}
+```
+**Aprofundamento**: 
+**Débito técnico** é um termo cunhado por Ward Cunningham, em 1992, para designar
+os problemas técnicos que podem dificultar a manutenção
+e evolução de um sistema. Dentre outros, esses problemas incluem falta de testes,
+problemas arquiteturais (isto é, sistemas mais parecidos com uma *big ball of mud*),
+sistemas com um número grande de code smells ou sem qualquer documentação.
+A intenção de Cunningham foi criar um termo que pudesse ser compreendido
+por gerentes e pessoas sem conhecimento de princípios e práticas de Engenharia
+de Software. Assim, ele optou pelo termo débito para reforçar que esses problemas, 
+caso não sejam resolvidos, em algum momento vão requerer o pagamento
+de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e difíceis de manter,
+nos quais a correção de bugs e a implementação de novas funcionalidades 
+leva cada vez mais tempo e se mostra mais arriscada.
+```{=latex}
+\end{esmbox}
+```
+
+
+
 ## Bibliografia {.unnumbered}
 
 Martin Fowler. Improving the Design of Existing Code, 
@@ -1453,8 +1476,7 @@ Martin Fowler. Improving the Design of Existing Code,
 Addison-Wesley, 2018.
 
 Danilo Silva, Nikolaos Tsantalis, Marco Tulio Valente. Why We Refactor?
-Confessions of GitHub Contributors. Foundations of Soft. Engineering
-(FSE), 2016.
+Confessions of GitHub Contributors. Foundations of Soft. Engineering, 2016.
 
 
 ## Exercícios de Fixação {.unnumbered}
@@ -1534,8 +1556,6 @@ class A {
   }
 }
 ```
-
-\newpage
 
 (d)
 

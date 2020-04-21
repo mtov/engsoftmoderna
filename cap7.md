@@ -157,8 +157,8 @@ construídos nas décadas de 60 e 70. Em sistemas que seguem esse padrão,
 as classes são organizadas em módulos de maior tamanho, chamados de
 **camadas**. As camadas são dispostas de forma hierárquica, como em um
 bolo. Assim, uma camada somente pode usar serviços — isto é, chamar
-métodos, instanciar objetos, estender classes, lançar exceções — da
-camada imediatamente inferior.
+métodos, instanciar objetos, estender classes, declarar 
+parâmetros, lançar exceções, etc — da camada imediatamente inferior.
 
 Dentre outras aplicações, arquiteturas em camadas são muito usadas na
 implementação de protocolos de rede. Por exemplo, HTTP é um protocolo de
@@ -244,10 +244,10 @@ Normalmente, uma arquitetura em três camadas é uma arquitetura
 distribuída. Isto é, a camada de interface executa na máquina dos
 clientes. A camada de negócio executa em um servidor, muitas vezes
 chamado de servidor de aplicação. E, por fim, temos o banco de dados. A
-próxima figura mostra um exemplo, que assume que a interface oferecida
-aos clientes é uma interface gráfica.
+figura da próxima página mostra um exemplo, que assume que a interface 
+oferecida aos clientes é uma interface gráfica.
 
-![Arquitetura em três camadas](figs/cap7/tiers3){width=75%}
+![Arquitetura em três camadas](figs/cap7/tiers3){width=80%}
 
 Em sistemas três camadas, a camada de aplicação pode ter diversos
 módulos, incluindo uma fachada, para facilitar o acesso ao sistema pelos
@@ -321,7 +321,7 @@ entender a Interface Gráfica como sendo observadora do Modelo. Quando o
 estado dos objetos do Modelo é alterado, deve-se atualizar
 automaticamente a interface do sistema.
 
-![Arquitetura MVC](figs/cap7/mvc){width="50%"}
+![Arquitetura MVC](figs/cap7/mvc){width=60%}
 
 Dentre as vantagens de arquiteturas MVC, podemos citar:
 
@@ -402,7 +402,7 @@ histórica dessas arquiteturas:
     em um banco de dados.
   
 
-![Arquitetura MVC Web](figs/cap7/mvc-web){width=55%}
+![Arquitetura MVC Web](figs/cap7/mvc-web){width=75%}
 
 Logo, apesar de sistemas Web serem parecidos com sistemas três camadas,
 os frameworks Web mais populares optaram por usar termos típicos de MVC
@@ -526,7 +526,7 @@ compartilham o mesmo espaço de endereçamento. Em outras palavras, em
 tempo de execução o sistema é um grande **monolito**, como ilustra a
 próxima figura.
 
-![Monolito com nove módulos. Em tempo de execução, o sistema executa como um único processo, representado pelo quadrado que delimita os 9 módulos.](figs/cap7/monolito){width="35%"}
+![Monolito com nove módulos. Em tempo de execução, o sistema executa como um único processo, representado pelo quadrado que delimita os 9 módulos.](figs/cap7/monolito){width="37%"}
 
 Em um monolito, sempre existe o risco de que uma mudança realizada por
 um time T em um módulo Mi cause um efeito colateral em um módulo Mj. Por
@@ -551,7 +551,7 @@ grupos de módulos são executados em processos independentes, sem
 compartilhamento de memória. Ou seja, o sistema é decomposto em módulos
 não apenas em tempo de desenvolvimento, mas também em tempo de execução.
 Com isso, as chances de que mudanças em um módulo causem problemas em
-outros módulos são menores.
+outros módulos ficam bem menores.
 
 Quando os módulos são separados em processos distintos não há mais
 possibilidade de que um módulo acesse um recurso interno de outro
@@ -570,7 +570,7 @@ executados, cada um deles, em um processo independente. Os módulos M4 e
 M5 são executados em um quinto processo. Por fim, os módulos M7, M8 e M9
 são executados, em conjunto, em um sexto processo.
 
-![Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.](figs/cap7/microservices1){width=35%}
+![Servidor com seis microsserviços: M1, M2, M3, M4-M5, M6, M7-M8-M9. Cada microsserviço executa como um processo autônomo.](figs/cap7/microservices1){width=37%}
 
 Até esse ponto da explicação, usamos o termo processo, mas o nome do
 padrão refere-se a eles como **serviços**. Ainda, os serviços são micro
@@ -606,7 +606,7 @@ O segundo servidor que foi disponibilizado inclui apenas
 instâncias do serviço M1. A suposição é que M1 é responsável pela maior
 parte dos problemas de performance da instalação inicial. Na primeira
 instalação, tínhamos uma única instância de M1. Agora, temos seis
-instâncias, todas elas em um novo servidor.
+instâncias, todas elas rodando em um novo servidor.
 
 Até o momento, listamos duas vantagens de microsserviços: (1) eles
 permitem a evolução mais rápida e independente de um sistema, permitindo
@@ -879,12 +879,12 @@ Assinantes devem previamente assinar eventos de seu interesse. Quando um
 evento é publicado, os seus assinantes são notificados, conforme mostra
 a próxima figura.
 
-![Arquitetura Publish/Subscribe](figs/cap7/pubsub){width=65%}
+![Arquitetura Publish/Subscribe](figs/cap7/pubsub){width=80%}
 
 Assim como ocorre quando se usa filas de mensagens, arquiteturas
 publish/subscribe também oferecem desacoplamento no espaço e no tempo.
 No entanto, existem duas diferenças principais entre publish/subscribe e
-filas de mensagens:
+sistemas baseados em filas de mensagens:
 
 *   Em publish/subscribe, um evento gera notificações em todos os seus
     assinantes. Por outro lado, em filas de mensagens, as mensagens
@@ -908,7 +908,7 @@ Em alguns sistemas publish/subscribe, eventos são organizados em
 que funcionam como categorias de eventos. Quando um
 publicador produz um evento, ele deve informar seu tópico. Assim,
 clientes não precisam assinar todos os eventos que ocorrem no sistema, mas
-apenas eventos de um certo tópico.
+apenas eventos de um determinado tópico.
 
 \index{Eventos}
 \index{Publish/Subscribe!Broker}
@@ -935,7 +935,7 @@ todos os dados da venda (data, horário, número do vôo, dados do
 passageiro, etc). A figura a seguir ilustra a arquitetura proposta para
 o sistema.
 
-![Arquitetura Pub/Sub em uma companhia aérea](figs/cap7/ciaaerea){width=70%}
+![Arquitetura Pub/Sub em uma companhia aérea](figs/cap7/ciaaerea){width=80%}
 
 O evento "venda" será então assinado por três sistemas da companhia
 aérea: (1) sistema de milhagens, pois as milhas relativas à passagem
@@ -992,8 +992,8 @@ conectada à máquina deles; (2) serviço de arquivos, que possibilita que
 clientes acessem o sistema de arquivos (isto é, o disco) de uma máquina
 servidora; (3) serviço de bancos de dados, que permite que clientes
 acessem um banco de dados instalado em uma outra máquina; (4) serviço
-Web, que permite que clientes (navegadores) acessem recursos (páginas
-HTML) armazenadas e providas por um servidor Web.
+Web, que permite que clientes (no caso, navegadores) acessem recursos 
+(no caso, páginas HTML) armazenadas e providas por um servidor Web.
 
 \index{Arquitetura de Software!Peer-to-Peer}
 \index{Peer-to-Peer}
@@ -1014,7 +1014,7 @@ rede.
 \index{Foote, Brian} 
 \index{Yoder, Joseph}
 
-Vamos encerrar com a descrição de um **anti-padrão** arquitetural, isto
+Vamos encerrar este capítulo com a descrição de um **anti-padrão** arquitetural, isto
 é, uma organização de sistemas que não é recomendada. Talvez, o mais
 conhecido anti-padrão é chamado de **big ball of mud** (ou "grande bola
 de lama"). Esse anti-padrão — proposto por Brian Foote e Joseph
@@ -1026,7 +1026,7 @@ vez disso, o que existe é uma explosão no número de dependências, que dá
 origem a um espaguete de código. Consequentemente, a manutenção do
 sistema torna-se muito difícil e arriscada.
 
-![Anti-padrão *big ball of mud*](figs/cap7/big-ball-mud){width=40%}
+![Anti-padrão *big ball of mud*](figs/cap7/big-ball-mud){width=50%}
 
 \index{InfoSys}
 ```{=latex}

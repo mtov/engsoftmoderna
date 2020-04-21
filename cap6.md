@@ -1256,6 +1256,7 @@ Java.
 abstract class Veiculo {
   abstract public void accept(Visitor v);
 }
+
 class Carro extends Veiculo {
   ...
   public void accept(Visitor v) {
@@ -1263,6 +1264,7 @@ class Carro extends Veiculo {
   }
   ...
 }
+
 class Onibus extends Veiculo {
   ...
   public void accept(Visitor v) {
