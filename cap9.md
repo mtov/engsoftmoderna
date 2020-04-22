@@ -493,7 +493,7 @@ class B { ... }
 class Cliente {
   A a = new A();
   void g() {
-    a.g(); 
+    a.f(); 
     ...
   }
 }
@@ -505,7 +505,7 @@ E agora o código após a refatoração:
 class A {
   B b = new B();
   void f {
-    b.g(); // apenas delega chamada para B
+    b.f(); // apenas delega chamada para B
   }
 }
 
@@ -516,7 +516,7 @@ class B {    // f foi movido de A para B
 class Cliente {
   A a = new A();
   void g() { 
-    a.g();    // não precisa mudar
+    a.f();    // não precisa mudar
     ...
   }
 }
