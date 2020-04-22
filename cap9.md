@@ -1461,6 +1461,19 @@ caso não sejam resolvidos, em algum momento vão requerer o pagamento
 de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e difíceis de manter,
 nos quais a correção de bugs e a implementação de novas funcionalidades 
 leva cada vez mais tempo e mostra-se mais arriscada.
+
+Suponha que existe um débito técnico em um determinado módulo M de um
+sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M vai
+requerer um esforço de 3 dias. Porém, se não houvesse o débito
+técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
+o juros cobrado pela existência do débito técnico em M. Uma
+alternativa seria então pagar o principal do débito, isto é, remover
+completamente o débito técnico de M. Mas isso pode levar, por exemplo,
+4 dias. Ou seja, se consideramos que precisamos estender o módulo
+com apenas F1, ainda não há vantagem. Porém, suponha que brevemente
+vamos ter que implementar novas funcionalidades, tais como F2, F3, F4,
+etc. Nesse caso, a eliminação do principal do débito técnico pode
+compensar.
 ```{=latex}
 \end{esmbox}
 ```
