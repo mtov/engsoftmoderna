@@ -785,7 +785,7 @@ implica na execução de todos os comandos da classe `Stack`.
 
 ![](figs/cap8/cobertura1.png){width=70%}
 
-Suponha agora que não tivéssemos implementado o teste
+Suponha agora que não tivéssemos implementado 
 `testEmptyStackException`. Isto é, não iríamos testar o levantamento de
 uma exceção pelo método `pop()`, quando chamado com uma pilha vazia. Nesse
 caso, a cobertura dos testes cairia para 92.9%, como ilustrado a seguir:
@@ -1916,10 +1916,10 @@ tratamento inadequado desses valores de fronteira. Assim, no nosso
 exemplo, para a primeira faixa salarial, deveríamos testar com os
 seguintes valores:
 
-* 1.903,98: valor imediatamente inferior ao limite inferior da 1a faixa salarial
+* 1.903,98: valor imediatamente inferior ao limite inferior da primeira faixa salarial
 * 1.903,99: limite inferior da primeira faixa salarial
 * 2.826,65: limite superior da primeira faixa salarial
-* 2.826,66: valor imediatamente superior ao limite superior da 1a faixa salarial
+* 2.826,66: valor imediatamente superior ao limite superior da primeira faixa salarial
 
 No entanto, como o leitor deve estar pensando, nem sempre é trivial
 encontrar as classes de equivalência para o domínio de entrada de uma
@@ -2138,9 +2138,9 @@ as chamadas da função `f` que o teste realiza).
 
 |Chamada feita pelo teste | Cobertura de comandos | Cobertura de branches
  - | - | - |
-| f(0,0) | | |
-| f(1,1) | | |
-| f(0,0) e f(1,1) | | |
+| `f(0,0)` | | |
+| `f(1,1)` | | |
+| `f(0,0)` e `f(1,1)` | | |
            
 
 7\. Suponha o seguinte requisito: alunos recebem conceito A em uma

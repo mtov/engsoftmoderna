@@ -1603,6 +1603,10 @@ significa que eles têm autonomia para definir qual tarefa vai ser puxada
 para o próximo passo. Eles também são cross-funcionais, isto é, devem
 incluir membros capazes de realizar todos os passos do Quadro Kanban.
 
+\index{Limites WIP}
+\index{Work in Progress (WIP)}
+\index{Kanban!Limites WIP}
+\index{Kanban!Work in Progress (WIP)}
 Por fim, resta explicar o conceito de **Limites WIP** (*Work in
 Progress*). Via de regra, métodos de gerenciamento de projetos têm como
 objetivo garantir um ritmo sustentável de trabalho. Para isso, deve-se
@@ -1678,11 +1682,8 @@ por gerentes da organização, por exemplo.
 
 ### Calculando os Limites WIP
 
-\index{Limites WIP}
-\index{Working in Progress (WIP)}
-\index{Kanban!Limites WIP}
-\index{Kanban!Working in Progress (WIP)}
 \index{Brechner, Eric}
+\index{Kanban!Cálculo de WIP}
 Resta-nos agora explicar como os limites WIP são definidos. Existe mais
 de uma alternativa, mas vamos adotar uma adaptação de um algoritmo
 proposto por Eric Brechner — um engenheiro da Microsoft
