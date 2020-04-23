@@ -343,7 +343,7 @@ Vamos responder agora duas perguntas sobre casos de uso.
 
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Uma resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
-**Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 80, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP) ([link](https://doi.org/10.1007/s10270-004-0060-3)). 
+**Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 80, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP) ([link](https://dl.acm.org/doi/book/10.5555/993806)). 
 Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme afirmamos no Capítulo 2, UP enfatiza a comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
 
 ## Produto Mínimo Viável (MVP)

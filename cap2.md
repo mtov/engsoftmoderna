@@ -1166,7 +1166,7 @@ lado, ele não é um gerente de projeto tradicional. Por exemplo, ele não
 é o líder do time, pois todos em um time Scrum tem o mesmo nível
 hierárquico.
 
-Costuma-se dizer que times Scrum são **cross-funcionais**, isto é, eles
+Costuma-se dizer que times Scrum são **cross-funcionais** (ou multidisciplinares), isto é, eles
 devem incluir — além do Dono do Produto e do Scrum Master —
 todos os especialistas necessários para desenvolver o produto, de forma
 a não depender de membros externos. No caso de projetos de software,

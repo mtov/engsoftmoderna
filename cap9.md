@@ -1462,18 +1462,20 @@ de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e dif�
 nos quais a correção de bugs e a implementação de novas funcionalidades 
 leva cada vez mais tempo e mostra-se mais arriscada.
 
-Suponha que existe um débito técnico em um determinado módulo M de um
+Para ilustrar melhor o conceito de débito técnico, suponha que 
+existe um débito técnico em um determinado módulo M de um
 sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M vai
 requerer um esforço de 3 dias. Porém, se não houvesse o débito
-técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
-o juros cobrado pela existência do débito técnico em M. Uma
+técnico, F1 poderia ser implementada em apenas 2 dias. A diferença de um dia constitui
+os juros cobrados pela existência do débito técnico em M. Uma
 alternativa seria então pagar o principal do débito, isto é, remover
 completamente o débito técnico de M. Mas isso pode levar, por exemplo,
-4 dias. Ou seja, se consideramos que precisamos estender o módulo
-com apenas F1, ainda não há vantagem. Porém, suponha que brevemente
-vamos ter que implementar novas funcionalidades, tais como F2, F3, F4,
+4 dias. Ou seja, se considerarmos que vamos estender o módulo
+com apenas F1, ainda não há vantagem. Porém, suponha que nos próximos
+meses vamos ter que implementar mais funcionalidades em M, tais como F2, F3, F4,
 etc. Nesse caso, a eliminação do principal do débito técnico pode
 compensar.
+
 ```{=latex}
 \end{esmbox}
 ```
@@ -1497,24 +1499,25 @@ Confessions of GitHub Contributors. Foundations of Soft. Engineering, 2016.
 
 1\. Marque a alternativa FALSA:
 
-\(a\) refactoring melhora o projeto de um sistema de software.
+\(a\) refactorings melhoram o projeto de um sistema de software.
 
-\(b\) refactoring torna o código de um sistema mais fácil de ser
+\(b\) refactorings tornam o código de um sistema mais fácil de ser
 entendido.
 
-\(c\) refactoring facilita a localização e a correção de bugs futuros.
+\(c\) refactorings facilitam a localização e a correção de bugs futuros.
 
-\(d\) refactoring acelera a implementação de novas funcionalidades.
+\(d\) refactorings aceleram a implementação de novas funcionalidades.
 
-\(e\) refactoring melhora o desempenho de um sistema.
+\(e\) refactorings melhoram o desempenho de um sistema, em termos de
+tempo de execução.
 
 2\. O gráfico a seguir mostra o total acumulado de novas funcionalidades
 implementadas em dois sistemas (A e B), de domínios semelhantes,
 desenvolvidos por times semelhantes, usando as mesmas tecnologias. Em
 qual dos dois sistemas você acha que refactorings foram realizados de
-forma sistemática? Justifique.
+forma sistemática? Justifique a sua resposta.
 
-![](figs/cap9/refactoring-exercicio.png){width="65%"}
+![](figs/cap9/refactoring-exercicio.png){width=70%}
 
 3\. Descreva as diferenças entre refactorings oportunistas e
 refactorings planejados. Qual dessas formas de refactoring deve ser mais
@@ -1524,13 +1527,11 @@ comum?
 executados em sequência não produzem impacto no código de um sistema. Ou
 seja, o refactoring B reverte as transformações realizadas pelo
 refactoring A.
-
-(a) Cite um refactoring A e um refactoring B.
-
-(b) Cite um refactoring A e um refactoring B.
  
-5\. Em cada um dos exemplos a seguir, extraia o código em negrito (e
-apenas ele) para um método `g`.
+5\. Nos exemplos a seguir, extraia o código comentado com a palavra
+"extrair" para um método `g`.
+
+\newpage
 
 (a)
 
@@ -1538,8 +1539,8 @@ apenas ele) para um método `g`.
 class A {
   void f() {
     int x = 10
-    x++;
-    print x;
+    x++;      
+    print x;   // extrair
   }
 }
 ```
@@ -1550,8 +1551,8 @@ class A {
 class A {
   void f() {
     int x = 10
-    x++;
-    print x;
+    x++;     // extrair
+    print x; // extrair
   }
 }
 ```
@@ -1562,8 +1563,8 @@ class A {
 class A {
   void f() {
     int x = 10
-    x++;
-    print x;
+    x++;     // extrair
+    print x; // extrair
     int y = x+1;
     ...
   }
@@ -1576,9 +1577,9 @@ class A {
 class A {
   void f() {
     int x = 10
-    int y;
-    y = h()*2;
-    print y;
+    int y;     // extrair
+    y = h()*2; // extrair
+    print y;   // extrair
     int z = y+1;
     ...
   }
@@ -1588,6 +1589,7 @@ class A {
 6\. A seguinte função calcula o n-ésimo termo da sequência de Fibonacci.
 O primeiro termo dessa sequência é 0; o segundo termo é 1; e a partir
 daí o n-ésimo termo é a soma dos dois termos anteriores.
+
 
 ```
 int fib(int n) {
