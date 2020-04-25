@@ -1090,27 +1090,31 @@ Vol. 4, John Wiley & Sons, 2007.
     relevantes na arquitetura de qualquer tipo de sistema. Verdadeiro
     ou falso? Justifique.
 
-2\. Qual a diferença entre classes Controladoras em uma Arquitetura MVC
+2\. Descreva três vantagens de arquiteturas MVC.
+
+3\. Qual a diferença entre classes Controladoras em uma Arquitetura MVC
     tradicional e classes Controladoras de um sistema Web implementado
     usando um framework MVC como Ruby on Rails?
 
-3\. Descreva resumidamente quatro vantagens de microsserviços.
+4\. Descreva resumidamente quatro vantagens de microsserviços.
 
-4\. Por que microsserviços não são uma bala de prata? Isto é, descreva
+5\. Por que microsserviços não são uma bala de prata? Isto é, descreva
     pelo menos três desvantagens do uso de microsserviços.
 
-5\. Explique o que significa desacoplamento no espaço e desacoplamento
+6\. Explique a relação entre a Lei de Conway e microsserviços.
+
+7\. Explique o que significa desacoplamento no espaço e desacoplamento
     no tempo. Por que arquiteturas baseadas em filas de mensagens e
     arquiteturas Publish/Subscribe oferecem essas formas de
     desacoplamento?
 
-6\. Quando uma empresa deve considerar o uso de uma arquitetura baseada
+8\. Quando uma empresa deve considerar o uso de uma arquitetura baseada
     em filas de mensagens ou uma arquitetura publish/subscribe?
 
-7\. Explique o objetivo do conceito de tópicos em uma arquitetura
+9\. Explique o objetivo do conceito de tópicos em uma arquitetura
     publish/subscribe.
 
-8\. (POSCOMP, 2019, adaptado) Marque V ou F.
+10\. (POSCOMP, 2019, adaptado) Marque V ou F.
 
 ( ) O padrão MVC é uma adaptação do padrão arquitetural Camadas. A Camada Visão lida com a apresentação e a manipulação da interface, a Camada Modelo organiza os objetos específicos da aplicação, e a Camada Controle posiciona-se entre estas duas com as regras do negócio.
 
