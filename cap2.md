@@ -108,7 +108,7 @@ conforme mostra o próximo gráfico:
 
 Os resultados em termos de custos não eram mais animadores: quase 40%
 dos projetos ultrapassava o orçamento entre 51% e 200%, como mostra
-o gráfico:
+o seguinte gráfico:
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **orçamentos** (para cada faixa de estouro).](figs/cap2/chaos1){width=95%}
 

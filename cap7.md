@@ -1088,7 +1088,7 @@ Vol. 4, John Wiley & Sons, 2007.
 
 1\. Dada a sua complexidade, sistemas de bancos de dados são componentes
     relevantes na arquitetura de qualquer tipo de sistema. Verdadeiro
-    ou falso? Justifique.
+    ou falso? Justifique a sua resposta.
 
 2\. Descreva três vantagens de arquiteturas MVC.
 

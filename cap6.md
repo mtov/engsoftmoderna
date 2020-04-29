@@ -183,9 +183,9 @@ objetos por trás de uma interface. Um exemplo é mostrado a seguir:
 
 ```
 class ChannelFactory {
-   public static Channel create() { // método fábrica estático
-     return new TCPChannel();
-   }
+  public static Channel create() { // método fábrica estático
+    return new TCPChannel();
+  }
 }
 
 void f() {
