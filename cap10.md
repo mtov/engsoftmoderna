@@ -111,7 +111,7 @@ Quando comparado com VCS centralizados, um DVCS tem as seguintes vantagens:
 
 No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.
 
-### Multirepos vs Monorepos {.unnumbered}
+### Multirepos vs Monorepos
 \index{Sistemas de Controle de Versões!Multirepos}
 \index{Sistemas de Controle de Versões!Monorepos}
 

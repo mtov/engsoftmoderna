@@ -1693,7 +1693,7 @@ não faz mais sentido usar mocks ou stubs. Como são testes maiores, eles
 levam mais tempo para executar e, consequentemente, são chamados com
 menor frequência.
 
-### Exemplo: Agenda de Compromissos {.unnumbered}
+### Exemplo: Agenda de Compromissos
 
 Suponha uma agenda simples que permita adicionar, remover e editar
 compromissos, conforme ilustrado na próxima figura.
@@ -1946,12 +1946,13 @@ sem testes.
 \index{Testes de Software!Testes Manuais}
 
 São testes realizados pelo cliente, com dados do cliente. Os resultados
-desse teste irão determinar se o cliente está de acordo ou não com a
+desses testes irão determinar se o cliente está de acordo ou não com a
 implementação realizada. Se estiver de acordo, o sistema pode entrar em
 produção. Se não estiver de acordo, os devidos ajustes devem ser
 realizados. Por exemplo, quando se usa métodos ágeis, uma história
 somente é considerada completa após passar por testes de aceitação,
-realizados pelos usuários, ao final de um sprint.
+realizados pelos usuários, ao final de um sprint, 
+conforme estudamos no Capítulo 2.
 
 Testes de aceitação possuem duas características que os distinguem de
 todos os testes que estudamos antes neste capítulo. Primeiro, são

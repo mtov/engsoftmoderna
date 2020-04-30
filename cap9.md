@@ -1462,11 +1462,11 @@ de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e dif�
 nos quais a correção de bugs e a implementação de novas funcionalidades 
 leva cada vez mais tempo e mostra-se mais arriscada.
 
-Para ilustrar melhor o conceito de débito técnico, suponha que 
+Para ilustrar melhor o conceito, suponha que 
 existe um débito técnico em um determinado módulo M de um
 sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M vai
 requerer um esforço de 3 dias. Porém, se não houvesse o débito
-técnico, F1 poderia ser implementada em apenas 2 dias. A diferença de um dia constitui
+técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
 os juros cobrados pela existência do débito técnico em M. Uma
 alternativa seria então pagar o principal do débito, isto é, remover
 completamente o débito técnico de M. Mas isso pode levar, por exemplo,
