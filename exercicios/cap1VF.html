@@ -1,0 +1,266 @@
+<html>
+
+<head>
+
+<script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-8249107-3', 'auto');
+   ga('send', 'pageview');
+</script>
+
+
+<script>
+var trackOutboundLink = function(url, doc, label) {
+    ga('send', 'event', doc, label, url, {
+       'transport': 'beacon',
+       'hitCallback': function(){window.open(url);}
+    });
+}
+</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://engsoftmoderna.info" />
+<meta property="og:title" content="Engenharia de Software Moderna (Livro Digital)" />
+<meta property="og:description" content="Princípios e Práticas para Desenvolvimento de Software com Produtividade." />
+<meta property="og:image" content="https://engsoftmoderna.info/twittercard.jpg"/>
+
+<meta name="keywords" content="Engenharia de Software, Processos de Software, Requisitos de Software, Projeto de Software, Arquitetura de Software, Testes de Software, Refactoring, DevOps">
+
+<title>Engenharia de Software Moderna - Capítulo 1 - Exercícios V ou F</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+</head>
+
+
+<body>
+
+<style>	
+.success {
+  color: green;
+  font-weight: bold;
+}
+.danger {
+  color: red;
+  font-weight: bold;
+}
+.normal {
+  color: black;
+  font-weight: normal;
+}
+</style>
+
+<div class="container">
+<div class="row cols-sm-12 cols-md-10">
+<div class="col-md-offset-1">
+
+<div class="row">
+
+
+<div id="app" class="container">
+
+<h1>Engenharia de Software Moderna</h1>
+<h4>Princípios e Práticas para Desenvolvimento de Software com Produtividade</h4>
+
+<h2 class="text-center">Capítulo 1 - Exercícios de V ou F</h2>
+
+<div v-if="answering">
+	
+<form>
+  <question v-for="(question, index) in questions" 
+    :number="index"
+    :text="question.text"
+    v-on:answer="handleAnswer" 
+    :correct="question.correct">
+  </question>
+</form>
+	
+<button @click="corrigir">Corrigir</button>
+	
+</div>
+
+
+<div v-if="!answering">
+
+<h2>Correção:</h2>
+
+<form>
+  <question2 v-for="(question, index) in questions" 
+    :number="index"
+    :text="question.text"
+    :correct="question.correct"
+    :answered="answers[index]">
+  </question2>
+</form>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://vuejs.org/js/vue.js"></script>  
+
+<script>
+ 
+var question2 = {
+  template: `
+      <div>
+      <p v-if="correct === answered"> ✅ {{number+1}}. {{text}}</p>
+      <p v-if="correct != answered"> ❌ {{number+1}}. {{text}}</p>
+	  <div>
+	     <input v-model="answer" disabled="true" value="true" type="radio"> Verdadeiro
+	  </div> 
+	  <div>
+	     <input v-model="answer" disabled="true" value="false" type="radio"> Falso
+	  </div>
+	  </div>          
+  `,
+
+   props: ['number', 'text', 'correct', 'answered'],
+
+   data: function () {
+     return {
+       answer: this.answered
+     }
+   },
+
+ };
+
+
+var question = {
+  template: `
+      <div>
+	  <p>{{number+1}}. {{text}} </p>
+	  <div>
+	     <input v-model="answer" value="true" type="radio" :name="getQuestionNumber" :id="getTrueNumber" @click="submitAnswer('true')"> Verdadeiro
+	  </div> 
+	  <div>
+	     <input v-model="answer" value="false" type="radio" :name="getQuestionNumber" :id="getFalseNumber" @click="submitAnswer('false')"> Falso
+	  </div>
+	  </div>          
+  `,
+
+  props: ['number', 'text', 'correct'],
+  
+  data() {
+     return {
+       answer:'empty',
+     }  
+  },
+  
+  computed: {
+    getQuestionNumber () {
+      return 'questao'+ this.number;
+    },
+    getTrueNumber () {
+      return 'option'+ this.number + '_true' 
+    },
+    getFalseNumber () {
+      return 'option'+ this.number + '_false' 
+    }
+  },
+
+  methods: {
+	submitAnswer:function(value) {
+	  this.answer = value	
+	  this.$emit('answer', {answer: this.answer, index: this.number});
+	}
+  }
+
+};
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+    	answering: true,
+    	answers: [],
+    	questions: [
+	      {
+	        text: 'Complexidade, conformidade, portabilidade e invisibilidade são dificuldades essenciais em Engenharia de Software.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'Toda dificuldade essencial é acidental, mas o contrário não é verdade.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'São exemplos de requisitos não-funcionais: usabilidade, segurança, desempenho e confiabilidade.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Arquitetura trata de projeto em nível de classes, métodos e atributos.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'Verificação de software preocupa-se em garantir que o sistema está de acordo com seus requisitos, isto é, com sua especificação.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Validação de software preocupa-se em garantir que o sistema é aquele que o cliente quer.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Todo defeito é causado por uma falha; mas nem toda falha é causada por um defeito.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'Uma das formas de reduzir o atraso de um projeto de software é aumentando o tamanho do time de desenvolvedores',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'Gerência de configuração trata dos arquivos de configuração de um sistema, como arquivos .INI.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'Manutenção corretiva tem como objetivo corrigir bugs reportados por usuários.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Manutenção preventiva tem com objetivo corrigir bugs latentes, que ainda não causaram falhas.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Refactorings são modificações realizadas em um software que preservam o seu comportamento e visam exclusivamente a melhoria do código ou projeto.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'Sistemas legados são sistemas antigos, baseados em linguagens e bancos de dados ultrapassados.',
+	        correct: 'true'
+	      },
+	      {
+	        text: 'São fatores de qualidade externa: correção, robustez, facilidade de uso e modularidade.',
+	        correct: 'false'
+	      },
+	      {
+	        text: 'São exemplos de refactorings: extração de um método menor (a partir de um método maior); renomear uma variável local; mover um método para uma classe mais apropriada.',
+	        correct: 'true'
+	      }
+	    ]
+	}
+  },
+  methods:{
+	 corrigir() {
+	 	this.answering = false
+	 },
+	 handleAnswer(e) {
+        this.answers[e.index]= e.answer;
+     },
+  },
+  components: {
+    question,
+    question2
+  }
+});
+
+</script>
