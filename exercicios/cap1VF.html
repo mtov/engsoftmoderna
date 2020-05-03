@@ -175,6 +175,8 @@ var question = {
 
 };
 
+const file = 'https://engsoftmoderna.info/exercicios/cap1VF.json';
+
 new Vue({
   el: '#app',
   data() {
@@ -183,69 +185,16 @@ new Vue({
 		answers: [],
 		totalQuestions: 0,
 		totalCorrect: 0,
-		questions: [
-	      {
-	        text: 'Complexidade, conformidade, portabilidade e invisibilidade são dificuldades essenciais em Engenharia de Software.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'Toda dificuldade essencial é acidental, mas o contrário não é verdade.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'São exemplos de requisitos não-funcionais: usabilidade, segurança, desempenho e confiabilidade.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Arquitetura trata de projeto em nível de classes, métodos e atributos.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'Verificação de software preocupa-se em garantir que o sistema está de acordo com seus requisitos, isto é, com sua especificação.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Validação de software preocupa-se em garantir que o sistema é aquele que o cliente quer.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Todo defeito é causado por uma falha; mas nem toda falha é causada por um defeito.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'Uma das formas de reduzir o atraso de um projeto de software é aumentando o tamanho do time de desenvolvedores',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'Gerência de configuração trata dos arquivos de configuração de um sistema, como arquivos .INI.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'Manutenção corretiva tem como objetivo corrigir bugs reportados por usuários.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Manutenção preventiva tem com objetivo corrigir bugs latentes, que ainda não causaram falhas.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Refactorings são modificações realizadas em um software que preservam o seu comportamento e visam exclusivamente a melhoria do código ou projeto.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'Sistemas legados são sistemas antigos, baseados em linguagens e bancos de dados ultrapassados.',
-	        correct: 'true'
-	      },
-	      {
-	        text: 'São fatores de qualidade externa: correção, robustez, facilidade de uso e modularidade.',
-	        correct: 'false'
-	      },
-	      {
-	        text: 'São exemplos de refactorings: extração de um método menor (a partir de um método maior); renomear uma variável local; mover um método para uma classe mais apropriada.',
-	        correct: 'true'
-	      }
-	    ]
+		questions: []
 	}
+  },
+
+  created() {
+	 fetch(file)
+	    .then(res => res.json())
+	    .then(res => {
+	            this.questions = res.questions;
+	          })
   },
 
   methods:{
