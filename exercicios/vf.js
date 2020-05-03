@@ -1,24 +1,24 @@
- var question2 = {
+var question2 = {
   template: `
       <div>
         <p v-if="correct === answered"> ✅ {{number+1}}. {{text}}</p>
         <p v-if="correct != answered"> ❌ {{number+1}}. {{text}}</p>
-	    <div>
-	      <input v-model="answer" disabled="true" value="true" type="radio"> Verdadeiro
-	    </div> 
-	    <div>
-	      <input v-model="answer" disabled="true" value="false" type="radio"> Falso
-	    </div>
-	  </div>          
+      <div>
+        <input v-model="answer" disabled="true" value="true" type="radio"> Verdadeiro
+      </div> 
+      <div>
+        <input v-model="answer" disabled="true" value="false" type="radio"> Falso
+      </div>
+    </div>          
     `,
 
-	props: ['number', 'text', 'correct', 'answered'],
+  props: ['number', 'text', 'correct', 'answered'],
 
-	data: function () {
-	  return {
-	    answer: this.answered
-	  }
-	},
+  data: function () {
+    return {
+      answer: this.answered
+    }
+  },
 
  };
 
@@ -44,15 +44,15 @@ var question = {
   },
   
   computed: {
-    getQuestionNumber () {
-      return 'questao'+ this.number;
-    },
-    getTrueNumber () {
-      return 'option'+ this.number + '_true' 
-    },
-    getFalseNumber () {
-      return 'option'+ this.number + '_false' 
-    }
+      getQuestionNumber () {
+        return 'questao'+ this.number;
+      },
+      getTrueNumber () {
+        return 'option'+ this.number + '_true' 
+      },
+      getFalseNumber () {
+        return 'option'+ this.number + '_false' 
+      }
   },
 
   methods: {
@@ -121,7 +121,6 @@ new Vue({
   	    .then(res => res.json())
   	    .then(res => {
                 this.title = res.title;
-                console.log(this.title);
   	            this.questions = res.questions;
   	          });  
     },
@@ -133,8 +132,7 @@ new Vue({
     	 	this.totalCorrect = 0;
     	 	var i;
             for (i = 0; i < this.questions.length; i++) {
-              if (this.questions[i].correct === this.answers[i]) {
-                 console.log(i);          	 
+              if (this.questions[i].correct === this.answers[i]) {   	 
               	 this.totalCorrect++;
               }
             }
@@ -142,7 +140,7 @@ new Vue({
 
      recarregar(){
         this.answering = true;
-        answers = [];
+        this.answers = [];
      },
 
   	 handleAnswer(e) {
