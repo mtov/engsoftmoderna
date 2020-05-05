@@ -1,0 +1,65 @@
+{
+"title": "Cap. 5 - Princípios de Projeto",  
+"questions": [
+  {
+    "text": "Uma maneira de atingir integridade conceitual é por meio de projeto dirigido por comitês.",
+    "correct": "false"
+  },
+  {
+    "text": "A implementação de uma classes deve encapsular aquelas decisões de projetos, incluindo estruturas de dados e algoritmos, que são sujeitas a mudanças.",
+    "correct": "true"
+  },
+  {
+    "text": "Desenvolvimento em paralelo é uma das vantagens de ocultamento de informação.",
+    "correct": "true"
+  },
+  {
+    "text": "Getters e setters são essenciais para construção de classes com ocultamento de informação.",
+    "correct": "false"
+  },
+  {
+    "text": "Coesão e separação de interesses são conceitos antagônicos.",
+    "correct": "false"
+  },
+  {
+    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em seu código uma classe B.",
+    "correct": "true"
+  },
+  {
+    "text": "Todo acoplamento estrutural é evolutivo, mas o contrário nem sempre é verdade.",
+    "correct": "false"
+  },
+  {
+    "text": "Segregação de Variáveis e Responsabilidade Única são princípios úteis para obter coesão.",
+    "correct": "false"
+  },
+  {
+    "text": "O Princípio de Substituição de Liskov apenas se aplica a linguagens com herança.",
+    "correct": "true"
+  },
+  {
+    "text": "Um nome mais intuitivo para Inversão de Dependências é Prefira Composição a Herança.",
+    "correct": "false"
+  },
+  {
+    "text": "Herança de classes envolve reúso de código; herança de interfaces não envolve reúso de código.",
+    "correct": "true"
+  },
+  {
+    "text": "Composição é um mecanismo de reuso caixa-branca.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma chamada obj.getX.getY().getZ().metodo() representa uma violação do Princípio de Demeter.",
+    "correct": "true"
+  },
+  {
+    "text": "Uma classe deve ser aberta para modificações, mas fechada para extensões.",
+    "correct": "false"
+  },
+  {
+    "text": "LCOM é uma métrica de acoplamento e CBO é uma métrica de coesão.",
+    "correct": "false"
+  } 
+]
+}	    
