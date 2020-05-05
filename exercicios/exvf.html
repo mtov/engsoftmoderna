@@ -1,0 +1,226 @@
+<html>
+
+<head>
+
+<script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-8249107-3', 'auto');
+   ga('send', 'pageview');
+</script>
+
+<script>
+var trackOutboundLink = function(url, doc, label) {
+    ga('send', 'event', doc, label, url, {
+       'transport': 'beacon',
+       'hitCallback': function(){window.open(url);}
+    });
+}
+</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="../figs/favicon.ico">
+
+<title>Engenharia de Software Moderna - Exercícios V ou F</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+<div class="row cols-sm-12 cols-md-10">
+<div class="col-md-offset-1">
+<div class="row">
+
+<div id="app" class="container">
+<router-view></router-view>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://vuejs.org/js/vue.js" ></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+
+
+<script>
+
+
+var question2 = {
+  template: `
+      <div>
+        <p v-if="correct === answered"> ✅ {{number+1}}. {{text}}</p>
+        <p v-if="correct != answered"> ❌ {{number+1}}. {{text}}</p>
+      <div>
+        <input v-model="answer" disabled="true" value="true" type="radio"> Verdadeiro
+      </div> 
+      <div>
+        <input v-model="answer" disabled="true" value="false" type="radio"> Falso
+      </div>
+    </div>          
+    `,
+
+  props: ['number', 'text', 'correct', 'answered'],
+
+  data: function () {
+    return {
+      answer: this.answered
+    }
+  },
+
+ };
+
+var question = {
+  template: `
+      <div>
+    <p>{{number+1}}. {{text}} </p>
+    <div>
+       <input v-model="answer" value="true" type="radio" :name="getQuestionNumber" :id="getTrueNumber" @click="submitAnswer('true')"> Verdadeiro
+    </div> 
+    <div>
+       <input v-model="answer" value="false" type="radio" :name="getQuestionNumber" :id="getFalseNumber" @click="submitAnswer('false')"> Falso
+    </div>
+    </div>          
+  `,
+
+  props: ['number', 'text'],
+  
+  data() {
+     return {
+       answer:'empty',
+     }  
+  },
+  
+  computed: {
+      getQuestionNumber () {
+        return 'questao'+ this.number;
+      },
+      getTrueNumber () {
+        return 'option'+ this.number + '_true' 
+      },
+      getFalseNumber () {
+        return 'option'+ this.number + '_false' 
+      }
+  },
+
+  methods: {
+    submitAnswer:function(value) {
+      this.answer = value;  
+      this.$emit('answer', {answer: this.answer, index: this.number});
+    }
+  }
+
+};
+
+var Exercise = {
+  template: `
+      <div>
+
+      <p><a href="https://engsoftmoderna.info/">Índice</a></p>
+      <h1>Engenharia de Software Moderna </h1>
+      <h4>Princípios e Práticas para Desenvolvimento de Software com Produtividade</h4>
+      <h2 class="text-center">{{title}} - Exercícios de V ou F</h2>
+
+      <div v-if="answering">
+      <form>
+        <question v-for="(question, index) in questions" 
+          :number="index"
+          :text="question.text"
+          v-on:answer="handleAnswer">
+        </question>
+      </form>
+      <button @click="corrigir">Corrigir</button>
+      </div>
+
+      <div v-if="!answering">
+      <h2>Correção</h2> 
+      <p>{{totalQuestions}} questões; {{totalCorrect}} corretas<p>
+      <form>
+        <question2 v-for="(question, index) in questions" 
+          :number="index"
+          :text="question.text"
+          :correct="question.correct"
+          :answered="answers[index]">
+        </question2>
+      </form>
+      <button @click="recarregar">Recarregar</button>
+      </div>
+
+      </div>
+  `,
+  
+  data() {
+    return {
+      title: '',
+      answering: true,
+      answers: [],
+      totalQuestions: 0,
+      totalCorrect: 0,
+      questions: []
+    }
+  },
+
+  created() {
+    const id = this.$route.params.id;
+    const file = 'https://engsoftmoderna.info/exercicios/cap' + id + 'VF.json';
+    console.log(file);
+     fetch(file)
+        .then(res => res.json())
+        .then(res => {
+                this.title = res.title;
+                this.questions = res.questions;
+              });  
+    },
+
+  methods:{
+     corrigir() {
+        this.answering = false;
+        this.totalQuestions = this.questions.length;
+        this.totalCorrect = 0;
+        var i;
+            for (i = 0; i < this.questions.length; i++) {
+              if (this.questions[i].correct === this.answers[i]) {     
+                 this.totalCorrect++;
+              }
+            }
+     },
+
+     recarregar(){
+        this.answering = true;
+        this.answers = [];
+     },
+
+     handleAnswer(e) {
+        this.answers[e.index]= e.answer;
+     },
+  },
+
+  components: {
+    question,
+    question2,
+  }
+};
+
+
+var router = new VueRouter({
+  routes: [
+    { path: '/cap/:id', component: Exercise }
+  ]
+});
+
+
+var app = new Vue({
+  router
+}).$mount('#app')
+
+</script>  

@@ -6,7 +6,7 @@
     "correct": "false"
   },
   {
-    "text": "A implementação de uma classes deve encapsular aquelas decisões de projetos, incluindo estruturas de dados e algoritmos, que são sujeitas a mudanças.",
+    "text": "A implementação de uma classe deve encapsular estruturas de dados e algoritmos que são sujeitas a mudanças.",
     "correct": "true"
   },
   {
@@ -34,7 +34,7 @@
     "correct": "false"
   },
   {
-    "text": "O Princípio de Substituição de Liskov apenas se aplica a linguagens com herança.",
+    "text": "O Princípio de Substituição de Liskov aplica-se apenas a linguagens com herança.",
     "correct": "true"
   },
   {
@@ -46,7 +46,7 @@
     "correct": "true"
   },
   {
-    "text": "Composição é um mecanismo de reuso caixa-branca.",
+    "text": "Composição é um mecanismo de reúso caixa-branca.",
     "correct": "false"
   },
   {
