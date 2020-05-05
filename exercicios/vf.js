@@ -35,7 +35,7 @@ var question = {
 	  </div>          
   `,
 
-  props: ['number', 'text', 'correct'],
+  props: ['number', 'text'],
   
   data() {
      return {
@@ -57,7 +57,7 @@ var question = {
 
   methods: {
   	submitAnswer:function(value) {
-  	  this.answer = value	
+  	  this.answer = value;	
   	  this.$emit('answer', {answer: this.answer, index: this.number});
   	}
   }
@@ -79,8 +79,7 @@ new Vue({
         <question v-for="(question, index) in questions" 
           :number="index"
           :text="question.text"
-          v-on:answer="handleAnswer" 
-          :correct="question.correct">
+          v-on:answer="handleAnswer">
         </question>
       </form>
       <button @click="corrigir">Corrigir</button>
