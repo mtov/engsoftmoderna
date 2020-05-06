@@ -51,10 +51,7 @@ var trackOutboundLink = function(url, doc, label) {
 <script src="https://vuejs.org/js/vue.js" ></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
-
-
 <script>
-
 
 var question2 = {
   template: `
@@ -173,13 +170,12 @@ var Exercise = {
   created() {
     const id = this.$route.params.id;
     const file = 'https://engsoftmoderna.info/exercicios/cap' + id + 'VF.json';
-    console.log(file);
-     fetch(file)
-        .then(res => res.json())
-        .then(res => {
-                this.title = res.title;
-                this.questions = res.questions;
-              });  
+    fetch(file)
+      .then(res => res.json())
+      .then(res => {
+              this.title = res.title;
+              this.questions = res.questions;
+            });  
     },
 
   methods:{
