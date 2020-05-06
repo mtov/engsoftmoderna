@@ -6,15 +6,15 @@
     "correct": "false"
   },
   {
-    "text": "A implementação de uma classe deve encapsular estruturas de dados e algoritmos que são sujeitas a mudanças.",
+    "text": "A implementação de uma classe deve encapsular estruturas de dados e algoritmos que são sujeitos a mudanças.",
     "correct": "true"
   },
   {
-    "text": "Desenvolvimento em paralelo é uma das vantagens de ocultamento de informação.",
+    "text": "Desenvolvimento em paralelo, isto é, a possibilidade de desenvolver ao mesmo tempo diversas classes de um sistema, é uma das vantagens de ocultamento de informação.",
     "correct": "true"
   },
   {
-    "text": "Getters e setters são essenciais para construção de classes com ocultamento de informação.",
+    "text": "Getters e setters são essenciais para construção de classes com ocultamento de informação. Sem eles, uma classe não atende a essa propriedade de projeto.",
     "correct": "false"
   },
   {
@@ -22,7 +22,7 @@
     "correct": "false"
   },
   {
-    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em seu código uma classe B.",
+    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em sua implementação uma classe B. Por exemplo, declara um atributo ou parâmetro do tipo B ou cria um objeto do tipo B, dentre outras situações.",
     "correct": "true"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Segregação de Variáveis e Responsabilidade Única são princípios úteis para obter coesão.",
+    "text": "Segregação de Variáveis e Responsabilidade Única são princípios úteis para obter classes coesas.",
     "correct": "false"
   },
   {
@@ -42,7 +42,7 @@
     "correct": "false"
   },
   {
-    "text": "Herança de classes envolve reúso de código; herança de interfaces não envolve reúso de código.",
+    "text": "Herança de classes envolve reúso de código, pois subclasses não precisam reimplementar métodos herdados. Já herança de interfaces não envolve reúso de código, pois, por definição, interfaces não incluem implementações.",
     "correct": "true"
   },
   {
@@ -54,11 +54,11 @@
     "correct": "true"
   },
   {
-    "text": "Uma classe deve ser aberta para modificações, mas fechada para extensões.",
+    "text": "De acordo com o Princípio Aberto/Fechado, uma classe deve ser aberta para modificações, mas fechada para extensões.",
     "correct": "false"
   },
   {
-    "text": "LCOM é uma métrica de acoplamento e CBO é uma métrica de coesão.",
+    "text": "Quando calcula-se o LCOM de uma classe, deve-se excluir métodos getters e setters.",
     "correct": "false"
   } 
 ]
