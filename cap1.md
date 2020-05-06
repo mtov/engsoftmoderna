@@ -1217,8 +1217,8 @@ integração e testes de sistema. Esses testes verificam propriedades de
 unidades maiores de código, como as classes responsáveis por um
 determinado serviço ou funcionalidade (testes de integração) ou mesmo
 todas as classes de um sistema (testes de sistema). Para terminar,
-incluímos uma discussão sobre outros testes, como testes caixa preta (ou
-testes funcionais), testes caixa branca (ou testes estruturais), testes
+incluímos uma discussão sobre outros testes, como testes caixa-preta (ou
+testes funcionais), testes caixa-branca (ou testes estruturais), testes
 de aceitação e também testes para verificar requisitos não-funcionais,
 como desempenho, falhas e usabilidade.
 

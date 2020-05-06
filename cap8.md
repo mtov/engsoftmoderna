@@ -18,7 +18,7 @@ Desenvolvimento Dirigido por Testes (ou *Test-Driven Development*, TDD).
 Em seguida, tratamos dos testes da parte de cima da pirâmide de testes,
 ou seja, Testes de Integração (Seção 8.8) e Testes de Sistemas (Seção
 8.9). Para fechar o capítulo, a Seção 8.10 cobre de forma rápida outros
-tipos de testes, tais como: testes caixa preta e caixa branca, testes de
+tipos de testes, tais como: testes caixa-preta e caixa-branca, testes de
 aceitação e testes de requisitos não-funcionais.
 
 ## Introdução
@@ -1844,50 +1844,51 @@ incorreta.
 
 ## Outros Tipos de Testes
 
-### Testes Caixa Preta e Caixa Branca 
-\index{Testes de Software!Caixa Preta}
-\index{Testes de Software!Caixa Branca}
+### Testes Caixa-Preta e Caixa-Branca 
+\index{Testes de Software!Caixa-Preta}
+\index{Testes de Software!Caixa-Branca}
 \index{Testes de Software!Funcional}
 \index{Testes de Software!Estrutural}
 
-Técnicas de teste podem ser classificadas como caixa preta ou caixa
-branca. Quando se usa uma **técnica caixa preta**, os testes são
+Técnicas de teste podem ser classificadas como caixa-preta ou caixa-branca. 
+Quando se usa uma **técnica caixa-preta**, os testes são
 escritos com base apenas na interface do sistema sob testes. Por
-exemplo, se a missão for testar um método como uma caixa preta, a única
+exemplo, se a missão for testar um método como uma caixa-preta, a única
 informação disponível incluirá seu nome, parâmetros, tipos e exceções de
-retorno. Por outro lado, quando se usa uma **técnica caixa branca**, a
+retorno. Por outro lado, quando se usa uma **técnica caixa-branca**, a
 escrita dos testes considera informações sobre o código e a estrutura do
-sistema sob teste. Por isso, técnicas de teste caixa preta são também
-chamadas de **testes funcionais**. E técnicas caixa branca são chamadas
+sistema sob teste. Por isso, técnicas de teste caixa-preta são também
+chamadas de **testes funcionais**. E técnicas caixa-branca são chamadas
 de **testes estruturais**.
 
 No entanto, não é trivial classificar testes de unidade em uma dessas
 categorias. Na verdade, a classificação vai depender de como os testes
 são escritos. Se os testes de unidade forem escritos usando-se
 informações apenas sobre a interface dos métodos sob teste, eles são
-considerados como caixa preta. Porém, se a escrita considerar
+considerados como caixa-preta. Porém, se a escrita considerar
 informações sobre a cobertura dos testes, desvios que são cobertos ou
-não, etc, então eles são testes caixa branca. Em resumo, testes de
+não, etc, então eles são testes caixa-branca. Em resumo, testes de
 unidade sempre testam uma unidade pequena e isolada de código. Essa
-unidade pode ser testada na forma de uma caixa preta (conhecendo-se
-apenas a sua interface e requisitos externos) ou na forma de uma caixa
-branca (conhecendo-se e tirando-se proveito da sua estrutura interna,
+unidade pode ser testada na forma de uma caixa-preta (conhecendo-se
+apenas a sua interface e requisitos externos) ou na forma de uma 
+caixa-branca (conhecendo-se e tirando-se proveito da sua estrutura interna,
 para elaboração de testes mais efetivos).
 
 \index{Beck, Kent}
 Uma observação semelhante pode ser feita sobre a relação entre TDD e
-testes caixa preta/branca. Para esclarecer essa relação, vamos usar
+testes caixa-preta/branca. Para esclarecer essa relação, vamos usar
 um comentário do próprio Kent Beck (fonte: *Test-Driven Development Violates the
 Dichotomies of Testing*, Three Rivers Institute, 2007):
 
-> "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa preta e testes caixa branca. Como testes em TDD são escritos antes do código que eles testam, eles talvez pudessem ser considerados como testes caixa preta. No entanto, eu normalmente ganho inspiração para escrever o próximo teste depois que implemento e analiso o código verificado pelo teste anterior, o que é uma característica marcante de testes caixa branca."
+> "No contexto de TDD, uma dicotomia incorreta ocorre entre testes caixa-preta
+ e testes caixa-branca. Como testes em TDD são escritos antes do código que eles testam, eles talvez pudessem ser considerados como testes caixa-preta. No entanto, eu normalmente ganho inspiração para escrever o próximo teste depois que implemento e analiso o código verificado pelo teste anterior, o que é uma característica marcante de testes caixa-branca."
 
 
 ### Seleção de Dados de Teste
 \index{Testes de Software!Classes de Equivalência}
 \index{Classes de Equivalência}
 
-Quando se adota testes caixa preta existem técnicas para auxiliar na
+Quando se adota testes caixa-preta existem técnicas para auxiliar na
 seleção das entradas que serão verificadas no teste. Partição via
 **Classe de Equivalência** é uma técnica que recomenda dividir as
 entradas de um problema em conjuntos de valores que têm a mesma chance

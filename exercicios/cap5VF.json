@@ -14,7 +14,7 @@
     "correct": "true"
   },
   {
-    "text": "Getters e setters são essenciais para construção de classes com ocultamento de informação. Sem eles, uma classe não atende a essa propriedade de projeto.",
+    "text": "Getters e setters são essenciais para implementação de classes com ocultamento de informação.",
     "correct": "false"
   },
   {
@@ -22,7 +22,7 @@
     "correct": "false"
   },
   {
-    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em sua implementação uma classe B. Por exemplo, declara um atributo ou parâmetro do tipo B ou cria um objeto do tipo B, dentre outras situações.",
+    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em sua implementação uma classe B. Por exemplo, a classe A declara um atributo ou parâmetro do tipo B ou cria um objeto do tipo B.",
     "correct": "true"
   },
   {
@@ -34,19 +34,19 @@
     "correct": "false"
   },
   {
-    "text": "O Princípio de Substituição de Liskov aplica-se apenas a linguagens com herança.",
+    "text": "O Princípio de Substituição de Liskov aplica-se somente a linguagens com herança.",
     "correct": "true"
   },
   {
-    "text": "Um nome mais intuitivo para Inversão de Dependências é Prefira Composição a Herança.",
+    "text": "Um nome mais intuitivo para Inversão de Dependências é Prefira Composição a Herança, como Java e C++.",
     "correct": "false"
   },
   {
-    "text": "Herança de classes envolve reúso de código, pois subclasses não precisam reimplementar métodos herdados. Já herança de interfaces não envolve reúso de código, pois, por definição, interfaces não incluem implementações.",
+    "text": "Herança de classes envolve reúso de código, pois subclasses não precisam reimplementar os métodos herdados da classe pai.",
     "correct": "true"
   },
   {
-    "text": "Composição é um mecanismo de reúso caixa-branca.",
+    "text": "Composição é um mecanismo de reúso caixa-branca, pois a classe cliente tem acesso a diversos detalhes de implementação da classe servidora.",
     "correct": "false"
   },
   {
@@ -58,7 +58,7 @@
     "correct": "false"
   },
   {
-    "text": "Quando calcula-se o LCOM de uma classe, deve-se excluir métodos getters e setters.",
+    "text": "Quando calcula-se o LCOM de uma classe, deve-se excluir métodos getters e setters, bem como métodos construtores.",
     "correct": "false"
   } 
 ]
