@@ -1,0 +1,85 @@
+{
+"title": "Cap. 8 - Testes",  
+"questions": [
+  {
+    "text": "Testes podem mostrar a presença de bugs, mas não a ausência completa de bugs em um sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Testes podem provar que um programa está incorreto, mas eles não provam que ele está correto.",
+    "correct": "true"
+  },
+  {
+    "text": "Toda falha é causada por um bug (ou defeito); mas nem todo bug causa falhas.",
+    "correct": "true"
+  },
+  {
+    "text": "Concorrência é um das principais causas de testes com comportamento flaky. ",
+    "correct": "true"
+  },
+  {
+    "text": "O contexto de um teste -- por exemplo, os objetos que são necessários para o teste -- é chamado de fixture.",
+    "correct": "true"
+  },
+  {
+    "text": "Todo teste deve ter sempre um único comando assert.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma regressão ocorre apenas quando a implementação de uma nova funcionalidade introduz bugs em código antigo. ",
+    "correct": "false"
+  },
+  {
+    "text": "Um ciclo TDD tem dois passos: escrever um teste que falha e fazer o teste passar.",
+    "correct": "false"
+  },
+  {
+    "text": "Sempre que se usa TDD a cobertura de testes alcança 100%.",
+    "correct": "false"
+  },
+  {
+    "text": "A pirâmide de testes tem três níveis: integração fica no topo e teste de unidades fica na base.",
+    "correct": "false"
+  },
+  {
+    "text": "Testes de aceitação são uma atividade de validação; testes de unidade são atividades de verificação de software.",
+    "correct": "true"
+  },
+  {
+    "text": "O framework JUnit (e similares) também pode ser usado para testes de integração.",
+    "correct": "true"
+  },
+  {
+    "text": "Métodos estáticos não podem ser objeto de mocks. ",
+    "correct": "true"
+  },
+  {
+    "text": "Teste caixa-preta é também chamado de funcional; teste caixa-branca é chamado de não-funcional.",
+    "correct": "true"
+  },
+  {
+    "text": "TDD é uma técnica de escrita de testes apenas do tipo caixa-branca.",
+    "correct": "false"
+  },
+  {
+    "text": "TDD é uma técnica de escrita de testes apenas do tipo caixa-preta.",
+    "correct": "false"
+  },
+  {
+    "text": "O fluxo de TDD tem três estados: vermelhos (testes falham), verde (testes passam) e refactoring.",
+    "correct": "true"
+  },
+  {
+    "text": "Teste comportamental é aquele que verifica os eventos que ocorreram na execução do Sistema sob Testes (SUT)",
+    "correct": "true"
+  },
+  {
+    "text": "Se a cobertura de branches de uma função é 100%, então a cobertura de comandos também é 100%. ",
+    "correct": "true"
+  }, 
+  {
+    "text": "Na fase de teste de unidade, o objetivo é explorar-se a menor unidade de projeto, procurando-se identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software, estabelecida na fase de projeto. (ENADE 2005)",
+    "correct": "true"
+  }
+]
+}	    
