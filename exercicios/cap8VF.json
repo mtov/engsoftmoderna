@@ -2,7 +2,7 @@
 "title": "Cap. 8 - Testes",  
 "questions": [
   {
-    "text": "Testes podem mostrar a presença de bugs, mas não a ausência completa de bugs em um sistema.",
+    "text": "Testes podem mostrar a presença de bugs, mas não a ausência de bugs em um sistema.",
     "correct": "true"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Um ciclo TDD tem dois passos: escrever um teste que falha e fazer o teste passar.",
+    "text": "Um ciclo TDD possui dois passos: escrever um teste que falha e fazer o teste passar.",
     "correct": "false"
   },
   {
@@ -38,7 +38,7 @@
     "correct": "false"
   },
   {
-    "text": "A pirâmide de testes tem três níveis: integração fica no topo e teste de unidades fica na base.",
+    "text": "A pirâmide de testes tem três níveis: integração fica no topo e testes de unidade ficam na base.",
     "correct": "false"
   },
   {
@@ -70,7 +70,7 @@
     "correct": "true"
   },
   {
-    "text": "Teste comportamental é aquele que verifica os eventos que ocorreram na execução do Sistema sob Testes (SUT)",
+    "text": "Teste comportamental é aquele que verifica os eventos que ocorreram durante a execução do Sistema sob Testes (SUT)",
     "correct": "true"
   },
   {
@@ -78,7 +78,7 @@
     "correct": "true"
   }, 
   {
-    "text": "Na fase de teste de unidade, o objetivo é explorar-se a menor unidade de projeto, procurando-se identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software, estabelecida na fase de projeto. (ENADE 2005)",
+    "text": "Na fase de testes de unidade, o objetivo é explorar a menor unidade de projeto, procurando identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software, estabelecida na fase de projeto. (ENADE 2005)",
     "correct": "true"
   }
 ]
