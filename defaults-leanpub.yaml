@@ -1,0 +1,24 @@
+from: markdown
+to: latex
+   
+pdf-engine: pdflatex
+
+include-in-header: helper/packages-leanpub.tex
+include-before-body: helper/begin-document-leanpub.tex 
+
+default-image-extension: ".pdf"
+
+listings: true
+
+top-level-division: chapter
+number-sections: true
+
+variables:
+  documentclass: book
+  fontsize: 11pt
+  classoption: twoside
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+  links-as-notes: true
+
