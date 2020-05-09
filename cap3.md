@@ -524,6 +524,48 @@ Sendo um pouco mais claro:
 
 O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem eventos com maior taxa de conversão e que testam ganhos de maior proporção. No exemplo anterior, se a taxa de conversão fosse de 10% e a melhoria a ser testada fosse de 25%, o tamanho da amostra cairia para 1.800 clientes, para cada grupo. Esses valores foram estimados usando a calculadora de testes A/B da empresa Optimizely, disponível neste [link](https://www.optimizely.com/sample-size-calculator/).
 
+
+```{=latex}
+\begin{esmbox}
+```
+
+**Aprofundamento**: 
+Em termos estatísticos, um Teste A/B é modelado como um **Teste de
+Hipótese**. Nesse tipo de teste, partimos de uma Hipótese Nula, que
+representa o "status quo" do problema. Isto é, a hipótese nula assume
+que nada vai mudar e que, portando, a versão B não é melhor do que a
+versão atual. Por outro lado, a hipótese que muda o "status quo" é
+chamada de Hipótese Alternativa. Por convenção, a Hipótese Nula é
+representada por H0 e a hipótese alternativa por H1.
+
+Um Teste de Hipótese é um procedimento de decisão  que parte do
+princípio de que H0 é verdadeira e,  sem seguida, tenta refutá-la. 
+Para isso, um teste estatístico específico deve ser usado.  Porém,
+esses testes não conseguem ser totalmente confiáveis. Ou seja, eles
+sempre trabalham com uma probabilidade de erro. Por exemplo,  qualquer
+que seja o teste, existe uma chance de  que H0 seja rejeitada, mesmo
+quando ela seja verdadeira. Quando isso ocorre, dizemos que ocorreu um
+Erro do Tipo 1 ou então um falso positivo, pois concluímos
+indevidamente que a versão B é melhor do que a versão A. Se não
+podemos evitar erros do Tipo 1, podemos pelo menos definir a
+probabilidade com que iremos tolerá-los. Assim, em todo Teste A/B,
+existe um parâmetro de entrada, chamado de  Nível de Significância,
+representado também pela letra grega alfa. Esse parâmetro representa a
+probabilidade com que erros do Tipo I são tolerados em um Teste de
+Hipótese.
+
+Por exemplo, suponha que alfa seja definido como sendo 5%. Então,
+existe sempre uma probabilidade de 5% de que H0 tenha sido rejeitada
+indevidamente. No exemplo que usamos antes na seção, em vez de alfa,
+adotamos como parâmetro de entrada o valor  de (1 - alfa), que é a
+probabilidade de que uma refutação de H0 tenha sido, de fato, correta.
+Tomamos essa decisão porque (1 - alfa) é o parâmetro de entrada mais
+usado em calculadoras de tamanho de amostras de Testes A/B.
+
+
+```{=latex}
+\end{esmbox}
+```
 ### Perguntas Frequentes
 
 Seguem algumas perguntas e esclarecimentos sobre testes A/B.
