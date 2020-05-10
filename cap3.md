@@ -552,9 +552,8 @@ Se erros do Tipo I não podem ser evitados, podemos, pelo menos, ter uma ideia
 da probabiblidade com que eles ocorrem. Mais especificamente, 
 em Testes A/B, existe um parâmetro de entrada, chamado de 
 Nível de Significância (*significance level*),
-representado pela letra grega alfa. Ele define a
-probabilidade de obter erros do Tipo I em testes de
-hipótese.
+representado pela letra grega $\alpha$. Ele define a
+probabilidade de ocorrência de um erro do Tipo I.
 
 Por exemplo, suponha que alfa seja definido em 5%. Então,
 existe uma probabilidade de 5% de rejeitar H0 
