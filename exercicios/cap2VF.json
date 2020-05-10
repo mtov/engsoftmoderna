@@ -10,7 +10,7 @@
     "correct": "false"
   },
   {
-    "text": "O Manifesto Ágil advga que documentação abrangente não tem importância.",
+    "text": "O Manifesto Ágil advoga que documentação abrangente não tem importância.",
     "correct": "false"
   },
   {
@@ -22,7 +22,7 @@
     "correct": "true"
   },
   {
-    "text": "XP defende que os contratos de software tenham um escopo fechado, isto é, todos os requisitos, preços e prazos são definidos a priori.",
+    "text": "XP defende que os contratos de software tenham um escopo fechado, isto é, requisitos, preços e prazos são definidos a priori.",
     "correct": "false"
   },
   {
@@ -38,7 +38,7 @@
     "correct": "false"
   },
   {
-    "text": "Times Scrum são cross-funcionais (isto é, multidisciplinares) e auto-organizáveis (isto é, isto eles têm autonomia para decidir como as histórias serão implementadas.).",
+    "text": "Times Scrum são cross-funcionais (isto é, multidisciplinares) e auto-organizáveis (isto é, têm autonomia para decidir como as histórias serão implementadas).",
     "correct": "true"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "true"
   },
   {
-    "text": "Em times menores e com menos recursos, recomenda-se que o Product Owner (PO) também acumule as funções de Scrum Master.",
+    "text": "Em times menores e com menos recursos, recomenda-se que o Product Owner (PO) acumule as funções de Scrum Master.",
     "correct": "false"
   },
   {
@@ -78,8 +78,8 @@
     "correct": "false"
   },
   {
-    "text": "Em Kanban, o objetivo dos limites WIP é evitar que o time fique ocioso.",
-    "correct": "true"
+    "text": "Em Kanban, o objetivo dos limites WIP é evitar que o time de desenvolvimento fique ocioso.",
+    "correct": "false"
   }
 ]
 }	    
