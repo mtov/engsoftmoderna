@@ -454,7 +454,8 @@ que devem passar. Isto é, pode-se programar um pouco e escrever testes;
 programar mais um pouco e escrever novos testes, etc.
 
 Alternativamente, pode-se escrever os testes primeiro, antes de qualquer
-código de produção. No início, esses testes não vão passar, somente
+código de produção. No início, esses testes não vão passar, pois isso
+somente vai acontecer
 depois que o código sob teste for implementado. Em outras palavras,
 inicia-se com um código que apenas compila e cujos testes, portanto,
 falham. Implementa-se então o código de produção e testa-se novamente.
