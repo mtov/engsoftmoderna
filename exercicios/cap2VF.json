@@ -1,0 +1,85 @@
+{
+"title": "Cap. 2 - Processos",  
+"questions": [
+  {
+    "text": "Projetos tradicionais de Engenharia (Civil, Elétrica, Mecânica, etc), normalmente, são waterfall.",
+    "correct": "true"
+  },
+  {
+    "text": "Métodos ágeis recomendam o uso de planejamento detalhado (ou big upfront design).",
+    "correct": "false"
+  },
+  {
+    "text": "O Manifesto Ágil advga que documentação abrangente não tem importância.",
+    "correct": "false"
+  },
+  {
+    "text": "Quando surgiram, métodos ágeis propuseram novas práticas de programação, como programação em pares, testes automatizados e integração contínua.",
+    "correct": "true"
+  },
+  {
+    "text": "Métodos ágeis defendem desenvolvimento com times pequenos, com cerca de uma dezena de desenvolvedores.",
+    "correct": "true"
+  },
+  {
+    "text": "XP defende que os contratos de software tenham um escopo fechado, isto é, todos os requisitos, preços e prazos são definidos a priori.",
+    "correct": "false"
+  },
+  {
+    "text": "Diferentemente de Scrum, XP é um método exclusivo para projetos de desenvolvimento de software, pois ele advoga o uso de diversas práticas de programação.",
+    "correct": "true"
+  },
+  {
+    "text": "A velocidade de um time é o número máximo de story points que ele consegue implementar em uma iteração.",
+    "correct": "true"
+  },
+  {
+    "text": "Histórias do topo do backlog têm maior prioridade e maior tamanho (em story points).",
+    "correct": "false"
+  },
+  {
+    "text": "Times Scrum são cross-funcionais (isto é, multidisciplinares) e auto-organizáveis (isto é, isto eles têm autonomia para decidir como as histórias serão implementadas.).",
+    "correct": "true"
+  },
+  {
+    "text": "Reuniões diárias podem durar de 10 a 30 minutos, dependendo da duração do sprint.",
+    "correct": "false"
+  },
+  {
+    "text": "O primeiro evento de um sprint é o planejamento; o último evento é a revisão.",
+    "correct": "false"
+  },
+  {
+    "text": "São exemplos de artefatos em Scrum: backlog do produto, backlog do sprint, quadro Scrum e gráfico de burndown.",
+    "correct": "true"
+  },
+  {
+    "text": "Em times menores e com menos recursos, recomenda-se que o Product Owner (PO) também acumule as funções de Scrum Master.",
+    "correct": "false"
+  },
+  {
+    "text": "Todos os eventos Scrum têm uma duração bem definida, chamada de time-box da atividade.",
+    "correct": "true"
+  },
+  {
+    "text": "Em Kanban, limites WIP valem para todos os passos e também para o backlog do produto.",
+    "correct": "false"
+  },
+  {
+    "text": "Kanban é um sistema push, isto é, ao terminar uma tarefa, um desenvolvedor a empurra para o próximo passo.",
+    "correct": "false"
+  },
+  {
+    "text": "Em Kanban, lead time é o tempo que uma tarefa passa em um passo do processo, incluindo o tempo em espera.",
+    "correct": "true"
+  },
+  {
+    "text": "Times Kanban não devem realizar eventos típicos de Scrum, como reuniões diárias, revisões e retrospectivas.",
+    "correct": "false"
+  },
+  {
+    "text": "Em Kanban, o objetivo dos limites WIP é evitar que o time fique ocioso.",
+    "correct": "true"
+  }
+]
+}	    
