@@ -557,9 +557,9 @@ probabilidade de ocorrência de um erro do Tipo I.
 
 Por exemplo, suponha que $\alpha$ seja definido em 5%. Então,
 existe uma probabilidade de 5% de rejeitar H0 
-indevidamente. No exemplo usado anteriormente nesta seção, em vez de alfa,
+indevidamente. No exemplo usado anteriormente nesta seção, em vez de $\alpha$,
 usamos como parâmetro de entrada o valor  de (1 - $\alpha$), que é a
-probabilidade de que uma refutação de H0 tenha sido, de fato, correta.
+probabilidade de refutar H0 corretamente.
 Tomamos essa decisão porque (1 - $\alpha$) é o parâmetro de entrada mais
 comum de calculadoras do tamanho de amostras de Testes A/B.
 ```{=latex}

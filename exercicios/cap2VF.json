@@ -10,7 +10,7 @@
     "correct": "false"
   },
   {
-    "text": "O Manifesto Ágil advoga que documentação abrangente não tem importância.",
+    "text": "O Manifesto Ágil advoga que documentação abrangente não tem qualquer importância.",
     "correct": "false"
   },
   {
@@ -18,7 +18,7 @@
     "correct": "true"
   },
   {
-    "text": "Métodos ágeis defendem desenvolvimento com times pequenos, com cerca de uma dezena de desenvolvedores.",
+    "text": "Métodos ágeis defendem desenvolvimento com times pequenos, com cerca de uma dezena de desenvolvedores, no máximo.",
     "correct": "true"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "true"
   },
   {
-    "text": "A velocidade de um time é o número máximo de story points que ele consegue implementar em uma iteração.",
+    "text": "A velocidade de um time é o número máximo de story points que ele consegue implementar em um sprint.",
     "correct": "true"
   },
   {
@@ -54,11 +54,11 @@
     "correct": "true"
   },
   {
-    "text": "Em times menores e com menos recursos, permite-se que o Product Owner (PO) acumule as funções de Scrum Master.",
+    "text": "Em times menores e com menos recursos, recomenda-se que o Product Owner (PO) acumule as funções de Scrum Master.",
     "correct": "false"
   },
   {
-    "text": "Todos os eventos Scrum têm uma duração bem definida, chamada de time-box da atividade.",
+    "text": "Todos os eventos Scrum têm uma duração bem definida, chamada de time-box do evento.",
     "correct": "true"
   },
   {
@@ -70,7 +70,7 @@
     "correct": "false"
   },
   {
-    "text": "Em Kanban, lead time é o tempo que uma tarefa passa em um passo do processo, incluindo o tempo em espera.",
+    "text": "Se conhecermos o lead time e o throughput de um passo Kanban, podemos usar a Lei de Little para calcular o seu limite WIP.",
     "correct": "true"
   },
   {
