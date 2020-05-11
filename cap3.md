@@ -515,7 +515,7 @@ suponha que a taxa de conversão de clientes seja de 1% e que desejamos
 verificar se o tratamento introduz um ganho mínimo de 10% nessa taxa.
 Nesse caso, os grupos de controle e de tratamento devem possuir no
 mínimo 200 mil clientes, cada um, para que os resultados do teste tenham
-relevância estatística, considerando um nível de significância de 95%.
+relevância estatística, considerando um nível de confiança de 95%.
 Sendo um pouco mais claro:
 
 * Se após 200K acessos, a versão B aumentar a taxa de conversão em pelo menos 10% podemos ter certeza estatística de que esse ganho é causado pelo tratamento B (na verdade, podemos ter 95% de certeza). Logo, dizemos que o teste foi bem sucedido, isto é, ele foi ganho pela versão B.
@@ -544,7 +544,7 @@ Para isso, um teste estatístico específico deve ser usado. Porém,
 esses testes não são totalmente confiáveis. Ou seja, eles
 sempre trabalham com uma probabilidade de erro. Por exemplo, qualquer
 que seja o teste, existe uma chance de refutar H0 mesmo
-quando ela é verdadeira. Nesses casos, dizemos que ocorreu um
+ela sendo verdadeira. Nesses casos, dizemos que ocorreu um
 Erro do Tipo I ou um falso positivo, pois concluímos
 indevidamente que a versão B é melhor do que a versão A. 
 
@@ -553,13 +553,14 @@ da probabiblidade com que eles ocorrem. Mais especificamente,
 em Testes A/B, existe um parâmetro de entrada, chamado de 
 Nível de Significância (*significance level*),
 representado pela letra grega $\alpha$ (alfa). Ele define a
-probabilidade de ocorrência de um erro do Tipo I.
+probabilidade de ocorrência de erros do Tipo I.
 
 Por exemplo, suponha que $\alpha$ seja definido em 5%. Então,
 existe uma probabilidade de 5% de rejeitar H0 
 indevidamente. No exemplo usado anteriormente nesta seção, em vez de $\alpha$,
 usamos como parâmetro de entrada o valor  de (1 - $\alpha$), que é a
-probabilidade de refutar H0 corretamente.
+probabilidade de rejeitar H0 corretamente. Esse valor é, normalmente,
+chamado de Nível de Confiança.
 Tomamos essa decisão porque (1 - $\alpha$) é o parâmetro de entrada mais
 comum de calculadoras do tamanho de amostras de Testes A/B.
 ```{=latex}
@@ -575,7 +576,7 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 \index{Testes A/B!Testes A/A}
 
-**O que é um teste A/A?** É um teste onde os dois grupos, controle e tratamento, executam a mesma versão do sistema. Logo, assumindo-se uma significância estatística de 95%, eles deveriam quase sempre falhar, pois a versão A não pode ser melhor do que ela mesma. Testes A/A são recomendados para testar e validar os procedimentos e decisões metodológicas que foram tomados em um teste A/B. Alguns autores chegam a recomendar que não se deve iniciar testes A/B antes de realizar alguns testes A/A ([link](https://dl.acm.org/citation.cfm?id=3339916)). Caso os testes A/A não falhem, deve-se depurar o sistema de experimentação até descobrir a causa raiz (*root cause*) que está fazendo com que uma versão A seja considerada melhor do que ela mesmo.
+**O que é um teste A/A?** É um teste onde os dois grupos, controle e tratamento, executam a mesma versão do sistema. Logo, assumindo-se uma confiança estatística de 95%, eles deveriam quase sempre falhar, pois a versão A não pode ser melhor do que ela mesma. Testes A/A são recomendados para testar e validar os procedimentos e decisões metodológicas que foram tomados em um teste A/B. Alguns autores chegam a recomendar que não se deve iniciar testes A/B antes de realizar alguns testes A/A ([link](https://dl.acm.org/citation.cfm?id=3339916)). Caso os testes A/A não falhem, deve-se depurar o sistema de experimentação até descobrir a causa raiz (*root cause*) que está fazendo com que uma versão A seja considerada melhor do que ela mesmo.
 
 **Qual a origem dos termos grupos de controle e de tratamento?** Os termos têm sua origem na área médica, mais especificamente em experimentos randomizados controlados (*randomized control experiments*). Por exemplo, para lançar uma nova droga no mercado, empresas farmacêuticas devem realizar esse tipo de experimento. São escolhidas duas amostras, chamadas de controle e de tratamento. Os participantes da amostra de controle recebem um placebo e os participantes da amostra de tratamento são tratados com a droga. Após o teste, comparam-se os resultados para verificar se o uso da droga foi efetivo. Experimentos randomizados controlados são um modo cientificamente aceito de provar causalidade. No nosso exemplo, eles podem, por exemplo, provar que a droga testada causou a cura de uma doença.
 
