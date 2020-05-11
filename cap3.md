@@ -533,7 +533,7 @@ O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem 
 Em termos estatísticos, um Teste A/B é modelado como um **Teste de
 Hipótese**. Nesse tipo de teste, partimos de uma Hipótese Nula, que
 representa o "status quo" do sistema. Isto é, a Hipótese Nula assume
-que nada vai mudar e que, portanto, a versão B não é melhor do que a
+que nada vai mudar e que, portanto, a versão B não será melhor do que a
 versão atual do sistema. Por outro lado, a hipótese que muda o "status quo" é
 chamada de Hipótese Alternativa. Por convenção, a Hipótese Nula é
 representada por H0 e a Hipótese Alternativa por H1.
@@ -558,11 +558,11 @@ probabilidade de ocorrência de erros do Tipo I.
 Por exemplo, suponha que $\alpha$ seja definido em 5%. Então,
 existe uma probabilidade de 5% de rejeitar H0 
 indevidamente. No exemplo usado anteriormente nesta seção, em vez de $\alpha$,
-usamos como parâmetro de entrada o valor  de (1 - $\alpha$), que é a
-probabilidade de rejeitar H0 corretamente. Esse valor é, normalmente,
+usamos como parâmetro de entrada o valor (1 - $\alpha$), que é a
+probabilidade de rejeitar H0 corretamente. Normalmente, esse valor é 
 chamado de Nível de Confiança.
 Tomamos essa decisão porque (1 - $\alpha$) é o parâmetro de entrada mais
-comum de calculadoras do tamanho de amostras de Testes A/B.
+comum de calculadoras de tamanho de amostras de Testes A/B.
 ```{=latex}
 \end{esmbox}
 ```
