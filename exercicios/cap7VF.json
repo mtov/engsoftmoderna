@@ -6,6 +6,10 @@
     "correct": "false"
   },
   {
+    "text": "Em uma arquitetura Três Camadas temos as seguintes camadas: interface com o usuário, aplicação (lógica de negócio) e banco de dados.",
+    "correct": "true"
+  },
+  {
     "text": "A camada de Controle mais o Modelo constitui a interface gráfica de sistemas MVC.",
     "correct": "false"
   },
@@ -14,7 +18,7 @@
     "correct": "true"
   },
   {
-    "text": "Em MVC, a interface gráfica pode ser entendida como uma observadora da camada de Controle.",
+    "text": "Em MVC, a Visão pode ser entendida como uma observadora da camada de Controle.",
     "correct": "false"
   },
   {
@@ -38,16 +42,23 @@
     "correct": "true"
   },
   {
-    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no espaço, isto é, produtores e consumidores não precisam ser conectados na mesma rede local.",
+    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no espaço, isto é, produtores e consumidores não precisam estar conectados na mesma rede local.",
     "correct": "false"
   },
   {
-    "text": "São exemplos de padrões arquiteturais: MVC, Pipes & Filtros e Big-Ball-of-Mud.",
+    "text": "Em arquiteturas Publish/Subscribe temos um estilo de comunicação de 1 para 1, pois um evento é enviado sempre para um único assinante (subscriber).",
+    "correct": "false"
+  },
+  {
+    "text": "MVC, Pipes & Filtros e Big-Ball-of-Mud são exemplos de padrões arquiteturais.",
     "correct": "false"
   },
   {
     "text": "A Lei de Conway afirma que o organograma de uma empresa imita a arquitetura de seus sistemas.",
     "correct": "false"
+  },
+  {
+    "text": "Os componentes de uma Arquitetura Peer-to-Peer podem desempenhar tanto o papel de cliente, como o papel de servidor.",
+    "correct": "false"
   }
-]
-}	    
+}	 
