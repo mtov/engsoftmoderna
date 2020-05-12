@@ -6,11 +6,11 @@
     "correct": "false"
   },
   {
-    "text": "Em uma arquitetura Três Camadas temos as seguintes camadas: interface com o usuário, aplicação (lógica de negócio) e banco de dados.",
+    "text": "Em uma arquitetura Três Camadas temos as seguintes camadas: interface com o usuário, aplicação (oi lógica de negócio) e banco de dados.",
     "correct": "true"
   },
   {
-    "text": "A camada de Controle mais o Modelo constitui a interface gráfica de sistemas MVC.",
+    "text": "A camada de Visão mais o Modelo constitui a interface gráfica de sistemas MVC.",
     "correct": "false"
   },
   {
@@ -50,7 +50,7 @@
     "correct": "false"
   },
   {
-    "text": "MVC, Pipes & Filtros e Big-Ball-of-Mud são exemplos de padrões arquiteturais.",
+    "text": "MVC, Pipes & Filtros e Big Ball- of Mud são exemplos de padrões arquiteturais.",
     "correct": "false"
   },
   {
@@ -58,7 +58,7 @@
     "correct": "false"
   },
   {
-    "text": "Os componentes de uma Arquitetura Peer-to-Peer podem desempenhar tanto o papel de cliente, como o papel de servidor.",
+    "text": "Os componentes de uma Arquitetura Peer-to-Peer podem desempenhar tanto o papel de cliente, como o papel de servidor de recursos.",
     "correct": "false"
   }
 ]
