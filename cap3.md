@@ -533,7 +533,7 @@ O tamanho da amostra de um teste A/B diminui bastante quando os testes envolvem 
 Em termos estatísticos, um Teste A/B é modelado como um **Teste de
 Hipótese**. Nesse tipo de teste, partimos de uma Hipótese Nula, que
 representa o "status quo" do sistema. Isto é, a Hipótese Nula assume
-que nada vai mudar e que, portanto, a versão B não será melhor do que a
+que nada vai mudar e que, portanto, a versão B não é melhor do que a
 versão atual do sistema. Por outro lado, a hipótese que muda o "status quo" é
 chamada de Hipótese Alternativa. Por convenção, a Hipótese Nula é
 representada por H0 e a Hipótese Alternativa por H1.
@@ -550,9 +550,9 @@ indevidamente que a versão B é melhor do que a versão A.
 
 Se erros do Tipo I não podem ser evitados, podemos, pelo menos, ter uma ideia
 da probabiblidade com que eles ocorrem. Mais especificamente, 
-em Testes A/B, existe um parâmetro de entrada, chamado de 
-Nível de Significância (*significance level*),
-representado pela letra grega $\alpha$ (alfa). Ele define a
+em Testes A/B, existe um parâmetro de entrada, chamado
+Nível de Significância (*significance level*) e
+representado pela letra grega $\alpha$ (alfa). Esse parâmetro define a
 probabilidade de ocorrência de erros do Tipo I.
 
 Por exemplo, suponha que $\alpha$ seja definido em 5%. Então,
