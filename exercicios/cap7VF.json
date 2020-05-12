@@ -1,0 +1,53 @@
+{
+  "title": "Cap. 7 - Arquitetura",  
+  "questions": [
+  {
+    "text": "Uma Arquitetura em Camadas torna mais difícil a manutenção e evolução de um sistema de software.",
+    "correct": "false"
+  },
+  {
+    "text": "A camada de Controle mais o Modelo constitui a interface gráfica de sistemas MVC.",
+    "correct": "false"
+  },
+  {
+    "text": "Em Arquiteturas MVC, classes de Modelo podem ser usadas por várias Visões.",
+    "correct": "true"
+  },
+  {
+    "text": "Em MVC, a interface gráfica pode ser entendida como uma observadora da camada de Controle.",
+    "correct": "false"
+  },
+  {
+    "text": "Single Page Applications (SPAs) são mais interativas e responsivas do que aplicações Web tradicionais.",
+    "correct": "true"
+  },
+  {
+    "text": "Microsserviços permitem que cada time de desenvolvimento tenha seu próprio fluxo de liberação de releases.",
+    "correct": "true"
+  },
+  {
+    "text": "Microsserviços devem compartilhar o mesmo banco de dados, por questões de segurança.",
+    "correct": "false"
+  },
+  {
+    "text": "Dentre outras vantagens, microsserviços oferecem independência de tecnologia, toleram falhas parciais e oferecem uma menor latência na comunicação.",
+    "correct": "false"
+  },
+  {
+    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no tempo, isto é, um consumidor pode receber uma mensagem mesmo estando off-line no momento em que ela foi produzida.",
+    "correct": "true"
+  },
+  {
+    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no espaço, isto é, produtores e consumidores não precisam ser conectados na mesma rede local.",
+    "correct": "false"
+  },
+  {
+    "text": "São exemplos de padrões arquiteturais: MVC, Pipes & Filtros e Big-Ball-of-Mud.",
+    "correct": "false"
+  },
+  {
+    "text": "A Lei de Conway afirma que o organograma de uma empresa imita a arquitetura de seus sistemas.",
+    "correct": "false"
+  }
+]
+}	    
