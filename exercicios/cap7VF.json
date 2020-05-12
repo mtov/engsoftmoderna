@@ -6,7 +6,7 @@
     "correct": "false"
   },
   {
-    "text": "Em uma arquitetura Três Camadas temos as seguintes camadas: interface com o usuário, aplicação (oi lógica de negócio) e banco de dados.",
+    "text": "Em uma arquitetura Três Camadas temos as seguintes camadas: interface com o usuário, aplicação (ou lógica de negócio) e banco de dados.",
     "correct": "true"
   },
   {
@@ -59,7 +59,7 @@
   },
   {
     "text": "Os componentes de uma Arquitetura Peer-to-Peer podem desempenhar tanto o papel de cliente, como o papel de servidor de recursos.",
-    "correct": "false"
+    "correct": "true"
   }
 ]
 }	 
