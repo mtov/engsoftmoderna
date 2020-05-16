@@ -167,7 +167,7 @@ histórias de usuários, que demandem alguns sprints para serem implementadas.
 
 Nesta seção, vamos mostrar exemplos de histórias para um sistema de controle de bibliotecas. Elas estão associadas a três tipos de usuários: usuário típico, professor e funcionário da biblioteca.
 
-Primeiro, mostramos histórias propostas por usuários típicos (veja a seguir). Qualquer usuário da biblioteca se encaixa nesse papel e, portanto, pode realizar as operações mencionadas nessas histórias. Observe que as histórias são resumidas e não detalham como cada operação será implementada. Por exemplo, uma história documenta que o sistema deve permitir pesquisas por livros. No entanto, existem diversos detalhes que a história omite, incluindo os campos de pesquisa, os filtros que poderão ser usados, o número máximo de resultados retornados em cada pesquisa, o layout das telas de pesquisa e de resultados, etc. Mas lembre-se que uma história é uma promessa: o representante dos clientes promete ter tempo para definir e explicar tais detalhes em conversas com os desenvolvedores, durante o sprint no qual a história será implementada. Conforme já comentado, quando se usa histórias, essa comunicação verbal entre desenvolvedores e representante dos clientes é a principal atividade de Engenharia de Requisitos.
+Primeiro, mostramos histórias propostas por usuários típicos (veja a seguir). Qualquer usuário da biblioteca se encaixa nesse papel e, portanto, pode realizar as operações mencionadas nessas histórias. Observe que as histórias são resumidas e não detalham como cada operação será implementada. Por exemplo, uma história documenta que o sistema deve permitir pesquisas por livros. No entanto, existem diversos detalhes que a história omite, incluindo os campos de pesquisa, os filtros que poderão ser usados, o número máximo de resultados retornados em cada pesquisa, o leiaute das telas de pesquisa e de resultados, etc. Mas lembre-se que uma história é uma promessa: o representante dos clientes promete ter tempo para definir e explicar tais detalhes em conversas com os desenvolvedores, durante o sprint no qual a história será implementada. Conforme já comentado, quando se usa histórias, essa comunicação verbal entre desenvolvedores e representante dos clientes é a principal atividade de Engenharia de Requisitos.
 
 > Como usuário típico, eu gostaria de realizar empréstimos de livros
 >
@@ -460,7 +460,7 @@ Testes A/B podem ser usados, por exemplo, quando se constrói um MVP (com
 requisitos A) e, depois de um ciclo construir-medir-aprender pretende-se
 testar um novo MVP (com requisitos B). Um outro cenário muito comum são
 testes A/B envolvendo componentes de interfaces com o usuário. Por
-exemplo, dados dois layouts da página de entrada de um site, um teste
+exemplo, dados dois leiautes da página de entrada de um site, um teste
 A/B pode ser usado para decidir qual resulta em maior engajamento por
 parte dos usuários. Pode-se testar também a cor ou posição de um botão
 da interface, as mensagens usadas, a ordem de apresentação 

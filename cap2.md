@@ -468,7 +468,7 @@ Como exemplo, mostramos a seguir uma história de um sistema de perguntas e resp
 --------------------------------------------------------------  
 **Postar Pergunta**
 
-*Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um layout diferenciado.*
+*Um usuário, quando logado no sistema, deve ser capaz de postar perguntas. Como é um site sobre programação, as perguntas podem incluir blocos de código, os quais devem ser apresentados com um leiaute diferenciado.*
 --------------------------------------------------------------  
 
 Observe que a história tem um título (Postar Pergunta) e uma breve descrição, que não ocupa mais do que duas ou três sentenças. Costuma-se dizer que histórias são um lembrete para que depois esse requisito seja verbalmente detalhado pelo representante dos clientes.
@@ -599,7 +599,7 @@ dos desenvolvedores do time. Por exemplo, a seguinte lista mostra as
 tarefas para a história "Postar Perguntas", que é a primeira história
 que será implementada em nosso sistema de exemplo.
 
-*   Projetar e testar a interface Web, incluindo layout, CSS templates,
+*   Projetar e testar a interface Web, incluindo leiaute, CSS templates,
     etc.
 
 *   Instalar banco de dados, projetar e criar tabelas.
@@ -726,7 +726,7 @@ das histórias. Logo, pode-se perguntar em seguida: como que vamos postar
 respostas, sem ter as perguntas? Para isso, basta implementar algumas
 perguntas "fixas", que não possam ser modificadas pelos usuários. Na
 iteração 1, quando o cliente abrir o sistema, essas perguntas vão
-aparecer por default, talvez com um layout bem simples, e então o
+aparecer por default, talvez com um leiaute bem simples, e então o
 cliente vai poder usar o sistema apenas para responder essas perguntas
 fixas.
 

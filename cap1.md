@@ -357,7 +357,7 @@ momento, existem diversas decisões que precisam ser tomadas, como, por
 exemplo: definir os algoritmos e estruturas de dados que serão usados,
 definir os frameworks e bibliotecas de terceiros que serão usados;
 definir técnicas para tratamento de exceções; definir padrões de nomes,
-layout e documentação de código e, por último, mas não menos importante,
+leiaute e documentação de código e, por último, mas não menos importante,
 definir as ferramentas que serão usadas no desenvolvimento, incluindo
 compiladores, ambientes integrados de desenvolvimento (IDEs),
 depuradores, sistemas gerenciadores de bancos de dados, ferramentas para
