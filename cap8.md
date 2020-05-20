@@ -729,6 +729,8 @@ título, autor, ano e editora. Nesse caso, justifica-se ter quatro
 comandos `assert` no mesmo teste, cada um verificando um dos campos do
 objeto retornado pela função, como mostra o seguinte código.
 
+\newpage
+
 ```
 @Test
 public void testBookService() {
