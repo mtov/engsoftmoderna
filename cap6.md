@@ -16,7 +16,7 @@ problema no projeto desse sistema; (3) uma solução para esse problema
 por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
 padrões. Terminamos o capítulo alertando que padrões de projeto não são
 uma bala de prata, ou seja, discutimos situações onde o uso de padrões
-não é recomendado (Seção 6.13).
+de projeto não é recomendado (Seção 6.13).
 
 ## Introdução 
 
@@ -183,7 +183,7 @@ objetos por trás de uma interface. Um exemplo é mostrado a seguir:
 
 ```
 class ChannelFactory {
-  public static Channel create() { // método fábrica estático
+  public static Channel create() {// método fábrica estático
     return new TCPChannel();
   }
 }
@@ -480,7 +480,7 @@ void main() {
 A próxima figura ilustra os objetos e as referências entre eles,
 considerando a solução que usa um proxy:
 
-![Padrão de projeto Proxy](figs/cap6/padrao-proxy){width=70%}
+![Padrão de projeto Proxy](figs/cap6/padrao-proxy){width=75%}
 
 Além de ajudar na implementação de caches, proxies podem ser usados para
 implementar outros requisitos não-funcionais. Alguns exemplos incluem:
@@ -571,7 +571,7 @@ públicos) das classes implementadas pelos fabricantes dos projetores.
 
 Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`, 
 é mostrado a seguir:
-\newpage
+
 
 ```
 class AdaptadorProjetorSamsung implements Projetor {
@@ -978,8 +978,8 @@ relação do tipo um-para-muitos entre objetos sujeito e observadores.
 Quando o estado de um sujeito muda, seus observadores devem ser
 notificados.
 
-Primeiro, vamos mostrar um possível programa principal para o nosso
-problema original:
+Primeiro, vamos mostrar um programa principal para o nosso
+problema:
 
 ```
 void main() {
@@ -1112,7 +1112,6 @@ abstract class Funcionario {
      double outros = calcOutrosDescontos();
      return salario - prev - saude - outros;
    }
-
 }
 ```
 
@@ -1208,7 +1207,6 @@ similares, o compilador somente conhece o tipo estático de `veiculo`, que
 Para ficar mais claro, o seguinte erro ocorre ao compilar o código
 anterior:
 
-\newpage
 ```
 visitor.visit(veiculo);  
          ^
