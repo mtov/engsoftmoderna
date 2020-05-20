@@ -333,7 +333,6 @@ estrutura de um programa, você deve usar diagramas estáticos. Se seu
 interesse for modelar o comportamento de um programa — isto é, o que
 pode acontecer durante sua execução, quais métodos são de fato
 executados, etc — você deve usar algum diagrama dinâmico da UML.
-
 Por fim, gostaríamos de lembrar que tratamos de Diagramas de Casos de
 Uso no Capítulo 3, quando apresentamos técnicas para especificação de
 requisitos.
@@ -381,7 +380,7 @@ métodos, como também ilustrado a seguir:
 
 Mostra-se a seguir um diagrama com duas classes: `Pessoa` e `Fone`.
 
-![](figs/cap4/class1){width=85%}
+![](figs/cap4/class1){width=90%}
 
 Nesse diagrama, pode-se conferir que a classe `Pessoa` tem três atributos
 — `nome`, `sobrenome` e `fone` — e dois métodos — `setPessoa` e
@@ -435,7 +434,7 @@ Portanto, usando associações, podemos transformar o primeiro diagrama
 que mostramos nesta seção, com as classes `Pessoa` e `Fone`, no seguinte
 diagrama:
 
-![](figs/cap4/class3){width=85%}
+![](figs/cap4/class3){width=90%}
 
 As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
 
@@ -461,7 +460,7 @@ pode estar associada a múltiplos objetos do tipo `Fone`, inclusive a nenhum.
 Essa multiplicidade é representada pelo \* que adicionamos logo acima da
 seta da associação.
 
-![](figs/cap4/class5){width=85%}
+![](figs/cap4/class5){width=90%}
 
 Neste segundo exemplo com informações de multiplicidade, o
 tipo do atributo `fone` deve ser um vetor de `Fone`. Para que fique
@@ -488,7 +487,7 @@ de classe são capazes de modelar qualquer um dos dois cenários.
 Em alguns casos, informações de multiplicidade são também mostradas na
 extremidade contrária da seta, como no exemplo abaixo:
 
-![](figs/cap4/class6){width=85%}
+![](figs/cap4/class6){width=90%}
 
 Nesse diagrama, a multiplicidade 0..1 — da extremidade com a seta
 — indica que uma `Pessoa` pode ter zero ou um único `Fone`. Mas o mais
@@ -510,7 +509,7 @@ A solução para essa exigência é simples: basta tornar a **associação
 bidirecional**, isto é, adicionar uma seta em cada extremidade da linha
 que conecta as classes, como mostrado no próximo diagrama.
 
-![](figs/cap4/class7){width=85%}
+![](figs/cap4/class7){width=90%}
 
 Para não deixar dúvidas sobre a semântica de uma associação
 bidirecional, mostramos também o código das duas classes:
@@ -593,7 +592,7 @@ Como usual em orientação a objetos, subclasses herdam todos os atributos
 e métodos da classe base, mas também podem adicionar novos membros. Por
 exemplo, apenas `PessoaFisica` tem `cpf` e apenas `PessoaJuridica` tem `cnpj`.
 
-![](figs/cap4/class10){width=90%}
+![](figs/cap4/class10){width=95%}
 
 ### Dependências {.unnumbered}
 \index{UML!Dependências}
@@ -626,7 +625,7 @@ Observe que o `metodoX` de `MinhaClasse` possui uma variável local do tipo
 `java.util.Stack`. Nesse caso, dizemos que existe uma dependência de
 `MinhaClasse` para `java.util.Stack`, a qual é modelada da seguinte forma:
 
-![](figs/cap4/class9){width=60%}
+![](figs/cap4/class9){width=65%}
 
 Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o
 tipo da dependência, usando-se palavras como create (para indicar que a
@@ -636,7 +635,7 @@ destino). Essas palavras são escritas entre sinais de menor (\<\<) e
 maior (\>\>). No diagrama a seguir, por exemplo, fica claro o tipo de
 dependência que `ShapeFactory` estabelece com a classe `Shape`.
 
-![](figs/cap4/class11){width=60%}
+![](figs/cap4/class11){width=65%}
 
 Uma classe pode ter dependências para um grande número de classes. No
 entanto, não se costuma representar todas elas em diagramas de classes,
@@ -660,7 +659,7 @@ apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na
 parte de cima, na forma de um trapézio, para melhor diferenciá-lo dos
 retângulos de classe.
 
-A próxima figura mostra um exemplo de diagrama de pacotes:
+A figura da próxima página mostra um exemplo de diagrama de pacotes:
 Nesse diagrama, podemos ver que o sistema possui quatro pacotes
 principais: `MobileView`, `WebView`, `BusinessLayer` e `Persistence`. Podemos
 ver ainda as dependências — setas tracejadas — que existem entre
@@ -671,8 +670,6 @@ setas que ligam os pacotes de `View` a `BusinessLayer` são bidirecionais.
 Por fim, apenas classes do pacote `BusinessLayer` usam classes do pacote
 `Persistence`.
 
-
-![](figs/cap4/package1){width=50%}
 
 Para concluir, gostaríamos de acrescentar duas observações:
 
@@ -691,6 +688,10 @@ Para concluir, gostaríamos de acrescentar duas observações:
     contínuas. Apenas as demais dependências são representadas por
     meio de setas tracejadas.
 
+
+![](figs/cap4/package1){width=60%}
+
+
 ## Diagramas de Sequência
 \index{UML!Diagrama de Sequência}
 \index{Diagramas UML!Sequência}
@@ -706,10 +707,7 @@ os métodos que são chamados quando um cliente chega em um caixa
 eletrônico e solicita uma operação de retirada de valores.
 
 Antes disso, para iniciar a apresentação de diagramas de sequência,
-vamos usar o seguinte diagrama:
-
-![](figs/cap4/sequence1){width=50%}
-
+vamos usar o diagrama da próxima página.
 Apesar de simples, esse diagrama serve para mostrar a dinâmica e a
 notação usada por diagramas de sequência. Como já dissemos, diagramas de
 sequência modelam objetos, os quais são representados por meio de
@@ -729,6 +727,8 @@ caso da chamada do método `g`. Existem dois motivos para essa omissão: (1)
 o tipo de retorno é `void`; ou (2) o objeto de retorno não é relevante, a
 ponto de merecer ser representado no diagrama.
 
+![](figs/cap4/sequence1){width=65%}
+
 No diagrama de sequência mostrado acima representamos apenas dois
 objetos (`a1` e `b1`). Mas um diagrama de sequência pode ter mais objetos.
 No entanto, esse número não pode crescer tanto, pois o diagrama acaba
@@ -746,14 +746,16 @@ programa.
 ```
 class A {
 
-  void g() {
-    ...
-  }   
+  void g() { 
+    ... 
+  } 
+
   void f() {
-    ...
-    g();
+    ... 
+    g(); 
     ...
   }
+
   main() {
     A a = new A();
     a.f();
@@ -767,7 +769,7 @@ seguir. Observe como a chamada de `g()` feita por `f()` é representada por
 meio de um novo retângulo, que "sai" do retângulo que representa a
 ativação da função `f()`.
 
-![](figs/cap4/sequence2){width=35%}
+![](figs/cap4/sequence2){width=38%}
 
 Para concluir, o próximo diagrama mostra um cenário mais real, que
 ilustra os métodos chamados quando o cliente de uma caixa eletrônico
@@ -787,7 +789,6 @@ são **ações** representadas por retângulos. Existem ainda elementos de
 figura da próxima página mostra um diagrama de atividades que modela o processo seguido
 após um usuário fechar uma compra em uma loja virtual. Para isso,
 assume-se que os produtos comprados já estão no carrinho de compra.
-
 Para entender o funcionamento de um diagrama de atividades (como aquele
 mostrado na figura), devemos assumir que existe uma ficha (*token*)
 imaginária que caminha pelos nodos do diagrama. A seguir,
@@ -796,7 +797,7 @@ assumindo a existência dessa ficha.
 
 \newpage
 
-![](figs/cap4/activity01){width=45%}
+![](figs/cap4/activity01){width=55%}
 
 
 
@@ -810,7 +811,7 @@ assumindo a existência dessa ficha.
 
 **Decisões:** Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.
 
-![](figs/cap4/activity-t-decisao){width=25%}
+![](figs/cap4/activity-t-decisao){width=30%}
 
 **Merges:** Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.
 
@@ -935,10 +936,12 @@ classes para representar as seguintes classes e associações:
 
 ```
 public class HelloWorldSwing { 
+
    public static void main(String[] args) {
      JFrame frame = new JFrame("Hello world!");
      frame.setVisible(true);
    }
+
 }
 ```
 
@@ -947,13 +950,16 @@ public class HelloWorldSwing {
 
 ```
 class HelloWorldSwing extends JFrame {
+
    public HelloWorldSwing() {
      super("Hello world!");
    }
+
    public static void main(String[] args) {
      HelloWorldSwing frame = new HelloWorldSwing();
      frame.setVisible(true);
    }
+
 }
 ```
 
@@ -987,4 +993,4 @@ e um nodo de *join*.
 8\. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama
 de forma a refletir corretamente a intenção do projetista.
 
-![](figs/cap4/activity-exercicio){width=45%}
+![](figs/cap4/activity-exercicio){width=50%}

@@ -393,6 +393,7 @@ public class Estacionamento {
   public void estaciona(String placa, String veiculo) {
     veiculos.put(placa, veiculo);
   }
+
   public static void main(String[] args) {
     Estacionamento e = new Estacionamento();
     e.estaciona("TCP-7030", "Uno");
@@ -532,7 +533,7 @@ Coesão tem as seguintes vantagens:
 
 \index{Separação de Interesses}
 **Separação de interesses** (*separation of concerns*) é uma outra
-propriedade desejável em projeto de software, a qual é semelhante
+propriedade desejável em projetos de software, a qual é semelhante
 ao conceito de coesão. Ela defende que uma classe deve implementar
 apenas um **interesse** (*concern*). Nesse contexto, o termo interesse
 se refere a qualquer funcionalidade, requisito ou responsabilidade da
@@ -558,7 +559,7 @@ float sin_or_cos(double x, int op) {
 Essa função — que consiste em um exemplo extremo e, queremos
 acreditar, pouco comum na prática — apresenta um problema sério de
 coesão, pois ela faz duas coisas: calcula o seno ou o cosseno de seu
-argumento. O recomendável, em casos como esse, é criar funções separadas
+argumento. O recomendável seria criar funções separadas
 para cada uma dessas tarefas.
 
 **Exemplo 2:** Suponha agora a seguinte classe:
@@ -691,10 +692,8 @@ classe `A`.
 
 ```
 class A {
-
   private void f() {
-    int total;
-    ...
+    int total; ...
     File f = File.open("arq1.db");
     total = f.readInt();
     ...
@@ -947,6 +946,8 @@ class Disciplina {
 
 Uma solução consiste em dividir essas responsabilidades entre duas classes: uma classe de interface com o usuário (`Console`) e uma classe de "regra de negócio" (`Disciplina`), conforme mostrado no código a seguir. Dentre outros benefícios, essa solução permite reusar a classe de negócio com outras classes de interface, como classes de interface gráfica, interface web, interface para celular, etc.
 
+\newpage
+
 ```
 class Console {
 
@@ -1106,7 +1107,6 @@ permanecerá válida, pois ao usarmos um tipo interface estamos nos
 preparando para receber parâmetros de vários tipos concretos que
 implementam essa interface.
 
-\newpage
 
 ```
 void f() {
@@ -1231,7 +1231,7 @@ passou a ser um parâmetro do construtor da classe `Stack`. Com isso,
 torna-se possível instanciar objetos `Stack` com estruturas de dados
 distintas. Por exemplo, um objeto no qual os elementos da pilha são
 armazenados em um `ArrayList` e outro objeto onde eles são armazenado em
-um Vector. Como uma observação final, veja que o tipo do atributo
+um `Vector`. Como uma observação final, veja que o tipo do atributo
 elementos de `Stack` passou a ser um `List`; ou seja, fizemos uso também do
 Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).
 
@@ -1414,7 +1414,7 @@ a classe `Collections` está preparada para esse novo cenário de uso. Mas
 para isso precisamos implementar um objeto `Comparator`, que irá comparar
 as strings pelo seu tamanho, como no seguinte código:
 
-\newpage
+
 ```
 Comparator<String> comparador = new Comparator<String>() {
   public int compare(String s1, String s2) {
@@ -1488,7 +1488,7 @@ de métodos de classes base em classes filhas. O nome do princípio é uma
 referência a Barbara Liskov, professora do MIT e ganhadora da edição de
 2008 do Prêmio Turing. Dentre outros trabalhos, Liskov desenvolveu
 pesquisas sobre sistemas de tipos para linguagens orientadas a objetos.
-Foi em um desses trabalhos que ela enunciou o princípio que depois
+Em um desses trabalhos, ela enunciou o princípio que depois
 ganhou seu nome.
 
 Para explicar o Princípio de Substituição de Liskov vamos nos basear no
@@ -1551,11 +1551,9 @@ Substituição de Liskov.
 
 ```
 class A {
-
   int soma(int a, int b) {
     return a+b;
   }
-
 }
 ```
 
@@ -1643,7 +1641,7 @@ funcionam como plugins de IDEs conhecidas.
 A métrica de código fonte mais popular é **linhas de código** (LOC,
 *lines of code*). Ela pode ser usada para medir o tamanho de uma função,
 classe, pacote ou de um sistema inteiro. Quando se reporta os resultados
-de LOC, deve-se tomar o cuidado de deixar claro quais linhas foram de
+de LOC, deve-se deixar claro quais linhas foram de
 fato contadas. Por exemplo, se comentários ou linhas em branco foram
 considerados ou não.
 
@@ -1703,6 +1701,8 @@ O valor de LCOM de C é assim definido:
 Isto é, LCOM(C) é o número de pares de métodos — dentre todos os
 possíveis pares de métodos de C — que não usam atributos em comum, isto é,
 a interseção deles é vazia.
+
+\newpage
 
 **Exemplo:** Para deixar a explicação mais clara, suponha a seguinte
 classe:
@@ -1816,7 +1816,7 @@ class A extends T1 implements T2 {
 }
 ```
 
-Conforme indicamos numerando os tipos dos quais A depende, CBO(A) = 9.
+Conforme indicamos numerando os tipos de que A depende, CBO(A) = 9.
 
 A definição de CBO não distingue as classes das quais uma classe
 depende. Por exemplo, tanto faz se a dependência é para uma classe da
@@ -1974,7 +1974,6 @@ void sendMail(ContaBancaria conta, String msg) {
 11\. Qual princípio de projeto é violado pelo seguinte código? Como você
     poderia alterar o código do método para atender a esse princípio?
 
-\newpage
 ```
 void imprimeDataContratacao(Funcionario func) {
   Date data = func.getDataContratacao();
@@ -2041,15 +2040,12 @@ class A {
   void f() {
     x.m1();
   }
-
   void g() {
     x.m2();
   }
-
   void h() {
     x.m3();
   }
-
 }
 ```
 

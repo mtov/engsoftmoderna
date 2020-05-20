@@ -37,11 +37,11 @@ Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organiza�
 
 O livro destina-se a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.
 
-Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro. Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software. De forma nenhuma, este é um livro descolado do estado da prática em Engenharia de Software.
+Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro. Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software. 
 
 ## Pré-requisitos {.unnumbered}
 
-Espera-se que os leitores tenham domínio de conceitos básicos de programação e de algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Supondo um curso de graduação de 4 anos, os alunos devem estar na metade final para que possam aproveitar o conteúdo do livro.
+Os leitores devem ter domínio de conceitos básicos de programação e de algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Supondo um curso de graduação de 4 anos, os alunos devem estar na metade final para melhor aproveitar o conteúdo do livro.
 
 ## Website {.unnumbered}
 
@@ -49,12 +49,9 @@ O livro  possui uma versão aberta, em HTML, disponível em:
 
 [https://engsoftmoderna.info](https://engsoftmoderna.info)
 
-Nesse site, estão também disponíveis diversos exercícios de múltipla escolha e alguns
-roteiros de aula prática.
+Nesse site, estão também disponíveis diversos exercícios de múltipla escolha. Não menos importante: para reportar qualquer erro, mesmo que um simples erro ortográfico, você pode usar este [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7).
 
-Não menos importante: para reportar qualquer erro, mesmo que um simples erro ortográfico, você pode usar este [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7).
-
-\vspace{0.8cm}
+\vspace{0.3cm}
 Marco Tulio Valente
 
 Belo Horizonte, 10 de fevereiro de 2020.
@@ -68,11 +65,10 @@ Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Fede
 
 ![](figs/cap0/mtov.png){width=25%}
 
-\newpage
 
 ## Agradecimentos {.unnumbered}
 
-Gostaria de agradecer aos mais de 30 alunos que passaram pelo ASERG/DCC/UFMG, na última década. Pode parecer que não, mas muito do conteúdo deste livro tem sua origem nos artigos, dissertações, teses e seminários do nosso grupo. Gostaria de agradecer também aos professores Eduardo Figueiredo e André Hora, colegas de departamento, que revisaram alguns capítulos do livro. E ao Prof. José Luis Braga, que fez uma leitura cuidadosa e deu sugestões valiosas para melhoria do texto. Gostaria de agradecer aos alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar este livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer a Aline Brito, que ajudou na conversão de todos os capítulos para o formato final, e a João Eduardo Montandon e Hudson Borges, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia Valente, pela revisão gramatical de partes do livro.
+Gostaria de agradecer aos mais de 30 alunos que passaram pelo ASERG/DCC/UFMG na última década. Muito do conteúdo deste livro tem sua origem nos trabalhos do nosso grupo. Gostaria de agradecer aos professores Eduardo Figueiredo e André Hora, colegas de departamento, que revisaram alguns capítulos do livro. E ao Prof. José Luis Braga, que fez uma leitura cuidadosa e deu sugestões valiosas para melhoria do texto. Gostaria de agradecer aos alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar este livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer a Aline Brito, que ajudou na conversão do texto para o formato final, e a João Eduardo Montandon e Hudson Borges, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia Valente, pela revisão gramatical de partes do livro.
 
 \mainmatter
 

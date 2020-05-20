@@ -169,7 +169,7 @@ mesma intensidade. Por exemplo, quando a legislação ambiental muda, os
 fabricantes de automóveis têm anos para se conformar às novas leis.
 Adicionalmente, carros não são alterados, pelo menos de forma essencial,
 com novas funcionalidades, após serem vendidos. Por fim, um carro é um produto
-físico, possuindo peso, altura, largura, número de assentos,
+físico, com peso, altura, largura, assentos,
 forma geométrica, etc, o que facilita sua avaliação e precificação por
 consumidores finais.
 
@@ -273,12 +273,12 @@ Já os requisitos não-funcionais definem *como* um sistema deve operar,
 sob quais restrições e com qual qualidade de serviço. São exemplos de
 requisitos não-funcionais: desempenho, disponibilidade, tolerância a
 falhas, segurança, privacidade, interoperabilidade, capacidade,
-manutenibilidade, usabilidade, dentre outros.
+manutenibilidade e usabilidade.
 
 Por exemplo, suponha um sistema de *home-banking*. Neste caso, os
 requisitos funcionais incluem informar o saldo da conta, informar o
 extrato, realizar transferência entre contas, pagar um boleto bancário,
-cancelar um cartão de débito, dentre outros. Já os requisitos
+cancelar um cartão de débito, etc. Já os requisitos
 não-funcionais, dentre outros, incluem:
 
 * Desempenho: informar o saldo da conta em menos de 5 segundos;
@@ -360,7 +360,7 @@ definir técnicas para tratamento de exceções; definir padrões de nomes,
 leiaute e documentação de código e, por último, mas não menos importante,
 definir as ferramentas que serão usadas no desenvolvimento, incluindo
 compiladores, ambientes integrados de desenvolvimento (IDEs),
-depuradores, sistemas gerenciadores de bancos de dados, ferramentas para
+depuradores, gerenciadores de bancos de dados, ferramentas para
 construção de interfaces, etc.
 
 ### Testes de Software 
@@ -730,7 +730,7 @@ alto nível), projeto detalhado, codificação e testes. Finalizado esse
 pipeline, o sistema é liberado para produção, isto é, para uso efetivo
 pelos seus usuários, conforme ilustrado na próxima figura.
 
-![Fases de um processo Waterfall.](figs/cap1/waterfall){width=80%}
+![Fases de um processo Waterfall.](figs/cap1/waterfall){width=87%}
 
 \index{Métodos Ágeis}
 \index{Manifesto Ágil}
@@ -758,8 +758,9 @@ Processos ágeis tiveram um profundo impacto na indústria de software.
 Hoje, eles são usados pelas mais diferentes organizações que produzem
 software, desde pequenas empresas até as grandes companhias da Internet.
 Diversos métodos que concretizam os princípios ágeis foram propostos,
-tais como **XP**, **Scrum**, **Kanban** e **Lean Development**. Esses
-métodos também ajudaram a disseminar diversas práticas de
+tais como **XP**, **Scrum**, **Kanban** e **Lean Development**. 
+
+Esses métodos também ajudaram a disseminar diversas práticas de
 desenvolvimento de software, como **testes automatizados**,
 **test-driven development** (isto é, escrever os testes primeiro, antes
 do próprio código) e **integração contínua** (*continuous integration*).
@@ -803,7 +804,7 @@ relacionamentos entre as classes. Existem editores para criar diagramas
 UML, que podem ser usados, por exemplo, em um cenário de Engenharia
 Avante.
 
-![Exemplo de Diagrama de Classe UML](figs/cap1/uml){width=75%}
+![Exemplo de Diagrama de Classe UML](figs/cap1/uml){width=80%}
 
 
 ### Qualidade de Software 
@@ -877,7 +878,7 @@ de software com qualidade. Modernamente, por exemplo, diversas
 organizações usam **revisões de código**, isto é, o código produzido por
 um desenvolvedor somente entra em produção depois de ser revisado e
 inspecionado por um outro desenvolvedor do time. O objetivo é detectar
-possíveis *bugs* antecipadamente, antes de o sistema entrar em produção.
+*bugs* antecipadamente, antes de o sistema entrar em produção.
 Além disso, revisões de código servem para garantir a qualidade interna
 do código — isto é, sua manutenibilidade, legibilidade,
 modularidade, etc — e para disseminar boas práticas de Engenharia
@@ -896,7 +897,7 @@ revisão de código. No exemplo, usamos a ferramenta fornecida
 pelo GitHub.
 
 
-![Exemplo de revisão de código.](figs/cap1/github.jpg){width=75%}
+![Exemplo de revisão de código.](figs/cap1/github.jpg){width=60%}
 
 
 ### Prática Profissional 
@@ -911,7 +912,7 @@ formação, em nível de graduação, envolvendo a definição de currículos de
 referência e a necessidade de cursos específicos para a área, que
 constituam alternativas aos cursos de Ciência da Computação, Sistemas de
 Informação e Engenharia de Computação. Não menos importante, existem
-também questões sobre a formação em nível técnico e tecnológico,
+questões sobre a formação em nível técnico e tecnológico,
 anterior à formação universitária. Após a etapa de formação, existem
 questões sobre a regulamentação da profissão, por exemplo.
 
@@ -934,7 +935,7 @@ Engenharia de Software. Por exemplo, ele recomenda que:
 
 \index{Código de Ética}
 No Brasil, existe o Código de Ética da Sociedade Brasileira de
-Computação (SBC), que por ser sintético e, ao mesmo tempo, bastante claro
+Computação (SBC), que por ser sintético e bastante claro
 resolvemos reproduzir a seguir:
 
 > São deveres dos profissionais de Informática:
@@ -947,7 +948,7 @@ resolvemos reproduzir a seguir:
 >
 > Art. 3^o^: Esforçar-se para adquirir continuamente competência técnica e
 > profissional, mantendo-se sempre atualizado com os avanços da profissão.
->
+
 > Art. 4^o^: Atuar dentro dos limites de sua competência profissional e
 > orientar-se por elevado espírito público.
 >
@@ -1051,9 +1052,9 @@ podem ser construídos e os princípios de Engenharia de Software mais
 recomendados para cada uma das categorias propostas. Segundo essa
 classificação, existem três tipos principais de software:
 
-*  **Sistemas A** (Acute)
+*  **Sistemas A** (*Acute*)
 
-*  **Sistemas B** (Business)
+*  **Sistemas B** (*Business*)
 
 *  **Sistemas C** (Casuais)
 
@@ -1095,7 +1096,7 @@ código e certificação por organizações externas. É comum exigir
 redundância não apenas em hardware, mas também no próprio software. Por
 exemplo, o sistema roda de forma paralela em duas máquinas e uma decisão
 somente é tomada caso ambas instâncias cheguem ao mesmo resultado. Por
-fim, esses sistemas muitas vezes são especificados em uma linguagem formal,
+fim, sistemas A muitas vezes são especificados em uma linguagem formal,
 baseada em teoria de conjuntos ou lógica.
 
 ```{=latex}
@@ -1110,7 +1111,7 @@ livro**.
 \end{aviso}
 ```
 
-Sobram os sistemas B (Business), que são exatamente aqueles que vão se
+Sobram os sistemas B (*Business*), que são exatamente aqueles que vão se
 beneficiar dos conceitos estudados neste livro. Esses sistemas incluem
 as mais variadas aplicações corporativas (financeiras, recursos humanos,
 logística, vendas, contabilidade, etc), sistemas Web dos mais variados
@@ -1198,8 +1199,8 @@ sistemas distribuídos fracamente acoplados. Por fim, apresentamos um
 anti-padrão arquitetural, chamado *big ball of mud*, que é um termo
 usado para designar sistemas sem organização arquitetural. Esses
 sistemas poderiam até possuir uma arquitetura no seu início, mas depois
-o projeto arquitetural deles foi sendo abandonado, transformando os
-sistemas em um "spaghetti" de dependências entre os seus módulos.
+o projeto arquitetural deles foi sendo abandonado, transformando-os
+em um "spaghetti" de dependências entre os seus módulos.
 
 **Capítulo 8: Testes**, com ênfase em testes de unidade, usando
 frameworks como o JUnit. O capítulo inclui dezenas de exemplos de testes

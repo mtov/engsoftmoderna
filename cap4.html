@@ -101,8 +101,7 @@
 <li><p><strong>Diagramas Estáticos (ou Estruturais)</strong> modelam a estrutura e organização de um sistema, incluindo informações sobre classes, atributos, métodos, pacotes, etc. Neste capítulo, vamos estudar dois diagramas estáticos: Diagramas de Classes e Diagramas de Pacotes.</p></li>
 <li><p><strong>Diagramas Dinâmicos (ou Comportamentais)</strong> modelam eventos que ocorrem durante a execução de um sistema. Por exemplo, eles podem modelar uma sequência de chamadas de métodos. Neste capítulo, vamos estudar dois diagramas dinâmicos: Diagramas de Sequência e Diagramas de Atividades.</p></li>
 </ul>
-<p>Para entender melhor a diferença entre esses grupos de diagramas, diagramas estáticos lidam apenas com informações que estão disponíveis, por exemplo, quando da compilação do código resultante dos modelos. Essa visão é estática porque ela não muda, a não ser que sejam realizadas mudanças nos modelos. Já os diagramas dinâmicos fornecem uma visão de tempo de execução. Eles são dinâmicos porque é comum ter execuções diferentes de um mesmo programa. Por exemplo, os usuários podem executar o programa com entradas diferentes, selecionar opções e menus diferentes, etc. Em resumo, se estiver interessado em modelar a estrutura de um programa, você deve usar diagramas estáticos. Se seu interesse for modelar o comportamento de um programa — isto é, o que pode acontecer durante sua execução, quais métodos são de fato executados, etc — você deve usar algum diagrama dinâmico da UML.</p>
-<p>Por fim, gostaríamos de lembrar que tratamos de Diagramas de Casos de Uso no Capítulo 3, quando apresentamos técnicas para especificação de requisitos.</p>
+<p>Para entender melhor a diferença entre esses grupos de diagramas, diagramas estáticos lidam apenas com informações que estão disponíveis, por exemplo, quando da compilação do código resultante dos modelos. Essa visão é estática porque ela não muda, a não ser que sejam realizadas mudanças nos modelos. Já os diagramas dinâmicos fornecem uma visão de tempo de execução. Eles são dinâmicos porque é comum ter execuções diferentes de um mesmo programa. Por exemplo, os usuários podem executar o programa com entradas diferentes, selecionar opções e menus diferentes, etc. Em resumo, se estiver interessado em modelar a estrutura de um programa, você deve usar diagramas estáticos. Se seu interesse for modelar o comportamento de um programa — isto é, o que pode acontecer durante sua execução, quais métodos são de fato executados, etc — você deve usar algum diagrama dinâmico da UML. Por fim, gostaríamos de lembrar que tratamos de Diagramas de Casos de Uso no Capítulo 3, quando apresentamos técnicas para especificação de requisitos.</p>
 <p> <strong>Aviso:</strong> Existem diversas versões de UML. No restante deste capítulo vamos usar a <strong>versão de UML que é adotada na 3a edição do livro UML Distilled, de Martin Fowler</strong> (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>). Esse livro foi o primeiro trabalho a discutir o uso de UML como esboço (<em>sketches</em>). Na verdade, vamos estudar um pequeno subconjunto da versão 2.0. Além de tratar de apenas quatro diagramas, não vamos cobrir todos os recursos de cada um deles. O nosso desafio ao escrever este capítulo foi selecionar os 20% (ou menos) dos recursos de UML que são responsáveis por 80% (ou mais) de seu uso prático nos dias de hoje. Para se ter uma ideia do nível de detalhe alcançado por UML, a especificação da versão mais recente da linguagem — versão 2.5.1, no momento da escrita deste capítulo — possui 796 páginas. Ela pode ser encontrada no site da OMG (<a href="https://www.omg.org/">link</a>).</p>
 <h2 data-number="1.3" id="diagramas-de-classes" data-number="1.3"><span class="header-section-number">4.3</span> Diagramas de Classes</h2>
 <p> </p>
@@ -110,7 +109,7 @@
 <p>Um diagrama de classes é desenhado usando-se retângulos e setas. Cada uma das classes é representada por meio de um retângulo com três compartimentos, conforme mostra a figura a seguir. Esses compartimentos contêm o nome da classe (normalmente, em negrito), seus atributos e métodos, como também ilustrado a seguir:</p>
 <p><img src="figs/cap4/class0.svg" style="width:28.0%" /></p>
 <p>Mostra-se a seguir um diagrama com duas classes: <code>Pessoa</code> e <code>Fone</code>.</p>
-<p><img src="figs/cap4/class1.svg" style="width:85.0%" /></p>
+<p><img src="figs/cap4/class1.svg" style="width:90.0%" /></p>
 <p>Nesse diagrama, pode-se conferir que a classe <code>Pessoa</code> tem três atributos — <code>nome</code>, <code>sobrenome</code> e <code>fone</code> — e dois métodos — <code>setPessoa</code> e <code>getPessoa</code>. Os três atributos são privados, conforme indicado pelo sinal <q>-</q> antes de cada um. Informa-se também o tipo de cada atributo. Por sua vez, os dois métodos são públicos, conforme indicado pelo sinal <q>+</q>. O diagrama possui ainda uma segunda classe, chamada <code>Fone</code>, com três atributos privados — <code>codigo</code>, <code>numero</code> e <code>celular</code> — e três métodos públicos — <code>setFone</code>, <code>getFone</code> e <code>isCelular</code>. No caso dos métodos, informamos também o nome de seus parâmetros e o tipo de retorno.</p>
 <p>Porém, se fosse somente isso, os diagramas dariam a impressão de que as classes de um sistema são <q>ilhas</q> sem comunicação entre si. No entanto, um dos principais objetivos de diagramas de classe é mostrar visualmente os relacionamentos que existem entre as classes de um sistema. Por isso, eles incluem também linhas e setas, as quais são usadas para representar três tipos de relacionamentos: <strong>associação</strong>, <strong>herança</strong> e <strong>dependência</strong>. Vamos tratar de cada um deles nos próximos parágrafos.</p>
 <h3 data-number="1.3.1" id="associações" data-number="1.3.1"><span class="header-section-number">4.3.1</span> Associações</h3>
@@ -129,13 +128,13 @@ class B {
    ...
 }</code></pre>
 <p>Portanto, usando associações, podemos transformar o primeiro diagrama que mostramos nesta seção, com as classes <code>Pessoa</code> e <code>Fone</code>, no seguinte diagrama:</p>
-<p><img src="figs/cap4/class3.svg" style="width:85.0%" /></p>
+<p><img src="figs/cap4/class3.svg" style="width:90.0%" /></p>
 <p>As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem <q>ilhadas</q>. Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de <code>Pessoa</code> para <code>Fone</code>. Reforçando, em ambos diagramas, <code>Pessoa</code> tem um atributo fone do tipo <code>Fone</code>. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe <code>Pessoa</code>. Já na segunda versão, ele é apresentado <q>fora</q> desse compartimento. Mais especificamente, na extremidade da seta que liga <code>Pessoa</code> a <code>Fone</code>. O objetivo é deixar claro que o atributo pertence a <code>Pessoa</code>, mas ele <q>aponta</q> para um objeto do tipo <code>Fone</code>.</p>
 <p> Frequentemente, associações incluem informações de <strong>multiplicidade</strong>, que indicam quantos objetos podem estar associados ao atributo responsável pela associação. As informações de multiplicidade mais comuns são as seguintes: 1 (exatamente um objeto), 0..1 (zero ou um objeto) e * (zero ou mais objetos).</p>
 <p>No próximo exemplo, incluímos informação sobre a multiplicidade da associação entre <code>Pessoa</code> e <code>Fone</code>, que no caso definimos como sendo 0..1. Essa informação consta acima do nome do atributo responsável pela associação, no caso, fone. E ela explicita que uma <code>Pessoa</code> pode ter zero ou um único telefone. Usando termos de programação, o atributo fone de <code>Pessoa</code> pode ter o valor null, isto é, a <code>Pessoa</code> em questão não tem <code>Fone</code> associado. Ou então ela pode se associar a um único objeto do tipo <code>Fone</code>.</p>
 <p><img src="figs/cap4/class4.svg" style="width:85.0%" /></p>
 <p>No próximo exemplo, a semântica já é diferente. Nesse caso, uma <code>Pessoa</code> pode estar associada a múltiplos objetos do tipo <code>Fone</code>, inclusive a nenhum. Essa multiplicidade é representada pelo * que adicionamos logo acima da seta da associação.</p>
-<p><img src="figs/cap4/class5.svg" style="width:85.0%" /></p>
+<p><img src="figs/cap4/class5.svg" style="width:90.0%" /></p>
 <p>Neste segundo exemplo com informações de multiplicidade, o tipo do atributo <code>fone</code> deve ser um vetor de <code>Fone</code>. Para que fique claro, mostramos o código das classes a seguir:</p>
 <pre><code>class Pessoa {
    private Fone[] fone;
@@ -147,10 +146,10 @@ class Fone {
 </code></pre>
 <p>Talvez o leitor possa se perguntar o que é mais correto: uma <code>Pessoa</code> ter no máximo um <code>Fone</code> (isto é, 0..1) ou uma <code>Pessoa</code> ter qualquer quantidade de <code>Fone</code> (isto é, *)? A resposta é simples: depende dos requisitos do sistema. Ou seja, quem deve responder a essa pergunta são os usuários do sistema que estamos modelando. Para nós, o que importa é que diagramas de classe são capazes de modelar qualquer um dos dois cenários.</p>
 <p>Em alguns casos, informações de multiplicidade são também mostradas na extremidade contrária da seta, como no exemplo abaixo:</p>
-<p><img src="figs/cap4/class6.svg" style="width:85.0%" /></p>
+<p><img src="figs/cap4/class6.svg" style="width:90.0%" /></p>
 <p>Nesse diagrama, a multiplicidade 0..1 — da extremidade com a seta — indica que uma <code>Pessoa</code> pode ter zero ou um único <code>Fone</code>. Mas o mais importante é explicar a multiplicidade que foi adicionada na extremidade oposta da seta, isto é, a multiplicidade *. Ela indica que um <code>Fone</code> pode estar associado a mais de uma <code>Pessoa</code>. Em outras palavras, duas pessoas, distintas, podem compartilhar o mesmo objeto do tipo <code>Fone</code>. No entanto, a associação continua sendo unidirecional, isto é, <code>Pessoa</code> tem um atributo fone que representa o seu <code>Fone</code>. Porém, <code>Fone</code> não possui um atributo para armazenar as diversas pessoas a que ele pode estar associado. Tentando ser mais claro, dada uma <code>Pessoa</code> pode-se recuperar o seu <code>Fone</code>. Para isso, basta acessar o atributo fone. Mas dado um <code>Fone</code> não é possível saber, pelo menos via atributos, a quais objetos do tipo <code>Pessoa</code> ele está associado.</p>
 <p>Para concluir, suponha que seja importante <q>navegar</q> nos dois sentidos da associação, isto é, de <code>Pessoa</code> para <code>Fone</code> e também de <code>Fone</code> para <code>Pessoa</code>. A solução para essa exigência é simples: basta tornar a <strong>associação bidirecional</strong>, isto é, adicionar uma seta em cada extremidade da linha que conecta as classes, como mostrado no próximo diagrama.</p>
-<p><img src="figs/cap4/class7.svg" style="width:85.0%" /></p>
+<p><img src="figs/cap4/class7.svg" style="width:90.0%" /></p>
 <p>Para não deixar dúvidas sobre a semântica de uma associação bidirecional, mostramos também o código das duas classes:</p>
 <pre><code>class Pessoa {
    ...
@@ -169,7 +168,7 @@ class Fone {
 <h3 data-number="1.3.2" id="herança" data-number="1.3.2"><span class="header-section-number">4.3.2</span> Herança</h3>
 <p></p>
 <p>Em diagramas de classes, relações de herança são representadas por meio de setas com a extremidade não preenchida. Essas setas são usadas para conectar subclasses à sua classe base. No próximo exemplo, elas indicam que <code>PessoaFisica</code> e <code>PessoaJuridica</code> são subclasses de <code>Pessoa</code>. Como usual em orientação a objetos, subclasses herdam todos os atributos e métodos da classe base, mas também podem adicionar novos membros. Por exemplo, apenas <code>PessoaFisica</code> tem <code>cpf</code> e apenas <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
-<p><img src="figs/cap4/class10.svg" style="width:90.0%" /></p>
+<p><img src="figs/cap4/class10.svg" style="width:95.0%" /></p>
 <h3 class="unnumbered" data-number="" id="dependências" class="unnumbered" data-number="">Dependências</h3>
 <p></p>
 <p>Existe uma dependência de uma classe A para uma classe B, representada por uma seta com uma linha tracejada de A para B, quando a classe A usa a classe B, porém esse uso não ocorre por meio de associação (isto é, A não tem um atributo do tipo B) ou herança (isto é, A não é uma subclasse de B). Dependências ocorrem, por exemplo, quando um método de A declara um parâmetro ou variável local do tipo B ou quando um método de A lança uma exceção do tipo B. Uma dependência é considerada uma modalidade menos forte de relacionamento entre classes do que relacionamentos que ocorrem por meio de associação e herança.</p>
@@ -184,60 +183,60 @@ class MinhaClasse {
    } ...
 }</code></pre>
 <p>Observe que o <code>metodoX</code> de <code>MinhaClasse</code> possui uma variável local do tipo <code>java.util.Stack</code>. Nesse caso, dizemos que existe uma dependência de <code>MinhaClasse</code> para <code>java.util.Stack</code>, a qual é modelada da seguinte forma:</p>
-<p><img src="figs/cap4/class9.svg" style="width:60.0%" /></p>
+<p><img src="figs/cap4/class9.svg" style="width:65.0%" /></p>
 <p>Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o tipo da dependência, usando-se palavras como create (para indicar que a classe de origem instancia objetos da classe de destino da dependência) ou call (para indicar que a classe de origem chama métodos da classe de destino). Essas palavras são escritas entre sinais de menor (&lt;&lt;) e maior (&gt;&gt;). No diagrama a seguir, por exemplo, fica claro o tipo de dependência que <code>ShapeFactory</code> estabelece com a classe <code>Shape</code>.</p>
-<p><img src="figs/cap4/class11.svg" style="width:60.0%" /></p>
+<p><img src="figs/cap4/class11.svg" style="width:65.0%" /></p>
 <p>Uma classe pode ter dependências para um grande número de classes. No entanto, não se costuma representar todas elas em diagramas de classes, mas apenas as mais importantes e que estão diretamente relacionadas com a funcionalidade ou propriedade do sistema que pretendemos esboçar.</p>
 <h2 data-number="1.4" id="diagramas-de-pacotes" data-number="1.4"><span class="header-section-number">4.4</span> Diagramas de Pacotes</h2>
 <p> </p>
 <p>Diagrama de pacotes são recomendados quando se pretende oferecer um modelo de mais alto nível de um sistema, que mostre apenas grupos de classes — isto é, pacotes — e as dependências entre eles. Para isso, UML define um retângulo especial para representar pacotes, mostrado abaixo:</p>
 <p><img src="figs/cap4/package0.svg" style="width:25.0%" /></p>
 <p>Ao contrário dos retângulos de classes, o retângulo de pacotes inclui apenas o nome do pacote (em negrito). Ele possui ainda um detalhe na parte de cima, na forma de um trapézio, para melhor diferenciá-lo dos retângulos de classe.</p>
-<p>A próxima figura mostra um exemplo de diagrama de pacotes: Nesse diagrama, podemos ver que o sistema possui quatro pacotes principais: <code>MobileView</code>, <code>WebView</code>, <code>BusinessLayer</code> e <code>Persistence</code>. Podemos ver ainda as dependências — setas tracejadas — que existem entre eles. Ambos os pacotes <code>View</code> usam classes de <code>BusinessLayer</code>. Por outro lado, as classes de <code>BusinessLayer</code> também usam classes da <code>View</code>, por exemplo, para notificá-las da ocorrência de algum evento. Por isso, as setas que ligam os pacotes de <code>View</code> a <code>BusinessLayer</code> são bidirecionais. Por fim, apenas classes do pacote <code>BusinessLayer</code> usam classes do pacote <code>Persistence</code>.</p>
-<p><img src="figs/cap4/package1.svg" style="width:50.0%" /></p>
+<p>A figura da próxima página mostra um exemplo de diagrama de pacotes: Nesse diagrama, podemos ver que o sistema possui quatro pacotes principais: <code>MobileView</code>, <code>WebView</code>, <code>BusinessLayer</code> e <code>Persistence</code>. Podemos ver ainda as dependências — setas tracejadas — que existem entre eles. Ambos os pacotes <code>View</code> usam classes de <code>BusinessLayer</code>. Por outro lado, as classes de <code>BusinessLayer</code> também usam classes da <code>View</code>, por exemplo, para notificá-las da ocorrência de algum evento. Por isso, as setas que ligam os pacotes de <code>View</code> a <code>BusinessLayer</code> são bidirecionais. Por fim, apenas classes do pacote <code>BusinessLayer</code> usam classes do pacote <code>Persistence</code>.</p>
 <p>Para concluir, gostaríamos de acrescentar duas observações:</p>
 <ul>
 <li><p>Dependências não incluem informações sobre quantas classes do pacote de origem dependem de classes do pacote de destino. Por exemplo, suponha dois pacotes P1 e P2, ambos com 100 classes. Suponha ainda que uma única classe de P1 use uma única classe de P2. Mesmo nesse caso, dizemos que existe uma dependência de P1 para P2.</p></li>
 <li><p>Em diagramas de pacotes, temos um único tipo de seta, sempre tracejada, que representa qualquer tipo de relacionamento, seja ele por meio de associação, herança ou dependência simples. Essa semântica é diferente daquela que apresentamos para setas tracejadas em diagramas de classes. Nesses últimos, relações de associação e herança são representadas por meio de setas contínuas. Apenas as demais dependências são representadas por meio de setas tracejadas.</p></li>
 </ul>
+<p><img src="figs/cap4/package1.svg" style="width:60.0%" /></p>
 <h2 data-number="1.5" id="diagramas-de-sequência" data-number="1.5"><span class="header-section-number">4.5</span> Diagramas de Sequência</h2>
 <p> </p>
 <p>Diagramas de sequência são diagramas dinâmicos, também chamados de comportamentais. Por isso, em vez de classes, eles modelam objetos de um sistema. Adicionalmente, eles incluem informações sobre quais métodos desses objetos são executados em um determinado cenário de uso de um programa. Logo, eles são usados quando se pretende explicar o comportamento de um sistema, em um determinado cenário. Por exemplo, no final desta seção, vamos apresentar um diagrama de sequência que ilustra os métodos que são chamados quando um cliente chega em um caixa eletrônico e solicita uma operação de retirada de valores.</p>
-<p>Antes disso, para iniciar a apresentação de diagramas de sequência, vamos usar o seguinte diagrama:</p>
-<p><img src="figs/cap4/sequence1.svg" style="width:50.0%" /></p>
-<p>Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes <code>a1</code> e <code>b1</code>. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método <code>g</code>. Existem dois motivos para essa omissão: (1) o tipo de retorno é <code>void</code>; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
+<p>Antes disso, para iniciar a apresentação de diagramas de sequência, vamos usar o diagrama da próxima página. Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes <code>a1</code> e <code>b1</code>. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método <code>g</code>. Existem dois motivos para essa omissão: (1) o tipo de retorno é <code>void</code>; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
+<p><img src="figs/cap4/sequence1.svg" style="width:65.0%" /></p>
 <p>No diagrama de sequência mostrado acima representamos apenas dois objetos (<code>a1</code> e <code>b1</code>). Mas um diagrama de sequência pode ter mais objetos. No entanto, esse número não pode crescer tanto, pois o diagrama acaba ficando complexo e de difícil entendimento. Por exemplo, pode não ser possível representá-lo em uma única folha de papel ou em uma tela de computador.</p>
 <p>Um objeto pode ficar ativo e inativo diversas vezes em um mesmo diagrama. Ou seja, ele pode executar um método; ficar inativo; executar um novo método; ficar inativo, etc. Existe ainda um caso especial, quando um objeto chama um método dele mesmo, isto é, quando ele chama um método usando this. Para ilustrar esse caso, suponha o seguinte programa.</p>
 <pre><code>class A {
 
-  void g() {
-    ...
-  }   
+  void g() { 
+    ... 
+  } 
+
   void f() {
-    ...
-    g();
+    ... 
+    g(); 
     ...
   }
+
   main() {
     A a = new A();
     a.f();
   }
 }</code></pre>
 <p>A execução desse programa é representada pelo diagrama de sequência a seguir. Observe como a chamada de <code>g()</code> feita por <code>f()</code> é representada por meio de um novo retângulo, que <q>sai</q> do retângulo que representa a ativação da função <code>f()</code>.</p>
-<p><img src="figs/cap4/sequence2.svg" style="width:35.0%" /></p>
+<p><img src="figs/cap4/sequence2.svg" style="width:38.0%" /></p>
 <p>Para concluir, o próximo diagrama mostra um cenário mais real, que ilustra os métodos chamados quando o cliente de uma caixa eletrônico solicita um depósito de certo valor em sua conta.</p>
 <p><img src="figs/cap4/sequence3.svg" style="width:75.0%" /></p>
 <h2 data-number="1.6" id="diagramas-de-atividades" data-number="1.6"><span class="header-section-number">4.6</span> Diagramas de Atividades</h2>
 <p> </p>
-<p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por retângulos. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A figura da próxima página mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em uma loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra.</p>
-<p>Para entender o funcionamento de um diagrama de atividades (como aquele mostrado na figura), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
-<p><img src="figs/cap4/activity01.svg" style="width:45.0%" /></p>
+<p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por retângulos. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A figura da próxima página mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em uma loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra. Para entender o funcionamento de um diagrama de atividades (como aquele mostrado na figura), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
+<p><img src="figs/cap4/activity01.svg" style="width:55.0%" /></p>
 <p><strong>Nodo Inicial:</strong> Cria uma ficha para dar início à execução do processo. Feito isso, repassa a ficha para seu único fluxo de saída. Por definição, o nodo inicial não possui fluxo de entrada.</p>
 <p><img src="figs/cap4/activity-t-inicial.svg" style="width:15.0%" /></p>
 <p><strong>Ações:</strong> Possuem um único fluxo de entrada e um único fluxo de saída. Para uma ação ser executada uma ficha precisa chegar no seu fluxo de entrada. Após a execução, repassa-se a ficha para o fluxo de saída.</p>
 <p><img src="figs/cap4/activity-t-acao.svg" style="width:25.0%" /></p>
 <p><strong>Decisões:</strong> Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Cada fluxo de saída possui uma variável booleana associada, chamada de guarda. Para se tomar uma decisão, precisa-se receber uma ficha no fluxo de entrada. Quando isso acontece, a ficha é repassada apenas para o fluxo de saída cuja condição é verdadeira.</p>
-<p><img src="figs/cap4/activity-t-decisao.svg" style="width:25.0%" /></p>
+<p><img src="figs/cap4/activity-t-decisao.svg" style="width:30.0%" /></p>
 <p><strong>Merges:</strong> Podem possuir vários fluxos de entrada, mas um único fluxo de saída. Quando uma ficha chega em um dos fluxos de entrada, fazem seu repasse para o fluxo de saída. São usados para unir os fluxos de nodos de decisão.</p>
 <p><img src="figs/cap4/activity-t-merge.svg" style="width:20.0%" /></p>
 <p><strong>Forks:</strong> Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.</p>
@@ -285,20 +284,25 @@ class MinhaClasse {
 <p>5. Crie diagramas de classes para os seguintes trechos de código:</p>
 <p>(a)</p>
 <pre><code>public class HelloWorldSwing { 
+
    public static void main(String[] args) {
      JFrame frame = new JFrame(&quot;Hello world!&quot;);
      frame.setVisible(true);
    }
+
 }</code></pre>
 <p>(b)</p>
 <pre><code>class HelloWorldSwing extends JFrame {
+
    public HelloWorldSwing() {
      super(&quot;Hello world!&quot;);
    }
+
    public static void main(String[] args) {
      HelloWorldSwing frame = new HelloWorldSwing();
      frame.setVisible(true);
    }
+
 }</code></pre>
 <p>6. Mostre o diagrama de sequência relativo ao seguinte código. O diagrama deve começar com a seguinte chamada <em>a</em>.<em>m5()</em>.</p>
 <pre><code>A a = new A(); // variáveis globais
@@ -320,7 +324,7 @@ class A {
 }     </code></pre>
 <p>7. Em diagramas de atividades, explique a diferença entre um nodo de <em>merge</em> e um nodo de <em>join</em>.</p>
 <p>8. Qual é o erro do seguinte diagrama de atividades? Refaça o diagrama de forma a refletir corretamente a intenção do projetista.</p>
-<p><img src="figs/cap4/activity-exercicio.svg" style="width:45.0%" /></p>
+<p><img src="figs/cap4/activity-exercicio.svg" style="width:50.0%" /></p>
 </div>
 </div>
 </div>

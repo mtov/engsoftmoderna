@@ -52,7 +52,7 @@ No caso de desenvolvimento ágil, a documentação de requisitos é feita de for
 exige um **Documento de Especificação de Requisitos**, onde todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor um padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
 Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos IEEE 830 são as seguintes:
 
-![Documento de Requisitos no Padrão IEEE 830](figs/cap3/padrao-ieee-830){width="65%"}
+![Documento de Requisitos no Padrão IEEE 830](figs/cap3/padrao-ieee-830){width=70%}
 
 \index{Requisitos!Propriedades}
 Após sua especificação, os requisitos devem ser verificados e validados. O objetivo é garantir que eles estejam corretos, precisos, completos, consistentes e verificáveis, conforme discutido a seguir.
@@ -199,7 +199,7 @@ Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, du
 > Como funcionário da biblioteca, eu gostaria de cadastrar novos usuários
 >
 > Como funcionário da biblioteca, eu gostaria de cadastrar novos livros
->
+
 > Como funcionário da biblioteca, eu gostaria de dar baixa em livros estragados
 >
 > Como funcionário da biblioteca, eu gostaria de obter estatísticas sobre o acervo
@@ -344,7 +344,7 @@ Vamos responder agora duas perguntas sobre casos de uso.
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Uma resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
 **Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 80, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP) ([link](https://dl.acm.org/doi/book/10.5555/993806)). 
-Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme afirmamos no Capítulo 2, UP enfatiza a comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
+Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme dito no Capítulo 2, UP enfatiza a comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
 
 ## Produto Mínimo Viável (MVP)
 

@@ -61,7 +61,7 @@
 <p>Assim como carros, software também é produzido de acordo com um <strong>processo</strong>, embora certamente menos mecânico e mais dependente de esforço intelectual. Um processo de desenvolvimento de software define um conjunto de passos, tarefas, eventos e práticas que devem ser seguidos por desenvolvedores de software, na produção de um sistema.</p>
 <p>    Alguns críticos de processos de software costumam fazer a seguinte pergunta: por que eu preciso seguir um processo? E complementam, perguntando também o seguinte: Qual processo Linus Torvalds usou na implementação do sistema operacional Linux? Ou que Donald Knuth usou na implementação do formatador de textos TeX?</p>
 <p>Na verdade, a segunda parte da pergunta não faz muito sentido, pois tanto o Linux (no seu início) e o TeX são projetos individuais, liderados por um único desenvolvedor. Nesses casos, a adoção de um processo é menos importante. Ou, dizendo de outra forma, o processo em tais projetos é pessoal, composto pelos princípios, práticas e decisões tomadas pelo seu único desenvolvedor; e que terão impacto apenas sobre ele mesmo.</p>
-<p>Porém, os sistemas de software atuais são por demais complexos para serem desenvolvidos por uma única pessoa. Por isso, casos de sistemas desenvolvidos por heróis serão cada vez mais raros. Na prática, os sistemas modernos — e que nos interessam neste livro — são desenvolvidos em <strong>equipes</strong>.</p>
+<p>Porém, os sistemas de software atuais são por demais complexos para serem desenvolvidos por uma única pessoa. Por isso, casos de sistemas desenvolvidos por heróis serão cada vez mais raros. Na prática, os sistemas modernos — que nos interessam neste livro — são desenvolvidos em <strong>equipes</strong>.</p>
 <p>E essas equipes, para produzir software com qualidade e produtividade, precisam de um ordenamento, mesmo que mínimo. Por isso, empresas dão tanto valor a processos de software. Eles são o instrumento de que as empresas dispõem para coordenar, motivar, organizar e avaliar o trabalho de seus desenvolvedores, de forma a garantir que eles trabalhem com produtividade e produzam sistemas alinhados com os objetivos da organização. Sem um processo — mesmo que simplificado e leve, como os processos ágeis que estudaremos neste capítulo — existe o risco de que os times de desenvolvimento passem a trabalhar de forma descoordenada, gerando produtos sem valor para o negócio da empresa. Por fim, processos são importantes não apenas para a empresa, mas também para os desenvolvedores, pois permitem que eles tomem consciência das tarefas e resultados que se esperam deles. Sem um processo, os desenvolvedores podem se sentir perdidos, trabalhando de forma errática e sem alinhamento com os demais membros do time.</p>
 <p>Neste capítulo, vamos estudar alguns processos de Software. Na verdade, no Capítulo 1 já comentamos sobre Processos Waterfall e Ágeis. Na próxima seção, vamos retomar essa discussão e, em seguida, descrever alguns métodos de desenvolvimento de software.</p>
 <h2 data-number="1.2" id="manifesto-ágil" data-number="1.2"><span class="header-section-number">2.2</span> Manifesto Ágil</h2>
@@ -333,14 +333,14 @@
 <p>   </p>
 <p>Ao lado do Backlog do Sprint, costuma-se anexar um quadro com tarefas <em>a fazer</em>, <em>em andamento</em> e <em>finalizadas</em>. Esse quadro — também chamado de <strong>Quadro</strong> <strong>Scrum</strong> (<em>Scrum Board</em>) — pode ser fixado nas paredes do ambiente de trabalho, permitindo que o time tenha diariamente uma sensação visual sobre o andamento do sprint. Veja um exemplo na próxima figura.</p>
 <figure>
-<img src="figs/cap2/scrum-board.svg" style="width:60.0%" alt="" /><figcaption>Exemplo de Quadro Scrum, mostrando as histórias selecionadas para o sprint e as tarefas nas quais elas foram quebradas. Cada tarefa nesse quadro pode estar em um dos seguintes estados: a fazer, em andamento, em teste ou concluída.</figcaption>
+<img src="figs/cap2/scrum-board.svg" style="width:65.0%" alt="" /><figcaption>Exemplo de Quadro Scrum, mostrando as histórias selecionadas para o sprint e as tarefas nas quais elas foram quebradas. Cada tarefa nesse quadro pode estar em um dos seguintes estados: a fazer, em andamento, em teste ou concluída.</figcaption>
 </figure>
 <p></p>
 <p>Uma decisão importante em projetos Scrum envolve os critérios para considerar uma história ou tarefa como concluídas (<em>done</em>). Esses critérios devem ser combinados com o time e ser do conhecimento de todos os seus membros. Por exemplo, em um projeto de desenvolvimento de software, para que uma história seja marcada como concluída pode-se exigir a implementação de testes de unidade, que devem estar todos passando, bem como a revisão do código por um outro membro do time. Além disso, o código deve ter sido integrado com sucesso no repositório do projeto. O objetivo desses critérios é evitar que os membros — de forma apressada e valendo-se de código de baixa qualidade — consigam mover suas tarefas para a coluna concluído.</p>
 <p> </p>
 <p>Um outro artefato comum em Scrum é o <strong>Gráfico de Burndown</strong>. A cada dia do sprint, esse gráfico mostra quantas horas são necessárias para se implementar as tarefas que ainda não estão concluídas. Isto é, no dia X do sprint ele informa que restam tarefas a implementar que somam Y horas. Logo, a curva de um gráfico de burndown deve ser declinante, atingindo o valor zero ao final do sprint, caso ele seja bem sucedido. Mostra-se a seguir um exemplo, assumindo-se um sprint com duração de 15 dias.</p>
 <figure>
-<img src="figs/cap2/burndown.svg" style="width:90.0%" alt="" /><figcaption>Gráfico de Burndown, assumindo um sprint de 15 dias.</figcaption>
+<img src="figs/cap2/burndown.svg" style="width:95.0%" alt="" /><figcaption>Gráfico de Burndown, assumindo um sprint de 15 dias.</figcaption>
 </figure>
 <h3 data-number="1.4.3" id="outros-eventos" data-number="1.4.3"><span class="header-section-number">2.4.3</span> Outros Eventos</h3>
 <p>Vamos agora descrever mais três eventos Scrum, especificamente Reuniões Diárias, Revisão do Sprint e Retrospectiva.</p>
@@ -529,7 +529,7 @@
 <li><p>Planejamento da próxima iteração ou então tomar a decisão de parar, pois o que já foi construído é suficiente para atender às necessidades da organização.</p></li>
 </ul>
 <figure>
-<img src="figs/cap2/espiral.jpg" style="width:55.0%" alt="" /><figcaption>Modelo Espiral. Cada iteração é dividida em quatro etapas.</figcaption>
+<img src="figs/cap2/espiral.jpg" style="width:65.0%" alt="" /><figcaption>Modelo Espiral. Cada iteração é dividida em quatro etapas.</figcaption>
 </figure>
 <p>Assim, o Modelo em Espiral produz, a cada iteração, versões mais completas de um sistema, começando da versão gerada no centro da espiral. Porém, cada iteração, somando-se as quatro fases, pode levar de 6 a 24 meses. Portanto, mais do que em XP e Scrum. Uma outra característica importante é a existência de uma fase explícita de análise de riscos, da qual devem resultar medidas concretas para mitigar os riscos identificados no projeto.</p>
 <p>    O <strong>Processo Unificado (UP)</strong>, proposto no final da década de 90, é outro exemplo de método iterativo de desenvolvimento. UP foi proposto por profissionais ligados a uma empresa de consultoria e de ferramentas de apoio ao desenvolvimento de software chamada Rational, que em 2003 seria comprada pela IBM. Por isso, o método é também chamado de <strong>Rational Unified Process (RUP)</strong>.</p>
@@ -539,7 +539,7 @@
 <li><p>UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como <strong>ferramentas CASE</strong> (<em>Computer-Aided Software Engineering</em>).  O nome é uma analogia com ferramentas CAD (<em>Computer Aided-Design</em>), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.</p></li>
 </ul>
 <figure>
-<img src="figs/cap2/case.png" style="width:60.0%" alt="" /><figcaption>Projeto usando ferramenta CASE. Figura gentilmente cedida pelos desenvolvedores do sistema ArgoUML.</figcaption>
+<img src="figs/cap2/case.png" style="width:70.0%" alt="" /><figcaption>Projeto usando ferramenta CASE. Figura gentilmente cedida pelos desenvolvedores do sistema ArgoUML.</figcaption>
 </figure>
 <p>UP propõe que o desenvolvimento seja decomposto nas seguintes fases:</p>
 <ul>
@@ -623,7 +623,7 @@
 </tbody>
 </table>
 <p>17. Seja o seguinte gráfico, que mostra — para um determinado sistema — como os custos de mudanças variam conforme a fase do desenvolvimento em que elas são realizadas. (a) Qual método de desenvolvimento você recomendaria para esse sistema? Justifique sua resposta. (b) Sistemas de quais domínios podem ter uma curva de custos de mudanças semelhante a essa?</p>
-<p><img src="figs/cap2/custo-mudancas.png" style="width:48.0%" /></p>
+<p><img src="figs/cap2/custo-mudancas.png" style="width:55.0%" /></p>
 <p>18. O artigo <q><em>Development and Deployment at Facebook</em></q> (<a href="https://research.fb.com/publications/development-and-deployment-at-facebook/">link</a>) apresenta os métodos e práticas de desenvolvimento de software  usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2), os autores fazem uma distinção entre alguns métodos de desenvolvimento, baseando-se na frequência com que versões de um sistema são liberadas para uso quando se adota cada um deles. Complete a seguinte tabela informando a frequência de releases mencionada no artigo para alguns métodos e políticas de liberação de software.</p>
 <table>
 <thead>
