@@ -957,7 +957,7 @@ public class IMCServlet extends HttpServtet {
         double p = Double.parseDouble(peso);
         double a = Double.parseDouble(altura);
         double imc = p / (a * a);
-        out.println("Índice de Massa Corporal (IMC): " + imc);
+        out.println("Índice de Massa Corporal (IMC): "+imc);
       }
       catch (NumberFormatException e) {
         out.println("Dados devem ser numéricos");
@@ -1259,6 +1259,7 @@ public class BookSearchTest {
                  thenReturn(BookConst.NULLBOOK);
     when(service.search(1234)).thenReturn(BookConst.ESM);
   }        
+
 
   @Test
   public void testGetBook() {
@@ -1706,8 +1707,6 @@ compromissos, conforme ilustrado na próxima figura.
 Nesse sistema, existe uma classe com métodos para manipular a agenda,
 como mostrado a seguir:
 
-\newpage
-
 ```
 public class AgendaFacade {
   public AgendaFacade(DB db);
@@ -1716,7 +1715,10 @@ public class AgendaFacade {
   Appointmemt[] listAppointments();
 }
 ```
+
 Assim, podemos escrever o seguinte teste de integração para essa classe:
+
+\newpage
 
 ```
 @Test
@@ -1794,13 +1796,13 @@ public class SeleniumExample {
     // espera a página de resposta carregar (timeout de 8s)
     (new WebDriverWait(driver,8)).
          until(new ExpectedCondition<Boolean>() {
-     public Boolean apply(WebDriver d) {
-     return d.getTitle().toLowerCase().startsWith("software");
-     }
+    public Boolean apply(WebDriver d) {
+    return d.getTitle().toLowerCase().startsWith("software");
+    }
     });
 
     // resultado deve ser: "software - Google Search"
-    System.out.println("Page title is: " + driver.getTitle());
+    System.out.println("Page title is: "+driver.getTitle());
 
     // fecha o navegador
     driver.quit();

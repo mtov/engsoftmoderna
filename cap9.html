@@ -119,7 +119,6 @@ void f () {
             LOCATION_TABLE + &quot; (&quot; + COLUMN_ID +
             &quot; INTEGER PRIMARY KEY AUTOINCREMENT, &quot; + ...
   database.execSQL(LOC_DATABASE_CREATE);
-
   // mais 200 linhas, criando outras tabelas
 }
 </code></pre>
@@ -256,7 +255,7 @@ private void write(byte[] revision) {
       total += time[i];
     }
     int middlePartLength = n/part;
-    return middlePartLength == 0 ? 0 : total/middlePartLength;
+    return middlePartLength == 0 ? 0:total/middlePartLength;
   }
   ...
 }</code></pre>
@@ -302,12 +301,12 @@ class Cliente {
 }</code></pre>
 <p>Observe que o método <code>f</code> foi movido da classe <code>A</code> para a classe <code>B</code>. Porém, em <code>A</code> ficou uma versão do método que apenas repassa (ou delega) a chamada para <code>B</code>. Por isso, o código da classe <code>Cliente</code> não precisou ser alterado.</p>
 <p></p>
-<p>Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de <strong>Pull Up Method</strong>. Para ilustrar, suponha um mesmo método <code>f</code> implementado em duas subclasses <code>B1</code> e <code>B2</code>. Para evitar <strong>duplicação de código</strong>, pode-se então <q>subir</q> com ambas implementações para a superclasse <code>A</code>, como mostra o seguinte diagrama de classes:</p>
+<p>Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de <strong>Pull Up Method</strong>. Para ilustrar, suponha um mesmo método <code>f</code> implementado em duas subclasses <code>B1</code> e <code>B2</code>. Para evitar <strong>duplicação de código</strong>, pode-se então <q>subir</q> com ambas implementações para a superclasse <code>A</code>, como mostra o diagrama de classes da próxima página.</p>
 <figure>
 <img src="figs/cap9/pull-up.svg" style="width:82.0%" alt="" /><figcaption>Pull Up Method</figcaption>
 </figure>
 <p></p>
-<p>Por outro lado, quando um método é movido para baixo na hierarquia de classes, isto é, de uma superclasse para uma subclasse, dizemos que foi realizado um <strong>Push Down Method</strong>. Por exemplo, apesar de implementado na superclasse <code>A</code>, um método <code>f</code> pode ser do interesse de uma única subclasse, digamos que <code>B1</code>. Logo, podemos <q>descer</q> com sua implementação para <code>B1</code>, como mostrado a seguir:</p>
+<p>Por outro lado, quando um método é movido para baixo na hierarquia de classes, isto é, de uma superclasse para uma subclasse, dizemos que foi realizado um <strong>Push Down Method</strong>. Por exemplo, apesar de implementado na superclasse <code>A</code>, um método <code>f</code> pode ser do interesse de uma única subclasse, digamos que <code>B1</code>. Logo, podemos <q>descer</q> com sua implementação para <code>B1</code>, como mostrado no diagrama de classes da próxima página.</p>
 <figure>
 <img src="figs/cap9/push-down.svg" style="width:82.0%" alt="" /><figcaption>Push Down Method</figcaption>
 </figure>
@@ -577,7 +576,7 @@ public class B {
   void fireAreaInvalidated2 (AbstractTool abt , Double r ){
     Point p1 = abt.getView().drawingToView (...);
     Point p2 = abt.getView().drawingToView (...);
-    Rectangle r= new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
+    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
     abt.fireAreaInvalidated (r);
   }
   ...

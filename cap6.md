@@ -1568,7 +1568,7 @@ interface Observer {
 
 class Subject {
 
-  private List<Observer> observers= new ArrayList<Observer>();
+  private List<Observer> observers=new ArrayList<Observer>();
 
   public void addObserver(Observer observer) {
     observers.add(observer);

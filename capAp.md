@@ -764,5 +764,16 @@ um repositório do GitHub. Nos exemplos que envolvem dois usuários (Alice
 e Bob, por exemplo), a sugestão é criar dois diretórios locais e usá-los
 para reproduzir os comandos de cada usuário.
 
+\small
 \printindex
 
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\noindent\fbox{
+\parbox{\textwidth}{%
+\small
+Este livro foi formato pelo autor usando o sistemas Pandoc, para conversão de Markdown para LaTeX e, em seguida, geração de um arquivo PDF. A fonte usada é Computer Modern, 11pt. A partir dos mesmos arquivos
+Markdown são geradas as versões MOBI (Kindle) e HTML.
+}
+}

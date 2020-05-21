@@ -167,6 +167,8 @@ void f () {
 
 E agora o código após a extração do método `g`:
 
+\newpage
+
 ```
 void g() {  // método extraído
   ... // B
@@ -214,6 +216,7 @@ manipula. O código dessa primeira versão de `onCreate` — após algumas
 edições, simplificações e remoções de comentários — é mostrado a
 seguir. O código fonte original possui mais de 200 linhas.
 
+\newpage
 
 ```
 void onCreate(SQLiteDatabase database) {// antes da extração
@@ -239,7 +242,6 @@ void onCreate(SQLiteDatabase database) {// antes da extração
             LOCATION_TABLE + " (" + COLUMN_ID +
             " INTEGER PRIMARY KEY AUTOINCREMENT, " + ...
   database.execSQL(LOC_DATABASE_CREATE);
-
   // mais 200 linhas, criando outras tabelas
 }
 
@@ -452,7 +454,7 @@ class PlatformTestUtil {
       total += time[i];
     }
     int middlePartLength = n/part;
-    return middlePartLength == 0 ? 0 : total/middlePartLength;
+    return middlePartLength == 0 ? 0:total/middlePartLength;
   }
   ...
 }
@@ -529,7 +531,7 @@ não precisou ser alterado.
 
 \index{Refactoring!Pull Up Method}
 
-Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de **Pull Up Method**. Para ilustrar, suponha um mesmo método `f` implementado em duas subclasses `B1` e `B2`. Para evitar **duplicação de código**, pode-se então "subir" com ambas implementações para a superclasse `A`, como mostra o seguinte diagrama de classes:
+Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de **Pull Up Method**. Para ilustrar, suponha um mesmo método `f` implementado em duas subclasses `B1` e `B2`. Para evitar **duplicação de código**, pode-se então "subir" com ambas implementações para a superclasse `A`, como mostra o diagrama de classes da próxima página.
 
 ![Pull Up Method](figs/cap9/pull-up){width=82%}
 
@@ -540,7 +542,7 @@ classes, isto é, de uma superclasse para uma subclasse, dizemos que foi
 realizado um **Push Down Method**. Por exemplo, apesar de implementado
 na superclasse `A`, um método `f` pode ser do interesse de uma única
 subclasse, digamos que `B1`. Logo, podemos "descer" com sua
-implementação para `B1`, como mostrado a seguir:
+implementação para `B1`, como mostrado no diagrama de classes da próxima página.
 
 ![Push Down Method](figs/cap9/push-down){width=82%}
 
@@ -1203,7 +1205,7 @@ public class DrawingEditorProxy
   void fireAreaInvalidated2 (AbstractTool abt , Double r ){
     Point p1 = abt.getView().drawingToView (...);
     Point p2 = abt.getView().drawingToView (...);
-    Rectangle r= new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
+    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
     abt.fireAreaInvalidated (r);
   }
   ...
@@ -1530,8 +1532,6 @@ refactoring A.
  
 5\. Nos exemplos a seguir, extraia o código comentado com a palavra
 "extrair" para um método `g`.
-
-\newpage
 
 (a)
 

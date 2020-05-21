@@ -33,7 +33,7 @@ No entanto, DevOps não advoga a criação de um profissional novo, que fique re
 
 Em vez disso, defende-se que esses profissionais atuem em conjunto desde os primeiros sprints de um projeto, como ilustrado na figura a seguir. Para o cliente, o benefício deve ser a entrada em produção mais cedo do sistema que ele contratou.
 
-![Organização baseada em DevOps. Frequentemente, alguns Dev e alguns Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops){width=35%}
+![Organização baseada em DevOps. Frequentemente, Devs e Ops sentam juntos para discutir questões sobre a entrega do sistema.](figs/cap10/devops){width=35%}
 
 Quando migra-se para uma cultura de DevOps, os times ágeis podem incluir um profissional de operações, que participará dos trabalhos em tempo parcial ou mesmo em tempo integral. Sempre em função da demanda, esse profissional pode também participar de mais de um time. A ideia é que ele antecipe problemas de desempenho, segurança, incompatibilidades com outros sistemas, etc. Ele pode também, enquanto o código está sendo implementado, começar a trabalhar nos scripts de instalação, administração e monitoramento do sistema em produção.
 
@@ -73,7 +73,7 @@ colocar um software em produção deve ser tão simples como apertar um botão.
 Como mencionamos algumas vezes neste livro, software é desenvolvido em equipe. Por isso, precisamos de um servidor para armazenar o código fonte do sistema que está sendo implementado por um grupo de desenvolvedores. A existência desse servidor é fundamental para que esses desenvolvedores possam colaborar e para que os operadores saibam precisamente qual versão do sistema deve ser colocada em produção. Além disso, sempre é útil manter o histórico das versões mais importantes de cada arquivo. Isso permite, se necessário, realizar uma espécie de "undo" no tempo, isto é, recuperar o código de um arquivo como ele estava há anos atrás, por exemplo.
 
 \index{Sistemas de Controle de Versões}
-Um **Sistema de Controle de Versões** (VCS, na sigla em inglês) oferece os dois serviços mencionados no parágrafo anterior. Primeiro, ele oferece um **repositório** para armazenar a versão mais recente do código fonte de um sistema, bem como de arquivos relacionados, como arquivos de documentação, configuração, páginas Web, manuais, etc. Em segundo lugar, ele permite que se recupere versões mais antigas de qualquer arquivo, caso isso seja necessário. Como enunciamos na Introdução, modernamente é inconcebível desenvolver qualquer sistema, mesmo que simples, sem um VCS.
+Um **Sistema de Controle de Versões** (VCS, na sigla em inglês) oferece os dois serviços mencionados no parágrafo anterior. Primeiro, ele oferece um **repositório** para armazenar a versão mais recente do código fonte de um sistema, bem como de arquivos relacionados, como arquivos de documentação, configuração, páginas Web, manuais, etc. Em segundo lugar, ele permite que se recupere versões mais antigas de qualquer arquivo, caso seja necessário. Como enunciamos na Introdução, modernamente é inconcebível desenvolver qualquer sistema, mesmo que simples, sem um VCS.
 
 \index{Unix}
 \index{CVS}
@@ -117,9 +117,9 @@ No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git.
 
 Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai  criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de **multirepos** e **monorepos** — são ilustradas nas próximas duas figuras.
 
-![Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.](figs/cap10/multirepos){width=37%}
+![Multirepos: um VCS gerencia vários repositórios. Normalmente, um repositório por projeto ou sistema.](figs/cap10/multirepos){width=40%}
 
-![Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=37%}
+![Monorepos: VCS gerencia um único repositório. Projetos são diretórios desse repositório.](figs/cap10/monorepo){width=40%}
 
 Se pensarmos em contas do GitHub, podemos exemplificar da seguinte forma:
 
@@ -157,7 +157,7 @@ Por exemplo, antes de implementar uma nova funcionalidade, pode ser comum criar 
 \index{Conflitos de Merge}
 Quando a implementação da nova funcionalidade terminar, o código do branch deve ser "copiado" de volta para o master, por meio de um comando do sistema de controle de versões chamado **merge**. Nesse momento, uma variedade de conflitos pode ocorrer, os quais são conhecidos como **conflitos de integração** ou **conflitos de merge**.
 
-Para ilustrar esse cenário, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustrado na figura a seguir (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.
+Para ilustrar esse cenário, suponha que Alice criou um branch para implementar uma nova funcionalidade X em seu sistema. Como essa funcionalidade era complexa, Alice trabalhou de forma isolada no seu branch por 40 dias, conforme ilustrado na figura da próxima página (cada nodo desse grafo é um commit). Observe que enquanto Alice trabalhava — realizando commits em seu branch — também ocorriam commits no branch principal.
 
 ![Desenvolvimento usando branches de funcionalidades.](figs/cap10/branch-funcional){width=75%}
 
@@ -222,8 +222,6 @@ Ainda nesta linha de raciocínio, um desenvolvedor somente deve avançar para um
 Existem diversos servidores de integração contínua no mercado. Alguns deles são oferecidos como um serviço independente, normalmente gratuito para repositórios de código aberto, mas pago para repositórios privados de empresas. Assim, se você possui um repositório aberto no GitHub, existe mais de uma opção gratuita para ativar um serviço de CI no mesmo.
 
 Uma dúvida comum é se CI é compatível com o uso de branches. Mantendo coerência com a definição de CI, a melhor resposta é a seguinte: sim, desde que os branches sejam integrados de forma frequente no master, via de regra, todo dia. Dizendo de outra forma, CI não é incompatível com branches, mas apenas com branches com um tempo de vida elevado. Por exemplo, Martin Fowler tem a seguinte observação sobre o uso de branches, especificamente branches de funcionalidades, junto com CI ([link](https://martinfowler.com/bliki/FeatureBranch.html)):
-
-\newpage
 
 \index{Fowler, Martin}
 
@@ -357,6 +355,8 @@ No contexto de deployment contínuo, variáveis usadas para evitar a entrada em 
 
 Para mostrar um segundo exemplo, suponha que você está trabalhando em uma nova página de um certo sistema. Então, você pode declarar um feature flag para desabilitar o carregamento da nova página, como mostrado a seguir:
 
+\newpage
+
 ```
 nova_pag = false;
 ...
@@ -455,7 +455,7 @@ Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Soft
 
 12\. Quando uma empresa migra para CI, normalmente ela não usa mais branches de funcionalidades (*feature branches*). Em vez disso, ela tem um único branch, que é compartilhado por todos os desenvolvedores. Essa prática é chamada Desenvolvimento Baseado no Trunk (ou TBD), conforme estudamos neste capítulo. No entanto, TBD não significa que branches não são mais usados nessas empresas. Descreva então um outro uso para branches, que não seja como *feature branches*.
 
-13\. Leia o seguinte [artigo](https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html) do blog oficial do GMail, que descreve uma grande atualização realizada pelo Google na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de "trocar os pneus de um carro com ele em movimento". Sobre esse artigo, responda então:
+13\. Leia o seguinte [artigo](https://gmail.googleblog.com/2011/12/developing-gmails-new-look.html) do blog oficial do GMail, que descreve uma grande atualização realizada na interface do sistema, em 2011. O artigo chega a comparar os desafios dessa migração com aqueles de "trocar os pneus de um carro com ele em movimento". Sobre esse artigo, responda então:
 
    a. Qual tecnologia — que estudamos neste capítulo — foi fundamental para viabilizar
    essa atualização na interface do GMail? Qual nome o artigo dá para essa tecnologia? 

@@ -417,7 +417,7 @@ representada pelo método `estaciona`.
 enviou um mail para todos os desenvolvedores da empresa, com um conjunto
 de diretrizes para projeto de software que eles deveriam
 obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na
-tabela a seguir (apenas fizemos adaptações cosméticas para ela ficar
+lista a seguir (apenas fizemos adaptações cosméticas para ela ficar
 mais clara em Português; essa mesma mensagem é mencionada no livro de
 Fox e Patterson ([link](http://www.saasbook.info/),
 Cap. 1, Seção 1.4):
@@ -426,9 +426,9 @@ Cap. 1, Seção 1.4):
 
 2. Os sistemas devem se comunicar apenas por meio de interfaces.
 
-3. Não deve haver outra forma de comunicação: sem links diretos, sem leituras diretas em bases de dados de outros sistemas, sem memória compartilha ou variáveis globais ou qualquer tipo de back-doors. A única forma de comunicação permitida é por meio de interfaces.
+3. Não deve haver outra forma de comunicação: sem links diretos, sem leitura direta em bases de dados de outros sistemas, sem memória compartilhada ou variáveis globais ou qualquer tipo de *backdoors*. A única forma de comunicação permitida é por meio de interfaces.
 
-4. Não importa qual tecnologia vocês vão usar: HTTP, CORBA, Pubsub, protocolos específicos — isso não interessa. Bezos não liga para isso.
+4. Não importa qual tecnologia vocês vão usar: HTTP, CORBA, PubSub, protocolos específicos — isso não interessa. Bezos não liga para isso.
 
 5. Todas as interfaces, sem exceção, devem ser projetadas para uso externo. Ou seja, os times devem planejar e projetar interfaces pensando em usuários externos. Sem nenhuma exceção à regra.
 
