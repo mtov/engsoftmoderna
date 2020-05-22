@@ -1672,7 +1672,7 @@ capítulos anteriores. Ou seja: existe alguma coisa que podemos fazer
 para tornar esse código mais legível, fácil de entender e de manter? No
 caso, a ideia que pode surgir é encapsular os campos de `Book`. Todos eles
 atualmente são públicos e, por isso, seria melhor implementar apenas
-métodos get e set para dar acesso a eles. Como essa implementação é
+métodos `get` e `set` para dar acesso a eles. Como essa implementação é
 simples, não vamos mostrar o código refatorado de `Book`.
 
 Então, fechamos uma volta no ciclo vermelho-verde-refatorar de TDD.

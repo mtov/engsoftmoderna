@@ -323,7 +323,7 @@ parte visível.
 
 Interfaces devem ser estáveis, pois mudanças na interface de uma classe
 podem implicar em atualizações em seus clientes. Para ser mais claro,
-suponha uma classe Math, com métodos que realizam operações matemáticas.
+suponha uma classe `Math`, com métodos que realizam operações matemáticas.
 Suponha um método `sqrt`, que calcula a raiz quadrada de seu parâmetro.
 Suponha ainda que a assinatura desse método seja alterada — para,
 por exemplo, retornar uma exceção caso o valor do parâmetro seja
@@ -426,7 +426,7 @@ Cap. 1, Seção 1.4):
 
 2. Os sistemas devem se comunicar apenas por meio de interfaces.
 
-3. Não deve haver outra forma de comunicação: sem links diretos, sem leitura direta em bases de dados de outros sistemas, sem memória compartilhada ou variáveis globais ou qualquer tipo de *backdoors*. A única forma de comunicação permitida é por meio de interfaces.
+3. Não deve haver outra forma de comunicação: sem links diretos, sem leitura direta em bases de dados de outros sistemas, sem memória compartilhada ou variáveis globais ou qualquer tipo de *backdoor*. A única forma de comunicação permitida é por meio de interfaces.
 
 4. Não importa qual tecnologia vocês vão usar: HTTP, CORBA, PubSub, protocolos específicos — isso não interessa. Bezos não liga para isso.
 
@@ -497,7 +497,7 @@ seguintes motivos:
 
 -   No futuro, podemos precisar de recuperar a matrícula de um banco de
     dados, ou seja, ela não estará mais em memória. Essa nova lógica
-    poderá, então, ser implementada no método get, sem impactar nenhum
+    poderá, então, ser implementada no método `get`, sem impactar nenhum
     cliente da classe.
 
 -   No futuro, podemos precisar de adicionar um dígito verificador nas
