@@ -705,10 +705,10 @@ estão iniciando, certamente essa deve ser uma questão menos difícil.
 Caso contrário, tem-se que experimentar e ir calibrando a velocidade nas
 iterações seguintes.
 
-**Histórias podem incluir tarefas de instalação de infra-estrutura de
+**Histórias podem incluir tarefas de instalação de infraestrutura de
 software?** Não, histórias são especificadas pelo representante dos
 clientes, que é um profissional leigo em Engenharia de Software.
-Portanto, ele não costuma ter conhecimento de infra-estrutura de
+Portanto, ele não costuma ter conhecimento de infraestrutura de
 software. No entanto, uma história pode dar origem a uma tarefa como
 "instalar e testar o banco de dados". Resumindo, histórias estão
 associadas a requisitos funcionais; para implementá-las criam-se
