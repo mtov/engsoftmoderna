@@ -74,7 +74,7 @@ tarefas e resultados que se esperam deles. Sem um processo, os
 desenvolvedores podem se sentir perdidos, trabalhando de forma errática
 e sem alinhamento com os demais membros do time.
 
-Neste capítulo, vamos estudar alguns processos de Software. Na verdade,
+Neste capítulo, vamos estudar alguns processos de software. Na verdade,
 no Capítulo 1 já comentamos sobre Processos Waterfall e Ágeis. Na
 próxima seção, vamos retomar essa discussão e, em seguida, descrever
 alguns métodos de desenvolvimento de software.
