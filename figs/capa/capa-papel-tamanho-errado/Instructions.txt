@@ -1,0 +1,87 @@
+ADOBE INDESIGN PRINTING INSTRUCTIONS FOR SERVICE PROVIDER REPORT
+
+PUBLICATION NAME: capa.indd
+
+PACKAGE DATE: 23/04/20 13:15
+Creation Date: 23/04/20
+Modification Date: 23/04/20
+
+CONTACT INFORMATION
+
+Company Name: Nine Editorial
+Contact: Nine Editorial
+Address: 
+
+
+
+
+
+Phone: 11959290724
+Fax: 
+Email: contato@nineeditorial.com.br
+
+SPECIAL INSTRUCTIONS AND OTHER NOTES
+
+
+
+
+
+
+External Plug-ins 0
+Non Opaque Objects :On Page2, 4
+
+FONTS
+3 Fonts Used; 0 Missing, 0 Embedded, 0 Incomplete, 0 Protected
+
+Fonts Packaged
+- Name: Avenir-Black; Type: TrueType, Status: OK
+- Name: Avenir-Medium; Type: TrueType, Status: OK
+- Name: BebasNeueBold; Type: OpenType Type 1, Status: OK
+
+
+COLOURS AND INKS
+4 Process Inks; 0 Spot Inks
+
+- Name and Type: Process Cyan; Angle: 0,000; Lines/Inch: 0,000
+- Name and Type: Process Magenta; Angle: 0,000; Lines/Inch: 0,000
+- Name and Type: Process Yellow; Angle: 0,000; Lines/Inch: 0,000
+- Name and Type: Process Black; Angle: 0,000; Lines/Inch: 0,000
+
+
+LINKS AND IMAGES
+(Missing & Embedded Links Only)
+Links and Images: 2 Links Found; 0 Modified, 0 Missing, 0 Inaccessible
+Images: 0 Embedded, 0 use RGB colour space
+
+
+PRINT SETTINGS
+PPD: N/A, (HP Deskjet 2540 series)
+Printing To: Printer
+Number of Copies: 1
+Reader Spreads: No
+Even/Odd Pages: Both
+Pages: All
+Proof: No
+Tiling: None
+Scale: 100%, 100%
+Page Position: Upper Left
+Print Layers: Visible & Printable Layers
+Printer's Marks: None
+Bleed: 0 mm, 0 mm, 0 mm, 0 mm
+Colour: Composite RGB
+Trapping Mode: None
+Send Image Data: Optimised Subsampling
+OPI/DCS Image Replacement: No
+Page Size: Custom: 160 mm x 230 mm
+Paper Dimensions: 210 mm x 297 mm
+Orientation: Portrait
+Negative: No
+Flip Mode: Off
+
+
+FILE PACKAGE LIST
+
+1. capa.indd; type: Adobe InDesign publication; size: 1560K
+2. capa.pdf; type: Adobe Acrobat Document; size: 1336K
+3. Avenir.ttc; type: Font file; size: 1555K
+4. BebasNeueBold.otf; type: Font file; size: 99K

@@ -1,4 +1,5 @@
 rm esm-book.pdf
+rm esm-book-leanpub.pdf
 rm esm-book.epub
 rm esm-book.mobi
 
