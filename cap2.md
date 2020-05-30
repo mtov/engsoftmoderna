@@ -84,7 +84,7 @@ alguns métodos de desenvolvimento de software.
 \index{Manifesto Ágil}
 Os primeiros processos de desenvolvimento de software — do tipo Waterfall, propostos ainda na década de 70 — eram estritamente sequenciais, começando com uma fase de especificação de requisitos até chegar às fases finais de implementação, testes e manutenção do sistema.
 
-Se considerarmos o contexto histórico, essa primeira visão de processo era natural, visto que projetos de Engenharia tradicional também são sequenciais e precedidos de um planejamento detalhado. Todas as fases também geram documentações detalhadas do produto que está sendo desenvolvido. Por isso, nada mais natural que a nascente Engenharia de Software se espelhasse nos processos de áreas mais tradicionais, como a Engenharia Eletrônica, Civil, Mecânica, Aeronáutica, etc.
+Se considerarmos o contexto histórico, essa primeira visão de processo era natural, visto que projetos de Engenharia tradicional também são sequenciais e precedidos de um planejamento detalhado. Todas as fases também geram documentações detalhadas do produto que está sendo desenvolvido. Por isso, nada mais natural que a nascente Engenharia de Software se espelhasse nos processos de áreas mais tradicionais, como Engenharia Eletrônica, Civil, Mecânica, Aeronáutica, etc.
 
 No entanto, após cerca de uma década, começou-se a perceber que software
 é diferente de outros produtos de Engenharia. Essa percepção foi ficando
@@ -101,8 +101,8 @@ da época. Por exemplo, o relatório, que ficou conhecido pelo sugestivo
 nome de CHAOS Report
 ([link](https://www.standishgroup.com/sample_research_files/chaos_report_1994.pdf)),
 mostrou que mais de 55% dos projetos estourava os prazos planejados
-entre 51% e 200%; pelo menos 12% estouraram os prazos acima de 200%,
-conforme mostra o próximo gráfico:
+entre 51% e 200%; pelo menos 12% estouravam os prazos acima de 200%,
+conforme mostra o próximo gráfico.
 
 ![CHAOS Report (1994): percentual de projetos que estourava seus **prazos** (para cada faixa de estouro).](figs/cap2/chaos2){width=95%}
 
@@ -137,7 +137,7 @@ de software, as quais foram registradas em um documento que chamaram de
 **Manifesto Ágil**. Por ser curto, iremos reproduzir o texto do
 manifesto:
 
-> Por meio desse trabalho, passamos a valorizar:
+> Por meio deste trabalho, passamos a valorizar:
 >
 > **Indivíduos e interações**, mais do que processos e ferramentas
 >
@@ -250,7 +250,7 @@ princípios ágeis, em maior ou menor escala. Para citar alguns dados, em
 desenvolvimento mais usado pelos respondentes
 ([link](https://insights.stackoverflow.com/survey/2018/#career-values)).
 Essa pergunta recebeu 57 mil respostas de desenvolvedores profissionais e
-a grande maioria deles mencionou métodos ou práticas ágeis,
+a grande maioria mencionou métodos ou práticas ágeis,
 incluindo aquelas que vamos estudar neste capítulo, como Scrum (63% das respostas),
 Kanban (36%) e Extreme Programming (16%). Apenas 15% dos
 participantes marcaram Waterfall como resposta.
