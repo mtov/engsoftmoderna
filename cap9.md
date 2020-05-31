@@ -720,7 +720,7 @@ funcionamento de um sistema.
 Os refactorings apresentados anteriormente têm maior potencial para
 melhorar o projeto de um sistema, pois eles envolvem operações com um
 escopo global, como Movimentação de Métodos ou Extração de Classes.
-Porém, existem refactorings com escopo local, que melhoraram, por
+Porém, existem refactorings com escopo local, que melhoram, por
 exemplo, a implementação interna de um único método. Vamos a seguir
 descrever resumidamente alguns desses refactorings.
 
