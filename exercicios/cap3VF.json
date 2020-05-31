@@ -1,0 +1,77 @@
+{
+"title": "Cap. 3 - Requisitos",  
+"questions": [
+  {
+    "text": "Requisitos definem o que um sistema deve fazer e sob quais restrições.",
+    "correct": "true"
+  },
+  {
+    "text": "Requisitos não-funcionais, na maioria das vezes, são especificados em linguagem natural.",
+    "correct": "false"
+  },
+  {
+    "text": "Requisitos Funcionais, na maioria das vezes, são especificados de forma quantitativa usando-se métricas.",
+    "correct": "false"
+  },
+  {
+    "text": "Requisitos devem ser: corretos, subjetivos, completos, consistentes e verificáveis.",
+    "correct": "false"
+  },
+  {
+    "text": "Histórias de usuário são composta de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
+    "correct": "false"
+  },
+  {
+    "text": "A sigla INVEST é usada para lembrar que histórias de usuários devem ser independentes, negociáveis, agregar valor, sucintas e testáveis.",
+    "correct": "true"
+  },
+  {
+    "text": "Histórias de usuário épicas devem ficar no topo do backlog do produto.",
+    "correct": "false"
+  },
+  {
+    "text": "Casos de uso devem tratar de aspectos tecnológicos ou de design.",
+    "correct": "false"
+  },
+  {
+    "text": "Casos de uso são especificações de requisitos mais detalhadas e completas do que histórias de usuários.",
+    "correct": "true"
+  },
+  {
+    "text": "Em Engenharia de Requisitos, gold plating designa a situação na qual os desenvolvedores decidem, por conta própria, sofisticar a implementação de alguns requisitos.",
+    "correct": "true"
+  },
+  {
+    "text": "As extensões de um caso de uso representam alternativas de execução ou então situações de erro.",
+    "correct": "true"
+  },
+  {
+    "text": "Apenas startups devem usar MVPs, sempre antes da fase de crescimento da empresa.",
+    "correct": "false"
+  },
+  {
+    "text": "Quando se faz um teste A/A, ele deve falhar em 100% dos casos.",
+    "correct": "false"
+  },
+  {
+    "text": "Em Engenharia de Software, MVPs devem ser vistos como técnicas de validação de requisitos.",
+    "correct": "true"
+  },
+  {
+    "text": "Quanto menor o efeito que se deseja medir com testes A/B, maior deve ser o tamanho da amostra.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando o mercado de um produto de software é estável e bem conhecido, não há necessidade de construir MVPs. ",
+    "correct": "true"
+  },
+  {
+    "text": "Para aplicar testes A/B, precisamos de duas versões de um sistema: controle e tratamento.",
+    "correct": "true"
+  },
+  {
+    "text": "Um pivô ocorre quando abandona-se a visão original de um sistema e tenta-se um novo MVP.",
+    "correct": "true"
+  }
+]
+}	    
