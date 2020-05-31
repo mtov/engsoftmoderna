@@ -10,19 +10,19 @@
     "correct": "false"
   },
   {
-    "text": "Requisitos Funcionais, na maioria das vezes, são especificados de forma quantitativa usando-se métricas.",
+    "text": "Requisitos funcionais, na maioria das vezes, são especificados de forma quantitativa usando-se métricas.",
     "correct": "false"
   },
   {
-    "text": "Requisitos devem ser: corretos, subjetivos, completos, consistentes e verificáveis.",
+    "text": "Requisitos devem ser corretos, subjetivos, completos, consistentes e verificáveis.",
     "correct": "false"
   },
   {
-    "text": "Histórias de usuário são composta de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
+    "text": "Histórias de usuário são compostas de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
     "correct": "false"
   },
   {
-    "text": "A sigla INVEST é usada para lembrar que histórias de usuários devem ser independentes, negociáveis, agregar valor, sucintas e testáveis.",
+    "text": "A sigla INVEST lembra que histórias de usuários devem ser independentes, negociáveis, agregar valor, sucintas e testáveis.",
     "correct": "true"
   },
   {
@@ -38,7 +38,7 @@
     "correct": "true"
   },
   {
-    "text": "Em Engenharia de Requisitos, gold plating designa a situação na qual os desenvolvedores decidem, por conta própria, sofisticar a implementação de alguns requisitos.",
+    "text": "Gold plating designa a situação na qual os desenvolvedores decidem, por conta própria, sofisticar a implementação de alguns requisitos.",
     "correct": "true"
   },
   {
