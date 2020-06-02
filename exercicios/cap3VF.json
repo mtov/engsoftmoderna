@@ -18,7 +18,7 @@
     "correct": "false"
   },
   {
-    "text": "Histórias de usuário são compostas de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
+    "text": "Histórias de usuários são compostas de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
     "correct": "false"
   },
   {
@@ -26,7 +26,7 @@
     "correct": "true"
   },
   {
-    "text": "Histórias de usuário épicas devem ficar no topo do backlog do produto.",
+    "text": "Histórias de usuários classificadas como épicas devem ficar no topo do backlog do produto.",
     "correct": "false"
   },
   {
