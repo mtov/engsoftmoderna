@@ -1,0 +1,3 @@
+
+pandoc --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
+

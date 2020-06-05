@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>ShapeUp: Uma possível alternativa a Scrum? – Blog do Livro Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-8249107-3', 'auto');
+     ga('send', 'pageview');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FCFCFC;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">Índice</a>
+</p>
+<header id="title-block-header">
+<h1 class="title">Blog do Livro Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="shapeup-uma-possível-alternativa-a-scrum" class="unnumbered" data-number="">ShapeUp: Uma possível alternativa a Scrum?</h1>
+<p>Shape Up é um novo método para desenvolvimento de software, que está sendo proposto pela <a href="https://basecamp.com/">Basecamp</a>, a empresa por trás do software de gerenciamento de projetos de mesmo nome. O método é descrito em um <a href="https://basecamp.com/shapeup">livro</a> aberto, de autoria de Ryan Singer, que é um dos principais gerentes de produto da empresa.</p>
+<p>Para comentar sobre Shape Up, vamos usar diversas analogias com outros métodos ágeis, principalmente com Scrum.</p>
+<p>Um ciclo de desenvolvimento em Shape Up é composto por três etapas, conforme descrito a seguir.</p>
+<p>Primeiro, temos uma fase de projeto <em>up front</em>, chamada de <strong>shape</strong>. Claro, esse projeto é mais simples do que em Waterfall (isto é, não é um <em>big design up front</em>). Porém, a ideia é que todo projeto de desenvolvimento de software precisa de uma coordenação de mais alto nível, que defina as features que serão implementadas, crie limites para as mesmas e avalie os riscos e benefícios. Tudo isso é feito nessa fase de <em>shape</em>. Como ela é central no método – e dá nome para ele – iremos comentar mais sobre ela daqui a pouco, em uma seção separada.</p>
+<p>Depois da fase de <em>shape</em> começa um sprint propriamente dito, que eles chamam de <strong>ciclos</strong>. Porém, esses ciclos são mais longos do que os sprints de Scrum, tendo uma duração de seis semanas. Veja como o autor justifica a duração dos ciclos:</p>
+<blockquote>
+<p>First, we work in six-week cycles. Six weeks is long enough to build something meaningful start-to-finish and short enough that everyone can feel the deadline looming from the start, so they use the time wisely. The majority of our new features are built and released in one six-week cycle.</p>
+</blockquote>
+<p>Finalizado um ciclo, segue um período de calmaria, de duas semanas, que os autores chamam de <strong>cool-down period</strong>. A ideia é que os desenvolvedores devem usar esse período para respirar um pouco. E aproveitar para realizar outras tarefas, como corrigir bugs, aplicar refactorings, estudar um nova tecnologia, implementar uma prova de conceito, etc. O autor justifica a necessidade desse período da seguinte forma:</p>
+<blockquote>
+<p>If we were to run six-week cycles back to back, there wouldn’t be any time to breathe and think about what’s next. The end of a cycle is the worst time to meet and plan because everybody is too busy finishing projects and making last-minute decisions in order to ship on time. Therefore, after each six-week cycle, we schedule two weeks for cool-down . This is a period with no scheduled work where we can breathe, meet as needed, and consider what to do next.</p>
+</blockquote>
+<p>Apesar de mais longo, um ciclo tem um time-box bem definido: 6 meses. Os autores usam o conceito de <q>tempo fixo, escopo variável</q> para ressaltar a importância de deadlines:</p>
+<blockquote>
+<p>This principle, called <q>fixed time, variable scope</q> is key to successfully defining and shipping projects. Take this book for an example. It’s hard to ship a book when you can always add more, explain more, or improve what’s already there. When you have a deadline, all of a sudden you have to make decisions.</p>
+</blockquote>
+<p>Existem mais duas diferenças importantes para Scrum:</p>
+<ul>
+<li><p>Shape Up não inclui, pelo menos explicitamente, outros eventos de Scrum, como reuniões diárias, revisões e retrospectivas.</p></li>
+<li><p>Os times são menores do que os times Scrum, sendo formados por um designer de UI e um ou dois desenvolvedores.</p></li>
+</ul>
+<h2 class="unnumbered" data-number="" id="shape" class="unnumbered" data-number="">Shape</h2>
+<p>Shape é a fase principal do método e que dá nome a ele. Ela é motivada da seguinte forma (veja também próxima figura):</p>
+<blockquote>
+<p>We shape the work before giving it to a team. A small senior group works in parallel to the cycle teams. They define the key elements of a solution before we consider a project ready to bet on. Projects are defined at the right level of abstraction: concrete enough that the teams know what to do, yet abstract enough that they have room to work out the interesting details themselves.</p>
+</blockquote>
+<figure>
+<img src="/img/shapeup-fig1.png" alt="" /><figcaption>Fase de Shape</figcaption>
+</figure>
+<p>Ou seja, a ideia parece ser atender um meio termo, entre um planejamento detalhado (como em Waterfall) ou um planejamento mas vago (como pode acontecer, por exemplo, com Scrum).</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
