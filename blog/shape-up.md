@@ -1,8 +1,8 @@
-# ShapeUp: Uma possível alternativa a Scrum? {.unnumbered}
+# Shape Up: Uma possível alternativa a Scrum? {.unnumbered}
 
-## Introdução
+## Introdução {.unnumbered}
 
-ShapeUp é um novo método para desenvolvimento de software, que está
+Shape Up é um novo método para desenvolvimento de software, que está
 sendo proposto pela [Basecamp](https://basecamp.com/),  a empresa por
 trás do software de gerenciamento de projetos de mesmo nome. O método
 é descrito em um [livro](https://basecamp.com/shapeup) aberto, de
@@ -11,7 +11,7 @@ da empresa. Segue uma imagem da capa do livro:
 
 ![Capa do livro](./figs/shapeup-cover.png){width=60%}
 
-## Principais Conceitos
+## Principais Conceitos {.unnumbered}
 
 Para apresentar Shape Up, vamos usar algumas analogias com outros
 métodos ágeis, principalmente com Scrum.
@@ -41,12 +41,12 @@ aproveitar para realizar outras tarefas, como corrigir bugs, aplicar
 refactorings, estudar um nova tecnologia, implementar uma prova de
 conceito, etc. 
 
-Por fim, em ShapeUp, os times são menores do que os times Scrum, 
+Por fim, em Shape Up, os times são menores do que os times Scrum, 
 sendo formados  por um designer de UI e, no máximo, dois
 desenvolvedores.
 
 
-## Shape  {.unnumbered}
+## Fase de Projeto Inicial (Shape)  {.unnumbered}
 
 Shape é a fase principal do método e que dá nome a ele. A ideia é
 proporcionar uma solução de meio termo, entre um planejamento
@@ -113,7 +113,7 @@ que ele pretende propor e defender na próxima *bet table*.
 
 ## Conclusão {.unnumbered}
 
-ShapeUp tem diferenças importantes para métodos como Scrum:
+Shape Up tem diferenças importantes para métodos como Scrum:
 
 * Existe uma fase dedicada para planejamento e projeto (*shape*).
 
