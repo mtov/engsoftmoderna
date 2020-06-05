@@ -1,0 +1,8 @@
+rm -r blog
+cp ../blog/public .
+mv public blog
+
+git add .
+git commit -a -m "update blog"
+
+git push origin master
