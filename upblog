@@ -1,6 +1,5 @@
 rm -r blog
-cp ../blog/public .
-mv public blog
+cp -R ../blog/public/ ./blog
 
 git add .
 git commit -a -m "update blog"
