@@ -6,11 +6,12 @@ a empresa por trás do
 software de gerenciamento de projetos de mesmo nome.
 O método é descrito em um [livro](https://basecamp.com/shapeup)
 aberto, de autoria de Ryan Singer, que é um dos principais 
-gerentes de produto da empresa.
+gerentes de produto da empresa. Segue uma imagem da capa
+do livro:
 
 ![Capa do livro](./figs/shapeup-cover.png){width=60%}
 
-Para comentar sobre Shape Up, vamos usar diversas analogias com
+Para comentar sobre Shape Up, vamos usar algumas analogias com
 outros métodos ágeis, principalmente com Scrum.
 
 Um ciclo de desenvolvimento em Shape Up
@@ -79,7 +80,7 @@ O resultado da fase de shape é um **pitch**, isto é,
 um documento simplificado que propõe uma nova feature para um sistema,
 incluindo as seguintes informações:
 
-* Descricão do problema que espera-se resolver com a nova feature.
+* Descrição do problema que espera-se resolver com a nova feature.
 
 * Quanto tempo pretende-se gastar com a implementação dessa feature. O autor
 chama esse tempo de **apetite**. Veja então que uma feature pode demandar 
@@ -123,20 +124,21 @@ propor e defender na próxima bet table.
 
 Resumindo, ShapeUp tem diferenças importantes para métodos como Scrum:
 
-* Existe uma fase de planejamento e projeto (shape)
+* Existe uma fase de planejamento e projeto (*shape*).
 
-* Não existem eventos como reuniões diárias, revisões, retrospectivas
+* Não existem reuniões diárias, revisões, retrospectivas.
 
-* Não existem artefatos como backlogs e quadros Scrum ou Kanbam
+* Não existem artefatos como backlogs e quadros Scrum ou Kanbam.
 
-* Os times possuem um tamanho realmente mínimo (por exemplo, 1 designer e 1 desenvolvedor)
+* Os times possuem um tamanho mínimo (por exemplo, 1 designer e 1 desenvolvedor).
 
-* Não existem papeis semelhantes àqueles de Scrum Master e Product Owner. Embora um
-estrategista de produto faça parte da *bet table*.
+* Não existem papeis semelhantes àqueles de Scrum Master e Product Owner. Embora 
+estrategistas de produtos possam ser consultados para definir os pitches e
+também podem fazer parte da *bet table*.
 
-* Os desenvolvedores não tem autonomia para definir os pitches (features) do próximo ciclo. Esses pitches
-(features) são delegados para eles.
+* Os desenvolvedores não têm autonomia para definir os pitches (features) do 
+próximo ciclo. Esses pitches (features) são delegados para eles.
 
-* No entanto, os times continuam bastante autônomos para decidir como o pitches serão implementados,
-no intervalo de 6 semanas.
+* Os times continuam autônomos, isto é, possuem poder para decidir 
+como os pitches serão implementados, no intervalo de 6 semanas.
 
