@@ -60,41 +60,40 @@
 <p>Para apresentar Shape Up, vamos usar algumas analogias com outros métodos ágeis, principalmente com Scrum.</p>
 <p>Um ciclo de desenvolvimento em Shape Up é composto por três etapas:</p>
 <ul>
-<li><p>Primeiro, temos uma fase de projeto <em>up front</em>, chamada de <strong>shape</strong>. Claro, esse projeto é mais simples do que em Waterfall (isto é, não é um <em>big design up front</em>). Porém, a ideia é que todo projeto de desenvolvimento de software precisa de uma coordenação de mais alto nível, que defina as features que serão implementadas, crie limites para as mesmas e avalie os riscos e benefícios. Tudo isso é feito nessa fase de <em>shape</em>. Como ela é central no método – e dá nome para ele – iremos comentar mais sobre ela daqui a pouco, em uma seção separada.</p></li>
+<li><p>Primeiro, temos uma fase de projeto <em>up front</em>, chamada de <strong>shape</strong>. Claro, esse projeto é mais simples do que em Waterfall (isto é, não é um <em>big design up front</em>). Porém, a ideia é que todo projeto de desenvolvimento de software precisa de uma coordenação de mais alto nível, que defina as funcionalidades que serão implementadas, crie limites para elas e avalie os seus riscos e benefícios. Tudo isso é feito nessa fase de <em>shape</em>. Como ela é central no método – e dá nome para ele – iremos comentar mais sobre ela daqui a pouco, em uma seção separada.</p></li>
 <li><p>Depois da fase de <em>shape</em> começa um sprint propriamente dito, que eles chamam de <strong>ciclos</strong>. Porém, esses ciclos são mais longos do que os sprints de Scrum, tendo uma duração de seis semanas. Segundo o autor, seis semanas é um tempo suficiente para implementar algo relevante, mas sem impor um forte deadline aos trabalhos do time.</p></li>
 <li><p>Finalizado um ciclo, segue um período de calmaria, de duas semanas, que os autores chamam de <strong>cool-down period</strong>. A ideia é que os desenvolvedores devem usar esse período para respirar um pouco. E aproveitar para realizar outras tarefas, como corrigir bugs, aplicar refactorings, estudar um nova tecnologia, implementar uma prova de conceito, etc.</p></li>
 </ul>
-<p>Por fim, em Shape Up, os times são menores do que os times Scrum, sendo formados por um designer de UI e, no máximo, dois desenvolvedores.</p>
+<p>Por fim, em Shape Up, os times são menores do que os times de Scrum, sendo formados por um designer de UI e, no máximo, dois desenvolvedores.</p>
 <h2 class="unnumbered" data-number="" id="fase-de-projeto-inicial-shape" class="unnumbered" data-number="">Fase de Projeto Inicial (Shape)</h2>
 <p>Shape é a fase principal do método e que dá nome a ele. A ideia é proporcionar uma solução de meio termo, entre um planejamento detalhado (como em Waterfall) e um planejamento mais vago e abstrato (como pode acontecer, por exemplo, quando adota-se Scrum). A próxima figura ilustra o nível de detalhe que deve ser objeto da fase de shape.</p>
 <figure>
 <img src="./figs/shapeup-fig1.png" alt="" /><figcaption>Fase de Shape</figcaption>
 </figure>
-<p>O livro não detalha os responsáveis pela fase de shape, mas sugere que devem ser desenvolvedores e gerentes de nível sênior. Além disso, é importante mencionar que a fase de shape pode acontecer em paralelo com os ciclos de seis semanas e o período de cool-down.</p>
+<p>O livro não detalha os responsáveis pela fase de shape, mas sugere que devem ser desenvolvedores e gerentes de nível sênior. Além disso, é importante mencionar que a fase de shape pode acontecer em paralelo com os ciclos de seis semanas e o período de cool-down. Por exemplo, em paralelo com um determinado período de cool-down, realiza-se o shape do ciclo seguinte.</p>
 <p>O resultado da fase de shape é um <strong>pitch</strong>, isto é, um documento simplificado que propõe uma nova funcionalidade para um sistema. Esse documento deve incluir as seguintes informações:</p>
 <ul>
 <li><p>Descrição do problema que espera-se resolver com a nova funcionalidade.</p></li>
 <li><p>Quanto tempo pretende-se gastar com a implementação dessa funcionalidade. O autor chama esse tempo de <strong>apetite</strong>. Veja então que uma funcionalidade pode demandar menos de seis meses (um ciclo). Pode-se, por exemplo, ter funcionalidades de dois meses.</p></li>
 <li><p>Uma descrição em alto nível da solução proposta. Como o autor é originalmente um designer, os exemplos de soluções mostrados no livro são descrições (ou sketches) de mais alto nível de telas e interfaces.</p></li>
-<li><p>Limitações e esclarecimentos. Na verdade, o autor usa o termo <strong>no go’s</strong> para limitações que serão aceitas na solução a ser implementada. E o termo <strong>rabbit holes</strong> para designar os impasses que podem ocorrer no momento da implementação (e então já propor soluções para eles na fase de shape). O objetivo final é evitar que o time se preocupe e perca tempo com essas questões.</p></li>
+<li><p>Limitações e esclarecimentos. Na verdade, o autor usa o termo <strong>no go’s</strong> para limitações que serão aceitas na solução a ser implementada. E o termo <strong>rabbit holes</strong> para designar os impasses que podem ocorrer no momento da implementação (e então já propor soluções para eles na fase de shape). O objetivo é evitar que o time se preocupe e perca tempo com essas questões.</p></li>
 </ul>
-<p>Por fim, gera-se um conjunto de pitches, que vão para o que o autor chama de <strong>bet table</strong>. Basicamente, os pitches são distribuídos para um grupo de tomadores de decisão, que escolhem e definem aqueles que de fato serão implementados no próximo ciclo. Essa decisão é tomada de forma assíncrona, via troca de mensagens e discussões em uma ferramenta de gerência de projetos (no caso, o próprio BaseCamp). E, por fim, em uma curta reunião final e síncrona, que deve durar poucas horas. No caso da BaseCamp, opinam sobre os pitches as seguintes pessoas: o CEO da empresa, o CTO da empresa, um desenvolvedor sênior e um estrategista de produtos.</p>
+<p>Por fim, gera-se um conjunto de pitches, que vão para o que o autor chama de <strong>bet table</strong>. Basicamente, os pitches são distribuídos para um grupo de tomadores de decisão, que escolhem e definem aqueles que de fato serão implementados no próximo ciclo. Essa decisão é tomada de forma assíncrona, via troca de mensagens e discussões em uma ferramenta de gerência de projetos (no caso, o próprio Basecamp). E, por fim, em uma curta reunião final e síncrona, que deve durar poucas horas. No caso da Basecamp, as seguintes pessoas participam de uma <em>bet table</em>: o CEO da empresa, o CTO da empresa, um desenvolvedor sênior e um estrategista de produtos.</p>
 <p>Terminada essa reunião, os pitches são distribuídos para os times. E começa-se o ciclo de seis semanas.</p>
-<p>Também não existe um backlog de pitches. Veja o que os autores dizem sobre esse fato:</p>
+<p>Veja então que não existe um backlog de pitches, conforme comenta o autor:</p>
 <blockquote>
 <p>If we decide to bet on a pitch, it goes into the next cycle to build. If we don’t, we let it go. There’s nothing we need to track or hold on to. What if the pitch was great, but the time just wasn’t right? Anyone who wants to advocate for it again simply tracks it independently—their own way—and then lobbies for it six weeks later.</p>
 </blockquote>
-<p>Ou seja, na verdade, parece o que não existe é um backlog local. Mas cada tomador de decisão pode ter seu backlog local de pitches que ele pretende propor e defender na próxima <em>bet table</em>.</p>
+<p>Ou seja, na verdade, parece o que não existe é um backlog global. Mas cada tomador de decisão pode ter seu backlog local de pitches que ele pretende propor e defender na próxima <em>bet table</em>.</p>
 <h2 class="unnumbered" data-number="" id="conclusão" class="unnumbered" data-number="">Conclusão</h2>
 <p>Shape Up tem diferenças importantes para métodos como Scrum:</p>
 <ul>
 <li><p>Existe uma fase dedicada para planejamento e projeto (<em>shape</em>).</p></li>
-<li><p>Não existem reuniões diárias, revisões e retrospectivas.</p></li>
+<li><p>Não existem eventos como reuniões diárias, revisões e retrospectivas.</p></li>
 <li><p>Não existem artefatos como backlogs e quadros Scrum ou Kanban.</p></li>
 <li><p>Os times possuem um tamanho mínimo: um designer e um ou dois desenvolvedores.</p></li>
 <li><p>Não existem papeis semelhantes àqueles de Scrum Master e Product Owner. No entanto, estrategistas de produtos podem ser consultados para definir os pitches e também podem fazer parte da <em>bet table</em>.</p></li>
-<li><p>Os times não têm autonomia para definir os pitches do próximo ciclo. Ou seja, eles recebem os pitches já prontos e modelados (<em>shaped</em>).</p></li>
-<li><p>Os times continuam autônomos para decidir como os pitches serão implementados, no intervalo de seis semanas.</p></li>
+<li><p>Os times não têm autonomia para definir os pitches do próximo ciclo. Ou seja, eles recebem os pitches já prontos e modelados (<em>shaped</em>). Porém, os times continuam autônomos para decidir como os pitches serão implementados, no intervalo de seis semanas.</p></li>
 </ul>
 </div>
 </div>
