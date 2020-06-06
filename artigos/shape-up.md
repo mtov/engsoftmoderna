@@ -1,3 +1,4 @@
+
 # Shape Up: Uma possível alternativa a Scrum? {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -14,7 +15,9 @@ da empresa. Segue uma imagem da capa do livro:
 ## Principais Conceitos {.unnumbered}
 
 Para apresentar Shape Up, vamos usar algumas analogias com outros
-métodos ágeis, principalmente com Scrum.
+métodos ágeis, principalmente com Scrum. Se quiser antes saber
+um pouco mais sobre métodos ágeis, você pode consultar o 
+[Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro.
 
 Um ciclo de desenvolvimento em Shape Up é composto por três etapas:
 
@@ -129,10 +132,13 @@ desenvolvedores.
 
 * Não existem papeis semelhantes àqueles de Scrum Master e Product
 Owner. No entanto, estrategistas de produtos podem ser consultados
-para definir os pitches e também podem fazer parte da *bet table*.
+para modelar os pitches e também podem fazer parte da *bet table*.
 
 * Os times não têm autonomia para definir os pitches do próximo ciclo. 
 Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
 como os pitches serão implementados, no intervalo de seis semanas.
 
+* * * 
+
+Voltar para lista de [artigos](./artigos.html).
