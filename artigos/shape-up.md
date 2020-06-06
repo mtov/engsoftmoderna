@@ -139,6 +139,10 @@ Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
 como os pitches serão implementados no intervalo de seis semanas.
 
+## Exercício {.unnumbered}
+
+Qual a diferença entre a fase de *shape* e um planejamento do sprint 
+(*sprint planning*) em Scrum?
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
