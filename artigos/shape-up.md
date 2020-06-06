@@ -137,8 +137,8 @@ para modelar os pitches e também podem fazer parte da *bet table*.
 * Os times não têm autonomia para definir os pitches do próximo ciclo. 
 Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
-como os pitches serão implementados, no intervalo de seis semanas.
+como os pitches serão implementados no intervalo de seis semanas.
 
 * * * 
 
-Voltar para lista de [artigos](./artigos.html).
+Voltar para a lista de [artigos](./artigos.html).
