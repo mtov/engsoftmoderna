@@ -76,7 +76,7 @@ Esse documento deve incluir as seguintes informações:
 * Quanto tempo pretende-se gastar com a implementação dessa funcionalidade. O
 autor chama esse tempo de **apetite**. Veja então que uma funcionalidade pode
 demandar menos de seis meses (um ciclo). Pode-se, por exemplo, ter
-funcionalidades de dois meses.
+funcionalidades de duas semanas.
 
 * Uma descrição em alto nível da solução proposta. Como o autor é 
 originalmente um designer, os exemplos de soluções mostrados no livro
