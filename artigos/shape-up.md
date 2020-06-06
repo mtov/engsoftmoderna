@@ -143,6 +143,7 @@ como os pitches serão implementados no intervalo de seis semanas.
 
 Qual a diferença entre a fase de *shape* e um planejamento do sprint 
 (*sprint planning*) em Scrum?
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
