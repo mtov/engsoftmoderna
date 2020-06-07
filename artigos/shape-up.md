@@ -139,6 +139,15 @@ Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
 como os pitches serão implementados no intervalo de seis semanas.
 
+## Para Saber Mais {.unnumbered}
+
+Se quiser saber mais sobre Shape Up, além do livro, recomendamos
+o seguinte [vídeo](https://youtu.be/8GyXkUc0Y4U), 
+gravado pelo Prof. Otávio Lemos (UNIFESP).
+Você pode ouvir também diversas entrevistas do Ryan
+Singer para podcasts. Os links estão 
+na própria página do [livro](https://basecamp.com/shapeup).
+
 ## Exercício {.unnumbered}
 
 Qual a diferença entre a fase de *shape* e o planejamento do sprint 
