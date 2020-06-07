@@ -139,7 +139,7 @@ Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
 como os pitches serão implementados no intervalo de seis semanas.
 
-## Para Saber Mais {.unnumbered}
+#### Para Saber Mais {.unnumbered}
 
 Se quiser saber mais sobre Shape Up, além do livro, recomendamos
 o seguinte [vídeo](https://youtu.be/8GyXkUc0Y4U), 
