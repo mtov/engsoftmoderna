@@ -987,7 +987,7 @@ domínio do sistema do que deixar o código inteiramente descoberto de
 testes.
 
 ```
-class IMCModel{
+class IMCModel {
   public double calculaIMC(String p1, String a1) 
                 throws NumberFormatException {
     double p = Double.parseDouble(p1);
