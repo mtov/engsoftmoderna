@@ -1,5 +1,7 @@
 # Módulos devem ser Profundos! {.unnumbered}
 
+## Introdução {.unnumbered}
+
 [John Ousterhout](https://web.stanford.edu/~ouster/cgi-bin/home.php)
 é professor da Universidade de Stanford e criador da
 linguagem de script Tcl/Tk. Em 2018, ele lançou um 
@@ -90,7 +92,7 @@ grandes benefícios.
 ## Conclusão {.unnumbered}
 
 No seu livro, Ousterhout lista uma 
-série de *red flgas* associados aos temas tratados em cada
+série de *red flags* associados aos temas tratados em cada
 capítulo. Esses *flags* são sinais de que um código é mais complexo
 do que deveria. A discussão de módulos profundos e
 rasos termina então com o seguinte *red flag*:
