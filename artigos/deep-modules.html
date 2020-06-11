@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Módulos devem ser Profundos! – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-8249107-3', 'auto');
+     ga('send', 'pageview');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FCFCFC;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">Índice</a>
+</p>
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="módulos-devem-ser-profundos" class="unnumbered" data-number="">Módulos devem ser Profundos!</h1>
+<p><a href="https://web.stanford.edu/~ouster/cgi-bin/home.php">John Ousterhout</a> é professor da Universidade de Stanford e criador da linguagem de script Tcl/Tk. Em 2018, ele lançou um <a href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">livro</a> sobre filosofia e princípios de projeto de software.</p>
+<p>Neste livro, uma das principais recomendações de Ousterhout – e, provavelmente, uma das mais originais, se comparada com o restante da literatura sobre projeto de software – é a seguinte: <strong>os módulos de um sistema devem ser profundos</strong>.</p>
+<p>Vamos, primeiro, então definir o que é um módulo. Basicamente, é qualquer elemento de código que tenha uma implementação e uma interface. Assim, podemos ter módulos de diferentes tamanhos, incluindo funções, classes, subsistemas, pacotes, etc.</p>
+<h2 class="unnumbered" data-number="" id="módulos-profundos" class="unnumbered" data-number="">Módulos Profundos</h2>
+<p>Mas voltando à recomendação de Ousterholt, um módulo é profundo (<em>deep</em>) quando sua implementação é bem mais complexa do que sua interface. Em outras palavras, módulos devem oferecer para seus clientes uma interface simples. Porém, por trás dessa interface, deve existir uma implementação complexa.</p>
+<p>O contrário é um módulo raso, quando a interface é quase tão complexa quanto a própria implementação do módulo. Para ajudar a entender, vejas as seguintes ilustrações retiradas do livro:</p>
+<p><img src="./figs/deep-modules.png" style="width:75.0%" /></p>
+<p>Como exemplo de módulo profundo, o autor menciona o sistema de arquivos do Unix, cuja interface é composta por apenas cinco funções:</p>
+<pre><code>int open(const char* path, int flags, mode_t permissions);
+ssize_t read(int fd, void* buffer, size_t count);
+ssize_t write(int fd, const void* buffer, size_t count);
+off_t lseek(int fd, off_t offset, int referencePosition);
+int close(int fd);</code></pre>
+<p>Ou seja, a implementação de um sistema de arquivos em um sistema operacional é bastante complexa, pois envolve lidar com uma variedade de dispositivos de hardware, criar estruturas para armazenar arquivos, gerenciar permisssões, permitir acesso concorrente a arquivos, manipular caches, etc. Porém, toda essa monstruosa complexidade fica escondida por trás de uma interface muito simples (as cinco funções mostradas acima). Inclusive, o autor comenta que a implementação dos sistemas de arquivos do Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível aos usuários, pois a assinatura das cinco funções mostradas permaneceu inalterada.</p>
+<p>O autor menciona um segundo exemplo de módulo profundo: coletores de lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados em módulos que, basicamente, não possuem uma interface. Pelo menos uma interface visível à maioria dos programadores de linguagens como Go ou Java.</p>
+<h2 class="unnumbered" data-number="" id="módulos-rasos" class="unnumbered" data-number="">Módulos Rasos</h2>
+<p>Por outro lado, a interface de um módulo raso (shallow) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
+<pre><code>private void addNullValueForAttribute(String attribute) {
+    data.put(attribute, null);
+}</code></pre>
+<p>Para ele, é mais simples e fácil, chamar diretamente:</p>
+<pre><code>data.put(attribute, null);</code></pre>
+<p>do que criar uma função com apenas essa finalidade. Ou seja, a função <code>addNullValueForAttribute</code> adiciona complexidade ao sistema, mas sem proporcionar grandes benefícios.</p>
+<p>O autor termina apresentando o seguinte red flag (isto é, um sinal de alerta para desenvolvedores):</p>
+<blockquote>
+<p>A shallow module is one whose interface is complicated relative to the functionality it provides. Shallow modules don’t help much in the battle against complexity, because the benefit they provide (not having to learn about how they work internally) is negated by the cost of learning and using their interfaces. Small modules tend to be shallow.</p>
+</blockquote>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
