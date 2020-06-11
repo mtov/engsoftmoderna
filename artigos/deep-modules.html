@@ -74,6 +74,7 @@ int close(int fd);</code></pre>
 <p>Para ele, é mais simples e fácil chamar diretamente:</p>
 <pre><code>data.put(attribute, null);</code></pre>
 <p>do que criar uma função com apenas essa finalidade. Ou seja, a função <code>addNullValueForAttribute</code> adiciona complexidade ao sistema, mas sem proporcionar grandes benefícios.</p>
+<h2 class="unnumbered" data-number="" id="conclusão" class="unnumbered" data-number="">Conclusão</h2>
 <p>No seu livro, Ousterhout lista uma série de <em>red flgas</em> associados aos temas tratados em cada capítulo. Esses <em>flags</em> são sinais de que um código é mais complexo do que deveria. A discussão de módulos profundos e rasos termina então com o seguinte <em>red flag</em>:</p>
 <blockquote>
 <p>A shallow module is one whose interface is complicated relative to the functionality it provides. Shallow modules don’t help much in the battle against complexity, because the benefit they provide (not having to learn about how they work internally) is negated by the cost of learning and using their interfaces. Small modules tend to be shallow.</p>

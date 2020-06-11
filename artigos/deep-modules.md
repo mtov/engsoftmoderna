@@ -87,6 +87,8 @@ a função `addNullValueForAttribute`
 adiciona complexidade ao sistema, mas sem proporcionar
 grandes benefícios.
 
+## Conclusão {.unnumbered}
+
 No seu livro, Ousterhout lista uma 
 série de *red flgas* associados aos temas tratados em cada
 capítulo. Esses *flags* são sinais de que um código é mais complexo
