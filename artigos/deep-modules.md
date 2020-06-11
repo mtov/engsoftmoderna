@@ -6,7 +6,7 @@ linguagem de script Tcl/Tk. Em 2018, ele lançou um
 [livro](https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design) sobre
 filosofia e princípios de projeto de software.
 
-Neste livro, uma das principais recomendações de Ousterhout
+Neste livro, uma das principais recomendações
 -- e, provavelmente, uma das mais originais, se comparada
 com o restante da literatura sobre projeto de software --
 é a seguinte: **os módulos de um sistema devem ser profundos**.
