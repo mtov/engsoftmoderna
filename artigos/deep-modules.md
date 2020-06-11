@@ -12,7 +12,7 @@ com o restante da literatura sobre projeto de software --
 é a seguinte: **os módulos de um sistema devem ser profundos**.
 
 Vamos, primeiro, definir o que é um módulo.
-Basicamente, é qualquer elemento de código que tenha
+Basicamente, é qualquer elemento de código que tem
 uma implementação e uma interface. Assim, podemos ter 
 módulos de diferentes tamanhos, incluindo funções, classes,
 subsistemas, pacotes, etc.
@@ -54,7 +54,7 @@ interface muito simples (as cinco funções mostradas acima).
 Inclusive, o autor comenta que a implementação de sistemas
 de arquivos no Unix evoluiu radicalmente ao 
 longo dos anos, mas de forma invisível aos usuários, pois
-a assinatura das cinco funções mostradas permaneceu inalterada.
+a assinatura das cinco funções de interface permaneceu inalterada.
 
 O autor menciona um segundo exemplo de módulo profundo:
 coletores de lixo. Apesar de complexos, algoritmos 
@@ -87,8 +87,12 @@ a função `addNullValueForAttribute`
 adiciona complexidade ao sistema, mas sem proporcionar
 grandes benefícios.
 
-O autor termina apresentando o seguinte red flag (isto é,
-um sinal de alerta para desenvolvedores):
+No seu livro, Ousterhout lista uma 
+série de *red flgas* associados aos temas tratados em cada
+capítulo. Esses *flags* são sinais de que um código é mais complexo
+do que deveria. A discussão de módulos profundos e
+rasos termina então com o seguinte *red flag*:
+
 
 > A shallow module is one whose interface is complicated
 > relative to the functionality it provides. Shallow 
