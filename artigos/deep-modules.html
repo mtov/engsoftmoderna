@@ -53,9 +53,9 @@
 <h1 class="unnumbered" data-number="" id="módulos-devem-ser-profundos" class="unnumbered" data-number="">Módulos devem ser Profundos!</h1>
 <p><a href="https://web.stanford.edu/~ouster/cgi-bin/home.php">John Ousterhout</a> é professor da Universidade de Stanford e criador da linguagem de script Tcl/Tk. Em 2018, ele lançou um <a href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">livro</a> sobre filosofia e princípios de projeto de software.</p>
 <p>Neste livro, uma das principais recomendações de Ousterhout – e, provavelmente, uma das mais originais, se comparada com o restante da literatura sobre projeto de software – é a seguinte: <strong>os módulos de um sistema devem ser profundos</strong>.</p>
-<p>Vamos, primeiro, então definir o que é um módulo. Basicamente, é qualquer elemento de código que tenha uma implementação e uma interface. Assim, podemos ter módulos de diferentes tamanhos, incluindo funções, classes, subsistemas, pacotes, etc.</p>
+<p>Vamos, primeiro, definir o que é um módulo. Basicamente, é qualquer elemento de código que tenha uma implementação e uma interface. Assim, podemos ter módulos de diferentes tamanhos, incluindo funções, classes, subsistemas, pacotes, etc.</p>
 <h2 class="unnumbered" data-number="" id="módulos-profundos" class="unnumbered" data-number="">Módulos Profundos</h2>
-<p>Mas voltando à recomendação de Ousterholt, um módulo é profundo (<em>deep</em>) quando sua implementação é bem mais complexa do que sua interface. Em outras palavras, módulos devem oferecer para seus clientes uma interface simples. Porém, por trás dessa interface, deve existir uma implementação complexa.</p>
+<p>Mas voltando à recomendação de Ousterhout, um módulo é profundo (<em>deep</em>) quando sua implementação é bem mais complexa do que sua interface. Em outras palavras, módulos devem oferecer para seus clientes uma interface simples. Porém, por trás dessa interface, deve existir uma implementação complexa.</p>
 <p>O contrário é um módulo raso, quando a interface é quase tão complexa quanto a própria implementação do módulo. Para ajudar a entender, vejas as seguintes ilustrações retiradas do livro:</p>
 <p><img src="./figs/deep-modules.png" style="width:75.0%" /></p>
 <p>Como exemplo de módulo profundo, o autor menciona o sistema de arquivos do Unix, cuja interface é composta por apenas cinco funções:</p>
@@ -64,14 +64,14 @@ ssize_t read(int fd, void* buffer, size_t count);
 ssize_t write(int fd, const void* buffer, size_t count);
 off_t lseek(int fd, off_t offset, int referencePosition);
 int close(int fd);</code></pre>
-<p>Ou seja, a implementação de um sistema de arquivos em um sistema operacional é bastante complexa, pois envolve lidar com uma variedade de dispositivos de hardware, criar estruturas para armazenar arquivos, gerenciar permisssões, permitir acesso concorrente a arquivos, manipular caches, etc. Porém, toda essa monstruosa complexidade fica escondida por trás de uma interface muito simples (as cinco funções mostradas acima). Inclusive, o autor comenta que a implementação dos sistemas de arquivos do Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível aos usuários, pois a assinatura das cinco funções mostradas permaneceu inalterada.</p>
+<p>Ou seja, a implementação de um sistema de arquivos em um sistema operacional é bastante complexa, pois envolve lidar com uma variedade de dispositivos de hardware, criar estruturas para armazenar arquivos, gerenciar permisssões, permitir acesso concorrente a arquivos, manipular caches, etc. Porém, toda essa monstruosa complexidade fica escondida por trás de uma interface muito simples (as cinco funções mostradas acima). Inclusive, o autor comenta que a implementação de sistemas de arquivos no Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível aos usuários, pois a assinatura das cinco funções mostradas permaneceu inalterada.</p>
 <p>O autor menciona um segundo exemplo de módulo profundo: coletores de lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados em módulos que, basicamente, não possuem uma interface. Pelo menos uma interface visível à maioria dos programadores de linguagens como Go ou Java.</p>
 <h2 class="unnumbered" data-number="" id="módulos-rasos" class="unnumbered" data-number="">Módulos Rasos</h2>
-<p>Por outro lado, a interface de um módulo raso (shallow) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
+<p>Por outro lado, a interface de um módulo raso (<em>shallow</em>) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
 <pre><code>private void addNullValueForAttribute(String attribute) {
     data.put(attribute, null);
 }</code></pre>
-<p>Para ele, é mais simples e fácil, chamar diretamente:</p>
+<p>Para ele, é mais simples e fácil chamar diretamente:</p>
 <pre><code>data.put(attribute, null);</code></pre>
 <p>do que criar uma função com apenas essa finalidade. Ou seja, a função <code>addNullValueForAttribute</code> adiciona complexidade ao sistema, mas sem proporcionar grandes benefícios.</p>
 <p>O autor termina apresentando o seguinte red flag (isto é, um sinal de alerta para desenvolvedores):</p>

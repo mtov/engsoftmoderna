@@ -11,7 +11,7 @@ Neste livro, uma das principais recomendações de Ousterhout
 com o restante da literatura sobre projeto de software --
 é a seguinte: **os módulos de um sistema devem ser profundos**.
 
-Vamos, primeiro, então definir o que é um módulo.
+Vamos, primeiro, definir o que é um módulo.
 Basicamente, é qualquer elemento de código que tenha
 uma implementação e uma interface. Assim, podemos ter 
 módulos de diferentes tamanhos, incluindo funções, classes,
@@ -19,7 +19,7 @@ subsistemas, pacotes, etc.
 
 ## Módulos Profundos {.unnumbered}
 
-Mas voltando à recomendação de Ousterholt, um módulo é profundo (*deep*) quando sua implementação
+Mas voltando à recomendação de Ousterhout, um módulo é profundo (*deep*) quando sua implementação
 é bem mais complexa do que sua interface. Em outras
 palavras, módulos devem oferecer para
 seus clientes uma interface simples. Porém, por trás
@@ -51,8 +51,8 @@ armazenar arquivos, gerenciar permisssões, permitir acesso
 concorrente a arquivos, manipular caches, etc. Porém,
 toda essa monstruosa complexidade fica escondida por trás de uma
 interface muito simples (as cinco funções mostradas acima).
-Inclusive, o autor comenta que a implementação dos sistemas
-de arquivos do Unix evoluiu radicalmente ao 
+Inclusive, o autor comenta que a implementação de sistemas
+de arquivos no Unix evoluiu radicalmente ao 
 longo dos anos, mas de forma invisível aos usuários, pois
 a assinatura das cinco funções mostradas permaneceu inalterada.
 
@@ -65,7 +65,7 @@ linguagens como Go ou Java.
 
 ## Módulos Rasos {.unnumbered}
 
-Por outro lado, a interface de um módulo raso (shallow)
+Por outro lado, a interface de um módulo raso (*shallow*)
 é relativamente complexa, quando comparada com a implementação
 do módulo. Como exemplo extremo, o autor menciona a seguinte
 função:
@@ -76,7 +76,7 @@ private void addNullValueForAttribute(String attribute) {
 }
 ```
 
-Para ele, é mais simples e fácil, chamar diretamente:
+Para ele, é mais simples e fácil chamar diretamente:
 
 ```
 data.put(attribute, null);
