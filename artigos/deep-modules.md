@@ -65,8 +65,8 @@ basicamente, não possuem uma interface. Pelo menos uma
 interface visível à maioria dos programadores de 
 linguagens como Go ou Java.
 
-Nas minhas aulas, eu costumo usar também uma segunda
-metáfora: módulos devem ser como icebergs, com uma
+Nas minhas aulas, eu costumo usar uma 
+metáfora alternativa: módulos devem ser como icebergs, com uma
 pequena "ponta" (a interface) e uma grande base
 (a implementação), que fica submersa e invisível
 aos olhos externos.
