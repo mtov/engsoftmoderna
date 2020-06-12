@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -67,10 +68,11 @@ off_t lseek(int fd, off_t offset, int referencePosition);
 int close(int fd);</code></pre>
 <p>Ou seja, a implementação de um sistema de arquivos em um sistema operacional é bastante complexa, pois envolve lidar com uma variedade de dispositivos de hardware, criar estruturas para armazenar arquivos, gerenciar permisssões, permitir acesso concorrente a arquivos, manipular caches, etc. Porém, toda essa monstruosa complexidade fica escondida por trás de uma interface muito simples (as cinco funções mostradas acima). Inclusive, o autor comenta que a implementação de sistemas de arquivos no Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível aos usuários, pois a assinatura das cinco funções de interface permaneceu inalterada.</p>
 <p>O autor menciona um segundo exemplo de módulo profundo: coletores de lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados em módulos que, basicamente, não possuem uma interface. Pelo menos uma interface visível à maioria dos programadores de linguagens como Go ou Java.</p>
-<h2 class="unnumbered" data-number="" id="módulos-rasos" class="unnumbered" data-number="">Módulos Rasos</h2>
+<p>Nas minhas aulas, eu costumo usar também uma segunda metáfora: módulos devem ser como icebergs, com uma pequena <q>ponta</q> (a interface) e uma grande base (a implementação), que não é visível aos olhos externos.</p>
+<p>submersa e invisível aos olhos externos ## Módulos Rasos {.unnumbered}</p>
 <p>Por outro lado, a interface de um módulo raso (<em>shallow</em>) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
-<pre><code>private void addNullValueForAttribute(String attribute) {
-    data.put(attribute, null);
+<pre><code>private void addNullValueForAttribute(String attribute) { // interface
+    data.put(attribute, null);    // implementação
 }</code></pre>
 <p>Para ele, é mais simples e fácil chamar diretamente:</p>
 <pre><code>data.put(attribute, null);</code></pre>
