@@ -68,9 +68,9 @@ linguagens como Go ou Java.
 Nas minhas aulas, eu costumo usar também uma segunda
 metáfora: módulos devem ser como icebergs, com uma
 pequena "ponta" (a interface) e uma grande base
-(a implementação), que não é visível aos olhos externos.
+(a implementação), que fica submersa e invisível
+aos olhos externos.
 
-submersa e invisível aos olhos externos 
 ## Módulos Rasos {.unnumbered}
 
 Por outro lado, a interface de um módulo raso (*shallow*)
