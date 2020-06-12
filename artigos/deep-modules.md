@@ -66,10 +66,14 @@ interface visível à maioria dos programadores de
 linguagens como Go ou Java.
 
 Nas minhas aulas, eu costumo usar uma 
-metáfora alternativa: módulos devem ser como icebergs, com uma
+metáfora alternativa, originalmente sugerida em um livro
+do prof. Bertrand Meyer. Segundo ele, módulos devem ser como icebergs, com uma
 pequena "ponta" (a interface) e uma grande base
 (a implementação), que fica submersa e invisível
-aos olhos externos.
+aos olhos externos. Veja a figura:
+
+![](./figs/deep-modules-iceberg.png){width=75%}
+
 
 ## Módulos Rasos {.unnumbered}
 
