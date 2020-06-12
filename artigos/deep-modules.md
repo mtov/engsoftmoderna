@@ -76,6 +76,18 @@ Meyer:
 
 ![](./figs/deep-modules-iceberg.png){width=45%}
 
+No <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>, 
+nós vimos que Funções Longas e Classes
+Grandes são exemplos de code smells. No entanto, não
+existe inconsistência entre essa visão e o conceito
+de módulos profundos. Explicando melhor, módulos
+profundos não implicam necessariamente em funções
+ou classes grandes, com muitas linhas de código.
+Ou seja, a ponta do iceberg pode ser
+uma única função de entrada do módulo (pública), que depois
+chama internamente diversas funções menores (privadas).
+Individualmente, a função pública e todas as funções 
+internas são pequenas, com poucas linhas de código.
 
 ## Módulos Rasos {.unnumbered}
 
