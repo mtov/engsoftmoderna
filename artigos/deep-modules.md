@@ -65,14 +65,16 @@ basicamente, não possuem uma interface. Pelo menos uma
 interface visível à maioria dos programadores de 
 linguagens como Go ou Java.
 
-Nas minhas aulas, eu costumo usar uma 
-metáfora alternativa, originalmente sugerida em um livro
+Nas minhas aulas, eu costumo usar também uma 
+metáfora alternativa, originalmente sugerida em um
+[livro](https://en.wikipedia.org/wiki/Object-Oriented_Software_Construction)
 do prof. Bertrand Meyer. Segundo ele, módulos devem ser como icebergs, com uma
 pequena "ponta" (a interface) e uma grande base
 (a implementação), que fica submersa e invisível
-aos olhos externos. Veja a figura:
+aos olhos externos. Veja a figura usada no livro de
+Meyer:
 
-![](./figs/deep-modules-iceberg.png){width=75%}
+![](./figs/deep-modules-iceberg.png){width=45%}
 
 
 ## Módulos Rasos {.unnumbered}
