@@ -120,7 +120,7 @@ public boolean isEmpty() {
 
 Esse método é raso? Justifique e discuta.
 
-Sugestão: Para responder à pergunta pense no código que chama `isEmpty`.
+Sugestão: Para responder à pergunta pense no código que chama `isEmpty()`.
 Por exemplo, você trocaria o seguinte código cliente
 
 ```
@@ -139,7 +139,7 @@ if (myString.lenght() == 0) {
 
 3. Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem
 todo módulo pequeno é raso. Ela é  verdadeira ou falsa? 
-Justifique e discuta.
+Justifique e discuta. (observação: um módulo pequeno é aquele que tem poucas linhas de código.)
 
 4. Seja a seguinte afirmação retirada do livro de Refactoring de
 Martin Fowler:
