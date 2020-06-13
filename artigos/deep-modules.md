@@ -76,18 +76,7 @@ Meyer:
 
 ![](./figs/deep-modules-iceberg.png){width=45%}
 
-No <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>, 
-nós vimos que Funções Longas e Classes
-Grandes são exemplos de code smells. No entanto, não
-existe inconsistência entre essa visão e o conceito
-de módulos profundos. Explicando melhor, módulos
-profundos não implicam necessariamente em funções
-ou classes grandes, com muitas linhas de código.
-Ou seja, a ponta do iceberg pode ser
-uma única função de entrada do módulo (pública), que depois
-chama internamente diversas funções menores (privadas).
-Individualmente, a função pública e todas as funções 
-internas são pequenas, com poucas linhas de código.
+
 
 ## Módulos Rasos {.unnumbered}
 
@@ -113,22 +102,52 @@ a função `addNullValueForAttribute`
 adiciona complexidade ao sistema, mas sem proporcionar
 grandes benefícios.
 
-## Conclusão {.unnumbered}
 
-No seu livro, Ousterhout lista uma 
-série de *red flags* associados aos temas tratados em cada
-capítulo. Esses *flags* são sinais de que um código é mais complexo
-do que deveria. A discussão de módulos profundos e
-rasos termina então com o seguinte *red flag*:
+## Exercícios {.unnumbered}
 
+1. Seja a seguinte afirmação: módulos
+profundos implicam obrigatoriamente em funções
+ou classes grandes, com muitas linhas de código. Ela é 
+verdadeira ou falsa? Justifique e discuta.
 
-> A shallow module is one whose interface is complicated
-> relative to the functionality it provides. Shallow 
-> modules don't help much in the battle against
-> complexity, because the benefit they provide (not
-> having to learn about how they work internally) is
-> negated by the cost of learning and using their
-> interfaces. Small modules tend to be shallow.
+2. Suponha o seguinte método da classe `String` de Java:
+
+```
+public boolean isEmpty() {
+  return value.length == 0;
+}
+```    
+
+Esse método é raso? Justifique e discuta.
+
+Sugestão: Para responder à pergunta pense no código que chama `isEmpty`.
+Por exemplo, você trocaria o seguinte código cliente
+
+```
+if (myString.isEmpty()) {
+    ...
+}
+```
+
+por um código como o seguinte?
+
+```
+if (myString.lenght() == 0) {
+    ...
+}
+```
+
+3. Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem
+todo módulo pequeno é raso. Ela é  verdadeira ou falsa? 
+Justifique e discuta.
+
+4. Seja a seguinte afirmação retirada do livro de Refactoring de
+Martin Fowler:
+
+> Small methods really work only when you have good names, so you need to pay attention to naming. People sometimes ask me what length I look for in a method. To me length is not the issue. The key is the semantic distance between the method name and the method body. 
+
+Explique conceito de *distância semântica entre o nome de um método e o
+corpo desse método*, mencionado na citação acima.
 
 * * * 
 

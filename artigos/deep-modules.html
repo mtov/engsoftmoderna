@@ -70,7 +70,6 @@ int close(int fd);</code></pre>
 <p>O autor menciona um segundo exemplo de módulo profundo: coletores de lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados em módulos que, basicamente, não possuem uma interface. Pelo menos uma interface visível à maioria dos programadores de linguagens como Go ou Java.</p>
 <p>Nas minhas aulas, eu costumo usar também uma metáfora alternativa, originalmente sugerida em um <a href="https://en.wikipedia.org/wiki/Object-Oriented_Software_Construction">livro</a> do prof. Bertrand Meyer. Segundo ele, módulos devem ser como icebergs, com uma pequena <q>ponta</q> (a interface) e uma grande base (a implementação), que fica submersa e invisível aos olhos externos. Veja a figura usada no livro de Meyer:</p>
 <p><img src="./figs/deep-modules-iceberg.png" style="width:45.0%" /></p>
-<p>No <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>, nós vimos que Funções Longas e Classes Grandes são exemplos de code smells. No entanto, não existe inconsistência entre essa visão e o conceito de módulos profundos. Explicando melhor, módulos profundos não implicam necessariamente em funções ou classes grandes, com muitas linhas de código. Ou seja, a ponta do iceberg pode ser uma única função de entrada do módulo (pública), que depois chama internamente diversas funções menores (privadas). Individualmente, a função pública e todas as funções internas são pequenas, com poucas linhas de código.</p>
 <h2 class="unnumbered" data-number="" id="módulos-rasos" class="unnumbered" data-number="">Módulos Rasos</h2>
 <p>Por outro lado, a interface de um módulo raso (<em>shallow</em>) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
 <pre><code>private void addNullValueForAttribute(String attribute) { // interface
@@ -79,11 +78,31 @@ int close(int fd);</code></pre>
 <p>Para ele, é mais simples e fácil chamar diretamente:</p>
 <pre><code>data.put(attribute, null);</code></pre>
 <p>do que criar uma função com apenas essa finalidade. Ou seja, a função <code>addNullValueForAttribute</code> adiciona complexidade ao sistema, mas sem proporcionar grandes benefícios.</p>
-<h2 class="unnumbered" data-number="" id="conclusão" class="unnumbered" data-number="">Conclusão</h2>
-<p>No seu livro, Ousterhout lista uma série de <em>red flags</em> associados aos temas tratados em cada capítulo. Esses <em>flags</em> são sinais de que um código é mais complexo do que deveria. A discussão de módulos profundos e rasos termina então com o seguinte <em>red flag</em>:</p>
+<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<ol type="1">
+<li><p>Seja a seguinte afirmação: módulos profundos implicam obrigatoriamente em funções ou classes grandes, com muitas linhas de código. Ela é verdadeira ou falsa? Justifique e discuta.</p></li>
+<li><p>Suponha o seguinte método da classe <code>String</code> de Java:</p></li>
+</ol>
+<pre><code>public boolean isEmpty() {
+  return value.length == 0;
+}</code></pre>
+<p>Esse método é raso? Justifique e discuta.</p>
+<p>Sugestão: Para responder à pergunta pense no código que chama <code>isEmpty</code>. Por exemplo, você trocaria o seguinte código cliente</p>
+<pre><code>if (myString.isEmpty()) {
+    ...
+}</code></pre>
+<p>por um código como o seguinte?</p>
+<pre><code>if (myString.lenght() == 0) {
+    ...
+}</code></pre>
+<ol start="3" type="1">
+<li><p>Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem todo módulo pequeno é raso. Ela é verdadeira ou falsa? Justifique e discuta.</p></li>
+<li><p>Seja a seguinte afirmação retirada do livro de Refactoring de Martin Fowler:</p></li>
+</ol>
 <blockquote>
-<p>A shallow module is one whose interface is complicated relative to the functionality it provides. Shallow modules don’t help much in the battle against complexity, because the benefit they provide (not having to learn about how they work internally) is negated by the cost of learning and using their interfaces. Small modules tend to be shallow.</p>
+<p>Small methods really work only when you have good names, so you need to pay attention to naming. People sometimes ask me what length I look for in a method. To me length is not the issue. The key is the semantic distance between the method name and the method body.</p>
 </blockquote>
+<p>Explique conceito de <em>distância semântica entre o nome de um método e o corpo desse método</em>, mencionado na citação acima.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
