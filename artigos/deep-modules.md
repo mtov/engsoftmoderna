@@ -105,12 +105,15 @@ grandes benefícios.
 
 ## Exercícios {.unnumbered}
 
-1. Seja a seguinte afirmação: módulos
+1. Dê dois exemplos de módulos profundos. Para facilitar a resposta,
+pense em pacotes ou bibliotecas de sua linguagem de preferência.
+
+2. Seja a seguinte afirmação: módulos
 profundos implicam obrigatoriamente em funções
 ou classes grandes, com muitas linhas de código. Ela é 
 verdadeira ou falsa? Justifique e discuta.
 
-2. Suponha o seguinte método da classe `String` de Java:
+3. Suponha o seguinte método da classe `String` de Java:
 
 ```
 public boolean isEmpty() {
@@ -137,11 +140,11 @@ if (myString.lenght() == 0) {
 }
 ```
 
-3. Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem
+4. Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem
 todo módulo pequeno é raso. Ela é  verdadeira ou falsa? 
 Justifique e discuta. (observação: um módulo pequeno é aquele que tem poucas linhas de código.)
 
-4. Seja a seguinte afirmação retirada do livro de Refactoring de
+5. Seja a seguinte afirmação retirada do livro de Refactoring de
 Martin Fowler:
 
 > Small methods really work only when you have good names, so you need to pay attention to naming. People sometimes ask me what length I look for in a method. To me length is not the issue. The key is the semantic distance between the method name and the method body. 
