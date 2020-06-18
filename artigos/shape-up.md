@@ -150,8 +150,11 @@ na própria página do [livro](https://basecamp.com/shapeup).
 
 ## Exercício {.unnumbered}
 
-Qual a diferença entre a fase de *shape* e o planejamento do sprint 
+1. Qual a diferença entre a fase de *shape* e o planejamento do sprint 
 (*sprint planning*) em Scrum?
+
+2. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 
+do [livro](https://basecamp.com/shapeup) que descreve o método, seção "The circuit breaker".
 
 * * * 
 
