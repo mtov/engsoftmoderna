@@ -1,0 +1,53 @@
+{
+  "title": "Cap. 6 - Padrões de Projeto",  
+  "questions": [
+  {
+    "text": "Fachada é um padrão que oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Singleton é um padrão que garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela.",
+    "correct": "true"
+  },
+  {
+    "text": "Wrapper é um padrão que facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais.",
+    "correct": "false"
+  },
+  {
+    "text": "Decorador é um padrão que permite converter a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces.",
+    "correct": "false"
+  },
+  {
+    "text": "Fábrica Abstrata é um padrão que oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados.",
+    "correct": "true"
+  },
+  {
+    "text": "Proxy é um padrão que funciona como um intermediário que controla o acesso a um objeto base.",
+    "correct": "true"
+  },
+  {
+    "text": "Adaptador é um padrão que permite adicionar dinamicamente novas funcionalidades a uma classe.",
+    "correct": "false"
+  },
+  {
+    "text": "Visitor é um padrão que oferece uma interface padronizada para caminhar em estruturas de dados.",
+    "correct": "false"
+  },
+  {
+    "text": "Strategy é um padrão que permite parametrizar os algoritmos usados por uma classe.",
+    "correct": "true"
+  },
+  {
+    "text": "Iterador é um padrão que torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos.",
+    "correct": "false"
+  },
+  {
+    "text": "Observador é uma padrão que permite que um objeto avise outros objetos de que seu estado mudou.",
+    "correct": "true"
+  },
+  {
+    "text": "Template Method é um padrão que define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses.",
+    "correct": "true"
+  }
+]
+}	 
