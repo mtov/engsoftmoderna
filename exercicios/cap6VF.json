@@ -48,6 +48,10 @@
   {
     "text": "Template Method é um padrão que define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses.",
     "correct": "true"
+  },
+  {
+    "text": "Strategy usa herança para variar parte um algoritmo. Template Method usa composição para variar um algoritmo inteiro.",
+    "correct": "true"
   }
-]
+  ]  
 }	 
