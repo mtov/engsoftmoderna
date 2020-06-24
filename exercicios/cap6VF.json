@@ -50,8 +50,29 @@
     "correct": "true"
   },
   {
-    "text": "Strategy usa herança para variar parte um algoritmo. Template Method usa composição para variar um algoritmo inteiro.",
+    "text": "Strategy usa herança para variar partes de um algoritmo. Template Method usa composição para variar um algoritmo inteiro. [GoF]",
+    "correct": "false"
+  },
+  {
+    "text": "Um das desvantagens de Fachadas é aumentar o acoplamento entre um subsistema e seus clientes.",
+    "correct": "false"
+  },
+  {
+    "text": "Um adaptador oferece uma interface diferente para o objeto adaptado. Em contraste, um proxy possui a mesma interface que o seu objeto base. [GoF]",
+    "correct": "true"
+  },
+  {
+    "text": "Um proxy repassa todas as chamadas realizadas em métodos de sua interface para métodos equivalentes do objeto base.",
+    "correct": "false"
+  },
+  {
+    "text": "No padrão Observador, os objetos sujeito possuem dependências para as classes concretas dos observadores.",
     "correct": "false"
   }
   ]  
 }	 
+
+
+
+
+
