@@ -1367,7 +1367,7 @@ catch (ExcecaoValorInsuficiente e) {
 No novo código, o cliente não libera o acesso à sua carteira. Pelo
 contrário, o jornaleiro nem fica ciente de que o cliente possui uma
 carteira. Essa informação está encapsulada na classe `Cliente`. Em vez
-disso, o cliente oferece um método pagar, que deve ser chamado pelo
+disso, o cliente oferece um método `pagar`, que deve ser chamado pelo
 jornaleiro. Finalmente, uma exceção sinaliza quando o `Cliente` não possui
 recursos suficientes para pagar pelo jornal.
 

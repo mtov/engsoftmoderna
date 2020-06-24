@@ -568,7 +568,7 @@ try {
 catch (ExcecaoValorInsuficiente e) {
   // volto amanhã, para cobrar o valor do jornal
 }</code></pre>
-<p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe <code>Cliente</code>. Em vez disso, o cliente oferece um método pagar, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o <code>Cliente</code> não possui recursos suficientes para pagar pelo jornal.</p>
+<p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe <code>Cliente</code>. Em vez disso, o cliente oferece um método <code>pagar</code>, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o <code>Cliente</code> não possui recursos suficientes para pagar pelo jornal.</p>
 <h3 data-number="1.6.6" id="princípio-abertofechado" data-number="1.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado</h3>
 <p>  </p>
 <p>Esse princípio, originalmente proposto por Bertrand Meyer ainda na década de 80 (<a href="https://dl.acm.org/citation.cfm?id=261119">link</a>), defende algo que pode parecer paradoxal: uma classe deve estar fechada para modificações e aberta para extensões.</p>

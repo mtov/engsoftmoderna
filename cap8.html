@@ -385,7 +385,7 @@ public void testRepeat() {
 }  </code></pre>
 <p>Primeiro, veja que não é simples escrever um teste para <code>IMCServlet</code>, pois essa classe depende de diversos tipos do pacote de Servlets de Java. Por exemplo, não é trivial instanciar um objeto do tipo <code>IMCServlet</code> e depois chamar <code>doGet</code>. Se tomarmos esse caminho, teríamos que criar também objetos dos tipos <code>HTTPServletRequest</code> e <code>HTTPServletResponse</code>, para passar como parâmetro de <code>doGet</code>. No entanto, esses dois tipos podem depender de outros tipos e assim sucessivamente. Portanto, a testabilidade de <code>IMCServlet</code> é baixa.</p>
 <p>Uma alternativa para testar o exemplo mostrado seria extrair a sua lógica de domínio para uma classe separada, como feito no código a seguir. Ou seja, a ideia consiste em separar apresentação (via Servlet) de lógica de domínio. Com isso, fica mais fácil testar a classe extraída, chamada <code>IMCModel</code>, pois ela não depende de tipos relacionados com Servlet. Por exemplo, é mais fácil instanciar um objeto da classe <code>IMCModel</code> do que da classe <code>IMCServlet</code>. É verdade que com essa refatoração não vamos testar o código completo. Porém, é melhor testar a parte de domínio do sistema do que deixar o código inteiramente descoberto de testes.</p>
-<pre><code>class IMCModel{
+<pre><code>class IMCModel {
   public double calculaIMC(String p1, String a1) 
                 throws NumberFormatException {
     double p = Double.parseDouble(p1);

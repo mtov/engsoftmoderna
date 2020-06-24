@@ -703,7 +703,7 @@ indicar que um elemento de código está desatualizado e, portanto,
 desencorajar seu uso. Quando o compilador descobre que um trecho de
 código está usando um elemento depreciado, ele emite um *warning*. No
 exemplo anterior, o método `f` não foi simplesmente renomeado para `g`. Em
-vez disso, primeiro criou-se um método g com o código original de `f`. Em
+vez disso, primeiro criou-se um método `g` com o código original de `f`. Em
 seguida, `f` foi depreciado e seu código modificado para apenas chamar `g`.
 
 A estratégia baseada em depreciação torna a renomeação mais segura, pois

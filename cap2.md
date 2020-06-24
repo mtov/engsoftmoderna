@@ -1366,7 +1366,7 @@ duração bem definida, que é chamada de **time-box** da atividade. Por
 isso, esse termo aparece sempre em documentos Scrum. Por exemplo, veja
 essa frase do Scrum Guide oficial: "o coração do método Scrum é um
 sprint, que tem um time-box de um mês ou menos e durante o qual um
-produto "done", usável e que potencialmente pode ser colocado em
+produto *done*, usável e que potencialmente pode ser colocado em
 produção é criado"
 ([link](https://www.scrum.org/resources/scrum-guide)). O
 objetivo da fixação de *time boxes* é criar um fluxo contínuo de
@@ -1442,7 +1442,7 @@ algumas perguntas sobre Scrum:
 
 **O que significa a palavra Scrum**? O nome não é uma sigla, mas uma
 referência à "reunião" de jogadores realizada em uma partida de rugby
-para decidir quem vai ficar com a bola, após uma infração involuntária.
+para decidir quem vai ficar com a bola após uma infração involuntária.
 
 \index{Squad}
 **O que é um squad**? Esse termo é um sinônimo para
