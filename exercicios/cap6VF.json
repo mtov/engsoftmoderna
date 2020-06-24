@@ -50,7 +50,7 @@
     "correct": "true"
   },
   {
-    "text": "Strategy usa herança para variar partes de um algoritmo. Template Method usa composição para variar um algoritmo inteiro. [GoF]",
+    "text": "Strategy usa herança para variar partes de um algoritmo. Template Method usa composição para variar um algoritmo inteiro.",
     "correct": "false"
   },
   {
@@ -58,15 +58,15 @@
     "correct": "false"
   },
   {
-    "text": "Um adaptador oferece uma interface diferente para o objeto adaptado. Em contraste, um proxy possui a mesma interface que o seu objeto base. [GoF]",
+    "text": "Um adaptador oferece uma interface diferente para o objeto adaptado. Em contraste, um proxy possui a mesma interface que o seu objeto base.",
     "correct": "true"
   },
   {
-    "text": "Um proxy repassa todas as chamadas realizadas em métodos de sua interface para métodos equivalentes do objeto base.",
+    "text": "Um proxy encaminha todas as chamadas realizadas em métodos de sua interface para métodos equivalentes do objeto base, podendo, no entanto, realizar algum processamento antes ou depois desse encaminhamento.",
     "correct": "false"
   },
   {
-    "text": "No padrão Observador, os objetos sujeito possuem dependências para as classes concretas dos observadores.",
+    "text": "No padrão Observador, os objetos sujeito conhecem e possuem dependências para as classes concretas dos observadores.",
     "correct": "false"
   }
   ]  
