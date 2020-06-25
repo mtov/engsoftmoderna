@@ -68,9 +68,25 @@
   {
     "text": "No padrão Observador, os objetos sujeito conhecem e possuem dependências para as classes concretas dos observadores.",
     "correct": "false"
+  },
+  {
+    "text": "Como são padrões distintos, uma Fachada não pode ser implementada como um Singleton.",
+    "correct": "true"
+  },
+  {
+    "text": "Template Methods são usados para implementar inversão de controle, quando, por exemplo, uma classe pai chama métodos de uma classe filha.",
+    "correct": "false"
+  },
+  {
+    "text": "Visitors são uma alternativa para simular despacho-duplo (double dispatch) em linguagens de programação que não oferecem esse recurso",
+    "correct": "false"
   }
   ]  
 }	 
+
+
+
+
 
 
 
