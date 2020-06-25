@@ -71,15 +71,15 @@
   },
   {
     "text": "Como são padrões distintos, uma Fachada não pode ser implementada como um Singleton.",
-    "correct": "true"
+    "correct": "false"
   },
   {
     "text": "Template Methods são usados para implementar inversão de controle, quando, por exemplo, uma classe pai chama métodos de uma classe filha.",
-    "correct": "false"
+    "correct": "true"
   },
   {
-    "text": "Visitors são uma alternativa para simular despacho-duplo (double dispatch) em linguagens de programação que não oferecem esse recurso",
-    "correct": "false"
+    "text": "Visitors são uma alternativa para simular despacho-duplo (double dispatch) em linguagens de programação que não oferecem esse recurso, como é o caso de Java, C++ e C#.",
+    "correct": "true"
   }
   ]  
 }	 
