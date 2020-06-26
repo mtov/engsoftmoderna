@@ -1102,11 +1102,11 @@ abstract class Funcionario {
 
    double salario;
    ...
-   private abstract double calcDescontosPrevidencia();
-   private abstract double calcDescontosPlanoSaude();
-   private abstract double calcOutrosDescontos();
+   abstract double calcDescontosPrevidencia();
+   abstract double calcDescontosPlanoSaude();
+   abstract double calcOutrosDescontos();
 
-   public double calcSalarioLiquido { // template method
+   public double calcSalarioLiquido() { // template method
      double prev = calcDescontosPrevidencia();
      double saude = calcDescontosPlanoSaude();
      double outros = calcOutrosDescontos();
