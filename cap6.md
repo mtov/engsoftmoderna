@@ -542,7 +542,7 @@ sistema:
 ```
 interface Projetor {
 
-  void liga() { ... }
+  void liga();
 
 }
 ...
@@ -578,7 +578,7 @@ class AdaptadorProjetorSamsung implements Projetor {
 
    private ProjetorSamsung projetor;
 
-   AdaptadorProjetorSamsung (ProjetorSamung projetor) {
+   AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
      this.projetor = projetor;
    }
 

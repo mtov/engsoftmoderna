@@ -273,7 +273,7 @@ class ProjetorLG {
 <p><strong>Problema</strong>: No sistema de controle de projetores multimídia, queremos usar uma interface única para ligar os projetores, independentemente de marca. O próximo código mostra essa interface e uma classe cliente do sistema:</p>
 <pre><code>interface Projetor {
 
-  void liga() { ... }
+  void liga();
 
 }
 ...
@@ -291,7 +291,7 @@ class SistemaControleProjetores {
 
    private ProjetorSamsung projetor;
 
-   AdaptadorProjetorSamsung (ProjetorSamung projetor) {
+   AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
      this.projetor = projetor;
    }
 

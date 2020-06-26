@@ -549,7 +549,7 @@ Erro do Tipo I ou um falso positivo, pois concluímos
 indevidamente que a versão B é melhor do que a versão A. 
 
 Se erros do Tipo I não podem ser evitados, podemos, pelo menos, ter uma ideia
-da probabiblidade com que eles ocorrem. Mais especificamente, 
+da probabilidade com que eles ocorrem. Mais especificamente, 
 em Testes A/B, existe um parâmetro de entrada, chamado
 Nível de Significância (*significance level*) e
 representado pela letra grega $\alpha$ (alfa). Esse parâmetro define a
