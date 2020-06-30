@@ -405,10 +405,10 @@ próximos parágrafos.
 ### Associações 
 \index{UML!Associações}
 
-Quando uma classe A possui um atributo b de um tipo B, dizemos que
+Quando uma classe A possui um atributo `b` de um tipo B, dizemos que
 existe uma associação de A para B, a qual é representada por meio de uma
 seta, também de A para B. Na extremidade da seta, informa-se o nome do
-atributo de A responsável pela associação — no nosso caso, b. Veja o
+atributo de A responsável pela associação — no nosso caso, `b`. Veja o
 exemplo abaixo (nele, só mostramos as informações que nos interessam;
 por isso, o compartimento de atributos e métodos está vazio):
 
