@@ -216,7 +216,7 @@ Antes de concluir, vamos mostrar um teste de aceitação para a história "pesqu
 >                                 
 > Pesquisa por livros, informando título; retorna livros cujo título contém a string de busca
 >
-> Pesquisa por livros cadastrados na biblioteca desde uma data, até a data atual                                                
+> Pesquisa por livros cadastrados na biblioteca desde uma data até a data atual                                                
 
 \index{Requisitos!Gold Plating}
 ```{=latex}

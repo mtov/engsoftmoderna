@@ -1077,7 +1077,7 @@ entre contratada e contratante, em vez de forçar a primeira a entregar
 um produto com problemas conhecidos, apenas para cumprir um contrato. Na
 verdade, contratos com escopo aberto são mais compatíveis com os
 princípios do Manifesto Ágil, que explicitamente valoriza "colaboração
-com o cliente, mais que negociação de contratos".
+com o cliente, mais do que negociação de contratos".
 
 \index{Extreme Programming!Métricas de Processo}
 **Métricas de Processo**. Para que gerentes e executivos possam
