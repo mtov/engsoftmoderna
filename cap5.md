@@ -974,7 +974,7 @@ class Disciplina {
 
 Assim como o princípio anterior, esse princípio é uma aplicação da ideia
 de coesão. Melhor dizendo, ele é um caso particular de Responsabilidade
-Única com foco em interfaces. O princípio define que interfaces tem que
+Única com foco em interfaces. O princípio define que interfaces têm que
 ser pequenas, coesas e, mais importante ainda, específicas para cada
 tipo de cliente. O objetivo é evitar que clientes dependam de interfaces
 com métodos que eles não vão usar. Para evitar isso, duas ou mais

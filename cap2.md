@@ -953,7 +953,7 @@ apoio de sistemas de controle de versões (VCS, ou *Version Control
 System*), que armazenam o código fonte do sistema e de arquivos
 relacionados, como arquivos de configuração, documentação, etc. Hoje o
 sistema de controle de versão mais usado é o git, por exemplo. Quando se
-usa um VCS, desenvolvedores tem que primeiro baixar (*pull*) o código
+usa um VCS, desenvolvedores têm que primeiro baixar (*pull*) o código
 fonte para sua máquina local, antes de começar a trabalhar em uma
 tarefa. Feito isso, eles devem subir o código modificado (*push*). Esse
 último passo é chamado de **integração** da modificação no código
@@ -1164,7 +1164,7 @@ cujos discos estão apresentando problemas todos os dias. Cabe ao Scrum
 Master intervir junto aos níveis adequados da empresa para garantir que
 esse problema de hardware não atrapalhe o avanço do time. Por outro
 lado, ele não é um gerente de projeto tradicional. Por exemplo, ele não
-é o líder do time, pois todos em um time Scrum tem o mesmo nível
+é o líder do time, pois todos em um time Scrum têm o mesmo nível
 hierárquico.
 
 Costuma-se dizer que times Scrum são **cross-funcionais** (ou multidisciplinares), isto é, eles
@@ -1500,7 +1500,7 @@ devem ser tomadas em um nível gerencial. Dentre essas decisões, podemos citar 
 seguintes:
 
 * Contratar e alocar membros para os times Scrum; ou seja, os
-     desenvolvedores não tem autonomia para escolher em quais times
+     desenvolvedores não têm autonomia para escolher em quais times
      eles vão trabalhar. Essa é uma decisão de mais alto nível e,
      portanto, tomada por gerentes.
 

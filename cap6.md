@@ -206,7 +206,7 @@ void h() {
 \index{Padrões de Projeto!Método Fábrica Estático}
 \index{Método Fábrica Estático}
 \index{Prefira Interfaces a Classes}
-Nessa nova versão, as funções `f`, `g` e `h` não tem consciência do tipo de
+Nessa nova versão, as funções `f`, `g` e `h` não têm consciência do tipo de
 `Channel` que vão criar e usar. Elas chamam um **Método Fábrica
 Estático**, que instancia e retorna um objeto de uma classe concreta
 — para ser claro, essa variante do padrão Fábrica não foi proposta
