@@ -375,7 +375,7 @@ para cada classe de teste TC
     o = new TC();       // instancia objeto de teste
     se C possui um método b com anotação @Before
          então o.b();   // chama método @Before
-    o.m();              // chamada método @Test
+    o.m();              // chama método @Test
 ```
 
 Voltando à classe `StackTest`, outro método interessante é aquele que
@@ -643,7 +643,7 @@ localização do comando `assert` que falhou.
 **Escritos o quanto antes (Timely)**, se possível antes
 mesmo do código que vai ser testado, como já comentamos no final da
 Seção 8.2 e iremos discutir com mais profundidade na seção sobre
-Desenvolvimento Dirigido por Testes (Seção 8.6).
+Desenvolvimento Dirigido por Testes (Seção 8.7).
 
 ### Test Smells
 \index{Testes de Unidade!Smells}

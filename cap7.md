@@ -163,7 +163,7 @@ parâmetros, lançar exceções, etc — da camada imediatamente inferior.
 Dentre outras aplicações, arquiteturas em camadas são muito usadas na
 implementação de protocolos de rede. Por exemplo, HTTP é um protocolo de
 aplicação, que usa serviços de um protocolo de transporte; por exemplo,
-TCP). Por sua vez, TCP usa serviços de um protocolo de rede; por
+TCP. Por sua vez, TCP usa serviços de um protocolo de rede; por
 exemplo, IP. Finalmente, a camada IP usa serviços de um protocolo de
 comunicação; por exemplo, Ethernet.
 
@@ -184,7 +184,7 @@ SMTP, DHCP, etc.
 \begin{esmbox}
 ```
 **Aprofundamento**: Uma das primeiras propostas de arquitetura em
-camada foi elaborada por Edsger W. Dijkstra, em 1968, para um sistema
+camadas foi elaborada por Edsger W. Dijkstra, em 1968, para um sistema
 operacional denominado THE
 ([link](https://doi.org/10.1145/363095.363143)). As
 camadas propostas por Dijkstra foram as seguintes: multiprogramação
@@ -212,7 +212,7 @@ tecnologias de rede e de hardware, foi possível migrar esses sistemas de
 mainframes para outras plataformas. Foi nessa época que arquiteturas em
 três camadas se tornaram uma alternativa muito comum.
 
-As três camadas dessas arquitetura são as seguintes:
+As três camadas dessa arquitetura são as seguintes:
 
 *   Interface com o Usuário, também chamada de camada de apresentação, é
     responsável por toda interação com o usuário. Ela trata tanto da
@@ -498,7 +498,7 @@ código do modelo está delimitado pela tag \<script\>.
 \index{Two-way Data Binding}
 Um segundo ponto interessante é que o framework Vue.js se encarrega de
 propagar para a visão qualquer alteração no modelo. Por exemplo, quando
-o método incTemperatura é executado, o valor da temperatura é
+o método `incTemperatura` é executado, o valor da temperatura é
 automaticamente atualizado na interface. O processo contrário também é
 verdadeiro, apesar de não ser exercitado em nosso exemplo, que é bem
 simples. Esse recurso de frameworks para construção de SPAs é chamado de

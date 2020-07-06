@@ -281,9 +281,9 @@ extrato, realizar transferência entre contas, pagar um boleto bancário,
 cancelar um cartão de débito, etc. Já os requisitos
 não-funcionais, dentre outros, incluem:
 
-* Desempenho: informar o saldo da conta em menos de 5 segundos;
+* Desempenho: informar o saldo da conta em menos de 3 segundos;
 
-* Disponibilidade: estar no ar 99.99% do tempo;
+* Disponibilidade: estar no ar 99% do tempo;
 
 * Tolerância a falhas: continuar operando mesmo se um determinado centro de dados
     cair;
