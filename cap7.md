@@ -596,7 +596,7 @@ as duas instâncias são idênticas, isto é, possuem os mesmos módulos.
 Porém, os problemas de performance podem ser causados por serviços
 específicos; por exemplo, apenas pelo serviço de autenticação de
 usuários. Então, microsserviços permitem replicar apenas os componentes
-diretamente relacionados com os problemas de performance. A próxima
+diretamente relacionados com tais problemas de performance. A próxima
 figura mostra uma nova instalação do nosso sistema baseado em
 microsserviços. 
 
@@ -704,7 +704,7 @@ do sistema.
 Por exemplo, equipes e arquiteturas tradicionais de desenvolvimento
 costumam ter um administrador de dados, a quem cabe cuidar das tabelas
 do banco de dados. Qualquer mudança no banco de dados — como a
-criação de uma coluna em uma tabela — precisa de aprovação do
+criação de uma coluna em uma tabela — precisa da aprovação do
 administrador de dados. Logo, essa autoridade central tem que conciliar
 os interesses, muitas vezes conflitantes, das diversas equipes de
 desenvolvimento. Por isso, suas decisões podem se tornar lentas e
@@ -790,7 +790,7 @@ isso, é importante que o serviço de mensagens seja instalado em uma
 máquina estável e com alto poder de processamento. Também é importante
 que a fila de mensagens seja persistente. Se o servidor que gerencia a
 fila cair, os dados não podem ser perdidos. Como filas de mensagens são
-muito usadas na construção de sistema distribuídos, existem soluções
+muito usadas na construção de sistemas distribuídos, existem soluções
 prontas no mercado. Ou seja, provavelmente você não vai implementar sua
 própria fila de mensagens, mas usar soluções de empresas conhecidas ou
 então mantidas por fundações de desenvolvimento de sistemas de código
@@ -816,7 +816,7 @@ componentes de uma aplicação distribuída:
     estar simultaneamente disponíveis para se comunicarem. Se o
     servidor estiver fora do ar, os clientes podem continuar
     produzindo mensagens e colocando-as na fila. Quando o servidor
-    voltar a funcionar, ele irá processar as mensagens.
+    voltar a funcionar, ele irá processar essas mensagens.
 
 Desacoplamento no espaço torna soluções baseadas em filas de mensagens
 bastante flexíveis. Os times de desenvolvimento — tanto do sistema
@@ -834,7 +834,7 @@ Filas de mensagens permitem também escalar mais facilmente um sistema
 distribuído. Para isso, basta configurar múltiplos servidores consumindo
 mensagens da mesma fila, como mostra a próxima figura.
 
-![Fila de Mensagens com vários consumidores.](figs/cap7/mom2){width=80%}
+![Fila de Mensagens com vários consumidores](figs/cap7/mom2){width=80%}
 
 ### Exemplo: Empresa de Telecomunicações 
 
@@ -890,7 +890,7 @@ sistemas baseados em filas de mensagens:
     assinantes. Por outro lado, em filas de mensagens, as mensagens
     são sempre consumidas — isto é, retiradas da fila — por um
     único servidor. Portanto, em publish/subscribe temos um estilo de
-    comunicação de 1 para *n*, também conhecida como **comunicação em
+    comunicação de 1 para *n*, também conhecido como **comunicação em
     grupo**. Já em filas de mensagens, a comunicação é 1 para 1,
     também chamada de **comunicação ponto-a-ponto**.
 
@@ -928,7 +928,7 @@ distribuídas.
 ### Exemplo: Companhia Aérea 
 
 Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
-arquitetura publish/subscribe. Suponha que essa companhia tenha um
+arquitetura publish/subscribe. Suponha que essa companhia tem um
 sistema de vendas, que é usado pelos clientes para comprar passagens
 aéreas. Após efetuar uma venda, esse sistema pode gerar um evento, com
 todos os dados da venda (data, horário, número do vôo, dados do
@@ -1042,8 +1042,8 @@ para mais de 25 milhões de linhas de código! Segundo os autores, os
 times de desenvolvimento do sistema contavam com "várias centenas de
 engenheiros". Apesar de não usarem o termo, o artigo caracteriza a
 arquitetura desse sistema bancário como uma "big ball of mud". Por
-exemplo, eles mencionam que apenas um diretório, chamado "sources",
-possuía quase 15 mil arquivos. Em seguida, os autores analisam o
+exemplo, os autores mencionam que apenas um diretório, chamado "sources",
+possuía quase 15 mil arquivos. Em seguida, eles analisam o
 problema que era manter esse sistema: (1) o tempo de aprendizado de
 novos engenheiros só aumentava, passando de três para sete meses, no intervalo
 de cinco anos; (2) frequentemente, a correção de bugs introduzia novos
@@ -1082,7 +1082,7 @@ Object-Oriented Programming, vol. 1, issue 3, p. 26-49, 1988.
 
 Kevlin Henney, Frank Buschmann, Douglas Schmidt. Pattern-Oriented
 Software Architecture: A Pattern Language for Distributed Computing,
-Vol. 4, John Wiley & Sons, 2007.
+vol. 4, John Wiley & Sons, 2007.
 
 ## Exercícios de Fixação {.unnumbered}
 
