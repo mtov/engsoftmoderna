@@ -58,8 +58,8 @@
     "correct": "false"
   },
   {
-    "text": "Quando calcula-se o LCOM de uma classe, deve-se excluir métodos getters e setters, bem como métodos construtores.",
-    "correct": "false"
+    "text": "Existe uma relação de composição entre duas classes A e B quando a classe A possui um atributo do tipo B.",
+    "correct": "true"
   } 
 ]
 }	    

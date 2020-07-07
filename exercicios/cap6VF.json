@@ -74,7 +74,15 @@
     "correct": "false"
   },
   {
-    "text": "Template Methods são usados para implementar inversão de controle, quando, por exemplo, uma classe pai chama métodos de uma classe filha.",
+    "text": "Template Methods são usados para implementar inversão de controle, quando, por exemplo, uma classe pai chama métodos concretos implementados em uma classe filha.",
+    "correct": "true"
+  },
+  {
+    "text": "Template Methods são muito usados para implementar frameworks. Quando isso acontece, os métodos template são implementados por classes clientes do framework.",
+    "correct": "false"
+  },
+  {
+    "text": "A diferença entre frameworks e bibliotecas é que os primeiras (frameworks) fazem uso intenso de inversão de controle.",
     "correct": "true"
   },
   {
