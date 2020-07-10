@@ -4,7 +4,7 @@
 > *The hardest single part of building a software system is deciding precisely what to build.* -- Frederick Brooks
 
 \index{Requisitos}
-Este capítulo inicia com uma apresentação sobre a importância e os diversos tipos de requisitos de software (Seção 3.1). Em seguida, caracterizamos e apresentamos as atividades que compõem o que chamamos de Engenharia de Requisitos (Seção 3.2). As quatro seções seguintes apresentam quatro técnicas e documentos para especificação e validação de requisitos. Na Seção 3.3, tratamos de histórias de usuário, as quais são os principais instrumentos de Engenharia de Requisitos quando se usa Métodos Ágeis de Desenvenvolvimento. Em seguida, na Seção 3.4 tratamos de casos de uso, que são documentos tradicionais e mais detalhados para especificação de requisitos. Na Seção 3.5, vamos tratar de Produto Mínimo Viável (MVP), muito usados modernamente para prospectar e validar requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também muito usados hoje em dia para validar e definir os requisitos de produtos de software.
+Este capítulo inicia com uma apresentação sobre a importância e os diversos tipos de requisitos de software (Seção 3.1). Em seguida, caracterizamos e apresentamos as atividades que compõem o que chamamos de Engenharia de Requisitos (Seção 3.2). As quatro seções seguintes apresentam quatro técnicas e documentos para especificação e validação de requisitos. Na Seção 3.3, tratamos de histórias de usuários, as quais são os principais instrumentos de Engenharia de Requisitos quando se usa Métodos Ágeis de Desenvenvolvimento. Em seguida, na Seção 3.4 tratamos de casos de uso, que são documentos tradicionais e mais detalhados para especificação de requisitos. Na Seção 3.5, vamos tratar de Produto Mínimo Viável (MVP), muito usados modernamente para prospectar e validar requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também muito usados hoje em dia para validar e definir os requisitos de produtos de software.
 
 ## Introdução
 
@@ -50,7 +50,7 @@ Após elicitados, os requisitos devem ser: (1) documentados, (2) verificados e v
 \index{Requisitos!Documento de Especificação}
 No caso de desenvolvimento ágil, a documentação de requisitos é feita de forma simplificada, por meio de **histórias do usuário**, conforme estudamos no Capítulo 2. Por outro lado, em alguns projetos, ainda se
 exige um **Documento de Especificação de Requisitos**, onde todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor um padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
-Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos IEEE 830 são as seguintes:
+Processos Waterfall, onde o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são mostradas na figura da próxima página.
 
 ![Documento de Requisitos no Padrão IEEE 830](figs/cap3/padrao-ieee-830){width=70%}
 
@@ -65,7 +65,7 @@ Após sua especificação, os requisitos devem ser verificados e validados. O ob
 
 * Requisitos devem ser **consistentes**. Um contra-exemplo ocorre quando um stakeholder afirma que a disponibilidade do sistema deve ser 99,9% e outro considera que 90% já é suficiente.
 
-* Requisitos devem ser **verificáveis**, isto é, deve ser possível testar se os requisitos estão sendo atendidos. Um contra-exemplo é um requisito que apenas requer que o sistema seja amigável. Como os desenvolvedores vão saber se estão atendendo essa expectativa dos clientes?
+* Requisitos devem ser **verificáveis**, isto é, deve ser possível testar se os requisitos estão sendo atendidos. Um contra-exemplo é um requisito que apenas requer que o sistema seja amigável. Como os desenvolvedores vão saber se estão atendendo a essa expectativa dos clientes?
 
 Por fim, os requisitos devem ser priorizados. Às vezes, o termo requisitos é interpretado de forma literal, isto é, como uma lista de funcionalidades e restrições obrigatórias em sistemas de software. No
 entanto, nem sempre aquilo que é especificado pelos clientes será implementado nas releases iniciais. Por exemplo, restrições de prazo e custos podem postergar a implementação de certos requisitos.
@@ -113,7 +113,7 @@ A próxima figura resume um pouco o que foi estudado sobre requisitos até agora
 
 A figura serve para ilustrar uma situação muito comum em Engenharia de Requisitos: sistemas cujos requisitos mudam com frequência ou cujos usuários não sabem especificar com precisão o sistema que querem. Na verdade, já estudamos sobre tais sistemas no Capítulo 2, quando tratamos de Métodos Ágeis. Conforme visto, quando os requisitos mudam frequentemente e o sistema não é de missão crítica, não vale a pena investir anos na elaboração de um Documento Detalhado de Requisitos. Corre-se o risco de quando ele ficar pronto, os requisitos já estarem obsoletos —  ou um concorrente já ter construído um sistema equivalente e dominado o mercado. Em tais sistemas, como vimos no Capítulo 2, pode-se adotar documentos simplificados de especificação de requisitos — chamados de **Histórias de Usuários**  —  e incorporar um representante dos clientes, em tempo integral, ao time de desenvolvimento, para tirar dúvidas e explicar os requisitos para os desenvolvedores. Dada a importância de tais cenários  —  sistemas cujos requisitos são sujeitos a mudanças, mas não críticos  —  iremos iniciar com o estudo de Histórias de Usuários na Seção 3.3.
 
-Por outro lado, existem também aqueles sistemas com requisitos mais estáveis. Nesses casos, pode ser importante investir em especificações de requisitos mais detalhadas. Tais especificações podem ser também requisitadas por certas empresas, que preferem contratar o desenvolvimento de um sistema apenas após conhecer todos os seus requisitos. Por último, eles podem ser requisitados por organização de certificação, principalmente no caso de sistemas que lidam com vidas humanas, como sistemas das áreas médicas, de transporte ou militar. Na Seção 3.4, iremos estudar **Casos de Uso**, que são documentos bastante detalhados para especificação de requisitos.
+Por outro lado, existem também aqueles sistemas com requisitos mais estáveis. Nesses casos, pode ser importante investir em especificações de requisitos mais detalhadas. Tais especificações podem ser também requisitadas por certas empresas, que preferem contratar o desenvolvimento de um sistema apenas após conhecer todos os seus requisitos. Por último, eles podem ser requisitados por organizações de certificação, principalmente no caso de sistemas que lidam com vidas humanas, como sistemas das áreas médica, de transporte ou militar. Na Seção 3.4, iremos estudar **Casos de Uso**, que são documentos detalhados para especificação de requisitos.
 
 Uma terceira situação é quando não sabemos nem mesmo se o "problema" que vamos resolver é de fato um problema. Ou seja, podemos até levantar todos os requisitos desse "problema" e implementar um sistema que o resolva. Porém, não temos certeza de que esse sistema terá sucesso e usuários. Nesses casos, o mais prudente é dar um passo atrás e primeiro testar a relevância do problema que se planeja resolver por meio de um sistema de software. Um possível teste envolve a construção de um **Produto Mínimo Viável** (**MVP**). Um MVP é um sistema funcional, mas que possui apenas o conjunto mínimo de funcionalidades necessárias para comprovar a viabilidade de um produto ou sistema. Dada a importância contemporânea de tais cenários — sistemas para resolver problemas em mercados desconhecidos ou incertos — estudaremos mais sobre MVPs na Seção 3.5.
 
@@ -122,7 +122,7 @@ Uma terceira situação é quando não sabemos nem mesmo se o "problema" que vam
 \index{Histórias de Usuários}
 Documentos de requisitos tradicionais, como aqueles produzidos quando se usa Waterfall, possuem centenas de páginas e levam às vezes mais de um ano para ficarem prontos. Além disso, eles sofrem dos seguintes problemas: (1) durante o desenvolvimento, os requisitos mudam e os documentos ficam obsoletos; (2) descrições em linguagem natural são ambíguas e incompletas; então os desenvolvedores têm que voltar a conversar com os clientes durante o desenvolvimento para tirar dúvidas; (3) quando essas conversas intermediárias não ocorrem, os riscos são ainda maiores: no final da codificação, o cliente pode simplesmente concluir que esse não é mais o sistema que ele queria, pois suas prioridades mudaram, sua visão do negócio mudou, os processos internos de sua empresa mudaram, etc. Por isso, uma longa fase inicial de especificação de requisitos é cada vez mais rara, pelo menos em sistemas comerciais, como aqueles que estão sendo tratados neste livro.
 
-Os profissionais da indústria que propuseram métodos ágeis perceberam  —  ou sofreram com  —  tais problemas e propuseram uma técnica pragmática para solucioná-los, que ficou conhecida pelo nome de **Histórias de Usuários**. Conforme sugerido por Ron Jeffries em um livro sobre desenvolvimento ágil ([link](https://dl.acm.org/citation.cfm?id=557459)), uma história de usuário é composta de três partes, todas começando com a letra C e que vamos documentar usando a seguinte equação:
+Os profissionais da indústria que propuseram métodos ágeis perceberam  —  ou sofreram com  —  tais problemas e propuseram uma técnica pragmática para solucioná-los, que ficou conhecida pelo nome de **Histórias de Usuários**. Conforme sugerido por Ron Jeffries em um livro sobre desenvolvimento ágil ([link](https://dl.acm.org/citation.cfm?id=557459)), uma história de usuário é composta por três partes, todas começando com a letra C e que vamos documentar usando a seguinte equação:
 
 > História de Usuário = Cartão + Conversas + Confirmação
 
@@ -138,7 +138,7 @@ Portanto, especificações de requisitos por meio de histórias não consistem a
 
 Olhando na perspectiva dos desenvolvedores, o processo funciona assim: o representante dos clientes está nos pedindo a história resumida nesse cartão. Logo, nossa obrigação no próximo sprint é implementá-la. Para isso, poderemos contar com o apoio integral dele para conversar e tirar dúvidas. Além disso, ele já definiu os testes que vai usar na reunião de revisão do sprint (ou sprint review) para considerar a história implementada. Combinamos ainda que ele não pode mudar de ideia e, ao final do sprint, usar um teste completamente diferente para testar nossa implementação.
 
-Resumindo, quando usamos histórias de usuário, atividades de Engenharia de Requisitos ocorrem ao longo de todo o desenvolvimento, em praticamente todos os dias de uma iteração. Consequentemente, troca-se um documento de requisitos com centenas de páginas por conversas frequentes, nas quais o representante dos clientes explica os requisitos para os desenvolvedores da equipe. Prosseguindo na comparação, histórias de usuários favorecem comunicação verbal, em vez de comunicação escrita. E por isso elas são também compatíveis com os princípios do Manifesto Ágil, que reproduzimos a seguir: (1) indivíduos e interações, mais do que processos e ferramentas; (2) software em funcionamento, mais do que documentação abrangente; (3) colaboração com o cliente, mais do que negociação de contratos; (4) resposta a mudanças, mais do que seguir um plano.
+Resumindo, quando usamos histórias de usuários, atividades de Engenharia de Requisitos ocorrem ao longo de todo o desenvolvimento, em praticamente todos os dias de uma iteração. Consequentemente, troca-se um documento de requisitos com centenas de páginas por conversas frequentes, nas quais o representante dos clientes explica os requisitos para os desenvolvedores da equipe. Prosseguindo na comparação, histórias de usuários favorecem comunicação verbal, em vez de comunicação escrita. E por isso elas são também compatíveis com os princípios do Manifesto Ágil, que reproduzimos a seguir: (1) indivíduos e interações, mais do que processos e ferramentas; (2) software em funcionamento, mais do que documentação abrangente; (3) colaboração com o cliente, mais do que negociação de contratos; (4) resposta a mudanças, mais do que seguir um plano.
 
 \index{Histórias de Usuários!Propriedades}
 Boas histórias devem possuir as seguintes características (cujas iniciais em inglês dão origem ao acrônimo INVEST):
@@ -210,13 +210,13 @@ Por fim, mostramos as histórias propostas pelos funcionários da biblioteca, du
 
 Antes de concluir, vamos mostrar um teste de aceitação para a história "pesquisar por livros". Para confirmar a implementação dessa história, o representante dos clientes definiu que gostaria de ver as seguintes pesquisas serem realizadas com sucesso. Elas serão demonstradas e testadas durante a reunião de entrega de histórias  —  chamada de Revisão do Sprint em Scrum.
 
->Pesquisa por livros, informando ISBN
+>Pesquisar por livros, informando ISBN
 >
-> Pesquisa por livros, informando autor; retorna livros cujo autor contém a string de busca
+> Pesquisar por livros, informando autor; retorna livros cujo autor contém a string de busca
 >                                 
-> Pesquisa por livros, informando título; retorna livros cujo título contém a string de busca
+> Pesquisar por livros, informando título; retorna livros cujo título contém a string de busca
 >
-> Pesquisa por livros cadastrados na biblioteca desde uma data até a data atual                                                
+> Pesquisar por livros cadastrados na biblioteca desde uma data até a data atual                                                
 
 \index{Requisitos!Gold Plating}
 ```{=latex}
@@ -248,7 +248,7 @@ vamos responder algumas perguntas sobre histórias de usuários:
 ## Casos de Uso
 
 \index{Casos de Uso}
-**Casos de uso** (*use cases*) são documentos textuais de especificação de requisitos. Como veremos nesta seção, eles incluem descrições mais detalhadas do que histórias de usuário. Recomenda-se que casos de uso sejam escritos na fase de Especificação de Requisitos, considerando que estamos seguindo um processo de desenvolvimento do tipo Waterfall. Eles são escritos pelos próprios desenvolvedores do sistema  —  às vezes, chamados de Engenheiros de Requisitos durante essa fase do desenvolvimento. Para isso, os desenvolvedores podem se valer, por exemplo, de entrevistas com os usuários do sistema. Apesar de escritos pelos desenvolvedores, casos de uso podem ser lidos, entendidos e validados pelos usuários, antes de as fases de design e implementação terem início.
+**Casos de uso** (*use cases*) são documentos textuais de especificação de requisitos. Como veremos nesta seção, eles incluem descrições mais detalhadas do que histórias de usuários. Recomenda-se que casos de uso sejam escritos na fase de Especificação de Requisitos, considerando que estamos seguindo um processo de desenvolvimento do tipo Waterfall. Eles são escritos pelos próprios desenvolvedores do sistema  —  às vezes, chamados de Engenheiros de Requisitos durante essa fase do desenvolvimento. Para isso, os desenvolvedores podem se valer, por exemplo, de entrevistas com os usuários do sistema. Apesar de escritos pelos desenvolvedores, casos de uso podem ser lidos, entendidos e validados pelos usuários, antes de as fases de design e implementação terem início.
 
 \index{Casos de Uso!Ator}
 Casos de uso são escritos na perspectiva de um **ator** que deseja usar o sistema com um objetivo. Tipicamente, esse ator é um usuário humano (embora, raramente, possa ser um outro sistema de software ou hardware). Em qualquer caso, o ator é uma entidade externa ao sistema.
@@ -293,7 +293,7 @@ Vamos agora detalhar alguns pontos pendentes sobre casos de uso, usando o exempl
 
 Por último, temos as extensões, as quais têm dois objetivos:
 
-* Detalhar algum passo do fluxo normal. No nosso exemplo, usamos extensões para especificar que a transferência deve ser imediatamente realizada se a data informada for a data corrente (extensão 5a). Caso contrário, temos um agendamento de transferência, que vai ocorrer na data futura que foi informada (extensão 5b).
+* Detalhar algum passo do fluxo normal. No nosso exemplo, usamos extensões para especificar que a transferência deve ser imediatamente realizada se a data informada for a data corrente (extensão 5a). Caso contrário, temos um agendamento da transferência, que vai ocorrer na data futura que foi informada (extensão 5b).
 
 * Tratar erros, exceções, cancelamentos, etc. No nosso exemplo, usamos uma extensão para especificar que um novo valor deve ser solicitado, caso não exista saldo suficiente para a transferência (extensão 3a).
 
@@ -324,7 +324,7 @@ autor de um conhecido livro sobre casos de uso ([link](https://dl.acm.org/citati
 
 No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No entanto, gostaríamos de adiantar e comentar sobre um dos diagramas UML, chamado **Diagrama de Casos de Uso**. Esse diagrama é um "índice gráfico" de casos de uso. Ele representa os atores de um sistema (como pequenos bonecos) e os casos de uso (como elipses). Mostram-se também dois tipos de relacionamento: (1) ligando ator com caso de uso, que indicam que um ator participa de um determinado caso de uso; (2) ligando dois casos de uso, que indicam que um caso de uso inclui ou estende outro caso de uso.
 
-Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é mostrado na próxima figura. Nele estão representados dois atores: Cliente e Gerente. Cliente participa dos seguintes casos de uso: Sacar Dinheiro e Transferir Valores. E Gerente é o ator principal do caso de uso Abrir Conta. O diagrama também deixa explícito que Transferir Valores inclui o caso de uso Autenticar Cliente. Por fim, veja que os casos de uso são representados dentro de um retângulo, que delimita as fronteiras do sistema. Os dois atores são representados fora dessa fronteira.
+Um exemplo simples de Diagrama de Caso de Uso para o nosso sistema bancário é mostrado na figura da próxima página. Nele estão representados dois atores: Cliente e Gerente. Cliente participa dos seguintes casos de uso: Sacar Dinheiro e Transferir Valores. E Gerente é o ator principal do caso de uso Abrir Conta. O diagrama também deixa explícito que Transferir Valores inclui o caso de uso Autenticar Cliente. Por fim, veja que os casos de uso são representados dentro de um retângulo, que delimita as fronteiras do sistema. Os dois atores são representados fora dessa fronteira.
 
 ![Exemplo de Diagrama UML de Casos de Uso](figs/cap3/diagrama-caso-uso){width=76%}
 
@@ -344,7 +344,7 @@ Vamos responder agora duas perguntas sobre casos de uso.
 **Qual a diferença entre casos de uso e histórias de usuários**? A resposta simples é que casos de uso são especificações de requisitos mais detalhadas e completas do que histórias. Uma resposta mais elaborada é formulada por Mike Cohn em seu livro sobre histórias ([link](https://dl.acm.org/citation.cfm?id=984017)). Segundo ele, "casos de uso são escritos em um formato aceito tanto por clientes como por desenvolvedores, de forma que cada um deles possa ler e concordar com o que está escrito. Portanto, o objetivo é documentar um acordo entre clientes e time de desenvolvimento. Histórias, por outro lado, são escritas para facilitar o planejamento de iterações e para servir como um lembrete para conversas sobre os detalhes das necessidades dos clientes."
 
 **Qual a origem da técnica de casos de uso?** Casos de uso foram propostos no final da década de 80, por Ivar Jacobson, um dos pais da UML e também do Processo Unificado (UP) ([link](https://dl.acm.org/doi/book/10.5555/993806)). 
-Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme dito no Capítulo 2, UP enfatiza a comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
+Especificamente, casos de uso foram concebidos para ser um dos principais produtos da fase de Elaboração do UP. Conforme dito no Capítulo 2, UP enfatiza comunicação escrita entre usuários e desenvolvedores, usando documentos como casos de uso.
 
 ## Produto Mínimo Viável (MVP)
 
@@ -371,7 +371,7 @@ O aprendizado obtido com um MVP pode resultar em três decisões:
 
 * Pode-se concluir que ainda são necessários mais testes com o MVP, possivelmente alterando seu conjunto de requisitos, sua interface com os usuários ou o mercado alvo. Logo, repete-se o ciclo, voltando para o passo construir.
 
-* Pode-se concluir que o teste foi bem sucedido e, portanto, achou-se um mercado para o sistema (um *market fit*). Neste caso, é hora de investir mais recursos, para implementar um sistema com um conjunto mais robusto e completo de funcionalidades.
+* Pode-se concluir que o teste foi bem sucedido e, portanto, achou-se um mercado para o sistema (um *market fit*). Neste caso, é hora de investir mais recursos para implementar um sistema com um conjunto mais robusto e completo de funcionalidades.
 
 * Por fim, pode-se concluir que o MVP falhou, após várias tentativas. Então, restam duas alternativas: (1) perecer, isto é, desistir do empreendimento, principalmente se não existirem mais recursos financeiros para mantê-lo vivo; ou (2) realizar um **pivô**, isto é, abandonar a visão original e tentar um novo MVP, com novos requisitos e para um novo mercado, mas sem esquecer o que se aprendeu com o MVP anterior.
 
@@ -487,7 +487,7 @@ obtidos com a versão de tratamento. Essa métrica é genericamente chamada de
 de visitas que se convertem em compras por meio de links recomendados. A
 expectativa é que o novo algoritmo de recomendação aumente esse percentual.
 
-Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo este trecho de código:
+Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use a versão de controle (com o algoritmo tradicional) e a outra metade use a versão de tratamento (com o novo algoritmo de recomendação, que está sendo testado). Além disso, é importante que essa seleção seja aleatória. Ou seja, quando um usuário entrar no sistema, iremos escolher aleatoriamente qual versão ele irá usar. Para isso, podemos modificar a página principal, incluindo o seguinte trecho de código:
 
 ```
 version = Math.Random(); // número aleatório entre 0 e 1
@@ -570,7 +570,7 @@ comum de calculadoras de tamanho de amostras de Testes A/B.
 
 Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
-**Posso testar mais de duas variações?** Sim, a metodologia que explicamos adapta-se a mais de dois testes. Basta dividir os acessos em três grupos aleatórias, por exemplo, se quiser testar três versões de um sistema. Esses testes, com mais de um tratamento, são chamados de Testes A/B/n.
+**Posso testar mais de duas variações?** Sim, a metodologia que explicamos adapta-se a mais de dois testes. Basta dividir os acessos em três grupos aleatórios, por exemplo, se quiser testar três versões de um sistema. Esses testes, com mais de um tratamento, são chamados de Testes A/B/n.
 
 **Posso terminar o teste A/B antes, se ele apresentar o ganho esperado**? Não, esse é um erro frequente e grave. Se o tamanho da amostra for de 200 mil usuários, o teste  —  de cada grupo  —  somente pode ser encerrado quando alcançarmos exatamente esse número de usuários. Sendo mais preciso, ele não deve terminar antes, com menos usuários, nem depois, com mais usuários. Um possível erro de desenvolvedores quando começam a usar testes A/B consiste em encerrar o teste no primeiro dia em que o ganho mínimo esperado for alcançado, sem testar o resto da amostra.
 
@@ -591,11 +591,11 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 * Na Netflix, 
   \index{Netflix}
-  "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
+  "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com que certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
 
 * Na Microsoft, 
    \index{Facebook}
-   especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. \... Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
+   especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
 ```{=latex}
 \end{esmbox}
 ```
@@ -628,7 +628,7 @@ trabalho.
 equipe técnica de desenvolvimento do software trabalham com o cliente e
 os usuários finais do sistema para descobrir mais informações sobre o
 domínio da aplicação, que serviços o sistema deve oferecer, o desempenho
-exigido do sistema, as restrições de hardware, entre outras informações.
+exigido do sistema, as restrições de hardware, dentre outras informações.
 
 ( ) Na medida em que a informação de vários pontos de vista é coletada,
 os requisitos emergentes são consistentes.
@@ -641,7 +641,7 @@ custos relacionados ao retrabalho.
 2\. Cite o nome de pelo menos cinco técnicas para elicitação de
 requisitos.
 
-3\. Quais são as três partes de uma história de usuário? Responsa usando
+3\. Quais são as três partes de uma história de usuário? Responda usando
 o acrônimo 3C\'s.
 
 4\. Suponha uma rede social como o Facebook. (1) Escreva um conjunto de
@@ -649,18 +649,18 @@ cinco histórias para essa rede, assumindo o papel de um usuário típico; (2)
 Pense agora em mais um papel de usuário e escreva pelo menos duas
 histórias para ele.
 
-5\. Em Engenharia de Software, anti-patterns são soluções não
-recomendadas para um certo problema. Escreva pelo menos cinco anti-patterns
-para histórias de usuário. Em outras palavras, descreva formatos de
+5\. Em Engenharia de Software, *anti-patterns* são soluções não
+recomendadas para um certo problema. Escreva pelo menos cinco *anti-patterns*
+para histórias de usuários. Em outras palavras, descreva formatos de
 histórias que não são recomendados ou que não possuem propriedades
 recomendáveis.
 
 6\. Pense em um sistema e escreva uma história épica para o mesmo.
 
-7\. No contexto de requisitos, o que significa a expressão gold plating?
+7\. No contexto de requisitos, o que significa a expressão *gold plating*?
 
 8\. Escreva um caso de uso para um Sistema de Controle de Bibliotecas
-(similar ao que usamos para ilustrar a escrita de histórias).
+(similar ao que usamos para ilustrar a escrita de histórias na Seção 3.3.1).
 
 9\. O seguinte caso de uso possui apenas o fluxo normal. Escreva
 então algumas extensões para ele.
@@ -676,7 +676,7 @@ então algumas extensões para ele.
 >
 > 2. Usuário seleciona livros e coloca no carrinho de compra
 >
-> 3. Usuário decide fechar compra
+> 3. Usuário decide fechar a compra
 >
 > 4. Usuário seleciona endereço de entrega
 >
