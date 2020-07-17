@@ -1,5 +1,5 @@
 
-# Como monetizar sistemas de software? {.unnumbered}
+# Como monetizar produtos de software? {.unnumbered}
 
 Este é um **artigo em andamento**. Provavelmente, ainda vamos acrescentar mais
 informações nele. No entanto, na versão atual, acreditamos que ele já
@@ -15,7 +15,7 @@ meio de uma licença de uso.
 Por exemplo, no início da empresa, a Microsoft somente vendia licenças
 de uso de seus sistemas. Veja um exemplo na próxima figura:
 
-![](./figs/windows10.png){width=75%}
+![](./figs/windows10.png){width=50%}
 
 
 Os usuários compravam licenças de sistemas como
@@ -74,7 +74,7 @@ Para dar um exemplo de um sistema SaaS brasileiro, a próxima
 figura mostra os preços do sistema de gestão financeira 
 e contábil da empresa Conta Azul.
 
-![](./figs/conta-azul.png){width=90%}
+![](./figs/conta-azul.png){width=85%}
 
 Porém, podemos citar diversos outros exemplos de sistemas SaaS:
 
