@@ -20,7 +20,7 @@ de uso de seus sistemas. Veja um exemplo na próxima figura:
 
 Os usuários compravam licenças de sistemas como
 Windows e Office e, assim, ganhavam o direito de instalá-los na 
-sua máquina e receber gratuitamente atualizações periódicas. Basicamente, 
+sua máquina e receber gratuitamente atualizações. Basicamente, 
 essas atualizações eram manutenções corretivas, com correções de bugs. 
 Depois de um certo tempo, a Microsoft criava novas versões de seus sistemas, 
 com novas funcionalidades e então os clientes tinham que adquirir novas
@@ -38,13 +38,12 @@ de conexões simultânea que será aceito pelo servidor.
 Uma alternativa ao modelo de licenças puro consiste na aquisição
 de uma licença e também na contração de serviços. 
 
-Dentre esses serviços, podemos citar serviços de manutenção, incluindo 
+Dentre eles, podemos citar serviços de manutenção, incluindo 
 manutenções corretivas e também algumas manutenções adaptativas (por
 exemplo, criar um novo relatório ou integrar o sistema licenciado a sistemas 
 de terceiros). A contratação de serviços de manutenção é mais comuns no caso
 de sistemas de informações, como sistemas integrados de gestão (ERPs).
-Por outro lado, no caso de software de prateleira, como 
-Windows, Office, etc, eles não são comuns.
+
 
 Além de serviços de manutenção, podem ser realizados também contratos
 para prestação de serviços de treinamento de usuários, instalação e suporte.
@@ -59,7 +58,7 @@ for necessário (ou então, até que ele se torne obsoleto).
 
 Em vez disso, paga-se uma assinatura mensal (ou anual) para a empresa
 que desenvolve e mantém o sistema. Mediante esse pagamento, o usuário
-ganha um login e senha, que dá direito ao usa do sistema.
+ganha um login e senha, que dá direito ao uso do sistema.
 
 Portanto, o modelo SaaS requer que a empresa vendedora
 hospede e mantenha alguma infraestrutura computacional para execução
