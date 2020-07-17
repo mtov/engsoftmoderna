@@ -30,7 +30,7 @@ Licenças de uso podem ser individuais, para uso em um único computador, ou
 para uso em mais de um computador. Além disso, algumas licenças podem
 implicar em alguma restrição ao funcionamento do sistema. Um bom exemplo
 são servidores de bancos de dados, onde o cliente pode pagar pelo número
-de conexões simultânea que será aceito pelo servidor.
+de conexões simultâneas que serão aceitas pelo servidor.
 
 
 ## Licenças & Serviços {.unnumbered}
@@ -41,12 +41,12 @@ de uma licença e também na contração de serviços.
 Dentre eles, podemos citar serviços de manutenção, incluindo 
 manutenções corretivas e também algumas manutenções adaptativas (por
 exemplo, criar um novo relatório ou integrar o sistema licenciado a sistemas 
-de terceiros). A contratação de serviços de manutenção é mais comuns no caso
+de terceiros). A contratação de serviços de manutenção é mais comum no caso
 de sistemas de informações, como sistemas integrados de gestão (ERPs).
 
 
-Além de serviços de manutenção, podem ser realizados também contratos
-para prestação de serviços de treinamento de usuários, instalação e suporte.
+Além de serviços de manutenção, podem ser firmados também contratos
+para treinamento de usuários, instalação e suporte.
 
 ## Assinaturas {.unnumbered}
 
@@ -64,7 +64,7 @@ Portanto, o modelo SaaS requer que a empresa vendedora
 hospede e mantenha alguma infraestrutura computacional para execução
 do sistema. Ou seja, os clientes não precisam comprar 
 servidores e software básico para rodar o sistema, pois eles 
-são de responsabilidade da empresa vendedora. 
+são de responsabilidade da própria empresa vendedora. 
 
 Atualmente, SaaS é o modelo predominante para monetização de sistemas
 de software, devido à popularização da Web e de plataformas de 
@@ -95,8 +95,9 @@ como GMail, Dropbox ou GitHub. No entanto, é comum que sistemas SaaS
 adotem uma estratégia de comercialização chamada de **freemium**. Nesse
 caso, o sistema possui uma versão aberta e gratuita, mas com algumas
 limitações e uma versão paga, com um conjunto completo de funcionalidades.
+
 Por exemplo, o GMail é gratuito, mas se o usuário quiser suporte ou quiser
-ter um mails com um domínio próprio, o Google oferece um serviço pago. 
+ter endereços de mail com um domínio próprio, o Google oferece um serviço pago. 
 O GitHub e GitLab são gratuitos apenas para repositórios públicos; 
 repositórios privados requerem o pagamento de uma assinatura. O Dropbox 
 é gratuito até um limite de  armazenamento, de alguns gigabytes. 
@@ -105,7 +106,7 @@ Se o usuário precisar de mais armazenamento, ele deve pagar.
 
 ## Anúncios {.unnumbered}
 
-No mundo da Web, existe uma máxima que diz quando você acessa
+No mundo da Web, existe uma máxima que diz que quando você acessa
 um "um sistema gratuito, você não é um usuário, mas sim um produto". 
 Atualmente, essa frase aplica-se perfeitamente a grandes redes sociais, como 
 Facebook, Instagram e Twitter; e também a  serviços de busca, como o Google. 
