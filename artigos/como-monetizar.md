@@ -3,17 +3,18 @@
 
 Este é um **artigo em andamento**. Provavelmente, ainda vamos acrescentar mais
 informações nele. No entanto, na versão atual, acreditamos que ele já
-oferece uma boa visão do problema de monetizar (ou precificar)
+oferece uma boa visão sobre modelos de monetização (ou precificação) de
 produtos de software.
 
 ## Licenças {.unnumbered}
 
 Até um tempo atrás, a principal maneira de comercializar um sistema
-de software -- que você ou sua empresa desenvolveu e pretende manter 
--- era por meio de uma licença de uso. 
+de software -- que você ou sua empresa desenvolveu e pretende agora
+lucrar com ele -- era por meio de uma licença de uso. 
 
 Por exemplo, no início da empresa, a Microsoft somente vendia licenças
-de uso de seus sistemas. Veja um exemplo na próxima figura:
+de uso de seus sistemas. Veja um exemplo de anúncio do sistema
+operacional Windows na próxima figura:
 
 ![](./figs/windows10.png){width=50%}
 
@@ -21,7 +22,7 @@ de uso de seus sistemas. Veja um exemplo na próxima figura:
 Os usuários compravam licenças de sistemas como
 Windows e Office e, assim, ganhavam o direito de instalá-los na 
 sua máquina e receber gratuitamente atualizações. Basicamente, 
-essas atualizações eram manutenções corretivas, com correções de bugs. 
+essas atualizações consistiam em manutenções corretivas, com correções de bugs. 
 Depois de um certo tempo, a Microsoft criava novas versões de seus sistemas, 
 com novas funcionalidades e então os clientes tinham que adquirir novas
 licenças.
@@ -41,12 +42,12 @@ de uma licença e também na contração de serviços.
 Dentre eles, podemos citar serviços de manutenção, incluindo 
 manutenções corretivas e também algumas manutenções adaptativas (por
 exemplo, criar um novo relatório ou integrar o sistema licenciado a sistemas 
-de terceiros). A contratação de serviços de manutenção é mais comum no caso
-de sistemas de informações, como sistemas integrados de gestão (ERPs).
-
+de terceiros). Particularmente, a contratação de serviços de manutenção 
+é mais comum no caso de sistemas de informações, como sistemas 
+integrados de gestão (ERPs).
 
 Além de serviços de manutenção, podem ser firmados também contratos
-para treinamento de usuários, instalação e suporte.
+relativos a serviços de treinamento de usuários, instalação e suporte.
 
 ## Assinaturas {.unnumbered}
 
@@ -76,18 +77,19 @@ e contábil da empresa Conta Azul.
 
 ![](./figs/conta-azul.png){width=85%}
 
-Porém, podemos citar diversos outros exemplos de sistemas SaaS:
+Porém, podemos citar diversos outros exemplos de sistemas 
+comercializados no modelo SaaS:
 
-* sistemas de folhas de pagamento, como Gusto
-* sistemas de gerenciamento clientes, como Salesforce
+* sistemas de folhas de pagamento, como Gusto.
+* sistemas de gerenciamento clientes, como Salesforce.
 * Sistemas de escritório, como Office 365.
-* sistemas de comunicação, como Slack
-* sistemas de compartilhamento de arquivos, como Dropbox
-* sistemas de mail, como o GMail
+* sistemas de comunicação, como Slack.
+* sistemas de compartilhamento de arquivos, como Dropbox.
+* sistemas de mail, como o GMail.
 * sistemas de conferência, como Zoom.
-* sistemas de pagamento, como Shopify
-* sistemas de gerenciamento de projetos, como Basecamp
-* sistemas de controle de versões, como GitHub e GitLab
+* sistemas de pagamento, como Shopify.
+* sistemas de gerenciamento de projetos, como Basecamp.
+* sistemas de controle de versões, como GitHub e GitLab.
 * etc
 
 O leitor pode estar pensando que alguns desses serviços são gratuitos,
@@ -95,21 +97,24 @@ como GMail, Dropbox ou GitHub. No entanto, é comum que sistemas SaaS
 adotem uma estratégia de comercialização chamada de **freemium**. Nesse
 caso, o sistema possui uma versão aberta e gratuita, mas com algumas
 limitações e uma versão paga, com um conjunto completo de funcionalidades.
+Veja alguns exemplos:
 
-Por exemplo, o GMail é gratuito, mas se o usuário quiser suporte ou quiser
-ter endereços de mail com um domínio próprio, o Google oferece um serviço pago. 
-O GitHub e GitLab são gratuitos apenas para repositórios públicos; 
-repositórios privados requerem o pagamento de uma assinatura. O Dropbox 
-é gratuito até um limite de  armazenamento, de alguns gigabytes. 
+* O GMail é gratuito, mas se o usuário quiser suporte ou quiser
+ter endereços de mail com um domínio próprio, o Google oferece um serviço pago.
+
+* O GitHub e GitLab são gratuitos apenas para repositórios públicos; 
+repositórios privados requerem o pagamento de uma assinatura. 
+
+* O Dropbox  é gratuito até um limite de armazenamento, de alguns gigabytes. 
 Se o usuário precisar de mais armazenamento, ele deve pagar.
 
 
 ## Anúncios {.unnumbered}
 
-No mundo da Web, existe uma máxima que diz que quando você acessa
-um "um sistema gratuito, você não é um usuário, mas sim um produto". 
+No mundo da Web, existe uma máxima que diz que quando você usa
+"um sistema gratuito, você não é um usuário, mas sim um produto". 
 Atualmente, essa frase aplica-se perfeitamente a grandes redes sociais, como 
-Facebook, Instagram e Twitter; e também a  serviços de busca, como o Google. 
+Facebook, Instagram e Twitter; e também a serviços de busca, como o Google. 
 Todos eles são serviços "gratuitos", no sentido de que você não precisa pagar 
 uma assinatura, como no caso de sistemas SaaS.
 
@@ -118,18 +123,19 @@ número de usuários, da coleta de dados sobre o perfil e as preferências
 deles, e então da oferta de anúncios.
 
 Pode-se também combinar modelos de monetização. Por exemplo, a versão
-gratuita de um sistema SaaS pode possuir anúncios. Ao realizar uma
-assinatura, por exemplo, o usuário fica livre de tais anúncios
-e, possivelmente, tem acesso a novas funcionalidades.
+gratuita de um sistema SaaS pode incluir anúncios. No entanto, ao realizar
+uma assinatura, o usuário fica livre dos anúncios e, possivelmente, 
+tem acesso a mais funcionalidades.
+
 
 ## Open Source {.unnumbered}
 
 Talvez, esse seja o tipo de sistema mais desafiador de se monetizar.
 O motivo é que, por definição, sistemas de código aberto podem ser
 livremente copiados, modificados e instalados, sem pagamento de nenhum
-valor para o autor do código.
+valor monetário para o autor do código.
 
-No entanto, mesmo no caso de sistemas open source, existem pelo
+No entanto, mesmo no caso de sistemas de código aberto, existem pelo
 menos duas formas de monetização:
 
 * Por meio de doações dos usuários. Por exemplo, o sistema operacional
@@ -138,14 +144,15 @@ graças a contribuições de grandes empresas usuárias do sistema operacional.
 Outros exemplos são a Fundação Mozilla e a Fundação Apache. No entanto,
 nem sempre é necessário criar uma fundação para receber doações. Muitas
 vezes, elas são feitas diretamente para os mantenedores do sistema
-open source, por meio de plataformas de captação de recursos, como
+de código aberto, por meio de plataformas de captação de recursos, como
 Patreon. Mais recentemente, o GitHub está também habilitando um
 serviço de doações.
 
 * Por meio de prestação de serviços relacionados com o sistema open source,
 incluindo treinamento e customizações. Um exemplo de empresa que adotou
 esse padrão foi a Red Hat, que oferece serviços de suporte e consultoria
-para empresas que usam sistemas Linux.
+para empresas que usam Linux.
+
 
 ## Exercício {.unnumbered}
 
