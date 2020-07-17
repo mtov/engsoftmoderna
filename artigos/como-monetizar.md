@@ -16,7 +16,7 @@ Por exemplo, no início da empresa, a Microsoft somente vendia licenças
 de uso de seus sistemas. Veja um exemplo de anúncio do sistema
 operacional Windows na próxima figura:
 
-![](./figs/windows10.png){width=50%}
+![](./figs/windows10.png){width=60%}
 
 
 Os usuários compravam licenças de sistemas como
@@ -49,7 +49,7 @@ integrados de gestão (ERPs).
 Além de serviços de manutenção, podem ser firmados também contratos
 relativos a serviços de treinamento de usuários, instalação e suporte.
 
-## SaaS: Software as a Service (SaaS){.unnumbered}
+## SaaS: Software as a Service{.unnumbered}
 
 Esse modelo popularizou-se com o surgimento da Web. 
 A ideia é que os clientes não adquirem
