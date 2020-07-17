@@ -1,4 +1,5 @@
 
 pandoc --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 pandoc --defaults=defaults.yaml -T "Módulos devem ser Profundos!" deep-modules.md -o deep-modules.html
+pandoc --defaults=defaults.yaml -T "Como monetizar sistemas de software?" como-monetizar.md -o como-monetizar.html
 
