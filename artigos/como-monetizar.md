@@ -9,8 +9,8 @@ produtos de software.
 ## Licenças {.unnumbered}
 
 Até um tempo atrás, a principal maneira de comercializar um sistema
-de software -- que você desenvolveu e pretende manter -- era por
-meio de uma licença de uso. 
+de software -- que você ou sua empresa desenvolveu e pretende manter 
+-- era por meio de uma licença de uso. 
 
 Por exemplo, no início da empresa, a Microsoft somente vendia licenças
 de uso de seus sistemas. Veja um exemplo na próxima figura:
@@ -153,6 +153,14 @@ para empresas que usam sistemas Linux.
 O que esses sistemas fazem? Qual o valor da assinatura cobrada?
 Eles adotam o modelo freemium?
 
+2. Descreva duas vantagens do modelo SaaS em relação ao modelo baseado em 
+licenças de uso.
+
+3. Existe uma modalidade de software que é gratuito porque ele permite
+acessar outros serviços da empresa responsável pelo software. Um exemplo
+são sistemas de home-banking: eles são gratuitos porque eles automatizam
+serviços bancários, que são cobrados. Dê pelo menos um outro exemplo
+de sistema desse tipo. 
 
 * * * 
 
