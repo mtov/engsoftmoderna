@@ -66,7 +66,7 @@ do sistema. Ou seja, os clientes não precisam comprar
 servidores e software básico para rodar o sistema, pois eles 
 são de responsabilidade da empresa vendedora. 
 
-Atualmente, Saas é o modelo predominante para monetização de sistemas
+Atualmente, SaaS é o modelo predominante para monetização de sistemas
 de software, devido à popularização da Web e de plataformas de 
 computação em nuvem. 
 
@@ -74,7 +74,7 @@ Para dar um exemplo de um sistema SaaS brasileiro, a próxima
 figura mostra os preços do sistema de gestão financeira 
 e contábil da empresa Conta Azul.
 
-![](./figs/conta-azul.png){width=100%}
+![](./figs/conta-azul.png){width=90%}
 
 Porém, podemos citar diversos outros exemplos de sistemas SaaS:
 
