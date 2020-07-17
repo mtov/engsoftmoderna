@@ -147,6 +147,13 @@ incluindo treinamento e customizações. Um exemplo de empresa que adotou
 esse padrão foi a Red Hat, que oferece serviços de suporte e consultoria
 para empresas que usam sistemas Linux.
 
+## Exercício {.unnumbered}
+
+1. Pesquise sistemas de empresas brasileiras que adotam o modelo SaaS.
+O que esses sistemas fazem? Qual o valor da assinatura cobrada?
+Eles adotam o modelo freemium?
+
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
