@@ -49,14 +49,12 @@ integrados de gestão (ERPs).
 Além de serviços de manutenção, podem ser firmados também contratos
 relativos a serviços de treinamento de usuários, instalação e suporte.
 
-## Assinaturas {.unnumbered}
+## SaaS: Software as a Service (SaaS){.unnumbered}
 
-Esse modelo popularizou-se com o surgimento da Web. Sistemas que
-seguem esse modelo de comercialização são chamados
-de **Software as a Service (ou SaaS)**. A ideia é que os clientes não adquirem
+Esse modelo popularizou-se com o surgimento da Web. 
+A ideia é que os clientes não adquirem
 mais uma licença que dá direito a uso do sistema pelo tempo que
 for necessário (ou então, até que ele se torne obsoleto). 
-
 Em vez disso, paga-se uma assinatura mensal (ou anual) para a empresa
 que desenvolve e mantém o sistema. Mediante esse pagamento, o usuário
 ganha um login e senha, que dá direito ao uso do sistema.
@@ -94,7 +92,7 @@ comercializados no modelo SaaS:
 
 O leitor pode estar pensando que alguns desses serviços são gratuitos,
 como GMail, Dropbox ou GitHub. No entanto, é comum que sistemas SaaS
-adotem uma estratégia de comercialização chamada de **freemium**. Nesse
+adotem uma estratégia de marketing chamada de **freemium**. Nesse
 caso, o sistema possui uma versão aberta e gratuita, mas com algumas
 limitações e uma versão paga, com um conjunto completo de funcionalidades.
 Veja alguns exemplos:
@@ -108,6 +106,13 @@ repositórios privados requerem o pagamento de uma assinatura.
 * O Dropbox  é gratuito até um limite de armazenamento, de alguns gigabytes. 
 Se o usuário precisar de mais armazenamento, ele deve pagar.
 
+
+Também existem empresas bem menores do que aquelas mencionadas acima e que 
+sobrevivem oferecendo sistemas SaaS. Algumas são constituídas por um único desenvolvedor.
+Elas identificaram algum nicho de mercado, desenvolveram
+um sistema para atuar nesse nicho e então possuem algumas centenas
+de usuários, no máximo milhares, que pagam valores relativamente
+baixo de assinaturas. 
 
 ## Anúncios {.unnumbered}
 
