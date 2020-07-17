@@ -156,11 +156,6 @@ Eles adotam o modelo freemium?
 2. Descreva duas vantagens do modelo SaaS em relação ao modelo baseado em 
 licenças de uso.
 
-3. Existe uma modalidade de software que é gratuito porque ele permite
-acessar outros serviços da empresa responsável pelo software. Um exemplo
-são sistemas de home-banking: eles são gratuitos porque eles automatizam
-serviços bancários, que são cobrados. Dê pelo menos um outro exemplo
-de sistema desse tipo. 
 
 * * * 
 
