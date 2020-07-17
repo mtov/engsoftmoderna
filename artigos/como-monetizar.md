@@ -146,5 +146,6 @@ incluindo treinamento e customizações. Um exemplo de empresa que adotou
 esse padrão foi a Red Hat, que oferece serviços de suporte e consultoria
 para empresas que usam sistemas Linux.
 
+* * * 
 
-
+Voltar para a lista de [artigos](./artigos.html).
