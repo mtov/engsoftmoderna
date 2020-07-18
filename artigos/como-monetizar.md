@@ -174,12 +174,12 @@ máquinas, Internet, serviços de cloud, propaganda, marketing, etc)
 * Capital disponível para desenvolvimento do produto e, em quanto tempo,
 espera-se recuperá-lo.
 
-* Preços de produtos similares no mercado e capacidade de pagamento dos
+* Preços praticados por sistemas concorrentes, junto com a capacidade de pagamento dos
 potenciais clientes de seu sistema. Por exemplo, se seu mercado são
 pequenas empresas, você não cobrar uma assinatura que não esteja ao alcance delas.
 
 
-## Exercício {.unnumbered}
+## Exercícios {.unnumbered}
 
 1. Pesquise sistemas de empresas brasileiras que adotam o modelo SaaS.
 O que esses sistemas fazem? Qual o valor da assinatura cobrada?
