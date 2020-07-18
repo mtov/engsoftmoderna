@@ -159,6 +159,26 @@ esse padrão foi a Red Hat, que oferece serviços de suporte e consultoria
 para empresas que usam Linux.
 
 
+## Conclusão {.unnumbered}
+
+Neste artigo, apresentamos os modelos que você pode usar para monetizar
+um software que você ou sua empresa pretende desenvolver. Faltou, no 
+entanto, comentar sobre como definir realmente o preço da licença,
+assinatura, dos serviços associados, etc. Para não deixar essa questão
+sem nenhuma resposta, essa definição depende basicamente das seguintes
+variáveis:
+
+* Custos de desenvolvimento do produto, desde salários, aluguel de salas, 
+máquinas, Internet, serviços de cloud, propaganda, marketing, etc)
+
+* Capital disponível para desenvolvimento do produto e, em quanto tempo,
+espera-se recuperá-lo.
+
+* Preços de produtos similares no mercado e capacidade de pagamento dos
+potenciais clientes de seu sistema. Por exemplo, se seu mercado são
+pequenas empresas, você não cobrar uma assinatura que não esteja ao alcance delas.
+
+
 ## Exercício {.unnumbered}
 
 1. Pesquise sistemas de empresas brasileiras que adotam o modelo SaaS.
