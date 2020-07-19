@@ -165,17 +165,20 @@ Neste artigo, apresentamos os modelos que você pode usar para monetizar
 um software que você ou sua empresa pretende desenvolver. Faltou, no 
 entanto, comentar sobre como definir realmente o preço da licença,
 assinatura, dos serviços associados, etc. Para não deixar essa questão
-completamente sem resposta, essa definição depende basicamente das seguintes
-variáveis:
+sem nenhuma resposta, no caso de desenvolvedores independentes 
+que não querem depender de financiamento externo, essa definição 
+depende das seguintes variáveis principais:
 
-* Custos de desenvolvimento do produto, desde salários, aluguel de salas, 
-máquinas, Internet, serviços de cloud, propaganda, marketing, etc.
+* Custos de desenvolvimento do produto, incluindo salários, aluguel de salas, 
+computadores, Internet, serviços de cloud, propaganda, marketing, etc.
 
-* Capital disponível para desenvolvimento do produto e, em quanto tempo,
-espera-se recuperá-lo.
+* Capital disponível para desenvolvimento do produto. Ou seja, 
+se você dispõe de um capital inicial pequeno, você não deve tentar 
+construir um sistema grande e complexo, pois irá
+gastá-lo completamente antes de ter um produto rentável.
 
-* Preços praticados por sistemas concorrentes, junto com a capacidade de 
-pagamento dos potenciais clientes de seu sistema. Por exemplo, se 
+* Preços praticados por sistemas concorrentes, além da capacidade de 
+pagamento dos potenciais clientes do seu sistema. Por exemplo, se 
 seu mercado são pequenas empresas, você não pode cobrar uma assinatura 
 que não esteja ao alcance delas. Ou então cobrar uma assinatura muito acima
 de um sistema concorrente, que resolve problemas semelhantes aos do
