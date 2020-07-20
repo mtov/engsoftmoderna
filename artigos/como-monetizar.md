@@ -71,11 +71,16 @@ computação em nuvem.
 
 Para dar um exemplo de um sistema SaaS brasileiro, a próxima 
 figura mostra os preços do sistema de gestão financeira 
-e contábil da empresa Conta Azul.
+e contábil da empresa ContaAzul.
 
 ![](./figs/conta-azul.png){width=85%}
 
-Porém, podemos citar diversos outros exemplos de sistemas 
+Veja que o sistema oferece diferentes planos de assinatura
+(Básico, Controle, Avançado, etc). Cada plano possui um
+número máximo de usuários e um número máximo de notas fiscais
+que podem ser emitidas por mês.
+
+Podemos citar também diversos outros exemplos de sistemas 
 comercializados no modelo SaaS:
 
 * sistemas de folhas de pagamento, como Gusto.
