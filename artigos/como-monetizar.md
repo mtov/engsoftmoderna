@@ -1,5 +1,5 @@
 
-# Como monetizar produtos de software? {.unnumbered}
+# Como monetizar sistemas de software? {.unnumbered}
 
 Este é um **artigo em andamento**. Provavelmente, ainda vamos acrescentar mais
 informações nele. No entanto, na versão atual, acreditamos que ele já
@@ -34,7 +34,7 @@ são servidores de bancos de dados, onde o cliente pode pagar pelo número
 de conexões simultâneas que serão aceitas pelo servidor.
 
 
-## Licenças & Serviços {.unnumbered}
+### Licenças & Serviços {.unnumbered}
 
 Uma alternativa ao modelo de licenças puro consiste na aquisição
 de uma licença e também na contração de serviços. 
@@ -140,7 +140,7 @@ tem acesso a mais funcionalidades.
 
 ## Open Source {.unnumbered}
 
-Talvez, esse seja o tipo de sistema mais desafiador de se monetizar.
+Este é o tipo de sistema mais desafiador de se monetizar.
 O motivo é que, por definição, sistemas de código aberto podem ser
 livremente copiados, modificados e instalados, sem pagamento de nenhum
 valor monetário para o autor do código.
@@ -158,10 +158,10 @@ de código aberto, por meio de plataformas de captação de recursos, como
 Patreon. Mais recentemente, o GitHub está também habilitando um
 serviço de doações.
 
-* Por meio de prestação de serviços relacionados com o sistema open source,
-incluindo treinamento e customizações. Um exemplo de empresa que adotou
-esse padrão foi a Red Hat, que oferece serviços de suporte e consultoria
-para empresas que usam Linux.
+* Por meio de prestação de serviços relacionados com o sistema de código 
+aberto, incluindo treinamento e customizações. Um exemplo de empresa 
+que adotou esse padrão foi a Red Hat, que oferece serviços de suporte 
+e consultoria para empresas que usam Linux.
 
 
 ## Conclusão {.unnumbered}
@@ -170,11 +170,12 @@ Neste artigo, apresentamos os modelos que você pode usar para monetizar
 um software que você ou sua empresa pretende desenvolver. Faltou, no 
 entanto, comentar sobre como definir realmente o preço da licença,
 assinatura, dos serviços associados, etc. Para não deixar essa questão
-sem nenhuma resposta, vamos rascunhar uma nesta conclusão.
-A resposta a seguir aplica-se a principalmente a desenvolvedores independentes 
-que não querem depender de financiamento externo. Neste caso, 
-a definição do preço de um produto de software
-depende das seguintes variáveis principais:
+completamente em aberto, vamos rascunhar uma resposta nesta conclusão.
+
+O esboço de resposta a seguir aplica-se a principalmente a desenvolvedores 
+independentes que não querem depender de financiamento externo. Neste caso, 
+a definição do preço de um produto de software depende das seguintes 
+variáveis principais:
 
 * Custos de desenvolvimento do produto, incluindo salários, 
 computadores, conexão de Internet, aluguel de serviços de cloud, 
@@ -183,13 +184,13 @@ propaganda, marketing, etc.
 * Capital disponível para desenvolvimento e operação do sistema. Ou seja, 
 se você dispõe de um capital inicial pequeno, você não deve tentar 
 construir um sistema grande e complexo, pois irá
-gastar seu capital completamente antes de ter um produto rentável.
+gastar esse capital completamente antes de ter um produto rentável.
 
 * Preços praticados por sistemas concorrentes, além da capacidade de 
 pagamento dos potenciais clientes do seu sistema. Por exemplo, se 
 seu mercado são pequenas empresas, você não pode cobrar uma assinatura 
 que não esteja ao alcance delas. Ou então cobrar uma assinatura muito acima
-de um sistema concorrente, que resolve problemas semelhantes aos do
+de sistemas concorrentes, que resolvem problemas semelhantes aos do
 seu sistema.
 
 
