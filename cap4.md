@@ -852,7 +852,7 @@ modelagem de fluxos e processos:
     também usam fichas (*tokens*) para marcar o estado corrente do
     sistema. Elas têm ainda a vantagem de possuir uma definição mais
     formal, principalmente quando comparada com a definição de
-    diagramas de sequência. Por outro lado, esses últimos tendem a
+    diagramas de atividades. Por outro lado, esses últimos tendem a
     oferecer uma notação mais simples e fácil de entender.
 
 -   **BPMN** (*Business Process Model and Notation*) 

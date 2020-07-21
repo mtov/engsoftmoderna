@@ -717,7 +717,7 @@ não-funcionais ou tarefas técnicas, como instalação de bancos de dados,
 servidores, frameworks, etc.
 
 **A história X depende da história Y, mas o representante dos clientes
-priorizou Y antes de X. O que devo fazer?** Por exemplo, suponha que no
+priorizou X antes de Y. O que devo fazer?** Por exemplo, suponha que no
 sistema de exemplo o representante dos clientes tenha alocado a história
 "Postar Pergunta" para a iteração 2 e a história "Postar Resposta"
 para a iteração 1. A pergunta então é a seguinte: o time deve respeitar
