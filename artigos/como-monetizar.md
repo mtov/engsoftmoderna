@@ -197,12 +197,12 @@ Para concluir mesmo, deve-se pensar também no **valor** de um sistema.
 Basicamente, preço é o que você vai cobrar pelo sistema e que o cliente vai
 pagar por ele. Valor é o benefício ou a economia que o cliente vai obter com 
 o seu sistema. Por exemplo, suponha que os clientes -- após comprarem 
-seu sistema -- vão aumentar suas vendas anuais em R$ 100 mil. Esse número
-é  então o valor do seu sistema para seus clientes. Portanto, se essa 
-estimativa de valor estiver correta, eles, muito provavelmente, estarão 
+seu sistema -- vão conseguir aumentar suas vendas anuais em R$ 100 mil. Esse número
+é  então o valor do seu sistema para seus clientes. Assim, se essa 
+estimativa de valor estiver correta, eles provavelmente estarão 
 dispostos a pagar R$ 10 mil de assinatura anual pelo sistema, 
-mesmo que seus custos sejam muito menores do que esse número. Por outro
-lado, a estimativa de valor de um sistema tende a ser subjetiva e
+mesmo que seus custos sejam muito menores do que esse montante. Porém,
+é importante ressaltar que o valor de um sistema tende a ser subjetivo e
 pode variar de cliente para cliente.
 
 ## Exercícios {.unnumbered}
