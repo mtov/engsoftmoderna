@@ -72,6 +72,18 @@
   {
     "text": "Um pivô ocorre quando abandona-se a visão original de um sistema e tenta-se um novo MVP.",
     "correct": "true"
+  },
+  {
+    "text": "São exemplos de requisitos não-funcionais: desempenho, confiabilidade, robustez, usabilidade e modularidade.",
+    "correct": "false"
+  },
+  {
+    "text": "Quando se usa métodos ágeis, requisitos não-funcionais devem fazer parte dos critérios de conclusão de histórias de usuários (done criteria).",
+    "correct": "true"
+  },
+  {
+    "text": "O nível de abstração usado na escrita de casos de uso deve ser similar àquele que usamos para definir algoritmos.",
+    "correct": "false"
   }
 ]
 }	    
