@@ -308,7 +308,7 @@ public class Estacionamento {
     ...
   }
 }</code></pre>
-<p>Nessa nova versão, a dependência entre <code>A</code> e <code>B</code> é tornada explícita. Agora, <code>B</code> possui um método público que retorna o valor <code>total</code>. E a classe <code>A</code> possui uma dependência para a classe <code>B</code>, por meio de um parâmetro do método <code>f</code>. Esse parâmetro é usado para requisitar explicitamente o valor de <code>total</code>, chamando-se o método <code>getTotal()</code>. Como esse método foi declarado público em B, espera-se que o desenvolvedor dessa classe se esforce para não alterar a sua assinatura. Por isso, nessa nova versão, dizemos que, apesar de existir uma dependência de <code>A</code> para <code>B</code>, o acoplamento criado por ela é aceitável. Ou seja, não é um acoplamento que gera preocupações.</p>
+<p>Nessa nova versão, a dependência entre <code>A</code> e <code>B</code> é tornada explícita. Agora, <code>B</code> possui um método público que retorna o valor <code>total</code>. E a classe <code>A</code> possui uma dependência para a classe <code>B</code>, por meio de um parâmetro do método <code>f</code>. Esse parâmetro é usado para requisitar explicitamente o valor de <code>total</code>, chamando-se o método <code>getTotal()</code>. Como esse método foi declarado público em <code>B</code>, espera-se que o desenvolvedor dessa classe se esforce para não alterar a sua assinatura. Por isso, nessa nova versão, dizemos que, apesar de existir uma dependência de <code>A</code> para <code>B</code>, o acoplamento criado por ela é aceitável. Ou seja, não é um acoplamento que gera preocupações.</p>
 <p>Ainda sobre o exemplo anterior, é interessante mencionar que, na primeira versão, o código de <code>A</code> não declara nenhuma variável ou atributo do tipo <code>B</code>. E, mesmo assim, temos um acoplamento ruim entre as classes. Na segunda versão, ocorre o contrário, pois o método <code>A.f()</code> declara um parâmetro do tipo <code>B</code>. Mesmo assim, o acoplamento entre as classes é de melhor qualidade, pois é mais fácil estudar e manter o código de <code>A</code> sem conhecer detalhes de <code>B</code>.</p>
 <p>   Alguns autores usam ainda os termos acoplamento estrutural e acoplamento evolutivo (ou lógico), com o seguinte significado:</p>
 <ul>
@@ -619,7 +619,7 @@ System.out.println(nomes);
 <p>Para explicar o Princípio de Substituição de Liskov vamos nos basear no seguinte exemplo:</p>
 <pre><code>void f(A a) {
   ...
-  a.g(n);
+  a.g();
   ...
 }</code></pre>
 <p>O método <code>f</code> pode ser chamado passando-se como parâmetros objetos de subclasses <code>B1</code>, <code>B2</code>, …, <code>Bn</code> da classe base <code>A</code>, como mostrado a seguir:</p>

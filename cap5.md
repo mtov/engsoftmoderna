@@ -758,7 +758,7 @@ Nessa nova versão, a dependência entre `A` e `B` é tornada explícita. Agora,
 possui uma dependência para a classe `B`, por meio de um parâmetro do
 método `f`. Esse parâmetro é usado para requisitar explicitamente o valor
 de `total`, chamando-se o método `getTotal()`. Como esse método foi
-declarado público em B, espera-se que o desenvolvedor dessa classe se
+declarado público em `B`, espera-se que o desenvolvedor dessa classe se
 esforce para não alterar a sua assinatura. Por isso, nessa nova versão,
 dizemos que, apesar de existir uma dependência de `A` para `B`, o
 acoplamento criado por ela é aceitável. Ou seja, não é um
@@ -1497,7 +1497,7 @@ seguinte exemplo:
 ```
 void f(A a) {
   ...
-  a.g(n);
+  a.g();
   ...
 }
 ```
