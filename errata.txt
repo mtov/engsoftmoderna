@@ -1,0 +1,11 @@
+2020.1.5
+
+Cap. 2, p. 49
+A história X depende da história Y, mas o representante dos clientes priorizou Y antes de X. 
+=>
+A história X depende da história Y, mas o representante dos clientes priorizou X antes de Y. 
+
+Cap. 3, p. 143
+Elas têm ainda a vantagem de possuir uma definição mais formal, principalmente quando comparada com a definição de diagramas de sequência.
+=>
+Elas têm ainda a vantagem de possuir uma definição mais formal, principalmente quando comparada com a definição de diagramas de atividades.

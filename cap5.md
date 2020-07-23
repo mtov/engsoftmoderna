@@ -665,7 +665,7 @@ básicos, como estruturas de dados, entrada/saída, etc.
 
 ### Exemplos
 
-**Exemplo 1:** Suponha a classe `Estacionamento`, usada na Seção 5.2, a
+**Exemplo 1:** Suponha a classe `Estacionamento`, usada na Seção 5.3, a
 qual possui um atributo que é uma `Hashtable`. Logo, dizemos que
 `Estacionamento` está acoplada a `Hashtable`. No entanto, na nossa
 classificação, trata-se de um acoplamento aceitável, isto é, ele não
@@ -1497,7 +1497,7 @@ seguinte exemplo:
 ```
 void f(A a) {
   ...
-  a.g(int n);
+  a.g(n);
   ...
 }
 ```

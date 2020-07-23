@@ -259,7 +259,7 @@ public class Estacionamento {
 </blockquote>
 <p>De fato, se uma classe depende de muitas outras classes, por exemplo, de dezenas de classes, ela pode estar assumindo responsabilidades demais, na forma de funcionalidades não coesas. Lembre-se que uma classe deve ter uma única responsabilidade (ou um único motivo para ser modificada). Por outro lado, devemos tomar cuidado com o significado do verbo minimizar. O objetivo não deve ser eliminar completamente o acoplamento de uma classe com outras classes, pois é natural que uma classe precise de outras classes, principalmente daquelas que implementam serviços básicos, como estruturas de dados, entrada/saída, etc.</p>
 <h3 data-number="1.5.1" id="exemplos-1" data-number="1.5.1"><span class="header-section-number">5.5.1</span> Exemplos</h3>
-<p><strong>Exemplo 1:</strong> Suponha a classe <code>Estacionamento</code>, usada na Seção 5.2, a qual possui um atributo que é uma <code>Hashtable</code>. Logo, dizemos que <code>Estacionamento</code> está acoplada a <code>Hashtable</code>. No entanto, na nossa classificação, trata-se de um acoplamento aceitável, isto é, ele não deve ser motivo de preocupação, pelos seguintes motivos:</p>
+<p><strong>Exemplo 1:</strong> Suponha a classe <code>Estacionamento</code>, usada na Seção 5.3, a qual possui um atributo que é uma <code>Hashtable</code>. Logo, dizemos que <code>Estacionamento</code> está acoplada a <code>Hashtable</code>. No entanto, na nossa classificação, trata-se de um acoplamento aceitável, isto é, ele não deve ser motivo de preocupação, pelos seguintes motivos:</p>
 <ul>
 <li><p><code>Estacionamento</code> só usa métodos públicos de <code>Hashtable</code>.</p></li>
 <li><p>A interface de <code>Hashtable</code> é estável, já que ela faz parte do pacote oficial de estruturas de dados de Java (estamos supondo que o sistema será implementado nessa linguagem). Assim, uma alteração na assinatura dos métodos públicos de <code>Hashtable</code> quebraria não apenas nossa classe <code>Estacionamento</code>, mas talvez milhões de outras classes de diversos sistemas Java ao redor do mundo.</p></li>
@@ -619,7 +619,7 @@ System.out.println(nomes);
 <p>Para explicar o Princípio de Substituição de Liskov vamos nos basear no seguinte exemplo:</p>
 <pre><code>void f(A a) {
   ...
-  a.g(int n);
+  a.g(n);
   ...
 }</code></pre>
 <p>O método <code>f</code> pode ser chamado passando-se como parâmetros objetos de subclasses <code>B1</code>, <code>B2</code>, …, <code>Bn</code> da classe base <code>A</code>, como mostrado a seguir:</p>
