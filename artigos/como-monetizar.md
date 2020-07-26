@@ -197,13 +197,15 @@ Para concluir mesmo, deve-se pensar também no **valor** de um sistema.
 Basicamente, preço é o que você vai cobrar pelo sistema e que o cliente vai
 pagar por ele. Valor é o benefício ou a economia que o cliente vai obter com 
 o seu sistema. Por exemplo, suponha que os clientes -- após comprarem 
-seu sistema -- vão conseguir aumentar suas vendas anuais em R$ 100 mil. Esse número
-é  então o valor do seu sistema para seus clientes. Assim, se essa 
-estimativa de valor estiver correta, eles provavelmente estarão 
+seu sistema -- vão conseguir incrementar suas vendas anuais em R$ 100 mil. Esse número
+é então o valor do seu sistema para seus clientes. Logo, se essa 
+estimativa de valor estiver correta, os clientes provavelmente estarão 
 dispostos a pagar R$ 10 mil de assinatura anual pelo sistema, 
 mesmo que seus custos sejam muito menores do que esse montante. Porém,
-é importante ressaltar que o valor de um sistema tende a ser subjetivo e
-pode variar de cliente para cliente.
+estimar o valor de um sistema pode não ser trivial. Pelo menos, ela 
+tende a ser bem mais difícil do que a estimativa dos custos do sistema.
+Além disso, o valor de um sistema pode variar de cliente 
+para cliente.
 
 ## Exercícios {.unnumbered}
 
@@ -213,6 +215,8 @@ Eles adotam o modelo freemium?
 
 2. Descreva duas vantagens do modelo SaaS em relação ao modelo baseado em 
 licenças de uso.
+
+3. Defina: (a) custo de um sistema; (b) valor de um sistema.
 
 
 * * * 
