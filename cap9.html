@@ -78,7 +78,7 @@
 <p>Nesta seção, vamos apresentar os principais refactorings do catálogo de Fowler. Assim como adotado nesse catálogo, vamos comentar sobre os seguintes tópicos na apresentação de cada refactoring: nome, motivação, mecânica de aplicação e exemplos de uso. Além disso, vamos usar alguns exemplos de refactorings reais, realizados por desenvolvedores de sistemas de código aberto disponíveis no GitHub.</p>
 <h3 data-number="1.2.1" id="extração-de-método" data-number="1.2.1"><span class="header-section-number">9.2.1</span> Extração de Método</h3>
 <p></p>
-<p>Extração de Método é um dos principais refactorings, tendo como objetivo extrair um trecho de código de um método <code>f</code> e levá-lo para um novo método g. Então, o método <code>f</code> passa a incluir uma chamada de <code>g</code>. O próximo código ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:</p>
+<p>Extração de Método é um dos principais refactorings, tendo como objetivo extrair um trecho de código de um método <code>f</code> e levá-lo para um novo método <code>g</code>. Então, o método <code>f</code> passa a incluir uma chamada de <code>g</code>. O próximo código ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:</p>
 <pre><code>void f () {
   ... // A
   ... // B 
@@ -98,7 +98,7 @@ void f () {
 <p> Existem também variações na mecânica de funcionamento de uma extração de método. Por exemplo, pode-se extrair de uma vez vários métodos <code>g1</code>, <code>g2</code>, …, <code>gn</code> de um método <code>f</code>. Pode-se também extrair o mesmo código <code>g</code> de vários métodos <code>f1</code>, <code>f2</code>, …, <code>fn</code>. Nesse caso, a extração é usada para eliminar <strong>duplicação de código</strong>, pois o código de <code>g</code> estava aparecendo no corpo de diversos métodos.</p>
 <p>Para realizar uma Extração de Método pode ser necessário passar parâmetros para o método extraído. Isso ocorre, por exemplo, se o método precisar acessar variáveis locais do método original. O método extraído pode ter ainda que retornar algumas dessas variáveis, caso elas sejam usados depois pelo método original. Por fim, se existirem variáveis locais que somente são usadas no método extraído, deve-se extrair também a declaração delas do método original. Ou seja, elas não serão mais necessárias no método original.</p>
 <p>Extração de Método é conhecido como o <q>canivete suíço</q> dos refactorings, pois ele é um dos refactorings com mais aplicações. Por exemplo, Extração de Método pode ser usado para quebrar um método grande em métodos menores. Cada um desses métodos tem uma função específica, que deve ficar clara em seu nome. Assim, fica mais fácil entender o método original, pois ele passará a conter apenas uma sequência de chamadas dos métodos extraídos. Vamos mostrar um exemplo a seguir. Outras aplicações de Extração de Método são discutidas em uma seção <q>Mundo Real</q>, após o exemplo.</p>
-<p><strong>Exemplo:</strong> A seguir, mostramos um exemplo real de Extração de Método, realizada em um sistema Android. Esse sistema possui um método onCreate, que usa comandos SQL para criar as tabelas do banco de dados que ele manipula. O código dessa primeira versão de <code>onCreate</code> — após algumas edições, simplificações e remoções de comentários — é mostrado a seguir. O código fonte original possui mais de 200 linhas.</p>
+<p><strong>Exemplo:</strong> A seguir, mostramos um exemplo real de Extração de Método, realizada em um sistema Android. Esse sistema possui um método <code>onCreate</code>, que usa comandos SQL para criar as tabelas do banco de dados que ele manipula. O código dessa primeira versão de <code>onCreate</code> — após algumas edições, simplificações e remoções de comentários — é mostrado a seguir. O código fonte original possui mais de 200 linhas.</p>
 <pre><code>void onCreate(SQLiteDatabase database) {// antes da extração
   // cria tabela 1
   database.execSQL(&quot;CREATE TABLE &quot; +
@@ -591,7 +591,7 @@ public class B {
 g(p1, p2);</code></pre>
 <p>Nesse caso, <code>p2</code> é desnecessário, pois ele pode ser obtido logo no início de <code>g</code>, da seguinte forma:</p>
 <pre><code>void g(p1) {
-  p2 = p1.g();
+  p2 = p1.f();
 }
 </code></pre>
 <p>Uma outra possibilidade é criar um tipo que agrupe alguns dos parâmetros de um método. Por exemplo, suponha o seguinte método:</p>

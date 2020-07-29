@@ -154,7 +154,7 @@ Nesta seção, vamos apresentar os principais refactorings do catálogo de Fowle
 
 Extração de Método é um dos principais refactorings, tendo como objetivo
 extrair um trecho de código de um método `f` e levá-lo para um novo método
-g. Então, o método `f` passa a incluir uma chamada de `g`. O próximo código
+`g`. Então, o método `f` passa a incluir uma chamada de `g`. O próximo código
 ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:
 
 ```
@@ -210,7 +210,7 @@ Outras aplicações de Extração de Método são discutidas em uma seção
 "Mundo Real", após o exemplo.
 
 **Exemplo:** A seguir, mostramos um exemplo real de Extração de Método,
-realizada em um sistema Android. Esse sistema possui um método onCreate,
+realizada em um sistema Android. Esse sistema possui um método `onCreate`,
 que usa comandos SQL para criar as tabelas do banco de dados que ele
 manipula. O código dessa primeira versão de `onCreate` — após algumas
 edições, simplificações e remoções de comentários — é mostrado a
@@ -1232,7 +1232,7 @@ de `g`, da seguinte forma:
 
 ```
 void g(p1) {
-  p2 = p1.g();
+  p2 = p1.f();
 }
 
 ```

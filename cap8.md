@@ -202,7 +202,7 @@ public class Stack<T> {
   public T pop() throws EmptyStackException {
     if (isEmpty())
       throw new EmptyStackException();
-    T elem = elements.get(size-1);
+    T elem = elements.remove(size-1);
     size--;
     return elem;
   }
