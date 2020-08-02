@@ -46,8 +46,8 @@
     "correct": "false"
   },
   {
-    "text": "Diagramas de Sequência representam alguns objetos e as chamadas de métodos que eles executam. Logo, eles são considerados diagramas estáticos.",
-    "correct": "false"
+    "text": "Diagramas de Sequência representam alguns objetos e as chamadas de métodos que eles executam. Logo, eles são diagramas dinâmicos.",
+    "correct": "true"
   },
   {
     "text": "Um objeto pode ficar ativo uma única vez em um diagrama de sequência.",
