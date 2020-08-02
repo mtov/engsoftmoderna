@@ -1,0 +1,67 @@
+
+
+{
+"title": "Cap. 4 - Modelos",  
+"questions": [
+  {
+    "text": "Uma das vantagens métodos formais é que as especificações de programas tornam-se precisas e não-ambíguas.",
+    "correct": "true"
+  },
+  {
+    "text": "Ferramentas CASE são usadas para ajudar na codificação de sistemas de software; portanto, são similares às atuais IDEs.",
+    "correct": "false"
+  },
+  {
+    "text": "UML pode ser usada como blueprint (modelos detalhados), como linguagem de programação ou como sketches (esboços).",
+    "correct": "true"
+  },
+  {
+    "text": "Engenharia Reversa é o nome que se dá a qualquer técnica que permita discutir e analisar alternativas de design antes que exista qualquer linha de código.",
+    "correct": "false"
+  },
+  {
+    "text": "São exemplos de diagramas UML estáticos: Diagramas de Classes, Diagramas de Pacotes e Diagramas de Atividades.",
+    "correct": "false"
+  },
+  {
+    "text": "Diagramas UML dinâmicos modelam eventos que ocorrem durante a execução de um sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Em Diagramas de Classes, setas podem ser usadas para representar associações, dependências e herança.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando uma classe A possui um atributo b de um tipo B, dizemos que existe uma associação (isto é, uma seta) de B para A.",
+    "correct": "false"
+  },
+  {
+    "text": "Cardinalidade é o mecanismo que UML oferece para indicar quantos objetos podem estar associados ao atributo responsável por uma associação.",
+    "correct": "false"
+  },
+  {
+    "text": "Dependências em UML -- representadas por setas tracejadas -- indicam relações entre classes que não são devidas a associações ou herança.",
+    "correct": "true"
+  },
+  {
+    "text": "Diagramas de Sequência representam alguns objetos e as chamadas de métodos que eles executam. Logo, eles são considerados diagramas estáticos.",
+    "correct": "false"
+  },
+  {
+    "text": "Um objeto pode ficar ativo uma única vez em um diagrama de sequência.",
+    "correct": "false"
+  },
+  {
+    "text": "Dentre os nodos de diagramas de atividades, temos: inicial, ações, decisões, merges, forks, joins e final.",
+    "correct": "true"
+  },
+  {
+    "text": "Em Diagramas de Atividades, merges possuem um único fluxo de entrada e também um único fluxo de saída.",
+    "correct": "false"
+  },
+  {
+    "text": "Como exemplos de notações alternativas a Diagramas de Atividades, podemos citar: fluxogramas, redes de petri e BPMN.",
+    "correct": "true"
+  }
+]
+}	    
