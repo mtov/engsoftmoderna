@@ -2,11 +2,11 @@
 "title": "Cap. 4 - Modelos",  
 "questions": [
   {
-    "text": "Uma das vantagens métodos formais é que as especificações de programas tornam-se precisas e não-ambíguas.",
+    "text": "Uma das vantagens métodos de formais é que as especificações de programas tornam-se precisas e não-ambíguas.",
     "correct": "true"
   },
   {
-    "text": "Ferramentas CASE são usadas para ajudar na codificação de sistemas de software; portanto, são similares às atuais IDEs.",
+    "text": "Ferramentas CASE ajudam na codificação de sistemas de software; portanto, são similares às atuais IDEs.",
     "correct": "false"
   },
   {
@@ -14,7 +14,11 @@
     "correct": "true"
   },
   {
-    "text": "Engenharia Reversa é o nome que se dá a qualquer técnica que permita discutir e analisar alternativas de design antes que exista qualquer linha de código.",
+    "text": "Quando se adotada métodos ágeis, UML é usada principalmente para construir sketches (esboços).",
+    "correct": "true"
+  },
+  {
+    "text": "Engenharia Reversa é o nome que se dá a qualquer técnica que permita analisar alternativas de design antes que exista qualquer linha de código.",
     "correct": "false"
   },
   {
@@ -30,7 +34,7 @@
     "correct": "true"
   },
   {
-    "text": "Quando uma classe A possui um atributo b de um tipo B, dizemos que existe uma associação (isto é, uma seta) de B para A.",
+    "text": "Quando uma classe A possui um atributo de um tipo B, dizemos que existe uma associação (isto é, uma seta) de B para A.",
     "correct": "false"
   },
   {
@@ -38,8 +42,8 @@
     "correct": "false"
   },
   {
-    "text": "Dependências em UML -- representadas por setas tracejadas -- indicam relações entre classes que não são devidas a associações ou herança.",
-    "correct": "true"
+    "text": "Dependências em UML -- representadas por setas contínuas -- indicam relações entre classes que não são devidas a associações ou herança.",
+    "correct": "false"
   },
   {
     "text": "Diagramas de Sequência representam alguns objetos e as chamadas de métodos que eles executam. Logo, eles são considerados diagramas estáticos.",
