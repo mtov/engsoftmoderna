@@ -1,5 +1,3 @@
-
-
 {
 "title": "Cap. 4 - Modelos",  
 "questions": [
@@ -28,7 +26,7 @@
     "correct": "true"
   },
   {
-    "text": "Em Diagramas de Classes, setas podem ser usadas para representar associações, dependências e herança.",
+    "text": "Em Diagramas de Classes, setas representam associações, dependências ou herança.",
     "correct": "true"
   },
   {
