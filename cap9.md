@@ -1232,7 +1232,7 @@ de `g`, da seguinte forma:
 
 ```
 void g(p1) {
-  p2 = p1.f();
+  p2 = p1.f(); ...
 }
 
 ```

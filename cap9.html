@@ -591,7 +591,7 @@ public class B {
 g(p1, p2);</code></pre>
 <p>Nesse caso, <code>p2</code> é desnecessário, pois ele pode ser obtido logo no início de <code>g</code>, da seguinte forma:</p>
 <pre><code>void g(p1) {
-  p2 = p1.f();
+  p2 = p1.f(); ...
 }
 </code></pre>
 <p>Uma outra possibilidade é criar um tipo que agrupe alguns dos parâmetros de um método. Por exemplo, suponha o seguinte método:</p>
