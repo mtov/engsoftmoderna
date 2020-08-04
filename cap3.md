@@ -50,7 +50,7 @@ Após elicitados, os requisitos devem ser: (1) documentados, (2) verificados e v
 \index{Requisitos!Documento de Especificação}
 No caso de desenvolvimento ágil, a documentação de requisitos é feita de forma simplificada, por meio de **histórias do usuário**, conforme estudamos no Capítulo 2. Por outro lado, em alguns projetos, ainda se
 exige um **Documento de Especificação de Requisitos**, no qual todos os requisitos do software que se pretende construir — incluindo requisitos funcionais e não-funcionais — são documentados em linguagem natural (Português, Inglês, etc). Na década de 90, chegou-se a propor um padrão para Documentos de Especificação de Requisitos, denominado **Padrão IEEE 830**. Ele foi proposto no contexto de
-Processos Waterfall, nos quais o desenvolvimento inicia-se com uma longa fase de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são mostradas na figura da próxima página.
+Processos Waterfall, isto é, processos que possuem uma longa fase inicial de levantamento de requisitos. As principais seções de um documento de requisitos no padrão IEEE 830 são mostradas na figura da próxima página.
 
 ![Documento de Requisitos no Padrão IEEE 830](figs/cap3/padrao-ieee-830){width=70%}
 
@@ -255,7 +255,7 @@ Casos de uso são escritos na perspectiva de um **ator** que deseja usar o siste
 
 \index{Casos de Uso!Fluxo Normal}
 \index{Casos de Uso!Extensões}
-Explicando com mais detalhes, um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o **fluxo normal** de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário no qual tudo dá certo, às vezes chamado também de "fluxo feliz". Já a segunda lista inclui **extensões ao fluxo normal**, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos  —  normal e extensões  —  serão posteriormente implementados no sistema.
+Explicando com mais detalhes, um caso de uso enumera os passos que um ator realiza em um sistema com um determinado objetivo. Na verdade, um caso de uso inclui duas listas de passos. A primeira representa o **fluxo normal** de passos necessários para concluir uma operação com sucesso. Ou seja, o fluxo normal descreve um cenário em que tudo dá certo, às vezes chamado também de "fluxo feliz". Já a segunda lista inclui **extensões do fluxo normal**, as quais representam alternativas de execução de um passo normal ou então situações de erro. Ambos os fluxos  —  normal e extensões  —  serão posteriormente implementados no sistema.
 Mostra-se a seguir um caso de uso, referente a um sistema bancário e que especifica uma transferência entre contas, por um cliente do banco.
 
 > **Transferir Valores entre Contas**
@@ -587,7 +587,7 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 * No Facebook, 
   \index{Facebook}
-  "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Adicionalmente, testes A/B permitem detectar cenários nos quais os usuários começam a usar novas funcionalidades de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que eles têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+  "as inovações que os engenheiros implementam são imediatamente liberadas para uso por usuários reais. Isso permite que os engenheiros comparem cuidadosamente as novas funcionalidades com o caso base (isto é, como o site atual). Testes A/B são uma abordagem experimental para descobrir o que os clientes querem, a qual dispensa elicitar requisitos de forma antecipada e escrever especificações. Além disso, testes A/B permitem detectar cenários nos quais os usuários começam a usar novas funcionalidades de modo inesperado. Dentre outras coisas, isso permite que os engenheiros aprendam com a diversidade de usuários e apreciem as diferentes visões que eles têm do Facebook." ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
 
 * Na Netflix, 
   \index{Netflix}
