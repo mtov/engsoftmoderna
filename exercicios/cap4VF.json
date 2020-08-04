@@ -14,7 +14,7 @@
     "correct": "true"
   },
   {
-    "text": "Quando se adotada métodos ágeis, UML é usada principalmente para construir sketches (esboços).",
+    "text": "Quando se adota métodos ágeis, UML é usada principalmente para construir sketches (esboços).",
     "correct": "true"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "false"
   },
   {
-    "text": "Dentre os nodos de diagramas de atividades, temos: inicial, ações, decisões, merges, forks, joins e final.",
+    "text": "Dentre os nodos de Diagramas de Atividades, temos: inicial, ações, decisões, merges, forks, joins e final.",
     "correct": "true"
   },
   {
