@@ -652,7 +652,7 @@ demande mais tempo do que o previsto; (2) permitir que os
 desenvolvedores respirem um pouco, pois o ritmo de trabalho em projetos
 de desenvolvimento de software costuma ser intenso e desgastante. Logo,
 os desenvolvedores precisam de um tempo para realizarem algumas tarefas
-onde não exista uma cobrança imediata de resultados.
+sem que exista uma cobrança imediata de resultados.
 
 #### Perguntas Frequentes {.unnumbered}
 
@@ -740,8 +740,8 @@ mais nada de relevante que deva ser implementado.
 O nome Extreme Programming foi escolhido porque XP propõe um conjunto de
 práticas de programação inovadoras, principalmente para a época na qual
 foram propostas, no final da década de 90. Na verdade, XP é um método
-que dá grande importância à tarefa de programação e produção de código.
-Essa importância tem que ser entendida no contexto da época, onde havia
+que dá grande importância a tarefas de programação e produção de código.
+Essa importância tem que ser entendida no contexto da época, quando havia
 uma diferença entre analistas e programadores. Analistas eram
 encarregados de elaborar o projeto em alto nível de um sistema,
 definindo seus principais componentes, classes e interfaces. Para isso,
@@ -821,7 +821,7 @@ Um dos desenvolvedores é o **líder** (ou *driver*) da sessão, ficando
 com o teclado e o mouse. Ao segundo desenvolvedor cabe a função de
 revisor e questionador, no bom sentido, do trabalho do líder. 
 Esse segundo desenvolvedor é chamado de **navegador**. O nome vem
-dos ralis automobilísticos, onde os pilotos são acompanhados de um
+dos ralis automobilísticos, nos quais os pilotos são acompanhados de um
 navegador.
 
 Com programação em pares espera-se melhorar a qualidade do código e do
@@ -1007,7 +1007,7 @@ desenvolvedores respondessem a um questionário sobre a experiência deles
 com métodos ágeis
 ([link](https://doi.org/10.1145/2133806.2133823)). Em uma
 das questões, pedia-se aos participantes para ranquear a importância de
-práticas ágeis, usando uma escala de 1 a 5, onde o score 5 deveria ser
+práticas ágeis, usando uma escala de 1 a 5, na qual o score 5 deveria ser
 dado apenas para práticas essenciais em desenvolvimento ágil. Três
 práticas ficaram empatadas em primeiro lugar, com score médio 4.5 e
 desvio padrão de 0.8. São elas: integração contínua, iterações curtas
@@ -1424,8 +1424,8 @@ nossos clientes, que, nesta primeira versão, são estudantes e
 professores brasileiros de disciplinas de Engenharia de Software,
 principalmente em nível de graduação. Assim, ao final de cada sprint, um
 capítulo é lançado e divulgado publicamente, de forma a receber
-feedback. Com isso, evita-se uma solução Waterfall, onde o livro seria
-escrito por cerca de dois anos, sem receber qualquer feedback.
+feedback. Com isso, evita-se uma solução Waterfall, por meio da qual
+o livro seria escrito por cerca de dois anos, sem receber qualquer feedback.
 
 Para finalizar, vamos comentar sobre o critério para conclusão de um
 capítulo, ou seja, para definir que um capítulo está finalizado
@@ -1619,9 +1619,9 @@ propõe um limite máximo de tarefas que podem estar em cada um dos passos
 de um Quadro Kanban. Esse limite é conhecido pelo nome Limite WIP, isto
 é, trata-se do limite máximo de cartões presentes em cada passo,
 contando aqueles na primeira coluna (em andamento) e aqueles na segunda
-coluna (concluídos) do passo. A exceção é o último passo, onde o WIP
+coluna (concluídos) do passo. A exceção é o último passo, no qual o WIP
 aplica-se apenas à primeira sub-coluna, já que não faz sentido aplicar
-um limite ao número de tarefas concluídas pelo time.
+um limite ao número de tarefas concluídas pelo time de desenvolvimento.
 
 A seguir, reproduzimos o último Quadro Kanban, mas com os limites WIP.
 Eles são os números que aparecem abaixo do nome de cada passo, na
