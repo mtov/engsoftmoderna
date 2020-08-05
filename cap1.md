@@ -724,7 +724,7 @@ de Defesa deveria ser construído usando Waterfall.
 Processos Waterfall — também chamados de **processos dirigidos por
 planejamento** (*plan-driven*) — propõem que a construção de um
 sistema deve ser feita em etapas sequenciais, como em uma cascata de
-água, onde a água vai escorrendo de um nível para o outro. Essas etapas
+água, na qual a água vai escorrendo de um nível para o outro. Essas etapas
 são as seguintes: levantamento de requisitos, análise (ou projeto de
 alto nível), projeto detalhado, codificação e testes. Finalizado esse
 pipeline, o sistema é liberado para produção, isto é, para uso efetivo
@@ -919,7 +919,7 @@ questões sobre a regulamentação da profissão, por exemplo.
 \index{Etica Profissional}
 Por fim, mas muito atual e relevante, existem questionamentos sobre o
 papel e a **responsabilidade ética** dos profissionais formados em
-Computação, em uma sociedade onde os relacionamentos humanos são cada
+Computação, em uma sociedade na qual os relacionamentos humanos são cada
 vez mais mediados por algoritmos e sistemas de software. Neste sentido,
 as principais sociedades científicas da área possuem códigos que
 procuram ajudar os profissionais de Computação — não necessariamente
@@ -1085,7 +1085,7 @@ uma bala de canhão para matar formigas".
 
 \index{Sistemas de Missão Crítica}
 No outro extremo, temos os Sistemas A (de *acute*, ou de missão
-crítica). São sistemas onde qualquer falha pode causar um imenso
+crítica). São sistemas nos quais qualquer falha pode causar um imenso
 prejuízo, incluindo a perda de vidas humanas. São sistemas para
 controlar um carro autônomo, uma usina nuclear, um avião, os
 equipamentos de uma UTI, um trem de metrô, etc. O exemplo do sistema de
@@ -1180,7 +1180,7 @@ herança, aberto/fechado, Demeter, etc.
 soluções para problemas comuns de projeto de software. Neste capítulo,
 vamos estudar os principais padrões de projeto definidos no livro
 clássico sobre o tema. A discussão de cada padrão será dividida em três
-partes: (1) um contexto, isto é, um sistema onde o padrão pode ser útil;
+partes: (1) um contexto, isto é, um sistema no qual o padrão pode ser útil;
 (2) um problema no projeto desse sistema; (3) uma solução para esse
 problema por meio de padrões. Iremos também apresentar diversos exemplos de
 código, para facilitar o entendimento e a discussão prática do uso de
