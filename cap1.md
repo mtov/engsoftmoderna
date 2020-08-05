@@ -179,7 +179,7 @@ tecnológicos, que os Engenheiros de Software podem resolver, se
 devidamente treinados e caso tenham acesso às devidas tecnologias e
 recursos. Como exemplo, podemos citar as seguintes dificuldades: um
 compilador que produz mensagens de erro obscuras, uma IDE que possui
-muitos bugs e frequentemente sofre crashes, um framework que não possui
+muitos bugs e frequentemente sofre travamentos, um framework que não possui
 documentação, uma aplicação Web com uma interface pouco intuitiva, etc.
 Todas essas dificuldades dizem respeito à solução adotada e, portanto,
 não são uma característica inerente dos sistemas mencionados.
@@ -275,7 +275,7 @@ requisitos não-funcionais: desempenho, disponibilidade, tolerância a
 falhas, segurança, privacidade, interoperabilidade, capacidade,
 manutenibilidade e usabilidade.
 
-Por exemplo, suponha um sistema de *home-banking*. Neste caso, os
+Por exemplo, suponha um sistema de *home-banking*. Nesse caso, os
 requisitos funcionais incluem informar o saldo da conta, informar o
 extrato, realizar transferência entre contas, pagar um boleto bancário,
 cancelar um cartão de débito, etc. Já os requisitos
@@ -382,7 +382,7 @@ Primeiro, existem diversos tipos de testes. Por exemplo, **testes de
 unidade** (quando se testa uma pequena unidade do código, como uma
 classe), **testes de integração** (quando se testa uma unidade de maior
 granularidade, como um conjunto de classes), **testes de performance**
-(quando se submete o sistema a uma carga de processamento, para
+(quando se submete o sistema a uma carga de processamento para
 verificar seu desempenho), **testes de usabilidade** (quando o objetivo
 é verificar a usabilidade da interface do sistema), etc.
 
@@ -437,7 +437,7 @@ ser que o código defeituoso nunca seja executado.
 
 Resumindo: código defeituoso é aquele que não está de acordo com a sua
 especificação. Se esse código for executado e de fato levar o programa a
-apresentar um resultado incorreto, diz-se que ocorreu uma falha.
+apresentar um resultado incorreto, dizemos que ocorreu uma falha.
 
 ```{=latex}
 \begin{esmbox}
@@ -679,7 +679,7 @@ mais comum nesses capítulos, aparecendo inclusive no título dos mesmos.
 do autor sobre gerenciamento de projetos de software, chamado *The
 Mythical Man-Month*, cuja primeira edição foi publicada em 1975
 ([link](https://dl.acm.org/citation.cfm?id=207583)). Nesse
-livro, Brooks reporta as lições que aprendeu no início da sua carreira,
+livro, Brooks reporta as lições que aprendeu no início da sua carreira
 como gerente responsável pelos primeiros sistemas operacionais da IBM.
 Em 1995, uma segunda edição do livro foi lançada, em comemoração aos
 seus 20 anos. Essa edição incluiu um novo capítulo, com o artigo *No
@@ -699,7 +699,7 @@ Um processo de desenvolvimento define quais atividades e etapas devem
 ser seguidas para construir e entregar um sistema de software. Uma
 analogia pode ser feita, por exemplo, com a construção de prédios, que
 ocorre de acordo com algumas etapas: fundação, alvenaria, cobertura,
-instalações hidráulicas, instalações elétricas, acabamentos, pintura,
+instalações hidráulicas, instalações elétricas, acabamento, pintura,
 etc.
 
 Historicamente, existem dois grandes tipos de processos que podem ser
@@ -749,10 +749,10 @@ de Software propôs um modo alternativo para construção de software, que
 eles chamaram de Ágil — nome do manifesto que eles produziram nesta
 reunião ([link](https://agilemanifesto.org/)).
 Contrastando com processos Waterfall, a ideia de processos ágeis é que
-um sistema seja construído de forma incremental e iterativa. Pequenos
+um sistema deve ser construído de forma incremental e iterativa. Pequenos
 incrementos de funcionalidade são produzidos, em intervalos de cerca de
 um mês e, logo em seguida, validados pelos usuários. Uma vez que o
-incremento produzido esteja aprovado, o ciclo se repete.
+incremento produzido seja aprovado, o ciclo se repete.
 
 Processos ágeis tiveram um profundo impacto na indústria de software.
 Hoje, eles são usados pelas mais diferentes organizações que produzem
@@ -843,7 +843,7 @@ seguintes fatores (ou atributos) de qualidade externa:
 *  Portabilidade: é possível portar esse software para outras
     plataformas e sistemas operacionais? Ele, por exemplo, possui
     versões para os principais sistemas operacionais, como Windows,
-    Linux e Mac OS? Ou então, se for um app, ele possui versões para
+    Linux e macOS? Ou então, se for um app, ele possui versões para
     Android e iOS?
 
 *  Facilidade de Uso: o software possui uma interface amigável,
@@ -897,7 +897,7 @@ revisão de código. No exemplo, usamos a ferramenta fornecida
 pelo GitHub.
 
 
-![Exemplo de revisão de código.](figs/cap1/github.jpg){width=60%}
+![Exemplo de revisão de código](figs/cap1/github.jpg){width=60%}
 
 
 ### Prática Profissional 
@@ -993,7 +993,7 @@ Uma delas perguntava se desenvolvedores têm a obrigação de considerar as
 implicações éticas do código que produzem. Quase 80% dos respondentes
 disseram que sim. Uma outra pergunta foi a seguinte: Quem, em última
 análise, é responsável por um código que colabora para um comportamento
-antiético? Nesse caso, 57.5% responderam que é a alta gerência da
+antiético? Nesse caso, 57,5% responderam que é a alta gerência da
 organização ou empresa, enquanto que 23% disseram que é o próprio
 desenvolvedor. Quando perguntados se concordariam em escrever um código
 com dúvidas éticas, 58% responderam que não e 37% responderam que
@@ -1018,7 +1018,7 @@ econômicos dos sistemas que produzem.
 Para discutir um caso mais concreto, em economia existe uma preocupação
 frequente com os custos de oportunidade de uma decisão. Isto é, toda
 decisão possui um custo de oportunidade, que são as oportunidades
-preteridas quando se descartou uma das decisões alternativas; em outras
+preteridas quando se descartou uma das decisões alternativas. Em outras
 palavras, quando se descarta uma decisão Y em detrimento de uma decisão
 X, os eventuais benefícios de Y passaram a ser oportunidades perdidas.
 Por exemplo, suponha que o principal sistema de sua empresa tenha uma
@@ -1120,9 +1120,9 @@ sistemas de busca. Outras aplicações incluem bibliotecas e frameworks de
 software, aplicações de uso geral (como editores de texto, planilhas,
 editores de imagens, etc) e sistemas de software básico (como
 compiladores, gerenciadores de bancos de dados, IDEs, etc). Nesses
-sistemas, as técnicas de Engenharia de Software estudadas neste livro
-podem contribuir com dois benefícios principais: (1) elas podem tornar
-mais produtivo o desenvolvimento de Sistemas B; (2) elas podem propiciar
+sistemas, os princípios e práticas de Engenharia de Software estudados neste livro
+podem contribuir com dois benefícios principais: (1) eles podem tornar
+mais produtivo o desenvolvimento de Sistemas B; (2) eles podem propiciar
 a construção de Sistemas B com melhor qualidade, tanto interna (por
 exemplo, sistemas mais fáceis de serem mantidos) como externa (por
 exemplo, sistemas com menor quantidade de bugs em produção).
