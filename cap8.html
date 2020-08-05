@@ -298,7 +298,7 @@ public void testEmptyStack() {
   assertFalse(stack.isEmpty());
 }</code></pre>
 <p>O primeiro exemplo, que divide o teste de pilha vazia em dois testes, tende a ser mais legível e fácil de entender do que o segundo, que faz tudo em um único teste. Além disso, quando o teste do primeiro exemplo falha, é mais simples detectar o motivo da falha do que no segundo exemplo, que pode falhar por dois motivos.</p>
-<p>No entanto, não devemos ser dogmáticos no emprego dessa regra (<a href="https://dl.acm.org/citation.cfm?id=1076526">link</a>, Capítulo 4). O motivo é que existem casos onde justifica-se ter mais de um <code>assert</code> por método. Por exemplo, suponha que precisamos testar uma função <code>getBook</code> que retorna um objeto com dados de um livro, incluindo título, autor, ano e editora. Nesse caso, justifica-se ter quatro comandos <code>assert</code> no mesmo teste, cada um verificando um dos campos do objeto retornado pela função, como mostra o seguinte código.</p>
+<p>No entanto, não devemos ser dogmáticos no emprego dessa regra (<a href="https://dl.acm.org/citation.cfm?id=1076526">link</a>, Capítulo 4). O motivo é que existem casos nos quais justifica-se ter mais de um <code>assert</code> por método. Por exemplo, suponha que precisamos testar uma função <code>getBook</code> que retorna um objeto com dados de um livro, incluindo título, autor, ano e editora. Nesse caso, justifica-se ter quatro comandos <code>assert</code> no mesmo teste, cada um verificando um dos campos do objeto retornado pela função, como mostra o seguinte código.</p>
 <pre><code>@Test
 public void testBookService() {
   BookService bs = new BookService();
@@ -999,7 +999,7 @@ public void test2() {
    String result = list.get(0) + &quot; &quot; + list.get(1);
    assertEquals(___________, ___________);
 }</code></pre>
-<p>9. Suponha duas unidades de código A e B, sendo que A depende de B. Para permitir o teste de unidade de A foi criado um mock para B, chamado B'. O teste de unidade de A está passando. Porém, ao fazer o teste de integração com A e B, ele falha. Descreva um cenário mais real, onde A, B, e B' sejam classes reais, com métodos reais, que realizam funções reais, etc. O cenário proposto deve incluir um bug associado ao mock B'. Ou seja, B' esconde um bug, que só vai aparecer no teste de integração. Dizendo de outra maneira, B' não simula precisamente o comportamento de B; quando B' é removido, no teste de integração, surge então um bug.</p>
+<p>9. Suponha duas unidades de código A e B, sendo que A depende de B. Para permitir o teste de unidade de A foi criado um mock para B, chamado B'. O teste de unidade de A está passando. Porém, ao fazer o teste de integração com A e B, ele falha. Descreva um cenário mais real, no qual A, B, e B' sejam classes reais, com métodos reais, que realizam funções reais, etc. O cenário proposto deve incluir um bug associado ao mock B'. Ou seja, B' esconde um bug, que só vai aparecer no teste de integração. Dizendo de outra maneira, B' não simula precisamente o comportamento de B; quando B' é removido, no teste de integração, surge então um bug.</p>
 </div>
 </div>
 </div>

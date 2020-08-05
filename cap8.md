@@ -722,7 +722,7 @@ falha, é mais simples detectar o motivo da falha do que no segundo exemplo, que
 
 No entanto, não devemos ser dogmáticos no emprego dessa regra
 ([link](https://dl.acm.org/citation.cfm?id=1076526),
-Capítulo 4). O motivo é que existem casos onde justifica-se ter mais de
+Capítulo 4). O motivo é que existem casos nos quais justifica-se ter mais de
 um `assert` por método. Por exemplo, suponha que precisamos testar uma
 função `getBook`  que retorna um objeto com dados de um livro, incluindo
 título, autor, ano e editora. Nesse caso, justifica-se ter quatro
@@ -2200,7 +2200,7 @@ public void test2() {
 9\. Suponha duas unidades de código A e B, sendo que A depende de B.
 Para permitir o teste de unidade de A foi criado um mock para B, chamado
 B\'. O teste de unidade de A está passando. Porém, ao fazer o teste de
-integração com A e B, ele falha. Descreva um cenário mais real, onde A,
+integração com A e B, ele falha. Descreva um cenário mais real, no qual A,
 B, e B\' sejam classes reais, com métodos reais, que realizam funções
 reais, etc. O cenário proposto deve incluir um bug associado ao mock
 B\'. Ou seja, B\' esconde um bug, que só vai aparecer no teste de
