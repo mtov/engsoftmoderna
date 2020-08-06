@@ -918,7 +918,7 @@ modificar qualquer classe em um sistema.
 Um corolário desse princípio recomenda separar **apresentação** de
 **regras de negócio**. Portanto, um sistema deve possuir classes de
 apresentação, que vão tratar de aspectos de sua interface com os
-usuários, formato das mensagens, meio onde as mensagens serão exibidas,
+usuários, formato das mensagens, meio no qual as mensagens serão exibidas,
 etc. E classes responsáveis por regras de negócio, isto é, que vão
 realizar as computações, processamento, análises, etc. São interesses e
 responsabilidades diferentes. E que podem evoluir e sofrer modificações
