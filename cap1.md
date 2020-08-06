@@ -1019,7 +1019,7 @@ Para discutir um caso mais concreto, em economia existe uma preocupação
 frequente com os custos de oportunidade de uma decisão. Isto é, toda
 decisão possui um custo de oportunidade, que são as oportunidades
 preteridas quando se descartou uma das decisões alternativas. Em outras
-palavras, quando se descarta uma decisão Y em detrimento de uma decisão
+palavras, quando se descarta uma decisão Y e, no seu lugar, toma-se uma decisão
 X, os eventuais benefícios de Y passaram a ser oportunidades perdidas.
 Por exemplo, suponha que o principal sistema de sua empresa tenha uma
 lista de bugs B para ser corrigida. Existem benefícios em corrigir B?
