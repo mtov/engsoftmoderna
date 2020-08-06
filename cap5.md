@@ -196,7 +196,7 @@ questão, temos que ressaltar que essa pré-condição — o projeto ser
 liderado por uma pessoa apenas — não faz parte da definição de
 integridade conceitual. No entanto, existe um certo consenso de que
 decisões importantes de projeto não devem ficar nas mãos de um grande
-comitê, onde cada membro tem direito a um voto. Quando isso ocorre, a
+comitê, no qual cada membro tem direito a um voto. Quando isso ocorre, a
 tendência é a produção de sistemas com mais funcionalidades do que o
 necessário, isto é, sistemas sobrecarregados (*bloated systems*). Por
 exemplo, um grupo pode defender uma funcionalidade A e outro grupo
@@ -454,7 +454,7 @@ os dados de uma classe devem ser privados e o acesso a eles — se
 necessário — deve ocorrer por meio de getters (acesso de leitura) e
 setters (acesso de escrita).
 
-Veja um exemplo a seguir, onde métodos `get` e `set` são usados para
+Veja um exemplo a seguir, no qual métodos `get` e `set` são usados para
 acessar o atributo `matricula` de uma classe `Aluno`.
 
 ```
@@ -1230,7 +1230,7 @@ No exemplo, a estrutura de dados que armazena os elementos da pilha
 passou a ser um parâmetro do construtor da classe `Stack`. Com isso,
 torna-se possível instanciar objetos `Stack` com estruturas de dados
 distintas. Por exemplo, um objeto no qual os elementos da pilha são
-armazenados em um `ArrayList` e outro objeto onde eles são armazenado em
+armazenados em um `ArrayList` e outro objeto no qual eles são armazenado em
 um `Vector`. Como uma observação final, veja que o tipo do atributo
 elementos de `Stack` passou a ser um `List`; ou seja, fizemos uso também do
 Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).
@@ -1857,7 +1857,7 @@ difícil de entender e testar e, portanto, mais complexo.
 Portanto, o cálculo de CC é bastante simples: dado o código fonte de uma
 função, conte o número dos comandos listados acima e some 1.
 Consequentemente, o menor valor de CC é 1, que ocorre em um código que
-não possui nenhum comando de decisão. No artigo onde definiu a métrica,
+não possui nenhum comando de decisão. No artigo em que definiu a métrica,
 McCabe sugere que um "limite superior razoável, mas não mágico" para
 CC é 10.
 
@@ -1929,7 +1929,7 @@ Languages, and Applications (OOPSLA), 1991.
     uma referência para B em seu código? Se sim, esse acoplamento será
     aceitável ou será um acoplamento ruim?
 
-7\.  Suponha um programa onde todo o código está implementado no método
+7\.  Suponha um programa em que todo o código está implementado no método
     `main`. Ele tem um problema de coesão ou acoplamento? Justifique.
 
 8\.  Qual princípio de projeto é violado pelo seguinte código?

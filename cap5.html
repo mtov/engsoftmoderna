@@ -92,7 +92,7 @@
 <blockquote>
 <p><q>Hoje, eu estou mais convencido do que antes. Integridade conceitual é fundamental para qualidade de produtos de software.</q></p>
 </blockquote>
-<p>Sempre que falamos de integridade conceitual, surge uma discussão sobre se o princípio requer que uma autoridade central — um único arquiteto ou gerente de produto, por exemplo — seja responsável por decidir quais funcionalidades serão incluídas no sistema. Sobre essa questão, temos que ressaltar que essa pré-condição — o projeto ser liderado por uma pessoa apenas — não faz parte da definição de integridade conceitual. No entanto, existe um certo consenso de que decisões importantes de projeto não devem ficar nas mãos de um grande comitê, onde cada membro tem direito a um voto. Quando isso ocorre, a tendência é a produção de sistemas com mais funcionalidades do que o necessário, isto é, sistemas sobrecarregados (<em>bloated systems</em>). Por exemplo, um grupo pode defender uma funcionalidade A e outro grupo defender uma funcionalidade B. Talvez, as duas não sejam necessárias; porém, para obter consenso, o comitê acaba decidindo que ambas devem ser implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a integridade conceitual do sistema ficará comprometida. Existe uma frase que resume o que acabamos de discutir; ela afirma que <q>um camelo é um cavalo projetado por um comitê</q>.</p>
+<p>Sempre que falamos de integridade conceitual, surge uma discussão sobre se o princípio requer que uma autoridade central — um único arquiteto ou gerente de produto, por exemplo — seja responsável por decidir quais funcionalidades serão incluídas no sistema. Sobre essa questão, temos que ressaltar que essa pré-condição — o projeto ser liderado por uma pessoa apenas — não faz parte da definição de integridade conceitual. No entanto, existe um certo consenso de que decisões importantes de projeto não devem ficar nas mãos de um grande comitê, no qual cada membro tem direito a um voto. Quando isso ocorre, a tendência é a produção de sistemas com mais funcionalidades do que o necessário, isto é, sistemas sobrecarregados (<em>bloated systems</em>). Por exemplo, um grupo pode defender uma funcionalidade A e outro grupo defender uma funcionalidade B. Talvez, as duas não sejam necessárias; porém, para obter consenso, o comitê acaba decidindo que ambas devem ser implementadas. Assim, os dois grupos vão ficar satisfeitos, embora a integridade conceitual do sistema ficará comprometida. Existe uma frase que resume o que acabamos de discutir; ela afirma que <q>um camelo é um cavalo projetado por um comitê</q>.</p>
 <p>Nos parágrafos anteriores, enfatizamos o impacto da falta de integridade conceitual nos usuários finais de um sistema. No entanto, o princípio se aplica também ao design e código de um sistema. Nesse caso, os afetados são os desenvolvedores, que terão mais dificuldade para entender, manter e evoluir o sistema. A seguir, mencionamos exemplos de falta de integridade conceitual em nível de código:</p>
 <ul>
 <li><p>Quando uma parte do sistema usa um padrão de nomes para variáveis (por exemplo, <em>camel case</em>, como em <code>notaTotal</code>), enquanto em outra parte usa-se um outro padrão (por exemplo, <em>snake case</em>, como em <code>nota_total</code>).</p></li>
@@ -175,7 +175,7 @@ public class Estacionamento {
 <h3 data-number="1.3.2" id="getters-e-setters" data-number="1.3.2"><span class="header-section-number">5.3.2</span> Getters e Setters</h3>
 <p> </p>
 <p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados apenas de <em>getters</em> e <em>setters</em> — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
-<p>Veja um exemplo a seguir, onde métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
+<p>Veja um exemplo a seguir, no qual métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
 <pre><code>class Aluno {
 
   private int matricula;
@@ -515,7 +515,7 @@ class C2 implements I {
   }
   ...
 }</code></pre>
-<p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto onde eles são armazenado em um <code>Vector</code>. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um <code>List</code>; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
+<p>No exemplo, a estrutura de dados que armazena os elementos da pilha passou a ser um parâmetro do construtor da classe <code>Stack</code>. Com isso, torna-se possível instanciar objetos <code>Stack</code> com estruturas de dados distintas. Por exemplo, um objeto no qual os elementos da pilha são armazenados em um <code>ArrayList</code> e outro objeto no qual eles são armazenado em um <code>Vector</code>. Como uma observação final, veja que o tipo do atributo elementos de <code>Stack</code> passou a ser um <code>List</code>; ou seja, fizemos uso também do Princípio de Inversão de Dependências (ou Prefira Interfaces a Classes).</p>
 <p>Antes de concluir, gostaríamos de mencionar três pontos suplementares ao que discutimos sobre <q>Prefira Composição a Herança</q>:</p>
 <ul>
 <li><p>Herança é classificada como um mecanismo de <strong>reúso caixa-branca</strong>, pois as subclasses costumam ter acesso a detalhes de implementação da classe base.   Por outro lado, composição é um mecanismo de <strong>reúso caixa-preta</strong>.</p></li>
@@ -763,7 +763,7 @@ class Main {
 <p>Porém, existe uma alternativa simples para calcular o CC de uma função, a qual dispensa a construção de grafos de fluxo de controle. Essa alternativa define CC da seguinte forma:</p>
 <p><em>CC = <q>número de comandos de decisão em uma função</q> + 1</em></p>
 <p>Onde comandos de decisão podem ser if, while, case, for, etc. A intuição subjacente a essa fórmula é que comandos de decisão tornam o código mais difícil de entender e testar e, portanto, mais complexo.</p>
-<p>Portanto, o cálculo de CC é bastante simples: dado o código fonte de uma função, conte o número dos comandos listados acima e some 1. Consequentemente, o menor valor de CC é 1, que ocorre em um código que não possui nenhum comando de decisão. No artigo onde definiu a métrica, McCabe sugere que um <q>limite superior razoável, mas não mágico</q> para CC é 10.</p>
+<p>Portanto, o cálculo de CC é bastante simples: dado o código fonte de uma função, conte o número dos comandos listados acima e some 1. Consequentemente, o menor valor de CC é 1, que ocorre em um código que não possui nenhum comando de decisão. No artigo em que definiu a métrica, McCabe sugere que um <q>limite superior razoável, mas não mágico</q> para CC é 10.</p>
 <h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
 <p>Robert C. Martin. Clean Architecture: A Craftsman's Guide to Software Structure and Design, Prentice Hall, 2017.</p>
 <p>John Ousterhout. A Philosophy of Software Design, Yaknyam Press, 2018.</p>
@@ -782,7 +782,7 @@ class Main {
 <p>4. Defina: (a) acoplamento aceitável; (b) acoplamento ruim; (c) acoplamento estrutural; (d) acoplamento evolutivo (ou lógico).</p>
 <p>5. Dê um exemplo de: (1) acoplamento estrutural e aceitável; (2) acoplamento estrutural e ruim.</p>
 <p>6. É possível que uma classe A esteja acoplada a uma classe B sem ter uma referência para B em seu código? Se sim, esse acoplamento será aceitável ou será um acoplamento ruim?</p>
-<p>7. Suponha um programa onde todo o código está implementado no método <code>main</code>. Ele tem um problema de coesão ou acoplamento? Justifique.</p>
+<p>7. Suponha um programa em que todo o código está implementado no método <code>main</code>. Ele tem um problema de coesão ou acoplamento? Justifique.</p>
 <p>8. Qual princípio de projeto é violado pelo seguinte código?</p>
 <pre><code>void onclick() {
   num1 = textfield1.value();
