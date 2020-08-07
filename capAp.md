@@ -137,7 +137,7 @@ A opção `-m` informa a mensagem que descreve o commit. Porém, o ponto que
 queremos ressaltar com esse exemplo é o seguinte: como o usuário não
 executou um novo  `add` após mudar o valor de `x` para 20, a versão mais
 recente do arquivo não será salva pelo commit. Em vez disso, a versão de
-`arq1` que será versionada é aquela onde `x` tem o valor 10, pois ela é a
+`arq1` que será versionada é aquela em que `x` tem o valor 10, pois ela é a
 versão que consta do index.
 
 Para evitar o problema descrito nesse exemplo, é comum usar um  `commit` da

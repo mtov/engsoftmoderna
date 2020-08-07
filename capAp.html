@@ -98,7 +98,7 @@ x = 10; </code></pre>
 x = 20; // novo valor de x</code></pre>
 <p>Feito isso, ele executou:</p>
 <p><code>git commit -m "Alterando o valor de x"</code></p>
-<p>A opção <code>-m</code> informa a mensagem que descreve o commit. Porém, o ponto que queremos ressaltar com esse exemplo é o seguinte: como o usuário não executou um novo <code>add</code> após mudar o valor de <code>x</code> para 20, a versão mais recente do arquivo não será salva pelo commit. Em vez disso, a versão de <code>arq1</code> que será versionada é aquela onde <code>x</code> tem o valor 10, pois ela é a versão que consta do index.</p>
+<p>A opção <code>-m</code> informa a mensagem que descreve o commit. Porém, o ponto que queremos ressaltar com esse exemplo é o seguinte: como o usuário não executou um novo <code>add</code> após mudar o valor de <code>x</code> para 20, a versão mais recente do arquivo não será salva pelo commit. Em vez disso, a versão de <code>arq1</code> que será versionada é aquela em que <code>x</code> tem o valor 10, pois ela é a versão que consta do index.</p>
 <p>Para evitar o problema descrito nesse exemplo, é comum usar um <code>commit</code> da seguinte forma:</p>
 <p><code>git commit -a -m "Alterando valor de x"</code></p>
 <p>A opção <code>-a</code> indica que antes de executar o commit queremos adicionar no index todos os arquivos rastreados (<em>tracked</em>) que tenham sido modificados desde o último commit. Portanto, a opção <code>-a</code> não elimina a necessidade de usar <code>add</code>. O uso desse comando continua sendo necessário, pelo menos uma vez, para indicar ao git que desejamos tornar um determinado arquivo rastreável.</p>
