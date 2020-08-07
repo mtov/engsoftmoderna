@@ -11,11 +11,11 @@ padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada,
 Decorador, Strategy, Observador, Template Method e Visitor. Cada um
 desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A
 apresentação de cada padrão é organizada em três partes: (1) um
-contexto, isto é, um sistema onde o padrão poderia ser útil; (2) um
+contexto, isto é, um sistema no qual o padrão poderia ser útil; (2) um
 problema no projeto desse sistema; (3) uma solução para esse problema
 por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
 padrões. Terminamos o capítulo alertando que padrões de projeto não são
-uma bala de prata, ou seja, discutimos situações onde o uso de padrões
+uma bala de prata, ou seja, discutimos situações nas quais o uso de padrões
 de projeto não é recomendado (Seção 6.13).
 
 ## Introdução 
@@ -108,7 +108,7 @@ ter que planejar um profundo reprojeto de seus sistemas.
 
 No livro sobre padrões de projeto, são propostos 23 padrões, divididos
 nas seguintes três categorias (os padrões que estudaremos neste capítulo estão
-em negrito, seguido do número da seção onde eles são apresentados):
+em negrito, seguido do número da seção em que eles são apresentados):
 
 
 -   **Criacionais**: padrões
@@ -1415,7 +1415,7 @@ Apesar de usarmos apenas dois padrões como exemplo, perguntas
 semelhantes podem ser feita para outros padrões.
 
 No entanto, em muitos sistemas observa-se um uso exagerado de padrões de
-projeto, em situações onde os ganhos de flexibilidade e extensibilidade
+projeto, em situações nas quais os ganhos de flexibilidade e extensibilidade
 são questionáveis. Existe até um termo para se referir a essa situação:
 **paternite**, isto é, uma "inflamação" associada ao uso precipitado
 de padrões de projeto.
