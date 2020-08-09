@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Teoria das Janelas Quebradas & Regra do Escoteiros? – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-8249107-3', 'auto');
+     ga('send', 'pageview');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FCFCFC;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.png" width="240"></a>
+</p>
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="teoria-das-janelas-quebradas-regra-do-escoteiros" class="unnumbered" data-number="">Teoria das Janelas Quebradas &amp; Regra do Escoteiros</h1>
+<p>Neste artigo, vamos apresentar uma teoria e uma regra, propostas originalmente para outras áreas e contextos, mas que aplicam-se diretamente a desenvolvimento de software. São elas:</p>
+<ul>
+<li>Teoria das Janelas Quebradas</li>
+<li>Regra dos Escoteiros</li>
+</ul>
+<p>Além de apresentar ambos conceitos, vamos tentar mostrar que existe uma conexão entre eles.</p>
+<h2 class="unnumbered" data-number="" id="teoria-das-janelas-quebradas" class="unnumbered" data-number="">Teoria das Janelas Quebradas</h2>
+<p>A Teoria das Janelas Quebradas é famosa entre criminologistas, policiais e autoridades da área de segurança. Proposta em 1982 por dois criminologistas – James Wilson e George Kelling –, ela defende resumidamente o seguinte:</p>
+<blockquote>
+<p>Se uma das janelas de uma casa for quebrada e não for consertada, as pessoas que passam na rua podem achar que a casa está abandonada e que ninguém se importa com ela. Então, alguém pode decidir jogar uma pedra e quebrar mais alguns vidros … Depois de um tempo, muitas janelas podem estar quebradas e uma sensação de abandono vai tomar conta da casa e até mesmo de sua vizinhança.</p>
+</blockquote>
+<p><img src="./figs/broken-windows.jpg" /></p>
+<p>A mensagem que a teoria tenta passar é que devemos ter <q>tolerância zero</q> com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, criando uma espiral crescente de abandono e de total descontrole.</p>
+<p>Apesar de mais ser discutida no meio de psicólogos sociais, a Teoria das Janelas Quebradas aplica-se também a sistemas de software. Um dos primeiros livros a fazer essa conexão foi <q>O Programador Pragmático</q>, de Andrew Hunt e David Thomas. Veja o que os autores dizem:</p>
+<blockquote>
+<p>Não deixe <q>janelas quebradas</q> (projetos ruins, decisões erradas ou código ruim) sem reparos. Conserte cada um desses problemas assim que ele for descoberto. … Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente quando as janelas começam a quebrar. Existem diversos fatores que podem contribuir para a deterioração de um sistema de software, mas a negligência acelera esse processo mais rápido do que qualquer outro fator.</p>
+</blockquote>
+<p>Para finalizar, vamos citar mais alguns exemplos de <q>janelas quebradas</q> que não devem ser toleradas quando almeja-se produzir um código com qualidade:</p>
+<ul>
+<li>código com bugs conhecidos e graves.</li>
+<li>código que não segue convenções de indentação e regras de nomes para identificadores.</li>
+<li>código que não possui testes.</li>
+<li>código que viola a arquitetura planejada do sistema; por exemplo, que usa chamadas SQL fora do módulo de persistência.</li>
+<li>código com <q>bad smells</q>, tais como métodos muito longos, uso injustificado de variáveis globais, código duplicado, etc.</li>
+<li>código com problemas de desempenho.</li>
+<li>código com vulnerabilidades de segurança.</li>
+<li>etc</li>
+</ul>
+<h2 class="unnumbered" data-number="" id="regra-do-escoteiro" class="unnumbered" data-number="">Regra do Escoteiro</h2>
+<p>A Regra do Escoteiro foi descrita por Robert Martin no seu livro <q>Código Limpo</q>. Segundo ele, os os escoteiros norte-americanos têm uma regra simples que pode ser adaptada para o contexto de desenvolvimento de software. A regra é a seguinte:</p>
+<blockquote>
+<p>Deixe o acampamento mais limpo do que você o encontrou</p>
+</blockquote>
+<p>Fazendo a conexão com a teoria anterior, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve fechar os olhos. Em vez disso, você deve procurar refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Você deve fazer isso mesmo que você não seja o autor do código com problema.</p>
+<p>A Regra do Escoteiro relaciona-se com o contexto de refactorings oportunistas que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactoring deve ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
