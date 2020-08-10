@@ -1,5 +1,5 @@
 
-# Teoria das Janelas Quebradas & Regra do Escoteiros {.unnumbered}
+# Teoria das Janelas Quebradas & Regra dos Escoteiros {.unnumbered}
 
 Neste artigo, vamos apresentar uma teoria e uma regra, propostas
 originalmente para outras áreas e contextos, mas que
@@ -62,37 +62,37 @@ A Regra do Escoteiro foi descrita por Robert Martin no seu livro "Código Limpo"
 Segundo ele, os os escoteiros norte-americanos têm uma regra simples que pode 
 ser adaptada para o contexto de desenvolvimento de software. A regra é a seguinte:
 
-> Deixe o acampamento mais limpo do que você o encontrou
+> Deixe o acampamento mais limpo do que você o encontrou.
 
-Fazendo a conexão com a teoria anterior, se você está corrigindo um bug em um sistema 
+Ou seja, se você está corrigindo um bug em um sistema 
 ou implementando uma nova funcionalidade e se depara com uma "janela quebrada" -- 
 isto é, com algum código de má qualidade -- você não deve fechar os olhos. Em vez disso, 
-você deve procurar refatorar esse código, para entregá-lo mais "limpo" do que o encontrou.
+procure refatorar esse código, para entregá-lo mais "limpo" do que o encontrou.
 Você deve fazer isso mesmo que você não seja o autor do código com problema.
 
 A Regra do Escoteiro relaciona-se com o contexto de refactorings oportunistas que
-estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactoring deve ser uma atividade
-contínua, realizada "no meio" de atividades de correção de bugs e de implementação
-de novas funcionalidades. 
+estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. 
+A ideia é que refactorings devem ser uma atividade contínua, 
+realizada "no meio" de atividades de correção de bugs e de implementação de novas funcionalidades. 
 
-Em um trabalho que publicamos em 2016 sobre motivações para refactorings 
+De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings 
 (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores 
-nos reportaram que, de fato, têm a preocupação de deixar o código mais limpo, 
-após uma tarefa de manutenção. Veja alguns exemplos dessas respostas:
+nos reportaram que têm a preocupação de deixar o código mais limpo, 
+após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra
+dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o
+propósito da regra. Veja alguns exemplos dessas respostas:
 
-> I was fixing an exception, in order to do that I had to add
-the same code to two different places. So I extracted initial
-code, replace duplicate with the extracted method and add
-the ‘fix’ to the extracted method.
+> Eu estava corrigindo uma exceção; então eu tive que adicionar o mesmo código
+em dois lugares diferentes. Então, eu extraí esse código para um método e
+apliquei a correção apenas nele.
 
-> The method was so long that it didn’t fit onto the screen
-anymore, so I moved out part.
+> O método [em que eu estava trabalhando] era muito grande e não cabia nem
+mesmo na tela. Então eu extraí uma parte dele.
 
-> These refactorings were made because of code reusability. I
-needed to use the same code in new method. I always try to
-reuse code, because when there’s a lot of code redundancy it
-gets overwhelmingly more complicated to work with the code
-in future.
+> Esses refactorings forem aplicados para reusar código. Eu sempre tento
+reusar código, porque quando existe muita redundância de código torna-se
+terrivelmente mais complicado manter o código no futuro.
+
 
 * * * 
 
