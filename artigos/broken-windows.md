@@ -9,7 +9,7 @@ elas:
 * Teoria das Janelas Quebradas
 * Regra dos Escoteiros
 
-Além de apresentar ambos conceitos, vamos tentar mostrar 
+Além de apresentar ambos conceitos, vamos mostrar 
 que existe uma conexão entre eles.
 
 ## Teoria das Janelas Quebradas {.unnumbered}
@@ -30,19 +30,19 @@ vai tomar conta da casa e até mesmo de sua vizinhança.
 
 A mensagem que a teoria tenta passar é que devemos ter "tolerância zero" 
 com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, 
-criando uma espiral crescente de abandono e de total descontrole.
+criando uma espiral crescente de abandono e descontrole.
 
-Apesar de mais ser discutida no meio de psicólogos sociais, a Teoria
+Apesar de ser mais discutida entre psicólogos sociais, a Teoria
 das Janelas Quebradas aplica-se também a sistemas de software. Um dos
 primeiros livros a fazer essa conexão foi "O Programador Pragmático",
 de Andrew Hunt e David Thomas. Veja o que os autores dizem:
 
 > Não deixe "janelas quebradas" (projetos ruins, decisões erradas ou código ruim) 
 sem reparos. Conserte cada um desses problemas assim que ele for descoberto. 
-... Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente 
+Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente 
 quando as janelas começam a quebrar. Existem diversos fatores que podem 
 contribuir para a deterioração de um sistema de software, mas a 
-negligência acelera esse processo mais rápido do que qualquer outro fator.
+negligência acelera esse processo mais rapidamente do que qualquer outro fator.
 
 Para finalizar, vamos citar mais alguns exemplos de "janelas quebradas" que não
 devem ser toleradas quando almeja-se produzir um código com qualidade:
@@ -75,6 +75,26 @@ estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do 
 contínua, realizada "no meio" de atividades de correção de bugs e de implementação
 de novas funcionalidades. 
 
+De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings,
+diversos desenvolvedores reportaram que, de fato, têm a preocupação de deixar
+o código mais limpo, após uma tarefa de manutenção. Veja alguns exemplos
+dessas respostas:
+
+> I was fixing an exception, in order to do that I had to add
+the same code to 2 different places. So I extracted initial
+code, replace duplicate with the extracted method and add
+the ‘fix’ to the extracted method.
+
+> The method was so long that it didn’t fit onto the screen
+anymore, so I moved out part
+
+> These refactorings were made because of code reusability. I
+needed to use the same code in new method. I always try to
+reuse code, because when there’s a lot of code redundancy it
+gets overwhelmingly more complicated to work with the code
+in future, because when something change in code that has
+it’s duplicate somewhere, it usually needs to be changed also
+there.”
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
