@@ -82,8 +82,8 @@ após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra
 dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o
 propósito da regra. Veja alguns exemplos dessas respostas:
 
-> Eu estava corrigindo uma exceção; então eu tive que adicionar o mesmo código
-em dois lugares diferentes. Então, eu extraí esse código para um método e
+> Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código
+em dois lugares. Em vez de fazer isso, eu extraí esse código para um método e
 apliquei a correção apenas nele.
 
 > O método [em que eu estava trabalhando] era muito grande e não cabia nem
@@ -92,6 +92,12 @@ mesmo na tela. Então eu extraí uma parte dele.
 > Esses refactorings forem aplicados para reusar código. Eu sempre tento
 reusar código, porque quando existe muita redundância de código torna-se
 terrivelmente mais complicado manter o código no futuro.
+
+## Exercícios {.unnumbered}
+
+1. Qual o nome do refactoring aplicado nas duas primeiras respostas de 
+desenvolvedores mencionadas na seção acima sobre a Regra dos Escoteiros.
+
 
 
 * * * 
