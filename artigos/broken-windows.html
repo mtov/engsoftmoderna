@@ -60,17 +60,17 @@
 <li>Teoria das Janelas Quebradas</li>
 <li>Regra dos Escoteiros</li>
 </ul>
-<p>Além de apresentar ambos conceitos, vamos tentar mostrar que existe uma conexão entre eles.</p>
+<p>Além de apresentar ambos conceitos, vamos mostrar que existe uma conexão entre eles.</p>
 <h2 class="unnumbered" data-number="" id="teoria-das-janelas-quebradas" class="unnumbered" data-number="">Teoria das Janelas Quebradas</h2>
 <p>A Teoria das Janelas Quebradas é famosa entre criminologistas, policiais e autoridades da área de segurança. Proposta em 1982 por dois criminologistas – James Wilson e George Kelling –, ela defende resumidamente o seguinte:</p>
 <blockquote>
 <p>Se uma das janelas de uma casa for quebrada e não for consertada, as pessoas que passam na rua podem achar que a casa está abandonada e que ninguém se importa com ela. Então, alguém pode decidir jogar uma pedra e quebrar mais alguns vidros … Depois de um tempo, muitas janelas podem estar quebradas e uma sensação de abandono vai tomar conta da casa e até mesmo de sua vizinhança.</p>
 </blockquote>
 <p><img src="./figs/broken-windows.jpg" /></p>
-<p>A mensagem que a teoria tenta passar é que devemos ter <q>tolerância zero</q> com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, criando uma espiral crescente de abandono e de total descontrole.</p>
-<p>Apesar de mais ser discutida no meio de psicólogos sociais, a Teoria das Janelas Quebradas aplica-se também a sistemas de software. Um dos primeiros livros a fazer essa conexão foi <q>O Programador Pragmático</q>, de Andrew Hunt e David Thomas. Veja o que os autores dizem:</p>
+<p>A mensagem que a teoria tenta passar é que devemos ter <q>tolerância zero</q> com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, criando uma espiral crescente de abandono e descontrole.</p>
+<p>Apesar de ser mais discutida entre psicólogos sociais, a Teoria das Janelas Quebradas aplica-se também a sistemas de software. Um dos primeiros livros a fazer essa conexão foi <q>O Programador Pragmático</q>, de Andrew Hunt e David Thomas. Veja o que os autores dizem:</p>
 <blockquote>
-<p>Não deixe <q>janelas quebradas</q> (projetos ruins, decisões erradas ou código ruim) sem reparos. Conserte cada um desses problemas assim que ele for descoberto. … Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente quando as janelas começam a quebrar. Existem diversos fatores que podem contribuir para a deterioração de um sistema de software, mas a negligência acelera esse processo mais rápido do que qualquer outro fator.</p>
+<p>Não deixe <q>janelas quebradas</q> (projetos ruins, decisões erradas ou código ruim) sem reparos. Conserte cada um desses problemas assim que ele for descoberto. Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente quando as janelas começam a quebrar. Existem diversos fatores que podem contribuir para a deterioração de um sistema de software, mas a negligência acelera esse processo mais rapidamente do que qualquer outro fator.</p>
 </blockquote>
 <p>Para finalizar, vamos citar mais alguns exemplos de <q>janelas quebradas</q> que não devem ser toleradas quando almeja-se produzir um código com qualidade:</p>
 <ul>
@@ -90,6 +90,16 @@
 </blockquote>
 <p>Fazendo a conexão com a teoria anterior, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve fechar os olhos. Em vez disso, você deve procurar refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Você deve fazer isso mesmo que você não seja o autor do código com problema.</p>
 <p>A Regra do Escoteiro relaciona-se com o contexto de refactorings oportunistas que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactoring deve ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
+<p>Em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que, de fato, têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Veja alguns exemplos dessas respostas:</p>
+<blockquote>
+<p>I was fixing an exception, in order to do that I had to add the same code to two different places. So I extracted initial code, replace duplicate with the extracted method and add the <q>fix</q> to the extracted method.</p>
+</blockquote>
+<blockquote>
+<p>The method was so long that it didn’t fit onto the screen anymore, so I moved out part.</p>
+</blockquote>
+<blockquote>
+<p>These refactorings were made because of code reusability. I needed to use the same code in new method. I always try to reuse code, because when there’s a lot of code redundancy it gets overwhelmingly more complicated to work with the code in future.</p>
+</blockquote>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

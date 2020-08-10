@@ -75,26 +75,25 @@ estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do 
 contínua, realizada "no meio" de atividades de correção de bugs e de implementação
 de novas funcionalidades. 
 
-De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings,
-diversos desenvolvedores reportaram que, de fato, têm a preocupação de deixar
-o código mais limpo, após uma tarefa de manutenção. Veja alguns exemplos
-dessas respostas:
+Em um trabalho que publicamos em 2016 sobre motivações para refactorings 
+(<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores 
+nos reportaram que, de fato, têm a preocupação de deixar o código mais limpo, 
+após uma tarefa de manutenção. Veja alguns exemplos dessas respostas:
 
 > I was fixing an exception, in order to do that I had to add
-the same code to 2 different places. So I extracted initial
+the same code to two different places. So I extracted initial
 code, replace duplicate with the extracted method and add
 the ‘fix’ to the extracted method.
 
 > The method was so long that it didn’t fit onto the screen
-anymore, so I moved out part
+anymore, so I moved out part.
 
 > These refactorings were made because of code reusability. I
 needed to use the same code in new method. I always try to
 reuse code, because when there’s a lot of code redundancy it
 gets overwhelmingly more complicated to work with the code
-in future, because when something change in code that has
-it’s duplicate somewhere, it usually needs to be changed also
-there.”
+in future.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
