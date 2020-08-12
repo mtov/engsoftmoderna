@@ -63,7 +63,7 @@ de variáveis globais, código duplicado, etc.
 * código com vulnerabilidades de segurança.
 * etc
 
-## Regra do Escoteiro {.unnumbered}
+## Regra dos Escoteiros {.unnumbered}
 
 A Regra do Escoteiro foi descrita por Robert Martin no seu livro "Código Limpo". 
 Segundo ele, os os escoteiros norte-americanos têm uma regra simples que pode 

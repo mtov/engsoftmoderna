@@ -83,17 +83,17 @@
 <li>código com vulnerabilidades de segurança.</li>
 <li>etc</li>
 </ul>
-<h2 class="unnumbered" data-number="" id="regra-do-escoteiro" class="unnumbered" data-number="">Regra do Escoteiro</h2>
+<h2 class="unnumbered" data-number="" id="regra-dos-escoteiros" class="unnumbered" data-number="">Regra dos Escoteiros</h2>
 <p>A Regra do Escoteiro foi descrita por Robert Martin no seu livro <q>Código Limpo</q>. Segundo ele, os os escoteiros norte-americanos têm uma regra simples que pode ser adaptada para o contexto de desenvolvimento de software. A regra é a seguinte:</p>
 <blockquote>
 <p>Deixe o acampamento mais limpo do que você o encontrou.</p>
 </blockquote>
 <p>Ou seja, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve simplesmente fechar os olhos. Em vez disso, procure refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Veja que você deve fazer isso mesmo que não seja o autor do código com problema.</p>
 <p>A Regra do Escoteiro relaciona-se com o contexto de <strong>refactorings oportunistas</strong> que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactorings devem ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
-<p>De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que sempre têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o propósito da regra. Veja alguns exemplos dessas respostas:</p>
+<p>De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o propósito da regra. Veja alguns exemplos de respostas:</p>
 <ul>
 <li><p><em>Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código em dois lugares. Em vez de fazer isso, eu extraí esse código para um método e apliquei a correção apenas nele.</em></p></li>
-<li><p><em>O método [em que eu estava trabalhando] era muito grande e não cabia nem mesmo na minha tela. Então eu extraí uma parte dele.</em></p></li>
+<li><p><em>O método [em que eu estava trabalhando] era muito grande e não cabia na minha tela. Então eu extraí uma parte dele.</em></p></li>
 <li><p><em>Esses refactorings foram aplicados para reusar código. Eu sempre tento fazer isso, porque quando existe muita redundância de código torna-se terrivelmente mais complicado manter o código no futuro.</em></p></li>
 </ul>
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
