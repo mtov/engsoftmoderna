@@ -268,8 +268,8 @@ public class Estacionamento {
 <pre><code>class A {
   private void f() {
     int total; ...
-    File f = File.open(&quot;arq1.db&quot;);
-    total = f.readInt();
+    File arq = File.open(&quot;arq1.db&quot;);
+    total = arq.readInt();
     ...
   }
 }</code></pre>
@@ -277,10 +277,10 @@ public class Estacionamento {
   private void g() {
     int total;
     // computa valor de total
-    File f = File.open(&quot;arq1.db&quot;);
-    f.writeInt(total);
+    File arq = File.open(&quot;arq1.db&quot;);
+    arq.writeInt(total);
     ...
-    f.close();
+    arq.close();
   }
 }</code></pre>
 <p>Antes de avançar, um pequeno comentário: no exemplo, existe também um acoplamento entre <code>B</code> e <code>File</code>. Porém, ele é um acoplamento aceitável, pois <code>B</code> realmente precisa persistir seus dados. Então, para conseguir isso, nada melhor do que usar uma classe da biblioteca de entrada e saída da linguagem.</p>
@@ -303,8 +303,8 @@ public class Estacionamento {
 
   private void g() {
     // computa valor de total
-    File f = File.open(&quot;arq1&quot;);
-    f.writeInt(total);
+    File arq = File.open(&quot;arq1&quot;);
+    arq.writeInt(total);
     ...
   }
 }</code></pre>

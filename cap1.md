@@ -1163,7 +1163,7 @@ diagramas da UML em detalhes, por outro lado existem elementos
 importantes em alguns desses diagramas. Além disso, desenvolvedores, com
 frequência, elaboram pequenos esboços de software, por exemplo, para
 comunicar e discutir ideias de design com outros desenvolvedores. Assim,
-conhecimento básico de UML pode ser interessante para criar esses
+conhecimento básico de UML pode ser interessante para desenhar esses
 esboços, inclusive para evitar a criação de uma nova linguagem de
 modelagem.
 
@@ -1203,7 +1203,7 @@ o projeto arquitetural deles foi sendo abandonado, transformando-os
 em um "spaghetti" de dependências entre os seus módulos.
 
 **Capítulo 8: Testes**, com ênfase em testes de unidade, usando
-frameworks como o JUnit. O capítulo inclui dezenas de exemplos de testes
+frameworks como JUnit. O capítulo inclui dezenas de exemplos de testes
 de unidade e também discute diversos aspectos desses testes. Por
 exemplo, discutimos bons princípios para escrita de testes de unidade e
 também test smells, isto é, padrões de testes que não são recomendados.
@@ -1229,13 +1229,13 @@ qualidade interna de um sistema de software. A apresentação inclui
 vários exemplos de código fonte, alguns deles de refactorings reais,
 realizados em sistemas de código aberto. O objetivo é transmitir ao
 leitor uma experiência prática de refatoração, que o ajude a desenvolver
-o hábito de frequentemente alocar tempo para melhor a qualidade interna
+o hábito de frequentemente reservar tempo para melhorar a qualidade interna
 do código que ele vai desenvolver. No capítulo, também apresentamos uma
 lista de code smells, isto é, indicadores de que uma 
-estrutura de código não está "cheirando bem" e que, portanto, poderia
+estrutura de código não está "cheirando bem" e que, portanto, deve
 ser objeto de uma refatoração.
 
-**Capítulo 10: DevOps**, que é um movimento que tenta aproximar os times de desenvolvimento (Devs) e de operações (Ops) de uma empresa desenvolvedora de software. O time de operações é responsável por manter o software em funcionamento, sendo formado por administradores de rede, administradores de bancos de dados, técnicos de suporte, etc. Em uma cultura tradicional, esses dois times tendem a atuar de forma independente. Ou seja, o time de desenvolvimento desenvolve o sistema e depois "joga ele por cima da parede" (*throw it over the wall*) que separa o departamento de desenvolvimento do departamento de operações. Ou seja, os dois times não conversam nem no momento da "passagem de bastão" de uma área para outra. Para resolver esse problema, DevOps propõe uma interação constante entre as áreas Devs e Ops, desde os primeiros dias do desenvolvimento. O objetivo é acelerar a entrada em produção de um sistema. Além de uma introdução a DevOps, vamos estudar no Capítulo 9 algumas práticas essenciais quando uma empresa adota essa cultura, incluindo Controle de Versões, Integração Contínua e Deployment/Entrega Contínua.
+**Capítulo 10: DevOps**, que é um movimento que tenta aproximar os times de desenvolvimento (Devs) e de operações (Ops) de uma empresa desenvolvedora de software. O time de operações é responsável por manter o software em funcionamento, sendo formado por administradores de rede, administradores de bancos de dados, técnicos de suporte, etc. Em uma cultura tradicional, esses dois times tendem a atuar de forma independente. Ou seja, o time de desenvolvimento desenvolve o sistema e depois "joga ele por cima da parede" (*throw it over the wall*) que separa o departamento de desenvolvimento do departamento de operações. Assim, os dois times não conversam nem no momento da "passagem de bastão" de uma área para outra. Para resolver esse problema, DevOps propõe uma interação constante entre as áreas Devs e Ops, desde os primeiros dias do desenvolvimento. O objetivo é acelerar a entrada em produção de um sistema. Além de uma introdução a DevOps, vamos estudar neste capítulo algumas práticas essenciais quando uma empresa adota essa cultura, incluindo Controle de Versões, Integração Contínua e Deployment/Entrega Contínua.
 
 **Apêndice A: Git**, que apresenta e mostra exemplos de uso dos principais comandos do sistema git. Atualmente, é inconcebível não usar controle de versões em qualquer sistema, mesmo naqueles mais simples. Por isso, fizemos questão de acrescentar esse apêndice no livro. Git é o sistema de controle de versões mais usado atualmente.
 

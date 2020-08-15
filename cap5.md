@@ -694,8 +694,8 @@ classe `A`.
 class A {
   private void f() {
     int total; ...
-    File f = File.open("arq1.db");
-    total = f.readInt();
+    File arq = File.open("arq1.db");
+    total = arq.readInt();
     ...
   }
 }
@@ -706,10 +706,10 @@ class B {
   private void g() {
     int total;
     // computa valor de total
-    File f = File.open("arq1.db");
-    f.writeInt(total);
+    File arq = File.open("arq1.db");
+    arq.writeInt(total);
     ...
-    f.close();
+    arq.close();
   }
 }
 ```
@@ -746,8 +746,8 @@ class B {
 
   private void g() {
     // computa valor de total
-    File f = File.open("arq1");
-    f.writeInt(total);
+    File arq = File.open("arq1");
+    arq.writeInt(total);
     ...
   }
 }
