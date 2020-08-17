@@ -569,7 +569,7 @@ Composição é uma relação na qual a classe de destino *não* pode existir
 de forma independente da classe de origem. Por outro lado, quando as
 duas classes têm ciclos de vida independentes, temos uma relação de
 agregação. No entanto, na prática, esses conceitos também geram confusão
-e, por isso, resolvemos não incluí-los na explicação sobre diagramas de
+e, por isso, resolvemos não os incluir na explicação sobre diagramas de
 classes. A mesma opinião é compartilhada por outros autores. Por
 exemplo, Fowler afirma que "agregação é algo estritamente sem
 sentido; portanto, eu recomendo que você ignore esse conceito em seus

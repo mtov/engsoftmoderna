@@ -1136,7 +1136,7 @@ desta seção, vamos explicar cada um deles.
 
 \index{Scrum!Papéis}
 Times Scrum são formados por um Dono de Produto (*Product
-Owner*), um Scrum Master e de três a nove desenvolvedores.
+Owner* ou apenas PO), um Scrum Master e de três a nove desenvolvedores.
 
 \index{Dono do Produto}
 \index{Product Owner}
