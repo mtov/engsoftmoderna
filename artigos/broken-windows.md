@@ -91,16 +91,16 @@ após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra
 dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o
 propósito da regra. Veja alguns exemplos de respostas:
 
-* *Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código
+> Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código
 em dois lugares. Em vez de fazer isso, eu extraí esse código para um método e
-apliquei a correção apenas nele.*
+apliquei a correção apenas nele.
 
-* *O método [em que eu estava trabalhando] era muito grande e não cabia 
-na minha tela. Então eu extraí uma parte dele.*
+> O método [em que eu estava trabalhando] era muito grande e não cabia 
+na minha tela. Então eu extraí uma parte dele.
 
-* *Esses refactorings foram aplicados para reusar código. Eu sempre tento
-fazer isso, porque quando existe muita redundância de código torna-se
-terrivelmente mais complicado manter o código no futuro.*
+> Esses refactorings foram aplicados para reusar código. Eu sempre tento
+fazer isso, porque quando existe muita redundância torna-se
+terrivelmente mais complicado manter o código no futuro.
 
 ## Exercícios {.unnumbered}
 
