@@ -60,27 +60,27 @@
 <li>Teoria das Janelas Quebradas</li>
 <li>Regra dos Escoteiros</li>
 </ul>
-<p>Além de apresentar ambos conceitos, vamos mostrar que existe uma conexão entre eles.</p>
+<p>Além de apresentar ambos os conceitos, vamos mostrar que existe uma conexão entre eles.</p>
 <h2 class="unnumbered" data-number="" id="teoria-das-janelas-quebradas" class="unnumbered" data-number="">Teoria das Janelas Quebradas</h2>
 <p>A Teoria das Janelas Quebradas é famosa entre criminologistas, policiais e autoridades da área de segurança. Proposta em 1982 por dois criminologistas – James Wilson e George Kelling –, ela defende o seguinte:</p>
 <blockquote>
-<p>Se uma das janelas de uma casa for quebrada e não for consertada, as pessoas que passam na rua podem achar que a casa está abandonada e que ninguém se importa com ela. Então, alguém pode decidir jogar uma pedra e quebrar mais alguns vidros… Depois de um tempo, muitas janelas podem estar quebradas, o telhado pode também ter problemas e uma sensação de abandono vai tomar conta da casa e até mesmo de sua vizinhança.</p>
+<p>Se uma das janelas de uma casa for quebrada e não for consertada, as pessoas que passam na rua podem achar que a casa está abandonada e que ninguém se importa com ela. Então, alguém pode decidir jogar uma pedra e quebrar mais alguns vidros… Depois de um tempo, muitas janelas podem estar quebradas, o telhado pode também começar a ter problemas e uma sensação de abandono vai tomar conta da casa e até mesmo de sua vizinhança.</p>
 </blockquote>
 <p><img src="./figs/broken-windows.jpg" /></p>
-<p>A mensagem que a teoria tenta passar é que devemos ter <q>tolerância zero</q> com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, criando uma espiral crescente de abandono e descontrole.</p>
+<p>A mensagem que a teoria tenta passar é que devemos ter <q>tolerância zero</q> com problemas aparentemente pequenos. Caso contrário, eles podem se acumular, criando uma espiral de abandono e descontrole.</p>
 <p>Apesar de ser mais discutida entre psicólogos sociais, a Teoria das Janelas Quebradas aplica-se também a sistemas de software. Um dos primeiros livros a fazer essa conexão foi <q>O Programador Pragmático</q>, de Andrew Hunt e David Thomas. Veja o que os autores dizem:</p>
 <blockquote>
-<p>Não deixe <q>janelas quebradas</q> (projetos ruins, decisões erradas ou código ruim) sem reparos. Conserte cada um desses problemas assim que ele for descoberto. Já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente quando as janelas começam a quebrar. Existem diversos fatores que podem contribuir para a deterioração de um sistema de software, mas a negligência acelera esse processo mais rapidamente do que qualquer outro fator.</p>
+<p>Não deixe <q>janelas quebradas</q> (projetos ruins, decisões erradas ou código ruim) sem reparos. Conserte cada um desses problemas assim que ele for descoberto. Nós já vimos sistemas bem projetados e funcionais se deteriorarem rapidamente quando as janelas começam a quebrar. Existem diversos fatores que podem contribuir para a deterioração de um sistema de software, mas a negligência acelera esse processo mais rapidamente do que qualquer outro fator.</p>
 </blockquote>
-<p>Para finalizar, vamos citar mais alguns exemplos de <q>janelas quebradas</q> que não devem ser toleradas quando almeja-se produzir software com qualidade:</p>
+<p>A seguir, listamos mais alguns exemplos de <q>janelas quebradas</q> que não devem ser toleradas quando almeja-se produzir software com qualidade:</p>
 <ul>
 <li>código com bugs conhecidos e graves, mas que mesmo assim entram em produção.</li>
 <li>código que não segue convenções de indentação e regras de nomes para identificadores.</li>
 <li>código que não possui testes.</li>
 <li>código que viola a arquitetura planejada do sistema; por exemplo, que faz chamadas SQL fora do módulo de persistência.</li>
-<li>código com <q>bad smells</q>, tais como métodos longos, uso injustificado de variáveis globais, código duplicado, etc.</li>
-<li>código com problemas de desempenho.</li>
-<li>código com vulnerabilidades de segurança.</li>
+<li>código com <q>code smells</q>, tais como métodos longos, uso injustificado de variáveis globais, código duplicado, etc.</li>
+<li>código com problemas relevantes de desempenho.</li>
+<li>código com vulnerabilidades graves de segurança.</li>
 <li>etc</li>
 </ul>
 <h2 class="unnumbered" data-number="" id="regra-dos-escoteiros" class="unnumbered" data-number="">Regra dos Escoteiros</h2>
@@ -88,9 +88,9 @@
 <blockquote>
 <p>Deixe o acampamento mais limpo do que você o encontrou.</p>
 </blockquote>
-<p>Ou seja, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve simplesmente fechar os olhos. Em vez disso, procure refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Veja que você deve fazer isso mesmo que não seja o autor do código com problema.</p>
-<p>A Regra do Escoteiro relaciona-se com o contexto de <strong>refactorings oportunistas</strong> que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactorings devem ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
-<p>De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o propósito da regra. Veja alguns exemplos de respostas:</p>
+<p>Ou seja, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve simplesmente fechar os olhos. Em vez disso, procure refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Você deve fazer isso mesmo que não seja o autor do código com problema.</p>
+<p>A Regra do Escoteiro relaciona-se com o conceito de <strong>refactorings oportunistas</strong> que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactorings devem ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
+<p>De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o propósito da regra. Veja exemplos de respostas:</p>
 <blockquote>
 <p>Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código em dois lugares. Em vez de fazer isso, eu extraí esse código para um método e apliquei a correção apenas nele.</p>
 </blockquote>
@@ -102,7 +102,7 @@
 </blockquote>
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
 <ol type="1">
-<li>Qual o nome do refactoring aplicado nas duas primeiras respostas de desenvolvedores mencionadas na seção acima sobre a Regra dos Escoteiros.</li>
+<li>Qual o nome do refactoring aplicado nas duas primeiras respostas de desenvolvedores mencionadas na seção sobre a Regra dos Escoteiros.</li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
