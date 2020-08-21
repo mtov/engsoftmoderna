@@ -33,7 +33,7 @@ A mensagem que a teoria tenta passar é que devemos ter "tolerância zero"
 com problemas aparentemente pequenos. Caso contrário, eles podem 
 se acumular, criando uma espiral de abandono e descontrole.
 
-Apesar de ser mais discutida entre psicólogos sociais, a Teoria
+Apesar de mais discutida entre psicólogos sociais, a Teoria
 das Janelas Quebradas aplica-se também a sistemas de software. Um dos
 primeiros livros a fazer essa conexão foi "O Programador Pragmático",
 de Andrew Hunt e David Thomas. Veja o que os autores dizem:
@@ -66,7 +66,7 @@ de variáveis globais, código duplicado, etc.
 ## Regra dos Escoteiros {.unnumbered}
 
 A Regra do Escoteiro foi descrita por Robert Martin no seu livro "Código Limpo". 
-Segundo ele, os os escoteiros norte-americanos têm uma regra simples que pode 
+Segundo ele, os escoteiros norte-americanos têm uma regra simples que pode 
 ser adaptada para o contexto de desenvolvimento de software. A regra é a seguinte:
 
 > Deixe o acampamento mais limpo do que você o encontrou.
