@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Desafios do Ensino de Engenharia de Software – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-8249107-3', 'auto');
+     ga('send', 'pageview');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FCFCFC;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.png" width="240"></a>
+</p>
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="desafios-do-ensino-de-engenharia-de-software" class="unnumbered" data-number="">Desafios do Ensino de Engenharia de Software</h1>
+<p>Por: Marco Tulio Valente (maio 2020)</p>
+<p>Em 2019, ministrei pela primeira vez um curso de Engenharia de Software para alunos de graduação. Desde então, tenho estudado, trabalhado e refletido bastante sobre questões ligadas ao ensino dessa disciplina.</p>
+<p>Assim, neste artigo, vou compartilhar minha visão sobre os desafios envolvidos em tal tarefa.</p>
+<h2 class="unnumbered" data-number="" id="importância-de-engenharia-de-software" class="unnumbered" data-number="">Importância de Engenharia de Software</h2>
+<p>Primeiro, para delimitar o contexto deste artigo, acho importante começar lembrando que Engenharia de Software é cada vez mais essencial na formação de alunos de Ciência da Computação, Sistemas de Informação, Engenharia de Computação, etc.</p>
+<p>Para ressaltar esse fato, na primeira aula da minha disciplina apresento para os alunos o seguinte diagrama.</p>
+<p><img src="./figs/desafios-engsoft.png" /></p>
+<p>Esclareço que ele não é baseado em nenhum estudo científico, mas apenas na minha experiência acadêmica e profissional. Porém, a mensagem para os alunos é clara: quando vocês se formarem, a maioria será Engenheiro de Software ou terá um título equivalente, como Frontend/Backend/Fullstack/Mobile developer, Arquiteto de Software, Tech/Squad Lead, etc.</p>
+<hr />
+<p>Contexto brasileiro: Temos também no Brasil capacidade, vocação e potencial para desenvolver um mercado de software relevante e com impacto e atuação global. Na verdade, não estou falando nenhuma novidade, pois sempre se falou nesse assunto. Também, não estou sugerindo que nosso mercado de software seja inexistente e inexpressivo. Pelo contrário, estamos avançando muito e com vários casos de sucesso. Porém, podemos melhorar e avançar mais ainda! Mas, para isso, o recurso fundamental é a disponibilidade de mão de obra bem formada, qualificada e motivada.</p>
+<hr />
+<p>Retomando o tema, o propósito central deste artigo é destacar que os desafios envolvidos na formação de um Engenheiro de Software são imensos, pois essa formação requer um conjunto de esforços em pelo menos três dimensões: conceitual, prática e comportamental.</p>
+<p>A seguir, detalho um pouco mais essas dimensões.</p>
+<h2 class="unnumbered" data-number="" id="formação-conceitual" class="unnumbered" data-number="">Formação Conceitual</h2>
+<p>Quando ministrei a disciplina de Engenharia de Software pela primeira vez, na graduação, fiquei surpreso com a falta de livros didáticos mais modernos na área. Por pelo menos um mês, não me saiu da cabeça uma frase que ouvi, uma vez, em uma palestra:</p>
+<blockquote>
+<p>A maturidade e capacidade de impacto de uma área do conhecimento pode ser medida pela qualidade e profundidade de seus livros didáticos.</p>
+</blockquote>
+<p>(Infelizmente, não lembro mais o autor, nem o enunciado exato que ele usou, mas foi algo parecido com o que acabei de citar).</p>
+<p>Por isso (e, para tirar a tal frase da minha cabeça!), resolvi dedicar um ano de intenso trabalho para escrever um livro-texto sobre Engenharia de Software.</p>
+<p>Sou suspeito para afirmar, mas acredito que, após a escrita desse livro, estou conseguindo cobrir essa dimensão do ensino de Engenharia de Software de maneira adequada. Isso envolve transmitir bons conceitos, práticas e princípios, sempre modernos, de processos, projeto, arquitetura, testes, manutenção, etc de software.</p>
+<h2 class="unnumbered" data-number="" id="formação-prática" class="unnumbered" data-number="">Formação Prática</h2>
+<p>Porém, de nada adianta dominar a teoria, se o aluno nunca colocou ela em prática. Ou seja, o aluno tem também que aplicar os conceitos que viu na teoria, dentro do ambiente acadêmico e de sua estrutura curricular.</p>
+<p>Ao comentar sobre isso, sempre me lembro da frase do Torvalds (Linus):</p>
+<blockquote>
+<p>Falar é fácil, mas quero ver o código!</p>
+</blockquote>
+<p>Então, sobre a dimensão prática da formação do Engenheiro de Software, quero dizer que não concordo que ela possa ser completamente terceirizada por meio de um estágio ou atividade semelhante.</p>
+<p>Por outro lado, quando a universidade assume parte da responsabilidade pela formação prática dos alunos, surgem algumas complicações, naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir que os alunos implementem, do zero, um sistema real em uma disciplina acadêmica.</p>
+<p>Da mesma forma, pedir para que os alunos trabalhem em sistemas de terceiros, como sistemas de código aberto, também não é trivial. O motivo é que o aluno, normalmente, não tem tempo, no escopo de uma disciplina acadêmica, para entender e domar um sistema real.</p>
+<p>Tentando explicar melhor, o aluno pode, por exemplo, até corrigir bugs menos críticos ou implementar pequenas features em um sistema de código aberto, mas sem entender como de fato as coisas acontecem no sistema.</p>
+<p>Assim, para atender à formação prática dos alunos, a solução mais promissora que vejo consiste no desenvolvimento de um conjunto de sistemas e programas <q>educativos</q>, de pequeno porte e que exercitem conceitos básicos de divisão de trabalho (isto é, de processos), projeto e arquitetura de software, testes, refatoração, devops, etc.</p>
+<p>Esses programas seriam construídos exclusivamente para permitir, exercitar e ilustrar o uso de bons princípios e práticas de Engenharia de Software. No entanto, pelo menos até onde eu consegui pesquisar, tais sistemas educativos para ensino de Engenharia de Software não são prevalentes. É verdade que existe algum esforço nesse sentido, mas a minha impressão é que ele é ainda distanciado e desconectado de uma prática real.</p>
+<p>Vou dar dois exemplos pessoais: na minhas disciplina, eu planejo duas aulas práticas. Na primeira aula, uso o sistema de locadora do Fowler, para ilustrar conceitos de refatoração. Em outra aula, uso o sistema de armazenamento de valores monetários, do Beck, para ilustrar e praticar conceitos de Desenvolvimento Dirigido por Testes (TDD). Acho ambos os sistemas interessantes e, em geral, recebo um bom feedback dos alunos sobre essa aulas. Algo na seguinte linha:</p>
+<blockquote>
+<p>Professor, muito bom esse exercício, para a gente não ficar só na teoria. Você deveria ter mais aulas assim …</p>
+</blockquote>
+<p>Porém, sei que existe um amplo espaço para fazer algo ainda melhor, no tocante a essas duas aulas, especificamente.</p>
+<p>E, claro, teríamos que ter <q>sistemas educativos</q> cobrindo outras práticas de programação, como testes, padrões de projeto, arquitetura, integração contínua, controle de versões, git, etc.</p>
+<h2 class="unnumbered" data-number="" id="formação-comportamental" class="unnumbered" data-number="">Formação Comportamental</h2>
+<p>Concluindo e, na falta de um nome melhor, estou usando o termo <q>formação comportamental</q> para referenciar os soft skills que são fundamentais em um Engenheiro de Software. Isto é, hoje em dia, não basta saber programar e dominar os conceitos básicos da área (formação conceitual). Não basta também ter capacidade de realização (formação prática).</p>
+<p>Além disso, o Engenheiro de Software moderno tem que saber trabalhar em equipe, saber liderar e ser liderado, saber se comunicar e se expressar, de forma escrita e oral, saber ouvir e saber falar na hora certa, ser capaz de entender o que a organização espera dele, etc. Porém, a abordagem dessa dimensão comportamental em cursos de Engenharia de Software é ainda um problema em aberto, pelo menos para mim. Talvez, na verdade, o problema não seja exclusivo de disciplinas de Engenharia de Software, mas de caráter mais transversal na formação de profissionais de Computação.</p>
+<hr />
+<p>Bem, esse é um artigo em andamento! A ideia é atualizá-lo, à medida que consiga respostas mais concretas sobre as dimensões prática e comportamental.</p>
+<hr />
+<p>P.S. Recebi um interessante comentário, por e-mail, sugerindo uma quarta dimensão: formação empreendedora. Certamente, muito importante! Pois em uma época de transformação digital — como a que estamos vivemos — , as oportunidades que existem são imensas! E Engenharia de Software, principalmente quando praticada com qualidade, é fundamental em qualquer processo de transformação digital.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
