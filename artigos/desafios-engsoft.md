@@ -36,7 +36,7 @@ Quando ministrei a disciplina de Engenharia de Software pela primeira vez, na gr
 
 (Infelizmente, não lembro mais o autor, nem o enunciado exato que ele usou, mas foi algo parecido com o que acabei de citar).
 
-Por isso (e, para tirar a tal frase da minha cabeça!), resolvi dedicar um ano de intenso trabalho para escrever um livro-texto sobre Engenharia de Software.
+Por isso (e, para tirar a tal frase da minha cabeça!), resolvi dedicar um ano de intenso trabalho para escrever um [livro-texto](https://engsoftmoderna.info/) sobre Engenharia de Software.
 
 Sou suspeito para afirmar, mas acredito que, após a escrita desse livro, estou conseguindo cobrir essa dimensão do ensino de Engenharia de Software de maneira adequada. Isso envolve transmitir bons conceitos, práticas e princípios, sempre modernos, de processos, projeto, arquitetura, testes, manutenção, etc de software.
 
@@ -50,7 +50,7 @@ Ao comentar sobre isso, sempre me lembro da frase do Torvalds (Linus):
 
 Então, sobre a dimensão prática da formação do Engenheiro de Software, quero dizer que não concordo que ela possa ser completamente terceirizada por meio de um estágio ou atividade semelhante.
 
-Por outro lado, quando a universidade assume parte da responsabilidade pela formação prática dos alunos, surgem algumas complicações, naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir que os alunos implementem, do zero, um sistema real em uma disciplina acadêmica.
+Por outro lado, quando a universidade assume parte da responsabilidade pela formação prática dos alunos, surgem complicações naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir que os alunos implementem, do zero, um sistema real em uma disciplina acadêmica.
 
 Da mesma forma, pedir para que os alunos trabalhem em sistemas de terceiros, como sistemas de código aberto, também não é trivial. O motivo é que o aluno, normalmente, não tem tempo, no escopo de uma disciplina acadêmica, para entender e domar um sistema real.
 
@@ -61,7 +61,7 @@ Assim, para atender à formação prática dos alunos, a solução mais promisso
 Esses programas seriam construídos exclusivamente para permitir, exercitar e ilustrar o uso de bons princípios e práticas de Engenharia de Software.
 No entanto, pelo menos até onde eu consegui pesquisar, tais sistemas educativos para ensino de Engenharia de Software não são prevalentes. É verdade que existe algum esforço nesse sentido, mas a minha impressão é que ele é ainda distanciado e desconectado de uma prática real.
 
-Vou dar dois exemplos pessoais: na minhas disciplina, eu planejo duas aulas práticas. Na primeira aula, uso o sistema de locadora do Fowler, para ilustrar conceitos de refatoração. Em outra aula, uso o sistema de armazenamento de valores monetários, do Beck, para ilustrar e praticar conceitos de Desenvolvimento Dirigido por Testes (TDD).
+Vou dar dois exemplos pessoais: na minhas disciplina, eu planejo duas aulas práticas. Na primeira aula, uso o sistema de locadora do Fowler para ilustrar conceitos de refatoração. Em outra aula, uso o sistema de armazenamento de valores monetários, do Beck, para ilustrar e praticar conceitos de Desenvolvimento Dirigido por Testes (TDD).
 Acho ambos os sistemas interessantes e, em geral, recebo um bom feedback dos alunos sobre essa aulas. Algo na seguinte linha:
 
 > Professor, muito bom esse exercício, para a gente não ficar só na teoria. Você deveria ter mais aulas assim ...
@@ -75,7 +75,7 @@ E, claro, teríamos que ter "sistemas educativos" cobrindo outras práticas de p
 Concluindo e, na falta de um nome melhor, estou usando o termo "formação comportamental" para referenciar os soft skills que são fundamentais em um Engenheiro de Software. Isto é, hoje em dia, não basta saber programar e dominar os conceitos básicos da área (formação conceitual). Não basta também ter capacidade de realização (formação prática).
 
 Além disso, o Engenheiro de Software moderno tem que saber trabalhar em equipe, saber liderar e ser liderado, saber se comunicar e se expressar, de forma escrita e oral, saber ouvir e saber falar na hora certa, ser capaz de entender o que a organização espera dele, etc.
-Porém, a abordagem dessa dimensão comportamental em cursos de Engenharia de Software é ainda um problema em aberto, pelo menos para mim. Talvez, na verdade, o problema não seja exclusivo de disciplinas de Engenharia de Software, mas de caráter mais transversal na formação de profissionais de Computação.
+Porém, a abordagem desta dimensão comportamental em cursos de Engenharia de Software é ainda um problema em aberto, pelo menos para mim. Talvez, na verdade, o problema não seja exclusivo de disciplinas de Engenharia de Software, mas de caráter mais transversal na formação de profissionais de Computação.
 
 * * *
 
