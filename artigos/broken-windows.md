@@ -57,7 +57,7 @@ para identificadores.
 * código que não possui testes.
 * código que viola a arquitetura planejada do sistema; por exemplo, 
 que faz chamadas SQL fora do módulo de persistência.
-* código com "code smells", tais como métodos longos, uso injustificado 
+* código com *code smells*, tais como métodos longos, uso injustificado 
 de variáveis globais, código duplicado, etc.
 * código com problemas relevantes de desempenho.
 * código com vulnerabilidades graves de segurança.
