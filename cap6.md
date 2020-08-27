@@ -1494,31 +1494,31 @@ de um objeto agregado sem expor sua representação subjacente.
 
 2\. Dê o nome dos seguintes padrões de projeto:
 
-a) Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema 
+a) Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema.
 
-b) Garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela
+b) Garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela.
 
-c) Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais 
+c) Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais. 
 
-d) Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces
+d) Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces.
 
-e) Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados
+e) Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados.
 
-f) Oferece um método para centralizar a criação de um tipo de objeto
+f) Oferece um método para centralizar a criação de um tipo de objeto.
 
-g) Funciona como um intermediário que controla o acesso a um objeto base
+g) Funciona como um intermediário que controla o acesso a um objeto base.
 
-h) Permite adicionar dinamicamente novas funcionalidades a uma classe
+h) Permite adicionar dinamicamente novas funcionalidades a uma classe.
 
-i) Oferece uma interface padronizada para caminhar em estruturas de dados
+i) Oferece uma interface padronizada para caminhar em estruturas de dados.
 
-j) Permite parametrizar os algoritmos usados por uma classe
+j) Permite parametrizar os algoritmos usados por uma classe.
 
-k) Torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos
+k) Torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos.
 
-l) Permite que um objeto avise outros objetos de que seu estado mudou
+l) Permite que um objeto avise outros objetos de que seu estado mudou.
 
-m) Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses
+m) Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses.
 
 
 3\. Dentre os padrões de projeto que respondeu na questão (2), quais são padrões criacionais?
