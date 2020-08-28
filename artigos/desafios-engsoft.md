@@ -1,6 +1,6 @@
 # Desafios do Ensino de Engenharia de Software {.unnumbered}
 
-Por: Marco Tulio Valente (maio 2020)
+Por: Marco Tulio Valente (maio de 2020)
 
 Em 2019, ministrei pela primeira vez um curso de Engenharia de Software para alunos de graduação. Desde então, tenho estudado, trabalhado e refletido bastante sobre questões ligadas ao ensino dessa disciplina.
 
