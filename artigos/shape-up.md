@@ -113,9 +113,16 @@ hold on to. What if the pitch was great, but the time just wasn’t
 right? Anyone who wants to advocate for it again simply tracks it
 independently—their own way—and then lobbies for it six weeks later. 
 
-Ou seja, na verdade, parece o que não existe é um backlog global. Mas
+Ou seja, na verdade, o que não existe é um backlog global. Mas
 cada tomador de decisão pode ter seu backlog local de pitches 
 que ele pretende propor e defender na próxima *bet table*.
+
+Por fim, Shape Up defende a ideia de "tempo fixo, mas escopo aberto".
+Isto é, os ciclos têm uma duração bem definida (por exemplo, 6 semanas).
+Porém, os times têm flexibilidade para adaptar o escopo do que será,
+de fato, implementado no ciclo. Veja que, no início de um ciclo, eles 
+recebem um pitch, que é uma especificação de requisitos relativamente
+aberta e flexível.
 
 ## Conclusão {.unnumbered}
 
@@ -138,6 +145,10 @@ para modelar os pitches e também podem fazer parte da *bet table*.
 Ou seja, eles recebem os pitches já prontos e modelados (*shaped*).
 Porém, os times continuam autônomos para decidir 
 como os pitches serão implementados no intervalo de seis semanas.
+
+* Os times têm autonomia para adaptar o escopo de um pitch
+à duração prevista do ciclo. Já em Scrum, o escopo do sprint é fixado
+logo no seu início, durante a reunião de planejamento do sprint.
 
 #### Para Saber Mais {.unnumbered}
 
