@@ -150,6 +150,12 @@ como os pitches serão implementados no intervalo de seis semanas.
 à duração prevista do ciclo. Já em Scrum, o escopo do sprint é fixado
 logo no seu início, durante a reunião de planejamento do sprint.
 
+* Ciclos são um pouco mais longos que os sprints de Scrum. Por exemplo,
+um ciclo pode durar 6 semamas, enquanto um sprint dura, no máximo, um
+mês e, frequentemente, menos do que isso. Além disso, os ciclos são
+seguidos de um período de cool down, que não envolve a implementação
+de novas funcionalidades.
+
 #### Para Saber Mais {.unnumbered}
 
 Se quiser saber mais sobre Shape Up, além do livro, recomendamos

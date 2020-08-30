@@ -1,0 +1,650 @@
+\indexentry{Confer\IeC {\^e}ncia da OTAN}{2}
+\indexentry{Brooks, Frederick}{4}
+\indexentry{Dificuldades!Essenciais}{4}
+\indexentry{Dificuldades!Acidentais}{4}
+\indexentry{Linux}{5}
+\indexentry{Google}{5}
+\indexentry{SWEBOK}{6}
+\indexentry{Engenharia de Requisitos}{7}
+\indexentry{Requisitos!Engenharia de Requisitos}{7}
+\indexentry{Requisitos!Funcionais}{7}
+\indexentry{Requisitos!N\IeC {\~a}o-Funcionais}{7}
+\indexentry{Projeto de Software}{8}
+\indexentry{Arquitetura de Software}{8}
+\indexentry{Constru\IeC {\c c}\IeC {\~a}o de Software}{9}
+\indexentry{Testes de Software}{9}
+\indexentry{Dijkstra, Edsger W.}{9}
+\indexentry{Defeitos}{10}
+\indexentry{Bugs}{10}
+\indexentry{Falhas}{10}
+\indexentry{Ariane, Explos\IeC {\~a}o do}{11}
+\indexentry{Manuten\IeC {\c c}\IeC {\~a}o de Software}{11}
+\indexentry{Manuten\IeC {\c c}\IeC {\~a}o de Software!Corretiva}{11}
+\indexentry{Manuten\IeC {\c c}\IeC {\~a}o de Software!Preventiva}{11}
+\indexentry{Bug do Mil\IeC {\^e}nio}{11}
+\indexentry{Manuten\IeC {\c c}\IeC {\~a}o de Software!Adaptativa}{12}
+\indexentry{Manuten\IeC {\c c}\IeC {\~a}o de Software!Evolutiva}{12}
+\indexentry{Sistemas Legados}{13}
+\indexentry{Ger\IeC {\^e}ncia de Configura\IeC {\c c}\IeC {\~a}o}{13}
+\indexentry{Versionamento Sem\IeC {\^a}ntico}{13}
+\indexentry{Ger\IeC {\^e}ncia de Projetos}{14}
+\indexentry{Stakeholders}{14}
+\indexentry{Brooks, Frederick}{14}
+\indexentry{Lei de Brooks}{14}
+\indexentry{Ger\IeC {\^e}ncia de Projetos!Lei de Brooks}{14}
+\indexentry{Processos de Software}{15}
+\indexentry{Waterfall}{16}
+\indexentry{M\IeC {\'e}todos \IeC {\'A}geis}{16}
+\indexentry{Manifesto \IeC {\'A}gil}{16}
+\indexentry{Modelos de Software}{18}
+\indexentry{UML}{18}
+\indexentry{Qualidade de Software}{18}
+\indexentry{Qualidade de Software!Externa}{19}
+\indexentry{Qualidade de Software!Interna}{19}
+\indexentry{Revis\IeC {\~a}o de C\IeC {\'o}digo}{20}
+\indexentry{Pr\IeC {\'a}tica Profissional}{20}
+\indexentry{Etica Profissional}{21}
+\indexentry{C\IeC {\'o}digo de \IeC {\'E}tica}{21}
+\indexentry{Economia de Software}{23}
+\indexentry{Sistemas ABC}{23}
+\indexentry{Meyer, Bertrand}{23}
+\indexentry{Over-engineering}{24}
+\indexentry{Sistemas Casuais}{24}
+\indexentry{Sistemas de Miss\IeC {\~a}o Cr\IeC {\'\i }tica}{24}
+\indexentry{Volkswagen, Esc\IeC {\^a}ndalo}{29}
+\indexentry{Processos de Software}{31}
+\indexentry{Torvalds, Linus}{32}
+\indexentry{Knuth, Donald}{32}
+\indexentry{TeX}{32}
+\indexentry{Linux}{32}
+\indexentry{Manifesto \IeC {\'A}gil}{33}
+\indexentry{CHAOS Report}{33}
+\indexentry{M\IeC {\'e}todos \IeC {\'A}geis}{35}
+\indexentry{Waterfall}{35}
+\indexentry{Beck, Kent}{37}
+\indexentry{Sutherland, Jeffrey}{37}
+\indexentry{Schwaber, Ken}{37}
+\indexentry{Toyota}{37}
+\indexentry{Stack Overflow survey}{38}
+\indexentry{Extreme Programming}{38}
+\indexentry{Extreme Programming!Valores}{39}
+\indexentry{Extreme Programming!Princ\IeC {\'\i }pios}{40}
+\indexentry{Baby Steps}{41}
+\indexentry{Chrysler}{42}
+\indexentry{Extreme Programming!Pr\IeC {\'a}ticas}{42}
+\indexentry{Extreme Programming!Representante dos Clientes}{42}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios}{42}
+\indexentry{Story Points}{43}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!Story Points}{43}
+\indexentry{Planning Poker}{44}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!Planning Poker}{44}
+\indexentry{Extreme Programming!Releases}{44}
+\indexentry{Slacks}{46}
+\indexentry{Velocidade}{48}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!Velocidade}{48}
+\indexentry{Design Incremental}{50}
+\indexentry{Big Design Upfront}{50}
+\indexentry{Programa\IeC {\c c}\IeC {\~a}o em Pares}{51}
+\indexentry{Microsoft Research}{52}
+\indexentry{Revis\IeC {\~a}o de C\IeC {\'o}digo}{52}
+\indexentry{Propriedade Coletiva do C\IeC {\'o}digo}{52}
+\indexentry{Testes de Software}{52}
+\indexentry{Desenvolvimento Dirigido por Testes (TDD)}{53}
+\indexentry{Test Driven Design (TDD)}{53}
+\indexentry{Build Automatizado}{53}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{54}
+\indexentry{Ambiente de Trabalho}{55}
+\indexentry{Extreme Programming!Ambiente de Trabalho}{55}
+\indexentry{Contratos com Escopo Aberto}{56}
+\indexentry{Extreme Programming!Contratos com Escopo Aberto}{56}
+\indexentry{Extreme Programming!M\IeC {\'e}tricas de Processo}{56}
+\indexentry{Scrum}{57}
+\indexentry{Sutherland, Jeffrey}{57}
+\indexentry{Schwaber, Ken}{57}
+\indexentry{Scrum!Pap\IeC {\'e}is}{57}
+\indexentry{Dono do Produto}{57}
+\indexentry{Product Owner}{57}
+\indexentry{Scrum!Dono do Produto}{57}
+\indexentry{Scrum!Product Owner}{57}
+\indexentry{Scrum Master}{58}
+\indexentry{Scrum!Scrum Master}{58}
+\indexentry{Backlog!Produto}{58}
+\indexentry{Scrum!Backlog do Produto}{58}
+\indexentry{Sprint}{59}
+\indexentry{Scrum!Sprint}{59}
+\indexentry{Planejamento do Sprint}{59}
+\indexentry{Scrum!Planejamento do Sprint}{59}
+\indexentry{Backlog!Sprint}{59}
+\indexentry{Scrum!Backlog do Sprint}{59}
+\indexentry{Quadro Scrum}{60}
+\indexentry{Scrum Board}{60}
+\indexentry{Scrum!Quadro Scrum}{60}
+\indexentry{Scrum!Scrum Board}{60}
+\indexentry{Scrum!Crit\IeC {\'e}rios de Conclus\IeC {\~a}o}{60}
+\indexentry{Gr\IeC {\'a}fico de Burndown}{60}
+\indexentry{Scrum!Gr\IeC {\'a}fico de Burndown}{60}
+\indexentry{Reuni\IeC {\~a}o Di\IeC {\'a}ria}{61}
+\indexentry{Daily Scrum}{61}
+\indexentry{Scrum!Reuni\IeC {\~a}o Di\IeC {\'a}ria}{61}
+\indexentry{Scrum!Daily Scrum}{61}
+\indexentry{Revis\IeC {\~a}o do Sprint}{61}
+\indexentry{Scrum!Revis\IeC {\~a}o}{61}
+\indexentry{Retrospectiva do Sprint}{62}
+\indexentry{Scrum!Retrospectiva}{62}
+\indexentry{Time-box}{62}
+\indexentry{Scrum!Time-box}{62}
+\indexentry{Squad}{64}
+\indexentry{Scrum!Scrum Master}{64}
+\indexentry{Kanban}{65}
+\indexentry{Toyota}{65}
+\indexentry{Microsoft}{65}
+\indexentry{Limites WIP}{67}
+\indexentry{Work in Progress (WIP)}{67}
+\indexentry{Kanban!Limites WIP}{67}
+\indexentry{Kanban!Work in Progress (WIP)}{67}
+\indexentry{Brechner, Eric}{69}
+\indexentry{Kanban!C\IeC {\'a}lculo de WIP}{69}
+\indexentry{Lei de Little}{71}
+\indexentry{Kanban!Lei de Little}{71}
+\indexentry{Throughput}{71}
+\indexentry{Lead Time}{71}
+\indexentry{M\IeC {\'e}todos \IeC {\'A}geis}{72}
+\indexentry{Modelo em Espiral}{74}
+\indexentry{Boehm, Barry}{74}
+\indexentry{Processo Unificado (UP)}{75}
+\indexentry{Rational Software}{75}
+\indexentry{IBM}{75}
+\indexentry{Rational Unified Process (RUP)}{75}
+\indexentry{CASE (Computer-Aided Software Engineering)}{76}
+\indexentry{Inception}{76}
+\indexentry{Facebook}{81}
+\indexentry{Requisitos}{83}
+\indexentry{Requisitos!Funcionais}{83}
+\indexentry{Requisitos!N\IeC {\~a}o-Funcionais}{83}
+\indexentry{Brooks, Frederick}{84}
+\indexentry{Sommerville, Ian}{85}
+\indexentry{Requisitos!Engenharia de Requisitos}{85}
+\indexentry{Requisitos!Elicita\IeC {\c c}\IeC {\~a}o}{85}
+\indexentry{Requisitos!Documento de Especifica\IeC {\c c}\IeC {\~a}o}{86}
+\indexentry{Requisitos!Propriedades}{86}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios}{90}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!Propriedades}{92}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!Workshop de Escrita}{94}
+\indexentry{Hist\IeC {\'o}rias de Usu\IeC {\'a}rios!\IeC {\'E}pico}{95}
+\indexentry{Requisitos!Gold Plating}{96}
+\indexentry{Casos de Uso}{97}
+\indexentry{Casos de Uso!Ator}{97}
+\indexentry{Casos de Uso!Fluxo Normal}{98}
+\indexentry{Casos de Uso!Extens\IeC {\~o}es}{98}
+\indexentry{Cockburn, Alistair}{100}
+\indexentry{Diagramas UML!Casos de Uso}{101}
+\indexentry{UML!Diagrama de Casos de Uso}{101}
+\indexentry{Fowler, Martin}{101}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)}{103}
+\indexentry{MVP}{103}
+\indexentry{Lean Startup}{103}
+\indexentry{Lean Development}{103}
+\indexentry{Eric Ries}{103}
+\indexentry{Toyota}{103}
+\indexentry{Startups}{103}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!M\IeC {\'e}tricas de Vaidade}{105}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!M\IeC {\'e}tricas de Funil}{105}
+\indexentry{Zappos}{106}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!Zappos}{106}
+\indexentry{Dropbox}{106}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!Dropbox}{106}
+\indexentry{CSIndexbr}{106}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!CSIndexbr}{106}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!Prototipa\IeC {\c c}\IeC {\~a}o}{108}
+\indexentry{Prototipa\IeC {\c c}\IeC {\~a}o}{108}
+\indexentry{Design Sprint}{108}
+\indexentry{Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)!Design Sprint}{108}
+\indexentry{Testes A/B}{110}
+\indexentry{Testes A/B}{110}
+\indexentry{Testes A/B!Vers\IeC {\~a}o de Controle}{110}
+\indexentry{Testes A/B!Vers\IeC {\~a}o de Tratamento}{110}
+\indexentry{Testes A/B!Testes A/A}{113}
+\indexentry{Facebook}{114}
+\indexentry{Netflix}{114}
+\indexentry{Facebook}{114}
+\indexentry{Modelos de Software}{119}
+\indexentry{Box, George}{120}
+\indexentry{M\IeC {\'e}todos Formais}{121}
+\indexentry{UML}{122}
+\indexentry{CASE (Computer-Aided Software Engineering)}{122}
+\indexentry{Fowler, Martin}{122}
+\indexentry{UML!como Blueprint}{122}
+\indexentry{UML!como Linguagem de Programa\IeC {\c c}\IeC {\~a}o}{123}
+\indexentry{UML!como Esbo\IeC {\c c}o}{123}
+\indexentry{UML!Engenharia Avante}{123}
+\indexentry{Engenharia Avante}{123}
+\indexentry{UML!Engenharia Reversa}{124}
+\indexentry{Engenharia Reversa}{124}
+\indexentry{UML!Tipos de Diagramas}{125}
+\indexentry{UML!Diagramas Est\IeC {\'a}ticos}{125}
+\indexentry{UML!Diagramas Din\IeC {\^a}micos}{125}
+\indexentry{Fowler, Martin}{126}
+\indexentry{UML!Diagrama de Classes}{127}
+\indexentry{Diagramas UML!Classes}{127}
+\indexentry{UML!Associa\IeC {\c c}\IeC {\~o}es}{128}
+\indexentry{UML!Multiplicidade}{129}
+\indexentry{UML!Heran\IeC {\c c}a}{133}
+\indexentry{UML!Depend\IeC {\^e}ncias}{133}
+\indexentry{UML!Diagrama de Pacotes}{135}
+\indexentry{Diagramas UML!Pacotes}{135}
+\indexentry{UML!Diagrama de Sequ\IeC {\^e}ncia}{136}
+\indexentry{Diagramas UML!Sequ\IeC {\^e}ncia}{136}
+\indexentry{UML!Diagrama de Atividades}{139}
+\indexentry{Diagramas UML!Atividades}{139}
+\indexentry{Fluxogramas}{142}
+\indexentry{Redes de Petri}{143}
+\indexentry{BPMN (Business Process Model and Notation)}{143}
+\indexentry{Projeto de Software}{147}
+\indexentry{Princ\IeC {\'\i }pios de Projeto}{147}
+\indexentry{Ousterhout, John}{147}
+\indexentry{Abstra\IeC {\c c}\IeC {\~a}o}{148}
+\indexentry{Propriedades de Projeto}{150}
+\indexentry{Princ\IeC {\'\i }pios de Projeto}{150}
+\indexentry{Projeto Orientado a Objetos}{150}
+\indexentry{Integridade Conceitual}{150}
+\indexentry{Brooks, Frederick}{151}
+\indexentry{Ocultamento de Informa\IeC {\c c}\IeC {\~a}o}{153}
+\indexentry{Information Hiding}{153}
+\indexentry{Parnas, David}{153}
+\indexentry{M\IeC {\'o}dulo}{153}
+\indexentry{Amazon}{156}
+\indexentry{Bezos, Jeff}{156}
+\indexentry{Getters}{157}
+\indexentry{Setters}{157}
+\indexentry{Ousterhout, John}{157}
+\indexentry{Coes\IeC {\~a}o}{158}
+\indexentry{Separa\IeC {\c c}\IeC {\~a}o de Interesses}{159}
+\indexentry{Acoplamento}{160}
+\indexentry{Vari\IeC {\'a}veis Globais}{160}
+\indexentry{Acoplamento!Estrutural}{164}
+\indexentry{Acoplamento!L\IeC {\'o}gico}{164}
+\indexentry{Acoplamento!Evolutivo}{164}
+\indexentry{Facebook}{164}
+\indexentry{Beck, Kent}{164}
+\indexentry{Epis\IeC {\'o}dio do left-pad}{165}
+\indexentry{Left-pad}{165}
+\indexentry{Princ\IeC {\'\i }pios de Projeto}{165}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!SOLID}{166}
+\indexentry{Martin, Robert}{166}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Responsabilidade \IeC {\'U}nica}{167}
+\indexentry{Responsabilidade \IeC {\'U}nica}{167}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Segrega\IeC {\c c}\IeC {\~a}o de Interfaces}{168}
+\indexentry{Segrega\IeC {\c c}\IeC {\~a}o de Interfaces}{168}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Invers\IeC {\~a}o de Depend\IeC {\^e}ncias}{169}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Prefira Interfaces a Classes}{169}
+\indexentry{Invers\IeC {\~a}o de Depend\IeC {\^e}ncias}{169}
+\indexentry{Prefira Interfaces a Classes}{169}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Prefira Composi\IeC {\c c}\IeC {\~a}o a Heran\IeC {\c c}a}{171}
+\indexentry{Prefira Composi\IeC {\c c}\IeC {\~a}o a Heran\IeC {\c c}a}{171}
+\indexentry{Heran\IeC {\c c}a!de Classes}{171}
+\indexentry{Heran\IeC {\c c}a!de Interfaces}{171}
+\indexentry{Gangue dos Quatro}{172}
+\indexentry{Composi\IeC {\c c}\IeC {\~a}o}{172}
+\indexentry{Reuso!Caixa-Preta}{173}
+\indexentry{Reuso!Caixa-Branca}{173}
+\indexentry{Go}{173}
+\indexentry{Rust}{173}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Demeter}{174}
+\indexentry{Demeter}{174}
+\indexentry{Princ\IeC {\'\i }pio do Menor Privil\IeC {\'e}gio}{174}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Aberto/Fechado}{176}
+\indexentry{Aberto/Fechado}{176}
+\indexentry{Meyer, Bertrand}{176}
+\indexentry{Princ\IeC {\'\i }pios de Projeto!Substitui\IeC {\c c}\IeC {\~a}o de Liskov}{178}
+\indexentry{Substitui\IeC {\c c}\IeC {\~a}o de Liskov}{178}
+\indexentry{Liskov, Barbara}{178}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte}{180}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Tamanho}{181}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Linhas de C\IeC {\'o}digo (LOC)}{181}
+\indexentry{Linhas de C\IeC {\'o}digo (LOC)}{181}
+\indexentry{Thompson, Ken}{181}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Coes\IeC {\~a}o}{182}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!LCOM (Lack of Cohesion Between Methods)}{182}
+\indexentry{LCOM (Lack of Cohesion Between Methods)}{182}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Acoplamento}{184}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!CBO (Coupling Between Objects)}{184}
+\indexentry{CBO (Coupling Between Objects)}{184}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Complexidade Ciclom\IeC {\'a}tica}{185}
+\indexentry{M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte!Complexidade de McCabe}{185}
+\indexentry{Complexidade Ciclom\IeC {\'a}tica}{185}
+\indexentry{Complexidade de McCabe}{185}
+\indexentry{Ousterhout, John}{187}
+\indexentry{Padr\IeC {\~o}es de Projeto}{193}
+\indexentry{Alexander, Cristopher}{193}
+\indexentry{Gamma, Erich}{194}
+\indexentry{Helm, Richard}{194}
+\indexentry{Johnson, Ralph}{194}
+\indexentry{Vlissides, John}{194}
+\indexentry{Gangue dos Quatro}{194}
+\indexentry{Design for Change}{195}
+\indexentry{Padr\IeC {\~o}es de Projeto!Criacionais}{195}
+\indexentry{Padr\IeC {\~o}es de Projeto!Estruturais}{196}
+\indexentry{Padr\IeC {\~o}es de Projeto!Comportamentais}{196}
+\indexentry{Padr\IeC {\~o}es de Projeto!F\IeC {\'a}brica}{196}
+\indexentry{F\IeC {\'a}brica}{196}
+\indexentry{Padr\IeC {\~o}es de Projeto!M\IeC {\'e}todo F\IeC {\'a}brica Est\IeC {\'a}tico}{197}
+\indexentry{M\IeC {\'e}todo F\IeC {\'a}brica Est\IeC {\'a}tico}{197}
+\indexentry{Prefira Interfaces a Classes}{197}
+\indexentry{Padr\IeC {\~o}es de Projeto!Singleton}{198}
+\indexentry{Singleton}{198}
+\indexentry{Padr\IeC {\~o}es de Projeto!Proxy}{201}
+\indexentry{Proxy}{201}
+\indexentry{Stubs}{203}
+\indexentry{Padr\IeC {\~o}es de Projeto!Adaptador}{204}
+\indexentry{Adaptador}{204}
+\indexentry{Wrapper}{205}
+\indexentry{Padr\IeC {\~o}es de Projeto!Fachada}{206}
+\indexentry{Fachada}{206}
+\indexentry{Padr\IeC {\~o}es de Projeto!Decorador}{207}
+\indexentry{Decorador}{207}
+\indexentry{Padr\IeC {\~o}es de Projeto!Strategy}{211}
+\indexentry{Strategy}{211}
+\indexentry{Padr\IeC {\~o}es de Projeto!Observador}{213}
+\indexentry{Observador}{213}
+\indexentry{Padr\IeC {\~o}es de Projeto!Template Method}{216}
+\indexentry{Template Method}{216}
+\indexentry{Frameworks}{217}
+\indexentry{Invers\IeC {\~a}o de Controle}{217}
+\indexentry{Padr\IeC {\~o}es de Projeto!Visitor}{217}
+\indexentry{Visitor}{217}
+\indexentry{Despacho Duplo}{218}
+\indexentry{Double Dispatch}{218}
+\indexentry{Common Lisp}{218}
+\indexentry{Single Dispatch}{219}
+\indexentry{Padr\IeC {\~o}es de Projeto!Iterador}{220}
+\indexentry{Iterador}{220}
+\indexentry{Padr\IeC {\~o}es de Projeto!Builder}{221}
+\indexentry{Builder}{221}
+\indexentry{Ousterhout, John}{223}
+\indexentry{Padr\IeC {\~o}es de Projeto!Null Object}{227}
+\indexentry{Null Object}{227}
+\indexentry{Arquitetura de Software}{229}
+\indexentry{Padr\IeC {\~o}es Arquiteturais}{230}
+\indexentry{Arquitetura de Software!Estilos}{230}
+\indexentry{Arquitetura de Software!Debate Tanenbaum-Torvalds}{231}
+\indexentry{Debate Tanenbaum-Torvalds}{231}
+\indexentry{Tanenbaum, Andrew}{231}
+\indexentry{Torvalds, Linus}{231}
+\indexentry{Monolitos}{231}
+\indexentry{Microkernel}{231}
+\indexentry{Linux}{231}
+\indexentry{Arquitetura de Software!Camadas}{232}
+\indexentry{Dijkstra, Edsger W.}{233}
+\indexentry{THE, Sistema Operacional}{233}
+\indexentry{Arquitetura de Software!Tr\IeC {\^e}s Camadas}{233}
+\indexentry{Mainframes}{233}
+\indexentry{Arquitetura de Software!Duas Camadas}{234}
+\indexentry{Arquitetura de Software!MVC (Model-View-Controller)}{235}
+\indexentry{MVC (Model-View-Controller)}{235}
+\indexentry{Smalltalk}{235}
+\indexentry{Fowler, Martin}{237}
+\indexentry{Beck, Kent}{237}
+\indexentry{Ruby on Rails}{238}
+\indexentry{Django}{238}
+\indexentry{CakePHP}{238}
+\indexentry{Arquitetura de Software!Single Page Applications}{239}
+\indexentry{Single Page Applications}{239}
+\indexentry{GMail}{239}
+\indexentry{JavaScript}{240}
+\indexentry{Vue.js}{240}
+\indexentry{Two-way Data Binding}{241}
+\indexentry{Arquitetura de Software!Microsservi\IeC {\c c}os}{241}
+\indexentry{Microsservi\IeC {\c c}os}{241}
+\indexentry{Microsservi\IeC {\c c}os!Monolitos}{241}
+\indexentry{Monolitos}{241}
+\indexentry{Escalabilidade}{243}
+\indexentry{Microsservi\IeC {\c c}os!Escalabilidade}{243}
+\indexentry{Escalabilidade!Horizontal}{243}
+\indexentry{Falhas Parciais}{245}
+\indexentry{Computa\IeC {\c c}\IeC {\~a}o em Nuvem}{245}
+\indexentry{Lei de Conway}{245}
+\indexentry{Conway, Melvin}{245}
+\indexentry{Microsservi\IeC {\c c}os!Lei de Conway}{245}
+\indexentry{Microsservi\IeC {\c c}os!Gerenciamento de Dados}{246}
+\indexentry{Microsservi\IeC {\c c}os!Quando n\IeC {\~a}o Usar}{247}
+\indexentry{REST}{247}
+\indexentry{Lat\IeC {\^e}ncia}{247}
+\indexentry{Microsservi\IeC {\c c}os!Two-Phase Commit}{248}
+\indexentry{Two-Phase Commit}{248}
+\indexentry{Arquitetura de Software!Orientada a Mensagens}{248}
+\indexentry{Arquitetura Orientada a Mensagens}{248}
+\indexentry{Arquitetura Orientada a Mensagens!Desacoplamento no espa\IeC {\c c}o}{249}
+\indexentry{Arquitetura Orientada a Mensagens!Desacoplamento no tempo}{249}
+\indexentry{Batch, Processamento}{250}
+\indexentry{Arquitetura de Software!Publish/Subscribe}{250}
+\indexentry{Publish/Subscribe}{250}
+\indexentry{Publish/Subscribe!T\IeC {\'o}picos}{251}
+\indexentry{Eventos}{251}
+\indexentry{Publish/Subscribe!Broker}{251}
+\indexentry{Publish/Subscribe!Eventos}{251}
+\indexentry{Arquitetura de Software!Pipes e Filtros}{253}
+\indexentry{Pipes e Filtros}{253}
+\indexentry{Arquitetura de Software!Cliente/Servidor}{253}
+\indexentry{Cliente/Servidor}{253}
+\indexentry{Arquitetura de Software!Peer-to-Peer}{253}
+\indexentry{Peer-to-Peer}{253}
+\indexentry{Arquitetura de Software!Anti-padr\IeC {\~o}es}{254}
+\indexentry{Anti-padr\IeC {\~o}es Arquiteturais}{254}
+\indexentry{Anti-padr\IeC {\~o}es Arquiteturais!Big Ball of Mud}{254}
+\indexentry{Big Ball of Mud}{254}
+\indexentry{Foote, Brian}{254}
+\indexentry{Yoder, Joseph}{254}
+\indexentry{InfoSys}{254}
+\indexentry{Testes de Software}{257}
+\indexentry{Testes de Software!Pir\IeC {\^a}mide de Testes}{259}
+\indexentry{Pir\IeC {\^a}mide de Testes}{259}
+\indexentry{Testes de Software!Tipos de Testes}{259}
+\indexentry{Testes de Software!Testes de Unidade}{261}
+\indexentry{Testes de Unidade}{261}
+\indexentry{Testes de Unidade!xUnit}{262}
+\indexentry{Testes de Unidade!JUnit}{262}
+\indexentry{JUnit}{262}
+\indexentry{Smalltalk}{262}
+\indexentry{Beck, Kent}{262}
+\indexentry{Gamma, Erich}{262}
+\indexentry{Testes de Unidade!Fixture}{263}
+\indexentry{Testes de Unidade!assert}{264}
+\indexentry{Testes de Unidade!JUnit}{264}
+\indexentry{JUnit}{264}
+\indexentry{Testes de Unidade!Defini\IeC {\c c}\IeC {\~o}es}{267}
+\indexentry{Testes de Unidade!Fixture}{267}
+\indexentry{Testes de Unidade!Casos de Teste}{267}
+\indexentry{Testes de Unidade!Su\IeC {\'\i }te de Testes}{267}
+\indexentry{Sistema sob Teste (SUT)}{267}
+\indexentry{Testes de Unidade!Quando Escrever}{268}
+\indexentry{Testes de Unidade!Benef\IeC {\'\i }cios}{269}
+\indexentry{Testes de Unidade!Regress\IeC {\~o}es}{269}
+\indexentry{Google}{269}
+\indexentry{Facebook}{269}
+\indexentry{Testes de Unidade!Princ\IeC {\'\i }pios FIRST}{270}
+\indexentry{Testes de Unidade!Flaky}{270}
+\indexentry{Testes Flaky}{270}
+\indexentry{Testes de Unidade!Smells}{272}
+\indexentry{Testes de Unidade!N\IeC {\'u}mero de asserts}{273}
+\indexentry{Testes de Software!Cobertura}{274}
+\indexentry{Cobertura de Testes}{274}
+\indexentry{Cobertura de Testes!Comandos}{274}
+\indexentry{Google}{277}
+\indexentry{Cobertura de Testes!Fun\IeC {\c c}\IeC {\~o}es}{277}
+\indexentry{Cobertura de Testes!Chamadas de Fun\IeC {\c c}\IeC {\~o}es}{277}
+\indexentry{Cobertura de Testes!Branches}{277}
+\indexentry{Testes de Software!Testabilidade}{278}
+\indexentry{Testabilidade}{278}
+\indexentry{Testes de Software!Mocks}{282}
+\indexentry{Mocks}{282}
+\indexentry{Stubs}{282}
+\indexentry{Mocks!Frameworks}{285}
+\indexentry{Mocks!Mockito}{285}
+\indexentry{Mockito}{285}
+\indexentry{Stubs}{286}
+\indexentry{Testes de Software!Comportamental}{286}
+\indexentry{Teste Comportamental}{286}
+\indexentry{Meszaros, Gerard}{286}
+\indexentry{Mocks!Objetos Dummy}{287}
+\indexentry{Mocks!Objetos Fake}{287}
+\indexentry{Desenvolvimento Dirigido por Testes (TDD)}{290}
+\indexentry{Desenvolvimento Dirigido por Testes (TDD)!Ciclo}{291}
+\indexentry{Testes de Software!Testes de Integra\IeC {\c c}\IeC {\~a}o}{294}
+\indexentry{Testes de Integra\IeC {\c c}\IeC {\~a}o}{294}
+\indexentry{Testes de Software!Testes de Sistema}{296}
+\indexentry{Testes de Sistema}{296}
+\indexentry{Testes de Sistema!Selenium}{296}
+\indexentry{Testes de Sistemas Web}{296}
+\indexentry{Selenium}{296}
+\indexentry{Testes de Software!Caixa-Preta}{298}
+\indexentry{Testes de Software!Caixa-Branca}{298}
+\indexentry{Testes de Software!Funcional}{298}
+\indexentry{Testes de Software!Estrutural}{298}
+\indexentry{Beck, Kent}{299}
+\indexentry{Testes de Software!Classes de Equival\IeC {\^e}ncia}{299}
+\indexentry{Classes de Equival\IeC {\^e}ncia}{299}
+\indexentry{Testes de Software!An\IeC {\'a}lise de Valor Limite}{300}
+\indexentry{An\IeC {\'a}lise de Valor Limite}{300}
+\indexentry{Testes de Software!Testes de Aceita\IeC {\c c}\IeC {\~a}o}{300}
+\indexentry{Testes de Software!Testes Manuais}{300}
+\indexentry{Testes de Software!Testes Alfa}{301}
+\indexentry{Testes de Software!Testes Beta}{301}
+\indexentry{Testes de Software!Testes Requisitos N\IeC {\~a}o-Funcionais}{301}
+\indexentry{Refactoring}{307}
+\indexentry{Leis de Lehman}{308}
+\indexentry{Leis da Evolu\IeC {\c c}\IeC {\~a}o de Software}{308}
+\indexentry{Lehman, Meir}{308}
+\indexentry{Refactoring!Defini\IeC {\c c}\IeC {\~a}o}{308}
+\indexentry{Opdyke, William}{309}
+\indexentry{Fowler, Martin}{309}
+\indexentry{Beck, Kent}{309}
+\indexentry{Refactoring!Extra\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo}{310}
+\indexentry{Duplica\IeC {\c c}\IeC {\~a}o de C\IeC {\'o}digo}{311}
+\indexentry{Refactoring!Inline de M\IeC {\'e}todo}{315}
+\indexentry{Refactoring!Movimenta\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo}{316}
+\indexentry{Refactoring!Pull Up Method}{318}
+\indexentry{Refactoring!Push Down Method}{318}
+\indexentry{Refactoring!Extra\IeC {\c c}\IeC {\~a}o de Classes}{320}
+\indexentry{Refactoring!Renomea\IeC {\c c}\IeC {\~a}o}{321}
+\indexentry{Refactoring!Extra\IeC {\c c}\IeC {\~a}o de Vari\IeC {\'a}veis}{322}
+\indexentry{Refactoring!Remo\IeC {\c c}\IeC {\~a}o de Flags}{323}
+\indexentry{Refactoring!Substitui\IeC {\c c}\IeC {\~a}o de Condicional por Polimorfismo}{323}
+\indexentry{Refactoring!Remo\IeC {\c c}\IeC {\~a}o de C\IeC {\'o}digo Morto}{324}
+\indexentry{Ousterhout, John}{325}
+\indexentry{Refactoring!Oportunistas}{325}
+\indexentry{Beck, Kent}{325}
+\indexentry{Refactoring!Planejados}{326}
+\indexentry{Fowler, Martin}{326}
+\indexentry{Refactoring!Automatizados}{326}
+\indexentry{Refactoring!Pr\IeC {\'e}-condi\IeC {\c c}\IeC {\~o}es}{327}
+\indexentry{Code Smells}{329}
+\indexentry{Bad Smells}{329}
+\indexentry{Code Smells!C\IeC {\'o}digo Duplicado}{329}
+\indexentry{C\IeC {\'o}digo Duplicado}{329}
+\indexentry{Code Smells!Clones de C\IeC {\'o}digo}{330}
+\indexentry{Clones de C\IeC {\'o}digo}{330}
+\indexentry{Clones de C\IeC {\'o}digo!Classifica\IeC {\c c}\IeC {\~a}o}{330}
+\indexentry{Code Smells!M\IeC {\'e}todos Longos}{332}
+\indexentry{Code Smells!Classes Grandes}{332}
+\indexentry{Code Smells!God Class}{332}
+\indexentry{Code Smells!Blob}{332}
+\indexentry{Blob}{332}
+\indexentry{Code Smells!Feature Envy}{332}
+\indexentry{Feature Envy}{332}
+\indexentry{Code Smells!M\IeC {\'e}todos com Muitos Par\IeC {\^a}metros}{333}
+\indexentry{Code Smells!Vari\IeC {\'a}veis Globais}{334}
+\indexentry{Vari\IeC {\'a}veis Globais}{334}
+\indexentry{Code Smells!Obsess\IeC {\~a}o por Tipos Primitivos}{334}
+\indexentry{Code Smells!Objetos Mut\IeC {\'a}veis}{335}
+\indexentry{Code Smells!Classes de Dados}{336}
+\indexentry{Code Smells!Coment\IeC {\'a}rios}{337}
+\indexentry{Coment\IeC {\'a}rios}{337}
+\indexentry{D\IeC {\'e}bito T\IeC {\'e}cnico}{338}
+\indexentry{DevOps}{343}
+\indexentry{Administradores de Sistemas}{344}
+\indexentry{DevOpsDay}{346}
+\indexentry{Humble, Jez}{346}
+\indexentry{Harley, David}{346}
+\indexentry{Controle de Vers\IeC {\~o}es}{348}
+\indexentry{Sistemas de Controle de Vers\IeC {\~o}es}{348}
+\indexentry{Unix}{348}
+\indexentry{CVS}{348}
+\indexentry{Subversion}{348}
+\indexentry{Sistemas de Controle de Vers\IeC {\~o}es!Centralizados}{348}
+\indexentry{Sistemas de Controle de Vers\IeC {\~o}es!Distribu\IeC {\'\i }dos}{348}
+\indexentry{Mercurial}{348}
+\indexentry{Git}{350}
+\indexentry{Torvalds, Linus}{350}
+\indexentry{BitKeeper}{350}
+\indexentry{GitHub}{351}
+\indexentry{Sistemas de Controle de Vers\IeC {\~o}es!Multirepos}{351}
+\indexentry{Sistemas de Controle de Vers\IeC {\~o}es!Monorepos}{351}
+\indexentry{Google}{352}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{353}
+\indexentry{Continuous Integration}{353}
+\indexentry{Conflitos de Integra\IeC {\c c}\IeC {\~a}o}{353}
+\indexentry{Conflitos de Merge}{353}
+\indexentry{Integration Hell}{354}
+\indexentry{Merge Hell}{354}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua!Defini\IeC {\c c}\IeC {\~a}o}{355}
+\indexentry{Beck, Kent}{355}
+\indexentry{Fowler, Martin}{355}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua!Boas Pr\IeC {\'a}ticas}{356}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua!Servidores de Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{356}
+\indexentry{Servidores de Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{356}
+\indexentry{Fowler, Martin}{358}
+\indexentry{Desenvolvimento Baseado no Trunk}{358}
+\indexentry{Trunk Based Development}{358}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua!Desenvolvimento Baseado no Trunk}{358}
+\indexentry{Google}{359}
+\indexentry{Facebook}{359}
+\indexentry{Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua!Quando n\IeC {\~a}o Usar}{359}
+\indexentry{Deployment Cont\IeC {\'\i }nuo}{360}
+\indexentry{Facebook}{361}
+\indexentry{Entrega Cont\IeC {\'\i }nua}{361}
+\indexentry{Continuous Delivery}{361}
+\indexentry{Eclipse}{362}
+\indexentry{Facebook}{362}
+\indexentry{Chrome, navegador}{362}
+\indexentry{Google}{362}
+\indexentry{Entrega Cont\IeC {\'\i }nua!Feature Flags}{363}
+\indexentry{Entrega Cont\IeC {\'\i }nua!Feature Toggles}{363}
+\indexentry{Feature Flags}{363}
+\indexentry{Feature Toggles}{363}
+\indexentry{Chrome, navegador}{364}
+\indexentry{Release Can\IeC {\'a}rio}{364}
+\indexentry{Testes A/B}{365}
+\indexentry{Git}{369}
+\indexentry{Torvalds, Linus}{369}
+\indexentry{Git!Clone}{369}
+\indexentry{Git!Init}{369}
+\indexentry{Git!Commit}{370}
+\indexentry{Git!Add}{371}
+\indexentry{Git!Diret\IeC {\'o}rio de Trabalho}{371}
+\indexentry{Git!Index}{371}
+\indexentry{Git!Stage}{371}
+\indexentry{Git!Arquivos Rastre\IeC {\'a}veis}{371}
+\indexentry{Git!Status}{373}
+\indexentry{Git!Diff}{373}
+\indexentry{Git!Log}{373}
+\indexentry{Git!Push}{373}
+\indexentry{Git!Pull}{373}
+\indexentry{Git!Conflitos de Merge}{375}
+\indexentry{Conflitos de Merge}{375}
+\indexentry{Git!Branches}{377}
+\indexentry{Branches}{377}
+\indexentry{Branches!Branch Master}{377}
+\indexentry{Git!Master}{377}
+\indexentry{Git!Merge}{379}
+\indexentry{Git!Grafo de Commits}{380}
+\indexentry{Grafo de Commits}{380}
+\indexentry{Git!HEAD}{380}
+\indexentry{Git!Master}{380}
+\indexentry{Git!Branches Remotos}{381}
+\indexentry{Git!Pull Requests}{383}
+\indexentry{Git!GitHub}{383}
+\indexentry{GitHub}{383}
+\indexentry{Git!Squash}{385}
+\indexentry{Git!Fork}{386}
+\indexentry{Git!GitHub}{386}
+\indexentry{GitHub}{386}

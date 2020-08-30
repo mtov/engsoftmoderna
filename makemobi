@@ -20,3 +20,8 @@ rm esm-book.md
 
 cp esm-book.mobi ../Dropbox
 cp esm-book.epub ../Dropbox
+
+echo "EXECUTANDO EPUBCHECK"
+
+./epubcheck
+

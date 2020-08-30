@@ -1,0 +1,239 @@
+\select@language {portuguese}
+\contentsline {chapter}{Pref\IeC {\'a}cio}{i}{chapter*.2}
+\contentsline {section}{P\IeC {\'u}blico-Alvo}{iii}{chapter*.2}
+\contentsline {section}{Pr\IeC {\'e}-requisitos}{iii}{chapter*.2}
+\contentsline {section}{Website}{iii}{chapter*.2}
+\contentsline {section}{Sobre o Autor}{iv}{chapter*.2}
+\contentsline {section}{Agradecimentos}{iv}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Defini\IeC {\c c}\IeC {\~o}es, Contexto e Hist\IeC {\'o}ria}{1}{section.1.1}
+\contentsline {subsection}{N\IeC {\~a}o existe bala de prata}{4}{figure.1.1}
+\contentsline {section}{\numberline {1.2}O que se Estuda em Engenharia de Software?}{6}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Engenharia de Requisitos}{7}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Projeto de Software}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Constru\IeC {\c c}\IeC {\~a}o de Software}{9}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Testes de Software}{9}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Manuten\IeC {\c c}\IeC {\~a}o e Evolu\IeC {\c c}\IeC {\~a}o de Software}{11}{subsection.1.2.5}
+\contentsline {subsection}{\numberline {1.2.6}Ger\IeC {\^e}ncia de Configura\IeC {\c c}\IeC {\~a}o}{13}{subsection.1.2.6}
+\contentsline {subsection}{\numberline {1.2.7}Ger\IeC {\^e}ncia de Projetos}{14}{subsection.1.2.7}
+\contentsline {subsection}{\numberline {1.2.8}Processos de Desenvolvimento de Software}{15}{subsection.1.2.8}
+\contentsline {subsection}{\numberline {1.2.9}Modelos de Software}{18}{subsection.1.2.9}
+\contentsline {subsection}{\numberline {1.2.10}Qualidade de Software}{18}{subsection.1.2.10}
+\contentsline {subsection}{\numberline {1.2.11}Pr\IeC {\'a}tica Profissional}{20}{subsection.1.2.11}
+\contentsline {subsection}{\numberline {1.2.12}Aspectos Econ\IeC {\^o}micos}{23}{subsection.1.2.12}
+\contentsline {section}{\numberline {1.3}Classifica\IeC {\c c}\IeC {\~a}o de Sistemas de Software}{23}{section.1.3}
+\contentsline {section}{\numberline {1.4}Pr\IeC {\'o}ximos Cap\IeC {\'\i }tulos}{25}{section.1.4}
+\contentsline {section}{Bibliografia}{28}{section.1.4}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{28}{section.1.4}
+\contentsline {chapter}{\numberline {2}Processos}{31}{chapter.2}
+\contentsline {section}{\numberline {2.1}Import\IeC {\^a}ncia de Processos}{31}{section.2.1}
+\contentsline {section}{\numberline {2.2}Manifesto \IeC {\'A}gil}{33}{section.2.2}
+\contentsline {section}{\numberline {2.3}Extreme Programming}{38}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Valores}{39}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Princ\IeC {\'\i }pios}{40}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Pr\IeC {\'a}ticas sobre o Processo de Desenvolvimento}{42}{subsection.2.3.3}
+\contentsline {subsubsection}{Perguntas Frequentes}{47}{table.2.2}
+\contentsline {subsection}{\numberline {2.3.4}Pr\IeC {\'a}ticas de Programa\IeC {\c c}\IeC {\~a}o}{49}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Pr\IeC {\'a}ticas de Gerenciamento de Projetos}{55}{subsection.2.3.5}
+\contentsline {section}{\numberline {2.4}Scrum}{57}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Pap\IeC {\'e}is}{57}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Principais Artefatos e Eventos}{58}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Outros Eventos}{61}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Exemplo: Escrita de um Livro}{63}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.5}Perguntas Frequentes}{64}{subsection.2.4.5}
+\contentsline {section}{\numberline {2.5}Kanban}{65}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Calculando os Limites WIP}{69}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Lei de Little}{71}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Perguntas Frequentes}{72}{subsection.2.5.3}
+\contentsline {section}{\numberline {2.6}Quando n\IeC {\~a}o Usar M\IeC {\'e}todos \IeC {\'A}geis?}{72}{section.2.6}
+\contentsline {section}{\numberline {2.7}Outros M\IeC {\'e}todos Iterativos}{74}{section.2.7}
+\contentsline {section}{Bibliografia}{78}{figure.2.11}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{79}{figure.2.11}
+\contentsline {chapter}{\numberline {3}Requisitos}{83}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introdu\IeC {\c c}\IeC {\~a}o}{83}{section.3.1}
+\contentsline {section}{\numberline {3.2}Engenharia de Requisitos}{85}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}O que Vamos Estudar?}{89}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Hist\IeC {\'o}rias de Usu\IeC {\'a}rios}{90}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Exemplo: Sistema de Controle de Bibliotecas}{94}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Perguntas Frequentes}{96}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Casos de Uso}{97}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Diagramas de Casos de Uso}{101}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Perguntas Frequentes}{102}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Produto M\IeC {\'\i }nimo Vi\IeC {\'a}vel (MVP)}{103}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Exemplos de MVP}{106}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Perguntas Frequentes}{107}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Construindo o Primeiro MVP}{108}{subsection.3.5.3}
+\contentsline {section}{\numberline {3.6}Testes A/B}{110}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Perguntas Frequentes}{112}{subsection.3.6.1}
+\contentsline {section}{Bibliografia}{114}{subsection.3.6.1}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{115}{subsection.3.6.1}
+\contentsline {chapter}{\numberline {4}Modelos}{119}{chapter.4}
+\contentsline {section}{\numberline {4.1}Modelos de Software}{119}{section.4.1}
+\contentsline {section}{\numberline {4.2}UML}{122}{section.4.2}
+\contentsline {subsection}{Como usar UML?}{122}{section.4.2}
+\contentsline {subsection}{Diagramas UML}{125}{section.4.2}
+\contentsline {section}{\numberline {4.3}Diagramas de Classes}{127}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Associa\IeC {\c c}\IeC {\~o}es}{128}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Heran\IeC {\c c}a}{133}{subsection.4.3.2}
+\contentsline {subsection}{Depend\IeC {\^e}ncias}{133}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Diagramas de Pacotes}{135}{section.4.4}
+\contentsline {section}{\numberline {4.5}Diagramas de Sequ\IeC {\^e}ncia}{136}{section.4.5}
+\contentsline {section}{\numberline {4.6}Diagramas de Atividades}{139}{section.4.6}
+\contentsline {section}{Bibliografia}{143}{section.4.6}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{143}{section.4.6}
+\contentsline {chapter}{\numberline {5}Princ\IeC {\'\i }pios de Projeto}{147}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introdu\IeC {\c c}\IeC {\~a}o}{147}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Exemplo}{148}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}O Que Vamos Estudar?}{150}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Integridade Conceitual}{150}{section.5.2}
+\contentsline {section}{\numberline {5.3}Ocultamento de Informa\IeC {\c c}\IeC {\~a}o}{153}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Exemplo}{155}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Getters e Setters}{157}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Coes\IeC {\~a}o}{158}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Exemplos}{159}{subsection.5.4.1}
+\contentsline {section}{\numberline {5.5}Acoplamento}{160}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Exemplos}{162}{subsection.5.5.1}
+\contentsline {section}{\numberline {5.6}SOLID e Outros Princ\IeC {\'\i }pios de Projeto}{165}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Princ\IeC {\'\i }pio da Responsabilidade \IeC {\'U}nica}{167}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Princ\IeC {\'\i }pio da Segrega\IeC {\c c}\IeC {\~a}o de Interfaces}{168}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Princ\IeC {\'\i }pio de Invers\IeC {\~a}o de Depend\IeC {\^e}ncias}{169}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.4}Prefira Composi\IeC {\c c}\IeC {\~a}o a Heran\IeC {\c c}a}{171}{subsection.5.6.4}
+\contentsline {subsection}{\numberline {5.6.5}Princ\IeC {\'\i }pio de Demeter}{174}{subsection.5.6.5}
+\contentsline {subsection}{\numberline {5.6.6}Princ\IeC {\'\i }pio Aberto/Fechado}{176}{subsection.5.6.6}
+\contentsline {subsection}{\numberline {5.6.7}Princ\IeC {\'\i }pio de Substitui\IeC {\c c}\IeC {\~a}o de Liskov}{178}{subsection.5.6.7}
+\contentsline {section}{\numberline {5.7}M\IeC {\'e}tricas de C\IeC {\'o}digo Fonte}{180}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Tamanho}{181}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Coes\IeC {\~a}o}{182}{subsection.5.7.2}
+\contentsline {subsection}{\numberline {5.7.3}Acoplamento}{184}{subsection.5.7.3}
+\contentsline {subsection}{\numberline {5.7.4}Complexidade}{185}{subsection.5.7.4}
+\contentsline {section}{Bibliografia}{186}{subsection.5.7.4}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{187}{subsection.5.7.4}
+\contentsline {chapter}{\numberline {6}Padr\IeC {\~o}es de Projeto}{193}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introdu\IeC {\c c}\IeC {\~a}o}{193}{section.6.1}
+\contentsline {section}{\numberline {6.2}F\IeC {\'a}brica}{196}{section.6.2}
+\contentsline {section}{\numberline {6.3}Singleton}{198}{section.6.3}
+\contentsline {section}{\numberline {6.4}Proxy}{201}{section.6.4}
+\contentsline {section}{\numberline {6.5}Adaptador}{204}{section.6.5}
+\contentsline {section}{\numberline {6.6}Fachada}{206}{section.6.6}
+\contentsline {section}{\numberline {6.7}Decorador}{207}{section.6.7}
+\contentsline {section}{\numberline {6.8}Strategy}{211}{section.6.8}
+\contentsline {section}{\numberline {6.9}Observador}{213}{section.6.9}
+\contentsline {section}{\numberline {6.10}Template Method}{216}{section.6.10}
+\contentsline {section}{\numberline {6.11}Visitor}{217}{section.6.11}
+\contentsline {section}{\numberline {6.12}Outros Padr\IeC {\~o}es de Projeto}{220}{section.6.12}
+\contentsline {section}{\numberline {6.13}Quando N\IeC {\~a}o Usar Padr\IeC {\~o}es de Projeto}{222}{section.6.13}
+\contentsline {section}{Bibliografia}{224}{lstnumber.-91.3}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{224}{lstnumber.-91.3}
+\contentsline {chapter}{\numberline {7}Arquitetura}{229}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introdu\IeC {\c c}\IeC {\~a}o}{229}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Debate Tanenbaum-Torvalds}{231}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Arquitetura em Camadas}{232}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Arquitetura em Tr\IeC {\^e}s Camadas}{233}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}Arquitetura MVC}{235}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Exemplo: Single Page Applications}{239}{subsection.7.3.1}
+\contentsline {section}{\numberline {7.4}Microsservi\IeC {\c c}os}{241}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Gerenciamento de Dados}{246}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Quando n\IeC {\~a}o usar microsservi\IeC {\c c}os?}{247}{subsection.7.4.2}
+\contentsline {section}{\numberline {7.5}Arquiteturas Orientadas a Mensagens}{248}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Exemplo: Empresa de Telecomunica\IeC {\c c}\IeC {\~o}es}{250}{subsection.7.5.1}
+\contentsline {section}{\numberline {7.6}Arquiteturas Publish/Subscribe}{250}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Exemplo: Companhia A\IeC {\'e}rea}{252}{subsection.7.6.1}
+\contentsline {section}{\numberline {7.7}Outros Padr\IeC {\~o}es Arquiteturais}{253}{section.7.7}
+\contentsline {section}{\numberline {7.8}Anti-padr\IeC {\~o}es Arquiteturais}{254}{section.7.8}
+\contentsline {section}{Bibliografia}{255}{figure.7.14}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{256}{figure.7.14}
+\contentsline {chapter}{\numberline {8}Testes}{257}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introdu\IeC {\c c}\IeC {\~a}o}{257}{section.8.1}
+\contentsline {section}{\numberline {8.2}Testes de Unidade}{261}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Defini\IeC {\c c}\IeC {\~o}es}{267}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Quando Escrever Testes de Unidade?}{268}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Benef\IeC {\'\i }cios}{269}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}Princ\IeC {\'\i }pios e Smells}{270}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Princ\IeC {\'\i }pios FIRST}{270}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Test Smells}{272}{subsection.8.3.2}
+\contentsline {subsection}{\numberline {8.3.3}N\IeC {\'u}mero de assert por Teste}{273}{subsection.8.3.3}
+\contentsline {section}{\numberline {8.4}Cobertura de Testes}{274}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Qual a Cobertura de Testes Ideal?}{276}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Outras Defini\IeC {\c c}\IeC {\~o}es de Cobertura de Testes}{277}{subsection.8.4.2}
+\contentsline {section}{\numberline {8.5}Testabilidade}{278}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}Exemplo: Servlet}{279}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}Exemplo: Chamada Ass\IeC {\'\i }ncrona}{281}{subsection.8.5.2}
+\contentsline {section}{\numberline {8.6}Mocks}{282}{section.8.6}
+\contentsline {subsection}{\numberline {8.6.1}Frameworks de Mocks}{285}{subsection.8.6.1}
+\contentsline {subsection}{\numberline {8.6.2}Mocks vs Stubs}{286}{subsection.8.6.2}
+\contentsline {subsection}{\numberline {8.6.3}Exemplo: Servlet}{287}{subsection.8.6.3}
+\contentsline {section}{\numberline {8.7}Desenvolvimento Dirigido por Testes (TDD)}{290}{section.8.7}
+\contentsline {subsection}{\numberline {8.7.1}Exemplo: Carrinho de Compras}{292}{subsection.8.7.1}
+\contentsline {section}{\numberline {8.8}Testes de Integra\IeC {\c c}\IeC {\~a}o}{294}{section.8.8}
+\contentsline {subsection}{\numberline {8.8.1}Exemplo: Agenda de Compromissos}{295}{subsection.8.8.1}
+\contentsline {section}{\numberline {8.9}Testes de Sistema}{296}{section.8.9}
+\contentsline {subsection}{\numberline {8.9.1}Exemplo: Teste de Sistemas Web}{296}{subsection.8.9.1}
+\contentsline {subsection}{\numberline {8.9.2}Exemplo: Teste de um Compilador}{298}{subsection.8.9.2}
+\contentsline {section}{\numberline {8.10}Outros Tipos de Testes}{298}{section.8.10}
+\contentsline {subsection}{\numberline {8.10.1}Testes Caixa-Preta e Caixa-Branca}{298}{subsection.8.10.1}
+\contentsline {subsection}{\numberline {8.10.2}Sele\IeC {\c c}\IeC {\~a}o de Dados de Teste}{299}{subsection.8.10.2}
+\contentsline {subsection}{\numberline {8.10.3}Testes de Aceita\IeC {\c c}\IeC {\~a}o}{300}{subsection.8.10.3}
+\contentsline {subsection}{\numberline {8.10.4}Testes de Requisitos N\IeC {\~a}o-Funcionais}{301}{subsection.8.10.4}
+\contentsline {section}{Bibliografia}{301}{subsection.8.10.4}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{302}{subsection.8.10.4}
+\contentsline {chapter}{\numberline {9}Refactoring}{307}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introdu\IeC {\c c}\IeC {\~a}o}{307}{section.9.1}
+\contentsline {section}{\numberline {9.2}Cat\IeC {\'a}logo de Refactorings}{310}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Extra\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo}{310}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Motiva\IeC {\c c}\IeC {\~o}es para Extra\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todos}{313}{subsection.9.2.2}
+\contentsline {subsection}{\numberline {9.2.3}Inline de M\IeC {\'e}todo}{315}{subsection.9.2.3}
+\contentsline {subsection}{\numberline {9.2.4}Movimenta\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo}{316}{subsection.9.2.4}
+\contentsline {subsection}{\numberline {9.2.5}Extra\IeC {\c c}\IeC {\~a}o de Classes}{320}{subsection.9.2.5}
+\contentsline {subsection}{\numberline {9.2.6}Renomea\IeC {\c c}\IeC {\~a}o}{321}{subsection.9.2.6}
+\contentsline {subsection}{\numberline {9.2.7}Outros Refactorings}{322}{subsection.9.2.7}
+\contentsline {section}{\numberline {9.3}Pr\IeC {\'a}tica de Refactoring}{324}{section.9.3}
+\contentsline {section}{\numberline {9.4}Refactorings Automatizados}{326}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}Verifica\IeC {\c c}\IeC {\~a}o de Pr\IeC {\'e}-condi\IeC {\c c}\IeC {\~o}es de Refactorings}{328}{subsection.9.4.1}
+\contentsline {section}{\numberline {9.5}Code Smells}{329}{section.9.5}
+\contentsline {subsection}{\numberline {9.5.1}C\IeC {\'o}digo Duplicado}{329}{subsection.9.5.1}
+\contentsline {subsection}{\numberline {9.5.2}M\IeC {\'e}todos Longos}{332}{subsection.9.5.2}
+\contentsline {subsection}{\numberline {9.5.3}Classes Grandes}{332}{subsection.9.5.3}
+\contentsline {subsection}{\numberline {9.5.4}Feature Envy}{332}{subsection.9.5.4}
+\contentsline {subsection}{\numberline {9.5.5}M\IeC {\'e}todos com Muitos Par\IeC {\^a}metros}{333}{subsection.9.5.5}
+\contentsline {subsection}{\numberline {9.5.6}Vari\IeC {\'a}veis Globais}{334}{subsection.9.5.6}
+\contentsline {subsection}{\numberline {9.5.7}Obsess\IeC {\~a}o por Tipos Primitivos}{334}{subsection.9.5.7}
+\contentsline {subsection}{\numberline {9.5.8}Objetos Mut\IeC {\'a}veis}{335}{subsection.9.5.8}
+\contentsline {subsection}{\numberline {9.5.9}Classes de Dados}{336}{subsection.9.5.9}
+\contentsline {subsection}{\numberline {9.5.10}Coment\IeC {\'a}rios}{337}{subsection.9.5.10}
+\contentsline {section}{Bibliografia}{338}{lstnumber.-169.10}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{339}{lstnumber.-169.10}
+\contentsline {chapter}{\numberline {10}DevOps}{343}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introdu\IeC {\c c}\IeC {\~a}o}{343}{section.10.1}
+\contentsline {section}{\numberline {10.2}Controle de Vers\IeC {\~o}es}{348}{section.10.2}
+\contentsline {subsection}{\numberline {10.2.1}Multirepos vs Monorepos}{351}{subsection.10.2.1}
+\contentsline {section}{\numberline {10.3}Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{353}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}Motiva\IeC {\c c}\IeC {\~a}o}{353}{subsection.10.3.1}
+\contentsline {subsection}{\numberline {10.3.2}O que \IeC {\'e} Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua?}{355}{subsection.10.3.2}
+\contentsline {subsection}{\numberline {10.3.3}Boas Pr\IeC {\'a}ticas para Uso de CI}{356}{subsection.10.3.3}
+\contentsline {subsubsection}{Build Automatizado}{356}{subsection.10.3.3}
+\contentsline {subsubsection}{Testes Automatizados}{356}{subsection.10.3.3}
+\contentsline {subsubsection}{Servidores de Integra\IeC {\c c}\IeC {\~a}o Cont\IeC {\'\i }nua}{356}{subsection.10.3.3}
+\contentsline {subsubsection}{Desenvolvimento Baseado no Trunk}{358}{figure.10.8}
+\contentsline {subsubsection}{Programa\IeC {\c c}\IeC {\~a}o em Pares}{359}{figure.10.8}
+\contentsline {subsection}{\numberline {10.3.4}Quando n\IeC {\~a}o usar CI?}{359}{subsection.10.3.4}
+\contentsline {section}{\numberline {10.4}Deployment Cont\IeC {\'\i }nuo}{360}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}Entrega Cont\IeC {\'\i }nua (Continuous Delivery)}{361}{subsection.10.4.1}
+\contentsline {subsection}{\numberline {10.4.2}Feature Flags}{363}{subsection.10.4.2}
+\contentsline {section}{Bibliografia}{366}{lstnumber.-179.8}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{366}{lstnumber.-179.8}
+\contentsline {chapter}{\numberline {A}Git}{369}{appendix.A}
+\contentsline {section}{\numberline {A.1}Init \& Clone}{369}{section.A.1}
+\contentsline {section}{\numberline {A.2}Commit}{370}{section.A.2}
+\contentsline {section}{\numberline {A.3}Add}{371}{section.A.3}
+\contentsline {section}{\numberline {A.4}Status, Diff \& Log}{373}{section.A.4}
+\contentsline {section}{\numberline {A.5}Push \& Pull}{373}{section.A.5}
+\contentsline {section}{\numberline {A.6}Conflitos de Merge}{375}{section.A.6}
+\contentsline {section}{\numberline {A.7}Branches}{377}{section.A.7}
+\contentsline {subsection}{\numberline {A.7.1}Grafo de Commits}{380}{subsection.A.7.1}
+\contentsline {section}{\numberline {A.8}Branches Remotos}{381}{section.A.8}
+\contentsline {section}{\numberline {A.9}Pull Requests}{383}{section.A.9}
+\contentsline {section}{\numberline {A.10}Squash}{385}{section.A.10}
+\contentsline {section}{\numberline {A.11}Forks}{386}{section.A.11}
+\contentsline {section}{Bibliografia}{387}{section.A.11}
+\contentsline {section}{Exerc\IeC {\'\i }cios de Fixa\IeC {\c c}\IeC {\~a}o}{387}{section.A.11}
+\contentsline {chapter}{\IeC {\'I}ndice Remissivo}{389}{section*.3}
