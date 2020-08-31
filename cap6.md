@@ -84,7 +84,7 @@ dois cenários principais:
     sistema, uma solução de projeto já testada e validada.
 
 -   Quando ele estiver usando um sistema de terceiros, como o pacote de
-    Java que implementa a classe `DocumentBuilderFactor` da figura.
+    Java que implementa a classe `DocumentBuilderFactory` da figura.
     Nesse caso, conhecimento de padrões de projeto pode ajudá-lo a
     entender o comportamento e a estrutura da classe que ele precisa
     usar.
