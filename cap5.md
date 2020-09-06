@@ -651,7 +651,7 @@ classe de origem.
 Frequentemente, as recomendações sobre acoplamento e coesão são reunidas
 em uma única recomendação:
 
->  Maxime a coesão das classes e minimize o acoplamento entre elas.
+>  Maximize a coesão das classes e minimize o acoplamento entre elas.
 
 De fato, se uma classe depende de muitas outras classes, por exemplo, de
 dezenas de classes, ela pode estar assumindo responsabilidades demais,

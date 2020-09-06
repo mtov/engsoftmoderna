@@ -131,9 +131,9 @@ em negrito, seguido do número da seção em que eles são apresentados):
     interação e divisão de responsabilidades entre classes e objetos.
     São eles: **Strategy (6.8)**, **Observer (6.9)**, **Template Method (6.10)**, **Visitor (6.11)**, Chain of Responsibility, Command, Interpreter, **Iterator (6.12)**, Mediator, Memento e State.
 
-**Tradução**: Pelo fato de a tradução ser direta, vamos traduzir os
-nomes dos seguintes padrões: Fábrica
-Abstrata, Método Fábrica, Adaptador, Decorador, Observador e Iterador.
+**Tradução**: Por ser uma tradução direta, vamos traduzir os
+nomes dos padrões Fábrica
+Abstrata, Método Fábrica, Adaptador, Fachada, Decorador, Observador e Iterador.
 Os demais serão referenciados usando o nome original.
 
 ## Fábrica
