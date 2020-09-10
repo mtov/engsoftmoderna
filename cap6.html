@@ -50,7 +50,7 @@
 <p>
 <a href="https://engsoftmoderna.info">Página principal do livro</a>
 </p>
-<p> <b> Novidade:</b> Estamos também no 
+<p> <mark class="tertiary"> Novidade:</mark> Estamos também no 
 <a href="https://twitter.com/engsoftmoderna"
   onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
   Twitter</a>.</p>
@@ -383,13 +383,13 @@ channel = new BufferChannel(new TCPChannel());
 channel = new BufferChannel(new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel = new BufferChannel(new ZipChannel(new TCPChannel()));
+channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 // TCPChannel com compactação e um buffer associado</code></pre>
 <p>Portanto, em uma solução com decoradores, a configuração de um <code>Channel</code> é feita no momento da sua instanciação, por meio de uma sequência aninhada de operadores <code>new</code>. O <code>new</code> mais interno sempre cria uma classe base, no nosso exemplo <code>TCPChannel</code> ou <code>UDPChannel</code>. Feito isso, os operadores mais externos são usados para <q>decorar</q> o objeto criado com novas funcionalidades.</p>
 <p>Falta então explicar as classes que são os decoradores propriamente ditos, como <code>ZipChannel</code> e <code>BufferChannel</code>. Primeiro, elas são subclasses da seguinte classe que não aparece no exemplo, mas que é fundamental para o funcionamento do padrão Decorador:</p>
 <pre><code>class ChannelDecorator implements Channel {
 
-  protected Channel channel;
+  private Channel channel;
 
   public ChannelDecorator(Channel channel) {
     this.channel = channel;
@@ -418,11 +418,11 @@ channel = new BufferChannel(new ZipChannel(new TCPChannel()));
 
    public void send(String msg) {
     &quot;compacta mensagem msg&quot;
-    super.channel.send(msg);
+    super.send(msg);
    }
 
    public String receive() {
-    String msg = super.channel.receive();
+    String msg = super.receive();
     &quot;descompacta mensagem msg&quot;
     return msg;
    }
@@ -434,7 +434,7 @@ c.send(&quot;Hello, world&quot;)</code></pre>
 <p>A chamada de <code>send</code> na última linha do exemplo dispara as seguintes execuções de métodos:</p>
 <ul>
 <li><p>Primeiro, executa-se <code>ZipChannel.send</code>, que vai compactar a mensagem.</p></li>
-<li><p>Após a compactação, <code>ZipChannel.send</code> chama <code>super.channel.send</code>, que vai executar <code>ChannelDecorator.send</code>, pois <code>ChannelDecorator</code> é a superclasse de <code>ZipChannel</code>.</p></li>
+<li><p>Após a compactação, <code>ZipChannel.send</code> chama <code>super.send</code>, que vai executar <code>ChannelDecorator.send</code>, pois <code>ChannelDecorator</code> é a superclasse da classe <code>ZipChannel</code>.</p></li>
 <li><p><code>ChannelDecorator.send</code> apenas repassa a chamada para o <code>Channel</code> por ele referenciado, que no caso é um <code>TCPChannel</code>.</p></li>
 <li><p>Finalmente, chegamos a <code>TCPChannel.send</code>, que vai transmitir a mensagem via TCP.</p></li>
 </ul>

@@ -755,7 +755,7 @@ channel = new BufferChannel(new TCPChannel());
 channel = new BufferChannel(new UDPChannel());
 // UDPChannel com um buffer associado
 
-channel = new BufferChannel(new ZipChannel(new TCPChannel()));
+channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 // TCPChannel com compactação e um buffer associado
 ```
 
@@ -774,7 +774,7 @@ funcionamento do padrão Decorador:
 ```
 class ChannelDecorator implements Channel {
 
-  protected Channel channel;
+  private Channel channel;
 
   public ChannelDecorator(Channel channel) {
     this.channel = channel;
@@ -818,11 +818,11 @@ class ZipChannel extends ChannelDecorator {
 
    public void send(String msg) {
     "compacta mensagem msg"
-    super.channel.send(msg);
+    super.send(msg);
    }
 
    public String receive() {
-    String msg = super.channel.receive();
+    String msg = super.receive();
     "descompacta mensagem msg"
     return msg;
    }
@@ -842,9 +842,9 @@ execuções de métodos:
 
 -   Primeiro, executa-se `ZipChannel.send`, que vai compactar a mensagem.
 
--   Após a compactação, `ZipChannel.send` chama `super.channel.send`, que
+-   Após a compactação, `ZipChannel.send` chama `super.send`, que
     vai executar `ChannelDecorator.send`, pois `ChannelDecorator` é a
-    superclasse de `ZipChannel`.
+    superclasse da classe `ZipChannel`.
 
 -   `ChannelDecorator.send` apenas repassa a chamada para o `Channel` por
     ele referenciado, que no caso é um `TCPChannel`.
