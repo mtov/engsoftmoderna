@@ -371,7 +371,7 @@ public void testRepeat() {
 <p>A boa notícia é que código que segue as propriedades e princípios de projeto que discutimos no Capítulo 5 — tais como coesão alta, acoplamento baixo, responsabilidade única, separação entre apresentação e modelo, inversão de dependências, Demeter, dentre outros — tende a apresentar boa testabilidade.</p>
 <h3 data-number="1.5.1" id="exemplo-servlet" data-number="1.5.1"><span class="header-section-number">8.5.1</span> Exemplo: Servlet</h3>
 <p>Servlet é uma tecnologia de Java para implementação de páginas Web dinâmicas. A seguir mostramos uma servlet que calcula o índice de massa corporal de uma pessoa, dado o seu peso e altura. O nosso objetivo é didático. Logo, não vamos detalhar todo o protocolo para implementação de servlets. Além disso, a lógica de domínio desse exemplo é simples, consistindo na seguinte fórmula: <code>peso / (altura * altura)</code>. Mas tente imaginar que essa lógica poderia ser mais complexa e que, mesmo assim, a solução que vamos apresentar continuaria válida.</p>
-<pre><code>public class IMCServlet extends HttpServtet {
+<pre><code>public class IMCServlet extends HttpServlet {
 
   public void doGet(HttpServletRequest req, 
                     HttpServletResponse res) {
@@ -401,7 +401,7 @@ public void testRepeat() {
   }
 }
 
-public class IMCServlet extends HttpServtet {
+public class IMCServlet extends HttpServlet {
   IMCModel model = new IMCModel();
 
   public void doGet(HttpServletRequest req, 

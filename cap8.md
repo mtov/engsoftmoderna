@@ -945,7 +945,7 @@ tente imaginar que essa lógica poderia ser mais complexa e que, mesmo
 assim, a solução que vamos apresentar continuaria válida.
 
 ```
-public class IMCServlet extends HttpServtet {
+public class IMCServlet extends HttpServlet {
 
   public void doGet(HttpServletRequest req, 
                     HttpServletResponse res) {
@@ -996,7 +996,7 @@ class IMCModel {
   }
 }
 
-public class IMCServlet extends HttpServtet {
+public class IMCServlet extends HttpServlet {
   IMCModel model = new IMCModel();
 
   public void doGet(HttpServletRequest req, 
