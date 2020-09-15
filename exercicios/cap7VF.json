@@ -58,8 +58,8 @@
     "correct": "false"
   },
   {
-    "text": "Os componentes de uma Arquitetura Peer-to-Peer podem desempenhar tanto o papel de cliente, como o papel de servidor de recursos.",
-    "correct": "true"
+    "text": "Um microsserviço deve ter no máximo 20 KLOC de código fonte.",
+    "correct": "false"
   }
 ]
 }	 

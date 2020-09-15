@@ -195,7 +195,7 @@ Quando usa-se CI, o master é constantemente atualizado com código novo. Para g
 
 #### Build Automatizado {.unnumbered}
 
-Build é o nome usado para designar a compilação de todo os arquivos de um sistema, até a geração de uma versão executável. Quando se usa CI, o build deve ser automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
+Build é o nome usado para designar a compilação de todos os arquivos de um sistema, até a geração de uma versão executável. Quando se usa CI, o build deve ser automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build ([link](https://dl.acm.org/doi/book/10.5555/318762)). 
 
 #### Testes Automatizados {.unnumbered}
 
