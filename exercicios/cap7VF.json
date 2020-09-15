@@ -60,6 +60,10 @@
   {
     "text": "Um microsserviço deve ter no máximo 20 KLOC de código fonte.",
     "correct": "false"
+  },
+  {
+    "text": "Microsserviços devem ser fortemente coesos e fracamente acoplados.",
+    "correct": "true"
   }
 ]
 }	 
