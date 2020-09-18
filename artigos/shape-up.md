@@ -3,7 +3,7 @@
 
 ## Introdução {.unnumbered}
 
-Shape Up é um novo método para desenvolvimento de software, que está
+Shape Up é um novo método para desenvolvimento de software que está
 sendo proposto pela [Basecamp](https://basecamp.com/),  a empresa por
 trás do software de gerenciamento de projetos de mesmo nome. O método
 é descrito em um [livro](https://basecamp.com/shapeup) aberto, de
