@@ -52,7 +52,7 @@ Então, sobre a dimensão prática da formação do Engenheiro de Software, quer
 
 Por outro lado, quando a universidade assume parte da responsabilidade pela formação prática dos alunos, surgem complicações naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir que os alunos implementem, do zero, um sistema real em uma disciplina acadêmica.
 
-Da mesma forma, pedir para que os alunos trabalhem em sistemas de terceiros, como sistemas de código aberto, também não é trivial. O motivo é que o aluno, normalmente, não tem tempo, no escopo de uma disciplina acadêmica, para entender e domar um sistema real.
+Da mesma forma, pedir para que os alunos trabalhem em sistemas de terceiros, como sistemas de código aberto, também não é trivial. O motivo é que o aluno, normalmente, não tem tempo, no escopo de uma disciplina acadêmica, para entender um sistema real.
 
 Tentando explicar melhor, o aluno pode, por exemplo, até corrigir bugs menos críticos ou implementar pequenas features em um sistema de código aberto, mas sem entender como de fato as coisas acontecem no sistema.
 
@@ -75,7 +75,7 @@ E, claro, teríamos que ter "sistemas educativos" cobrindo outras práticas de p
 Concluindo e, na falta de um nome melhor, estou usando o termo "formação comportamental" para referenciar os soft skills que são fundamentais em um Engenheiro de Software. Isto é, hoje em dia, não basta saber programar e dominar os conceitos básicos da área (formação conceitual). Não basta também ter capacidade de realização (formação prática).
 
 Além disso, o Engenheiro de Software moderno tem que saber trabalhar em equipe, saber liderar e ser liderado, saber se comunicar e se expressar, de forma escrita e oral, saber ouvir e saber falar na hora certa, ser capaz de entender o que a organização espera dele, etc.
-Porém, a abordagem desta dimensão comportamental em cursos de Engenharia de Software é ainda um problema em aberto, pelo menos para mim. Talvez, na verdade, o problema não seja exclusivo de disciplinas de Engenharia de Software, mas de caráter mais transversal na formação de profissionais de Computação.
+Porém, a abordagem dessa dimensão comportamental em cursos de Engenharia de Software é ainda um problema em aberto, pelo menos para mim. Talvez, na verdade, o problema não seja exclusivo de disciplinas de Engenharia de Software, mas de caráter mais transversal na formação de profissionais de Computação.
 
 * * *
 
