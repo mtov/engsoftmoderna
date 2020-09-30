@@ -1839,7 +1839,7 @@ métrica, o conceito de complexidade relaciona-se com a dificuldade de
 manter e testar uma função. A definição de CC baseia-se no conceito de
 grafos de fluxo de controle. Em tais grafos, os nodos representam os
 comandos de uma função ou método; e as arestas representam os possíveis
-fluxos de controle. Portanto, comandos como if geram fluxos de controle
+fluxos de controle. Portanto, comandos como `if` geram fluxos de controle
 alternativos. O nome da métrica deriva do fato de ser calculada usando
 um conceito de Teoria dos Grafos chamado de número ciclomático
 (*cyclomatic number*).
@@ -1850,7 +1850,7 @@ alternativa define CC da seguinte forma:
 
 *CC = "número de comandos de decisão em uma função" + 1*
 
-Onde comandos de decisão podem ser if, while, case, for, etc. A intuição
+Onde comandos de decisão podem ser `if`, `while`, `case`, `for`, etc. A intuição
 subjacente a essa fórmula é que comandos de decisão tornam o código mais
 difícil de entender e testar e, portanto, mais complexo.
 

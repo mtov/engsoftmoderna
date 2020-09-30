@@ -1893,7 +1893,7 @@ Dichotomies of Testing*, Three Rivers Institute, 2007):
 \index{Testes de Software!Classes de Equivalência}
 \index{Classes de Equivalência}
 
-Quando se adota testes caixa-preta existem técnicas para auxiliar na
+Quando se adota testes caixa-preta, existem técnicas para auxiliar na
 seleção das entradas que serão verificadas no teste. Partição via
 **Classe de Equivalência** é uma técnica que recomenda dividir as
 entradas de um problema em conjuntos de valores que têm a mesma chance
