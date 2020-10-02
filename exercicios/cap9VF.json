@@ -1,0 +1,69 @@
+{
+"title": "Cap. 9 - Refactoring",  
+"questions": [
+  {
+    "text": "As Leis de Lehman são leis empíricas sobre manutenção e evolução de software. Uma delas afirma que manutenções tornam a estrutura interna de um sistema mais complexa e difícil de manter no futuro.",
+    "correct": "true"
+  },
+  {
+    "text": "Extração de métodos é um dos refactorings mais poderosos e com maior número de motivações.",
+    "correct": "true"
+  },
+  {
+    "text": "Inline de métodos é uma operação mais frequente do que sua operação oposta (extração de métodos).",
+    "correct": "false"
+  },
+  {
+    "text": "Pull Up Method e Push Down Method são casos particulares de movimentação de métodos, que ocorrem ao longo de uma hierarquia de herança.",
+    "correct": "true"
+  },
+  {
+    "text": "São exemplos de refactorings: extração de métodos, inline de métodos e melhoria do desempenho de um método.",
+    "correct": "false"
+  },
+  {
+    "text": "A prática de refactoring depende da existência de bons testes de unidade.",
+    "correct": "true"
+  },
+  {
+    "text": "A maior parte dos refactorings são planejados, isto é, não-oportunistas.",
+    "correct": "false"
+  },
+  {
+    "text": "São exemplos de code smells: classes grandes, métodos longos e features longas.",
+    "correct": "false"
+  },
+  {
+    "text": "Extração de métodos é o refactoring recomendado para remover o code smell chamado de método longo.",
+    "correct": "true"
+  },
+  {
+    "text": "Um clone do Tipo 4 ocorre quando existem trechos de código A e B que são semanticamente equivalentes, mas suas implementações são baseadas em algoritmos diferentes.",
+    "correct": "true"
+  },
+  {
+    "text": "Variáveis globais são um code smell porque elas impactam negativamente na coesão das classes nas quais são referenciadas.",
+    "correct": "true"
+  },
+  {
+    "text": "Obsessão por Tipos Primitivos ocorre quando tais tipos (isto é, int, float, String, etc) são usados no lugar de classes.",
+    "correct": "true"
+  },
+  {
+    "text": "Objetos Mutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos. ",
+    "correct": "false"
+  },
+  {
+    "text": "Todo e qualquer comentário é um code smell.",
+    "correct": "false"
+  },
+  {
+    "text": "Débito técnico designa o possível déficit de proficiência técnica de alguns membros de um time de desenvolvimento.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma refatoração é geralmente motivada por alguma tarefa de implementação específica que (a refatoração) tornará mais fácil, em oposição a melhorias simples do código.",
+    "correct": "true"
+  }
+]
+}	    
