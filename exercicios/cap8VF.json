@@ -14,7 +14,7 @@
     "correct": "true"
   },
   {
-    "text": "Concorrência é um das principais causas de testes com comportamento flaky. ",
+    "text": "Concorrência é um das principais causas de testes com comportamento flaky.",
     "correct": "true"
   },
   {
@@ -26,7 +26,7 @@
     "correct": "false"
   },
   {
-    "text": "Uma regressão ocorre apenas quando a implementação de uma nova funcionalidade introduz bugs em código antigo. ",
+    "text": "Uma regressão ocorre apenas quando a implementação de uma nova funcionalidade introduz bugs em código antigo.",
     "correct": "false"
   },
   {
@@ -50,7 +50,7 @@
     "correct": "true"
   },
   {
-    "text": "Métodos estáticos não podem ser objeto de mocks. ",
+    "text": "Métodos estáticos não podem ser objeto de mocks.",
     "correct": "true"
   },
   {
@@ -74,7 +74,7 @@
     "correct": "true"
   },
   {
-    "text": "Se a cobertura de branches de uma função é 100%, então a cobertura de comandos também é 100%. ",
+    "text": "Se a cobertura de branches de uma função é 100%, então a cobertura de comandos também é 100%.",
     "correct": "true"
   }, 
   {
