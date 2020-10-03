@@ -179,6 +179,8 @@ var Exercise = {
   created() {
     const id = this.$route.params.id;
     const file = 'https://engsoftmoderna.info/exercicios/cap' + id + 'VF.json';
+    const id_event = 'VF-' + id;
+    ga('send', 'event', id_event, id_event, id_event);
     fetch(file)
       .then(res => res.json())
       .then(res => {
