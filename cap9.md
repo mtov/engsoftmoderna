@@ -946,7 +946,7 @@ tem um método chamado `m2`.
 A verificação das pré-condições de refactorings
 não é uma tarefa trivial. Para ilustrar a complexidade dessa tarefa,
 vamos reusar um pequeno programa em Java, proposto por
-Friedrich Steimann and Andreas Thies
+Friedrich Steimann e Andreas Thies
 ([link](https://doi.org/10.1007/978-3-642-03013-0_19)).
 Conforme mostrado a seguir, esse programa inclui duas classes, `A` e `B`,
 implementadas em arquivos distintos, mas pertencentes a um mesmo pacote
