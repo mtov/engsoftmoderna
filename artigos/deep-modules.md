@@ -106,7 +106,7 @@ grandes benefícios.
 ## Exercícios {.unnumbered}
 
 1. Dê dois exemplos de módulos profundos. Para facilitar sua resposta,
-pense em pacotes ou bibliotecas de sua linguagem de preferência.
+pense em pacotes ou bibliotecas de sua linguagem preferida.
 
 2. Seja a seguinte afirmação: módulos
 profundos implicam obrigatoriamente em funções
