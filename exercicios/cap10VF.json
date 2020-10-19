@@ -1,68 +1,72 @@
 {
-"title": "Cap. 9 - Refactoring",  
+"title": "Cap. 10 - DevOps",  
 "questions": [
   {
-    "text": "As Leis de Lehman são leis empíricas sobre manutenção e evolução de software. Uma delas afirma que manutenções tornam a estrutura interna de um sistema mais complexa e difícil de manter no futuro.",
-    "correct": "true"
-  },
-  {
-    "text": "Extração de métodos é um dos refactorings mais poderosos e com maior número de motivações.",
-    "correct": "true"
-  },
-  {
-    "text": "Inline de métodos é uma operação mais frequente do que sua operação oposta (extração de métodos).",
+    "text": "DevOps advoga que devem existir dois silos de engenheiros: desenvolvedores de solftware e administradores de sistemas.",
     "correct": "false"
   },
   {
-    "text": "Pull Up Method e Push Down Method são casos particulares de movimentação de métodos, que ocorrem ao longo de uma hierarquia de herança.",
-    "correct": "true"
-  },
-  {
-    "text": "São exemplos de refactorings: extração de métodos, inline de métodos e melhoria do desempenho de um método.",
+    "text": "O movimento DevOps surgiu junto com os primeiros métodos ágeis, logo no início dos anos 2000.",
     "correct": "false"
   },
   {
-    "text": "A prática de refactoring depende da existência de bons testes de unidade.",
+    "text": "São exemplos de sistemas de controle de versão distribuídos: git e mercurial.",
     "correct": "true"
   },
   {
-    "text": "A maior parte dos refactorings são planejados, isto é, não-oportunistas.",
-    "correct": "false"
-  },
-  {
-    "text": "São exemplos de code smells: classes grandes, métodos longos e features longas.",
-    "correct": "false"
-  },
-  {
-    "text": "Extração de métodos é o refactoring recomendado para remover o code smell chamado de método longo.",
+    "text": "São exemplos de sistemas de controle de versão centralizados: cvs e subversion (svn).",
     "correct": "true"
   },
   {
-    "text": "Um clone do Tipo 4 ocorre quando existem trechos de código A e B que são semanticamente equivalentes, mas suas implementações são baseadas em algoritmos diferentes.",
+    "text": "Sistemas de controle de versões distribuídos seguem uma arquitetura peer-to-peer.",
     "correct": "true"
   },
   {
-    "text": "Variáveis globais são um code smell porque elas impactam negativamente na coesão das classes nas quais são referenciadas.",
+    "text": "Monorepos são muito mais comuns do que multirepos.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma vantagem de multirepos é a possibilidade de realizar atomicamente (em um único commit) refatorações em larga escala, como a renomeação de uma função que é chamada em sistemas distintos.",
+    "correct": "false"
+  },
+  {
+    "text": "Monorepos são usados por grandes empresas da Internet, que possuem bilhões de linha de código, como Google.",
     "correct": "true"
   },
   {
-    "text": "Obsessão por Tipos Primitivos ocorre quando tais tipos (isto é, int, float, String, etc) são usados no lugar de classes.",
+    "text": "O uso de um servidor de integração contínua é condição suficiente para uma empresa dizer que adota tal prática.",
+    "correct": "false"
+  },
+  {
+    "text": "CI tem como objetivo diminuir o esforço requerido na integração de branches de funcionalidades.",
     "correct": "true"
   },
   {
-    "text": "Objetos Mutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos. ",
+    "text": "Integração contínua é uma das práticas de programação propostas por Scrum.",
     "correct": "false"
   },
   {
-    "text": "Todo e qualquer comentário é um code smell.",
-    "correct": "false"
+    "text": "Feature flags são recursos fundamentais quando adota-se Deployment Contínuo.",
+    "correct": "true"
   },
   {
-    "text": "Débito técnico designa o possível déficit de proficiência técnica de alguns membros de um time de desenvolvimento.",
-    "correct": "false"
+    "text": "Deployment é o processo de liberar uma nova versão de um sistema para seus usuários finais.",
+    "correct": "true"
   },
   {
-    "text": "Uma refatoração é geralmente motivada por alguma tarefa de implementação específica que (a refatoração) tornará mais fácil, em oposição a melhorias simples do código.",
+    "text": "Delivery é o processo de liberar uma nova versão de um sistema para ser objeto de deployment.",
+    "correct": "true"
+  },
+  {
+    "text": "Release canário disponibiliza uma nova funcionalidade primeiro para um grupo pequeno de usuários.",
+    "correct": "true"
+  },
+  {
+    "text": "São exemplos de boas práticas quando usa-se DevOps: Sistemas de Controle de Versões; Integração Contínua; Desenvolvimento Baseado no Trunk e Deployment (ou Delivery) Contínuo.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando adota-se Desenvolvimento Baseado no Trunk (TBD) não existem mais branches de funcionalidades.",
     "correct": "true"
   }
 ]
