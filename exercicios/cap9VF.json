@@ -50,7 +50,7 @@
     "correct": "true"
   },
   {
-    "text": "Objetos Mutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos. ",
+    "text": "Objetos Mutáveis são por construção thread-safe, isto é, não é necessário sincronizar o acesso de threads aos seus métodos.",
     "correct": "false"
   },
   {
