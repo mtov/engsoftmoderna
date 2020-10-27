@@ -1410,7 +1410,7 @@ são incentivados a comentar todo o código produzido, com o objetivo de
 ensinar a importância de documentação de código. No livro *Elements of
 Programming Style*, Brian Kerninghan — um dos criadores das
 primeiras versões do sistema operacional Unix e da linguagem de
-programação C — e P. J. Plauger, dão uma recomendação que ajuda, de
+programação C — e P. J. Plauger dão uma recomendação que ajuda, de
 forma certeira, a esclarecer essa dúvida. Eles recomendam o seguinte:
 
 > "Não comente código ruim, reescreva-o".
@@ -1465,9 +1465,9 @@ nos quais a correção de bugs e a implementação de novas funcionalidades
 leva cada vez mais tempo e mostra-se mais arriscada.
 
 Para ilustrar melhor o conceito, suponha que 
-existe um débito técnico em um determinado módulo M de um
-sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M vai
-requerer um esforço de 3 dias. Porém, se não houvesse o débito
+exista um débito técnico em um determinado módulo M de um
+sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M 
+requer um esforço de 3 dias. Porém, se não houvesse o débito
 técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
 os juros cobrados pela existência do débito técnico em M. Uma
 alternativa seria então pagar o principal do débito, isto é, remover
