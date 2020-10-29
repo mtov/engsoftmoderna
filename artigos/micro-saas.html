@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Micro-SaaS: Microempresas de Software como Serviço – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-8249107-3', 'auto');
+     ga('send', 'pageview');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.png" width="240"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<!---
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+
+
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="micro-saas-microempresas-de-software-como-serviço" class="unnumbered" data-number="">Micro-SaaS: Microempresas de Software como Serviço</h1>
+<p>Em um <a href="https://engsoftmoderna.info/artigos/desafios-engsoft.html">artigo anterior</a>, comentamos sobre os desafios do ensino de Engenharia de Software. A mensagem principal do artigo era que existem desafios em três dimensões: conceitual, prática e comportamental. No entanto, no final do artigo, comentamos também sobre uma quarta dimensão: formação empreendedora.</p>
+<p>Existem diversos caminhos que alunos podem tomar na área de empreendedorismo. Hoje em dia, o caminho mais desejado talvez seja criar uma startup de sucesso, obter vasto financiamento via capital de risco e virar um unicórnio. No entanto, evidentemente, esse não é um caminho trivial, isto é, são pouquíssimas empresas que alçam tal nível sucesso. E, muitas vezes, quando isso acontece, elas acabam sendo administradas pelos fundos de capital de risco. Além disso, existe hoje uma vasta literatura sobre a criação e administração de <q>startups tradicionais</q>.</p>
+<p>Por outro lado, existe também um caminho oposto, que se costuma chamar de <strong>micro-SaaS</strong>. E parece que ele é menos conhecido e explorado, principalmente no Brasil. Por isso, resolvemos escrever esse pequeno artigo sobre o assunto.</p>
+<p>Uma definição, genérica, de micro-SaaS é a seguinte:</p>
+<blockquote>
+<p>Micro-SaaS é um pequeno empreendimento de software, auto-financiado e administrado por 1-2 desenvolvedores, e que atende a uma necessidade bem específica. Além disso, um micro-SaaS segue um modelo de serviços (isto é, <em>Software as a Service</em>), com pagamentos recorrentes (assinaturas) por parte de centenas ou alguns milhares de clientes globais.</p>
+</blockquote>
+<p>Para ficar mais claro, vamos dar alguns exemplos:</p>
+<ul>
+<li><p><a href="https://saberfeedback.com/">Saber Feedback</a> é uma aplicação que possibilita adicionar um pequeno botão <q>Feedback</q> na lateral direita de todas as páginas de um site Web. Usuários podem usar esse botão para dar feedback sobre o site e suas páginas, reportando desde erros ortográficos até bugs de lógica ou de interface. A princípio, parece que o sistema é mantido por um único fundador, mais alguns freelancers. A assinatura do sistema começa em US$ 29.00 mensais.</p></li>
+<li><p><a href="https://transistor.fm/">Transistor</a> é um sistema para hospedagem e distribuição de podcasts. Toda a operação do sistema é mantida pelos dois fundadores da empresa e a assinatura mensal mais barata custa US$ 19.00.</p></li>
+<li><p><a href="https://permanent.link/">Permanentlink</a> é um sistema recém-lançado, que pode ser considerado ainda um MVP (Produto Mínimo Viável). Ele pretende resolver um problema enfrentado por autores de livros digitais: esses livros incorporam diversos links (URLs), que com o tempo podem <q>quebrar</q>. A ideia então é disponibilzar uma URL permanente para os documentos referenciados. Enquanto um link estiver ativo, o sistema redireciona a conexão para ele; se o link quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema. A assinatura mais barata do sistema custa US$ 25.00 por mês.</p></li>
+</ul>
+<p>Interessante, que os três sistemas são tanto B2B (<em>Business-to-Business</em>) como B2C (<em>Business-to-Customers</em>). Isto é, eles podem ter clientes que são empresas ou consumidores finais.</p>
+<p>É importante também ressaltar que os fundadores de um negócio de micro-SaaS são responsáveis por desenvolver e manter o sistema e também por outras funções, tais como:</p>
+<ul>
+<li><p>Cuidar de toda a parte de operação. No entanto, essa tarefa ficou mais simples, devido à disponibilidade de sistemas de cloud que permitem rapidamente criar máquinas virtuais com todo o software básico instalado.</p></li>
+<li><p>Cuidar da parte de cobrança e recebimento das assinaturas. Porém, hoje existem serviços para isso, oferecidos por empresas com Stripe ou PagSeguro.</p></li>
+<li><p>Cuidar da parte de atendimento e suporte a clientes. Para isso é importante automatizar e documentar bem todos os processos e, também, usar sistemas de low-code, como Zapier.</p></li>
+<li><p>Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar bastante de marketing de conteúdo e de técnicas de SEO (<em>Search Engine Optimization</em>).</p></li>
+</ul>
+<p>Por outro lado, o grande desafio de um micro-SaaS é achar um nicho certo de mercado, que tenha um problema real que pode ser resolvido por meio de um sistema relativamente pequeno, implementado e mantido por 1-2 desenvolvedores. Se o mercado, por exemplo, for muito grande existem dois riscos: ele atrair o interesse de grandes empresas e/ou ele demandar um alto investimento, para contratação de mais desenvolvedores, realização de campanhas de remarketing, etc.</p>
+<p>Por fim, em certos casos e negócios, pode ser possível começar com um micro-SaaS e depois evoluir o empreendimento para uma solução de Saas mais completa e abrangente.</p>
+<hr />
+<h2 class="unnumbered" data-number="" id="exercício" class="unnumbered" data-number="">Exercício</h2>
+<ol type="1">
+<li><p>Pesquise e descreva alguns sistemas micro-SaaS (de forma semelhante àquela que fizemos no artigo).</p></li>
+<li><p>Tente pensar e projetar um sistema micro-SaaS. Qual problema ele vai resolver? Quais serão seus principais usuários? Quais serão as funcionalidades do primeiro MVP do sistema?</p></li>
+</ol>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
