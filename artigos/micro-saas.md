@@ -85,7 +85,9 @@ campanhas de remarketing, etc.
 
 Por fim, em certos casos e negócios, pode ser possível também começar com um 
 micro-SaaS e depois evoluir o empreendimento para uma solução de Saas 
-mais completa e abrangente.
+mais completa e abrangente. E, claro, um micro-SaaS pode servir de renda
+complementar para seus desenvolvedores, que podem ter outros projetos
+ou empregos.
 
 * * * 
 
