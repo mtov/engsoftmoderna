@@ -1,6 +1,7 @@
 
 # Micro-SaaS: Microempresas de Software como Serviço {.unnumbered}
 
+## Introdução {.unnumbered}
 
 Em um [artigo anterior](https://engsoftmoderna.info/artigos/desafios-engsoft.html), 
 comentamos sobre os desafios do ensino de Engenharia de
@@ -10,10 +11,10 @@ também sobre uma quarta dimensão: formação empreendedora.
 
 Existem diversos caminhos que alunos podem tomar na área
 de empreendedorismo. Hoje em dia, o caminho mais desejado talvez
-seja criar uma startup de sucesso, obter vasto financiamento via 
+seja criar uma startup de sucesso, obter financiamento via 
 capital de risco e virar um unicórnio. No entanto, evidentemente, 
 esse não é um caminho trivial, isto é, são pouquíssimas empresas
-que alçam tal nível sucesso. E, muitas vezes, quando isso acontece,
+que alçam esse nível sucesso. E, muitas vezes, quando isso acontece,
 elas acabam sendo administradas pelos fundos de capital de risco.
 Além disso, existe hoje uma vasta literatura sobre a criação e 
 administração de "startups tradicionais".
@@ -22,6 +23,8 @@ Por outro lado, existe também um caminho oposto, que se costuma chamar
 de **micro-SaaS**. E parece que ele é menos conhecido e explorado,
 principalmente no Brasil. Por isso, resolvemos escrever esse 
 pequeno artigo sobre o assunto.
+
+## Definição e Exemplos {.unnumbered}
 
 Uma definição, genérica, de micro-SaaS é a seguinte:
 
@@ -50,16 +53,24 @@ digitais: esses livros incorporam diversos links (URLs), que com o tempo podem "
 A ideia então é disponibilzar uma URL permanente para os documentos referenciados. 
 Enquanto um link estiver ativo, o sistema redireciona a conexão para ele; se o link 
 quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema. 
-A assinatura mais barata do sistema custa US$ 25.00 por mês.
+A assinatura mais barata do serviço custa US$ 25.00 por mês.
 
 Interessante, que os três sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
 empresas ou consumidores finais.
 
-É importante também ressaltar que os fundadores de um negócio de micro-SaaS são responsáveis por
+E gostaríamos também de citar alguns contra-exemplos: certamente, sistemas como Dropbox,
+Gusto (folha de pagamento) e Zoom (video-conferência) não são micro-SaaS.
+Esses sistemas pertencem a empresas que já são grandes, com dezenas, talvez centenas 
+de engenheiros de software.
+
+
+## Desafios e Riscos {.unnumbered}
+
+Primeiro, é importante ressaltar que os fundadores de um negócio de micro-SaaS são responsáveis por
 desenvolver e manter o sistema e também por outras funções, tais como:
 
-* Cuidar de toda a parte de operação. No entanto, essa tarefa ficou mais simples, 
+* Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de cloud que permitem rapidamente criar máquinas 
 virtuais com todo o software básico instalado.
 
@@ -72,31 +83,37 @@ documentar bem todos os processos e, também, usar sistemas de low-code, como Za
 * Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar bastante
 de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*).
 
-Por outro lado, o grande desafio de um micro-SaaS é achar um nicho certo de mercado, que 
-tenha um problema real que possa ser resolvido por meio de um sistema relativamente pequeno, 
-implementado e mantido por 1-2 desenvolvedores. E, mais importante, esse problema tem que
-ser relevante o suficiente para atrair clientes dispostos a pagar um assinatura mensal
-para ter acesso um sistema que o resolva.
+Por outro lado, o grande **desafio de um micro-SaaS é achar um nicho de mercado**, que 
+tenha um problema real que possa ser resolvido por meio de um sistema relativamente pequeno. 
+E, mais importante, esse problema tem que
+ser relevante o suficiente para **atrair clientes dispostos a pagar um assinatura mensal**
+para ter acesso a um sistema que o resolva.
 
-Complementando, se o mercado, por exemplo, for muito grande 
-existem dois riscos: ele atrair o interesse de grandes empresas e/ou ele demandar 
-um alto investimento, para contratação de mais desenvolvedores, realização de 
-campanhas de remarketing, etc.
+Por fim, em certos casos, pode-se começar com um micro-SaaS e depois evoluir 
+o empreendimento para uma solução mais completa e abrangente, porém ainda 
+auto-financiada. Um caso interessante é o sistema 
+[Less Annoying CRM](https://www.lessannoyingcrm.com/), para gerenciamento de 
+dados de clientes. Como o próprio nome diz, o seu objetivo é ser um sistema de CRM mais 
+simples do que os sistemas concorrentes de grandes empresas, como Salesforce. Em contrapartida, 
+a assinatura do sistema é também mais barata (US$ 15.00/mês). A Less Annoying CRM 
+foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro-SaaS chegou 
+a 1.5K clientes, com apenas um colaborador. Em 2020, ela possui mais de 22 mil 
+clientes e 17 colaboradores, cerca de metade deles atuando em atendimento a clientes.
 
-Por fim, em certos casos e negócios, pode ser possível também começar com um 
-micro-SaaS e depois evoluir o empreendimento para uma solução de Saas 
-mais completa e abrangente. E, claro, um micro-SaaS pode servir de renda
-complementar para seus desenvolvedores, que podem ter outros projetos
-ou empregos.
+## Artigo Relacionado {.unnumbered}
 
-* * * 
+Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-monetizar.html) sobre monetização de software.
 
-## Exercício {.unnumbered}
+## Exercícios {.unnumbered}
 
-1. Pesquise e descreva alguns sistemas micro-SaaS (de forma semelhante àquela que fizemos no artigo).
+1. Pesquise e descreva alguns sistemas micro-SaaS (de forma semelhante àquela que fizemos no artigo). Algum desses sistemas é brasileiro?
 
 2. Tente pensar e projetar um sistema micro-SaaS. Qual problema ele vai resolver? Quais serão seus principais usuários? 
 Quais serão as funcionalidades do primeiro MVP do sistema?
+
+3. Do ponto de vista de monetização, qual a vantagem de micro-Saas em relação a uma pequena app para celulares (comercializada
+em lojas como Google Play e Apple Store)?
+
 
 * * * 
 
