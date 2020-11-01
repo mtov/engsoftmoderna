@@ -19,21 +19,23 @@ elas acabam sendo administradas pelos fundos de capital de risco.
 Além disso, existe hoje uma vasta literatura sobre a criação e 
 administração de "startups tradicionais".
 
-Por outro lado, existe também um caminho oposto, que se costuma chamar 
+Por outro lado, existe um caminho oposto, que se costuma chamar 
 de **micro-SaaS**. E parece que ele é menos conhecido e explorado,
 principalmente no Brasil. Por isso, resolvemos escrever esse 
 pequeno artigo sobre o assunto.
 
-## Definição e Exemplos {.unnumbered}
+## Definição {.unnumbered}
 
 Uma definição, genérica, de micro-SaaS é a seguinte:
 
 > Micro-SaaS é um pequeno empreendimento de software, 
 > auto-financiado e administrado por 1-2 desenvolvedores, 
-> e que atende a uma necessidade bem específica. Além disso,
+> e que atende a uma necessidade específica. Além disso,
 > um micro-SaaS segue um modelo de serviços (isto é, *Software as a Service*), 
 > com pagamentos recorrentes (assinaturas) por parte
 > de centenas ou alguns milhares de clientes globais.
+
+## Exemplos {.unnumbered}
 
 Para ficar mais claro, vamos dar alguns exemplos:
 
@@ -55,7 +57,7 @@ Enquanto um link estiver ativo, o sistema redireciona a conexão para ele; se o 
 quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema. 
 A assinatura mais barata do serviço custa US$ 25.00 por mês.
 
-Interessante, que os três sistemas são tanto B2B (*Business-to-Business*) 
+Interessante, que esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
 empresas ou consumidores finais.
 
@@ -64,11 +66,11 @@ Gusto (folha de pagamento) e Zoom (video-conferência) não são micro-SaaS.
 Esses sistemas pertencem a empresas que já são grandes, com dezenas, talvez centenas 
 de engenheiros de software.
 
-
 ## Desafios e Riscos {.unnumbered}
 
-Primeiro, é importante ressaltar que os fundadores de um negócio de micro-SaaS são responsáveis por
-desenvolver e manter o sistema e também por outras funções, tais como:
+Primeiro, é importante ressaltar que os fundadores de um negócio de micro-SaaS 
+são responsáveis por desenvolver e manter o sistema e também por outras funções, 
+tais como:
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de cloud que permitem rapidamente criar máquinas 
@@ -86,18 +88,25 @@ de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*).
 Por outro lado, o grande **desafio de um micro-SaaS é achar um nicho de mercado**, que 
 tenha um problema real que possa ser resolvido por meio de um sistema relativamente pequeno. 
 E, mais importante, esse problema tem que
-ser relevante o suficiente para **atrair clientes dispostos a pagar um assinatura mensal**
+ser relevante para **atrair clientes dispostos a pagar um assinatura mensal**
 para ter acesso a um sistema que o resolva.
 
-Por fim, em certos casos, pode-se começar com um micro-SaaS e depois evoluir 
-o empreendimento para uma solução mais completa e abrangente, porém ainda 
-auto-financiada. Um caso interessante é o sistema 
+## Evoluindo um micro-SaaS  {.unnumbered}
+
+Quando um micro-SaaS faz sucesso e atrai um número maior de clientes, 
+é natural que o empreendimento também cresça, melhorando principalmente
+a estrutura de atendimento a clientes da empresa. E isso pode ser 
+feito de forma também auto-financiada, com os recursos das próprias
+assinaturas do serviço.
+
+Um caso interessante é o sistema 
 [Less Annoying CRM](https://www.lessannoyingcrm.com/), para gerenciamento de 
-dados de clientes. Como o próprio nome diz, o seu objetivo é ser um sistema de CRM mais 
+dados de clientes. Como o próprio nome diz, o seu objetivo é ser um sistema de CRM 
+(*Customer Relationship Management*) mais 
 simples do que os sistemas concorrentes de grandes empresas, como Salesforce. Em contrapartida, 
 a assinatura do sistema é também mais barata (US$ 15.00/mês). A Less Annoying CRM 
-foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro-SaaS chegou 
-a 1.5K clientes, com apenas um colaborador. Em 2020, ela possui mais de 22 mil 
+foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro-SaaS, chegou 
+a 1.5K clientes, com apenas mais um colaborador. Em 2020, ela possui mais de 22 mil 
 clientes e 17 colaboradores, cerca de metade deles atuando em atendimento a clientes.
 
 ## Artigo Relacionado {.unnumbered}
