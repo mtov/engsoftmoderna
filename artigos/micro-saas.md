@@ -83,7 +83,9 @@ serviços para isso, oferecidos por empresas com Stripe ou PagSeguro.
 documentar bem todos os processos e, também, usar sistemas de low-code, como Zapier.
 
 * Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar bastante
-de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*).
+de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). Além disso,
+um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar
+o sistema por um tempo de forma gratuita.
 
 Por outro lado, o grande **desafio de um micro-SaaS é achar um nicho de mercado**, que 
 tenha um problema real que possa ser resolvido por meio de um sistema relativamente pequeno. 
