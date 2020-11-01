@@ -27,15 +27,15 @@ pequeno artigo sobre o assunto.
 Uma definição, genérica, de micro-SaaS é a seguinte:
 
 > Micro-SaaS é um pequeno empreendimento de software, 
-> auto-financiado e administrado por 1-2 desenvolvedores, 
+> auto-financiado, completamente administrado por 1-2 desenvolvedores 
 > e que atende a uma necessidade específica. Além disso,
-> um micro-SaaS segue um modelo de serviços (isto é, *Software as a Service*), 
+> um micro-SaaS segue um modelo de serviços (*Software as a Service*), 
 > com pagamentos recorrentes (assinaturas) por parte
 > de centenas ou alguns milhares de clientes globais.
 
 ## Exemplos {.unnumbered}
 
-Para ficar mais claro, vamos dar alguns exemplos:
+Para ficar mais claro, vamos dar alguns exemplos de micro-SaaS:
 
 * [Saber Feedback](https://saberfeedback.com/) é uma aplicação que possibilita adicionar 
 um pequeno botão "Feedback" na lateral direita de todas as páginas de um site Web. Usuários podem usar esse
@@ -101,12 +101,12 @@ Um caso interessante é o sistema
 dados de clientes. Como o próprio nome diz, seu objetivo é ser um sistema de CRM 
 (*Customer Relationship Management*) mais 
 simples do que os sistemas concorrentes de grandes empresas, como Salesforce. Em contrapartida, 
-a assinatura do sistema é também mais barata (US$ 15.00/mês). A Less Annoying CRM 
+a assinatura do sistema é também mais barata, apenas US$ 15.00/mês. A Less Annoying CRM 
 foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro-SaaS, chegou 
 a 1.5K clientes, com apenas mais um colaborador. Em 2020, ela possui mais de 22 mil 
-clientes e 17 colaboradores, cerca de metade deles atuando em atendimento a clientes.
+clientes e 17 colaboradores, cerca de metade atuando em atendimento a clientes.
 
-## Artigo Relacionado {.unnumbered}
+### Artigo Relacionado {.unnumbered}
 
 Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-monetizar.html) sobre monetização de software.
 
