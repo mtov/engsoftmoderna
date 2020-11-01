@@ -9,15 +9,13 @@ Software. A mensagem principal do artigo era que existem desafios em três dimen
 conceitual, prática e comportamental. No entanto, no final do artigo, comentamos 
 também sobre uma quarta dimensão: formação empreendedora.
 
-Existem diversos caminhos que alunos podem tomar na área
-de empreendedorismo. Hoje em dia, o caminho mais desejado talvez
-seja criar uma startup de sucesso, obter financiamento via 
-capital de risco e virar um unicórnio. No entanto, evidentemente, 
-esse não é um caminho trivial, isto é, são pouquíssimas empresas
-que alçam esse nível sucesso. E, muitas vezes, quando isso acontece,
-elas acabam sendo administradas pelos fundos de capital de risco.
-Além disso, existe hoje uma vasta literatura sobre a criação e 
-administração de "startups tradicionais".
+Existem diversos caminhos que alunos podem tomar na área de empreendedorismo. 
+Hoje em dia, o caminho mais desejado talvez seja criar uma startup de sucesso, 
+obter financiamento via capital de risco e virar um unicórnio. No entanto, 
+evidentemente, esse não é um caminho trivial, isto é, são pouquíssimas 
+empresas que alçam esse nível sucesso. Além disso, já existe uma vasta 
+literatura sobre a criação e administração de startups financiadas por 
+meio de capital de risco.
 
 Por outro lado, existe um caminho oposto, que se costuma chamar 
 de **micro-SaaS**. E parece que ele é menos conhecido e explorado,
@@ -57,20 +55,24 @@ Enquanto um link estiver ativo, o sistema redireciona a conexão para ele; se o 
 quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema. 
 A assinatura mais barata do serviço custa US$ 25.00 por mês.
 
-Interessante, que esses sistemas são tanto B2B (*Business-to-Business*) 
+De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
 empresas ou consumidores finais.
 
-E gostaríamos também de citar alguns contra-exemplos: certamente, sistemas como Dropbox,
-Gusto (folha de pagamento) e Zoom (video-conferência) não são micro-SaaS.
-Esses sistemas pertencem a empresas que já são grandes, com dezenas, talvez centenas 
-de engenheiros de software.
+E gostaríamos também de citar alguns contra-exemplos: certamente, sistemas como 
+Dropbox, Slack e Zoom não são micro-SaaS. Esses sistemas pertencem a empresas 
+que já são grandes, com dezenas, talvez centenas de engenheiros de software.
 
 ## Desafios e Riscos {.unnumbered}
 
-Primeiro, é importante ressaltar que os fundadores de um negócio de micro-SaaS 
-são responsáveis por desenvolver e manter o sistema e também por outras funções, 
-tais como:
+O grande **desafio de um micro-SaaS é achar um nicho de mercado**, que tenha 
+um problema real que possa ser resolvido por meio de um sistema relativamente 
+pequeno. E, mais importante, esse problema tem que ser relevante 
+para **atrair clientes dispostos a pagar um assinatura mensal** para ter 
+acesso a um sistema que o resolva. 
+
+Adicionalmente, os fundadores de um negócio de micro-SaaS são responsáveis 
+não apenas por desenvolver e manter o sistema, mas também por outras funções, tais como:
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de cloud que permitem rapidamente criar máquinas 
@@ -87,23 +89,16 @@ de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). 
 um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar
 o sistema por um tempo de forma gratuita.
 
-Por outro lado, o grande **desafio de um micro-SaaS é achar um nicho de mercado**, que 
-tenha um problema real que possa ser resolvido por meio de um sistema relativamente pequeno. 
-E, mais importante, esse problema tem que
-ser relevante para **atrair clientes dispostos a pagar um assinatura mensal**
-para ter acesso a um sistema que o resolva.
-
 ## Evoluindo um micro-SaaS  {.unnumbered}
 
-Quando um micro-SaaS faz sucesso e atrai um número maior de clientes, 
-é natural que o empreendimento também cresça, melhorando principalmente
-a estrutura de atendimento a clientes da empresa. E isso pode ser 
-feito de forma também auto-financiada, com os recursos das próprias
-assinaturas do serviço.
+Quando um micro-SaaS faz sucesso e atrai um número maior de clientes, é natural que o 
+empreendimento também cresça, principalmente em termos de estrutura de atendimento a 
+clientes. E isso pode ser feito de forma também auto-financiada, com os recursos 
+das próprias assinaturas do serviço.
 
 Um caso interessante é o sistema 
-[Less Annoying CRM](https://www.lessannoyingcrm.com/), para gerenciamento de 
-dados de clientes. Como o próprio nome diz, o seu objetivo é ser um sistema de CRM 
+[Less Annoying CRM](https://www.lessannoyingcrm.com), para gerenciamento de 
+dados de clientes. Como o próprio nome diz, seu objetivo é ser um sistema de CRM 
 (*Customer Relationship Management*) mais 
 simples do que os sistemas concorrentes de grandes empresas, como Salesforce. Em contrapartida, 
 a assinatura do sistema é também mais barata (US$ 15.00/mês). A Less Annoying CRM 
