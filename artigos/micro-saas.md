@@ -75,8 +75,8 @@ Adicionalmente, os fundadores de um negócio de micro-SaaS são responsáveis
 não apenas por desenvolver e manter o sistema, mas também por outras funções, tais como:
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
-devido à disponibilidade de sistemas de cloud que permitem rapidamente criar máquinas 
-virtuais com todo o software básico instalado.
+devido à disponibilidade de sistemas de computação em nuvem que permitem rapidamente 
+criar máquinas virtuais com todo o software básico instalado.
 
 * Cuidar da parte de cobrança e recebimento das assinaturas. Porém, hoje existem
 serviços para isso, oferecidos por empresas com Stripe ou PagSeguro.
@@ -101,7 +101,7 @@ Um caso interessante é o sistema
 dados de clientes. Como o próprio nome diz, seu objetivo é ser um sistema de CRM 
 (*Customer Relationship Management*) mais 
 simples do que os sistemas concorrentes de grandes empresas, como Salesforce. Em contrapartida, 
-a assinatura do sistema é também mais barata, apenas US$ 15.00/mês. A Less Annoying CRM 
+a assinatura do sistema é também mais barata, apenas US$ 15.00 por mês. A Less Annoying CRM 
 foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro-SaaS, chegou 
 a 1.5K clientes, com apenas mais um colaborador. Em 2020, ela possui mais de 22 mil 
 clientes e 17 colaboradores, cerca de metade atuando em atendimento a clientes.
