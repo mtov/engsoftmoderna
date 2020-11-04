@@ -10,7 +10,7 @@ trás do software de gerenciamento de projetos de mesmo nome. O método
 autoria de Ryan Singer, que é um dos principais gerentes de produto
 da empresa. Segue uma imagem da capa do livro:
 
-![Capa do livro](./figs/shapeup-cover.png){width=60%}
+![Capa do livro](./figs/shapeup-cover.jpg){width=45%}
 
 ## Principais Conceitos {.unnumbered}
 
