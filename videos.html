@@ -15,9 +15,11 @@
 
 <script>
 var trackOutboundLink = function(url, doc, label) {
-    ga('send', 'event', doc, label, url, {
-       'transport': 'beacon',
-       'hitCallback': function(){window.open(url);}
+    gtag('event', doc, {
+      'event_category': label,
+      'event_label': url,
+      'transport_type': 'beacon',
+      'event_callback': function(){document.location = url;}
     });
 }
 </script>

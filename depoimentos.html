@@ -15,9 +15,11 @@
 
 <script>
 var trackOutboundLink = function(url, doc, label) {
-    ga('send', 'event', doc, label, url, {
-       'transport': 'beacon',
-       'hitCallback': function(){window.open(url);}
+    gtag('event', doc, {
+      'event_category': label,
+      'event_label': url,
+      'transport_type': 'beacon',
+      'event_callback': function(){document.location = url;}
     });
 }
 </script>
@@ -53,20 +55,9 @@ body {
 <div class="row cols-sm-12 cols-md-8">
 <div class="col-md-offset-2">
 
-
 <div class="row">
 
 <div>
-<!--
-<img src="figs/capa/capa-pequena.jpg">
--->
-
-<!---
-<iframe type="text/html" width="252" height="413" frameborder="0" allowfullscreen style="max-width:100%" src="https://ler.amazon.com.br/kp/card?asin=B086K5QJ9V&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_2MGIEb4NZ6N2G" ></iframe>
-
-
-<iframe width="370" height="208" src="https://www.youtube.com/embed/uf7yi6uqPMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
---->
 
 <img src="figs/capa/foto-capa-papel3.png" width="310">
 

@@ -12,15 +12,6 @@
   gtag('config', 'UA-8249107-3');
 </script>
 
-<script>
-var trackOutboundLink = function(url, doc, label) {
-    ga('send', 'event', doc, label, url, {
-       'transport': 'beacon',
-       'hitCallback': function(){window.open(url);}
-    });
-}
-</script>
-
 <link rel="shortcut icon" type="image/x-icon" href="../figs/favicon.ico">
 
 <title>Engenharia de Software Moderna - Exercícios V ou F</title>
@@ -180,7 +171,15 @@ var Exercise = {
     const id = this.$route.params.id;
     const file = 'https://engsoftmoderna.info/exercicios/cap' + id + 'VF.json';
     const id_event = 'vf-cap' + id;
-    ga('send', 'event', id_event, id_event, id_event);
+
+    // old version - google analytics track event
+    // ga('send', 'event', id_event, id_event, id_event);
+    
+    gtag('event', id_event, {
+      'event_category': id_event,
+      'event_label': id_event,
+    });
+
     fetch(file)
       .then(res => res.json())
       .then(res => {
