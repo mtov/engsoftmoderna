@@ -14,9 +14,9 @@
 </script>
 
 <script>
-var trackOutboundLink = function(url, doc, label) {
-    gtag('event', doc, {
-      'event_category': label,
+var trackOutboundLink = function(url, action, category) {
+    gtag('event', action, {
+      'event_category': category,
       'event_label': url,
       'transport_type': 'beacon',
       'event_callback': function(){document.location = url;}
@@ -111,12 +111,6 @@ Engenharia de Software Moderna é um livro-texto destinado a alunos de cursos de
 <p> O livro possui 395 páginas, 10 capítulos e 1 apêndice. Inclui ainda 
 25 seções "Mundo Real" descrevendo exemplos e estudos de casos reais e 125 exercícios de fixação.</p>
 
-<!---
-<p> <b> Novidade:</b> Estamos também no 
-<a href="https://twitter.com/engsoftmoderna"
-  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
-  Twitter</a>.</p>
---->
 
 <h3> Versão em Papel</h3>
 
@@ -268,21 +262,6 @@ Mencione explicitamente que gostaria de ter acesso às respostas.
 
 <p><a href="./videos.html">Vídeo-aulas</a> sobre alguns capítulos do livro.</p>
 
-<!--
-<p> 
-Vídeos:
-<a href="https://youtu.be/uf7yi6uqPMk"> Book trailer</a>,
-<a href="https://youtu.be/6ydOpqdLuKo"
-onclick="trackOutboundLink('https://youtu.be/6ydOpqdLuKo', 'youtube-intro', 'youtube-intro'); return false;">
-Introdução a ES</a>,   
-<a href="https://youtu.be/L3YnzEmse2Q"
-onclick="trackOutboundLink('https://youtu.be/L3YnzEmse2Q', 'youtube-uml', 'youtube-uml'); return false;">
-UML</a> e
-<a href="https://youtu.be/odqn_6S-p6k"
-onclick="trackOutboundLink('https://youtu.be/odqn_6S-p6k', 'youtube-devops', 'youtube-devops'); return false;">
-DevOps</a>.
-</p>
---->
 
 <h3>Depoimentos</h3>
 
@@ -332,9 +311,6 @@ DevOps</a>.
 <a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 
-<!----
-<a class="twitter-timeline" data-tweet-limit="3" data-lang="pt" data-width="440" data-height="700" href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw">Tweets by engsoftmoderna</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
----->
 
 <h3> Contato </h3>
 
