@@ -22,6 +22,10 @@
     "correct": "false"
   },
   {
+    "text": "Em MVC, as regras de negócio são implementadas na camada de Modelo.",
+    "correct": "true"
+  },
+  {
     "text": "Single Page Applications (SPAs) são mais interativas e responsivas do que aplicações Web tradicionais.",
     "correct": "true"
   },
