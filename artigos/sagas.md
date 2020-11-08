@@ -3,16 +3,16 @@
 
 ## Introdução {.unnumbered}
 
-Conforme discutido no [Capítulo 7](https://engsoftmoderna.info/cap7.html),
+Como discutimos no [Capítulo 7](https://engsoftmoderna.info/cap7.html),
 em arquiteturas baseadas em microsserviços, recomenda-se que cada 
 microsserviço possua sua própria base de dados. Ou seja, recomenda-se 
-uma configuração como a seguinte.
+uma arquitetura como a seguinte.
 
 ![Microsserviços devem ter sua própria base de dados](../figs/cap7/dados2.svg){width=35%}
 
-Por outro lado, ao adotar esse recomendação, frequentemente surge um 
-problema: *como garantir a consistência de dados quando eles estão 
-distribuídos em vários microsserviços?*
+Por outro lado, ao adotar essa recomendação, frequentemente surge um 
+problema: *como garantir a consistência dos dados do sistema 
+quando eles estão distribuídos em vários microsserviços?*
 
 Para ilustrar, vamos usar um exemplo de uma loja virtual. Nessa loja,
 para concluir uma venda temos que realizar duas operações:
@@ -38,14 +38,14 @@ A seguir, vamos discutir as maneiras tradicionais de garantir
 atomicidade. Primeiro, em bancos de dados centralizados. A
 seguir, em bancos de dados distribuídos.
 
-### Bancos de Dados Centralizados {.unnumbered}
+### Bancos de Dados Centralizados (Monolitos) {.unnumbered}
 
 Quando um sistema segue uma arquitetura monolítica, normalmente temos 
 um único bancos de dados. Então, a própria implementação do banco 
 garante a execução atômica de transações, por meio de comandos 
 `commit` e `rollback`. 
 
-Ou seja, podemos usar um código como o seguinte:
+Podemos usar um código como o seguinte:
 
 ```
 try {
@@ -58,38 +58,40 @@ try {
 ```
 
 Se `op1` e `op2` terminarem suas execuções com sucesso, chamamos `commit`
-para sacramentar os resultados das operações no banco de dados centralizado.
+para sacramentar os resultados no banco de dados centralizado.
 Por outro lado, se qualquer uma delas falhar, chamamos `rollback` para
 retornar o banco ao seu estado inicial.
 
-### Bancos de Dados Distribuídos {.unnumbered}
+### Bancos de Dados Distribuídos (Microsserviços) {.unnumbered}
 
 Suponha, no entanto, que `op1` executa em um banco de dados e `op2` executa 
 em um outro banco de dados, como tipicamente ocorre no caso de uma arquitetura 
-baseada em microsserviços. No entanto, neste novo cenário, não temos 
-mais garantia automática de atomicidade. 
+baseada em microsserviços. Nesse novo cenário, não existe mais garantia 
+automática de atomicidade. 
 
-Para isso, existem protocolos que devem ser implementados por bancos de dados 
-distribuídos para garantir atomicidade na execução de operações. O mais 
-famoso deles é chamado de **Two Phase Commit (2PC)**.
+Uma possível solução requer implementar um protocolo para garantir atomicidade 
+na execução de operações distribuídas. O mais conhecido deles é chamado de 
+**Two Phase Commit (2PC)**. Apenas para ficar um pouco mais claro, esse
+protocolo normalmente é implementado e disponibilizado pelo próprio fornecedor
+do banco de dados distribuído.
 
-No entanto, os problemas do protocolo 2PC são bastante conhecidos. Por exemplo,
-2PC tem um custo e uma latência altos. Isso ocorre porque os nodos participantes
-de uma transação distribuída têm que trocar diversas mensagens, antes de 
-chegarem a um consenso sobre o seu resultado. E, no limite, pode-se chegar a uma 
-situação de impasse. Isto é, a transação pode ficar bloqueada por um tempo 
-indeterminado no caso de queda do nodo coordenador do protocolo.
+No entanto, os problemas de 2PC são bastante conhecidos. Por exemplo,
+o protocolo tem um custo e uma latência altos. Isso ocorre porque os processos 
+participantes de uma transação distribuída têm que trocar diversas mensagens, 
+antes de chegarem a um consenso sobre o seu resultado. E, no limite, pode-se 
+chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por um tempo 
+indeterminado no caso de queda do processo coordenador do protocolo.
 
-Por isso, alguns autores recomendam explicitamente que 2PC **não** deve ser usados
+Por isso, alguns autores recomendam explicitamente que 2PC *não* deve ser usados
 como microsserviços. Veja, por exemplo, a recomendação de Sam Newman 
-([link] https://www.oreilly.com/library/view/building-microservices/9781491950340):
+([link](https://www.oreilly.com/library/view/building-microservices/9781491950340)):
 
 > Eu recomendo fortemente que você evite o uso de transações distribuídas e
 > de 2PC para coordenar mudanças de estado em microsserviços.
 
 Por isso, começou-se a procurar alternativas mais viáveis para consistência 
-dos dados de aplicações baseadas em microsserviços. Uma dessas alternativas
-é o conceito de sagas, que descreveremos a seguir.
+dos dados de microsserviços. Uma dessas alternativas é o conceito de sagas, 
+que descreveremos a seguir.
 
 ## Sagas {.unnumbered}
 
@@ -98,9 +100,9 @@ Hector Garcia-Molina e Kenneth Salem. Se quiser, veja
 o [artigo](https://doi.org/10.1145/38713.38742) original, 
 que é muito claro e fácil de ler. 
 
-O conceito proposto originalmente para tratar transações de longa duração. 
-No entanto, modernamente, ele está sendo aplicado também no contexto de arquiteturas 
-baseadas em microsserviços.
+O conceito foi proposto originalmente para tratar transações de longa duração. 
+No entanto, modernamente, ele está sendo aplicado também no contexto de 
+arquiteturas baseadas em microsserviços.
 
 Uma saga é definida por meio de dois conjuntos:
 
@@ -112,7 +114,8 @@ uma transação de crédito de *x* reais é "compensada" por uma transação de
 débito do mesmo valor.
 
 Idealmente, desejamos que todas a transações Ti sejam executadas com sucesso e 
-sequencialmente, começando em T1 e terminando em Tn.
+sequencialmente, começando em T1 e terminando em Tn. Esse é o caminho feliz de
+uma saga!
 
 Porém, principalmente em um ambiente distribuído (como é o caso de microsserviços), 
 pode ser que uma transação intermediária Tj falhe, isto é:
@@ -125,8 +128,8 @@ para as transações anteriores. Ou seja, continuamos assim:
 T1 (sucesso), T2 (sucesso), ..., Tj (falha), C1, C2, Cj-1.
 
 Estamos assumindo que quando Tj falha ela não registrou ainda seus efeitos no 
-banco de dados. Logo, não precisamos chamar Cj. Ou seja, só precisamos 
-chamar as compensações até Cj-1.
+banco de dados. Logo, não precisamos chamar Cj, mas apenas as compensações 
+até Cj-1.
 
 Para concluir, vamos mostrar como seria o código para implementar uma
 saga composta por três transações:
@@ -151,7 +154,7 @@ catch (FailureT3) {
 
 ## Exercícios {.unnumbered}
 
-1. Por que recomenda-se que microsserviços não compartilhem um banco de dados único?
+1. Por que microsserviços não devem compartilhar um banco de dados único?
 Para responder, você pode consultar a Seção 7.4.1 do [Capítulo 7](https://engsoftmoderna.info/cap7.html)
 e também o início da Seção 7.4.
 
@@ -166,10 +169,10 @@ e também o início da Seção 7.4.
    * Suponha uma transação distribuída T. Uma segunda transação T' pode observar os 
      resultados intermediários de T?
 
-3. Como se deve proceder quando uma compensação Ci falhar (isto é, não puder ser executada com sucesso)?
+3. Como devemos proceder quando uma compensação Ci falha (isto é, não puder ser executada com sucesso)?
 
-4. Qual problema de transações de longa duração (*long lived transactions*) é resolvido
-por meio de sagas? Se necessário, para responder consulte o segundo parágrafo da seção de
+4. Qual problema de transações de longa duração é resolvido
+por meio de sagas? Se necessário, consulte o segundo parágrafo da 
 Introdução do [artigo](https://doi.org/10.1145/38713.38742) que definiu o conceito de sagas.
 
 * * * 
