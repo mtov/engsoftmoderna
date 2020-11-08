@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Consistência de Dados em Microsserviços usando-se Sagas – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.png" width="240"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<!---
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+
+
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="consistência-de-dados-em-microsserviços-usando-se-sagas" class="unnumbered" data-number="">Consistência de Dados em Microsserviços usando-se Sagas</h1>
+<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
+<p>Conforme discutido no <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, em arquitteuras baseadas em microserviços, recomenda-se que cada microserviço possua sua própria base de dados. Ou seja, recomenda-se uma configuração como a seguinte.</p>
+<figure>
+<img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="" /><figcaption>Microserviços devem ter seu próprio repositório de dados</figcaption>
+</figure>
+<p>Por outro lado, surge um problema central: <em>como garantir a consistência de dados quando eles estão distribuídos em vários pontos da rede?</em></p>
+<p>Para ficar mais claro, vamos usar um exemplo de uma loja virtual. Para concluir uma venda temos que realizar duas operações:</p>
+<ul>
+<li><code>op1</code>: dar baixa nos itens vendidos (no microserviço de estoque)</li>
+<li><code>op2</code>: processar pagamento (no microserviço de pagamento)</li>
+</ul>
+<p>Essas duas operações devem constituir uma uma <em>transação</em>, o que vai garantir que elas serão executadas de forma atômica. Mais especificamente, atomicidade significa que apenas dois resulados são possíveis:</p>
+<ul>
+<li>Ou ambas as operações executam com sucesso</li>
+<li>Ou nenhuma das operações é executada</li>
+</ul>
+<p>Nesta explicação, <q>executar</q> significa ter seus efeitos registrados no banco de dados. Logo, o que não pode ocorrer é executar uma operação e não executar a outra, pois isso deixaria o sistema em um estado inconsistente.</p>
+<h2 class="unnumbered" data-number="" id="garantindo-atomicidade" class="unnumbered" data-number="">Garantindo Atomicidade</h2>
+<p>A seguir, vamos discutir as maneiras tradicionais de garantir atomicidade. Primeiro, em bancos de dados centralizados. A seguir, em bancos de dados distribuídos.</p>
+<h3 class="unnumbered" data-number="" id="bancos-de-dados-centralizados" class="unnumbered" data-number="">Bancos de Dados Centralizados</h3>
+<p>Quando a arquitetura é monolítica, normalmente temos um único bancos de dados. Então, a própria implementação do banco garante a execução atômica de transações, por meio de comandos <code>commit</code> e <code>rollback</code>.</p>
+<p>Ou seja, podemos usar um código como o seguinte:</p>
+<pre><code>try {
+    op1();
+    op2();
+    commit();
+} catch (Failure) {
+    rollback();
+}</code></pre>
+<h3 class="unnumbered" data-number="" id="bancos-de-dados-distribuídos" class="unnumbered" data-number="">Bancos de Dados Distribuídos</h3>
+<p>Porém, quando <code>op1</code> executa em um banco de dados e <code>op2</code> executa em um outro banco de dados – como ocorre no nossos exemplo – não temos mais garantia automática de atomicidade.</p>
+<p>Por isso, existem protocolos que devem ser implementados por bancos de dados distribuídos para garantir atomicidade na execução de operações. O mais famoso deles é chamado de <strong>Two Phase Commit (2PC)</strong>.</p>
+<p>No entanto, os problemas do protocolo 2PC são também bastante conhecidos. Por exemplo, ele têm um custo e uma latência altos. E, no limite, pode-se chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por um bom tempo…</p>
+<p>Por isso, alguns autores recomendam claramente que 2PC <strong>não</strong> devem ser usados como microserviços. Veja, por exemplo, a recomendação de Sam Newman:</p>
+<blockquote>
+<p>Eu recomendo fortemente que você evite o uso de transações distribuídas e de 2PC para coordenadar mudanças de estado em microserviços.</p>
+</blockquote>
+<h2 class="unnumbered" data-number="" id="sagas" class="unnumbered" data-number="">Sagas</h2>
+<p>Assim, quando microserviços tornaram-se populares, já se sabia que deveriam ser procuradas alternativas mais viáveis que um protocolo 2PC.</p>
+<p>Uma dessas alternativas é o conceito de <strong>Sagas</strong>, que, na realidade, é um conceito antigo de bancos de dados, proposto em 1987 por Hector Garcia-Molina e Kenneth Salem. Se quiser, veja o <a href="https://doi.org/10.1145/38713.38742">artigo</a> original, que é muito claro e fácil de ler.</p>
+<p>O conceito de sagas foi proposto originalmente para tratar transações de longa duração. No entanto, o conceito está sendo aplicado também no contexto de arquiteturas baseadas em microserviços.</p>
+<p>Uma saga é definida por meio de dois conjuntos:</p>
+<ul>
+<li><p>Um conjunto de transações T1, T2, …, Tn (que devem ser executadas nesta ordem).</p></li>
+<li><p>Um conjunto de <strong>compensações</strong> para cada transação, que vamos chamar de C1, C2, …, Cn. Ou seja, toda transação tem uma segunda transação que a reverte. Por exemplo, uma transação de crédito de x reais é <q>compensada</q> por uma transação de débito do mesmo valor.</p></li>
+</ul>
+<p>Idealmente, desejamos que todas a transações Ti sejam executadas com sucesso e sequencialmente, começando em T1 e terminando em Tn.</p>
+<p>Porém, principalmente em um ambiente distribuído (como é o caso de microserviços), pode ser que uma transação intermediária Tj falhe, isto é:</p>
+<p>T1 (sucesso), T2 (sucesso), …, Tj (falha)</p>
+<p>Quando isso ocorre, temos então que executar as devidas compensações para as transações anteriores, isto é, continuamos assim:</p>
+<p>T1 (sucesso), T2 (sucesso), …, Tj (falha), C1, C2, Cj-1.</p>
+<p>Veja que estamos assumindo que quando Tj falha ela não registrou seus efeitos no banco de dados. Logo, não precisamos chamar Cj. Ou seja, só precisamos chamar as compensações até Cj-1.</p>
+<p>Para concluir, vamos mostrar como seria o código para implementar uma saga composta por três transações:</p>
+<pre><code>try {
+  T1();
+  T2();
+  T3();
+}
+catch (FailureT1) {
+   // sem compensação
+}
+catch (FailureT2) {
+   C1();
+}
+catch (FailureT3) {
+   C1();
+   C2();
+}</code></pre>
+<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<ol type="1">
+<li><p>Por que recomenda-se que microserviços não compartilhem um banco de dados único? Para responder, leia a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>. Se quiser, você pode ler também o início da Seção 7.4.</p></li>
+<li><p>Qual diferença entre uma transação distribuída e uma saga? Mais especificamente:</p></li>
+</ol>
+<ul>
+<li>Quando consideradas individualmente, as operações T1, T2,…, Tn de uma saga podem ser atômicas?</li>
+<li>Quando consideradas em conjunto, as operações T1, T2,…, Tn de uma saga são atômicas?</li>
+<li>Suponha uma transação Ti de uma saga. Uma outra transação T’, que não faz parte da saga, pode observar os resultados de Ti?</li>
+<li>Suponha uma transação distribuída T. Uma outra transação T’ pode observar os resultados intermediários de T?</li>
+</ul>
+<ol start="3" type="1">
+<li><p>Como deve-se proceder quando uma compensação Ci de uma saga não puder ser executada com sucesso?</p></li>
+<li><p>Qual problema de transações de longa duração (<em>long lived transactions</em>) é resolvido por meio de sagas? Se necesário, para responder leia o segundo parágrafo da seção de Introdução do <a href="https://doi.org/10.1145/38713.38742">artigo</a> que introduziu o conceito de sagas.</p></li>
+</ol>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
