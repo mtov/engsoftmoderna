@@ -18,7 +18,6 @@ operacional Windows na próxima figura:
 
 ![](./figs/windows10.png){width=60%}
 
-
 Os usuários compravam licenças de sistemas como
 Windows e Office e, assim, ganhavam o direito de instalá-los na 
 sua máquina e receber gratuitamente atualizações. Basicamente, 
@@ -206,6 +205,11 @@ estimar o valor de um sistema pode não ser trivial. Pelo menos, ela
 tende a ser bem mais difícil do que a estimativa dos custos do sistema.
 Além disso, o valor de um sistema pode variar de cliente 
 para cliente.
+
+### Artigo Relacionado {.unnumbered}
+
+Veja também este outro [artigo](https://engsoftmoderna.info/artigos/micro-saas.html)
+sobre microempresas de software como serviço.
 
 ## Exercícios {.unnumbered}
 

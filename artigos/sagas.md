@@ -160,9 +160,9 @@ e também o início da Seção 7.4.
 
 2. Qual diferença entre uma transação distribuída e uma saga? Mais especificamente:
 
-   * Quando consideradas individualmente, as operações T1, T2,..., Tn de uma saga podem ser
+   * Quando consideradas individualmente, as transações T1, T2,..., Tn de uma saga são
      atômicas?
-   * Quando consideradas em conjunto, as operações T1, T2,..., Tn de uma saga são 
+   * Quando consideradas em conjunto, as transações T1, T2,..., Tn de uma saga são 
      atômicas?
    * Suponha uma transação Ti de uma saga. Uma transação T' que não
      faz parte da saga pode observar os resultados de Ti? 

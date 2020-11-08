@@ -147,8 +147,8 @@ catch (FailureT3) {
 <li><p>Por que microsserviços não devem compartilhar um único banco de dados? Para responder, você pode consultar a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a> e também o início da Seção 7.4.</p></li>
 <li><p>Qual diferença entre uma transação distribuída e uma saga? Mais especificamente:</p>
 <ul>
-<li>Quando consideradas individualmente, as operações T1, T2,…, Tn de uma saga podem ser atômicas?</li>
-<li>Quando consideradas em conjunto, as operações T1, T2,…, Tn de uma saga são atômicas?</li>
+<li>Quando consideradas individualmente, as transações T1, T2,…, Tn de uma saga são atômicas?</li>
+<li>Quando consideradas em conjunto, as transações T1, T2,…, Tn de uma saga são atômicas?</li>
 <li>Suponha uma transação Ti de uma saga. Uma transação T’ que não faz parte da saga pode observar os resultados de Ti?</li>
 <li>Suponha uma transação distribuída T. Uma segunda transação T’ pode observar os resultados intermediários de T?</li>
 </ul></li>
