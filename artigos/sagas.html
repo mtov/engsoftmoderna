@@ -75,17 +75,17 @@
 </header>
 <h1 class="unnumbered" data-number="" id="consistência-de-dados-em-microsserviços-usando-se-sagas" class="unnumbered" data-number="">Consistência de Dados em Microsserviços usando-se Sagas</h1>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
-<p>Conforme discutido no <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, em arquitteuras baseadas em microserviços, recomenda-se que cada microserviço possua sua própria base de dados. Ou seja, recomenda-se uma configuração como a seguinte.</p>
+<p>Conforme discutido no <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, em arquiteturas baseadas em microsserviços, recomenda-se que cada microsserviço possua sua própria base de dados. Ou seja, recomenda-se uma configuração como a seguinte.</p>
 <figure>
-<img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="" /><figcaption>Microserviços devem ter seu próprio repositório de dados</figcaption>
+<img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="" /><figcaption>microsserviços devem ter sua própria base de dados</figcaption>
 </figure>
-<p>Por outro lado, surge um problema central: <em>como garantir a consistência de dados quando eles estão distribuídos em vários pontos da rede?</em></p>
+<p>Por outro lado, ao adotar tal recomendação, frequentemente surge um problema: <em>como garantir a consistência de dados quando eles estão distribuídos em vários pontos da rede?</em></p>
 <p>Para ficar mais claro, vamos usar um exemplo de uma loja virtual. Para concluir uma venda temos que realizar duas operações:</p>
 <ul>
-<li><code>op1</code>: dar baixa nos itens vendidos (no microserviço de estoque)</li>
-<li><code>op2</code>: processar pagamento (no microserviço de pagamento)</li>
+<li><code>op1</code>: dar baixa nos itens vendidos (no microsserviço de estoque)</li>
+<li><code>op2</code>: processar pagamento (no microsserviço de pagamento)</li>
 </ul>
-<p>Essas duas operações devem constituir uma uma <em>transação</em>, o que vai garantir que elas serão executadas de forma atômica. Mais especificamente, atomicidade significa que apenas dois resulados são possíveis:</p>
+<p>Essas duas operações devem constituir uma uma <em>transação</em>, o que vai garantir que elas serão executadas de forma atômica. Mais especificamente, atomicidade significa que apenas dois resultados são possíveis:</p>
 <ul>
 <li>Ou ambas as operações executam com sucesso</li>
 <li>Ou nenhuma das operações é executada</li>
@@ -106,22 +106,22 @@
 <h3 class="unnumbered" data-number="" id="bancos-de-dados-distribuídos" class="unnumbered" data-number="">Bancos de Dados Distribuídos</h3>
 <p>Porém, quando <code>op1</code> executa em um banco de dados e <code>op2</code> executa em um outro banco de dados – como ocorre no nossos exemplo – não temos mais garantia automática de atomicidade.</p>
 <p>Por isso, existem protocolos que devem ser implementados por bancos de dados distribuídos para garantir atomicidade na execução de operações. O mais famoso deles é chamado de <strong>Two Phase Commit (2PC)</strong>.</p>
-<p>No entanto, os problemas do protocolo 2PC são também bastante conhecidos. Por exemplo, ele têm um custo e uma latência altos. E, no limite, pode-se chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por um bom tempo…</p>
-<p>Por isso, alguns autores recomendam claramente que 2PC <strong>não</strong> devem ser usados como microserviços. Veja, por exemplo, a recomendação de Sam Newman:</p>
+<p>No entanto, os problemas do protocolo 2PC são também bastante conhecidos. Por exemplo, ele têm um custo e uma latência altos. E, no limite, pode-se chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por tempo indeterminado no caso de queda do nodo coordenador do protocolo.</p>
+<p>Por isso, alguns autores recomendam explicitamente que 2PC <strong>não</strong> devem ser usados como microsserviços. Veja, por exemplo, a recomendação de Sam Newman:</p>
 <blockquote>
-<p>Eu recomendo fortemente que você evite o uso de transações distribuídas e de 2PC para coordenadar mudanças de estado em microserviços.</p>
+<p>Eu recomendo fortemente que você evite o uso de transações distribuídas e de 2PC para coordenar mudanças de estado em microsserviços.</p>
 </blockquote>
 <h2 class="unnumbered" data-number="" id="sagas" class="unnumbered" data-number="">Sagas</h2>
-<p>Assim, quando microserviços tornaram-se populares, já se sabia que deveriam ser procuradas alternativas mais viáveis que um protocolo 2PC.</p>
+<p>Com a popularidade recente de microsserviços, começou-se a procurar alternativas mais viáveis para consistência de dados do sistema e que fossem baseadas em transações distribuídas e 2PC.</p>
 <p>Uma dessas alternativas é o conceito de <strong>Sagas</strong>, que, na realidade, é um conceito antigo de bancos de dados, proposto em 1987 por Hector Garcia-Molina e Kenneth Salem. Se quiser, veja o <a href="https://doi.org/10.1145/38713.38742">artigo</a> original, que é muito claro e fácil de ler.</p>
-<p>O conceito de sagas foi proposto originalmente para tratar transações de longa duração. No entanto, o conceito está sendo aplicado também no contexto de arquiteturas baseadas em microserviços.</p>
+<p>O conceito de sagas foi proposto originalmente para tratar transações de longa duração. No entanto, o conceito está sendo aplicado também no contexto de arquiteturas baseadas em microsserviços.</p>
 <p>Uma saga é definida por meio de dois conjuntos:</p>
 <ul>
 <li><p>Um conjunto de transações T1, T2, …, Tn (que devem ser executadas nesta ordem).</p></li>
 <li><p>Um conjunto de <strong>compensações</strong> para cada transação, que vamos chamar de C1, C2, …, Cn. Ou seja, toda transação tem uma segunda transação que a reverte. Por exemplo, uma transação de crédito de x reais é <q>compensada</q> por uma transação de débito do mesmo valor.</p></li>
 </ul>
 <p>Idealmente, desejamos que todas a transações Ti sejam executadas com sucesso e sequencialmente, começando em T1 e terminando em Tn.</p>
-<p>Porém, principalmente em um ambiente distribuído (como é o caso de microserviços), pode ser que uma transação intermediária Tj falhe, isto é:</p>
+<p>Porém, principalmente em um ambiente distribuído (como é o caso de microsserviços), pode ser que uma transação intermediária Tj falhe, isto é:</p>
 <p>T1 (sucesso), T2 (sucesso), …, Tj (falha)</p>
 <p>Quando isso ocorre, temos então que executar as devidas compensações para as transações anteriores, isto é, continuamos assim:</p>
 <p>T1 (sucesso), T2 (sucesso), …, Tj (falha), C1, C2, Cj-1.</p>
@@ -144,7 +144,7 @@ catch (FailureT3) {
 }</code></pre>
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
 <ol type="1">
-<li><p>Por que recomenda-se que microserviços não compartilhem um banco de dados único? Para responder, leia a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>. Se quiser, você pode ler também o início da Seção 7.4.</p></li>
+<li><p>Por que recomenda-se que microsserviços não compartilhem um banco de dados único? Para responder, leia a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>. Se quiser, você pode ler também o início da Seção 7.4.</p></li>
 <li><p>Qual diferença entre uma transação distribuída e uma saga? Mais especificamente:</p></li>
 </ol>
 <ul>
@@ -155,7 +155,7 @@ catch (FailureT3) {
 </ul>
 <ol start="3" type="1">
 <li><p>Como deve-se proceder quando uma compensação Ci de uma saga não puder ser executada com sucesso?</p></li>
-<li><p>Qual problema de transações de longa duração (<em>long lived transactions</em>) é resolvido por meio de sagas? Se necesário, para responder leia o segundo parágrafo da seção de Introdução do <a href="https://doi.org/10.1145/38713.38742">artigo</a> que introduziu o conceito de sagas.</p></li>
+<li><p>Qual problema de transações de longa duração (<em>long lived transactions</em>) é resolvido por meio de sagas? Se necessário, para responder leia o segundo parágrafo da seção de Introdução do <a href="https://doi.org/10.1145/38713.38742">artigo</a> que introduziu o conceito de sagas.</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
