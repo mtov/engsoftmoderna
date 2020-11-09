@@ -78,7 +78,7 @@
 <figure>
 <img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="" /><figcaption>Microsserviços devem ter sua própria base de dados</figcaption>
 </figure>
-<p>Por outro lado, ao adotar essa recomendação, frequentemente surge um problema: <em>como garantir a consistência dos dados do sistema quando eles estão distribuídos em vários microsserviços?</em></p>
+<p>Por outro lado, ao adotar essa recomendação, frequentemente surge o seguinte problema: <em>como garantir a consistência dos dados do sistema quando eles estão distribuídos em vários microsserviços?</em></p>
 <p>Para ilustrar, vamos usar um exemplo de uma loja virtual. Nessa loja, para concluir uma venda temos que realizar duas operações:</p>
 <ul>
 <li><code>op1</code>: dar baixa nos itens vendidos (no microsserviço de estoque)</li>
@@ -91,9 +91,9 @@
 </ul>
 <p>Nessa explicação, <em>executar</em> significa ter seus efeitos registrados no banco de dados. Portanto, o que não pode ocorrer é executar uma operação e não executar a outra, pois isso deixaria o sistema em um estado inconsistente.</p>
 <h2 class="unnumbered" data-number="" id="garantindo-atomicidade" class="unnumbered" data-number="">Garantindo Atomicidade</h2>
-<p>A seguir, vamos discutir as maneiras tradicionais de garantir atomicidade. Primeiro, em bancos de dados centralizados. Depois, em bancos de dados distribuídos.</p>
-<h3 class="unnumbered" data-number="" id="bancos-de-dados-centralizados-monolitos" class="unnumbered" data-number="">Bancos de Dados Centralizados (Monolitos)</h3>
-<p>Quando um sistema possui uma arquitetura monolítica, normalmente temos um único bancos de dados. Então, a própria implementação do banco garante a execução atômica de transações, por meio de comandos <code>commit</code> e <code>rollback</code>.</p>
+<p>A seguir, vamos discutir as maneiras tradicionais para garantir atomicidade. Primeiro, em bancos de dados centralizados. Depois, em bancos de dados distribuídos.</p>
+<h3 class="unnumbered" data-number="" id="bancos-de-dados-centralizados" class="unnumbered" data-number="">Bancos de Dados Centralizados</h3>
+<p>Quando um sistema possui uma arquitetura monolítica, normalmente temos um único banco de dados. Nesses casos, a própria implementação do banco garante a execução atômica de transações, por meio de comandos <code>commit</code> e <code>rollback</code>.</p>
 <p>Podemos então usar um código como o seguinte:</p>
 <pre><code>try {
     op1();
@@ -102,12 +102,12 @@
 } catch (Failure) {
     rollback();
 }</code></pre>
-<p>Se <code>op1</code> e <code>op2</code> terminarem suas execuções com sucesso, chamamos <code>commit</code> para sacramentar os resultados no banco de dados. Por outro lado, se qualquer uma das operações falhar, chamamos <code>rollback</code> para retornar o banco ao seu estado inicial.</p>
-<h3 class="unnumbered" data-number="" id="bancos-de-dados-distribuídos-microsserviços" class="unnumbered" data-number="">Bancos de Dados Distribuídos (Microsserviços)</h3>
+<p>Se <code>op1</code> e <code>op2</code> terminarem suas execuções com sucesso, chamamos <code>commit</code> para persistir os resultados no banco de dados. Por outro lado, se qualquer uma das operações falhar, chamamos <code>rollback</code> para retornar o banco ao seu estado inicial.</p>
+<h3 class="unnumbered" data-number="" id="bancos-de-dados-distribuídos" class="unnumbered" data-number="">Bancos de Dados Distribuídos</h3>
 <p>Suponha, no entanto, que <code>op1</code> executa em um banco de dados e <code>op2</code> executa em um outro banco de dados, como tipicamente ocorre no caso de arquiteturas baseadas em microsserviços. Nesse novo cenário, não existe mais garantia automática de atomicidade.</p>
-<p>Uma possível solução requer implementar um protocolo que garanta atomicidade na execução de operações distribuídas. O mais conhecido deles é chamado de <strong>Two Phase Commit (2PC)</strong>. Apenas para ficar um pouco mais claro, esse protocolo normalmente é implementado e disponibilizado pelo próprio fornecedor do banco de dados distribuído.</p>
+<p>Uma possível solução requer o uso de um protocolo que garanta atomicidade na execução de operações distribuídas. O mais conhecido deles é chamado de <strong>Two Phase Commit (2PC)</strong>. Apenas para ficar um pouco mais claro, esse protocolo normalmente é implementado e disponibilizado pelo próprio banco de dados distribuído.</p>
 <p>No entanto, os problemas de 2PC são bem conhecidos. Por exemplo, o protocolo tem um custo e uma latência altos. Isso ocorre porque os processos participantes de uma transação distribuída têm que trocar diversas mensagens, antes de chegarem a um consenso sobre o seu resultado. E, no limite, pode-se chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por um tempo indeterminado no caso de queda do processo coordenador do protocolo.</p>
-<p>Por isso, alguns autores recomendam explicitamente que 2PC <em>não</em> deve ser usados como microsserviços. Veja, por exemplo, a recomendação de Sam Newman (<a href="https://www.oreilly.com/library/view/building-microservices/9781491950340">link</a>):</p>
+<p>Por isso, alguns autores recomendam explicitamente que microsserviços não devem usar 2PC. Veja, por exemplo, a recomendação de Sam Newman (<a href="https://www.oreilly.com/library/view/building-microservices/9781491950340">link</a>):</p>
 <blockquote>
 <p>Eu recomendo fortemente que você evite o uso de transações distribuídas e de 2PC para coordenar mudanças de estado em microsserviços.</p>
 </blockquote>
@@ -117,15 +117,15 @@
 <p>Originalmente, o conceito foi proposto para tratar transações de longa duração. No entanto, modernamente, ele está sendo aplicado também no contexto de arquiteturas baseadas em microsserviços.</p>
 <p>Uma saga é definida por meio de dois conjuntos:</p>
 <ul>
-<li><p>Um conjunto de transações T1, T2,…,Tn (que devem ser executadas nesta ordem).</p></li>
+<li><p>Um conjunto de transações T1, T2,…, Tn (que devem ser executadas nesta ordem).</p></li>
 <li><p>Um conjunto de <strong>compensações</strong> para cada transação, que vamos chamar de C1, C2,…, Cn. Ou seja, toda transação tem uma segunda transação que a reverte. Por exemplo, uma transação de crédito de <em>x</em> reais é compensada por uma transação de débito do mesmo valor.</p></li>
 </ul>
-<p>Idealmente, desejamos que todas a transações Ti sejam executadas com sucesso e sequencialmente, começando em T1 e terminando em Tn. Esse é o caminho feliz de uma saga.</p>
+<p>Idealmente, desejamos que todas as transações Ti sejam executadas com sucesso e sequencialmente, começando em T1 e terminando em Tn. Esse é o caminho feliz de uma saga.</p>
 <p>Porém, principalmente em ambientes distribuídos (como é o caso de microsserviços), pode ser que uma transação intermediária Tj falhe, isto é:</p>
-<p>T1 (sucesso), T2 (sucesso), …, Tj (falha)</p>
+<p>T1 (sucesso), T2 (sucesso),…, Tj (falha)</p>
 <p>Quando isso ocorre, temos então que executar as devidas compensações para as transações anteriores. Ou seja, continuamos assim:</p>
-<p>T1 (sucesso), T2 (sucesso), …, Tj (falha), C1, C2, Cj-1.</p>
-<p>Estamos assumindo que quando Tj falha ela não registrou seus efeitos no banco de dados. Logo, não precisamos chamar Cj, mas apenas as compensações até Cj-1.</p>
+<p>T1 (sucesso), T2 (sucesso),…, Tj (falha), Cj-1,…, C2, C1.</p>
+<p>Estamos assumindo que quando Tj falha ela não registrou seus efeitos no banco de dados. Logo, não precisamos chamar Cj, mas apenas as compensações de Cj-1 até C1.</p>
 <p>Para concluir, vamos mostrar como seria o código para implementar uma saga formada por três transações:</p>
 <pre><code>try {
   T1();
@@ -139,13 +139,13 @@ catch (FailureT2) {
    C1();
 }
 catch (FailureT3) {
-   C1();
    C2();
+   C1();
 }</code></pre>
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
 <ol type="1">
 <li><p>Por que microsserviços não devem compartilhar um único banco de dados? Para responder, você pode consultar a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a> e também o início da Seção 7.4.</p></li>
-<li><p>Qual diferença entre uma transação distribuída e uma saga? Mais especificamente:</p>
+<li><p>Qual a diferença entre uma transação distribuída e uma saga? Mais especificamente:</p>
 <ul>
 <li>Quando consideradas individualmente, as transações T1, T2,…, Tn de uma saga são atômicas?</li>
 <li>Quando consideradas em conjunto, as transações T1, T2,…, Tn de uma saga são atômicas?</li>
