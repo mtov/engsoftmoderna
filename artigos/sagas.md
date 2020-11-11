@@ -168,6 +168,8 @@ e também o início da Seção 7.4.
      faz parte da saga pode observar os resultados de Ti? 
    * Suponha uma transação distribuída T. Uma segunda transação T' pode observar os 
      resultados intermediários de T?
+   * Com sagas, temos que escrever a lógica de rollback, isto é, o código das compensações.
+     O mesmo acontece com transações distribuídas? Sim ou não? Justifique.  
 
 3. Como devemos proceder quando uma compensação Ci falha (isto é, não puder ser executada com sucesso)?
 

@@ -51,13 +51,12 @@
 <a href="https://engsoftmoderna.info">Página principal do livro</a>
 </p>
 
+<!---
 
 <p>
 <a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p>
 
-
-<!---
 
 <p> <b> Novidade:</b> Estamos também no 
 <a href="https://twitter.com/engsoftmoderna"
@@ -66,8 +65,6 @@
 </p>
 
 --->
-
-
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -151,6 +148,7 @@ catch (FailureT3) {
 <li>Quando consideradas em conjunto, as transações T1, T2,…, Tn de uma saga são atômicas?</li>
 <li>Suponha uma transação Ti de uma saga. Uma transação T’ que não faz parte da saga pode observar os resultados de Ti?</li>
 <li>Suponha uma transação distribuída T. Uma segunda transação T’ pode observar os resultados intermediários de T?</li>
+<li>Com sagas, temos que escrever a lógica de rollback, isto é, o código das compensações. O mesmo acontece com transações distribuídas? Sim ou não? Justifique.</li>
 </ul></li>
 <li><p>Como devemos proceder quando uma compensação Ci falha (isto é, não puder ser executada com sucesso)?</p></li>
 <li><p>Qual problema de transações de longa duração é resolvido por meio de sagas? Se necessário, consulte o segundo parágrafo da Introdução do <a href="https://doi.org/10.1145/38713.38742">artigo</a> que definiu o conceito.</p></li>
