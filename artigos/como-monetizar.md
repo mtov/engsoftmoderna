@@ -196,15 +196,15 @@ Para concluir mesmo, deve-se pensar também no **valor** de um sistema.
 Basicamente, preço é o que o desenvolvedor vai cobrar pelo sistema e 
 que o cliente vai pagar por ele. Valor é o benefício ou a economia que 
 o cliente vai obter com o uso do sistema. Por exemplo, suponha que os 
-clientes -- após adotarem um certo sistema -- vão aumentar suas vendas
-anuais em R$ 100 mil. Esse número é então o valor do sistema para seus clientes. 
-Logo, se essa estimativa de valor estiver mesmo correta, os clientes 
-provavelmente estarão dispostos a pagar R$ 10 mil de assinatura anual 
-pelo sistema, mesmo que custos do sistema (para quem o desenvolve) 
-sejam muito menores do que esse montante. Porém, estimar o valor de 
-um sistema pode não ser trivial. Pelo menos, essa tarefa tende a ser 
-mais difícil do que a estimativa dos seus custos. Além disso, 
-o valor de um sistema pode variar de cliente para cliente.
+clientes -- após adotarem um certo sistema -- vão conseguir um aumento de
+R$ 100 mil nas suas vendas anuais. Esse número é então o valor do sistema 
+para seus clientes. Por isso, e se essa estimativa de valor estiver mesmo 
+correta, os clientes provavelmente estarão dispostos a pagar R$ 10 mil 
+de assinatura anual pelo sistema, mesmo que custos dele
+(para quem o desenvolve) sejam muito menores do que esse montante. 
+Porém, estimar o valor de um sistema costuma não ser trivial. Pelo menos, 
+essa tarefa tende a ser mais difícil do que a estimativa dos seus custos. 
+Além disso, o valor de um sistema pode variar de cliente para cliente.
 
 ### Artigo Relacionado {.unnumbered}
 
@@ -217,8 +217,14 @@ sobre microempresas de software como serviço.
 O que esses sistemas fazem? Qual o valor da assinatura cobrada?
 Eles adotam o modelo freemium?
 
-2. Descreva duas vantagens do modelo SaaS em relação ao modelo baseado em 
-licenças de uso.
+2. São vantagens de sistemas SaaS, EXCETO:
+
+   (a) Clientes não precisam ter o hardware adequado para executar a funcionalidade principal de um sistema SaaS.
+   (b) Clientes não precisam realizar backups dos seus dados.
+   (c) Clientes são imunes a falhas de segurança, pois sistemas SaaS executam em plataformas de computação em nuvem.
+   (d) Atualizações e correções de bugs são mais fáceis, pois elas ocorrem apenas nos servidores.
+   (e) Clientes não precisam comprar uma nova licença quando uma versão importante do sistema for lançada.
+
 
 3. Defina: (a) custo de um sistema; (b) valor de um sistema.
 
