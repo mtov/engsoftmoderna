@@ -1,4 +1,4 @@
-# Construindo Aplicações com uma Arquitetura Limpa {.unnumbered}
+# Construindo Sistemas com uma Arquitetura Limpa {.unnumbered}
 
 ## Introdução {.unnumbered}
 
@@ -114,7 +114,7 @@ da Regra de Dependência.
 No entanto, em alguns casos, um caso de uso pode ter que chamar um método 
 de uma classe de uma camada mais externa. Para ficar mais claro, suponha 
 que um caso de uso precise enviar um mail. Antes de mais nada vamos supor 
-que existe uma classe adaptadora `MailServiceImpl` com um método `send:
+que existe uma classe adaptadora `MailServiceImpl` com um método `send`:
 
 ```
 package Adaptadores;
@@ -163,7 +163,16 @@ externa (`MailServiceImpl`) está dependendo de um elemento de código de
 uma camada mais interna. No caso, esse elemento é uma interface 
 (`MailServiceInterface`).
 
+O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
+
+![Em uma arquitetura limpa, as dependências são sempre de fora para dentro.](./figs/arquitetura-limpa-exemplo.svg){width=75%}
+
 # Conclusão {.unnumbered}
+
+Uma Arquitetura Limpa faz uso de diversos conceitos
+que estudamos no Capítulo 5, incluindo propriedades de projeto
+como **coesão**, **acoplamento** e **separação de interesses** e princípios
+como **responsabilidade única** e **inversão de dependências**.
 
 As recomendações principais de uma Arquitetura Limpa são as seguintes:
 
@@ -173,25 +182,30 @@ outros sistemas que você construir no futuro.
 
 * Depois, pense nos Casos de Uso, que vão implementar regras de negócio envolvendo
 as Entidades de seu sistema. Mas torne as classes que representam Entidades
-e Casos de Uso "limpas" de qualquer tecnologia. Lembre-se a "a Web é um detalhe;
+e Casos de Uso "limpas" de qualquer tecnologia. Lembre-se "a Web é um detalhe;
 o banco de dados é um detalhe".
 
-* Pense também nas classes Adaptadoras, que vão funcionar como portas de entrada
-e saída, para comunicação entre as classes internas e o mundo externo.
+* Por fim, pense também nas classes Adaptadoras, que vão funcionar como 
+portas de entrada e saída, para comunicação entre as classes internas 
+e o mundo externo.
 
 Seguindo essas recomendações, você vai produzir uma arquitetura que separa
 dois tipos de interesses (ou requisitos): interesses de negócio
-e interesses de tecnologia. E assim, será então mais fácil adaptar seu sistema
-às novas tecnologias que, com certeza, vão surgir.
+e interesses de tecnologia. E assim, será então fácil testar seu sistema
+e também adaptá-lo às novas tecnologias que, com certeza, vão surgir no
+futuro.
 
 ### Para Saber Mais {.unnumbered}
 
-Em breve!
+Para saber mais sobre Arquitetura Limpa, você pode consultar o 
+[livro](https://dl.acm.org/doi/book/10.5555/3175742) de 
+mesmo nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista interessante de 
+[vídeos](https://www.youtube.com/playlist?list=PLpJIjBkNnEt_IyTngYRkXXwxqz-Ae74ub) 
+no YouTube sobre o tema.
 
 ## Exercícios {.unnumbered}
 
 Em breve!
-
 
 * * * 
 
