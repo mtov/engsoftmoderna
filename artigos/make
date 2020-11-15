@@ -6,3 +6,4 @@ pandoc --defaults=defaults.yaml -T "Módulos devem ser Profundos!" deep-modules.
 pandoc --defaults=defaults.yaml -T "Como monetizar sistemas de software?" como-monetizar.md -o como-monetizar.html
 pandoc --defaults=defaults.yaml -T "Teoria das Janelas Quebradas & Regra do Escoteiros?" broken-windows.md -o broken-windows.html
 pandoc --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html
+pandoc --defaults=defaults.yaml -T "Construindo Aplicações com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
