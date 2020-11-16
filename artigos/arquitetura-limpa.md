@@ -10,36 +10,36 @@ classificação do [Capítulo 7](https://engsoftmoderna.info/cap7.html),
 a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
-(a qual foi copiada de um [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
+(copiada de um [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
 
-![Camadas de uma Arquitetura Limpa](./figs/arquitetura-limpa.png){width=75%}
+![Arquitetura Limpa](./figs/arquitetura-limpa.png){width=75%}
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
 ## Entidades e Casos de Estudo {.unnumbered}
 
 No centro da arquitetura, temos as classes responsáveis pelas regras de negócio, 
-que podem ser de dois tipos:
+que podem ser de dois tipos: Entidades e Casos de Uso.
 
 **Entidades** são classes comuns a vários sistemas da empresa. Suponha, por
 exemplo, uma universidade com sistemas acadêmico, financeiro, extensão, etc.
 Todos esses sistemas têm que lidar com classes como `Aluno`, `Professor`, `Curso`,
 `Departamento`, etc. Essas classes são então chamadas de Entidades. Além de dados, entidades
 podem implementar regras de negócio genéricas. Por exemplo, uma regra da universidade
-define que um `Professor` deve pertencer a exatamente um `Departamento`.
+define que todo `Professor` deve pertencer a exatamente um `Departamento`.
 
 Já as classes da camada **Casos de Uso** implementam regras de negócio um
 pouco menos genéricas e, normalmente, relativas a um único sistema. 
 Por exemplo, o sistema acadêmico do nosso exemplo 
 pode ter uma classe  `DiarioDeClasse` que armazena a lista de objetos 
 do tipo `Aluno` matriculados em 
-uma `Disciplina` de um dado `Curso` que está sendo ofertada em um determinado 
+uma `Disciplina` que está sendo ofertada em um determinado 
 semestre. Uma regra de negócio define que um `Aluno` 
 somente pode ser incluído em um `DiarioDeClasse` se tiver cursado os 
 pré-requisitos da sua `Disciplina`. 
 
 Para evitar qualquer tipo de confusão, gostaríamos de comentar que 
-o nome casos de uso em uma Arquitetura Limpa não tem relação,
+os casos de uso em uma Arquitetura Limpa não tem uma correspondência,
 pelo menos direta, com casos de uso para especificação de requisitos 
 e, menos ainda, com diagramas de casos de uso da UML, tal como 
 estudamos no [Capítulo 3](https://engsoftmoderna.info/cap3.html).
@@ -66,11 +66,11 @@ controladores pertencerão a essa camada.
 Na camada mais externa, temos classes pertencentes a bibliotecas e frameworks 
 externos (de terceiros), as quais podem ser responsáveis por persistência, 
 construção de interfaces com usuários, envio de mails, integração com 
-outros sistemas, etc.
+outros sistemas, comunicação com um determinado hardware, etc.
 
 Por exemplo, a universidade do nosso exemplo pode possuir 
 um sistema para gerenciamento de cursos de extensão, o qual aceita 
-que o pagamento dos cursos seja realizado por meio de cartões de crédito. 
+pagamento por meio de cartões de crédito. 
 Para isso, o sistema usa um serviço de pagamentos de terceiros, que oferece 
 algumas classes para processamento de pagamentos. Logo, essa classes
 ficam na camada mais externa de uma Arquitetura Limpa.
@@ -84,35 +84,36 @@ veja como essa camada é descrita:
 > podem fazer menos mal.
 
 
-## Regra da Dependência {.unnumbered}
+## Regra de Dependência {.unnumbered}
 
-Em uma Arquitetura Limpa, as classes de um nível X não devem conhecer nenhuma 
-classe de um nível Y mais externo. No seu livro, Uncle Bob afirma categoricamente:
+Em uma Arquitetura Limpa, as classes de uma camada X não devem conhecer nenhuma 
+classe de uma camada Y mais externa. No seu livro, Uncle Bob afirma categoricamente:
 
 > O nome de um elemento declarado em uma camada externa não deve ser 
 > mencionado pelo código de uma camada interna. Isso inclui funções, classes, 
 > variáveis e qualquer outro elemento de código.
 
 Assim, em uma Arquitetura Limpa, as camadas centrais são mais estáveis -- menos
-sujeita a mudanças -- do que as camadas mais externas. Por exemplo, as
+sujeitas a mudanças -- do que as camadas mais externas. Por exemplo, as
 entidades de um sistema raramente precisam ser modificadas. 
 Sobre os casos de uso, é verdade que eles, às vezes, precisam ser mantidos.
 Porém, queremos evitar que essas mudanças sejam motivadas por mudanças 
 nas tecnologias adotadas na aplicação, como bancos de dados, frameworks 
 e bibliotecas. 
 
-Por isso, a Regra de Dependência garante que entidades e casos de uso
-sejam classes "limpas" de qualquer tecnologia ou adaptadores implementados
-nas camadas mais externas.
+Resumindo, a Regra de Dependência garante que as entidades e os casos de uso
+sejam classes "limpas" de qualquer tecnologia ou serviço externo ao sistema.
 
 ## Invertendo o Fluxo de Controle {.unnumbered}
 
 Em uma Arquitetura Limpa, fluxos de controle de "fora para dentro" são 
 implementados de forma "natural", pois eles seguem o mesmo sentido 
-da Regra de Dependência.
+da Regra de Dependência. Por exemplo, uma camada mais externa Y
+pode criar um objeto de um tipo mais interno X e então chamar um
+método desse objeto.
 
-No entanto, em alguns casos, um caso de uso pode ter que chamar um método 
-de uma classe de uma camada mais externa. Para ficar mais claro, suponha 
+No entanto, em alguns cenários, um caso de uso pode ter que chamar um método 
+de uma classe de uma camada mais externa. Para ficar claro, suponha 
 que um caso de uso precise enviar um mail. Antes de mais nada vamos supor 
 que existe uma classe adaptadora `MailServiceImpl` com um método `send`:
 
@@ -125,11 +126,11 @@ public class MailServiceImpl {
 ```
 
 No entanto, veja que esse exemplo implica em um fluxo de fora para dentro: 
-o caso de uso (mais interno) tem que chamar um método de uma classe 
+o caso de uso (mais interno) tem que declarar uma variável de uma classe 
 adaptadora (mais externa), o que contraria a regra da dependência!
 
 A solução implica em ter uma interface na camada de caso de uso chamada
-`MailServiceInterface`, com um método `send(String msg)`. 
+`MailServiceInterface` com um método `send(String msg)`. 
 
 ```
 package CasosDeUso;
@@ -141,9 +142,13 @@ public interface MailServiceInterface {
 // outras classes da camada Casos de Uso
 ```
 
+Essa interface foi criada para funcionar como uma abstração para o serviço 
+de envio de mail. Ou seja, para evitar que o caso de uso tenha que se 
+acoplar a uma classe concreta desse serviço. 
 
-Como `MailServiceInterface` pertence à camada Caso de Uso, as outras classes dessa camada 
-podem chamar `send` sem violar a Regra de Dependência.
+Além disso, como `MailServiceInterface` pertence à camada Caso de Uso, 
+as outras classes dessa camada podem chamar `send` sem violar a Regra 
+de Dependência.
 
 Prosseguindo, a classe adaptadora `MailServiceImpl` deve implementar
 a interface `MailServiceInterface`. 
@@ -165,14 +170,15 @@ uma camada mais interna. No caso, esse elemento é uma interface
 
 O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 
-![Em uma arquitetura limpa, as dependências são sempre de fora para dentro.](./figs/arquitetura-limpa-exemplo.svg){width=75%}
+![Dependências em uma arquitetura limpa](./figs/arquitetura-limpa-exemplo.svg){width=75%}
 
-# Conclusão {.unnumbered}
+## Conclusão {.unnumbered}
 
 Uma Arquitetura Limpa faz uso de diversos conceitos
 que estudamos no Capítulo 5, incluindo propriedades de projeto
 como **coesão**, **acoplamento** e **separação de interesses** e princípios
-como **responsabilidade única** e **inversão de dependências**.
+de projeto como **responsabilidade única** e **inversão de dependências**.
+Faz uso ainda do padrão de projeto **adaptador**.
 
 As recomendações principais de uma Arquitetura Limpa são as seguintes:
 
@@ -180,18 +186,18 @@ As recomendações principais de uma Arquitetura Limpa são as seguintes:
 que armazenam principalmente dados e que poderão ser reusadas em
 outros sistemas que você construir no futuro.
 
-* Depois, pense nos Casos de Uso, que vão implementar regras de negócio envolvendo
-as Entidades de seu sistema. Mas torne as classes que representam Entidades
-e Casos de Uso "limpas" de qualquer tecnologia. Lembre-se "a Web é um detalhe;
-o banco de dados é um detalhe".
+* Depois, pense nos Casos de Uso, que vão implementar regras de negócio 
+relacionadas com as Entidades de seu sistema. Mas torne as classes que 
+representam Entidades e Casos de Uso "limpas" de qualquer tecnologia. 
+Lembre-se "a Web é um detalhe; o banco de dados é um detalhe".
 
-* Por fim, pense também nas classes Adaptadoras, que vão funcionar como 
+* Por fim, pense nas classes Adaptadoras, que vão funcionar como 
 portas de entrada e saída, para comunicação entre as classes internas 
 e o mundo externo.
 
 Seguindo essas recomendações, você vai produzir uma arquitetura que separa
 dois tipos de interesses (ou requisitos): interesses de negócio
-e interesses de tecnologia. E assim, será então fácil testar seu sistema
+e interesses de tecnologia. E assim, será mais fácil testar seu sistema
 e também adaptá-lo às novas tecnologias que, com certeza, vão surgir no
 futuro.
 
