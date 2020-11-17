@@ -114,20 +114,19 @@ método desse objeto.
 
 No entanto, em alguns cenários, um caso de uso pode ter que chamar um método 
 de uma classe de uma camada mais externa. Para ficar claro, suponha 
-que um caso de uso precise enviar um mail. Antes de mais nada vamos supor 
-que existe uma classe adaptadora `MailServiceImpl` com um método `send`:
+que um caso de uso precise enviar um mail. Antes de mais nada, vamos supor 
+que existe no sistema uma classe, de uma camada mais externa,
+chamada `MailServiceImpl` e com um método `send`:
 
 ```
-package Adaptadores;
-
 public class MailServiceImpl {
   public void send(String msg);
 }
 ```
 
 No entanto, veja que esse exemplo implica em um fluxo de fora para dentro: 
-o caso de uso (mais interno) tem que declarar uma variável de uma classe 
-adaptadora (mais externa), o que contraria a regra da dependência!
+o caso de uso tem que declarar uma variável de uma classe 
+de uma camada mais externa, o que contraria a regra da dependência!
 
 A solução implica em ter uma interface na camada de caso de uso chamada
 `MailServiceInterface` com um método `send(String msg)`. 
@@ -150,12 +149,10 @@ Além disso, como `MailServiceInterface` pertence à camada Caso de Uso,
 as outras classes dessa camada podem chamar `send` sem violar a Regra 
 de Dependência.
 
-Prosseguindo, a classe adaptadora `MailServiceImpl` deve implementar
+Prosseguindo, a classe `MailServiceImpl` deve implementar
 a interface `MailServiceInterface`. 
 
 ```
-package Adaptadores;
-
 import CasosDeUso.MailServiceInterface;
 
 public class MailServiceImpl implements MailServiceInterface {
@@ -163,8 +160,8 @@ public class MailServiceImpl implements MailServiceInterface {
 }
 ```
 
-Essa implementação não viola a Regra de Dependência, pois uma classe mais 
-externa (`MailServiceImpl`) está dependendo de um elemento de código de 
+Essa implementação não viola a Regra de Dependência, pois uma classe de uma
+camada mais externa (`MailServiceImpl`) está dependendo de um elemento de código de 
 uma camada mais interna. No caso, esse elemento é uma interface 
 (`MailServiceInterface`).
 
@@ -174,11 +171,13 @@ O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 
 ## Conclusão {.unnumbered}
 
-Uma Arquitetura Limpa faz uso de diversos conceitos
-que estudamos no Capítulo 5, incluindo propriedades de projeto
+Uma Arquitetura Limpa é uma aplicação de diversos conceitos
+que estudamos no [Capítulo 5](https://engsoftmoderna.info/cap5.html), 
+incluindo propriedades de projeto
 como **coesão**, **acoplamento** e **separação de interesses** e princípios
 de projeto como **responsabilidade única** e **inversão de dependências**.
-Faz uso ainda do padrão de projeto **adaptador**.
+Ela faz uso também do padrão de projeto **adaptador**, que estudamos no
+[Capítulo 6](https://engsoftmoderna.info/cap6.html).
 
 As recomendações principais de uma Arquitetura Limpa são as seguintes:
 
@@ -211,7 +210,12 @@ no YouTube sobre o tema.
 
 ## Exercícios {.unnumbered}
 
-Em breve!
+1. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
+
+   * Se quisermos ter um código totalmente aderente aos princípios de uma Arquitetura Limpa,
+     por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
+
+   * Em qual camada você implementaria então `MailServiceImpl`?
 
 * * * 
 
