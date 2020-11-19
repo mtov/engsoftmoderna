@@ -16,7 +16,7 @@ Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
-## Entidades e Casos de Estudo {.unnumbered}
+## Entidades e Casos de Uso {.unnumbered}
 
 No centro da arquitetura, temos as classes responsáveis pelas regras de negócio, 
 que podem ser de dois tipos: Entidades e Casos de Uso.
