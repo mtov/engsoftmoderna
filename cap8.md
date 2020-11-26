@@ -873,7 +873,7 @@ acima, foi baseada em comandos, pois trata-se de sua definição mais
 comum. Porém, existem definições alternativas, tais como **cobertura de
 funções** (percentual de funções que são executadas por um teste),
 **cobertura de chamadas de funções** (dentre todas as linhas de um
-programa que chamam funções, quantas são de fato, exercitadas por
+programa que chamam funções, quantas são, de fato, exercitadas por
 testes), **cobertura de branches** (% de branches de um programa que são
 executados por testes; um comando `if` sempre gera dois branches: quando a
 condição é verdadeira e quando ela é falsa). Cobertura de comandos e de
