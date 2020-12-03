@@ -5,7 +5,7 @@
 
 Neste primeiro capítulo, vamos definir e contextualizar o que é
 Engenharia de Software (Seção 1.1) e dar uma visão geral dos principais
-assuntos estudados nesta área da Computação (Seção 1.2). O objetivo é
+assuntos estudados nessa área da Computação (Seção 1.2). O objetivo é
 propiciar ao leitor uma visão horizontal da área de Engenharia de
 Software, antes de nos aprofundarmos em temas específicos. Além disso,
 sendo Engenharia de Software uma área bastante ampla, vamos caracterizar
@@ -84,7 +84,7 @@ de Engenharia de Software.
 Reprodução gentilmente autorizada pelo Prof. Robert McClure.](figs/cap1/otan.jpg){width=45%}
 
 O comentário a seguir, de um dos participantes da Conferência da OTAN,
-ilustra os desafios que esperavam a recém criada área de pesquisa:
+ilustra os desafios que esperavam a recém-criada área de pesquisa:
 
 > "O problema é que certas classes de sistemas estão colocando demandas sobre nós que estão além das nossas capacidades e das teorias e métodos de projeto que conhecemos no presente tempo. Em algumas aplicações não existe uma crise, como rotinas de ordenação e folhas de pagamento, por exemplo. Porém, estamos tendo dificuldades com grandes aplicações. Não podemos esperar que a produção de tais sistemas seja fácil."
 
@@ -428,7 +428,7 @@ círculo, dependendo de uma determinada condição:
 
 Esse código possui um defeito, pois a área de um círculo é "pi vezes
 raio ao quadrado", e não ao cubo. Bug é um termo mais informal, usado
-com objetivos às vezes diversos. Mas, o uso mais comum é como sinônimo
+com objetivos às vezes diversos. Mas o uso mais comum é como sinônimo
 de defeito. Por fim, uma falha ocorre quando um código com defeito for
 executado — por exemplo, a condição do `if` do programa acima for
 verdadeira — e, com isso, levar o programa a apresentar um resultado
