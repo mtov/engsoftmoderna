@@ -30,7 +30,7 @@ software estejam sujeitos aos mais variados tipos de erros e
 inconsistências. Para evitar que tais erros cheguem aos usuários finais
 e causem prejuízos de valor incalculável, é fundamental introduzir
 atividades de teste em projetos de desenvolvimento de software. De fato,
-testes são uma das práticas de programação mais valorizadas hoje em dia,
+teste é uma das práticas de programação mais valorizadas hoje em dia,
 em qualquer tipo de software. É também uma das práticas que sofreram
 mais transformações nos anos recentes.
 

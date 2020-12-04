@@ -352,7 +352,7 @@ construções semelhantes.
 ### Construção de Software 
 
 \index{Construção de Software}
-Construção trata da implementação, isto é, codificação do sistema. Neste
+Construção trata da implementação, isto é, codificação do sistema. Nesse
 momento, existem diversas decisões que precisam ser tomadas, como, por
 exemplo: definir os algoritmos e estruturas de dados que serão usados,
 definir os frameworks e bibliotecas de terceiros que serão usados;
@@ -602,7 +602,7 @@ recuperar e retornar para a versão antiga, anterior à introdução do bug.
 
 \index{Versionamento Semântico}
 No entanto, gerência de configuração é mais do que apenas usar um
-sistema com o git. Ela inclui a definição de um conjunto de políticas
+sistema como git. Ela inclui a definição de um conjunto de políticas
 para gerenciar as diversas versões de um sistema. Por exemplo,
 preocupa-se com o esquema usado para identificar as releases de um
 software; isto é, as versões de um sistema que serão liberadas para seus
@@ -632,7 +632,7 @@ usa-se o termo **stakeholder** para designar todas as partes
 interessadas no mesmo; ou seja, os stakeholders são aqueles que afetam
 ou que são afetados pelo projeto, podendo ser pessoas físicas ou
 organizações. Por exemplo, stakeholders comuns em projetos de software
-incluem, obviamente, seus desenvolvedores e seus clientes; mas também,
+incluem, obviamente, seus desenvolvedores e seus clientes; mas, também,
 gerentes da equipe de desenvolvimento, empresas subcontratadas,
 fornecedores de qualquer natureza, talvez algum nível de governo, etc.
 
@@ -741,12 +741,12 @@ recorrentes em projetos de software, que ocorriam com frequência nessa
 completo de requisitos, depois um projeto detalhado, depois uma
 implementação completa, etc. Para só então validar o sistema com os
 usuários, o que pode acontecer anos após o início do projeto. No
-entanto, neste período de tempo, o mundo pode ter mudado, bem como as
+entanto, nesse período de tempo, o mundo pode ter mudado, bem como as
 necessidades dos clientes, que podem não mais precisar do sistema que
 ajudaram a especificar anos antes. Assim, reunidos em uma cidade de
 Utah, Estados Unidos, em fevereiro de 2001, um grupo de 17 Engenheiros
 de Software propôs um modo alternativo para construção de software, que
-eles chamaram de Ágil — nome do manifesto que eles produziram nesta
+eles chamaram de Ágil — nome do manifesto que eles produziram nessa
 reunião ([link](https://agilemanifesto.org/)).
 Contrastando com processos Waterfall, a ideia de processos ágeis é que
 um sistema deve ser construído de forma incremental e iterativa. Pequenos
@@ -904,7 +904,7 @@ pelo GitHub.
 
 \index{Prática Profissional}
 Como afirmado na frase de Bjarne Stroustrup que abre este capítulo,
-*nossa sociedade funciona a base de software*. Isso gera diversas
+*nossa sociedade funciona à base de software*. Isso gera diversas
 oportunidades para os profissionais da área, mas também implica em
 responsabilidades e pontos de preocupação. Questões sobre a prática
 profissional em Engenharia de Software iniciam-se no momento da
@@ -1224,7 +1224,7 @@ de aceitação e também testes para verificar requisitos não-funcionais,
 como desempenho, falhas e usabilidade.
 
 **Capítulo 9: Refactoring**, cujo principal conteúdo é uma apresentação
-dos principais refactorings que podem ser realizados para melhor a
+dos principais refactorings que podem ser realizados para melhorar a
 qualidade interna de um sistema de software. A apresentação inclui
 vários exemplos de código fonte, alguns deles de refactorings reais,
 realizados em sistemas de código aberto. O objetivo é transmitir ao

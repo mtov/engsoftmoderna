@@ -554,7 +554,7 @@ Em resumo, para começar a usar XP precisamos de:
 
 Uma vez definidos os parâmetros e documentos acima, o representante do
 cliente deve priorizar as histórias. Para isso, ele deve definir quais
-histórias serão implementadas nas iterações da primeira release. Nesta
+histórias serão implementadas nas iterações da primeira release. Nessa
 priorização, deve-se respeitar a velocidade do time de desenvolvimento.
 Por exemplo, suponha que a velocidade de um time seja de 25 story points
 por iteração. Nesse caso, o representante do cliente não pode alocar
@@ -1419,7 +1419,7 @@ exatamente no momento em que se está escrevendo este parágrafo:
 +-----------------+----------------+----------------+----------------+
 
 Decidiu-se adotar um método ágil para escrita do livro para minimizar os
-riscos de desenvolver um produto que não atenda às necessidades de
+riscos de desenvolver um produto que não atende às necessidades de
 nossos clientes, que, nesta primeira versão, são estudantes e
 professores brasileiros de disciplinas de Engenharia de Software,
 principalmente em nível de graduação. Assim, ao final de cada sprint, um
@@ -1873,7 +1873,7 @@ inicial de levantamento de requisitos e depois de design.
 
 \index{Modelo em Espiral}
 \index{Boehm, Barry}
-Um exemplo de proposta de processo surgida nesta época é o **Modelo em
+Um exemplo de proposta de processo surgida nessa época é o **Modelo em
 Espiral**, proposto por Barry Boehm, em 1986
 ([link](https://doi.org/10.1145/12944.12948)). Nesse
 modelo, um sistema é desenvolvido na forma de uma espiral de iterações.
