@@ -5,13 +5,13 @@
 
 Design Thinking é uma abordagem para solução de problemas -- não apenas
 de Engenharia de Software, mas qualquer tipo de problema.
-A abordagem é inspirada em métodos e técnicas usadas há tempo
+A abordagem é inspirada em métodos e técnicas usados há tempo
 por designers industriais, designers gráficos, designers
 de interface com o usuário, etc.
 
 Com o passar dos anos, os designers perceberam que esses métodos
 e técnicas poderiam ser usados não apenas para melhorar a ergonomia 
-de um produto ou gerar uma interface mais amigável, mas também para 
+de um produto ou criar uma interface mais amigável, mas também para 
 resolver diversos outros problemas. Daí o nome **Design Thinking**,
 ou seja, o objetivo é levar o *pensamento* dos designers para 
 outras áreas.
@@ -28,51 +28,48 @@ criativas e inovadoras** para problemas de maior complexidade.
 Ou seja, o objetivo **não** é desenvolver um produto ou sistema 
 cujos requisitos já bem definidos.
 
-### Exemplo e Contra-exemplo {.unnumbered}
+### Exemplos {.unnumbered}
 
-Primeiro, vamos dar um contra-exemplo de uso de Design Thinking.
+Primeiro, vamos apresentar um cenário onde o uso de Design Thinking 
+**não** é recomendado.
 Suponha que uma empresa seja contratada para construir um sistema Web
-para gerenciar a aplicação de provas on-line com questões de múltipla
+para gerenciar a aplicação de provas online com questões de múltipla
 escolha. Nesse caso, a solução que está sendo demandada já está
-clara e não precisamos usar design thinking. A empresa pode, por exemplo, 
-usar usar práticas típicas de métodos ágeis, como histórias de usuários 
-e conversas com um  Product Owner (PO) para clarificar e priorizar os 
-requisitos do sistema demandado.
+bastante clara e não precisamos usar Design Thinking. A empresa pode, 
+por exemplo, usar usar práticas de métodos ágeis, como histórias 
+de usuários e conversas com um  Product Owner (PO) para clarificar 
+e priorizar os requisitos do sistema.
 
-E agora um exemplo: suponha que uma empresa -- ou melhor, uma universidade
-ou departamento -- esteja interessada em desenvolver método inovador 
-para ensino de Engenharia de Software. Nesse caso não temos clareza sobre 
-a demanda que está sendo pedida. Não sabemos nem ao certo se esse 
-método demandará a implementação de algum sistema. No caso, a universidade
--- ou um setor dela -- pode usar design thinking para entender melhor o 
-problema e delinear as linhas gerais de um método para ensino de
-Engenharia de Software com chances de proporcionar uma experiência
-de melhor qualidade para os alunos.
+E agora um exemplo de cenário no qual Design Thinking pode
+ser interessante: suponha que uma empresa -- ou melhor, uma universidade
+ou departamento -- esteja interessada em desenvolver um método inovador 
+para ensino de Engenharia de Software. Ou seja, nesse caso, não temos 
+tanta clareza sobre a demanda que está sendo pedida. Não sabemos nem 
+ao certo se esse método demandará a implementação de um sistema de
+software. Então, a universidade -- ou um departamento dela -- pode usar 
+Design Thinking para entender melhor o problema e delinear as linhas 
+gerais de um método realmente inovador para ensino de Engenharia de Software.
 
-## Fases de um Processo de Design Thinking {.unnumbered}
+## Atividades de um Processo de Design Thinking {.unnumbered}
 
 Design Thinking não é definido por meio de um conjunto preciso de passos, 
 tarefas e papéis. Isto é, Design Thinking não é uma fórmula ou algoritmo, 
 que recebe como entrada um problema genérico, abstrato e desafiador e 
 gera como saída uma solução inovadora. 
 
-Porém, as seguintes fases principais caracterizam um processo de
+Porém, as seguintes atividades principais caracterizam um processo de
 Design Thinking:
 
 * Inspiração
 * Ideação
 * Implementação
 
-No entanto, dependendo da referências consultada, o nome dessas fases pode
-mudar. Em alguns artigos, o processo é ainda apresentado com mais fases.
-No entanto, isso é natural, pois não "existe uma única definição para
-Design Thinking".
 
-Nas próximas seções, vamos detalhar essas fases e também os conceitos 
+Nas próximas seções, vamos detalhar essas atividades e também os conceitos 
 e princípios que são usados ao longo de um processo de Design Thinking. 
 Antes, no entanto, já gostaríamos de comentar que esses processos 
-são conduzidos por um **equipe multidisciplinar**, 
-que inclui profissionais de diversas áreas e com diferentes experiências. 
+são conduzidos por **equipes multidisciplinares**, 
+que incluem profissionais de diversas áreas e com diferentes experiências. 
 Argumenta-se que multidisciplinaridade é um ingrediente fundamental para 
 fomentar *pensamentos e ideias fora da caixa* e, portanto, maximizar as 
 chances de se chegar a soluções inovadoras.
@@ -90,28 +87,29 @@ locais de trabalho, observar e estudar seus comportamentos, etc. Como vimos no
 [Capítulo 3](https://engsoftmoderna.info/cap3.html), os estudos que observam 
 *ao vivo* os usuários afetados por uma solução são chamados de **estudos etnográficos**. 
 No limite, o designer pode até se passar por um usuário. Por exemplo, em seu 
-livro sobre Design Thinking, Tim Brown -- um dos principais executivos da IDEO -- 
-reporta o caso de um designer que estava tentando melhorar o serviço de atendimento
+livro sobre Design Thinking, Tim Brown -- que por um tempo foi um dos principais 
+executivos da IDEO -- reporta o caso de um designer que estava tentando melhorar o serviço de atendimento
 de um hospital. Para isso, ele simulou que tinha quebrado o pé e, então, 
-experimentou na própria pele o processo de atendimento do hospital.
+experimentou na própria pele o serviço de atendimento do hospital.
 
-Por outro lado, Design Thinking dá menos ênfase a instrumentos como surveys 
+Por outro lado, Design Thinking dá menos ênfase a instrumentos como questionários
 e pesquisas de mercado. A seguinte frase de Steve Jobs ilustra bem os limites 
 desses instrumentos:
 
 > Nosso trabalho é descobrir antes o que os clientes querem. Acho que Henry 
 Ford disse uma vez: se eu perguntasse aos meus clientes o que eles queriam, 
 eles teriam me dito um "cavalo mais rápido". As pessoas não sabem o que querem 
-até que você mostre a elas. É por isso que eu não confio em pesquisas de mercado. 
+até que você mostre a elas.  
 
-Design Thinking recomenda também prestar atenção a "usuário extremos", tais 
+Design Thinking recomenda também prestar atenção a "usuário extremos", 
 como crianças, idosos, adotantes iniciais de tecnologias, etc.
 
 ### Ideação {.unnumbered}
 
-Após entender o problema, pode-se avançar para uma fase de **geração 
-e testes de ideias** para solucioná-lo, a qual é chamada 
-de **ideação**. Nessa fase, incentiva-se dois tipos de atividades:
+Após entender o problema, pode-se avançar para atividades de **geração 
+e testes de ideias** para solucioná-lo, as quais são chamadas 
+de **ideação**. Mais precisamente, incentivam-se dois tipos 
+de atividades:
 
 * Pensamento divergente e convergente
 * Prototipação e Testes
@@ -127,9 +125,9 @@ rascunhar soluções para o problema proposto, sejam elas convencionais
 ou não. Ou seja, em um processo de **brainstorming**, soluções 
 "fora da caixa" são incentivadas. 
 
-Lembre-se sempre que o objetivo de Design Thinking é gerar soluções 
+Lembre-se que o objetivo de Design Thinking é gerar soluções 
 inovadoras e não incrementar marginalmente a qualidade de um produto 
-ou serviço. A seguinte frase, do cientista Linus Pauling — 
+ou serviço existente. A seguinte frase, do cientista Linus Pauling — 
 ganhador de dois prêmios Nobel, em Química e da Paz —
 ilustra a importância desse primeiro momento:
 
@@ -143,7 +141,7 @@ votação, as soluções que continuarão no processo.
 
 #### Prototipação e Testes {.unnumbered}
 
-Em seguida, ainda na fase de ideação, deve-se construir protótipos 
+Em seguida, ainda como uma atividade de ideação, deve-se construir protótipos 
 para as melhores ideias
 e testá-los com usuários reais. Os protótipos iniciais podem ser bem
 simples. Por exemplo, o primeiro protótipo de mouse que a IDEO criou
@@ -153,7 +151,7 @@ colada em uma embalagem de margarina.
 Porém, a criação de protótipos é mais difícil em certos tipos de
 problemas. Por exemplo, na área de serviços pode ser necessário criar espaços
 físicos, mesmo que de forma improvisada e, por exemplo, com móveis de isopor.
-Uma alternativa a tais protótipos físicos consiste no desenho de **storyboards**
+Uma alternativa a protótipos físicos consiste no desenho de **storyboards**
 (ilustrações) descrevendo a jornada de um usuário quando ele tem que usar 
 um determinado serviço. No caso de software, storyboards podem
 ser usados para prototipar pelo menos a interface do sistema.
@@ -169,30 +167,32 @@ divulgação e marketing, etc.
 
 Talvez, a explicação anterior leve o leitor a pensar que Design 
 Thinking é um processo sequencial. No entanto, 
-em qualquer fase pode-se retroceder para uma fase anterior. Por exemplo,
-na fase de ideação pode-se perceber que são necessários mais
-dados e insights sobre os problemas dos usuários. Na
-fase de prototipação, pode-se perceber que a ideia que foi 
+em qualquer atividade pode-se "retroceder" para um ponto anterior. Por exemplo,
+durante as atividades de ideação pode-se perceber que são necessários mais
+dados e insights sobre os problemas dos usuários. Após uma
+prototipação, pode-se perceber que a ideia que foi 
 escolhida não está funcionando bem. Logo, deve-se retroceder
 e escolher -- ou mesmo gerar -- uma nova ideia.
 
-Por isso, a IDEO costuma ilustrar essas fases por meio de
+Por isso, a IDEO costuma ilustrar essas atividades por meio de
 "anéis" (ou espaços) interconectados, como na seguinte figura 
-(copiada do seguinte [site](https://designthinking.ideo.com/)):
+(extraída do seguinte [site](https://designthinking.ideo.com/)):
 
 ![](./figs/design-thinking-fases.svg){width=50%}
 
 Para concluir gostaríamos de listar as habilidades importantes
 em um Design Thinker, segundo Tim Brown: "capacidade de identificar
-padrões na desordem de informações complexas; de sintetizar novas
-ideias a partir de fragmentos; de sentir empatia por pessoas
+padrões na desordem de informações complexas, de sintetizar novas
+ideias a partir de fragmentos e de sentir empatia por pessoas
 diferentes dele mesmo."
 
 #### Para Saber Mais {.unnumbered}
 
 Existe um vasto material sobre Design Thinking. Uma das boas
-referência sobre o assunto é o livro de Tim Brown, que usamos
-como referência principal para elaboração desse artigo.
+referência sobre o assunto é o 
+[livro](https://www.altabooks.com.br/produto/design-thinking/) 
+de Tim Brown, que usamos como referência para elaboração 
+deste artigo.
 
 * * * 
 
