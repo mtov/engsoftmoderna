@@ -23,7 +23,7 @@ A IDEO ajudou a projetar, por exemplo, os primeiros
 mouses da Apple.
 
 Outro motivo para essa popularidade deve-se ao fato de Design 
-Thinking ser considerado uma abordagem capaz de gerar **soluções 
+Thinking ser considerado uma abordagem capaz de propor **soluções 
 criativas e inovadoras** para problemas de maior complexidade. 
 Ou seja, o objetivo **não** é desenvolver um produto ou sistema 
 cujos requisitos já estão bem definidos.
@@ -196,7 +196,7 @@ referência sobre o assunto é o
 de Tim Brown, que usamos como referência para elaboração 
 deste artigo.
 
-## Exercícios
+## Exercícios {.unnumbered}
 
 1. Qual a importância de Design Thinking para um Engenheiro de Software?
 Por que é importante que um Engenheiro de Software tenha uma conhecimento
