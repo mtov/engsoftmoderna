@@ -198,9 +198,8 @@ deste artigo.
 
 ## Exercícios {.unnumbered}
 
-1. Qual a importância de Design Thinking para um Engenheiro de Software?
-Por que é importante que um Engenheiro de Software tenha uma conhecimento
-básico das atividades, conceitos e princípios de Design Thinking?
+1. Por que é importante que um Engenheiro de Software tenha uma conhecimento
+básico de Design Thinking?
 
 2. Pense e descreva resumidamente um problema que pode se beneficiar do 
 uso de Design Thinking.
