@@ -931,7 +931,7 @@ de *backend* (isto é, de classes com regras de negócio).
 **Exemplo:** A próxima classe ilustra uma violação do Princípio da
 Responsabilidade Única. O método `calculaIndiceDesistencia` da classe
 `Disciplina` possui duas responsabilidades: calcular o índice de
-desistência de uma disciplina e imprimi-lo na console do sistema.
+desistência de uma disciplina e imprimi-lo no console do sistema.
 
 ```
 class Disciplina {

@@ -342,7 +342,7 @@ void log(String msg) {
 ```
 
 O desenvolvedor decidiu então prover uma versão alternativa desse método com um parâmetro
-booleano, que indica se a string também deve ser mostrada na console. Veja o código após a extração desse segundo método `log`:
+booleano, que indica se a string também deve ser mostrada no console. Veja o código após a extração desse segundo método `log`:
 
 ```
 void log(String msg, boolean console) {

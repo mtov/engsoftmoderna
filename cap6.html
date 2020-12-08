@@ -217,7 +217,7 @@ void h() {
   }
 
   public void println(String msg) {
-    // registra msg na console, mas poderia ser em arquivo
+    // registra msg no console, mas poderia ser em arquivo
     System.out.println(msg);      
   }
 }</code></pre>
@@ -527,7 +527,7 @@ class ShellSortStrategy extends SortStrategy {
 <h2 data-number="1.9" id="observador" data-number="1.9"><span class="header-section-number">6.9</span> Observador</h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um sistema para controlar uma estação meteorológica. Nesse sistema, temos que manipular objetos de duas classes: <code>Temperatura</code>, que são objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na estação meteorológica; e <code>Termometro</code>, que é uma classe usada para criar objetos visuais que exibem as temperaturas sob monitoramento. Termômetros devem exibir a temperatura atual que foi monitorada. Se a temperatura mudar, os termômetros devem ser atualizados.</p>
-<p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius na console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nesses outros pares de classes.</p>
+<p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius no console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nesses outros pares de classes.</p>
 <p><strong>Solução:</strong> O padrão <strong>Observador</strong> é a solução recomendada para o nosso contexto e problema. Esse padrão define como implementar uma relação do tipo um-para-muitos entre objetos sujeito e observadores. Quando o estado de um sujeito muda, seus observadores devem ser notificados.</p>
 <p>Primeiro, vamos mostrar um programa principal para o nosso problema:</p>
 <pre><code>void main() {
@@ -739,7 +739,7 @@ ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>5. Qual a semelhança entre Proxy, Decorador e Visitor? E qual a diferença entre esses padrões?</p>
 <p>6. No exemplo de Adaptador, mostramos o código de uma única classe adaptadora (<code>AdaptadorProjetorSamsung</code>). Escreva o código de uma classe semelhante, mas que adapte a interface <code>Projetor</code> para a interface <code>ProjetorLG</code> (o código de ambas interfaces é mostrado na Seção 6.5). Chame essa classe de <code>AdaptadorProjetorLG</code>.</p>
 <p>7. Suponha uma classe base A. Suponha que queremos adicionar quatro funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades podem ser adicionadas em qualquer ordem, isto é, a ordem não é importante. Se usarmos herança, quantas subclasses de A teremos que implementar? Se optarmos por uma solução por meio de decoradores, quantas classes teremos que implementar (sem contar a classe A). Justifique e explique sua resposta.</p>
-<p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida na console. Chame essa classe decoradora de <code>LogChannel</code>.</p>
+<p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida no console. Chame essa classe decoradora de <code>LogChannel</code>.</p>
 <p>9. Dado o código abaixo de uma classe <code>Subject</code> (do padrão Observador):</p>
 <pre><code>interface Observer {
   public void update(Subject s);

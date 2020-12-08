@@ -307,7 +307,7 @@ class Logger {
   }
 
   public void println(String msg) {
-    // registra msg na console, mas poderia ser em arquivo
+    // registra msg no console, mas poderia ser em arquivo
     System.out.println(msg);      
   }
 }
@@ -962,7 +962,7 @@ termômetros devem ser atualizados.
 **Problema**: Não queremos acoplar `Temperatura` (classe de modelo) a
 `Termometro` (classe de interface). O motivo é simples: classes de
 interface mudam com frequência. Na versão atual, o sistema possui uma
-interface textual, que exibe temperaturas em Celsius na console do
+interface textual, que exibe temperaturas em Celsius no console do
 sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para
 celulares e para outros sistemas. Pretendemos também oferecer outras
 interfaces de termômetros, tais como digital, analógico, etc. Por fim,
@@ -1556,7 +1556,7 @@ Justifique e explique sua resposta.
 
 8\. No exemplo de Decorador, mostramos o código de um único decorador
 (`ZipChannel`). Escreva o código de uma classe semelhante, mas que imprima
-a mensagem a ser transmitida ou recebida na console. Chame essa classe
+a mensagem a ser transmitida ou recebida no console. Chame essa classe
 decoradora de `LogChannel`.
 
 9\. Dado o código abaixo de uma classe `Subject` (do padrão Observador):

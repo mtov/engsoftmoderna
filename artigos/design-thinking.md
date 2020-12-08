@@ -215,17 +215,17 @@ deste artigo.
       complexos e para os quais não existe uma solução conhecida.
    b. Design Thinking propõe que a resolução de um problema ocorra de forma estritamente
       sequencial, por meio de três atividades: inspiração, ideação e implementação.
-   c. Design Thinking defende o uso de equipes multidisciplinares para a solução de
+   c. Design Thinking defende o uso de equipes multidisciplinares para solução de
       problemas complexos.
    d. Experimentação, por meio da construção e teste de protótipos, é uma das práticas
       defendidas por Design Thinking.
    e. Para resolver problemas, Design Thinking recomenda que o time trabalhe
       de forma exploratória (divergente) e depois de forma convergente.         
 
-2. Por que é importante que um Engenheiro de Software tenha uma conhecimento
+2. Por que é importante que um Engenheiro de Software tenha um conhecimento
 básico de Design Thinking?
 
-3. Pense e descreva resumidamente um problema que pode se beneficiar do 
+3. Pense e descreva resumidamente um problema que possa se beneficiar do 
 uso de Design Thinking.
 
 4. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição

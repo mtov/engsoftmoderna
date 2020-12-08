@@ -1317,8 +1317,8 @@ distinção, pois achamos que ela é sutil e, portanto, os benefícios não
 compensam o custo de páginas extras para explicar
 conceitos semelhantes.
 Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
-verifica eventos que ocorreram no SUT. Um exemplo é o seguinte
-teste:
+— também chamado de teste de interação —
+verifica eventos que ocorreram no SUT. Segue um exemplo:
 
 ```
 testBehaviour {
@@ -1771,7 +1771,7 @@ etc. Um exemplo — extraído e adaptado da documentação do Selenium
 ([link](https://www.seleniumhq.org/docs/03_webdriver.jsp))
 — é mostrado a seguir. Esse código simula um usuário de um navegador
 Firefox fazendo uma pesquisa no Google pela palavra "software". O
-código também imprime na console o título da página que lista os
+código também imprime no console o título da página que lista os
 resultados da pesquisa.
 
 ```
