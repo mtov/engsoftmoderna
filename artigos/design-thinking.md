@@ -25,10 +25,10 @@ mouses da Apple.
 Outro motivo para essa popularidade deve-se ao fato de Design 
 Thinking ser considerado uma abordagem capaz de propor **soluções 
 criativas e inovadoras** para problemas de maior complexidade. 
-Ou seja, o objetivo **não** é desenvolver um produto ou sistema 
-cujos requisitos já estão bem definidos.
+Por isso, se já conhecemos razoavelmente bem tanto o problema 
+como sua solução, **não** precisamos usar Design Thinking.
 
-### Exemplos {.unnumbered}
+#### Exemplos {.unnumbered}
 
 Primeiro, vamos apresentar um cenário onde o uso de Design Thinking 
 **não** é recomendado.
@@ -36,13 +36,13 @@ Suponha que uma empresa seja contratada para construir um sistema Web
 para gerenciar a aplicação de provas online com questões de múltipla
 escolha. Nesse caso, a solução que está sendo demandada está
 bastante clara e **não** precisamos usar Design Thinking. A empresa pode, 
-por exemplo, usar usar práticas de métodos ágeis, como histórias 
-de usuários e conversas com um  Product Owner (PO) para clarificar 
+por exemplo, se valer de práticas de métodos ágeis, como histórias 
+de usuários e conversas com um  Product Owner (PO), para clarificar 
 e priorizar os requisitos do sistema.
 
 E agora um exemplo de cenário no qual Design Thinking pode
-ser interessante: suponha que uma empresa -- ou melhor, uma universidade
--- esteja interessada em desenvolver um método inovador 
+ser interessante: suponha que uma universidade
+esteja interessada em desenvolver um método inovador 
 para ensino de Engenharia de Software. Ou seja, nesse caso, não temos 
 clareza sobre a demanda que está sendo pedida. Não sabemos nem 
 ao certo se esse método demandará a implementação de um sistema de
@@ -63,7 +63,6 @@ Design Thinking:
 * Inspiração
 * Ideação
 * Implementação
-
 
 Nas próximas seções, vamos detalhar essas atividades e também os conceitos 
 e princípios que são usados ao longo de um processo de Design Thinking. 
@@ -94,7 +93,7 @@ quebrado o pé e, então, experimentou na própria pele o serviço de atendiment
 desse hospital.
 
 Por outro lado, Design Thinking dá menos ênfase a instrumentos como questionários
-e pesquisas de mercado. A seguinte frase de Steve Jobs ilustra bem os limites 
+e pesquisas de mercado. A seguinte frase de Steve Jobs ilustra os limites 
 desses instrumentos:
 
 > Nosso trabalho é descobrir antes o que os clientes querem. Acho que Henry 
@@ -102,8 +101,20 @@ Ford disse uma vez: se eu perguntasse aos meus clientes o que eles queriam,
 eles teriam me dito um "cavalo mais rápido". As pessoas não sabem o que querem 
 até que você mostre a elas.  
 
-Design Thinking recomenda também prestar atenção a "usuário extremos", 
-como crianças, idosos, adotantes iniciais de tecnologias, etc.
+Design Thinking recomenda também prestar atenção a **usuário extremos**, 
+tais como crianças, idosos, adotantes iniciais de tecnologias, melhores
+e piores alunos de uma disciplina, pacientes leves e graves, etc.
+
+Uma outra técnica de inspiração importante é chamada **reframing**, 
+isto é, tentar reformular o problema proposto originalmente
+pelo cliente. Em outras palavras, ver esse problema por um ângulo ou 
+com um olhar diferente. E, consequentemente, propor uma solução distinta 
+daquela que era esperada. Por exemplo, suponha uma editora
+que esteja tendo dificuldades para vender seus livros. Talvez, em vez
+de tentar novas estratégias para vender livros, ela possa "pivotar"
+-- isto é, reformular de forma importante seu negócio -- e vender não 
+apenas livros mas também cursos online baseados nos livros de seu 
+catálogo.
 
 ### Ideação {.unnumbered}
 
@@ -167,13 +178,13 @@ divulgação e marketing.
 ## Comentários Finais {.unnumbered}
 
 Talvez, a explicação anterior leve o leitor a pensar que Design 
-Thinking é um processo sequencial. No entanto, 
-em qualquer atividade pode-se "retroceder" para um ponto anterior. Por exemplo,
-durante as atividades de ideação pode-se perceber que são necessários mais
+Thinking é um processo sequencial. No entanto, em qualquer atividade 
+pode-se "retroceder" para um ponto anterior. Por exemplo, durante as 
+atividades de ideação pode-se perceber que são necessários mais
 dados e insights sobre os problemas dos usuários. Como um outro exemplo,
 após uma prototipação, pode-se perceber que a ideia que foi 
-escolhida não está funcionando bem. Logo, deve-se retroceder
-e escolher -- ou mesmo gerar -- uma nova ideia.
+escolhida não está funcionando bem. Logo, deve-se escolher 
+-- ou mesmo gerar -- uma nova ideia.
 
 Por isso, costuma ilustrar essas atividades por meio de
 "anéis" (ou espaços) interconectados, como na seguinte figura 
@@ -198,13 +209,26 @@ deste artigo.
 
 ## Exercícios {.unnumbered}
 
-1. Por que é importante que um Engenheiro de Software tenha uma conhecimento
+1. Marque a alternativa INCORRETA:
+
+   a. Design Thinking é um abordagem iterativa e colaborativa para solução de problemas 
+      complexos e para os quais não existe uma solução conhecida.
+   b. Design Thinking propõe que a resolução de um problema ocorra de forma estritamente
+      sequencial, por meio de três atividades: inspiração, ideação e implementação.
+   c. Design Thinking defende o uso de equipes multidisciplinares para a solução de
+      problemas complexos.
+   d. Experimentação, por meio da construção e teste de protótipos, é uma das práticas
+      defendidas por Design Thinking.
+   e. Para resolver problemas, Design Thinking recomenda que o time trabalhe
+      de forma exploratória (divergente) e depois de forma convergente.         
+
+2. Por que é importante que um Engenheiro de Software tenha uma conhecimento
 básico de Design Thinking?
 
-2. Pense e descreva resumidamente um problema que pode se beneficiar do 
+3. Pense e descreva resumidamente um problema que pode se beneficiar do 
 uso de Design Thinking.
 
-3. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
+4. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
 [Capítulo 3](https://engsoftmoderna.info/cap3.html) do livro.
 
