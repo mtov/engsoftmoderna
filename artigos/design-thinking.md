@@ -105,7 +105,7 @@ Design Thinking recomenda também prestar atenção a **usuário extremos**,
 tais como crianças, idosos, adotantes iniciais de tecnologias, melhores
 e piores alunos de uma disciplina, pacientes leves e graves, etc.
 
-Uma outra técnica de inspiração importante é chamada **reframing**, 
+Uma outra técnica importante é chamada **reframing**, 
 isto é, tentar reformular o problema proposto originalmente
 pelo cliente. Em outras palavras, ver esse problema por um ângulo ou 
 com um olhar diferente. E, consequentemente, propor uma solução distinta 
