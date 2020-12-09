@@ -6,7 +6,7 @@
 Design Thinking é uma abordagem para solução de problemas -- não apenas
 de Engenharia de Software, mas qualquer tipo de problema.
 A abordagem é inspirada em métodos e técnicas usados há tempo
-por designers industriais, designers gráficos, designers
+por designers de produtos, designers gráficos, designers
 de interface com o usuário, etc.
 
 Com o passar dos anos, os designers perceberam que esses métodos
@@ -154,9 +154,9 @@ votação, as soluções que continuarão no processo.
 #### Prototipação e Testes {.unnumbered}
 
 Em seguida, ainda como uma atividade de ideação, deve-se construir 
-**protótipos** para as melhores ideias
-e testá-los com usuários reais. Os protótipos iniciais podem ser bem
-simples. Por exemplo, o primeiro protótipo de mouse que a IDEO criou
+**protótipos** para as melhores ideias e testá-los com usuários reais. 
+Os protótipos iniciais podem ser bem simples ou ter baixa fidelidade.
+Por exemplo, o primeiro protótipo de mouse que a IDEO criou
 para a Apple era formado pela esfera de um desodorante *roll-on*
 colada em uma embalagem de margarina.
 
@@ -222,13 +222,20 @@ deste artigo.
    e. Para resolver problemas, Design Thinking recomenda que o time trabalhe
       de forma exploratória (divergente) e depois de forma convergente.         
 
-2. Por que é importante que um Engenheiro de Software tenha um conhecimento
+2. Qual dessas práticas NÃO é comum quando se usa Design Thinking:
+   a. Reframing
+   b. Pensamento convergente e divergente
+   c. Prototipação
+   d. Pesquisas de mercado
+   e. Estudos etnográficos
+
+3. Por que é importante que um Engenheiro de Software tenha um conhecimento
 básico de Design Thinking?
 
-3. Pense e descreva resumidamente um problema que possa se beneficiar do 
+4. Pense e descreva resumidamente um problema que possa se beneficiar do 
 uso de Design Thinking.
 
-4. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
+5. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
 [Capítulo 3](https://engsoftmoderna.info/cap3.html) do livro.
 
