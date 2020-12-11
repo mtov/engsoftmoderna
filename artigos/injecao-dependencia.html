@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>O que é Injeção de Dependência? – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.png" width="240"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="o-que-é-injeção-de-dependência" class="unnumbered" data-number="">O que é Injeção de Dependência?</h1>
+<p>Injeção de Dependência não faz parte dos padrões de projeto do livro GoF. Porém, a solução é frequentemente listada como um padrão que poderia ser incluído em uma possível nova edição do livro.</p>
+<p>A ideia de Injeção de Dependência é bastante simples e quase que uma aplicação literal do seu nome. Vamos então explicá-la em quatro itens:</p>
+<ol type="1">
+<li>Suponha que uma classe <code>A</code> dependa de uma outra classe <code>B</code>:</li>
+</ol>
+<pre><code>class A {
+   B b; // A depende de B
+}</code></pre>
+<ol start="2" type="1">
+<li>No entanto, para seguir a ideia do padrão, a classe <code>A</code> não deve instanciar diretamente – isto é, no seu código — objetos do tipo <code>B</code>, como em:</li>
+</ol>
+<pre><code>class A {
+   B b = new B();  // instanciação incompatível com injeção de dependência 
+}</code></pre>
+<ol start="3" type="1">
+<li>Em vez disso, a classe <code>A</code> deve receber essa dependência por meio de um construtor:</li>
+</ol>
+<pre><code>class A {
+   B b;
+   A(B b) { // injeção de dependência via construtor
+      this.b = b;
+   }
+}</code></pre>
+<p>ou então rceber a dependência por meio de um método <code>set</code>:</p>
+<pre><code>class A {
+   B b;
+   void setterB(B b) { // injeção de dependência via setter
+      this.b = b;
+   }
+}</code></pre>
+<p>Logo, agora fica fácil entender o nome do padrão: as dependências de uma classe são <strong>injetadas</strong> nela, seja por meio de chamadas do seu construtor ou por meio de chamadas de um setter.</p>
+<ol start="4" type="1">
+<li>Na verdade, o mais recomendado é que o código de <code>A</code> use uma interface (isto é, uma abstração) para a classe concreta <code>B</code>. Ou seja, em vez de usar <code>B</code> (uma classe), deve-se usar <code>IB</code> (uma interface):</li>
+</ol>
+<pre><code>class A {
+   IB b;   // dependência para uma interface IB
+   A(IB b) {
+      this.b = b;
+   }
+}</code></pre>
+<p>ou</p>
+<pre><code>class A {
+   IB b;  // dependência para uma interface IB
+   void setterB(IB b) {
+      this.b = b;
+   }
+}</code></pre>
+<p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso também do princípio de projeto <strong>Prefira Interfaces a Classes Concretas</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p>
+<p>Para concluir, as vantagens de Injeção de Dependência são:</p>
+<ul>
+<li><p>Injeção de Dependência torna mais fácil mudar a dependência concreta (<code>B</code>) usada por uma classe <code>A</code>. Por exemplo, <code>A</code> pode ser uma classe que precisa enviar mails, usando uma classe <code>B1</code>. Amanhã, no entanto, podemos decidir que os mails serão enviados por uma classe <code>B2</code>. Para isso, basta que <code>B1</code> e <code>B2</code> implementem a interface <code>IB</code>.</p></li>
+<li><p>Injeção de Dependência torna mais fácil o teste da classe <code>A</code>, pois podemos <em>mockar</em> mais facilmente a dependência para <code>B</code>. Por exemplo, em vez de um serviço de mail real (<code>B1</code> ou <code>B2</code>), podemos usar um serviço de mail fictício, que apenas emule o envio de uma mensagem simples. Para isso, basta que esse serviço fictício implemente a interface <code>IB</code>.</p></li>
+</ul>
+<h2 class="unnumbered" data-number="" id="frameworks-para-injeção-de-dependência" class="unnumbered" data-number="">Frameworks para Injeção de Dependência</h2>
+<p>Uma desvantagem de Injeção de Dependência é que a responsabilidade por criar as dependências – isto é, instanciar os objetos que serão passados para a classe – é transferida para os seus clientes, como no seguinte exemplo:</p>
+<pre><code>class Cliente {
+  void foo() {
+     IB b = new B1();  // instancia dependência
+     A a = new A(b);   // injeta dependência na classe A
+     ...
+  } 
+}</code></pre>
+<p>No entanto, existem frameworks que evitam que os clientes tenham esse trabalho extra. Basicamente, eles assumem a responsabilidade de criar as dependências e injetá-las nas classes de destino.</p>
+<p>De um modo genérico, costuma funcionar assim:</p>
+<pre><code>class A {
+   IB b;
+
+   @Inject // anotação disponibilizada pelo framework
+   A(IB b) { 
+      this.b = b;
+   }
+}</code></pre>
+<p>A anotação <code>@Inject</code> indica que a classe <code>A</code> quer fazer uso de Injeção de Dependência. E que, portanto, as dependências do seu construtor deverão ser criadas e injetadas pelo framework de injeção de dependências.</p>
+<p>No entanto, algum desenvolvedor deverá declarar a classe dos objetos que devem ser criados toda vez que o framework precisar chamar um construtor anotado com <code>@Inject</code>. Isso pode acontecer em um arquivo XML, um outro tipo de arquivo ou mesmo em um método específico. Independentemente do local, a ideia é declarar uma tabela com duas colunas: interface e classe concreta.</p>
+<p>No nosso exemplo, essa tabela deve incluir a linha <code>(IB, B1)</code>. Ou seja, uma linha como essa define que objetos do tipo <code>B1</code> deverão ser instanciados e injetados em todas as classes que precisarem de dependências do tipo <code>IB</code>.</p>
+<p>Por fim, o cliente, quando precisar instanciar um objeto de uma classe que usa <code>@Inject</code>, não precisará mais chamar o operador <code>new</code>, mas sim um método do próprio framework, como em:</p>
+<pre><code>class Cliente {
+  void foo() {
+     A a = DIF.getInstance(A.class);
+     ...
+  } 
+}</code></pre>
+<p>Ou seja, <code>getInstance</code> é um método que instancia classes que usam Injeção de Dependência. O nosso framework de injeção de dependência (DIF) entende então que:</p>
+<ul>
+<li><p>A classe <code>A</code> faz uso de injeção de dependência, pois seu construtor foi anotado com <code>@Inject</code>.</p></li>
+<li><p>Antes de instanciar um objeto da classe <code>A</code>, o framework deve criar os objetos (dependências) usados pelo construtor dessa classe. No caso, esses objetos são de classes que implementam a interface <code>IB</code>.</p></li>
+<li><p>Mas qual classe que implementa <code>IB</code> deve ser instanciada? Para isso, o framework consulta o arquivo de configuração e descobre que <code>IB</code> está mapeada para <code>B1</code>, conforme explicamos anteriormente.</p></li>
+<li><p>Então o framework instancia um objeto do tipo <code>B1</code> e um objeto do tipo <code>A</code> (passando o objeto do tipo <code>B1</code> como parâmetro de seu construtor).</p></li>
+</ul>
+<p>Essa explicação foi baseada no <a href="https://github.com/google/guice">Guice</a>, um framework de injeção de dependências para Java, desenvolvido pelo Google. No entanto, existem outros frameworks semelhantes, tanto para Java como para outras linguagens.</p>
+<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
