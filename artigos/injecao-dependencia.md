@@ -7,7 +7,7 @@ poderia ser incluído em uma possível segunda edição do livro.
 
 A ideia de Injeção de Dependência é bastante simples e quase que uma 
 aplicação literal do seu nome. Vamos então explicá-la em quatro
-itens:
+passos:
 
 1. Suponha que uma classe `A` dependa de uma outra classe `B`:
 
@@ -186,6 +186,11 @@ No entanto, existem outros frameworks semelhantes, tanto para Java como
 para outras linguagens.
 
 ## Exercícios {.unnumbered}
+
+1. Como explicamos no [Capítulo 6](https://engsoftmoderna.info/cap6.html),
+padrões de projeto são classificados em padrões criacionais,
+estruturais e comportamentais. Em qual dessas categorias você classificaria
+Injeção de Dependência? Justifique brevemente.
 
 1. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
 de Dependência (princípio de projeto). Para saber mais sobre Inversão de 

@@ -96,8 +96,8 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 class="unnumbered" data-number="" id="o-que-é-injeção-de-dependência" class="unnumbered" data-number="">O que é Injeção de Dependência?</h1>
-<p>Injeção de Dependência não faz parte dos padrões de projeto do livro GoF. Porém, a solução é frequentemente listada como um padrão que poderia ser incluído em uma possível nova edição do livro.</p>
-<p>A ideia de Injeção de Dependência é bastante simples e quase que uma aplicação literal do seu nome. Vamos então explicá-la em quatro itens:</p>
+<p>Injeção de Dependência não faz parte dos padrões de projeto do livro GoF. Porém, a solução é frequentemente listada como um padrão que poderia ser incluído em uma possível segunda edição do livro.</p>
+<p>A ideia de Injeção de Dependência é bastante simples e quase que uma aplicação literal do seu nome. Vamos então explicá-la em quatro passos:</p>
 <ol type="1">
 <li>Suponha que uma classe <code>A</code> dependa de uma outra classe <code>B</code>:</li>
 </ol>
@@ -119,16 +119,16 @@
       this.b = b;
    }
 }</code></pre>
-<p>ou então rceber a dependência por meio de um método <code>set</code>:</p>
+<p>ou então receber a dependência por meio de um método <code>set</code>:</p>
 <pre><code>class A {
    B b;
-   void setterB(B b) { // injeção de dependência via setter
+   void setB(B b) { // injeção de dependência via setter
       this.b = b;
    }
 }</code></pre>
 <p>Logo, agora fica fácil entender o nome do padrão: as dependências de uma classe são <strong>injetadas</strong> nela, seja por meio de chamadas do seu construtor ou por meio de chamadas de um setter.</p>
 <ol start="4" type="1">
-<li>Na verdade, o mais recomendado é que o código de <code>A</code> use uma interface (isto é, uma abstração) para a classe concreta <code>B</code>. Ou seja, em vez de usar <code>B</code> (uma classe), deve-se usar <code>IB</code> (uma interface):</li>
+<li>Na verdade, o mais recomendado é que o código de <code>A</code> use uma interface (isto é, uma abstração) para a classe concreta <code>B</code>. Ou seja, em vez de usar <code>B</code> (uma classe concreta), deve-se usar <code>IB</code> (uma interface):</li>
 </ol>
 <pre><code>class A {
    IB b;   // dependência para uma interface IB
@@ -143,11 +143,11 @@
       this.b = b;
    }
 }</code></pre>
-<p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso também do princípio de projeto <strong>Prefira Interfaces a Classes Concretas</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p>
+<p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso do princípio de projeto <strong>Prefira Interfaces a Classes Concretas</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p>
 <p>Para concluir, as vantagens de Injeção de Dependência são:</p>
 <ul>
-<li><p>Injeção de Dependência torna mais fácil mudar a dependência concreta (<code>B</code>) usada por uma classe <code>A</code>. Por exemplo, <code>A</code> pode ser uma classe que precisa enviar mails, usando uma classe <code>B1</code>. Amanhã, no entanto, podemos decidir que os mails serão enviados por uma classe <code>B2</code>. Para isso, basta que <code>B1</code> e <code>B2</code> implementem a interface <code>IB</code>.</p></li>
-<li><p>Injeção de Dependência torna mais fácil o teste da classe <code>A</code>, pois podemos <em>mockar</em> mais facilmente a dependência para <code>B</code>. Por exemplo, em vez de um serviço de mail real (<code>B1</code> ou <code>B2</code>), podemos usar um serviço de mail fictício, que apenas emule o envio de uma mensagem simples. Para isso, basta que esse serviço fictício implemente a interface <code>IB</code>.</p></li>
+<li><p>Injeção de Dependência torna mais fácil mudar a dependência concreta (<code>B</code>) usada por uma classe <code>A</code>. Por exemplo, <code>A</code> pode ser uma classe que precisa enviar mails. Para isso, ela faz uso de uma classe <code>B1</code>. Amanhã, no entanto, podemos decidir que os mails serão enviados por uma classe <code>B2</code>. Para isso, basta que <code>B1</code> e <code>B2</code> implementem a interface <code>IB</code>.</p></li>
+<li><p>Injeção de Dependência torna mais fácil o teste da classe <code>A</code>, pois podemos <em>mockar</em> mais facilmente a dependência para <code>B</code>. Por exemplo, em vez de um serviço de mail real (<code>B1</code> ou <code>B2</code>), podemos usar um serviço de mail fictício, que apenas emule o envio de uma mensagem simples. Para isso, basta que esse serviço fictício implemente a interface <code>IB</code>. Se você ainda não sabe o que é um mock, recomendamos a leitura do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>.</p></li>
 </ul>
 <h2 class="unnumbered" data-number="" id="frameworks-para-injeção-de-dependência" class="unnumbered" data-number="">Frameworks para Injeção de Dependência</h2>
 <p>Uma desvantagem de Injeção de Dependência é que a responsabilidade por criar as dependências – isto é, instanciar os objetos que serão passados para a classe – é transferida para os seus clientes, como no seguinte exemplo:</p>
@@ -158,7 +158,7 @@
      ...
   } 
 }</code></pre>
-<p>No entanto, existem frameworks que evitam que os clientes tenham esse trabalho extra. Basicamente, eles assumem a responsabilidade de criar as dependências e injetá-las nas classes de destino.</p>
+<p>No entanto, existem frameworks que evitam que os clientes tenham esse trabalho extra. Basicamente, eles assumem a responsabilidade de criar as dependências e injetá-las nas classe de destino.</p>
 <p>De um modo genérico, costuma funcionar assim:</p>
 <pre><code>class A {
    IB b;
@@ -169,8 +169,8 @@
    }
 }</code></pre>
 <p>A anotação <code>@Inject</code> indica que a classe <code>A</code> quer fazer uso de Injeção de Dependência. E que, portanto, as dependências do seu construtor deverão ser criadas e injetadas pelo framework de injeção de dependências.</p>
-<p>No entanto, algum desenvolvedor deverá declarar a classe dos objetos que devem ser criados toda vez que o framework precisar chamar um construtor anotado com <code>@Inject</code>. Isso pode acontecer em um arquivo XML, um outro tipo de arquivo ou mesmo em um método específico. Independentemente do local, a ideia é declarar uma tabela com duas colunas: interface e classe concreta.</p>
-<p>No nosso exemplo, essa tabela deve incluir a linha <code>(IB, B1)</code>. Ou seja, uma linha como essa define que objetos do tipo <code>B1</code> deverão ser instanciados e injetados em todas as classes que precisarem de dependências do tipo <code>IB</code>.</p>
+<p>No entanto, algum desenvolvedor deverá declarar a classe dos objetos que devem ser criados toda vez que o framework precisar chamar um construtor anotado com <code>@Inject</code>. Isso pode acontecer em um arquivo XML, um outro tipo de arquivo ou mesmo em um método específico. Em qualquer caso, a ideia é declarar uma tabela com duas colunas: interface e classe concreta.</p>
+<p>No nosso exemplo, essa tabela deve incluir a linha <code>(IB, B1)</code>. Essa linha define que objetos do tipo <code>B1</code> deverão ser instanciados e injetados em todas as classes que precisarem de dependências do tipo <code>IB</code>.</p>
 <p>Por fim, o cliente, quando precisar instanciar um objeto de uma classe que usa <code>@Inject</code>, não precisará mais chamar o operador <code>new</code>, mas sim um método do próprio framework, como em:</p>
 <pre><code>class Cliente {
   void foo() {
@@ -183,10 +183,15 @@
 <li><p>A classe <code>A</code> faz uso de injeção de dependência, pois seu construtor foi anotado com <code>@Inject</code>.</p></li>
 <li><p>Antes de instanciar um objeto da classe <code>A</code>, o framework deve criar os objetos (dependências) usados pelo construtor dessa classe. No caso, esses objetos são de classes que implementam a interface <code>IB</code>.</p></li>
 <li><p>Mas qual classe que implementa <code>IB</code> deve ser instanciada? Para isso, o framework consulta o arquivo de configuração e descobre que <code>IB</code> está mapeada para <code>B1</code>, conforme explicamos anteriormente.</p></li>
-<li><p>Então o framework instancia um objeto do tipo <code>B1</code> e um objeto do tipo <code>A</code> (passando o objeto do tipo <code>B1</code> como parâmetro de seu construtor).</p></li>
+<li><p>Então o framework instancia um objeto do tipo <code>B1</code> e um objeto do tipo <code>A</code> . Ao instanciar esse último objeto ele também passa o objeto do tipo <code>B1</code> como parâmetro de seu construtor.</p></li>
 </ul>
-<p>Essa explicação foi baseada no <a href="https://github.com/google/guice">Guice</a>, um framework de injeção de dependências para Java, desenvolvido pelo Google. No entanto, existem outros frameworks semelhantes, tanto para Java como para outras linguagens.</p>
+<p>A explicação que acabamos de apresentar foi baseada no <a href="https://github.com/google/guice">Guice</a>, um framework de injeção de dependências para Java, desenvolvido pelo Google. No entanto, existem outros frameworks semelhantes, tanto para Java como para outras linguagens.</p>
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<ol type="1">
+<li><p>Como explicamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>, padrões de projeto são classificados em padrões criacionais, estruturais e comportamentais. Em qual dessas categorias você classificaria Injeção de Dependência? Justifique brevemente.</p></li>
+<li><p>Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão de Dependência (princípio de projeto). Para saber mais sobre Inversão de Dependência, consulte o <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p></li>
+<li><p>Por que costuma-se dizer que Injeção de Dependência pode, em certos casos, violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta use como exemplo a classe <code>Estacionamento</code> da Seção 5.3.1 do do <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a> do livro.</p></li>
+</ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
