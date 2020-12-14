@@ -173,6 +173,19 @@ na própria página do [livro](https://basecamp.com/shapeup).
 2. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 
 do [livro](https://basecamp.com/shapeup) que descreve o método, seção "The circuit breaker".
 
+3. A Basecamp -- empresa proponente de Shape up -- sempre possuiu 
+diversos times trabalhando de forma remota. E, recentemente, ela 
+anunciou que mesmo após a pandemia, continuará a ser uma empresa 
+100% remota. Qual a principal característica que torna Shape Up 
+um método adequado para times que trabalham de forma remota?
+
+4. O período de Cool Down -- existente em Shape Up -- não é uma 
+novidade em métodos ágeis. Por exemplo, em Extreme Programming 
+(XP) existe uma prática parecida, mas com um nome diferente. 
+Qual é esse nome adotado em XP? Se necessário, consulte o 
+[Capítulo 2](https://engsoftmoderna.info/cap2.html) 
+do livro texto, seção 2.3.3.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).

@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -189,6 +190,21 @@
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
 <ol type="1">
 <li><p>Como explicamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>, padrões de projeto são classificados em padrões criacionais, estruturais e comportamentais. Em qual dessas categorias você classificaria Injeção de Dependência? Justifique brevemente.</p></li>
+<li><p>Injeção de Dependência, muitas vezes, é comparada com padrão de projeto Fábrica. Qual a desvantagem de <q>injetar</q> dependências por meio de fábricas? Para responder, use os seguintes códigos:</p></li>
+</ol>
+<pre><code>class A {
+  IB b;
+  A(IB b) { // injeção de dependência 
+    this.b = b;
+  }
+}</code></pre>
+<pre><code>class A {
+  IB b;
+  A() { 
+    this.b = IB_Factory.getInstance();
+  }
+}</code></pre>
+<ol start="3" type="1">
 <li><p>Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão de Dependência (princípio de projeto). Para saber mais sobre Inversão de Dependência, consulte o <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p></li>
 <li><p>Por que costuma-se dizer que Injeção de Dependência pode, em certos casos, violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta use como exemplo a classe <code>Estacionamento</code> da Seção 5.3.1 do do <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a> do livro.</p></li>
 </ol>

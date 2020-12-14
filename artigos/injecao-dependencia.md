@@ -192,11 +192,33 @@ padrões de projeto são classificados em padrões criacionais,
 estruturais e comportamentais. Em qual dessas categorias você classificaria
 Injeção de Dependência? Justifique brevemente.
 
-1. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
+2. Injeção de Dependência, muitas vezes, é comparada com padrão de projeto
+Fábrica. Qual a desvantagem de "injetar" dependências por meio de fábricas?
+Para responder, use os seguintes códigos:
+
+ ```
+ class A {
+   IB b;
+   A(IB b) { // injeção de dependência 
+     this.b = b;
+   }
+ }
+ ```
+
+ ```
+ class A {
+   IB b;
+   A() { 
+     this.b = IB_Factory.getInstance();
+   }
+ }
+ ```
+
+3. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
 de Dependência (princípio de projeto). Para saber mais sobre Inversão de 
 Dependência, consulte o [Capítulo 5](https://engsoftmoderna.info/cap5.html).
 
-2. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
+4. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
 violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta
 use como exemplo a classe `Estacionamento` da Seção 5.3.1 do 
 do [Capítulo 5](https://engsoftmoderna.info/cap5.html) do livro.
