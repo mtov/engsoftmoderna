@@ -190,18 +190,18 @@
 <h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
 <ol type="1">
 <li><p>Como explicamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>, padrões de projeto são classificados em padrões criacionais, estruturais e comportamentais. Em qual dessas categorias você classificaria Injeção de Dependência? Justifique brevemente.</p></li>
-<li><p>Injeção de Dependência, muitas vezes, é comparada com padrão de projeto Fábrica. Qual a desvantagem de <q>injetar</q> dependências por meio de fábricas? Para responder, use os seguintes códigos:</p></li>
+<li><p>Injeção de Dependência, muitas vezes, é comparada com padrão de projeto Fábrica. Qual a desvantagem de <q>injetar</q> dependências por meio de fábricas? Para responder, compare os seguintes códigos:</p></li>
 </ol>
 <pre><code>class A {
   IB b;
-  A(IB b) { // injeção de dependência 
-    this.b = b;
+  A(IB b) { 
+    this.b = b; // injeção de dependência 
   }
 }</code></pre>
 <pre><code>class A {
   IB b;
   A() { 
-    this.b = IB_Factory.getInstance();
+    this.b = IB_Factory.getInstance(); // fábrica
   }
 }</code></pre>
 <ol start="3" type="1">

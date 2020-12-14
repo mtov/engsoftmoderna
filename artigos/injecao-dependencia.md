@@ -194,13 +194,13 @@ Injeção de Dependência? Justifique brevemente.
 
 2. Injeção de Dependência, muitas vezes, é comparada com padrão de projeto
 Fábrica. Qual a desvantagem de "injetar" dependências por meio de fábricas?
-Para responder, use os seguintes códigos:
+Para responder, compare os seguintes códigos:
 
  ```
  class A {
    IB b;
-   A(IB b) { // injeção de dependência 
-     this.b = b;
+   A(IB b) { 
+     this.b = b; // injeção de dependência 
    }
  }
  ```
@@ -209,7 +209,7 @@ Para responder, use os seguintes códigos:
  class A {
    IB b;
    A() { 
-     this.b = IB_Factory.getInstance();
+     this.b = IB_Factory.getInstance(); // fábrica
    }
  }
  ```
