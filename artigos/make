@@ -4,6 +4,7 @@ pandoc --defaults=defaults.yaml -T "Como monetizar sistemas de software?" como-m
 pandoc --defaults=defaults.yaml -T "Micro-SaaS: Microempresas de Software como Serviço" micro-saas.md -o micro-saas.html
 
 pandoc --defaults=defaults.yaml -T "Design Thinking" design-thinking.md -o design-thinking.html
+pandoc --defaults=defaults.yaml -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html
 
 pandoc --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
