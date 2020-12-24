@@ -83,11 +83,12 @@ Bem, esse é um artigo em andamento! A ideia é atualizá-lo, à medida que cons
 
 * * *
 
-P.S. Recebi um interessante comentário, por e-mail, sugerindo uma quarta dimensão: **formação empreendedora**. Certamente, muito importante! Pois em uma época de transformação digital — como a que estamos vivemos —, as oportunidades que existem são imensas. E Engenharia de Software é o motor principal da maioria dos 
-processos de transformação digital. Adicionalmente, as empresas exigem que seus funcionários
-cada vez mais tenham também uma mentalidade empreendedora. Ou seja, os engenheiros de software estão sendo
-incentivados a também entender do negócio da empresa, propor soluções diferentes daquelas que chegam de
-cima para baixo, assumir riscos, etc. Às vezes, esse processo é conhecido como **empreendedorismo interno**.
+P.S. Recebi um interessante comentário, por e-mail, sugerindo uma quarta dimensão: **formação empreendedora**. Certamente, muito importante! Pois em uma época de transformação digital — como a que estamos vivemos —, as oportunidades que existem são imensas. E Engenharia de Software é o motor da maioria dos 
+processos de transformação digital. Adicionalmente, as empresas também cobram cada vez mais uma
+mentalidade empreendedora de seus colaboradores. Ou seja, os engenheiros de software modernos estão sendo
+incentivados a também entender do negócio da empresa, a propor soluções diferentes daquelas 
+que chegam de cima para baixo, a assumir riscos, etc. Esse processo é conhecido 
+como **empreendedorismo interno**.
 
 * * * 
 
