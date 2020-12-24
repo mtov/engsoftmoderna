@@ -1,6 +1,6 @@
-# O que é (e que o não é) um MVP?  {.unnumbered}
+# O que é -- e também o que o não é -- um MVP?  {.unnumbered}
 
-## Introdução?  {.unnumbered}
+## Introdução  {.unnumbered}
 
 **Mínimo Produto Viável (MVP)** é um conceito cunhado por Eric Eries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
@@ -72,7 +72,7 @@ funcionalidade para mostrar para seu cliente.
 
 A pergunta é: esse primeiro sistema é um MVP?
 
-Não queremos ser dogmáticos e rigorosos quanto ao uso
+Não queremos ser dogmáticos e puristas quanto ao uso
 de termos, mas a resposta é **negativa**.
 
 Conforme definimos, um MVP é um experimento para testar 
@@ -80,34 +80,34 @@ uma ameaça importante ao sucesso de um projeto. No exemplo
 que acabamos de apresentar, no entanto, não existe ameaça ou riscos
 relevantes. Conforme afirmamos: os requisitos e o escopo do
 sistema já estão claros, você tem competência e experiência
-para desenvolvê-lo e ele já tem um cliente garantido, que vai
-pagar pelo desenvolvimento!
+para desenvolvê-lo e o sistema já tem um cliente garantido, que vai
+pagar pelo desenvolvimento.
 
 **Resumo:** quando falamos de MVP, o mais importante não é o
 produto em si, mas a hipótese de risco (ou a preocupação
 ou ameaça) que procuramos testar. Se alguém comentar
 com você sobre um MVP, não esqueça então de perguntar 
-e conhecer qual a hipótese de risco está sendo testada!
+e conhecer qual a hipótese de risco está sendo testada.
 
-## Antes de concluir: Pivôs {.unnumbered}
+## Antes de concluir: Pivôs vs Restarts {.unnumbered}
 
-Às vezes, costumamos usar o termo pivô também de forma imprecisa.
+Às vezes, costumamos usar o termo **pivô** também de forma imprecisa.
 Para ficar claro, após criar um MVP, recebemos feedback e
 dados de potenciais clientes. Podem então ocorrer três situações:
 
-1. o experimento foi bem sucedido! Vamos então começar a implementar
-um produto de verdade.
+1. O experimento foi bem sucedido! Vamos então começar a implementar
+um sistema de verdade.
 
-2. o experimento foi um fracasso! Portanto, talvez seja melhor 
+2. O experimento foi um fracasso! Portanto, talvez seja melhor 
 desistir, enquanto o prejuízo é pequeno.
 
-3. com o que aprendemos com o experimento, talvez a gente possa 
+3. Com o que aprendemos com o experimento, talvez a gente possa 
 criar um novo MVP, dessa vez com mais chances de sucesso. Ou 
 seja, como temos ainda alguma verba, vamos realizar um **pivô**!
 
 Por exemplo, em um pivô podemos reformular a interface
-do sistema, tentar atrair um outro tipo de cliente, tentar
-uma nova forma de divulgação ou promoção do experimento,
+do sistema, tentar atrair um outro tipo de cliente ou adotante
+inicial, tentar uma nova forma de divulgação ou promoção do experimento,
 acrescentar ou remover uma funcionalidade do sistema, etc.
 
 Porém, não podemos confundir um pivô com um
@@ -117,8 +117,7 @@ o empreendimento, com um novo objetivo e visão.
 
 **Exemplo de restart**: antes de criar o Twitter, os seus fundadores 
 trabalharam em uma plataforma de distribuição de podcasts, chamada Odeo. 
-Como a iniciativa não deu certo (pois a Apple lançou logo depois
-o iTunes), eles desistiram da Odeo e começaram a trabalhar em um novo 
+Como a iniciativa não deu certo, eles desistiram da Odeo e começaram a trabalhar em um novo 
 sistema, dessa vez uma rede social para compartilhamento de mensagens 
 de texto com 140 caracteres, a qual chamaram de Twitter. Essa mudança 
 de rota -- de um sistema para distribuição de podcasts para uma rede 
