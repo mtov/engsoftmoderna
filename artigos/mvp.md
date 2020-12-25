@@ -125,7 +125,7 @@ pivô, mas sim um recomeço do zero.
 
 ## Exercícios {.unnumbered}
 
-1. O seguinte artigo do blog de incubadora de startups YCombinador
+1. O seguinte artigo do blog da incubadora de startups YCombinador
 tem um título interessante: 
 [A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/library/4Q-a-minimum-viable-product-is-not-a-product-it-s-a-process).
 Por que o artigo defende essa tese? (isto é, por que, segundo o artigo,
@@ -136,7 +136,7 @@ uma empresa que entregava DVDs fisicamente pelo correio, já tendo
 nessa época centenas de milhares de assinantes. Então, em 2007, a
 empresa migrou para o serviço de streaming, tal qual conhecemos e
 usamos hoje. Você classificaria essa mudança como um pivô? Sim ou
-não? Justifique sua resposta.
+não? Justifique a sua resposta.
 
 * * * 
 
