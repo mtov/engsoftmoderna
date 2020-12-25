@@ -6,13 +6,13 @@
 no seu livro Lean Startup. E é impressionante o sucesso e o
 alcance que ele alcançou. Hoje, o conceito é usado pelos mais
 diversos empreendedores, sejam eles de produtos digitais ou
-mesmo de produtos físicos. O conceito já faz parte também do
+mesmo de produtos físicos. O conceito de MVP já faz parte também do
 vocabulário de desenvolvedores de software (como estudamos no
 [Capítulo 3](https://engsoftmoderna.info/cap3.html)), 
 profissionais de marketing, consultores, analistas de negócio, etc.
 
 No entanto, principalmente na área de software, o conceito de
-MVP é muitas vezes usado de uma forma que que não é totalmente fiel 
+MVP é algumas vezes usado de uma forma que não é totalmente fiel 
 à sua definição original. Então, neste pequeno artigo, vamos
 tentar esclarecer o significado mais preciso do conceito.
 
@@ -20,18 +20,18 @@ tentar esclarecer o significado mais preciso do conceito.
 
 Para entender para que serve um MVP, temos que começar lembrando que 
 o conceito foi proposto no contexto de startups, isto é, 
-empreendimentos que operam em um ambiente de risco e, cujas chances 
-de insucesso são grande.
+empreendimentos que operam em um ambiente de grande 
+risco e cujas chances de insucesso, portanto, são grandes.
 
 Nesse contexto, é importante **testar** o mais rapidamente possível 
 as hipóteses mais arriscadas do empreendimento. Normalmente,
 a primeira hipótese que deve ser testada é a capacidade da empresa 
 atrair clientes dispostos a pagar pelo seu produto ou serviço.
 
-Por isso mesmo, o primeiro MVP de uma startup não costuma ser um 
+Por isso, o primeiro MVP de uma startup não costuma ser um 
 sistema, pois o custo de desenvolver um sistema -- mesmo que 
 mínimo -- pode ser alto. Em vez disso, costuma-se usar como
-primeiro MVP apenas uma *landing page*, um vídeo demo ou  
+primeiro MVP apenas uma *landing page*, um vídeo de demonstração ou 
 sketches de telas em papel. Ou seja, um produto que pode ser 
 construído em poucos dias. Feito isso, ele deve ser 
 apresentado a potenciais clientes iniciais, para obter 
@@ -64,8 +64,8 @@ cliente, que está pagando pelo seu desenvolvimento.
 Então, você resolve usar um método como Scrum ou XP para 
 implementar esse sistema (imagine, para ficar mais realista,
 que você é dono de uma empresa de desenvolvimento e vai contar com 
-ajuda de alguns desenvolvedores nesse projeto). Assim, 
-o projeto será dividido em sprints, no caso, de duas semanas. 
+ajuda de alguns desenvolvedores nesse projeto). Mais precisamente, 
+o projeto será dividido em sprints com duração de duas semanas. 
 Assim, após o primeiro sprint, você já terá um sistema com alguma 
 funcionalidade para mostrar para seu cliente. 
 
@@ -88,7 +88,7 @@ ou ameaça) que procuramos testar. Se alguém comentar
 com você sobre um MVP, não esqueça então de perguntar 
 sobre a hipótese de risco que está sendo testada.
 
-## Antes de concluir: Pivôs vs Restarts {.unnumbered}
+## Antes de Concluir: Pivôs vs Restarts {.unnumbered}
 
 Às vezes, costumamos usar o termo **pivô** também de forma imprecisa.
 Para ficar claro, após criar um MVP, recebemos feedback e
@@ -102,15 +102,15 @@ desistir, enquanto o prejuízo é pequeno.
 
 3. Com o que aprendemos com o experimento, a gente consegue 
 criar um novo MVP, dessa vez com mais chances de sucesso. Ou 
-seja, como temos ainda alguma verba, vamos realizar um **pivô**!
+seja, vamos realizar um **pivô**!
 
 Por exemplo, em um pivô podemos reformular a interface
-do sistema, tentar atrair um outro tipo de cliente ou adotante
+do MVP, tentar atrair um outro tipo de cliente ou adotante
 inicial, tentar uma nova forma de divulgação ou promoção do experimento,
-acrescentar ou remover uma funcionalidade do sistema, etc.
+acrescentar ou remover uma funcionalidade do MVP, etc.
 
 Porém, não podemos confundir um pivô com um
-um **restart** . Um restart (ou reboot) ocorre quando os fundadores 
+um **restart**. Um restart (ou reboot) ocorre quando os fundadores 
 abandonam o produto e a visão original da empresa e recomeçam 
 o empreendimento, com um novo propósito e visão. 
 
@@ -121,7 +121,7 @@ sistema, dessa vez uma rede social para compartilhamento de mensagens
 de texto com 140 caracteres, a qual chamaram de Twitter. Essa mudança 
 de rota -- de um sistema para distribuição de podcasts para uma rede 
 social baseada em mensagens curtas de texto -- não foi apenas um
-pivô, mas um recomeço do zero.
+pivô, mas sim um recomeço do zero.
 
 
 * * * 
