@@ -2,7 +2,7 @@
 
 ## Introdução  {.unnumbered}
 
-**Mínimo Produto Viável (MVP)** é um conceito cunhado por Eric Eries 
+**Produto Mínimo Viável (MVP)** é um conceito cunhado por Eric Eries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
 alcance que ele alcançou. Hoje, o conceito é usado pelos mais
 diversos empreendedores, sejam eles de produtos digitais ou
@@ -109,9 +109,9 @@ do MVP, tentar atrair um outro tipo de cliente ou adotante
 inicial, tentar uma nova forma de divulgação ou promoção do experimento,
 acrescentar ou remover uma funcionalidade do MVP, etc.
 
-Porém, não podemos confundir um pivô com um
-um **restart**. Um restart (ou reboot) ocorre quando os fundadores 
-abandonam o produto e a visão original da empresa e recomeçam 
+Porém, não podemos confundir um pivô com um **restart**. Um 
+restart (ou reboot) ocorre quando os fundadores abandonam 
+o produto e a visão original da empresa e recomeçam 
 o empreendimento, com um novo propósito e visão. 
 
 **Exemplo**: antes de criar o Twitter, os seus fundadores 
@@ -123,6 +123,20 @@ de rota -- de um sistema para distribuição de podcasts para uma rede
 social baseada em mensagens curtas de texto -- não foi apenas um
 pivô, mas sim um recomeço do zero.
 
+## Exercícios {.unnumbered}
+
+1. O seguinte artigo do blog de incubadora de startups YCombinador
+tem um título interessante: 
+[A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/library/4Q-a-minimum-viable-product-is-not-a-product-it-s-a-process).
+Por que o artigo defende essa tese? (isto é, por que, segundo o artigo,
+um MVP não é um produto, mas sim um processo?).
+
+2. Nos seus primeiros dez anos de vida (1997-2007), a Netflix era
+uma empresa que entregava DVDs fisicamente pelo correio, já tendo 
+nessa época centenas de milhares de assinantes. Então, em 2007, a
+empresa migrou para o serviço de streaming, tal qual conhecemos e
+usamos hoje. Você classificaria essa mudança como um pivô? Sim ou
+não? Justifique sua resposta.
 
 * * * 
 
