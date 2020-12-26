@@ -1,0 +1,31 @@
+Marque a alternativa INCORRETA:
+A. Casos de uso podem ser escritos tanto por desenvolvedores como por usuários finais.
+B. Um caso de uso possui duas partes: fluxo normal e extensões (a esse fluxo normal).
+C. Extensões podem detalhar um passo do fluxo normal ou especificar erros e exceções.
+E. Para padronizar a escrita de casos de uso, deve-se criar um glossário explicando o vocabulário usado no projeto.
+E. "O aluno seleciona o seu curso em um menu" nunca deve ser um passo em um caso de uso.
+ANSWER: A
+
+Casos de uso podem incluir as seguintes seções adicionais, EXCETO:
+A. Propósito do caso de uso
+B. Pré-condições do caso de uso
+C. Pós-condições do caso de uso
+D. Casos de uso relacionados
+E. Diagramas UML relacionados
+ANSWER: E
+
+Marque a alternativa INCORRETA:
+A. Com métodos ágeis, atividades de definição de requisitos ocorrem todos os dias, por meio de conversas entre PO e desenvolvedores.
+B. Se necessário, pode-se realizar no início do projeto um workshop para definir seu escopo e principais histórias dos usuários.
+C. Os casos de teste que serão usados para aceitar uma história podem ser escritos no seu verso.
+D. Critérios para aceitação de histórias são importantes para evitar que desenvolvedores decidam por si só sobre a conclusão de histórias.
+E. Histórias de usuários devem ser independentes, negociáveis, agregar valor, estimáveis, sucintas e atômicas.
+ANSWER: E
+
+São exemplos de requisitos não-funcionais, EXCETO:
+A. Desempenho, usabilidade e robustez.
+B. Desempenho, confiabilidade e portabilidade.
+C. Espaço, confiabilidade e usabilidade.
+D. Confiabilidade, robustez e usabilidade.
+E. Desempenho, confiabilidade e eficácia.
+ANSWER: E

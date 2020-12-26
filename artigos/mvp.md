@@ -128,8 +128,8 @@ pivô, mas sim um recomeço do zero.
 1. O seguinte artigo do blog da incubadora de startups YCombinador
 tem um título interessante: 
 [A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/library/4Q-a-minimum-viable-product-is-not-a-product-it-s-a-process).
-Por que o artigo defende essa tese? (isto é, por que, segundo o artigo,
-um MVP não é um produto, mas sim um processo?).
+Por que o artigo defende essa tese? Isto é, por que, segundo o artigo,
+um MVP não é um produto, mas sim um processo?
 
 2. Nos seus primeiros dez anos de vida (1997-2007), a Netflix era
 uma empresa que entregava DVDs fisicamente pelo correio, já tendo 
