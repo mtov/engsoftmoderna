@@ -63,13 +63,13 @@ nesse momento são as seguintes:
 
 * Mesmo quando o MVP passar a ser um sistema, continue 
 focando em adotantes iniciais (*early adopters*), pois
-é bem mais difícil criar um produto para um grupo muito 
+é mais difícil criar um produto para um grupo 
 amplo e genérico de usuários.
 
 * Passe a exigir algum pagamento dos clientes, por exemplo,
-após um período de experimentação de, por exemplo, 30 dias.
+após um período de experimentação de 30 dias.
 Ou seja, você tem que validar se seus clientes estão dispostos
-a pagar pelo uso do sistema. Se eles não quiserem pagar,
+a pagar pelo sistema. Se eles não quiserem pagar,
 isso costuma ser uma ameaça séria à sobrevivência do negócio.
 
 * Não tente automatizar tudo ainda. Como você vai ter
@@ -77,14 +77,14 @@ poucos clientes, várias tarefas -- incluindo pagamentos,
 devoluções, cancelamentos, entregas, etc -- podem ser feitas 
 de modo manual. Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
 
-* Sempre reuse pacotes prontos ou serviços podem ser terceirizadas. 
+* Sempre reuse bibliotecas ou serviços de terceiros. 
 Os exemplos clássicos são serviços de autenticação e de 
 cobrança por cartões de créditos. 
 
-* Não deixe de se preocupar com certos requisitos não-funcionais,
+* Preste atenção também em alguns requisitos não-funcionais,
 como desempenho, usabilidade, segurança e privacidade. Esses
 requisitos -- se não tratados de forma adequada -- podem causar o
-fracasso de seu projeto.
+fracasso do seu projeto.
 
 ## E o que não é um MVP? {.unnumbered}
 
