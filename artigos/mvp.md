@@ -21,12 +21,22 @@ tentar esclarecer o significado mais preciso do conceito.
 Para entender para que serve um MVP, temos que começar lembrando que 
 o conceito foi proposto no contexto de startups, isto é, 
 empreendimentos que operam em um ambiente de grande 
-risco e cujas chances de insucesso, portanto, são grandes.
+risco e cujas chances de insucesso são grandes.
 
-Nesse contexto, é importante **testar** o mais rapidamente possível 
-as hipóteses mais arriscadas do empreendimento. Normalmente,
-a primeira hipótese que deve ser testada é a capacidade da empresa 
-atrair clientes dispostos a pagar pelo seu produto ou serviço.
+Nesse contexto, é importante testar o mais rapidamente possível 
+as hipóteses mais arriscadas do empreendimento. A **metodologia
+lean** para criação de startups, empresas e produtos possui então
+dois passos principais:
+
+1. Qual a hipótese mais arriscada do meu projeto? Isto é, o 
+que tem a maior chance de levar o projeto a um fracasso?
+
+2. Qual o menor experimento (isto é, MVP) que posso construir
+para validar essa hipótese?
+
+
+Normalmente, a primeira hipótese que deve ser testada é a capacidade 
+da empresa atrair clientes dispostos a pagar pelo seu produto ou serviço.
 
 Por isso, o primeiro MVP de uma startup não costuma ser um 
 sistema, pois o custo de desenvolver um sistema -- mesmo que 
@@ -34,7 +44,7 @@ mínimo -- pode ser alto. Em vez disso, costuma-se usar como
 primeiro MVP apenas uma *landing page*, um vídeo de demonstração ou 
 sketches de telas em papel. Ou seja, um produto que pode ser 
 construído em poucos dias. Feito isso, ele deve ser 
-apresentado a potenciais clientes iniciais, para obter 
+apresentado a potenciais clientes, para obter 
 uma primeira ideia do potencial de sucesso do empreendimento.
 
 Por exemplo, suponha que seu primeiro MVP é uma apenas uma
@@ -45,6 +55,36 @@ para receber notícias sobre o sistema à medida que ele
 for ficando pronto. Se ninguém se cadastrar em sua lista
 de mails, mesmo após algum esforço de promoção, você deve 
 avaliar com calma se vale a pena continuar com sua ideia.
+
+Por outro lado, se os primeiros experimentos forem bem 
+sucedidos, você vai ter que começar a construir seus
+primeiros MVPs na forma de sistemas. Algumas recomendações
+nesse momento são as seguintes:
+
+* Mesmo quando o MVP passar a ser um sistema, continue 
+focando em adotantes iniciais (*early adopters*), pois
+é bem mais difícil criar um produto para um grupo muito 
+amplo e genérico de usuários.
+
+* Passe a exigir algum pagamento dos clientes, por exemplo,
+após um período de experimentação de, por exemplo, 30 dias.
+Ou seja, você tem que validar se seus clientes estão dispostos
+a pagar pelo uso do sistema. Se eles não quiserem pagar,
+isso costuma ser uma ameaça séria à sobrevivência do negócio.
+
+* Não tente automatizar tudo ainda. Como você vai ter
+poucos clientes, várias tarefas -- incluindo pagamentos,
+devoluções, cancelamentos, entregas, etc -- podem ser feitas 
+de modo manual. Esse tipo de MVP é chamado de **MVP Concierge**.
+
+* Sempre reuse pacotes prontos ou serviços podem ser terceirizadas. 
+Os exemplos clássicos são serviços de autenticação e de 
+cobrança por cartões de créditos. 
+
+* Não deixe de se preocupar com certos requisitos não-funcionais,
+como desempenho, usabilidade, segurança e privacidade. Esses
+requisitos -- se não tratados de forma adequada -- podem causar o
+fracasso de seu projeto.
 
 ## E o que não é um MVP? {.unnumbered}
 
