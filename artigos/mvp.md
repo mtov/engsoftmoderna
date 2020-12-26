@@ -52,7 +52,13 @@ página Web, descrevendo o sistema que pretende desenvolver,
 suas principais funcionalidades e benefícios. Nessa página,
 você pode pedir que potenciais clientes deixem seu e-mail, 
 para receber notícias sobre o sistema à medida que ele
-for ficando pronto. Se ninguém se cadastrar em sua lista
+for ficando pronto. E então passa a valer a seguinte
+frase famosa sobre metodologias lean:
+
+> Em um MVP, você decide o que é mínimo, mas é o cliente quem
+decide se ele é viável.
+
+Ou seja, no exemplo anterior, se ninguém se cadastrar na sua lista
 de mails, mesmo após algum esforço de promoção, você deve 
 avaliar com calma se vale a pena continuar com sua ideia.
 
