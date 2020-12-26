@@ -12,7 +12,7 @@ a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
 (copiada de um [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
 
-![Arquitetura Limpa](./figs/arquitetura-limpa.png){width=75%}
+![Arquitetura Limpa](./figs/arquitetura-limpa.jpg){width=75%}
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
