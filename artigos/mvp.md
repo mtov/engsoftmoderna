@@ -128,13 +128,7 @@ sistema estão claros, você tem competência e experiência
 para desenvolvê-lo e o sistema já tem um cliente garantido, que vai
 pagar pelo seu desenvolvimento.
 
-**Resumo:** quando falamos de MVP, o mais importante não é o
-produto em si, mas a hipótese de risco (ou a preocupação
-ou ameaça) que procuramos testar. Se alguém comentar
-com você sobre um MVP, não esqueça então de perguntar 
-sobre a hipótese de risco que está sendo testada.
-
-## Antes de Concluir: Pivôs vs Restarts {.unnumbered}
+## Pivôs vs Restarts {.unnumbered}
 
 Às vezes, costumamos usar o termo **pivô** também de forma imprecisa.
 Para ficar claro, após criar um MVP, recebemos feedback e
@@ -168,6 +162,15 @@ de texto com 140 caracteres, a qual chamaram de Twitter. Essa mudança
 de rota -- de um sistema para distribuição de podcasts para uma rede 
 social baseada em mensagens curtas de texto -- não foi apenas um
 pivô, mas sim um recomeço do zero.
+
+## Comentário Final {.unnumbered}
+
+Quando falamos de MVP, o mais importante não é o
+produto em si, mas a hipótese de risco (ou a preocupação
+ou ameaça) que procuramos testar. Se alguém comentar
+com você sobre um MVP, não esqueça então de perguntar 
+sobre a hipótese de risco que está sendo testada.
+
 
 ## Exercícios {.unnumbered}
 
