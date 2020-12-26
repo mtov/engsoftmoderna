@@ -75,7 +75,7 @@ isso costuma ser uma ameaça séria à sobrevivência do negócio.
 * Não tente automatizar tudo ainda. Como você vai ter
 poucos clientes, várias tarefas -- incluindo pagamentos,
 devoluções, cancelamentos, entregas, etc -- podem ser feitas 
-de modo manual. Esse tipo de MVP é chamado de **MVP Concierge**.
+de modo manual. Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
 
 * Sempre reuse pacotes prontos ou serviços podem ser terceirizadas. 
 Os exemplos clássicos são serviços de autenticação e de 
