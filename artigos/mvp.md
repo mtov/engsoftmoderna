@@ -28,17 +28,21 @@ as hipóteses mais arriscadas do empreendimento. A **metodologia
 lean** para criação de startups, empresas e produtos possui então
 dois passos principais:
 
-1. Qual a hipótese mais arriscada do meu projeto? Isto é, o 
-que tem a maior chance de levar o projeto a um fracasso?
+1. Qual a hipótese mais arriscada do meu projeto? Isto é, qual a
+hipótese que se não for verdade vai resultar no fracasso 
+do projeto?
 
 2. Qual o menor experimento (isto é, MVP) que posso construir
 para validar essa hipótese?
 
+Normalmente, a primeira hipótese que deve ser testada é a 
+capacidade da empresa atrair clientes dispostos a pagar 
+pelo seu produto ou serviço. Dizendo de outro modo, essa
+hipótese pode ser anunciada da seguinte forma: existem 
+clientes dispostos a pagar por uma solução X para um 
+problema Y.
 
-Normalmente, a primeira hipótese que deve ser testada é a capacidade 
-da empresa atrair clientes dispostos a pagar pelo seu produto ou serviço.
-
-Por isso, o primeiro MVP de uma startup não costuma ser um 
+Desse modo, o primeiro MVP de uma startup não costuma ser um 
 sistema, pois o custo de desenvolver um sistema -- mesmo que 
 mínimo -- pode ser alto. Em vez disso, costuma-se usar como
 primeiro MVP apenas uma *landing page*, um vídeo de demonstração ou 
@@ -47,7 +51,7 @@ construído em poucos dias. Feito isso, ele deve ser
 apresentado a potenciais clientes, para obter 
 uma primeira ideia do potencial de sucesso do empreendimento.
 
-Por exemplo, suponha que seu primeiro MVP é uma apenas uma
+Por exemplo, suponha que seu primeiro MVP seja apenas uma
 página Web, descrevendo o sistema que pretende desenvolver,
 suas principais funcionalidades e benefícios. Nessa página,
 você pode pedir que potenciais clientes deixem seu e-mail, 
@@ -56,32 +60,38 @@ for ficando pronto. E então passa a valer a seguinte
 frase famosa sobre metodologias lean:
 
 > Em um MVP, você decide o que é mínimo, mas é o cliente quem
-decide se ele é viável.
+decide se o produto é viável.
 
-Ou seja, no exemplo anterior, se ninguém se cadastrar na sua lista
-de mails, mesmo após algum esforço de promoção, você deve 
-avaliar com calma se vale a pena continuar com sua ideia.
+Ou seja, viável, na sigla MVP, significa um produto que atende 
+e atrai clientes -- em vez de significar um produto cuja 
+implementação é possível.
+
+Continuando com o exemplo anterior, se ninguém se cadastrar
+na sua lista de mails, mesmo após algum esforço de promoção, 
+você deve avaliar com calma se vale a pena continuar com sua 
+ideia.
 
 Por outro lado, se os primeiros experimentos forem bem 
 sucedidos, você vai ter que começar a construir seus
 primeiros MVPs na forma de sistemas. Algumas recomendações
 nesse momento são as seguintes:
 
-* Mesmo quando o MVP passar a ser um sistema, continue 
+* Mesmo quando o MVP passa a ser um sistema, continue 
 focando em adotantes iniciais (*early adopters*), pois
 é mais difícil criar um produto para um grupo 
 amplo e genérico de usuários.
 
 * Passe a exigir algum pagamento dos clientes, por exemplo,
 após um período de experimentação de 30 dias.
-Ou seja, você tem que validar se seus clientes estão dispostos
-a pagar pelo sistema. Se eles não quiserem pagar,
+Ou seja, é importante validar se seus clientes estão 
+dispostos a pagar pelo sistema. Se eles não quiserem pagar,
 isso costuma ser uma ameaça séria à sobrevivência do negócio.
 
 * Não tente automatizar tudo ainda. Como você vai ter
 poucos clientes, várias tarefas -- incluindo pagamentos,
-devoluções, cancelamentos, entregas, etc -- podem ser feitas 
-de modo manual. Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
+devoluções, cancelamentos, mudanças de planos de pagamento, 
+entregas, etc -- podem ser feitas de modo manual. 
+Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
 
 * Sempre reuse bibliotecas ou serviços de terceiros. 
 Os exemplos clássicos são serviços de autenticação e de 
@@ -89,8 +99,8 @@ cobrança por cartões de créditos.
 
 * Preste atenção também em alguns requisitos não-funcionais,
 como desempenho, usabilidade, segurança e privacidade. Esses
-requisitos -- se não tratados de forma adequada -- podem causar o
-fracasso do seu projeto.
+requisitos -- se não tratados de forma adequada -- podem causar 
+o fracasso do seu projeto.
 
 ## E o que não é um MVP? {.unnumbered}
 
