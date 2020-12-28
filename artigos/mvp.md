@@ -164,11 +164,15 @@ restart (ou reboot) ocorre quando os fundadores abandonam
 o produto e a visão original da empresa e recomeçam 
 o empreendimento com um novo propósito e visão. 
 
-**Exemplo**: antes de criar o Twitter, os seus fundadores 
+**Exemplo**: antes de criarem o Twitter, os seus fundadores 
 trabalharam em uma plataforma de distribuição de podcasts, chamada Odeo. 
 Como a iniciativa não deu certo, eles desistiram da Odeo e começaram a trabalhar em um novo 
 sistema, dessa vez uma rede social para compartilhamento de mensagens 
-de texto com 140 caracteres, a qual chamaram de Twitter. Essa mudança 
+de texto com 140 caracteres, a qual chamaram de Twitter (veja figura)
+
+![](./figs/odeo-twitter-restart.jpg){width=95%}
+
+Essa mudança 
 de rota -- de um sistema para distribuição de podcasts para uma rede 
 social -- não foi apenas um
 pivô, mas sim um recomeço do zero.
