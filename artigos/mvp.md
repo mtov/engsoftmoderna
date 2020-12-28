@@ -32,7 +32,7 @@ dois passos principais:
 hipótese que se não for verdade vai resultar no fracasso 
 do projeto?
 
-2. Qual o menor experimento (isto é, MVP) que posso construir
+2. Qual o menor experimento (isto é, MVP) que eu posso construir
 para validar essa hipótese?
 
 Normalmente, a primeira hipótese que deve ser testada é a 
@@ -54,7 +54,7 @@ uma primeira ideia do potencial de sucesso do empreendimento.
 Por exemplo, suponha que seu primeiro MVP seja apenas uma
 página Web, descrevendo o sistema que pretende desenvolver,
 suas principais funcionalidades e benefícios. Nessa página,
-você pode pedir que potenciais clientes deixem seu e-mail, 
+você pode pedir que potenciais clientes deixem seu e-mail 
 para receber notícias sobre o sistema à medida que ele
 for ficando pronto. E então passa a valer a seguinte
 frase famosa sobre metodologias lean:
@@ -63,13 +63,13 @@ frase famosa sobre metodologias lean:
 decide se o produto é viável.
 
 Ou seja, viável, na sigla MVP, significa um produto que atende 
-e atrai clientes -- em vez de significar um produto cuja 
-implementação é possível.
+e atrai clientes -- em vez de significar um produto que você
+consegue implementar.
 
 Continuando com o exemplo anterior, se ninguém se cadastrar
 na sua lista de mails, mesmo após algum esforço de promoção, 
-você deve avaliar com calma se vale a pena continuar com sua 
-ideia.
+você deve avaliar com calma se vale a pena continuar com a 
+sua ideia.
 
 Por outro lado, se os primeiros experimentos forem bem 
 sucedidos, você vai ter que começar a construir seus
@@ -94,8 +94,8 @@ entregas, etc -- podem ser feitas de modo manual.
 Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
 
 * Sempre reuse bibliotecas ou serviços de terceiros. 
-Os exemplos clássicos são serviços de autenticação e de 
-cobrança por cartões de créditos. 
+Os exemplos clássicos são serviços de autenticação de 
+usuários e de cobrança por cartões de crédito. 
 
 * Preste atenção também em alguns requisitos não-funcionais,
 como desempenho, usabilidade, segurança e privacidade. Esses
@@ -104,7 +104,7 @@ o fracasso do seu projeto.
 
 ## E o que não é um MVP? {.unnumbered}
 
-Para clarificar um pouco mais, suponha que você seja contratado 
+Suponha agora que você seja contratado 
 para fazer um sistema conhecido para uma certa empresa. Por sistema
 conhecido estamos nos referindo a um sistema cujos requisitos
 são claros e bem entendidos e delimitados. Pode ser, inclusive, que
@@ -157,12 +157,12 @@ seja, vamos realizar um **pivô**!
 Por exemplo, em um pivô podemos reformular a interface
 do MVP, tentar atrair um outro tipo de cliente ou adotante
 inicial, tentar uma nova forma de divulgação ou promoção do experimento,
-acrescentar ou remover uma funcionalidade do MVP, etc.
+acrescentar ou remover uma funcionalidade no MVP, etc.
 
 Porém, não podemos confundir um pivô com um **restart**. Um 
 restart (ou reboot) ocorre quando os fundadores abandonam 
 o produto e a visão original da empresa e recomeçam 
-o empreendimento, com um novo propósito e visão. 
+o empreendimento com um novo propósito e visão. 
 
 **Exemplo**: antes de criar o Twitter, os seus fundadores 
 trabalharam em uma plataforma de distribuição de podcasts, chamada Odeo. 
@@ -170,7 +170,7 @@ Como a iniciativa não deu certo, eles desistiram da Odeo e começaram a trabalh
 sistema, dessa vez uma rede social para compartilhamento de mensagens 
 de texto com 140 caracteres, a qual chamaram de Twitter. Essa mudança 
 de rota -- de um sistema para distribuição de podcasts para uma rede 
-social baseada em mensagens curtas de texto -- não foi apenas um
+social -- não foi apenas um
 pivô, mas sim um recomeço do zero.
 
 ## Comentário Final {.unnumbered}
@@ -178,7 +178,7 @@ pivô, mas sim um recomeço do zero.
 Quando falamos de MVP, o mais importante não é o
 produto em si, mas a hipótese de risco (ou a preocupação
 ou ameaça) que procuramos testar. Se alguém comentar
-com você sobre um MVP, não esqueça então de perguntar 
+com você sobre um MVP, não se esqueça então de perguntar 
 sobre a hipótese de risco que está sendo testada.
 
 
