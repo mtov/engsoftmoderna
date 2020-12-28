@@ -84,6 +84,11 @@
   {
     "text": "O nível de abstração usado na escrita de casos de uso deve ser similar àquele que usamos para definir algoritmos.",
     "correct": "false"
+  },
+  {
+    "text": "Em um MVP, os desenvolvedores decidem o que é mínimo e os clientes decidem se o produto é viável.",
+    "correct": "true"
   }
+  
 ]
 }	    

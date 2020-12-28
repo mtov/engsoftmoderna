@@ -1,4 +1,4 @@
-# O que é -- e também o que o não é -- um MVP?  {.unnumbered}
+# O que é -- e também o que não é -- um MVP?  {.unnumbered}
 
 ## Introdução  {.unnumbered}
 
