@@ -103,6 +103,26 @@ requisitos -- se não tratados de forma adequada -- podem causar
 o fracasso do seu projeto. Por fim, avalie também se seu projeto
 possui algum risco legal ou jurídico.
 
+Por outro lado, *overengineering* é sempre algo que deve
+ser evitado na construção de MVPs. Veja, como o MVP pode
+falhar, não devemos nos preocupar neste momento em usar a última 
+tecnologia da moda. Em vez disso, tente usar linguagens e frameworks
+conhecidos e robustos. Escalabilidade é outro aspecto
+que não é importante. Se o MVP der certo, você terá tempo
+e dinheiro para resolver depois eventuais problemas de escala. 
+Da mesma forma, preocupações com arquitetura, design, qualidade 
+de código, implementação de testes, etc são menos importantes, 
+neste momento inicial.
+
+Idealmente, em MVPs gostaríamos que o risco e a preocupação com
+qualidade de software evoluísse como ilustrado no seguinte gráfico.
+
+![](./figs/qualidade-mvp.svg){width=75%}
+
+Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
+(seu risco de fracasso cai) e vamos então tendo tempo e dinheiro para 
+investir em fatores de qualidade interna e externa de software.
+
 ## E o que não é um MVP? {.unnumbered}
 
 Suponha agora que você seja contratado 
