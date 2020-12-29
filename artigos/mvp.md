@@ -117,7 +117,7 @@ neste momento inicial.
 Idealmente, em MVPs gostaríamos que o risco e a preocupação com
 qualidade de software evoluísse como ilustrado no seguinte gráfico.
 
-![](./figs/qualidade-mvp.svg){width=75%}
+![Evolução do risco de fracasso e da importância de qualidade de software em MVPs](./figs/qualidade-mvp.svg){width=75%}
 
 Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
 (seu risco de fracasso cai) e vamos então tendo tempo e dinheiro para 
