@@ -100,7 +100,8 @@ usuários e de cobrança por cartões de crédito.
 * Preste atenção também em alguns requisitos não-funcionais,
 como desempenho, usabilidade, segurança e privacidade. Esses
 requisitos -- se não tratados de forma adequada -- podem causar 
-o fracasso do seu projeto.
+o fracasso do seu projeto. Por fim, avalie também se seu projeto
+possui algum risco legal ou jurídico.
 
 ## E o que não é um MVP? {.unnumbered}
 
@@ -136,7 +137,11 @@ que acabamos de apresentar, no entanto, não existem ameaças ou riscos
 relevantes. Conforme afirmamos: os requisitos e o escopo do
 sistema estão claros, você tem competência e experiência
 para desenvolvê-lo e o sistema já tem um cliente garantido, que vai
-pagar pelo seu desenvolvimento.
+pagar pelo seu desenvolvimento. 
+
+Por isso, os incrementos de produto produzidos nos sprints iniciais 
+de um projeto não têm -- na maioria das vezes -- características 
+típicas de um experimento, isto é, de um MVP. 
 
 ## Pivôs vs Restarts {.unnumbered}
 
