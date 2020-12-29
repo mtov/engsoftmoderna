@@ -111,13 +111,13 @@ conhecidos e robustos. Escalabilidade é outro aspecto
 que não é importante. Se o MVP der certo, você terá tempo
 e dinheiro para resolver depois eventuais problemas de escala. 
 Da mesma forma, preocupações com arquitetura, design, qualidade 
-de código, implementação de testes, etc são menos importantes, 
+de código, implementação de testes, etc são menos importantes 
 neste momento inicial.
 
 Idealmente, em MVPs gostaríamos que o risco e a preocupação com
 qualidade de software evoluísse como ilustrado no seguinte gráfico.
 
-![Evolução do risco de fracasso e da importância de qualidade de software em MVPs](./figs/qualidade-mvp.svg){width=75%}
+![Evolução do risco de fracasso e da importância de qualidade de software em](./figs/qualidade-mvp.svg){width=75%}
 
 Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
 (seu risco de fracasso cai) e vamos então tendo tempo e dinheiro para 
