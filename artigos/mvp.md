@@ -112,11 +112,11 @@ são claros e bem entendidos e delimitados. Pode ser, inclusive, que
 você já tenha feito um sistema parecido para outras empresas.
 O importante aqui são dois fatores:
 
-* Não existe risco de o sistema -- à medida que for
+* Não existe risco de o sistema -- à medida que ele for
 sendo desenvolvido -- se revelar mais complexo e desafiador.
 
 * Não existe risco financeiro, pois o sistema já tem um 
-cliente, que está pagando pelo seu desenvolvimento.
+cliente que está pagando pelo seu desenvolvimento.
 
 Então, você resolve usar um método como Scrum ou XP para 
 implementar esse sistema (imagine, para ficar mais realista,
