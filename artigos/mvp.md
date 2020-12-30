@@ -2,7 +2,7 @@
 
 ## Introdução  {.unnumbered}
 
-**Produto Mínimo Viável (MVP)** é um conceito cunhado por Eric Eries 
+**Produto Mínimo Viável (MVP)** é um conceito popularizado por Eric Eries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
 alcance que ele alcançou. Hoje, o conceito é usado pelos mais
 diversos empreendedores, sejam eles de produtos digitais ou
@@ -117,11 +117,13 @@ neste momento inicial.
 Idealmente, em MVPs gostaríamos que o risco e a preocupação com
 qualidade de software evoluísse como ilustrado no seguinte gráfico.
 
-![Evolução do risco de fracasso e da importância de qualidade de software em](./figs/qualidade-mvp.svg){width=75%}
+![Evolução do risco de fracasso e da importância de qualidade de software em MVPs (os valores nos eixos x e y são meramente ilustrativos)](./figs/qualidade-mvp.svg){width=75%}
 
 Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
-(seu risco de fracasso cai) e vamos então tendo tempo e dinheiro para 
+(seu risco de fracasso cai) e vamos então tendo tempo e recursos para 
 investir em fatores de qualidade interna e externa de software.
+Se quiser conhecer melhor esses fatores, recomendamos ler a Seção
+1.2.10 do [Capítulo 1](https://engsoftmoderna.info/cap1.html) do livro.
 
 ## E o que não é um MVP? {.unnumbered}
 
