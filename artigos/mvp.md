@@ -118,7 +118,7 @@ uma arquitetura limpa, qualidade de código, implementação de testes,
 etc não são fundamentais neste momento inicial.
 
 Idealmente, com MVPs gostaríamos que o risco e a preocupação com
-qualidade de software evoluísse conforme ilustrado no seguinte 
+qualidade de software evoluíssem conforme ilustrado no seguinte 
 gráfico.
 
 ![Evolução do risco de fracasso e da importância de qualidade de software em MVPs (os valores nos eixos x e y são meramente ilustrativos)](./figs/qualidade-mvp.svg){width=75%}

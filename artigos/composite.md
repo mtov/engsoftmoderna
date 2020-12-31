@@ -1,0 +1,151 @@
+# Criando Objetos Compostos com o Padrão de Projeto Composite {.unnumbered}
+
+## Introdução  {.unnumbered}
+
+Neste artigo, vamos apresentar o padrão de projeto **Composite**,
+que não foi tratado no [Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro.
+
+Para isso, vamos usar a mesma estrutura dos padrões de projeto 
+que estudamos np referido capítulo. Ou seja, iremos apresentar o padrão
+Composite descrevendo primeiro um contexto, depois um problema 
+enfrentado nesse contexto e, por fim, a solução que é proposta 
+por Composite.
+
+## Contexto {.unnumbered}
+
+Suponha que estamos desenvolvendo um editor gráfico, similar 
+ao Paint (para Windows) ou Canva (Web). Nesse editor, temos
+interfaces e classes como as seguintes:
+
+```
+interface Figura {
+  void desenha();
+  void mudaCorDeFundo(Cor cor);
+  ...	
+}
+
+class Circulo implements Figure {
+  ...	
+}
+
+class Triangulo implements Figure {
+  ...
+}
+```
+
+## Problema {.unnumbered}
+
+No nosso editor, queremos implementar uma funcionalidade
+que permita *agrupar figuras* e então tratar a figura
+resultante do agrupamento como uma figura única. 
+
+Por exemplo, uma certa figura agrupada pode ser composta pode
+um círculo e dois triângulos. Uma vez criado esse agrupamento, 
+queremos realizar uma operação no mesmo -- por exemplo, mudar
+a cor de fundo de suas três figuras -- por meio de uma
+única chamada de método.
+
+Explicando melhor, um código cliente vai poder trabalhar
+com figuras simples ou com figuras agrupadas da mesma
+forma. O cliente não vai precisar saber qual tipo de
+figura (simples ou agrupada) que ele está manipulando.
+
+## Solução {.unnumbered}
+
+O **padrão de projeto Composite** é a solução para o
+problema que enunciamos. Ele permite armazenar objetos
+compostos (ou agrupados) em uma estrutura com forma de
+árvore e então possibilita que clientes manipulem esses 
+objetos compostos como se fossem objetos simples.
+
+A classe principal do padrão é aquela responsável pelo
+agrupamento. No nosso exemplo, temos então que criar uma
+classe como a seguinte:
+
+```
+class FiguraAgrupada implements Figura {
+
+  private ArrayList<Figura> figuras = new ArrayList<Figura>();
+  // lista que vai armazenar as figuras agrupadas
+  
+  public void adicionar (Figura fig) {
+    figuras.add(fig);
+  }
+
+  public void remover (Figura fig) {
+    figuras.remove(fig);
+  }
+
+  public desenha() {
+    for (Figura fig: figuras) {
+      fig.desenha();   
+    }
+  }
+
+  public mudaCorDeFundo(Cor cor) {
+    for (Figura fig: figuras) {
+      fig.mudaCorDeFundo(cor);   
+    }
+  }
+}
+```
+
+Dois aspectos principais devem ser ressaltados sobre a classe ``FiguraAgrupada``:
+
+* Ela implementa métodos para adicionar e remover uma figura do *agrupamento*.
+
+* Ela também é uma figura, pois ela implementa a interface `Figura`. A implementação
+dos métodos de `Figura` apenas delega a mesma operação para todas as figuras do
+agrupamento, usando para isso um comando `for`.
+
+Assim, para um cliente, não interessa se ele está trabalhando com um
+figura simples ou com uma figura agrupada, como no seguinte código:
+
+```
+class Cliente {
+  void foo(Figura fig) {
+    ...
+    fig.desenha(); // chama desenha de figura simples ou agrupada
+    ...
+  }	
+}
+
+class Main {
+  public main() {
+    Cliente cliente = new Cliente();
+
+    Circulo c1 = new Circulo();
+    cliente.foo(c1);  // chama foo com figura simples
+
+    Triangulo t1 = new Triangulo();
+    Triangulo t2 = new Triangulo();
+    
+    FiguraAgrupada grupo = new FiguraAgrupada();
+    grupo.add(c1);
+    grupo.add(t1);
+    grupo.add(t2);
+    cliente.foo(grupo); // chama foo com figura agrupada
+  }	
+}
+```
+
+Por fim, veja que podemos criar uma hierarquia, em forma
+de árvore, de figuras agrupadas, como em:
+
+```
+Circulo c1 = new Circulo();
+Triangulo t1 = new Triangulo();
+Triangulo t2 = new Triangulo;
+    
+FiguraAgrupada grupo1 = new FiguraAgrupada();
+grupo1.add(c1);
+grupo1.add(t1);
+grupo1.add(t2);
+
+FiguraAgrupada grupo2 = new FiguraAgrupada();
+grupo2.add(grupo1); // figura agrupada contendo outra figura agrupada
+```
+
+* * * 
+
+Voltar para a lista de [artigos](./artigos.html).

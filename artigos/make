@@ -10,6 +10,7 @@ pandoc --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?"
 
 pandoc --defaults=defaults.yaml -T "Módulos devem ser Profundos!" deep-modules.md -o deep-modules.html
 
+pandoc --defaults=defaults.yaml -T "Criando objetos compostos com o Padrão de Projeto Composite" composite.md -o composite.html
 pandoc --defaults=defaults.yaml -T "O que é Injeção de Dependência?" injecao-dependencia.md -o injecao-dependencia.html
 
 pandoc --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html
