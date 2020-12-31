@@ -146,6 +146,16 @@ FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.add(grupo1); // figura agrupada contendo outra figura agrupada
 ```
 
+## Comentário Final
+
+Devemos usar o padrão Composite quando quisermos representar
+de forma uniforme objetos simples e objetos compostos (isto é,
+objetos formados pelo agrupamento de objetos simples). Isso 
+simplifica a implementação de código que precisa manipular 
+tais objetos, pois torna-se transparente se a manipulação 
+ocorre sobre um único objeto simples ou sobre um objeto
+composto. 
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
