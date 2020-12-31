@@ -103,27 +103,32 @@ requisitos -- se não tratados de forma adequada -- podem causar
 o fracasso do seu projeto. Por fim, avalie também se seu projeto
 possui algum risco legal ou jurídico.
 
-Por outro lado, *overengineering* é sempre algo que deve
+Por outro lado, **otimização prematura** é sempre algo que deve
 ser evitado na construção de MVPs. Veja, como o MVP pode
 falhar, não devemos nos preocupar neste momento em usar a última 
 tecnologia da moda. Em vez disso, tente usar linguagens e frameworks
-conhecidos e robustos. Escalabilidade é outro aspecto
-que não é importante. Se o MVP der certo, você terá tempo
-e dinheiro para resolver depois eventuais problemas de escala. 
-Da mesma forma, preocupações com arquitetura, design, qualidade 
-de código, implementação de testes, etc são menos importantes 
-neste momento inicial.
+conhecidos e robustos. A seguinte frase resume bem essa recomendação:
 
-Idealmente, em MVPs gostaríamos que o risco e a preocupação com
-qualidade de software evoluísse como ilustrado no seguinte gráfico.
+> Ame o problema e não a solução ou tecnologia que está usando.
+
+Escalabilidade é outro aspecto que costuma não ser tão importante. 
+Se o MVP der certo, você terá tempo e dinheiro para resolver 
+eventuais problemas de escala. Da mesma forma, preocupações com 
+uma arquitetura limpa, qualidade de código, implementação de testes, 
+etc não são fundamentais neste momento inicial.
+
+Idealmente, com MVPs gostaríamos que o risco e a preocupação com
+qualidade de software evoluísse conforme ilustrado no seguinte 
+gráfico.
 
 ![Evolução do risco de fracasso e da importância de qualidade de software em MVPs (os valores nos eixos x e y são meramente ilustrativos)](./figs/qualidade-mvp.svg){width=75%}
 
 Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
-(seu risco de fracasso cai) e vamos então tendo tempo e recursos para 
-investir em fatores de qualidade interna e externa de software.
-Se quiser conhecer melhor esses fatores, recomendamos ler a Seção
-1.2.10 do [Capítulo 1](https://engsoftmoderna.info/cap1.html) do livro.
+(seu risco de fracasso cai) e vamos ter recursos para 
+investir na melhoria da qualidade interna e externa do software.
+Se quiser conhecer melhor sobre fatores de qualidade interna e externa
+de software, recomendamos ler a Seção 1.2.10 do 
+[Capítulo 1](https://engsoftmoderna.info/cap1.html) do livro.
 
 ## E o que não é um MVP? {.unnumbered}
 
@@ -199,18 +204,15 @@ de texto com 140 caracteres, a qual chamaram de Twitter (veja figura)
 
 ![](./figs/odeo-twitter-restart.jpg){width=95%}
 
-Essa mudança 
-de rota -- de um sistema para distribuição de podcasts para uma rede 
-social -- não foi apenas um
-pivô, mas sim um recomeço do zero.
+Essa mudança de rota -- de um sistema para distribuição de podcasts 
+para uma rede social -- não foi apenas um pivô, mas sim um recomeço do zero.
 
 ## Comentário Final {.unnumbered}
 
-Quando falamos de MVP, o mais importante não é o
-produto em si, mas a hipótese de risco (ou a preocupação
-ou ameaça) que procuramos testar. Se alguém comentar
-com você sobre um MVP, não se esqueça então de perguntar 
-sobre a hipótese de risco que está sendo testada.
+Quando falamos de MVP, o mais importante não é o produto em si, mas a
+hipótese de risco (ou a preocupação ou ameaça) que procuramos testar. 
+Se alguém comentar com você sobre um MVP, não se esqueça então de 
+perguntar sobre a hipótese de risco que está sendo testada.
 
 
 ## Exercícios {.unnumbered}
