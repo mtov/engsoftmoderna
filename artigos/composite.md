@@ -7,8 +7,8 @@ que -- por sem um padrão bem simples -- não foi tratado no
 [Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro.
 
 Para isso, vamos usar a mesma estrutura dos padrões de projeto 
-que estudamos np referido capítulo. Ou seja, iremos apresentar o padrão
-Composite descrevendo primeiro um contexto, depois um problema 
+que estudamos no referido capítulo. Ou seja, iremos apresentar o padrão
+descrevendo primeiro um contexto, depois um problema 
 enfrentado nesse contexto e, por fim, a solução que é proposta 
 por Composite.
 
@@ -21,8 +21,7 @@ interfaces e classes como as seguintes:
 ```
 interface Figura {
   void desenha();
-  void mudaCorDeFundo(Cor cor);
-  ...	
+  void mudaCorDeFundo(Cor cor);	
 }
 
 class Circulo implements Figura {
@@ -37,18 +36,18 @@ class Triangulo implements Figura {
 ## Problema {.unnumbered}
 
 No nosso editor, queremos implementar uma funcionalidade
-que permita *agrupar figuras* e então tratar a figura
-resultante do agrupamento como uma figura única. 
+que permita **agrupar figuras** e então tratar a figura
+resultante desse agrupamento como uma figura única. 
 
-Por exemplo, uma certa figura agrupada pode ser composta pode
-um círculo e dois triângulos. Uma vez criado esse agrupamento, 
+Por exemplo, uma certa figura agrupada pode ser composta por
+um círculo e dois triângulos. Criado esse agrupamento, 
 queremos realizar uma operação no mesmo -- por exemplo, mudar
 a cor de fundo de suas três figuras -- por meio de uma
 única chamada de método.
 
 Explicando melhor, um código cliente vai poder trabalhar
 com figuras simples ou com figuras agrupadas da mesma
-forma. O cliente não vai precisar saber qual tipo de
+forma, usando apenas a interface `Figura`. Esse código não vai precisar saber qual tipo de
 figura (simples ou agrupada) que ele está manipulando.
 
 ## Solução {.unnumbered}
@@ -57,7 +56,7 @@ O **padrão de projeto Composite** é a solução para o
 problema que enunciamos. Ele permite armazenar objetos
 compostos (ou agrupados) em uma estrutura com forma de
 árvore e então possibilita que clientes manipulem esses 
-objetos compostos como se fossem objetos simples.
+objetos como se fossem objetos simples.
 
 A classe principal do padrão é aquela responsável pelo
 agrupamento. No nosso exemplo, temos então que criar uma
@@ -95,12 +94,12 @@ Dois aspectos principais devem ser ressaltados sobre a classe ``FiguraAgrupada``
 
 * Ela implementa métodos para adicionar e remover uma figura do *agrupamento*.
 
-* Ela também é uma figura, pois ela implementa a interface `Figura`. A implementação
+* Ela também é uma figura, pois implementa a interface `Figura`. A implementação
 dos métodos de `Figura` apenas delega a mesma operação para todas as figuras do
 agrupamento, usando para isso um comando `for`.
 
-Assim, para um cliente, não interessa se ele está trabalhando com um
-figura simples ou com uma figura agrupada, como no seguinte código:
+Assim, para um código cliente, não interessa se ele está trabalhando com um
+figura simples ou com uma figura agrupada, como no seguinte caso:
 
 ```
 class Cliente {
@@ -131,24 +130,15 @@ class Main {
 ```
 
 Por fim, veja que podemos criar uma hierarquia, em forma
-de árvore, com figuras agrupadas "dentro" de outras figuras
+de árvore, com figuras agrupadas "contendo" outras figuras
 agrupadas, como em:
 
 ```
-Circulo c1 = new Circulo();
-Triangulo t1 = new Triangulo();
-Triangulo t2 = new Triangulo;
-    
-FiguraAgrupada grupo = new FiguraAgrupada();
-grupo.adicionar(c1);
-grupo.adicionar(t1);
-grupo.adicionar(t2);
-
 FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
 ```
 
-## Comentário Final
+## Comentário Final {.unnumbered}
 
 Devemos usar o padrão Composite quando quisermos representar
 de forma uniforme objetos simples e objetos compostos (isto é,
