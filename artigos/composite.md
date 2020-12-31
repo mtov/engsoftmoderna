@@ -3,7 +3,8 @@
 ## Introdução  {.unnumbered}
 
 Neste artigo, vamos apresentar o padrão de projeto **Composite**,
-que não foi tratado no [Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro.
+que -- por sem um padrão bem simples -- não foi tratado no 
+[Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro.
 
 Para isso, vamos usar a mesma estrutura dos padrões de projeto 
 que estudamos np referido capítulo. Ou seja, iremos apresentar o padrão
@@ -24,11 +25,11 @@ interface Figura {
   ...	
 }
 
-class Circulo implements Figure {
+class Circulo implements Figura {
   ...	
 }
 
-class Triangulo implements Figure {
+class Triangulo implements Figura {
   ...
 }
 ```
@@ -68,21 +69,21 @@ class FiguraAgrupada implements Figura {
   private ArrayList<Figura> figuras = new ArrayList<Figura>();
   // lista que vai armazenar as figuras agrupadas
   
-  public void adicionar (Figura fig) {
+  public void adicionar(Figura fig) {
     figuras.add(fig);
   }
 
-  public void remover (Figura fig) {
+  public void remover(Figura fig) {
     figuras.remove(fig);
   }
 
-  public desenha() {
+  public void desenha() {
     for (Figura fig: figuras) {
       fig.desenha();   
     }
   }
 
-  public mudaCorDeFundo(Cor cor) {
+  public void mudaCorDeFundo(Cor cor) {
     for (Figura fig: figuras) {
       fig.mudaCorDeFundo(cor);   
     }
@@ -121,29 +122,30 @@ class Main {
     Triangulo t2 = new Triangulo();
     
     FiguraAgrupada grupo = new FiguraAgrupada();
-    grupo.add(c1);
-    grupo.add(t1);
-    grupo.add(t2);
+    grupo.adicionar(c1);
+    grupo.adicionar(t1);
+    grupo.adicionar(t2);
     cliente.foo(grupo); // chama foo com figura agrupada
   }	
 }
 ```
 
 Por fim, veja que podemos criar uma hierarquia, em forma
-de árvore, de figuras agrupadas, como em:
+de árvore, com figuras agrupadas "dentro" de outras figuras
+agrupadas, como em:
 
 ```
 Circulo c1 = new Circulo();
 Triangulo t1 = new Triangulo();
 Triangulo t2 = new Triangulo;
     
-FiguraAgrupada grupo1 = new FiguraAgrupada();
-grupo1.add(c1);
-grupo1.add(t1);
-grupo1.add(t2);
+FiguraAgrupada grupo = new FiguraAgrupada();
+grupo.adicionar(c1);
+grupo.adicionar(t1);
+grupo.adicionar(t2);
 
 FiguraAgrupada grupo2 = new FiguraAgrupada();
-grupo2.add(grupo1); // figura agrupada contendo outra figura agrupada
+grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
 ```
 
 ## Comentário Final
@@ -155,6 +157,10 @@ simplifica a implementação de código que precisa manipular
 tais objetos, pois torna-se transparente se a manipulação 
 ocorre sobre um único objeto simples ou sobre um objeto
 composto. 
+
+**Código fonte:** O código fonte do exemplo usado neste 
+artigo está disponível 
+[aqui](https://repl.it/@mtvalente/Padrao-de-Projeto-Composite).
 
 * * * 
 

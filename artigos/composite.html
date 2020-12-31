@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -101,7 +102,7 @@
 </header>
 <h1 class="unnumbered" data-number="" id="criando-objetos-compostos-com-o-padrão-de-projeto-composite" class="unnumbered" data-number="">Criando Objetos Compostos com o Padrão de Projeto Composite</h1>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
-<p>Neste artigo, vamos apresentar o padrão de projeto <strong>Composite</strong>, que não foi tratado no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> do livro.</p>
+<p>Neste artigo, vamos apresentar o padrão de projeto <strong>Composite</strong>, que – por sem um padrão bem simples – não foi tratado no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> do livro.</p>
 <p>Para isso, vamos usar a mesma estrutura dos padrões de projeto que estudamos np referido capítulo. Ou seja, iremos apresentar o padrão Composite descrevendo primeiro um contexto, depois um problema enfrentado nesse contexto e, por fim, a solução que é proposta por Composite.</p>
 <h2 class="unnumbered" data-number="" id="contexto" class="unnumbered" data-number="">Contexto</h2>
 <p>Suponha que estamos desenvolvendo um editor gráfico, similar ao Paint (para Windows) ou Canva (Web). Nesse editor, temos interfaces e classes como as seguintes:</p>
@@ -111,11 +112,11 @@
   ...   
 }
 
-class Circulo implements Figure {
+class Circulo implements Figura {
   ...   
 }
 
-class Triangulo implements Figure {
+class Triangulo implements Figura {
   ...
 }</code></pre>
 <h2 class="unnumbered" data-number="" id="problema" class="unnumbered" data-number="">Problema</h2>
@@ -130,21 +131,21 @@ class Triangulo implements Figure {
   private ArrayList&lt;Figura&gt; figuras = new ArrayList&lt;Figura&gt;();
   // lista que vai armazenar as figuras agrupadas
   
-  public void adicionar (Figura fig) {
+  public void adicionar(Figura fig) {
     figuras.add(fig);
   }
 
-  public void remover (Figura fig) {
+  public void remover(Figura fig) {
     figuras.remove(fig);
   }
 
-  public desenha() {
+  public void desenha() {
     for (Figura fig: figuras) {
       fig.desenha();   
     }
   }
 
-  public mudaCorDeFundo(Cor cor) {
+  public void mudaCorDeFundo(Cor cor) {
     for (Figura fig: figuras) {
       fig.mudaCorDeFundo(cor);   
     }
@@ -175,26 +176,27 @@ class Main {
     Triangulo t2 = new Triangulo();
     
     FiguraAgrupada grupo = new FiguraAgrupada();
-    grupo.add(c1);
-    grupo.add(t1);
-    grupo.add(t2);
+    grupo.adicionar(c1);
+    grupo.adicionar(t1);
+    grupo.adicionar(t2);
     cliente.foo(grupo); // chama foo com figura agrupada
   } 
 }</code></pre>
-<p>Por fim, veja que podemos criar uma hierarquia, em forma de árvore, de figuras agrupadas, como em:</p>
+<p>Por fim, veja que podemos criar uma hierarquia, em forma de árvore, com figuras agrupadas <q>dentro</q> de outras figuras agrupadas, como em:</p>
 <pre><code>Circulo c1 = new Circulo();
 Triangulo t1 = new Triangulo();
 Triangulo t2 = new Triangulo;
     
-FiguraAgrupada grupo1 = new FiguraAgrupada();
-grupo1.add(c1);
-grupo1.add(t1);
-grupo1.add(t2);
+FiguraAgrupada grupo = new FiguraAgrupada();
+grupo.adicionar(c1);
+grupo.adicionar(t1);
+grupo.adicionar(t2);
 
 FiguraAgrupada grupo2 = new FiguraAgrupada();
-grupo2.add(grupo1); // figura agrupada contendo outra figura agrupada</code></pre>
+grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada</code></pre>
 <h2 data-number="0.1" id="comentário-final" data-number="0.1"><span class="header-section-number">0.1</span> Comentário Final</h2>
 <p>Devemos usar o padrão Composite quando quisermos representar de forma uniforme objetos simples e objetos compostos (isto é, objetos formados pelo agrupamento de objetos simples). Isso simplifica a implementação de código que precisa manipular tais objetos, pois torna-se transparente se a manipulação ocorre sobre um único objeto simples ou sobre um objeto composto.</p>
+<p><strong>Código fonte:</strong> O código fonte do exemplo usado neste artigo está disponível <a href="https://repl.it/@mtvalente/Padrao-de-Projeto-Composite">aqui</a>.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
