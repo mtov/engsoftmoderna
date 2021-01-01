@@ -140,18 +140,33 @@ grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
 
 ## Comentário Final {.unnumbered}
 
-Devemos usar o padrão Composite quando quisermos representar
+Devemos usar o padrão Composite quando precisamos representar
 de forma uniforme objetos simples e objetos compostos (isto é,
 objetos formados pelo agrupamento de objetos simples). Isso 
 simplifica a implementação de código que precisa manipular 
-tais objetos, pois torna-se transparente se a manipulação 
-ocorre sobre um único objeto simples ou sobre um objeto
-composto. 
+tais objetos, pois fica transparente se a manipulação 
+ocorre sobre um objeto simples ou sobre um objeto composto. 
 
 **Código fonte:** O código fonte do exemplo usado neste 
 artigo está disponível 
 [aqui](https://repl.it/@mtvalente/Padrao-de-Projeto-Composite).
 
+## Exercício {.unnumbered}
+
+1. Existem quatro tipos de classes no padrão Composite:
+
+   * Interface visível para o cliente (no nosso exemplo, `Figura`)
+   * Classes de objetos simples (no nosso exemplo, `Circulo` e `Triangulo`)
+   * Classe responsável pela composição (no nosso exemplo, `FiguraAgrupada`)
+
+   Considerando essas classes pense em um outro exemplo de uso do padrão Composite.
+   No seu exemplo:
+
+   (a) Qual é a interface visível para o cliente? Quais métodos ela define?
+   (b) Quais são as classes de objetos simples? Basta citar o nome delas.
+   (c) Qual a classe responsável pela composição? Basta citar o nome dela.
+
+   
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
