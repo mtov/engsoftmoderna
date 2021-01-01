@@ -152,14 +152,16 @@ class Triangulo implements Figura {
 }</code></pre>
 <p>Dois aspectos principais devem ser ressaltados sobre a classe <code>FiguraAgrupada</code>:</p>
 <ul>
-<li><p>Ela implementa métodos para adicionar e remover uma figura do <em>agrupamento</em>.</p></li>
+<li><p>Ela implementa métodos para adicionar e remover uma figura do agrupamento.</p></li>
 <li><p>Ela também é uma figura, pois implementa a interface <code>Figura</code>. A implementação dos métodos de <code>Figura</code> apenas delega a mesma operação para todas as figuras do agrupamento, usando para isso um comando <code>for</code>.</p></li>
 </ul>
-<p>Assim, para um código cliente, não interessa se ele está trabalhando com um figura simples ou com uma figura agrupada, como no seguinte caso:</p>
+<p>Veja também um diagrama UML com as classes que criamos até agora:</p>
+<p><img src="./figs/composite-pattern-uml.svg" style="width:95.0%" /></p>
+<p>Como resultado, para um código cliente, não interessa se ele está trabalhando com um figura simples ou com uma figura agrupada, como no seguinte caso:</p>
 <pre><code>class Cliente {
   void foo(Figura fig) {
     ...
-    fig.desenha(); // chama desenha de figura simples ou agrupada
+    fig.desenha(); // desenha figura simples ou agrupada
     ...
   } 
 }
@@ -189,13 +191,13 @@ grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada</cod
 <p><strong>Código fonte:</strong> O código fonte do exemplo usado neste artigo está disponível <a href="https://repl.it/@mtvalente/Padrao-de-Projeto-Composite">aqui</a>.</p>
 <h2 class="unnumbered" data-number="" id="exercício" class="unnumbered" data-number="">Exercício</h2>
 <ol type="1">
-<li><p>Existem quatro tipos de classes no padrão Composite:</p>
+<li><p>Existem quatro tipos de classes ou interfaces no padrão Composite:</p>
 <ul>
-<li>Interface visível para o cliente (no nosso exemplo, <code>Figura</code>)</li>
+<li>Uma interface visível para o cliente (no nosso exemplo, <code>Figura</code>)</li>
 <li>Classes de objetos simples (no nosso exemplo, <code>Circulo</code> e <code>Triangulo</code>)</li>
 <li>Classe responsável pela composição (no nosso exemplo, <code>FiguraAgrupada</code>)</li>
 </ul>
-<p>Considerando essas classes pense em um outro exemplo de uso do padrão Composite. No seu exemplo:</p>
+<p>Considerando essas classes, pense em um outro exemplo de uso do padrão Composite. E então responda:</p>
 <ol type="a">
 <li>Qual é a interface visível para o cliente? Quais métodos ela define?</li>
 <li>Quais são as classes de objetos simples? Basta citar o nome delas.</li>

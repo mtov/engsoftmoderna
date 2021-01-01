@@ -92,20 +92,24 @@ class FiguraAgrupada implements Figura {
 
 Dois aspectos principais devem ser ressaltados sobre a classe ``FiguraAgrupada``:
 
-* Ela implementa métodos para adicionar e remover uma figura do *agrupamento*.
+* Ela implementa métodos para adicionar e remover uma figura do agrupamento.
 
 * Ela também é uma figura, pois implementa a interface `Figura`. A implementação
 dos métodos de `Figura` apenas delega a mesma operação para todas as figuras do
 agrupamento, usando para isso um comando `for`.
 
-Assim, para um código cliente, não interessa se ele está trabalhando com um
+Veja também um diagrama UML com as classes que criamos até agora:
+
+![](./figs/composite-pattern-uml.svg){width=95%}
+
+Como resultado, para um código cliente, não interessa se ele está trabalhando com um
 figura simples ou com uma figura agrupada, como no seguinte caso:
 
 ```
 class Cliente {
   void foo(Figura fig) {
     ...
-    fig.desenha(); // chama desenha de figura simples ou agrupada
+    fig.desenha(); // desenha figura simples ou agrupada
     ...
   }	
 }
@@ -153,20 +157,20 @@ artigo está disponível
 
 ## Exercício {.unnumbered}
 
-1. Existem quatro tipos de classes no padrão Composite:
+1. Existem quatro tipos de classes ou interfaces no padrão Composite:
 
-   * Interface visível para o cliente (no nosso exemplo, `Figura`)
+   * Uma interface visível para o cliente (no nosso exemplo, `Figura`)
    * Classes de objetos simples (no nosso exemplo, `Circulo` e `Triangulo`)
    * Classe responsável pela composição (no nosso exemplo, `FiguraAgrupada`)
 
-   Considerando essas classes pense em um outro exemplo de uso do padrão Composite.
-   No seu exemplo:
+   Considerando essas classes, pense em um outro exemplo de uso do padrão 
+   Composite. E então responda:
 
    (a) Qual é a interface visível para o cliente? Quais métodos ela define?
    (b) Quais são as classes de objetos simples? Basta citar o nome delas.
    (c) Qual a classe responsável pela composição? Basta citar o nome dela.
 
-   
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
