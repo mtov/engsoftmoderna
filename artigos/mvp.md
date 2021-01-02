@@ -103,13 +103,13 @@ requisitos -- se não tratados de forma adequada -- podem causar
 o fracasso do seu projeto. Por fim, avalie também se seu projeto
 possui algum risco legal ou jurídico.
 
-Por outro lado, **otimização prematura** é sempre algo que deve
+Por outro lado, **otimização prematura** é algo que deve
 ser evitado na construção de MVPs. Veja, como o MVP pode
 falhar, não devemos nos preocupar neste momento em usar a última 
 tecnologia da moda. Em vez disso, tente usar linguagens e frameworks
 conhecidos e robustos. A seguinte frase resume bem essa recomendação:
 
-> Ame o problema e não a solução ou tecnologia que está usando.
+> Ame o problema e não a solução ou tecnologia que você está usando.
 
 Escalabilidade é outro aspecto que não é tão importante. 
 Se o MVP der certo, você terá tempo e dinheiro para resolver 

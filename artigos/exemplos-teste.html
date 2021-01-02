@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Alguns Exemplos Reais e Interessantes de Testes – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" data-number="" id="alguns-exemplos-reais-e-interessantes-de-testes" class="unnumbered" data-number="">Alguns Exemplos Reais e Interessantes de Testes</h1>
+<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
+<p>No <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
+<p>Neste artigo, vamos <strong>ampliar essa lista de exemplos, mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto de sucesso</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar na escrita de seus próprios testes depois.</p>
+<p>Vamos começar estudando os testes do JUnit. Ou seja, nada melhor do que começar conhecendo os testes do framework pioneiro de testes automatizados. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, da própria ideia de testes automatizados.</p>
+<h2 class="unnumbered" data-number="" id="junit" class="unnumbered" data-number="">JUnit</h2>
+<p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>do lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
+<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. Para ter uma ideia, a primeira versão de tais testes foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>).</p>
+<p>Os testes implementados nessa classe funcionam conforme descrito a seguir.</p>
+<p>Primeiro, no mesmo diretório de <code>SuiteTest.java</code>, existem arquivos que implementam alguns casos de teste. Vamos mostrar um deles (os comentários foram acrescentados por nós mesmos):</p>
+<pre><code>// OneTestCase.java
+public class OneTestCase extends TestCase {
+  public void noTestCase() { // não começa com test
+  }
+
+  public void testCase() { // ok, método de teste!
+  }
+
+  public void testCase(int arg) { // possui parâmetro
+  }
+}
+</code></pre>
+<p>Esse arquivo declara um <code>TestCase</code> simples, que usa a convenção antiga do JUnit para implementação de testes. Segundo essa convenção: (1) casos de teste devem ser implementados em subclasses de <code>TestCase</code>; (2) cada teste deve começar com o prefixo <code>test</code>, não possuir parâmetro e retornar <code>void</code>.</p>
+<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
+<pre><code>public void testOneTestCase() {
+  TestSuite t = new TestSuite(OneTestCase.class);
+  t.run(fResult);
+  assertTrue(fResult.runCount() == 1);
+  assertTrue(fResult.failureCount() == 0);
+  assertTrue(fResult.errorCount() == 0);
+  assertTrue(fResult.wasSuccessful());
+}</code></pre>
+<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste chamam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Essencialmente, então, <code>testOneTestCase</code> é um meta-teste, isto é, um teste de um outro teste!</p>
+<p>Especificamente, como mostrado no código acima, <code>testOneTestCase</code> executa o teste implementado na classe <code>OneTestCase</code> (duas primeiras linhas). Ao executar o teste, passa-se como parâmetro um objeto (<code>fResult</code>) que vai armazenar o resultado da execução. Para ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code> e foi inicializado no <code>setUp</code> do teste.</p>
+<p>Por fim, são executados quatro <code>assert</code> para assegurar que:</p>
+<ul>
+<li><code>OneTestCase</code> possui um único um método de teste;</li>
+<li>nenhum método de teste falhou, isto é, todos os <code>assert</code> foram confirmados;</li>
+<li>e, também, não ocorreu nenhum erro ou exceção;</li>
+<li>por fim, o teste como um todo foi bem sucedido.</li>
+</ul>
+<p><strong>Exercício:</strong> Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, o qual testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

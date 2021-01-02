@@ -16,4 +16,6 @@ pandoc --defaults=defaults.yaml -T "O que é Injeção de Dependência?" injecao
 pandoc --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html
 pandoc --defaults=defaults.yaml -T "Construindo Aplicações com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
 
+pandoc --defaults=defaults.yaml -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
+
 pandoc --defaults=defaults.yaml -T "Teoria das Janelas Quebradas & Regra do Escoteiros?" broken-windows.md -o broken-windows.html
