@@ -1,5 +1,5 @@
 
-# Shape Up: Uma possível alternativa a Scrum? {.unnumbered}
+# Shape Up: Uma Possível Alternativa a Scrum? {.unnumbered}
 
 ## Introdução {.unnumbered}
 
