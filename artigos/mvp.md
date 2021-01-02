@@ -111,12 +111,13 @@ conhecidos e robustos. A seguinte frase resume bem essa recomendação:
 
 > Ame o problema e não a solução ou tecnologia que está usando.
 
-Escalabilidade é outro aspecto que costuma não ser tão importante. 
+Escalabilidade é outro aspecto que não é tão importante. 
 Se o MVP der certo, você terá tempo e dinheiro para resolver 
 eventuais problemas de escala. Da mesma forma, preocupações com 
-uma arquitetura limpa, qualidade de código, implementação de testes, 
-etc não são fundamentais neste momento inicial.
+uma arquitetura extensível e com uma alta cobertura de testes 
+não são fundamentais neste momento inicial.
 
+<!---
 Idealmente, com MVPs gostaríamos que o risco e a preocupação com
 qualidade de software evoluíssem conforme ilustrado no seguinte 
 gráfico.
@@ -129,6 +130,7 @@ investir na melhoria da qualidade interna e externa do software.
 Se quiser conhecer melhor sobre fatores de qualidade interna e externa
 de software, recomendamos ler a Seção 1.2.10 do 
 [Capítulo 1](https://engsoftmoderna.info/cap1.html) do livro.
+--->
 
 ## E o que não é um MVP? {.unnumbered}
 

@@ -157,7 +157,7 @@ artigo está disponível
 
 ## Exercício {.unnumbered}
 
-1. Existem quatro tipos de classes ou interfaces no padrão Composite:
+1. Existem três tipos de classes ou interfaces no padrão Composite:
 
    * Uma interface visível para o cliente (no nosso exemplo, `Figura`)
    * Classes de objetos simples (no nosso exemplo, `Circulo` e `Triangulo`)
