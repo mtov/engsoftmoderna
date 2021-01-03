@@ -162,10 +162,10 @@ void shouldUpdateOwner() {
   owner = this.owners.findById(1);
   assertThat(owner.getLastName()).isEqualTo(newLastName);
 }</code></pre>
-<p>Esse teste recupera o nome do dono cujo ID é 1. Em seguida, ele altera esse nome acrescentando um <q>X</q> no final e salva a alteração no banco de dados. Para finalizar, ele recupera de novo o mesmo nome e verifica se ele agora termina mesmo com um <q>X</q>.</p>
+<p>Esse teste recupera o nome do dono cujo ID é 1. Em seguida, ele altera esse nome acrescentando um <q>X</q> no final e salva a alteração no banco de dados. Para finalizar, ele recupera de novo o mesmo nome e verifica se ele agora termina com um <q>X</q>.</p>
 <p>Esse teste é um teste de integração, pois ele recupera e salva dados no banco de dados da aplicação. Além disso, ele usa dois serviços interessantes do Spring:</p>
 <ul>
-<li>O atributo <code>owners</code> – com métodos para recuperar e salvar dados de donos de animais – é injetado automaticamente pelo Spring, que implementa um serviço de <strong>injeção de dependências</strong>. Para isso, a declaração desse atributo na classe <code>ClinicServiceTests</code> possui uma anotação <code>@Autowired</code> do Spring:</li>
+<li>O valor do atributo <code>owners</code> – com métodos para recuperar e salvar dados de donos de animais – é injetado automaticamente pelo Spring, que também implementa um serviço de <strong>injeção de dependências</strong>. Para isso, a declaração desse atributo na classe <code>ClinicServiceTests</code> possui uma anotação <code>@Autowired</code>:</li>
 </ul>
 <pre><code>class ClinicServiceTests {
   ...
@@ -175,8 +175,13 @@ void shouldUpdateOwner() {
 }</code></pre>
 <p>Para saber mais sobre injeção de dependência, você pode consultar esse <a href="https://engsoftmoderna.info/artigos/injecao-dependencia.html">artigo</a> do nosso site.</p>
 <ul>
-<li>O teste é também anotado com uma anotação do Spring chamada <code>@Transactional</code>, que garante uma semântica de transações na sua execução. Além disso, no caso especial de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
+<li>O teste é também anotado com uma anotação do Spring chamada <code>@Transactional</code>, que garante uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
 </ul>
+<p><strong>Exercício</strong>: Estude o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p>
+<h2 class="unnumbered" data-number="" id="como-contribuir" class="unnumbered" data-number="">Como Contribuir</h2>
+<p>Estamos interessados em ampliar a nossa lista de exemplos de testes de software. Se você quiser então sugerir algum exemplo, favor preencher o seguinte <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>. E informe o sistema de código aberto do teste, classe e nome do método de teste, URLs, se possível uma breve descrição, etc.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
 </div>
 </div>

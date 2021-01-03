@@ -148,7 +148,7 @@ interessantes do Spring:
 
 * O valor do atributo `owners` -- com métodos para recuperar e salvar dados 
 de donos de animais -- é injetado automaticamente pelo Spring,
-que implementa um serviço de **injeção de dependências**. Para
+que também implementa um serviço de **injeção de dependências**. Para
 isso, a declaração desse atributo na classe `ClinicServiceTests`
 possui uma anotação `@Autowired`:
 
@@ -166,8 +166,8 @@ consultar esse [artigo](https://engsoftmoderna.info/artigos/injecao-dependencia.
 do nosso site.
 
 * O teste é também anotado com uma anotação do Spring chamada `@Transactional`, 
-que garante uma semântica de transações na sua execução. Além disso, no caso
-especial de testes de integração, essa anotação está configurada para
+que garante uma semântica de transações na sua execução. No caso
+de testes de integração, essa anotação está configurada para
 realizar automaticamente um rollback ao final de cada transação.
 Veja o que diz um comentário na própria classe de teste:
 *each test method is executed in its own transaction, which is 
@@ -175,5 +175,19 @@ automatically rolled back by default. Thus, even if tests
 insert or otherwise change database state, there is no need 
 for a teardown or cleanup script.*
 
+**Exercício**: Estude o funcionamento do método de teste
+[shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da
+classe `ClinicServiceTests`.
+
+## Como Contribuir {.unnumbered}
+
+Estamos interessados em ampliar a nossa lista de exemplos de testes 
+de software. Se você quiser então sugerir algum exemplo, favor
+preencher o seguinte [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7). 
+E informe o sistema de código aberto do teste, classe e nome do método
+de teste, URLs, se possível uma breve descrição, etc.
 
 
+* * * 
+
+Voltar para a lista de [artigos](./artigos.html).
