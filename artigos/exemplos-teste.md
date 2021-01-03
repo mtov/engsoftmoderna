@@ -68,8 +68,10 @@ pelo seguinte método de `SuiteTest`:
 ```
 public void testOneTestCase() {
   TestSuite t = new TestSuite(OneTestCase.class); // setup
+
   t.run(fResult);         // método que está sendo testado
-  assertTrue(fResult.runCount() == 1);          // asserts
+  
+  assertTrue(fResult.runCount() == 1);          
   assertTrue(fResult.failureCount() == 0);
   assertTrue(fResult.errorCount() == 0);
   assertTrue(fResult.wasSuccessful());
@@ -100,5 +102,78 @@ Por fim, são usados quatro comandos `assert` para assegurar que:
 [testInheritedTests](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44),
 que testa a execução do seguinte 
 [teste](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java).
+
+## Sprint PetClinic {.unnumbered}
+
+[Spring PetClinic](https://github.com/spring-projects/spring-petclinic) 
+é uma aplicação de demonstração do 
+[Spring](https://spring.io/projects/spring-framework), 
+um conhecido framework para desenvolvimento Web para Java. A PetClinic
+implementa um sistema simples para controle de uma clínica veterinária.
+Por exemplo, o sistema armazena informações sobre os animais internados
+na clínica e seus respectivos donos.
+
+O sistema tem alguns **testes de integração** interessantes, que se beneficiam
+de funcionalidades oferecidas de forma "transparente" pelo Spring.
+
+Por exemplo, a classe 
+[ClinicServiceTests](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java) 
+testa o serviço de atualização do nome do dono de um animal:
+
+```
+@Test
+@Transactional
+void shouldUpdateOwner() {
+  Owner owner = this.owners.findById(1);
+  String oldLastName = owner.getLastName();  // setup
+  String newLastName = oldLastName + "X";
+  owner.setLastName(newLastName);
+
+  this.owners.save(owner);  // método que está sendo testado
+
+  owner = this.owners.findById(1);
+  assertThat(owner.getLastName()).isEqualTo(newLastName);
+}
+```
+
+Esse teste recupera o nome do dono cujo ID é 1.
+Em seguida, ele altera esse nome acrescentando um "X" no final
+e salva a alteração no banco de dados. Para finalizar, ele 
+recupera de novo o mesmo nome e verifica se ele agora 
+termina com um "X".
+
+Esse teste é um teste de integração, pois ele recupera e salva dados 
+no banco de dados da aplicação. Além disso, ele usa dois serviços 
+interessantes do Spring:
+
+* O valor do atributo `owners` -- com métodos para recuperar e salvar dados 
+de donos de animais -- é injetado automaticamente pelo Spring,
+que implementa um serviço de **injeção de dependências**. Para
+isso, a declaração desse atributo na classe `ClinicServiceTests`
+possui uma anotação `@Autowired`:
+
+```
+class ClinicServiceTests {
+  ...
+  @Autowired
+  protected OwnerRepository owners;
+  ...
+}
+```
+
+Para saber mais sobre injeção de dependência, você pode
+consultar esse [artigo](https://engsoftmoderna.info/artigos/injecao-dependencia.html) 
+do nosso site.
+
+* O teste é também anotado com uma anotação do Spring chamada `@Transactional`, 
+que garante uma semântica de transações na sua execução. Além disso, no caso
+especial de testes de integração, essa anotação está configurada para
+realizar automaticamente um rollback ao final de cada transação.
+Veja o que diz um comentário na própria classe de teste:
+*each test method is executed in its own transaction, which is 
+automatically rolled back by default. Thus, even if tests
+insert or otherwise change database state, there is no need 
+for a teardown or cleanup script.*
+
 
 
