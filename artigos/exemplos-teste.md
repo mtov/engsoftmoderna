@@ -1,5 +1,7 @@
 # Alguns Exemplos Reais e Interessantes de Testes {.unnumbered}
 
+### Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas {.unnumbered}
+
 ## Introdução  {.unnumbered}
 
 No [Capítulo 8](https://engsoftmoderna.info/cap8.html), 

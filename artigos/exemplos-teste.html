@@ -101,13 +101,14 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 class="unnumbered" data-number="" id="alguns-exemplos-reais-e-interessantes-de-testes" class="unnumbered" data-number="">Alguns Exemplos Reais e Interessantes de Testes</h1>
+<h3 class="unnumbered" data-number="" id="esse-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-exemplos-de-outros-sistemas" class="unnumbered" data-number="">Esse artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas</h3>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
 <p>No <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
-<p>Neste artigo, vamos <strong>ampliar essa lista de exemplos, mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto de sucesso</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar na escrita de seus próprios testes depois.</p>
-<p>Vamos começar estudando os testes do JUnit. Ou seja, nada melhor do que começar conhecendo os testes do framework pioneiro de testes automatizados. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, da própria ideia de testes automatizados.</p>
+<p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto de sucesso</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar o leitor na escrita de seus próprios testes.</p>
+<p>Vamos começar estudando os testes do JUnit. Ou seja, o JUnit possui alguns testes, que, evidentemente, são executados pelo próprio JUnit. Portanto, nada melhor do que começar estudando esses testes, cujas primeiras versões foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, criadores também do próprio conceito de testes de unidade automatizados.</p>
 <h2 class="unnumbered" data-number="" id="junit" class="unnumbered" data-number="">JUnit</h2>
-<p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>do lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
-<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. Para ter uma ideia, a primeira versão de tais testes foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>).</p>
+<p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>ao lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
+<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. Para ter uma ideia, a primeira versão dessa classe foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>).</p>
 <p>Os testes implementados nessa classe funcionam conforme descrito a seguir.</p>
 <p>Primeiro, no mesmo diretório de <code>SuiteTest.java</code>, existem arquivos que implementam alguns casos de teste. Vamos mostrar um deles (os comentários foram acrescentados por nós mesmos):</p>
 <pre><code>// OneTestCase.java
@@ -123,25 +124,25 @@ public class OneTestCase extends TestCase {
 }
 </code></pre>
 <p>Esse arquivo declara um <code>TestCase</code> simples, que usa a convenção antiga do JUnit para implementação de testes. Segundo essa convenção: (1) casos de teste devem ser implementados em subclasses de <code>TestCase</code>; (2) cada teste deve começar com o prefixo <code>test</code>, não possuir parâmetro e retornar <code>void</code>.</p>
-<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
+<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste, cujo corpo é vazio. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
 <pre><code>public void testOneTestCase() {
-  TestSuite t = new TestSuite(OneTestCase.class);
-  t.run(fResult);
-  assertTrue(fResult.runCount() == 1);
+  TestSuite t = new TestSuite(OneTestCase.class); // setup
+  t.run(fResult);         // método que está sendo testado
+  assertTrue(fResult.runCount() == 1);          // asserts
   assertTrue(fResult.failureCount() == 0);
   assertTrue(fResult.errorCount() == 0);
   assertTrue(fResult.wasSuccessful());
 }</code></pre>
-<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste chamam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Essencialmente, então, <code>testOneTestCase</code> é um meta-teste, isto é, um teste de um outro teste!</p>
+<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste chamam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Esses testes são interessantes porque neles o JUnit tem um duplo papel: ele é tanto o framework de testes como o SUT, isto é, o sistema que está sendo testado.</p>
 <p>Especificamente, como mostrado no código acima, <code>testOneTestCase</code> executa o teste implementado na classe <code>OneTestCase</code> (duas primeiras linhas). Ao executar o teste, passa-se como parâmetro um objeto (<code>fResult</code>) que vai armazenar o resultado da execução. Para ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code> e foi inicializado no <code>setUp</code> do teste.</p>
-<p>Por fim, são executados quatro <code>assert</code> para assegurar que:</p>
+<p>Por fim, são usados quatro comandos <code>assert</code> para assegurar que:</p>
 <ul>
-<li><code>OneTestCase</code> possui um único um método de teste;</li>
-<li>nenhum método de teste falhou, isto é, todos os <code>assert</code> foram confirmados;</li>
-<li>e, também, não ocorreu nenhum erro ou exceção;</li>
-<li>por fim, o teste como um todo foi bem sucedido.</li>
+<li>A suíte de teste que foi executada possui um único caso de teste (subclasse de <code>TestCase</code>);</li>
+<li>Dentre os métodos de teste executados, nenhum deles falhou.</li>
+<li>E, também, não ocorreu nenhum erro ou exceção;</li>
+<li>Por fim, o teste como um todo foi bem sucedido.</li>
 </ul>
-<p><strong>Exercício:</strong> Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, o qual testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
+<p><strong>Exercício:</strong> Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
 </div>
 </div>
 </div>
