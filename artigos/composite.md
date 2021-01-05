@@ -39,16 +39,18 @@ No nosso editor, queremos implementar uma funcionalidade
 que permita **agrupar figuras** e então tratar a figura
 resultante desse agrupamento como uma figura única. 
 
-Por exemplo, uma certa figura agrupada pode ser composta por
-um círculo e dois triângulos. Criado esse agrupamento, 
-queremos realizar uma operação no mesmo -- por exemplo, mudar
-a cor de fundo de suas três figuras -- por meio de uma
-única chamada de método.
+Por exemplo, uma figura agrupada pode ser composta por
+um círculo e dois triângulos (veja ilustração). Criado esse agrupamento, 
+queremos, em seguida, realizar uma operação no mesmo -- 
+por exemplo, mudar a cor de fundo de suas três figuras -- 
+usando para isso uma única chamada de método.
+
+![](./figs/composite-pattern.jpg){width=85%}
 
 Explicando melhor, um código cliente vai poder trabalhar
 com figuras simples ou com figuras agrupadas da mesma
 forma, usando apenas a interface `Figura`. Esse código não vai precisar saber qual tipo de
-figura (simples ou agrupada) que ele está manipulando.
+figura (simples ou agrupada) ele está manipulando.
 
 ## Solução {.unnumbered}
 

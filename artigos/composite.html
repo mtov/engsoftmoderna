@@ -120,8 +120,9 @@ class Triangulo implements Figura {
 }</code></pre>
 <h2 class="unnumbered" data-number="" id="problema" class="unnumbered" data-number="">Problema</h2>
 <p>No nosso editor, queremos implementar uma funcionalidade que permita <strong>agrupar figuras</strong> e então tratar a figura resultante desse agrupamento como uma figura única.</p>
-<p>Por exemplo, uma certa figura agrupada pode ser composta por um círculo e dois triângulos. Criado esse agrupamento, queremos realizar uma operação no mesmo – por exemplo, mudar a cor de fundo de suas três figuras – por meio de uma única chamada de método.</p>
-<p>Explicando melhor, um código cliente vai poder trabalhar com figuras simples ou com figuras agrupadas da mesma forma, usando apenas a interface <code>Figura</code>. Esse código não vai precisar saber qual tipo de figura (simples ou agrupada) que ele está manipulando.</p>
+<p>Por exemplo, uma certa figura agrupada pode ser composta por um círculo e dois triângulos (veja ilustração). Criado esse agrupamento, queremos, em seguida, realizar uma operação no mesmo – por exemplo, mudar a cor de fundo de suas três figuras – usando para isso uma única chamada de método.</p>
+<p><img src="./figs/composite-pattern.jpg" style="width:85.0%" /></p>
+<p>Explicando melhor, um código cliente vai poder trabalhar com figuras simples ou com figuras agrupadas da mesma forma, usando apenas a interface <code>Figura</code>. Esse código não vai precisar saber qual tipo de figura (simples ou agrupada) ele está manipulando.</p>
 <h2 class="unnumbered" data-number="" id="solução" class="unnumbered" data-number="">Solução</h2>
 <p>O <strong>padrão de projeto Composite</strong> é a solução para o problema que enunciamos. Ele permite armazenar objetos compostos (ou agrupados) em uma estrutura com forma de árvore e então possibilita que clientes manipulem esses objetos como se fossem objetos simples.</p>
 <p>A classe principal do padrão é aquela responsável pelo agrupamento. No nosso exemplo, temos então que criar uma classe como a seguinte:</p>

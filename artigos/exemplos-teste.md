@@ -98,7 +98,9 @@ Por fim, são usados quatro comandos `assert` para assegurar que:
 * E, também, não ocorreu nenhum erro ou exceção;
 * Por fim, o teste como um todo foi bem sucedido.
 
-**Exercício:** Estude o funcionamento do teste 
+#### Exercício {.unnumbered}
+
+Estude o funcionamento do teste 
 [testInheritedTests](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44),
 que testa a execução do seguinte 
 [teste](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java).
@@ -155,7 +157,7 @@ possui uma anotação `@Autowired`:
 ```
 class ClinicServiceTests {
   ...
-  @Autowired
+  @Autowired     // informa para o Spring que ele deve injetar essa dependência
   protected OwnerRepository owners;
   ...
 }
@@ -175,7 +177,9 @@ automatically rolled back by default. Thus, even if tests
 insert or otherwise change database state, there is no need 
 for a teardown or cleanup script.*
 
-**Exercício**: Estude o funcionamento do método de teste
+#### Exercício {.unnumbered}
+
+Estude o funcionamento do método de teste
 [shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da
 classe `ClinicServiceTests`.
 

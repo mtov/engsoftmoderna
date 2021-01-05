@@ -144,7 +144,8 @@ public class OneTestCase extends TestCase {
 <li>E, também, não ocorreu nenhum erro ou exceção;</li>
 <li>Por fim, o teste como um todo foi bem sucedido.</li>
 </ul>
-<p><strong>Exercício:</strong> Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
+<h4 class="unnumbered" data-number="" id="exercício" class="unnumbered" data-number="">Exercício</h4>
+<p>Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
 <h2 class="unnumbered" data-number="" id="sprint-petclinic" class="unnumbered" data-number="">Sprint PetClinic</h2>
 <p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um conhecido framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
 <p>O sistema tem alguns <strong>testes de integração</strong> interessantes, que se beneficiam de funcionalidades oferecidas de forma <q>transparente</q> pelo Spring.</p>
@@ -169,7 +170,7 @@ void shouldUpdateOwner() {
 </ul>
 <pre><code>class ClinicServiceTests {
   ...
-  @Autowired
+  @Autowired     // informa para o Spring que ele deve injetar essa dependência
   protected OwnerRepository owners;
   ...
 }</code></pre>
@@ -177,7 +178,8 @@ void shouldUpdateOwner() {
 <ul>
 <li>O teste é também anotado com uma anotação do Spring chamada <code>@Transactional</code>, que garante uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
 </ul>
-<p><strong>Exercício</strong>: Estude o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p>
+<h4 class="unnumbered" data-number="" id="exercício-1" class="unnumbered" data-number="">Exercício</h4>
+<p>Estude o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p>
 <h2 class="unnumbered" data-number="" id="como-contribuir" class="unnumbered" data-number="">Como Contribuir</h2>
 <p>Estamos interessados em ampliar a nossa lista de exemplos de testes de software, implementados em sistemas de código aberto populares e bem conhecidos. Se você quiser sugerir algum exemplo, favor preencher o seguinte <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>. E informe o sistema, classe e nome do método de teste, URLs, se possível uma breve descrição, etc.</p>
 <hr />
