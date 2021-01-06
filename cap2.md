@@ -622,8 +622,8 @@ Resumindo, um projeto XP é organizado em:
 *   releases, que são conjunto de iterações, com duração total de alguns
     meses.
 
-*   iterações, que são conjuntos de tarefas, com duração total de
-    algumas semanas.
+*   iterações, que são conjuntos de tarefas resultantes da decomposição 
+    de histórias, com duração total de algumas semanas. 
 
 *   tarefas, com duração de alguns dias.
 
@@ -1587,9 +1587,9 @@ trabalho do time.
 
 Agora, mostraremos uma evolução do projeto. Isto é, alguns dias depois,
 o Quadro Kanban passou para o seguinte estado (as tarefas que avançaram
-no quadro estão em vermelho).
+no quadro estão sublinhadas e em vermelho).
 
-![](figs/cap2/kanban2.png){width=80%}
+![](figs/cap2/kanban2-sublinhado.png){width=80%}
 
 Veja que a história H2 desapareceu, pois foi quebrada em três tarefas
 (T10, T11 e T12). O objetivo da fase de especificação é exatamente
