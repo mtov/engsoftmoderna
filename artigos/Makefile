@@ -1,5 +1,5 @@
 desafios-engsoft: desafios-engsoft.md
-	pandoc --defaults=defaults.yaml -T "Desafios do Ensino de Engenharia de Software" desafios-engsoft.md -o desafios-engsoft.html
+	pandoc --defaults=defaults.yaml -T "Desafios da Formação de Engenheiros de Software" desafios-engsoft.md -o desafios-engsoft.html
 
 como-monetizar: como-monetizar.md
 	pandoc --defaults=defaults.yaml -T "Como monetizar sistemas de software?" como-monetizar.md -o como-monetizar.html
