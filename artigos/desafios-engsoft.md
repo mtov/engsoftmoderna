@@ -39,16 +39,16 @@ sugerindo que nosso mercado de software seja inexistente e
 inexpressivo. Pelo contrário, estamos avançando e temos 
 inúmeros casos de sucesso. 
 
-Por outro lado, temos essa situação paradoxal entre oferta e
+Por outro lado, temos esse descasamento paradoxal entre oferta e
 demanda de profissionais de TI no Brasil. Digo, em um país onde
 existe um brutal problema de desemprego temos um setor da 
 economia -- empresas de TI -- com centenas de milhares de 
-vagas abertas, sendo a maioria delas para Engenheiros de
-Software e profissões relacionadas.
+vagas abertas, sendo a maioria delas para trabalho diretamente
+relacionado com Engenheira de Software.
 
-Ou seja, temos aqui um problema muito relevante e que, portanto,
-merece um olhar especial por parte das instituições de ensino 
-brasileiras.
+Assim, acredito que nunca foi tão importante formar, no Brasil,
+um maior número de profissionais com capacidade e interesse 
+de atuar na área de Engenharia de Software.
 
 ### Eixos de Formação {.unnumbered}
 
@@ -69,7 +69,7 @@ principalmente, um domínio de **habilidades comportamentais**
 A seguir, detalho um pouco mais sobre esses eixos e suas 
 respectivas categorias de formação.
 
-## Eixo Central {.unnumbered}
+## Eixo Central de Formação {.unnumbered}
 
 Este eixo envolve a formação básica de um Engenheiro de Software,
 a qual deve contemplar, em nossa opinião, o desenvolvimento de
@@ -141,7 +141,7 @@ testes, etc. Como um exemplo inicial, neste outro
 [artigo](https://engsoftmoderna.info/artigos/exemplos-teste.html), 
 começamos a documentar exemplos reais de testes de software.
 
-## Eixo Transversal {.unnumbered}
+## Eixo Transversal de Formação {.unnumbered}
 
 Neste eixo estão incluídas duas categorias de formação:
 comportamental e em negócios. Decidimos chamar o eixo de transveral 
@@ -168,7 +168,7 @@ recente, publicado na revista científica *Information and Software Technology*,
 fizemos uma análise de várias ofertas de emprego
 postadas no Stack Overflow Jobs. Pudemos confirmar que a grande 
 maioria faz referência a soft skills. Veja a seguir aqueles que são 
-mais demandados, conforme constatado no artigo:
+mais demandados:
 
 ![](./figs/soft-skills.jpg)
 
@@ -185,7 +185,7 @@ não podem restringir sua atuação à escrita de código. Eles têm também
 que constantemente refletir sobre o valor que está sendo gerado pelo
 código que eles produzem. 
 
-Para isso, os profissionais têm entender um pouco do negócio principal 
+Para isso, os profissionais têm que entender do negócio principal 
 da empresa na qual trabalham. Isso é importante inclusive para conversar 
 e argumentar com outros profissionais, como POs, gerentes de produtos,
 designers e mesmo com os usuários finais.
@@ -195,13 +195,14 @@ valor gerado pelo código que eles produzem. Então, não é bom assumir
 que os requisitos e funcionalidades de um sistema vão sempre chegar 
 prontos e perfeitamente definidos. O desenvolvedor moderno tem que ser 
 capaz de propor novas funcionalidades, participar e influenciar na 
-evolução do sistema no qual trabalha, sugerir novas funcionalidades 
-e mesmo novas oportunidades de negócio,
+evolução dos sistemas nos quais trabalha, sugerir novas funcionalidades 
+e mesmo novas oportunidades de negócio.
 
 Evidentemente, do ponto de vista de ensino, não dá para tratar da 
 variedade de negócios que beneficiam-se atualmente de software. 
-Porém, pelo menos transversalmente, é importante debater e alertar 
-os alunos sobre a importância desse alinhamento: sistemas e negócio.
+Porém, pelo menos transversalmente, é importante comentar com  
+os alunos sobre a importância desse alinhamento: sistemas e 
+negócio.
 
 Outras disciplinas de graduação -- como uma disciplina de 
 **empreendedorismo** -- podem também ajudar nessa formação.

@@ -185,12 +185,12 @@ classe `ClinicServiceTests`.
 
 ## Como Contribuir {.unnumbered}
 
-Estamos interessados em ampliar a nossa lista de exemplos de testes 
-de software, implementados em sistemas de código aberto populares e
+Estamos interessados em ampliar nossa lista de exemplos de testes 
+de software implementados em sistemas de código aberto populares e
 bem conhecidos. Se você quiser sugerir algum exemplo, favor
 preencher o seguinte [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7). 
-E informe o sistema, classe e nome do método de teste, URLs, se 
-possível uma breve descrição, etc.
+Informe o sistema, classe e nome do método de teste, URLs, e, se 
+possível, inclua uma breve descrição do teste.
 
 
 * * * 
