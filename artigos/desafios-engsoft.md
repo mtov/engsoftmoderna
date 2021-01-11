@@ -4,7 +4,7 @@ Por Marco Tulio Valente (versão 1.1 - 11/01/2021)
 
 Em 2019, ministrei pela primeira vez um curso de Engenharia de 
 Software para alunos de graduação. Desde então, tenho estudado, 
-trabalhado e refletido bastante sobre questões ligadas à formação 
+trabalhado e refletido sobre questões ligadas à formação 
 qualificada de Engenheiros de Software no Brasil.
 
 Assim, neste artigo, vou compartilhar minha visão sobre os desafios 
@@ -33,7 +33,7 @@ Software, Tech/Squad Lead, etc.
 
 Temos também no Brasil capacidade, vocação e potencial para 
 desenvolver um mercado de software relevante e com impacto 
-e atuação global. Na verdade, não estou falando nenhuma 
+global. Na verdade, não estou falando nenhuma 
 novidade, pois sempre se falou nesse assunto. Também, não estou 
 sugerindo que nosso mercado de software seja inexistente e 
 inexpressivo. Pelo contrário, estamos avançando e temos 
@@ -61,7 +61,7 @@ um conjunto de esforços em dois eixos (veja também a próxima figura):
 
 * **Eixo Transversal de Formação**: aqui, os desafios envolvem,
 principalmente, um domínio de **habilidades comportamentais** 
-(*soft skills*) e também uma visão mais ampla de 
+(*soft skills*) e também uma visão -- mesmo que mais ampla -- de 
 **negócios**.
 
 ![](./figs/eixos-formacao-es.jpg)
@@ -78,7 +78,7 @@ habilidades conceituais e práticas.
 ### Formação Conceitual {.unnumbered}
 
 Quando ministrei a disciplina de Engenharia de Software pela 
-primeira vez, na graduação, senti uma grande falta de livros 
+primeira vez, na graduação, senti uma falta de livros 
 didáticos mais modernos na área. 
 
 Por isso, resolvi dedicar um ano de intenso trabalho para escrever 
@@ -92,8 +92,9 @@ conceitos, práticas e princípios, sempre modernos, de processos,
 projeto, arquitetura, testes, manutenção, etc de software.
 
 Na verdade, estamos bastante satisfeitos com a adoção do livro.
-Após um ano de seu lançamento, já temos mais de 100 professores
+Após um ano de seu lançamento, mais de 100 professores estão
 usando o nosso material.
+
 
 ### Formação Prática {.unnumbered}
 
@@ -112,9 +113,9 @@ terceirizada por meio de estágios ou atividades semelhantes.
 
 Por outro lado, quando a universidade assume parte da 
 responsabilidade pela formação prática dos alunos, surgem complicações 
-naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir que os alunos 
-implementem um sistema real em uma disciplina acadêmica, na qual 
-devem ser abordados ainda aspectos conceituais.
+naturais do ambiente acadêmico. Por exemplo, torna-se desafiador pedir 
+que os alunos implementem um sistema real em uma disciplina acadêmica, 
+na qual devem ser cobertos também aspectos conceituais.
 
 Da mesma forma, pedir para que os alunos trabalhem em sistemas de 
 terceiros, como sistemas de código aberto, também não é trivial. O motivo 
@@ -144,7 +145,7 @@ começamos a documentar exemplos reais de testes de software.
 ## Eixo Transversal de Formação {.unnumbered}
 
 Neste eixo estão incluídas duas categorias de formação:
-comportamental e em negócios. Decidimos chamar o eixo de transveral 
+comportamental e em negócios. Decidimos chamar o eixo de transversal 
 porque ele trata de questões que são também importantes em outros 
 profissionais de computação, como cientistas de dados, 
 administradores de redes, etc. Por isso, elas podem também
@@ -170,7 +171,7 @@ postadas no Stack Overflow Jobs. Pudemos confirmar que a grande
 maioria faz referência a soft skills. Veja a seguir aqueles que são 
 mais demandados:
 
-![](./figs/soft-skills.jpg)
+![Soft skilss demandados em Engenheiros de Software](./figs/soft-skills.jpg)
 
 Porém, a abordagem da dimensão comportamental em cursos de Engenharia 
 de Software é ainda um problema em aberto, pelo menos para mim. Talvez, 
@@ -211,14 +212,14 @@ estamos vivemos --, as oportunidades que existem para criação de
 novas empresas são imensas. E Engenharia de Software é o motor 
 da maioria dos processos de transformação digital. Adicionalmente, 
 as empresas cobram cada vez mais uma mentalidade empreendedora 
-de seus colaboradores, via o que costuma-se chamar de
+de seus colaboradores, por meio do que costuma-se chamar de
 **empreendedorismo interno**.
 
 * * *
 
 Bem, esse é um artigo em andamento! A ideia é atualizá-lo, 
 à medida que tenha novos resultados sobre a minha experiência 
-de ensino de discipinas de Engenharia de Software.
+de ensino de disciplinas de Engenharia de Software.
 
 * * *
 
