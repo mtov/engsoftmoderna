@@ -2,6 +2,8 @@
 
 Por Marco Tulio Valente (versão 1.1 - 11/01/2021)
 
+## Introdução {.unnumbered}
+
 Em 2019, ministrei pela primeira vez um curso de Engenharia de 
 Software para alunos de graduação. Desde então, tenho estudado, 
 trabalhado e refletido sobre questões ligadas à formação 
@@ -215,9 +217,9 @@ as empresas cobram cada vez mais uma mentalidade empreendedora
 de seus colaboradores, por meio do que costuma-se chamar de
 **empreendedorismo interno**.
 
-* * *
+## Comentário Final {.unnumbered}
 
-Bem, esse é um artigo em andamento! A ideia é atualizá-lo, 
+Este é um artigo em andamento! A ideia é atualizá-lo, 
 à medida que tenha novos resultados sobre a minha experiência 
 de ensino de disciplinas de Engenharia de Software.
 
