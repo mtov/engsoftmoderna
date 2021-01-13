@@ -201,9 +201,17 @@ capaz de propor novas funcionalidades, participar e influenciar na
 evolução dos sistemas nos quais trabalha, sugerir novas funcionalidades 
 e mesmo novas oportunidades de negócio.
 
+Idealmente, um time de desenvolvedores sempre deve procurar 
+relacionar seu trabalho com a melhoria de um indicador de negócio. 
+Por exemplo, uma determinada funcionalidade pode estar sendo implementada
+porque ela tem potencial para ampliar a base de clientes em
+x% ou reduzir a taxa de cancelamentos em y%. Ela pode ainda 
+permitir que a empresa economize z milhões de reais em serviços
+de cloud ou então de serviços de terceiros.
+
 Evidentemente, do ponto de vista de ensino, não dá para tratar da 
 variedade de negócios que beneficiam-se atualmente de software. 
-Porém, pelo menos transversalmente, é importante comentar com  
+Porém, pelo menos transversalmente, é importante comentar com 
 os alunos sobre a importância desse alinhamento: sistemas e 
 negócio.
 
@@ -219,7 +227,7 @@ de seus colaboradores, por meio do que costuma-se chamar de
 
 ## Comentário Final {.unnumbered}
 
-Este é um artigo em andamento! A ideia é atualizá-lo, 
+Este é um artigo em andamento! A ideia é atualizá-lo 
 à medida que tenha novos resultados sobre a minha experiência 
 de ensino de disciplinas de Engenharia de Software.
 
