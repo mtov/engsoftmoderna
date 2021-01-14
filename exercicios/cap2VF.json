@@ -42,7 +42,7 @@
     "correct": "true"
   },
   {
-    "text": "Reuniões diárias podem durar de 10 a 30 minutos, dependendo da duração do sprint.",
+    "text": "Reuniões diárias podem durar de 10 a 40 minutos, dependendo da duração do sprint.",
     "correct": "false"
   },
   {
@@ -59,6 +59,10 @@
   },
   {
     "text": "Todos os eventos Scrum têm uma duração bem definida, chamada de time-box do evento.",
+    "correct": "true"
+  },
+  {
+    "text": "Apenas o Dono do Produto tem autoridade para cancelar um sprint.",
     "correct": "true"
   },
   {
