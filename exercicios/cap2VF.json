@@ -66,6 +66,10 @@
     "correct": "true"
   },
   {
+    "text": "O Sprint é um container para os demais eventos de Scrum.",
+    "correct": "true"
+  },
+  {
     "text": "Em Kanban, limites WIP valem para todos os passos e também para o backlog do produto.",
     "correct": "false"
   },
