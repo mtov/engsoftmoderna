@@ -97,6 +97,31 @@ Na verdade, estamos bastante satisfeitos com a adoção do livro.
 Após um ano de seu lançamento, mais de 100 professores estão
 usando o nosso material.
 
+Também gostaríamos de comentar sobre dois problemas que
+podem ocorrem quando aborda-se a parte conceitual:
+
+* Ser muito abrangente e "conteudista" e, assim, procurar ensinar 
+todo e qualquer método, técnica ou ferramenta. Achamos que isso torna
+as aulas de Engenharia de Software massantes e repetititvas.
+
+* Ser opinativo e, assim, emitir diversos comentários e vereditos 
+sobre os temas estudados, sem que eles sejam baseados em uma 
+experiência empírica mais sólida e científica.
+
+Para evitar o primeiro problema, tomamos o cuidado de tornar o nosso 
+livro enxuto (*lean*), com cerca de 400 páginas. Mesmo em futuras 
+edições, pretendemos nos esforçar por manter esse tamanho 
+e, assim, evitar que o livro se transforme em uma enciclopédia sobre 
+Engenharia de Software. 
+
+Na verdade, extensões do livro já estão em andamento, mas na forma de
+[artigos didáticos](https://engsoftmoderna.info/artigos/artigos.html). 
+Nesse caso, o propósito não é apenas apresentar um
+conteúdo novo, mas também usar os artigos como trabalhos para 
+os alunos. Esclareço: os artigos são auto-contidos (ou, no máximo,
+referenciam conteúdo do próprio livro) e, importante, são 
+sempre acompanhados de exercícios.
+
 
 ### Formação Prática {.unnumbered}
 

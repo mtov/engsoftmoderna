@@ -137,7 +137,7 @@ string chamada `I18N`.
 Em tempo, a função `Files.toString` usada no `assertEquals` lê o
 conteúdo de um arquivo e retorna-o em uma string.
 
-Antes de terminar, queremos lembrar que esse é um **teste de 
+Antes de terminar, queremos ressaltar que esse é um **teste de 
 integração**, pois ele faz acesso ao disco para ler e gravar 
 arquivos.
 
