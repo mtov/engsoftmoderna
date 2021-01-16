@@ -98,29 +98,34 @@ Após um ano de seu lançamento, mais de 100 professores estão
 usando o nosso material.
 
 Também gostaríamos de comentar sobre dois problemas que
-podem ocorrem quando aborda-se a parte conceitual:
+podem ocorrer quando aborda-se a parte conceitual:
 
 * Ser muito abrangente e "conteudista" e, assim, procurar ensinar 
 todo e qualquer método, técnica ou ferramenta. Achamos que isso torna
-as aulas de Engenharia de Software massantes e repetititvas.
+as aulas de Engenharia de Software massantes e repetitivas.
 
 * Ser opinativo e, assim, emitir diversos comentários e vereditos 
-sobre os temas estudados, sem que eles sejam baseados em uma 
-experiência empírica mais sólida e científica.
+sobre os temas estudados, sem que eles estejam baseados em uma 
+evidência empírica mais sólida e científica.
 
 Para evitar o primeiro problema, tomamos o cuidado de tornar o nosso 
 livro enxuto (*lean*), com cerca de 400 páginas. Mesmo em futuras 
-edições, pretendemos nos esforçar por manter esse tamanho 
-e, assim, evitar que o livro se transforme em uma enciclopédia sobre 
-Engenharia de Software. 
+edições, pretendemos manter esse tamanho 
+e, assim, evitar que o livro se transforme em uma enciclopédia. 
+Para nos ajudar a cumprir esse objetivo, sempre lembramos
+da frase de Mark Twain:
 
-Na verdade, extensões do livro já estão em andamento, mas na forma de
+> Eu não tive tempo de escrever uma carta curta, então acabei
+escrevendo uma carta longa ...
+
+No entanto, é importante ressaltar que extensões do livro já 
+estão em pleno andamento, mas na forma de
 [artigos didáticos](https://engsoftmoderna.info/artigos/artigos.html). 
 Nesse caso, o propósito não é apenas apresentar um
 conteúdo novo, mas também usar os artigos como trabalhos para 
-os alunos. Esclareço: os artigos são auto-contidos (ou, no máximo,
-referenciam conteúdo do próprio livro) e, importante, são 
-sempre acompanhados de exercícios.
+os alunos. Esclareço: os artigos são auto-contidos ou, no máximo,
+referenciam conteúdo do próprio livro. E são sempre acompanhados
+de exercícios.
 
 
 ### Formação Prática {.unnumbered}
