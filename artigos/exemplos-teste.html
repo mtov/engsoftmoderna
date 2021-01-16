@@ -104,15 +104,15 @@
 <h3 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-exemplos-de-outros-sistemas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas</h3>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
 <p>No <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
-<p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto de sucesso</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar o estudante na escrita de seus próprios testes.</p>
+<p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar o estudante na escrita de seus próprios testes.</p>
 <hr />
 <h2 class="unnumbered" data-number="" id="guava" class="unnumbered" data-number="">Guava</h2>
-<p><a href="https://github.com/google/guava">Guava</a> é uma biblioteca de código aberto – implementada pelo Google – que oferece um conjunto de funções básicas para concorrência, cache, E/S e grafos. Ela inclui também algumas funções utilitárias para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como um complemento para a API padrão de Java.</p>
+<p><a href="https://github.com/google/guava">Guava</a> é uma biblioteca de código aberto – implementada pelo Google – que oferece um conjunto de funções básicas para concorrência, cache, E/S e grafos. Ela inclui também funções utilitárias para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como um complemento para a biblioteca padrão de Java.</p>
 <p>Já mostramos um exemplo de teste do Guava no <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, mas vamos aqui mostrar mais dois exemplos.</p>
 <h4 class="unnumbered" data-number="" id="exemplo-1-ints.contains" class="unnumbered" data-number="">Exemplo 1: Ints.contains</h4>
-<p>Guava implementa uma classe chamada <a href="https://guava.dev/releases/snapshot-jre/api/docs/"><code>Ints</code></a> que oferece diversos métodos para trabalhar com valores inteiros. Dentre eles, temos o seguinte método estático:</p>
+<p>Guava implementa uma classe chamada <a href="https://guava.dev/releases/snapshot-jre/api/docs/"><code>Ints</code></a> que oferece métodos estáticos para trabalhar com valores inteiros. Dentre eles, temos o seguinte método:</p>
 <pre><code>public static boolean contains(int[] array, int target)</code></pre>
-<p>Esse método verifica se um vetor de inteiros (<code>array</code>) contem um determinado valor inteiro (<code>target</code>).</p>
+<p>Ele verifica se um vetor de inteiros (<code>array</code>) contem um determinado inteiro (<code>target</code>).</p>
 <p>O teste desse método é o seguinte:</p>
 <pre><code>public void testContains() {
   assertFalse(Ints.contains(EMPTY, (int) 1));
@@ -137,17 +137,17 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
   testReverse(new int[] {3, 1, 1}, new int[] {1, 1, 3});
   testReverse(new int[] {-1, 1, -2, 2}, new int[] {2, -2, 1, -1});
 }</code></pre>
-<p>Esse método de teste apenas chama um segundo método, também chamado <code>testReverse</code>, mas que recebe como parâmetro dois vetores de inteiros, sendo que um é o inverso do outro. Veja o código desse segundo método:</p>
+<p>Esse método de teste sempre chama um segundo método, também chamado <code>testReverse</code>, mas que recebe como parâmetro dois vetores de inteiros, sendo que um é o inverso do outro. Veja o seu código:</p>
 <pre><code>private static void testReverse(int[] input, int[] expectedOutput) {
   input = Arrays.copyOf(input, input.length);
   Ints.reverse(input);
   assertTrue(Arrays.equals(expectedOutput, input));
 }</code></pre>
-<p>O código é bem simples: primeiro cria-se uma cópia do vetor <code>input</code> (basicamente, para o teste não alterar seus valores, quando retornar); depois chama-se o método de teste (<code>Ints.reverse</code>) e verifica-se se o resultado é aquele esperado, isto é, <code>expectedOutput</code>.</p>
+<p>O código é bem simples: primeiro cria-se uma cópia do vetor <code>input</code> (basicamente, para o teste não alterar seus elementos quando retornar); depois chama-se o método de teste (<code>Ints.reverse</code>) e verifica-se se o resultado é aquele esperado, isto é, <code>expectedOutput</code>.</p>
 <hr />
 <h2 class="unnumbered" data-number="" id="sprint-petclinic" class="unnumbered" data-number="">Sprint PetClinic</h2>
-<p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um conhecido framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
-<p>O sistema tem alguns <strong>testes de integração</strong> interessantes, que se beneficiam de funcionalidades oferecidas de forma <q>transparente</q> pelo Spring.</p>
+<p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
+<p>O sistema tem alguns <strong>testes de integração</strong> interessantes, que se beneficiam de funcionalidades oferecidas de forma transparente pelo Spring.</p>
 <p>Por exemplo, a classe <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java">ClinicServiceTests</a> implementa um método que testa o serviço de atualização do nome do dono de um animal:</p>
 <pre><code>@Test
 @Transactional
@@ -175,16 +175,15 @@ void shouldUpdateOwner() {
 }</code></pre>
 <p>Para saber mais sobre injeção de dependência, você pode consultar esse <a href="https://engsoftmoderna.info/artigos/injecao-dependencia.html">artigo</a> do nosso site.</p>
 <ul>
-<li>O teste é também anotado com uma anotação do Spring chamada <code>@Transactional</code>, que garante uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
+<li>O teste é também anotado com <code>@Transactional</code> para garantir uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
 </ul>
 <h4 class="unnumbered" data-number="" id="exercício" class="unnumbered" data-number="">Exercício</h4>
 <p>Estude o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p>
 <hr />
 <h2 class="unnumbered" data-number="" id="junit" class="unnumbered" data-number="">JUnit</h2>
-<p>O JUnit possui alguns testes, que, evidentemente, são executados pelo próprio JUnit. As primeiras versões de tais testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, criadores também do próprio conceito de testes de unidade automatizados.</p>
+<p>O JUnit também possui testes, que, evidentemente, são executados pelo próprio JUnit. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, do próprio conceito de testes de unidade automatizados.</p>
 <p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>ao lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
-<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. Para ter uma ideia, a primeira versão dessa classe foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>).</p>
-<p>Os testes implementados nessa classe funcionam conforme descrito a seguir.</p>
+<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. A primeira versão dessa classe foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>). Os testes implementados nela funcionam conforme descrito a seguir.</p>
 <p>Primeiro, no mesmo diretório de <code>SuiteTest.java</code>, existem arquivos que implementam alguns casos de teste. Vamos mostrar um deles (os comentários foram acrescentados por nós mesmos):</p>
 <pre><code>// OneTestCase.java
 public class OneTestCase extends TestCase {
@@ -199,7 +198,7 @@ public class OneTestCase extends TestCase {
 }
 </code></pre>
 <p>Esse arquivo declara um <code>TestCase</code> simples, que usa a convenção antiga do JUnit para implementação de testes. Segundo essa convenção: (1) casos de teste devem ser implementados em subclasses de <code>TestCase</code>; (2) cada teste deve começar com o prefixo <code>test</code>, não possuir parâmetro e retornar <code>void</code>.</p>
-<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste, cujo corpo é vazio. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
+<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste válido (<code>testCase()</code>), cujo corpo é vazio. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
 <pre><code>public void testOneTestCase() {
   TestSuite t = new TestSuite(OneTestCase.class); // setup
 
@@ -210,14 +209,14 @@ public class OneTestCase extends TestCase {
   assertTrue(fResult.errorCount() == 0);
   assertTrue(fResult.wasSuccessful());
 }</code></pre>
-<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste chamam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Esses testes são interessantes porque neles o JUnit tem um duplo papel: ele é tanto o framework de testes como o SUT, isto é, o sistema que está sendo testado.</p>
-<p>Especificamente, como mostrado no código acima, <code>testOneTestCase</code> executa o teste implementado na classe <code>OneTestCase</code> (duas primeiras linhas). Ao executar o teste, passa-se como parâmetro um objeto (<code>fResult</code>) que vai armazenar o resultado da execução. Para ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code> e foi inicializado no <code>setUp</code> do teste.</p>
+<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste rodam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Esses testes são interessantes porque neles o JUnit tem um duplo papel: ele é tanto o framework de testes como o SUT, isto é, o sistema que está sendo testado.</p>
+<p>Como mostrado no código acima, <code>testOneTestCase</code> executa o teste implementado na classe <code>OneTestCase</code> (duas primeiras linhas). Ao executar o teste, passa-se como parâmetro um objeto (<code>fResult</code>) que vai armazenar o resultado da execução. Para ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code> e foi inicializado no <code>setUp</code> do teste.</p>
 <p>Por fim, são usados quatro comandos <code>assert</code> para assegurar que:</p>
 <ul>
-<li>A suíte de teste que foi executada possui um único caso de teste (subclasse de <code>TestCase</code>);</li>
-<li>Dentre os métodos de teste executados, nenhum deles falhou.</li>
-<li>E, também, não ocorreu nenhum erro ou exceção;</li>
-<li>Por fim, o teste como um todo foi bem sucedido.</li>
+<li><p>A suíte de teste que foi executada possui um único caso de teste (subclasse de <code>TestCase</code>);</p></li>
+<li><p>Dentre os métodos de teste executados, nenhum deles falhou.</p></li>
+<li><p>E, também, não ocorreu nenhum erro ou exceção;</p></li>
+<li><p>Por fim, o teste como um todo foi bem sucedido.</p></li>
 </ul>
 <h4 class="unnumbered" data-number="" id="exercício-1" class="unnumbered" data-number="">Exercício</h4>
 <p>Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
