@@ -26,7 +26,7 @@ um complemento para a biblioteca padrão de Java.
 
 Já mostramos um exemplo de teste do Guava no 
 [Capítulo 8](https://engsoftmoderna.info/cap8.html), mas vamos
-aqui mostrar mais dois exemplos.
+aqui mostrar mais três exemplos.
 
 #### Exemplo 1: Ints.contains {.unnumbered}
 
@@ -57,7 +57,7 @@ public void testContains() {
 ```
 
 Esse teste é quase que auto-explicativo. Na verdade, basta entender que
-os identificadores em maiúsculos são constantes definidas na classe
+os identificadores em maiúsculo são constantes definidas na classe
 de teste, chamada [IntsTest](https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/primitives/IntsTest.java), 
 da seguinte forma:
 
@@ -86,7 +86,7 @@ public void testReverse() {
 Esse método de teste sempre chama um segundo método, também
 chamado `testReverse`, mas que recebe como parâmetro dois 
 vetores de inteiros, sendo que um é o inverso do outro. 
-Veja o seu código:
+Veja seu código:
 
 ```
 private static void testReverse(int[] input, int[] expectedOutput) {
@@ -100,6 +100,46 @@ O código é bem simples: primeiro cria-se uma cópia do vetor `input`
 (basicamente, para o teste não alterar seus elementos quando retornar);
 depois chama-se o método de teste (`Ints.reverse`) e verifica-se
 se o resultado é aquele esperado, isto é, `expectedOutput`.
+
+#### Exemplo 3: Files.copy {.unnumbered}
+
+Guava disponibiliza uma classe `Files`, com métodos utilitários
+para trabalhar com arquivos. Dentre eles, temos um método 
+`copy(File from, File to)` que copia todos os bytes de um arquivo
+para outro.
+
+Um dos testes desse método é o seguinte:
+
+```
+public void testCopyFile() throws IOException {
+  File i18nFile = getTestFile("i18n.txt"); // setup
+  File temp = createTempFile();
+
+  Files.copy(i18nFile, temp); // método que está sendo testado
+
+  assertEquals(I18N, Files.toString(temp, Charsets.UTF_8));
+}
+```
+
+Primeiro, abre-se um arquivo que já existe no
+diretório de teste, chamado `i18n.txt`. Em seguida, cria-se um arquivo
+vazio, também no diretório de teste. Ambas as tarefas são
+realizadas por funções utilitárias: `getTestFile` e `createTempFile`.
+
+Depois, o método `copy` é chamado para copiar o conteúdo de um dos
+arquivos (`i18nFile`) para o outro arquivo (`temp`). 
+
+Por fim, temos um `assert`. Ele verifica se o conteúdo do arquivo 
+`temp` de fato passou a ser o conteúdo previamente lido de `i18n.txt`. 
+Esse conteúdo já é conhecido e está armazenado em uma constante 
+string chamada `I18N`.
+
+Em tempo, a função `Files.toString` usada no `assertEquals` lê o
+conteúdo de um arquivo e retorna-o em uma string.
+
+Antes de terminar, queremos lembrar que esse é um **teste de 
+integração**, pois ele faz acesso ao disco para ler e gravar 
+arquivos.
 
 * * *
 
