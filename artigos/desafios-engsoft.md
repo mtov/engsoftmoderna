@@ -85,7 +85,7 @@ didáticos mais modernos na área.
 
 Por isso, resolvi dedicar um ano de intenso trabalho para escrever 
 um [livro-texto](https://engsoftmoderna.info/) sobre Engenharia 
-de Software.
+de Software. Veja a sua capa no topo desta página.
 
 Sou suspeito para afirmar, mas acredito que, após a escrita desse 
 livro, estou conseguindo cobrir essa dimensão do ensino de 
@@ -110,10 +110,11 @@ evidência empírica mais sólida e científica.
 
 Para evitar o primeiro problema, tomamos o cuidado de tornar o nosso 
 livro enxuto (*lean*), com cerca de 400 páginas. Mesmo em futuras 
-edições, pretendemos manter esse tamanho 
-e, assim, evitar que o livro se transforme em uma enciclopédia. 
+edições, pretendemos manter esse tamanho e, assim, evitar que o livro 
+se transforme em uma enciclopédia. No fundo, a ideia é maximizar
+o valor de cada página e, assim, manter o engajamento do leitor.
 Para nos ajudar a cumprir esse objetivo, sempre lembramos
-da frase de Mark Twain:
+da seguinte frase de Mark Twain:
 
 > Eu não tive tempo de escrever uma carta curta, então acabei
 escrevendo uma carta longa ...

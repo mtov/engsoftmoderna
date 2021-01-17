@@ -72,7 +72,7 @@ Para dar um exemplo de um sistema SaaS brasileiro, a próxima
 figura mostra os preços do sistema de gestão financeira 
 e contábil da empresa ContaAzul.
 
-![](./figs/conta-azul.png){width=85%}
+![](./figs/conta-azul.jpg){width=85%}
 
 Veja que o sistema oferece diferentes planos de assinatura
 (Básico, Controle, Avançado, etc). Cada plano possui um
