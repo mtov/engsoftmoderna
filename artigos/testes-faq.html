@@ -103,7 +103,7 @@
 <h1 class="unnumbered" data-number="" id="perguntas-frequentes-sobre-testes" class="unnumbered" data-number="">Perguntas Frequentes sobre Testes</h1>
 <h4 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-perguntas-e-respostas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais perguntas e respostas</h4>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
-<p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais. Ou seja, não vamos tratar de perguntas específicas de um framework de testes ou de qualquer outra tecnologia.</p>
+<p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: unidade, integração e sistema. Particularmente, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
 <h2 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">O que é uma unidade?</h2>
 <p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente no que diz respeito à letra F. Isto é, eles devem ser rápidos!</p>
 <p>Complementando, se um teste T testa um conjunto de classes C1, C2, …, Cn e uma delas possui uma dependência <em>d</em> para um determinado serviço que deixa o teste lento, temos duas opções:</p>
@@ -111,6 +111,9 @@
 <li>Criar um mock para <em>d</em>: nesse caso, podemos chamar T de um teste de unidade.</li>
 <li>Continuar a usar <em>d</em>: nesse caso, como será um <q>teste lento</q>, ele deve ser chamado de um teste de integração.</li>
 </ul>
+<p>Para completar a explicação, se o número de classes testadas (<em>n</em>, no exemplo) for grande e incluir classes de diversas camadas da aplicação, é melhor chamar o teste de teste de sistema.</p>
+<h2 data-number="0.1" id="o-certo-é-teste-de-unidade-ou-teste-unitário" data-number="0.1"><span class="header-section-number">0.1</span> O certo é teste de unidade ou teste unitário?</h2>
+<p>Na verdade, os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h2 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h2>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estarão funcionando.</p>
 <h2 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">O que é um teste de fumaça (smoke test)?</h2>

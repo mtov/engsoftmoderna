@@ -6,9 +6,10 @@
 
 O objetivo deste artigo é responder algumas perguntas frequentes que são feitas
 sobre o [Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro. No entanto,
-estamos interessados apenas em perguntas conceituais. Ou seja, não vamos
-tratar de perguntas específicas de um framework de testes ou de qualquer outra
-tecnologia.
+estamos interessados apenas em perguntas conceituais, principalmente sobre os 
+três tipos de testes abordados no capítulo: unidade, integração e sistema. 
+Particularmente, não pretendemos abordar questões específicas de um framework 
+de testes ou de qualquer outra tecnologia.
 
 ## O que é uma unidade? {.unnumbered}
 
@@ -27,6 +28,17 @@ o teste lento, temos duas opções:
   teste de unidade.
 - Continuar a usar *d*: nesse caso, como será um "teste lento", ele deve ser
 chamado de um teste de integração.
+
+Para completar a explicação, se o número de classes testadas (*n*, no exemplo)
+for grande e incluir classes de diversas camadas da aplicação, é melhor chamar
+o teste de teste de sistema.
+
+## O certo é teste de unidade ou teste unitário?
+
+Na verdade, os dois termos são usados. Então, assumindo que a língua é uma
+entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
+Dito isso, preferimos teste de unidade, porque teste unitário pode passar a
+ideia errada de que temos um único teste no sistema.
 
 ## Precisamos testar métodos privados? {.unnumbered}
 
