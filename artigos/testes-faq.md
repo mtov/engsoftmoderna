@@ -48,24 +48,36 @@ Por tabela, isso vai garantir que os métodos privados também estão funcionand
 
 ## Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado? {.unnumbered}
 
-Não, quando um comando assert falha, ele levanta uma exceção que finaliza 
-imediatamente a execução do método de teste. Logo, o segundo assert não será 
+Não, quando um comando `assert` falha, ele levanta uma exceção que finaliza 
+imediatamente a execução do método de teste. Logo, o segundo `assert` não será 
 executado.
 
 Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando
-assert por método de teste. 
+`assert` por método de teste. 
 
-## Em qual diretório os testes devem ser implementados? {.unnumbered}
+Para ficar mais claro, veja um exemplo:
+
+```
+@Test
+public void test() {
+  System.out.println("Primeiro assert: falha e termina execução");
+  assertTrue(false);
+  System.out.println("Segundo assert: não vai ser executado");
+  assertTrue(true);
+}
+```
+
+## Em qual diretório devo colocar os arquivos de teste? {.unnumbered}
 
 Tipicamente, em um diretório separado, apenas com o código de testes.
 
 Veja o exemplo do sistema `google/guava`:
 
-* As classes e pacotes do sistema ficam em: `src/com/google/common`.
-* Os respectivos testes ficam em: `test/com/google/common `.
+* As classes e pacotes do sistema ficam em `src/com/google/common`.
+* Os respectivos testes ficam em `test/com/google/common `.
 
-Ou seja, normalmente, o diretório de testes "espelha" a organização do
-diretório com as classes do sistema.
+Ou seja, normalmente, o diretório de testes "espelha" a organização dos
+diretórios com as classes do sistema.
 
 ## O que é um teste de fumaça (smoke test)? {.unnumbered}
 
