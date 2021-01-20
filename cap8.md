@@ -1086,7 +1086,7 @@ mocks como uma possível solução para testar esse exemplo.
 ```{=latex}
 \begin{aviso}
 ```
-**Aviso:** Neste capítulo, usamos **mock** como sinônimo de **stub**.
+**Aviso:** Neste capítulo, inicialmente, usamos **mock** como sinônimo de **stub**.
 No entanto, incluímos uma subseção mais à frente para ressaltar que
 alguns autores fazem uma distinção entre esses termos.
 ```{=latex}

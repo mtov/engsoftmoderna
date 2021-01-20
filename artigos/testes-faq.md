@@ -33,7 +33,7 @@ Para completar a explicação, se o número de classes testadas (*n*, no exemplo
 for grande e incluir classes de diversas camadas da aplicação, sem qualquer
 uso de mocks, é melhor chamar o teste de teste de sistema.
 
-## O certo é teste de unidade ou teste unitário?
+## O certo é teste de unidade ou teste unitário? {.unnumbered}
 
 Na verdade, os dois termos são usados. Então, assumindo que a língua é uma
 entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
@@ -45,6 +45,27 @@ ideia errada de que temos um único teste no sistema.
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. 
 Por tabela, isso vai garantir que os métodos privados também estão funcionando.
+
+## Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado? {.unnumbered}
+
+Não, quando um comando assert falha, ele levanta uma exceção que finaliza 
+imediatamente a execução do método de teste. Logo, o segundo assert não será 
+executado.
+
+Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando
+assert por método de teste. 
+
+## Em qual diretório os testes devem ser implementados? {.unnumbered}
+
+Tipicamente, em um diretório separado, apenas com o código de testes.
+
+Veja o exemplo do sistema `google/guava`:
+
+* As classes e pacotes do sistema ficam em: `src/com/google/common`.
+* Os respectivos testes ficam em: `test/com/google/common `.
+
+Ou seja, normalmente, o diretório de testes "espelha" a organização do
+diretório com as classes do sistema.
 
 ## O que é um teste de fumaça (smoke test)? {.unnumbered}
 

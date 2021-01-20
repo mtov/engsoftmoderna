@@ -112,10 +112,20 @@
 <li>Continuar a usar <em>d</em>: no entanto, como será um <q>teste lento</q>, ele deve ser chamado de um teste de integração.</li>
 </ul>
 <p>Para completar a explicação, se o número de classes testadas (<em>n</em>, no exemplo) for grande e incluir classes de diversas camadas da aplicação, sem qualquer uso de mocks, é melhor chamar o teste de teste de sistema.</p>
-<h2 data-number="0.1" id="o-certo-é-teste-de-unidade-ou-teste-unitário" data-number="0.1"><span class="header-section-number">0.1</span> O certo é teste de unidade ou teste unitário?</h2>
+<h2 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">O certo é teste de unidade ou teste unitário?</h2>
 <p>Na verdade, os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h2 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h2>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
+<h2 class="unnumbered" data-number="" id="suponha-um-teste-com-dois-asserts.-se-o-primeiro-assert-falhar-o-segundo-é-executado" class="unnumbered" data-number="">Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado?</h2>
+<p>Não, quando um comando assert falha, ele levanta uma exceção que finaliza imediatamente a execução do método de teste. Logo, o segundo assert não será executado.</p>
+<p>Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando assert por método de teste.</p>
+<h2 class="unnumbered" data-number="" id="em-qual-diretório-os-testes-devem-ser-implementados" class="unnumbered" data-number="">Em qual diretório os testes devem ser implementados?</h2>
+<p>Tipicamente, em um diretório separado, apenas com o código de testes.</p>
+<p>Veja o exemplo do sistema <code>google/guava</code>:</p>
+<ul>
+<li>As classes e pacotes do sistema ficam em: <code>src/com/google/common</code>.</li>
+<li>Os respectivos testes ficam em: <code>test/com/google/common</code>.</li>
+</ul>
 <h2 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">O que é um teste de fumaça (smoke test)?</h2>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
