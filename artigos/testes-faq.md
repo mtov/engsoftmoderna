@@ -8,7 +8,7 @@ O objetivo deste artigo é responder algumas perguntas frequentes que são feita
 sobre o [Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro. No entanto,
 estamos interessados apenas em perguntas conceituais, principalmente sobre os 
 três tipos de testes abordados no capítulo: unidade, integração e sistema. 
-Particularmente, não pretendemos abordar questões específicas de um framework 
+Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
 ## O que é uma unidade? {.unnumbered}
@@ -26,12 +26,12 @@ o teste lento, temos duas opções:
 
 - Criar um mock para *d*: nesse caso, podemos chamar T de um 
   teste de unidade.
-- Continuar a usar *d*: nesse caso, como será um "teste lento", ele deve ser
+- Continuar a usar *d*: no entanto, como será um "teste lento", ele deve ser
 chamado de um teste de integração.
 
 Para completar a explicação, se o número de classes testadas (*n*, no exemplo)
-for grande e incluir classes de diversas camadas da aplicação, é melhor chamar
-o teste de teste de sistema.
+for grande e incluir classes de diversas camadas da aplicação, sem qualquer
+uso de mocks, é melhor chamar o teste de teste de sistema.
 
 ## O certo é teste de unidade ou teste unitário?
 
@@ -44,7 +44,7 @@ ideia errada de que temos um único teste no sistema.
 
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. 
-Por tabela, isso vai garantir que os métodos privados também estarão funcionando.
+Por tabela, isso vai garantir que os métodos privados também estão funcionando.
 
 ## O que é um teste de fumaça (smoke test)? {.unnumbered}
 

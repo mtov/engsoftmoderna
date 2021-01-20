@@ -46,7 +46,7 @@ demanda de profissionais de TI no Brasil. Digo, em um país onde
 existe um brutal problema de desemprego temos um setor da 
 economia -- empresas de TI -- com centenas de milhares de 
 vagas abertas, sendo a maioria delas para trabalho diretamente
-relacionado com Engenheira de Software.
+relacionado com Engenharia de Software.
 
 Assim, acredito que nunca foi tão importante formar, no Brasil,
 um maior número de profissionais com capacidade e interesse 
