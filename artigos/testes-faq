@@ -1,0 +1,42 @@
+# Perguntas Frequentes sobre Testes de Software
+
+### Este artigo está em andamento; em breve, iremos adicionar mais perguntas e respostas {.unnumbered}
+
+## Introdução
+
+O objetivo deste artigo é responder algumas perguntas frequentes que são feitas
+sobre o [Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro.
+
+Seguem então tais perguntas e nossas respostas.
+
+## O que é uma unidade?
+
+A definição de unidade não é totalmente objetiva, no contexto de testes de unidade.
+Claro, que tendemos a dizer que uma unidade é uma classe, no caso de sistemas
+orientados a objetos. No entanto, não precisamos ser dogmáticos e, por isso,
+podemos considerar que certos testes de unidade vão testar um **conjunto de classes**.
+O fundamental é que eles continuem atendendo aos princípios FIRST, principalmente
+no que diz respeito à letra F. Isto é, eles devem ser rápidos!
+
+Complementando, se estamos testando um conjunto de classes C1, C2, ..., Cn, e
+uma delas possui uma dependência *d* para um serviço S que deixa o teste lento,
+temos duas opções:
+
+- ou *mockamos*, de forma a poder continuar chamando o nosso teste de um teste de unidade
+- continuamos usando *d*. Mas nesse caso, como o teste é mais lento, ele deve ser
+chamado de um **teste de integração**.
+
+## Precisamos testar métodos privados?
+
+Conceitualmente, não faz sentido, pois ele já vai ser testado quando testarmos os
+métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento
+dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também
+estão funcionando.
+
+## O que é um smoke test?
+
+É um teste de sistema (end-to-end), mas rápido e superficial. O objetivo é 
+garantir que não existe um erro grave no funcionamento da aplicação. Por exemplo, 
+um smoe teste pode verificar se algumas janelas da aplicação estão abrindo ou se determinados sistemas ou APIs estão no ar. Ou seja, que uma API pelo menos responde 
+a algumas solicitações básicas. Mas veja, um smoke test continua sendo um teste 
+automático. 

@@ -106,7 +106,7 @@ as aulas de Engenharia de Software massantes e repetitivas.
 
 * Ser opinativo e, assim, emitir diversos comentários e vereditos 
 sobre os temas estudados, sem que eles estejam baseados em uma 
-evidência empírica mais sólida e científica.
+evidência empírica mais sólida.
 
 Para evitar o primeiro problema, tomamos o cuidado de tornar o nosso 
 livro enxuto (*lean*), com cerca de 400 páginas. Mesmo em futuras 

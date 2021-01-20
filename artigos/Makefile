@@ -31,6 +31,9 @@ sagas: sagas.md
 arquitetura-limpa: arquitetura-limpa.md
 	pandoc --defaults=defaults.yaml -T "Construindo Aplicações com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
 
+testes-faq: testes-faq.md
+	pandoc --defaults=defaults.yaml -T "Perguntas Frequentes sobre Testes de Software" testes-faq.md -o testes-faq.html
+
 exemplos-teste: exemplos-teste.md
 	pandoc --defaults=defaults.yaml -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
 
