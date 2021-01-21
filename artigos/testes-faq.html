@@ -116,22 +116,29 @@
 <h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
 <h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">Como testar métodos que têm efeito colateral?</h3>
-<p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna o valor, mas altera o contexto de execução. Por exemplo, um método que altera o estado do objeto, uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
-<p>Voltando à resposta, vamos dividi-la em duas partes: efeito colateral <q>próximo</q> e <q>distante</q> do método chamado.</p>
-<p>Por efeito colateral <q>próximo do método chamado</q>, chamamos basicamente métodos que alteram o estado de seu objeto (isto é, os valores de atributos do objeto). Por exemplo, um método <code>push()</code> altera o estado do objeto, para colocar mais um item na pilha. Neste caso, normalmente, podemos usar um outro método, do próprio objeto, para testar se o efeito colateral desejado ocorreu. Por exemplo, um método <code>size()</code>, que retorna o tamanho da pilha. Evidentemente, após um <code>push</code> o tamanho da pilha é incrementado de uma unidade. Veja então um exemplo de tal teste:</p>
-<pre><code>public void testSizeStack() {
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
-    int size = stack.size();  // usado para acessar o efeito colateral dos pushes
-    assertEquals(3,size);     // no caso, a pilha após os pushes deve ter tamanho 3
-  }</code></pre>
-<p>No outro extremo, às vezes o efeito colateral está muito distante do método chamado. Por exemplo, suponha que o método envie um mail, que chega na caixa postal de um outro servidor. Evidentemente, não é fácil acessar esse servidor para saber que se a mensagem chegou. A solução é então usar um <code>mock</code> e realizar um tipo de teste chamado comportamental. Isto é, testamos se a execução do método chamou algum método de interesse. No caso, o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo:</p>
+<p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna um valor, mas altera o contexto de execução. Por exemplo, um método tem um efeito colateral quando ele altera o estado do seu objeto ou o valor de uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
+<p>Voltando então à resposta, vamos dividi-la em duas situações:</p>
+<ul>
+<li>Quando o efeito colateral é <q>próximo</q> do método sob teste.</li>
+<li>Quando o efeito colateral é <q>distante</q> do método sob teste.</li>
+</ul>
+<p>O efeito colateral é <q>próximo</q> quando o método altera apenas o estado de seu objeto (isto é, os valores de atributos desse objeto). Por exemplo, um método <code>push()</code> altera o estado da pilha, para incluir mais um item. Nesse caso, normalmente, podemos usar um outro método, do próprio objeto, para testar se o efeito colateral desejado ocorreu. Por exemplo, um método <code>size()</code>, que retorna o tamanho da pilha, pode ajudar. Veja um exemplo:</p>
+<pre><code>void testSizeStack() {
+  Stack stack = new Stack();
+  stack.push(10);           // método sob teste (com efeito colateral)
+  stack.push(20);
+  stack.push(30);
+  int size = stack.size();  // acessa o efeito colateral dos pushes
+  assertEquals(3,size);     // após os pushes, a pilha deve ter tamanho 3
+}</code></pre>
+<p>No outro extremo, o efeito colateral pode estar <q>distante</q> do método chamado. Por exemplo, suponha que o método envie um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para saber que se a mensagem, de fato, chegou. Uma possível solução é então usar um <code>mock</code> e realizar um tipo de teste chamado comportamental. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo:</p>
 <pre><code>void testeEnvioDeMail {
-  Mailer m = mock(Mailer.class); // cria mock para serviço que envia mail
-  sut.someBusinessLogic(m);      // método que gera o efeito colateral
+  SomeObject obj = new SomeObject();    
+  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
+  obj.someBusinessLogic(m);      // método que gera o efeito colateral
   verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }</code></pre>
+<p>Antes de concluir, a definição de efeito colateral <q>próximo</q> e <q>distante</q> de um método de teste não é totalmente objetiva. Na explicação acima, usamos exemplos extremos, nos quais existe pouca dúvida. Porém, em certos casos a decisão de testar o efeito colateral real ou de usar um mock pode ser mais difícil.</p>
 <h3 class="unnumbered" data-number="" id="suponha-um-teste-com-dois-asserts.-se-o-primeiro-assert-falhar-o-segundo-é-executado" class="unnumbered" data-number="">Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado?</h3>
 <p>Não, quando um comando <code>assert</code> falha, ele levanta uma exceção que finaliza imediatamente a execução do método de teste. Logo, o segundo <code>assert</code> não será executado.</p>
 <p>Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando <code>assert</code> por método de teste.</p>
