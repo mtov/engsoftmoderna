@@ -1,6 +1,6 @@
 # Alguns Exemplos Reais e Interessantes de Testes {.unnumbered}
 
-### Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas {.unnumbered}
+#### Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas {.unnumbered}
 
 ## Introdução  {.unnumbered}
 
@@ -217,11 +217,7 @@ automatically rolled back by default. Thus, even if tests
 insert or otherwise change database state, there is no need 
 for a teardown or cleanup script.*
 
-#### Exercício {.unnumbered}
 
-Estude o funcionamento do método de teste
-[shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da
-classe `ClinicServiceTests`.
 
 * * *
 
@@ -311,21 +307,20 @@ teste (subclasse de `TestCase`);
 
 * Por fim, o teste como um todo foi bem sucedido.
 
-#### Exercício {.unnumbered}
 
-Estude o funcionamento do teste 
+## Exercícios {.unnumbered}
+
+1. Spring PetClinic: estude e documente o funcionamento do método de teste
+[shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da
+classe `ClinicServiceTests`.
+
+2. JUnit: estude e documente o funcionamento do teste 
 [testInheritedTests](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44),
 que testa a execução do seguinte 
 [teste](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java).
 
-## Como Contribuir {.unnumbered}
 
-Estamos interessados em ampliar nossa lista de exemplos de testes 
-de software implementados em sistemas de código aberto populares e
-bem conhecidos. Se você quiser sugerir algum exemplo, favor
-preencher o seguinte [formulário](https://forms.gle/KbzvMx5RLnqPR7uq7). 
-Informe o sistema, classe e nome do método de teste, URLs, e, se 
-possível, inclua uma breve descrição do teste.
+
 
 
 * * * 

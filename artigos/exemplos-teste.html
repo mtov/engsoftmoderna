@@ -101,7 +101,7 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 class="unnumbered" data-number="" id="alguns-exemplos-reais-e-interessantes-de-testes" class="unnumbered" data-number="">Alguns Exemplos Reais e Interessantes de Testes</h1>
-<h3 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-exemplos-de-outros-sistemas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas</h3>
+<h4 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-exemplos-de-outros-sistemas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas</h4>
 <h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
 <p>No <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
 <p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudar o estudante na escrita de seus próprios testes.</p>
@@ -159,7 +159,7 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
 <p>Depois, o método <code>copy</code> é chamado para copiar o conteúdo de um dos arquivos (<code>i18nFile</code>) para o outro arquivo (<code>temp</code>).</p>
 <p>Por fim, temos um <code>assert</code>. Ele verifica se o conteúdo do arquivo <code>temp</code> de fato passou a ser o conteúdo previamente lido de <code>i18n.txt</code>. Esse conteúdo já é conhecido e está armazenado em uma constante string chamada <code>I18N</code>.</p>
 <p>Em tempo, a função <code>Files.toString</code> usada no <code>assertEquals</code> lê o conteúdo de um arquivo e retorna-o em uma string.</p>
-<p>Antes de terminar, queremos lembrar que esse é um <strong>teste de integração</strong>, pois ele faz acesso ao disco para ler e gravar arquivos.</p>
+<p>Antes de terminar, queremos ressaltar que esse é um <strong>teste de integração</strong>, pois ele faz acesso ao disco para ler e gravar arquivos.</p>
 <hr />
 <h2 class="unnumbered" data-number="" id="sprint-petclinic" class="unnumbered" data-number="">Sprint PetClinic</h2>
 <p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
@@ -193,8 +193,6 @@ void shouldUpdateOwner() {
 <ul>
 <li>O teste é também anotado com <code>@Transactional</code> para garantir uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste: <em>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</em></li>
 </ul>
-<h4 class="unnumbered" data-number="" id="exercício" class="unnumbered" data-number="">Exercício</h4>
-<p>Estude o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p>
 <hr />
 <h2 class="unnumbered" data-number="" id="junit" class="unnumbered" data-number="">JUnit</h2>
 <p>O JUnit também possui testes, que, evidentemente, são executados pelo próprio JUnit. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, do próprio conceito de testes de unidade automatizados.</p>
@@ -234,10 +232,11 @@ public class OneTestCase extends TestCase {
 <li><p>E, também, não ocorreu nenhum erro ou exceção;</p></li>
 <li><p>Por fim, o teste como um todo foi bem sucedido.</p></li>
 </ul>
-<h4 class="unnumbered" data-number="" id="exercício-1" class="unnumbered" data-number="">Exercício</h4>
-<p>Estude o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p>
-<h2 class="unnumbered" data-number="" id="como-contribuir" class="unnumbered" data-number="">Como Contribuir</h2>
-<p>Estamos interessados em ampliar nossa lista de exemplos de testes de software implementados em sistemas de código aberto populares e bem conhecidos. Se você quiser sugerir algum exemplo, favor preencher o seguinte <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>. Informe o sistema, classe e nome do método de teste, URLs, e, se possível, inclua uma breve descrição do teste.</p>
+<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<ol type="1">
+<li><p>Spring PetClinic: estude e documente o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p></li>
+<li><p>JUnit: estude e documente o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p></li>
+</ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
