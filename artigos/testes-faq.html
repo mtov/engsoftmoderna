@@ -102,9 +102,8 @@
 </header>
 <h1 class="unnumbered" data-number="" id="perguntas-frequentes-sobre-testes" class="unnumbered" data-number="">Perguntas Frequentes sobre Testes</h1>
 <h4 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-perguntas-e-respostas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais perguntas e respostas</h4>
-<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
 <p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: unidade, integração e sistema. Também, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
-<h2 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">O que é uma unidade?</h2>
+<h3 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">O que é uma unidade?</h3>
 <p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente no que diz respeito à letra F. Isto é, eles devem ser rápidos!</p>
 <p>Complementando, se um teste T testa um conjunto de classes C1, C2, …, Cn e uma delas possui uma dependência <em>d</em> para um determinado serviço que deixa o teste lento, temos duas opções:</p>
 <ul>
@@ -112,11 +111,28 @@
 <li>Continuar a usar <em>d</em>: no entanto, como será um <q>teste lento</q>, ele deve ser chamado de um teste de integração.</li>
 </ul>
 <p>Para completar a explicação, se o número de classes testadas (<em>n</em>, no exemplo) for grande e incluir classes de diversas camadas da aplicação, sem qualquer uso de mocks, é melhor chamar o teste de teste de sistema.</p>
-<h2 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">O certo é teste de unidade ou teste unitário?</h2>
+<h3 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">O certo é teste de unidade ou teste unitário?</h3>
 <p>Na verdade, os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
-<h2 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h2>
+<h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
-<h2 class="unnumbered" data-number="" id="suponha-um-teste-com-dois-asserts.-se-o-primeiro-assert-falhar-o-segundo-é-executado" class="unnumbered" data-number="">Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado?</h2>
+<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">Como testar métodos que têm efeito colateral?</h3>
+<p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna o valor, mas altera o contexto de execução. Por exemplo, um método que altera o estado do objeto, uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
+<p>Voltando à resposta, vamos dividi-la em duas partes: efeito colateral <q>próximo</q> e <q>distante</q> do método chamado.</p>
+<p>Por efeito colateral <q>próximo do método chamado</q>, chamamos basicamente métodos que alteram o estado de seu objeto (isto é, os valores de atributos do objeto). Por exemplo, um método <code>push()</code> altera o estado do objeto, para colocar mais um item na pilha. Neste caso, normalmente, podemos usar um outro método, do próprio objeto, para testar se o efeito colateral desejado ocorreu. Por exemplo, um método <code>size()</code>, que retorna o tamanho da pilha. Evidentemente, após um <code>push</code> o tamanho da pilha é incrementado de uma unidade. Veja então um exemplo de tal teste:</p>
+<pre><code>public void testSizeStack() {
+    stack.push(10);
+    stack.push(20);
+    stack.push(30);
+    int size = stack.size();  // usado para acessar o efeito colateral dos pushes
+    assertEquals(3,size);     // no caso, a pilha após os pushes deve ter tamanho 3
+  }</code></pre>
+<p>No outro extremo, às vezes o efeito colateral está muito distante do método chamado. Por exemplo, suponha que o método envie um mail, que chega na caixa postal de um outro servidor. Evidentemente, não é fácil acessar esse servidor para saber que se a mensagem chegou. A solução é então usar um <code>mock</code> e realizar um tipo de teste chamado comportamental. Isto é, testamos se a execução do método chamou algum método de interesse. No caso, o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo:</p>
+<pre><code>void testeEnvioDeMail {
+  Mailer m = mock(Mailer.class); // cria mock para serviço que envia mail
+  sut.someBusinessLogic(m);      // método que gera o efeito colateral
+  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+}</code></pre>
+<h3 class="unnumbered" data-number="" id="suponha-um-teste-com-dois-asserts.-se-o-primeiro-assert-falhar-o-segundo-é-executado" class="unnumbered" data-number="">Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado?</h3>
 <p>Não, quando um comando <code>assert</code> falha, ele levanta uma exceção que finaliza imediatamente a execução do método de teste. Logo, o segundo <code>assert</code> não será executado.</p>
 <p>Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando <code>assert</code> por método de teste.</p>
 <p>Para ficar mais claro, veja um exemplo:</p>
@@ -127,7 +143,7 @@ public void test() {
   System.out.println(&quot;Segundo assert: não vai ser executado&quot;);
   assertTrue(true);
 }</code></pre>
-<h2 class="unnumbered" data-number="" id="em-qual-diretório-devo-colocar-os-arquivos-de-teste" class="unnumbered" data-number="">Em qual diretório devo colocar os arquivos de teste?</h2>
+<h3 class="unnumbered" data-number="" id="em-qual-diretório-devo-colocar-os-arquivos-de-teste" class="unnumbered" data-number="">Em qual diretório devo colocar os arquivos de teste?</h3>
 <p>Tipicamente, em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
 <ul>
@@ -135,7 +151,7 @@ public void test() {
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
 <p>Ou seja, normalmente, o diretório de testes <q>espelha</q> a organização dos diretórios com as classes do sistema.</p>
-<h2 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">O que é um teste de fumaça (smoke test)?</h2>
+<h3 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">O que é um teste de fumaça (smoke test)?</h3>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
 <blockquote>
