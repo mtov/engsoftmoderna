@@ -9,7 +9,14 @@ três tipos de testes abordados no capítulo: unidade, integração e sistema.
 Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
-### O que é uma unidade? {.unnumbered}
+### 1. O certo é teste de unidade ou teste unitário? {.unnumbered}
+
+Os dois termos são usados. Então, assumindo que a língua é uma
+entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
+Dito isso, preferimos teste de unidade, porque teste unitário pode passar a
+ideia errada de que temos um único teste no sistema.
+
+### 2. O que é uma unidade? {.unnumbered}
 
 No contexto de testes de unidade, a definição de unidade não é totalmente objetiva.
 Tendemos a dizer que uma unidade é uma classe, no caso de sistemas
@@ -31,20 +38,13 @@ No entanto, se o número de classes testadas (*n*, no exemplo)
 for grande e incluir classes de diversas camadas da aplicação, sem qualquer
 uso de mocks, é melhor chamar o teste de **teste de sistema**.
 
-### O certo é teste de unidade ou teste unitário? {.unnumbered}
-
-Os dois termos são usados. Então, assumindo que a língua é uma
-entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
-Dito isso, preferimos teste de unidade, porque teste unitário pode passar a
-ideia errada de que temos um único teste no sistema.
-
-### Precisamos testar métodos privados? {.unnumbered}
+### 3. Precisamos testar métodos privados? {.unnumbered}
 
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. 
 Por tabela, isso vai garantir que os métodos privados também estão funcionando.
 
-### Como testar métodos que têm efeito colateral? {.unnumbered}
+### 4. Como testar métodos que têm efeito colateral? {.unnumbered}
 
 Primeiro, uma rápida definição de efeito colateral: o termo designa métodos 
 cuja execução não apenas retorna um valor, mas também altera o contexto de 
@@ -107,11 +107,12 @@ No teste acima, não testamos o efeito colateral (isto é, se a mensagem
 chegou no destino), mas sim se o método `send`, responsável por enviar 
 a mensagem, foi chamado durante a execução de `someBusinessLogic`.
 
-### Como testar métodos que não têm efeito colateral? {.unnumbered}
+### 5. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
-Esses são os métodos fáceis de serem testados: eles recebem alguns 
-parâmetros, processam eles e retornam um resultado, sem alterar 
-absolutamente nada do ambiente de execução.Veja um exemplo:
+Normalmente, esses são os métodos fáceis de serem testados: eles 
+recebem alguns parâmetros, processam eles e retornam um resultado, 
+sem alterar absolutamente nada do ambiente de execução. Veja 
+um exemplo:
 
 ```
 public void testMetodoSemEfeitoColateral() {
@@ -120,7 +121,7 @@ public void testMetodoSemEfeitoColateral() {
 }
 
 ```
-### Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 6. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -131,7 +132,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 7. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
