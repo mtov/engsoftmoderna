@@ -102,8 +102,10 @@
 </header>
 <h1 class="unnumbered" data-number="" id="perguntas-frequentes-sobre-testes" class="unnumbered" data-number="">Perguntas Frequentes sobre Testes</h1>
 <h4 class="unnumbered" data-number="" id="este-artigo-está-em-andamento-em-breve-iremos-adicionar-mais-perguntas-e-respostas" class="unnumbered" data-number="">Este artigo está em andamento; em breve, iremos adicionar mais perguntas e respostas</h4>
-<p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: unidade, integração e sistema. Também, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
-<h3 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">O que é uma unidade?</h3>
+<p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: <strong>unidade, integração e sistema</strong>. Também, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
+<h3 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">1. O certo é teste de unidade ou teste unitário?</h3>
+<p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
+<h3 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">2. O que é uma unidade?</h3>
 <p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente no que diz respeito à letra F. Isto é, eles devem ser rápidos!</p>
 <p>Complementando, se um teste T testa um conjunto de classes C1, C2, …, Cn e uma delas possui uma dependência <em>d</em> para um determinado serviço que deixa o teste lento, temos duas opções:</p>
 <ul>
@@ -111,11 +113,9 @@
 <li>Continuar a usar <em>d</em>: no entanto, como será um <q>teste lento</q>, ele deve ser chamado de um <strong>teste de integração</strong>.</li>
 </ul>
 <p>No entanto, se o número de classes testadas (<em>n</em>, no exemplo) for grande e incluir classes de diversas camadas da aplicação, sem qualquer uso de mocks, é melhor chamar o teste de <strong>teste de sistema</strong>.</p>
-<h3 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">O certo é teste de unidade ou teste unitário?</h3>
-<p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
-<h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">Precisamos testar métodos privados?</h3>
+<h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">3. Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
-<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">Como testar métodos que têm efeito colateral?</h3>
+<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">4. Como testar métodos que têm efeito colateral?</h3>
 <p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna um valor, mas também altera o contexto de execução. Por exemplo, um método tem um efeito colateral quando ele altera o valor de um atributo do seu objeto ou de uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
 <p>Voltando à pergunta, temos duas possíveis respostas:</p>
 <ul>
@@ -143,21 +143,21 @@
    verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
-<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-não-têm-efeito-colateral" class="unnumbered" data-number="">Como testar métodos que não têm efeito colateral?</h3>
-<p>Esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução.Veja um exemplo:</p>
+<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-não-têm-efeito-colateral" class="unnumbered" data-number="">5. Como testar métodos que não têm efeito colateral?</h3>
+<p>Normalmente, esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução. Veja um exemplo:</p>
 <pre><code>public void testMetodoSemEfeitoColateral() {
   String s = &quot;smiles&quot;;
   assertTrue(s.endsWith(&quot;miles&quot;)); // string termina com &quot;miles&quot;?
 }
 </code></pre>
-<h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
+<h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">6. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
 <ul>
 <li>As classes e pacotes do sistema ficam em <code>src/com/google/common</code>.</li>
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
-<h3 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">O que é um teste de fumaça (smoke test)?</h3>
+<h3 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">7. O que é um teste de fumaça (smoke test)?</h3>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
 <blockquote>

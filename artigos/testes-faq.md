@@ -5,7 +5,7 @@
 O objetivo deste artigo é responder algumas perguntas frequentes que são feitas
 sobre o [Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro. No entanto,
 estamos interessados apenas em perguntas conceituais, principalmente sobre os 
-três tipos de testes abordados no capítulo: unidade, integração e sistema. 
+três tipos de testes abordados no capítulo: **unidade, integração e sistema**. 
 Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
