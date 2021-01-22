@@ -23,17 +23,17 @@ uma delas possui uma dependência *d* para um determinado serviço que deixa
 o teste lento, temos duas opções:
 
 - Criar um mock para *d*: nesse caso, podemos chamar T de um 
-  teste de unidade.
+  **teste de unidade**.
 - Continuar a usar *d*: no entanto, como será um "teste lento", ele deve ser
-chamado de um teste de integração.
+chamado de um **teste de integração**.
 
-Para completar a explicação, se o número de classes testadas (*n*, no exemplo)
+No entanto, se o número de classes testadas (*n*, no exemplo)
 for grande e incluir classes de diversas camadas da aplicação, sem qualquer
-uso de mocks, é melhor chamar o teste de teste de sistema.
+uso de mocks, é melhor chamar o teste de **teste de sistema**.
 
 ### O certo é teste de unidade ou teste unitário? {.unnumbered}
 
-Na verdade, os dois termos são usados. Então, assumindo que a língua é uma
+Os dois termos são usados. Então, assumindo que a língua é uma
 entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
 Dito isso, preferimos teste de unidade, porque teste unitário pode passar a
 ideia errada de que temos um único teste no sistema.
@@ -47,26 +47,28 @@ Por tabela, isso vai garantir que os métodos privados também estão funcionand
 ### Como testar métodos que têm efeito colateral? {.unnumbered}
 
 Primeiro, uma rápida definição de efeito colateral: o termo designa métodos 
-cuja execução não apenas retorna um valor, mas altera o contexto de execução. 
-Por exemplo, um método tem um efeito colateral quando ele altera o estado do 
-seu objeto ou o valor de uma variável global, salva um valor em algum arquivo, 
-envia um mail, etc.
+cuja execução não apenas retorna um valor, mas também altera o contexto de 
+execução. Por exemplo, um método tem um efeito colateral quando ele altera 
+o valor de um atributo do seu objeto ou de uma variável global, 
+salva um valor em algum arquivo, envia um mail, etc.
 
-Voltando então à resposta, vamos dividi-la em duas situações: 
+Voltando à pergunta, temos duas possíveis respostas:
 
-* Quando o efeito colateral é "próximo" do método sob teste.
-* Quando o efeito colateral é "distante" do método sob teste.
+* Testar se o efeito colateral ocorreu
+* Implementar um teste comportamental ou de interação
 
-O efeito colateral é "próximo" quando o método altera apenas o 
-estado de seu objeto (isto é, os valores de atributos desse objeto). 
-Por exemplo, um método `push()` altera o estado da pilha, para 
-incluir mais um item. Nesse caso, normalmente, podemos usar um 
-outro método, do próprio objeto, para testar se o efeito colateral 
-desejado ocorreu. Por exemplo, um método `size()`,  que retorna 
-o tamanho da pilha, pode ajudar. Veja um exemplo:
+Vamos explicar cada um desses casos a seguir:
+
+#### Testar o efeito colateral
+
+Suponha um método `push()` que altera o estado da sua pilha, para incluir 
+mais um item. Nesse caso, podemos usar um outro método, do próprio objeto, 
+para testar se o efeito colateral desejado ocorreu. Por exemplo, um 
+método `size()`, que retorna o tamanho da pilha, pode ajudar. Veja um 
+exemplo:
 
 ```
-void testSizeStack() {
+void testEmpilhaStack() {
   Stack stack = new Stack();
   stack.push(10);           // método sob teste (com efeito colateral)
   stack.push(20);
@@ -76,62 +78,46 @@ void testSizeStack() {
 }
 ```
 
-No outro extremo, o efeito colateral pode estar "distante" do método 
-chamado. Por exemplo, suponha que o método envie um mail, que chega na caixa 
-postal de um outro processo. Normalmente, não é fácil contactar esse processo 
-para saber que se a mensagem, de fato, chegou. Uma possível solução é então 
-usar um `mock` e realizar um tipo de teste chamado comportamental. Isto é, 
-testamos se a execução do método sob teste chamou algum método de interesse. 
-No nosso caso, se essa execução chamou o método que produz o efeito colateral 
-que nos interessa (o envio de um mail). Veja um exemplo:
+Vejam ainda que o método `push` retorna `void`. Ou seja, realmente, não
+conseguimos testar um `push` de forma usual: isto é, chamando-o e
+verificando se o valor que ele retorna é aquele esperado.
+
+#### Teste comportamental ou de interação
+
+Suponha agora que um método envia um mail, que chega na caixa postal de um outro 
+processo. Normalmente, não é fácil contactar esse processo  para testar 
+se a mensagem, de fato, chegou. Uma possível solução consiste em 
+usar um mock e realizar um tipo de teste chamado de **teste comportamental**
+ou **teste de interação**. Isto é, testamos se a execução do método sob 
+teste chamou algum método de interesse. No nosso caso, devemos testar 
+se essa execução chamou o método que produz o efeito colateral que nos 
+interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do 
+[Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro)
 
 ```
-void testeEnvioDeMail {
-  SomeObject obj = new SomeObject();	
-  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
-  obj.someBusinessLogic(m);      // método que gera o efeito colateral
-  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+void testeEnvioDeMensagem {
+   SomeObject obj = new SomeObject();	
+   Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
+   obj.someBusinessLogic(m);      // método que gera o efeito colateral
+   verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }
 ```
 
-Antes de concluir, a definição de efeito colateral "próximo" e "distante" 
-de um método de teste não é totalmente objetiva. Na explicação acima, usamos 
-exemplos extremos, nos quais existe pouca dúvida. Porém, em certos casos 
-a decisão de testar o efeito colateral real ou de usar um mock pode ser 
-mais difícil.
+No teste acima, não testamos o efeito colateral (isto é, se a mensagem 
+chegou no destino), mas sim se o método `send`, responsável por enviar 
+a mensagem, foi chamado durante a execução de `someBusinessLogic`.
 
-### Suponha um teste com dois asserts. Se o primeiro assert falhar, o segundo é executado? {.unnumbered}
 
-Não, quando um comando `assert` falha, ele levanta uma exceção que finaliza 
-imediatamente a execução do método de teste. Logo, o segundo `assert` não será 
-executado.
+### Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
-Inclusive, esse é um dos motivos pelos quais recomenda-se ter apenas um comando
-`assert` por método de teste. 
-
-Para ficar mais claro, veja um exemplo:
-
-```
-@Test
-public void test() {
-  System.out.println("Primeiro assert: falha e termina execução");
-  assertTrue(false);
-  System.out.println("Segundo assert: não vai ser executado");
-  assertTrue(true);
-}
-```
-
-### Em qual diretório devo colocar os arquivos de teste? {.unnumbered}
-
-Tipicamente, em um diretório separado, apenas com o código de testes.
+Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
+separado, apenas com o código de testes.
 
 Veja o exemplo do sistema `google/guava`:
 
 * As classes e pacotes do sistema ficam em `src/com/google/common`.
 * Os respectivos testes ficam em `test/com/google/common `.
 
-Ou seja, normalmente, o diretório de testes "espelha" a organização dos
-diretórios com as classes do sistema.
 
 ### O que é um teste de fumaça (smoke test)? {.unnumbered}
 
