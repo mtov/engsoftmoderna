@@ -122,8 +122,8 @@
 <li>Testar se o efeito colateral ocorreu</li>
 <li>Implementar um teste comportamental ou de interação</li>
 </ul>
-<p>Vamos explicar cada um desses casos a seguir:</p>
-<h4 data-number="0.0.0.1" id="testar-o-efeito-colateral" data-number="0.0.0.1"><span class="header-section-number">0.0.0.1</span> Testar o efeito colateral</h4>
+<p>Vamos explicar cada um desses casos a seguir.</p>
+<h5 class="unnumbered" data-number="" id="teste-do-efeito-colateral" class="unnumbered" data-number="">Teste do efeito colateral</h5>
 <p>Suponha um método <code>push()</code> que altera o estado da sua pilha, para incluir mais um item. Nesse caso, podemos usar um outro método, do próprio objeto, para testar se o efeito colateral desejado ocorreu. Por exemplo, um método <code>size()</code>, que retorna o tamanho da pilha, pode ajudar. Veja um exemplo:</p>
 <pre><code>void testEmpilhaStack() {
   Stack stack = new Stack();
@@ -133,8 +133,8 @@
   int size = stack.size();  // acessa o efeito colateral dos pushes
   assertEquals(3,size);     // após os pushes, a pilha deve ter tamanho 3
 }</code></pre>
-<p>Vejam ainda que o método <code>push</code> retorna <code>void</code>. Ou seja, realmente, não conseguimos testar um <code>push</code> de forma usual: isto é, chamando-o e verificando se o valor que ele retorna é aquele esperado.</p>
-<h4 data-number="0.0.0.2" id="teste-comportamental-ou-de-interação" data-number="0.0.0.2"><span class="header-section-number">0.0.0.2</span> Teste comportamental ou de interação</h4>
+<p>Veja que o método <code>push</code> retorna <code>void</code>. Ou seja, realmente, não conseguimos testar um <code>push</code> de forma usual: isto é, chamando-o e verificando se o valor que ele retorna é aquele esperado.</p>
+<h5 class="unnumbered" data-number="" id="teste-comportamental" class="unnumbered" data-number="">Teste comportamental</h5>
 <p>Suponha agora que um método envia um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para testar se a mensagem, de fato, chegou. Uma possível solução consiste em usar um mock e realizar um tipo de teste chamado de <strong>teste comportamental</strong> ou <strong>teste de interação</strong>. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, devemos testar se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro)</p>
 <pre><code>void testeEnvioDeMensagem {
    SomeObject obj = new SomeObject();   
@@ -143,6 +143,13 @@
    verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
+<h3 class="unnumbered" data-number="" id="como-testar-métodos-que-não-têm-efeito-colateral" class="unnumbered" data-number="">Como testar métodos que não têm efeito colateral?</h3>
+<p>Esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução.Veja um exemplo:</p>
+<pre><code>public void testMetodoSemEfeitoColateral() {
+  String s = &quot;smiles&quot;;
+  assertTrue(s.endsWith(&quot;miles&quot;)); // string termina com &quot;miles&quot;?
+}
+</code></pre>
 <h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>

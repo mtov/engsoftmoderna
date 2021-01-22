@@ -57,9 +57,9 @@ Voltando à pergunta, temos duas possíveis respostas:
 * Testar se o efeito colateral ocorreu
 * Implementar um teste comportamental ou de interação
 
-Vamos explicar cada um desses casos a seguir:
+Vamos explicar cada um desses casos a seguir.
 
-#### Testar o efeito colateral
+##### Teste do efeito colateral {.unnumbered}
 
 Suponha um método `push()` que altera o estado da sua pilha, para incluir 
 mais um item. Nesse caso, podemos usar um outro método, do próprio objeto, 
@@ -78,11 +78,11 @@ void testEmpilhaStack() {
 }
 ```
 
-Vejam ainda que o método `push` retorna `void`. Ou seja, realmente, não
+Veja que o método `push` retorna `void`. Ou seja, realmente, não
 conseguimos testar um `push` de forma usual: isto é, chamando-o e
 verificando se o valor que ele retorna é aquele esperado.
 
-#### Teste comportamental ou de interação
+##### Teste comportamental {.unnumbered}
 
 Suponha agora que um método envia um mail, que chega na caixa postal de um outro 
 processo. Normalmente, não é fácil contactar esse processo  para testar 
@@ -107,7 +107,19 @@ No teste acima, não testamos o efeito colateral (isto é, se a mensagem
 chegou no destino), mas sim se o método `send`, responsável por enviar 
 a mensagem, foi chamado durante a execução de `someBusinessLogic`.
 
+### Como testar métodos que não têm efeito colateral? {.unnumbered}
 
+Esses são os métodos fáceis de serem testados: eles recebem alguns 
+parâmetros, processam eles e retornam um resultado, sem alterar 
+absolutamente nada do ambiente de execução.Veja um exemplo:
+
+```
+public void testMetodoSemEfeitoColateral() {
+  String s = "smiles";
+  assertTrue(s.endsWith("miles")); // string termina com "miles"?
+}
+
+```
 ### Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
