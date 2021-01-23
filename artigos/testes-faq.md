@@ -23,20 +23,8 @@ Tendemos a dizer que uma unidade é uma classe, no caso de sistemas
 orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar 
 que certos testes vão testar um **conjunto de classes**.
 O fundamental é que tais testes atendam aos princípios FIRST, principalmente
-no que diz respeito à letra F. Isto é, eles devem ser rápidos!
+àqueles representados pelas três primeiras letras: rápidos, independentes, repetíveis (ou determinísticos)
 
-Complementando, se um teste T testa um conjunto de classes C1, C2, ..., Cn e
-uma delas possui uma dependência *d* para um determinado serviço que deixa 
-o teste lento, temos duas opções:
-
-- Criar um mock para *d*: nesse caso, podemos chamar T de um 
-  **teste de unidade**.
-- Continuar a usar *d*: no entanto, como será um "teste lento", ele deve ser
-chamado de um **teste de integração**.
-
-No entanto, se o número de classes testadas (*n*, no exemplo)
-for grande e incluir classes de diversas camadas da aplicação, sem qualquer
-uso de mocks, é melhor chamar o teste de **teste de sistema**.
 
 ### 3. Precisamos testar métodos privados? {.unnumbered}
 
@@ -96,10 +84,10 @@ interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do
 
 ```
 void testeEnvioDeMensagem {
-   SomeObject obj = new SomeObject();	
-   Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
-   obj.someBusinessLogic(m);      // método que gera o efeito colateral
-   verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+  SomeObject obj = new SomeObject();	
+  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
+  obj.someBusinessLogic(m);      // método que gera o efeito colateral
+  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }
 ```
 
@@ -108,8 +96,9 @@ chegou no destino), mas sim se o método `send`, responsável por enviar
 a mensagem, foi chamado durante a execução de `someBusinessLogic`.
 
 Antes de concluir, gostaríamos de mencionar que testes de interação, como
-o mostrado acima, são mais frágeis, pois eles possuem um acoplamento com 
+o mostrado acima, são mais frágeis, pois eles estão acoplados a 
 detalhes da implementação interna do método que está sendo testado.
+
 
 ### 5. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
@@ -131,7 +120,42 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 6. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 6. Quando eu preciso criar um mock (ou teste doublê) para uma dependência? {.unnumbered}
+
+Suponha que temos que testar um método `f` da seguinte classe:
+
+```
+class A {
+ 
+  private D d;   // precisamos mockar "d"?
+ 
+  A(D d) {
+  	this.d = d;
+  }	
+ 
+  public int f(...) {  // método que queremos testar
+    ...
+  }
+}
+```	
+
+A classe `A` possui uma dependência `d` para o tipo `D`. Quando precisamos
+mockar essa dependência?
+
+* Quando `D` representa um serviço lento, como um banco de dados.
+
+* Quando não é trivial instanciar um objeto do tipo `D`. Por exemplo, `D` pode 
+demandar que outros serviços estejam rodando na máquina ou que algum tipo
+de hardware esteja presente, como uma impressora.
+
+* Quando a execução de um método de `D` for importante para o teste. 
+Esse é exatamente o caso de teste comportamental que descrevemos na 
+pergunta 4. Nesse teste, `D` é o tipo `Mailer`. Isto é, precisamos 
+testar se a execução de `f` vai enviar um mail.
+
+
+
+### 7. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -142,7 +166,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 7. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 8. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.

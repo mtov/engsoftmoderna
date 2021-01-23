@@ -106,13 +106,7 @@
 <h3 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">1. O certo é teste de unidade ou teste unitário?</h3>
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">2. O que é uma unidade?</h3>
-<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente no que diz respeito à letra F. Isto é, eles devem ser rápidos!</p>
-<p>Complementando, se um teste T testa um conjunto de classes C1, C2, …, Cn e uma delas possui uma dependência <em>d</em> para um determinado serviço que deixa o teste lento, temos duas opções:</p>
-<ul>
-<li>Criar um mock para <em>d</em>: nesse caso, podemos chamar T de um <strong>teste de unidade</strong>.</li>
-<li>Continuar a usar <em>d</em>: no entanto, como será um <q>teste lento</q>, ele deve ser chamado de um <strong>teste de integração</strong>.</li>
-</ul>
-<p>No entanto, se o número de classes testadas (<em>n</em>, no exemplo) for grande e incluir classes de diversas camadas da aplicação, sem qualquer uso de mocks, é melhor chamar o teste de <strong>teste de sistema</strong>.</p>
+<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente àqueles representados pelas três primeiras letras: rápidos, independentes, repetíveis (ou determinísticos)</p>
 <h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">3. Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
 <h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">4. Como testar métodos que têm efeito colateral?</h3>
@@ -137,13 +131,13 @@
 <h5 class="unnumbered" data-number="" id="teste-comportamental-ou-de-interação" class="unnumbered" data-number="">Teste comportamental (ou de interação)</h5>
 <p>Suponha agora que um método envia um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para testar se a mensagem, de fato, chegou. Uma possível solução consiste em usar um mock e realizar um tipo de teste chamado de <strong>teste comportamental</strong> ou <strong>teste de interação</strong>. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, devemos testar se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro)</p>
 <pre><code>void testeEnvioDeMensagem {
-   SomeObject obj = new SomeObject();   
-   Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
-   obj.someBusinessLogic(m);      // método que gera o efeito colateral
-   verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+  SomeObject obj = new SomeObject();    
+  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
+  obj.someBusinessLogic(m);      // método que gera o efeito colateral
+  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
-<p>Antes de concluir, gostaríamos de mencionar que testes de interação, como o mostrado acima, são mais frágeis, pois eles possuem um acoplamento com detalhes da implementação interna do método que está sendo testado.</p>
+<p>Antes de concluir, gostaríamos de mencionar que testes de interação, como o mostrado acima, são mais frágeis, pois eles estão acoplados a detalhes da implementação interna do método que está sendo testado.</p>
 <h3 class="unnumbered" data-number="" id="como-testar-métodos-que-não-têm-efeito-colateral" class="unnumbered" data-number="">5. Como testar métodos que não têm efeito colateral?</h3>
 <p>Normalmente, esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução. Veja um exemplo:</p>
 <pre><code>public void testeMetodoSemEfeitoColateral() {
@@ -152,14 +146,34 @@
 }
 </code></pre>
 <p>Testes como o acima, que apenas verificam o resultado do método chamado — ou, no máximo, o estado de alguma outra estrutura de dados do sistema — são chamados de <strong>testes de estado</strong>.</p>
-<h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">6. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
+<h3 class="unnumbered" data-number="" id="quando-eu-preciso-criar-um-mock-ou-teste-doublê-para-uma-dependência" class="unnumbered" data-number="">6. Quando eu preciso criar um mock (ou teste doublê) para uma dependência?</h3>
+<p>Suponha que temos que testar um método <code>f</code> da seguinte classe:</p>
+<pre><code>class A {
+ 
+  private D d;   // precisamos mockar &quot;d&quot;?
+ 
+  A(D d) {
+    this.d = d;
+  } 
+ 
+  public int f(...) {  // método que queremos testar
+    ...
+  }
+}</code></pre>
+<p>A classe <code>A</code> possui uma dependência <code>d</code> para o tipo <code>D</code>. Quando precisamos mockar essa dependência?</p>
+<ul>
+<li><p>Quando <code>D</code> representa um serviço lento, como um banco de dados.</p></li>
+<li><p>Quando não é trivial instanciar um objeto do tipo <code>D</code>. Por exemplo, <code>D</code> pode demandar que outros serviços estejam rodando na máquina ou que algum tipo de hardware esteja presente, como uma impressora.</p></li>
+<li><p>Quando a execução de um método de <code>D</code> for importante para o teste. Esse é exatamente o caso de teste comportamental que descrevemos na pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>. Isto é, precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
+</ul>
+<h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">7. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
 <ul>
 <li>As classes e pacotes do sistema ficam em <code>src/com/google/common</code>.</li>
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
-<h3 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">7. O que é um teste de fumaça (smoke test)?</h3>
+<h3 class="unnumbered" data-number="" id="o-que-é-um-teste-de-fumaça-smoke-test" class="unnumbered" data-number="">8. O que é um teste de fumaça (smoke test)?</h3>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
 <blockquote>
