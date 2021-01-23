@@ -607,7 +607,7 @@ public class BookSearchTest {
 <h3 data-number="1.6.2" id="mocks-vs-stubs" data-number="1.6.2"><span class="header-section-number">8.6.2</span> Mocks vs Stubs</h3>
 <p>  </p>
 <p> Alguns autores, como Gerard Meszaros (<a href="https://dl.acm.org/citation.cfm?id=1076526">link</a>), fazem uma distinção entre <strong>mocks</strong> e <strong>stubs</strong>. Segundo eles, mocks devem verificar não apenas o estado do Sistema sob Testes (SUT), mas também o seu comportamento. Se os mocks verificam apenas o estado, eles deveriam ser chamados de stubs. No entanto, neste livro, não vamos fazer essa distinção, pois achamos que ela é sutil e, portanto, os benefícios não compensam o custo de páginas extras para explicar conceitos semelhantes. Porém, apenas para esclarecer um pouco mais, um <strong>teste comportamental</strong> — também chamado de teste de interação — verifica eventos que ocorreram no SUT. Segue um exemplo:</p>
-<pre><code>testBehaviour {
+<pre><code>void testBehaviour {
   Mailer m = mock(Mailer.class);
   sut.someBusinessLogic(m);
   verify(m).send(anyString());

@@ -1321,7 +1321,7 @@ Porém, apenas para esclarecer um pouco mais, um **teste comportamental**
 verifica eventos que ocorreram no SUT. Segue um exemplo:
 
 ```
-testBehaviour {
+void testBehaviour {
   Mailer m = mock(Mailer.class);
   sut.someBusinessLogic(m);
   verify(m).send(anyString());

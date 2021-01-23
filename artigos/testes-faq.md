@@ -68,7 +68,7 @@ método `size()`, que retorna o tamanho da pilha, pode ajudar. Veja um
 exemplo:
 
 ```
-void testEmpilhaStack() {
+void testeEmpilhaStack() {
   Stack stack = new Stack();
   stack.push(10);           // método sob teste (com efeito colateral)
   stack.push(20);
@@ -82,7 +82,7 @@ Veja que o método `push` retorna `void`. Ou seja, realmente, não
 conseguimos testar um `push` de forma usual: isto é, chamando-o e
 verificando se o valor que ele retorna é aquele esperado.
 
-##### Teste comportamental {.unnumbered}
+##### Teste comportamental (ou de interação) {.unnumbered}
 
 Suponha agora que um método envia um mail, que chega na caixa postal de um outro 
 processo. Normalmente, não é fácil contactar esse processo  para testar 
@@ -107,6 +107,10 @@ No teste acima, não testamos o efeito colateral (isto é, se a mensagem
 chegou no destino), mas sim se o método `send`, responsável por enviar 
 a mensagem, foi chamado durante a execução de `someBusinessLogic`.
 
+Antes de concluir, gostaríamos de mencionar que testes de interação, como
+o mostrado acima, são mais frágeis, pois eles possuem um acoplamento com 
+detalhes da implementação interna do método que está sendo testado.
+
 ### 5. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
 Normalmente, esses são os métodos fáceis de serem testados: eles 
@@ -115,12 +119,18 @@ sem alterar absolutamente nada do ambiente de execução. Veja
 um exemplo:
 
 ```
-public void testMetodoSemEfeitoColateral() {
+public void testeMetodoSemEfeitoColateral() {
   String s = "smiles";
-  assertTrue(s.endsWith("miles")); // string termina com "miles"?
+  assertTrue(s.endsWith("miles")); // string "s" termina com "miles"?
 }
 
 ```
+
+Testes como o acima, que apenas verificam o resultado do método 
+chamado — ou, no máximo, o estado de alguma outra estrutura de 
+dados do sistema — são chamados de **testes de estado**.
+
+
 ### 6. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
