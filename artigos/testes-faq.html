@@ -106,9 +106,9 @@
 <h3 class="unnumbered" data-number="" id="o-certo-é-teste-de-unidade-ou-teste-unitário" class="unnumbered" data-number="">1. O certo é teste de unidade ou teste unitário?</h3>
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" data-number="" id="o-que-é-uma-unidade" class="unnumbered" data-number="">2. O que é uma unidade?</h3>
-<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente àqueles representados pelas três primeiras letras: rápidos, independentes, repetíveis (ou determinísticos)</p>
+<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos)</p>
 <h3 class="unnumbered" data-number="" id="precisamos-testar-métodos-privados" class="unnumbered" data-number="">3. Precisamos testar métodos privados?</h3>
-<p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
+<p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
 <h3 class="unnumbered" data-number="" id="como-testar-métodos-que-têm-efeito-colateral" class="unnumbered" data-number="">4. Como testar métodos que têm efeito colateral?</h3>
 <p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna um valor, mas também altera o contexto de execução. Por exemplo, um método tem um efeito colateral quando ele altera o valor de um atributo do seu objeto ou de uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
 <p>Voltando à pergunta, temos duas possíveis respostas:</p>
@@ -121,20 +121,20 @@
 <p>Suponha um método <code>push()</code> que altera o estado da sua pilha, para incluir mais um item. Nesse caso, podemos usar um outro método, do próprio objeto, para testar se o efeito colateral desejado ocorreu. Por exemplo, um método <code>size()</code>, que retorna o tamanho da pilha, pode ajudar. Veja um exemplo:</p>
 <pre><code>void testeEmpilhaStack() {
   Stack stack = new Stack();
-  stack.push(10);           // método sob teste (com efeito colateral)
+  stack.push(10);
   stack.push(20);
   stack.push(30);
-  int size = stack.size();  // acessa o efeito colateral dos pushes
-  assertEquals(3,size);     // após os pushes, a pilha deve ter tamanho 3
+  int size = stack.size();
+  assertEquals(3,size);
 }</code></pre>
 <p>Veja que o método <code>push</code> retorna <code>void</code>. Ou seja, realmente, não conseguimos testar um <code>push</code> de forma usual: isto é, chamando-o e verificando se o valor que ele retorna é aquele esperado.</p>
 <h5 class="unnumbered" data-number="" id="teste-comportamental-ou-de-interação" class="unnumbered" data-number="">Teste comportamental (ou de interação)</h5>
 <p>Suponha agora que um método envia um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para testar se a mensagem, de fato, chegou. Uma possível solução consiste em usar um mock e realizar um tipo de teste chamado de <strong>teste comportamental</strong> ou <strong>teste de interação</strong>. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, devemos testar se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro)</p>
 <pre><code>void testeEnvioDeMensagem {
   SomeObject obj = new SomeObject();    
-  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
-  obj.someBusinessLogic(m);      // método que gera o efeito colateral
-  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+  Mailer m = mock(Mailer.class);
+  obj.someBusinessLogic(m);
+  verify(m).send(anyString());
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
 <p>Antes de concluir, gostaríamos de mencionar que testes de interação, como o mostrado acima, são mais frágeis, pois eles estão acoplados a detalhes da implementação interna do método que está sendo testado.</p>
@@ -142,7 +142,7 @@
 <p>Normalmente, esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução. Veja um exemplo:</p>
 <pre><code>public void testeMetodoSemEfeitoColateral() {
   String s = &quot;smiles&quot;;
-  assertTrue(s.endsWith(&quot;miles&quot;)); // string &quot;s&quot; termina com &quot;miles&quot;?
+  assertTrue(s.endsWith(&quot;miles&quot;));
 }
 </code></pre>
 <p>Testes como o acima, que apenas verificam o resultado do método chamado — ou, no máximo, o estado de alguma outra estrutura de dados do sistema — são chamados de <strong>testes de estado</strong>.</p>
@@ -150,13 +150,13 @@
 <p>Suponha que temos que testar um método <code>f</code> da seguinte classe:</p>
 <pre><code>class A {
  
-  private D d;   // precisamos mockar &quot;d&quot;?
+  private D d;   
  
   A(D d) {
     this.d = d;
   } 
  
-  public int f(...) {  // método que queremos testar
+  public int f(...) {  
     ...
   }
 }</code></pre>

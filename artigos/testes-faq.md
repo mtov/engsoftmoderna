@@ -23,14 +23,14 @@ Tendemos a dizer que uma unidade é uma classe, no caso de sistemas
 orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar 
 que certos testes vão testar um **conjunto de classes**.
 O fundamental é que tais testes atendam aos princípios FIRST, principalmente
-àqueles representados pelas três primeiras letras: rápidos, independentes, repetíveis (ou determinísticos)
+aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos)
 
 
 ### 3. Precisamos testar métodos privados? {.unnumbered}
 
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
-Em outras palavras, o foco deve ser testar o comportamento dos métodos públicos. 
-Por tabela, isso vai garantir que os métodos privados também estão funcionando.
+Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, 
+isso vai garantir que os métodos privados também estão funcionando.
 
 ### 4. Como testar métodos que têm efeito colateral? {.unnumbered}
 
@@ -58,11 +58,11 @@ exemplo:
 ```
 void testeEmpilhaStack() {
   Stack stack = new Stack();
-  stack.push(10);           // método sob teste (com efeito colateral)
+  stack.push(10);
   stack.push(20);
   stack.push(30);
-  int size = stack.size();  // acessa o efeito colateral dos pushes
-  assertEquals(3,size);     // após os pushes, a pilha deve ter tamanho 3
+  int size = stack.size();
+  assertEquals(3,size);
 }
 ```
 
@@ -85,9 +85,9 @@ interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do
 ```
 void testeEnvioDeMensagem {
   SomeObject obj = new SomeObject();	
-  Mailer m = mock(Mailer.class); // cria mock para serviço de envio de mail
-  obj.someBusinessLogic(m);      // método que gera o efeito colateral
-  verify(m).send(anyString());   // testa se a execução chamou o método send do mock, com um parâmetro do tipo string
+  Mailer m = mock(Mailer.class);
+  obj.someBusinessLogic(m);
+  verify(m).send(anyString());
 }
 ```
 
@@ -110,7 +110,7 @@ um exemplo:
 ```
 public void testeMetodoSemEfeitoColateral() {
   String s = "smiles";
-  assertTrue(s.endsWith("miles")); // string "s" termina com "miles"?
+  assertTrue(s.endsWith("miles"));
 }
 
 ```
@@ -127,13 +127,13 @@ Suponha que temos que testar um método `f` da seguinte classe:
 ```
 class A {
  
-  private D d;   // precisamos mockar "d"?
+  private D d;   
  
   A(D d) {
   	this.d = d;
   }	
  
-  public int f(...) {  // método que queremos testar
+  public int f(...) {  
     ...
   }
 }
