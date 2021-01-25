@@ -18,3 +18,5 @@ pdflatex esm-book.tex
 rm esm-book.md
 
 cp esm-book.pdf ../Dropbox
+
+rm esm-book.*

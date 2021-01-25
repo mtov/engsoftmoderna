@@ -2,6 +2,18 @@ Release Notes
 
 ====
 
+2020.1.6 
+Versão usada na Turma 4 do curso de extensão
+Apenas minor changes
+
+Upload Leanpub: 25/01/2021
+Upload Amazon KDP: ainda não foi feito
+Upload UmLivro: ainda não foi feito
+
+Atualização Web: 25/01/2021
+
+====
+
 2020.1.5 
 Versão usada na Turma 3 do curso de extensão
 Apenas minor changes
