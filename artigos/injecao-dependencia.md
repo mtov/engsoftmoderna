@@ -221,7 +221,7 @@ Dependência, consulte o [Capítulo 5](https://engsoftmoderna.info/cap5.html).
 4. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
 violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta
 use como exemplo a classe `Estacionamento` da Seção 5.3.1 do 
-do [Capítulo 5](https://engsoftmoderna.info/cap5.html) do livro.
+[Capítulo 5](https://engsoftmoderna.info/cap5.html) do livro.
 
 * * * 
 
