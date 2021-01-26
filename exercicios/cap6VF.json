@@ -88,9 +88,19 @@
   {
     "text": "Visitors são uma alternativa para simular despacho-duplo (double dispatch) em linguagens de programação que não oferecem esse recurso, como é o caso de Java, C++ e C#.",
     "correct": "true"
+  },
+  {
+    "text": "[ENADE 2019, Eng. Computação, adaptado] No padrão Strategy, a raiz da hieraquia de estratégias pode ser uma classe abstrata ou uma interface, pois corresponde a uma abstração dos diversos tipos de estratégias definidas.",
+    "correct": "true"
+  },
+  {
+    "text": "[ENADE 2019, Eng. Computação, adaptado] Sobre o padrão Strategy, o baixo acoplamento permite que estratégias sejam incluídas ou retiradas da aplicação sem alterar a estrutura das demais classes do sistema.",
+    "correct": "true"
   }
   ]  
 }	 
+
+
 
 
 
