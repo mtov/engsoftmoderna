@@ -258,9 +258,19 @@ de seus colaboradores, por meio do que costuma-se chamar de
 
 ## Comentário Final {.unnumbered}
 
-Este é um artigo em andamento! A ideia é atualizá-lo 
-à medida que tenha novos resultados sobre a minha experiência 
-de ensino de disciplinas de Engenharia de Software.
+Antes de concluir, gostaríamos de mencionar dois **pré-requisitos**
+que achamos fundamentais para iniciar a formação de engenheiros de 
+software:
+
+* É muito importante que o aluno **goste de programar**. Como fizemos
+questão de dizer no prefácio do nosso livro "cada vez mais, 
+engenheiros de software têm que escrever código. Hoje, há pouco espaço 
+para dizer que eu não preciso programar, pois sou arquiteto ou 
+analista."
+
+* É muito importante também que o aluno **saiba programar**. Ou seja,
+o aluno já deve ter domíno de conceitos básicos de programação, algoritmos
+e estruturas de dados. 
 
 * * *
 

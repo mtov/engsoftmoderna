@@ -164,11 +164,11 @@
 <ul>
 <li><p>Quando <code>D</code> é um serviço lento, como um banco de dados.</p></li>
 <li><p>Quando não é trivial instanciar um objeto do tipo <code>D</code>. Por exemplo, a construtora de <code>D</code> pode exigir como parâmetro um objeto do tipo <code>E</code>; por sua vez, a construtora de <code>E</code> pode exigir um objeto do tipo <code>F</code> e assim por diante.</p></li>
-<li><p>Quando <code>D</code> é um serviço não-determinísticos. Por exemplo, <code>D</code> pode ser um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
+<li><p>Quando <code>D</code> é um serviço não-determinísticos. Por exemplo, <code>D</code> é um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
 <li><p>Quando a execução de um método de <code>D</code> for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>e precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
 </ul>
 <h3 class="unnumbered" data-number="" id="como-mockar-uma-dependência-privada" class="unnumbered" data-number="">7. Como mockar uma dependência privada?</h3>
-<p>Se a dependência é privada, mas configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
+<p>Se a dependência for configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
 <p>Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.</p>
 <h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">8. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
