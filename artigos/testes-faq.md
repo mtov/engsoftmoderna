@@ -120,7 +120,7 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 6. Quando eu preciso criar um mock (ou teste doublê) para uma dependência? {.unnumbered}
+### 6. Quando preciso criar um mock (ou teste doublê) para uma dependência? {.unnumbered}
 
 Suponha que temos que testar um método `f` da seguinte classe:
 
@@ -142,20 +142,23 @@ class A {
 A classe `A` possui uma dependência `d` para o tipo `D`. Quando precisamos
 mockar essa dependência?
 
-* Quando `D` representa um serviço lento, como um banco de dados.
+* Quando `D` é um serviço lento, como um banco de dados.
 
-* Quando não é trivial instanciar um objeto do tipo `D`. Por exemplo, `D` pode 
-demandar que outros serviços estejam rodando na máquina ou que algum tipo
-de hardware esteja presente, como uma impressora.
+* Quando não é trivial instanciar um objeto do tipo `D`. Por exemplo, a construtora de `D` pode exigir como parâmetro um objeto do tipo `E`; por sua vez, a construtora de `E` pode exigir um objeto do tipo `F` e assim por diante.
 
-* Quando a execução de um método de `D` for importante para o teste. 
-Esse é exatamente o caso de teste comportamental que descrevemos na 
-pergunta 4. Nesse teste, `D` é o tipo `Mailer`. Isto é, precisamos 
-testar se a execução de `f` vai enviar um mail.
+* Quando `D` é um serviço não-determinísticos. Por exemplo, `D` pode ser um serviço financeiro cujo resultado varia com a cotação do dólar.
+
+* Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
+### 7. Como mockar uma dependência privada?
 
-### 7. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+Se a dependência é privada, mas configurável por meio do construtor da classe ou de um método `set` não existe problema.
+
+Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
+
+
+### 8. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -166,7 +169,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 8. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 9. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
