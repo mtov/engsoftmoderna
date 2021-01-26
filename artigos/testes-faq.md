@@ -151,7 +151,7 @@ mockar essa dependência?
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
-### 7. Como mockar uma dependência privada?
+### 7. Como mockar uma dependência privada? {.unnumbered}
 
 Se a dependência é privada, mas configurável por meio do construtor da classe ou de um método `set` não existe problema.
 

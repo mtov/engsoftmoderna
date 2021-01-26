@@ -167,7 +167,7 @@
 <li><p>Quando <code>D</code> é um serviço não-determinísticos. Por exemplo, <code>D</code> pode ser um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
 <li><p>Quando a execução de um método de <code>D</code> for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>e precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
 </ul>
-<h3 data-number="0.0.1" id="como-mockar-uma-dependência-privada" data-number="0.0.1"><span class="header-section-number">0.0.1</span> 7. Como mockar uma dependência privada?</h3>
+<h3 class="unnumbered" data-number="" id="como-mockar-uma-dependência-privada" class="unnumbered" data-number="">7. Como mockar uma dependência privada?</h3>
 <p>Se a dependência é privada, mas configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
 <p>Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.</p>
 <h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">8. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
