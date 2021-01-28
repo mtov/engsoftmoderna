@@ -158,7 +158,25 @@ Se a dependência for configurável por meio do construtor da classe ou de um m�
 Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
 
 
-### 8. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 8. Por que não usam o termo Dublê de Testes no livro? {.unnumbered}
+
+Reconhecemos que *dublê* é um termo usado por diversos autores, desde que foi 
+descrito no livro do Gerard Meszaros (xUnit Test Patterns).
+
+Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas 
+de teste. Veja alguns exemplos:
+
+* *Jest uses a custom resolver for imports in your tests, making it simple to **mock any object** outside of your test’s scope.*
+
+* *Mockito is a **mocking framework** that tastes really good.*
+
+* *unittest.mock ... allows you to replace parts of your system under test with **mock objects** and make assertions about how they have been used.*
+
+Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar
+o termo mock.
+
+
+### 9. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -169,7 +187,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 9. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 10. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
