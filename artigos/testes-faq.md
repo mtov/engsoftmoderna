@@ -120,7 +120,7 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 6. Quando preciso criar um mock (ou teste doublê) para uma dependência? {.unnumbered}
+### 6. Quando preciso criar um mock para uma dependência? {.unnumbered}
 
 Suponha que temos que testar um método `f` da seguinte classe:
 
@@ -158,7 +158,7 @@ Se a dependência for configurável por meio do construtor da classe ou de um m�
 Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
 
 
-### 8. Por que não usam o termo Dublê de Testes no livro? {.unnumbered}
+### 8. Por que não usam o termo dublê de testes no livro? {.unnumbered}
 
 Reconhecemos que *dublê* é um termo usado por diversos autores, desde que foi 
 descrito no livro do Gerard Meszaros (xUnit Test Patterns).
@@ -170,10 +170,11 @@ de teste. Veja alguns exemplos:
 
 * *Mockito is a **mocking framework** that tastes really good.*
 
-* *unittest.mock ... allows you to replace parts of your system under test with **mock objects** and make assertions about how they have been used.*
+* *unittest.mock ... allows you to replace parts of your system under test with **mock objects**.*
 
-Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar
-o termo mock.
+Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, 
+preferimos adotar o termo mock. No entanto, também acrescentamos uma nota 
+explicando o conceito de dublês e seus tipos, tais como stubs, fakes, etc.
 
 
 ### 9. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}

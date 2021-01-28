@@ -146,7 +146,7 @@
 }
 </code></pre>
 <p>Testes como o acima, que apenas verificam o resultado do método chamado — ou, no máximo, o estado de alguma outra estrutura de dados do sistema — são chamados de <strong>testes de estado</strong>.</p>
-<h3 class="unnumbered" data-number="" id="quando-preciso-criar-um-mock-ou-teste-doublê-para-uma-dependência" class="unnumbered" data-number="">6. Quando preciso criar um mock (ou teste doublê) para uma dependência?</h3>
+<h3 class="unnumbered" data-number="" id="quando-preciso-criar-um-mock-para-uma-dependência" class="unnumbered" data-number="">6. Quando preciso criar um mock para uma dependência?</h3>
 <p>Suponha que temos que testar um método <code>f</code> da seguinte classe:</p>
 <pre><code>class A {
  
@@ -170,15 +170,15 @@
 <h3 class="unnumbered" data-number="" id="como-mockar-uma-dependência-privada" class="unnumbered" data-number="">7. Como mockar uma dependência privada?</h3>
 <p>Se a dependência for configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
 <p>Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.</p>
-<h3 class="unnumbered" data-number="" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro" class="unnumbered" data-number="">8. Por que não usam o termo Dublê de Testes no livro?</h3>
+<h3 class="unnumbered" data-number="" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro" class="unnumbered" data-number="">8. Por que não usam o termo dublê de testes no livro?</h3>
 <p>Reconhecemos que <em>dublê</em> é um termo usado por diversos autores, desde que foi descrito no livro do Gerard Meszaros (xUnit Test Patterns).</p>
 <p>Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas de teste. Veja alguns exemplos:</p>
 <ul>
 <li><p><em>Jest uses a custom resolver for imports in your tests, making it simple to <strong>mock any object</strong> outside of your test’s scope.</em></p></li>
 <li><p><em>Mockito is a <strong>mocking framework</strong> that tastes really good.</em></p></li>
-<li><p><em>unittest.mock … allows you to replace parts of your system under test with <strong>mock objects</strong> and make assertions about how they have been used.</em></p></li>
+<li><p><em>unittest.mock … allows you to replace parts of your system under test with <strong>mock objects</strong>.</em></p></li>
 </ul>
-<p>Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar o termo mock.</p>
+<p>Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar o termo mock. No entanto, também acrescentamos uma nota explicando o conceito de dublês e seus tipos, tais como stubs, fakes, etc.</p>
 <h3 class="unnumbered" data-number="" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="unnumbered" data-number="">9. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
