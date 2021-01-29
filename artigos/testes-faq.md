@@ -140,7 +140,7 @@ class A {
 ```	
 
 A classe `A` possui uma dependência `d` para o tipo `D`. Quando precisamos
-mockar essa dependência?
+criar um mock para essa dependência?
 
 * Quando `D` é um serviço lento, como um banco de dados.
 
@@ -151,7 +151,7 @@ mockar essa dependência?
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
-### 7. Como mockar uma dependência privada? {.unnumbered}
+### 7. Como criar um mock para uma dependência privada? {.unnumbered}
 
 Se a dependência for configurável por meio do construtor da classe ou de um método `set` não existe problema.
 
@@ -160,8 +160,8 @@ Porém, se a dependência não for configurável de fora da classe, aí sim temo
 
 ### 8. Por que não usam o termo dublê de testes no livro? {.unnumbered}
 
-Reconhecemos que *dublê* é um termo usado por diversos autores, desde que foi 
-descrito no livro do Gerard Meszaros (xUnit Test Patterns).
+Reconhecemos que **dublê** é um termo usado por diversos autores, desde que foi 
+descrito no livro do Gerard Meszaros (*xUnit Test Patterns*).
 
 Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas 
 de teste. Veja alguns exemplos:
