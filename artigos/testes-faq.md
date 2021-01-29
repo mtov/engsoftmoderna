@@ -1,7 +1,5 @@
 # Perguntas Frequentes sobre Testes {.unnumbered}
 
-#### Este artigo está em andamento; em breve, iremos adicionar mais perguntas e respostas {.unnumbered}
-
 O objetivo deste artigo é responder algumas perguntas frequentes que são feitas
 sobre o [Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro. No entanto,
 estamos interessados apenas em perguntas conceituais, principalmente sobre os 
@@ -9,12 +7,14 @@ três tipos de testes abordados no capítulo: **unidade, integração e sistema*
 Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
+
 ### 1. O certo é teste de unidade ou teste unitário? {.unnumbered}
 
 Os dois termos são usados. Então, assumindo que a língua é uma
 entidade viva e dinâmica, não consideramos errado usar qualquer um deles. 
 Dito isso, preferimos teste de unidade, porque teste unitário pode passar a
 ideia errada de que temos um único teste no sistema.
+
 
 ### 2. O que é uma unidade? {.unnumbered}
 
@@ -31,6 +31,7 @@ aqueles associados às três primeiras letras: rápidos, independentes e repetí
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, 
 isso vai garantir que os métodos privados também estão funcionando.
+
 
 ### 4. Como testar métodos que têm efeito colateral? {.unnumbered}
 
