@@ -26,6 +26,10 @@
     "correct": "true"
   },
   {
+    "text": "São vantagens de MVC: separação entre interface e modelo; especialização do trabalho de desenvolvimento; e testabilidade.",
+    "correct": "true"
+  },
+  {
     "text": "Single Page Applications (SPAs) são mais interativas e responsivas do que aplicações Web tradicionais.",
     "correct": "true"
   },
@@ -71,3 +75,4 @@
   }
 ]
 }	 
+
