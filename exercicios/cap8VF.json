@@ -80,6 +80,10 @@
   {
     "text": "Na fase de testes de unidade, o objetivo é explorar a menor unidade de projeto, procurando identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software, estabelecida na fase de projeto. (ENADE 2005)",
     "correct": "true"
+  },
+  {
+    "text": "Teste de regressão tem como objetivo verificar se uma modificação no sistema não introduziu bugs em código que estava funcionando, isto é, que passava nos testes.",
+    "correct": "true"
   }
 ]
 }	    

@@ -147,7 +147,7 @@ criar um mock para essa dependência?
 
 * Quando não é trivial instanciar um objeto do tipo `D`. Por exemplo, a construtora de `D` pode exigir como parâmetro um objeto do tipo `E`; por sua vez, a construtora de `E` pode exigir um objeto do tipo `F` e assim por diante.
 
-* Quando `D` é um serviço não-determinísticos. Por exemplo, `D` é um serviço financeiro cujo resultado varia com a cotação do dólar.
+* Quando `D` é um serviço não-determinístico. Por exemplo, `D` é um serviço financeiro cujo resultado varia com a cotação do dólar.
 
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 

@@ -163,7 +163,7 @@
 <ul>
 <li><p>Quando <code>D</code> é um serviço lento, como um banco de dados.</p></li>
 <li><p>Quando não é trivial instanciar um objeto do tipo <code>D</code>. Por exemplo, a construtora de <code>D</code> pode exigir como parâmetro um objeto do tipo <code>E</code>; por sua vez, a construtora de <code>E</code> pode exigir um objeto do tipo <code>F</code> e assim por diante.</p></li>
-<li><p>Quando <code>D</code> é um serviço não-determinísticos. Por exemplo, <code>D</code> é um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
+<li><p>Quando <code>D</code> é um serviço não-determinístico. Por exemplo, <code>D</code> é um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
 <li><p>Quando a execução de um método de <code>D</code> for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>e precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
 </ul>
 <h3 class="unnumbered" data-number="" id="como-criar-um-mock-para-uma-dependência-privada" class="unnumbered" data-number="">7. Como criar um mock para uma dependência privada?</h3>
