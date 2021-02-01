@@ -82,7 +82,7 @@
     "correct": "true"
   },
   {
-    "text": "Teste de regressão tem como objetivo verificar se uma modificação no sistema não introduziu bugs em código que estava funcionando, isto é, que passava nos testes.",
+    "text": "Teste de regressão tem como objetivo verificar se uma modificação no sistema não introduziu bugs em código que já estava funcionando, isto é, que passava nos testes.",
     "correct": "true"
   }
 ]
