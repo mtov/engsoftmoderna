@@ -82,8 +82,12 @@
     "correct": "true"
   },
   {
-    "text": "Teste de regressão tem como objetivo verificar se uma modificação no sistema não introduziu bugs em código que já estava funcionando, isto é, que passava nos testes.",
+    "text": "Teste de regressão tem como objetivo verificar se uma modificação no sistema introduziu bugs em código que já estava funcionando, isto é, que passava nos testes.",
     "correct": "true"
+  },
+  {
+    "text": "Mocks, stubs, fakes e proxies são exemplos de dublês de teste.",
+    "correct": "false"
   }
 ]
 }	    
