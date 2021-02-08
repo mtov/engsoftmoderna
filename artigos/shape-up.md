@@ -15,59 +15,59 @@ da empresa. Segue uma imagem da capa do livro:
 ## Principais Conceitos {.unnumbered}
 
 Para apresentar Shape Up, vamos usar algumas analogias com outros
-métodos ágeis, principalmente com Scrum. Se quiser antes saber
+métodos ágeis, principalmente com Scrum. Se quiser saber
 um pouco mais sobre métodos ágeis, você pode consultar o 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro.
 
 Um ciclo de desenvolvimento em Shape Up é composto por três etapas:
 
 * Primeiro, temos uma fase de projeto *up front*, chamada de
-**shape**. Claro, esse projeto é mais simples do que em Waterfall
+**shaping**. Claro, esse projeto é mais simples do que em Waterfall
 (isto é, não é um *big design up front*). Porém, a ideia é que todo
 projeto de desenvolvimento de software precisa de uma coordenação de
 mais alto nível, que defina as funcionalidades que serão implementadas, crie
 limites para elas e avalie os seus riscos e benefícios. Tudo isso é
-feito nessa fase de *shape*. Como ela é central no método -- e dá nome
+feito nessa fase de *shaping*. Como ela é central no método -- e dá nome
 para ele -- iremos comentar mais sobre ela daqui a pouco, em uma seção
 separada.
 
-* Depois da fase de *shape* começa um sprint propriamente dito, que
+* Depois da fase de *shaping* começa um sprint propriamente dito, que
 eles chamam de **ciclos**. Porém, esses ciclos são mais longos do que
 os sprints de Scrum, tendo uma duração de seis semanas. Segundo o
 autor, seis semanas é um tempo suficiente para implementar algo
 relevante, mas sem impor um forte deadline aos trabalhos do time.
 
 * Finalizado um ciclo, segue um período de calmaria, de duas semanas,
-que os autores chamam de **cool-down period**. A ideia é que os
+que os autores chamam de período de **cool-down**. A ideia é que os
 desenvolvedores devem usar esse período para respirar um pouco. E
 aproveitar para realizar outras tarefas, como corrigir bugs, aplicar
-refactorings, estudar um nova tecnologia, implementar uma prova de
-conceito, etc. 
+refactorings, pagar uma dívida técnica, estudar um nova tecnologia, 
+implementar uma prova de conceito, etc. 
 
 Por fim, em Shape Up, os times são menores do que os times de Scrum, 
 sendo formados  por um designer de UI e, no máximo, dois
 desenvolvedores.
 
 
-## Fase de Projeto Inicial (Shape)  {.unnumbered}
+## Fase de Projeto Inicial (Shaping)  {.unnumbered}
 
-Shape é a fase principal do método e que dá nome a ele. A ideia é
+Shaping é a fase principal do método e que dá nome a ele. A ideia é
 proporcionar uma solução de meio termo, entre um planejamento
 detalhado (como em Waterfall) e um planejamento mais vago e abstrato
 (como pode acontecer, por exemplo, quando adota-se Scrum). A próxima
 figura ilustra o nível de detalhe que deve ser objeto da fase de
-shape.
+shaping.
 
-![Fase de Shape](./figs/shapeup-fig1.png)
+![Fase de Shaping](./figs/shapeup-fig1.png)
 
-O livro não detalha os responsáveis pela fase de shape, mas sugere que
+O livro não detalha os responsáveis pela fase de shaping, mas sugere que
 devem ser desenvolvedores e gerentes de nível sênior. Além disso, é
-importante mencionar que a fase de shape pode acontecer em paralelo
+importante mencionar que o shaping pode acontecer em paralelo
 com os ciclos de seis semanas e o período de cool-down. Por exemplo,
-em paralelo com um determinado período de cool-down, realiza-se o shape
+em paralelo com um determinado período de cool-down, realiza-se o shaping
 do ciclo seguinte.
 
-O resultado da fase de shape é um **pitch**, isto é,  um documento
+O resultado da fase de shaping é um **pitch**, isto é, um documento
 simplificado que propõe uma nova funcionalidade para um sistema.
 Esse documento deve incluir as seguintes informações:
 
@@ -87,7 +87,7 @@ interfaces.
 go's** para limitações que serão aceitas na solução a ser
 implementada. E o termo **rabbit holes** para designar os 
 impasses que podem ocorrer no  momento da implementação (e então já
-propor soluções para eles na fase de shape). O objetivo é evitar
+propor soluções para eles na fase de shaping). O objetivo é evitar
 que o time se preocupe e perca tempo com essas questões.
 
 Por fim, gera-se um conjunto de pitches, que vão para o que o autor
@@ -128,7 +128,7 @@ aberta e flexível.
 
 Shape Up tem diferenças importantes para métodos como Scrum:
 
-* Existe uma fase dedicada para planejamento e projeto (*shape*).
+* Existe uma fase dedicada para planejamento e projeto (*shaping*).
 
 * Não existem eventos como reuniões diárias, revisões e retrospectivas.
 
@@ -168,7 +168,7 @@ na própria página do [livro](https://basecamp.com/shapeup).
 
 ## Exercícios {.unnumbered}
 
-1. Qual a diferença entre a fase de *shape* e o planejamento do sprint 
+1. Qual a diferença entre a fase de *shaping* e o planejamento do sprint 
 (*sprint planning*) em Scrum?
 
 2. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 

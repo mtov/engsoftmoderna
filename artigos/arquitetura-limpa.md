@@ -210,7 +210,12 @@ no YouTube sobre o tema.
 
 ## Exercícios {.unnumbered}
 
-1. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
+1. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
+externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
+principal vantagem ou benefício dessa regra?
+
+
+2. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
 
    * Se quisermos ter um código totalmente aderente aos princípios de uma Arquitetura Limpa,
      por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
