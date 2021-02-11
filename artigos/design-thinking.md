@@ -1,5 +1,5 @@
 
-# O que é Design Thinking?   {.unnumbered}
+# Design Thinking: Aprendendo a Resolver Problemas com os Designers   {.unnumbered}
 
 ## Introdução {.unnumbered}
 

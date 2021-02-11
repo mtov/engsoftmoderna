@@ -11,7 +11,7 @@ shape-up: shape-up.md
 	pandoc --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
 design-thinking: design-thinking.md
-	pandoc --defaults=defaults.yaml -T "Design Thinking" design-thinking.md -o design-thinking.html
+	pandoc --defaults=defaults.yaml -T "Design Thinking: Aprendendo a Resolver Problemas com os Designers" design-thinking.md -o design-thinking.html
 
 mvp: mvp.md
 	pandoc --defaults=defaults.yaml -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html

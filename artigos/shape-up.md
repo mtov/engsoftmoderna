@@ -138,7 +138,7 @@ Shape Up tem diferenças importantes para métodos como Scrum:
 desenvolvedores.
 
 * Não existem papeis semelhantes àqueles de Scrum Master e Product
-Owner. No entanto, estrategistas de produtos podem ser consultados
+Owner. No entanto, estrategistas de produto podem ser consultados
 para modelar os pitches e também podem fazer parte da *bet table*.
 
 * Os times não têm autonomia para definir os pitches do próximo ciclo. 
