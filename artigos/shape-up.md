@@ -159,9 +159,11 @@ de novas funcionalidades.
 #### Para Saber Mais {.unnumbered}
 
 Se quiser saber mais sobre Shape Up, além do livro do Ryan Singer, 
-recomendamos uma palestra que fizemos para o evento MPS Talks, incluindo
-[vídeo](https://youtu.be/CsgrTWtuBuE) e
+recomendamos uma palestra que fizemos para o evento MPS Talks, incluindo também seus
 [slides](https://speakerdeck.com/aserg_ufmg/melhores-praticas-para-desenvolvimento-remoto-de-software-mps-talks-softex).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CsgrTWtuBuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 Você pode ouvir também diversas entrevistas do Ryan
 Singer para podcasts. Os links estão 
 na própria página do [livro](https://basecamp.com/shapeup).
