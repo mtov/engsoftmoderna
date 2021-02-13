@@ -141,7 +141,9 @@ var Exercise = {
 
       <div v-if="!answering">
       <h2>Correção</h2> 
-      <p>{{totalQuestions}} questões; {{totalCorrect}} corretas<p>
+      
+      <p> {{totalQuestions}} questões; {{totalCorrect}} corretas </p>
+
       <form>
         <question2 v-for="(question, index) in questions" 
           :number="index"
