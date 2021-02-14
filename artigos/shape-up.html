@@ -14,6 +14,7 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -100,13 +101,13 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" data-number="" id="shape-up-uma-possível-alternativa-a-scrum" class="unnumbered" data-number="">Shape Up: Uma Possível Alternativa a Scrum?</h1>
-<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
+<h1 class="unnumbered" id="shape-up-uma-possível-alternativa-a-scrum">Shape Up: Uma Possível Alternativa a Scrum?</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
 <p>Shape Up é um novo método para desenvolvimento de software que está sendo proposto pela <a href="https://basecamp.com/">Basecamp</a>, a empresa por trás do software de gerenciamento de projetos de mesmo nome. O método é descrito em um <a href="https://basecamp.com/shapeup">livro</a> aberto, de autoria de Ryan Singer, que é um dos principais gerentes de produto da empresa. Segue uma imagem da capa do livro:</p>
 <figure>
-<img src="./figs/shapeup-cover.jpg" style="width:45.0%" alt="" /><figcaption>Capa do livro</figcaption>
+<img src="./figs/shapeup-cover.jpg" style="width:45.0%" alt="Capa do livro" /><figcaption aria-hidden="true">Capa do livro</figcaption>
 </figure>
-<h2 class="unnumbered" data-number="" id="principais-conceitos" class="unnumbered" data-number="">Principais Conceitos</h2>
+<h2 class="unnumbered" id="principais-conceitos">Principais Conceitos</h2>
 <p>Para apresentar Shape Up, vamos usar algumas analogias com outros métodos ágeis, principalmente com Scrum. Se quiser saber um pouco mais sobre métodos ágeis, você pode consultar o <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a> do livro.</p>
 <p>Um ciclo de desenvolvimento em Shape Up é composto por três etapas:</p>
 <ul>
@@ -115,10 +116,10 @@
 <li><p>Finalizado um ciclo, segue um período de calmaria, de duas semanas, que os autores chamam de período de <strong>cool-down</strong>. A ideia é que os desenvolvedores devem usar esse período para respirar um pouco. E aproveitar para realizar outras tarefas, como corrigir bugs, aplicar refactorings, pagar uma dívida técnica, estudar um nova tecnologia, implementar uma prova de conceito, etc.</p></li>
 </ul>
 <p>Por fim, em Shape Up, os times são menores do que os times de Scrum, sendo formados por um designer de UI e, no máximo, dois desenvolvedores.</p>
-<h2 class="unnumbered" data-number="" id="fase-de-projeto-inicial-shaping" class="unnumbered" data-number="">Fase de Projeto Inicial (Shaping)</h2>
+<h2 class="unnumbered" id="fase-de-projeto-inicial-shaping">Fase de Projeto Inicial (Shaping)</h2>
 <p>Shaping é a fase principal do método e que dá nome a ele. A ideia é proporcionar uma solução de meio termo, entre um planejamento detalhado (como em Waterfall) e um planejamento mais vago e abstrato (como pode acontecer, por exemplo, quando adota-se Scrum). A próxima figura ilustra o nível de detalhe que deve ser objeto da fase de shaping.</p>
 <figure>
-<img src="./figs/shapeup-fig1.png" alt="" /><figcaption>Fase de Shaping</figcaption>
+<img src="./figs/shapeup-fig1.png" alt="Fase de Shaping" /><figcaption aria-hidden="true">Fase de Shaping</figcaption>
 </figure>
 <p>O livro não detalha os responsáveis pela fase de shaping, mas sugere que devem ser desenvolvedores e gerentes de nível sênior. Além disso, é importante mencionar que o shaping pode acontecer em paralelo com os ciclos de seis semanas e o período de cool-down. Por exemplo, em paralelo com um determinado período de cool-down, realiza-se o shaping do ciclo seguinte.</p>
 <p>O resultado da fase de shaping é um <strong>pitch</strong>, isto é, um documento simplificado que propõe uma nova funcionalidade para um sistema. Esse documento deve incluir as seguintes informações:</p>
@@ -136,7 +137,7 @@
 </blockquote>
 <p>Ou seja, na verdade, o que não existe é um backlog global. Mas cada tomador de decisão pode ter seu backlog local de pitches que ele pretende propor e defender na próxima <em>bet table</em>.</p>
 <p>Por fim, Shape Up defende a ideia de <q>tempo fixo, mas escopo aberto</q>. Isto é, os ciclos têm uma duração bem definida (por exemplo, 6 semanas). Porém, os times têm flexibilidade para adaptar o escopo do que será, de fato, implementado no ciclo. Veja que, no início de um ciclo, eles recebem um pitch, que é uma especificação de requisitos relativamente aberta e flexível.</p>
-<h2 class="unnumbered" data-number="" id="conclusão" class="unnumbered" data-number="">Conclusão</h2>
+<h2 class="unnumbered" id="conclusão">Conclusão</h2>
 <p>Shape Up tem diferenças importantes para métodos como Scrum:</p>
 <ul>
 <li><p>Existe uma fase dedicada para planejamento e projeto (<em>shaping</em>).</p></li>
@@ -148,12 +149,12 @@
 <li><p>Os times têm autonomia para adaptar o escopo de um pitch à duração prevista do ciclo. Já em Scrum, o escopo do sprint é fixado logo no seu início, durante a reunião de planejamento do sprint.</p></li>
 <li><p>Ciclos são um pouco mais longos que os sprints de Scrum. Por exemplo, um ciclo pode durar 6 semamas, enquanto um sprint dura, no máximo, um mês e, frequentemente, menos do que isso. Além disso, os ciclos são seguidos de um período de cool down, que não envolve a implementação de novas funcionalidades.</p></li>
 </ul>
-<h4 class="unnumbered" data-number="" id="para-saber-mais" class="unnumbered" data-number="">Para Saber Mais</h4>
+<h4 class="unnumbered" id="para-saber-mais">Para Saber Mais</h4>
 <p>Se quiser saber mais sobre Shape Up, além do livro do Ryan Singer, recomendamos uma palestra que fizemos para o evento MPS Talks, incluindo também seus <a href="https://speakerdeck.com/aserg_ufmg/melhores-praticas-para-desenvolvimento-remoto-de-software-mps-talks-softex">slides</a>.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CsgrTWtuBuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p>Você pode ouvir também diversas entrevistas do Ryan Singer para podcasts. Os links estão na própria página do <a href="https://basecamp.com/shapeup">livro</a>.</p>
-<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
 <li><p>Qual a diferença entre a fase de <em>shaping</em> e o planejamento do sprint (<em>sprint planning</em>) em Scrum?</p></li>
 <li><p>Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no <em>pitch</em>? Para responder, consulte o Capítulo 8 do <a href="https://basecamp.com/shapeup">livro</a> que descreve o método, seção <q>The circuit breaker</q>.</p></li>
