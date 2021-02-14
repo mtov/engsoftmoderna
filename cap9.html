@@ -14,6 +14,7 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -100,12 +101,14 @@
 <h1 class="title">Engenharia de Software Moderna (Livro Digital)</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 data-number="1" id="refactoring" data-number="1"><span class="header-section-number">9</span> Refactoring</h1>
+<section id="refactoring" data-number="1">
+<h1 data-number="9"><span class="header-section-number">9</span> Refactoring</h1>
 <blockquote>
 <p><em>I'm not a great programmer; I'm just a good programmer with great habits.</em> – Kent Beck</p>
 </blockquote>
 <p>Este capítulo inicia com uma introdução a refactorings, os quais são modificações realizadas em um programa para facilitar o seu entendimento e futura evolução. Na Seção 9.2, apresentamos uma série de operações de refactoring, incluindo exemplos de código, alguns deles de refactorings reais, realizados em sistemas de código aberto. Em seguida, na Seção 9.3, discutimos alguns aspectos sobre a prática de refactoring, incluindo a importância de uma boa suíte de testes de unidade. A Seção 9.4 apresenta os recursos oferecidos por IDEs para realização automatizada de refactorings. Para finalizar, a Seção 9.5 descreve uma lista de code smells, isto é, indicadores de que uma determinada estrutura de código não está <q>cheirando bem</q> e que, portanto, poderia ser objeto de uma refatoração.</p>
-<h2 data-number="1.1" id="introdução" data-number="1.1"><span class="header-section-number">9.1</span> Introdução</h2>
+<section id="introdução" data-number="1.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span> Introdução</h2>
 <p></p>
 <p>No capítulo anterior, vimos que software precisa ser testado, como qualquer produto de engenharia. A mesma recomendação vale para atividades de manutenção. Isto é, software também precisa de manutenção. Na verdade, na Introdução deste livro, já comentamos que existem diversos tipos de manutenção que podem ser realizadas em sistemas de software. Quando um bug é detectado, temos que realizar uma <strong>manutenção corretiva</strong>. Quando os usuários ou o dono do produto solicitam uma nova funcionalidade, temos que realizar uma <strong>manutenção evolutiva</strong>. Quando uma regra de negócio ou alguma tecnologia usada pelo sistema muda, temos que reservar tempo para uma <strong>manutenção</strong> <strong>adaptativa</strong>.</p>
 <p>   Além disso, sistemas de software também envelhecem, como ocorre com os seres vivos. Ainda no início da década de 1970, Meir Lehman — então trabalhando na IBM — começou a observar e analisar esse fenômeno e, como resultado, enunciou um conjunto de leis empíricas sobre envelhecimento, qualidade interna e evolução de sistemas de software, que ficaram conhecidas <strong>Leis da Evolução de Software</strong> ou simplesmente <strong>Leis de Lehman</strong>. As duas primeiras leis enunciadas por Lehman foram as seguintes:</p>
@@ -120,9 +123,12 @@
 <p> Em seu livro, Fowler cita também a frase de Kent Beck que abre esse capítulo e que ressalta a importância de seguir <q>bons hábitos de programação</q>, os quais são fundamentais para preservar a saúde de um sistema, garantindo que ele continuará evoluindo por anos. Portanto, desenvolvedores não devem realizar apenas manutenções corretivas, adaptativas e evolutivas. É importante cuidar também da manutenibilidade do sistema, por meio da realização frequente de refactorings.</p>
 <p><strong>Tradução</strong>: Decidimos não traduzir refactoring quando usado como substantivo. O motivo é que achamos que o substantivo em inglês já faz parte do vocabulário dos desenvolvedores de software brasileiros. Porém, quando usada como verbo (<em>to refactor</em>), traduzimos para refatorar.</p>
 <p><strong>Aviso:</strong> O termo refactoring tornou-se comum em desenvolvimento de software. Por isso, às vezes ele é usado para indicar a melhoria de outros requisitos não-funcionais, que não estão relacionados com manutenibilidade. Por exemplo, frequentemente, ouvimos desenvolvedores mencionar que vão refatorar o código para melhorar seu desempenho, para introduzir concorrência, para melhorar a usabilidade de sua interface, etc. No entanto, neste livro, vamos usar o termo restrito à sua definição original, isto é, apenas para denotar modificações de código que melhoram a sua manutenibilidade.</p>
-<h2 data-number="1.2" id="catálogo-de-refactorings" data-number="1.2"><span class="header-section-number">9.2</span> Catálogo de Refactorings</h2>
+</section>
+<section id="catálogo-de-refactorings" data-number="1.2">
+<h2 data-number="9.2"><span class="header-section-number">9.2</span> Catálogo de Refactorings</h2>
 <p>Nesta seção, vamos apresentar os principais refactorings do catálogo de Fowler. Assim como adotado nesse catálogo, vamos comentar sobre os seguintes tópicos na apresentação de cada refactoring: nome, motivação, mecânica de aplicação e exemplos de uso. Além disso, vamos usar alguns exemplos de refactorings reais, realizados por desenvolvedores de sistemas de código aberto disponíveis no GitHub.</p>
-<h3 data-number="1.2.1" id="extração-de-método" data-number="1.2.1"><span class="header-section-number">9.2.1</span> Extração de Método</h3>
+<section id="extração-de-método" data-number="1.2.1">
+<h3 data-number="9.2.1"><span class="header-section-number">9.2.1</span> Extração de Método</h3>
 <p></p>
 <p>Extração de Método é um dos principais refactorings, tendo como objetivo extrair um trecho de código de um método <code>f</code> e levá-lo para um novo método <code>g</code>. Então, o método <code>f</code> passa a incluir uma chamada de <code>g</code>. O próximo código ilustra o funcionamento desse refactoring. Primeiro, o código antes do refactoring:</p>
 <pre><code>void f () {
@@ -181,7 +187,9 @@ void f () {
   createDefaultMCCTable(database);
   createEventLogTable(database);
  }</code></pre>
-<h3 data-number="1.2.2" id="motivações-para-extração-de-métodos" data-number="1.2.2"><span class="header-section-number">9.2.2</span> Motivações para Extração de Métodos</h3>
+</section>
+<section id="motivações-para-extração-de-métodos" data-number="1.2.2">
+<h3 data-number="9.2.2"><span class="header-section-number">9.2.2</span> Motivações para Extração de Métodos</h3>
 <p>Em 2016, junto com Danilo Silva e com o Prof. Nikolaos Tsantalis (da Universidade Concordia, em Montreal, no Canadá), realizamos um estudo com desenvolvedores de sistemas GitHub para descobrir suas reais motivações para realização de refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>). No estudo, revelamos 11 motivações distintas para Extrações de Métodos, conforme mostrado na tabela a seguir.</p>
 <table>
 <colgroup>
@@ -261,7 +269,9 @@ void log(String msg) {
   log(msg, false);
 }</code></pre>
 <p>O leitor deve observar que, tecnicamente, a transformação mostrada no exemplo anterior é uma Extração de Método. Primeiro, todo o código de <code>log(String)</code> foi extraído para <code>log(String,boolean)</code>, que é um novo método. Em seguida, pequenos ajustes foram realizados no código extraído. Especificamente, foi adicionado um comando <code>if</code>. Tais ajustes são comuns e não descaracterizam a transformação como uma Extração de Método.</p>
-<h3 data-number="1.2.3" id="inline-de-método" data-number="1.2.3"><span class="header-section-number">9.2.3</span> Inline de Método</h3>
+</section>
+<section id="inline-de-método" data-number="1.2.3">
+<h3 data-number="9.2.3"><span class="header-section-number">9.2.3</span> Inline de Método</h3>
 <p></p>
 <p>Esse refactoring funciona no sentido contrário a uma extração de método. Suponha um método pequeno, com uma ou duas linhas de código, e que seja chamado poucas vezes. O benefício proporcionado por esse método — em termos de reúso e incremento de legibilidade do código — é pequeno. Portanto, ele pode ser removido do sistema e seu corpo incorporado nos pontos de chamada. No entanto, é importante ressaltar que Inline de Métodos é uma operação mais rara e menos importante do que Extração.</p>
 <p><strong>Exemplo:</strong> A seguir, mostramos um exemplo de Inline de Método, realizado no sistema IntelliJ, uma IDE para Java. Primeiro, segue o código antes do inline. Podemos ver que o método <code>writeContentToFile</code> tem uma única linha de código e é chamado apenas uma vez, pelo método <code>write</code>.</p>
@@ -288,7 +298,9 @@ private void write(byte[] revision) {
   ...
 }
 </code></pre>
-<h3 data-number="1.2.4" id="movimentação-de-método" data-number="1.2.4"><span class="header-section-number">9.2.4</span> Movimentação de Método</h3>
+</section>
+<section id="movimentação-de-método" data-number="1.2.4">
+<h3 data-number="9.2.4"><span class="header-section-number">9.2.4</span> Movimentação de Método</h3>
 <p></p>
 <p>Não é raro encontrar um método implementado na classe errada. Ou seja, apesar de implementado em uma classe A, um método <code>f</code> pode usar mais serviços de uma classe B. Por exemplo, ele pode ter mais dependências para elementos de B do que de sua classe A. Nesses casos, deve-se avaliar a possibilidade de mover f para a classe B. Esse refactoring pode melhorar a coesão da classe A, diminuir o acoplamento entre A e B e, em última instância, tornar ambas as classes mais fáceis de serem entendidas e modificadas.</p>
 <p>Pelas suas características, Movimentação de Métodos é um dos refactorings com maior potencial para melhorar a modularização de um sistema. Como sua atuação não está restrita a uma única classe, Movimentação de Métodos pode ter um impacto positivo na arquitetura do sistema, garantindo que os métodos estejam nas classes apropriadas, tanto do ponto de vista funcional como arquitetural.</p>
@@ -311,7 +323,7 @@ private void write(byte[] revision) {
 <p>Pelos motivos expostos no parágrafo anterior, um dos desenvolvedores do IntelliJ decidiu mover <code>averageAmongMedians</code> para uma classe chamada <code>ArrayUtil</code>, que tem como objetivo disponibilizar funções utilitárias para manipulação de vetores. Logo, trata-se de uma classe mais relacionada com a funcionalidade provida por <code>averageAmongMedians</code>.</p>
 <p>Após a movimentação para a nova classe, as chamadas de <code>averageAmongMedians</code> tiveram que ser atualizadas, como mostrado na figura a seguir.</p>
 <figure>
-<img src="figs/cap9/diff-intellij.png" style="width:100.0%" alt="" /><figcaption>Atualizando chamadas de método estático após movimentação. <code>averageAmongMedians</code> foi movido de <code>PlatformTestUtil</code> para <code>ArrayUtil</code>.</figcaption>
+<img src="figs/cap9/diff-intellij.png" style="width:100.0%" alt="Atualizando chamadas de método estático após movimentação. averageAmongMedians foi movido de PlatformTestUtil para ArrayUtil." /><figcaption aria-hidden="true">Atualizando chamadas de método estático após movimentação. <code>averageAmongMedians</code> foi movido de <code>PlatformTestUtil</code> para <code>ArrayUtil</code>.</figcaption>
 </figure>
 <p>No entanto, como o leitor pode observar nesse diff, isso não foi difícil, pois <code>averageAmongMedians</code> é um método estático. Logo, apenas o nome de sua classe teve que ser atualizado em cada ponto de chamada.</p>
 <p>Em outros casos, no entanto, pode não ser tão simples atualizar as chamadas de um método após ele ser movido para uma nova classe. Isso acontece quando nos pontos de chamada não existem referências para objetos da nova classe do método. Uma solução consiste então em deixar uma implementação simples do método na classe de origem. Essa implementação apenas delega as chamadas para a nova classe do método. Por isso, nenhum cliente precisará ser alterado. Um exemplo é mostrado a seguir. Primeiro, o código original:</p>
@@ -352,12 +364,12 @@ class Cliente {
 <p></p>
 <p>Quando ocorre em uma mesma hierarquia de classes, Movimentação de Métodos ganha nomes especiais. Por exemplo, quando o refactoring move um método de subclasses para uma superclasse, ele é chamado de <strong>Pull Up Method</strong>. Para ilustrar, suponha um mesmo método <code>f</code> implementado em duas subclasses <code>B1</code> e <code>B2</code>. Para evitar <strong>duplicação de código</strong>, pode-se então <q>subir</q> com ambas implementações para a superclasse <code>A</code>, como mostra o diagrama de classes da próxima página.</p>
 <figure>
-<img src="figs/cap9/pull-up.svg" style="width:82.0%" alt="" /><figcaption>Pull Up Method</figcaption>
+<img src="figs/cap9/pull-up.svg" style="width:82.0%" alt="Pull Up Method" /><figcaption aria-hidden="true">Pull Up Method</figcaption>
 </figure>
 <p></p>
 <p>Por outro lado, quando um método é movido para baixo na hierarquia de classes, isto é, de uma superclasse para uma subclasse, dizemos que foi realizado um <strong>Push Down Method</strong>. Por exemplo, apesar de implementado na superclasse <code>A</code>, um método <code>f</code> pode ser do interesse de uma única subclasse, digamos que <code>B1</code>. Logo, podemos <q>descer</q> com sua implementação para <code>B1</code>, como mostrado no diagrama de classes da próxima página.</p>
 <figure>
-<img src="figs/cap9/push-down.svg" style="width:82.0%" alt="" /><figcaption>Push Down Method</figcaption>
+<img src="figs/cap9/push-down.svg" style="width:82.0%" alt="Push Down Method" /><figcaption aria-hidden="true">Push Down Method</figcaption>
 </figure>
 <p>Para concluir, operações de refactoring podem ser feitas em sequência. Por exemplo, suponha a seguinte classe <code>A</code> com um método <code>f</code>:</p>
 <pre><code>class A {
@@ -403,7 +415,9 @@ class B {
   }
 
 }</code></pre>
-<h3 data-number="1.2.5" id="extração-de-classes" data-number="1.2.5"><span class="header-section-number">9.2.5</span> Extração de Classes</h3>
+</section>
+<section id="extração-de-classes" data-number="1.2.5">
+<h3 data-number="9.2.5"><span class="header-section-number">9.2.5</span> Extração de Classes</h3>
 <p></p>
 <p>Esse refactoring é recomendado quando um sistema possui uma classe A com muitas responsabilidades e atributos. Alguns desses atributos são relacionados e poderiam ter vida própria. Logo, eles podem ser extraídos para uma nova classe B. Em seguida, declaramos em A um atributo do tipo B.</p>
 <p><strong>Exemplo:</strong> Seja a classe <code>Pessoa</code> mostrada a seguir. Além de outros atributos, que foram omitidos do exemplo, ela armazena dados do telefone fixo e celular da pessoa em questão, incluindo código de área e número.</p>
@@ -426,7 +440,9 @@ class Pessoa {
   ...
 }</code></pre>
 <p>Um refactoring similar a <strong>Extração de Classes</strong> é chamado de <strong>Extração de Interfaces</strong>. Por exemplo, suponha que uma biblioteca de estruturas de dados implemente as classes <code>LinkedList</code> e <code>ArrayList</code>. Dessas duas classes podemos extrair uma interface <code>List</code>, com os métodos comuns a elas. Assim, os clientes de tais classes podem começar a praticar o princípio de projeto <q>Prefira Interfaces a Classes Concretas</q>, que estudamos no Capítulo 5.</p>
-<h3 data-number="1.2.6" id="renomeação" data-number="1.2.6"><span class="header-section-number">9.2.6</span> Renomeação</h3>
+</section>
+<section id="renomeação" data-number="1.2.6">
+<h3 data-number="9.2.6"><span class="header-section-number">9.2.6</span> Renomeação</h3>
 <p></p>
 <p>Existe uma frase provocativa, atribuída a Phil Karlton, que afirma que <q>existem apenas duas coisas difíceis em Ciência da Computação: invalidação de cache e dar nomes às coisas.</q> Como dar nomes é difícil, frequentemente temos que renomear um elemento de código, seja ele uma variável, função, método, parâmetro, atributo, classe, etc. Isso pode ocorrer porque o nome dado ao elemento não foi uma boa escolha. Um outro motivo é que a responsabilidade desse elemento pode ter mudado com o tempo e assim seu nome ficou desatualizado. Em ambos os casos, recomenda-se realizar um dos refactorings mais populares que existe: <strong>renomeação</strong>. Isto é, dar um nome mais adequado e significativo para o elemento de código.</p>
 <p>Quando esse refactoring é aplicado, a parte mais complexa não é renomear o elemento, mas atualizar os pontos do código em que ele é referenciado. Por exemplo, se um método <code>f</code> é renomeado para <code>g</code>, todas as chamadas de <code>f</code> devem ser atualizadas. Na verdade, se <code>f</code> for muito usado, pode ser interessante extraí-lo para um novo método, com o novo nome, e manter o nome antigo, mas depreciado.</p>
@@ -445,7 +461,9 @@ void f() {    // mantêm nome antigo
 }</code></pre>
 <p>Depreciação é um mecanismo oferecido por linguagens de programação para indicar que um elemento de código está desatualizado e, portanto, desencorajar seu uso. Quando o compilador descobre que um trecho de código está usando um elemento depreciado, ele emite um <em>warning</em>. No exemplo anterior, o método <code>f</code> não foi simplesmente renomeado para <code>g</code>. Em vez disso, primeiro criou-se um método <code>g</code> com o código original de <code>f</code>. Em seguida, <code>f</code> foi depreciado e seu código modificado para apenas chamar <code>g</code>.</p>
 <p>A estratégia baseada em depreciação torna a renomeação mais segura, pois ela não obriga a atualização de uma só vez de todas as chamadas de <code>f</code>, que podem ser muitas e espalhadas em diversos programas. Ou seja, ela dá tempo para que os clientes se adaptem à mudança e passem a usar o novo nome. Na verdade, refactorings — mesmo os mais simples, como uma renomeação — devem ser realizado em pequenos passos, ou em <strong>baby steps</strong>, para ter certeza que eles não vão prejudicar o correto funcionamento de um sistema.</p>
-<h3 data-number="1.2.7" id="outros-refactorings" data-number="1.2.7"><span class="header-section-number">9.2.7</span> Outros Refactorings</h3>
+</section>
+<section id="outros-refactorings" data-number="1.2.7">
+<h3 data-number="9.2.7"><span class="header-section-number">9.2.7</span> Outros Refactorings</h3>
 <p>Os refactorings apresentados anteriormente têm maior potencial para melhorar o projeto de um sistema, pois eles envolvem operações com um escopo global, como Movimentação de Métodos ou Extração de Classes. Porém, existem refactorings com escopo local, que melhoram, por exemplo, a implementação interna de um único método. Vamos a seguir descrever resumidamente alguns desses refactorings.</p>
 <p> <strong>Extração de Variáveis</strong> é usado para simplificar expressões e torná-las mais fáceis de ler e entender. Seja o seguinte código de exemplo:</p>
 <pre><code>x1 = (-b + sqrt(b*b-4*a*c)) / (2*a);</code></pre>
@@ -489,7 +507,10 @@ x1 = (-b + sqrt(delta)) / (2*a);
 <p><code>bolsa = aluno.getBolsa();</code></p>
 <p>Na versão refatorada, o atributo <code>type</code> de Aluno não é mais necessário e, portanto, pode ser removido. Além disso, temos que implementar nas subclasses de <code>Aluno</code> — por exemplo, <code>AlunoGraduacao</code>, <code>AlunoMestrado</code> e <code>AlunoDoutorado</code> — um método <code>getBolsa()</code>. Por fim, na superclasse <code>Aluno</code> esse método deve ser abstrato, isto é, ter apenas uma assinatura, sem corpo.</p>
 <p> <strong>Remoção de Código Morto</strong> recomenda deletar métodos, classes, variáveis, atributos, etc que não estão sendo mais usados. Por exemplo, no caso de um método, pode não existir mais chamadas para ele. No caso de uma classe, ela pode não ser mais instanciada ou herdada por outras classes. No caso de um atributo, ele pode não ser usado no corpo da classe, nem em subclasses ou em outras classes. Pode parecer que Remoção de Código Morto é um refactoring raro, mas em grandes sistemas, desenvolvidos ao longo de anos por programadores diferentes, costuma existir uma quantidade considerável de código que não é mais chamado.</p>
-<h2 data-number="1.3" id="prática-de-refactoring" data-number="1.3"><span class="header-section-number">9.3</span> Prática de Refactoring</h2>
+</section>
+</section>
+<section id="prática-de-refactoring" data-number="1.3">
+<h2 data-number="9.3"><span class="header-section-number">9.3</span> Prática de Refactoring</h2>
 <p>Tendo apresentado diversos refactorings na seção anterior, vamos agora discutir como a prática de refactoring pode ser adotada em projetos reais de desenvolvimento de software.</p>
 <p>Primeiro, a realização bem sucedida de refactorings depende da existência de bons testes, principalmente testes de unidade. Ou seja, sem testes fica arriscado realizar mudanças em um sistema, ainda mais quando elas não agregam novas funcionalidades ou corrigem bugs, como é o caso de refactorings. John Ousterhout tem o seguinte comentário sobre a importância de testes durante atividades de refactoring (<a href="https://dl.acm.org/citation.cfm?id=3288797">link</a>):</p>
 <p></p>
@@ -504,7 +525,9 @@ x1 = (-b + sqrt(delta)) / (2*a);
 </blockquote>
 <p>A ideia de fundo dessa recomendação é que um desenvolvedor pode estar enfrentando dificuldades para implementar uma mudança exatamente porque o código não está preparado para acomodá-la. Assim, primeiro ele deve dar um <q>passo atrás</q>, isto é, refatorar o código de forma oportunista, para tornar a mudança em questão <q>fácil</q>. Feito isso, ele terá aberto caminho para dar dois passos a frente e implementar a mudança que ficou sob sua responsabilidade.</p>
 <p>  Na maior parte das vezes, os refactorings são oportunistas. No entanto, é possível ter também <strong>refactorings planejados</strong>. Normalmente, eles são mudanças mais profundas, demoradas e complexas, que não valem a pena encaixar no meio de uma outra tarefa de desenvolvimento. Em vez disso, eles devem ser realizados em sessões planejadas e dedicadas. Por exemplo, esses refactorings podem envolver a quebra de um pacote em dois ou mais subpacotes, o que pode exigir atualizações em diversas partes de um sistema. Como um segundo exemplo, pode ser que o time de desenvolvimento negligenciou a prática de refactorings por muito tempo. Então, como existem muitos refactorings pendentes, é melhor planejá-los para um período de tempo específico. No entanto, como afirma Fowler <q>tais episódios de refactorings planejados devem ser raros. A maior parte do esforço de refactoring deve ser do tipo normal e oportunista.</q></p>
-<h2 data-number="1.4" id="refactorings-automatizados" data-number="1.4"><span class="header-section-number">9.4</span> Refactorings Automatizados</h2>
+</section>
+<section id="refactorings-automatizados" data-number="1.4">
+<h2 data-number="9.4"><span class="header-section-number">9.4</span> Refactorings Automatizados</h2>
 <p></p>
 <p>Diversas IDEs oferecem suporte para automatizar a realização de refactorings, da seguinte forma: o usuário seleciona o trecho de código que pretende refatorar e a operação de refactoring que deseja realizar. Então, a IDE realiza essa operação automaticamente. Para deixar o conceito mais claro, as próximas figuras ilustram um renomeação automática de método via uma IDE. Primeiro, o usuário marca o nome do método <code>m1</code>, como mostra a figura:</p>
 <p><img src="figs/cap9/automatizado1.png" style="width:37.0%" /></p>
@@ -517,7 +540,8 @@ x1 = (-b + sqrt(delta)) / (2*a);
 <p>Primeiro, o nome do método na classe <code>A</code> foi renomeado para <code>m11</code>. Além disso, as chamadas feitas em <code>m3</code> e <code>m4</code> foram atualizadas para usar o novo nome.</p>
 <p>Apesar de chamado de refactoring automatizado, o exemplo que mostramos deixa claro que cabe ao usuário indicar o trecho de código que deseja refatorar e o refactoring que deseja realizar. Ele também deve dar informações sobre esse refactoring. Por exemplo, o novo nome do identificador, no caso de uma renomeação. A partir daí é que o refactoring torna-se automatizado.</p>
 <p> Antes de aplicar o refactoring, a IDE verifica se as suas <strong>pré-condições</strong> são verdadeiras, isto é, se a execução do refactoring — conforme requisitado pelo usuário — não vai causar um erro de compilação ou então mudar o comportamento do programa. No exemplo anterior, se o usuário pedir para renomear <code>m1</code> para <code>m2</code>, a IDE vai informar que esse refactoring não pode ser realizado, pois a classe já tem um método chamado <code>m2</code>.</p>
-<h3 data-number="1.4.1" id="verificação-de-pré-condições-de-refactorings" data-number="1.4.1"><span class="header-section-number">9.4.1</span> Verificação de Pré-condições de Refactorings</h3>
+<section id="verificação-de-pré-condições-de-refactorings" data-number="1.4.1">
+<h3 data-number="9.4.1"><span class="header-section-number">9.4.1</span> Verificação de Pré-condições de Refactorings</h3>
 <p>A verificação das pré-condições de refactorings não é uma tarefa trivial. Para ilustrar a complexidade dessa tarefa, vamos reusar um pequeno programa em Java, proposto por Friedrich Steimann e Andreas Thies (<a href="https://doi.org/10.1007/978-3-642-03013-0_19">link</a>). Conforme mostrado a seguir, esse programa inclui duas classes, <code>A</code> e <code>B</code>, implementadas em arquivos distintos, mas pertencentes a um mesmo pacote <code>P1</code>. Assim, a chamada de <code>m("abc")</code> no primeiro arquivo irá resultar na execução do método <code>m(String)</code> da classe <code>B</code>.</p>
 <pre><code>// arquivo A.java
 package P1;
@@ -546,10 +570,14 @@ public class B {
 } </code></pre>
 <p>Apesar de parecer inofensiva, essa Movimentação de Classe muda o comportamento do programa. Na nova versão, a chamada de <code>m("abc")</code> resulta na execução de <code>m(Object)</code> e não mais de <code>m(String)</code>. O motivo é que a classe <code>B</code> não está mais no mesmo pacote da classe <code>A</code>. Por isso, <code>m(String)</code> deixou de ser visível para <code>A</code>, pois ele não é um método público. Para leitores que não conhecem Java, um método público de uma classe pública, como <code>m(Object)</code>, pode ser chamado em qualquer parte do código. Mas métodos sem modificador de visibilidade, como <code>m(String)</code>, somente podem ser chamados por código do mesmo pacote.</p>
 <p>Em resumo, o exemplo de Movimentação de Classes que apresentamos não é um refactoring, pois ele não preserva o comportamento do programa. Se realizado com o apoio de uma IDE, caberia a ela detectar tal fato e avisar ao usuário que o refactoring não poderá ser realizado, pois ele muda o comportamento do programa.</p>
-<h2 data-number="1.5" id="code-smells" data-number="1.5"><span class="header-section-number">9.5</span> Code Smells</h2>
+</section>
+</section>
+<section id="code-smells" data-number="1.5">
+<h2 data-number="9.5"><span class="header-section-number">9.5</span> Code Smells</h2>
 <p> </p>
 <p>Code Smells — também conhecidos como <strong>bad smells</strong> — são indicadores de código de baixa qualidade, isto é, código difícil de manter, entender, modificar ou testar. Em resumo, código que não está <q>cheirando bem</q> e que portanto talvez possa ser refatorado. No entanto, nessa definição, o termo <q>indicadores</q> significa que não devemos considerar que todo code smell deve ser imediatamente refatorado. Essa decisão depende de outros fatores, como a importância do trecho de código e a frequência com que ele precisará ser mantido. Feita essa ressalva, vamos apresentar, no restante desta seção, alguns dos principais code smells.</p>
-<h3 data-number="1.5.1" id="código-duplicado" data-number="1.5.1"><span class="header-section-number">9.5.1</span> Código Duplicado</h3>
+<section id="código-duplicado" data-number="1.5.1">
+<h3 data-number="9.5.1"><span class="header-section-number">9.5.1</span> Código Duplicado</h3>
 <p> </p>
 <p>Duplicação de código é o principal code smell e aquele com o maior potencial para prejudicar a evolução de um sistema. Código duplicado aumenta o esforço de manutenção, pois alterações têm que ser replicadas em mais de uma parte do código. Consequentemente, corre-se o risco de alterar uma parte e esquecer de uma outra. Código duplicado também torna a base de código mais complexa, pois dados e comandos que poderiam estar modularizados em métodos ou classes ficam espalhados pelo sistema.</p>
 <p>Para eliminar duplicação de código, pode-se usar os seguintes refactorings: Extração de Método (recomendado quando o código duplicado está dentro de dois ou mais métodos), Extração de Classe (recomendado quando o código duplicado refere-se a atributos e métodos que aparecem em mais de uma classe) e Pull Up Method (recomendado quando o código duplicado é um método presente em duas ou mais subclasses).</p>
@@ -607,15 +635,21 @@ public class B {
 }</code></pre>
 <p>Em todos esses casos, não precisaríamos ter duas ou mais funções <code>fatorial</code> no sistema. Apenas uma delas poderia ficar no código e a outra seria removida.</p>
 <p><strong>Mundo Real</strong>: Em 2013, Auki Yamashita e Leon Moonen, dois pesquisadores de um laboratório de pesquisa na Noruega, publicaram os resultados de um estudo exploratório sobre code smells envolvendo 85 desenvolvedores de software (<a href="https://doi.org/10.1109/WCRE.2013.6671299">link</a>). Quando esses desenvolvedores foram questionados sobre os code smells com os quais eles tinham mais preocupação, a resposta mais comum foi Código Duplicado, com quase 20 pontos na escala usada pelos pesquisadores para ordenar as respostas. Em segundo lugar, com metade dos pontos, ficou Métodos Longos, que é o code smell que estudaremos a seguir.</p>
-<h3 data-number="1.5.2" id="métodos-longos" data-number="1.5.2"><span class="header-section-number">9.5.2</span> Métodos Longos</h3>
+</section>
+<section id="métodos-longos" data-number="1.5.2">
+<h3 data-number="9.5.2"><span class="header-section-number">9.5.2</span> Métodos Longos</h3>
 <p></p>
 <p>Em qualquer sistema, métodos devem ser pequenos, com nomes auto-explicativos e poucas linhas de código. <strong>Métodos Longos</strong> são considerados um code smell, pois eles tornam o código mais difícil de entender e manter. Quando nos deparamos com um método longo, devemos considerar a possibilidade de usar uma Extração de Método para quebrá-lo em métodos menores. No entanto, não existe um limite máximo de linhas de código que possa ser usado arbitrariamente para classificar métodos longos, pois isso depende da linguagem de programação, da relevância do método, do domínio do sistema, etc. Porém, modernamente, existe uma tendência em escrever métodos pequenos, com menos de 20 linhas de código, por exemplo.</p>
-<h3 data-number="1.5.3" id="classes-grandes" data-number="1.5.3"><span class="header-section-number">9.5.3</span> Classes Grandes</h3>
+</section>
+<section id="classes-grandes" data-number="1.5.3">
+<h3 data-number="9.5.3"><span class="header-section-number">9.5.3</span> Classes Grandes</h3>
 <p></p>
 <p>Assim como métodos, classes não devem assumir muitas responsabilidades e prover serviços que não são coesos. Por isso, <strong>Classes Grandes</strong> (<em>Large Class</em>) é considerado um code smell, pois, assim como métodos longos, elas tornam o código mais difícil de entender e manter. Normalmente, é mais difícil também reusar essas classes em outro pacote ou sistema. Classes grandes são caracterizadas por um grande número de atributos, com baixa coesão entre eles. A solução para esse smell consiste em usar Extração de Classe para extrair uma classe menor A' a partir de uma classe grande A. Em seguida, a classe A passa a ter um atributo do tipo para A'.</p>
 <p>  </p>
 <p><strong>Aprofundamento</strong>: Quando uma classe cresce tanto que ela passa a monopolizar grande parte da <q>inteligência</q> de um sistema, ela é chamada de <strong>God Class</strong> — ou então de <strong>Blob</strong>. Classes com nomes muito genéricos, como <code>Manager</code>, <code>System</code> ou <code>Subsystem</code> podem representar instâncias desse smell.</p>
-<h3 data-number="1.5.4" id="feature-envy" data-number="1.5.4"><span class="header-section-number">9.5.4</span> Feature Envy</h3>
+</section>
+<section id="feature-envy" data-number="1.5.4">
+<h3 data-number="9.5.4"><span class="header-section-number">9.5.4</span> Feature Envy</h3>
 <p> </p>
 <p>Esse smell designa um método que parece <q>invejar</q> os dados e métodos de uma outra classe. Dizendo de outro modo, ele acessa mais atributos e métodos de uma classe B do que de sua atual classe A. Portanto, deve-se analisar a possibilidade de usar Movimentação de Método para migrá-lo para a classe <q>invejada</q>.</p>
 <p>O método <code>fireAreaInvalidated2</code>, mostrado no código a seguir, é um exemplo de Feature Envy. Podemos observar que ele realiza três chamadas de métodos, mas todas têm como alvo um mesmo objeto <code>abt</code> do tipo <code>AbstractTool</code>. Por outro lado, ele não acessa nenhum atributo ou chama qualquer método da sua classe atual. Logo, deve-se analisar a conveniência de mover esse método para <code>AbstractTool</code>.</p>
@@ -630,7 +664,9 @@ public class B {
   }
   ...
 }</code></pre>
-<h3 data-number="1.5.5" id="métodos-com-muitos-parâmetros" data-number="1.5.5"><span class="header-section-number">9.5.5</span> Métodos com Muitos Parâmetros</h3>
+</section>
+<section id="métodos-com-muitos-parâmetros" data-number="1.5.5">
+<h3 data-number="9.5.5"><span class="header-section-number">9.5.5</span> Métodos com Muitos Parâmetros</h3>
 <p></p>
 <p>Além de pequenos, métodos, na medida do possível, devem ter poucos parâmetros. Isto é, <strong>Métodos com Muitos Parâmetros</strong> é um smell, que pode ser eliminado de duas formas principais. Primeiro, deve-se verificar se um dos parâmetros pode ser obtido diretamente pelo método chamado, como mostrado a seguir:</p>
 <pre><code>p2 = p1.f();
@@ -653,7 +689,9 @@ g(p1, p2);</code></pre>
 void f(DateRange range} {
   ...
 }</code></pre>
-<h3 data-number="1.5.6" id="variáveis-globais" data-number="1.5.6"><span class="header-section-number">9.5.6</span> Variáveis Globais</h3>
+</section>
+<section id="variáveis-globais" data-number="1.5.6">
+<h3 data-number="9.5.6"><span class="header-section-number">9.5.6</span> Variáveis Globais</h3>
 <p> </p>
 <p>Conforme estudamos no capítulo sobre princípios de projeto, variáveis globais devem ser evitadas, pois elas dão origem a um tipo de <strong>acoplamento ruim</strong>. Por isso, elas também constituem um code smell. O principal motivo é que variáveis globais dificultam o entendimento de um módulo de forma independente dos demais módulos de um sistema. Para entender melhor, suponha a seguinte função:</p>
 <pre><code>void f(...) {
@@ -661,10 +699,14 @@ void f(DateRange range} {
   return x + g; // onde g é uma variável global
 }</code></pre>
 <p>Apenas analisando e estudando esse código, você consegue dizer o valor que <code>f</code> retorna? A resposta é negativa, pois não basta entender o código que precede o comando <code>return</code> da função. Precisamos conhecer também o valor de <code>g</code>. Porém, como <code>g</code> é uma variável global, seu valor pode ser alterado em qualquer parte do programa. Tal situação pode facilmente introduzir bugs nessa função, pois agora uma única linha de código distante e não relacionada com <code>f</code> pode influir no seu resultado. Para isso, basta que essa linha altere o valor de <code>g</code>. Antes de concluir, em linguagens como Java, atributos estáticos de classes funcionam exatamente como variáveis globais. Logo, eles também representam um code smell.</p>
-<h3 data-number="1.5.7" id="obsessão-por-tipos-primitivos" data-number="1.5.7"><span class="header-section-number">9.5.7</span> Obsessão por Tipos Primitivos</h3>
+</section>
+<section id="obsessão-por-tipos-primitivos" data-number="1.5.7">
+<h3 data-number="9.5.7"><span class="header-section-number">9.5.7</span> Obsessão por Tipos Primitivos</h3>
 <p></p>
 <p>Este code smell ocorre quando tipos primitivos (isto é, <code>int</code>, <code>float</code>, <code>String</code>, etc) são usados no lugar de classes. Por exemplo, suponha que precisamos declarar uma variável para armazenar o CEP de um endereço. Na pressa para usar rapidamente a variável, podemos declará-la como sendo do tipo <code>String</code>, em vez de criar uma classe dedicada — por exemplo, CEP — para esse fim. A principal vantagem é que uma classe pode oferecer métodos para manipular os valores que a variável vai armazenar. Por exemplo, a construtora da classe pode verificar se o CEP informado é válido antes de inicializar o objeto. Dessa forma, a classe assume essa responsabilidade e, consequentemente, evita que ela seja uma preocupação de seus clientes. Em resumo, não devemos ficar <q>obcecados</q> com tipos primitivos. Em vez disso, devemos analisar a possibilidade de criar classes que encapsulem valores primitivos e que ofereçam operações para manipulá-los. No próximo code smell, iremos complementar essa recomendação e sugerir que tais objetos, sempre que possível, devem ser também imutáveis.</p>
-<h3 data-number="1.5.8" id="objetos-mutáveis" data-number="1.5.8"><span class="header-section-number">9.5.8</span> Objetos Mutáveis</h3>
+</section>
+<section id="objetos-mutáveis" data-number="1.5.8">
+<h3 data-number="9.5.8"><span class="header-section-number">9.5.8</span> Objetos Mutáveis</h3>
 <p></p>
 <p>Na segunda versão de seu livro, Fowler considera que <strong>Objetos Mutáveis</strong> são um code smell. Um objeto mutável é aquele cujo estado pode ser modificado. Por outro lado, um objeto imutável, uma vez criado, não pode mais ser alterado. Para viabilizar a criação de objetos imutáveis, classes devem declarar todos os seus atributos como privados e final (um atributo final somente pode ser usado para leitura). A classe também deve ser declarada final, para proibir a criação de subclasses. Se precisarmos alterar um objeto imutável, a única alternativa consiste em criar uma nova instância do objeto com o estado desejado.</p>
 <p>Por exemplo, objetos do tipo <code>String</code> em Java são imutáveis, como ilustra o seguinte programa.</p>
@@ -701,10 +743,14 @@ void f(DateRange range} {
   // outros métodos
 }
 </code></pre>
-<h3 data-number="1.5.9" id="classes-de-dados" data-number="1.5.9"><span class="header-section-number">9.5.9</span> Classes de Dados</h3>
+</section>
+<section id="classes-de-dados" data-number="1.5.9">
+<h3 data-number="9.5.9"><span class="header-section-number">9.5.9</span> Classes de Dados</h3>
 <p></p>
 <p>Tais classes possuem apenas atributos e nenhum método. No máximo, elas possuem getters e setters. Porém, como recorrente com code smells, não devemos considerar que <strong>Classes de Dados</strong> são sempre um erro de projeto. Em vez disso, o importante é analisar o código e verificar a possibilidade de mover comportamento para essas classes. Isto é, criar métodos nessas classes, para realizar operações que já estão sendo realizadas, mas de forma espalhada em outras classes.</p>
-<h3 data-number="1.5.10" id="comentários" data-number="1.5.10"><span class="header-section-number">9.5.10</span> Comentários</h3>
+</section>
+<section id="comentários" data-number="1.5.10">
+<h3 data-number="9.5.10"><span class="header-section-number">9.5.10</span> Comentários</h3>
 <p> </p>
 <p>Pode soar estranho ver comentários incluídos em uma lista de code smells. Por exemplo, em cursos de Introdução a Programação, os alunos são incentivados a comentar todo o código produzido, com o objetivo de ensinar a importância de documentação de código. No livro <em>Elements of Programming Style</em>, Brian Kerninghan — um dos criadores das primeiras versões do sistema operacional Unix e da linguagem de programação C — e P. J. Plauger dão uma recomendação que ajuda, de forma certeira, a esclarecer essa dúvida. Eles recomendam o seguinte:</p>
 <blockquote>
@@ -734,11 +780,13 @@ void f {
 <p></p>
 <p><strong>Aprofundamento</strong>: <strong>Débito técnico</strong> é um termo cunhado por Ward Cunningham, em 1992, para designar os problemas técnicos que podem dificultar a manutenção e evolução de um sistema. Dentre outros, esses problemas incluem falta de testes, problemas arquiteturais (por exemplo, sistemas mais parecidos com uma <em>big ball of mud</em>), sistemas com um número grande de code smells ou sem qualquer documentação. A intenção de Cunningham foi criar um termo que pudesse ser compreendido por gerentes e pessoas sem conhecimento de princípios e práticas de Engenharia de Software. Assim, ele optou pelo termo débito para reforçar que esses problemas, caso não sejam resolvidos, em algum momento vão requerer o pagamento de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e difíceis de manter, nos quais a correção de bugs e a implementação de novas funcionalidades leva cada vez mais tempo e mostra-se mais arriscada.</p>
 <p>Para ilustrar melhor o conceito, suponha que exista um débito técnico em um determinado módulo M de um sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M requer um esforço de 3 dias. Porém, se não houvesse o débito técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui os juros cobrados pela existência do débito técnico em M. Uma alternativa seria então pagar o principal do débito, isto é, remover completamente o débito técnico de M. Mas isso pode levar, por exemplo, 4 dias. Ou seja, se considerarmos que vamos estender o módulo com apenas F1, ainda não há vantagem. Porém, suponha que nos próximos meses vamos ter que implementar mais funcionalidades em M, tais como F2, F3, F4, etc. Nesse caso, a eliminação do principal do débito técnico pode compensar.</p>
-<h2 class="unnumbered" data-number="" id="bibliografia" class="unnumbered" data-number="">Bibliografia</h2>
+</section>
+</section>
+<h2 class="unnumbered" id="bibliografia">Bibliografia</h2>
 <p>Martin Fowler. Improving the Design of Existing Code, Addison-Wesley, 2000.</p>
 <p>Martin Fowler. Improving the Design of Existing Code, Addison-Wesley, 2018.</p>
 <p>Danilo Silva, Nikolaos Tsantalis, Marco Tulio Valente. Why We Refactor? Confessions of GitHub Contributors. Foundations of Soft. Engineering, 2016.</p>
-<h2 class="unnumbered" data-number="" id="exercícios-de-fixação" class="unnumbered" data-number="">Exercícios de Fixação</h2>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação</h2>
 <p>1. Marque a alternativa FALSA:</p>
 <p>(a) refactorings melhoram o projeto de um sistema de software.</p>
 <p>(b) refactorings tornam o código de um sistema mais fácil de ser entendido.</p>
@@ -836,6 +884,7 @@ class Aluno {
 }</code></pre>
 <p>9. Use uma IDE, como o Eclipse ou IntelliJ para Java, para realizar um refactoring simples, em um de seus programas. Por exemplo, realize uma renomeação de método. Quais as vantagens de se realizar refactorings com o suporte de IDEs?</p>
 <p>10. Use uma IDE para testar o exemplo de Movimentação de Classe discutido na Seção 9.4.1, isto é, o exemplo com classes <code>A</code> e <code>B</code> e pacotes <code>P1</code> e <code>P2</code>. Se realizar a Movimentação de Classe discutida nesse exemplo via IDE, ocorrerá algum erro? Se sim, descreva o erro detectado pela IDE.</p>
+</section>
 </div>
 </div>
 </div>
