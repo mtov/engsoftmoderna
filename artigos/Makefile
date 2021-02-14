@@ -29,7 +29,7 @@ sagas: sagas.md
 	pandoc --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html
 
 arquitetura-limpa: arquitetura-limpa.md
-	pandoc --defaults=defaults.yaml -T "Construindo Aplicações com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
+	pandoc --defaults=defaults.yaml -T "Construindo Sistemas com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
 
 testes-faq: testes-faq.md
 	pandoc --defaults=defaults.yaml -T "Perguntas Frequentes sobre Testes de Software" testes-faq.md -o testes-faq.html
