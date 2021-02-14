@@ -14,6 +14,7 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -100,38 +101,38 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" data-number="" id="construindo-sistemas-com-uma-arquitetura-limpa" class="unnumbered" data-number="">Construindo Sistemas com uma Arquitetura Limpa</h1>
-<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
+<h1 class="unnumbered" id="construindo-sistemas-com-uma-arquitetura-limpa">Construindo Sistemas com uma Arquitetura Limpa</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
 <p><strong>Arquitetura Limpa</strong> (<em>Clean Architecture</em>) é um padrão arquitetural proposto por Robert Martin – mais conhecido como Uncle Bob – com o objetivo de promover a implementação de sistemas que favorecem reusabilidade de código, coesão, independência de tecnologia e testabilidade. Se quisermos adotar a classificação do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.</p>
 <p>Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura (copiada de um <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">post</a> do <q>The Clean Code Blog</q>).</p>
 <figure>
-<img src="./figs/arquitetura-limpa.jpg" style="width:75.0%" alt="" /><figcaption>Arquitetura Limpa</figcaption>
+<img src="./figs/arquitetura-limpa.jpg" style="width:75.0%" alt="Arquitetura Limpa" /><figcaption aria-hidden="true">Arquitetura Limpa</figcaption>
 </figure>
 <p>A seguir, vamos comentar sobre cada um das camadas da arquitetura.</p>
-<h2 class="unnumbered" data-number="" id="entidades-e-casos-de-uso" class="unnumbered" data-number="">Entidades e Casos de Uso</h2>
+<h2 class="unnumbered" id="entidades-e-casos-de-uso">Entidades e Casos de Uso</h2>
 <p>No centro da arquitetura, temos as classes responsáveis pelas regras de negócio, que podem ser de dois tipos: Entidades e Casos de Uso.</p>
 <p><strong>Entidades</strong> são classes comuns a vários sistemas da empresa. Suponha, por exemplo, uma universidade com sistemas acadêmico, financeiro, extensão, etc. Todos esses sistemas têm que lidar com classes como <code>Aluno</code>, <code>Professor</code>, <code>Curso</code>, <code>Departamento</code>, etc. Essas classes são então chamadas de Entidades. Além de dados, entidades podem implementar regras de negócio genéricas. Por exemplo, uma regra da universidade define que todo <code>Professor</code> deve pertencer a exatamente um <code>Departamento</code>.</p>
 <p>Já as classes da camada <strong>Casos de Uso</strong> implementam regras de negócio um pouco menos genéricas e, normalmente, relativas a um único sistema. Por exemplo, o sistema acadêmico do nosso exemplo pode ter uma classe <code>DiarioDeClasse</code> que armazena a lista de objetos do tipo <code>Aluno</code> matriculados em uma <code>Disciplina</code> que está sendo ofertada em um determinado semestre. Uma regra de negócio define que um <code>Aluno</code> somente pode ser incluído em um <code>DiarioDeClasse</code> se tiver cursado os pré-requisitos da sua <code>Disciplina</code>.</p>
 <p>Para evitar qualquer tipo de confusão, gostaríamos de comentar que os casos de uso em uma Arquitetura Limpa não tem uma correspondência, pelo menos direta, com casos de uso para especificação de requisitos e, menos ainda, com diagramas de casos de uso da UML, tal como estudamos no <a href="https://engsoftmoderna.info/cap3.html">Capítulo 3</a>.</p>
-<h2 class="unnumbered" data-number="" id="adaptadores" class="unnumbered" data-number="">Adaptadores</h2>
+<h2 class="unnumbered" id="adaptadores">Adaptadores</h2>
 <p>Na terceira camada, de dentro para fora, temos classes e interfaces chamadas de <strong>Adaptadores</strong>. A função delas é converter dados de um formato para outro.</p>
 <p>Suponha, por exemplo, que o sistema use uma API REST para comunicação com seus clientes. As classes adaptadoras serão então responsáveis por implementar os <em>endpoints</em> REST da API. Isto é, elas devem receber as requisições e encaminhá-las para os casos de uso correspondentes. E, também, fazer o caminho inverso: receber os resultados retornados pelos casos de uso e convertê-los em documentos JSON que serão enviados para os clientes.</p>
 <p>Se o sistema for implementado usando-se um framework MVC Web, os controladores pertencerão a essa camada.</p>
-<h2 class="unnumbered" data-number="" id="frameworks-externos" class="unnumbered" data-number="">Frameworks Externos</h2>
+<h2 class="unnumbered" id="frameworks-externos">Frameworks Externos</h2>
 <p>Na camada mais externa, temos classes pertencentes a bibliotecas e frameworks externos (de terceiros), as quais podem ser responsáveis por persistência, construção de interfaces com usuários, envio de mails, integração com outros sistemas, comunicação com um determinado hardware, etc.</p>
 <p>Por exemplo, a universidade do nosso exemplo pode possuir um sistema para gerenciamento de cursos de extensão, o qual aceita pagamento por meio de cartões de crédito. Para isso, o sistema usa um serviço de pagamentos de terceiros, que oferece algumas classes para processamento de pagamentos. Logo, essa classes ficam na camada mais externa de uma Arquitetura Limpa.</p>
 <p>No livro <a href="https://dl.acm.org/doi/book/10.5555/3175742">Arquitetura Limpa</a>, veja como essa camada é descrita:</p>
 <blockquote>
 <p>Todos os detalhes ficam na camada de frameworks e drivers. A Web é um detalhe. O banco de dados é um detalhe. Mantemos essas tecnologias na camada mais externa porque é onde elas podem fazer menos mal.</p>
 </blockquote>
-<h2 class="unnumbered" data-number="" id="regra-de-dependência" class="unnumbered" data-number="">Regra de Dependência</h2>
+<h2 class="unnumbered" id="regra-de-dependência">Regra de Dependência</h2>
 <p>Em uma Arquitetura Limpa, as classes de uma camada X não devem conhecer nenhuma classe de uma camada Y mais externa. No seu livro, Uncle Bob afirma categoricamente:</p>
 <blockquote>
 <p>O nome de um elemento declarado em uma camada externa não deve ser mencionado pelo código de uma camada interna. Isso inclui funções, classes, variáveis e qualquer outro elemento de código.</p>
 </blockquote>
 <p>Assim, em uma Arquitetura Limpa, as camadas centrais são mais estáveis – menos sujeitas a mudanças – do que as camadas mais externas. Por exemplo, as entidades de um sistema raramente precisam ser modificadas. Sobre os casos de uso, é verdade que eles, às vezes, precisam ser mantidos. Porém, queremos evitar que essas mudanças sejam motivadas por mudanças nas tecnologias adotadas na aplicação, como bancos de dados, frameworks e bibliotecas.</p>
 <p>Resumindo, a Regra de Dependência garante que as entidades e os casos de uso sejam classes <q>limpas</q> de qualquer tecnologia ou serviço externo ao sistema.</p>
-<h2 class="unnumbered" data-number="" id="invertendo-o-fluxo-de-controle" class="unnumbered" data-number="">Invertendo o Fluxo de Controle</h2>
+<h2 class="unnumbered" id="invertendo-o-fluxo-de-controle">Invertendo o Fluxo de Controle</h2>
 <p>Em uma Arquitetura Limpa, fluxos de controle de <q>fora para dentro</q> são implementados de forma <q>natural</q>, pois eles seguem o mesmo sentido da Regra de Dependência. Por exemplo, uma camada mais externa Y pode criar um objeto de um tipo mais interno X e então chamar um método desse objeto.</p>
 <p>No entanto, em alguns cenários, um caso de uso pode ter que chamar um método de uma classe de uma camada mais externa. Para ficar claro, suponha que um caso de uso precise enviar um mail. Antes de mais nada, vamos supor que existe no sistema uma classe, de uma camada mais externa, chamada <code>MailServiceImpl</code> e com um método <code>send</code>:</p>
 <pre><code>public class MailServiceImpl {
@@ -157,9 +158,9 @@ public class MailServiceImpl implements MailServiceInterface {
 <p>Essa implementação não viola a Regra de Dependência, pois uma classe de uma camada mais externa (<code>MailServiceImpl</code>) está dependendo de um elemento de código de uma camada mais interna. No caso, esse elemento é uma interface (<code>MailServiceInterface</code>).</p>
 <p>O seguinte diagrama de classes ilustra a solução que acabamos de descrever.</p>
 <figure>
-<img src="./figs/arquitetura-limpa-exemplo.svg" style="width:75.0%" alt="" /><figcaption>Dependências em uma arquitetura limpa</figcaption>
+<img src="./figs/arquitetura-limpa-exemplo.svg" style="width:75.0%" alt="Dependências em uma arquitetura limpa" /><figcaption aria-hidden="true">Dependências em uma arquitetura limpa</figcaption>
 </figure>
-<h2 class="unnumbered" data-number="" id="conclusão" class="unnumbered" data-number="">Conclusão</h2>
+<h2 class="unnumbered" id="conclusão">Conclusão</h2>
 <p>Uma Arquitetura Limpa é uma aplicação de diversos conceitos que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>, incluindo propriedades de projeto como <strong>coesão</strong>, <strong>acoplamento</strong> e <strong>separação de interesses</strong> e princípios de projeto como <strong>responsabilidade única</strong> e <strong>inversão de dependências</strong>. Ela faz uso também do padrão de projeto <strong>adaptador</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>.</p>
 <p>As recomendações principais de uma Arquitetura Limpa são as seguintes:</p>
 <ul>
@@ -168,9 +169,9 @@ public class MailServiceImpl implements MailServiceInterface {
 <li><p>Por fim, pense nas classes Adaptadoras, que vão funcionar como portas de entrada e saída, para comunicação entre as classes internas e o mundo externo.</p></li>
 </ul>
 <p>Seguindo essas recomendações, você vai produzir uma arquitetura que separa dois tipos de interesses (ou requisitos): interesses de negócio e interesses de tecnologia. E assim, será mais fácil testar seu sistema e também adaptá-lo às novas tecnologias que, com certeza, vão surgir no futuro.</p>
-<h3 class="unnumbered" data-number="" id="para-saber-mais" class="unnumbered" data-number="">Para Saber Mais</h3>
+<h3 class="unnumbered" id="para-saber-mais">Para Saber Mais</h3>
 <p>Para saber mais sobre Arquitetura Limpa, você pode consultar o <a href="https://dl.acm.org/doi/book/10.5555/3175742">livro</a> de mesmo nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista interessante de <a href="https://www.youtube.com/playlist?list=PLpJIjBkNnEt_IyTngYRkXXwxqz-Ae74ub">vídeos</a> no YouTube sobre o tema.</p>
-<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
 <li><p>Em uma arquitetura limpa <q>o nome de um elemento declarado em uma camada externa não deve ser mencionado pelo código de uma camada interna</q>? Qual a principal vantagem ou benefício dessa regra?</p></li>
 <li><p>No texto do artigo, propositalmente não mencionamos a camada da classe <code>MailServiceImpl</code>.</p>
