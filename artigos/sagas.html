@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -99,11 +100,11 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" data-number="" id="consistência-de-dados-em-microsserviços-usando-se-sagas" class="unnumbered" data-number="">Consistência de Dados em Microsserviços usando-se Sagas</h1>
-<h2 class="unnumbered" data-number="" id="introdução" class="unnumbered" data-number="">Introdução</h2>
+<h1 class="unnumbered" id="consistência-de-dados-em-microsserviços-usando-se-sagas">Consistência de Dados em Microsserviços usando-se Sagas</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
 <p>Como discutimos no <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, em arquiteturas baseadas em microsserviços, recomenda-se que cada microsserviço possua sua própria base de dados. Ou seja, recomenda-se uma arquitetura como a seguinte.</p>
 <figure>
-<img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="" /><figcaption>Microsserviços devem ter sua própria base de dados</figcaption>
+<img src="../figs/cap7/dados2.svg" style="width:35.0%" alt="Microsserviços devem ter sua própria base de dados" /><figcaption aria-hidden="true">Microsserviços devem ter sua própria base de dados</figcaption>
 </figure>
 <p>Por outro lado, ao adotar essa recomendação, frequentemente surge o seguinte problema: <em>como garantir a consistência dos dados do sistema quando eles estão distribuídos em vários microsserviços?</em></p>
 <p>Para ilustrar, vamos usar um exemplo de uma loja virtual. Nessa loja, para concluir uma venda temos que realizar duas operações:</p>
@@ -117,9 +118,9 @@
 <li>Ou nenhuma das operações é executada</li>
 </ul>
 <p>Nessa explicação, <em>executar</em> significa ter seus efeitos registrados no banco de dados. Portanto, o que não pode ocorrer é executar uma operação e não executar a outra, pois isso deixaria o sistema em um estado inconsistente.</p>
-<h2 class="unnumbered" data-number="" id="garantindo-atomicidade" class="unnumbered" data-number="">Garantindo Atomicidade</h2>
+<h2 class="unnumbered" id="garantindo-atomicidade">Garantindo Atomicidade</h2>
 <p>A seguir, vamos discutir as maneiras tradicionais para garantir atomicidade. Primeiro, em bancos de dados centralizados. Depois, em bancos de dados distribuídos.</p>
-<h3 class="unnumbered" data-number="" id="bancos-de-dados-centralizados" class="unnumbered" data-number="">Bancos de Dados Centralizados</h3>
+<h3 class="unnumbered" id="bancos-de-dados-centralizados">Bancos de Dados Centralizados</h3>
 <p>Quando um sistema possui uma arquitetura monolítica, normalmente temos um único banco de dados. Nesses casos, a própria implementação do banco garante a execução atômica de transações, por meio de comandos <code>commit</code> e <code>rollback</code>.</p>
 <p>Podemos então usar um código como o seguinte:</p>
 <pre><code>try {
@@ -130,7 +131,7 @@
     rollback();
 }</code></pre>
 <p>Se <code>op1</code> e <code>op2</code> terminarem suas execuções com sucesso, chamamos <code>commit</code> para persistir os resultados no banco de dados. Por outro lado, se qualquer uma das operações falhar, chamamos <code>rollback</code> para retornar o banco ao seu estado inicial.</p>
-<h3 class="unnumbered" data-number="" id="bancos-de-dados-distribuídos" class="unnumbered" data-number="">Bancos de Dados Distribuídos</h3>
+<h3 class="unnumbered" id="bancos-de-dados-distribuídos">Bancos de Dados Distribuídos</h3>
 <p>Suponha, no entanto, que <code>op1</code> executa em um banco de dados e <code>op2</code> executa em um outro banco de dados, como tipicamente ocorre no caso de arquiteturas baseadas em microsserviços. Nesse novo cenário, não existe mais garantia automática de atomicidade.</p>
 <p>Uma possível solução requer o uso de um protocolo que garanta atomicidade na execução de operações distribuídas. O mais conhecido deles é chamado de <strong>Two Phase Commit (2PC)</strong>. Apenas para ficar um pouco mais claro, esse protocolo normalmente é implementado e disponibilizado pelo próprio banco de dados distribuído.</p>
 <p>No entanto, os problemas de 2PC são bem conhecidos. Por exemplo, o protocolo tem um custo e uma latência altos. Isso ocorre porque os processos participantes de uma transação distribuída têm que trocar diversas mensagens, antes de chegarem a um consenso sobre o seu resultado. E, no limite, pode-se chegar a uma situação de impasse. Isto é, a transação pode ficar bloqueada por um tempo indeterminado no caso de queda do processo coordenador do protocolo.</p>
@@ -139,7 +140,7 @@
 <p>Eu recomendo fortemente que você evite o uso de transações distribuídas e de 2PC para coordenar mudanças de estado em microsserviços.</p>
 </blockquote>
 <p>Por isso, começou-se a procurar alternativas mais viáveis para consistência dos dados de microsserviços. Uma delas é o conceito de sagas, que descreveremos a seguir.</p>
-<h2 class="unnumbered" data-number="" id="sagas" class="unnumbered" data-number="">Sagas</h2>
+<h2 class="unnumbered" id="sagas">Sagas</h2>
 <p><strong>Sagas</strong> é um conceito antigo de bancos de dados, proposto em 1987 por Hector Garcia-Molina e Kenneth Salem. Se quiser, veja o <a href="https://doi.org/10.1145/38713.38742">artigo</a> original, que é muito claro e fácil de ler.</p>
 <p>Originalmente, o conceito foi proposto para tratar transações de longa duração. No entanto, modernamente, ele está sendo aplicado também no contexto de arquiteturas baseadas em microsserviços.</p>
 <p>Uma saga é definida por meio de dois conjuntos:</p>
@@ -169,7 +170,7 @@ catch (FailureT3) {
    C2();
    C1();
 }</code></pre>
-<h2 class="unnumbered" data-number="" id="exercícios" class="unnumbered" data-number="">Exercícios</h2>
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
 <li><p>Por que microsserviços não devem compartilhar um único banco de dados? Para responder, você pode consultar a Seção 7.4.1 do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a> e também o início da Seção 7.4.</p></li>
 <li><p>Qual a diferença entre uma transação distribuída e uma saga? Mais especificamente:</p>
