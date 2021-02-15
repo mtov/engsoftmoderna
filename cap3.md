@@ -264,7 +264,7 @@ Mostra-se a seguir um caso de uso, referente a um sistema bancário e que especi
 >
 > **Fluxo normal:**
 >
-> 1 - \underline{Autenticar Cliente}
+> 1 - Autenticar Cliente (sublinhado)
 >
 > 2 - Cliente informa agência e conta de destino da transferência
 >
