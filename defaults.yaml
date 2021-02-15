@@ -16,3 +16,6 @@ top-level-division: chapter
 number-sections: true	
 
 html-q-tags: true
+
+variables:
+  document-css: false
