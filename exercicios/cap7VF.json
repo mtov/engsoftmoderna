@@ -58,7 +58,7 @@
     "correct": "false"
   },
   {
-    "text": "MVC, Pipes & Filtros e Big Ball- of Mud são exemplos de padrões arquiteturais.",
+    "text": "MVC, Pipes & Filtros e Big Ball of Mud são exemplos de padrões arquiteturais.",
     "correct": "false"
   },
   {
@@ -71,6 +71,14 @@
   },
   {
     "text": "Microsserviços devem ser fortemente coesos e fracamente acoplados.",
+    "correct": "true"
+  },
+  {
+    "text": "Com microsserviços, a forma mais comum de escalabilidade é horizontal, por meio da adição de novos servidores no sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Com monolitos, a forma mais comum de escalabilidade é vertical, por meio da adição de mais recursos (CPU, memória, discos, etc) no servidor no qual o monolito já é executado.",
     "correct": "true"
   }
 ]
