@@ -80,6 +80,10 @@
   {
     "text": "'Não fale com estranhos' é uma frase que resume o Princípio de Demeter.",
     "correct": "true"
+  },
+  {
+    "text": "Se uma classe tem mais de um método, ela viola o Princípio da Responsabilidade Única.",
+    "correct": "true"
   }  
 ]
 }	    
