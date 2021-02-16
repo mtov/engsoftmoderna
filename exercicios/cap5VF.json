@@ -84,6 +84,14 @@
   {
     "text": "Se uma classe tem mais de um método, ela viola o Princípio da Responsabilidade Única.",
     "correct": "false"
-  }  
+  },
+  {
+    "text": "Classes grandes tendem a ter problemas de coesão (baixa) e acoplamento (alto).",
+    "correct": "true"
+  },
+  {
+    "text": "Todos os atributos de uma determinada classe X são privados. Logo, com certeza, X oferece Ocultamento de Informação.",
+    "correct": "false"
+  }
 ]
 }	    
