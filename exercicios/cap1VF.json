@@ -60,6 +60,10 @@
   {
     "text": "São exemplos de refactorings: extração de um método menor (a partir de um método maior); renomear uma variável local; mover um método para uma classe mais apropriada.",
     "correct": "true"
+  },
+  {
+    "text": "Com o impacto crescente da profissão, códigos de ética são necessários para clarificar os princípios de conduta que devem ser observados por engenheiros de software.",
+    "correct": "true"
   }
 ]
 }	    
