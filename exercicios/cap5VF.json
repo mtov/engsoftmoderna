@@ -60,6 +60,26 @@
   {
     "text": "Existe uma relação de composição entre duas classes A e B quando a classe A possui um atributo do tipo B.",
     "correct": "true"
-  } 
+  },
+  {
+    "text": "O Princípio de Liskov recomenda que não devemos usar objetos apenas como intermediários para chegar até um objeto de interesse.",
+    "correct": "false"
+  },
+  {
+    "text": "Coesão vale para qualquer unidade de código, seja ela um método, uma classe ou um pacote.",
+    "correct": "true"
+  },
+  {
+    "text": "Em um módulo, uma interface simples é mais importante do que uma implementação simples.",
+    "correct": "true"
+  }, 
+  {
+    "text": "Suponha uma classe X com grupos de métodos M1, M2 e M3, os quais são usados pelos sistemas contábil, financeiro e de compras de uma empresa. Isso é um indicativo de que X viola o Princípio Aberto/Fechado.",
+    "correct": "false"
+  },
+  {
+    "text": "'Não fale com estranhos' é uma frase que resume o Princípio de Demeter.",
+    "correct": "true"
+  }  
 ]
 }	    
