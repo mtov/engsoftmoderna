@@ -83,7 +83,7 @@
   },
   {
     "text": "Se uma classe tem mais de um método, ela viola o Princípio da Responsabilidade Única.",
-    "correct": "true"
+    "correct": "false"
   }  
 ]
 }	    
