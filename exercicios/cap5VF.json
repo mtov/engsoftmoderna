@@ -74,7 +74,7 @@
     "correct": "true"
   }, 
   {
-    "text": "Suponha uma classe de negócios X com grupos de métodos M1, M2 e M3, os quais são usados, respectivamente, pelos sistemas contábil, financeiro e de compras de uma empresa. Esse fato é um indicativo de que X viola o Princípio da Responsabilidade Única.",
+    "text": "Suponha uma classe de domínio X com grupos de métodos M1, M2 e M3, os quais são usados, respectivamente, pelos sistemas contábil, financeiro e de compras de uma empresa. Esse fato é um indicativo de que X viola o Princípio da Responsabilidade Única.",
     "correct": "true"
   },
   {
