@@ -74,8 +74,8 @@
     "correct": "true"
   }, 
   {
-    "text": "Suponha uma classe X com grupos de métodos M1, M2 e M3, os quais são usados pelos sistemas contábil, financeiro e de compras de uma empresa. Isso é um indicativo de que X viola o Princípio Aberto/Fechado.",
-    "correct": "false"
+    "text": "Suponha uma classe de negócios X com grupos de métodos M1, M2 e M3, os quais são usados, respectivamente, pelos sistemas contábil, financeiro e de compras de uma empresa. Esse fato é um indicativo de que X viola o Princípio da Responsabilidade Única.",
+    "correct": "true"
   },
   {
     "text": "'Não fale com estranhos' é uma frase que resume o Princípio de Demeter.",
