@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+</script>
+
+<script>
+var trackOutboundLink = function(url, doc, label) {
+    gtag('event', doc, {
+      'event_category': label,
+      'event_label': url,
+      'transport_type': 'beacon',
+      'event_callback': function(){document.location = url;}
+    });
+}
+</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://engsoftmoderna.info" />
+<meta property="og:title" content="Engenharia de Software Moderna (Livro Digital)" />
+<meta property="og:description" content="Princípios e Práticas para Desenvolvimento de Software com Produtividade." />
+<meta property="og:image" content="https://engsoftmoderna.info/twittercard.jpg"/>
+
+<meta name="keywords" content="Engenharia de Software, Processos de Software, Requisitos de Software, Projeto de Software, Arquitetura de Software, Testes de Software, Refactoring, DevOps">
+
+<title>Engenharia de Software Moderna</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+-->
+
+<link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+<style>
+body {
+  background-color: #FFFFFF;
+  foreground-color: black;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+<div class="row cols-sm-12 cols-md-8">
+<div class="col-md-offset-2">
+
+
+<div class="row">
+
+<div>
+<img src="figs/capa/foto-capa-papel3.png" width="310">
+</div>
+
+<div>
+<h1>Engenharia de Software Moderna</h1>
+<h4>Princípios e Práticas para Desenvolvimento de Software com Produtividade</h4>
+<h4>Marco Tulio Valente</h4>
+</div>
+
+</div>
+
+<h2>Código Fonte</h2>
+
+<p>
+Código fonte usado nos exemplos do livro, disponibilizado no Repl.it, uma IDE
+online que permite execução sem qualquer configuração. No caso de contas públicas do Repl.it, a compilação e execução costumam ser lentas, mas basta ter um pouco de paciência.
+
+</p>
+
+<h4>Cap. 6 - Padrões de Projeto</h4>
+
+<ul>
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Fabrica"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Fabrica', 'replit-cap6-fabrica', 'replit-cap6-fabrica'); return false;">
+Fábrica    
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Singleton"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Singleton', 'replit-cap6-singleton', 'replit-cap6-singleton'); return false;">
+Singleton    
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Proxy"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Proxy', 'replit-cap6-proxy', 'replit-cap6-proxy'); return false;">
+Proxy 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Adaptador"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Adaptador', 'replit-cap6-adaptador', 'replit-cap6-adaptador'); return false;">
+Adaptador 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Decorador"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Decorador', 'replit-cap6-decorador', 'replit-cap6-decorador'); return false;">
+Decorador 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Strategy"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Strategy', 'replit-cap6-strategy', 'replit-cap6-strategy'); return false;">
+Strategy 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Observador"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Observador', 'replit-cap6-observador', 'replit-cap6-observador'); return false;">
+Observador 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/TemplateMethod"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/TemplateMethod', 'replit-cap6-templatemethod', 'replit-cap6-templatemethod'); return false;">
+Template Method
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Visitor"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Visitor', 'replit-cap6-visitor', 'replit-cap6-visitor'); return false;">
+Visitor
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/Builder"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/Builder', 'replit-cap6-builder', 'replit-cap6-builder'); return false;">
+Builder
+</a>    
+</li>  
+
+</ul>
+
+
+
+<h4>Cap. 8 - Testes</h4>
+
+<ul>
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/ExemploTesteMuitoSimples"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/ExemploTesteMuitoSimples', 'replit-cap8-calculadora', 'replit-cap8-calculadora'); return false;">
+Classe Calculadora
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/ExemploTesteUnidade"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/ExemploTesteUnidade', 'replit-cap8-stack-java', 'replit-cap8-stack-java'); return false;">
+Classe Stack 
+</a>    
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/ExemploTesteUnidade-JavaScript"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/ExemploTesteUnidade-JavaScript', 'replit-cap8-stack-js', 'replit-cap8-stack-js'); return false;">
+Classe Stack 
+</a> (JavaScript, usando Jest)   
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/ExemploTesteGoogleGuava"
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/ExemploTesteGoogleGuava', 'replit-cap8-guava', 'replit-cap8-guava'); return false;">
+Google Guava
+</a>  
+</li>  
+
+<li>
+<a href="https://repl.it/@engsoftmoderna/ExemploMocks" 
+  onclick="trackOutboundLink('https://repl.it/@engsoftmoderna/ExemploMocks', 'replit-cap8-mocks', 'replit-cap8-mocks'); return false;">
+Mocks
+</a>  
+</li>  
+</ul>
+
+<hr>
+
+
+
+<p> 
+Voltar para <a href="index.html"> página principal</a> do livro.
+</p>
+
+<hr>
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
