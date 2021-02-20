@@ -70,7 +70,7 @@
     "correct": "false"
   },
   {
-    "text": "Antes de realizar uma refatoração, uma IDE deve verificar se ela não introduz um erro de compilação ou uma mudança no comportamento do programa.",
+    "text": "Antes de realizar uma refatoração, uma IDE deve verificar se ela introduz um erro de compilação ou uma mudança no comportamento do programa.",
     "correct": "true"
   },
   {
