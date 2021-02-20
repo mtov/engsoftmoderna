@@ -64,6 +64,22 @@
   {
     "text": "Uma refatoração é geralmente motivada por alguma tarefa de implementação específica que (a refatoração) tornará mais fácil, em oposição a melhorias simples do código.",
     "correct": "true"
+  },
+  {
+    "text": "Não existem pré-condições para realizar renomeações de variáveis.",
+    "correct": "false"
+  },
+  {
+    "text": "Antes de realizar uma refatoração, uma IDE deve verificar se ela não introduz um erro de compilação ou uma mudança no comportamento do programa.",
+    "correct": "true"
+  },
+  {
+    "text": "Push Up/Push Down de métodos são refactorings possíveis em programas escritos em qualquer linguagem imperativa.",
+    "correct": "false"
+  },
+  {
+    "text": "IDEs modernas ajudam os desenvolvedores a realizar refactorings de forma mais rápida. Por exemplo, elas permitem que você renomeie uma função e todas as suas chamadas de forma automática.",
+    "correct": "true"
   }
 ]
 }	    
