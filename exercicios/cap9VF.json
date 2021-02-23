@@ -74,7 +74,7 @@
     "correct": "true"
   },
   {
-    "text": "Push Up/Push Down de métodos são refactorings possíveis em programas escritos em qualquer linguagem imperativa.",
+    "text": "Push Up/Push Down de métodos são refactorings possíveis em qualquer linguagem de programação imperativa.",
     "correct": "false"
   },
   {
