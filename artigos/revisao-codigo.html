@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Revisão de Código: Uma Breve Introdução – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="revisão-de-código-uma-breve-introdução">Revisão de Código: Uma Breve Introdução</h1>
+<p>Artigo de autoria de <strong>Aline Torres</strong> e <strong>Marco Tulio Valente</strong>. Elaborado como parte da Monografia de Sistemas de Informação da primeira autora no DCC/UFMG.</p>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
+<p>Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas 23% disseram que não usavam revisão de código (<a href="https://insights.stackoverflow.com/survey/2019#development-practices">link</a>).</p>
+<p><img src="./figs/stackoverflow-survey-2019.jpg" style="width:50.0%" /></p>
+<p>A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de <strong>revisor</strong>. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerir melhorias, indicar bugs, etc.</p>
+<p>Assim, estabelece-se um <q>diálogo</q> – na forma de uma troca de comentários — entre o <strong>autor</strong> do código e o revisor. Como resultado, o autor pode modificar sua implementação para atender a algum comentário do revisor que ele achou procedente. Ou então, ele pode replicar e justificar que o comentário não faz sentido… Espera-se que após esse <q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado no repositório do projeto.</p>
+<h2 class="unnumbered" id="pull-requests">Pull Requests</h2>
+<p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar código usando o recurso de <strong>Pull Requests (PR)</strong> do GitHub. Por meio desse recurso, desenvolvedores podem submeter código para ser integrado no repositório principal de um projeto. No entanto, antes da integração, o GitHub permite que outros desenvolvedores revisem esse código.</p>
+<p>Vamos dar um exemplo, baseado em uma classe <code>Estacionamento</code> que já usamos no Capítulo 5 do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar essa classe no sistema. Após isso, tem início o processo de revisão, que você pode acompanhar também pela próxima figura.</p>
+<ul>
+<li><p><strong>Comentário 1</strong>: o revisor comenta que alguns atributos da classe <code>Estacionamento</code> poderiam ser privados. E sugere implementar um método <code>estaciona</code> para mediar o acesso a tais atributos</p></li>
+<li><p><strong>Comentário 2:</strong> a autora informa que concorda com a sugestão do revisor e, inclusive, já atualizou o seu código com a modificação sugerida.</p></li>
+<li><p><strong>Comentário 3:</strong> O revisor aprova o PR. A mensagem LGTM significa <em>Looks Good to Me</em>. Então, o PR pode ser integrado no branch principal. Isso pode ser feito pela própria autora, caso ela tenha permissão de escrita no repositório.</p></li>
+</ul>
+<p><img src="./figs/pull-request-screenshot.jpg" style="width:85.0%" /></p>
+<h2 class="unnumbered" id="motivações-para-revisão-de-código">Motivações para Revisão de Código</h2>
+<p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores, testadores e gerentes da Microsoft (<a href="https://doi.org/10.1109/ICSE.2013.6606617">link</a>). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos funcionários da Microsoft.</p>
+<p><img src="./figs/code-review-paper-microsoft.jpg" style="width:62.0%" /></p>
+<p>Conforme respondido por esses funcionários, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa. Por fim, a quarta motivação (<em>team awareness</em>) é também relacionada com o aspecto <q>social</q> de revisões de código, pois elas evitam que surjam <q>ilhas de conhecimento</q> em um time. Em outras palavras, revisão de código evita cenários nos quais apenas alguns desenvolvedores dominam certas partes do código.</p>
+<h2 class="unnumbered" id="boas-práticas-para-revisores">Boas Práticas para Revisores</h2>
+<p>Nesta seção, vamos documentar e ilustrar algumas recomendações para revisão de código.</p>
+<p>Para chegar a essas recomendações, partimos do artigo <em>How to Give Respectful and Constructive Code Review Feedback</em>, de autoria de Michaela Greiler (<a href="https://www.michaelagreiler.com/respectful-constructive-code-review-feedback">link</a>). Em seguida, fizemos uma análise de mais de 120 pull requests de projetos de código aberto, hospedados no GitHub, buscando casos concretos de comentários que seguem as recomendações que coletamos inicialmente. Ao todo, analisamos pelo menos 259 comentários para selecionar os exemplos que iremos mostrar a seguir.</p>
+<h3 class="unnumbered" id="recomendações-genéricas">Recomendações Genéricas</h3>
+<p>Vamos começar com algumas recomendações genéricas:</p>
+<ol type="1">
+<li><p>Os revisores têm que lembrar que o objetivo da revisão é <strong>detectar problemas claros</strong> no código submetido. Por exemplo, é natural que o revisor tivesse escolhido resolver o mesmo problema de um modo diferente… Porém, a revisão não é para alternativas que não tenham vantagens claras e inequívocas. Ou seja, um revisor somente deve propor uma alternativa se ela for, de fato, muito melhor!</p></li>
+<li><p>Na linha da recomendação anterior, <strong>evite questões subjetivas e sujeitas a estilos pessoais</strong>. Um exemplo são nomes de variáveis. A não ser que o nome de uma variável seja muito ruim, recomenda-se não iniciar um debate sobre ele.</p></li>
+<li><p>Em suas revisões, <strong>nunca use palavras ofensivas</strong>, sarcásticas ou mesmo irônicas. Em vez disso, seja sempre educado e profissional.</p></li>
+<li><p>Sempre <strong>restrinja seus comentários ao código</strong> submetido e evite comentários pessoais ou sobre outras questões.</p></li>
+</ol>
+<h3 class="unnumbered" id="recomendações-específicas">Recomendações Específicas</h3>
+<p>Seguem agora algumas recomendações específicas:</p>
+<ol start="5" type="1">
+<li><p>Nos comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
+<li><p>Se você tiver feito um comentário errado ou sem sentido, <strong>reconheça o seu erro</strong> e agradeça, como no seguinte exemplo: <em>Ah, I see the point. Thanks for your explanation.</em></p></li>
+<li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task. If the taskname is not conflicting with any native yarn command. It’ll save time to everybody</em> 😄</p></li>
+<li><p>Sempre que for interessante, <strong>referencie a documentação</strong> – interna ou externa ao projeto – para embasar seus comentários, como neste exemplo: <em>+1 to specify volume id instead of volume name, because the id is UUID and safe to be specified. cinder delete allows id as https://docs.openstack.org/python-cinderclient/latest/cli/details.html#cinder-delete</em></p></li>
+<li><p>Não deixe de <strong>elogiar o código</strong> ou sua documentação, se achar que ele possui uma qualidade superior, como neste caso: <em>Thanks for the clear test instructions.</em></p></li>
+<li><p>Se necessário, <strong>use imagens e screenshots</strong> para explicar sua dúvida (veja também na próxima figura): <em>The problem with this approach (which has been tried before) is that you can not trash an item when you have the filter set to all</em></p></li>
+</ol>
+<p><img src="./figs/code-review-screenshot.jpg" style="width:57.0%" /></p>
+<ol start="11" type="1">
+<li>Sempre que for razoável, <strong>use o pronome <q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o pronome <q>você</q>, pois assim você deixa claro que estão — autor e revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que você não poderia tornar esse atributo privado?</em>, você pode dizer: <em>será que a gente não poderia tornar esse atributo privado?</em></li>
+</ol>
+<h2 class="unnumbered" id="boas-práticas-para-autores">Boas Práticas para Autores</h2>
+<p>Evidentemente, cabe aos autores também ser profissionais e educados em suas respostas.</p>
+<p>Outro ponto importante é que os autores devem submeter pull requests pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores. Por exemplo, os autores do livro Software Engineering at Google, recomendam que <strong>um pull request deve ter no máximo 200 linhas de código</strong>.</p>
+<h2 class="unnumbered" id="linters">Linters</h2>
+<p>Antes de concluir, gostaríamos de comentar que diversos <q>problemas</q> tratados em uma revisão de código podem ser automatizados por meio de ferramentas de análise estática. Por exemplo, questões como convenções de nomes de identificadores (camel case, snake case, etc), leiaute de código e estilo de intenção (tab ou espaços, por exemplo) podem ser padronizadas por meio de linters. Com isso, evita-se que um revisor humano tenha que <q>perder tempo</q> com elas.</p>
+<h2 class="unnumbered" id="exercício">Exercício</h2>
+<p>Seja o seguinte código, de uma classe Stack, quais comentários você faria caso fosse responsável pela sua revisão (sugestão: existem 4 questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão de código).</p>
+<pre><code>import java.util.ArrayList;
+import java.util.EmptyStackException;
+
+public class Stack&lt;T&gt; {
+
+  private ArrayList&lt;T&gt; elements = new ArrayList&lt;T&gt;();
+  public int size = 0;
+
+  public int size() {
+    return size;
+  }
+
+  public boolean isEmpty() {
+         return (size == 0);
+  }
+
+  public void empilha(T elem) {
+    elements.add(elem);
+    size++;
+  }
+
+  public T pop() throws EmptyStackException {
+    if (isEmpty())
+      throw new EmptyStackException();
+    T elem = elements.get(size-1);
+    size--;
+    return elem;
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

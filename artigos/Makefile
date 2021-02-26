@@ -44,3 +44,6 @@ exemplos-teste: exemplos-teste.md
 
 broken-windows: broken-windows.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Teoria das Janelas Quebradas & Regra do Escoteiros?" broken-windows.md -o broken-windows.html
+
+revisao-codigo: revisao-codigo.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Revisão de Código: Uma Breve Introdução" revisao-codigo.md -o revisao-codigo.html
