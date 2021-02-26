@@ -14,6 +14,69 @@
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     q { quotes: "“" "”" "‘" "’"; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
@@ -106,7 +169,7 @@
 <h2 class="unnumbered" id="introdução">Introdução</h2>
 <p>Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas 23% disseram que não usavam revisão de código (<a href="https://insights.stackoverflow.com/survey/2019#development-practices">link</a>).</p>
 <p><img src="./figs/stackoverflow-survey-2019.jpg" style="width:50.0%" /></p>
-<p>A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de <strong>revisor</strong>. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerir melhorias, indicar bugs, etc.</p>
+<p>A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de <strong>revisor</strong>. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerindo melhorias, indicando bugs, etc.</p>
 <p>Assim, estabelece-se um <q>diálogo</q> – na forma de uma troca de comentários — entre o <strong>autor</strong> do código e o revisor. Como resultado, o autor pode modificar sua implementação para atender a algum comentário do revisor que ele achou procedente. Ou então, ele pode replicar e justificar que o comentário não faz sentido… Espera-se que após esse <q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado no repositório do projeto.</p>
 <h2 class="unnumbered" id="pull-requests">Pull Requests</h2>
 <p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar código usando o recurso de <strong>Pull Requests (PR)</strong> do GitHub. Por meio desse recurso, desenvolvedores podem submeter código para ser integrado no repositório principal de um projeto. No entanto, antes da integração, o GitHub permite que outros desenvolvedores revisem esse código.</p>
@@ -114,74 +177,74 @@
 <ul>
 <li><p><strong>Comentário 1</strong>: o revisor comenta que alguns atributos da classe <code>Estacionamento</code> poderiam ser privados. E sugere implementar um método <code>estaciona</code> para mediar o acesso a tais atributos</p></li>
 <li><p><strong>Comentário 2:</strong> a autora informa que concorda com a sugestão do revisor e, inclusive, já atualizou o seu código com a modificação sugerida.</p></li>
-<li><p><strong>Comentário 3:</strong> O revisor aprova o PR. A mensagem LGTM significa <em>Looks Good to Me</em>. Então, o PR pode ser integrado no branch principal. Isso pode ser feito pela própria autora, caso ela tenha permissão de escrita no repositório.</p></li>
+<li><p><strong>Comentário 3:</strong> o revisor aprova o PR. A mensagem LGTM significa <em>Looks Good to Me</em>. Então, o PR pode ser integrado no branch principal. Isso pode ser feito pela própria autora, caso ela tenha permissão de escrita no repositório.</p></li>
 </ul>
 <p><img src="./figs/pull-request-screenshot.jpg" style="width:85.0%" /></p>
 <h2 class="unnumbered" id="motivações-para-revisão-de-código">Motivações para Revisão de Código</h2>
 <p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores, testadores e gerentes da Microsoft (<a href="https://doi.org/10.1109/ICSE.2013.6606617">link</a>). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos funcionários da Microsoft.</p>
 <p><img src="./figs/code-review-paper-microsoft.jpg" style="width:62.0%" /></p>
-<p>Conforme respondido por esses funcionários, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa. Por fim, a quarta motivação (<em>team awareness</em>) é também relacionada com o aspecto <q>social</q> de revisões de código, pois elas evitam que surjam <q>ilhas de conhecimento</q> em um time. Em outras palavras, revisão de código evita cenários nos quais apenas alguns desenvolvedores dominam certas partes do código.</p>
+<p>Conforme respondido por esses funcionários, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa.</p>
 <h2 class="unnumbered" id="boas-práticas-para-revisores">Boas Práticas para Revisores</h2>
 <p>Nesta seção, vamos documentar e ilustrar algumas recomendações para revisão de código.</p>
 <p>Para chegar a essas recomendações, partimos do artigo <em>How to Give Respectful and Constructive Code Review Feedback</em>, de autoria de Michaela Greiler (<a href="https://www.michaelagreiler.com/respectful-constructive-code-review-feedback">link</a>). Em seguida, fizemos uma análise de mais de 120 pull requests de projetos de código aberto, hospedados no GitHub, buscando casos concretos de comentários que seguem as recomendações que coletamos inicialmente. Ao todo, analisamos pelo menos 259 comentários para selecionar os exemplos que iremos mostrar a seguir.</p>
 <h3 class="unnumbered" id="recomendações-genéricas">Recomendações Genéricas</h3>
 <p>Vamos começar com algumas recomendações genéricas:</p>
 <ol type="1">
-<li><p>Os revisores têm que lembrar que o objetivo da revisão é <strong>detectar problemas claros</strong> no código submetido. Por exemplo, é natural que o revisor tivesse escolhido resolver o mesmo problema de um modo diferente… Porém, a revisão não é para alternativas que não tenham vantagens claras e inequívocas. Ou seja, um revisor somente deve propor uma alternativa se ela for, de fato, muito melhor!</p></li>
+<li><p>Os revisores têm que lembrar que o objetivo da revisão é <strong>detectar problemas claros</strong> no código submetido. Por exemplo, é natural que o revisor tivesse escolhido resolver o mesmo problema de um modo diferente… Porém, a revisão não é para propor alternativas que não tenham vantagens claras e inequívocas. Ou seja, um revisor somente deve propor uma alternativa se ela for, de fato, muito melhor!</p></li>
 <li><p>Na linha da recomendação anterior, <strong>evite questões subjetivas e sujeitas a estilos pessoais</strong>. Um exemplo são nomes de variáveis. A não ser que o nome de uma variável seja muito ruim, recomenda-se não iniciar um debate sobre ele.</p></li>
 <li><p>Em suas revisões, <strong>nunca use palavras ofensivas</strong>, sarcásticas ou mesmo irônicas. Em vez disso, seja sempre educado e profissional.</p></li>
-<li><p>Sempre <strong>restrinja seus comentários ao código</strong> submetido e evite comentários pessoais ou sobre outras questões.</p></li>
+<li><p>Sempre <strong>restrinja seus comentários ao código</strong> que foi submetido e evite comentários pessoais ou sobre outras questões.</p></li>
 </ol>
 <h3 class="unnumbered" id="recomendações-específicas">Recomendações Específicas</h3>
 <p>Seguem agora algumas recomendações específicas:</p>
 <ol start="5" type="1">
 <li><p>Nos comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
 <li><p>Se você tiver feito um comentário errado ou sem sentido, <strong>reconheça o seu erro</strong> e agradeça, como no seguinte exemplo: <em>Ah, I see the point. Thanks for your explanation.</em></p></li>
-<li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task. If the taskname is not conflicting with any native yarn command. It’ll save time to everybody</em> 😄</p></li>
-<li><p>Sempre que for interessante, <strong>referencie a documentação</strong> – interna ou externa ao projeto – para embasar seus comentários, como neste exemplo: <em>+1 to specify volume id instead of volume name, because the id is UUID and safe to be specified. cinder delete allows id as https://docs.openstack.org/python-cinderclient/latest/cli/details.html#cinder-delete</em></p></li>
+<li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task… It’ll save time to everybody</em> 😄</p></li>
+<li><p>Sempre que for interessante, <strong>referencie a documentação</strong> – interna ou externa ao projeto – para embasar seus comentários, como neste exemplo: <em>[a given feature] allows id as https://docs.openstack.org/python-cinderclient/latest/cli/details.html#cinder-delete</em></p></li>
 <li><p>Não deixe de <strong>elogiar o código</strong> ou sua documentação, se achar que ele possui uma qualidade superior, como neste caso: <em>Thanks for the clear test instructions.</em></p></li>
-<li><p>Se necessário, <strong>use imagens e screenshots</strong> para explicar sua dúvida (veja também na próxima figura): <em>The problem with this approach (which has been tried before) is that you can not trash an item when you have the filter set to all</em></p></li>
+<li><p>Se necessário, <strong>use imagens e screenshots</strong> para explicar sua dúvida (veja também na próxima figura): <em>The problem with this approach is that you can not trash an item when you have the filter set to all</em></p></li>
 </ol>
 <p><img src="./figs/code-review-screenshot.jpg" style="width:57.0%" /></p>
 <ol start="11" type="1">
 <li>Sempre que for razoável, <strong>use o pronome <q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o pronome <q>você</q>, pois assim você deixa claro que estão — autor e revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que você não poderia tornar esse atributo privado?</em>, você pode dizer: <em>será que a gente não poderia tornar esse atributo privado?</em></li>
 </ol>
 <h2 class="unnumbered" id="boas-práticas-para-autores">Boas Práticas para Autores</h2>
-<p>Evidentemente, cabe aos autores também ser profissionais e educados em suas respostas.</p>
-<p>Outro ponto importante é que os autores devem submeter pull requests pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores. Por exemplo, os autores do livro Software Engineering at Google, recomendam que <strong>um pull request deve ter no máximo 200 linhas de código</strong>.</p>
+<p>Evidentemente, os autores também devem ser profissionais e educados em suas respostas.</p>
+<p>Outro ponto importante é que os autores devem submeter pull requests pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores. Por exemplo, os autores do livro <em>Software Engineering at Google</em>, recomendam que <strong>um pull request deve ter no máximo 200 linhas de código</strong>.</p>
 <h2 class="unnumbered" id="linters">Linters</h2>
 <p>Antes de concluir, gostaríamos de comentar que diversos <q>problemas</q> tratados em uma revisão de código podem ser automatizados por meio de ferramentas de análise estática. Por exemplo, questões como convenções de nomes de identificadores (camel case, snake case, etc), leiaute de código e estilo de intenção (tab ou espaços, por exemplo) podem ser padronizadas por meio de linters. Com isso, evita-se que um revisor humano tenha que <q>perder tempo</q> com elas.</p>
 <h2 class="unnumbered" id="exercício">Exercício</h2>
-<p>Seja o seguinte código, de uma classe Stack, quais comentários você faria caso fosse responsável pela sua revisão (sugestão: existem 4 questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão de código).</p>
-<pre><code>import java.util.ArrayList;
-import java.util.EmptyStackException;
-
-public class Stack&lt;T&gt; {
-
-  private ArrayList&lt;T&gt; elements = new ArrayList&lt;T&gt;();
-  public int size = 0;
-
-  public int size() {
-    return size;
-  }
-
-  public boolean isEmpty() {
-         return (size == 0);
-  }
-
-  public void empilha(T elem) {
-    elements.add(elem);
-    size++;
-  }
-
-  public T pop() throws EmptyStackException {
-    if (isEmpty())
-      throw new EmptyStackException();
-    T elem = elements.get(size-1);
-    size--;
-    return elem;
-  }
-}</code></pre>
+<p>Seja o seguinte código, de uma classe Stack. Quais comentários você faria caso fosse responsável pela sua revisão? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão de código.</p>
+<div class="sourceCode" id="stack"><pre class="sourceCode numberSource java numberLines"><code class="sourceCode java"><span id="stack-1"><a href="#stack-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">ArrayList</span><span class="op">;</span></span>
+<span id="stack-2"><a href="#stack-2"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">EmptyStackException</span><span class="op">;</span></span>
+<span id="stack-3"><a href="#stack-3"></a></span>
+<span id="stack-4"><a href="#stack-4"></a><span class="kw">public</span> <span class="kw">class</span> <span class="bu">Stack</span><span class="op">&lt;</span>T<span class="op">&gt;</span> <span class="op">{</span></span>
+<span id="stack-5"><a href="#stack-5"></a></span>
+<span id="stack-6"><a href="#stack-6"></a>  <span class="kw">private</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>T<span class="op">&gt;</span> elements <span class="op">=</span> <span class="kw">new</span> <span class="bu">ArrayList</span><span class="op">&lt;</span>T<span class="op">&gt;();</span></span>
+<span id="stack-7"><a href="#stack-7"></a>  <span class="kw">public</span> <span class="dt">int</span> size <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="stack-8"><a href="#stack-8"></a></span>
+<span id="stack-9"><a href="#stack-9"></a>  <span class="kw">public</span> <span class="dt">int</span> <span class="fu">size</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="stack-10"><a href="#stack-10"></a>    <span class="cf">return</span> size<span class="op">;</span></span>
+<span id="stack-11"><a href="#stack-11"></a>  <span class="op">}</span></span>
+<span id="stack-12"><a href="#stack-12"></a></span>
+<span id="stack-13"><a href="#stack-13"></a>  <span class="kw">public</span> <span class="dt">boolean</span> <span class="fu">isEmpty</span><span class="op">()</span> <span class="op">{</span></span>
+<span id="stack-14"><a href="#stack-14"></a>         <span class="cf">return</span> <span class="op">(</span>size <span class="op">==</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="stack-15"><a href="#stack-15"></a>  <span class="op">}</span></span>
+<span id="stack-16"><a href="#stack-16"></a></span>
+<span id="stack-17"><a href="#stack-17"></a>  <span class="kw">public</span> <span class="dt">void</span> <span class="fu">empilha</span><span class="op">(</span>T elem<span class="op">)</span> <span class="op">{</span></span>
+<span id="stack-18"><a href="#stack-18"></a>    elements<span class="op">.</span><span class="fu">add</span><span class="op">(</span>elem<span class="op">);</span></span>
+<span id="stack-19"><a href="#stack-19"></a>    size<span class="op">++;</span></span>
+<span id="stack-20"><a href="#stack-20"></a>  <span class="op">}</span></span>
+<span id="stack-21"><a href="#stack-21"></a></span>
+<span id="stack-22"><a href="#stack-22"></a>  <span class="kw">public</span> T <span class="fu">pop</span><span class="op">()</span> <span class="kw">throws</span> <span class="bu">EmptyStackException</span> <span class="op">{</span></span>
+<span id="stack-23"><a href="#stack-23"></a>    <span class="cf">if</span> <span class="op">(</span><span class="fu">isEmpty</span><span class="op">())</span></span>
+<span id="stack-24"><a href="#stack-24"></a>      <span class="cf">throw</span> <span class="kw">new</span> <span class="bu">EmptyStackException</span><span class="op">();</span></span>
+<span id="stack-25"><a href="#stack-25"></a>    T elem <span class="op">=</span> elements<span class="op">.</span><span class="fu">get</span><span class="op">(</span>size<span class="op">-</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="stack-26"><a href="#stack-26"></a>    size<span class="op">--;</span></span>
+<span id="stack-27"><a href="#stack-27"></a>    <span class="cf">return</span> elem<span class="op">;</span></span>
+<span id="stack-28"><a href="#stack-28"></a>  <span class="op">}</span></span>
+<span id="stack-29"><a href="#stack-29"></a><span class="op">}</span></span></code></pre></div>
 </div>
 </div>
 </div>
