@@ -8,7 +8,7 @@ Artigo de autoria de **Aline Torres** e **Marco Tulio Valente**. Elaborado como 
 
 Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas 23% disseram que não usavam revisão de código ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
 
-![Pergunta do Stack Overflow Survey de 2019](./figs/stackoverflow-survey-2019.jpg){width=50%}
+![](./figs/stackoverflow-survey-2019-pt.svg){width=85%}
 
 A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de **revisor**. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerindo melhorias, indicando bugs, etc. 
 
@@ -86,9 +86,9 @@ Outro ponto importante é que os autores devem submeter PRs pequenos, caso queir
 Por exemplo, os autores do livro *Software Engineering at Google*, recomendam que **um pull request deve ter no máximo 200 linhas de código**. 
 
 
-## Linters {.unnumbered}
+## Automatizando o Processo {.unnumbered}
 
-Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em uma revisão de código podem ser detectados de forma automática por meio de ferramentas de análise estática. Por exemplo, questões como convenções de nomes de identificadores (*camel case*, *snake case*, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de linters. Com isso, evita-se que um revisor humano tenha que perder tempo com elas.
+Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em uma revisão de código podem ser detectados de forma automática por meio de **ferramentas de análise estática**. Por exemplo, questões como convenções de nomes de identificadores (*camel case*, *snake case*, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de **linters**. Com isso, evita-se que um revisor humano tenha que perder tempo com elas.
 
 
 ## Exercício {.unnumbered}
