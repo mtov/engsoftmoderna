@@ -35,7 +35,7 @@ O exemplo a seguir usa a classe `Estacionamento` que já foi usada no
 
 Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores e testadores da Microsoft ([link](https://doi.org/10.1109/ICSE.2013.6606617)). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos participantes do estudo. 
 
-![](./figs/code-review-paper-microsoft.svg){width=90%}
+![](./figs/code-review-paper-microsoft.svg){width=95%}
 
 Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa. 
 
@@ -68,7 +68,7 @@ Seguem agora algumas recomendações mais específicas:
 
 7. Sempre que possível, **use emojis**, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: *run yarn task... It'll save time to everybody* 😄
 
-8. Sempre que for esclrecedor, **referencie a documentação** interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: *[a given feature] allows id as in [URL]*
+8. Sempre que for esclarecedor, **referencie a documentação** interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: *[a given feature] allows id as in [URL]*
 
 9. Não deixe de **elogiar o código** submetido, se achar que ele possui um nível de qualidade superior, como neste caso: *Thanks for the clear test instructions.*
 
@@ -76,12 +76,14 @@ Seguem agora algumas recomendações mais específicas:
 
 ![Exemplo de screenshot adicionado por um revisor em sua revisão](./figs/code-review-screenshot.jpg){width=60%}
 
-11. Sempre que for razoável, **use o pronome "nós"**  ou a expressão "a gente", em vez de usar o pronome "você", pois assim você deixa claro que estão -- autor e revisor -- trabalhando juntos. Por exemplo, em vez de dizer, *será que você não poderia tornar esse atributo privado?*, você pode perguntar: *será que a gente não poderia tornar esse atributo privado?*
+11. Procure **justificar os seus comentários** quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Por exemplo, em vez de dizer apenas *Sugiro trocar o ArrayList de Aluno por um HashMap<String, Aluno>* complemente com: *porque aí poderemos verificar de forma mais eficiente se um determinado Aluno está presente na estrutura de dados...*.
+
+12. Sempre que for razoável, **use o pronome "nós"**  ou a expressão "a gente", em vez de usar o pronome "você", pois assim você deixa claro que estão -- autor e revisor -- trabalhando juntos. Por exemplo, em vez de dizer, *será que você não poderia tornar esse atributo privado?*, você pode perguntar: *será que a gente não poderia tornar esse atributo privado?*
 
 
 ## Boas Práticas para Autores {.unnumbered}
 
-Evidentemente, os autores também devem ser profissionais e educados em suas respostas. 
+Evidentemente, os autores também devem ser profissionais e educados em suas respostas. E também procurar entender que **revisão de código não é uma avaliação de sua competência** como desenvolvedor. Então 
 
 Outro ponto muito importante é que os autores devem submeter PRs pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores.
 Por exemplo, os autores do livro *Software Engineering at Google*, recomendam que **um PR deve ter no máximo 200 linhas de código**. 

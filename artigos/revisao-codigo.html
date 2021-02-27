@@ -184,7 +184,7 @@
 </figure>
 <h2 class="unnumbered" id="motivações">Motivações</h2>
 <p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores e testadores da Microsoft (<a href="https://doi.org/10.1109/ICSE.2013.6606617">link</a>). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos participantes do estudo.</p>
-<p><img src="./figs/code-review-paper-microsoft.svg" style="width:90.0%" /></p>
+<p><img src="./figs/code-review-paper-microsoft.svg" style="width:95.0%" /></p>
 <p>Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa.</p>
 <h2 class="unnumbered" id="boas-práticas-para-revisores">Boas Práticas para Revisores</h2>
 <p>Nesta seção, vamos listar algumas recomendações para revisão de código.</p>
@@ -203,7 +203,7 @@
 <li><p>Nos seu comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
 <li><p>Se você tiver feito um comentário errado ou sem sentido, <strong>reconheça o seu erro</strong> e agradeça, como no seguinte exemplo: <em>Ah, I see the point. Thanks for your explanation.</em></p></li>
 <li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task… It’ll save time to everybody</em> 😄</p></li>
-<li><p>Sempre que for esclrecedor, <strong>referencie a documentação</strong> interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: <em>[a given feature] allows id as in [URL]</em></p></li>
+<li><p>Sempre que for esclarecedor, <strong>referencie a documentação</strong> interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: <em>[a given feature] allows id as in [URL]</em></p></li>
 <li><p>Não deixe de <strong>elogiar o código</strong> submetido, se achar que ele possui um nível de qualidade superior, como neste caso: <em>Thanks for the clear test instructions.</em></p></li>
 <li><p>Se necessário, <strong>use imagens e screenshots</strong> para explicar sua dúvida. Veja um exemplo na próxima figura. Por meio dela, o revisor quis deixar claro que o código submetido poderia ter um comportamento errado quando um determinado filtro fosse definido como <em>All</em>.</p></li>
 </ol>
@@ -211,10 +211,11 @@
 <img src="./figs/code-review-screenshot.jpg" style="width:60.0%" alt="Exemplo de screenshot adicionado por um revisor em sua revisão" /><figcaption aria-hidden="true">Exemplo de screenshot adicionado por um revisor em sua revisão</figcaption>
 </figure>
 <ol start="11" type="1">
-<li>Sempre que for razoável, <strong>use o pronome <q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o pronome <q>você</q>, pois assim você deixa claro que estão – autor e revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que você não poderia tornar esse atributo privado?</em>, você pode perguntar: <em>será que a gente não poderia tornar esse atributo privado?</em></li>
+<li><p>Procure <strong>justificar os seus comentários</strong> quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Por exemplo, em vez de dizer apenas <em>Sugiro trocar o ArrayList de Aluno por um HashMap&lt;String, Aluno&gt;</em> complemente com um <em>porque aí poderemos verificar de forma mais eficiente se um determinado Aluno está presente na estrutura de dados…</em>.</p></li>
+<li><p>Sempre que for razoável, <strong>use o pronome <q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o pronome <q>você</q>, pois assim você deixa claro que estão – autor e revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que você não poderia tornar esse atributo privado?</em>, você pode perguntar: <em>será que a gente não poderia tornar esse atributo privado?</em></p></li>
 </ol>
 <h2 class="unnumbered" id="boas-práticas-para-autores">Boas Práticas para Autores</h2>
-<p>Evidentemente, os autores também devem ser profissionais e educados em suas respostas.</p>
+<p>Evidentemente, os autores também devem ser profissionais e educados em suas respostas. E também procurar entender que <strong>revisão de código não é uma avaliação de sua competência</strong> como desenvolvedor. Então</p>
 <p>Outro ponto muito importante é que os autores devem submeter PRs pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores. Por exemplo, os autores do livro <em>Software Engineering at Google</em>, recomendam que <strong>um PR deve ter no máximo 200 linhas de código</strong>.</p>
 <h2 class="unnumbered" id="automatizando-o-processo">Automatizando o Processo</h2>
 <p>Antes de concluir, gostaríamos de comentar que diversos <q>problemas</q> tratados em uma revisão de código podem ser detectados de forma automática por meio de <strong>ferramentas de análise estática</strong>. Por exemplo, questões como convenções de nomes de identificadores (<em>camel case</em>, <em>snake case</em>, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de <strong>linters</strong>. Com isso, evita-se que um revisor humano tenha que perder tempo com tais questões.</p>
