@@ -76,14 +76,14 @@ Seguem agora algumas recomendações mais específicas:
 
 ![Exemplo de screenshot adicionado por um revisor em sua revisão](./figs/code-review-screenshot.jpg){width=60%}
 
-11. Procure **justificar os seus comentários** quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Por exemplo, em vez de dizer apenas *Sugiro trocar o ArrayList de Aluno por um HashMap<String, Aluno>* complemente com: *porque aí poderemos verificar de forma mais eficiente se um determinado Aluno está presente na estrutura de dados...*.
+11. Procure **justificar os seus comentários** quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Veja um exemplo: *Sugiro trocar o ArrayList de Aluno por um HashMap<String, Aluno>, porque aí poderemos verificar de forma mais eficiente se um determinado Aluno está presente na sua turma...*.
 
 12. Sempre que for razoável, **use o pronome "nós"**  ou a expressão "a gente", em vez de usar o pronome "você", pois assim você deixa claro que estão -- autor e revisor -- trabalhando juntos. Por exemplo, em vez de dizer, *será que você não poderia tornar esse atributo privado?*, você pode perguntar: *será que a gente não poderia tornar esse atributo privado?*
 
 
 ## Boas Práticas para Autores {.unnumbered}
 
-Evidentemente, os autores também devem ser profissionais e educados em suas respostas. E também procurar entender que **revisão de código não é uma avaliação de sua competência** como desenvolvedor. Então 
+Os autores também devem ser profissionais e educados em suas respostas. Eles devem entender também que **revisão de código não é um exame de proficiência**. Ou seja, como autor, não leve a revisão para o lado pessoal e nunca imagine que o revisor está julgando sua competência.
 
 Outro ponto muito importante é que os autores devem submeter PRs pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores.
 Por exemplo, os autores do livro *Software Engineering at Google*, recomendam que **um PR deve ter no máximo 200 linhas de código**. 
