@@ -76,10 +76,11 @@ Seguem agora algumas recomendações mais específicas:
 
 ![Exemplo de screenshot adicionado por um revisor em sua revisão](./figs/code-review-screenshot.jpg){width=60%}
 
-11. Procure **justificar os seus comentários** quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Veja um exemplo: *Sugiro trocar o ArrayList de Aluno por um HashMap<String, Aluno>, porque aí poderemos verificar de forma mais eficiente se um determinado Aluno está presente na sua turma...*.
+11. Procure **justificar os seus comentários** quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Veja um exemplo: *Sugiro trocar o ArrayList de Aluno por um HashMap<String, Aluno>, porque aí podemos verificar de forma mais eficiente se um determinado Aluno está presente na sua turma...*.
 
 12. Sempre que for razoável, **use o pronome "nós"**  ou a expressão "a gente", em vez de usar o pronome "você", pois assim você deixa claro que estão -- autor e revisor -- trabalhando juntos. Por exemplo, em vez de dizer, *será que você não poderia tornar esse atributo privado?*, você pode perguntar: *será que a gente não poderia tornar esse atributo privado?*
 
+13. Por último, mas não menos importante, se você tiver uma divergência muito forte em relação ao código submetido (por exemplo, se achar que está tudo errado...) ou se a troca de comentários não estiver convergindo para aprovar o PR, tente **agendar uma reunião com o autor** para expor sua visão e tentarem chegar a um consenso. Ou seja, de forma nenhuma, deixe a revisão se transformar em um longo fio de comentários.
 
 ## Boas Práticas para Autores {.unnumbered}
 
