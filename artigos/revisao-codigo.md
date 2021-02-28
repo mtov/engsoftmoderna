@@ -6,7 +6,7 @@ Artigo de autoria de **Aline Torres** e **Marco Tulio Valente**. Elaborado como 
 
 ## Introdução {.unnumbered}
 
-Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas 23% disseram que não usavam revisão de código no seu trabalho ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
+Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas **23% não usavam revisão de código** no seu trabalho ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
 
 ![](./figs/stackoverflow-survey-2019-pt.svg){width=85%}
 
@@ -99,6 +99,9 @@ Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em
 ## Exercício {.unnumbered}
 
 Seja o seguinte código, de uma classe `Stack`. Quais comentários você faria caso fosse responsável pela sua revisão? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.
+
+Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se você não sabe fazer isso, consulte a seção sobre Pull Requests do [Apêndice A](https://engsoftmoderna.info/capAp.html). Esse procedimento será um pouco estranho, pois estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular uma revisão de código usando PRs. 
+
 
 ~~~~ {#stack .java .numberLines }
 import java.util.ArrayList;
