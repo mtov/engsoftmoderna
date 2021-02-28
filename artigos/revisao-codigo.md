@@ -6,7 +6,7 @@ Artigo de autoria de **Aline Torres** e **Marco Tulio Valente**. Elaborado como 
 
 ## Introdução {.unnumbered}
 
-Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, apenas **23% não usavam revisão de código** no seu trabalho ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
+Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, **apenas 23% não usavam revisão de código** no seu trabalho ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
 
 ![](./figs/stackoverflow-survey-2019-pt.svg){width=80%}
 
@@ -41,7 +41,7 @@ Conforme respondido pelos participantes, a principal motivação é encontrar bu
 
 Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício importante que é evitar a formação de "ilhas de conhecimento" em um projeto. Em vez disso, ela ajuda a socializar o conhecimento sobre o código e a criar uma cultura de colaboração e troca de ideias entre os membros do time.
 
-## Boas Práticas para Revisores {.unnumbered}
+## Recomendações para Revisores {.unnumbered}
  
 Nesta seção, vamos listar algumas recomendações para revisão de código. 
 
@@ -83,7 +83,7 @@ Seguem agora algumas recomendações mais específicas:
 
 13. Por último, mas não menos importante, se você tiver uma divergência muito forte em relação ao código submetido (por exemplo, se achar que está tudo errado...) ou se a troca de comentários não estiver convergindo para aprovar o PR, tente **agendar uma reunião com o autor** para expor sua visão e tentarem chegar a um consenso. Porém, essa interação síncrona deve ser uma exceção e reservada para casos mais importantes.
 
-## Boas Práticas para Autores {.unnumbered}
+## Recomendações para Autores {.unnumbered}
 
 Os autores também devem ser profissionais e educados em suas respostas. Eles devem entender também que **revisão de código não é um exame de proficiência**. Ou seja, como autor, não leve a revisão para o lado pessoal e nunca imagine que o revisor está julgando sua competência.
 
@@ -91,16 +91,16 @@ Outro ponto muito importante é que os autores devem submeter PRs pequenos, caso
 Por exemplo, os autores do livro *Software Engineering at Google*, recomendam que **um PR deve ter no máximo 200 linhas de código**. 
 
 
-## Automatizando o Processo {.unnumbered}
+## Automatizando a Revisão {.unnumbered}
 
 Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em uma revisão de código podem ser detectados de forma automática por meio de **ferramentas de análise estática**. Por exemplo, questões como convenções de nomes de identificadores (*camel case*, *snake case*, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de **linters**. Com isso, evita-se que um revisor humano tenha que perder tempo com tais questões.
 
 
 ## Exercício {.unnumbered}
 
-Seja o seguinte código, de uma classe `Stack`. Quais comentários você faria caso fosse responsável pela sua revisão? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.
+Seja o seguinte código, de uma classe `Stack`. Quais comentários você faria caso fosse responsável pela revisão do código dessa classe? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.
 
-Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se você não sabe fazer isso, consulte a seção sobre Pull Requests do [Apêndice A](https://engsoftmoderna.info/capAp.html). Esse procedimento será um pouco estranho, pois estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular uma revisão de código usando PRs. 
+Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do [Apêndice A](https://engsoftmoderna.info/capAp.html). Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código. 
 
 
 ~~~~ {#stack .java .numberLines }
