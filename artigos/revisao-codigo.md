@@ -81,7 +81,7 @@ Seguem agora algumas recomendações mais específicas:
 
 12. Sempre que for razoável, **use o pronome "nós"**  ou a expressão "a gente", em vez de usar o pronome "você", pois assim você deixa claro que estão -- autor e revisor -- trabalhando juntos. Por exemplo, em vez de dizer, *será que você não poderia tornar esse atributo privado?*, você pode perguntar: *será que a gente não poderia tornar esse atributo privado?*
 
-13. Por último, mas não menos importante, se você tiver uma divergência muito forte em relação ao código submetido (por exemplo, se achar que está tudo errado...) ou se a troca de comentários não estiver convergindo para aprovar o PR, tente **agendar uma reunião com o autor** para expor sua visão e tentarem chegar a um consenso. Porém, essa interação síncrona deve ser uma exceção e reservada para casos mais sensíveis.
+13. Por último, mas não menos importante, se você tiver uma divergência muito forte em relação ao código submetido (por exemplo, se achar que está tudo errado...) ou se a troca de comentários não estiver convergindo para aprovar o PR, tente **agendar uma reunião com o autor** para expor sua visão e tentarem chegar a um consenso. Porém, essa interação síncrona deve ser uma exceção e reservada para casos mais importantes.
 
 ## Boas Práticas para Autores {.unnumbered}
 
