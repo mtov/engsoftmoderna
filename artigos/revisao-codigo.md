@@ -139,6 +139,9 @@ public class Stack<T> {
 }
 ~~~~
 
+4. É possível adotar simultaneamente Revisão de Código e Desenvolvimento Baseado no Trunk? Sim ou não? Justifique.
+
+5. É possível adotar simultaneamente Revisão de Código e Integração Contínua? Sim ou não? Justifique.
 
 
 * * * 
