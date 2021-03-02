@@ -88,6 +88,14 @@
   {
     "text": "Em um MVP, os desenvolvedores decidem o que é mínimo e os clientes decidem se o produto é viável.",
     "correct": "true"
+  },
+  {
+    "text": "Em um MVP, otimizações prematuras devem ser evitadas, pois não temos certeza de que o produto será bem sucedido.",
+    "correct": "true"
+  },
+  {
+    "text": "Um MVP deve implementar e automatizar tarefas de back-office -- como pagamentos, entregas e cancelamentos -- pois elas são fundamentais para uma boa experiência dos clientes.",
+    "correct": "false"
   }
   
 ]
