@@ -94,7 +94,7 @@
     "correct": "true"
   },
   {
-    "text": "Um MVP deve implementar e automatizar tarefas de back-office -- como pagamentos, entregas e cancelamentos -- pois elas são fundamentais para uma boa experiência dos clientes.",
+    "text": "Um MVP deve sempre implementar e automatizar tarefas de back-office -- como pagamentos, entregas e cancelamentos -- pois elas são fundamentais para uma boa experiência dos clientes.",
     "correct": "false"
   }
   
