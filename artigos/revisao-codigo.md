@@ -107,7 +107,7 @@ Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em
    Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do [Apêndice A](https://engsoftmoderna.info/capAp.html). Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código. 
 
 
-~~~~ {#stack .java .numberLines }
+```
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 
@@ -137,7 +137,7 @@ public class Stack<T> {
     return elem;
   }
 }
-~~~~
+```
 
 4. É possível adotar simultaneamente Revisão de Código e Desenvolvimento Baseado no Trunk? Sim ou não? Justifique.
 
