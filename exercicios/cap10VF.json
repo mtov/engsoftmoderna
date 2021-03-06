@@ -68,6 +68,11 @@
   {
     "text": "Quando adota-se Desenvolvimento Baseado no Trunk (TBD) não existem mais branches de funcionalidades.",
     "correct": "true"
+  },
+  {
+    "text": "Um VCS funciona como a fonte única da verdade (single source of truth) quando precisamos obter a versão mais recente de um arquivo.",
+    "correct": "true"
   }
 ]
 }	    
+

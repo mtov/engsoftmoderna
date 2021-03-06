@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Perguntas Frequentes sobre Procesos de Software – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="perguntas-frequentes-sobre-métodos-ágeis">Perguntas Frequentes sobre Métodos Ágeis</h1>
+<p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a> do livro.</p>
+<h3 class="unnumbered" id="o-que-é-um-líder-técnico-tech-lead">O que é um Líder Técnico (Tech Lead) ?</h3>
+<p>Os métodos ágeis não fazem distinção entre os desenvolvedores de um time. Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou hierarquias em um time. Porém, na prática, sabemos que os desenvolvedores têm níveis de experiência e conhecimento diferentes sobre o sistema que estão implementando ou mantendo. Além disso, sempre existem tarefas que exigem maior responsabilidade, tais como:</p>
+<ul>
+<li>Implementar histórias mais complexas ou críticas</li>
+<li>Definir e evoluir a arquitetura do sistema</li>
+<li>Treinar e prover mentoria para desenvolvedores júnior</li>
+<li>Monitorar o montante de débito técnico no sistema</li>
+<li>Escolher novas tecnologias, incluindo bibliotecas, frameworks, linguagens de programação, etc</li>
+<li>Explicar as decisões técnicas adotadas pelo time para os níveis superiores da empresa (por exemplo, CTO, CEO, etc)</li>
+<li>Ajudar na contratação de novos desenvolvedores</li>
+</ul>
+<p>Então, para assumir essas tarefas de maior responsabilidade, algumas empresas têm em seus times de desenvolvimento a figura de um <strong>Líder Técnico (Tech Lead)</strong>. No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time e, portanto, ele não deve ser o controlador de todas as tarefas do time.</p>
+<h3 class="unnumbered" id="o-que-é-o-modelo-spotify">O que é o Modelo Spotify?</h3>
+<p>Trata-se de um modelo proposto pela Spotify para organização de times ágeis em uma empresa, principalmente quando ela cresce e passa a ter dezenas ou mesmo centenas de times. Quando isso começou a aconteceer na Spotify, eles adotaram uma estrutura organizacional em forma de matriz, conforme ilustrado na seguinte figura:</p>
+<figure>
+<img src="./figs/modelo-spotify.jpg" style="width:80.0%" alt="Figura copiada do artigo Scaling Agile @ Spotify with Tribes, Squads, Chapters &amp; Guilds. Henrik Kniberg &amp; Anders Ivarsson, 2012" /><figcaption aria-hidden="true">Figura copiada do artigo Scaling Agile @ Spotify with Tribes, Squads, Chapters &amp; Guilds. Henrik Kniberg &amp; Anders Ivarsson, 2012</figcaption>
+</figure>
+<p>Nesta estutura matricial temos:</p>
+<ul>
+<li><p><strong>Squads</strong>: que são os times, com todas as características típicas de times ágeis, isto é: multi-disciplinares, auto-organizáveis, autônomos, etc.</p></li>
+<li><p><strong>Tribos</strong>: são conjuntos de squads que trabalham em sistemas ou sub-sistemas semelhantes. Ou seja, são equivalentes a divisões ou departamentos em uma nomenclatura tradicional. Recomenda-se que um tribo tenha no máximo 100 pessoas.</p></li>
+<li><p><strong>Chapters</strong>: agrupam, de forma horizontal, profissionais que realizam as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores front-end, de cientistas de dados, de especialistas em UI/UX. Esses profissionais no dia-a-dia estão espalhados pelos squads. Porém, com uma frequência bem definida e planejada, eles se reunuem para trocar ideias, definir práticas comuns, etc. Normalmente, como mostrado na figura acima, os chapters congregam profissionais de uma mesma tribo.</p></li>
+<li><p><strong>Guildas</strong>: são chapters informais e, às vezes, temporários. Isto é, são grupos de pessoas que compartilham interesses comuns, como em uma tecnologia, processo, etc. Eles não precisam pertencer à mesma tribo.</p></li>
+</ul>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
