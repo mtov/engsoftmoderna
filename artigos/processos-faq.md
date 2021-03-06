@@ -45,10 +45,13 @@ Nesta estutura matricial temos:
 
 * **Squads**: que são os times, com todas as características típicas de times
 ágeis, isto é: multi-disciplinares, auto-organizáveis, autônomos, etc. 
+Tipicamente, um squad tem menos de 10 profissionais.
 
 * **Tribos**: são conjuntos de squads que trabalham em sistemas ou sub-sistemas semelhantes.
 Ou seja, são equivalentes a divisões ou departamentos em uma nomenclatura tradicional.
-Recomenda-se que um tribo tenha no máximo 100 pessoas.
+Recomenda-se que um tribo tenha no máximo 100 pessoas. Se esse limite começa a ser 
+ultrassado, costuma-se criar mais um nível, constituído por **Alianças**, isto é,
+conjunto de tribos.
 
 * **Chapters**: agrupam, de forma horizontal, profissionais que realizam
 as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
@@ -56,11 +59,13 @@ front-end, de cientistas de dados, de especialistas em UI/UX. Esses profissionai
 no dia-a-dia estão espalhados pelos squads. Porém, com uma frequência bem
 definida e planejada, eles se reunuem para trocar ideias, definir práticas 
 comuns, etc. Normalmente, como mostrado na figura acima, os chapters congregam 
-profissionais de uma mesma tribo.
+profissionais de uma mesma tribo. Eles costumam possuir também um líder
+formal.
 
-* **Guildas**: são chapters informais e, às vezes, temporários. Isto é,
-são grupos de pessoas que compartilham interesses comuns, como em uma tecnologia, 
-processo, etc. Eles não precisam pertencer à mesma tribo.
+* **Guildas**: são grupos informais e, às vezes, temporários. Isto é,
+são grupos de pessoas que se reunem, voluntariamente, para compartilhar interesses 
+comuns, como em uma tecnologia, processo, etc. Elas não precisam pertencer à mesma 
+tribo.
 
 * * * 
 
