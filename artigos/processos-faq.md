@@ -31,8 +31,8 @@ desenvolvedores.
 
 É um modelo proposto pela Spotify para organização de times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
-aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma de matriz, 
-conforme ilustrado a seguir:
+aconteceu na Spotify, eles passaram a usar uma estrutura organizacional em forma 
+de matriz, ilustrada a seguir:
 
 ![Figura copiada do artigo Scaling Agile @ Spotify
 with Tribes, Squads, Chapters & Guilds.
@@ -42,21 +42,21 @@ Nessa **estrutura matricial** temos:
 
 * **Squads**, que são os times, com todas as características típicas de times
 ágeis, isto é, multi-disciplinares, auto-organizáveis e autônomos. 
-Tipicamente, um squad tem menos de 10 profissionais, que seguem os eventos
-de um determinado método ágil. Por exemplo, eles devem realizar reuniões de 
+Tipicamente, um squad tem menos de 10 profissionais, que seguem um determinado 
+método ágil. Por exemplo, eles devem realizar reuniões de 
 planejamento, reuniões diárias, retrospectivas e revisões, no caso de Scrum.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou sub-sistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
-nomenclatura tradicional. Recomenda-se que um tribo tenha no máximo 100 membros. 
+nomenclatura tradicional. Recomenda-se que uma tribo tenha no máximo 100 membros. 
 Se esse limite começa a ser ultrapassado, deve-se criar mais um nível, constituído 
-por **Alianças** ou **Unidades de Negócio**, isto é, conjunto de tribos.
+por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
 
 * **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
 as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
 front-end, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
 no dia-a-dia estão espalhados pelos squads. Porém, com uma frequência bem
-definida e planejada, eles se reunem para trocar ideias, definir práticas 
+definida, eles se reunem para trocar ideias, definir práticas 
 comuns, etc. Normalmente, como mostrado na figura acima, os chapters congregam 
 profissionais de uma mesma tribo. Eles costumam possuir também um líder
 formal.
@@ -67,7 +67,7 @@ interesses comuns, como uma tecnologia, processo, etc. Os participantes
 de uma guilda não precisam pertencer à mesma tribo.
 
 Antes de concluir, é importante lembrar que o Modelo Spotify foi proposto em
-2012. Desde lá, a sua adoção, mesmo na Spotify, já passou por evoluções e
+2012. Desde lá, a sua adoção, mesmo na Spotify, passou por evoluções e
 adaptações importantes.
 
 

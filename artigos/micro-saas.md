@@ -106,6 +106,28 @@ foi criada em 2009, por dois fundadores. Em 2013, a empresa, ainda como um micro
 a 1.5K clientes, com apenas mais um colaborador. Em 2020, ela possui mais de 22 mil 
 clientes e 17 colaboradores, cerca de metade atuando em atendimento a clientes.
 
+## Métricas {.unnumbered}
+
+Antes de concluir, gostaríamos de comentar sobre algumas métricas usadas 
+para avaliar o sucesso de sistemas SaaS (ou micro-SaaS):
+
+* **Custo de Aquisição de Clientes (CAC)** (ou *Customer Acquisiton Cost*): 
+custos com propaganda, vendas, etc em um mês / número de novos assinantes no mês.
+
+* **Receita Mensal Recorrente (MRR)** (ou *Monthly Recurring Revenue*):
+Somatório do valor das assinaturas recebidas no mês.
+
+* **Taxa de Cancelamentos** (*Churn Rate*): número de cancelamentos no mês /
+total de clientes no início do mês.
+
+* **Valor do Tempo de Vida do Cliente** (LTV) (*Customer Lifetime Value*): 
+assinatura média no mês / taxa de cancelamentos. Exemplo: se a assinatura
+média é de R$ 100 e a taxa de cancelamento for de 25%, temos que LTV =
+100 / 0.25 = R$ 400.
+
+Evidentemente, para um SaaS ser viável, LTV > CAC. Na verdade,
+costuma-se recomendar que LTV / CAC > 3.0.
+
 ### Artigo Relacionado {.unnumbered}
 
 Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-monetizar.html) sobre monetização de software.
