@@ -16,10 +16,10 @@ responsabilidade, tais como:
 * Definir e evoluir a arquitetura do sistema.
 * Treinar e prover mentoria para desenvolvedores júnior.
 * Monitorar o montante de débito técnico no sistema.
-* Escolher novas tecnologias, como bibliotecas e frameworks
-* Explicar as decisões técnicas adotadas pelo time para os níveis superiores 
-da empresa (por exemplo, CTO, CEO, etc)
-* Ajudar na contratação de novos desenvolvedores
+* Escolher novas tecnologias, como bibliotecas e frameworks.
+* Explicar as decisões técnicas adotadas para os níveis superiores 
+da empresa (por exemplo, CTO, CEO, etc).
+* Ajudar na contratação de novos desenvolvedores.
 
 Então, para assumir essas tarefas de maior responsabilidade, algumas empresas 
 têm em seus times a figura de um **Líder Técnico (Tech Lead)**. 
@@ -38,11 +38,13 @@ conforme ilustrado a seguir:
 with Tribes, Squads, Chapters & Guilds.
 Henrik Kniberg & Anders Ivarsson, 2012.](./figs/modelo-spotify.jpg){width=80%}
 
-Nessa estrutura matricial temos:
+Nessa **estrutura matricial** temos:
 
 * **Squads**, que são os times, com todas as características típicas de times
-ágeis, isto é, multi-disciplinares, auto-organizáveis, autônomos, etc. 
-Tipicamente, um squad tem menos de 10 profissionais.
+ágeis, isto é, multi-disciplinares, auto-organizáveis e autônomos. 
+Tipicamente, um squad tem menos de 10 profissionais, que seguem os eventos
+de um determinado método ágil. Por exemplo, eles devem realizar reuniões de 
+planejamento, reuniões diárias, retrospectivas e revisões, no caso de Scrum.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou sub-sistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
@@ -61,7 +63,7 @@ formal.
 
 * **Guildas**, que são comunidades informais e, às vezes, temporárias. Isto é,
 são grupos de funcionários que se reunem, voluntariamente, para compartilhar 
-interesses comuns, como em uma tecnologia, processo, etc. Os participantes
+interesses comuns, como uma tecnologia, processo, etc. Os participantes
 de uma guilda não precisam pertencer à mesma tribo.
 
 Antes de concluir, é importante lembrar que o Modelo Spotify foi proposto em
