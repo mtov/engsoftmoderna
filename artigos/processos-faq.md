@@ -45,11 +45,13 @@ Nessa **estrutura matricial** temos:
 Tipicamente, um squad tem menos de 10 profissionais, que seguem um determinado 
 método ágil. Por exemplo, eles devem realizar reuniões de 
 planejamento, reuniões diárias, retrospectivas e revisões, no caso de Scrum.
+Um squad deve também possuir autonomia para colocar suas implememtações em
+produção. 
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou sub-sistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
-nomenclatura tradicional. Recomenda-se que uma tribo tenha no máximo 100 membros. 
-Se esse limite começa a ser ultrapassado, deve-se criar mais um nível, constituído 
+estrutura tradicional. Recomenda-se que uma tribo tenha no máximo 100 membros. 
+Se esse limite for ultrapassado, deve-se criar mais um nível, constituído 
 por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
 
 * **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
@@ -59,12 +61,15 @@ no dia-a-dia estão espalhados pelos squads. Porém, com uma frequência bem
 definida, eles se reunem para trocar ideias, definir práticas 
 comuns, etc. Normalmente, como mostrado na figura acima, os chapters congregam 
 profissionais de uma mesma tribo. Eles costumam possuir também um líder
-formal.
+formal, que fica responsável por questões como contratação, treinamento e
+promoções.
 
 * **Guildas**, que são comunidades informais e, às vezes, temporárias. Isto é,
 são grupos de funcionários que se reunem, voluntariamente, para compartilhar 
 interesses comuns, como uma tecnologia, processo, etc. Os participantes
-de uma guilda não precisam pertencer à mesma tribo.
+de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda não
+é novo e já existia antes, com nomes como comunidade de prática ou grupo
+de interesse.
 
 Antes de concluir, é importante lembrar que o Modelo Spotify foi proposto em
 2012. Desde lá, a sua adoção, mesmo na Spotify, passou por evoluções e
