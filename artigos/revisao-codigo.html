@@ -124,20 +124,21 @@
 <p><img src="./figs/code-review-paper-microsoft.svg" style="width:80.0%" /></p>
 <p>Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa.</p>
 <p>Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício importante que é evitar a formação de <q>ilhas de conhecimento</q> em um projeto. Em vez disso, ela ajuda a socializar o conhecimento sobre o código e a criar uma cultura de colaboração e troca de ideias entre os membros do time.</p>
-<p>Antes de concluir esta seção, segue um lista de questões que costumam ser apontadas em revisões de código:</p>
+<h2 class="unnumbered" id="o-que-revisar">O que Revisar?</h2>
+<p>Segue um lista de questões que devem ser apontadas e consideradas em revisões de código:</p>
 <ul>
 <li>Bugs</li>
-<li>Código com code smells (veja mais no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>)</li>
 <li>Código que viola algum princípio de projeto (veja mais no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>)</li>
-<li>Código que viola a arquitetura do sistema (exemplo: chama SQL na camada de Visão)</li>
+<li>Código que viola a arquitetura de camadas do sistema (veja mais no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 7</a>)</li>
 <li>Código que não trata adequadamente exceções e erros</li>
-<li>Uso de um algoritmo e/ou estrutura de dados menos eficiente</li>
-<li>Otimizações prematuras (exemplo: usar um padrão de projeto quando as chances de mudança no projeto são raras)</li>
-<li>Falta de testes</li>
-<li>Falta de documentação (principalmente aquela mais relevante)</li>
+<li>Código com code smells (veja mais no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>)</li>
+<li>Código que usa um algoritmo e/ou estrutura de dados menos eficiente</li>
+<li>Otimizações prematuras</li>
+<li>Ausência de testes</li>
+<li>Ausência de documentação, principalmente aquela mais relevante</li>
 <li>Falhas de segurança ou privacidade</li>
-<li>Problemas desempenho</li>
-<li>Problemas de usabilidade com usuário</li>
+<li>Problemas de desempenho</li>
+<li>Problemas de usabilidade com o usuário</li>
 <li>Uso inadequado ou sub-ótimo de APIs</li>
 <li>Uso de bibliotecas ou frameworks não autorizados</li>
 <li>Problemas no leiaute ou indentação do código</li>
