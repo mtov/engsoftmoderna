@@ -125,7 +125,7 @@ assinatura média no mês / taxa de cancelamentos. Exemplo: se a assinatura
 média é de R$ 100 e a taxa de cancelamento for de 25%, temos que LTV =
 100 / 0.25 = R$ 400.
 
-Evidentemente, para um SaaS ser viável, LTV > CAC. Na verdade,
+Para um SaaS ser viável, LTV > CAC. Na verdade,
 costuma-se recomendar que LTV / CAC > 3.0.
 
 ### Artigo Relacionado {.unnumbered}
