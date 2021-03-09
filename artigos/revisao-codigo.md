@@ -41,9 +41,27 @@ Conforme respondido pelos participantes, a principal motivação é encontrar bu
 
 Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício importante que é evitar a formação de "ilhas de conhecimento" em um projeto. Em vez disso, ela ajuda a socializar o conhecimento sobre o código e a criar uma cultura de colaboração e troca de ideias entre os membros do time.
 
+Antes de concluir esta seção, segue um lista de questões que costumam ser apontadas em revisões de código:
+
+* Bugs 
+* Código com code smells (veja mais no [Capítulo 9](https://engsoftmoderna.info/cap9.html))
+* Código que viola algum princípio de projeto (veja mais no [Capítulo 5](https://engsoftmoderna.info/cap5.html))
+* Código que viola a arquitetura do sistema (exemplo: chama SQL na camada de Visão)
+* Código que não trata adequadamente exceções e erros
+* Uso de um algoritmo e/ou estrutura de dados menos eficiente
+* Otimizações prematuras (exemplo: usar um padrão de projeto quando as chances de mudança no projeto são raras)
+* Falta de testes
+* Falta de documentação (principalmente aquela mais relevante)
+* Falhas de segurança ou privacidade
+* Problemas desempenho
+* Problemas de usabilidade com usuário
+* Uso inadequado ou sub-ótimo de APIs
+* Uso de bibliotecas ou frameworks não autorizados
+* Problemas no leiaute ou indentação do código
+
 ## Recomendações para Revisores {.unnumbered}
  
-Nesta seção, vamos listar algumas recomendações para revisão de código. 
+Nesta seção, vamos listar algumas recomendações sobre como se "portar" em uma revisão de código. 
 
 Para chegar até elas, partimos do artigo *How to Give Respectful and Constructive Code Review Feedback*, de autoria de Michaela Greiler ([link](https://www.michaelagreiler.com/respectful-constructive-code-review-feedback)). Em seguida, fizemos uma análise de mais de 120 PRs de projetos de código aberto, hospedados no GitHub, buscando por casos concretos de comentários que seguem as recomendações que coletamos inicialmente.  Ao todo, analisamos pelo menos 259 comentários para selecionar os exemplos que iremos mostrar a seguir.
 

@@ -36,17 +36,18 @@ de matriz, ilustrada a seguir:
 
 ![Figura copiada do artigo Scaling Agile @ Spotify
 with Tribes, Squads, Chapters & Guilds.
-Henrik Kniberg & Anders Ivarsson, 2012.](./figs/modelo-spotify.jpg){width=80%}
+Henrik Kniberg & Anders Ivarsson, 2012.](./figs/modelo-spotify.jpg){width=75%}
 
 Nessa **estrutura matricial** temos:
 
 * **Squads**, que são os times, com todas as características típicas de times
 ágeis, isto é, multi-disciplinares, auto-organizáveis e autônomos. 
 Tipicamente, um squad tem menos de 10 profissionais, que seguem um determinado 
-método ágil. Por exemplo, eles devem realizar reuniões de 
+método ágil. Por exemplo, eles podem realizar reuniões de 
 planejamento, reuniões diárias, retrospectivas e revisões, no caso de Scrum.
-Um squad deve também possuir autonomia para colocar suas implememtações em
-produção. 
+Um squad deve também possuir autonomia para colocar suas implementações em
+produção. Para que isso ocorra sem atritos, é importante que as dependências
+entre squads sejam minimizadas.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou sub-sistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
