@@ -47,7 +47,7 @@ Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício
 Segue um lista de questões que devem ser apontadas e consideradas em revisões de código:
 
 1. Bugs
-2. Código muito complexo, mais do que o necessário
+2. Código mais complexo do que o necessário
 3. Código que usa um algoritmo e/ou estrutura de dados menos eficiente
 4. Código que viola princípios de projeto (veja mais no [Capítulo 5](https://engsoftmoderna.info/cap5.html))
 5. Código que viola a arquitetura de camadas do sistema (veja mais no [Capítulo 7](https://engsoftmoderna.info/cap5.html))
