@@ -46,21 +46,23 @@ Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício
 
 Segue um lista de questões que devem ser apontadas e consideradas em revisões de código:
 
-* Bugs 
-* Código que viola algum princípio de projeto (veja mais no [Capítulo 5](https://engsoftmoderna.info/cap5.html))
-* Código que viola a arquitetura de camadas do sistema (veja mais no [Capítulo 7](https://engsoftmoderna.info/cap5.html))
-* Código que não trata adequadamente exceções e erros
-* Código com code smells (veja mais no [Capítulo 9](https://engsoftmoderna.info/cap9.html))
-* Código que usa um algoritmo e/ou estrutura de dados menos eficiente
-* Otimizações prematuras 
-* Ausência de testes
-* Ausência de documentação, principalmente aquela mais relevante
-* Falhas de segurança ou privacidade
-* Problemas de desempenho
-* Problemas de usabilidade com o usuário
-* Uso inadequado ou sub-ótimo de APIs
-* Uso de bibliotecas ou frameworks não autorizados
-* Problemas no leiaute ou indentação do código
+1. Bugs
+2. Código muito complexo, mais do que o necessário
+3. Código que usa um algoritmo e/ou estrutura de dados menos eficiente
+4. Código que viola princípios de projeto (veja mais no [Capítulo 5](https://engsoftmoderna.info/cap5.html))
+5. Código que viola a arquitetura de camadas do sistema (veja mais no [Capítulo 7](https://engsoftmoderna.info/cap5.html))
+6. Código que não trata exceções e erros
+7. Código com code smells (veja mais no [Capítulo 9](https://engsoftmoderna.info/cap9.html))
+8. Otimizações prematuras 
+9. Ausência de testes
+10. Ausência de documentação, principalmente aquela mais relevante
+11. Falhas de segurança ou privacidade
+12. Problemas de desempenho
+13. Problemas de usabilidade com o usuário
+14. Uso inadequado ou sub-ótimo de APIs
+15. Uso de bibliotecas ou frameworks não autorizados
+16. Código com problemas de leiaute ou indentação
+17. Código que viola convenções de nome
 
 ## Recomendações para Revisores {.unnumbered}
  
