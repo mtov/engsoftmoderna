@@ -80,7 +80,7 @@ Adaptações ao contexto são necessárias e bem vindas.
 
 ### 3. O que é Grooming? {.unnumbered}
 
-Grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
+O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
 Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas
 atividades, podemos mencionar as seguintes: estimar, adicionar, remover, 
