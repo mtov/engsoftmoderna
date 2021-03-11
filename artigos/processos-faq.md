@@ -75,16 +75,17 @@ de interesse.
 Antes de concluir, é importante lembrar que o Modelo Spotify foi proposto em
 2012. Desde lá, a sua adoção, mesmo na Spotify, passou por evoluções e
 adaptações importantes. E, como qualquer assunto relacionado com processo, 
-sua a adoção nunca deve ser cegamente de acordo com o manual. 
-Adaptações ao contexto são necessárias e bem vindas.
+sua adoção nunca deve ocorrer cegamente de acordo com o manual. 
+Adaptações ao **contexto** são necessárias e bem vindas.
 
 ### 3. O que é Grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
 Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas
-atividades, podemos mencionar as seguintes: estimar, adicionar, remover, 
-refinar, entender, especificar ou particionar histórias de usuários. 
+atividades, podemos mencionar as seguintes: descobrir, criar, estimar, 
+priorizar, remover, refinar, entender, especificar ou particionar 
+histórias de usuários. 
 Alguns autores, como Kenneth Rubim, no livro Scrum Essencial, sugerem 
 que 10% do tempo dos membros de um time Scrum deve ser alocado para 
 atividades de grooming. Ou seja, cerca de 4 horas semanais. No entanto, não 
