@@ -60,7 +60,8 @@ CFD, agora com labels indicando o valor de cada ponto do gráfico:
 Como já afirmamos, consideramos que o eixo y de um CFD é o número de histórias
 em cada coluna de um Quadro Kanban, em cada semana. No entanto, dependendo 
 do contexto, pode-se adotar outras unidades, como número de tarefas, 
-bugs, itens de trabalho, *story points*, etc.
+bugs, itens de trabalho, *story points*, etc. De forma semelhante, no eixo x podemos usar outra unidade de tempo,
+como dias, quinzenas, meses, etc.
 
 ### Para que serve um CFD? {.unnumbered}
 
@@ -112,8 +113,8 @@ Olhando para esse diagrama, podemos concluir que:
 
 * O número de novas histórias que entraram em revisão no período de tempo LT é igual a WIP. Logo, a taxa de chegada de histórias (ou throughput)  é  WIP / LT.
 
-* LT é também o intervalo de tempo que as histórias que estavam em Revisão na semana 2 levaram para sair desse
-estágio e migrarem para Pronto. No diagrama, essas histórias
+* O intervalo de tempo que as histórias que estavam em Revisão na semana 2 levaram para sair desse
+estágio e migrarem para Pronto é igual a LT. No diagrama, essas histórias
 são representadas pela barra vertical de cor verde. Logo, LT é o lead time dessas histórias.
 
 * * * 
