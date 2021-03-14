@@ -119,9 +119,8 @@ Analisando o diagrama, podemos concluir que:
 de tempo LT é igual a WIP. Logo, a taxa de chegada de histórias 
 (ou throughput)  é  WIP / LT.
 
-* O número de semanas que as histórias que estavam em Revisão na 
-semana 2 levaram para sair desse estágio e chegarem no passo 
-Pronto é igual a LT. No diagrama, essas histórias são representadas 
+* As histórias que estavam em Revisão na semana 2 levaram LT semanas
+para chegar no passo Pronto. No diagrama, essas histórias são representadas 
 pela barra vertical de cor verde. Logo, LT é o lead time médio 
 dessas histórias.
 
@@ -132,8 +131,8 @@ passo de Revisão, representado pela área em azul no diagrama.
 ### Para Saber Mais {.unnumbered}
 
 CFDs são tratados na maioria dos livros sobre Kanban. Especificamente,
-o livro "Diagramas de Fluxo Cumulativo, de autoria de Paulo Caroli, 
-constitui uma introdução bastante objetiva ao assunto. O livro do 
+o livro "Diagrama de Fluxo Cumulativo", de autoria de Paulo Caroli, 
+oferece uma introdução objetiva ao assunto. O livro do 
 David Anderson -- *Kanban: Successful Evolutionary Change for Your 
 Technology Business* -- é uma outra referência importante sobre CFDs.
 
