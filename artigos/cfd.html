@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Diagramas de Fluxo Cumulativo – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3');
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="diagramas-de-fluxo-cumulativo">Diagramas de Fluxo Cumulativo</h1>
+<p>No <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, estudamos sobre Gráficos de Burndown e comentamos que eles podem ser usados para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.</p>
+<p>No entanto, Gráficos de Burndown não são adequados para times que usam Kanban, pois eles assumem que o objetivo é implementar um certo número de story points em um determinado sprint. E, quando usamos Kanban, não existe mais essa ideia de sprints.</p>
+<p>Por isso, times Kanban costumam usar um outro tipo de gráfico para acompanhar o seu fluxo de trabalho, chamado de <strong>Diagrama de Fluxo Cumulativo</strong> (CFD, de <em>Cumulative Flow Diagram</em>).</p>
+<h3 class="unnumbered" id="definição">Definição</h3>
+<p>Um CFD é gerado a partir de uma tabela como a seguinte</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Semana</th>
+<th style="text-align: center;">Especificação</th>
+<th style="text-align: center;">Implementação</th>
+<th style="text-align: center;">Revisão</th>
+<th style="text-align: center;">Pronto</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+</tbody>
+</table>
+<p>onde:</p>
+<ul>
+<li><p>Especificação, Implementação, Revisão e Pronto são as colunas do Quadro Kanban usado pelo time.</p></li>
+<li><p>Em cada linha, mostra-se o número de histórias de usuários que estão em cada coluna no final da respectiva semana. Por exemplo, no final da Semana 1, existiam 10 histórias em Especificação, 10 histórias em Implementação, 9 histórias em Revisão e 4 histórias Prontas.</p></li>
+<li><p>E, muito importante, assume-se que as histórias – ou, se você quiser, os post-its – não saem do quadro. Em vez disso, elas vão se acumulando na coluna Pronto. Daí o nome <strong>cumulativo</strong> do diagrama. Por exemplo, da semana 1 até a semana 5, um total de 42 histórias foram finalizadas pelo time.</p></li>
+</ul>
+<p>A partir dessa tabela gera-se um gráfico de áreas empilhadas, que é chamado de <strong>Diagrama de Fluxo Cumulativo</strong> (CFD, de <em>Cumulative Flow Diagram</em>). Veja o CFD gerado a partir da tabela anterior:</p>
+<p><img src="./figs/cfd1.svg" style="width:80.0%" /></p>
+<p>Em um CFD, a faixa inferior corresponde à coluna mais à direita do quadro Kanban. No nosso exemplo, a coluna Pronto. A partir dela, vão sendo empilhadas as demais colunas, da direita para a esquerda do quadro. Assim, a última coluna empilhada, no nosso exemplo, é Especificação.</p>
+<p>Para facilitar o entendimento de um CFD, segue uma segunda versão do nosso CFD, agora com labels indicando o valor de cada ponto do gráfico:</p>
+<p><img src="./figs/cfd2.svg" style="width:80.0%" /></p>
+<p>Como já afirmamos, consideramos que o eixo y de um CFD é o número de histórias em cada coluna de um Quadro Kanban, em cada semana. No entanto, dependendo do contexto, pode-se adotar outras unidades, como número de tarefas, bugs, itens de trabalho, <em>story points</em>, etc.</p>
+<h3 class="unnumbered" id="para-que-serve-um-cfd">Para que serve um CFD?</h3>
+<p>Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban está estável ou não.</p>
+<p>Analisando um CFD, podemos concluir que o fluxo está normal e estável quando as áreas do diagrama crescem de forma linear, com praticamente a mesma inclinação, como ocorre no CFD mostrado na seção anterior.</p>
+<p>Por outro, quando existem problemas em um passo, a sua área no diagrama tende a crescer, como mostrado no seguinte exemplo:</p>
+<figure>
+<img src="./figs/cfd3.svg" style="width:80.0%" alt="Sistema instável, com acúmulo crescente de histórias em Implementação" /><figcaption aria-hidden="true">Sistema instável, com acúmulo crescente de histórias em Implementação</figcaption>
+</figure>
+<p>Podemos ver neste CFD que o passo de implementação está ocupando, gradativamente, uma área maior no diagrama, o que significa que as histórias estão se acumulando nesse passo. Consequentemente, menos histórias estão ficando prontas, ou seja, a inclinação da linha <q>Pronto</q> está diminuindo. Podemos observar também que menos histórias estão sendo revisadas, pois a faixa verde do diagrama praticamente sumiu. E, por fim, o acúmulo de histórias em Implementação começa a gerar um represamento também em Especificação.</p>
+<h3 class="unnumbered" id="cfd-e-lei-de-little">CFD e Lei de Little</h3>
+<p>Como vimos no <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, a Lei de Little diz que:</p>
+<p>WIP = TP * LT</p>
+<p>onde:</p>
+<ul>
+<li><p>WIP é o <em>work in progress</em>, isto é, o número de histórias em um passo do quadro Kanban.</p></li>
+<li><p>TP é o <em>throughput</em> do passo, isto é, o número de histórias finalizadas por unidade de tempo.</p></li>
+<li><p>LT é o <em>lead time</em>, isto é, o intervalo de tempo que uma história leva para <q>atravessar</q> um passo do quadro Kanban.</p></li>
+</ul>
+<p>Reescrevendo a fórmula da Lei de Little temos que:</p>
+<p>TP = WIP / LT</p>
+<p>Essa fórmula pode ser visualizada em um CFD, como mostrado abaixo:</p>
+<p><img src="./figs/cfd4.png" style="width:80.0%" /></p>
+<p>Olhando para esse diagrama, podemos concluir que:</p>
+<ul>
+<li><p>O número de novas histórias que entraram em revisão no período de tempo LT é igual a WIP. Logo, a taxa de chegada de histórias (ou throughput) é WIP / LT.</p></li>
+<li><p>LT é também o intervalo de tempo que as histórias que estavam em Revisão na semana 2 levaram para sair desse estágio e migrarem para Pronto. No diagrama, essas histórias são representadas pela barra vertical de cor verde. Logo, LT é o lead time dessas histórias.</p></li>
+</ul>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

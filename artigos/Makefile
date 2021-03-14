@@ -18,6 +18,9 @@ shape-up: shape-up.md
 processos-faq: processos-faq.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Procesos de Software" processos-faq.md -o processos-faq.html
 
+cfd: cfd.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Diagramas de Fluxo Cumulativo" cfd.md -o cfd.html
+
 design-thinking: design-thinking.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Design Thinking: Aprendendo a Resolver Problemas com os Designers" design-thinking.md -o design-thinking.html
 
