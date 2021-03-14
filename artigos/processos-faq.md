@@ -1,7 +1,8 @@
 # Perguntas Frequentes sobre Métodos Ágeis {.unnumbered}
 
-O objetivo deste artigo é responder algumas perguntas frequentes que são 
-feitas sobre o [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
+O objetivo deste artigo é responder perguntas 
+sobre temas relacionados com métodos ágeis e que não são
+abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
 
 ### 1. O que faz um Líder Técnico (Tech Lead) ? {.unnumbered}
 

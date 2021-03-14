@@ -4,7 +4,7 @@ No [Capítulo 2](https://engsoftmoderna.info/cap2.html), estudamos
 sobre Gráficos de Burndown e comentamos que eles podem ser usados 
 para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.
 
-No entanto, Gráficos de Burndown não são adequados para times que usam
+No entanto, Gráficos de Burndown não são adequados para times 
 Kanban, pois eles assumem que o objetivo é implementar um certo número
 de story points em um determinado sprint. E, quando usamos Kanban,
 não existe mais essa ideia de sprints.
@@ -49,42 +49,40 @@ Veja o CFD gerado a partir da tabela anterior:
 ![](./figs/cfd1.svg){width=80%}
 
 Em um CFD, a faixa inferior corresponde à coluna mais à direita
-do quadro Kanban. No nosso exemplo, a coluna Pronto. A partir dela, vão sendo empilhadas as demais colunas, da direita para a esquerda do quadro. Assim, a última coluna empilhada, no nosso exemplo, é Especificação.
+do quadro Kanban. No nosso exemplo, a coluna Pronto. A partir dela, são
+empilhadas as demais colunas, da direita para a esquerda do quadro. 
+Assim, a última coluna empilhada, no nosso exemplo, é Especificação.
 
-Para facilitar o entendimento de um CFD, segue uma segunda versão do nosso
-CFD, agora com labels indicando o valor de cada ponto do gráfico:
+Para facilitar o entendimento, segue uma segunda versão do CFD anterior, 
+agora com labels indicando o valor de cada ponto do gráfico:
 
 ![](./figs/cfd2.svg){width=80%}
 
-
-Como já afirmamos, consideramos que o eixo y de um CFD é o número de histórias
+No exemplo, consideramos que o eixo y de um CFD é o número de histórias
 em cada coluna de um Quadro Kanban, em cada semana. No entanto, dependendo 
 do contexto, pode-se adotar outras unidades, como número de tarefas, 
-bugs, itens de trabalho, *story points*, etc. De forma semelhante, no eixo x podemos usar outra unidade de tempo,
-como dias, quinzenas, meses, etc.
+bugs, itens de trabalho, *story points*, etc. De forma semelhante, no eixo 
+x podemos usar uma outra unidade de tempo, como dias, quinzenas, meses, etc.
 
 ### Para que serve um CFD? {.unnumbered}
 
 Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban está estável ou não.
 
-Analisando um CFD, podemos concluir que o fluxo está normal 
-e estável quando as áreas do diagrama crescem de forma
-linear, com praticamente a mesma inclinação, como ocorre 
-no CFD mostrado na seção anterior.
+Especificamente, o fluxo está normal e estável quando as áreas do diagrama crescem de forma
+linear, com praticamente a mesma inclinação, como no CFD mostrado na seção anterior.
 
 Por outro, quando existem problemas em um passo, a sua área no diagrama tende a crescer, como mostrado no seguinte exemplo:
 
 ![Sistema instável, com acúmulo crescente de histórias em Implementação](./figs/cfd3.svg){width=80%}
 
-Podemos ver neste CFD que o passo de implementação está ocupando, gradativamente, uma área maior no diagrama, o que significa que
+Nesse CFD, o passo de implementação está ocupando, gradativamente, uma área maior no diagrama, o que significa que
 as histórias estão se acumulando nesse passo. Consequentemente,
 menos histórias estão ficando prontas, ou seja, a inclinação da
-linha "Pronto" está diminuindo. Podemos observar também que menos histórias estão sendo revisadas, pois a faixa verde do diagrama
+linha "Pronto" está diminuindo. Podemos observar também que menos histórias estão sendo revisadas, pois a faixa vermelha
 praticamente sumiu. E, por fim, o acúmulo de histórias em
 Implementação começa a gerar um represamento também em Especificação.
 
-### CFD e Lei de Little {.unnumbered}
-
+### CFDs e Lei de Little {.unnumbered}
 
 Como vimos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), a Lei de Little diz que:
 
@@ -100,7 +98,7 @@ o número de histórias finalizadas por unidade de tempo.
 
 * LT é o *lead time*, isto é, o intervalo de tempo que uma história leva para "atravessar" um passo do quadro Kanban.
 
-Reescrevendo a fórmula da Lei de Little temos que:
+Reescrevendo a fórmula temos que:
 
 TP = WIP / LT
 
@@ -109,13 +107,33 @@ abaixo:
 
 ![](./figs/cfd4.png){width=80%}
 
-Olhando para esse diagrama, podemos concluir que:
+Analisando o diagrama, podemos concluir que:
 
 * O número de novas histórias que entraram em revisão no período de tempo LT é igual a WIP. Logo, a taxa de chegada de histórias (ou throughput)  é  WIP / LT.
 
-* O intervalo de tempo que as histórias que estavam em Revisão na semana 2 levaram para sair desse
-estágio e migrarem para Pronto é igual a LT. No diagrama, essas histórias
-são representadas pela barra vertical de cor verde. Logo, LT é o lead time dessas histórias.
+* O número de semanas que as histórias que estavam em Revisão na semana 2 levaram 
+para sair desse estágio e chegarem Pronto é igual a LT. No diagrama, essas histórias
+são representadas pela barra vertical de cor verde. Logo, LT é o lead time médio 
+dessas histórias.
+
+Portanto, podemos usar um CFD para calcular o lead time e throughput de cada passo de um quadro Kanban. No exemplo, fizemos isso para o passo de Revisão, representado pela área em azul no diagrama.
+
+### Exercícios {.unnumbered}
+
+1. Neste artigo, comentamos que Diagramas de Fluxo Cumulativo (CFD) são muito usados com Kanban.
+Mas é possível usar CFDs também com Scrum? Justifique sua resposta.
+
+2. Se quisermos diminuir o lead time de um passo de um Quadro Kanban, devemos aumentar ou diminuir o seu limite WIP? Justifique sua resposta usando a Lei de Little.
+
+3. Em um CFD estável, a taxa de chegada de novas histórias é igual à taxa com que histórias são puxadas para o próximo passo. Verdadeiro ou Falso? Justifique.
+
+4. Suponha um processo de desenvolvimento do tipo Waterfall, com três fases: Especificação, Implementação e Testes. Crie um CFD para um projeto desenvolvido nesse processo. No seu CFD,
+assuma um sistema cujo desenvolvimento inclui 25 funcionalidades. As fases Especificação,
+Implementação e Testes levam, respectivamente, 2, 3 e 1 semestre.
+
+5. Use um software de planilhas para criar CFDs hipotéticos, tal como fizemos neste artigo.
+Defina um horizonte de tempo (eixo x) e alguns passos (colunas da planilha e, consequentemente, áreas do diagrama). Em seguida, lance valores hipotéticos na sua planilha. Crie pelo menos dois CFDs: um CFD representando um fluxo de trabalho estável e também um CFD com instabilidade em algum passo do quadro.
+
 
 * * * 
 
