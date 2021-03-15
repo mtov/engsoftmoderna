@@ -4,10 +4,11 @@ No [Capítulo 2](https://engsoftmoderna.info/cap2.html), estudamos
 sobre Gráficos de Burndown e comentamos que eles podem ser usados 
 para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.
 
-No entanto, Gráficos de Burndown não são adequados para times 
-Kanban, pois eles assumem que o objetivo é implementar um certo número
-de story points em um determinado sprint. E, quando usamos Kanban,
-não existe mais essa ideia de sprints.
+No entanto, Gráficos de Burndown não são adequados para times Kanban, 
+pois eles assumem que o objetivo é implementar um certo número de 
+story points em um determinado período de tempo, normalmente, 
+equivalente a um sprint. E, quando usamos Kanban, não existem 
+mais sprints.
 
 Por isso, times Kanban costumam usar um outro tipo de gráfico para 
 acompanhar o seu fluxo de trabalho, chamado de **Diagrama de Fluxo 
