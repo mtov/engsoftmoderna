@@ -1680,7 +1680,7 @@ indica, LCOM mede a "falta de coesão" de uma classe. Em geral,
 métricas de software são interpretadas da seguinte forma: quanto maior o
 valor da métrica, pior a qualidade do código ou do projeto. No entanto,
 coesão é uma exceção a essa regra, pois quanto maior a coesão de uma
-classe, melhor o ser seu projeto. Por isso, LCOM foi planejada para
+classe, melhor o seu projeto. Por isso, LCOM foi planejada para
 medir a falta de coesão de classes. Quanto maior o valor de LCOM, maior
 a falta de coesão de uma classe e, portanto, pior o seu projeto.
 

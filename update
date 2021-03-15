@@ -17,7 +17,7 @@ $pandoc_bin --number-offset=8 -T "Cap. 9: Refactoring" cap9.md -o cap9.html
 $pandoc_bin --number-offset=9 -T "Cap. 10: DevOps" cap10.md -o cap10.html
 $pandoc_bin -T "Apêndice A: Git" capAp.md -o capAp.html
 
-git add .
-git commit -a -m "update"
+# git add .
+# git commit -a -m "update"
 
-git push origin master
+# git push origin master
