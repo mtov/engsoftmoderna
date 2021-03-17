@@ -170,7 +170,7 @@ fabricantes de automóveis têm anos para se conformar às novas leis.
 Adicionalmente, carros não são alterados, pelo menos de forma essencial,
 com novas funcionalidades, após serem vendidos. Por fim, um carro é um produto
 físico, com peso, altura, largura, assentos,
-forma geométrica, etc, o que facilita sua avaliação e precificação por
+forma geométrica, etc., o que facilita sua avaliação e precificação por
 consumidores finais.
 
 Ainda segundo Brooks, desenvolvimento de software enfrenta também
@@ -500,7 +500,7 @@ Manutenção corretiva tem como objetivo corrigir bugs reportados por
 usuários ou outros desenvolvedores.
 
 \index{Manutenção de Software!Preventiva}
-Por sua vez, manutenção preventiva tem com objetivo corrigir bugs
+Por sua vez, manutenção preventiva tem como objetivo corrigir bugs
 latentes no código, que ainda não causaram falhas junto aos usuários do
 sistema.
 
@@ -624,9 +624,9 @@ conhecido como **versionamento semântico**.
 \index{Stakeholders}
 Desenvolvimento de software requer o uso de práticas e atividades de
 gerência de projetos, por exemplo, para negociação de contratos com
-clientes (com definição de prazos, valores, cronogramas, etc), gerência
+clientes (com definição de prazos, valores, cronogramas, etc.), gerência
 de recursos humanos (incluindo contratação, treinamento, políticas de
-promoção, remuneração, etc), gerência de riscos, acompanhamento da
+promoção, remuneração, etc.), gerência de riscos, acompanhamento da
 concorrência, marketing, finanças, etc. Em um projeto, normalmente
 usa-se o termo **stakeholder** para designar todas as partes
 interessadas no mesmo; ou seja, os stakeholders são aqueles que afetam
@@ -657,7 +657,7 @@ canais. Se ele cresce para 10 desenvolvedores, passam a existir 45
 canais de comunicação. Por isso, modernamente, software é
 desenvolvido em times pequenos, com uma dezena de engenheiros, se tanto.
 
-**Tradução**: Em Português, a palavra *projeto* pode se referir tanto
+**Tradução**: Em português, a palavra *projeto* pode se referir tanto
 a *design* como a *project*. Por exemplo, em uma subseção anterior
 introduzimos questões de projeto de software, isto é, *software design*,
 tratando de conceitos como interfaces, dependências, arquitetura, etc.
@@ -683,7 +683,7 @@ livro, Brooks reporta as lições que aprendeu no início da sua carreira
 como gerente responsável pelos primeiros sistemas operacionais da IBM.
 Em 1995, uma segunda edição do livro foi lançada, em comemoração aos
 seus 20 anos. Essa edição incluiu um novo capítulo, com o artigo *No
-Silver Bullet Essence and Accidents of Software Engineering*, publicado
+Silver Bullet — Essence and Accidents of Software Engineering*, publicado
 originalmente em 1987 (e que já comentamos nesta Introdução). Em 1999,
 Frederick Brooks ganhou o Prêmio Turing, considerado o Prêmio Nobel da
 Computação.
@@ -741,7 +741,7 @@ recorrentes em projetos de software, que ocorriam com frequência nessa
 completo de requisitos, depois um projeto detalhado, depois uma
 implementação completa, etc. Para só então validar o sistema com os
 usuários, o que pode acontecer anos após o início do projeto. No
-entanto, nesse período de tempo, o mundo pode ter mudado, bem como as
+entanto, nesse período, o mundo pode ter mudado, bem como as
 necessidades dos clientes, que podem não mais precisar do sistema que
 ajudaram a especificar anos antes. Assim, reunidos em uma cidade de
 Utah, Estados Unidos, em fevereiro de 2001, um grupo de 17 Engenheiros
@@ -772,7 +772,7 @@ principal do projeto. Quando o time de desenvolvimento é maior, isso
 aumenta as chances de conflitos de integração, que ocorrem quando dois
 desenvolvedores alteram em paralelo os mesmos trechos de código. O
 primeiro desenvolvedor a integrar seu código será bem sucedido; enquanto
-que o segundo desenvolvedor será informado de que o trecho já foi
+o segundo desenvolvedor será informado de que o trecho já foi
 modificado pelo primeiro.
 
 ### Modelos de Software 
@@ -812,7 +812,7 @@ Avante.
 \index{Qualidade de Software}
 Qualidade é um objetivo recorrente em produtos de engenharia.
 Fabricantes de automóveis, celulares, computadores, empresas de
-construção civil, etc, todos almejam e dizem que possuem produtos de
+construção civil, etc., todos almejam e dizem que possuem produtos de
 qualidade. Esse contexto não é diferente quando o produto é
 um software. Segundo uma classificação proposta por
 Bertrand Meyer
@@ -881,7 +881,7 @@ inspecionado por um outro desenvolvedor do time. O objetivo é detectar
 *bugs* antecipadamente, antes de o sistema entrar em produção.
 Além disso, revisões de código servem para garantir a qualidade interna
 do código — isto é, sua manutenibilidade, legibilidade,
-modularidade, etc — e para disseminar boas práticas de Engenharia
+modularidade, etc. — e para disseminar boas práticas de Engenharia
 de Software entre os membros de um time de desenvolvimento.
 
 A próxima figura mostra um exemplo de revisão de código, referente a um
@@ -941,7 +941,7 @@ resolvemos reproduzir a seguir:
 > São deveres dos profissionais de Informática:
 > 
 > Art. 1^o^: Contribuir para o bem-estar social, promovendo, sempre que
-> possível, a inclusão de todos setores da sociedade.
+> possível, a inclusão de todos os setores da sociedade.
 >
 > Art. 2^o^: Exercer o trabalho profissional com responsabilidade,
 > dedicação, honestidade e justiça, buscando sempre a melhor solução.
@@ -972,7 +972,7 @@ resolvemos reproduzir a seguir:
 > Art. 10^o^: Não praticar atos que possam comprometer a honra, a
 > dignidade e privacidade de qualquer pessoa.
 > 
-> Art. 11^o^: Nunca apropriar-se de trabalho intelectual, iniciativas ou
+> Art. 11^o^: Nunca se apropriar de trabalho intelectual, iniciativas ou
 > soluções encontradas por outras pessoas.
 > 
 > Art. 12^o^: Zelar pelo cumprimento deste código.
@@ -984,7 +984,7 @@ resolvemos reproduzir a seguir:
 ```{=latex}
 \begin{esmbox}
 ```
-**Mundo Real**: O Stack Overflow realiza anualmente um survey com
+**Mundo Real**: O Stack Overflow realiza anualmente uma pesquisa com
 usuários da plataforma de perguntas e respostas. Em 2018, esse survey
 foi respondido por mais de 100 mil desenvolvedores, dos mais variados
 países. Dentre as perguntas, um grupo se referia a questões éticas
@@ -994,7 +994,7 @@ implicações éticas do código que produzem. Quase 80% dos respondentes
 disseram que sim. Uma outra pergunta foi a seguinte: Quem, em última
 análise, é responsável por um código que colabora para um comportamento
 antiético? Nesse caso, 57,5% responderam que é a alta gerência da
-organização ou empresa, enquanto que 23% disseram que é o próprio
+organização ou empresa, enquanto 23% disseram que é o próprio
 desenvolvedor. Quando perguntados se concordariam em escrever um código
 com dúvidas éticas, 58% responderam que não e 37% responderam que
 dependeria do código requisitado.
@@ -1095,7 +1095,7 @@ feito de acordo com processos rígidos, incluindo rigorosa revisão de
 código e certificação por organizações externas. É comum exigir
 redundância não apenas em hardware, mas também no próprio software. Por
 exemplo, o sistema roda de forma paralela em duas máquinas e uma decisão
-somente é tomada caso ambas instâncias cheguem ao mesmo resultado. Por
+somente é tomada caso ambas as instâncias cheguem ao mesmo resultado. Por
 fim, sistemas A muitas vezes são especificados em uma linguagem formal,
 baseada em teoria de conjuntos ou lógica.
 
@@ -1114,12 +1114,12 @@ livro**.
 Sobram os sistemas B (*Business*), que são exatamente aqueles que vão se
 beneficiar dos conceitos estudados neste livro. Esses sistemas incluem
 as mais variadas aplicações corporativas (financeiras, recursos humanos,
-logística, vendas, contabilidade, etc), sistemas Web dos mais variados
+logística, vendas, contabilidade, etc.), sistemas Web dos mais variados
 tipos, desde sistemas com poucas páginas até grandes redes sociais ou
 sistemas de busca. Outras aplicações incluem bibliotecas e frameworks de
 software, aplicações de uso geral (como editores de texto, planilhas,
-editores de imagens, etc) e sistemas de software básico (como
-compiladores, gerenciadores de bancos de dados, IDEs, etc). Nesses
+editores de imagens, etc.) e sistemas de software básico (como
+compiladores, gerenciadores de bancos de dados, IDEs, etc.). Nesses
 sistemas, os princípios e práticas de Engenharia de Software estudados neste livro
 podem contribuir com dois benefícios principais: (1) eles podem tornar
 mais produtivo o desenvolvimento de Sistemas B; (2) eles podem propiciar
@@ -1200,11 +1200,11 @@ anti-padrão arquitetural, chamado *big ball of mud*, que é um termo
 usado para designar sistemas sem organização arquitetural. Esses
 sistemas poderiam até possuir uma arquitetura no seu início, mas depois
 o projeto arquitetural deles foi sendo abandonado, transformando-os
-em um "spaghetti" de dependências entre os seus módulos.
+em um espaguete de dependências entre os seus módulos.
 
 **Capítulo 8: Testes**, com ênfase em testes de unidade, usando
 frameworks como JUnit. O capítulo inclui dezenas de exemplos de testes
-de unidade e também discute diversos aspectos desses testes. Por
+de unidade e discute diversos aspectos desses testes. Por
 exemplo, discutimos bons princípios para escrita de testes de unidade e
 também test smells, isto é, padrões de testes que não são recomendados.
 Em seguida, tratamos de testabilidade, isto é, discutimos a importância
@@ -1263,7 +1263,7 @@ sistemas operacionais, etc.
 
 2\. Diferencie requisitos funcionais de requisitos não-funcionais.
 
-3\. Explique porque testes podem ser considerados tanto uma atividade de
+3\. Explique por que testes podem ser considerados tanto uma atividade de
 verificação como de validação de software. Qual tipo de teste é mais
 adequado se o objetivo for verificação? Qual tipo de teste é mais
 adequado se o objetivo for validar um sistema de software?
@@ -1282,7 +1282,7 @@ documentação detalhados?
 
 7\. Alguns estudos mostram que os custos com manutenção e evolução podem
 alcançar 80% ou mais dos custos totais alocados a um sistema de
-software, durante todo o seu ciclo de vida. Explique porque esse valor é
+software, durante todo o seu ciclo de vida. Explique por que esse valor é
 tão alto.
 
 8\. Refactoring é uma transformação de código

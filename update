@@ -1,23 +1,7 @@
 rm esm-book.*
 rm esm-book-leanpub.pdf
 
-# path do pandoc incluindo parâmetros sempre usados
-pandoc_bin="/Users/mtov/pandoc-2.11.4/bin/pandoc --defaults=defaults.yaml"
+git add .
+git commit -a -m "update"
 
-$pandoc_bin  -T "Prefácio" cap0.md -o cap0.html
-$pandoc_bin --number-offset=0 -T "Cap. 1: Introdução" cap1.md -o cap1.html
-$pandoc_bin --number-offset=1 -T "Cap. 2: Processos" cap2.md -o cap2.html
-$pandoc_bin --number-offset=2 -T "Cap. 3: Requisitos" cap3.md -o cap3.html
-$pandoc_bin --number-offset=3 -T "Cap. 4: Modelos" cap4.md -o cap4.html
-$pandoc_bin --number-offset=4 -T "Cap. 5: Princípios de Projeto" cap5.md -o cap5.html
-$pandoc_bin --number-offset=5 -T "Cap. 6: Padrões de Projeto " cap6.md -o cap6.html
-$pandoc_bin --number-offset=6 -T "Cap. 7: Arquitetura" cap7.md -o cap7.html
-$pandoc_bin --number-offset=7 -T "Cap. 8: Testes" cap8.md -o cap8.html
-$pandoc_bin --number-offset=8 -T "Cap. 9: Refactoring" cap9.md -o cap9.html
-$pandoc_bin --number-offset=9 -T "Cap. 10: DevOps" cap10.md -o cap10.html
-$pandoc_bin -T "Apêndice A: Git" capAp.md -o capAp.html
-
-# git add .
-# git commit -a -m "update"
-
-# git push origin master
+git push origin master
