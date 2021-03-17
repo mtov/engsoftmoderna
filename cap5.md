@@ -49,8 +49,8 @@ software passa pela criação de **abstrações**. Uma abstração — pelo
 menos em Computação — é uma representação simplificada de uma
 entidade. Apesar de simplificada, ela nos permite interagir e tirar
 proveito da entidade abstraída, sem que tenhamos que dominar todos os
-detalhes envolvidos na sua implementação. Funções, classes, interfaces,
-pacotes, bibliotecas, etc são os instrumentos clássicos oferecidos por
+detalhes envolvidos na sua implementação. Dentre outros, funções, classes, interfaces,
+pacotes e bibliotecas são os instrumentos clássicos oferecidos por
 linguagens de programação para criação de abstrações.
 
 Em resumo, o primeiro objetivo de projeto de software é decompor um
@@ -77,7 +77,7 @@ O problema inicial — projetar um compilador — foi decomposto em
 quatro problemas menores, que vamos descrever brevemente neste
 parágrafo. Primeiro, temos que implementar um analisador léxico, que vai
 ler o arquivo de entrada e dividi-lo em tokens (como `if`, `for`, `while`, `x`,
-`+`, etc).
+`+`, etc.).
 
 Depois, temos que implementar um analisador sintático, que vai analisar
 as tokens e verificar se elas respeitam a gramática da linguagem fonte.

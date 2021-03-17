@@ -332,7 +332,7 @@ diferentes, etc. Em resumo, se estiver interessado em modelar a
 estrutura de um programa, você deve usar diagramas estáticos. Se seu
 interesse for modelar o comportamento de um programa — isto é, o que
 pode acontecer durante sua execução, quais métodos são de fato
-executados, etc — você deve usar algum diagrama dinâmico da UML.
+executados, etc. — você deve usar algum diagrama dinâmico da UML.
 Por fim, gostaríamos de lembrar que tratamos de Diagramas de Casos de
 Uso no Capítulo 3, quando apresentamos técnicas para especificação de
 requisitos.
