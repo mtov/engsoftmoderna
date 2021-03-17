@@ -198,7 +198,7 @@ void g() {   // implementada por Bob
   print(&quot;Helo, world!&quot;);
 }</code></pre>
 <p>Concluída a implementação, Bob realizou um <code>add</code>, seguido de um <code>commit</code> e um <code>push</code>.</p>
-<p>Em seguida, Alice realizou um <code>pull</code> e obteve a versão do arquivo implementada por Bob. Então, Alice resolveu traduzir a mensagem do programa para Português:</p>
+<p>Em seguida, Alice realizou um <code>pull</code> e obteve a versão do arquivo implementada por Bob. Então, Alice resolveu traduzir a mensagem do programa para português:</p>
 <pre><code>main() {
   print(&quot;Olá, mundo!&quot;);
 }</code></pre>
@@ -225,7 +225,7 @@ Automatic merge failed; fix conflicts and then commit the result.</div>
 <li><p>Entre <code>=======</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; f25bce8 ...</code> temos o código modificado por Alice, isto é, pela desenvolvedora que executou com sucesso seu <code>push</code>. <code>f225bce8...</code> é o ID do commit no qual Alice modificou essa parte do código.</p></li>
 </ul>
 <p>Cabe então a Bob resolver o conflito, o que é sempre uma tarefa manual. Para isso, ele tem que escolher o trecho de código que vai prevalecer — o seu código ou o da Alice — e editar o arquivo de acordo com tal escolha, para remover os delimitadores inseridos pelo git.</p>
-<p>Vamos supor que Bob decida que o código de Alice é o certo, pois agora o sistema está usando mensagens em Português. Logo, ele deve editar o arquivo, de forma que fique assim:</p>
+<p>Vamos supor que Bob decida que o código de Alice é o certo, pois agora o sistema está usando mensagens em português. Logo, ele deve editar o arquivo, de forma que fique assim:</p>
 <pre><code>main() {                
   print(&quot;Olá, mundo!&quot;);                      
 }                       </code></pre>

@@ -274,7 +274,7 @@ um  `push`.
 
 Em seguida, Alice realizou um  `pull` e obteve a versão do arquivo
 implementada por Bob. Então, Alice resolveu traduzir a mensagem do
-programa para Português:
+programa para português:
 
 ```
 main() {
@@ -336,7 +336,7 @@ Para isso, ele tem que escolher o trecho de código que vai prevalecer
 tal escolha, para remover os delimitadores inseridos pelo git. 
 
 Vamos supor que Bob decida que o código de Alice é o certo, pois agora o
-sistema está usando mensagens em Português. Logo, ele deve editar o
+sistema está usando mensagens em português. Logo, ele deve editar o
 arquivo, de forma que fique assim:
 
 ```

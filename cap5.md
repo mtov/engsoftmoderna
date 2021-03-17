@@ -418,7 +418,7 @@ enviou um mail para todos os desenvolvedores da empresa, com um conjunto
 de diretrizes para projeto de software que eles deveriam
 obrigatoriamente seguir a partir de então. Reproduzimos a mensagem na
 lista a seguir (apenas fizemos adaptações cosméticas para ela ficar
-mais clara em Português; essa mesma mensagem é mencionada no livro de
+mais clara em português; essa mesma mensagem é mencionada no livro de
 Fox e Patterson ([link](http://www.saasbook.info/),
 Cap. 1, Seção 1.4):
 

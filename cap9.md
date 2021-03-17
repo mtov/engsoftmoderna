@@ -1631,7 +1631,7 @@ questão).
 para explicar "código ruim" são considerados um code smell. Nessas
 situações, o ideal é tornar o código mais claro e, então, remover os
 comentários. A seguir, mostramos mais um caso de comentário que pode ser
-deletado. Explique porque esses comentários são desnecessários.
+deletado. Explique por que esses comentários são desnecessários.
 
 ```
 // classe Aluno
