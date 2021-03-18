@@ -44,7 +44,7 @@ Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício
 
 ## O que Revisar?   {.unnumbered}
 
-Segue um lista de questões que devem ser apontadas e consideradas em revisões de código:
+Segue uma lista de questões que devem ser apontadas e consideradas em revisões de código:
 
 1. Bugs
 2. Código mais complexo do que o necessário
@@ -61,6 +61,7 @@ Segue um lista de questões que devem ser apontadas e consideradas em revisões 
 13. Problemas de usabilidade com o usuário
 14. Uso inadequado ou sub-ótimo de APIs
 15. Uso de bibliotecas ou frameworks não autorizados
+16. Erros relacionados com alocação de memória dinâmica
 16. Código com problemas de leiaute ou indentação
 17. Código que viola convenções de nome
 
@@ -86,7 +87,7 @@ Vamos começar com algumas recomendações genéricas:
 
 Seguem agora algumas recomendações mais específicas:
 
-5. Nos seu comentários, **procure fazer perguntas e não julgamentos**. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: *Is this actually used? Or is it something necessary to make the template magic work?*
+5. Nos seus comentários, **procure fazer perguntas e não julgamentos**. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: *Is this actually used? Or is it something necessary to make the template magic work?*
 
 6. Se você tiver feito um comentário errado ou sem sentido, **reconheça o seu erro** e agradeça, como no seguinte exemplo: *Ah, I see the point. Thanks for your explanation.*
 

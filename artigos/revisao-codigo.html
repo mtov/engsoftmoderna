@@ -125,7 +125,7 @@
 <p>Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa.</p>
 <p>Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício importante que é evitar a formação de <q>ilhas de conhecimento</q> em um projeto. Em vez disso, ela ajuda a socializar o conhecimento sobre o código e a criar uma cultura de colaboração e troca de ideias entre os membros do time.</p>
 <h2 class="unnumbered" id="o-que-revisar">O que Revisar?</h2>
-<p>Segue um lista de questões que devem ser apontadas e consideradas em revisões de código:</p>
+<p>Segue uma lista de questões que devem ser apontadas e consideradas em revisões de código:</p>
 <ol type="1">
 <li>Bugs</li>
 <li>Código mais complexo do que o necessário</li>
@@ -142,6 +142,7 @@
 <li>Problemas de usabilidade com o usuário</li>
 <li>Uso inadequado ou sub-ótimo de APIs</li>
 <li>Uso de bibliotecas ou frameworks não autorizados</li>
+<li>Erros relacionados com alocação de memória dinâmica</li>
 <li>Código com problemas de leiaute ou indentação</li>
 <li>Código que viola convenções de nome</li>
 </ol>
@@ -159,7 +160,7 @@
 <h3 class="unnumbered" id="recomendações-específicas">Recomendações Específicas</h3>
 <p>Seguem agora algumas recomendações mais específicas:</p>
 <ol start="5" type="1">
-<li><p>Nos seu comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
+<li><p>Nos seus comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
 <li><p>Se você tiver feito um comentário errado ou sem sentido, <strong>reconheça o seu erro</strong> e agradeça, como no seguinte exemplo: <em>Ah, I see the point. Thanks for your explanation.</em></p></li>
 <li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task… It’ll save time to everybody</em> 😄</p></li>
 <li><p>Sempre que for esclarecedor, <strong>referencie a documentação</strong> interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: <em>[a given feature] allows id as in [URL]</em></p></li>
