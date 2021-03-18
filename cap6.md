@@ -802,7 +802,7 @@ Essa classe tem duas características importantes:
     as chamadas aos métodos `send` e `receive`. Em outras palavras, um
     decorador, no nosso caso, vai sempre referenciar um outro
     decorador. Após implementar a funcionalidade que lhe cabe — um
-    buffer, compactação, etc — ele repassa a chamada para esse
+    buffer, compactação, etc. — ele repassa a chamada para esse
     decorador.
 
 Por fim, chegamos aos decoradores reais. Eles são subclasses de

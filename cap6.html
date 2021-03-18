@@ -464,7 +464,7 @@ channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 <p>Essa classe tem duas características importantes:</p>
 <ul>
 <li><p>Ela é uma <code>Channel</code>, isto é, ela implementa essa interface e, portanto, os seus dois métodos. Assim, sempre que for esperado um objeto do tipo <code>Channel</code> podemos passar um objeto do tipo <code>ChannelDecorator</code> no lugar.</p></li>
-<li><p>Ela possui internamente um objeto do tipo <code>Channel</code> para o qual delega as chamadas aos métodos <code>send</code> e <code>receive</code>. Em outras palavras, um decorador, no nosso caso, vai sempre referenciar um outro decorador. Após implementar a funcionalidade que lhe cabe — um buffer, compactação, etc — ele repassa a chamada para esse decorador.</p></li>
+<li><p>Ela possui internamente um objeto do tipo <code>Channel</code> para o qual delega as chamadas aos métodos <code>send</code> e <code>receive</code>. Em outras palavras, um decorador, no nosso caso, vai sempre referenciar um outro decorador. Após implementar a funcionalidade que lhe cabe — um buffer, compactação, etc. — ele repassa a chamada para esse decorador.</p></li>
 </ul>
 <p>Por fim, chegamos aos decoradores reais. Eles são subclasses de <code>ChannelDecorator</code>, como no código a seguir, que implementa um decorador que compacta e descompacta as mensagens trafegadas pelo canal:</p>
 <pre><code>class ZipChannel extends ChannelDecorator {
