@@ -158,7 +158,7 @@ as classes são organizadas em módulos de maior tamanho, chamados de
 **camadas**. As camadas são dispostas de forma hierárquica, como em um
 bolo. Assim, uma camada somente pode usar serviços — isto é, chamar
 métodos, instanciar objetos, estender classes, declarar 
-parâmetros, lançar exceções, etc — da camada imediatamente inferior.
+parâmetros, lançar exceções, etc. — da camada imediatamente inferior.
 
 Dentre outras aplicações, arquiteturas em camadas são muito usadas na
 implementação de protocolos de rede. Por exemplo, HTTP é um protocolo de
@@ -203,7 +203,7 @@ projetos de maior porte.
 \index{Mainframes}
 Esse tipo de arquitetura é comum na construção de sistemas de informação
 corporativos. Até o final da década de 80, aplicações corporativas —
-como folhas de pagamento, controle de estoque, sistemas financeiros, etc
+como folhas de pagamento, controle de estoque ou sistemas financeiros
 — executavam em **mainframes**, que eram computadores fisicamente
 grandes e também muito caros. As aplicações eram monolíticas e acessadas
 por meio de "terminais burros", isto é, sem qualquer capacidade de
@@ -416,7 +416,7 @@ vertente lembra bastante sistemas três camadas.
 \index{Arquitetura de Software!Single Page Applications}
 \index{Single Page Applications}
 
-Em uma aplicação Web tradicional, com formulários, menus, botões, etc,
+Em uma aplicação Web tradicional, com formulários, menus e botões,
 toda vez que o usuário gera um evento — por exemplo, clica em um
 botão "Gravar" — ocorre uma interação entre o navegador e o
 servidor Web. Isto é, o navegador envia informações para o servidor Web,
@@ -931,8 +931,8 @@ Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
 arquitetura publish/subscribe. Suponha que essa companhia tem um
 sistema de vendas, que é usado pelos clientes para comprar passagens
 aéreas. Após efetuar uma venda, esse sistema pode gerar um evento, com
-todos os dados da venda (data, horário, número do vôo, dados do
-passageiro, etc). A figura a seguir ilustra a arquitetura proposta para
+todos os dados da venda, tais como data, horário, número do vôo e dados do
+passageiro. A figura a seguir ilustra a arquitetura proposta para
 o sistema.
 
 ![Arquitetura Pub/Sub em uma companhia aérea](figs/cap7/ciaaerea){width=80%}
@@ -941,7 +941,7 @@ O evento "venda" será então assinado por três sistemas da companhia
 aérea: (1) sistema de milhagens, pois as milhas relativas à passagem
 devem ser creditadas na conta do passageiro; (2) sistema de marketing,
 que pode usar os dados da venda para fazer ofertas para o cliente, como
-aluguel de carros, promoção para classe executiva, etc; (3) Sistema de
+aluguel de carros ou promoção para classe executiva; (3) Sistema de
 contabilidade, pois a venda que foi realizada precisa ser incluída na
 contabilidade da empresa.
 
