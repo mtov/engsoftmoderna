@@ -662,7 +662,7 @@ tenham uma lógica clara e de rápido entendimento. Idealmente, um teste
 deve, por exemplo, testar um único requisito do sistema sob teste.
 
 Um **Teste com Lógica Condicional** inclui código que pode ou não ser
-executado. Isto é, são testes com comandos `if`, laços, etc, quando o
+executado. Isto é, são testes com comandos `if` ou laços, quando o
 ideal é que os testes de unidade sejam lineares. Lógica condicional em
 testes é considerada um smell porque ela prejudica o entendimento do
 teste.
@@ -1871,8 +1871,8 @@ categorias. Na verdade, a classificação vai depender de como os testes
 são escritos. Se os testes de unidade forem escritos usando-se
 informações apenas sobre a interface dos métodos sob teste, eles são
 considerados como caixa-preta. Porém, se a escrita considerar
-informações sobre a cobertura dos testes, desvios que são cobertos ou
-não, etc, então eles são testes caixa-branca. Em resumo, testes de
+informações sobre a cobertura dos testes, tais como desvios que são cobertos ou
+não, então eles são testes caixa-branca. Em resumo, testes de
 unidade sempre testam uma unidade pequena e isolada de código. Essa
 unidade pode ser testada na forma de uma caixa-preta (conhecendo-se
 apenas a sua interface e requisitos externos) ou na forma de uma 
