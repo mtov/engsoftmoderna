@@ -809,7 +809,7 @@ esse método deve ser abstrato, isto é, ter apenas uma assinatura, sem corpo.
 
 \index{Refactoring!Remoção de Código Morto}
 **Remoção de Código Morto** recomenda deletar métodos, classes,
-variáveis, atributos, etc que não estão sendo mais usados. Por exemplo,
+variáveis ou atributos que não estão sendo mais usados. Por exemplo,
 no caso de um método, pode não existir mais chamadas para ele. No caso
 de uma classe, ela pode não ser mais instanciada ou herdada por outras
 classes. No caso de um atributo, ele pode não ser usado no corpo da
@@ -1297,7 +1297,7 @@ smell.
 \index{Code Smells!Obsessão por Tipos Primitivos}
 
 Este code smell ocorre quando tipos primitivos (isto é, `int`, `float`,
-`String`, etc) são usados no lugar de classes. Por exemplo, suponha que
+`String`, etc.) são usados no lugar de classes. Por exemplo, suponha que
 precisamos declarar uma variável para armazenar o CEP de um endereço. Na
 pressa para usar rapidamente a variável, podemos declará-la como sendo
 do tipo `String`, em vez de criar uma classe dedicada — por exemplo,
