@@ -229,7 +229,8 @@ class Fone {
 <p>Em diagramas de classes, relações de herança são representadas por meio de setas com a extremidade não preenchida. Essas setas são usadas para conectar subclasses à sua classe base. No próximo exemplo, elas indicam que <code>PessoaFisica</code> e <code>PessoaJuridica</code> são subclasses de <code>Pessoa</code>. Como usual em orientação a objetos, subclasses herdam todos os atributos e métodos da classe base, mas também podem adicionar novos membros. Por exemplo, apenas <code>PessoaFisica</code> tem <code>cpf</code> e apenas <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
 <p><img src="figs/cap4/class10.svg" style="width:95.0%" /></p>
 </section>
-<h3 class="unnumbered" id="dependências">Dependências</h3>
+<section id="dependências" data-number="1.3.3">
+<h3 data-number="4.3.3"><span class="header-section-number">4.3.3</span> Dependências</h3>
 <p></p>
 <p>Existe uma dependência de uma classe A para uma classe B, representada por uma seta com uma linha tracejada de A para B, quando a classe A usa a classe B, porém esse uso não ocorre por meio de associação (isto é, A não tem um atributo do tipo B) ou herança (isto é, A não é uma subclasse de B). Dependências ocorrem, por exemplo, quando um método de A declara um parâmetro ou variável local do tipo B ou quando um método de A lança uma exceção do tipo B. Uma dependência é considerada uma modalidade menos forte de relacionamento entre classes do que relacionamentos que ocorrem por meio de associação e herança.</p>
 <p>Para ilustrar o uso de dependências, considere o seguinte trecho de código:</p>
@@ -247,6 +248,7 @@ class MinhaClasse {
 <p>Algumas vezes, logo acima e ao longo da seta tracejada, informa-se o tipo da dependência, usando-se palavras como create (para indicar que a classe de origem instancia objetos da classe de destino da dependência) ou call (para indicar que a classe de origem chama métodos da classe de destino). Essas palavras são escritas entre sinais de menor (&lt;&lt;) e maior (&gt;&gt;). No diagrama a seguir, por exemplo, fica claro o tipo de dependência que <code>ShapeFactory</code> estabelece com a classe <code>Shape</code>.</p>
 <p><img src="figs/cap4/class11.svg" style="width:65.0%" /></p>
 <p>Uma classe pode ter dependências para um grande número de classes. No entanto, não se costuma representar todas elas em diagramas de classes, mas apenas as mais importantes e que estão diretamente relacionadas com a funcionalidade ou propriedade do sistema que pretendemos esboçar.</p>
+</section>
 </section>
 <section id="diagramas-de-pacotes" data-number="1.4">
 <h2 data-number="4.4"><span class="header-section-number">4.4</span> Diagramas de Pacotes</h2>

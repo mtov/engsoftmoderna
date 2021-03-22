@@ -594,7 +594,7 @@ exemplo, apenas `PessoaFisica` tem `cpf` e apenas `PessoaJuridica` tem `cnpj`.
 
 ![](figs/cap4/class10){width=95%}
 
-### Dependências {.unnumbered}
+### Dependências 
 \index{UML!Dependências}
 
 Existe uma dependência de uma classe A para uma classe B, representada
