@@ -930,8 +930,8 @@ distribuídas.
 Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
 arquitetura publish/subscribe. Suponha que essa companhia tem um
 sistema de vendas, que é usado pelos clientes para comprar passagens
-aéreas. Após efetuar uma venda, esse sistema pode gerar um evento, com
-todos os dados da venda, tais como data, horário, número do vôo e dados do
+aéreas. Após efetuar uma venda, esse sistema pode gerar um evento com
+todos os dados da operação, tais como data, horário, número do vôo e dados do
 passageiro. A figura a seguir ilustra a arquitetura proposta para
 o sistema.
 

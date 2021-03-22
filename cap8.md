@@ -662,7 +662,7 @@ tenham uma lógica clara e de rápido entendimento. Idealmente, um teste
 deve, por exemplo, testar um único requisito do sistema sob teste.
 
 Um **Teste com Lógica Condicional** inclui código que pode ou não ser
-executado. Isto é, são testes com comandos `if` ou laços, quando o
+executado. Isto é, são testes com comandos `if` ou laços, enquanto que o
 ideal é que os testes de unidade sejam lineares. Lógica condicional em
 testes é considerada um smell porque ela prejudica o entendimento do
 teste.
