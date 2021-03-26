@@ -28,7 +28,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 2. O que é o Modelo Spotify? {.unnumbered}
+### 2. O que é o Modelo Spotify? {.unnumbered #spotify}
 
 É um modelo proposto pela Spotify para organização de times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
