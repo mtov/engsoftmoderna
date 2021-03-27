@@ -32,7 +32,7 @@ desenvolvedores.
 
 É um modelo proposto pela Spotify para organização de times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
-aconteceu na Spotify, eles passaram a usar uma estrutura organizacional em forma 
+aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma 
 de matriz, ilustrada a seguir:
 
 ![Figura copiada do artigo Scaling Agile @ Spotify
@@ -41,16 +41,16 @@ Henrik Kniberg & Anders Ivarsson, 2012.](./figs/modelo-spotify.jpg){width=75%}
 
 Nessa **estrutura matricial** temos:
 
-* **Squads**, que são os times, com todas as características típicas de times
-ágeis, isto é, multi-disciplinares, auto-organizáveis e autônomos. 
+* **Squads**, que são os times, com todas as características de times
+ágeis, isto é, multidisciplinares, auto-organizáveis e autônomos. 
 Tipicamente, um squad tem menos de 10 profissionais, que seguem um determinado 
 método ágil. Por exemplo, eles podem realizar reuniões de 
-planejamento, reuniões diárias, retrospectivas e revisões, no caso de Scrum.
-Um squad deve também possuir autonomia para colocar suas implementações em
-produção. Para que isso ocorra sem atritos, é importante que as dependências
+planejamento, reuniões diárias, retrospectivas e revisões, no caso de 
+adotarem Scrum. Um squad deve possuir autonomia para colocar suas histórias
+de usuários em produção. Por isso, é importante que as dependências
 entre squads sejam minimizadas.
 
-* **Tribos**, que são conjuntos de squads que trabalham em sistemas ou sub-sistemas 
+* **Tribos**, que são conjuntos de squads que trabalham em sistemas ou subsistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
 estrutura tradicional. Recomenda-se que uma tribo tenha no máximo 100 membros. 
 Se esse limite for ultrapassado, deve-se criar mais um nível, constituído 
@@ -59,25 +59,23 @@ por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
 * **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
 as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
 front-end, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
-no dia-a-dia estão espalhados pelos squads. Porém, com uma frequência bem
-definida, eles se reunem para trocar ideias, definir práticas 
-comuns, etc. Normalmente, como mostrado na figura acima, os chapters congregam 
-profissionais de uma mesma tribo. Eles costumam possuir também um líder
-formal, que fica responsável por questões como contratação, treinamento e
-promoções.
+no dia a dia estão espalhados pelos squads. Porém, com uma frequência definida, 
+eles se reunem para trocar ideias, definir práticas comuns, etc. Como mostrado 
+na figura acima, os chapters congregam profissionais de uma mesma tribo. 
+Eles possuem um líder formal, que é responsável por questões como contratação,
+treinamento e promoções.
 
 * **Guildas**, que são comunidades informais e, às vezes, temporárias. Isto é,
 são grupos de funcionários que se reunem, voluntariamente, para compartilhar 
 interesses comuns, como uma tecnologia, processo, etc. Os participantes
-de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda não
-é novo e já existia antes, com nomes como comunidade de prática ou grupo
+de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda 
+já existia antes, com nomes como comunidade de prática ou grupos
 de interesse.
 
-Antes de concluir, é importante lembrar que o Modelo Spotify foi proposto em
-2012. Desde lá, a sua adoção, mesmo na Spotify, passou por evoluções e
-adaptações importantes. E, como qualquer assunto relacionado com processo, 
-sua adoção nunca deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao **contexto** são necessárias e bem vindas.
+O Modelo Spotify foi proposto em 2012. Desde lá, a sua adoção, mesmo na Spotify, 
+passou por evoluções e adaptações importantes. E, como qualquer assunto relacionado 
+com processo, sua adoção não deve ocorrer cegamente de acordo com o manual. 
+Adaptações ao **contexto** quase sempre serão necessárias.
 
 ### 3. O que é Grooming? {.unnumbered}
 
