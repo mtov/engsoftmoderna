@@ -52,9 +52,10 @@ entre squads sejam minimizadas.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou subsistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
-estrutura tradicional. Recomenda-se que uma tribo tenha no máximo 100 membros. 
-Se esse limite for ultrapassado, deve-se criar mais um nível, constituído 
-por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
+estrutura tradicional. Toda tribo possui um líder, responsável por garantir que os 
+squads estão trabalhando de forma coordenada. Recomenda-se que uma tribo tenha no 
+máximo 100 membros. Se esse limite for ultrapassado, deve-se criar mais um nível, 
+constituído por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
 
 * **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
 as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
@@ -71,6 +72,11 @@ interesses comuns, como uma tecnologia, processo, etc. Os participantes
 de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda 
 já existia antes, com nomes como comunidade de prática ou grupos
 de interesse.
+
+O modelo é matricial porque existem estruturas verticais, representadas
+pelos squads e tribos, e estruturas horizontais, representadas
+pelos chapters e guildas. Consequentemente, os membros de um squad 
+possuem dois "chefes" ou líderes: o líder do chapter e o líder da tribo.
 
 O Modelo Spotify foi proposto em 2012. Desde lá, a sua adoção, mesmo na Spotify, 
 passou por evoluções e adaptações importantes. E, como qualquer assunto relacionado 
