@@ -47,8 +47,10 @@ Tipicamente, um squad tem menos de 10 profissionais, que seguem um determinado
 método ágil. Por exemplo, eles podem realizar reuniões de 
 planejamento, reuniões diárias, retrospectivas e revisões, no caso de 
 adotarem Scrum. Um squad deve possuir autonomia para colocar suas histórias
-de usuários em produção. Por isso, é importante que as dependências
-entre squads sejam minimizadas.
+de usuário em produção. Na verdade, esse é um objetivo central do modelo:
+criar condições para que cada squad funcione como uma "micro-startup", com 
+bastante autonomia, dentro da organização. Para que isso seja possível, 
+é importante que as dependências entre squads sejam minimizadas.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou subsistemas 
 semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
