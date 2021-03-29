@@ -115,7 +115,8 @@ para avaliar o sucesso de sistemas SaaS (ou micro-SaaS):
 custos com propaganda, vendas, etc em um mês / número de novos assinantes no mês.
 
 * **Receita Mensal Recorrente (MRR)** (ou *Monthly Recurring Revenue*):
-Somatório do valor das assinaturas recebidas no mês.
+Somatório do valor das assinaturas recebidas no mês. Ou seja, é o faturamento
+mensal obtido com o sistema. Existe também o termo Receita Anual Recorrente (ARR).
 
 * **Taxa de Cancelamentos** (*Churn Rate*): número de cancelamentos no mês /
 total de clientes no início do mês.
