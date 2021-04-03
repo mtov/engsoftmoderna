@@ -15,6 +15,9 @@ micro-saas: micro-saas.md
 shape-up: shape-up.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
+modelo-spotify: modelo-spotify.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Escalando Times Ágeis com o Modelo Spotify" modelo-spotify.md -o modelo-spotify.html
+
 processos-faq: processos-faq.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Procesos de Software" processos-faq.md -o processos-faq.html
 
