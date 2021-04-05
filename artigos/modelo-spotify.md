@@ -1,9 +1,11 @@
 # Escalando Times Ágeis com o Modelo Spotify {.unnumbered}
 
+### Visão Geral {.unnumbered}
+
 O Modelo Spotify define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
 aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma 
-de matriz, ilustrada a seguir:
+de matriz, ilustrada na seguinte figura:
 
 ![Figura copiada do artigo Scaling Agile @ Spotify
 with Tribes, Squads, Chapters & Guilds.
@@ -18,7 +20,7 @@ método ágil. Por exemplo, eles podem realizar reuniões de
 planejamento, reuniões diárias, retrospectivas e revisões, no caso de 
 adotarem Scrum. Um squad deve possuir autonomia para colocar suas histórias
 de usuário em produção. Na verdade, esse é um objetivo central do modelo:
-criar condições para que cada squad funcione como uma "micro-startup", com 
+criar condições para que cada squad funcione como uma "microempresa", com 
 bastante autonomia dentro da organização. Para que isso seja possível, 
 é importante que as dependências entre squads sejam minimizadas.
 
@@ -31,7 +33,7 @@ constituído por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos d
 
 * **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
 as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
-front-end, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
+frontend, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
 no dia a dia estão espalhados pelos squads. Porém, com uma frequência definida, 
 eles se reunem para trocar ideias, definir práticas comuns, etc. Como mostrado 
 na figura acima, os chapters congregam profissionais de uma mesma tribo. 
@@ -51,10 +53,52 @@ pelos chapters e guildas. Consequentemente, os membros de um squad
 possuem dois "chefes" ou líderes: o líder do chapter e o líder da tribo.
 
 
+### Tipos de Squads {.unnumbered}
+
+Existem três tipos principais de squads voltados para desenvolvimento 
+de software:
+
+* Squads responsáveis por componentes arquiteturais: o exemplo clássico 
+são squads responsáveis pelos clientes móveis de um sistema, incluindo 
+Android, iOS, etc. Ou seja, a empresa pode ter squads para 
+desenvolver e manter cada uma desses clientes. Como um segundo exemplo,
+em empresas menores, podemos ter squads de frontend e backend.
+
+* Squads responsáveis por funcionalidades: por exemplo, em um sistema 
+de comércio eletrônico, podem existir squads responsáveis pelo processo 
+de compra (checkout), pelo pagamento, pela recomendação de produtos, 
+pela pesquisa de produtos, etc. 
+
+* Squads responsáveis por desafios de negócio: por exemplo, pode-se criar 
+um squad para melhorar a retenção de clientes de um sistema SaaS 
+(*Software as a Service*). As soluções desenhadas e implementadas por esse 
+squad podem incluir programas de fidelidade, cupons de desconto, etc. 
+
+Assim, os squads de funcionalidade tratam de serviços bem conhecidos e 
+quase que obrigatórios em um sistema. Já os squads voltados para resolver
+um desafio do negócio tendem a ter uma maior liberdade para desenhar 
+seus serviços.
+
+Desenvolvedores são maioria nos dois primeiros tipos de squads.
+Já em squads voltados para um desafio de negócio existe um 
+equilíbrio entre desenvolvedores e outros papeis, como gerentes 
+de produto, vendedores, analistas de marketing, cientistas de 
+dados, etc.
+
+É importante ressaltar que em uma mesma empresa podem co-existir squads 
+de componentes arquiteturais, de funcionalidades e associados a 
+desafios de negócio.
+
+
 ### Comentário Final {.unnumbered}
 
-O Modelo Spotify foi proposto em 2012. Desde lá, a sua adoção, mesmo na Spotify, 
-passou por evoluções e adaptações importantes. E, como qualquer assunto relacionado 
+O Modelo Spotify foi proposto em 2012. Em 2014, 
+dois [vídeos](https://blog.crisp.se/2014/03/27/henrikkniberg/spotify-engineering-culture-part-1),
+com o formato de animação, viralizaram e ajudaram a tornar o modelo 
+largamente conhecido.
+
+Desde essa época, a sua adoção, mesmo na Spotify, passou por evoluções e 
+adaptações importantes. E, como qualquer assunto relacionado 
 com processo, sua adoção não deve ocorrer cegamente de acordo com o manual. 
 Adaptações ao **contexto** quase sempre serão necessárias.
 
