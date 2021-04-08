@@ -76,8 +76,7 @@ squad podem incluir programas de fidelidade, cupons de desconto, etc.
 
 Assim, os squads de funcionalidade tratam de serviços bem conhecidos e 
 quase que obrigatórios em um sistema. Já os squads voltados para resolver
-um desafio do negócio tendem a ter uma maior liberdade para desenhar 
-seus serviços.
+um desafio do negócio têm maior liberdade para desenhar seus serviços.
 
 Desenvolvedores são maioria nos dois primeiros tipos de squads.
 Já em squads voltados para um desafio de negócio existe um 
