@@ -322,7 +322,7 @@ interface de uma classe é muito importante, pois ela constitui a sua
 parte visível.
 
 Interfaces devem ser estáveis, pois mudanças na interface de uma classe
-podem implicar em atualizações em seus clientes. Para ser mais claro,
+podem demandar atualizações em seus clientes. Para ser mais claro,
 suponha uma classe `Math`, com métodos que realizam operações matemáticas.
 Suponha um método `sqrt`, que calcula a raiz quadrada de seu parâmetro.
 Suponha ainda que a assinatura desse método seja alterada — para,
@@ -804,7 +804,7 @@ software. Nesse glossário, acoplamento é definido da seguinte forma
 ([link](https://engineering.fb.com/uncategorized/software-design-glossary/)):
 
 > "Dois elementos estão acoplados quando mudanças em um elemento
-implicam em mudanças em um outro elemento ... Acoplamento pode dar
+demandam mudanças em um outro elemento ... Acoplamento pode dar
 origem a uma relação bem sutil entre classes, como frequentemente
 observamos no Facebook. Certos eventos que interrompem o funcionamento
 de uma parte do sistema normalmente são causados por pequenos bits de
@@ -813,7 +813,7 @@ configuração do sistema A causam um time-out no sistema B, que causa
 uma sobrecarga no sistema C."
 
 A definição de acoplamento proposta por Beck — "quando mudanças em
-um elemento implicam em mudanças em um outro elemento" —
+um elemento demandam mudanças em um outro elemento" —
 corresponde à definição de acoplamento evolutivo. Ou seja, parece que
 Beck não se preocupa com o acoplamento aceitável (isto é, estrutural e
 estável) entre duas classes; pois ele, de fato, não deve ser motivo de

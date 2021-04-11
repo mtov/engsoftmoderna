@@ -843,7 +843,7 @@ código entre em produção, quando é mais caro detectá-los e
 corrigi-los. Como resultado, desenvolvedores tendem a evitar
 refatorações em sistemas sem boas suítes de teste. Em vez disso, eles
 reduzem as modificações no código àquelas necessárias para implementar
-novas funcionalidades ou corrigir bugs. Isso implica que a
+novas funcionalidades ou corrigir bugs. Consequentemente, a
 complexidade vai se acumulando e erros de projeto não são corrigidos."
 
 Uma segunda questão importante diz respeito ao momento em que o código

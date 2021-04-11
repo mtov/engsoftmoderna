@@ -1388,7 +1388,7 @@ classe com novas funcionalidades, tornando-a flexível a outros cenários
 de uso. O padrão Strategy permite configurar os algoritmos usados por
 uma classe, apenas para citar alguns exemplos.
 
-Porém, como quase tudo em Computação, o uso de padrões implica em um
+Porém, como quase tudo em Computação, o uso de padrões também tem um
 custo. Por exemplo, uma fábrica requer a implementação de pelo menos
 mais uma classe no sistema. Para citar um segundo exemplo, Strategy
 requer a criação de uma classe abstrata e mais uma classe para cada

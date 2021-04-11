@@ -644,11 +644,11 @@ captura uma peculiaridade de projetos de software. Segundo Brooks:
 
 \index{Lei de Brooks}
 \index{Gerência de Projetos!Lei de Brooks}
-Essa frase ficou tão famosa, que ela é hoje conhecida como **Lei de
+Essa frase ficou tão famosa que ela é hoje conhecida como **Lei de
 Brooks**. Basicamente, esse efeito acontece porque os novos
 desenvolvedores terão primeiro que entender e compreender todo o
 sistema, sua arquitetura e seu projeto (*design*), antes de começarem
-a produzir código útil. Além disso, equipes maiores implicam em um maior
+a produzir código útil. Além disso, equipes maiores exigem um maior
 esforço de comunicação e coordenação para tomar e explicar decisões. Por
 exemplo, se um time tem 3 desenvolvedores (d~1~, d~2~, d~3~), existem 3
 canais de comunicação possíveis (d~1~-d~2~, d~1~-d~3~ e d~2~-d~3~); se
@@ -905,7 +905,7 @@ pelo GitHub.
 \index{Prática Profissional}
 Como afirmado na frase de Bjarne Stroustrup que abre este capítulo,
 *nossa sociedade funciona à base de software*. Isso gera diversas
-oportunidades para os profissionais da área, mas também implica em
+oportunidades para os profissionais da área, mas também gera
 responsabilidades e pontos de preocupação. Questões sobre a prática
 profissional em Engenharia de Software iniciam-se no momento da
 formação, em nível de graduação, envolvendo a definição de currículos de

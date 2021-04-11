@@ -784,7 +784,7 @@ implementados em `StackTest`. As únicas linhas não coloridas de verde são
 responsáveis pela assinatura dos métodos de `Stack` e, portanto, não
 correspondem a comandos executáveis. Assim, a cobertura dos testes do
 nosso primeiro exemplo é de 100%, pois a execução dos métodos de testes
-implica na execução de todos os comandos da classe `Stack`.
+resulta na execução de todos os comandos da classe `Stack`.
 
 ![](figs/cap8/cobertura1.png){width=70%}
 

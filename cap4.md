@@ -63,7 +63,7 @@ ao estudo de modelos de software. Por um lado, como afirmamos, eles não
 têm a mesma efetividade de modelos em outras Engenharias. Além disso,
 via de regra, modelos de software não são formalismos matemáticos, mas
 sim representações gráficas de determinadas dimensões de um sistema de
-software. Por outro lado, isso não implica em dizer que modelos de
+software. Por outro lado, isso não significa dizer que modelos de
 software são inúteis, a ponto de não merecer um capítulo em um livro
 sobre práticas de Engenharia de Software Moderna. Se não criarmos
 expectativas irrealistas, eles podem ter um papel importante no
