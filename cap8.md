@@ -953,7 +953,7 @@ public class IMCServlet extends HttpServlet {
     PrintWriter out = res.getWriter();
     String peso = req.getParameter("peso");
     String altura = req.getParameter("altura");
-      try{
+      try {
         double p = Double.parseDouble(peso);
         double a = Double.parseDouble(altura);
         double imc = p / (a * a);
@@ -2042,7 +2042,7 @@ entender.
 @Test
 public void testEmptyStackException() {
   boolean sucesso = false;
-  try{
+  try {
     Stack s<Integer> = new Stack<Integer>();
     s.push(10);
     int r = stack.pop();

@@ -804,7 +804,7 @@ software. Nesse glossário, acoplamento é definido da seguinte forma
 ([link](https://engineering.fb.com/uncategorized/software-design-glossary/)):
 
 > "Dois elementos estão acoplados quando mudanças em um elemento
-demandam mudanças em um outro elemento ... Acoplamento pode dar
+demandam mudanças em um outro elemento. Acoplamento pode dar
 origem a uma relação bem sutil entre classes, como frequentemente
 observamos no Facebook. Certos eventos que interrompem o funcionamento
 de uma parte do sistema normalmente são causados por pequenos bits de
