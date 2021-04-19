@@ -10,9 +10,9 @@ classificação do [Capítulo 7](https://engsoftmoderna.info/cap7.html),
 a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
-(copiada de um [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
+(baseada em uma figura semelhante do seguinte [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
 
-![Arquitetura Limpa](./figs/arquitetura-limpa.jpg){width=75%}
+![Arquitetura Limpa](./figs/arquitetura-limpa-novo.svg){width=70%}
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
@@ -223,10 +223,5 @@ principal vantagem ou benefício dessa regra?
    * Em qual camada você implementaria então `MailServiceImpl`?
 
 * * * 
-
-
-<p>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</p>
 
 Voltar para a lista de [artigos](./artigos.html).
