@@ -159,11 +159,9 @@ de novas funcionalidades.
 #### Para Saber Mais {.unnumbered}
 
 Se quiser saber mais sobre Shape Up, além do livro do Ryan Singer, 
-recomendamos uma palestra que fizemos para o evento MPS Talks, incluindo também seus
+recomendamos uma [palestra](https://youtu.be/CsgrTWtuBuE) que fizemos 
+para o evento MPS Talks, incluindo também seus
 [slides](https://speakerdeck.com/aserg_ufmg/melhores-praticas-para-desenvolvimento-remoto-de-software-mps-talks-softex).
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CsgrTWtuBuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 Você pode ouvir também diversas entrevistas do Ryan
 Singer para podcasts. Os links estão 
 na própria página do [livro](https://basecamp.com/shapeup).
@@ -190,10 +188,5 @@ Qual é esse nome adotado em XP? Se necessário, consulte o
 do livro texto, seção 2.3.3.
 
 * * * 
-
-
-<p>
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</p>
 
 Voltar para a lista de [artigos](./artigos.html).
