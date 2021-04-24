@@ -2,7 +2,7 @@
 title: Engenharia de Software Moderna
 subtitle: Princípios e Práticas para Desenvolvimento de Software com Produtividade
 author: Marco Tulio Valente
-rights: Direitos autorais protegidos pela Lei 9.610, de 10/02/1998. Versão para  uso pessoal e individual, sendo proibida qualquer forma de redistribuição. O autor não assume qualquer responsabilidade por eventuais danos ou perdas relacionados ao uso deste livro. Versão 2020.1.6.
+rights: Direitos autorais protegidos pela Lei 9.610, de 10/02/1998. Versão para  uso pessoal e individual, sendo proibida qualquer forma de redistribuição. O autor não assume qualquer responsabilidade por eventuais danos ou perdas relacionados ao uso deste livro. Versão 2020.1.7.
 identifier: 978-65-00-00077-1 (ISBN)
 language: pt-BR
 ---

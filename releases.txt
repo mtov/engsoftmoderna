@@ -1,5 +1,18 @@
 Release Notes
 
+===
+
+2020.1.7 
+Versão usada em nova reimpressão do livro (UmLivro/POD)
+Versão usada na Turma 5 do curso de extensão
+Apenas minor/typo changes
+
+Upload Leanpub: ainda não foi feito
+Upload Amazon KDP: ainda não foi feito
+Upload UmLivro: ainda não foi feito
+
+Atualização Web: 22/04/2021
+
 ====
 
 2020.1.6 
