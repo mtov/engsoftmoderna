@@ -25,15 +25,27 @@ que certos testes vão testar um **conjunto de classes**.
 O fundamental é que tais testes atendam aos princípios FIRST, principalmente
 aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos)
 
+### 3. No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo? {.unnumbered}
 
-### 3. Precisamos testar métodos privados? {.unnumbered}
+Seguem as definições:
+
+* Falso positivo: um teste que falha, embora o código testado esteja correto.
+* Falso negativo: um teste que passa, apesar de o código testado ter um bug.
+* Verdadeiro positivo: um teste que falha e o código testado, de fato, tem um bug.
+* Verdadeiro negativo: um teste que passa e o código testado, de fato, está correto.
+
+Ou seja, com testes, sempre almejamos obter verdadeiro positivos ou negativos. Um falso positivo indica um bug nos nossos testes. Por fim, um falso negativo indica que deixamos de testar entradas que levariam o programa a falhar.
+
+Apenas para concluir com um exemplo, testes flaky (não-determinísticos) podem dar origem a falso positivos.
+
+### 4. Precisamos testar métodos privados? {.unnumbered}
 
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, 
 isso vai garantir que os métodos privados também estão funcionando.
 
 
-### 4. Como testar métodos que têm efeito colateral? {.unnumbered}
+### 5. Como testar métodos que têm efeito colateral? {.unnumbered}
 
 Primeiro, uma rápida definição de efeito colateral: o termo designa métodos 
 cuja execução não apenas retorna um valor, mas também altera o contexto de 
@@ -101,7 +113,7 @@ o mostrado acima, são mais frágeis, pois eles estão acoplados a
 detalhes da implementação interna do método que está sendo testado.
 
 
-### 5. Como testar métodos que não têm efeito colateral? {.unnumbered}
+### 6. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
 Normalmente, esses são os métodos fáceis de serem testados: eles 
 recebem alguns parâmetros, processam eles e retornam um resultado, 
@@ -121,7 +133,7 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 6. Quando preciso criar um mock para uma dependência? {.unnumbered}
+### 7. Quando preciso criar um mock para uma dependência? {.unnumbered}
 
 Suponha que temos que testar um método `f` da seguinte classe:
 
@@ -152,14 +164,14 @@ criar um mock para essa dependência?
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
-### 7. Como criar um mock para uma dependência privada? {.unnumbered}
+### 8. Como criar um mock para uma dependência privada? {.unnumbered}
 
 Se a dependência for configurável por meio do construtor da classe ou de um método `set` não existe problema.
 
 Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
 
 
-### 8. Por que não usam o termo dublê de testes no livro? {.unnumbered}
+### 9. Por que não usam o termo dublê de testes no livro? {.unnumbered}
 
 Reconhecemos que **dublê** é um termo usado por diversos autores, desde que foi 
 descrito no livro do Gerard Meszaros (*xUnit Test Patterns*).
@@ -178,7 +190,7 @@ preferimos adotar o termo mock. No entanto, também acrescentamos uma nota
 explicando o conceito de dublês e seus tipos, tais como stubs, fakes, etc.
 
 
-### 9. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -189,7 +201,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 10. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 11. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.

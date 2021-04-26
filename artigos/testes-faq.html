@@ -107,9 +107,19 @@
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" id="o-que-é-uma-unidade">2. O que é uma unidade?</h3>
 <p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos)</p>
-<h3 class="unnumbered" id="precisamos-testar-métodos-privados">3. Precisamos testar métodos privados?</h3>
+<h3 class="unnumbered" id="no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo">3. No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?</h3>
+<p>Seguem as definições:</p>
+<ul>
+<li>Falso positivo: um teste que falha, embora o código testado esteja correto.</li>
+<li>Falso negativo: um teste que passa, apesar de o código testado ter um bug.</li>
+<li>Verdadeiro positivo: um teste que falha e o código testado, de fato, tem um bug.</li>
+<li>Verdadeiro negativo: um teste que passa e o código testado, de fato, está correto.</li>
+</ul>
+<p>Ou seja, com testes, sempre almejamos obter verdadeiro positivos ou negativos. Um falso positivo indica um bug nos nossos testes. Por fim, um falso negativo indica que deixamos de testar entradas que levariam o programa a falhar.</p>
+<p>Apenas para concluir com um exemplo, testes flaky (não-determinísticos) podem dar origem a falso positivos.</p>
+<h3 class="unnumbered" id="precisamos-testar-métodos-privados">4. Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
-<h3 class="unnumbered" id="como-testar-métodos-que-têm-efeito-colateral">4. Como testar métodos que têm efeito colateral?</h3>
+<h3 class="unnumbered" id="como-testar-métodos-que-têm-efeito-colateral">5. Como testar métodos que têm efeito colateral?</h3>
 <p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna um valor, mas também altera o contexto de execução. Por exemplo, um método tem um efeito colateral quando ele altera o valor de um atributo do seu objeto ou de uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
 <p>Voltando à pergunta, temos duas possíveis respostas:</p>
 <ul>
@@ -138,7 +148,7 @@
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
 <p>Antes de concluir, gostaríamos de mencionar que testes de interação, como o mostrado acima, são mais frágeis, pois eles estão acoplados a detalhes da implementação interna do método que está sendo testado.</p>
-<h3 class="unnumbered" id="como-testar-métodos-que-não-têm-efeito-colateral">5. Como testar métodos que não têm efeito colateral?</h3>
+<h3 class="unnumbered" id="como-testar-métodos-que-não-têm-efeito-colateral">6. Como testar métodos que não têm efeito colateral?</h3>
 <p>Normalmente, esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução. Veja um exemplo:</p>
 <pre><code>public void testeMetodoSemEfeitoColateral() {
   String s = &quot;smiles&quot;;
@@ -146,7 +156,7 @@
 }
 </code></pre>
 <p>Testes como o acima, que apenas verificam o resultado do método chamado — ou, no máximo, o estado de alguma outra estrutura de dados do sistema — são chamados de <strong>testes de estado</strong>.</p>
-<h3 class="unnumbered" id="quando-preciso-criar-um-mock-para-uma-dependência">6. Quando preciso criar um mock para uma dependência?</h3>
+<h3 class="unnumbered" id="quando-preciso-criar-um-mock-para-uma-dependência">7. Quando preciso criar um mock para uma dependência?</h3>
 <p>Suponha que temos que testar um método <code>f</code> da seguinte classe:</p>
 <pre><code>class A {
  
@@ -167,10 +177,10 @@
 <li><p>Quando <code>D</code> é um serviço não-determinístico. Por exemplo, <code>D</code> é um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
 <li><p>Quando a execução de um método de <code>D</code> for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>e precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
 </ul>
-<h3 class="unnumbered" id="como-criar-um-mock-para-uma-dependência-privada">7. Como criar um mock para uma dependência privada?</h3>
+<h3 class="unnumbered" id="como-criar-um-mock-para-uma-dependência-privada">8. Como criar um mock para uma dependência privada?</h3>
 <p>Se a dependência for configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
 <p>Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.</p>
-<h3 class="unnumbered" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro">8. Por que não usam o termo dublê de testes no livro?</h3>
+<h3 class="unnumbered" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro">9. Por que não usam o termo dublê de testes no livro?</h3>
 <p>Reconhecemos que <strong>dublê</strong> é um termo usado por diversos autores, desde que foi descrito no livro do Gerard Meszaros (<em>xUnit Test Patterns</em>).</p>
 <p>Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas de teste. Veja alguns exemplos:</p>
 <ul>
@@ -179,14 +189,14 @@
 <li><p><em>unittest.mock … allows you to replace parts of your system under test with <strong>mock objects</strong>.</em></p></li>
 </ul>
 <p>Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar o termo mock. No entanto, também acrescentamos uma nota explicando o conceito de dublês e seus tipos, tais como stubs, fakes, etc.</p>
-<h3 class="unnumbered" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes">9. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
+<h3 class="unnumbered" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes">10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
 <ul>
 <li>As classes e pacotes do sistema ficam em <code>src/com/google/common</code>.</li>
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
-<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">10. O que é um teste de fumaça (smoke test)?</h3>
+<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">11. O que é um teste de fumaça (smoke test)?</h3>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
 <blockquote>
