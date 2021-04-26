@@ -36,7 +36,6 @@ Seguem as definições:
 
 Ou seja, com testes, sempre almejamos obter verdadeiro positivos ou negativos. Um falso positivo indica um bug nos nossos testes. Por fim, um falso negativo indica que deixamos de testar entradas que levariam o programa a falhar.
 
-Apenas para concluir com um exemplo, testes flaky (não-determinísticos) podem dar origem a falso positivos.
 
 ### 4. Precisamos testar métodos privados? {.unnumbered}
 
