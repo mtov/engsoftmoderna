@@ -57,8 +57,8 @@ Por exemplo, podemos criar a seguinte persona:
 > **Mariana**: Estudante do segundo ano de Sistemas de Informação, 20 anos, cursa normalmente cinco disciplinas em cada semestre. Usa a biblioteca para estudar e para acessar os principais livros 
 dessas disciplinas.  Durante as férias, gosta de realizar empréstimos de livros de literatura.
 
-Uma persona é um usuário fictício e hipotético. Ou seja, no nosso sistema 
-de bibliotecas não necessariamente existe um usuário chamado Mariana.
+Uma persona é um usuário fictício e hipotético. Ou seja, no sistema 
+de bibliotecas não existe necessariamente um usuário chamado Mariana.
 A descrição de uma persona é também acompanhada de uma foto.
 Normalmente, define-se um número pequeno de personas para um sistema. 
 Por exemplo, menos de cinco ou seis personas. E então as histórias de 
@@ -74,7 +74,7 @@ Para definição das personas podem ser realizadas pesquisas
 com os potenciais usuários do sistema, por exemplo, por meio de questionários.
 Além de perguntas tradicionais (nome, sexo, idade, etc.) é importante que esses
 questionários revelem também os hábitos e comportamentos dos usuários,
-principalmente aqueles mais relacionados com o sistema que se pretende
+principalmente aqueles relacionados com o sistema que se pretende
 implementar. A partir das respostas dos questionários, deve-se agrupar 
 usuários semelhantes e então criar uma persona para cada grupo.
 
