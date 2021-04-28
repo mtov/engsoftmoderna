@@ -28,11 +28,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 2. O que é o Modelo Spotify? {.unnumbered #spotify}
-
-Resolvemos responder essa pergunta em um [artigo](./modelo-spotify.html) separado.
-
-### 3. O que é Grooming? {.unnumbered}
+### 2. O que é Grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -47,7 +43,7 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
-### 4. O que são personas? {.unnumbered}
+### 3. O que são personas? {.unnumbered}
 
 No contexto de Engenharia de Software, persona é uma técnica usada para 
 aproximar os desenvolvedores de um sistema de seus usuários finais. 
@@ -61,10 +57,30 @@ Por exemplo, podemos criar a seguinte persona:
 > **Mariana**: Estudante do segundo ano de Sistemas de Informação, 20 anos, cursa normalmente cinco disciplinas em cada semestre. Usa a biblioteca para estudar e para acessar os principais livros 
 dessas disciplinas.  Durante as férias, gosta de realizar empréstimos de livros de literatura.
 
+Uma persona é um usuário fictício e hipotético. Ou seja, no nosso sistema 
+de bibliotecas não necessariamente existe um usuário chamado Mariana.
 A descrição de uma persona é também acompanhada de uma foto.
 Normalmente, define-se um número pequeno de personas para um sistema. 
 Por exemplo, menos de cinco ou seis personas. E então as histórias de 
 usuários são pensadas e escritas para cada uma das personas definidas.
+
+Como dissemos, o principal objetivo da técnica de personas é criar uma
+relação empática entre os desenvolvedores de um sistema e os seus 
+usuários. Com isso, pretende-se evitar que os desenvolvedores projetem
+o sistema pensando neles mesmos, isto é, apenas com as características 
+que eles julgam importantes, caso tivessem que usar o sistema. 
+
+Para definição das personas podem ser realizadas pesquisas
+com os potenciais usuários do sistema, por exemplo, por meio de questionários.
+Além de perguntas tradicionais (nome, sexo, idade, etc.) é importante que esses
+questionários revelem também os hábitos e comportamentos dos usuários,
+principalmente aqueles mais relacionados com o sistema que se pretende
+implementar. A partir das respostas dos questionários, deve-se agrupar 
+usuários semelhantes e então criar uma persona para cada grupo.
+
+Antes de concluir, é importante mencionar que personas são usadas
+também em outras áreas, como projeto de interface
+com o usuário, marketing, vendas, etc.
 
 * * * 
 
