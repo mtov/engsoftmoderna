@@ -137,7 +137,7 @@ Shape Up tem diferenças importantes para métodos como Scrum:
 * Os times possuem um tamanho mínimo: um designer e um ou dois
 desenvolvedores.
 
-* Não existem papeis semelhantes àqueles de Scrum Master e Product
+* Não existem papéis semelhantes àqueles de Scrum Master e Product
 Owner. No entanto, estrategistas de produto podem ser consultados
 para modelar os pitches e também podem fazer parte da *bet table*.
 

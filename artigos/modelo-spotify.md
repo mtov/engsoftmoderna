@@ -80,7 +80,7 @@ um desafio do negócio têm maior liberdade para desenhar seus serviços.
 
 Desenvolvedores são maioria nos dois primeiros tipos de squads.
 Já em squads voltados para um desafio de negócio existe um 
-equilíbrio entre desenvolvedores e outros papeis, como gerentes 
+equilíbrio entre desenvolvedores e outros papéis, como gerentes 
 de produto, vendedores, analistas de marketing, cientistas de 
 dados, etc.
 

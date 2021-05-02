@@ -49,8 +49,8 @@ No contexto de Engenharia de Software, persona é uma técnica usada para
 aproximar os desenvolvedores de um sistema de seus usuários finais. 
 Suponha o sistema de bibliotecas que usamos no 
 [Capítulo 3](https://engsoftmoderna.info/cap3.html) do livro. 
-Nele, assumimos três papeis de usuários: usuário típico, professor e 
-funcionário. A técnica de personas propõe representar esses papeis 
+Nele, assumimos três papéis de usuários: usuário típico, professor e 
+funcionário. A técnica de personas propõe representar esses papéis 
 de uma forma mais "humana" por meio de nomes e de uma breve descrição. 
 Por exemplo, podemos criar a seguinte persona:
 
