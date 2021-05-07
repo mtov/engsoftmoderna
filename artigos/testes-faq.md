@@ -36,6 +36,12 @@ Seguem as definições:
 
 Ou seja, com testes, sempre almejamos obter verdadeiro positivos ou negativos. Um falso positivo indica um bug nos nossos testes. Por fim, um falso negativo indica que deixamos de testar entradas que levariam o programa a falhar.
 
+Ainda para ficar mais claro:
+
+* verdadeiro = teste cujo resultado é confiável
+* falso = teste cujo resultado não é confiável
+* positivo = teste que falha, isto é, emite um "alerta"
+* negativo = teste que passa
 
 ### 4. Precisamos testar métodos privados? {.unnumbered}
 
