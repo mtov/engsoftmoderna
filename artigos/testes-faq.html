@@ -116,6 +116,13 @@
 <li>Verdadeiro negativo: um teste que passa e o código testado, de fato, está correto.</li>
 </ul>
 <p>Ou seja, com testes, sempre almejamos obter verdadeiro positivos ou negativos. Um falso positivo indica um bug nos nossos testes. Por fim, um falso negativo indica que deixamos de testar entradas que levariam o programa a falhar.</p>
+<p>Ainda para ficar mais claro:</p>
+<ul>
+<li>verdadeiro = teste cujo resultado é confiável</li>
+<li>falso = teste cujo resultado não é confiável</li>
+<li>positivo = teste que falha, isto é, emite um <q>alerta</q></li>
+<li>negativo = teste que passa</li>
+</ul>
 <h3 class="unnumbered" id="precisamos-testar-métodos-privados">4. Precisamos testar métodos privados?</h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
 <h3 class="unnumbered" id="como-testar-métodos-que-têm-efeito-colateral">5. Como testar métodos que têm efeito colateral?</h3>
