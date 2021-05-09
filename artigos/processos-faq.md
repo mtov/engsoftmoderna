@@ -82,6 +82,61 @@ Antes de concluir, é importante mencionar que personas são usadas
 também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
+### 4. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+
+Vamos responder discorrendo sobre cada um dessas formas de organização de times.
+
+**Times orientados por projeto**
+
+Recomenda-se ter times orientados por projeto quando 
+o escopo e as funcionalidades do sistema que será desenvolvido 
+estão bem definidos. Ou seja, "o que" o sistema deve fazer está 
+claro. Logo, a função principal do time é implementar as 
+funcionalidades requeridas pelos clientes. Isso não impede que 
+exista um PO ("Product Owner") que vai funcionar como uma ponte 
+entre os clientes e os desenvolvedores do time.
+
+Os projetos têm sempre uma duração bem definida. Após o seu 
+término, o sistema é entregue ao contratante, que assume sua 
+manutenção e evolução. O time pode então migrar para
+outro projeto.
+
+**Times orientados por produto**
+
+Recomenda-se ter times orientados por produto quando os 
+requisitos do sistema que será desenvolvido não são claros. 
+Um time orientado por produto recebe como entrada um problema 
+e deve "descobrir" o melhor sistema que vai solucioná-lo. 
+Assim, o time tem autonomia para definir as funcionalidades 
+do sistema. 
+
+Técnicas como [Design Thinking](./design-thinking.html),
+[MVPs](./mvp.html) e Testes A/B são frequentemente usadas por times orientados por produto. Também já está acordado que os times
+vão manter e evoluir o sistema desenvolvido, normalmente 
+por anos, até que ele seja descontinuado.
+
+Normalmente, um time orientado por produto desenvolve um sistema 
+para clientes externos. No entanto, os clientes podem ser também 
+internos à organização. Por exemplo, suponha que uma empresa 
+desenvolve um produto X para clientes externos. Porém, um time 
+dessa organização pode desenvolver internamente um produto Y, 
+que facilita a implantação de X em plataformas de computação 
+em nuvem.
+
+**Resumo**
+
+Não existe uma organização de times melhor do que a outra. No 
+entanto, times orientados por projeto devem ser usados quando
+o problema a ser resolvido é bem conhecido, assim como a 
+solução (sistema) a ser implementada. É importante também que 
+essa solução demande poucas manutenções, principalmente 
+manutenções evolutivas.
+
+Normalmente, os times de fábricas ou agências de software são 
+orientados por projeto. Já empresas de tecnologia -- cujo 
+principal negócio são sistemas ou serviços de software -- 
+possuem times orientados por produto.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
