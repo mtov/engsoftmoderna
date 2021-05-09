@@ -548,9 +548,9 @@ interface Projetor {
 ...
 class SistemaControleProjetores {
 
-   void init(Projetor projetor) {
-     projetor.liga();  // liga qualquer projetor
-   }
+  void init(Projetor projetor) {
+    projetor.liga();  // liga qualquer projetor
+  }
 
 }
 ```
@@ -576,15 +576,15 @@ Um exemplo de classe adaptadora, de `ProjetorSamsung` para `Projetor`,
 ```
 class AdaptadorProjetorSamsung implements Projetor {
 
-   private ProjetorSamsung projetor;
+  private ProjetorSamsung projetor;
 
-   AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
-     this.projetor = projetor;
-   }
+  AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
+    this.projetor = projetor;
+  }
 
-   public void liga() {
-     projetor.turnOn();
-   }
+  public void liga() {
+    projetor.turnOn();
+  }
 }
 ```
 
@@ -680,16 +680,16 @@ explicar o Padrão Fábrica. Suponha que as classes `TCPChannel` e
 
 ```
 interface Channel {
-   void send(String msg);
-   String receive();
+  void send(String msg);
+  String receive();
 }
 
 class TCPChannel implements Channel {
-   ...
+  ...
 }
 
 class UDPChannel implements Channel {
-   ...
+  ...
 }
 ```
 
@@ -812,20 +812,20 @@ que compacta e descompacta as mensagens trafegadas pelo canal:
 ```
 class ZipChannel extends ChannelDecorator {
 
-   public ZipChannel(Channel c) {
+  public ZipChannel(Channel c) {
     super(c);
-   }  
+  }  
 
-   public void send(String msg) {
+  public void send(String msg) {
     "compacta mensagem msg"
     super.send(msg);
-   }
+  }
 
-   public String receive() {
+  public String receive() {
     String msg = super.receive();
     "descompacta mensagem msg"
     return msg;
-   }
+  }
 
 }
 ```
@@ -1100,18 +1100,18 @@ mostrado a seguir:
 ```
 abstract class Funcionario {
 
-   double salario;
-   ...
-   abstract double calcDescontosPrevidencia();
-   abstract double calcDescontosPlanoSaude();
-   abstract double calcOutrosDescontos();
+  double salario;
+  ...
+  abstract double calcDescontosPrevidencia();
+  abstract double calcDescontosPlanoSaude();
+  abstract double calcOutrosDescontos();
 
-   public double calcSalarioLiquido() { // template method
-     double prev = calcDescontosPrevidencia();
-     double saude = calcDescontosPlanoSaude();
-     double outros = calcOutrosDescontos();
-     return salario - prev - saude - outros;
-   }
+  public double calcSalarioLiquido() { // template method
+    double prev = calcDescontosPrevidencia();
+    double saude = calcDescontosPlanoSaude();
+    double outros = calcOutrosDescontos();
+    return salario - prev - saude - outros;
+  }
 }
 ```
 
@@ -1171,15 +1171,15 @@ No entanto, o objetivo é implementar essas operações fora das classes de
 
 ```
 interface Visitor {
-   void visit(Carro c);
-   void visit(Onibus o);
-   void visit(Motocicleta m);
+  void visit(Carro c);
+  void visit(Onibus o);
+  void visit(Motocicleta m);
 }  
 
 class PrintVisitor implements Visitor {
-   public void visit(Carro c) { "imprime dados de carro" }
-   public void visit(Onibus o) { "imprime dados de onibus" }
-   public void visit(Motocicleta m) {"imprime dados de moto"}
+  public void visit(Carro c) { "imprime dados de carro" }
+  public void visit(Onibus o) { "imprime dados de onibus" }
+  public void visit(Motocicleta m) {"imprime dados de moto"}
 }
 ```
 
@@ -1191,7 +1191,7 @@ do estacionamento::
 ```
 PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
-   visitor.visit(veiculo); // erro de compilação
+  visitor.visit(veiculo); // erro de compilação
 }
 ```
 
@@ -1258,7 +1258,7 @@ abstract class Veiculo {
 class Carro extends Veiculo {
   ...
   public void accept(Visitor v) {
-   v.visit(this);
+    v.visit(this);
   }
   ...
 }

@@ -339,9 +339,9 @@ class ProjetorLG {
 ...
 class SistemaControleProjetores {
 
-   void init(Projetor projetor) {
-     projetor.liga();  // liga qualquer projetor
-   }
+  void init(Projetor projetor) {
+    projetor.liga();  // liga qualquer projetor
+  }
 
 }</code></pre>
 <p>Porém, as classes de cada projetor — mostradas anteriormente — foram implementadas pelos seus fabricantes e estão prontas para uso. Ou seja, não temos acesso ao código dessas classes para fazer com que elas implementem a interface <code>Projetor</code>.</p>
@@ -349,15 +349,15 @@ class SistemaControleProjetores {
 <p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é mostrado a seguir:</p>
 <pre><code>class AdaptadorProjetorSamsung implements Projetor {
 
-   private ProjetorSamsung projetor;
+  private ProjetorSamsung projetor;
 
-   AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
-     this.projetor = projetor;
-   }
+  AdaptadorProjetorSamsung (ProjetorSamsung projetor) {
+    this.projetor = projetor;
+  }
 
-   public void liga() {
-     projetor.turnOn();
-   }
+  public void liga() {
+    projetor.turnOn();
+  }
 }</code></pre>
 <p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; isto é, um objeto que acessa projetores Samsung.</p>
 <figure>
@@ -402,16 +402,16 @@ code.eval();</code></pre>
 <p> </p>
 <p><strong>Contexto</strong>: Vamos voltar ao sistema de comunicação remota usado para explicar o Padrão Fábrica. Suponha que as classes <code>TCPChannel</code> e <code>UDPChannel</code> implementam uma interface <code>Channel</code>:</p>
 <pre><code>interface Channel {
-   void send(String msg);
-   String receive();
+  void send(String msg);
+  String receive();
 }
 
 class TCPChannel implements Channel {
-   ...
+  ...
 }
 
 class UDPChannel implements Channel {
-   ...
+  ...
 }</code></pre>
 <p><strong>Problema</strong>: Os clientes dessas classes precisam adicionar funcionalidades extras em canais, tais como buffers, compactação das mensagens, log das mensagens trafegadas, etc. Mas essas funcionalidades são opcionais: dependendo do cliente precisamos de apenas algumas funcionalidades ou, talvez, nenhuma delas. Uma primeira solução consiste no uso de herança para criar subclasses com cada possível seleção de funcionalidades. No quadro abaixo, mostramos algumas das subclasses que teríamos que criar (<code>extends</code> significa relação de herança):</p>
 <ul>
@@ -469,20 +469,20 @@ channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 <p>Por fim, chegamos aos decoradores reais. Eles são subclasses de <code>ChannelDecorator</code>, como no código a seguir, que implementa um decorador que compacta e descompacta as mensagens trafegadas pelo canal:</p>
 <pre><code>class ZipChannel extends ChannelDecorator {
 
-   public ZipChannel(Channel c) {
+  public ZipChannel(Channel c) {
     super(c);
-   }  
+  }  
 
-   public void send(String msg) {
+  public void send(String msg) {
     &quot;compacta mensagem msg&quot;
     super.send(msg);
-   }
+  }
 
-   public String receive() {
+  public String receive() {
     String msg = super.receive();
     &quot;descompacta mensagem msg&quot;
     return msg;
-   }
+  }
 
 }</code></pre>
 <p>Para entender o funcionamento de <code>ZipChannel</code>, suponha o seguinte código:</p>
@@ -608,18 +608,18 @@ class TermometroCelsius implements Observer {
 <p>Um exemplo de Template Method para o nosso contexto e problema é mostrado a seguir:</p>
 <pre><code>abstract class Funcionario {
 
-   double salario;
-   ...
-   abstract double calcDescontosPrevidencia();
-   abstract double calcDescontosPlanoSaude();
-   abstract double calcOutrosDescontos();
+  double salario;
+  ...
+  abstract double calcDescontosPrevidencia();
+  abstract double calcDescontosPlanoSaude();
+  abstract double calcOutrosDescontos();
 
-   public double calcSalarioLiquido() { // template method
-     double prev = calcDescontosPrevidencia();
-     double saude = calcDescontosPlanoSaude();
-     double outros = calcOutrosDescontos();
-     return salario - prev - saude - outros;
-   }
+  public double calcSalarioLiquido() { // template method
+    double prev = calcDescontosPrevidencia();
+    double saude = calcDescontosPlanoSaude();
+    double outros = calcOutrosDescontos();
+    return salario - prev - saude - outros;
+  }
 }</code></pre>
 <p>Nesse exemplo, <code>calcSalarioLiquido</code> é um método template para cálculo do salário de funcionários. Ele padroniza que temos que calcular três descontos: para a previdência, para o plano de saúde do funcionário e outros descontos. Feito isso, o salário líquido é o salário do funcionário subtraído desses três descontos. Porém, em <code>Funcionario</code>, não sabemos ainda como calcular os descontos, pois eles variam conforme o tipo de funcionário (público ou CLT). Logo, são criados métodos abstratos para representar cada um desses passos da rotina de cálculo de salários. Como eles são abstratos, a classe <code>Funcionario</code> também foi declarada como abstrata. Como o leitor já deve ter percebido, subclasses de <code>Funcionario</code> — como <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code> — vão herdar o método <code>calcSalarioLiquido</code>, que não precisará sofrer nenhuma modificação. No entanto, caberá às subclasses implementar os três passos (métodos) abstratos: <code>calcDescontosPrevidencia</code>, <code>calcDescontosPlanoSaude</code> e <code>calcOutrosDescontos</code>.</p>
 <p>  Métodos template permitem que <q>código antigo</q> chame <q>código novo</q>. No exemplo, a classe <code>Funcionario</code> provavelmente foi implementada antes de <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code>. Logo, dizemos que <code>Funcionario</code> é mais antiga do que as suas subclasses. Mesmo assim, <code>Funcionario</code> inclui um método que vai chamar <q>código novo</q>, implementado nas subclasses. Esse recurso de sistemas orientados a objetos é chamado de <strong>inversão de controle</strong>. Ele é fundamental, por exemplo, para implementação de <strong>frameworks</strong>, isto é, aplicações semi-prontas, que antes de serem usadas devem ser customizadas por seus clientes. Apesar de não ser o único instrumento disponível para esse fim, métodos template constituem uma alternativa interessante para que um cliente implemente o código faltante em um framework.</p>
@@ -631,20 +631,20 @@ class TermometroCelsius implements Observer {
 <p><strong>Problema:</strong> Com frequência, no sistema de estacionamentos, temos que realizar uma operação em todos os veículos estacionados. Como exemplo, podemos citar: imprimir informações sobre os veículos estacionados, persistir os dados dos veículos ou enviar uma mensagem para os donos dos veículos.</p>
 <p>No entanto, o objetivo é implementar essas operações fora das classes de <code>Veiculo</code> por meio de um código como o seguinte:</p>
 <pre><code>interface Visitor {
-   void visit(Carro c);
-   void visit(Onibus o);
-   void visit(Motocicleta m);
+  void visit(Carro c);
+  void visit(Onibus o);
+  void visit(Motocicleta m);
 }  
 
 class PrintVisitor implements Visitor {
-   public void visit(Carro c) { &quot;imprime dados de carro&quot; }
-   public void visit(Onibus o) { &quot;imprime dados de onibus&quot; }
-   public void visit(Motocicleta m) {&quot;imprime dados de moto&quot;}
+  public void visit(Carro c) { &quot;imprime dados de carro&quot; }
+  public void visit(Onibus o) { &quot;imprime dados de onibus&quot; }
+  public void visit(Motocicleta m) {&quot;imprime dados de moto&quot;}
 }</code></pre>
 <p>Nesse código, a classe <code>PrintVisitor</code> inclui métodos que imprimem os dados de um <code>Carro</code>, <code>Onibus</code> e <code>Motocicleta</code>. Uma vez implementada essa classe, gostaríamos de usar o seguinte código para <q>visitar</q> todos os veículos do estacionamento::</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
-   visitor.visit(veiculo); // erro de compilação
+  visitor.visit(veiculo); // erro de compilação
 }</code></pre>
 <p>No entanto, no código mostrado, o método <code>visit</code> a ser chamado depende do tipo dinâmico do objeto alvo da chamada (<code>visitor</code>) e do tipo dinâmico de um parâmetro (<code>veiculo</code>). Porém, em linguagens como Java, C++ ou C# apenas o tipo do objeto alvo da chamada é considerado na escolha do método a ser chamado. Dizendo de outro modo, em Java e em linguagens similares, o compilador somente conhece o tipo estático de <code>veiculo</code>, que é <code>Veiculo</code>. Por isso, ele não consegue inferir qual implementação de <code>visit</code> deve ser chamada.</p>
 <p>Para ficar mais claro, o seguinte erro ocorre ao compilar o código anterior:</p>
@@ -665,7 +665,7 @@ method PrintVisitor.visit(Onibus) is not applicable
 class Carro extends Veiculo {
   ...
   public void accept(Visitor v) {
-   v.visit(this);
+    v.visit(this);
   }
   ...
 }

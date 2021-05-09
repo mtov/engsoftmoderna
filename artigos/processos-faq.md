@@ -119,9 +119,9 @@ Normalmente, um time orientado por produto desenvolve um sistema
 para clientes externos. No entanto, os clientes podem ser também 
 internos à organização. Por exemplo, suponha que uma empresa 
 desenvolve um produto X para clientes externos. Porém, um time 
-dessa organização pode desenvolver internamente um produto Y, 
-que facilita a implantação de X em plataformas de computação 
-em nuvem.
+dessa organização pode ser responsável por desenvolver internamente 
+um produto Y, que facilita a implantação de X em plataformas de 
+computação em nuvem.
 
 **Resumo**
 
