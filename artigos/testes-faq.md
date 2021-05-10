@@ -23,7 +23,8 @@ Tendemos a dizer que uma unidade é uma classe, no caso de sistemas
 orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar 
 que certos testes vão testar um **conjunto de classes**.
 O fundamental é que tais testes atendam aos princípios FIRST, principalmente
-aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos)
+aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos). Mais detalhes sobre esses princípios na 
+Seção 8.3.1 do [Capítulo 8](https://engsoftmoderna.info/cap8.html).
 
 ### 3. No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo? {.unnumbered}
 
