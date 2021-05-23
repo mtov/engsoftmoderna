@@ -47,11 +47,6 @@ de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda
 já existia antes, com nomes como comunidade de prática ou grupos
 de interesse.
 
-O modelo é matricial porque existem estruturas verticais, representadas
-pelos squads e tribos, e estruturas horizontais, representadas
-pelos chapters e guildas. Consequentemente, os membros de um squad 
-possuem dois "chefes" ou líderes: o líder do chapter e o líder da tribo.
-
 
 ### Tipos de Squads {.unnumbered}
 
@@ -64,7 +59,7 @@ Android, iOS, etc. Ou seja, a empresa pode ter squads para
 desenvolver e manter cada uma desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend.
 
-* Squads responsáveis por funcionalidades: por exemplo, em um sistema 
+* Squads responsáveis por requisitos funcionais: por exemplo, em um sistema 
 de comércio eletrônico, podem existir squads responsáveis pelo processo 
 de compra (checkout), pelo pagamento, pela recomendação de produtos, 
 pela pesquisa de produtos, etc. 
@@ -98,9 +93,14 @@ largamente conhecido.
 
 Desde essa época, a sua adoção, mesmo na Spotify, passou por evoluções e 
 adaptações importantes. E, como qualquer assunto relacionado 
-com processo, sua adoção não deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao **contexto** quase sempre serão necessárias.
+com processos, sua adoção não deve ocorrer cegamente de acordo com o manual. 
+Adaptações ao **contexto** quase sempre são necessárias.
 
+## Exercícios {.unnumbered}
+
+1. Por que o Modelo Spotify é considerado uma estrutura matricial?
+
+2. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
 
 * * * 
 
