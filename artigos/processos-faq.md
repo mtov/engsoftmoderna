@@ -139,13 +139,13 @@ possuem times orientados por produto.
 
 ### 5. Posso estimar histórias de usuários em horas? {.unnumbered}
 
-Sim, histórias podem ser estimadas em unidades de tempo, tais com horas ou homens/hora, por exemplo.
+Sim, histórias podem ser estimadas em unidades de tempo, tais como horas ou homens/hora, por exemplo.
 
-Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais (tempo efetivamente consumido). O motivo é que sempre ocorrem interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!
+Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais. O motivo é que sempre vão ocorrer  interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!
 
 Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin afirma o seguinte:
 
-> Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um importante argumento contra o uso do tempo ideal consiste no risco de mal-entendidos.
+> Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um argumento importante contra o uso do tempo ideal consiste no risco de mal-entendidos.
 
 E o autor conclui com o exemplo de um jogo de futebol americano, que tem quatro tempos de 15 minutos, ou seja, uma hora ideal. Apesar disso, uma partida de futebol americano dura, quase sempre, mais de três horas.
 
