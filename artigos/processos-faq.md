@@ -197,12 +197,15 @@ que começa com o backlog e prossegue com os passos de
 implementação das tarefas, tais como especificação, 
 codificação e revisão.
 
-Para fixar o entendimento desses dois fluxos, nós costumamos 
-usar a imagem de uma peneira. As demandas que ainda não 
-passaram pela peneira estão no Upstream Kanban, cujo 
-objetivo é exatamente quebrar e entender essas demandas, antes 
-de entregá-las para o time de desenvolvimento. Depois que isso 
-acontece começa o fluxo do Downstream Kanban.
+Para fixar o entendimento desses dois fluxos, costuma-se usar a
+imagem de um funil, como na seguinte figura:
+
+![](./figs/upstream-kanban.svg){width=80%}
+
+Resumindo: no upstream, especificamos e decidimos o que deve 
+ser implementado; no downstream, implementa-se o que foi 
+decidido.
+
 
 
 * * * 
