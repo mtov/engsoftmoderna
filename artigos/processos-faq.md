@@ -139,15 +139,71 @@ possuem times orientados por produto.
 
 ### 5. Posso estimar histórias de usuários em horas? {.unnumbered}
 
-Sim, histórias podem ser estimadas em unidades de tempo, tais como horas ou homens/hora, por exemplo.
+Sim, histórias podem ser estimadas em unidades de tempo, 
+tais como horas ou homens/hora, por exemplo.
 
-Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais. O motivo é que sempre vão ocorrer  interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!
+Por outro lado, os defensores de story points argumentam 
+que o maior problema de usar medidas de tempo é que existem 
+sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). 
+Explicando melhor, quando alguém afirma que vai implementar 
+uma história em um dia (tempo ideal), ele pode na verdade 
+levar um pouco mais. O motivo é que sempre vão ocorrer 
+interrupções, tais como reuniões, bugs críticos para corrigir, 
+compromissos pessoais, idas ao médico, etc. Muitas vezes, 
+essa diferença entre tempo ideal e tempo consumido pode acabar 
+gerando um mal-entendido. Algo assim: você prometeu que ia 
+fazer isso em um dia, mas já se passaram dois dias e você 
+não entregou ainda!
 
-Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin afirma o seguinte:
+Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin 
+afirma o seguinte:
 
-> Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um argumento importante contra o uso do tempo ideal consiste no risco de mal-entendidos.
+> Não há uma resposta certa ou errada sobre o uso de story 
+points e dias ideais. No entanto, um argumento importante 
+contra o uso do tempo ideal consiste no risco de 
+mal-entendidos.
 
-E o autor conclui com o exemplo de um jogo de futebol americano, que tem quatro tempos de 15 minutos, ou seja, uma hora ideal. Apesar disso, uma partida de futebol americano dura, quase sempre, mais de três horas.
+E o autor conclui com o exemplo de um jogo de futebol 
+americano, que tem quatro tempos de 15 minutos, ou seja, 
+uma hora ideal. Apesar disso, uma partida de futebol 
+americano dura, quase sempre, mais de três horas.
+
+### 6. O que é Upstream e Downstream Kanban? {.unnumbered}
+
+O quadro Kanban, tal como explicamos no 
+[Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
+sua esquerda com um backlog de tarefas.
+
+No entanto, se os times não tomarem cuidado, esse backlog pode 
+crescer muito e passar a incluir tarefas complexas, que não
+foram devidamente entendidas pelo time ou que não vão agregar 
+valor ao produto. Pode ser então que o time não consiga escolher 
+as tarefas certas para implementar, já que o backlog 
+transformou-se em uma extensa lista não-priorizada de tarefas 
+obscuras.
+
+Para isso, defende-se que o uso de Kanban seja dividido em 
+dois fluxos:
+
+* **Upstream Kanban**: fluxo de atividades para cuidar do backlog, 
+evitando que ele fique grande e confuso. Por exemplo, pode-se 
+prever atividades para entender as demandas dos clientes e 
+priorizá-las. Com isso, somente vão entrar no backlog as 
+tarefas que, de fato, deverão ser implementadas pelo time.
+
+* **Downstream Kanban**: fluxo principal de Kanban, tal como 
+explicamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), 
+que começa com o backlog e prossegue com os passos de 
+implementação das tarefas, tais como especificação, 
+codificação e revisão.
+
+Para fixar o entendimento desses dois fluxos, nós costumamos 
+usar a imagem de uma peneira. As demandas que ainda não 
+passaram pela peneira estão no Upstream Kanban, cujo 
+objetivo é exatamente quebrar e entender essas demandas, antes 
+de entregá-las para o time de desenvolvimento. Depois que isso 
+acontece começa o fluxo do Downstream Kanban.
+
 
 * * * 
 
