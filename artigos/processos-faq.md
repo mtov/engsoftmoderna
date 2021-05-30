@@ -170,40 +170,43 @@ americano dura, quase sempre, mais de três horas.
 
 ### 6. O que é Upstream e Downstream Kanban? {.unnumbered}
 
-O quadro Kanban, tal como explicamos no 
+O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
 sua esquerda com um backlog de tarefas.
 
 No entanto, se os times não tomarem cuidado, esse backlog pode 
-crescer muito e passar a incluir tarefas complexas, que não
+crescer muito e passar a incluir tarefas complexas, que ainda não
 foram devidamente entendidas pelo time ou que não vão agregar 
 valor ao produto. Pode ser então que o time não consiga escolher 
 as tarefas certas para implementar, já que o backlog 
 transformou-se em uma extensa lista não-priorizada de tarefas 
 obscuras.
 
-Para isso, defende-se que o uso de Kanban seja dividido em 
-dois fluxos:
+Para isso, o uso de Kanban costuma ser dividido em dois fluxos:
 
-* **Upstream Kanban**: fluxo de atividades para cuidar do backlog, 
-evitando que ele fique grande e confuso. Por exemplo, pode-se 
-prever atividades para entender as demandas dos clientes e 
-priorizá-las. Com isso, somente vão entrar no backlog as 
-tarefas que, de fato, deverão ser implementadas pelo time.
+* **Upstream Kanban**: define um fluxo de atividades para cuidar 
+do backlog, evitando que ele fique grande e confuso. Por exemplo, 
+pode-se prever atividades para entender as demandas dos clientes e 
+priorizá-las. Assim, somente vão entrar no backlog as tarefas que, 
+de fato, devem ser implementadas pelo time.
 
-* **Downstream Kanban**: fluxo principal de Kanban, tal como 
-explicamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), 
+* **Downstream Kanban**: representa o fluxo principal de Kanban, 
+tal como estudamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), 
 que começa com o backlog e prossegue com os passos de 
 implementação das tarefas, tais como especificação, 
 codificação e revisão.
 
-Para fixar o entendimento desses dois fluxos, costuma-se usar a
-imagem de um funil, como na seguinte figura:
+Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
+como na seguinte figura:
 
 ![](./figs/upstream-kanban.svg){width=80%}
 
-Resumindo: no upstream, especificamos e decidimos o que deve 
-ser implementado; no downstream, implementa-se o que foi 
+O Upstream Kanban corresponde à parte do funil que vai se estreitando
+para deixar claro que nem toda demanda proposta pelos stakeholders
+precisa chegar ao backlog.
+
+Resumindo: no Upstream, especificamos e decidimos o que deve 
+ser implementado; no Downstream, implementa-se o que foi 
 decidido.
 
 
