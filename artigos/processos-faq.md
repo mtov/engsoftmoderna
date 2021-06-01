@@ -4,7 +4,63 @@ O objetivo deste artigo é responder perguntas
 sobre temas relacionados com métodos ágeis e que não são
 abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
 
-### 1. O que faz um Líder Técnico (Tech Lead) ? {.unnumbered}
+### 1. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
+
+Quando se usa Scrum, histórias de usuários -- ou seja, 
+features ou requisitos funcionais do sistema -- são o principal 
+item do backlog do produto.
+
+No entanto, outros itens também podem ser incluídos no 
+backlog do produto, tais como:
+
+* Solicitações de correção de bugs, principalmente bugs 
+importantes e que levarão mais tempo para serem corrigidos.
+
+* Manutenções adaptativas, como, por exemplo, migrar o 
+sistema para uma versão mais nova de um framework, banco 
+de dados ou linguagem de programação.
+
+* Refatorações grandes e importantes, bem como outras 
+atividades para pagamento de Débito Técnico.
+
+Resumindo, conforme afirmado no Scrum Guide, qualquer 
+trabalho que é "necessário para melhorar o produto" pode 
+ser incluído no backlog do produto. 
+
+
+### 2. Posso estimar histórias de usuários em horas? {.unnumbered}
+
+Sim, histórias podem ser estimadas em unidades de tempo, 
+tais como horas ou homens/hora, por exemplo.
+
+Por outro lado, os defensores de story points argumentam 
+que o maior problema de usar medidas de tempo é que existem 
+sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). 
+Explicando melhor, quando alguém afirma que vai implementar 
+uma história em um dia (tempo ideal), ele pode na verdade 
+levar um pouco mais. O motivo é que sempre vão ocorrer 
+interrupções, tais como reuniões, bugs críticos para corrigir, 
+compromissos pessoais, idas ao médico, etc. Muitas vezes, 
+essa diferença entre tempo ideal e tempo consumido pode acabar 
+gerando um mal-entendido. Algo assim: você prometeu que ia 
+fazer isso em um dia, mas já se passaram dois dias e você 
+não entregou ainda!
+
+Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin 
+afirma o seguinte:
+
+> Não há uma resposta certa ou errada sobre o uso de story 
+points e dias ideais. No entanto, um argumento importante 
+contra o uso do tempo ideal consiste no risco de 
+mal-entendidos.
+
+E o autor conclui com o exemplo de um jogo de futebol 
+americano, que tem quatro tempos de 15 minutos, ou seja, 
+uma hora ideal. Apesar disso, uma partida de futebol 
+americano dura, quase sempre, mais de três horas.
+
+
+### 3. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -28,7 +84,8 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 2. O que é Grooming? {.unnumbered}
+
+### 4. O que é Grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -43,7 +100,8 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
-### 3. O que são personas? {.unnumbered}
+
+### 5. O que são personas? {.unnumbered}
 
 No contexto de Engenharia de Software, persona é uma técnica usada para 
 aproximar os desenvolvedores de um sistema de seus usuários finais. 
@@ -82,7 +140,8 @@ Antes de concluir, é importante mencionar que personas são usadas
 também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
-### 4. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+
+### 6. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -137,38 +196,8 @@ orientados por projeto. Já empresas de tecnologia -- cujo
 principal negócio são sistemas ou serviços de software -- 
 possuem times orientados por produto.
 
-### 5. Posso estimar histórias de usuários em horas? {.unnumbered}
 
-Sim, histórias podem ser estimadas em unidades de tempo, 
-tais como horas ou homens/hora, por exemplo.
-
-Por outro lado, os defensores de story points argumentam 
-que o maior problema de usar medidas de tempo é que existem 
-sempre dois "tempos": o tempo ideal e o tempo consumido (*elapsed*). 
-Explicando melhor, quando alguém afirma que vai implementar 
-uma história em um dia (tempo ideal), ele pode na verdade 
-levar um pouco mais. O motivo é que sempre vão ocorrer 
-interrupções, tais como reuniões, bugs críticos para corrigir, 
-compromissos pessoais, idas ao médico, etc. Muitas vezes, 
-essa diferença entre tempo ideal e tempo consumido pode acabar 
-gerando um mal-entendido. Algo assim: você prometeu que ia 
-fazer isso em um dia, mas já se passaram dois dias e você 
-não entregou ainda!
-
-Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin 
-afirma o seguinte:
-
-> Não há uma resposta certa ou errada sobre o uso de story 
-points e dias ideais. No entanto, um argumento importante 
-contra o uso do tempo ideal consiste no risco de 
-mal-entendidos.
-
-E o autor conclui com o exemplo de um jogo de futebol 
-americano, que tem quatro tempos de 15 minutos, ou seja, 
-uma hora ideal. Apesar disso, uma partida de futebol 
-americano dura, quase sempre, mais de três horas.
-
-### 6. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 7. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -208,7 +237,6 @@ precisa chegar ao backlog.
 Resumindo: no Upstream, especificamos e decidimos o que deve 
 ser implementado; no Downstream, implementa-se o que foi 
 decidido.
-
 
 
 * * * 

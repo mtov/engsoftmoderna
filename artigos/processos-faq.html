@@ -103,7 +103,24 @@
 </header>
 <h1 class="unnumbered" id="perguntas-frequentes-sobre-métodos-ágeis">Perguntas Frequentes sobre Métodos Ágeis</h1>
 <p>O objetivo deste artigo é responder perguntas sobre temas relacionados com métodos ágeis e que não são abordados no <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a> do livro.</p>
-<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">1. O que faz um Líder Técnico (Tech Lead) ?</h3>
+<h3 class="unnumbered" id="além-de-histórias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto">1. Além de histórias, quais outros itens podem fazer parte do backlog do produto?</h3>
+<p>Quando se usa Scrum, histórias de usuários – ou seja, features ou requisitos funcionais do sistema – são o principal item do backlog do produto.</p>
+<p>No entanto, outros itens também podem ser incluídos no backlog do produto, tais como:</p>
+<ul>
+<li><p>Solicitações de correção de bugs, principalmente bugs importantes e que levarão mais tempo para serem corrigidos.</p></li>
+<li><p>Manutenções adaptativas, como, por exemplo, migrar o sistema para uma versão mais nova de um framework, banco de dados ou linguagem de programação.</p></li>
+<li><p>Refatorações grandes e importantes, bem como outras atividades para pagamento de Débito Técnico.</p></li>
+</ul>
+<p>Resumindo, conforme afirmado no Scrum Guide, qualquer trabalho que é <q>necessário para melhorar o produto</q> pode ser incluído no backlog do produto.</p>
+<h3 class="unnumbered" id="posso-estimar-histórias-de-usuários-em-horas">2. Posso estimar histórias de usuários em horas?</h3>
+<p>Sim, histórias podem ser estimadas em unidades de tempo, tais como horas ou homens/hora, por exemplo.</p>
+<p>Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois <q>tempos</q>: o tempo ideal e o tempo consumido (<em>elapsed</em>). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais. O motivo é que sempre vão ocorrer interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!</p>
+<p>Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin afirma o seguinte:</p>
+<blockquote>
+<p>Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um argumento importante contra o uso do tempo ideal consiste no risco de mal-entendidos.</p>
+</blockquote>
+<p>E o autor conclui com o exemplo de um jogo de futebol americano, que tem quatro tempos de 15 minutos, ou seja, uma hora ideal. Apesar disso, uma partida de futebol americano dura, quase sempre, mais de três horas.</p>
+<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">3. O que faz um Líder Técnico (Tech Lead)?</h3>
 <p>Métodos ágeis não fazem distinção entre os desenvolvedores de um time. Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou hierarquias em um time. Porém, na prática, sabemos que os desenvolvedores têm níveis de experiência e conhecimento diferentes sobre o sistema que estão implementando ou mantendo. Além disso, existem tarefas que exigem maior responsabilidade, tais como:</p>
 <ul>
 <li>Implementar histórias mais complexas ou críticas.</li>
@@ -115,9 +132,9 @@
 <li>Ajudar na contratação de novos desenvolvedores.</li>
 </ul>
 <p>Então, para assumir essas tarefas de maior responsabilidade, algumas empresas têm em seus times a figura de um <strong>Líder Técnico (Tech Lead)</strong>. No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time e, portanto, ele não deve ser o controlador de todas as tarefas dos demais desenvolvedores.</p>
-<h3 class="unnumbered" id="o-que-é-grooming">2. O que é Grooming?</h3>
+<h3 class="unnumbered" id="o-que-é-grooming">4. O que é Grooming?</h3>
 <p>O termo grooming designa as atividades realizadas com o propósito de <q>cuidar</q> do backlog do produto. Portanto, são atividades que devem ser lideradas pelo Product Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas atividades, podemos mencionar as seguintes: descobrir, criar, estimar, priorizar, remover, refinar, entender, especificar ou particionar histórias de usuários. Alguns autores, como Kenneth Rubim, no livro Scrum Essencial, sugerem que 10% do tempo dos membros de um time Scrum deve ser alocado para atividades de grooming. Ou seja, cerca de 4 horas semanais. No entanto, não existe um evento ou momento específico para realização do grooming. Ele pode ser realizado, por exemplo, em reuniões específicas convocadas pelo PO.</p>
-<h3 class="unnumbered" id="o-que-são-personas">3. O que são personas?</h3>
+<h3 class="unnumbered" id="o-que-são-personas">5. O que são personas?</h3>
 <p>No contexto de Engenharia de Software, persona é uma técnica usada para aproximar os desenvolvedores de um sistema de seus usuários finais. Suponha o sistema de bibliotecas que usamos no <a href="https://engsoftmoderna.info/cap3.html">Capítulo 3</a> do livro. Nele, assumimos três papéis de usuários: usuário típico, professor e funcionário. A técnica de personas propõe representar esses papéis de uma forma mais <q>humana</q> por meio de nomes e de uma breve descrição. Por exemplo, podemos criar a seguinte persona:</p>
 <blockquote>
 <p><strong>Mariana</strong>: Estudante do segundo ano de Sistemas de Informação, 20 anos, cursa normalmente cinco disciplinas em cada semestre. Usa a biblioteca para estudar e para acessar os principais livros dessas disciplinas. Durante as férias, gosta de realizar empréstimos de livros de literatura.</p>
@@ -126,7 +143,7 @@
 <p>Como dissemos, o principal objetivo da técnica de personas é criar uma relação empática entre os desenvolvedores de um sistema e os seus usuários. Com isso, pretende-se evitar que os desenvolvedores projetem o sistema pensando neles mesmos, isto é, apenas com as características que eles julgam importantes, caso tivessem que usar o sistema.</p>
 <p>Para definição das personas podem ser realizadas pesquisas com os potenciais usuários do sistema, por exemplo, por meio de questionários. Além de perguntas tradicionais (nome, sexo, idade, etc.) é importante que esses questionários revelem também os hábitos e comportamentos dos usuários, principalmente aqueles relacionados com o sistema que se pretende implementar. A partir das respostas dos questionários, deve-se agrupar usuários semelhantes e então criar uma persona para cada grupo.</p>
 <p>Antes de concluir, é importante mencionar que personas são usadas também em outras áreas, como projeto de interface com o usuário, marketing, vendas, etc.</p>
-<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">4. Qual a diferença entre times orientados por projeto e por produto?</h3>
+<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">6. Qual a diferença entre times orientados por projeto e por produto?</h3>
 <p>Vamos responder discorrendo sobre cada um dessas formas de organização de times.</p>
 <p><strong>Times orientados por projeto</strong></p>
 <p>Recomenda-se ter times orientados por projeto quando o escopo e as funcionalidades do sistema que será desenvolvido estão bem definidos. Ou seja, <q>o que</q> o sistema deve fazer está claro. Logo, a função principal do time é implementar as funcionalidades requeridas pelos clientes. Isso não impede que exista um PO (<q>Product Owner</q>) que vai funcionar como uma ponte entre os clientes e os desenvolvedores do time.</p>
@@ -138,15 +155,7 @@
 <p><strong>Resumo</strong></p>
 <p>Não existe uma organização de times melhor do que a outra. No entanto, times orientados por projeto devem ser usados quando o problema a ser resolvido é bem conhecido, assim como a solução (sistema) a ser implementada. É importante também que essa solução demande poucas manutenções, principalmente manutenções evolutivas.</p>
 <p>Normalmente, os times de fábricas ou agências de software são orientados por projeto. Já empresas de tecnologia – cujo principal negócio são sistemas ou serviços de software – possuem times orientados por produto.</p>
-<h3 class="unnumbered" id="posso-estimar-histórias-de-usuários-em-horas">5. Posso estimar histórias de usuários em horas?</h3>
-<p>Sim, histórias podem ser estimadas em unidades de tempo, tais como horas ou homens/hora, por exemplo.</p>
-<p>Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois <q>tempos</q>: o tempo ideal e o tempo consumido (<em>elapsed</em>). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais. O motivo é que sempre vão ocorrer interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!</p>
-<p>Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin afirma o seguinte:</p>
-<blockquote>
-<p>Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um argumento importante contra o uso do tempo ideal consiste no risco de mal-entendidos.</p>
-</blockquote>
-<p>E o autor conclui com o exemplo de um jogo de futebol americano, que tem quatro tempos de 15 minutos, ou seja, uma hora ideal. Apesar disso, uma partida de futebol americano dura, quase sempre, mais de três horas.</p>
-<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">6. O que é Upstream e Downstream Kanban?</h3>
+<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">7. O que é Upstream e Downstream Kanban?</h3>
 <p>O quadro Kanban, como explicamos no <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, começa à sua esquerda com um backlog de tarefas.</p>
 <p>No entanto, se os times não tomarem cuidado, esse backlog pode crescer muito e passar a incluir tarefas complexas, que ainda não foram devidamente entendidas pelo time ou que não vão agregar valor ao produto. Pode ser então que o time não consiga escolher as tarefas certas para implementar, já que o backlog transformou-se em uma extensa lista não-priorizada de tarefas obscuras.</p>
 <p>Para isso, o uso de Kanban costuma ser dividido em dois fluxos:</p>
