@@ -60,7 +60,22 @@ uma hora ideal. Apesar disso, uma partida de futebol
 americano dura, quase sempre, mais de três horas.
 
 
-### 3. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+### 3. O que é Grooming? {.unnumbered}
+
+O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
+produto. Portanto, são atividades que devem ser lideradas pelo Product 
+Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas
+atividades, podemos mencionar as seguintes: descobrir, criar, estimar, 
+priorizar, remover, refinar, entender, especificar ou particionar 
+histórias de usuários. 
+Alguns autores, como Kenneth Rubim, no livro Scrum Essencial, sugerem 
+que 10% do tempo dos membros de um time Scrum deve ser alocado para 
+atividades de grooming. Ou seja, cerca de 4 horas semanais. No entanto, não 
+existe um evento ou momento específico para realização do grooming. 
+Ele pode ser realizado, por exemplo, em reuniões específicas 
+convocadas pelo PO.
+
+### 4. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -83,22 +98,6 @@ têm em seus times a figura de um **Líder Técnico (Tech Lead)**.
 No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time e, 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
-
-
-### 4. O que é Grooming? {.unnumbered}
-
-O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
-produto. Portanto, são atividades que devem ser lideradas pelo Product 
-Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas
-atividades, podemos mencionar as seguintes: descobrir, criar, estimar, 
-priorizar, remover, refinar, entender, especificar ou particionar 
-histórias de usuários. 
-Alguns autores, como Kenneth Rubim, no livro Scrum Essencial, sugerem 
-que 10% do tempo dos membros de um time Scrum deve ser alocado para 
-atividades de grooming. Ou seja, cerca de 4 horas semanais. No entanto, não 
-existe um evento ou momento específico para realização do grooming. 
-Ele pode ser realizado, por exemplo, em reuniões específicas 
-convocadas pelo PO.
 
 
 ### 5. O que são personas? {.unnumbered}
