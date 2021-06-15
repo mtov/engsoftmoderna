@@ -245,17 +245,18 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 8. É possível voltar com o cartão em Kanban? {.unnumbered}
+### 8. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
--- detectou-se que uma tarefa foi especificada de forma errada.
-O que deve-se fazer?
+-- detectou-se que uma tarefa foi especificada (e implementada)
+de forma errada. O que deve-se fazer?
 
 Nesse caso, e principalmente se o erro foi grave e demandará
 um bom tempo para ser corrigido, não existe alternativa, 
-a não ser voltar com a tarefa para o passo de especificação, 
-para que ela seja re-especificada, agora de forma correta.
+a não ser voltar com o cartão que descreve a tarefa para o 
+passo de especificação, para que ela seja re-especificada e 
+re-implementada, agora de forma correta.
 
 * * * 
 
