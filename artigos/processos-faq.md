@@ -4,7 +4,30 @@ O objetivo deste artigo é responder perguntas
 sobre temas relacionados com métodos ágeis e que não são
 abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
 
-### 1. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
+### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
+
+Usualmente, costuma-se dizer que foi em 2001, com o
+lançamento do [Manisfesto Ágil](http://agilemanifesto.org/).
+
+Porém, não podemos achar que tudo foi inventado na
+reunião realizada em uma estação de esqui no estado de
+Utah (EUA), com duração de três dias.
+
+Mesmo antes de 2001, existiram trabalhos importantes
+na área, conforme datado a seguir:
+
+- 1995: primeira versão de Scrum (veja o [paper](http://www.jeffsutherland.org/oopsla/schwapub.pdf), de autoria de Ken Schwaber).
+- 1999: primeira versão do livro sobre XP, do Kent Beck.
+
+E pós-2001, também temos trabalhos importantes que influenciaram
+na difusão das ideias ágeis, tais como:
+
+- 2004: Primeira vez que Kanban foi usado em desenvolvimento 
+de software, por David J. Anderson, na época trabalhando na Microsoft.
+- 2011: publicação do livro Lean Startup, de Eric Ries.
+
+
+### 2. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
 
 Quando se usa Scrum, histórias de usuários -- ou seja, 
 features ou requisitos funcionais do sistema -- são o principal 
@@ -28,7 +51,7 @@ trabalho que é "necessário para melhorar o produto" pode
 ser incluído no backlog do produto. 
 
 
-### 2. Posso estimar histórias de usuários em horas? {.unnumbered}
+### 3. Posso estimar histórias de usuários em horas? {.unnumbered}
 
 Sim, histórias podem ser estimadas em unidades de tempo, 
 tais como horas ou homens/hora, por exemplo.
@@ -60,7 +83,7 @@ uma hora ideal. Apesar disso, uma partida de futebol
 americano dura, quase sempre, mais de três horas.
 
 
-### 3. O que é Grooming? {.unnumbered}
+### 4. O que é Grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -75,7 +98,7 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
-### 4. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+### 5. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -100,7 +123,7 @@ portanto, ele não deve ser o controlador de todas as tarefas dos demais
 desenvolvedores.
 
 
-### 5. O que são personas? {.unnumbered}
+### 6. O que são personas? {.unnumbered}
 
 No contexto de Engenharia de Software, persona é uma técnica usada para 
 aproximar os desenvolvedores de um sistema de seus usuários finais. 
@@ -140,7 +163,7 @@ também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
 
-### 6. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 7. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -196,7 +219,7 @@ principal negócio são sistemas ou serviços de software --
 possuem times orientados por produto.
 
 
-### 7. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 8. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -245,7 +268,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 8. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 9. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
