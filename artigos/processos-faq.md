@@ -16,14 +16,18 @@ Utah (EUA), com duração de três dias.
 Mesmo antes de 2001, existiram trabalhos importantes
 na área, conforme datado a seguir:
 
+- 1989: primeiro framework de testes de unidade, chamado SUnit, implementado por Kent Beck para Smalltalk.
+- 1992: primeira tese de doutorado sobre refactoring, de autoria de William Opdyke.
 - 1995: primeira versão de Scrum (veja o [paper](http://www.jeffsutherland.org/oopsla/schwapub.pdf), de autoria de Ken Schwaber).
-- 1999: primeira versão do livro sobre XP, do Kent Beck.
+- 1999: primeira edição do livro sobre XP, por Kent Beck.
 
 E pós-2001, também temos trabalhos importantes que influenciaram
 na difusão das ideias ágeis, tais como:
 
-- 2004: Primeira vez que Kanban foi usado em desenvolvimento 
+- 2002: primeira edição do livro sobre TDD, por Kent Beck.
+- 2004: primeira vez que Kanban foi usado em desenvolvimento 
 de software, por David J. Anderson, na época trabalhando na Microsoft.
+- 2009: primeira conferência sobre DevOps, organizada por Patrick Dubois.
 - 2011: publicação do livro Lean Startup, de Eric Ries.
 
 
