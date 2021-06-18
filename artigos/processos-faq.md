@@ -6,7 +6,7 @@ abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro.
 
 ### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
 
-Usualmente, costuma-se dizer que foi em 2001, com o
+Usualmente, costuma-se dizer que foi em fevereiro de 2001, com o
 lançamento do [Manisfesto Ágil](http://agilemanifesto.org/).
 
 Porém, não podemos achar que tudo foi inventado na
@@ -21,9 +21,10 @@ na área, conforme datado a seguir:
 - 1995: primeira versão de Scrum (veja o [paper](http://www.jeffsutherland.org/oopsla/schwapub.pdf), de autoria de Ken Schwaber).
 - 1999: primeira edição do livro sobre XP, por Kent Beck.
 
-E pós-2001, também temos trabalhos importantes que influenciaram
+E após fevereiro de 2001 também temos trabalhos importantes que influenciaram
 na difusão das ideias ágeis, tais como:
 
+- 2001: primeiro servidor de integração contínua, chamado CruiseControl, implementado por desenvolvedores da ThoughWorks.
 - 2002: primeira edição do livro sobre TDD, por Kent Beck.
 - 2004: primeira vez que Kanban foi usado em desenvolvimento 
 de software, por David J. Anderson, na época trabalhando na Microsoft.
