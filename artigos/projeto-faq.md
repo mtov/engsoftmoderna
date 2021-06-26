@@ -10,13 +10,13 @@ Suponha um objeto que tenha uma interface `I`, com métodos `f1`, `f2`, `f3` e `
 
 * Um **proxy** implementa a interface`I`, isto é, implementa `f1`, `f2`, `f3` e `f4`.
 
-* Já um **adaptador** implementa uma outra interface, digamos que `I'` e fica responsável por adaptá-la para a interface `I`. Para melhor ilustrar, lembre-se do adaptador de tomadas do padrão novo para o antigo ou vice-versa.
+* Já um **adaptador** implementa uma outra interface, digamos que `I'` e fica responsável por adaptá-la para a interface `I`. Para ilustrar melhor, lembre-se de um adaptador de tomadas do padrão novo para o antigo ou vice-versa.
 
-Quando eu uso caso um desses padrões?
+Quando eu devo usar cada um desses padrões?
 
 * Proxy: para implementar requisitos não-funcionais, tais como segurança, persistência, distribuição, etc.
 
-* Adaptador: para "compatibilizar" interfaces diferentes.
+* Adaptador: para compatibilizar interfaces diferentes.
 
 * * * 
 
