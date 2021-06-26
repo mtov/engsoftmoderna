@@ -19,7 +19,7 @@ modelo-spotify: modelo-spotify.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Escalando Times Ágeis com o Modelo Spotify" modelo-spotify.md -o modelo-spotify.html
 
 processos-faq: processos-faq.md
-	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Procesos de Software" processos-faq.md -o processos-faq.html
+	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Processos de Software" processos-faq.md -o processos-faq.html
 
 cfd: cfd.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Diagramas de Fluxo Cumulativo" cfd.md -o cfd.html
@@ -38,6 +38,9 @@ composite: composite.md
 
 injecao-dependencia: injecao-dependencia.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "O que é Injeção de Dependência?" injecao-dependencia.md -o injecao-dependencia.html
+
+projeto-faq: projeto-faq.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
 
 sagas: sagas.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html
