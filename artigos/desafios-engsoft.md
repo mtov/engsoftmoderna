@@ -1,6 +1,6 @@
 # Desafios da Formação de Engenheiros de Software {.unnumbered}
 
-Por Marco Tulio Valente (versão 1.1, 11/01/2021)
+Por Marco Tulio Valente (versão 1.1 - 11/01/2021)
 
 ## Introdução {.unnumbered}
 
