@@ -1,0 +1,398 @@
+4c4
+< \PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+---
+> \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+8a9,12
+> \author{}
+> \date{}
+> 
+> \usepackage{amsmath,amssymb}
+10,12c14,15
+< \usepackage{amssymb,amsmath}
+< \usepackage{ifxetex,ifluatex}
+< \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+---
+> \usepackage{iftex}
+> \ifPDFTeX
+42,45c45,48
+<   linkcolor=blue,
+<   filecolor=Maroon,
+<   citecolor=Blue,
+<   urlcolor=blue,
+---
+>   linkcolor={blue},
+>   filecolor={Maroon},
+>   citecolor={Blue},
+>   urlcolor={blue},
+52c55,56
+< \usepackage{longtable,booktabs}
+---
+> \usepackage{longtable,booktabs,array}
+> \usepackage{calc} % for calculating minipage widths
+166,168c170,172
+< 
+< \author{}
+< \date{}
+---
+> \ifLuaTeX
+>   \usepackage{selnolig}  % disable illegal ligatures
+> \fi
+2363c2367,2368
+< \begin{longtable}[]{@{}l@{}}
+---
+> \begin{longtable}[]{@{}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 0\tabcolsep) * \real{0.90}}@{}}
+2366,2369c2371
+< \begin{minipage}[t]{0.88\columnwidth}\raggedright
+< \textbf{Postar Pergunta}\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.88\columnwidth}\raggedright
+---
+> \textbf{Postar Pergunta} \\
+2373,2374c2375
+< diferenciado.}\strut
+< \end{minipage}\tabularnewline
+---
+> diferenciado.} \\
+2483c2484
+< \textbf{Release}\tabularnewline
+---
+> \textbf{Release} \\
+2486,2493c2487,2494
+< Cadastrar usuário & 8 & 1 & 1\tabularnewline
+< Postar perguntas & 5 & 1 & 1\tabularnewline
+< Postar respostas & 3 & 1 & 1\tabularnewline
+< Tela de abertura & 5 & 1 & 1\tabularnewline
+< Gamificar perguntas/respostas & 5 & 2 & 1\tabularnewline
+< Pesquisar perguntas/respostas & 8 & 2 & 1\tabularnewline
+< Adicionar tags & 5 & 2 & 1\tabularnewline
+< Comentar perguntas/respostas & 3 & 2 & 1\tabularnewline
+---
+> Cadastrar usuário & 8 & 1 & 1 \\
+> Postar perguntas & 5 & 1 & 1 \\
+> Postar respostas & 3 & 1 & 1 \\
+> Tela de abertura & 5 & 1 & 1 \\
+> Gamificar perguntas/respostas & 5 & 2 & 1 \\
+> Pesquisar perguntas/respostas & 8 & 2 & 1 \\
+> Adicionar tags & 5 & 2 & 1 \\
+> Comentar perguntas/respostas & 3 & 2 & 1 \\
+3315c3316
+< \textbf{Evento} & \textbf{Time-box}\tabularnewline
+---
+> \textbf{Evento} & \textbf{Time-box} \\
+3318,3322c3319,3323
+< Planejamento do Sprint & máximo de 8 horas\tabularnewline
+< Sprint & menos de 1 mês\tabularnewline
+< Reunião Diária & 15 minutos\tabularnewline
+< Revisão do Sprint & máximo de 4 horas\tabularnewline
+< Retrospectiva & máximo de 3 horas\tabularnewline
+---
+> Planejamento do Sprint & máximo de 8 horas \\
+> Sprint & menos de 1 mês \\
+> Reunião Diária & 15 minutos \\
+> Revisão do Sprint & máximo de 4 horas \\
+> Retrospectiva & máximo de 3 horas \\
+3343c3344,3348
+< \begin{longtable}[]{@{}llll@{}}
+---
+> \begin{longtable}[]{@{}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.24}}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.24}}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.24}}@{}}
+3345,3353c3350,3358
+< \begin{minipage}[b]{0.22\columnwidth}\raggedright
+< \textbf{História}\strut
+< \end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+< \textbf{A fazer}\strut
+< \end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+< \textbf{Em andamento}\strut
+< \end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
+< \textbf{Concluídas}\strut
+< \end{minipage}\tabularnewline
+---
+> \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{História}
+> \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{A fazer}
+> \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{Em andamento}
+> \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{Concluídas}
+> \end{minipage} \\
+3356,3359c3361
+< \begin{minipage}[t]{0.22\columnwidth}\raggedright
+< Cap. 2 - Processos de Desenvolvimento\strut
+< \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+< Kanban
+---
+> Cap. 2 - Processos de Desenvolvimento & Kanban
+3365,3369c3367
+< Exercícios\strut
+< \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+< Scrum\strut
+< \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
+< Introdução
+---
+> Exercícios & Scrum & Introdução
+3373,3374c3371
+< XP\strut
+< \end{minipage}\tabularnewline
+---
+> XP \\
+4159c4156
+< (tarefas/dia) & \textbf{WIP}\tabularnewline
+---
+> (tarefas/dia) & \textbf{WIP} \\
+4162,4165c4159,4162
+< A & 4 & - &\tabularnewline
+< B & 3 & - &\tabularnewline
+< C & 10 & 0.5 &\tabularnewline
+< D & 5 & - &\tabularnewline
+---
+> A & 4 & - & \\
+> B & 3 & - & \\
+> C & 10 & 0.5 & \\
+> D & 5 & - & \\
+4190c4187
+< \textbf{Método} & \textbf{Frequência de novas releases}\tabularnewline
+---
+> \textbf{Método} & \textbf{Frequência de novas releases} \\
+4193,4197c4190,4194
+< Waterfall &\tabularnewline
+< Evolucionário &\tabularnewline
+< Ágil &\tabularnewline
+< Facebook &\tabularnewline
+< Deployment Contínuo &\tabularnewline
+---
+> Waterfall & \\
+> Evolucionário & \\
+> Ágil & \\
+> Facebook & \\
+> Deployment Contínuo & \\
+4271c4268,4270
+< \begin{longtable}[]{@{}ll@{}}
+---
+> \begin{longtable}[]{@{}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+4273,4277c4272,4276
+< \begin{minipage}[b]{0.47\columnwidth}\raggedright
+< \textbf{Requisito Não-Funcional}\strut
+< \end{minipage} & \begin{minipage}[b]{0.47\columnwidth}\raggedright
+< \textbf{Métrica}\strut
+< \end{minipage}\tabularnewline
+---
+> \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{Requisito Não-Funcional}
+> \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{Métrica}
+> \end{minipage} \\
+4280,4311c4279,4287
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Desempenho\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Transações por segundo, tempo de resposta, latência, vazão
+< (throughput)\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Espaço\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Uso de disco, RAM, cache\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Confiabilidade\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< \% de disponibilidade, tempo médio entre falhas (MTBF)\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Robustez\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Tempo para recuperar o sistema após uma falha (MTTR); probabilidade de
+< perda de dados após uma falha\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Usabilidade\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Tempo de treinamento de usuários\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< Portabilidade\strut
+< \end{minipage} & \begin{minipage}[t]{0.47\columnwidth}\raggedright
+< \% de linhas de código portáveis\strut
+< \end{minipage}\tabularnewline
+---
+> Desempenho & Transações por segundo, tempo de resposta, latência, vazão
+> (throughput) \\
+> Espaço & Uso de disco, RAM, cache \\
+> Confiabilidade & \% de disponibilidade, tempo médio entre falhas
+> (MTBF) \\
+> Robustez & Tempo para recuperar o sistema após uma falha (MTTR);
+> probabilidade de perda de dados após uma falha \\
+> Usabilidade & Tempo de treinamento de usuários \\
+> Portabilidade & \% de linhas de código portáveis \\
+7959,7960c7935
+< \textbf{Princípio de Projeto} & \textbf{Propriedade de
+< Projeto}\tabularnewline
+---
+> \textbf{Princípio de Projeto} & \textbf{Propriedade de Projeto} \\
+7963,7969c7938,7944
+< Responsabilidade Única & Coesão\tabularnewline
+< Segregação de Interfaces & Coesão\tabularnewline
+< Inversão de Dependências & Acoplamento\tabularnewline
+< Prefira Composição a Herança & Acoplamento\tabularnewline
+< Demeter & Ocultamento de Informação\tabularnewline
+< Aberto/Fechado & Extensibilidade\tabularnewline
+< Substituição de Liskov & Extensibilidade\tabularnewline
+---
+> Responsabilidade Única & Coesão \\
+> Segregação de Interfaces & Coesão \\
+> Inversão de Dependências & Acoplamento \\
+> Prefira Composição a Herança & Acoplamento \\
+> Demeter & Ocultamento de Informação \\
+> Aberto/Fechado & Extensibilidade \\
+> Substituição de Liskov & Extensibilidade \\
+8960,8961c8935,8936
+< (\href{https://doi.org/10.1145/118014.117970}{{link1}} e
+< \href{https://doi.org/10.1109/32.295895}{{link2}}).
+---
+> (\href{https://doi.org/10.1145/118014.117970}{\underline{link1}} e
+> \href{https://doi.org/10.1109/32.295895}{\underline{link2}}).
+14381,14382c14356
+< \textbf{Salário} & \textbf{Alíquota} & \textbf{Parcela a
+< Deduzir}\tabularnewline
+---
+> \textbf{Salário} & \textbf{Alíquota} & \textbf{Parcela a Deduzir} \\
+14385,14388c14359,14362
+< De 1.903,99 até 2.826,65 & 7,5\% & 142,80\tabularnewline
+< De 2.826,66 até 3.751,05 & 15\% & 354,80\tabularnewline
+< De 3.751,06 até 4.664,68 & 22,5\% & 636,13\tabularnewline
+< Acima de 4.664,68 & 27,5\% & 869,36\tabularnewline
+---
+> De 1.903,99 até 2.826,65 & 7,5\% & 142,80 \\
+> De 2.826,66 até 3.751,05 & 15\% & 354,80 \\
+> De 3.751,06 até 4.664,68 & 22,5\% & 636,13 \\
+> Acima de 4.664,68 & 27,5\% & 869,36 \\
+14660c14634
+< branches\tabularnewline
+---
+> branches \\
+14663,14664c14637,14638
+< \passthrough{\lstinline!f(0,0)!} & &\tabularnewline
+< \passthrough{\lstinline!f(1,1)!} & &\tabularnewline
+---
+> \passthrough{\lstinline!f(0,0)!} & & \\
+> \passthrough{\lstinline!f(1,1)!} & & \\
+14666c14640
+< &\tabularnewline
+---
+> & \\
+15027c15001,15003
+< \begin{longtable}[]{@{}lc@{}}
+---
+> \begin{longtable}[]{@{}
+>   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.75}}
+>   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.25}}@{}}
+15029,15033c15005,15009
+< \begin{minipage}[b]{0.70\columnwidth}\raggedright
+< \textbf{Motivações para Extração de Métodos}\strut
+< \end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\centering
+< \textbf{Ocorrências}\strut
+< \end{minipage}\tabularnewline
+---
+> \begin{minipage}[b]{\linewidth}\raggedright
+> \textbf{Motivações para Extração de Métodos}
+> \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+> \textbf{Ocorrências}
+> \end{minipage} \\
+15036,15057c15012,15017
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Extração de um método para ser reusado em outras partes do código\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 43\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Introduzir uma assinatura alternativa para um método existente\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 25\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Dividir um método em partes menores para melhorar o seu
+< entendimento\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 21\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Remover duplicação de código\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 15\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+---
+> Extração de um método para ser reusado em outras partes do código &
+> 43 \\
+> Introduzir uma assinatura alternativa para um método existente & 25 \\
+> Dividir um método em partes menores para melhorar o seu entendimento &
+> 21 \\
+> Remover duplicação de código & 15 \\
+15059,15063c15019
+< funcionalidade ou a correção de um bug\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 14\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+---
+> funcionalidade ou a correção de um bug & 14 \\
+15066,15086c15022,15026
+< extraído\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 6\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Permitir o teste do método extraído, isto é, melhorar
+< testabilidade\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 6\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Permitir que subclasses sobrescrevam o método que foi extraído\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 4\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+< Permitir a implementação de um método recursivo\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 2\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+---
+> extraído & 6 \\
+> Permitir o teste do método extraído, isto é, melhorar testabilidade &
+> 6 \\
+> Permitir que subclasses sobrescrevam o método que foi extraído & 4 \\
+> Permitir a implementação de um método recursivo & 2 \\
+15088,15092c15028
+< para o novo método\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 1\strut
+< \end{minipage}\tabularnewline
+< \begin{minipage}[t]{0.70\columnwidth}\raggedright
+---
+> para o novo método & 1 \\
+15094,15097c15030
+< executado em uma thread independente\strut
+< \end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering
+< 1\strut
+< \end{minipage}\tabularnewline
+---
+> executado em uma thread independente & 1 \\
+18520c18453
+< \passthrough{\lstinline!git clone https://github.com/aserg-ufmg/awesome-git.git!}~\\
+---
+> \passthrough{\lstinline!git clone https://github.com/aserg-ufmg/awesome-git.git!}\strut \\
+18528,18529c18461,18462
+< \passthrough{\lstinline!git add README.md!}~\\
+< \passthrough{\lstinline!git commit -m "Livro ESM"!}~\\
+---
+> \passthrough{\lstinline!git add README.md!}\strut \\
+> \passthrough{\lstinline!git commit -m "Livro ESM"!}\strut \\
