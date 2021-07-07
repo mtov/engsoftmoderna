@@ -1486,11 +1486,11 @@ compensar.
 
 ## Bibliografia {.unnumbered}
 
-Martin Fowler. Improving the Design of Existing Code, 
-Addison-Wesley, 2000.
+Martin Fowler. Refactoring: Improving the Design of Existing Code, 
+Addison-Wesley, 1st edition, 2000.
 
-Martin Fowler. Improving the Design of Existing Code, 
-Addison-Wesley, 2018.
+Martin Fowler. Refactoring: Improving the Design of Existing Code, 
+Addison-Wesley, 2nd edition, 2018.
 
 Danilo Silva, Nikolaos Tsantalis, Marco Tulio Valente. Why We Refactor?
 Confessions of GitHub Contributors. Foundations of Soft. Engineering, 2016.

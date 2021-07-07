@@ -42,8 +42,8 @@ Infelizmente, modelos de software — pelo menos até hoje — são
 menos efetivos do que os modelos matemáticos usados em outras
 engenharias. O motivo é que ao abstrair detalhes eles também descartam
 parte da complexidade que é essencial aos sistemas modelados. Frederick
-Brooks comenta sobre essa questão em seu ensaio "*Não Existe Bala de
-Prata \..."*
+Brooks comenta sobre essa questão em seu ensaio clássico *Não Existe Bala de
+Prata*
 ([link](https://doi.org/10.1109/MC.1987.1663532)):
 
 > "A complexidade de um software é uma propriedade essencial e não acidental. Portanto, representações de uma entidade de software que abstraem sua complexidade normalmente também abstraem sua essência. Por três séculos, matemáticos e físicos obtiveram grandes avanços construindo modelos simplificados de um fenômeno complexo, derivando propriedades de tais modelos e verificando tais propriedade por meio de experimentos. Esse paradigma funcionou porque as complexidades ignoradas não são propriedades essenciais do fenômeno sob estudo. Porém, essa abordagem não funciona quando as complexidades são essenciais."
