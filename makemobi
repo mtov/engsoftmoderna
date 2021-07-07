@@ -12,7 +12,7 @@ cat cap9.md >> esm-book.md
 cat cap10.md >> esm-book.md
 cat capAp.md >> esm-book.md
 
-pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
+pandoc-2.9 title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
 
 ../kindlegen/kindlegen esm-book.epub -o esm-book.mobi
 
