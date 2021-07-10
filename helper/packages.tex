@@ -71,6 +71,14 @@
 \newenvironment{aviso}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=backcolor, width=4.9in]}{\end{tcolorbox} \vspace{1.5ex}}
 
 \usepackage[compact]{titlesec}
+
+% Windows (descomentar as próximas duas linhas)
+% Motivo: elas criam um espaço antes e depois de cada section e subsection
+% Sem elas, esse espaço no Windows fica muito pequeno
+%\titlespacing*{\section}{0pt}{\parskip}{\parskip}
+%\titlespacing*{\subsection}{0pt}{\parskip}{\parskip}
+
+% Mac
 \titlespacing*{\section}{0pt}{*0}{0pt}
 \titlespacing*{\subsection}{0pt}{*0}{0pt}
 
