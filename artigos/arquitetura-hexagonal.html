@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>O que é uma Arquitetura Hexagonal – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="o-que-é-uma-arquitetura-hexagonal">O que é uma Arquitetura Hexagonal?</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
+<p>O conceito de Arquitetura Hexagonal foi proposto por Alistair Cockburn, em meados dos anos 90, em um <a href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> postado na primeira wiki que foi desenvolvida, chamada WikiWikiWeb (cujos artigos tratavam principalmente de temas relacionados com Engenharia de Software).</p>
+<p>Os objetivos de uma Arquitetura Hexagonal são parecidos com os de uma Arquitetura Limpa, tal como descrevemos em um outro <a href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo</a>. Mas, para reforçar, a ideia é construir sistemas que favorecem reusabilidade de código, alta coesão, baixo acoplamento, independência de tecnologia e que são mais fáceis de serem testados.</p>
+<p>Uma Arquitetura Hexagonal divide as classes de um sistema em dois grupos principais: (1) classes de domínio e (2) classes relacionadas com infraestrutura, tecnologias e integração com sistemas externos (tais como bancos de dados).</p>
+<p>Além disso, <strong>classes de domínio não devem depender de classes relacionadas com infraestrutura, tecnologias ou sistemas externos</strong>. A vantagem dessa divisão é desacoplar esses dois tipos de classes.</p>
+<p>Assim, as classes de domínio não conhecem as tecnologias – bancos de dados, interfaces com usuário e quaisquer outras bibliotecas – usadas pelo sistema. Consequentemente, mudanças de tecnologia podem ser feitas sem impactar as classes de domínio. Talvez ainda mais importante, as classes de domínio podem ser compartilhadas por mais de uma tecnologia. Por exemplo, um sistema pode ter diversas interfaces (Web, mobile, etc).</p>
+<p>Em uma arquitetura hexagonal, a comunicação entre as classes dos dois grupos é mediada por <strong>adaptadores</strong>, isto é, por classes que implementam o padrão de projeto de mesmo nome que estudamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>. Iremos explicar melhor o papel dos adaptadores logo a seguir.</p>
+<p>Visualmente, a arquitetura é representada por meio de dois hexágonos concêntricos (veja figura). No hexágono interno, ficam as classes do domínio (ou classes de negócio, se você preferir). No hexágono externo, ficam os adaptadores. Por fim, as classes de interface com o usuário, classes de tecnologia ou de sistemas externos ficam fora desses dois hexágonos.</p>
+<figure>
+<img src="./figs/arquitetura-hexagonal.svg" style="width:40.0%" alt="Arquitetura Hexagonal" /><figcaption aria-hidden="true">Arquitetura Hexagonal</figcaption>
+</figure>
+<p>Assim, o nome hexagonal tem sua origem na figura acima. Cockburn justifica o uso de um hexágono do seguinte modo:</p>
+<blockquote>
+<p>Cada face do hexágono representa um motivo pelo qual o sistema deve se comunicar com o mundo exterior. É por isso que são hexágonos concêntricos e não círculos concêntricos.</p>
+</blockquote>
+<p>Dentre os motivos que requerem comunicação com o mundo exterior podemos citar os seguintes: interagir com seus usuários (por meio de algum tipo de interface, seja ela gráfica, Web, mobile, terminal, etc), persistir informações, enviar informações para outros sistemas, etc.</p>
+<h2 class="unnumbered" id="adaptadores-e-portas">Adaptadores e Portas</h2>
+<p>Em uma Arquitetura Hexagonal, o termo <strong>porta</strong> designa as interfaces usadas para comunicação com as classes de domínio. Basicamente, existem dois tipos de portas:</p>
+<ul>
+<li><p><strong>Portas de entrada:</strong> são interfaces usadas para comunicação de fora para dentro, isto é, quando uma classe externa precisa chamar um método de uma classe de domínio.</p></li>
+<li><p><strong>Portas de saída:</strong> são interfaces usadas para comunicação de dentro para fora, isto é, quando uma classe de domínio precisa chamar um método de uma classe externa.</p></li>
+</ul>
+<p>O importante é que <strong>as portas são independentes de tecnologia</strong>. Portanto, elas estão localizadas no hexágono interior.</p>
+<p>Por outro lado, os sistemas externos, normalmente, usam alguma tecnologia, seja ela de comunicação (REST, gRPC, etc), de bancos de dados (SQL, noSQL, etc), de interação com o usuário (Web, mobile, etc), etc.</p>
+<p>Daí a necessidade de componentes localizados no hexágono mais externo da arquitetura – os <strong>adaptadores</strong> –, os quais atuam de um dos dois modos a seguir:</p>
+<ul>
+<li><p>Eles recebem chamadas de métodos vindas de fora do sistema e<br />
+encaminham essas chamadas para métodos adequados das portas de entrada.</p></li>
+<li><p>Eles recebem chamadas vindas de dentro do sistema, isto é, das classes de domínio, e as direcionam para um sistema externo, tais como um banco de dados, um outro sistema da organização ou mesmo de terceiros.</p></li>
+</ul>
+<h2 class="unnumbered" id="exemplo-sistema-de-bibliotecas">Exemplo: Sistema de Bibliotecas</h2>
+<p>A próxima figura mostra a arquitetura hexagonal de um sistema para gerenciamento de bibliotecas:</p>
+<figure>
+<img src="./figs/hex-ports-adapters.svg" style="width:90.0%" alt="Arquitetura Hexagonal do Sistema de Bibliotecas" /><figcaption aria-hidden="true">Arquitetura Hexagonal do Sistema de Bibliotecas</figcaption>
+</figure>
+<p>Na figura, podemos observar que os usuários acessam o sistema por meio de três interfaces: Web, mobile e por meio de um sistema externo. Qualquer que seja a forma de acesso, ele é sempre mediado por adaptadores. Em seguida, esses adaptadores comunicam-se com uma porta de entrada, que define métodos para pesquisa no catálogo, realização de empréstimos, cadastro de usuários, etc. Concretamente, esses métodos são implementados pelas classes de domínio. No sistema em questão, essas classes incluem <code>Livro</code>, <code>Usuario</code>, <code>Bibliotecario</code>, <code>Emprestimo</code>, <code>Reserva</code>, etc.</p>
+<p>O sistema precisa também persistir algumas informações. Para isso, ele usa uma porta de saída, com métodos para salvar e ler dados de livros, salvar e ler dados de empréstimos, etc. Plugado nessa porta temos um adaptador, que realiza as operações em um banco de dados relacional.</p>
+<p>Um sistema pode possuir várias portas de entrada e de saída (sempre localizadas no hexágono interior, junto às classes de domínio). Em um determinada porta, seja ela de entrada ou de saída, podemos plugar um ou mais adaptadores, os quais ficam sempre localizados no hexágono mais externo.</p>
+<h2 class="unnumbered" id="comentário-final">Comentário Final</h2>
+<p>Em 2005, Cockburn tentou renomear o nome de sua arquitetura para <strong>Arquitetura baseada em Portas e Adaptadores</strong>, com a seguinte justificativa:</p>
+<blockquote>
+<p>Eu finalmente tive esse momento <q>aha!</q> (junho de 2005) no qual vi que as faces do hexágono [interno] são <q>portas</q>… e os objetos entre os dois hexágonos são <q>adaptadores</q> e, portanto, o padrão arquitetural consiste em uma Arquitetura Baseada em Portas e Adaptadores. Esse nome admite uma explicação melhor do que aquela que eu propus com o nome Arquitetura Hexagonal.</p>
+</blockquote>
+<p>No entanto, a tentativa de renomeação não deu certo e a arquitetura, provavelmente, continua sendo mais conhecida como Arquitetura Hexagonal.</p>
+<h3 class="unnumbered" id="para-saber-mais">Para Saber Mais</h3>
+<p>Se quiser conhecer mais sobre a Arquitetura Hexagonal, recomendamos dois pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro <a href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> define a arquitetura. Já o segundo <a href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">artigo</a> tenta renomeá-la para incluir os termos portas e adaptadores.</p>
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<ol type="1">
+<li>Em uma Arquitetura Hexagonal, um adaptador é uma implementação do padrão de projeto de mesmo nome. E as portas? Elas podem ser vistas como sendo uma implementação – pelo menos aproximada – de qual padrão de projeto? Se necessário, consulte o <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> para responder.</li>
+</ol>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

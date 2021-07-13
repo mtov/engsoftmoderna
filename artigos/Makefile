@@ -48,6 +48,9 @@ sagas: sagas.md
 arquitetura-limpa: arquitetura-limpa.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Construindo Sistemas com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
 
+arquitetura-hexagonal: arquitetura-hexagonal.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "O que é uma Arquitetura Hexagonal" arquitetura-hexagonal.md -o arquitetura-hexagonal.html
+
 testes-faq: testes-faq.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Testes de Software" testes-faq.md -o testes-faq.html
 
