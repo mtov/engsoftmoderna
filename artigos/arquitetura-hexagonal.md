@@ -16,13 +16,16 @@ reusabilidade de código, alta coesão, baixo acoplamento, independência
 de tecnologia e que são mais fáceis de serem testados. 
 
 Uma Arquitetura Hexagonal divide as classes de um sistema em
-dois grupos principais: (1) classes de domínio e (2) classes 
-relacionadas com infraestrutura, tecnologias e integração
-com sistemas externos (tais como bancos de dados). 
+dois grupos principais: 
 
-Além disso, **classes de domínio não devem depender de classes
-relacionadas com infraestrutura, tecnologias ou sistemas externos**.
-A vantagem dessa divisão é desacoplar esses dois tipos de classes.
+* Classes de domínio, isto é, diretamente relacionadas com o negócio do sistema. 
+* Classes relacionadas com infraestrutura, tecnologias e responsáveis
+pela integração com sistemas externos (tais como bancos de dados). 
+
+Além disso, em uma Arquitetura Hexagonal, **classes de domínio não devem 
+depender de classes relacionadas com infraestrutura, tecnologias ou 
+sistemas externos**. A vantagem dessa divisão é desacoplar esses dois 
+tipos de classes.
 
 Assim, as classes de domínio não conhecem as tecnologias -- bancos 
 de dados, interfaces com usuário e quaisquer outras bibliotecas -- 
@@ -62,8 +65,11 @@ outros sistemas, etc.
 ## Adaptadores e Portas {.unnumbered}
 
 Em uma Arquitetura Hexagonal, o termo **porta** designa as interfaces
-usadas para comunicação com as classes de domínio. Basicamente,
-existem dois tipos de portas:
+usadas para comunicação com as classes de domínio (veja que interface
+aqui significa interface de programação; por exemplo, uma **interface**
+de Java).
+
+Existem dois tipos de portas:
 
 * **Portas de entrada:** são interfaces usadas para comunicação 
 de fora para dentro, isto é, quando uma classe externa precisa chamar 
@@ -77,7 +83,7 @@ O importante é que **as portas são independentes de tecnologia**.
 Portanto, elas estão localizadas no hexágono interior.
 
 Por outro lado, os sistemas externos, normalmente, usam alguma tecnologia, 
-seja ela de comunicação (REST, gRPC, etc), de bancos de dados 
+seja ela de comunicação (REST, gRPC, GraphQL, etc), de bancos de dados 
 (SQL, noSQL, etc), de interação com o usuário (Web, mobile, etc), etc.
 
 Daí a necessidade de componentes localizados no hexágono mais externo 
@@ -104,9 +110,9 @@ Na figura, podemos observar que os usuários acessam o sistema por meio
 de três interfaces: Web, mobile e por meio de um sistema externo. Qualquer 
 que seja a forma de acesso, ele é sempre mediado por adaptadores. Em seguida, 
 esses adaptadores comunicam-se com uma porta de entrada, que define métodos 
-para pesquisa no catálogo, realização de empréstimos, cadastro de usuários, 
-etc. Concretamente, esses métodos são implementados pelas classes 
-de domínio. No sistema em questão, essas classes incluem `Livro`, 
+para pesquisa no catálogo da biblioteca, para realização de empréstimos, 
+para cadastro de usuários, etc. Concretamente, esses métodos são implementados 
+pelas classes de domínio. No sistema em questão, essas classes incluem `Livro`, 
 `Usuario`,  `Bibliotecario`, `Emprestimo`, `Reserva`, etc.
 
 O sistema precisa também persistir algumas informações. Para isso, 
@@ -133,12 +139,12 @@ consiste em uma Arquitetura Baseada em Portas e Adaptadores. Esse nome
 admite uma explicação melhor do que aquela que eu propus com o nome 
 Arquitetura Hexagonal. 
 
-No entanto, a tentativa de renomeação não deu certo e a arquitetura,
+No entanto, a tentativa de renomeação não deu tão certo e a arquitetura,
 provavelmente, continua sendo mais conhecida como Arquitetura Hexagonal.
 
 ### Para Saber Mais {.unnumbered}
 
-Se quiser conhecer mais sobre a Arquitetura Hexagonal, recomendamos dois
+Se quiser conhecer mais sobre Arquitetura Hexagonal, recomendamos dois
 pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro 
 [artigo](http://wiki.c2.com/?HexagonalArchitecture) define a arquitetura. 
 Já o segundo [artigo](http://wiki.c2.com/?PortsAndAdaptersArchitecture) 
