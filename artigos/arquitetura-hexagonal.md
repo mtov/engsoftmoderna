@@ -158,6 +158,14 @@ vistas como sendo uma implementação -- pelo menos aproximada -- de
 qual padrão de projeto? Se necessário, consulte o 
 [Capítulo 6](https://engsoftmoderna.info/cap6.html) para responder.
 
+2. Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas,
+por que os adaptadores de interface externa (HTTP, GraphQL e REST) e
+o adaptador de persistência (SQL) estão em faces distintas do hexágono?
+Eles poderiam ser desenhados na mesma face?
+
+3. A definição do termo hexagonal é arbitrária, pois, dependendo
+da aplicação, ela poderia ser chamada de quadrangular, pentagonal, heptagonal,
+octogonal, etc. Justifique essa afirmação.
 
 * * * 
 
