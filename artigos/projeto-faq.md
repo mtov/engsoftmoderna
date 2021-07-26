@@ -25,9 +25,9 @@ persistência, distribuição, etc.
 
 ### 2. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
 
-Este princípio de projeto foi enunciado pela 
-primeira vez no livro *The Pragmatic Programmer*, de David Thomas
-e Andrew Hunt, de 1999. A recomendação básica é a seguinte: 
+Este princípio de projeto foi enunciado pela primeira vez no 
+livro *The Pragmatic Programmer*, de David Thomas e Andrew Hunt, 
+de 1999. Ele recomenda o seguinte: 
 
 > Qualquer tipo de conhecimento deve ter uma representação única, 
 inequívoca e oficial em um sistema.
@@ -35,14 +35,14 @@ inequívoca e oficial em um sistema.
 A forma mais fácil de entender DRY é pensando em termos
 de código. Por exemplo, em um sistema nunca devemos ter duas funções
 X e Y duplicadas, isto é, com exatamente o mesmo propósito. Isso é 
-ruim pode dois motivos principais: 
+ruim por dois motivos principais: 
 
 * Suponha que X tenha sido implementada primeiro; logo, o esforço para 
 implementar Y foi desnecessário, pois já existia uma função idêntica 
 no sistema. 
 
 * Suponha que temos que realizar uma manutenção em X; logo, teremos 
-que repetir esse mesmo esforço em Y. 
+que repetir esse esforço em Y. 
 
 Porém, DRY não vale apenas para código, mas para qualquer conhecimento.
 Por exemplo, às vezes temos um comentário (ou outra forma documentação)
@@ -50,11 +50,14 @@ que apenas repete o que está no código. Nesse caso, talvez a refatoração
 do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. 
 Se isso acontecer, podemos remover o comentário.
 
-Na verdade, na própria escrita do nosso livro procuramos praticar esse 
-princípio. O livro tem quatro versões (HTML, e-book e PDF para impressão). Todas elas, 
-no entanto, são geradas a partir de um mesmo fonte, escrito em Markdown. 
-Se não fosse assim, qualquer pequena correção de um português teria que ser 
-repetida nos três formatos do livro.
+Na verdade, na escrita do nosso livro procuramos praticar esse 
+princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, 
+no entanto, são geradas a partir de um mesmo arquivo fonte, escrito 
+em Markdown. Se não fosse assim, qualquer pequena correção de português 
+teria que ser repetida nos três formatos do livro.
+
+Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
+Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
 * * * 
 
