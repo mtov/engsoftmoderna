@@ -7,12 +7,12 @@ de software e que não são abordados nos capítulos
 
 ### 1. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
 
-Suponha um objeto que tenha uma interface `I`, com quatro métodos. 
+Suponha um objeto que tenha uma interface `I`. 
 
-* Um **proxy** implementa a interface`I`, isto é, implementa os seus quatro métodos.
+* Um **proxy** implementa a interface`I`, isto é, implementa todos os seus métodos.
 
 * Já um **adaptador** implementa uma outra interface, digamos que `I'` e 
-fica responsável por adaptá-la para a interface `I`. Para ilustrar melhor, 
+fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
 lembre-se de um adaptador de tomadas do padrão novo para o antigo 
 ou vice-versa.
 
