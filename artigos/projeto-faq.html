@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
@@ -123,9 +124,24 @@
 <li><p>Suponha que X tenha sido implementada primeiro; logo, o esforço para implementar Y foi desnecessário, pois já existia uma função idêntica no sistema.</p></li>
 <li><p>Suponha que temos que realizar uma manutenção em X; logo, teremos que repetir esse esforço em Y.</p></li>
 </ul>
-<p>Porém, DRY não vale apenas para código, mas para qualquer conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma documentação) que apenas repete o que está no código. Nesse caso, talvez a refatoração do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. Se isso acontecer, podemos remover o comentário.</p>
+<p>Porém, DRY não vale apenas para código, mas para qualquer conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma de documentação) que apenas repete o que está no código. Nesse caso, talvez a refatoração do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. Se isso acontecer, podemos remover o comentário.</p>
 <p>Na verdade, na escrita do nosso livro procuramos praticar esse princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no entanto, são geradas a partir de um mesmo arquivo fonte, escrito em Markdown. Se não fosse assim, qualquer pequena correção de português teria que ser repetida nos três formatos do livro.</p>
 <p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of Unix Programming</em>, Eric Raymond usa o termo SPOT (<em>Single Point of Truth</em>).</p>
+<h3 class="unnumbered" id="o-que-significa-o-princípio-da-separação-entre-comandos-e-queries">3. O que significa o princípio da Separação entre Comandos e Queries?</h3>
+<p>Este princípio foi proposto por Bertrand Meyer, o mesmo autor do princípio Aberto/Fechado (Open/Closed), que dá origem à letra <q>O</q> dos princípios SOLID.</p>
+<p>O Princípio da Separação entre Comandos e Queries advoga que devem existir duas categorias de métodos em uma classe:</p>
+<ul>
+<li><p>Comandos, que são métodos que não retornam valor (isto é, retornam <code>void</code>), mas que possuem efeito colateral. Ou seja, eles <em>alteram</em> o estado do sistema. Por exemplo, eles gravam alguma informação no banco de dados, alteram um atributo da classe ou uma variável global, etc.</p></li>
+<li><p>Queries, que são métodos que apenas retornam valores, sem mudar o estado do sistema.</p></li>
+</ul>
+<p>Então, o princípio recomenda que um método: (1) ou deve ser um comando; (2) ou deve ser uma query. O que não é recomendável é que um método desempenhe ambos os papeis.</p>
+<p>Ou seja, para ficar ainda mais claro: (1) um comando não deve retornar valores; (2) uma query não deve ter efeitos colaterais.</p>
+<p>O objetivo do princípio é fomentar uma divisão clara entre essas duas categorias de métodos, pois é mais <q>seguro</q> e simples você chamar uma query do que chamar um comando. Por exemplo, ao chamar uma query o desenvolvedor tem certeza de que não vai alterar nada no sistema. O mesmo, no entanto, não acontece com comandos.</p>
+<p>Bertrand Meyer justifica assim o seu princípio:</p>
+<blockquote>
+<p>O ato de fazer uma pergunta não deve mudar a sua resposta.</p>
+</blockquote>
+<p>Nessa frase, <q>fazer uma pergunta</q> significa chamar uma query. Isso não deve influenciar a resposta dessa query (caso a gente faça a pergunta de novo, por exemplo) ou a resposta de uma outra query (que, por exemplo, a gente faça a seguir).</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

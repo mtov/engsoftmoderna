@@ -45,7 +45,7 @@ no sistema.
 que repetir esse esforço em Y. 
 
 Porém, DRY não vale apenas para código, mas para qualquer conhecimento.
-Por exemplo, às vezes temos um comentário (ou outra forma documentação)
+Por exemplo, às vezes temos um comentário (ou outra forma de documentação)
 que apenas repete o que está no código. Nesse caso, talvez a refatoração
 do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. 
 Se isso acontecer, podemos remover o comentário.
@@ -58,6 +58,49 @@ teria que ser repetida nos três formatos do livro.
 
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
+
+### 3. O que significa o princípio da Separação entre Comandos e Queries? {.unnumbered}
+
+Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
+princípio Aberto/Fechado (Open/Closed), que dá origem à letra "O"
+dos princípios SOLID.
+
+O Princípio da Separação entre Comandos e Queries advoga que devem 
+existir duas categorias de métodos em uma classe:
+
+* Comandos, que são métodos que não retornam valor (isto é,
+retornam `void`), mas que possuem efeito colateral. Ou seja, 
+eles *alteram* o estado do sistema. Por exemplo, eles gravam 
+alguma informação no banco de dados, alteram um atributo da 
+classe ou uma variável global, etc.
+
+* Queries, que são métodos que apenas retornam valores, sem 
+mudar o estado do sistema.
+
+Então, o princípio recomenda que um método: (1) ou deve
+ser um comando; (2) ou deve ser uma query. O que não é 
+recomendável é que um método desempenhe ambos os papeis.
+
+Ou seja, para ficar ainda mais claro: (1) um comando não
+deve retornar valores; (2) uma query não deve ter efeitos
+colaterais.
+
+O objetivo do princípio é fomentar uma divisão clara entre 
+essas duas categorias de métodos, pois é mais "seguro" e 
+simples você chamar uma query do que chamar um comando. Por 
+exemplo, ao chamar uma query o desenvolvedor tem certeza de 
+que não vai alterar nada no sistema. O mesmo, no entanto, 
+não acontece com comandos.
+
+Bertrand Meyer justifica assim o seu princípio:
+
+> O ato de fazer uma pergunta não deve mudar a sua resposta.
+
+Nessa frase, "fazer uma pergunta" significa chamar uma
+query. Isso não deve influenciar a resposta dessa query 
+(caso a gente faça a pergunta de novo, por exemplo) ou 
+a resposta de uma outra query (que, por exemplo, a gente 
+faça a seguir).
 
 * * * 
 
