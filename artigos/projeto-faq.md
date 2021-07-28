@@ -59,7 +59,7 @@ teria que ser repetida nos três formatos do livro.
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
-### 3. O que significa o princípio da Separação entre Comandos e Queries? {.unnumbered}
+### 3. O que significa Separação entre Comandos e Queries? {.unnumbered}
 
 Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
 princípio Aberto/Fechado (Open/Closed), que dá origem à letra "O"
@@ -88,7 +88,7 @@ colaterais.
 O objetivo do princípio é fomentar uma divisão clara entre 
 essas duas categorias de métodos, pois é mais "seguro" e 
 simples você chamar uma query do que chamar um comando. Por 
-exemplo, ao chamar uma query o desenvolvedor tem certeza de 
+exemplo, ao chamar uma query a desenvolvedora tem certeza de 
 que não vai alterar nada no sistema. O mesmo, no entanto, 
 não acontece com comandos.
 
@@ -100,7 +100,7 @@ Nessa frase, "fazer uma pergunta" significa chamar uma
 query. Isso não deve influenciar a resposta dessa query 
 (caso a gente faça a pergunta de novo, por exemplo) ou 
 a resposta de uma outra query (que, por exemplo, a gente 
-faça a seguir).
+faça logo a seguir).
 
 * * * 
 
