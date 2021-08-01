@@ -87,28 +87,29 @@ faça logo a seguir).
 
 ### 3. O que é ortogonalidade? {.unnumbered}
 
-Dois elementos de um projeto de software são ortogonais se mudanças 
-em um deles não afeta o outro. Consequentemente, esses elementos 
-podem ser livremente combinados ou trocados.
+Dois componentes de um projeto são ortogonais se mudanças em um deles 
+não afetam o outro. Logo, eles podem ser livremente combinados 
+ou trocados.
 
 No livro *The Pragmatic Programmer*, o seguinte exemplo explica o 
 conceito:
 
-> Em um sistema bem projetado, o código do banco de dados é ortogonal 
+> Em um sistema bem projetado, o banco de dados é ortogonal 
 à interface do usuário: pode-se alterar a interface sem afetar 
 o banco de dados e trocar o banco de dados sem alterar a interface.
 
-Para explicar melhor, suponha que temos um conjunto de 
-interfaces X e um conjunto de bancos de dados Y, que podemos usar. 
+Para explicar melhor, suponha um sistema no qual podemos usar um 
+conjunto de interfaces X e um conjunto de bancos de dados Y. 
 Em um sistema ortogonal, a escolha da interface X não impacta ou 
 restringe a escolha do banco de dados Y. Qualquer combinação de X e Y 
-é possível. Na verdade, podemos imaginar X e Y como duas retas 
-ortogonais, que formam um plano, no qual qualquer ponto x e y 
+é possível. Por isso, podemos imaginar X e Y como duas retas 
+ortogonais, que formam um plano, no qual qualquer coordenada (x,y) 
 representa uma configuração possível do sistema.
 
-Concluindo, ortogonalidade é uma propriedade que costuma estar 
+Portanto, ortogonalidade é uma propriedade que costuma estar 
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
-alta coesão e baixo acoplamento. 
+alta coesão e baixo acoplamento, tal como estudamos no 
+Capítulo [5](https://engsoftmoderna.info/cap5.html).
 
 ### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
 
