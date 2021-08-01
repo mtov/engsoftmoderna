@@ -5,25 +5,8 @@ de software e que não são abordados nos capítulos
 [5](https://engsoftmoderna.info/cap5.html) e 
 [6](https://engsoftmoderna.info/cap6.html) do livro. 
 
-### 1. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
 
-Suponha um objeto que tenha uma interface `I`. 
-
-* Um **proxy** implementa a interface`I`, isto é, implementa todos os seus métodos.
-
-* Já um **adaptador** implementa uma outra interface, digamos que `I'` e 
-fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
-lembre-se de um adaptador de tomadas do padrão novo para o antigo 
-ou vice-versa.
-
-Quando eu devo usar cada um desses padrões?
-
-* Proxy: para implementar requisitos não-funcionais, tais como segurança, 
-persistência, distribuição, etc.
-
-* Adaptador: para compatibilizar interfaces diferentes.
-
-### 2. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
+### 1. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
 
 Este princípio de projeto foi enunciado pela primeira vez no 
 livro *The Pragmatic Programmer*, de David Thomas e Andrew Hunt, 
@@ -59,7 +42,7 @@ teria que ser repetida nos três formatos do livro.
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
-### 3. O que significa Separação entre Comandos e Queries? {.unnumbered}
+### 2. O que significa Separação entre Comandos e Queries? {.unnumbered}
 
 Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
 princípio Aberto/Fechado (Open/Closed), que dá origem à letra "O"
@@ -102,7 +85,7 @@ query. Isso não deve influenciar a resposta dessa query
 a resposta de uma outra query (que, por exemplo, a gente 
 faça logo a seguir).
 
-### 4. O que é ortogonalidade? {.unnumbered}
+### 3. O que é ortogonalidade? {.unnumbered}
 
 Dois elementos de um projeto de software são ortogonais se mudanças 
 em um deles não afeta o outro. Consequentemente, esses elementos 
@@ -126,6 +109,24 @@ representa uma configuração possível do sistema.
 Concluindo, ortogonalidade é uma propriedade que costuma estar 
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
 alta coesão e baixo acoplamento. 
+
+### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
+
+Suponha um objeto que tenha uma interface `I`. 
+
+* Um **proxy** implementa a interface`I`, isto é, implementa todos os seus métodos.
+
+* Já um **adaptador** implementa uma outra interface, digamos que `I'` e 
+fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
+lembre-se de um adaptador de tomadas do padrão novo para o antigo 
+ou vice-versa.
+
+Quando eu devo usar cada um desses padrões?
+
+* Proxy: para implementar requisitos não-funcionais, tais como segurança, 
+persistência, distribuição, etc.
+
+* Adaptador: para compatibilizar interfaces diferentes.
 
 * * * 
 
