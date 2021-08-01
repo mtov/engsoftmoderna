@@ -142,6 +142,14 @@
 <p>O ato de fazer uma pergunta não deve mudar a sua resposta.</p>
 </blockquote>
 <p>Nessa frase, <q>fazer uma pergunta</q> significa chamar uma query. Isso não deve influenciar a resposta dessa query (caso a gente faça a pergunta de novo, por exemplo) ou a resposta de uma outra query (que, por exemplo, a gente faça logo a seguir).</p>
+<h3 class="unnumbered" id="o-que-é-ortogonalidade">4. O que é ortogonalidade?</h3>
+<p>Dois elementos de um projeto de software são ortogonais se mudanças em um deles não afeta o outro. Consequentemente, esses elementos podem ser livremente combinados ou trocados.</p>
+<p>No livro <em>The Pragmatic Programmer</em>, o seguinte exemplo explica o conceito:</p>
+<blockquote>
+<p>Em um sistema bem projetado, o código do banco de dados é ortogonal à interface do usuário: pode-se alterar a interface sem afetar o banco de dados e trocar o banco de dados sem alterar a interface.</p>
+</blockquote>
+<p>Para explicar melhor, suponha que temos um conjunto de interfaces X e um conjunto de bancos de dados Y. Em um sistema ortogonal, a escolha da interface X não impacta ou restringe a escolha do banco de dados Y. Qualquer combinação de X e Y é possível. Na verdade, podemos imaginar X e Y como sendo duas retas ortogonais, que formam um plano, no qual qualquer ponto x e y representa uma configuração possível do nosso sistema.</p>
+<p>Concluindo, ortogonalidade é uma propriedade sempre presente em sistemas modulares, cujos módulos possuem alta coesão e baixo acoplamento.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

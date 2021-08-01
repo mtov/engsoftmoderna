@@ -56,7 +56,7 @@ de software:
 * Squads responsáveis por componentes arquiteturais: o exemplo clássico 
 são squads responsáveis pelos clientes móveis de um sistema, incluindo 
 Android, iOS, etc. Ou seja, a empresa pode ter squads para 
-desenvolver e manter cada uma desses clientes. Como um segundo exemplo,
+desenvolver e manter cada um desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend.
 
 * Squads responsáveis por requisitos funcionais: por exemplo, em um sistema 
