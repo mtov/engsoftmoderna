@@ -99,7 +99,7 @@ conceito:
 o banco de dados e trocar o banco de dados sem alterar a interface.
 
 Para explicar melhor, suponha um sistema no qual podemos usar um 
-conjunto de interfaces X e um conjunto de bancos de dados Y. 
+conjunto de interfaces com o usuário X e um conjunto de bancos de dados Y. 
 Em um sistema ortogonal, a escolha da interface X não impacta ou 
 restringe a escolha do banco de dados Y. Qualquer combinação de X e Y 
 é possível. Por isso, podemos imaginar X e Y como duas retas 

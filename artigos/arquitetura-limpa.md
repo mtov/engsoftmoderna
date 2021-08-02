@@ -28,9 +28,8 @@ Todos esses sistemas têm que lidar com classes como `Aluno`, `Professor`, `Curs
 podem implementar regras de negócio genéricas. Por exemplo, uma regra da universidade
 define que todo `Professor` deve pertencer a exatamente um `Departamento`.
 
-Já as classes da camada **Casos de Uso** implementam regras de negócio um
-pouco menos genéricas e, normalmente, relativas a um único sistema. 
-Por exemplo, o sistema acadêmico do nosso exemplo 
+Já as classes da camada **Casos de Uso** implementam regras de negócio 
+específicas de um sistema. Por exemplo, o sistema acadêmico do nosso exemplo 
 pode ter uma classe  `DiarioDeClasse` que armazena a lista de objetos 
 do tipo `Aluno` matriculados em 
 uma `Disciplina` que está sendo ofertada em um determinado 
@@ -63,15 +62,15 @@ controladores pertencerão a essa camada.
 
 ## Frameworks Externos {.unnumbered}
 
-Na camada mais externa, temos classes pertencentes a bibliotecas e frameworks 
+Na camada mais externa, temos as classes de bibliotecas e frameworks 
 externos (de terceiros), as quais podem ser responsáveis por persistência, 
 construção de interfaces com usuários, envio de mails, integração com 
 outros sistemas, comunicação com um determinado hardware, etc.
 
 Por exemplo, a universidade do nosso exemplo pode possuir 
-um sistema para gerenciamento de cursos de extensão, o qual aceita 
+um sistema para gerenciamento de cursos de extensão, que aceita 
 pagamento por meio de cartões de crédito. 
-Para isso, o sistema usa um serviço de pagamentos de terceiros, que oferece 
+Para isso, o sistema usa um serviço de terceiros, que oferece 
 algumas classes para processamento de pagamentos. Logo, essa classes
 ficam na camada mais externa de uma Arquitetura Limpa.
 
@@ -101,8 +100,8 @@ Porém, queremos evitar que essas mudanças sejam motivadas por mudanças
 nas tecnologias adotadas na aplicação, como bancos de dados, frameworks 
 e bibliotecas. 
 
-Resumindo, a Regra de Dependência garante que as entidades e os casos de uso
-sejam classes "limpas" de qualquer tecnologia ou serviço externo ao sistema.
+Resumindo, a Regra de Dependência garante que **entidades e casos de uso
+são classes "limpas" de qualquer tecnologia** ou serviço externo ao sistema.
 
 ## Invertendo o Fluxo de Controle {.unnumbered}
 
@@ -124,11 +123,11 @@ public class MailServiceImpl {
 }
 ```
 
-No entanto, veja que esse exemplo implica em um fluxo de fora para dentro: 
+No entanto, esse exemplo implica em um fluxo de dentro para fora: 
 o caso de uso tem que declarar uma variável de uma classe 
 de uma camada mais externa, o que contraria a regra da dependência!
 
-A solução implica em ter uma interface na camada de caso de uso chamada
+A solução consiste em ter uma interface na camada de caso de uso chamada
 `MailServiceInterface` com um método `send(String msg)`. 
 
 ```
@@ -156,7 +155,9 @@ a interface `MailServiceInterface`.
 import CasosDeUso.MailServiceInterface;
 
 public class MailServiceImpl implements MailServiceInterface {
-  public void send(String msg);
+  public void send(String msg) {
+  	// chama serviço externo para enviar e-mail
+  }
 }
 ```
 
@@ -183,7 +184,7 @@ As recomendações principais de uma Arquitetura Limpa são as seguintes:
 
 * Ao implementar uma aplicação, pense nas suas Entidades, que são classes
 que armazenam principalmente dados e que poderão ser reusadas em
-outros sistemas que você construir no futuro.
+outros sistemas que você vai construir no futuro.
 
 * Depois, pense nos Casos de Uso, que vão implementar regras de negócio 
 relacionadas com as Entidades de seu sistema. Mas torne as classes que 
@@ -221,6 +222,21 @@ principal vantagem ou benefício dessa regra?
      por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
 
    * Em qual camada você implementaria então `MailServiceImpl`?
+
+3. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
+precisa obter a lista de livros que estão emprestados para um 
+certo usuário da biblioteca. Fisicamente, essa informação
+está armazenada em um banco de dados relacional. Modele então
+a implementação desse requisito assumindo que o sistema adota
+uma Arquitetura Limpa. Especificamente, responda:
+
+   * Em qual camada será implementada a classe com o código da 
+     consulta SQL que vai retornar os livros emprestados?
+
+   * Mostre a assinatura do principal método da interface implementada 
+     por essa classe (com os comandos SQL)? Essa interface pertence 
+     a qual camada? 
+ 
 
 * * * 
 
