@@ -167,6 +167,10 @@ Eles poderiam ser desenhados na mesma face?
 da aplicação, ela poderia ser chamada de quadrangular, pentagonal, heptagonal,
 octogonal, etc. Justifique essa afirmação.
 
+4. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
+e a Arquitetura Limpa (que estudamos em um outro 
+[artigo](https://engsoftmoderna.info/artigos/arquitetura-limpa.html) didático).
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
