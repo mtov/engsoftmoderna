@@ -117,9 +117,9 @@
 <h2 class="unnumbered" id="adaptadores">Adaptadores</h2>
 <p>Na terceira camada, de dentro para fora, temos classes e interfaces chamadas de <strong>Adaptadores</strong>. A função delas é converter dados de um formato para outro.</p>
 <p>Suponha, por exemplo, que o sistema use uma API REST para comunicação com seus clientes. As classes adaptadoras serão então responsáveis por implementar os <em>endpoints</em> REST da API. Isto é, elas devem receber as requisições e encaminhá-las para os casos de uso correspondentes. E, também, fazer o caminho inverso: receber os resultados retornados pelos casos de uso e convertê-los em documentos JSON que serão enviados para os clientes.</p>
-<p>Se o sistema for implementado usando-se um framework MVC Web, os controladores pertencerão a essa camada.</p>
+<p>Se o sistema for implementado usando-se um framework MVC, todos os componentes desse padrão arquitetural – isto é, a Visão, os controladores e o modelo – pertencerão a essa camada.</p>
 <h2 class="unnumbered" id="frameworks-externos">Frameworks Externos</h2>
-<p>Na camada mais externa, temos as classes de bibliotecas e frameworks externos (de terceiros), as quais podem ser responsáveis por persistência, construção de interfaces com usuários, envio de mails, integração com outros sistemas, comunicação com um determinado hardware, etc.</p>
+<p>Na camada mais externa, temos as classes de bibliotecas e frameworks externos (de terceiros), as quais podem ser responsáveis por persistência em bancos de dados, construção de interfaces com usuários, envio de mails, integração com outros sistemas, comunicação com um determinado hardware, etc.</p>
 <p>Por exemplo, a universidade do nosso exemplo pode possuir um sistema para gerenciamento de cursos de extensão, que aceita pagamento por meio de cartões de crédito. Para isso, o sistema usa um serviço de terceiros, que oferece algumas classes para processamento de pagamentos. Logo, essa classes ficam na camada mais externa de uma Arquitetura Limpa.</p>
 <p>No livro <a href="https://dl.acm.org/doi/book/10.5555/3175742">Arquitetura Limpa</a>, veja como essa camada é descrita:</p>
 <blockquote>
@@ -184,8 +184,10 @@ public class MailServiceImpl implements MailServiceInterface {
 </ul></li>
 <li><p>Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema precisa obter a lista de livros que estão emprestados para um certo usuário da biblioteca. Fisicamente, essa informação está armazenada em um banco de dados relacional. Modele então a implementação desse requisito assumindo que o sistema adota uma Arquitetura Limpa. Especificamente, responda:</p>
 <ul>
-<li><p>Em qual camada será implementada a classe com o código da consulta SQL que vai retornar os livros emprestados?</p></li>
-<li><p>Mostre a assinatura do principal método da interface implementada por essa classe (com os comandos SQL)? Essa interface pertence a qual camada?</p></li>
+<li><p>Em qual camada será implementada uma classe com o código da consulta SQL que vai retornar os livros emprestados?</p></li>
+<li><p>Mostre a assinatura do principal método da interface implementada por essa classe? Essa interface pertence a qual camada?</p></li>
+<li><p>Nesse sistema, provavelmente, existe uma classe <code>Livro</code>. Ela deve pertencer a qual camada?</p></li>
+<li><p>Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, mongoDB, etc.) estará localizado em qual camada?</p></li>
 </ul></li>
 </ol>
 <hr />

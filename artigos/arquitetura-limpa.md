@@ -57,15 +57,17 @@ correspondentes. E, também, fazer o caminho inverso: receber os resultados
 retornados pelos casos de uso e convertê-los em documentos JSON 
 que serão enviados para os clientes.
 
-Se o sistema for implementado usando-se um framework MVC Web, os 
-controladores pertencerão a essa camada.
+Se o sistema for implementado usando-se um framework MVC, 
+todos os componentes desse padrão arquitetural -- isto é, a Visão, 
+os controladores e o modelo -- pertencerão a essa camada.
 
 ## Frameworks Externos {.unnumbered}
 
 Na camada mais externa, temos as classes de bibliotecas e frameworks 
-externos (de terceiros), as quais podem ser responsáveis por persistência, 
-construção de interfaces com usuários, envio de mails, integração com 
-outros sistemas, comunicação com um determinado hardware, etc.
+externos (de terceiros), as quais podem ser responsáveis por 
+persistência em bancos de dados, construção de interfaces com usuários, 
+envio de mails, integração com outros sistemas, comunicação com um 
+determinado hardware, etc.
 
 Por exemplo, a universidade do nosso exemplo pode possuir 
 um sistema para gerenciamento de cursos de extensão, que aceita 
@@ -233,13 +235,19 @@ está armazenada em um banco de dados relacional. Modele então
 a implementação desse requisito assumindo que o sistema adota
 uma Arquitetura Limpa. Especificamente, responda:
 
-   * Em qual camada será implementada a classe com o código da 
+   * Em qual camada será implementada uma classe com o código da 
      consulta SQL que vai retornar os livros emprestados?
 
-   * Mostre a assinatura do principal método da interface implementada 
-     por essa classe (com os comandos SQL)? Essa interface pertence 
-     a qual camada? 
- 
+   * Mostre a assinatura do principal método da interface 
+     implementada por essa classe? Essa interface pertence a qual 
+     camada? 
+
+   * Nesse sistema, provavelmente, existe uma classe `Livro`.
+     Ela deve pertencer a qual camada?
+
+   * Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, 
+     mongoDB, etc.) estará localizado em qual camada?
+
 
 * * * 
 
