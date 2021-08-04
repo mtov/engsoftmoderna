@@ -209,6 +209,9 @@ mesmo nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista in
 [vídeos](https://www.youtube.com/playlist?list=PLpJIjBkNnEt_IyTngYRkXXwxqz-Ae74ub) 
 no YouTube sobre o tema.
 
+Se quiser, veja também nosso artigo sobre
+[Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html).
+
 ## Exercícios {.unnumbered}
 
 1. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
