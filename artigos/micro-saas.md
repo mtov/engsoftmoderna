@@ -12,7 +12,7 @@ já existe uma vasta literatura sobre a criação e administração de startups
 financiadas por meio de capital de risco.
 
 Por outro lado, existe um caminho oposto, que se costuma chamar 
-de auto-financiado (*boostrapped*), no qual a empresa é criada com recursos
+de auto-financiado (*bootstrapped*), no qual a empresa é criada com recursos
 próprios e mantida com os resultados de seu faturamento. 
 Como ele é menos comentado, pelo menos na literatura, resolvemos escrever esse 
 pequeno artigo sobre o assunto.
@@ -62,7 +62,7 @@ empresas ou consumidores finais.
 O grande **desafio de uma microempresa de software é achar um segmento 
 de mercado**, que tenha um problema real que possa ser resolvido por meio 
 de um sistema relativamente pequeno. E, mais importante, esse problema 
-tem que ser relevante para **atrair clientes dispostos a pagar um assinatura 
+tem que ser relevante para **atrair clientes dispostos a pagar uma assinatura 
 mensal** para ter acesso a um sistema que o resolva. 
 
 Adicionalmente, os fundadores de uma microempresa de software são responsáveis 
@@ -102,7 +102,7 @@ Um segundo exemplo de empresa de SaaS que começou pequena e cresceu
 bastante, mas mantendo o modelo de auto-financiamento, é a 
 [Balsamiq](https://balsamiq.com), que faz uma ferramenta para criação de 
 wireframes de baixa fidelidade. A empresa, localizada na Itália,
-foi fundada em 2008 e, em 2020, obteve uma faturamento de mais de 
+foi fundada em 2008 e, em 2020, obteve um faturamento de mais de 
 US$ 9 milhões, com 33 colaboradores.
 
 ## Métricas {.unnumbered}
@@ -110,7 +110,7 @@ US$ 9 milhões, com 33 colaboradores.
 Antes de concluir, gostaríamos de comentar sobre algumas métricas usadas 
 para avaliar o sucesso de sistemas SaaS:
 
-* **Custo de Aquisição de Clientes (CAC)** (ou *Customer Acquisiton Cost*): 
+* **Custo de Aquisição de Clientes (CAC)** (ou *Customer Acquisition Cost*): 
 custos com propaganda, vendas, etc em um mês / número de novos assinantes no mês.
 
 * **Receita Mensal Recorrente (MRR)** (ou *Monthly Recurring Revenue*):
