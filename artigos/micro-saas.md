@@ -4,27 +4,26 @@
 ## Introdução {.unnumbered}
 
 Existem diversos caminhos na área de empreendedorismo envolvendo Engenharia
-de Software. Hoje em dia, o caminho mais desejado talvez seja criar uma 
+de Software. Hoje em dia, talvez, o caminho mais desejado seja criar uma 
 startup de sucesso, obter financiamento via capital de risco e virar um 
-unicórnio. No entanto, evidentemente, esse não é um caminho trivial, isto 
-é, são pouquíssimas empresas que alçam esse nível sucesso. Além disso, 
+unicórnio. No entanto, evidentemente, esse não é um caminho trivial, pois 
+são pouquíssimas empresas que alçam esse nível de sucesso. Além disso, 
 já existe uma vasta literatura sobre a criação e administração de startups 
 financiadas por meio de capital de risco.
 
 Por outro lado, existe um caminho oposto, que se costuma chamar 
 de auto-financiado (*boostrapped*), no qual a empresa é criada com recursos
-próprios e, logo em seguida, mantida com os resultados de seu faturamento. 
+próprios e mantida com os resultados de seu faturamento. 
 Como ele é menos comentado, pelo menos na literatura, resolvemos escrever esse 
 pequeno artigo sobre o assunto.
 
-Especificamente, quando adotam um modelo de assinatura (SaaS, ou 
-*Software as a Service*) essas empresas iniciais costumam ser chamadas 
+Quando adotam um modelo de assinatura, essas empresas são chamadas 
 de micro-SaaS. Podemos definir esse conceito da seguinte forma:
 
 > Micro-SaaS é um pequeno empreendimento de software, 
 > auto-financiado, completamente administrado por 1-2 desenvolvedores 
-> e que atende a uma necessidade específica. Além disso,
-> um micro-SaaS segue um modelo de serviços (*Software as a Service*), 
+> e que atende a uma necessidade específica. 
+> Um micro-SaaS segue um modelo de serviços (*Software as a Service*), 
 > com pagamentos recorrentes (assinaturas) por parte
 > de centenas ou alguns milhares de clientes globais.
 
@@ -36,24 +35,23 @@ Para ficar mais claro, vamos dar alguns exemplos de micro-SaaS:
 adicionar um pequeno botão "Feedback" na lateral direita de todas as páginas 
 de um site Web. Usuários podem usar esse botão para dar feedback sobre o site 
 e suas páginas, reportando desde erros ortográficos até bugs de lógica ou de 
-interface. A princípio, parece que o sistema é mantido por um único fundador, 
-mais alguns freelancers. 
+interface. O sistema é mantido por um único fundador, mais alguns freelancers. 
 
 * [Transistor](https://transistor.fm/) é um sistema para hospedagem e 
 distribuição de podcasts, que é mantido por dois fundadores.
 
-* [Permanentlink](https://permanent.link/) é um sistema que pretende resolver 
+* [Permanentlink](https://permanent.link/) é um sistema que se propõe a resolver 
 um problema enfrentado por autores de livros digitais: esses livros incorporam 
 diversos links (URLs), que com o tempo podem "quebrar". A ideia então é 
-disponibilzar uma URL permanente para os documentos referenciados. 
+disponibilizar uma URL permanente para os documentos referenciados. 
 Enquanto um link estiver ativo, o sistema redireciona a conexão para ele; se o link 
 quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema. 
 
 * [Reform](https://www.reform.app/) é um sistema para criação de formulários.
 Ou seja, o sistema tem que competir com concorrentes importantes, tal como 
-sumarizado na seguinte [página](Comparison_of_survey_software) da Wikipedia. 
+sumarizado na seguinte [página](Comparison_of_survey_software) da Wikipédia. 
 Apesar disso, os fundadores estão tentando criar um sistema alternativo 
-que oferece uma experiência mais agradável para criação de formulários.
+que propicie uma experiência mais agradável para criação de formulários.
 
 De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
@@ -61,29 +59,29 @@ empresas ou consumidores finais.
 
 ## Desafios e Riscos {.unnumbered}
 
-O grande **desafio de uma microempresa é achar um segmento de mercado**, que 
-tenha um problema real que possa ser resolvido por meio de um sistema 
-relativamente pequeno. E, mais importante, esse problema tem que ser relevante 
-para **atrair clientes dispostos a pagar um assinatura mensal** para ter 
-acesso a um sistema que o resolva. 
+O grande **desafio de uma microempresa de software é achar um segmento 
+de mercado**, que tenha um problema real que possa ser resolvido por meio 
+de um sistema relativamente pequeno. E, mais importante, esse problema 
+tem que ser relevante para **atrair clientes dispostos a pagar um assinatura 
+mensal** para ter acesso a um sistema que o resolva. 
 
 Adicionalmente, os fundadores de uma microempresa de software são responsáveis 
 não apenas por desenvolver e manter o sistema, mas também por outras funções, 
 tais como:
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
-devido à disponibilidade de sistemas de computação em nuvem que permitem rapidamente 
+devido à disponibilidade de sistemas de computação em nuvem que permitem 
 criar máquinas virtuais com todo o software básico instalado.
 
 * Cuidar da parte de cobrança e recebimento das assinaturas. Porém, hoje existem
 serviços de terceiros para isso.
 
 * Cuidar da parte de atendimento e suporte a clientes. Para isso é importante 
-automatizar e documentar bem todos os processos e, também, usar sistemas de 
+automatizar e documentar todos os processos e, também, usar sistemas de 
 low-code, como Zapier.
 
 * Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar 
-bastante de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). Além disso, um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
+de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). Além disso, um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
 
 ## Crescendo a Empresa  {.unnumbered}
 
@@ -99,6 +97,13 @@ de grandes empresas, como Salesforce. Em contrapartida, a assinatura do sistema
 Em 2013, a empresa chegou a 1.5K clientes, com apenas mais um colaborador. 
 Em 2021, ela possui quase 24 mil clientes e 19 colaboradores, a maior parte 
 atuando em atendimento a clientes.
+
+Um segundo exemplo de empresa de SaaS que começou pequena e cresceu 
+bastante, mas mantendo o modelo de auto-financiamento, é a 
+[Balsamiq](https://balsamiq.com), que faz uma ferramenta para criação de 
+wireframes de baixa fidelidade. A empresa, localizada na Itália,
+foi fundada em 2008 e, em 2020, obteve uma faturamento de mais de 
+US$ 9 milhões, com 33 colaboradores.
 
 ## Métricas {.unnumbered}
 
@@ -129,14 +134,10 @@ Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-moneti
 
 ## Exercícios {.unnumbered}
 
-1. Pesquise e descreva alguns sistemas micro-SaaS, de forma semelhante àquela que 
-fizemos no artigo. Algum deles é brasileiro?
+1. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
+àquela que fizemos no artigo.
 
-2. Tente pensar e projetar um sistema micro-SaaS. Qual problema ele vai 
-resolver? Quais serão seus principais usuários? Quais serão as funcionalidades 
-do primeiro MVP do sistema?
-
-3. Do ponto de vista de monetização, qual a vantagem de micro-Saas em 
+2. Do ponto de vista de monetização, qual a vantagem de micro-Saas em 
 relação a uma pequena app para celulares (comercializada em lojas como 
 Google Play e Apple Store)?
 
