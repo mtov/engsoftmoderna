@@ -29,7 +29,7 @@ de micro-SaaS. Podemos definir esse conceito da seguinte forma:
 
 ## Exemplos {.unnumbered}
 
-Para ficar mais claro, vamos dar alguns exemplos de micro-SaaS:
+Para ficar mais claro, vamos dar alguns exemplos de sistemas micro-SaaS:
 
 * [Saber Feedback](https://saberfeedback.com/) é uma aplicação que possibilita 
 adicionar um pequeno botão "Feedback" na lateral direita de todas as páginas 
