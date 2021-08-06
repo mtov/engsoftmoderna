@@ -57,17 +57,46 @@ De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*)
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
 empresas ou consumidores finais.
 
-## Desafios e Riscos {.unnumbered}
+## Escolhendo o Sistema {.unnumbered}
 
-O grande **desafio de uma microempresa de software é achar um segmento 
-de mercado**, que tenha um problema real que possa ser resolvido por meio 
-de um sistema relativamente pequeno. E, mais importante, esse problema 
-tem que ser relevante para **atrair clientes dispostos a pagar uma assinatura 
-mensal** para ter acesso a um sistema que o resolva. 
+O grande **desafio de uma microempresa de software é achar um 
+segmento de mercado**, que tenha um problema real que possa ser 
+resolvido por meio de um sistema relativamente pequeno. E, mais 
+importante, esse problema tem que ser relevante para **atrair 
+clientes dispostos a pagar uma assinatura mensal** para ter 
+acesso a um sistema que o resolva. 
 
-Adicionalmente, os fundadores de uma microempresa de software são responsáveis 
-não apenas por desenvolver e manter o sistema, mas também por outras funções, 
-tais como:
+Os resultados de uma pesquisa realizada em 2020 pela MicroConf, 
+uma empresa organizadora de  eventos, ajudam a entender 
+como a escolha desse problema e sistema ocorre na prática. Nessa 
+pesquisa, foram entrevistados fundadores de SaaS auto-financiados. 
+Uma das perguntas era a seguinte: **Como você teve a ideia para 
+o seu produto ou empresa?** 
+Veja as respostas:
+
+* 45% responderam que escolheram influenciados por um problema 
+que estavam enfrentando.
+
+* 22% responderam que escolheram influenciados por um problema 
+que seus clientes ou consumidores enfrentavam.
+
+* 13% responderam que escolheram o problema baseado em experiências 
+relacionadas com o seu trabalho diário.
+
+* 11% responderam que amigos ou parentes estavam enfrentando 
+o problema.
+
+O seguinte padrão fica então claro nas respostas: a escolha foi 
+de um problema que os fundadores ou pessoas próximas estavam 
+enfrentando. Portanto, os fundadores conheciam bem o problema
+e também tinham acesso a pessoas que poderiam validar ou mesmo 
+serem clientes das primeiras versões do sistema.
+
+## Outras Responsabilidades {.unnumbered}
+
+Os fundadores de uma microempresa de software são responsáveis 
+não apenas por desenvolver e manter o sistema, mas também por outras 
+funções, tais como:
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de computação em nuvem que permitem 
@@ -82,6 +111,7 @@ low-code, como Zapier.
 
 * Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar 
 de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). Além disso, um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
+
 
 ## Crescendo a Empresa  {.unnumbered}
 
@@ -102,8 +132,8 @@ Um segundo exemplo de empresa de SaaS que começou pequena e cresceu
 bastante, mas mantendo o modelo de auto-financiamento, é a 
 [Balsamiq](https://balsamiq.com), que faz uma ferramenta para criação de 
 wireframes de baixa fidelidade. A empresa, localizada na Itália,
-foi fundada em 2008 e, em 2020, obteve um faturamento de mais de 
-US$ 9 milhões, com 33 colaboradores.
+foi fundada em 2008 e, em 2020, obteve um faturamento de  
+US$ 7.3 milhões, com 33 colaboradores.
 
 ## Métricas {.unnumbered}
 
