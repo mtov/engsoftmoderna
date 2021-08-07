@@ -92,6 +92,18 @@ enfrentando. Portanto, os fundadores conheciam bem o problema
 e também tinham acesso a pessoas que poderiam validar ou mesmo 
 serem clientes das primeiras versões do sistema.
 
+Os resultados da pesquisa conectam-se com  duas expressões
+usadas com frequência em desenvolvimento de software: 
+
+* *Scrath your itch*, que pode ser traduzida como "coçar a sua
+própria coceira". Ou seja, empreendedores devem escolher
+sistemas que vão resolver problemas que eles também 
+estão enfrentando.
+
+* *Eat your own dog food*, que pode ser traduzida como 
+"comer a mesma comida do seu cachorro". Ou seja, empreendedores 
+devem ser também usuários dos sistemas que desenvolvem.
+
 ## Outras Responsabilidades {.unnumbered}
 
 Os fundadores de uma microempresa de software são responsáveis 

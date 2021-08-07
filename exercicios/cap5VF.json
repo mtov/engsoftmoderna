@@ -86,11 +86,19 @@
     "correct": "false"
   },
   {
-    "text": "Classes grandes tendem a ter problemas de coesão (baixa) e acoplamento (alto).",
+    "text": "Classes grandes são mais propensas a ter problemas de coesão (baixa) e acoplamento (alto).",
     "correct": "true"
   },
   {
-    "text": "Todos os atributos de uma determinada classe X são privados. Logo, com certeza, X oferece Ocultamento de Informação.",
+    "text": "Todos os atributos de uma classe X são privados. Logo, com certeza, X possibilita Ocultamento de Informação.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma classe X possui três atributos privados. Logo, para prover Ocultamento de Informação, X deve obrigatoriamente implementar três getters (um para cada atributo).",
+    "correct": "false"
+  },
+  {
+    "text": "Uma classe X possui três atributos privados. Logo, para prover Ocultamento de Informação, X deve obrigatoriamente implementar três setters (um para cada atributo).",
     "correct": "false"
   }
 ]
