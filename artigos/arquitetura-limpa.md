@@ -216,19 +216,33 @@ Se quiser, veja também nosso artigo sobre
 
 ## Exercícios {.unnumbered}
 
-1. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
+1. Marque V ou F:
+
+   (&nbsp;&nbsp;) Uma Arquitetura Limpa permite escrever consultas SQL na camada de Entidades.
+
+   (&nbsp;&nbsp;) Entidades podem ser usadas por mais de um sistema da empresa, quando se adota uma Arquitetura Limpa.
+
+   (&nbsp;&nbsp;) Um sistema X segue uma Arquitetura Limpa. Atualmente, ele possui uma interface Web. Surgiu então a necessidade de criar uma versão móvel para celulares e tablets. Logo, para atender à essa segunda interface, não será necessário modificar as
+   duas camadas mais internas (Entidades e Casos de Uso).
+
+   (&nbsp;&nbsp;) As camadas mais internas de uma Arquitetura Limpa são mais próximas do negócio e mais distantes da tecnologia.
+
+   (&nbsp;&nbsp;) Quando se usa uma Arquitetura Limpa, os casos de uso são modelados usando-se Diagramas de Casos de Uso de UML.
+
+
+2. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
 principal vantagem ou benefício dessa regra?
 
 
-2. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
+3. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
 
    * Se quisermos ter um código totalmente aderente aos princípios de uma Arquitetura Limpa,
      por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
 
    * Em qual camada você implementaria então `MailServiceImpl`?
 
-3. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
+4. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
 precisa obter a lista de livros que estão emprestados para um 
 certo usuário da biblioteca. Fisicamente, essa informação
 está armazenada em um banco de dados relacional. Modele então

@@ -95,7 +95,7 @@ serem clientes das primeiras versões do sistema.
 Os resultados da pesquisa conectam-se com  duas expressões
 usadas com frequência em desenvolvimento de software: 
 
-* *Scrath your itch*, que pode ser traduzida como "coçar a sua
+* *Scrath your own itch*, que pode ser traduzida como "coçar a sua
 própria coceira". Ou seja, empreendedores devem escolher
 sistemas que vão resolver problemas que eles também 
 estão enfrentando.
