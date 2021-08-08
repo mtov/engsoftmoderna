@@ -111,6 +111,29 @@ presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no 
 Capítulo [5](https://engsoftmoderna.info/cap5.html).
 
+### 4. O que é uma dependência circular entre pacotes? {.unnumbered}
+
+Suponha dois pacotes P1 e P2. Existe uma dependência circular 
+entre eles quando P1 usa P2 e vice-versa.
+
+Nessa explicação, "usar" significa que P1 declara variáveis, 
+chama métodos, lança exceções ou estende classes implementadas 
+em P2, dentre outros usos possíveis.
+
+Uma dependência circular pode ser indireta também, isto é:
+
+P1 usa P2, que usa P3, que usa P4,..., que usa Pn, que volta a usar P1.
+
+Dependências circulares entre pacotes devem ser evitadas, pois elas
+tornam o entendimento, manutenção e teste do sistema mais complexo.
+
+A próxima figura -- extraída do seguinte 
+[artigo](https://hal.archives-ouvertes.fr/hal-01203525) -- ilustra uma
+dependência circular entre classes dos pacotes `awt` e `swing` de Java:
+
+![Dependência circular entre dois pacotes da API de Java](./figs/dep-circular.png){width=70%}
+
+<!---
 ### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
 
 Suponha um objeto que tenha uma interface `I`. 
@@ -129,6 +152,7 @@ persistência, distribuição, etc.
 
 * Adaptador: para compatibilizar interfaces diferentes.
 
+-->
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).

@@ -139,17 +139,36 @@
 </blockquote>
 <p>Para explicar melhor, suponha um sistema no qual podemos usar um conjunto de interfaces com o usuário X e um conjunto de bancos de dados Y. Em um sistema ortogonal, a escolha da interface X não impacta ou restringe a escolha do banco de dados Y. Qualquer combinação de X e Y é possível. Por isso, podemos imaginar X e Y como duas retas ortogonais, que formam um plano, no qual qualquer coordenada (x,y) representa uma configuração possível do sistema.</p>
 <p>Portanto, ortogonalidade é uma propriedade que costuma estar presente, de graça, em sistemas bem projetados, cujos módulos possuem alta coesão e baixo acoplamento, tal como estudamos no Capítulo <a href="https://engsoftmoderna.info/cap5.html">5</a>.</p>
-<h3 class="unnumbered" id="qual-a-diferença-entre-os-padrões-de-projeto-proxy-e-adaptador">4. Qual a diferença entre os padrões de projeto Proxy e Adaptador?</h3>
-<p>Suponha um objeto que tenha uma interface <code>I</code>.</p>
-<ul>
-<li><p>Um <strong>proxy</strong> implementa a interface<code>I</code>, isto é, implementa todos os seus métodos.</p></li>
-<li><p>Já um <strong>adaptador</strong> implementa uma outra interface, digamos que <code>I'</code> e fica responsável por adaptá-la para a interface <code>I</code>. Para ilustrar, lembre-se de um adaptador de tomadas do padrão novo para o antigo ou vice-versa.</p></li>
-</ul>
-<p>Quando eu devo usar cada um desses padrões?</p>
-<ul>
-<li><p>Proxy: para implementar requisitos não-funcionais, tais como segurança, persistência, distribuição, etc.</p></li>
-<li><p>Adaptador: para compatibilizar interfaces diferentes.</p></li>
-</ul>
+<h3 class="unnumbered" id="o-que-é-uma-dependência-circular-entre-pacotes">4. O que é uma dependência circular entre pacotes?</h3>
+<p>Suponha dois pacotes P1 e P2. Existe uma dependência circular entre eles quando P1 usa P2 e vice-versa.</p>
+<p>Nessa explicação, <q>usar</q> significa que P1 declara variáveis, chama métodos, lança exceções ou estende classes implementadas em P2, dentre outros usos possíveis.</p>
+<p>Uma dependência circular pode ser indireta também, isto é:</p>
+<p>P1 usa P2, que usa P3, que usa P4,…, que usa Pn, que volta a usar P1.</p>
+<p>Dependências circulares entre pacotes devem ser evitadas, pois elas tornam o entendimento, manutenção e teste do sistema mais complexo.</p>
+<p>A próxima figura – extraída do seguinte <a href="https://hal.archives-ouvertes.fr/hal-01203525">artigo</a> – ilustra uma dependência circular entre classes dos pacotes <code>awt</code> e <code>swing</code> de Java:</p>
+<figure>
+<img src="./figs/dep-circular.png" style="width:70.0%" alt="Dependência circular entre dois pacotes da API de Java" /><figcaption aria-hidden="true">Dependência circular entre dois pacotes da API de Java</figcaption>
+</figure>
+<!---
+### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
+
+Suponha um objeto que tenha uma interface `I`. 
+
+* Um **proxy** implementa a interface`I`, isto é, implementa todos os seus métodos.
+
+* Já um **adaptador** implementa uma outra interface, digamos que `I'` e 
+fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
+lembre-se de um adaptador de tomadas do padrão novo para o antigo 
+ou vice-versa.
+
+Quando eu devo usar cada um desses padrões?
+
+* Proxy: para implementar requisitos não-funcionais, tais como segurança, 
+persistência, distribuição, etc.
+
+* Adaptador: para compatibilizar interfaces diferentes.
+
+-->
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
