@@ -111,7 +111,7 @@ presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no 
 Capítulo [5](https://engsoftmoderna.info/cap5.html).
 
-### 4. O que é uma dependência circular entre pacotes? {.unnumbered}
+### 4. O que é uma dependência circular? {.unnumbered}
 
 Suponha dois pacotes P1 e P2. Existe uma dependência circular 
 entre eles quando P1 usa P2 e vice-versa.
@@ -127,11 +127,18 @@ P1 usa P2, que usa P3, que usa P4,..., que usa Pn, que volta a usar P1.
 Dependências circulares entre pacotes devem ser evitadas, pois elas
 tornam o entendimento, manutenção e teste do sistema mais complexo.
 
-A próxima figura -- extraída do seguinte 
+O próximo diagrama -- extraída do seguinte 
 [artigo](https://hal.archives-ouvertes.fr/hal-01203525) -- ilustra uma
 dependência circular entre classes dos pacotes `awt` e `swing` de Java:
 
-![Dependência circular entre dois pacotes da API de Java](./figs/dep-circular.png){width=70%}
+![Dependência circular entre dois pacotes da biblioteca de Java](./figs/dep-circular.png){width=70%}
+
+O interessante nesse exemplo é que `swing` é um pacote para construção
+de interfaces gráficas mais novo do que `awt`. De certo modo, seria 
+então esperado que ele usasse código antigo, para facilitar a sua
+implementação. Mas, por outro lado, o que o diagrama revela é que
+manutenções no pacote antigo (`awt`) acabaram introduzindo 
+dependências para o pacote novo (`swing`).
 
 <!---
 ### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
