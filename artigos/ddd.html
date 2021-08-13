@@ -106,88 +106,96 @@
 <p>Domain-Driven Design (DDD) é um conjunto de princípios para projeto de software, organizados e sistematizados em 2003, por Eric Evans, em um livro com o mesmo nome.</p>
 <p>Os princípios defendidos por DDD têm, no seu conjunto, um objetivo central: permitir o desenvolvimento de sistemas cujo design é centrado em conceitos próximos e alinhados com um domínio de negócio.</p>
 <p>O <strong>domínio</strong> de um sistema consiste da área e problema de negócio que ele pretende resolver. Neste artigo, para explicar DDD, vamos usar como exemplo um sistema para gerenciar uma biblioteca. Logo, esse problema – gerenciamento de bibliotecas – constitui o domínio do nosso sistema de exemplo.</p>
-<p>DDD defende que os <strong>desenvolvedores</strong> devem ter um bom conhecimento do domínio do sistema que eles desenvolvem. Esse conhecimento deve ser obtido por meio de conversas e discussões frequentes com <strong>especialistas no domínio</strong> (ou negócio). Portanto, o design do sistema deve ser norteado para atender ao seu domínio. E não, por exemplo, apenas para se moldar a uma determinada tecnologia de programação. Ou seja, o design é dirigido pelo domínio, e não por frameworks, arquiteturas, linguagens de programação, etc.</p>
-<p>DDD preconiza que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html">Capítulo 7</a> podem ser usados.</p>
-<p>É importante mencionar também que DDD se sobressai quando é usado no design de sistemas para domínios mais complexos, cujas regras de negócio são mais difíceis de serem imediatamente entendidas e dominadas pelos desenvolvedores.</p>
+<p>DDD defende que os <strong>desenvolvedores</strong> devem ter um profundo conhecimento do domínio do sistema que eles desenvolvem. Esse conhecimento deve ser obtido por meio de conversas e discussões frequentes com <strong>especialistas no domínio</strong> (ou no negócio). Portanto, o design do sistema deve ser norteado para atender ao seu domínio. E não, por exemplo, apenas para se moldar a uma determinada tecnologia de programação. Em suma, o design é dirigido pelo domínio, e não por frameworks, arquiteturas, linguagens de programação, etc.</p>
+<p>DDD preconiza que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html">Capítulo 7</a>) podem ser usados.</p>
+<p>É importante mencionar também que DDD se sobressai quando é usado em sistemas para domínios mais complexos, cujas regras de negócio são mais difíceis de serem imediatamente entendidas e dominadas pelos desenvolvedores.</p>
 <h2 class="unnumbered" id="linguagem-ubíqua">Linguagem Ubíqua</h2>
 <p><strong>Linguagem Ubíqua</strong> (ou <strong>Linguagem Onipresente</strong>) é um conceito central de DDD. Ela consiste de um conjunto de termos que devem ser plenamente entendidos tanto por especialistas no domínio (usuários do sistema) como por desenvolvedores (implementadores do sistema).</p>
 <p>Para um projeto de software dar certo, DDD defende que esses dois papéis – especialistas no domínio e desenvolvedores – devem falar a mesma língua, que vai constituir a chamada Linguagem Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:</p>
 <p><img src="./figs/linguagem-onipresente.svg" style="width:80.0%" /></p>
-<p>A figura deixa claro que podem existir termos que só os especialistas de domínio conhecem. Já outros termos, de cunho tecnológico, são do conhecimento apenas dos desenvolvedores. Porém, existe um conjunto de termos que devem ser do conhecimento de ambos os papéis, os quais, no jargão de DDD, formam a Linguagem Ubíqua.</p>
+<p>A figura deixa claro que existem termos que só os especialistas de domínio conhecem. Já outros termos, de cunho tecnológico, são do conhecimento apenas dos desenvolvedores. Porém, existe um conjunto de termos que devem ser do conhecimento de ambos, os quais formam a Linguagem Ubíqua do sistema.</p>
 <p>Os termos da Linguagem Ubíqua são usados com dois propósitos:</p>
 <ul>
 <li><p>Para possibilitar uma comunicação fluida entre desenvolvedores e especialistas no domínio.</p></li>
 <li><p>Para nomear entidades do código do sistema, como classes, métodos, atributos, pacotes, módulos, tabelas de bancos de dados, rotas de APIs, etc.</p></li>
 </ul>
 <p>Além de clarificar o significado dos termos da linguagem ubíqua, é importante que se definam os <strong>relacionamentos</strong> e <strong>associações</strong> que existem entre eles.</p>
-<p><strong>Exemplo</strong>: no nosso Sistema de Bibliotecas, a Linguagem Ubíqua inclui termos como os seguintes:</p>
+<p><strong>Exemplo</strong>: no nosso sistema de bibliotecas, a Linguagem Ubíqua inclui termos como os seguintes:</p>
 <blockquote>
 <p>Livro, Exemplar, ISBN, Bibliotecária, Usuário, Acervo, Reserva, Empréstimo, Multa, Catálogo</p>
 </blockquote>
-<p>Por outro lado, alguns termos são de domínio apenas dos desenvolvedores, tais como proxy, observadores, cache, camadas, rotas, dentre outros. Existem ainda termos que são do conhecimento apenas de bibliotecárias, como certos formatos para definição de ISBNs, os quais não são usados nas bibliotecas brasileiras.</p>
+<p>Por outro lado, alguns termos são de domínio apenas dos desenvolvedores, tais como proxy, observadores, cache, camadas, rotas, dentre outros. Existem ainda termos que são do conhecimento apenas de bibliotecárias, como certos formatos para definição de ISBNs, os quais não são usados no Brasil.</p>
 <p>Devemos definir também os relacionamentos e associações entre esses termos, como exemplificado a seguir:</p>
 <ul>
 <li>Um <code>Livro</code> pode ter um ou mais <code>Exemplares</code>.</li>
 <li>Uma <code>Reserva</code> pode ser feita para no máximo três <code>Livros</code>.</li>
-<li>Existem três tipos de <code>Usuário</code>: <code>Aluno</code>, <code>Professor</code> e <code>Externo</code>.</li>
+<li>Existem três tipos de <code>Usuário</code>: <code>Aluno</code>, <code>Professor</code> e <code>UsuárioExterno</code>.</li>
 <li>O <code>Acervo</code> da biblioteca é formado por um conjunto de <code>Livros</code>.</li>
 </ul>
 <p>Para documentar de forma visual esses relacionamentos pode ser usado um <strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a href="../cap4.html">Capítulo 4</a>.</p>
 <h2 class="unnumbered" id="objetos-de-domínio">Objetos de Domínio</h2>
-<p>DDD foi proposto pensando em sistemas implementados em linguagens orientadas a objetos. Então, quando se define o design desses sistemas, alguns tipos importantes de objetos se destacam. Dentre eles, DDD lista os seguintes: Entidades, Objetos de Valor, Serviços, Agregações e Repositórios.</p>
+<p>DDD foi proposto pensando em sistemas implementados em linguagens orientadas a objetos. Então, quando se define o design desses sistemas, alguns tipos importantes de objetos se destacam. Dentre eles, DDD lista os seguintes:</p>
+<ul>
+<li>Entidades</li>
+<li>Objetos de Valor</li>
+<li>Serviços</li>
+<li>Agregações</li>
+<li>Repositórios</li>
+</ul>
 <p>Esses tipos de objetos de domínio devem ser entendidos como as <q>ferramentas conceituais</q> que um projetista deve lançar mão para projetar com sucesso um determinado sistema. Iremos comentar sobre cada um deles a seguir.</p>
 <h3 class="unnumbered" id="entidades-e-objetos-de-valor">Entidades e Objetos de Valor</h3>
 <p>Uma <strong>entidade</strong> é um objeto que possui uma identidade única, que o distingue dos demais objetos da mesma classe. Por exemplo, cada <code>Usuário</code> da nossa biblioteca é uma entidade, cujo identificador é o seu número de matrícula na universidade.</p>
-<p>Por outro lado, <strong>objetos de valor</strong> (<em>value objects</em>) não possuem um identificador único. Assim, eles são caracterizados apenas por seu estado, isto é, pelos valores de seus atributos. Por exemplo, o <code>Endereço</code> de um Usuário da biblioteca é um objeto de valor. Veja que se dois dois <code>Endereços</code> tem exatamente os mesmos valores para <code>rua</code>, <code>número</code>, <code>cidade</code>, <code>CEP</code>, etc, eles são considerados idênticos.</p>
+<p>Por outro lado, <strong>objetos de valor</strong> (<em>value objects</em>) não possuem um identificador único. Assim, eles são caracterizados apenas por seu estado, isto é, pelos valores de seus atributos. Por exemplo, o <code>Endereço</code> de um <code>Usuário</code> da biblioteca é um objeto de valor. Veja que se dois dois <code>Endereços</code> tem exatamente os mesmos valores para <code>rua</code>, <code>número</code>, <code>cidade</code>, <code>CEP</code>, etc, eles são idênticos.</p>
 <p>Outros exemplos de objetos de valor incluem: <code>Moeda</code>, <code>Data</code>, <code>Fone</code>, <code>Email</code>, <code>Hora</code>, etc.</p>
-<p><strong>Por que distinguir entre entidades e objetos de valor?</strong> Entidades são objetos mais importantes e devemos, por exemplo, projetar com cuidado como eles serão persistidos e depois recuperados de um banco de dados. Devemos também tomar mais cuidado com o ciclo de vida de entidades. Por exemplo, podem existir regras que governam a criação e remoção de entidades. No caso de nosso sistema de bibliotecas, provavelmente, não se pode remover um <code>Usuário</code> do sistema se ele tiver um <code>Empréstimo</code> de livros ainda pendente.</p>
-<p>Já objetos de valor são mais simples. E também eles devem ser imutáveis, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis foram discutidos no <a href="../cap9.html">Capítulo 9</a></p>
+<p><strong>Por que distinguir entre entidades e objetos de valor?</strong> Entidades são objetos mais importantes e devemos, por exemplo, projetar com cuidado como eles serão persistidos e depois recuperados de um banco de dados. Devemos também tomar cuidado com o ciclo de vida de entidades. Por exemplo, podem existir regras que governam a criação e remoção de entidades. No caso de nosso sistema de bibliotecas, não se pode remover um <code>Usuário</code> se ele tiver um <code>Empréstimo</code> pendente.</p>
+<p>Já objetos de valor são mais simples. E também eles devem ser imutáveis, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis já foram discutidos no <a href="../cap9.html">Capítulo 9</a></p>
 <p>Resumindo: entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.</p>
 <h3 class="unnumbered" id="serviços">Serviços</h3>
 <p>Existem operações importantes do domínio que não se encaixam em entidades e objetos de valor. Assim, o ideal é criar objetos específicos nos quais essas operações sejam implementadas. No jargão de DDD, esses objetos são chamados de <strong>serviços</strong>. Em alguns sistemas, é comum ver esses objetos sendo chamados também de gerenciadores ou controladores.</p>
-<p>A assinatura das operações de um objeto de serviço podem incluir entidades e objetos de valor. No entanto, objetos de serviço não devem possuir estado, isto é, eles devem ser <strong>stateless</strong>. Por isso, eles não costumam ter atributos, mas apenas métodos.</p>
+<p>A assinatura das operações de um objeto de serviço pode incluir entidades e objetos de valor. No entanto, objetos de serviço não devem possuir estado, isto é, eles devem ser <strong>stateless</strong>. Por isso, eles não costumam ter atributos, mas apenas métodos.</p>
 <p>Serviços normalmente são implementados como <strong>Singletons</strong>, ou seja, possuem uma única instância durante a execução do sistema. Mais detalhes sobre esse padrão de projeto no <a href="../cap6.html">Capítulo 6</a>.</p>
-<p><strong>Exemplo</strong>: no nosso Sistema de Bibliotecas, podemos ter um serviço que implementa as seguintes operações:</p>
+<p><strong>Exemplo</strong>: no nosso sistema de bibliotecas, podemos ter um serviço que implementa as seguintes operações:</p>
 <pre><code>class ServicoDeEmprestimo {
   ...
-  public void emprestarLivro(Usuario, Livro) {...}
-  public void devolverLivro(Usuario, Livro)  {...}
-  ...</code></pre>
-<p>Na primeira operação, realiza-se o empréstimo de um <code>Livro</code> para um <code>Usuário</code>. Na segunda operação, um <code>Usuário</code> devolve um <code>Livro</code> que ele tenha sob empréstimo.</p>
+  void emprestarLivro(Usuario, Livro) {...}
+  void devolverLivro(Usuario, Livro)  {...}
+  ...
+}  </code></pre>
+<p>Na primeira operação, realiza-se o empréstimo de um <code>Livro</code> para um certo <code>Usuário</code>. Na segunda operação, um <code>Usuário</code> devolve um <code>Livro</code> que ele tenha sob empréstimo.</p>
 <p>Ambas as operações não são específicas nem de <code>Usuário</code>, nem de <code>Livro</code>. Logo, a recomendação de criar um objeto de serviço para acomodá-las.</p>
 <h3 class="unnumbered" id="agregados">Agregados</h3>
 <p><strong>Agregados</strong> (<em>aggregates</em>) são coleções de entidades e objetos de valor. Ou seja, algumas vezes não faz sentido raciocinar sobre entidades e objetos de valor de forma individual. Em vez disso, temos que pensar em grupos de objetos para ter uma visão consistente com o domínio que estamos modelando.</p>
 <p>Um agregado possui um objeto raiz, que deve ser uma entidade. Externamente, o agregado é acessado a partir dessa raiz. A raiz, por sua vez, referencia os objetos internos do agregado. Porém, esses objetos internos não devem ser visíveis para o resto do sistema, ou seja, apenas a raiz pode referenciá-los.</p>
-<p>Como formam um todo coerente, agregados são persistidos em conjunto em bancos de dados.</p>
-<p>Como eles são objetos mais complexos e com objetos internos, pode ser interessante implementar métodos especificamente para criação de agregados, os quais são chamados de <strong>Fábricas</strong>, ou seja, implementações do padrão de projeto de mesmo nome.</p>
+<p>Como formam uma unidade coerente, agregados são persistidos em conjunto em bancos de dados.</p>
+<p>Como eles são objetos mais complexos e com objetos internos, pode ser interessante implementar métodos especificamente para criação de agregados, os quais são chamados de <strong>Fábricas</strong>. Ou seja, eles são implementações do padrão de projeto de mesmo nome.</p>
 <p><strong>Exemplo</strong>: No sistema de bibliotecas podem um <code>Empréstimo</code> possui um <code>Usuário</code> (que é uma entidade), uma data de realização (que é um objeto de valor) e uma lista de <code>Itens Emprestados</code>. Cada <code>Item Emprestado</code> contém informações sobre um certo <code>Livro</code> que foi emprestado e sua data de devolução (estamos pressupondo que alguns livros devem ser devolvidos mais rapidamente do que outros, por exemplo).</p>
 <p>Logo, <code>Empréstimo</code> e <code>Itens de Empréstimo</code> formam um agregado. Isto é, uma entidade única do ponto de vista conceitual. <code>Empréstimo</code> é a raiz do agregado e <code>Itens Emprestados</code> são os seus objetos internos, que não podem ser manipulados sem passar antes pela raiz.</p>
 <p>Observe que <code>Itens Emprestados</code> referenciam <code>Livros</code>, porém esses últimos não fazem parte do agregado, pois eles têm vida própria, isto é, eles existem independentemente de estarem emprestados ou não.</p>
 <h3 class="unnumbered" id="repositórios">Repositórios</h3>
-<p>Para implementar diversos serviços do domínio precisamos antes obter referências para determinados objetos. Por exemplo, imagine um serviço que lista os <code>Empréstimos</code> realizados por um usuário.</p>
-<p>No entanto, não podemos assumir que todos os objetos do tipo <code>Empréstimo</code> estão na memória principal. Ou seja, em qualquer sistema real, eles devem estar salvos em um banco de dados.</p>
-<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionados com implementações de consultas de banco de dados, abertura e fechamento de transações, manipulação de cursores, etc.</p>
-<p>Em outras palavras, um <code>Repositório</code> oferece uma abstração para o banco de dados usado pelo sistema e permite que os desenvolvedores manipulem objetos de domínio como se eles fossem coleções em memória principal.</p>
-<p><strong>Exemplo:</strong> No sistema de bibliotecas, pode existir um Repositório que implementa métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
+<p>Para implementar certos serviços do domínio precisamos antes obter referências para determinados objetos.</p>
+<p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um usuário. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estão na memória principal. Na verdade, em qualquer sistema real, eles estão armazenados em um banco de dados.</p>
+<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com implementações de consultas em banco de dados, abertura e fechamento de transações, manipulação de cursores, etc.</p>
+<p>Em outras palavras, um <code>Repositório</code> oferece uma abstração para o banco de dados usado pelo sistema e permite que os desenvolvedores manipulem objetos de domínio como se eles fossem coleções disponíveis em memória principal.</p>
+<p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um Repositório que implementa métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
-  public List&lt;Emprestimo&gt; findEmprestimosUsuario(Usuario u) {...}
-  public List&lt;Emprestimo&gt; findEmprestimosData(Data inicio, Data fim) {...}
-  public List&lt;Emprestimo&gt; findEmprestimosVencidos() {...}
+  List&lt;Emprestimo&gt; findEmprestimosDeUsuario(Usuario u) {...}
+  List&lt;Emprestimo&gt; findEmprestimosPorData(Data inicio, Data fim) {...}
+  List&lt;Emprestimo&gt; findEmprestimosVencidos() {...}
   ...   
 }</code></pre>
-<p>Além dos métodos <code>find*</code> acima, um repositório costuma incluir métodos para salvar, atualizar e remover objetos:</p>
+<p>Além dos métodos <code>find*</code>, um repositório costuma incluir métodos para salvar, atualizar e remover objetos:</p>
 <pre><code>class RepsitorioDeEmprestimos {
 
   // métodos find* (veja acima)
   
-  public void salva(Emprestimo e) {...}
-  public void edita(Emprestimo e) {...}
-  public void remove(Emprestimo e) {...} 
+  void salva(Emprestimo e) {...}
+  void edita(Emprestimo e) {...}
+  void remove(Emprestimo e) {...} 
 }</code></pre>
 <h2 class="unnumbered" id="contextos-delimitados">Contextos Delimitados</h2>
-<p>Sistemas de software ficam sempre mais complexos e abrangentes. Então é irrealista imaginar que sistemas de organizações grandes e complexas vão possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
-<p>É natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que torna impossível a definição de uma linguagem verdadeiramente ubíqua. A solução natural consiste então em quebrar esses domínios complexos em <q>domínios menores</q>, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
-<p><strong>Exemplo:</strong> Suponha que a nossa biblioteca tenha um setor financeiro. Esse setor tem necessidades específicas, que começam justificar um projeto separado, com uma linguagem própria. Por exemplo, nesse domínio financeiro, a classe <code>Usuário</code> pode, inclusive, ser chamada de <code>Cliente</code> e ter novos atributos.</p>
+<p>Com o tempo, sistemas de software ficam mais complexos e abrangentes. Então é irrealista imaginar que sistemas de organizações grandes e complexas vão sempre possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
+<p>Em vez disso, é natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que impede a definição de uma linguagem ubíqua. A solução para esse problema consiste em quebrar tais domínios complexos em <q>domínios menores</q>, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
+<p><strong>Exemplo:</strong> Suponha que a nossa biblioteca tenha um setor financeiro. Esse setor tem necessidades específicas, que começam a justificar um projeto separado, com uma linguagem própria. Por exemplo, nesse domínio financeiro, a classe <code>Usuário</code> pode, inclusive, ser chamada de <code>Cliente</code> e ter novos atributos.</p>
 </div>
 </div>
 </div>

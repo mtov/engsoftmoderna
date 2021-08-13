@@ -16,22 +16,22 @@ usar como exemplo um sistema para gerenciar uma biblioteca. Logo,
 esse problema -- gerenciamento de bibliotecas -- constitui o 
 domínio do nosso sistema de exemplo.
 
-DDD defende que os **desenvolvedores** devem ter um bom conhecimento
+DDD defende que os **desenvolvedores** devem ter um profundo conhecimento
 do domínio do sistema que eles desenvolvem. Esse conhecimento deve
 ser obtido por meio de conversas e discussões frequentes com 
-**especialistas no domínio** (ou negócio). Portanto, o design do sistema 
+**especialistas no domínio** (ou no negócio). Portanto, o design do sistema 
 deve ser norteado para atender ao seu domínio. E não, por exemplo, 
 apenas para se moldar a uma determinada tecnologia de programação. 
-Ou seja, o design é dirigido pelo domínio, e não por frameworks, 
+Em suma, o design é dirigido pelo domínio, e não por frameworks, 
 arquiteturas, linguagens de programação, etc.
 
 DDD preconiza que a separação entre domínio e tecnologia deve ser 
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
-[Capítulo 7](../cap7.html) podem ser usados.
+[Capítulo 7](../cap7.html)) podem ser usados.
 
 É importante mencionar também que DDD se sobressai quando é usado
-no design de sistemas para domínios mais complexos, cujas regras
+em sistemas para domínios mais complexos, cujas regras
 de negócio são mais difíceis de serem imediatamente entendidas e
 dominadas pelos desenvolvedores.
 
@@ -51,12 +51,11 @@ Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:
 
 ![](./figs/linguagem-onipresente.svg){width=80%}
 
-A figura deixa claro que podem existir termos que só os 
+A figura deixa claro que existem termos que só os 
 especialistas de domínio conhecem. Já outros termos, de cunho 
 tecnológico, são do conhecimento apenas dos desenvolvedores. 
 Porém, existe um conjunto de termos que devem ser do conhecimento 
-de ambos os papéis, os quais, no jargão de DDD, formam a Linguagem 
-Ubíqua.
+de ambos, os quais formam a Linguagem  Ubíqua do sistema.
 
 Os termos da Linguagem Ubíqua são usados com dois propósitos:
 
@@ -71,7 +70,7 @@ Além de clarificar o significado dos termos da linguagem ubíqua,
 é importante que se definam os **relacionamentos** e **associações** 
 que existem entre eles.
 
-**Exemplo**: no nosso Sistema de Bibliotecas, a Linguagem Ubíqua 
+**Exemplo**: no nosso sistema de bibliotecas, a Linguagem Ubíqua 
 inclui termos como os seguintes:
 
 > Livro, Exemplar, ISBN, Bibliotecária, Usuário, Acervo,
@@ -81,14 +80,14 @@ Por outro lado, alguns termos são de domínio apenas dos desenvolvedores,
 tais como proxy, observadores, cache, camadas, rotas, dentre outros. 
 Existem ainda termos que são do conhecimento apenas de bibliotecárias, 
 como certos formatos para definição de ISBNs, os quais não são 
-usados nas bibliotecas brasileiras. 
+usados no Brasil. 
 
 Devemos definir também os relacionamentos e associações entre esses 
 termos, como exemplificado a seguir:
 
 * Um `Livro` pode ter um ou mais `Exemplares`.
 * Uma `Reserva` pode ser feita para no máximo três `Livros`.
-* Existem três tipos de `Usuário`: `Aluno`, `Professor` e `Externo`.
+* Existem três tipos de `Usuário`: `Aluno`, `Professor` e `UsuárioExterno`.
 * O `Acervo` da biblioteca é formado por um conjunto de `Livros`. 
 
 Para documentar de forma visual esses relacionamentos pode ser usado
@@ -100,8 +99,13 @@ no [Capítulo 4](../cap4.html).
 DDD foi proposto pensando em sistemas implementados em linguagens
 orientadas a objetos. Então, quando se define o design desses 
 sistemas, alguns tipos importantes de objetos se destacam. 
-Dentre eles, DDD lista os seguintes: Entidades, Objetos de Valor, 
-Serviços, Agregações e Repositórios. 
+Dentre eles, DDD lista os seguintes: 
+
+* Entidades
+* Objetos de Valor
+* Serviços
+* Agregações
+* Repositórios
 
 Esses tipos de objetos de domínio devem ser entendidos como as 
 "ferramentas conceituais" que um projetista deve lançar mão para 
@@ -118,9 +122,9 @@ identificador é o seu número de matrícula na universidade.
 Por outro lado, **objetos de valor** (*value objects*) não possuem
 um identificador único. Assim, eles são caracterizados apenas por seu 
 estado, isto é, pelos valores de seus atributos. Por exemplo,
-o `Endereço` de um Usuário da biblioteca é um objeto de valor.
+o `Endereço` de um `Usuário` da biblioteca é um objeto de valor.
 Veja que se dois dois `Endereços` tem exatamente os mesmos valores 
-para `rua`, `número`, `cidade`, `CEP`, etc, eles são considerados 
+para `rua`, `número`, `cidade`, `CEP`, etc, eles são 
 idênticos.
 
 Outros exemplos de objetos de valor incluem: `Moeda`, `Data`,
@@ -129,19 +133,18 @@ Outros exemplos de objetos de valor incluem: `Moeda`, `Data`,
 **Por que distinguir entre entidades e objetos de valor?**
 Entidades são objetos mais importantes e devemos, por exemplo, 
 projetar com cuidado como eles serão persistidos e depois
-recuperados de um banco de dados. Devemos também tomar mais
+recuperados de um banco de dados. Devemos também tomar
 cuidado com o ciclo de vida de entidades. Por exemplo, podem
 existir regras que governam a criação e remoção de entidades.
-No caso de nosso sistema de bibliotecas, provavelmente, não
-se pode remover um `Usuário` do sistema se ele tiver um
-`Empréstimo` de livros ainda pendente.
+No caso de nosso sistema de bibliotecas, não se pode remover 
+um `Usuário` se ele tiver um `Empréstimo` pendente.
 
 Já objetos de valor são mais simples. E também eles devem ser 
 imutáveis, ou seja, uma vez criados, não deve ser possível alterar 
 seus valores internos. Por exemplo, para alterar o `Endereço` 
 de um `Usuário` devemos abandonar o objeto antigo e criar um objeto 
 com o `Endereço` novo. Os benefícios de objetos imutáveis 
-foram discutidos no [Capítulo 9](../cap9.html)
+já foram discutidos no [Capítulo 9](../cap9.html)
 
 Resumindo: entidades são definidas por sua identidade; objetos
 de valor são definidos por seus atributos.
@@ -155,7 +158,7 @@ implementadas. No jargão de DDD, esses objetos são chamados
 de **serviços**. Em alguns sistemas, é comum ver esses
 objetos sendo chamados também de gerenciadores ou controladores.
 
-A assinatura das operações de um objeto de serviço podem incluir
+A assinatura das operações de um objeto de serviço pode incluir
 entidades e objetos de valor. No entanto, objetos de serviço
 não devem possuir estado, isto é, eles devem ser **stateless**. 
 Por isso, eles não costumam ter atributos, mas apenas métodos.
@@ -165,19 +168,20 @@ possuem uma única instância durante a execução do sistema.
 Mais detalhes sobre esse padrão de projeto no 
 [Capítulo 6](../cap6.html).
 
-**Exemplo**: no nosso Sistema de Bibliotecas, podemos ter um
+**Exemplo**: no nosso sistema de bibliotecas, podemos ter um
 serviço que implementa as seguintes operações:
 
 ```
 class ServicoDeEmprestimo {
   ...
-  public void emprestarLivro(Usuario, Livro) {...}
-  public void devolverLivro(Usuario, Livro)  {...}
+  void emprestarLivro(Usuario, Livro) {...}
+  void devolverLivro(Usuario, Livro)  {...}
   ...
+}  
 ```
 
 Na primeira operação, realiza-se o empréstimo de um `Livro` 
-para um `Usuário`. Na segunda operação, um `Usuário` devolve 
+para um certo `Usuário`. Na segunda operação, um `Usuário` devolve 
 um `Livro` que ele tenha sob empréstimo. 
 
 Ambas as operações não são específicas nem de `Usuário`, 
@@ -198,14 +202,14 @@ A raiz, por sua vez, referencia os objetos internos do agregado.
 Porém, esses objetos internos não devem ser visíveis para o 
 resto do sistema, ou seja, apenas a raiz pode referenciá-los.
 
-Como formam um todo coerente, agregados são persistidos em 
+Como formam uma unidade coerente, agregados são persistidos em 
 conjunto em bancos de dados.
 
 Como eles são objetos mais complexos e com objetos internos,
 pode ser interessante implementar métodos especificamente
 para criação de agregados, os quais são chamados de 
-**Fábricas**, ou seja, implementações do padrão de projeto
-de mesmo nome.
+**Fábricas**. Ou seja, eles são implementações do padrão de 
+projeto de mesmo nome.
 
 **Exemplo**: No sistema de bibliotecas podem um `Empréstimo`
 possui um `Usuário` (que é uma entidade), uma data de realização
@@ -228,39 +232,40 @@ emprestados ou não.
 
 ### Repositórios {.unnumbered}
 
-Para implementar diversos serviços do domínio precisamos antes
-obter referências para determinados objetos. Por exemplo, imagine 
-um serviço que lista os `Empréstimos` realizados por um usuário. 
+Para implementar certos serviços do domínio precisamos antes
+obter referências para determinados objetos. 
 
-No entanto, não podemos assumir que todos os objetos do tipo
-`Empréstimo` estão na memória principal. Ou seja, em qualquer
-sistema real, eles devem estar salvos em um banco de dados.
+Por exemplo, suponha um serviço que lista os `Empréstimos` 
+realizados por um usuário. Para implementá-lo, não podemos 
+assumir que todos os agregados do tipo `Empréstimo` estão 
+na memória principal. Na verdade, em qualquer sistema real, eles 
+estão armazenados em um banco de dados.
 
 Um **Repositório** é então um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
-relacionados com implementações de consultas de banco de dados, 
+relacionadas com implementações de consultas em banco de dados, 
 abertura e fechamento de transações, manipulação de cursores, etc.
 
 Em outras palavras, um `Repositório` oferece uma abstração
 para o banco de dados usado pelo sistema e permite que os 
 desenvolvedores manipulem objetos de domínio como se eles fossem 
-coleções em memória principal.
+coleções disponíveis em memória principal.
 
-**Exemplo:** No sistema de bibliotecas, pode existir um
-Repositório que implementa métodos para recuperar `Empréstimos` 
-salvos em um banco de dados:
+**Exemplo:** No sistema de bibliotecas, existe um Repositório que 
+implementa métodos para recuperar `Empréstimos`  salvos em 
+um banco de dados:
 
 ```
 class RepositorioDeEmprestimos {
-  public List<Emprestimo> findEmprestimosUsuario(Usuario u) {...}
-  public List<Emprestimo> findEmprestimosData(Data inicio, Data fim) {...}
-  public List<Emprestimo> findEmprestimosVencidos() {...}
+  List<Emprestimo> findEmprestimosDeUsuario(Usuario u) {...}
+  List<Emprestimo> findEmprestimosPorData(Data inicio, Data fim) {...}
+  List<Emprestimo> findEmprestimosVencidos() {...}
   ...	
 }
 ```
 
-Além dos métodos `find*` acima, um repositório costuma incluir 
+Além dos métodos `find*`, um repositório costuma incluir 
 métodos para salvar, atualizar e remover objetos:
 
 ```
@@ -268,29 +273,29 @@ class RepsitorioDeEmprestimos {
 
   // métodos find* (veja acima)
   
-  public void salva(Emprestimo e) {...}
-  public void edita(Emprestimo e) {...}
-  public void remove(Emprestimo e) {...} 
+  void salva(Emprestimo e) {...}
+  void edita(Emprestimo e) {...}
+  void remove(Emprestimo e) {...} 
 }
 ```
 
 ## Contextos Delimitados {.unnumbered}
 
-Sistemas de software ficam sempre mais complexos e abrangentes.
-Então é irrealista imaginar que sistemas de organizações grandes 
-e complexas vão possuir um modelo de domínio único e baseado na 
-mesma linguagem ubíqua.
+Com o tempo, sistemas de software ficam mais complexos e 
+abrangentes. Então é irrealista imaginar que sistemas de organizações 
+grandes e complexas vão sempre possuir um modelo de domínio único 
+e baseado na mesma linguagem ubíqua.
 
-É natural que tais organizações tenham sistemas que atendem
-a usuários com perfis e necessidades diferentes, o que torna
-impossível a definição de uma linguagem verdadeiramente
-ubíqua. A solução natural consiste então em quebrar esses 
-domínios complexos em "domínios menores", os quais em DDD são 
-chamados de **Contextos Delimitados** (*Bounded Contexts*).
+Em vez disso, é natural que tais organizações tenham sistemas que atendem
+a usuários com perfis e necessidades diferentes, o que impede
+a definição de uma linguagem ubíqua. A solução para esse problema
+consiste em quebrar tais domínios complexos em "domínios menores", 
+os quais em DDD são chamados de **Contextos Delimitados** 
+(*Bounded Contexts*).
 
 **Exemplo:** Suponha que a nossa biblioteca tenha um setor
 financeiro. Esse setor tem necessidades específicas, que 
-começam justificar um projeto separado, com uma linguagem 
+começam a justificar um projeto separado, com uma linguagem 
 própria. Por exemplo, nesse domínio financeiro, a classe 
 `Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
 atributos.
