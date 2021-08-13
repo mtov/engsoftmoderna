@@ -236,12 +236,12 @@ Para implementar certos serviços do domínio precisamos antes
 obter referências para determinados objetos. 
 
 Por exemplo, suponha um serviço que lista os `Empréstimos` 
-realizados por um usuário. Para implementá-lo, não podemos 
-assumir que todos os agregados do tipo `Empréstimo` estão 
+realizados por um `Usuário`. Para implementá-lo, não podemos 
+assumir que todos os agregados do tipo `Empréstimo` estarão 
 na memória principal. Na verdade, em qualquer sistema real, eles 
 estão armazenados em um banco de dados.
 
-Um **Repositório** é então um objeto usado para recuperar outros
+Um **Repositório** é um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
 relacionadas com implementações de consultas em banco de dados, 
@@ -250,11 +250,10 @@ abertura e fechamento de transações, manipulação de cursores, etc.
 Em outras palavras, um `Repositório` oferece uma abstração
 para o banco de dados usado pelo sistema e permite que os 
 desenvolvedores manipulem objetos de domínio como se eles fossem 
-coleções disponíveis em memória principal.
+coleções disponíveis na memória principal.
 
-**Exemplo:** No sistema de bibliotecas, existe um Repositório que 
-implementa métodos para recuperar `Empréstimos`  salvos em 
-um banco de dados:
+**Exemplo:** No sistema de bibliotecas, existe um repositório com
+ métodos para recuperar `Empréstimos`  salvos em um banco de dados:
 
 ```
 class RepositorioDeEmprestimos {
@@ -265,11 +264,11 @@ class RepositorioDeEmprestimos {
 }
 ```
 
-Além dos métodos `find*`, um repositório costuma incluir 
-métodos para salvar, atualizar e remover objetos:
+Além dos métodos `find*`, um repositório pode incluir métodos 
+para salvar, atualizar e remover objetos:
 
 ```
-class RepsitorioDeEmprestimos {
+class RepositorioDeEmprestimos {
 
   // métodos find* (veja acima)
   
@@ -282,14 +281,14 @@ class RepsitorioDeEmprestimos {
 ## Contextos Delimitados {.unnumbered}
 
 Com o tempo, sistemas de software ficam mais complexos e 
-abrangentes. Então é irrealista imaginar que sistemas de organizações 
-grandes e complexas vão sempre possuir um modelo de domínio único 
-e baseado na mesma linguagem ubíqua.
+abrangentes. Por isso, é irrealista imaginar que sistemas de 
+organizações grandes e complexas vão possuir um modelo de domínio 
+único e baseado na mesma linguagem ubíqua.
 
-Em vez disso, é natural que tais organizações tenham sistemas que atendem
-a usuários com perfis e necessidades diferentes, o que impede
+Em vez disso, é natural que tais organizações tenham sistemas que 
+atendem a usuários com perfis e necessidades diferentes, o que impede
 a definição de uma linguagem ubíqua. A solução para esse problema
-consiste em quebrar tais domínios complexos em "domínios menores", 
+consiste em quebrar tais domínios complexos em domínios menores, 
 os quais em DDD são chamados de **Contextos Delimitados** 
 (*Bounded Contexts*).
 
@@ -299,4 +298,3 @@ começam a justificar um projeto separado, com uma linguagem
 própria. Por exemplo, nesse domínio financeiro, a classe 
 `Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
 atributos.
-
