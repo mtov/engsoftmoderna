@@ -21,7 +21,7 @@ do domínio do sistema que eles desenvolvem. Esse conhecimento deve
 ser obtido por meio de conversas e discussões frequentes com 
 **especialistas no domínio** (ou no negócio). Portanto, o design do sistema 
 deve ser norteado para atender ao seu domínio. E não, por exemplo, 
-apenas para se moldar a uma determinada tecnologia de programação. 
+para se moldar a uma determinada tecnologia de programação. 
 Em suma, o design é dirigido pelo domínio, e não por frameworks, 
 arquiteturas, linguagens de programação, etc.
 
@@ -79,7 +79,7 @@ inclui termos como os seguintes:
 Por outro lado, alguns termos são de domínio apenas dos desenvolvedores, 
 tais como proxy, observadores, cache, camadas, rotas, dentre outros. 
 Existem ainda termos que são do conhecimento apenas de bibliotecárias, 
-como certos formatos para definição de ISBNs, os quais não são 
+como certos formatos para definição de ISBNs, que não são 
 usados no Brasil. 
 
 Devemos definir também os relacionamentos e associações entre esses 
@@ -123,9 +123,8 @@ Por outro lado, **objetos de valor** (*value objects*) não possuem
 um identificador único. Assim, eles são caracterizados apenas por seu 
 estado, isto é, pelos valores de seus atributos. Por exemplo,
 o `Endereço` de um `Usuário` da biblioteca é um objeto de valor.
-Veja que se dois dois `Endereços` tem exatamente os mesmos valores 
-para `rua`, `número`, `cidade`, `CEP`, etc, eles são 
-idênticos.
+Veja que se dois  `Endereços` tiverem exatamente os mesmos valores 
+para `rua`, `número`, `cidade`, `CEP`, etc, eles serão idênticos.
 
 Outros exemplos de objetos de valor incluem: `Moeda`, `Data`,
 `Fone`, `Email`, `Hora`, etc.
@@ -136,15 +135,15 @@ projetar com cuidado como eles serão persistidos e depois
 recuperados de um banco de dados. Devemos também tomar
 cuidado com o ciclo de vida de entidades. Por exemplo, podem
 existir regras que governam a criação e remoção de entidades.
-No caso de nosso sistema de bibliotecas, não se pode remover 
+No caso da nossa bibliotecas, não se pode remover 
 um `Usuário` se ele tiver um `Empréstimo` pendente.
 
 Já objetos de valor são mais simples. E também eles devem ser 
-imutáveis, ou seja, uma vez criados, não deve ser possível alterar 
+**imutáveis**, ou seja, uma vez criados, não deve ser possível alterar 
 seus valores internos. Por exemplo, para alterar o `Endereço` 
 de um `Usuário` devemos abandonar o objeto antigo e criar um objeto 
 com o `Endereço` novo. Os benefícios de objetos imutáveis 
-já foram discutidos no [Capítulo 9](../cap9.html)
+já foram discutidos no [Capítulo 9](../cap9.html).
 
 Resumindo: entidades são definidas por sua identidade; objetos
 de valor são definidos por seus atributos.
@@ -153,10 +152,10 @@ de valor são definidos por seus atributos.
 
 Existem operações importantes do domínio que não se
 encaixam em entidades e objetos de valor. Assim, o ideal
-é criar objetos específicos nos quais essas operações sejam
-implementadas. No jargão de DDD, esses objetos são chamados
-de **serviços**. Em alguns sistemas, é comum ver esses
-objetos sendo chamados também de gerenciadores ou controladores.
+é criar objetos específicos para implementar essas operações. 
+No jargão de DDD, esses objetos são chamados de **serviços**. 
+Em alguns sistemas, é comum ver esses objetos sendo chamados 
+também de gerenciadores ou controladores.
 
 A assinatura das operações de um objeto de serviço pode incluir
 entidades e objetos de valor. No entanto, objetos de serviço
@@ -208,10 +207,10 @@ conjunto em bancos de dados.
 Como eles são objetos mais complexos e com objetos internos,
 pode ser interessante implementar métodos especificamente
 para criação de agregados, os quais são chamados de 
-**Fábricas**. Ou seja, eles são implementações do padrão de 
-projeto de mesmo nome.
+**Fábricas**. Ou seja, tais métodos são implementações do padrão 
+de projeto de mesmo nome.
 
-**Exemplo**: No sistema de bibliotecas podem um `Empréstimo`
+**Exemplo**: No sistema de bibliotecas, um `Empréstimo`
 possui um `Usuário` (que é uma entidade), uma data de realização
 (que é um objeto de valor) e uma lista de `Itens Emprestados`.
 Cada `Item Emprestado` contém informações sobre um certo `Livro`
@@ -239,12 +238,12 @@ Por exemplo, suponha um serviço que lista os `Empréstimos`
 realizados por um `Usuário`. Para implementá-lo, não podemos 
 assumir que todos os agregados do tipo `Empréstimo` estarão 
 na memória principal. Na verdade, em qualquer sistema real, eles 
-estão armazenados em um banco de dados.
+estarão armazenados em um banco de dados.
 
 Um **Repositório** é um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
-relacionadas com implementações de consultas em banco de dados, 
+relacionadas com implementações de consultas em bancos de dados, 
 abertura e fechamento de transações, manipulação de cursores, etc.
 
 Em outras palavras, um `Repositório` oferece uma abstração
@@ -272,9 +271,9 @@ class RepositorioDeEmprestimos {
 
   // métodos find* (veja acima)
   
-  void salva(Emprestimo e) {...}
-  void edita(Emprestimo e) {...}
-  void remove(Emprestimo e) {...} 
+  void salvar(Emprestimo e) {...}
+  void atualizar(Emprestimo e) {...}
+  void remover(Emprestimo e) {...} 
 }
 ```
 
@@ -286,10 +285,10 @@ organizações grandes e complexas vão possuir um modelo de domínio
 único e baseado na mesma linguagem ubíqua.
 
 Em vez disso, é natural que tais organizações tenham sistemas que 
-atendem a usuários com perfis e necessidades diferentes, o que impede
-a definição de uma linguagem ubíqua. A solução para esse problema
-consiste em quebrar tais domínios complexos em domínios menores, 
-os quais em DDD são chamados de **Contextos Delimitados** 
+atendem a usuários com perfis e necessidades diferentes, o que 
+complica a definição de uma linguagem ubíqua. A solução para esse 
+problema consiste em quebrar tais domínios complexos em domínios 
+menores, os quais em DDD são chamados de **Contextos Delimitados** 
 (*Bounded Contexts*).
 
 **Exemplo:** Suponha que a nossa biblioteca tenha um setor
