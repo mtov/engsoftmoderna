@@ -173,18 +173,18 @@
 <p>Observe que <code>Itens Emprestados</code> referenciam <code>Livros</code>, porém esses últimos não fazem parte do agregado, pois eles têm vida própria, isto é, eles existem independentemente de estarem emprestados ou não.</p>
 <h3 class="unnumbered" id="repositórios">Repositórios</h3>
 <p>Para implementar certos serviços do domínio precisamos antes obter referências para determinados objetos.</p>
-<p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um usuário. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estão na memória principal. Na verdade, em qualquer sistema real, eles estão armazenados em um banco de dados.</p>
-<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com implementações de consultas em banco de dados, abertura e fechamento de transações, manipulação de cursores, etc.</p>
-<p>Em outras palavras, um <code>Repositório</code> oferece uma abstração para o banco de dados usado pelo sistema e permite que os desenvolvedores manipulem objetos de domínio como se eles fossem coleções disponíveis em memória principal.</p>
-<p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um Repositório que implementa métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
+<p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um <code>Usuário</code>. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estarão na memória principal. Na verdade, em qualquer sistema real, eles estão armazenados em um banco de dados.</p>
+<p>Um <strong>Repositório</strong> é um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com implementações de consultas em banco de dados, abertura e fechamento de transações, manipulação de cursores, etc.</p>
+<p>Em outras palavras, um <code>Repositório</code> oferece uma abstração para o banco de dados usado pelo sistema e permite que os desenvolvedores manipulem objetos de domínio como se eles fossem coleções disponíveis na memória principal.</p>
+<p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um repositório com métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
   List&lt;Emprestimo&gt; findEmprestimosDeUsuario(Usuario u) {...}
   List&lt;Emprestimo&gt; findEmprestimosPorData(Data inicio, Data fim) {...}
   List&lt;Emprestimo&gt; findEmprestimosVencidos() {...}
   ...   
 }</code></pre>
-<p>Além dos métodos <code>find*</code>, um repositório costuma incluir métodos para salvar, atualizar e remover objetos:</p>
-<pre><code>class RepsitorioDeEmprestimos {
+<p>Além dos métodos <code>find*</code>, um repositório pode incluir métodos para salvar, atualizar e remover objetos:</p>
+<pre><code>class RepositorioDeEmprestimos {
 
   // métodos find* (veja acima)
   
@@ -193,8 +193,8 @@
   void remove(Emprestimo e) {...} 
 }</code></pre>
 <h2 class="unnumbered" id="contextos-delimitados">Contextos Delimitados</h2>
-<p>Com o tempo, sistemas de software ficam mais complexos e abrangentes. Então é irrealista imaginar que sistemas de organizações grandes e complexas vão sempre possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
-<p>Em vez disso, é natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que impede a definição de uma linguagem ubíqua. A solução para esse problema consiste em quebrar tais domínios complexos em <q>domínios menores</q>, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
+<p>Com o tempo, sistemas de software ficam mais complexos e abrangentes. Por isso, é irrealista imaginar que sistemas de organizações grandes e complexas vão possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
+<p>Em vez disso, é natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que impede a definição de uma linguagem ubíqua. A solução para esse problema consiste em quebrar tais domínios complexos em domínios menores, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
 <p><strong>Exemplo:</strong> Suponha que a nossa biblioteca tenha um setor financeiro. Esse setor tem necessidades específicas, que começam a justificar um projeto separado, com uma linguagem própria. Por exemplo, nesse domínio financeiro, a classe <code>Usuário</code> pode, inclusive, ser chamada de <code>Cliente</code> e ter novos atributos.</p>
 </div>
 </div>
