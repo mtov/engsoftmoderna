@@ -131,13 +131,14 @@ O próximo diagrama -- extraída do seguinte
 [artigo](https://hal.archives-ouvertes.fr/hal-01203525) -- ilustra uma
 dependência circular entre classes dos pacotes `awt` e `swing` de Java:
 
-![Dependência circular entre dois pacotes da biblioteca de Java](./figs/dep-circular.png){width=70%}
+![Dependência circular entre dois pacotes da biblioteca de Java. Os retângulos
+maiores são pacotes (ou módulos) e os menores são classes.](./figs/dep-circular.png){width=70%}
 
 O interessante nesse exemplo é que `swing` é um pacote para construção
 de interfaces gráficas mais novo do que `awt`. De certo modo, seria 
 então esperado que ele usasse código antigo, para facilitar a sua
 implementação. Mas, por outro lado, o que o diagrama revela é que
-manutenções no pacote antigo (`awt`) acabaram introduzindo 
+manutenções no pacote antigo (`awt`) introduziram também
 dependências para o pacote novo (`swing`).
 
 <!---
