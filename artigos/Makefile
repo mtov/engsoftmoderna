@@ -33,14 +33,17 @@ mvp: mvp.md
 deep-modules: deep-modules.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Módulos devem ser Profundos!" deep-modules.md -o deep-modules.html
 
+ddd: ddd.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Domain-Driven Design (DDD): Um Resumo" ddd.md -o ddd.html
+
+projeto-faq: projeto-faq.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
+
 composite: composite.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Criando objetos compostos com o Padrão de Projeto Composite" composite.md -o composite.html
 
 injecao-dependencia: injecao-dependencia.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "O que é Injeção de Dependência?" injecao-dependencia.md -o injecao-dependencia.html
-
-projeto-faq: projeto-faq.md
-	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
 
 sagas: sagas.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Consistência de Dados em Microsserviços usando-se Sagas" sagas.md -o sagas.html

@@ -45,15 +45,17 @@ devem ser plenamente entendidos tanto por especialistas no domínio
 do sistema).
 
 Para um projeto de software dar certo, DDD defende que esses 
-dois papeis -- especialistas no domínio e desenvolvedores -- devem 
+dois papéis -- especialistas no domínio e desenvolvedores -- devem 
 falar a mesma língua, que vai constituir a chamada Linguagem 
 Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:
+
+![](./figs/linguagem-onipresente.svg){width=80%}
 
 A figura deixa claro que podem existir termos que só os 
 especialistas de domínio conhecem. Já outros termos, de cunho 
 tecnológico, são do conhecimento apenas dos desenvolvedores. 
 Porém, existe um conjunto de termos que devem ser do conhecimento 
-de ambos os papeis, os quais, no jargão de DDD, formam a Linguagem 
+de ambos os papéis, os quais, no jargão de DDD, formam a Linguagem 
 Ubíqua.
 
 Os termos da Linguagem Ubíqua são usados com dois propósitos:
@@ -99,8 +101,7 @@ DDD foi proposto pensando em sistemas implementados em linguagens
 orientadas a objetos. Então, quando se define o design desses 
 sistemas, alguns tipos importantes de objetos se destacam. 
 Dentre eles, DDD lista os seguintes: Entidades, Objetos de Valor, 
-Serviços, Agregações, Fábricas e Repositórios. 
-
+Serviços, Agregações e Repositórios. 
 
 Esses tipos de objetos de domínio devem ser entendidos como as 
 "ferramentas conceituais" que um projetista deve lançar mão para 
@@ -125,8 +126,7 @@ idênticos.
 Outros exemplos de objetos de valor incluem: `Moeda`, `Data`,
 `Fone`, `Email`, `Hora`, etc.
 
-#### Por que distinguir entidades e objetos de valor?#### {.unnumbered}
-
+**Por que distinguir entre entidades e objetos de valor?**
 Entidades são objetos mais importantes e devemos, por exemplo, 
 projetar com cuidado como eles serão persistidos e depois
 recuperados de um banco de dados. Devemos também tomar mais
@@ -148,7 +148,7 @@ de valor são definidos por seus atributos.
 
 ### Serviços {.unnumbered}
 
-Existem certas operações importantes do domínio que não se
+Existem operações importantes do domínio que não se
 encaixam em entidades e objetos de valor. Assim, o ideal
 é criar objetos específicos nos quais essas operações sejam
 implementadas. No jargão de DDD, esses objetos são chamados
@@ -186,27 +186,33 @@ serviço para acomodá-las.
 
 ### Agregados {.unnumbered}
 
-**Agregados** (*agregates*)  são coleções de entidades e objetos 
+**Agregados** (*aggregates*)  são coleções de entidades e objetos 
 de valor. Ou seja, algumas vezes não faz sentido raciocinar sobre
-entidades e objetos de valor de forma individual ou atômica. 
-Em vez disso, temos que pensar em grupos de objetos para ter uma
+entidades e objetos de valor de forma individual. Em vez disso, 
+temos que pensar em grupos de objetos para ter uma
 visão consistente com o domínio que estamos modelando.
 
 Um agregado possui um objeto raiz, que deve ser uma entidade.
 Externamente, o agregado é acessado a partir dessa raiz.
-A raiz, por sua vez, referencia os objetos internos do agregado, ]
-mas eles não devem ser visíveis para o resto do sistema.
+A raiz, por sua vez, referencia os objetos internos do agregado.
+Porém, esses objetos internos não devem ser visíveis para o 
+resto do sistema, ou seja, apenas a raiz pode referenciá-los.
 
 Como formam um todo coerente, agregados são persistidos em 
-conjunto, com um todo, em bancos de dados.
+conjunto em bancos de dados.
 
-**Exemplo**: `Usuários` do sistema de bibliotecas podem
-realizar `Empréstimos` de `Livros`. Portanto, um `Empréstimo`
-possui um Usuário (que é uma entidade), uma data de realização
+Como eles são objetos mais complexos e com objetos internos,
+pode ser interessante implementar métodos especificamente
+para criação de agregados, os quais são chamados de 
+**Fábricas**, ou seja, implementações do padrão de projeto
+de mesmo nome.
+
+**Exemplo**: No sistema de bibliotecas podem um `Empréstimo`
+possui um `Usuário` (que é uma entidade), uma data de realização
 (que é um objeto de valor) e uma lista de `Itens Emprestados`.
 Cada `Item Emprestado` contém informações sobre um certo `Livro`
 que foi emprestado e sua data de devolução (estamos pressupondo
-que alguns livros devem ser devolvidos mais rapidamente que
+que alguns livros devem ser devolvidos mais rapidamente do que
 outros, por exemplo).
 
 Logo, `Empréstimo` e `Itens de Empréstimo` formam um agregado.
@@ -220,4 +226,72 @@ esses últimos não fazem parte do agregado, pois eles têm vida
 própria, isto é, eles existem independentemente de estarem
 emprestados ou não.
 
-### Fábricas {.unnumbered}
+### Repositórios {.unnumbered}
+
+Para implementar diversos serviços do domínio precisamos antes
+obter referências para determinados objetos. Por exemplo, imagine 
+um serviço que lista os `Empréstimos` realizados por um usuário. 
+
+No entanto, não podemos assumir que todos os objetos do tipo
+`Empréstimo` estão na memória principal. Ou seja, em qualquer
+sistema real, eles devem estar salvos em um banco de dados.
+
+Um **Repositório** é então um objeto usado para recuperar outros
+objetos de domínio de um banco de dados. Seu objetivo é 
+prover uma abstração que blinde os desenvolvedores de preocupações
+relacionados com implementações de consultas de banco de dados, 
+abertura e fechamento de transações, manipulação de cursores, etc.
+
+Em outras palavras, um `Repositório` oferece uma abstração
+para o banco de dados usado pelo sistema e permite que os 
+desenvolvedores manipulem objetos de domínio como se eles fossem 
+coleções em memória principal.
+
+**Exemplo:** No sistema de bibliotecas, pode existir um
+Repositório que implementa métodos para recuperar `Empréstimos` 
+salvos em um banco de dados:
+
+```
+class RepositorioDeEmprestimos {
+  public List<Emprestimo> findEmprestimosUsuario(Usuario u) {...}
+  public List<Emprestimo> findEmprestimosData(Data inicio, Data fim) {...}
+  public List<Emprestimo> findEmprestimosVencidos() {...}
+  ...	
+}
+```
+
+Além dos métodos `find*` acima, um repositório costuma incluir 
+métodos para salvar, atualizar e remover objetos:
+
+```
+class RepsitorioDeEmprestimos {
+
+  // métodos find* (veja acima)
+  
+  public void salva(Emprestimo e) {...}
+  public void edita(Emprestimo e) {...}
+  public void remove(Emprestimo e) {...} 
+}
+```
+
+## Contextos Delimitados {.unnumbered}
+
+Sistemas de software ficam sempre mais complexos e abrangentes.
+Então é irrealista imaginar que sistemas de organizações grandes 
+e complexas vão possuir um modelo de domínio único e baseado na 
+mesma linguagem ubíqua.
+
+É natural que tais organizações tenham sistemas que atendem
+a usuários com perfis e necessidades diferentes, o que torna
+impossível a definição de uma linguagem verdadeiramente
+ubíqua. A solução natural consiste então em quebrar esses 
+domínios complexos em "domínios menores", os quais em DDD são 
+chamados de **Contextos Delimitados** (*Bounded Contexts*).
+
+**Exemplo:** Suponha que a nossa biblioteca tenha um setor
+financeiro. Esse setor tem necessidades específicas, que 
+começam justificar um projeto separado, com uma linguagem 
+própria. Por exemplo, nesse domínio financeiro, a classe 
+`Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
+atributos.
+
