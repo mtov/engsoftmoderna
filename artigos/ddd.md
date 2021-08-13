@@ -246,10 +246,14 @@ prover uma abstração que blinde os desenvolvedores de preocupações
 relacionadas com implementações de consultas em bancos de dados, 
 abertura e fechamento de transações, manipulação de cursores, etc.
 
-Em outras palavras, um `Repositório` oferece uma abstração
-para o banco de dados usado pelo sistema e permite que os 
-desenvolvedores manipulem objetos de domínio como se eles fossem 
-coleções disponíveis na memória principal.
+Em outras palavras, um repositório oferece uma abstração para o 
+banco de dados usado pelo sistema e, assim, permite que os 
+desenvolvedores continuem focados no domínio, em vez de ter sua atenção 
+desviada, em certos momentos, para uma tecnologia de armazenamento 
+de dados. Em termos mais concretos, um repositório permite manipular 
+objetos de domínio como se eles fossem listas (ou coleções) 
+armazenadas na memória principal. A implementação do repositório
+cuida então de ler e salvar essas listas no banco de dados.
 
 **Exemplo:** No sistema de bibliotecas, existe um repositório com
  métodos para recuperar `Empréstimos`  salvos em um banco de dados:
@@ -263,7 +267,7 @@ class RepositorioDeEmprestimos {
 }
 ```
 
-Além dos métodos `find*`, um repositório pode incluir métodos 
+Além dos métodos `find*`, um repositório pode implementar métodos 
 para salvar, atualizar e remover objetos:
 
 ```

@@ -175,7 +175,7 @@
 <p>Para implementar certos serviços do domínio precisamos antes obter referências para determinados objetos.</p>
 <p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um <code>Usuário</code>. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estarão na memória principal. Na verdade, em qualquer sistema real, eles estarão armazenados em um banco de dados.</p>
 <p>Um <strong>Repositório</strong> é um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com implementações de consultas em bancos de dados, abertura e fechamento de transações, manipulação de cursores, etc.</p>
-<p>Em outras palavras, um <code>Repositório</code> oferece uma abstração para o banco de dados usado pelo sistema e permite que os desenvolvedores manipulem objetos de domínio como se eles fossem coleções disponíveis na memória principal.</p>
+<p>Em outras palavras, um repositório oferece uma abstração para o banco de dados usado pelo sistema e, assim, permite que os desenvolvedores continuem focados no domínio, em vez de ter sua atenção desviada, em certos momentos, para uma tecnologia de armazenamento de dados. Em termos mais concretos, um repositório permite manipular objetos de domínio como se eles fossem listas (ou coleções) armazenadas na memória principal. A implementação do repositório cuida então de ler e salvar essas listas no banco de dados.</p>
 <p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um repositório com métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
   List&lt;Emprestimo&gt; findEmprestimosDeUsuario(Usuario u) {...}
@@ -183,7 +183,7 @@
   List&lt;Emprestimo&gt; findEmprestimosVencidos() {...}
   ...   
 }</code></pre>
-<p>Além dos métodos <code>find*</code>, um repositório pode incluir métodos para salvar, atualizar e remover objetos:</p>
+<p>Além dos métodos <code>find*</code>, um repositório pode implementar métodos para salvar, atualizar e remover objetos:</p>
 <pre><code>class RepositorioDeEmprestimos {
 
   // métodos find* (veja acima)
