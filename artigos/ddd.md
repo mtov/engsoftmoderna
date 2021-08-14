@@ -128,7 +128,7 @@ Veja que se dois  `Endereços` tiverem exatamente os mesmos valores
 para `rua`, `número`, `cidade`, `CEP`, etc, eles serão idênticos.
 
 Outros exemplos de objetos de valor incluem: `Moeda`, `Data`,
-`Fone`, `Email`, `Hora`, etc.
+`Fone`, `Email`, `Hora`, `Cor`, etc.
 
 **Por que distinguir entre entidades e objetos de valor?**
 Entidades são objetos mais importantes e devemos, por exemplo, 
@@ -302,3 +302,21 @@ começam a justificar um projeto separado, com uma linguagem
 própria. Por exemplo, nesse domínio financeiro, a classe 
 `Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
 atributos.
+
+## Comentários Finais {.unnumbered}
+
+Em um material de referência, que escreveu em 2014, Eric Evans 
+define assim DDD:
+
+> DDD é uma abordagem para desenvolvimento de sistemas
+de software complexos, em que: (1) o foco está no 
+domínio do sistema; (2) desenvolvedores e especialistas 
+no negócio devem explorar esse domínio de forma colaborativa; 
+(3) como resultado, eles devem se comunicar usando uma 
+linguagem ubíqua, mas dentro de um contexto delimitado.
+
+A linguagem ubíqua do sistema deve ser usada também
+no seu código, para nomear variáveis, parâmetros, métodos,
+classes, pacotes, etc. Especificamente, um projeto DDD
+deve fazer uso dos seguintes tipos de objetos principais: entidades, 
+objetos de valor, serviços, agregados e  repositórios.

@@ -148,7 +148,7 @@
 <h3 class="unnumbered" id="entidades-e-objetos-de-valor">Entidades e Objetos de Valor</h3>
 <p>Uma <strong>entidade</strong> é um objeto que possui uma identidade única, que o distingue dos demais objetos da mesma classe. Por exemplo, cada <code>Usuário</code> da nossa biblioteca é uma entidade, cujo identificador é o seu número de matrícula na universidade.</p>
 <p>Por outro lado, <strong>objetos de valor</strong> (<em>value objects</em>) não possuem um identificador único. Assim, eles são caracterizados apenas por seu estado, isto é, pelos valores de seus atributos. Por exemplo, o <code>Endereço</code> de um <code>Usuário</code> da biblioteca é um objeto de valor. Veja que se dois <code>Endereços</code> tiverem exatamente os mesmos valores para <code>rua</code>, <code>número</code>, <code>cidade</code>, <code>CEP</code>, etc, eles serão idênticos.</p>
-<p>Outros exemplos de objetos de valor incluem: <code>Moeda</code>, <code>Data</code>, <code>Fone</code>, <code>Email</code>, <code>Hora</code>, etc.</p>
+<p>Outros exemplos de objetos de valor incluem: <code>Moeda</code>, <code>Data</code>, <code>Fone</code>, <code>Email</code>, <code>Hora</code>, <code>Cor</code>, etc.</p>
 <p><strong>Por que distinguir entre entidades e objetos de valor?</strong> Entidades são objetos mais importantes e devemos, por exemplo, projetar com cuidado como eles serão persistidos e depois recuperados de um banco de dados. Devemos também tomar cuidado com o ciclo de vida de entidades. Por exemplo, podem existir regras que governam a criação e remoção de entidades. No caso da nossa bibliotecas, não se pode remover um <code>Usuário</code> se ele tiver um <code>Empréstimo</code> pendente.</p>
 <p>Já objetos de valor são mais simples. E também eles devem ser <strong>imutáveis</strong>, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis já foram discutidos no <a href="../cap9.html">Capítulo 9</a>.</p>
 <p>Resumindo: entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.</p>
@@ -198,6 +198,12 @@
 <p>Com o tempo, sistemas de software ficam mais complexos e abrangentes. Por isso, é irrealista imaginar que sistemas de organizações grandes e complexas vão possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
 <p>Em vez disso, é natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que complica a definição de uma linguagem ubíqua. A solução para esse problema consiste em quebrar tais domínios complexos em domínios menores, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
 <p><strong>Exemplo:</strong> Suponha que a nossa biblioteca tenha um setor financeiro. Esse setor tem necessidades específicas, que começam a justificar um projeto separado, com uma linguagem própria. Por exemplo, nesse domínio financeiro, a classe <code>Usuário</code> pode, inclusive, ser chamada de <code>Cliente</code> e ter novos atributos.</p>
+<h2 class="unnumbered" id="comentários-finais">Comentários Finais</h2>
+<p>Em um material de referência, que escreveu em 2014, Eric Evans define assim DDD:</p>
+<blockquote>
+<p>DDD é uma abordagem para desenvolvimento de sistemas de software complexos, em que: (1) o foco está no domínio do sistema; (2) desenvolvedores e especialistas no negócio devem explorar esse domínio de forma colaborativa; (3) como resultado, eles devem se comunicar usando uma linguagem ubíqua, mas dentro de um contexto delimitado.</p>
+</blockquote>
+<p>A linguagem ubíqua do sistema deve ser usada também no seu código, para nomear variáveis, parâmetros, métodos, classes, pacotes, etc. Especificamente, um projeto DDD deve fazer uso dos seguintes tipos de objetos principais: entidades, objetos de valor, serviços, agregados e repositórios.</p>
 </div>
 </div>
 </div>
