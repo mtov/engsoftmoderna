@@ -28,7 +28,9 @@ arquiteturas, linguagens de programação, etc.
 DDD preconiza que a separação entre domínio e tecnologia deve ser 
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
-[Capítulo 7](../cap7.html)) podem ser usados.
+[Capítulo 7](../cap7.html)), 
+Arquitetura Limpa (tratada neste outro [artigo didático](./arquitetura-limpa.html))
+ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html)) podem ser usados.
 
 É importante mencionar também que DDD se sobressai quando é usado
 em sistemas para domínios mais complexos, cujas regras

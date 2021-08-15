@@ -49,9 +49,10 @@ quebrar, retorna-se uma cópia da página armazenada localmente pelo sistema.
 
 * [Reform](https://www.reform.app/) é um sistema para criação de formulários.
 Ou seja, o sistema tem que competir com concorrentes importantes, tal como 
-sumarizado na seguinte [página](Comparison_of_survey_software) da Wikipédia. 
-Apesar disso, os fundadores estão tentando criar um sistema alternativo 
-que propicie uma experiência mais agradável para criação de formulários.
+sumarizado na seguinte 
+[página](https://en.wikipedia.org/wiki/Comparison_of_survey_software) 
+da Wikipédia. Apesar disso, os fundadores estão tentando criar um sistema
+alternativo que propicie uma experiência mais agradável para criação de formulários.
 
 De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
