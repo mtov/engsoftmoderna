@@ -320,3 +320,19 @@ no seu código, para nomear variáveis, parâmetros, métodos,
 classes, pacotes, etc. Especificamente, um projeto DDD
 deve fazer uso dos seguintes tipos de objetos principais: entidades, 
 objetos de valor, serviços, agregados e  repositórios.
+
+## Exercício {.unnumbered}
+
+1. Suponha que você trabalhe em um empresa que possui um aplicativo para entrega 
+de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do back end desse sistema. Para isso, você decidiu usar DDD. Descreva então:
+
+    * Cinco termos da linguagem ubíqua do sistema 
+    * Três entidades 
+    * Três objetos de valor
+    * Um agregado (incluindo o objeto raiz e seus objetos internos)
+    * Dois métodos de um serviço 
+    * Dois métodos de um repositório 
+
+    Em suas respostas, basta citar os nomes que foram pedidos.
+
+
