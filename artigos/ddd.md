@@ -112,7 +112,8 @@ Dentre eles, DDD lista os seguintes:
 
 Esses tipos de objetos de domínio devem ser entendidos como as 
 "ferramentas conceituais" que um projetista deve lançar mão para 
-projetar com sucesso um determinado sistema. Iremos comentar 
+projetar com sucesso um determinado sistema. Por isso, eles
+são chamados também dos **building blocks** de DDD. Iremos comentar 
 sobre cada um deles a seguir.
 
 ### Entidades e Objetos de Valor {.unnumbered}

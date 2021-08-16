@@ -178,8 +178,8 @@ Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-moneti
 ## Exercícios {.unnumbered}
 
 1. Do ponto de vista de monetização, qual a vantagem de micro-SaaS em 
-relação a uma pequena app para celulares (comercializada em lojas como 
-Google Play e Apple Store)?
+relação a uma pequena app não-SaaS comercializada em lojas como 
+Google Play e Apple Store?
 
 2. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
 àquela que fizemos no artigo.

@@ -144,7 +144,7 @@
 <li>Agregações</li>
 <li>Repositórios</li>
 </ul>
-<p>Esses tipos de objetos de domínio devem ser entendidos como as <q>ferramentas conceituais</q> que um projetista deve lançar mão para projetar com sucesso um determinado sistema. Iremos comentar sobre cada um deles a seguir.</p>
+<p>Esses tipos de objetos de domínio devem ser entendidos como as <q>ferramentas conceituais</q> que um projetista deve lançar mão para projetar com sucesso um determinado sistema. Por isso, eles são chamados também dos <strong>building blocks</strong> de DDD. Iremos comentar sobre cada um deles a seguir.</p>
 <h3 class="unnumbered" id="entidades-e-objetos-de-valor">Entidades e Objetos de Valor</h3>
 <p>Uma <strong>entidade</strong> é um objeto que possui uma identidade única, que o distingue dos demais objetos da mesma classe. Por exemplo, cada <code>Usuário</code> da nossa biblioteca é uma entidade, cujo identificador é o seu número de matrícula na universidade.</p>
 <p>Por outro lado, <strong>objetos de valor</strong> (<em>value objects</em>) não possuem um identificador único. Assim, eles são caracterizados apenas por seu estado, isto é, pelos valores de seus atributos. Por exemplo, o <code>Endereço</code> de um <code>Usuário</code> da biblioteca é um objeto de valor. Veja que se dois <code>Endereços</code> tiverem exatamente os mesmos valores para <code>rua</code>, <code>número</code>, <code>cidade</code>, <code>CEP</code>, etc, eles serão idênticos.</p>
