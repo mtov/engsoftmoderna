@@ -30,7 +30,7 @@ promovida e expressa na arquitetura do sistema. Para tanto, padrões
 como Arquitetura em Camadas (estudado no 
 [Capítulo 7](../cap7.html)), 
 Arquitetura Limpa (tratada neste outro [artigo didático](./arquitetura-limpa.html))
-ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html)) podem ser usados.
+ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html) separado) podem ser usados.
 
 É importante mencionar também que DDD se sobressai quando é usado
 em sistemas para domínios mais complexos, cujas regras
@@ -52,7 +52,7 @@ falar a mesma língua, que vai constituir a chamada Linguagem
 Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:
 
 ![A linguagem ubíqua representa o conhecimento compartilhado 
-entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente.svg){width=80%}
+entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente.svg){width=85%}
 
 A figura deixa claro que existem termos que só os 
 especialistas de domínio conhecem. Já outros termos, de cunho 
