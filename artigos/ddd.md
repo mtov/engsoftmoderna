@@ -240,15 +240,15 @@ obter referências para determinados objetos.
 
 Por exemplo, suponha um serviço que lista os `Empréstimos` 
 realizados por um `Usuário`. Para implementá-lo, não podemos 
-assumir que todos os agregados do tipo `Empréstimo` estarão 
+assumir que todos os agregados do tipo `Empréstimo` estão 
 na memória principal. Na verdade, em qualquer sistema real, eles 
-estarão armazenados em um banco de dados.
+estão armazenados em um banco de dados.
 
-Um **Repositório** é um objeto usado para recuperar outros
+Um **Repositório** é então um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
-relacionadas com implementações de consultas em bancos de dados, 
-abertura e fechamento de transações, manipulação de cursores, etc.
+relacionadas com o acesso a bancos de dados. Normalmente, repositórios 
+são criados para recuperar entidades ou agregados.
 
 Em outras palavras, um repositório oferece uma abstração para o 
 banco de dados usado pelo sistema e, assim, permite que os 
@@ -256,7 +256,7 @@ desenvolvedores continuem focados no domínio, em vez de ter sua atenção
 desviada, em certos momentos, para uma tecnologia de armazenamento 
 de dados. Em termos mais concretos, um repositório permite manipular 
 objetos de domínio como se eles fossem listas (ou coleções) 
-armazenadas na memória principal. A implementação do repositório
+armazenadas na memória principal. A implementação interna do repositório
 cuida então de ler e salvar essas listas no banco de dados.
 
 **Exemplo:** No sistema de bibliotecas, existe um repositório com
