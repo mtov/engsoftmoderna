@@ -324,9 +324,20 @@ classes, pacotes, etc. Especificamente, um projeto DDD
 deve fazer uso dos seguintes tipos de objetos principais: entidades, 
 objetos de valor, serviços, agregados e  repositórios.
 
-## Exercício {.unnumbered}
+## Exercícios {.unnumbered}
 
-1. Suponha que você trabalhe em um empresa que possui um aplicativo para entrega 
+1. Marque V ou F:
+   
+   (&nbsp;&nbsp;) Não deve ser possível alterar os atributos de objetos de
+   valor (*value objects*); em vez disso, a solução consiste em criar um
+   novo objeto.
+
+   (&nbsp;&nbsp;) Apenas entidades e agregados podem possui repositórios.
+
+   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.    
+
+
+2. Suponha que você trabalhe em um empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 
     * Cinco termos da linguagem ubíqua do sistema 
@@ -338,7 +349,7 @@ de comida pela Internet. Você ficou responsável pelo projeto da camada de dom�
 
     Em suas respostas, basta citar os nomes que foram pedidos.
 
-2. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para cada um dos tipos de objetos preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
+3. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
 
 ~~~~
    Raiz
