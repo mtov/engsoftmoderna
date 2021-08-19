@@ -247,7 +247,7 @@ estão armazenados em um banco de dados.
 Um **Repositório** é então um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
-relacionadas com o acesso a bancos de dados. Normalmente, repositórios 
+relacionadas com acesso a bancos de dados. Normalmente, repositórios 
 são criados para recuperar entidades ou agregados.
 
 Em outras palavras, um repositório oferece uma abstração para o 
@@ -327,7 +327,7 @@ objetos de valor, serviços, agregados e  repositórios.
 ## Exercício {.unnumbered}
 
 1. Suponha que você trabalhe em um empresa que possui um aplicativo para entrega 
-de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do back end desse sistema. Para isso, você decidiu usar DDD. Descreva então:
+de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 
     * Cinco termos da linguagem ubíqua do sistema 
     * Três entidades 
@@ -338,4 +338,22 @@ de comida pela Internet. Você ficou responsável pelo projeto da camada de dom�
 
     Em suas respostas, basta citar os nomes que foram pedidos.
 
+2. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para cada um dos tipos de objetos preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
 
+~~~~
+   Raiz
+      |__ Entidades
+      |   | arquivos que implementam entidades
+      |
+      |__ Agregados
+      |   | arquivos que implementam agregados
+      |
+      |__ ObjetosValor
+      |   | arquivos que implementam objetos de valor
+      |
+      |__ Servicos
+      |   | arquivos que implementam serviços
+      |
+      |__ Repositorios
+      |  | arquivos que implementam repositórios
+~~~~

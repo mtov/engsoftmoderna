@@ -176,7 +176,7 @@
 <h3 class="unnumbered" id="repositórios">Repositórios</h3>
 <p>Para implementar certos serviços do domínio precisamos antes obter referências para determinados objetos.</p>
 <p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um <code>Usuário</code>. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estão na memória principal. Na verdade, em qualquer sistema real, eles estão armazenados em um banco de dados.</p>
-<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com o acesso a bancos de dados. Normalmente, repositórios são criados para recuperar entidades ou agregados.</p>
+<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com acesso a bancos de dados. Normalmente, repositórios são criados para recuperar entidades ou agregados.</p>
 <p>Em outras palavras, um repositório oferece uma abstração para o banco de dados usado pelo sistema e, assim, permite que os desenvolvedores continuem focados no domínio, em vez de ter sua atenção desviada, em certos momentos, para uma tecnologia de armazenamento de dados. Em termos mais concretos, um repositório permite manipular objetos de domínio como se eles fossem listas (ou coleções) armazenadas na memória principal. A implementação interna do repositório cuida então de ler e salvar essas listas no banco de dados.</p>
 <p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um repositório com métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
@@ -206,7 +206,7 @@
 <p>A linguagem ubíqua do sistema deve ser usada também no seu código, para nomear variáveis, parâmetros, métodos, classes, pacotes, etc. Especificamente, um projeto DDD deve fazer uso dos seguintes tipos de objetos principais: entidades, objetos de valor, serviços, agregados e repositórios.</p>
 <h2 class="unnumbered" id="exercício">Exercício</h2>
 <ol type="1">
-<li><p>Suponha que você trabalhe em um empresa que possui um aplicativo para entrega de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do back end desse sistema. Para isso, você decidiu usar DDD. Descreva então:</p>
+<li><p>Suponha que você trabalhe em um empresa que possui um aplicativo para entrega de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:</p>
 <ul>
 <li>Cinco termos da linguagem ubíqua do sistema</li>
 <li>Três entidades</li>
@@ -216,7 +216,23 @@
 <li>Dois métodos de um repositório</li>
 </ul>
 <p>Em suas respostas, basta citar os nomes que foram pedidos.</p></li>
+<li><p>Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para cada um dos tipos de objetos preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?</p></li>
 </ol>
+<pre><code>   Raiz
+      |__ Entidades
+      |   | arquivos que implementam entidades
+      |
+      |__ Agregados
+      |   | arquivos que implementam agregados
+      |
+      |__ ObjetosValor
+      |   | arquivos que implementam objetos de valor
+      |
+      |__ Servicos
+      |   | arquivos que implementam serviços
+      |
+      |__ Repositorios
+      |  | arquivos que implementam repositórios</code></pre>
 </div>
 </div>
 </div>
