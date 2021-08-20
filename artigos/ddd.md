@@ -334,7 +334,9 @@ objetos de valor, serviços, agregados e  repositórios.
 
    (&nbsp;&nbsp;) Apenas entidades e agregados podem possuir repositórios.
 
-   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.    
+   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
+
+   (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
 
 
 2. Suponha que você trabalha em um empresa que possui um aplicativo para entrega 
