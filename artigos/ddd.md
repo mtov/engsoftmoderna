@@ -25,17 +25,17 @@ para se moldar a uma determinada tecnologia de programação.
 Em suma, o design é dirigido pelo domínio, e não por frameworks, 
 arquiteturas, linguagens de programação, etc.
 
-DDD preconiza que a separação entre domínio e tecnologia deve ser 
+DDD defende que a separação entre domínio e tecnologia deve ser 
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
 [Capítulo 7](../cap7.html)), 
 Arquitetura Limpa (tratada neste outro [artigo didático](./arquitetura-limpa.html))
 ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html) separado) podem ser usados.
 
-É importante mencionar também que DDD se sobressai quando é usado
-em sistemas para domínios mais complexos, cujas regras
-de negócio são mais difíceis de serem imediatamente entendidas e
-dominadas pelos desenvolvedores.
+Antes de avançarmos, é importante mencionar também que DDD se 
+sobressai quando é usado em sistemas para domínios complexos, 
+cujas regras de negócio são mais difíceis de serem imediatamente 
+entendidas e implementadas pelos desenvolvedores.
 
 
 ## Linguagem Ubíqua {.unnumbered}
@@ -166,7 +166,7 @@ entidades e objetos de valor. No entanto, objetos de serviço
 não devem possuir estado, isto é, eles devem ser **stateless**. 
 Por isso, eles não costumam ter atributos, mas apenas métodos.
 
-Serviços normalmente são implementados como **Singletons**, ou seja,
+Serviços normalmente são implementados como **singletons**, ou seja,
 possuem uma única instância durante a execução do sistema.
 Mais detalhes sobre esse padrão de projeto no 
 [Capítulo 6](../cap6.html).
@@ -211,7 +211,7 @@ conjunto em bancos de dados.
 Como eles são objetos mais complexos e com objetos internos,
 pode ser interessante implementar métodos especificamente
 para criação de agregados, os quais são chamados de 
-**Fábricas**. Ou seja, tais métodos são implementações do padrão 
+**fábricas**. Ou seja, tais métodos são implementações do padrão 
 de projeto de mesmo nome.
 
 **Exemplo**: No sistema de bibliotecas, um `Empréstimo`
@@ -244,7 +244,7 @@ assumir que todos os agregados do tipo `Empréstimo` estão
 na memória principal. Na verdade, em qualquer sistema real, eles 
 estão armazenados em um banco de dados.
 
-Um **Repositório** é então um objeto usado para recuperar outros
+Um **repositório** é então um objeto usado para recuperar outros
 objetos de domínio de um banco de dados. Seu objetivo é 
 prover uma abstração que blinde os desenvolvedores de preocupações
 relacionadas com acesso a bancos de dados. Normalmente, repositórios 
@@ -328,17 +328,19 @@ objetos de valor, serviços, agregados e  repositórios.
 
 1. Marque V ou F:
 
+   (&nbsp;&nbsp;) DDD não obriga o uso de nenhuma arquitetura de software específica, embora recomende uma arquitetura em camadas, incluindo uma camada focada no domínio e nas regras do negócio.
+
+   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
+
    (&nbsp;&nbsp;) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.
    
    (&nbsp;&nbsp;) Objetos de valor (*value objects*) não devem possuir métodos `set*`.
 
    (&nbsp;&nbsp;) Apenas entidades e agregados podem possuir repositórios.
 
-   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
-
    (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
 
-
+   
 2. Suponha que você trabalha em um empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 

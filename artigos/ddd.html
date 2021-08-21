@@ -107,8 +107,8 @@
 <p>Os princípios defendidos por DDD têm, no seu conjunto, um objetivo central: permitir o desenvolvimento de sistemas cujo design é centrado em conceitos próximos e alinhados com um domínio de negócio.</p>
 <p>O <strong>domínio</strong> de um sistema consiste da área e problema de negócio que ele pretende resolver. Neste artigo, para explicar DDD, vamos usar como exemplo um sistema para gerenciar uma biblioteca. Logo, esse problema – gerenciamento de bibliotecas – constitui o domínio do nosso sistema de exemplo.</p>
 <p>DDD defende que os <strong>desenvolvedores</strong> devem ter um profundo conhecimento do domínio do sistema que eles desenvolvem. Esse conhecimento deve ser obtido por meio de conversas e discussões frequentes com <strong>especialistas no domínio</strong> (ou no negócio). Portanto, o design do sistema deve ser norteado para atender ao seu domínio. E não, por exemplo, para se moldar a uma determinada tecnologia de programação. Em suma, o design é dirigido pelo domínio, e não por frameworks, arquiteturas, linguagens de programação, etc.</p>
-<p>DDD preconiza que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html">Capítulo 7</a>), Arquitetura Limpa (tratada neste outro <a href="./arquitetura-limpa.html">artigo didático</a>) ou Arquitetura Hexagonal (também coberta em um <a href="./arquitetura-hexagonal.html">artigo</a> separado) podem ser usados.</p>
-<p>É importante mencionar também que DDD se sobressai quando é usado em sistemas para domínios mais complexos, cujas regras de negócio são mais difíceis de serem imediatamente entendidas e dominadas pelos desenvolvedores.</p>
+<p>DDD defende que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html">Capítulo 7</a>), Arquitetura Limpa (tratada neste outro <a href="./arquitetura-limpa.html">artigo didático</a>) ou Arquitetura Hexagonal (também coberta em um <a href="./arquitetura-hexagonal.html">artigo</a> separado) podem ser usados.</p>
+<p>Antes de avançarmos, é importante mencionar também que DDD se sobressai quando é usado em sistemas para domínios complexos, cujas regras de negócio são mais difíceis de serem imediatamente entendidas e implementadas pelos desenvolvedores.</p>
 <h2 class="unnumbered" id="linguagem-ubíqua">Linguagem Ubíqua</h2>
 <p><strong>Linguagem Ubíqua</strong> (ou <strong>Linguagem Onipresente</strong>) é um conceito central de DDD. Ela consiste de um conjunto de termos que devem ser plenamente entendidos tanto por especialistas no domínio (usuários do sistema) como por desenvolvedores (implementadores do sistema).</p>
 <p>Para um projeto de software dar certo, DDD defende que esses dois papéis – especialistas no domínio e desenvolvedores – devem falar a mesma língua, que vai constituir a chamada Linguagem Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:</p>
@@ -155,7 +155,7 @@
 <h3 class="unnumbered" id="serviços">Serviços</h3>
 <p>Existem operações importantes do domínio que não se encaixam em entidades e objetos de valor. Assim, o ideal é criar objetos específicos para implementar essas operações. No jargão de DDD, esses objetos são chamados de <strong>serviços</strong>. Em alguns sistemas, é comum ver esses objetos sendo chamados também de gerenciadores ou controladores.</p>
 <p>A assinatura das operações de um objeto de serviço pode incluir entidades e objetos de valor. No entanto, objetos de serviço não devem possuir estado, isto é, eles devem ser <strong>stateless</strong>. Por isso, eles não costumam ter atributos, mas apenas métodos.</p>
-<p>Serviços normalmente são implementados como <strong>Singletons</strong>, ou seja, possuem uma única instância durante a execução do sistema. Mais detalhes sobre esse padrão de projeto no <a href="../cap6.html">Capítulo 6</a>.</p>
+<p>Serviços normalmente são implementados como <strong>singletons</strong>, ou seja, possuem uma única instância durante a execução do sistema. Mais detalhes sobre esse padrão de projeto no <a href="../cap6.html">Capítulo 6</a>.</p>
 <p><strong>Exemplo</strong>: no nosso sistema de bibliotecas, podemos ter um serviço que implementa as seguintes operações:</p>
 <pre><code>class ServicoDeEmprestimo {
   ...
@@ -169,14 +169,14 @@
 <p><strong>Agregados</strong> (<em>aggregates</em>) são coleções de entidades e objetos de valor. Ou seja, algumas vezes não faz sentido raciocinar sobre entidades e objetos de valor de forma individual. Em vez disso, temos que pensar em grupos de objetos para ter uma visão consistente com o domínio que estamos modelando.</p>
 <p>Um agregado possui um objeto raiz, que deve ser uma entidade. Externamente, o agregado é acessado a partir dessa raiz. A raiz, por sua vez, referencia os objetos internos do agregado. Porém, esses objetos internos não devem ser visíveis para o resto do sistema, ou seja, apenas a raiz pode referenciá-los.</p>
 <p>Como formam uma unidade coerente, agregados são persistidos em conjunto em bancos de dados.</p>
-<p>Como eles são objetos mais complexos e com objetos internos, pode ser interessante implementar métodos especificamente para criação de agregados, os quais são chamados de <strong>Fábricas</strong>. Ou seja, tais métodos são implementações do padrão de projeto de mesmo nome.</p>
+<p>Como eles são objetos mais complexos e com objetos internos, pode ser interessante implementar métodos especificamente para criação de agregados, os quais são chamados de <strong>fábricas</strong>. Ou seja, tais métodos são implementações do padrão de projeto de mesmo nome.</p>
 <p><strong>Exemplo</strong>: No sistema de bibliotecas, um <code>Empréstimo</code> possui um <code>Usuário</code> (que é uma entidade), uma data de realização (que é um objeto de valor) e uma lista de <code>Itens Emprestados</code>. Cada <code>Item Emprestado</code> contém informações sobre um certo <code>Livro</code> que foi emprestado e sua data de devolução (estamos pressupondo que alguns livros devem ser devolvidos mais rapidamente do que outros, por exemplo).</p>
 <p>Logo, <code>Empréstimo</code> e <code>Itens de Empréstimo</code> formam um agregado. Isto é, uma entidade única do ponto de vista conceitual. <code>Empréstimo</code> é a raiz do agregado e <code>Itens Emprestados</code> são os seus objetos internos, que não podem ser manipulados sem passar antes pela raiz.</p>
 <p>Observe que <code>Itens Emprestados</code> referenciam <code>Livros</code>, porém esses últimos não fazem parte do agregado, pois eles têm vida própria, isto é, eles existem independentemente de estarem emprestados ou não.</p>
 <h3 class="unnumbered" id="repositórios">Repositórios</h3>
 <p>Para implementar certos serviços do domínio precisamos antes obter referências para determinados objetos.</p>
 <p>Por exemplo, suponha um serviço que lista os <code>Empréstimos</code> realizados por um <code>Usuário</code>. Para implementá-lo, não podemos assumir que todos os agregados do tipo <code>Empréstimo</code> estão na memória principal. Na verdade, em qualquer sistema real, eles estão armazenados em um banco de dados.</p>
-<p>Um <strong>Repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com acesso a bancos de dados. Normalmente, repositórios são criados para recuperar entidades ou agregados.</p>
+<p>Um <strong>repositório</strong> é então um objeto usado para recuperar outros objetos de domínio de um banco de dados. Seu objetivo é prover uma abstração que blinde os desenvolvedores de preocupações relacionadas com acesso a bancos de dados. Normalmente, repositórios são criados para recuperar entidades ou agregados.</p>
 <p>Em outras palavras, um repositório oferece uma abstração para o banco de dados usado pelo sistema e, assim, permite que os desenvolvedores continuem focados no domínio, em vez de ter sua atenção desviada, em certos momentos, para uma tecnologia de armazenamento de dados. Em termos mais concretos, um repositório permite manipular objetos de domínio como se eles fossem listas (ou coleções) armazenadas na memória principal. A implementação interna do repositório cuida então de ler e salvar essas listas no banco de dados.</p>
 <p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um repositório com métodos para recuperar <code>Empréstimos</code> salvos em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
@@ -207,10 +207,11 @@
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
 <li><p>Marque V ou F:</p>
+<p>(  ) DDD não obriga o uso de nenhuma arquitetura de software específica, embora recomende uma arquitetura em camadas, incluindo uma camada focada no domínio e nas regras do negócio.</p>
+<p>(  ) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.</p>
 <p>(  ) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.</p>
 <p>(  ) Objetos de valor (<em>value objects</em>) não devem possuir métodos <code>set*</code>.</p>
 <p>(  ) Apenas entidades e agregados podem possuir repositórios.</p>
-<p>(  ) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.</p>
 <p>(  ) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.</p></li>
 <li><p>Suponha que você trabalha em um empresa que possui um aplicativo para entrega de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:</p>
 <ul>
