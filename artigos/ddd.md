@@ -328,7 +328,7 @@ objetos de valor, serviços, agregados e  repositórios.
 
 1. Marque V ou F:
 
-   (&nbsp;&nbsp;) DDD não obriga o uso de nenhuma arquitetura de software específica, embora recomende uma arquitetura em camadas, incluindo uma camada focada no domínio e nas regras do negócio.
+   (&nbsp;&nbsp;) DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.
 
    (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
 
@@ -344,12 +344,12 @@ objetos de valor, serviços, agregados e  repositórios.
 2. Suponha que você trabalha em um empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 
-    * Cinco termos da linguagem ubíqua do sistema 
-    * Três entidades 
-    * Três objetos de valor
-    * Um agregado (incluindo o objeto raiz e seus objetos internos)
-    * Dois métodos de um serviço 
-    * Dois métodos de um repositório 
+    (a) Cinco termos da linguagem ubíqua do sistema 
+    (b) Três entidades 
+    (c) Três objetos de valor
+    (d) Um agregado (incluindo o objeto raiz e seus objetos internos)
+    (e) Dois métodos de um serviço 
+    (f) Dois métodos de um repositório 
 
     Em suas respostas, basta citar os nomes que foram pedidos.
 
