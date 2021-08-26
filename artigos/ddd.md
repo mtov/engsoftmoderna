@@ -147,10 +147,14 @@ Já objetos de valor são mais simples. E também eles devem ser
 seus valores internos. Por exemplo, para alterar o `Endereço` 
 de um `Usuário` devemos abandonar o objeto antigo e criar um objeto 
 com o `Endereço` novo. Os benefícios de objetos imutáveis 
-já foram discutidos no [Capítulo 9](../cap9.html).
+já foram discutidos no [Capítulo 9](../cap9.html). 
 
-Resumindo: entidades são definidas por sua identidade; objetos
-de valor são definidos por seus atributos.
+É interessante mencionar também que, recentemente, algumas linguagens de 
+programação passaram a oferecer suporte sintático para implementação de 
+objetos de valor. Por exemplo, nas versões mais novas de Java, eles podem 
+ser implementados por meio de 
+[records](https://docs.oracle.com/en/java/javase/16/language/records.html).
+
 
 ### Serviços {.unnumbered}
 
@@ -206,7 +210,9 @@ Porém, esses objetos internos não devem ser visíveis para o
 resto do sistema, ou seja, apenas a raiz pode referenciá-los.
 
 Como formam uma unidade coerente, agregados são persistidos em 
-conjunto em bancos de dados.
+conjunto em bancos de dados. A deleção de um agregado, da
+memória principal e/ou de um banco de dados, implica na deleção
+da sua raiz e de todos os objetos internos.
 
 Como eles são objetos mais complexos e com objetos internos,
 pode ser interessante implementar métodos especificamente
@@ -332,6 +338,8 @@ objetos de valor, serviços, agregados e  repositórios.
 
    (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
 
+   (&nbsp;&nbsp;) Entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.
+
    (&nbsp;&nbsp;) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.
    
    (&nbsp;&nbsp;) Objetos de valor (*value objects*) não devem possuir métodos `set*`.
@@ -353,7 +361,12 @@ de comida pela Internet. Você ficou responsável pelo projeto da camada de dom�
 
     Em suas respostas, basta citar os nomes que foram pedidos.
 
-3. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
+3. Suponha um sistema de comércio eletrônico, com as seguintes classes `Pedido`, 
+`ItensPedido` e `Produto`. Desenhe um diagrama de classes que represente as
+relações entre essas classes. Quais classes constituem um agregado? Qual
+classe está fora do agregado e porquê?
+
+4. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
 
 ~~~~
    Raiz

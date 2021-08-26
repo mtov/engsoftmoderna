@@ -151,7 +151,7 @@
 <p>Outros exemplos de objetos de valor incluem: <code>Moeda</code>, <code>Data</code>, <code>Fone</code>, <code>Email</code>, <code>Hora</code>, <code>Cor</code>, etc.</p>
 <p><strong>Por que distinguir entre entidades e objetos de valor?</strong> Entidades são objetos mais importantes e devemos, por exemplo, projetar com cuidado como eles serão persistidos e depois recuperados de um banco de dados. Devemos também tomar cuidado com o ciclo de vida de entidades. Por exemplo, podem existir regras que governam a criação e remoção de entidades. No caso da nossa bibliotecas, não se pode remover um <code>Usuário</code> se ele tiver um <code>Empréstimo</code> pendente.</p>
 <p>Já objetos de valor são mais simples. E também eles devem ser <strong>imutáveis</strong>, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis já foram discutidos no <a href="../cap9.html">Capítulo 9</a>.</p>
-<p>Resumindo: entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.</p>
+<p>É interessante mencionar também que, recentemente, algumas linguagens de programação passaram a oferecer suporte sintático para implementação de objetos de valor. Por exemplo, nas versões mais novas de Java, eles podem ser implementados por meio de <a href="https://docs.oracle.com/en/java/javase/16/language/records.html">records</a>.</p>
 <h3 class="unnumbered" id="serviços">Serviços</h3>
 <p>Existem operações importantes do domínio que não se encaixam em entidades e objetos de valor. Assim, o ideal é criar objetos específicos para implementar essas operações. No jargão de DDD, esses objetos são chamados de <strong>serviços</strong>. Em alguns sistemas, é comum ver esses objetos sendo chamados também de gerenciadores ou controladores.</p>
 <p>A assinatura das operações de um objeto de serviço pode incluir entidades e objetos de valor. No entanto, objetos de serviço não devem possuir estado, isto é, eles devem ser <strong>stateless</strong>. Por isso, eles não costumam ter atributos, mas apenas métodos.</p>
@@ -168,7 +168,7 @@
 <h3 class="unnumbered" id="agregados">Agregados</h3>
 <p><strong>Agregados</strong> (<em>aggregates</em>) são coleções de entidades e objetos de valor. Ou seja, algumas vezes não faz sentido raciocinar sobre entidades e objetos de valor de forma individual. Em vez disso, temos que pensar em grupos de objetos para ter uma visão consistente com o domínio que estamos modelando.</p>
 <p>Um agregado possui um objeto raiz, que deve ser uma entidade. Externamente, o agregado é acessado a partir dessa raiz. A raiz, por sua vez, referencia os objetos internos do agregado. Porém, esses objetos internos não devem ser visíveis para o resto do sistema, ou seja, apenas a raiz pode referenciá-los.</p>
-<p>Como formam uma unidade coerente, agregados são persistidos em conjunto em bancos de dados.</p>
+<p>Como formam uma unidade coerente, agregados são persistidos em conjunto em bancos de dados. A deleção de um agregado, da memória principal e/ou de um banco de dados, implica na deleção da sua raiz e de todos os objetos internos.</p>
 <p>Como eles são objetos mais complexos e com objetos internos, pode ser interessante implementar métodos especificamente para criação de agregados, os quais são chamados de <strong>fábricas</strong>. Ou seja, tais métodos são implementações do padrão de projeto de mesmo nome.</p>
 <p><strong>Exemplo</strong>: No sistema de bibliotecas, um <code>Empréstimo</code> possui um <code>Usuário</code> (que é uma entidade), uma data de realização (que é um objeto de valor) e uma lista de <code>Itens Emprestados</code>. Cada <code>Item Emprestado</code> contém informações sobre um certo <code>Livro</code> que foi emprestado e sua data de devolução (estamos pressupondo que alguns livros devem ser devolvidos mais rapidamente do que outros, por exemplo).</p>
 <p>Logo, <code>Empréstimo</code> e <code>Itens de Empréstimo</code> formam um agregado. Isto é, uma entidade única do ponto de vista conceitual. <code>Empréstimo</code> é a raiz do agregado e <code>Itens Emprestados</code> são os seus objetos internos, que não podem ser manipulados sem passar antes pela raiz.</p>
@@ -209,6 +209,7 @@
 <li><p>Marque V ou F:</p>
 <p>(  ) DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.</p>
 <p>(  ) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.</p>
+<p>(  ) Entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.</p>
 <p>(  ) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.</p>
 <p>(  ) Objetos de valor (<em>value objects</em>) não devem possuir métodos <code>set*</code>.</p>
 <p>(  ) Apenas entidades e agregados podem possuir repositórios.</p>
@@ -223,6 +224,7 @@
 <li>Dois métodos de um repositório</li>
 </ol>
 <p>Em suas respostas, basta citar os nomes que foram pedidos.</p></li>
+<li><p>Suponha um sistema de comércio eletrônico, com as seguintes classes <code>Pedido</code>, <code>ItensPedido</code> e <code>Produto</code>. Desenhe um diagrama de classes que represente as relações entre essas classes. Quais classes constituem um agregado? Qual classe está fora do agregado e porquê?</p></li>
 <li><p>Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?</p></li>
 </ol>
 <pre><code>   Raiz
