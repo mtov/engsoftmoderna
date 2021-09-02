@@ -177,9 +177,17 @@ mesma comida do seu cachorro"  (*eat you own dog food*).
 
 O objetivo é simples: fazer com os que os desenvolvedores experimentem os benefícios
 e, principalmente, os problemas e dificuldades relacionados com o uso de um sistema. 
+
 Particularmente, dogfooding é adotado pela maioria das grandes empresas de tecnologia. 
 Por exemplo, no Facebook, "os engenheiros também são usuários da rede social, portanto, 
-eles têm conhecimento em primeira mão de "o que" sistema faz e de quais serviços ele oferece." (link)[https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf].
+eles têm conhecimento em primeira mão do que o sistema faz e de quais serviços ele oferece." 
+([link](https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf)).
+
+Por outro lado, dogfooding é bem mais complicado no caso de sistemas para domínios de 
+negócio específicos,que requerem usuários especializados. Por exemplo, um sistema 
+complexo para cálculo e geração de apólices de seguro. Mesmo que um desenvolvedor 
+implemente uma parte desse sistema, ele pode não conseguir usá-lo tal como um analista 
+de seguros.
 
 
 ### 8. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
