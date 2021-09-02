@@ -167,8 +167,22 @@ Antes de concluir, é importante mencionar que personas são usadas
 também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
+### 7. O que é dogfooding? {.unnumbered}
 
-### 7. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos produtos de 
+software que eles desenvolvem. No entanto, no caso de dogfooding, a aproximação 
+é total: ou seja, além de desenvolver um sistema, desenvolvedores devem também 
+usá-lo com frequência. O nome tem origem em uma frase comum em inglês: "comer a 
+mesma comida do seu cachorro"  (*eat you own dog food*).
+
+O objetivo é simples: fazer com os que os desenvolvedores experimentem os benefícios
+e, principalmente, os problemas e dificuldades relacionados com o uso de um sistema. 
+Particularmente, dogfooding é adotado pela maioria das grandes empresas de tecnologia. 
+Por exemplo, no Facebook, "os engenheiros também são usuários da rede social, portanto, 
+eles têm conhecimento em primeira mão de "o que" sistema faz e de quais serviços ele oferece." (link)[https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf].
+
+
+### 8. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -224,7 +238,7 @@ principal negócio são sistemas ou serviços de software --
 possuem times orientados por produto.
 
 
-### 8. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 9. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -273,7 +287,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 9. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 10. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão

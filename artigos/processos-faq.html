@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Marco Tulio Valente" />
-  <title>Perguntas Frequentes sobre Procesos de Software – Engenharia de Software Moderna</title>
+  <title>Perguntas Frequentes sobre Processos de Software – Engenharia de Software Moderna</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -161,7 +161,10 @@
 <p>Como dissemos, o principal objetivo da técnica de personas é criar uma relação empática entre os desenvolvedores de um sistema e os seus usuários. Com isso, pretende-se evitar que os desenvolvedores projetem o sistema pensando neles mesmos, isto é, apenas com as características que eles julgam importantes, caso tivessem que usar o sistema.</p>
 <p>Para definição das personas podem ser realizadas pesquisas com os potenciais usuários do sistema, por exemplo, por meio de questionários. Além de perguntas tradicionais (nome, sexo, idade, etc.) é importante que esses questionários revelem também os hábitos e comportamentos dos usuários, principalmente aqueles relacionados com o sistema que se pretende implementar. A partir das respostas dos questionários, deve-se agrupar usuários semelhantes e então criar uma persona para cada grupo.</p>
 <p>Antes de concluir, é importante mencionar que personas são usadas também em outras áreas, como projeto de interface com o usuário, marketing, vendas, etc.</p>
-<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">7. Qual a diferença entre times orientados por projeto e por produto?</h3>
+<h3 class="unnumbered" id="o-que-é-dogfooding">7. O que é dogfooding?</h3>
+<p>Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos produtos de software que eles desenvolvem. No entanto, no caso de dogfooding, a aproximação é total: ou seja, além de desenvolver um sistema, desenvolvedores devem também usá-lo com frequência. O nome tem origem em uma frase comum em inglês: <q>comer a mesma comida do seu cachorro</q> (<em>eat you own dog food</em>).</p>
+<p>O objetivo é simples: fazer com os que os desenvolvedores experimentem os benefícios e, principalmente, os problemas e dificuldades relacionados com o uso de um sistema. Particularmente, dogfooding é adotado pela maioria das grandes empresas de tecnologia. Por exemplo, no Facebook, <q>os engenheiros também são usuários da rede social, portanto, eles têm conhecimento em primeira mão de</q>o que” sistema faz e de quais serviços ele oferece.” (link)[https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf].</p>
+<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">8. Qual a diferença entre times orientados por projeto e por produto?</h3>
 <p>Vamos responder discorrendo sobre cada um dessas formas de organização de times.</p>
 <p><strong>Times orientados por projeto</strong></p>
 <p>Recomenda-se ter times orientados por projeto quando o escopo e as funcionalidades do sistema que será desenvolvido estão bem definidos. Ou seja, <q>o que</q> o sistema deve fazer está claro. Logo, a função principal do time é implementar as funcionalidades requeridas pelos clientes. Isso não impede que exista um PO (<q>Product Owner</q>) que vai funcionar como uma ponte entre os clientes e os desenvolvedores do time.</p>
@@ -173,7 +176,7 @@
 <p><strong>Resumo</strong></p>
 <p>Não existe uma organização de times melhor do que a outra. No entanto, times orientados por projeto devem ser usados quando o problema a ser resolvido é bem conhecido, assim como a solução (sistema) a ser implementada. É importante também que essa solução demande poucas manutenções, principalmente manutenções evolutivas.</p>
 <p>Normalmente, os times de fábricas ou agências de software são orientados por projeto. Já empresas de tecnologia – cujo principal negócio são sistemas ou serviços de software – possuem times orientados por produto.</p>
-<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">8. O que é Upstream e Downstream Kanban?</h3>
+<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">9. O que é Upstream e Downstream Kanban?</h3>
 <p>O quadro Kanban, como explicamos no <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, começa à sua esquerda com um backlog de tarefas.</p>
 <p>No entanto, se os times não tomarem cuidado, esse backlog pode crescer muito e passar a incluir tarefas complexas, que ainda não foram devidamente entendidas pelo time ou que não vão agregar valor ao produto. Pode ser então que o time não consiga escolher as tarefas certas para implementar, já que o backlog transformou-se em uma extensa lista não-priorizada de tarefas obscuras.</p>
 <p>Para isso, o uso de Kanban costuma ser dividido em dois fluxos:</p>
@@ -186,7 +189,7 @@
 <p>O Upstream Kanban corresponde à parte do funil que vai se estreitando para deixar claro que nem toda demanda proposta pelos stakeholders precisa chegar ao backlog.</p>
 <p>Resumindo: no Upstream, especificamos e decidimos o que deve ser implementado; no Downstream, implementa-se o que foi decidido.</p>
 <p>Antes de concluir, gostaríamos de comentar sobre a origem dos termos upstream e downstream. Uma possível tradução seria montante (upstream) e jusante (downstream). Especificamente, quando se constrói uma barragem em um rio, a parte do seu leito que foi represada, dando origem ao repositório ou lago, chama-se montante do rio; a parte do rio após a barragem é chamada de jusante.</p>
-<h3 class="unnumbered" id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">9. É possível voltar com o cartão em um quadro Kanban?</h3>
+<h3 class="unnumbered" id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">10. É possível voltar com o cartão em um quadro Kanban?</h3>
 <p>Explicando melhor: suponha um quadro com passos Especificação, Implementação e Revisão. Suponha ainda que – no passo de revisão – detectou-se que uma tarefa foi especificada (e implementada) de forma errada. O que deve-se fazer?</p>
 <p>Nesse caso, e principalmente se o erro foi grave e demandará um bom tempo para ser corrigido, não existe alternativa, a não ser voltar com o cartão que descreve a tarefa para o passo de especificação, para que ela seja re-especificada e re-implementada, agora de forma correta.</p>
 <hr />
