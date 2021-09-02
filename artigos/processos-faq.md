@@ -169,25 +169,27 @@ com o usuário, marketing, vendas, etc.
 
 ### 7. O que é dogfooding? {.unnumbered}
 
-Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos produtos de 
-software que eles desenvolvem. No entanto, no caso de dogfooding, a aproximação 
-é total: ou seja, além de desenvolver um sistema, desenvolvedores devem também 
-usá-lo com frequência. O nome tem origem em uma frase comum em inglês: "comer a 
-mesma comida do seu cachorro"  (*eat you own dog food*).
+Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos 
+produtos de software que eles desenvolvem. No entanto, no caso de 
+dogfooding, a aproximação é total: ou seja, além de desenvolver um sistema, 
+desenvolvedores devem também usá-lo com frequência. O nome tem origem em uma 
+frase comum em inglês: "comer a mesma comida do seu cachorro"  (*eat you own dog food*).
 
-O objetivo é simples: fazer com os que os desenvolvedores experimentem os benefícios
-e, principalmente, os problemas e dificuldades relacionados com o uso de um sistema. 
+O objetivo é simples: fazer com os que os desenvolvedores experimentem os 
+benefícios e, principalmente, os problemas e dificuldades relacionados com 
+o uso de um sistema. 
 
-Particularmente, dogfooding é adotado pela maioria das grandes empresas de tecnologia. 
-Por exemplo, no Facebook, "os engenheiros também são usuários da rede social, portanto, 
-eles têm conhecimento em primeira mão do que o sistema faz e de quais serviços ele oferece." 
+Dogfooding é adotado pela maioria das grandes empresas de tecnologia. 
+Por exemplo, no Facebook, "os engenheiros também são usuários da rede social, 
+portanto, eles têm conhecimento em primeira mão do que o sistema faz e de 
+quais serviços ele oferece." 
 ([link](https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf)).
 
-Por outro lado, dogfooding é bem mais complicado no caso de sistemas para domínios de 
-negócio específicos,que requerem usuários especializados. Por exemplo, um sistema 
-complexo para cálculo e geração de apólices de seguro. Mesmo que um desenvolvedor 
-implemente uma parte desse sistema, ele pode não conseguir usá-lo tal como um analista 
-de seguros.
+No entanto, dogfooding é mais complicado no caso de sistemas para domínios de 
+negócio que requerem usuários especializados. Por exemplo, um 
+sistema para cálculo e geração de apólices de seguros para navios. Mesmo que um 
+desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo 
+tal como um analista de seguros navais.
 
 
 ### 8. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
