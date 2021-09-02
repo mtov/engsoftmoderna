@@ -192,9 +192,14 @@ de teste. Veja alguns exemplos:
 * *unittest.mock ... allows you to replace parts of your system under test with **mock objects**.*
 
 Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, 
-preferimos adotar o termo mock. No entanto, também acrescentamos uma nota 
-explicando o conceito de dublês e seus tipos, tais como stubs, fakes, etc.
+preferimos adotar o termo mock. 
 
+Além disso, achamos que a diferença entre os vários tipos de dublês não é 
+intuitiva, nem auto-explicativa. Ou seja, não é tão simples lembrar, no dia a dia, 
+a característica distintiva de um spy, stub, dummy, fake, etc.
+
+Por outro lado, é importante ressaltar que acrescentamos, no livro, uma nota 
+explicando o conceito de dublês e seus diferentes tipos.
 
 ### 10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
