@@ -183,7 +183,12 @@ Dogfooding é adotado pela maioria das grandes empresas de tecnologia.
 Por exemplo, no Facebook, "os engenheiros também são usuários da rede social, 
 portanto, eles têm conhecimento em primeira mão do que o sistema faz e de 
 quais serviços ele oferece." 
-([link](https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf)).
+([link](https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf)). 
+
+Como um segundo exemplo, veja o seguinte tweet do CEO do Google:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Have been dogfooding the new <a href="https://twitter.com/gmail?ref_src=twsrc%5Etfw">@Gmail</a> for a while now - very excited for this new redesign! <a href="https://t.co/Z7xcHwZTjO">https://t.co/Z7xcHwZTjO</a></p>&mdash; Sundar Pichai (@sundarpichai) <a href="https://twitter.com/sundarpichai/status/989236143613820928?ref_src=twsrc%5Etfw">April 25, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 No entanto, dogfooding é mais complicado no caso de sistemas para domínios de 
 negócio que requerem usuários especializados. Por exemplo, um 
