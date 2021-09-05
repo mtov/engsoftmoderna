@@ -25,7 +25,7 @@ cfd: cfd.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Diagramas de Fluxo Cumulativo" cfd.md -o cfd.html
 
 design-thinking: design-thinking.md
-	$(pandoc_bin) --defaults=defaults.yaml -T "Design Thinking: Aprendendo a Resolver Problemas com os Designers" design-thinking.md -o design-thinking.html
+	$(pandoc_bin) --defaults=defaults.yaml -T "Design Thinking: Principais Conceitos e Atividades" design-thinking.md -o design-thinking.html
 
 mvp: mvp.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html
