@@ -1,5 +1,5 @@
 
-# Design Thinking: Aprendendo a Resolver Problemas com os Designers   {.unnumbered}
+# Design Thinking: Principais Conceitos e Atividades   {.unnumbered}
 
 ## Introdução {.unnumbered}
 
