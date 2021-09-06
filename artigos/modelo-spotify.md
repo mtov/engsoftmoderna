@@ -42,9 +42,8 @@ treinamento e promoções.
 
 * **Guildas**, que são comunidades informais e, às vezes, temporárias. Isto é,
 são grupos de funcionários que se reunem, voluntariamente, para compartilhar 
-interesses comuns, como uma tecnologia, processo, etc. Os participantes
-de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda 
-já existia antes, com nomes como comunidade de prática ou grupos
+interesses comuns, como uma tecnologia, arquitetura, processo, etc. Os participantes de uma guilda não precisam pertencer à mesma tribo. O conceito 
+de guilda já existia antes, com nomes como comunidade de prática ou grupos
 de interesse.
 
 
@@ -62,12 +61,14 @@ em empresas menores, podemos ter squads de frontend e backend.
 * Squads responsáveis por requisitos funcionais: por exemplo, em um sistema 
 de comércio eletrônico, podem existir squads responsáveis pelo processo 
 de compra (checkout), pelo pagamento, pela recomendação de produtos, 
-pela pesquisa de produtos, etc. 
+pelo catálogo de produtos, etc. 
 
 * Squads responsáveis por desafios de negócio: por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
 (*Software as a Service*). As soluções desenhadas e implementadas por esse 
 squad podem incluir programas de fidelidade, cupons de desconto, etc. 
+Como um segundo exemplo, um squad pode ficar responsável por implantar
+o produto de software em um outro país.
 
 Assim, os squads de funcionalidade tratam de serviços bem conhecidos e 
 quase que obrigatórios em um sistema. Já os squads voltados para resolver
@@ -101,6 +102,8 @@ Adaptações ao **contexto** quase sempre são necessárias.
 1. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
 2. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
+
+3. Descreva uma desvantagem do Modelo Spotify.
 
 * * * 
 
