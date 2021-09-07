@@ -58,11 +58,10 @@ Android, iOS, etc. Ou seja, a empresa pode ter squads para
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend.
 
-* Squads responsáveis por funcionalidades do software: por exemplo, em um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
+* Squads responsáveis por funcionalidades do software: por exemplo, em 
+um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
 processo de compra (checkout), pelo pagamento, pela recomendação de 
-produtos, pelo catálogo de produtos, etc. Talvez esse seja o tipo mais 
-comum de squad. Eles são conhecidos também como times funcionais 
-(*feature teams*).
+produtos, pelo catálogo de produtos, etc. 
 
 * Squads responsáveis por desafios de negócio: por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
@@ -94,9 +93,17 @@ com o formato de animação, viralizaram e ajudaram a tornar o modelo
 largamente conhecido.
 
 Desde essa época, a sua adoção, mesmo na Spotify, passou por evoluções e 
-adaptações importantes. E, como qualquer assunto relacionado 
-com processos, sua adoção não deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao **contexto** quase sempre são necessárias.
+adaptações importantes. Isso é reconhecido, inclusive, pelos próprios 
+autores do artigo que descreve o modelo:
+
+> A Spotify (como qualquer boa empresa ágil) está evoluindo rapidamente. Este artigo
+é apenas uma fotografia de nossa forma atual de trabalhar -- uma jornada em andamento, 
+não uma jornada concluída. Quando você estiver lendo o artigo, provavelmente
+as coisas já mudaram.
+
+Por isso, como qualquer assunto relacionado com processos, a adoção do 
+Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
+Adaptações ao **contexto** serão sempre necessárias.
 
 ## Exercícios {.unnumbered}
 
@@ -106,7 +113,7 @@ Adaptações ao **contexto** quase sempre são necessárias.
 
    (&nbsp;&nbsp;) O Product Owner (PO) é o chefe de um squad.
 
-   (&nbsp;&nbsp;) Squads podem ser usados com outros objetivos, que não requerem desenvolvimento de software.
+   (&nbsp;&nbsp;) Squads podem ser usados em áreas de uma empresa que não demandam desenvolvimento de software.
 
    (&nbsp;&nbsp;) Quando se adota squads, deve-se obrigatoriamente usar também chapters e guildas.
 
@@ -116,7 +123,9 @@ Adaptações ao **contexto** quase sempre são necessárias.
 
    (&nbsp;&nbsp;) Squads são formados apenas por profissionais de desenvolvimento de software.
 
-   (&nbsp;&nbsp;) Quando a empresa pratica revisão de código, o código produzido por um squad deve ser sempre revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.
+   (&nbsp;&nbsp;) Quando uma empresa adota revisão de código, o código produzido por um squad deve ser revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.
+
+   (&nbsp;&nbsp;) O Modelo Spotify (com squads, tribos, chapters e guildas) é recomendado para empresas que possuem, pelo menos, algumas dezenas de desenvolvedores.
 
 
 2. Por que o Modelo Spotify é considerado uma estrutura matricial?
