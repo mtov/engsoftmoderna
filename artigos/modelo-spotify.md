@@ -58,10 +58,11 @@ Android, iOS, etc. Ou seja, a empresa pode ter squads para
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend.
 
-* Squads responsáveis por requisitos funcionais: por exemplo, em um sistema 
-de comércio eletrônico, podem existir squads responsáveis pelo processo 
-de compra (checkout), pelo pagamento, pela recomendação de produtos, 
-pelo catálogo de produtos, etc. 
+* Squads responsáveis por funcionalidades do software: por exemplo, em um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
+processo de compra (checkout), pelo pagamento, pela recomendação de 
+produtos, pelo catálogo de produtos, etc. Talvez esse seja o tipo mais 
+comum de squad. Eles são conhecidos também como times funcionais 
+(*feature teams*).
 
 * Squads responsáveis por desafios de negócio: por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
@@ -99,11 +100,30 @@ Adaptações ao **contexto** quase sempre são necessárias.
 
 ## Exercícios {.unnumbered}
 
-1. Por que o Modelo Spotify é considerado uma estrutura matricial?
+1. Marque V ou F.
 
-2. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
+   (&nbsp;&nbsp;) A autonomia dos squads é uma característica fundamental do Modelo Spotify.
 
-3. Descreva uma desvantagem do Modelo Spotify.
+   (&nbsp;&nbsp;) O Product Owner (PO) é o chefe de um squad.
+
+   (&nbsp;&nbsp;) Squads podem ser usados com outros objetivos, que não requerem desenvolvimento de software.
+
+   (&nbsp;&nbsp;) Quando se adota squads, deve-se obrigatoriamente usar também chapters e guildas.
+
+   (&nbsp;&nbsp;) Os squads de uma empresa não precisam, todos eles, usar o mesmo método ágil.
+
+   (&nbsp;&nbsp;) Dependências entre squads devem ser minimizadas.
+
+   (&nbsp;&nbsp;) Squads são formados apenas por profissionais de desenvolvimento de software.
+
+   (&nbsp;&nbsp;) Quando a empresa pratica revisão de código, o código produzido por um squad deve ser sempre revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.
+
+
+2. Por que o Modelo Spotify é considerado uma estrutura matricial?
+
+3. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
+
+4. Descreva uma desvantagem do Modelo Spotify.
 
 * * * 
 
