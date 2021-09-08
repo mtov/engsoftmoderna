@@ -107,34 +107,15 @@ Adaptações ao **contexto** são sempre necessárias.
 
 Por isso, gostamos de dizer que o principal benefício do Modelo Spotify 
 consiste em adicionar algumas ferramentas conceituais na sua 
-"caixa de ferramentas" sobre processos e organização de times de software. 
-Nem todas as ferramentas dessa caixa podem ser úteis no contexto atual da sua 
-empresa. Porém, é importante conhecer todas elas, pois amanhã seu contexto 
+"caixa de ferramentas" sobre processos e organização de times de desenvolvimento
+de software. Nem todas as ferramentas dessa caixa podem ser úteis no contexto atual 
+da sua empresa. Porém, é importante conhecer todas elas, pois amanhã seu contexto 
 pode mudar -- e uma ferramenta que antes parecia inútil pode agora 
 desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
 
-1. Marque V ou F.
-
-   (&nbsp;&nbsp;) A autonomia dos squads é uma característica fundamental do Modelo Spotify.
-
-   (&nbsp;&nbsp;) O Product Owner (PO) é o chefe de um squad.
-
-   (&nbsp;&nbsp;) Squads podem ser usados em áreas de uma empresa que não demandam desenvolvimento de software.
-
-   (&nbsp;&nbsp;) Quando se adota squads, deve-se obrigatoriamente usar também chapters e guildas.
-
-   (&nbsp;&nbsp;) Os squads de uma empresa não precisam, todos eles, usar o mesmo método ágil.
-
-   (&nbsp;&nbsp;) Dependências entre squads devem ser minimizadas.
-
-   (&nbsp;&nbsp;) Squads são formados apenas por profissionais de desenvolvimento de software.
-
-   (&nbsp;&nbsp;) Quando uma empresa adota revisão de código, o código produzido por um squad deve ser revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.
-
-   (&nbsp;&nbsp;) O Modelo Spotify (com squads, tribos, chapters e guildas) é recomendado para empresas que possuem, pelo menos, algumas dezenas de desenvolvedores.
-
+1. Primeiro, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Spotify) de V ou F, com correção online.
 
 2. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
