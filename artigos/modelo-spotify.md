@@ -101,9 +101,17 @@ autores do artigo que descreve o modelo:
 não uma jornada concluída. Quando você estiver lendo o artigo, provavelmente
 as coisas já mudaram.
 
-Por isso, como qualquer assunto relacionado com processos, a adoção do 
+Por isso, como é normal quando o assunto são processos, a adoção do 
 Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao **contexto** serão sempre necessárias.
+Adaptações ao **contexto** são sempre necessárias. 
+
+Por isso, gostamos de dizer que o principal benefício do Modelo Spotify 
+consiste em adicionar algumas ferramentas conceituais na sua 
+"caixa de ferramentas" sobre processos e organização de times de software. 
+Nem todas as ferramentas dessa caixa podem ser úteis no contexto atual da sua 
+empresa. Porém, é importante conhecer todas elas, pois amanhã seu contexto 
+pode mudar -- e uma ferramenta que antes parecia inútil pode agora 
+desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
 
