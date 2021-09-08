@@ -1,0 +1,41 @@
+{
+"title": "Artigo - Modelo Spotify",  
+"questions": [
+  {
+    "text": "A autonomia dos squads é uma característica fundamental do Modelo Spotify.",
+    "correct": "true"
+  },
+  {
+    "text": "O Product Owner (PO) é o chefe de um squad.",
+    "correct": "false"
+  },
+  {
+    "text": "Squads podem ser usados em áreas de uma empresa que não demandam desenvolvimento de software.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando se adota squads, deve-se obrigatoriamente usar também chapters e guildas.",
+    "correct": "false"
+  },
+  {
+    "text": "Os squads de uma empresa não precisam, todos eles, usar o mesmo método ágil.",
+    "correct": "true"
+  },
+  {
+    "text": "Dependências entre squads devem ser minimizadas.",
+    "correct": "true"
+  },
+  {
+    "text": "Squads são formados apenas por profissionais de desenvolvimento de software.",
+    "correct": "false"
+  },
+  {
+    "text": "Quando uma empresa adota revisão de código, o código produzido por um squad deve ser revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.",
+    "correct": "false"
+  },
+  {
+    "text": "O Modelo Spotify (com squads, tribos, chapters e guildas) é recomendado para empresas que possuem, pelo menos, algumas dezenas de desenvolvedores.",
+    "correct": "true"
+  }
+]
+}	    
