@@ -20,6 +20,18 @@
   {
     "text": "Quando se usa uma Arquitetura Limpa, os casos de uso são sempre modelados usando-se Diagramas de Casos de Uso de UML.",
     "correct": "false"
+  },
+  {
+    "text": "Em uma Arquitetura Limpa, as entidades não conhecem os casos de uso, que por sua vez não conhecem as tecnologias usadas no sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Ao separar tecnologia de regras de negócio, uma Arquitetura Limpa dificulta a implementação de testes automatizados.",
+    "correct": "false"
+  },
+  {
+    "text": "Se um caso de uso precisa persistir uma entidade X, ele deve fazer isso por meio de uma interface I independente de qualquer banco de dados ou tecnologia de persistência.",
+    "correct": "true"
   }
 ]
 }	    
