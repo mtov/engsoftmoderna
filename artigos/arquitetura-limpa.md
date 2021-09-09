@@ -216,23 +216,11 @@ Se quiser, veja também nosso artigo sobre
 
 ## Exercícios {.unnumbered}
 
-1. Marque V ou F:
-
-   (&nbsp;&nbsp;) Uma Arquitetura Limpa permite escrever consultas SQL na camada de Entidades.
-
-   (&nbsp;&nbsp;) Quando se adota uma Arquitetura Limpa, entidades podem ser usadas por mais de um sistema da empresa. 
-
-   (&nbsp;&nbsp;) Um sistema X segue uma Arquitetura Limpa. Atualmente, ele possui uma interface Web. Surgiu então a necessidade de criar uma versão móvel para celulares e tablets. No entanto, para atender à essa segunda interface, não será necessário modificar as duas camadas mais internas (Entidades e Casos de Uso).
-
-   (&nbsp;&nbsp;) As camadas mais internas de uma Arquitetura Limpa são mais próximas do negócio e mais distantes da tecnologia.
-
-   (&nbsp;&nbsp;) Quando se usa uma Arquitetura Limpa, os casos de uso são sempre modelados usando-se Diagramas de Casos de Uso de UML.
-
+1. Primeiro, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
 
 2. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
 principal vantagem ou benefício dessa regra?
-
 
 3. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
 
