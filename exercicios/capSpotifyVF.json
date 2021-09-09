@@ -36,6 +36,10 @@
   {
     "text": "O Modelo Spotify (com squads, tribos, chapters e guildas) é recomendado para empresas que possuem, pelo menos, algumas dezenas de desenvolvedores.",
     "correct": "true"
+  },
+  {
+    "text": "Quando se usa o Modelo Spotify, existem times separados para desenvolvimento, manutenção e implantação (deployment) de cada sistema da empresa.",
+    "correct": "false"
   }
 ]
 }	    
