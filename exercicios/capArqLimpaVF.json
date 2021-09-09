@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Se um caso de uso precisa persistir uma entidade X, ele deve fazer isso por meio de uma interface I independente de qualquer banco de dados ou tecnologia de persistência.",
+    "text": "Se um caso de uso precisa persistir uma entidade X, ele deve fazer isso por meio de uma interface que seja independente de qualquer banco de dados ou tecnologia de persistência.",
     "correct": "true"
   }
 ]
