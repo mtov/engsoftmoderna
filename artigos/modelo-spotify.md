@@ -115,7 +115,7 @@ desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
 
-1. Primeiro, responda ao seguinte **[exercício](../exercicios/exvf.html#/cap/Spotify)** de V ou F, com **correção online**.
+1. Para fixar as principais ideias do Modelo Spotify, responda ao seguinte **[exercício](../exercicios/exvf.html#/cap/Spotify)** de V ou F, com **correção online**.
 
 2. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
