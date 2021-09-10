@@ -32,6 +32,10 @@
   {
     "text": "Se um caso de uso precisa persistir uma entidade X, ele deve fazer isso por meio de uma interface que seja independente de qualquer banco de dados ou tecnologia de persistência.",
     "correct": "true"
+  },
+  {
+    "text": "Em um sistema de comércio eletrônico, \"Produto\" é uma entidade; já \"Limpar Carrinho de Compra\" é um Caso de Uso.",
+    "correct": "true"
   }
 ]
 }	    

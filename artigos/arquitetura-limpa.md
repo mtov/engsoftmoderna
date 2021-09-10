@@ -216,7 +216,7 @@ Se quiser, veja também nosso artigo sobre
 
 ## Exercícios {.unnumbered}
 
-1. Primeiro, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
+1. Primeiro, responda ao seguinte **[exercício](../exercicios/exvf.html#/cap/ArqLimpa)** de V ou F, com **correção online**.
 
 2. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
@@ -249,6 +249,11 @@ uma Arquitetura Limpa. Especificamente, responda:
    * Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, 
      mongoDB, etc.) estará localizado em qual camada?
 
+5. Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos
+certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance 
+de amanhã o sistema ter que usar uma tecnologia X', Y' ou Z'. Nesse cenário,
+você acha que ainda pode ser útil a adoção de uma Arquitetura Limpa?
+Justifique.
 
 * * * 
 
