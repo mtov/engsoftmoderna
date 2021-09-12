@@ -36,6 +36,10 @@
   {
     "text": "Em um sistema de comércio eletrônico, \"Produto\" é uma entidade; já \"Limpar Carrinho de Compra\" é um Caso de Uso.",
     "correct": "true"
+  },
+  {
+    "text": "Classes que são entidades, em uma Arquitetura Limpa, não podem implementar nenhum método, exceto getters e setters.",
+    "correct": "false"
   }
 ]
 }	    

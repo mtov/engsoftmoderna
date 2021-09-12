@@ -59,6 +59,9 @@ agora com labels indicando o valor de cada ponto do gráfico:
 
 ![](./figs/cfd2.svg){width=80%}
 
+Ele está disponível também para acesso online no 
+Google Sheets, neste [link](https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit?usp=sharing).
+
 No exemplo, consideramos que o eixo y de um CFD é o número de histórias
 em cada coluna de um Quadro Kanban, em cada semana. No entanto, dependendo 
 do contexto, pode-se adotar outras unidades, como número de tarefas, 
@@ -75,7 +78,7 @@ crescem de forma linear, com praticamente a mesma inclinação, como no
 CFD mostrado na seção anterior.
 
 Por outro, quando existem problemas em um passo, a sua área no diagrama 
-tende a crescer, como mostrado no seguinte exemplo:
+tende a crescer, como mostrado no seguinte exemplo (acesse também neste [link](https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit#gid=882423560)):
 
 ![Sistema instável, com acúmulo crescente de histórias em Implementação](./figs/cfd3.svg){width=80%}
 
