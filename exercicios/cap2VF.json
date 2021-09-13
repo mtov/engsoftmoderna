@@ -88,6 +88,10 @@
   {
     "text": "Em Kanban, o objetivo dos limites WIP é evitar que o time de desenvolvimento fique ocioso.",
     "correct": "false"
+  },
+  {
+    "text": "Suponha uma empresa X que desenvolve um sistema Y usando Scrum. Neste caso, todos os times Scrum de X devem compartilhar o mesmo backlog do produto, o qual irá conter os itens de trabalho do sistema Y.",
+    "correct": "false"
   }
 ]
 }	    

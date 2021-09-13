@@ -103,6 +103,7 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
+
 ### 5. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
@@ -128,7 +129,19 @@ portanto, ele não deve ser o controlador de todas as tarefas dos demais
 desenvolvedores.
 
 
-### 6. O que são personas? {.unnumbered}
+### 6. Em Scrum, o que é um líder servidor? {.unnumbered}
+
+Scrum usa esse termo para descrever o estilo de liderança que deve ser
+exercido por um Scrum Master. Ou seja, o Scrum Master não é o "chefe"
+de um time Scrum, que lidera dando ordens, cobrando tarefas e prazos, etc.
+Em vez disso, ele é apenas mais um membro do time, que procura prestar 
+serviços para o PO, para os desenvolvedores e também para a organização. 
+Na versão mais recente do Scrum Guide (2020), o papel de um Scrum Master é 
+assim resumido: "eles são líderes verdadeiros, que servem tanto o time 
+Scrum, quanto a organização maior [na qual o time está inserido]."
+
+
+### 7. O que são personas? {.unnumbered}
 
 No contexto de Engenharia de Software, persona é uma técnica usada para 
 aproximar os desenvolvedores de um sistema de seus usuários finais. 
@@ -167,7 +180,8 @@ Antes de concluir, é importante mencionar que personas são usadas
 também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
-### 7. O que é dogfooding? {.unnumbered}
+
+### 8. O que é dogfooding? {.unnumbered}
 
 Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos 
 produtos de software que eles desenvolvem. No entanto, no caso de 
@@ -253,7 +267,7 @@ principal negócio são sistemas ou serviços de software --
 possuem times orientados por produto.
 
 
-### 9. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -302,7 +316,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 10. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
