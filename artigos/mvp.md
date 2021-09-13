@@ -232,6 +232,12 @@ empresa migrou para o serviço de streaming, tal qual conhecemos e
 usamos hoje. Você classificaria essa mudança como um pivô? Sim ou
 não? Justifique a sua resposta.
 
+3. Suponha que você planeja abrir uma empresa para entrega de
+comida pela Internet, em uma cidade como Belo Horizonte, e
+pretende, portanto, concorrer com empresas estabelecidas como iFood, 
+Uber Eats, Rappi, etc. A criação de um MVP seria recomendada nesse
+contexto? Sim ou Não? Justifique e discuta sua resposta.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
