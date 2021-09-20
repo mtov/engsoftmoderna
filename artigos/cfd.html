@@ -102,7 +102,7 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 class="unnumbered" id="diagramas-de-fluxo-cumulativo">Diagramas de Fluxo Cumulativo</h1>
-<p>No <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, estudamos sobre Gráficos de Burndown e comentamos que eles podem ser usados para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.</p>
+<p>No <a href="../cap2.html">Capítulo 2</a>, estudamos sobre Gráficos de Burndown e comentamos que eles podem ser usados para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.</p>
 <p>No entanto, Gráficos de Burndown não são adequados para times Kanban, pois eles assumem que o objetivo é implementar um certo número de story points em um determinado período de tempo, normalmente, equivalente a um sprint. E, quando usamos Kanban, não existem mais sprints.</p>
 <p>Por isso, times Kanban costumam usar um outro tipo de gráfico para acompanhar o seu fluxo de trabalho, chamado de <strong>Diagrama de Fluxo Cumulativo</strong> (CFD, de <em>Cumulative Flow Diagram</em>).</p>
 <h3 class="unnumbered" id="definição">Definição</h3>
@@ -175,6 +175,7 @@
 <p><img src="./figs/cfd2.svg" style="width:80.0%" /></p>
 <p>Ele está disponível também para acesso online no Google Sheets, neste <a href="https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit?usp=sharing">link</a>.</p>
 <p>No exemplo, consideramos que o eixo y de um CFD é o número de histórias em cada coluna de um Quadro Kanban, em cada semana. No entanto, dependendo do contexto, pode-se adotar outras unidades, como número de tarefas, bugs, itens de trabalho, <em>story points</em>, etc. De forma semelhante, no eixo x podemos usar uma outra unidade de tempo, como dias, quinzenas, meses, etc.</p>
+<p>Além disso, neste artigo, para a explicação ficar mais simples, não vamos quebrar as histórias em tarefas menores no passo de Especificação, tal como fizemos na seção sobre Kanban no <a href="../cap2.html">Capítulo 2</a>. Ou seja, imagine que as histórias são simples e podem ser Implementadas e Revisadas sem necessidade de divisão em tarefas menores.</p>
 <h3 class="unnumbered" id="para-que-serve-um-cfd">Para que serve um CFD?</h3>
 <p>Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban está <strong>estável</strong> ou não.</p>
 <p>Especificamente, o fluxo está normal e estável quando as áreas do diagrama crescem de forma linear, com praticamente a mesma inclinação, como no CFD mostrado na seção anterior.</p>
@@ -184,7 +185,7 @@
 </figure>
 <p>Nesse CFD, o passo de implementação está ocupando, gradativamente, uma área maior no diagrama, o que significa que as histórias estão se acumulando nesse passo. Consequentemente, menos histórias estão ficando prontas, ou seja, a inclinação da linha <q>Pronto</q> está diminuindo. Podemos observar também que menos histórias estão sendo revisadas, pois a faixa vermelha praticamente sumiu. E, por fim, o acúmulo de histórias em Implementação começa a gerar um represamento também em Especificação.</p>
 <h3 class="unnumbered" id="cfds-e-lei-de-little">CFDs e Lei de Little</h3>
-<p>Como vimos no <a href="https://engsoftmoderna.info/cap2.html">Capítulo 2</a>, a Lei de Little diz que:</p>
+<p>Como vimos no <a href="../cap2.html">Capítulo 2</a>, a Lei de Little diz que:</p>
 <p>WIP = TP * LT</p>
 <p>onde:</p>
 <ul>

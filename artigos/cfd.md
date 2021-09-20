@@ -1,6 +1,6 @@
 # Diagramas de Fluxo Cumulativo {.unnumbered}
 
-No [Capítulo 2](https://engsoftmoderna.info/cap2.html), estudamos
+No [Capítulo 2](../cap2.html), estudamos
 sobre Gráficos de Burndown e comentamos que eles podem ser usados 
 para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.
 
@@ -68,6 +68,13 @@ do contexto, pode-se adotar outras unidades, como número de tarefas,
 bugs, itens de trabalho, *story points*, etc. De forma semelhante, no eixo 
 x podemos usar uma outra unidade de tempo, como dias, quinzenas, meses, etc.
 
+Além disso, neste artigo, para a explicação ficar mais simples, não vamos
+quebrar as histórias em tarefas menores no passo de Especificação, tal como
+fizemos na seção sobre Kanban no 
+[Capítulo 2](../cap2.html). Ou seja, imagine que as histórias são simples e 
+podem ser Implementadas e Revisadas sem necessidade de divisão em tarefas 
+menores.
+
 ### Para que serve um CFD? {.unnumbered}
 
 Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban 
@@ -92,7 +99,7 @@ começa a gerar um represamento também em Especificação.
 
 ### CFDs e Lei de Little {.unnumbered}
 
-Como vimos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), a 
+Como vimos no [Capítulo 2](../cap2.html), a 
 Lei de Little diz que:
 
 WIP = TP * LT
