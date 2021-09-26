@@ -175,39 +175,53 @@ típicas de um experimento, isto é, de um MVP.
 ## Pivôs vs Restarts {.unnumbered}
 
 Às vezes, costumamos usar o termo **pivô** também de forma imprecisa.
-Para ficar claro, após criar um MVP, recebemos feedback e
-dados de potenciais clientes. Podem então ocorrer três situações:
+Para ficar claro, após criar um MVP, recebemos feedback de potenciais 
+clientes. Podem então ocorrer três situações:
 
 1. O experimento foi bem sucedido! Vamos então começar a implementar
 um sistema de verdade.
 
-2. O experimento foi um fracasso! Portanto, talvez seja melhor 
+2. O experimento foi um total fracasso! Portanto, talvez seja melhor 
 desistir, enquanto o prejuízo é pequeno.
 
 3. Com o que aprendemos com o experimento, a gente consegue 
 criar um novo MVP, dessa vez com mais chances de sucesso. Ou 
 seja, vamos realizar um **pivô**!
 
-Por exemplo, em um pivô podemos reformular a interface
-do MVP, tentar atrair um outro tipo de cliente ou adotante
-inicial, tentar uma nova forma de divulgação ou promoção do experimento,
-acrescentar ou remover uma funcionalidade no MVP, etc.
+Por exemplo, em um pivô podemos realizar as seguintes mudanças:
 
-Porém, não podemos confundir um pivô com um **restart**. Um 
-restart (ou reboot) ocorre quando os fundadores abandonam 
-o produto e a visão original da empresa e recomeçam 
-o empreendimento com um novo propósito e visão. 
+* Tentar atrair um outro tipo de cliente ou adotante inicial. Por
+exemplo, focar em empresas em vez de pessoas físicas.
+
+* Realizar mudanças importantes nas funcionalidades no MVP. Por
+exemplo, o Instagram começou como um aplicativo de *check-in*,
+chamado de Burbn, que permitia avisar seus amigos que você estava
+em um determinado local e, então, compartilhar fotos com eles. No 
+entanto, essa última funcionalidade -- compartilhamento de fotos com 
+amigos -- fez tanto sucesso que se transformou sozinha em um 
+novo produto, que os fundadores renomearam para Instagram.
+
+* Migrar para uma nova tecnologia. Por exemplo, focar em
+aplicativos Android em vez de apenas iOS.
+
+Porém, não podemos confundir um pivô com um **restart**. Um restart 
+ocorre quando os fundadores abandonam, por completo, o propósito 
+da empresa e recomeçam o empreendimento do zero. Ou seja, um restart 
+é uma desistência seguida por um recomeço em uma área totalmente
+nova.
 
 **Exemplo**: antes de criarem o Twitter, os seus fundadores 
-trabalharam em uma plataforma de distribuição de podcasts, chamada Odeo. 
-Como a iniciativa não deu certo, eles desistiram da Odeo e começaram a trabalhar em um novo 
-sistema, dessa vez uma rede social para compartilhamento de mensagens 
-de texto com 140 caracteres, a qual chamaram de Twitter (veja figura)
+trabalharam em uma plataforma de distribuição de podcasts, chamada 
+Odeo. Como a iniciativa não deu certo, eles desistiram da Odeo e 
+começaram a trabalhar em um novo sistema, dessa vez uma rede social 
+para compartilhamento de mensagens de texto com 140 caracteres, 
+a qual chamaram de Twitter (veja figura).
 
 ![](./figs/odeo-twitter-restart.jpg){width=95%}
 
-Essa mudança de rota -- de um sistema para distribuição de podcasts 
-para uma rede social -- não foi apenas um pivô, mas sim um recomeço do zero.
+Essa mudança completa de objetivo -- de um sistema para distribuição 
+de podcasts para uma rede social baseada em texto -- não foi apenas 
+um pivô, mas sim um recomeço do zero.
 
 ## Comentário Final {.unnumbered}
 
