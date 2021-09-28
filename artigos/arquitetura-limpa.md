@@ -216,7 +216,7 @@ Se quiser, veja também nosso artigo sobre
 
 ## Exercícios {.unnumbered}
 
-1. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte **[exercício](../exercicios/exvf.html#/cap/ArqLimpa)** de V ou F, com **correção online**.
+1. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
 
 2. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
