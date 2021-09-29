@@ -100,6 +100,10 @@
   {
     "text": "Uma classe X possui três atributos privados. Logo, para prover Ocultamento de Informação, X deve obrigatoriamente implementar três setters (um para cada atributo).",
     "correct": "false"
+  },
+  {
+    "text": "Uma interface I é implementada, atualmente, por duas classes C1 e C2. Amanhã, novas classes podem também vir a implementar I. Logo, um cliente C deve depender de I e nunca das classes concretas que implementam essa interface (tais como C1 e C2).",
+    "correct": "true"
   }
 ]
 }	    
