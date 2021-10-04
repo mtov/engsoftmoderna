@@ -1147,7 +1147,7 @@ de herança:
 
 -   **Herança de interfaces**
     \index{Herança!de Interfaces} 
-    (exemplo: `interface I implements J`), que
+    (exemplo: `interface I extends J`), que
     não envolve reúso de código. Essa forma de herança é mais simples
     e não suscita preocupações. Quando precisarmos de nos referir a
     ela, iremos usar o nome completo: herança de interfaces.
@@ -1211,7 +1211,7 @@ Uma segunda vantagem de composição é que a relação entre as classes não
 é estática, como no caso de herança. No exemplo, se optássemos por
 herança, a classe `Stack` estaria acoplada estaticamente a `ArrayList`; e
 não seria possível mudar essa decisão em tempo de execução. Por outro
-lado, quando adota-se uma solução baseada em composição, isso fica
+lado, quando se adota uma solução baseada em composição, isso fica
 mais fácil, como mostra o exemplo a seguir:
 
 ```

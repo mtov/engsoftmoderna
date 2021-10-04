@@ -564,7 +564,7 @@ class C2 implements I {
 <p>Antes de explicar o princípio, vamos esclarecer que existem dois tipos de herança:</p>
 <ul>
 <li><p><strong>Herança de classes</strong>  (exemplo: <code>class A extends B</code>), que é aquela que envolve reúso de código. Não apenas neste capítulo, mas em todo o livro, quando mencionarmos apenas o termo herança estaremos nos referindo a herança de classes.</p></li>
-<li><p><strong>Herança de interfaces</strong>  (exemplo: <code>interface I implements J</code>), que não envolve reúso de código. Essa forma de herança é mais simples e não suscita preocupações. Quando precisarmos de nos referir a ela, iremos usar o nome completo: herança de interfaces.</p></li>
+<li><p><strong>Herança de interfaces</strong>  (exemplo: <code>interface I extends J</code>), que não envolve reúso de código. Essa forma de herança é mais simples e não suscita preocupações. Quando precisarmos de nos referir a ela, iremos usar o nome completo: herança de interfaces.</p></li>
 </ul>
 <p>Voltando ao princípio, quando orientação a objetos se tornou comum, na década de 80, houve um incentivo ao uso de herança. Acreditava-se que o conceito seria talvez uma bala de prata capaz de resolver os problemas de reúso de software. Argumentava-se que hierarquias de classes profundas, com vários níveis, seriam um indicativo de um bom projeto, no qual foi possível atingir elevados índices de reúso. No entanto, com o tempo, percebeu-se que herança não era a tal <q>bala de prata</q>. Pelo contrário, herança tende a introduzir problemas na manutenção e evolução das classes de um sistema. Esses problemas têm sua origem no forte acoplamento que existe entre subclasses e superclasses, conforme descrito por Gamma e colegas no livro sobre padrões de projeto (<a href="https://dl.acm.org/citation.cfm?id=186897">link</a>):</p>
 <p></p>
@@ -583,7 +583,7 @@ class C2 implements I {
   ...
 }</code></pre>
 <p>A solução por meio de herança não é recomendada por vários motivos, sendo que os principais são os seguintes: (1) um <code>Stack</code>, em termos conceituais, não é um <code>ArrayList</code>, mas sim uma estrutura que pode usar um <code>ArrayList</code> na sua implementação interna; (2) quando se força uma solução via herança, a class <code>Stack</code> irá herdar métodos como <code>get</code> e <code>set</code>, que não fazem parte da especificação de pilhas. Portanto, nesse caso, devemos preferir a solução baseada em composição.</p>
-<p>Uma segunda vantagem de composição é que a relação entre as classes não é estática, como no caso de herança. No exemplo, se optássemos por herança, a classe <code>Stack</code> estaria acoplada estaticamente a <code>ArrayList</code>; e não seria possível mudar essa decisão em tempo de execução. Por outro lado, quando adota-se uma solução baseada em composição, isso fica mais fácil, como mostra o exemplo a seguir:</p>
+<p>Uma segunda vantagem de composição é que a relação entre as classes não é estática, como no caso de herança. No exemplo, se optássemos por herança, a classe <code>Stack</code> estaria acoplada estaticamente a <code>ArrayList</code>; e não seria possível mudar essa decisão em tempo de execução. Por outro lado, quando se adota uma solução baseada em composição, isso fica mais fácil, como mostra o exemplo a seguir:</p>
 <pre><code>class Stack {
 
   private List elementos;
