@@ -100,7 +100,10 @@
   {
     "text": "Implementação de testes automatizados, incluindo testes de unidade e de integração, é muito importante em MVPs.",
     "correct": "false"
+  },
+  {
+    "text": "Seis meses pode ser considerado um prazo longo para lançamento do primeiro MVP sobre uma ideia de produto ou sistema.",
+    "correct": "true"
   }
-  
 ]
 }	    

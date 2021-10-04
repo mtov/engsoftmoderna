@@ -25,25 +25,22 @@ bastante autonomia dentro da organização. Para que isso seja possível,
 é importante que as dependências entre squads sejam minimizadas.
 
 * **Tribos**, que são conjuntos de squads que trabalham em sistemas ou subsistemas 
-semelhantes. Ou seja, as tribos são equivalentes a divisões ou departamentos em uma 
-estrutura tradicional. Toda tribo possui um líder, responsável por garantir que os 
-squads estão trabalhando de forma coordenada. Recomenda-se que uma tribo tenha no 
-máximo 100 membros. Se esse limite for ultrapassado, deve-se criar mais um nível, 
-constituído por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
+semelhantes. Toda tribo possui um líder, responsável por garantir que os 
+squads estão trabalhando de forma coordenada e de acordo com as prioridades do negócio. Recomenda-se que uma tribo tenha no  máximo 100 membros. Se esse limite for ultrapassado, deve-se criar mais um nível, constituído por **Alianças** ou **Unidades de Negócio**, isto é, conjuntos de tribos.
 
-* **Chapters**, que agrupam, de forma horizontal, profissionais que realizam
-as mesmas atividades. Por exemplo, podem existir chapters de desenvolvedores 
-frontend, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
+* **Chapters**, que agrupam, de forma horizontal, profissionais que possuem as mesmas
+competências. Por exemplo, podem existir chapters de desenvolvedores 
+front-end, de cientistas de dados, de especialistas em UI/UX, etc. Esses profissionais 
 no dia a dia estão espalhados pelos squads. Porém, com uma frequência definida, 
 eles se reunem para trocar ideias, definir práticas comuns, etc. Como mostrado 
 na figura acima, os chapters congregam profissionais de uma mesma tribo. 
-Eles possuem um líder formal, que é responsável por questões como contratação,
-treinamento e promoções.
+Eles possuem um líder formal, que é responsável -- junto com o setor de RH da 
+empresa -- por questões como contratação, treinamento e promoções.
 
 * **Guildas**, que são comunidades informais e, às vezes, temporárias. Isto é,
 são grupos de funcionários que se reunem, voluntariamente, para compartilhar 
-interesses comuns, como uma tecnologia, arquitetura, processo, etc. Os participantes de uma guilda não precisam pertencer à mesma tribo. O conceito 
-de guilda já existia antes, com nomes como comunidade de prática ou grupos
+interesses comuns, como uma tecnologia, arquitetura, processo, etc. Os participantes de uma guilda não precisam pertencer à mesma tribo. O conceito de guilda já existia antes
+do Modelo Spotify ser proposto, com nomes como comunidade de prática ou grupos
 de interesse.
 
 
@@ -63,26 +60,26 @@ um sistema de comércio eletrônico, podem existir squads responsáveis pelo
 processo de compra (checkout), pelo pagamento, pela recomendação de 
 produtos, pelo catálogo de produtos, etc. 
 
-* Squads responsáveis por desafios de negócio: por exemplo, pode-se criar 
+* Squads responsáveis por objetivos de negócio: por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
 (*Software as a Service*). As soluções desenhadas e implementadas por esse 
 squad podem incluir programas de fidelidade, cupons de desconto, etc. 
 Como um segundo exemplo, um squad pode ficar responsável por implantar
 o produto de software em um outro país.
 
-Assim, os squads de funcionalidade tratam de serviços bem conhecidos e 
-quase que obrigatórios em um sistema. Já os squads voltados para resolver
-um desafio do negócio têm maior liberdade para desenhar seus serviços.
+Assim, os squads de funcionalidades tratam de serviços bem conhecidos e 
+quase que obrigatórios em um sistema. Já os squads voltados para atender a
+um objetivo do negócio têm maior liberdade para desenhar seus serviços.
 
 Desenvolvedores são maioria nos dois primeiros tipos de squads.
-Já em squads voltados para um desafio de negócio existe um 
+Já em squads voltados para um objetivo de negócio existe um 
 equilíbrio entre desenvolvedores e outros papéis, como gerentes 
 de produto, vendedores, analistas de marketing, cientistas de 
 dados, etc.
 
 É importante ressaltar que em uma mesma empresa podem co-existir squads 
 de componentes arquiteturais, de funcionalidades e associados a 
-desafios de negócio.
+objetivos de negócio.
 
 
 ### Comentário Final {.unnumbered}
@@ -110,7 +107,7 @@ consiste em adicionar algumas ferramentas conceituais na sua
 "caixa de ferramentas" sobre processos e organização de times de desenvolvimento
 de software. Nem todas as ferramentas dessa caixa podem ser úteis no contexto atual 
 da sua empresa. Porém, é importante conhecer todas elas, pois amanhã seu contexto 
-pode mudar -- e uma ferramenta que antes parecia inútil pode agora 
+pode mudar e uma ferramenta que antes parecia inútil pode agora 
 desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
@@ -122,6 +119,8 @@ desempenhar um papel importante.
 3. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
 
 4. Descreva uma desvantagem do Modelo Spotify.
+
+5. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
 
 * * * 
 
