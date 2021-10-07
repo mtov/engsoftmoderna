@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.15;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -102,20 +106,20 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <section id="princípios-de-projeto" data-number="1">
-<h1 data-number="5"><span class="header-section-number">5</span> Princípios de Projeto</h1>
+<h1 data-number="5"><span class="header-section-number">5</span> Princípios de Projeto <a href="#princípios-de-projeto" class="anchor-link">🔗</a></h1>
 <blockquote>
 <p><em>The most fundamental problem in computer science is problem decomposition: how to take a complex problem and divide it up into pieces that can be solved independently.</em> – John Ousterhout</p>
 </blockquote>
 <p> </p>
 <p>Este capítulo inicia com uma introdução ao projeto de software, na qual procuramos definir e motivar a importância desse tipo de atividade (Seção 5.1). Em seguida, discutimos diversas considerações relevantes em projetos de software. Especificamente, tratamos de Integridade Conceitual (Seção 5.2), Ocultamento de Informação (Seção 5.3), Coesão (Seção 5.4) e Acoplamento (Seção 5.5). Na Seção 5.6 discutimos um conjunto de princípios de projeto, incluindo: Responsabilidade Única, Segregação de Interfaces, Inversão de Dependências, Prefira Composição a Herança, Demeter, Aberto/Fechado e Substituição de Liskov. Por fim, tratamos de métricas para avaliar a qualidade de projetos de software (Seção 5.7).</p>
 <section id="introdução" data-number="1.1">
-<h2 data-number="5.1"><span class="header-section-number">5.1</span> Introdução</h2>
+<h2 data-number="5.1"><span class="header-section-number">5.1</span> Introdução <a href="#introdução" class="anchor-link">🔗</a></h2>
 <p> A afirmação de John Ousterhout que abre este capítulo é uma excelente definição para <strong>projeto de software</strong>. Apesar de não afirmar explicitamente, a citação assume que quando falamos de projeto estamos procurando uma solução para um determinado problema. No contexto de Engenharia de Software, esse problema consiste na implementação de um sistema que atenda aos requisitos funcionais e não-funcionais definidos por um cliente — ou Dono do Produto, para usar um termo mais moderno. Prosseguindo, Ousterhout sugere como devemos proceder para chegar a essa solução: devemos decompor, isto é, quebrar o problema inicial, que pode ser bastante complexo, em partes menores. Por fim, a frase impõe uma restrição a essa decomposição: ela deve permitir que cada uma das partes do projeto possa ser resolvida (ou implementada) de forma independente.</p>
 <p>Essa explicação pode passar a impressão de que projeto é uma atividade simples. No entanto, no projeto de software temos que combater um grande inimigo: a <strong>complexidade</strong> que caracteriza sistemas modernos de software. Talvez, por isso, Ousterhout mencione que a decomposição de um problema em partes independentes é uma questão fundamental, não apenas em Engenharia de Software, mas em toda Ciência da Computação!</p>
 <p> Uma estratégia importante para combater a complexidade de sistemas de software passa pela criação de <strong>abstrações</strong>. Uma abstração — pelo menos em Computação — é uma representação simplificada de uma entidade. Apesar de simplificada, ela nos permite interagir e tirar proveito da entidade abstraída, sem que tenhamos que dominar todos os detalhes envolvidos na sua implementação. Dentre outros, funções, classes, interfaces, pacotes e bibliotecas são os instrumentos clássicos oferecidos por linguagens de programação para criação de abstrações.</p>
 <p>Em resumo, o primeiro objetivo de projeto de software é decompor um problema em partes menores. Além disso, deve ser possível implementar tais partes de forma independente. Por fim, mas não menos importante, essas partes devem ser abstratas. Em outras palavras, a implementação delas pode ser desafiadora e complexa, mas apenas para os desenvolvedores envolvidos em tal tarefa. Para os demais desenvolvedores, deve ser simples usar a abstração que foi criada.</p>
 <section id="exemplo" data-number="1.1.1">
-<h3 data-number="5.1.1"><span class="header-section-number">5.1.1</span> Exemplo</h3>
+<h3 data-number="5.1.1"><span class="header-section-number">5.1.1</span> Exemplo <a href="#exemplo" class="anchor-link">🔗</a></h3>
 <p>Para ilustrar essa introdução a projetos de software, vamos usar o exemplo de um compilador. Os requisitos no caso são claros: dado um programa em uma linguagem X devemos convertê-lo em um programa em uma linguagem Y, que costuma ser a linguagem de uma máquina. No entanto, o projeto de um compilador não é trivial. Então, após anos de pesquisa, descobriu-se uma solução — ou projeto — para esse tipo de sistema, a qual é ilustrada na figura da próxima página.</p>
 <figure>
 <img src="figs/cap5/compiler-design.svg" style="width:100.0%" alt="Principais módulos de um compilador" /><figcaption aria-hidden="true">Principais módulos de um compilador</figcaption>
@@ -128,7 +132,7 @@
 <p>Portanto, a complexidade envolvida na implementação de um analisador léxico está abstraída (ou, se preferir, encapsulada) na função <code>next_token()</code>, cujo uso é bem simples.</p>
 </section>
 <section id="o-que-vamos-estudar" data-number="1.1.2">
-<h3 data-number="5.1.2"><span class="header-section-number">5.1.2</span> O Que Vamos Estudar?</h3>
+<h3 data-number="5.1.2"><span class="header-section-number">5.1.2</span> O Que Vamos Estudar? <a href="#o-que-vamos-estudar" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>É verdade que o projeto de sistemas de software depende de experiência e, em alguma medida, também de talento e criatividade. No entanto, existem algumas propriedades importantes no projeto de sistemas. Por isso, estudar e conhecer essas <strong>propriedades de projeto</strong> pode ajudar na concepção de sistemas com maior qualidade. No restante deste capítulo, iremos estudar as seguintes propriedades de projetos de software: integridade conceitual, ocultamento de informação, coesão e acoplamento. Para tornar o estudo mais prático, iremos, em seguida, enunciar alguns <strong>princípios de projeto</strong>, os quais representam diretrizes para se garantir que um projeto atende a determinadas propriedades. Para concluir, vamos descrever métricas para quantificar propriedades como coesão, acoplamento e complexidade.</p>
 <p></p>
@@ -136,7 +140,7 @@
 </section>
 </section>
 <section id="integridade-conceitual" data-number="1.2">
-<h2 data-number="5.2"><span class="header-section-number">5.2</span> Integridade Conceitual</h2>
+<h2 data-number="5.2"><span class="header-section-number">5.2</span> Integridade Conceitual <a href="#integridade-conceitual" class="anchor-link">🔗</a></h2>
 <p> Integridade conceitual é uma propriedade de projeto proposta por Frederick Brooks — o mesmo da Lei de Brooks mencionada no Capítulo 1. O princípio foi enunciado em 1975, na primeira edição do livro <em>The Mythical Man-Month</em> (<a href="https://dl.acm.org/citation.cfm?id=540031">link</a>). Brooks defende que um sistema não pode ser um amontoado de funcionalidades, sem coerência e coesão entre elas. Integridade conceitual é importante porque facilita o uso e entendimento de um sistema por parte de seus usuários. Por exemplo, com integridade conceitual, o usuário acostumado a usar uma parte de um sistema se sente confortável a usar uma outra parte, pois as funcionalidades e a interface implementadas ao longo do produto são sempre consistentes.</p>
 <p>Para citar um contra-exemplo, isto é, um caso de ausência de integridade conceitual, vamos assumir um sistema que usa tabelas para apresentar seus resultados. Dependendo da tela do sistema na qual são usadas, essas tabelas possuem leiautes diferentes, em termos de tamanho de fontes, uso de negrito, espaçamento entre linhas, etc. Além disso, em algumas tabelas pode-se ordenar os dados clicando-se no título das colunas, mas em outras tabelas essa funcionalidade não está disponível. Por fim, os valores são mostrados em moedas distintas. Em algumas tabelas, os valores referem-se a reais; em outras tabelas, eles referem-se a dólares. Essa falta de padronização é um sinal de falta de integridade conceitual e, como afirmamos, ela adiciona complexidade acidental no uso e entendimento do sistema.</p>
 <p> Na primeira edição do seu livro, Brooks faz uma defesa enfática do princípio, afirmando que:</p>
@@ -159,7 +163,7 @@
 <p><strong>Mundo Real</strong>: Samuel Roso e Daniel Jackson, pesquisadores do MIT, nos EUA, dão um exemplo real de sistema que implementa duas funcionalidades com propósitos semelhantes — o que também revela uma falta de integridade conceitual (<a href="https://doi.org/10.1145/2509578.2509584">link</a>). Segundo eles, em um conhecido sistema de blogs, quando um usuário incluía um sinal de interrogação no título de um post, uma janela era aberta, solicitando que ele informasse se desejava receber respostas para esse post. No entanto, os pesquisadores argumentam que essa possibilidade deixava os usuários confusos, pois já existia no sistema a possibilidade de comentar posts. Logo, a confusão acontecia devido a duas funcionalidades parecidas: comentários (em posts normais) e respostas (em posts cujos títulos terminavam com um ponto de interrogação).</p>
 </section>
 <section id="ocultamento-de-informação" data-number="1.3">
-<h2 data-number="5.3"><span class="header-section-number">5.3</span> Ocultamento de Informação</h2>
+<h2 data-number="5.3"><span class="header-section-number">5.3</span> Ocultamento de Informação <a href="#ocultamento-de-informação" class="anchor-link">🔗</a></h2>
 <p>   Essa propriedade, uma tradução da expressão <em>information hiding</em>, foi discutida pela primeira vez em 1972, por David Parnas, em um dos artigos mais importantes e influentes da área de Engenharia de Software, de todos os tempos, cujo título é <em>On the criteria to be used in decomposing systems into modules</em> (<a href="https://dl.acm.org/citation.cfm?id=361623">link</a>). O resumo do artigo começa da seguinte forma:</p>
 <blockquote>
 <p><q>Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos.</q></p>
@@ -175,7 +179,7 @@
 <p>Porém, se uma classe encapsular toda a sua implementação ela não será útil. Dito de outra forma, uma classe para ser útil deve tornar alguns de seus métodos públicos, isto é, permitir que eles possam ser chamados por código externo. Código externo que chama métodos de uma classe é dito ser <strong>cliente</strong> da classe. Dizemos também que o conjunto de métodos públicos de uma classe define a sua <strong>interface</strong>. A definição da interface de uma classe é muito importante, pois ela constitui a sua parte visível.</p>
 <p>Interfaces devem ser estáveis, pois mudanças na interface de uma classe podem demandar atualizações em seus clientes. Para ser mais claro, suponha uma classe <code>Math</code>, com métodos que realizam operações matemáticas. Suponha um método <code>sqrt</code>, que calcula a raiz quadrada de seu parâmetro. Suponha ainda que a assinatura desse método seja alterada — para, por exemplo, retornar uma exceção caso o valor do parâmetro seja negativo. Essa alteração terá impacto em todo código cliente do método <code>sqrt</code>, que deverá ser alterado para tratar a nova exceção.</p>
 <section id="exemplo-1" data-number="1.3.1">
-<h3 data-number="5.3.1"><span class="header-section-number">5.3.1</span> Exemplo</h3>
+<h3 data-number="5.3.1"><span class="header-section-number">5.3.1</span> Exemplo <a href="#exemplo-1" class="anchor-link">🔗</a></h3>
 <p>Suponha um sistema para controle de estacionamentos. Suponha ainda que, em uma primeira versão, a classe principal desse sistema seja a seguinte:</p>
 <pre><code>import java.util.Hashtable;
 
@@ -232,7 +236,7 @@ public class Estacionamento {
 </ol>
 </section>
 <section id="getters-e-setters" data-number="1.3.2">
-<h3 data-number="5.3.2"><span class="header-section-number">5.3.2</span> Getters e Setters</h3>
+<h3 data-number="5.3.2"><span class="header-section-number">5.3.2</span> Getters e Setters <a href="#getters-e-setters" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados apenas de <em>getters</em> e <em>setters</em> — são muito usados em linguagens orientadas a objetos, como Java e C++. A recomendação para uso desses métodos é a seguinte: todos os dados de uma classe devem ser privados e o acesso a eles — se necessário — deve ocorrer por meio de getters (acesso de leitura) e setters (acesso de escrita).</p>
 <p>Veja um exemplo a seguir, no qual métodos <code>get</code> e <code>set</code> são usados para acessar o atributo <code>matricula</code> de uma classe <code>Aluno</code>.</p>
@@ -263,7 +267,7 @@ public class Estacionamento {
 </section>
 </section>
 <section id="coesão" data-number="1.4">
-<h2 data-number="5.4"><span class="header-section-number">5.4</span> Coesão</h2>
+<h2 data-number="5.4"><span class="header-section-number">5.4</span> Coesão <a href="#coesão" class="anchor-link">🔗</a></h2>
 <p></p>
 <p>A implementação de qualquer classe deve ser coesa, isto é, toda classe deve implementar uma única funcionalidade ou serviço. Especificamente, todos os métodos e atributos de uma classe devem estar voltados para a implementação do mesmo serviço. Uma outra forma de explicar coesão é afirmando que toda classe deve ter uma única responsabilidade no sistema. Ou, ainda, afirmando que deve existir um único motivo para modificar uma classe.</p>
 <p>Coesão tem as seguintes vantagens:</p>
@@ -274,7 +278,7 @@ public class Estacionamento {
 </ul>
 <p> <strong>Separação de interesses</strong> (<em>separation of concerns</em>) é uma outra propriedade desejável em projetos de software, a qual é semelhante ao conceito de coesão. Ela defende que uma classe deve implementar apenas um <strong>interesse</strong> (<em>concern</em>). Nesse contexto, o termo interesse se refere a qualquer funcionalidade, requisito ou responsabilidade da classe. Portanto, as seguintes recomendações são equivalentes: (1) uma classe deve ter uma única responsabilidade; (2) uma classe deve implementar um único interesse; (3) uma classe deve ser coesa.</p>
 <section id="exemplos" data-number="1.4.1">
-<h3 data-number="5.4.1"><span class="header-section-number">5.4.1</span> Exemplos</h3>
+<h3 data-number="5.4.1"><span class="header-section-number">5.4.1</span> Exemplos <a href="#exemplos" class="anchor-link">🔗</a></h3>
 <p><strong>Exemplo 1:</strong> A discussão anterior foi voltada para coesão de classes. No entanto, o conceito se adapta também a métodos ou funções. Por exemplo, suponha uma função como a seguinte:</p>
 <pre><code>float sin_or_cos(double x, int op) {
   if (op == 1)
@@ -304,7 +308,7 @@ public class Estacionamento {
 </section>
 </section>
 <section id="acoplamento" data-number="1.5">
-<h2 data-number="5.5"><span class="header-section-number">5.5</span> Acoplamento</h2>
+<h2 data-number="5.5"><span class="header-section-number">5.5</span> Acoplamento <a href="#acoplamento" class="anchor-link">🔗</a></h2>
 <p></p>
 <p>Acoplamento é a força (<em>strength</em>) da conexão entre duas classes. Apesar de parecer simples, o conceito possui algumas nuances, as quais derivam da existência de dois tipos de acoplamento entre classes: acoplamento aceitável e acoplamento ruim.</p>
 <p>Dizemos que existe um <strong>acoplamento aceitável</strong> de uma classe A para uma classe B quando:</p>
@@ -326,7 +330,7 @@ public class Estacionamento {
 </blockquote>
 <p>De fato, se uma classe depende de muitas outras classes, por exemplo, de dezenas de classes, ela pode estar assumindo responsabilidades demais, na forma de funcionalidades não coesas. Lembre-se que uma classe deve ter uma única responsabilidade (ou um único motivo para ser modificada). Por outro lado, devemos tomar cuidado com o significado do verbo minimizar. O objetivo não deve ser eliminar completamente o acoplamento de uma classe com outras classes, pois é natural que uma classe precise de outras classes, principalmente daquelas que implementam serviços básicos, como estruturas de dados, entrada/saída, etc.</p>
 <section id="exemplos-1" data-number="1.5.1">
-<h3 data-number="5.5.1"><span class="header-section-number">5.5.1</span> Exemplos</h3>
+<h3 data-number="5.5.1"><span class="header-section-number">5.5.1</span> Exemplos <a href="#exemplos-1" class="anchor-link">🔗</a></h3>
 <p><strong>Exemplo 1:</strong> Suponha a classe <code>Estacionamento</code>, usada na Seção 5.3, a qual possui um atributo que é uma <code>Hashtable</code>. Logo, dizemos que <code>Estacionamento</code> está acoplada a <code>Hashtable</code>. No entanto, na nossa classificação, trata-se de um acoplamento aceitável, isto é, ele não deve ser motivo de preocupação, pelos seguintes motivos:</p>
 <ul>
 <li><p><code>Estacionamento</code> só usa métodos públicos de <code>Hashtable</code>.</p></li>
@@ -396,7 +400,7 @@ public class Estacionamento {
 </section>
 </section>
 <section id="solid-e-outros-princípios-de-projeto" data-number="1.6">
-<h2 data-number="5.6"><span class="header-section-number">5.6</span> SOLID e Outros Princípios de Projeto</h2>
+<h2 data-number="5.6"><span class="header-section-number">5.6</span> SOLID e Outros Princípios de Projeto <a href="#solid-e-outros-princípios-de-projeto" class="anchor-link">🔗</a></h2>
 <p></p>
 <p>Princípios de projeto são recomendações mais concretas que desenvolvedores de software devem seguir para atender às propriedades de projeto que estudamos na seção anterior. Assim, propriedades de projeto podem ser vistas como recomendações ainda genéricas (ou táticas), enquanto que os princípios que estudaremos agora estão em um nível operacional.</p>
 <p>Nesta seção, iremos estudar os sete princípios de projeto listados na próxima tabela. A tabela mostra ainda as propriedades de projeto que são contempladas ao seguir cada um desses princípios.</p>
@@ -448,7 +452,7 @@ public class Estacionamento {
 </ul>
 <p>Os princípios de projeto que vamos estudar têm um ponto em comum: eles não visam apenas <q>resolver</q> um problema, mas também assegurar que a solução encontrada possa ser mantida e evoluída com sucesso, no futuro. Os maiores problemas com projetos de software costumam ocorrer após a implementação, quando o sistema precisa ser mantido. Normalmente, existe uma tendência de que essa manutenção fique gradativamente mais lenta, custosa e arriscada. Portanto, os princípios de projeto que estudaremos tentam reduzir ou postergar essa contínua degradação da qualidade interna de sistemas de software. Em resumo, o objetivo não é apenas entregar um projeto capaz de resolver um problema, mas também que facilite manutenções futuras. Lembre-se que a principal regra sobre requisitos de software é que eles mudam com frequência. O mesmo acontece com tecnologias de implementação, como bibliotecas e frameworks.</p>
 <section id="princípio-da-responsabilidade-única" data-number="1.6.1">
-<h3 data-number="5.6.1"><span class="header-section-number">5.6.1</span> Princípio da Responsabilidade Única</h3>
+<h3 data-number="5.6.1"><span class="header-section-number">5.6.1</span> Princípio da Responsabilidade Única <a href="#princípio-da-responsabilidade-única" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>Esse princípio é uma aplicação direta da ideia de coesão. Ele propõe o seguinte: toda classe deve ter uma única responsabilidade. Mais ainda, responsabilidade, no contexto do princípio, significa <q>motivo para modificar uma classe</q>. Ou seja, deve existir um único motivo para modificar qualquer classe em um sistema.</p>
 <p>Um corolário desse princípio recomenda separar <strong>apresentação</strong> de <strong>regras de negócio</strong>. Portanto, um sistema deve possuir classes de apresentação, que vão tratar de aspectos de sua interface com os usuários, formato das mensagens, meio no qual as mensagens serão exibidas, etc. E classes responsáveis por regras de negócio, isto é, que vão realizar as computações, processamento, análises, etc. São interesses e responsabilidades diferentes. E que podem evoluir e sofrer modificações por razões distintas. Portanto, elas devem ser implementadas em classes diferentes. Por esse motivo, não é surpresa que existam desenvolvedores que tratam apenas de requisitos de <em>front-end</em> (isto é, de classes de apresentação) e desenvolvedores que tratam de requisitos de <em>backend</em> (isto é, de classes com regras de negócio).</p>
@@ -481,7 +485,7 @@ class Disciplina {
 }</code></pre>
 </section>
 <section id="princípio-da-segregação-de-interfaces" data-number="1.6.2">
-<h3 data-number="5.6.2"><span class="header-section-number">5.6.2</span> Princípio da Segregação de Interfaces</h3>
+<h3 data-number="5.6.2"><span class="header-section-number">5.6.2</span> Princípio da Segregação de Interfaces <a href="#princípio-da-segregação-de-interfaces" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>Assim como o princípio anterior, esse princípio é uma aplicação da ideia de coesão. Melhor dizendo, ele é um caso particular de Responsabilidade Única com foco em interfaces. O princípio define que interfaces têm que ser pequenas, coesas e, mais importante ainda, específicas para cada tipo de cliente. O objetivo é evitar que clientes dependam de interfaces com métodos que eles não vão usar. Para evitar isso, duas ou mais interfaces específicas podem, por exemplo, substituir uma interface de propósito geral.</p>
 <p>Uma violação do princípio ocorre, por exemplo, quando uma interface possui dois conjuntos de métodos M<sub>x</sub> e M<sub>y</sub>. O primeiro conjunto é usado por clientes C<sub>x</sub> (que então não usam os métodos M<sub>y</sub>). De forma inversa, os métodos M<sub>y</sub> são usados apenas por clientes C<sub>y</sub> (que não usam os métodos M<sub>x</sub>). Consequentemente, essa interface deveria ser quebrada em duas interfaces menores e específicas: uma interface contendo apenas os métodos M<sub>x</sub> e a segunda interface contendo apenas os métodos M<sub>y</sub>.</p>
@@ -513,7 +517,7 @@ interface FuncionarioPublico extends Funcionario {
 }</code></pre>
 </section>
 <section id="princípio-de-inversão-de-dependências" data-number="1.6.3">
-<h3 data-number="5.6.3"><span class="header-section-number">5.6.3</span> Princípio de Inversão de Dependências</h3>
+<h3 data-number="5.6.3"><span class="header-section-number">5.6.3</span> Princípio de Inversão de Dependências <a href="#princípio-de-inversão-de-dependências" class="anchor-link">🔗</a></h3>
 <p>   </p>
 <p>Esse princípio recomenda que uma classe cliente deve estabelecer dependências prioritariamente com abstrações e não com implementações concretas, pois abstrações (isto é, interfaces) são mais estáveis do que implementações concretas (isto é, classes). A ideia é então trocar (ou <q>inverter</q>) as dependências: em vez de depender de classes concretas, clientes devem depender de interfaces. Portanto, um nome mais intuitivo para o princípio seria <strong>Prefira Interfaces a Classes</strong>.</p>
 <p>Para detalhar a ideia do princípio, suponha que exista uma interface I e uma classe C1 que a implementa. Se puder escolher, um cliente deve se acoplar a I e não a C1. O motivo é que quando um cliente se acopla a uma interface I ele fica imune a mudanças na implementação dessa interface. Por exemplo, em vez de C1, pode-se mudar a implementação para C2, que isso não terá impacto no cliente em questão.</p>
@@ -559,7 +563,7 @@ class C2 implements I {
 <p><strong>Exemplo 3:</strong> Como um exemplo final, suponha um pacote de estruturas de dados que oferece uma interface <code>List</code> e algumas implementações concretas (classes) para ela, como <code>ArrayList</code>, <code>LinkedList</code> e <code>Vector</code>. Sempre que possível, em código cliente desse pacote, declare variáveis, parâmetros ou atributos usando o tipo <code>List</code>, pois assim você estará criando código compatível com as diversas implementações concretas dessa interface.</p>
 </section>
 <section id="prefira-composição-a-herança" data-number="1.6.4">
-<h3 data-number="5.6.4"><span class="header-section-number">5.6.4</span> Prefira Composição a Herança</h3>
+<h3 data-number="5.6.4"><span class="header-section-number">5.6.4</span> Prefira Composição a Herança <a href="#prefira-composição-a-herança" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>Antes de explicar o princípio, vamos esclarecer que existem dois tipos de herança:</p>
 <ul>
@@ -602,7 +606,7 @@ class C2 implements I {
 </ul>
 </section>
 <section id="princípio-de-demeter" data-number="1.6.5">
-<h3 data-number="5.6.5"><span class="header-section-number">5.6.5</span> Princípio de Demeter</h3>
+<h3 data-number="5.6.5"><span class="header-section-number">5.6.5</span> Princípio de Demeter <a href="#princípio-de-demeter" class="anchor-link">🔗</a></h3>
 <p>  </p>
 <p>O nome desse princípio faz referência a um grupo de pesquisa da Northeastern University, em Boston, EUA. Esse grupo, chamado Demeter, desenvolvia pesquisas na área de modularização de software. No final da década de 80, em uma de suas pesquisas, o grupo enunciou um conjunto de regras para evitar problemas de encapsulamento em projeto de sistemas orientados a objetos, as quais ficaram conhecidas como Princípio ou Lei de Demeter.</p>
 <p>O Princípio de Demeter — também chamado de <strong>Princípio do Menor Privilégio</strong> (<em>Principle of Least Privilege</em>) — defende que a implementação de um método deve invocar apenas os seguintes outros métodos:</p>
@@ -654,7 +658,7 @@ catch (ExcecaoValorInsuficiente e) {
 <p>No novo código, o cliente não libera o acesso à sua carteira. Pelo contrário, o jornaleiro nem fica ciente de que o cliente possui uma carteira. Essa informação está encapsulada na classe <code>Cliente</code>. Em vez disso, o cliente oferece um método <code>pagar</code>, que deve ser chamado pelo jornaleiro. Finalmente, uma exceção sinaliza quando o <code>Cliente</code> não possui recursos suficientes para pagar pelo jornal.</p>
 </section>
 <section id="princípio-abertofechado" data-number="1.6.6">
-<h3 data-number="5.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado</h3>
+<h3 data-number="5.6.6"><span class="header-section-number">5.6.6</span> Princípio Aberto/Fechado <a href="#princípio-abertofechado" class="anchor-link">🔗</a></h3>
 <p>  </p>
 <p>Esse princípio, originalmente proposto por Bertrand Meyer ainda na década de 80 (<a href="https://dl.acm.org/citation.cfm?id=261119">link</a>), defende algo que pode parecer paradoxal: uma classe deve estar fechada para modificações e aberta para extensões.</p>
 <p>No entanto, o aparente paradoxo se esclarece quando o projeto da classe prevê a possibilidade de extensões e customizações. Para isso, o projetista pode se valer de recursos como herança, funções de mais alta ordem (ou funções lambda) e padrões de projeto, como Abstract Factory, Template Method e Strategy. Especificamente, no próximo capítulo, iremos tratar de padrões de projeto que permitem customizar uma classe sem modificar o seu código.</p>
@@ -696,7 +700,7 @@ System.out.println(nomes);
 <p>O Princípio Aberto/Fechado requer que o projetista de uma classe antecipe os seus pontos de extensão. Por isso, não é possível a uma classe acomodar todos os possíveis tipos de extensões que podem aparecer. Mas apenas aqueles para os quais são oferecidos pontos de extensão, seja via herança, funções de mais alta ordem ou padrões de projeto. Por exemplo, a implementação da classe <code>Collections</code> (no exemplo 1) usa um algoritmo de ordenação que é uma versão do MergeSort. Porém, os clientes da classe não podem alterar e customizar esse algoritmo, tendo que se contentar com a implementação default que é oferecida. Logo, sob o critério de customização do algoritmo de ordenação, o método <code>sort</code> não atende ao Princípio Aberto/Fechado.</p>
 </section>
 <section id="princípio-de-substituição-de-liskov" data-number="1.6.7">
-<h3 data-number="5.6.7"><span class="header-section-number">5.6.7</span> Princípio de Substituição de Liskov</h3>
+<h3 data-number="5.6.7"><span class="header-section-number">5.6.7</span> Princípio de Substituição de Liskov <a href="#princípio-de-substituição-de-liskov" class="anchor-link">🔗</a></h3>
 <p> </p>
 <p>Conforme já discutimos ao falar do princípio <q>Prefira Composição a Herança</q>, herança não é mais um conceito popular como foi na década de 80. Hoje, o emprego de herança é mais restrito e raro. No entanto, alguns casos de uso ainda são justificados. Herança define uma relação <q>é-um</q> entre objetos de uma classe base e objetos de subclasses. A vantagem é que comportamentos (isto é, métodos) comuns a essas classes podem ser implementados uma única vez, na classe base. Feito isso, eles são herdados em todas as subclasses.</p>
 <p> O Princípio de Substituição de Liskov explicita regras para redefinição de métodos de classes base em classes filhas. O nome do princípio é uma referência a Barbara Liskov, professora do MIT e ganhadora da edição de 2008 do Prêmio Turing. Dentre outros trabalhos, Liskov desenvolveu pesquisas sobre sistemas de tipos para linguagens orientadas a objetos. Em um desses trabalhos, ela enunciou o princípio que depois ganhou seu nome.</p>
@@ -756,13 +760,13 @@ class Main {
 </section>
 </section>
 <section id="métricas-de-código-fonte" data-number="1.7">
-<h2 data-number="5.7"><span class="header-section-number">5.7</span> Métricas de Código Fonte</h2>
+<h2 data-number="5.7"><span class="header-section-number">5.7</span> Métricas de Código Fonte <a href="#métricas-de-código-fonte" class="anchor-link">🔗</a></h2>
 <p></p>
 <p>Ao longo dos anos, diversas métricas foram propostas para quantificar propriedades de um projeto de software. Normalmente, essas métricas precisam do código fonte de um sistema, isto é, o projeto já deve ter sido implementado. Por meio da análise de características do código fonte, elas expressam de forma quantitativa — por meio de valores numéricos — propriedades como tamanho, coesão, acoplamento e complexidade do código. O objetivo é permitir a avaliação da qualidade de um projeto de forma mais objetiva.</p>
 <p>No entanto, a monitoração do projeto de um sistema por meio de métricas de código fonte não é uma prática tão comum nos dias de hoje. Um dos motivos é que diversas propriedades de um sistema de software — como coesão e acoplamento, por exemplo — possuem um grau de subjetividade, o que dificulta a sua mensuração. Além disso, a interpretação dos resultados de métricas de software depende de informações de contexto. Uma determinada faixa de valores de uma métrica pode ser admissível em um sistema, mas não ser em outro sistema, de um domínio diferente. Mesmo entre as classes de um sistema, a interpretação dos valores de uma determinada métrica pode ser bem distinta.</p>
 <p>Nesta seção, vamos estudar métricas para mensurar as seguintes propriedades de um projeto de software: tamanho, coesão, acoplamento e complexidade. Iremos detalhar os procedimentos de cálculo dessas métricas e dar alguns exemplos. Existem ainda ferramentas que calculam essas métricas de forma automática. Algumas delas funcionam como plugins de IDEs conhecidas.</p>
 <section id="tamanho" data-number="1.7.1">
-<h3 data-number="5.7.1"><span class="header-section-number">5.7.1</span> Tamanho</h3>
+<h3 data-number="5.7.1"><span class="header-section-number">5.7.1</span> Tamanho <a href="#tamanho" class="anchor-link">🔗</a></h3>
 <p>   A métrica de código fonte mais popular é <strong>linhas de código</strong> (LOC, <em>lines of code</em>). Ela pode ser usada para medir o tamanho de uma função, classe, pacote ou de um sistema inteiro. Quando se reporta os resultados de LOC, deve-se deixar claro quais linhas foram de fato contadas. Por exemplo, se comentários ou linhas em branco foram considerados ou não.</p>
 <p>Embora LOC possa dar uma ideia do tamanho de um sistema, ela não deve ser usada para medir a produtividade de programadores. Por exemplo, se um desenvolvedor implementou 1 KLOC em um mês e outro implementou 5 KLOC, não podemos afirmar que o segundo foi 5 vezes mais produtivo. Dentre outros motivos, os requisitos implementados por cada um deles podem ter complexidade diferente. Ken Thompson — um dos desenvolvedores do sistema operacional Unix — tem uma frase a esse respeito:</p>
 <p></p>
@@ -773,7 +777,7 @@ class Main {
 <p>Outras metas de tamanho de um sistema incluem: número de métodos, número de atributos, número de classes e número de pacotes.</p>
 </section>
 <section id="coesão-1" data-number="1.7.2">
-<h3 data-number="5.7.2"><span class="header-section-number">5.7.2</span> Coesão</h3>
+<h3 data-number="5.7.2"><span class="header-section-number">5.7.2</span> Coesão <a href="#coesão-1" class="anchor-link">🔗</a></h3>
 <p>  </p>
 <p>Uma das métricas mais conhecidas para se calcular coesão é chamada de <strong>LCOM</strong> (<em>Lack of Cohesion Between Methods</em>). Na verdade, como seu nome indica, LCOM mede a <q>falta de coesão</q> de uma classe. Em geral, métricas de software são interpretadas da seguinte forma: quanto maior o valor da métrica, pior a qualidade do código ou do projeto. No entanto, coesão é uma exceção a essa regra, pois quanto maior a coesão de uma classe, melhor o seu projeto. Por isso, LCOM foi planejada para medir a falta de coesão de classes. Quanto maior o valor de LCOM, maior a falta de coesão de uma classe e, portanto, pior o seu projeto.</p>
 <p>Para calcular o valor de LCOM de uma classe C deve-se, primeiro, computar o seguinte conjunto:</p>
@@ -815,7 +819,7 @@ class Main {
 <p>Por fim, é importante mencionar que existem propostas alternativas para cálculo de LCOM. A versão que apresentamos, chamada de LCOM1, foi proposta por Shyam Chidamber e Chris Kemerer, em 1991 (<a href="https://doi.org/10.1145/118014.117970">link</a>). As versões alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar valores de LCOM, é importante deixar claro qual versão da métrica está sendo adotada.</p>
 </section>
 <section id="acoplamento-1" data-number="1.7.3">
-<h3 data-number="5.7.3"><span class="header-section-number">5.7.3</span> Acoplamento</h3>
+<h3 data-number="5.7.3"><span class="header-section-number">5.7.3</span> Acoplamento <a href="#acoplamento-1" class="anchor-link">🔗</a></h3>
 <p>  </p>
 <p><strong>CBO</strong> (<em>Coupling Between Objects</em>) é uma métrica para medir <strong>acoplamento estrutural</strong> entre duas classes. Ela também foi proposta por Chidamber e Kemerer (<a href="https://doi.org/10.1145/118014.117970"><u>link1</u></a> e <a href="https://doi.org/10.1109/32.295895"><u>link2</u></a>).</p>
 <p>Dada uma classe A, CBO conta o número de classes das quais A depende de forma sintática (ou estrutural). Diz-se que A depende de uma classe B quando:</p>
@@ -851,7 +855,7 @@ class Main {
 <p>A definição de CBO não distingue as classes das quais uma classe depende. Por exemplo, tanto faz se a dependência é para uma classe da biblioteca de Java (por exemplo, String) ou uma classe mais instável da própria aplicação que está sendo desenvolvida.</p>
 </section>
 <section id="complexidade" data-number="1.7.4">
-<h3 data-number="5.7.4"><span class="header-section-number">5.7.4</span> Complexidade</h3>
+<h3 data-number="5.7.4"><span class="header-section-number">5.7.4</span> Complexidade <a href="#complexidade" class="anchor-link">🔗</a></h3>
 <p>   </p>
 <p><strong>Complexidade Ciclomática</strong> (CC) é uma métrica proposta por Thomas McCabe em 1976 para medir a complexidade do código de uma função ou método (<a href="https://dl.acm.org/citation.cfm?id=1313586">link</a>). Às vezes, ela é chamada também de Complexidade de McCabe. No contexto dessa métrica, o conceito de complexidade relaciona-se com a dificuldade de manter e testar uma função. A definição de CC baseia-se no conceito de grafos de fluxo de controle. Em tais grafos, os nodos representam os comandos de uma função ou método; e as arestas representam os possíveis fluxos de controle. Portanto, comandos como <code>if</code> geram fluxos de controle alternativos. O nome da métrica deriva do fato de ser calculada usando um conceito de Teoria dos Grafos chamado de número ciclomático (<em>cyclomatic number</em>).</p>
 <p>Porém, existe uma alternativa simples para calcular o CC de uma função, a qual dispensa a construção de grafos de fluxo de controle. Essa alternativa define CC da seguinte forma:</p>
@@ -860,7 +864,7 @@ class Main {
 <p>Portanto, o cálculo de CC é bastante simples: dado o código fonte de uma função, conte o número dos comandos listados acima e some 1. Consequentemente, o menor valor de CC é 1, que ocorre em um código que não possui nenhum comando de decisão. No artigo em que definiu a métrica, McCabe sugere que um <q>limite superior razoável, mas não mágico</q> para CC é 10.</p>
 </section>
 </section>
-<h2 class="unnumbered" id="bibliografia">Bibliografia</h2>
+<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link">🔗</a></h2>
 <p>Robert C. Martin. Clean Architecture: A Craftsman's Guide to Software Structure and Design, Prentice Hall, 2017.</p>
 <p>John Ousterhout. A Philosophy of Software Design, Yaknyam Press, 2018.</p>
 <p>Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
@@ -871,7 +875,7 @@ class Main {
 <p>Thomas J. McCabe. A Complexity Measure. IEEE Transactions on Software Engineering, 1976.</p>
 <p>Shyam Chidamber and Chris Kemerer. A metrics suite for object oriented design. IEEE Transactions on Software Engineering, 1994.</p>
 <p>Shyam Chidamber and Chris Kemerer. Towards a metrics suite for object oriented design. Conference on Object-oriented Programming Systems, Languages, and Applications (OOPSLA), 1991.</p>
-<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação</h2>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link">🔗</a></h2>
 <p>1. Descreva três benefícios da propriedade de projeto chamada ocultamento de informação (<em>information hiding</em>)?</p>
 <p>2. Suponha que um programador adote a seguinte estratégia: ao implementar qualquer nova funcionalidade ou corrigir um bug que implique na modificação de duas classes A e B localizadas em arquivos diferentes, ele conclui a tarefa movendo as classes para o mesmo arquivo. Explicando melhor: após terminar a tarefa de programação que ficou sob sua responsabilidade, ele escolhe uma das classes, digamos a classe B, e a move para o mesmo arquivo da classe A. Agindo dessa maneira, ele estará melhorando qual propriedade de projeto? Por outro lado, qual propriedade de projeto estará sendo afetada de modo negativo? Justifique.</p>
 <p>3. <strong>Classitis</strong> é o nome dado por John Ousterhout  à proliferação de pequenas classes em um sistema. Segundo ele, <em>classitis</em> pode resultar em classes que individualmente são simples, mas que aumentam a complexidade total de um sistema. Usando os conceitos de acoplamento e coesão, como podemos explicar o problema causado por essa <q>doença</q>?</p>
