@@ -54,7 +54,7 @@
     foreground-color: black;
   }
   .anchor-link {
-    opacity: 0.20;
+    opacity: 0.17;
     font-size: 70%;
   }
   </style>
@@ -106,13 +106,13 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <section id="padrões-de-projeto" data-number="1">
-<h1 data-number="6"><span class="header-section-number">6</span> Padrões de Projeto <a href="#padrões-de-projeto" class="anchor-link">🔗</a></h1>
+<h1 data-number="6"><span class="header-section-number">6</span> Padrões de Projeto <a href="#padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>A design that doesn’t take change into account risks major redesign in the future.</em> – Gang of Four</p>
 </blockquote>
 <p>Este capítulo inicia com uma introdução ao conceito e aos objetivos de padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada, Decorador, Strategy, Observador, Template Method e Visitor. Cada um desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A apresentação de cada padrão é organizada em três partes: (1) um contexto, isto é, um sistema no qual o padrão poderia ser útil; (2) um problema no projeto desse sistema; (3) uma solução para esse problema por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns padrões. Terminamos o capítulo alertando que padrões de projeto não são uma bala de prata, ou seja, discutimos situações nas quais o uso de padrões de projeto não é recomendado (Seção 6.13).</p>
 <section id="introdução" data-number="1.1">
-<h2 data-number="6.1"><span class="header-section-number">6.1</span> Introdução <a href="#introdução" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.1"><span class="header-section-number">6.1</span> Introdução <a href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Padrões de projeto são inspirados em uma ideia proposta por Cristopher Alexander, um arquiteto — de construções civis e não de software — e professor da Universidade de Berkeley. Em 1977, Alexander lançou um livro chamado <em>A Patterns Language</em>, no qual ele documenta diversos padrões para construção de cidades e prédios. Segundo Alexander:</p>
 <blockquote>
@@ -144,7 +144,7 @@
 <p><strong>Tradução</strong>: Por ser uma tradução direta, vamos traduzir os nomes dos padrões Fábrica Abstrata, Método Fábrica, Adaptador, Fachada, Decorador, Observador e Iterador. Os demais serão referenciados usando o nome original.</p>
 </section>
 <section id="fábrica" data-number="1.2">
-<h2 data-number="6.2"><span class="header-section-number">6.2</span> Fábrica <a href="#fábrica" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.2"><span class="header-section-number">6.2</span> Fábrica <a href="#fábrica" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha um sistema distribuído baseado em TCP/IP. Nesse sistema, três funções <code>f</code>, <code>g</code> e <code>h</code> criam objetos do tipo <code>TCPChannel</code> para comunicação remota, como mostra o próximo código.</p>
 <pre><code>void f() {
@@ -199,7 +199,7 @@ void f(ProtocolFactory pf) {
 <p>No exemplo acima, omitimos as classes que estendem a classe abstrata <code>ProtocolFactory</code> e que vão implementar, de fato, os métodos concretos para criação de canais e portas de comunicação. Podemos, por exemplo, ter duas subclasses: <code>TCPProtocolFactory</code> e <code>UDPProtocolFactory</code>.</p>
 </section>
 <section id="singleton" data-number="1.3">
-<h2 data-number="6.3"><span class="header-section-number">6.3</span> Singleton <a href="#singleton" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.3"><span class="header-section-number">6.3</span> Singleton <a href="#singleton" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha uma classe <code>Logger</code>, usada para registrar as operações realizadas em um sistema. Um uso dessa classe é mostrado a seguir:</p>
 <pre><code>void f() {
@@ -261,7 +261,7 @@ void h() {
 <p><strong>Código Fonte</strong>: O código do exemplo de Singleton usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/704348e216e85918d7375a6b3d40dcdb">link</a>.</p>
 </section>
 <section id="proxy" data-number="1.4">
-<h2 data-number="6.4"><span class="header-section-number">6.4</span> Proxy <a href="#proxy" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.4"><span class="header-section-number">6.4</span> Proxy <a href="#proxy" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha uma classe <code>BookSearch</code>, cujo principal método pesquisa por um livro, dado o seu ISBN:</p>
 <pre><code>class BookSearch {
@@ -321,7 +321,7 @@ void h() {
 </ul>
 </section>
 <section id="adaptador" data-number="1.5">
-<h2 data-number="6.5"><span class="header-section-number">6.5</span> Adaptador <a href="#adaptador" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.5"><span class="header-section-number">6.5</span> Adaptador <a href="#adaptador" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha um sistema que tenha que controlar projetores multimídia. Para isso ele deve instanciar objetos de classes fornecidas pelos fabricantes de cada projetor, como ilustrado a seguir:</p>
 <pre><code>class ProjetorSamsung {
@@ -370,7 +370,7 @@ class SistemaControleProjetores {
 <p>Se quisermos manipular projetores LG, vamos ter que implementar uma segunda classe adaptadora. No entanto, seu código será parecido com <code>AdaptadorProjetorSamsung</code>.</p>
 </section>
 <section id="fachada" data-number="1.6">
-<h2 data-number="6.6"><span class="header-section-number">6.6</span> Fachada <a href="#fachada" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.6"><span class="header-section-number">6.6</span> Fachada <a href="#fachada" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que implementamos um interpretador para uma linguagem X. Esse interpretador permite executar programas X a partir de uma linguagem hospedeira, no caso Java. Se quiser tornar o exemplo mais real, imagine que X é uma linguagem para consulta a dados, semelhante a SQL. Para executar programas X, a partir de um código em Java, os seguintes passos são necessários:</p>
 <pre><code>Scanner s = new Scanner(&quot;prog1.x&quot;);
@@ -402,7 +402,7 @@ code.eval();</code></pre>
 <p>Antes de implementar a fachada, os clientes precisavam criar três objetos de tipos internos do interpretador e chamar dois métodos. Agora, basta criar um único objeto e chamar <code>eval</code>.</p>
 </section>
 <section id="decorador" data-number="1.7">
-<h2 data-number="6.7"><span class="header-section-number">6.7</span> Decorador <a href="#decorador" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.7"><span class="header-section-number">6.7</span> Decorador <a href="#decorador" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Vamos voltar ao sistema de comunicação remota usado para explicar o Padrão Fábrica. Suponha que as classes <code>TCPChannel</code> e <code>UDPChannel</code> implementam uma interface <code>Channel</code>:</p>
 <pre><code>interface Channel {
@@ -502,7 +502,7 @@ c.send(&quot;Hello, world&quot;)</code></pre>
 <p><strong>Código Fonte</strong>: O código do exemplo de Decorador usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/c8d65378a2904af01c20c53922f5ae1d">link</a>.</p>
 </section>
 <section id="strategy" data-number="1.8">
-<h2 data-number="6.8"><span class="header-section-number">6.8</span> Strategy <a href="#strategy" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.8"><span class="header-section-number">6.8</span> Strategy <a href="#strategy" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um pacote de estruturas de dados, com a seguinte classe lista:</p>
 <pre><code>class MyList {
@@ -551,7 +551,7 @@ class ShellSortStrategy extends SortStrategy {
 }</code></pre>
 </section>
 <section id="observador" data-number="1.9">
-<h2 data-number="6.9"><span class="header-section-number">6.9</span> Observador <a href="#observador" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.9"><span class="header-section-number">6.9</span> Observador <a href="#observador" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um sistema para controlar uma estação meteorológica. Nesse sistema, temos que manipular objetos de duas classes: <code>Temperatura</code>, que são objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na estação meteorológica; e <code>Termometro</code>, que é uma classe usada para criar objetos visuais que exibem as temperaturas sob monitoramento. Termômetros devem exibir a temperatura atual que foi monitorada. Se a temperatura mudar, os termômetros devem ser atualizados.</p>
 <p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius no console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nesses outros pares de classes.</p>
@@ -604,7 +604,7 @@ class TermometroCelsius implements Observer {
 <p><strong>Código Fonte</strong>: Se quiser conferir o código completo do nosso exemplo de Observador, incluindo o código das classes <code>Subject</code> e da interface <code>Observer</code>, acesse o seguinte <a href="https://gist.github.com/mtov/5fadb0e599cb84fd6bd124b2ff37c03c">link</a>.</p>
 </section>
 <section id="template-method" data-number="1.10">
-<h2 data-number="6.10"><span class="header-section-number">6.10</span> Template Method <a href="#template-method" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.10"><span class="header-section-number">6.10</span> Template Method <a href="#template-method" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos desenvolvendo uma folha de pagamento. Nela, temos uma classe <code>Funcionario</code>, com duas subclasses: <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code>.</p>
 <p><strong>Problema</strong>: Pretendemos padronizar um modelo (ou template) para cálculo dos salários na classe base <code>Funcionario</code>, que possa depois ser herdado pelas suas subclasses. Assim, as subclasses terão apenas que adaptar a rotina de cálculo de salários às suas particularidades. Mais especificamente, as subclasses saberão exatamente os métodos que precisam implementar para calcular o salário de um funcionário.</p>
@@ -629,7 +629,7 @@ class TermometroCelsius implements Observer {
 <p>  Métodos template permitem que <q>código antigo</q> chame <q>código novo</q>. No exemplo, a classe <code>Funcionario</code> provavelmente foi implementada antes de <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code>. Logo, dizemos que <code>Funcionario</code> é mais antiga do que as suas subclasses. Mesmo assim, <code>Funcionario</code> inclui um método que vai chamar <q>código novo</q>, implementado nas subclasses. Esse recurso de sistemas orientados a objetos é chamado de <strong>inversão de controle</strong>. Ele é fundamental, por exemplo, para implementação de <strong>frameworks</strong>, isto é, aplicações semi-prontas, que antes de serem usadas devem ser customizadas por seus clientes. Apesar de não ser o único instrumento disponível para esse fim, métodos template constituem uma alternativa interessante para que um cliente implemente o código faltante em um framework.</p>
 </section>
 <section id="visitor" data-number="1.11">
-<h2 data-number="6.11"><span class="header-section-number">6.11</span> Visitor <a href="#visitor" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.11"><span class="header-section-number">6.11</span> Visitor <a href="#visitor" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha o sistema de estacionamentos que usamos no Capítulo 5. Suponha que nesse sistema existe uma classe <code>Veiculo</code>, com subclasses <code>Carro</code>, <code>Onibus</code> e <code>Motocicleta</code>. Essas classes são usadas para armazenar informações sobre os veículos estacionados no estacionamento. Suponha ainda que todos esses veículos estão armazenados em uma lista. Dizemos que essa lista é uma estrutura de dados <strong>polimórfica</strong>, pois ela pode armazenar objetos de classes diferentes, desde que eles sejam subclasses de <code>Veiculo</code>.</p>
 <p><strong>Problema:</strong> Com frequência, no sistema de estacionamentos, temos que realizar uma operação em todos os veículos estacionados. Como exemplo, podemos citar: imprimir informações sobre os veículos estacionados, persistir os dados dos veículos ou enviar uma mensagem para os donos dos veículos.</p>
@@ -693,7 +693,7 @@ foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
 <p><strong>Código Fonte</strong>: O código do exemplo de Visitor usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/d447fd22974c57688d0fd109cb9509ea">link</a>.</p>
 </section>
 <section id="outros-padrões-de-projeto" data-number="1.12">
-<h2 data-number="6.12"><span class="header-section-number">6.12</span> Outros Padrões de Projeto <a href="#outros-padrões-de-projeto" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.12"><span class="header-section-number">6.12</span> Outros Padrões de Projeto <a href="#outros-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Iterador</strong> é um padrão de projeto que padroniza uma interface para caminhar sobre uma estrutura de dados. Normalmente, essa interface inclui métodos como <code>hasNext()</code> e <code>next()</code>, como mostrado no seguinte exemplo:</p>
 <pre><code>List&lt;String&gt; list = Arrays.asList(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);
@@ -716,7 +716,7 @@ Livro gof = new Livro.Builder().setName(&quot;Design Patterns&quot;).
 <p><strong>Código Fonte</strong>: O código do exemplo de Builder — incluindo as classes <code>Livro</code> e <code>Livro.Builder</code> — está disponível neste <a href="https://gist.github.com/mtov/cb98612474f01eccc5e10fa08f82a62b">link</a>. Ao estudá-lo, você perceberá que <code>Livro.Builder</code> é uma classe interna, pública e estática de <code>Livro</code>. Por isso, é que podemos chamar <code>new Livro.Builder()</code> diretamente, sem precisar de instanciar antes um objeto do tipo <code>Livro</code>.</p>
 </section>
 <section id="quando-não-usar-padrões-de-projeto" data-number="1.13">
-<h2 data-number="6.13"><span class="header-section-number">6.13</span> Quando Não Usar Padrões de Projeto <a href="#quando-não-usar-padrões-de-projeto" class="anchor-link">🔗</a></h2>
+<h2 data-number="6.13"><span class="header-section-number">6.13</span> Quando Não Usar Padrões de Projeto <a href="#quando-não-usar-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Padrões de projeto têm como objetivo tornar o projeto de um sistema mais flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos manipulados por um programa. Um decorador permite personalizar uma classe com novas funcionalidades, tornando-a flexível a outros cenários de uso. O padrão Strategy permite configurar os algoritmos usados por uma classe, apenas para citar alguns exemplos.</p>
 <p>Porém, como quase tudo em Computação, o uso de padrões também tem um custo. Por exemplo, uma fábrica requer a implementação de pelo menos mais uma classe no sistema. Para citar um segundo exemplo, Strategy requer a criação de uma classe abstrata e mais uma classe para cada algoritmo. Por isso, a adoção de padrões de projeto exige uma análise cuidadosa. Para ilustrar esse tipo de análise, vamos continuar a usar os exemplos de Fábrica e Strategy:</p>
 <ul>
@@ -735,14 +735,14 @@ BufferedInputStream bs = new BufferedInputStream(fs);
 ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
 <p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao processo de criação de arquivos em Java. O principal motivo é que, via de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por <em>default</em>, em vez de por meio de uma classe decoradora específica. Assim, e de acordo com esse raciocínio, as classes <code>FileInputStream</code> e <code>BufferedInputStream</code> poderiam ser fundidas em uma única classe.</p>
 </section>
-<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link">🔗</a></h2>
+<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
 <p>Joshua Bloch. Effective Java. 3rd edition. Prentice Hall, 2017.</p>
 <p>Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns: A Brain-Friendly Guide. O'Reilly, 2004.</p>
 <p>Eduardo Guerra. Design Patterns com Java: Projeto Orientado a Objetos guiado por Padrões. Caso do Código, 2014.</p>
 <p>Fernando Pereira, Marco Tulio Valente, Roberto Bigonha, Mariza Bigonha. Arcademis: A Framework for Object Oriented Communication Middleware Development. Software: Practice and Experience, 2006.</p>
 <p>Fabio Tirelo, Roberto Bigonha, Mariza Bigonha, Marco Tulio Valente. Desenvolvimento de Software Orientado por Aspectos. XXIII Jornada de Atualização em Informática (JAI), 2004.</p>
-<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link">🔗</a></h2>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>1. (ENADE 2011, adaptado) Sobre padrões de projeto, assinale V ou F.</p>
 <p>( ) Prototype é um tipo de padrão estrutural.</p>
 <p>( ) Singleton tem por objetivo garantir que uma classe tenha ao menos uma instância e fornecer um ponto global de acesso para ela.</p>
