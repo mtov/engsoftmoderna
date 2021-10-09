@@ -6,7 +6,7 @@
 por Robert Martin -- mais conhecido como Uncle Bob -- com o objetivo de 
 promover a implementação de sistemas que favorecem reusabilidade de código,
 coesão, independência de tecnologia e testabilidade. Se quisermos adotar a 
-classificação do [Capítulo 7](https://engsoftmoderna.info/cap7.html), 
+classificação do [Capítulo 7](../cap7.html), 
 a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
@@ -41,7 +41,7 @@ Para evitar qualquer tipo de confusão, gostaríamos de comentar que
 os casos de uso em uma Arquitetura Limpa não tem uma correspondência,
 pelo menos direta, com casos de uso para especificação de requisitos 
 e, menos ainda, com diagramas de casos de uso da UML, tal como 
-estudamos no [Capítulo 3](https://engsoftmoderna.info/cap3.html).
+estudamos no [Capítulo 3](../cap3.html#diagramas-de-casos-de-uso).
  
 ## Adaptadores {.unnumbered}
 
@@ -175,12 +175,12 @@ O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 ## Conclusão {.unnumbered}
 
 Uma Arquitetura Limpa é uma aplicação de diversos conceitos
-que estudamos no [Capítulo 5](https://engsoftmoderna.info/cap5.html), 
+que estudamos no [Capítulo 5](../cap5.html), 
 incluindo propriedades de projeto
 como **coesão**, **acoplamento** e **separação de interesses** e princípios
 de projeto como **responsabilidade única** e **inversão de dependências**.
 Ela faz uso também do padrão de projeto **adaptador**, que estudamos no
-[Capítulo 6](https://engsoftmoderna.info/cap6.html).
+[Capítulo 6](../cap6.html#adaptador).
 
 As recomendações principais de uma Arquitetura Limpa são as seguintes:
 

@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -103,7 +107,7 @@
 </header>
 <h1 class="unnumbered" id="construindo-sistemas-com-uma-arquitetura-limpa">Construindo Sistemas com uma Arquitetura Limpa</h1>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
-<p><strong>Arquitetura Limpa</strong> (<em>Clean Architecture</em>) é um padrão arquitetural proposto por Robert Martin – mais conhecido como Uncle Bob – com o objetivo de promover a implementação de sistemas que favorecem reusabilidade de código, coesão, independência de tecnologia e testabilidade. Se quisermos adotar a classificação do <a href="https://engsoftmoderna.info/cap7.html">Capítulo 7</a>, a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.</p>
+<p><strong>Arquitetura Limpa</strong> (<em>Clean Architecture</em>) é um padrão arquitetural proposto por Robert Martin – mais conhecido como Uncle Bob – com o objetivo de promover a implementação de sistemas que favorecem reusabilidade de código, coesão, independência de tecnologia e testabilidade. Se quisermos adotar a classificação do <a href="../cap7.html">Capítulo 7</a>, a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.</p>
 <p>Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura (baseada em uma figura semelhante do seguinte <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html">post</a> do <q>The Clean Code Blog</q>).</p>
 <figure>
 <img src="./figs/arquitetura-limpa-novo.svg" style="width:70.0%" alt="Arquitetura Limpa" /><figcaption aria-hidden="true">Arquitetura Limpa</figcaption>
@@ -113,7 +117,7 @@
 <p>No centro da arquitetura, temos as classes responsáveis pelas regras de negócio, que podem ser de dois tipos: Entidades e Casos de Uso.</p>
 <p><strong>Entidades</strong> são classes comuns a vários sistemas da empresa. Suponha, por exemplo, uma universidade com sistemas acadêmico, financeiro, extensão, etc. Todos esses sistemas têm que lidar com classes como <code>Aluno</code>, <code>Professor</code>, <code>Curso</code>, <code>Departamento</code>, etc. Essas classes são então chamadas de Entidades. Além de dados, entidades podem implementar regras de negócio genéricas. Por exemplo, uma regra da universidade define que todo <code>Professor</code> deve pertencer a exatamente um <code>Departamento</code>.</p>
 <p>Já as classes da camada <strong>Casos de Uso</strong> implementam regras de negócio específicas de um sistema. Por exemplo, o sistema acadêmico do nosso exemplo pode ter uma classe <code>DiarioDeClasse</code> que armazena a lista de objetos do tipo <code>Aluno</code> matriculados em uma <code>Disciplina</code> que está sendo ofertada em um determinado semestre. Uma regra de negócio define que um <code>Aluno</code> somente pode ser incluído em um <code>DiarioDeClasse</code> se tiver cursado os pré-requisitos da sua <code>Disciplina</code>.</p>
-<p>Para evitar qualquer tipo de confusão, gostaríamos de comentar que os casos de uso em uma Arquitetura Limpa não tem uma correspondência, pelo menos direta, com casos de uso para especificação de requisitos e, menos ainda, com diagramas de casos de uso da UML, tal como estudamos no <a href="https://engsoftmoderna.info/cap3.html">Capítulo 3</a>.</p>
+<p>Para evitar qualquer tipo de confusão, gostaríamos de comentar que os casos de uso em uma Arquitetura Limpa não tem uma correspondência, pelo menos direta, com casos de uso para especificação de requisitos e, menos ainda, com diagramas de casos de uso da UML, tal como estudamos no <a href="../cap3.html#diagramas-de-casos-de-uso">Capítulo 3</a>.</p>
 <h2 class="unnumbered" id="adaptadores">Adaptadores</h2>
 <p>Na terceira camada, de dentro para fora, temos classes e interfaces chamadas de <strong>Adaptadores</strong>. A função delas é converter dados de um formato para outro.</p>
 <p>Suponha, por exemplo, que o sistema use uma API REST para comunicação com seus clientes. As classes adaptadoras serão então responsáveis por implementar os <em>endpoints</em> REST da API. Isto é, elas devem receber as requisições e encaminhá-las para os casos de uso correspondentes. E, também, fazer o caminho inverso: receber os resultados retornados pelos casos de uso e convertê-los em documentos JSON que serão enviados para os clientes.</p>
@@ -163,7 +167,7 @@ public class MailServiceImpl implements MailServiceInterface {
 <img src="./figs/arquitetura-limpa-exemplo.svg" style="width:75.0%" alt="Dependências em uma arquitetura limpa" /><figcaption aria-hidden="true">Dependências em uma arquitetura limpa</figcaption>
 </figure>
 <h2 class="unnumbered" id="conclusão">Conclusão</h2>
-<p>Uma Arquitetura Limpa é uma aplicação de diversos conceitos que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>, incluindo propriedades de projeto como <strong>coesão</strong>, <strong>acoplamento</strong> e <strong>separação de interesses</strong> e princípios de projeto como <strong>responsabilidade única</strong> e <strong>inversão de dependências</strong>. Ela faz uso também do padrão de projeto <strong>adaptador</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>.</p>
+<p>Uma Arquitetura Limpa é uma aplicação de diversos conceitos que estudamos no <a href="../cap5.html">Capítulo 5</a>, incluindo propriedades de projeto como <strong>coesão</strong>, <strong>acoplamento</strong> e <strong>separação de interesses</strong> e princípios de projeto como <strong>responsabilidade única</strong> e <strong>inversão de dependências</strong>. Ela faz uso também do padrão de projeto <strong>adaptador</strong>, que estudamos no <a href="../cap6.html#adaptador">Capítulo 6</a>.</p>
 <p>As recomendações principais de uma Arquitetura Limpa são as seguintes:</p>
 <ul>
 <li><p>Ao implementar uma aplicação, pense nas suas Entidades, que são classes que armazenam principalmente dados e que poderão ser reusadas em outros sistemas que você vai construir no futuro.</p></li>
