@@ -212,7 +212,7 @@ mesmo nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista in
 no YouTube sobre o tema.
 
 Se quiser, veja também nosso artigo sobre
-[Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html).
+[Arquitetura Hexagonal](./arquitetura-hexagonal.html).
 
 ## Exercícios {.unnumbered}
 
