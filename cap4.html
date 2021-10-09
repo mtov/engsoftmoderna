@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -102,13 +106,13 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <section id="modelos" data-number="1">
-<h1 data-number="4"><span class="header-section-number">4</span> Modelos</h1>
+<h1 data-number="4"><span class="header-section-number">4</span> Modelos <a href="#modelos" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>All models are wrong, but some models are useful. So the question you need to ask is not <q>Is the model true?</q> (it never is) but <q>Is the model good enough for this particular application?</q></em> – George Box</p>
 </blockquote>
 <p>Este capítulo inicia com uma apresentação genérica sobre modelos de software (Seção 4.1). Em seguida, apresentamos uma visão geral sobre UML, que é a notação gráfica mais utilizada para construção de modelos de software (Seção 4.2). Também deixamos claro que vamos estudar UML visando a criação de esboços de software (<em>sketches</em>) e não desenhos técnicos detalhados (<em>blueprints</em>). Nas seções seguintes, apresentamos quatro diagramas UML com um maior nível de detalhes: Diagramas de Classes (Seção 4.3), Diagramas de Pacotes (Seção 4.4), Diagramas de Sequência (Seção 4.5) e Diagramas de Atividades (Seção 4.6).</p>
 <section id="modelos-de-software" data-number="1.1">
-<h2 data-number="4.1"><span class="header-section-number">4.1</span> Modelos de Software</h2>
+<h2 data-number="4.1"><span class="header-section-number">4.1</span> Modelos de Software <a href="#modelos-de-software" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Como vimos no capítulo anterior, requisitos documentam <q>o que</q> um sistema deve fazer, valendo-se de um nível de abstração próximo do problema e de seus usuários. Por outro lado, o código fonte é uma representação concreta, de baixo nível e executável do comportamento de um sistema. Portanto, existe uma lacuna entre esses dois mundos: requisitos e código fonte. Para preencher essa lacuna, desde a fundação da área, Engenheiros de Software investem na criação de <strong>modelos</strong>, os quais são criados para ajudar no entendimento e análise de um sistema. Para cumprir essa missão, os modelos usados em Engenharia de Software são mais detalhados do que requisitos, mas ainda menos complexos do que o código fonte de um sistema.</p>
 <p>Modelos são largamente usados também em outras engenharias. Por exemplo, uma engenheira civil pode decidir criar uma maquete para mostrar como será a ponte que ela foi contratada para construir. Em seguida, ela pode criar um modelo matemático e físico da ponte e usá-lo para simular e provar propriedades da mesma, tais como carga máxima, resistência a ventos, ondas, terremotos, etc.</p>
@@ -124,11 +128,11 @@
 <p><strong>Aprofundamento</strong>: Desde a década de 70, pesquisadores têm investigado o uso de modelos matemáticos em Engenharia de Software, por meio do que se chama de <strong>Métodos Formais</strong>. Esses métodos valem-se de uma notação matemática — baseada em lógica, teoria de conjuntos ou Redes de Petri, por exemplo — para derivar <strong>especificações formais</strong> para sistemas de software. Além de serem precisas e não-ambíguas, especificações formais podem ser usadas para provar propriedades de um sistema mesmo antes de sua implementação. Por exemplo, em tese, poderia-se provar que um sistema concorrente não possui deadlocks ou condições de corrida. Pode parecer ambicioso, mas isso ocorre em outras Engenharias. Retomando o exemplo do início da seção, engenheiros civis usam há séculos modelos matemáticos para provar, por exemplo, que uma ponte — antes de ser construída — vai suportar determinada carga e certas condições climáticas. No entanto, o uso de formalismos e especificações matemáticas em Engenharia de Software não avançou como em outras Engenharias. Por isso, eles são pouco usados atualmente, com exceção talvez de alguns sistemas de missão crítica.</p>
 </section>
 <section id="uml" data-number="1.2">
-<h2 data-number="4.2"><span class="header-section-number">4.2</span> UML</h2>
+<h2 data-number="4.2"><span class="header-section-number">4.2</span> UML <a href="#uml" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>UML é uma notação gráfica para modelagem de software. A linguagem define um conjunto de diagramas para documentar e ajudar no design de sistemas de software, particularmente sistemas orientados a objetos. As origens de UML datam da década de 80, quando o paradigma de orientação a objetos estava amadurecendo e vivendo seu auge. Assim, surgiram diversas linguagens orientadas a objetos, como C++, e também algumas notações gráficas para modelagem de software. Lembre-se que os sistemas na década de 80 eram desenvolvidos segundo o Modelo Waterfall, que prescreve uma grande e longa fase de design. A proposta de UML era que nessa fase seriam criados modelos gráficos, que depois seriam repassados para os programadores, para serem convertidos em código fonte.</p>
 <p> Na verdade, UML é o resultado de um esforço para unificar as notações gráficas que surgiram no final das décadas de 80 e início da década de 90. Especificamente, a primeira versão de UML foi proposta em 1995, como resultado da unificação de notações que estavam sendo desenvolvidas de forma independente por três Engenheiros de Software conhecidos na época: Grady Booch, Jim Rumbaugh e Ivar Jacobson. Nessa época, surgiram também ferramentas para desenhar diagramas UML, as quais foram chamadas de <strong>ferramentas CASE</strong> (<em>Computer-Aided Software Engineering</em>). O nome é inspirado em ferramentas CAD (<em>Computer Aided Design</em>), usadas para criar modelos para produtos de Engenharia tradicional, como casas, pontes, automóveis, aviões, etc. Por isso, era importante ter uma padronização de UML, de forma que um diagrama criado em uma ferramenta CASE pudesse ser aberto e editado em uma outra ferramenta, de uma empresa diferente. De fato, em 1997, UML passou a ser um padrão gerenciado pela OMG, que é uma organização de padronização financiada por indústrias de software. Desde o início, o desenvolvimento de UML foi comandado por consultores influentes e por grandes empresas de ferramentas ou consultoria, como a Rational, que depois viria a ser comprada pela IBM.</p>
-<h3 class="unnumbered" id="como-usar-uml">Como usar UML?</h3>
+<h3 class="unnumbered" id="como-usar-uml">Como usar UML? <a href="#como-usar-uml" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Martin Fowler, em seu livro sobre UML (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>), propõe uma classificação sobre formas de uso dessa linguagem de modelagem. Segundo ele, existem três formas de uso de UML: como blueprint, como linguagem de programação ou como esboço. Vamos descrever cada uma delas nos próximos parágrafos.</p>
 <p> <strong>UML como blueprint</strong> corresponde ao uso de UML vislumbrado por seus criadores, ainda na década de 90. Nessa forma de uso, defende-se que, após o levantamento de requisitos, seja produzido um conjunto de modelos — ou plantas técnicas (<em>blueprints</em>) — documentando diversos aspectos de um sistema e sempre usando diagramas UML. Esses modelos seriam criados por analistas de sistemas, usando-se ferramentas CASE e, depois, repassados a programadores para codificação. Logo, UML como <em>blueprint</em> é recomendado quando se emprega processos de desenvolvimento do tipo Waterfall ou quando se adota o Processo Unificado (UP). Na verdade, UP foi proposto por pessoas com forte ligação com UML. No entanto, como já discutimos no Capítulo 2, o uso de UML na construção de modelos detalhados e completos é cada vez mais raro. Por exemplo, com métodos ágeis não existe uma longa fase inicial de design (<em>big design up front</em>). Em vez disso, decisões de design são tomadas e refinadas ao longo do desenvolvimento, em cada uma das iterações (ou <em>sprints</em>). Por isso, não iremos neste capítulo nos aprofundar no uso de UML como <em>blueprint</em>.</p>
 <p> <strong>UML como linguagem de programação</strong> corresponde ao uso de UML vislumbrado pela OMG, após a padronização da linguagem de modelagem. De forma ambiciosa e pelo menos durante um período, vislumbrou-se a geração de código automaticamente a partir de modelos UML. Em outras palavras, não haveria mais uma fase de codificação, pois o código seria gerado diretamente a partir da <q>compilação</q> de modelos UML. Essa forma de uso é conhecida como <strong>Desenvolvimento Dirigido por Modelos</strong> (<em>Model Driven Development ou MDD</em>). Para que MDD fosse viável, UML foi expandida e ganhou novos recursos e diagramas. Foi a partir desse momento que a linguagem ganhou a reputação de ser pesada e complexa. Porém, mesmo com adição de complexidade extra, o uso de UML para geração de código não se tornou comum, pelo menos na grande maioria dos sistemas.</p>
@@ -148,7 +152,7 @@
 <li><p>52% dos esboços foram feitos para ajudar no projeto (<em>design</em>) da arquitetura do sistema, 48% para ajudar no projeto de novas funcionalidades, 46% para explicar alguma tarefa para um outro desenvolvedor, 45% para analisar requisitos e 44% para ajudar no entendimento de uma tarefa. A soma dos percentuais ultrapassa 100% porque os participantes podiam marcar mais de uma resposta.</p></li>
 <li><p>48% dos esboços continham algum elemento de UML e 9% eram integralmente baseados em diagramas UML. Portanto, esses percentuais reforçam a importância de estudar UML, não como notação para documentação detalhada de sistemas (<em>blueprints</em>), mas para ajudar na construção de modelos informais e parciais.</p></li>
 </ul>
-<h3 class="unnumbered" id="diagramas-uml">Diagramas UML</h3>
+<h3 class="unnumbered" id="diagramas-uml">Diagramas UML <a href="#diagramas-uml" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>  </p>
 <p>Os diagramas UML são classificados em dois grandes grupos:</p>
 <ul>
@@ -159,7 +163,7 @@
 <p> <strong>Aviso:</strong> Existem diversas versões de UML. No restante deste capítulo vamos usar a <strong>versão de UML que é adotada na 3a edição do livro UML Distilled, de Martin Fowler</strong> (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>). Esse livro foi o primeiro trabalho a discutir o uso de UML como esboço (<em>sketches</em>). Na verdade, vamos estudar um pequeno subconjunto da versão 2.0. Além de tratar de apenas quatro diagramas, não vamos cobrir todos os recursos de cada um deles. O nosso desafio ao escrever este capítulo foi selecionar os 20% (ou menos) dos recursos de UML que são responsáveis por 80% (ou mais) de seu uso prático nos dias de hoje. Para se ter uma ideia do nível de detalhe alcançado por UML, a especificação da versão mais recente da linguagem — versão 2.5.1, no momento da escrita deste capítulo — possui 796 páginas. Ela pode ser encontrada no site da OMG (<a href="https://www.omg.org/">link</a>).</p>
 </section>
 <section id="diagramas-de-classes" data-number="1.3">
-<h2 data-number="4.3"><span class="header-section-number">4.3</span> Diagramas de Classes</h2>
+<h2 data-number="4.3"><span class="header-section-number">4.3</span> Diagramas de Classes <a href="#diagramas-de-classes" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de classes são os diagramas mais usados da UML. Eles oferecem uma representação gráfica para um conjunto de classes, provendo informações sobre atributos, métodos e relacionamentos que existem entre as classes modeladas.</p>
 <p>Um diagrama de classes é desenhado usando-se retângulos e setas. Cada uma das classes é representada por meio de um retângulo com três compartimentos, conforme mostra a figura a seguir. Esses compartimentos contêm o nome da classe (normalmente, em negrito), seus atributos e métodos, como também ilustrado a seguir:</p>
@@ -169,7 +173,7 @@
 <p>Nesse diagrama, pode-se conferir que a classe <code>Pessoa</code> tem três atributos — <code>nome</code>, <code>sobrenome</code> e <code>fone</code> — e dois métodos — <code>setPessoa</code> e <code>getPessoa</code>. Os três atributos são privados, conforme indicado pelo sinal <q>-</q> antes de cada um. Informa-se também o tipo de cada atributo. Por sua vez, os dois métodos são públicos, conforme indicado pelo sinal <q>+</q>. O diagrama possui ainda uma segunda classe, chamada <code>Fone</code>, com três atributos privados — <code>codigo</code>, <code>numero</code> e <code>celular</code> — e três métodos públicos — <code>setFone</code>, <code>getFone</code> e <code>isCelular</code>. No caso dos métodos, informamos também o nome de seus parâmetros e o tipo de retorno.</p>
 <p>Porém, se fosse somente isso, os diagramas dariam a impressão de que as classes de um sistema são <q>ilhas</q> sem comunicação entre si. No entanto, um dos principais objetivos de diagramas de classe é mostrar visualmente os relacionamentos que existem entre as classes de um sistema. Por isso, eles incluem também linhas e setas, as quais são usadas para representar três tipos de relacionamentos: <strong>associação</strong>, <strong>herança</strong> e <strong>dependência</strong>. Vamos tratar de cada um deles nos próximos parágrafos.</p>
 <section id="associações" data-number="1.3.1">
-<h3 data-number="4.3.1"><span class="header-section-number">4.3.1</span> Associações</h3>
+<h3 data-number="4.3.1"><span class="header-section-number">4.3.1</span> Associações <a href="#associações" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Quando uma classe A possui um atributo <code>b</code> de um tipo B, dizemos que existe uma associação de A para B, a qual é representada por meio de uma seta, também de A para B. Na extremidade da seta, informa-se o nome do atributo de A responsável pela associação — no nosso caso, <code>b</code>. Veja o exemplo abaixo (nele, só mostramos as informações que nos interessam; por isso, o compartimento de atributos e métodos está vazio):</p>
 <p><img src="figs/cap4/class2.svg" style="width:40.0%" /></p>
@@ -224,13 +228,13 @@ class Fone {
 <p><strong>Aprofundamento</strong>: UML — dependendo da versão que está sendo usada — admite notações diferentes para associações. Por exemplo, algumas vezes, informa-se um nome para a associação, o qual é mostrado logo acima e ao longo da seta que une as duas classes. Outras vezes, no caso de associações bidirecionais, as duas setas são omitidas — pois a padronização de UML define o seguinte: <q>uma associação em que nenhuma das extremidades é marcada com uma seta de navegabilidade é navegável em ambas as direções</q>. No entanto, essas notações alternativas tendem a ser confusas ou mesmo ambíguas. Por exemplo, Gonzalo Génova e mais dois pesquisadores da Universidade de Madrid, na Espanha, fazem a seguinte observação sobre o uso de associações bidirecionais sem setas: <q>infelizmente, isso pode introduzir ambiguidade na notação gráfica, porque não conseguimos mais distinguir entre associações bidirecionais e associações sem especificação de navegabilidade</q> em uma de suas extremidades. (<a href="http://www.jot.fm/issues/issue_2003_09/article4/">link</a>, Seção 3, quarto parágrafo). Existem ainda dois conceitos frequentemente mencionados quando estudamos associações em UML: composição e agregação. Composição é uma relação na qual a classe de destino <em>não</em> pode existir de forma independente da classe de origem. Por outro lado, quando as duas classes têm ciclos de vida independentes, temos uma relação de agregação. No entanto, na prática, esses conceitos também geram confusão e, por isso, resolvemos não os incluir na explicação sobre diagramas de classes. A mesma opinião é compartilhada por outros autores. Por exemplo, Fowler afirma que <q>agregação é algo estritamente sem sentido; portanto, eu recomendo que você ignore esse conceito em seus diagramas</q> (<a href="https://dl.acm.org/citation.cfm?id=861282">link</a>, página 68).</p>
 </section>
 <section id="herança" data-number="1.3.2">
-<h3 data-number="4.3.2"><span class="header-section-number">4.3.2</span> Herança</h3>
+<h3 data-number="4.3.2"><span class="header-section-number">4.3.2</span> Herança <a href="#herança" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Em diagramas de classes, relações de herança são representadas por meio de setas com a extremidade não preenchida. Essas setas são usadas para conectar subclasses à sua classe base. No próximo exemplo, elas indicam que <code>PessoaFisica</code> e <code>PessoaJuridica</code> são subclasses de <code>Pessoa</code>. Como usual em orientação a objetos, subclasses herdam todos os atributos e métodos da classe base, mas também podem adicionar novos membros. Por exemplo, apenas <code>PessoaFisica</code> tem <code>cpf</code> e apenas <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
 <p><img src="figs/cap4/class10.svg" style="width:95.0%" /></p>
 </section>
 <section id="dependências" data-number="1.3.3">
-<h3 data-number="4.3.3"><span class="header-section-number">4.3.3</span> Dependências</h3>
+<h3 data-number="4.3.3"><span class="header-section-number">4.3.3</span> Dependências <a href="#dependências" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Existe uma dependência de uma classe A para uma classe B, representada por uma seta com uma linha tracejada de A para B, quando a classe A usa a classe B, porém esse uso não ocorre por meio de associação (isto é, A não tem um atributo do tipo B) ou herança (isto é, A não é uma subclasse de B). Dependências ocorrem, por exemplo, quando um método de A declara um parâmetro ou variável local do tipo B ou quando um método de A lança uma exceção do tipo B. Uma dependência é considerada uma modalidade menos forte de relacionamento entre classes do que relacionamentos que ocorrem por meio de associação e herança.</p>
 <p>Para ilustrar o uso de dependências, considere o seguinte trecho de código:</p>
@@ -251,7 +255,7 @@ class MinhaClasse {
 </section>
 </section>
 <section id="diagramas-de-pacotes" data-number="1.4">
-<h2 data-number="4.4"><span class="header-section-number">4.4</span> Diagramas de Pacotes</h2>
+<h2 data-number="4.4"><span class="header-section-number">4.4</span> Diagramas de Pacotes <a href="#diagramas-de-pacotes" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagrama de pacotes são recomendados quando se pretende oferecer um modelo de mais alto nível de um sistema, que mostre apenas grupos de classes — isto é, pacotes — e as dependências entre eles. Para isso, UML define um retângulo especial para representar pacotes, mostrado abaixo:</p>
 <p><img src="figs/cap4/package0.svg" style="width:25.0%" /></p>
@@ -265,7 +269,7 @@ class MinhaClasse {
 <p><img src="figs/cap4/package1.svg" style="width:60.0%" /></p>
 </section>
 <section id="diagramas-de-sequência" data-number="1.5">
-<h2 data-number="4.5"><span class="header-section-number">4.5</span> Diagramas de Sequência</h2>
+<h2 data-number="4.5"><span class="header-section-number">4.5</span> Diagramas de Sequência <a href="#diagramas-de-sequência" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de sequência são diagramas dinâmicos, também chamados de comportamentais. Por isso, em vez de classes, eles modelam objetos de um sistema. Adicionalmente, eles incluem informações sobre quais métodos desses objetos são executados em um determinado cenário de uso de um programa. Logo, eles são usados quando se pretende explicar o comportamento de um sistema, em um determinado cenário. Por exemplo, no final desta seção, vamos apresentar um diagrama de sequência que ilustra os métodos que são chamados quando um cliente chega em um caixa eletrônico e solicita uma operação de retirada de valores.</p>
 <p>Antes disso, para iniciar a apresentação de diagramas de sequência, vamos usar o diagrama da próxima página. Apesar de simples, esse diagrama serve para mostrar a dinâmica e a notação usada por diagramas de sequência. Como já dissemos, diagramas de sequência modelam objetos, os quais são representados por meio de retângulos, com o nome dos objetos modelados. Esses retângulos ficam dispostos logo na primeira linha do diagrama. Portanto, dois objetos são representados no diagrama anterior, de nomes <code>a1</code> e <code>b1</code>. Abaixo de cada objeto, desenha-se uma linha vertical, a qual pode assumir duas formas: (1) quando ela é desenhada de forma tracejada, o objeto está inativo, isto é, nenhum de seus métodos está sendo executado; (2) quando a linha fica cheia, ganhando um formato retangular, um dos métodos do objeto foi chamado e encontra-se em execução. Quando essa execução termina, a linha volta a ficar tracejada. Além disso, o início da chamada é indicado por uma seta na horizontal, com o nome do método chamado. O retorno da chamada é indicado por uma seta tracejada, com o nome do objeto retornado. No entanto, às vezes a seta de retorno é omitida, como no caso da chamada do método <code>g</code>. Existem dois motivos para essa omissão: (1) o tipo de retorno é <code>void</code>; ou (2) o objeto de retorno não é relevante, a ponto de merecer ser representado no diagrama.</p>
@@ -295,7 +299,7 @@ class MinhaClasse {
 <p><img src="figs/cap4/sequence3.svg" style="width:75.0%" /></p>
 </section>
 <section id="diagramas-de-atividades" data-number="1.6">
-<h2 data-number="4.6"><span class="header-section-number">4.6</span> Diagramas de Atividades</h2>
+<h2 data-number="4.6"><span class="header-section-number">4.6</span> Diagramas de Atividades <a href="#diagramas-de-atividades" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de atividades são usados para representar, em alto nível, um processo ou fluxo de execução. Os principais elementos desses diagramas são <strong>ações</strong> representadas por retângulos. Existem ainda elementos de <strong>controle</strong>, que definem a ordem de execução das ações. A figura da próxima página mostra um diagrama de atividades que modela o processo seguido após um usuário fechar uma compra em uma loja virtual. Para isso, assume-se que os produtos comprados já estão no carrinho de compra. Para entender o funcionamento de um diagrama de atividades (como aquele mostrado na figura), devemos assumir que existe uma ficha (<em>token</em>) imaginária que caminha pelos nodos do diagrama. A seguir, explicamos o comportamento de cada nodo de um diagrama de atividades, assumindo a existência dessa ficha.</p>
 <p><img src="figs/cap4/activity01.svg" style="width:55.0%" /></p>
@@ -320,11 +324,11 @@ class MinhaClasse {
 <li><p><strong>BPMN</strong> (<em>Business Process Model and Notation</em>)  é um esforço mais recente, que teve início nos anos 2000, visando a proposição de uma notação gráfica mais amigável para modelagem de processos de negócio do que aquela oferecida por diagramas de atividades. Um dos objetivos é propiciar que analistas de negócio possam ler, interpretar e validar diagramas BPMN.</p></li>
 </ul>
 </section>
-<h2 class="unnumbered" id="bibliografia">Bibliografia</h2>
+<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Martin Fowler. UML Distilled: A Brief Guide to the Standard Object Modeling Language. Addison-Wesley, 2003.</p>
 <p>Grady Booch, James Rumbaugh, Ivar Jacobson. The Unified Modeling Language User Guide. Addison-Wesley, 2005.</p>
 <p>Craig Larman. Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development. Prentice-Hall, 2004.</p>
-<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação</h2>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>1. Explique e discuta os três usos possíveis de UML:</p>
 <ol type="a">
 <li>Como blueprint (ou plantas técnicas detalhadas)</li>
