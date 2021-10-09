@@ -10,7 +10,7 @@ Engenharia de Software).
 
 Os objetivos de uma Arquitetura Hexagonal são parecidos com os
 de uma Arquitetura Limpa, tal como descrevemos em um outro 
-[artigo](https://engsoftmoderna.info/artigos/arquitetura-limpa.html). Mas, 
+[artigo](./arquitetura-limpa.html). Mas, 
 para reforçar, a ideia é construir sistemas que favorecem 
 reusabilidade de código, alta coesão, baixo acoplamento, independência 
 de tecnologia e que são mais fáceis de serem testados. 
@@ -38,7 +38,7 @@ interfaces (Web, mobile, etc).
 Em uma arquitetura hexagonal, a comunicação entre as classes dos dois 
 grupos é mediada por **adaptadores**, isto é, por classes que 
 implementam o padrão de projeto de mesmo nome que estudamos no 
-[Capítulo 6](https://engsoftmoderna.info/cap6.html). Iremos explicar
+[Capítulo 6](../cap6.html#adaptador). Iremos explicar
 melhor o papel dos adaptadores logo a seguir.
 
 Visualmente, a arquitetura é representada por meio de dois hexágonos 
@@ -156,7 +156,7 @@ tenta renomeá-la para incluir os termos portas e adaptadores.
 padrão de projeto de mesmo nome. E as portas? Elas podem ser 
 vistas como sendo uma implementação -- pelo menos aproximada -- de 
 qual padrão de projeto? Se necessário, consulte o 
-[Capítulo 6](https://engsoftmoderna.info/cap6.html) para responder.
+[Capítulo 6](../cap6.html) para responder.
 
 2. Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas,
 por que os adaptadores de interface externa (HTTP, GraphQL e REST) e
@@ -169,7 +169,7 @@ octogonal, etc. Justifique essa afirmação.
 
 4. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
 e a Arquitetura Limpa (que estudamos em um outro 
-[artigo](https://engsoftmoderna.info/artigos/arquitetura-limpa.html) didático).
+[artigo](./arquitetura-limpa.html) didático).
 
 * * * 
 

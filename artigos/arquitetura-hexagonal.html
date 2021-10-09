@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -104,7 +108,7 @@
 <h1 class="unnumbered" id="o-que-é-uma-arquitetura-hexagonal">O que é uma Arquitetura Hexagonal?</h1>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
 <p>O conceito de Arquitetura Hexagonal foi proposto por Alistair Cockburn, em meados dos anos 90, em um <a href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> postado na primeira wiki que foi desenvolvida, chamada WikiWikiWeb (cujos artigos tratavam principalmente de temas relacionados com Engenharia de Software).</p>
-<p>Os objetivos de uma Arquitetura Hexagonal são parecidos com os de uma Arquitetura Limpa, tal como descrevemos em um outro <a href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo</a>. Mas, para reforçar, a ideia é construir sistemas que favorecem reusabilidade de código, alta coesão, baixo acoplamento, independência de tecnologia e que são mais fáceis de serem testados.</p>
+<p>Os objetivos de uma Arquitetura Hexagonal são parecidos com os de uma Arquitetura Limpa, tal como descrevemos em um outro <a href="./arquitetura-limpa.html">artigo</a>. Mas, para reforçar, a ideia é construir sistemas que favorecem reusabilidade de código, alta coesão, baixo acoplamento, independência de tecnologia e que são mais fáceis de serem testados.</p>
 <p>Uma Arquitetura Hexagonal divide as classes de um sistema em dois grupos principais:</p>
 <ul>
 <li>Classes de domínio, isto é, diretamente relacionadas com o negócio do sistema.</li>
@@ -112,7 +116,7 @@
 </ul>
 <p>Além disso, em uma Arquitetura Hexagonal, <strong>classes de domínio não devem depender de classes relacionadas com infraestrutura, tecnologias ou sistemas externos</strong>. A vantagem dessa divisão é desacoplar esses dois tipos de classes.</p>
 <p>Assim, as classes de domínio não conhecem as tecnologias – bancos de dados, interfaces com usuário e quaisquer outras bibliotecas – usadas pelo sistema. Consequentemente, mudanças de tecnologia podem ser feitas sem impactar as classes de domínio. Talvez ainda mais importante, as classes de domínio podem ser compartilhadas por mais de uma tecnologia. Por exemplo, um sistema pode ter diversas interfaces (Web, mobile, etc).</p>
-<p>Em uma arquitetura hexagonal, a comunicação entre as classes dos dois grupos é mediada por <strong>adaptadores</strong>, isto é, por classes que implementam o padrão de projeto de mesmo nome que estudamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>. Iremos explicar melhor o papel dos adaptadores logo a seguir.</p>
+<p>Em uma arquitetura hexagonal, a comunicação entre as classes dos dois grupos é mediada por <strong>adaptadores</strong>, isto é, por classes que implementam o padrão de projeto de mesmo nome que estudamos no <a href="../cap6.html#adaptador">Capítulo 6</a>. Iremos explicar melhor o papel dos adaptadores logo a seguir.</p>
 <p>Visualmente, a arquitetura é representada por meio de dois hexágonos concêntricos (veja figura). No hexágono interno, ficam as classes do domínio (ou classes de negócio, se você preferir). No hexágono externo, ficam os adaptadores. Por fim, as classes de interface com o usuário, classes de tecnologia ou de sistemas externos ficam fora desses dois hexágonos.</p>
 <figure>
 <img src="./figs/arquitetura-hexagonal.svg" style="width:40.0%" alt="Arquitetura Hexagonal" /><figcaption aria-hidden="true">Arquitetura Hexagonal</figcaption>
@@ -155,10 +159,10 @@ encaminham essas chamadas para métodos adequados das portas de entrada.</p></li
 <p>Se quiser conhecer mais sobre Arquitetura Hexagonal, recomendamos dois pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro <a href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> define a arquitetura. Já o segundo <a href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">artigo</a> tenta renomeá-la para incluir os termos portas e adaptadores.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Em uma Arquitetura Hexagonal, um adaptador é uma implementação do padrão de projeto de mesmo nome. E as portas? Elas podem ser vistas como sendo uma implementação – pelo menos aproximada – de qual padrão de projeto? Se necessário, consulte o <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> para responder.</p></li>
+<li><p>Em uma Arquitetura Hexagonal, um adaptador é uma implementação do padrão de projeto de mesmo nome. E as portas? Elas podem ser vistas como sendo uma implementação – pelo menos aproximada – de qual padrão de projeto? Se necessário, consulte o <a href="../cap6.html">Capítulo 6</a> para responder.</p></li>
 <li><p>Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas, por que os adaptadores de interface externa (HTTP, GraphQL e REST) e o adaptador de persistência (SQL) estão em faces distintas do hexágono? Eles poderiam ser desenhados na mesma face?</p></li>
 <li><p>A definição do termo hexagonal é arbitrária, pois, dependendo da aplicação, ela poderia ser chamada de quadrangular, pentagonal, heptagonal, octogonal, etc. Justifique essa afirmação.</p></li>
-<li><p>Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal e a Arquitetura Limpa (que estudamos em um outro <a href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo</a> didático).</p></li>
+<li><p>Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal e a Arquitetura Limpa (que estudamos em um outro <a href="./arquitetura-limpa.html">artigo</a> didático).</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
