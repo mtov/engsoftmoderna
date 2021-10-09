@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -102,13 +106,13 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <section id="devops" data-number="1">
-<h1 data-number="10"><span class="header-section-number">10</span> DevOps</h1>
+<h1 data-number="10"><span class="header-section-number">10</span> DevOps <a href="#devops" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>Imagine a world where product owners, development, QA, IT Operations, and Infosec work together, not only to help each other, but also to ensure that the overall organization succeeds.</em> – Gene Kim, Jez Humble, Patrick Debois, John Willis</p>
 </blockquote>
 <p>Este capítulo inicia discutindo o conceito de DevOps e seus benefícios (Seção 10.1). Apesar de ser um termo novo, existe uma tendência em ver DevOps como um movimento que visa introduzir práticas ágeis <q>na última milha</q> de um projeto de software, isto é, quando o sistema vai entrar em produção. Além de discutir o conceito, tratamos de três práticas importantes quando se adota DevOps. São elas: Controle de Versões (Seção 10.2), Integração Contínua (Seção 10.3) e Deployment Contínuo (Seção 10.4).</p>
 <section id="introdução" data-number="1.1">
-<h2 data-number="10.1"><span class="header-section-number">10.1</span> Introdução</h2>
+<h2 data-number="10.1"><span class="header-section-number">10.1</span> Introdução <a href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Até agora, neste livro, estudamos um conjunto de práticas para desenvolvimento de software com qualidade e agilidade. Por meio de métodos ágeis — como Scrum, XP ou Kanban —, vimos que o cliente deve participar desde o primeiro dia da construção de um sistema. Também estudamos práticas importantes para produção de software com qualidade, como testes de unidade e refactoring. Estudamos ainda princípios e padrões de projeto e também padrões arquiteturais.</p>
 <p>Logo, após aplicar o que vimos, o sistema — ou um incremento dele, resultante de um sprint — está pronto para entrar em produção. Essa tarefa é conhecida pelos nomes de <strong>implantação (deploy)</strong>, <strong>liberação (release)</strong> ou <strong>entrega (delivery)</strong> do sistema. Independentemente do nome, ela não é tão simples e rápida como pode parecer.</p>
@@ -146,7 +150,7 @@
 </ul>
 </section>
 <section id="controle-de-versões" data-number="1.2">
-<h2 data-number="10.2"><span class="header-section-number">10.2</span> Controle de Versões</h2>
+<h2 data-number="10.2"><span class="header-section-number">10.2</span> Controle de Versões <a href="#controle-de-versões" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Como mencionamos algumas vezes neste livro, software é desenvolvido em equipe. Por isso, precisamos de um servidor para armazenar o código fonte do sistema que está sendo implementado por um grupo de desenvolvedores. A existência desse servidor é fundamental para que esses desenvolvedores possam colaborar e para que os operadores saibam precisamente qual versão do sistema deve ser colocada em produção. Além disso, sempre é útil manter o histórico das versões mais importantes de cada arquivo. Isso permite, se necessário, realizar uma espécie de <q>undo</q> no tempo, isto é, recuperar o código de um arquivo como ele estava há anos atrás, por exemplo.</p>
 <p> Um <strong>Sistema de Controle de Versões</strong> (VCS, na sigla em inglês) oferece os dois serviços mencionados no parágrafo anterior. Primeiro, ele oferece um <strong>repositório</strong> para armazenar a versão mais recente do código fonte de um sistema, bem como de arquivos relacionados, como arquivos de documentação, configuração, páginas Web, manuais, etc. Em segundo lugar, ele permite que se recupere versões mais antigas de qualquer arquivo, caso seja necessário. Como enunciamos na Introdução, modernamente é inconcebível desenvolver qualquer sistema, mesmo que simples, sem um VCS.</p>
@@ -170,7 +174,7 @@
 <p> <strong>GitHub</strong> é um serviço de hospedagem de código que usa o sistema Git para prover controle de versões. O GitHub oferece repositórios públicos e gratuitos, para projetos de código aberto, e repositórios fechados e pagos, para uso por empresas. Assim, em vez de manter internamente um DVCS, uma empresa desenvolvedora de software pode alugar esse serviço do GitHub. Uma comparação pode ser feita com serviços de mail. Em vez de instalar um servidor de mail em uma máquina própria, uma empresa pode contratar esse serviço de terceiros, como do Google, via GMail. Apesar de o GitHub ser o mais popular, existem serviços semelhantes providos por outras empresas, como GitLab e BitBucket.</p>
 <p>No Apêndice A, apresentamos e ilustramos os principais comandos do sistema Git. São explicados também os conceitos de forks e pull requests, os quais são específicos do GitHub.</p>
 <section id="multirepos-vs-monorepos" data-number="1.2.1">
-<h3 data-number="10.2.1"><span class="header-section-number">10.2.1</span> Multirepos vs Monorepos</h3>
+<h3 data-number="10.2.1"><span class="header-section-number">10.2.1</span> Multirepos vs Monorepos <a href="#multirepos-vs-monorepos" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Um VCS gerencia repositórios. Assim, uma organização precisa decidir os repositórios que vai criar em seu VCS. Uma decisão tradicional consiste em criar um repositório para cada projeto ou sistema da organização. Porém, soluções baseadas em um único repositório estão sendo adotadas com mais frequência, principalmente por grandes empresas, como Google, Facebook e Microsoft. Essas duas alternativas — chamadas, respectivamente, de <strong>multirepos</strong> e <strong>monorepos</strong> — são ilustradas nas próximas duas figuras.</p>
 <figure>
@@ -195,11 +199,11 @@
 </section>
 </section>
 <section id="integração-contínua" data-number="1.3">
-<h2 data-number="10.3"><span class="header-section-number">10.3</span> Integração Contínua</h2>
+<h2 data-number="10.3"><span class="header-section-number">10.3</span> Integração Contínua <a href="#integração-contínua" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Para explicar o conceito de Integração Contínua (CI), iniciamos com uma subseção de motivação. Em seguida, apresentamos o conceito propriamente dito. Feito isso, discutimos outras práticas que uma organização deve adotar junto com CI. Terminamos com uma breve discussão sobre cenários que podem desmotivar o emprego de CI em uma organização.</p>
 <section id="motivação" data-number="1.3.1">
-<h3 data-number="10.3.1"><span class="header-section-number">10.3.1</span> Motivação</h3>
+<h3 data-number="10.3.1"><span class="header-section-number">10.3.1</span> Motivação <a href="#motivação" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Antes de definir o que é integração contínua, vamos descrever o problema que levou à proposta dessa prática de integração de código. Tradicionalmente, era comum o uso de branches durante a implementação de novas funcionalidades. Branches podem ser entendidos como um sub-diretório interno e virtual, gerenciado pelo sistema de controle de versões. Nesses sistemas, existe um branch principal, conhecido pelo nome de <strong>master</strong> (quando usa-se Git) ou <strong>trunk</strong> (quando usa-se outros sistemas, como svn). Além do branch principal, os usuários podem criar seus próprios branches.</p>
 <p>Por exemplo, antes de implementar uma nova funcionalidade, pode ser comum criar um branch para conter o seu código. Tais branches são chamados de <strong>branches de funcionalidades (feature branches)</strong> e, dependendo da complexidade da funcionalidade, eles podem levar meses para serem integrados de volta à linha principal de desenvolvimento. Logo, em sistemas maiores e mais complexos podem existir dezenas de branches ativos.</p>
 <p>  Quando a implementação da nova funcionalidade terminar, o código do branch deve ser <q>copiado</q> de volta para o master, por meio de um comando do sistema de controle de versões chamado <strong>merge</strong>. Nesse momento, uma variedade de conflitos pode ocorrer, os quais são conhecidos como <strong>conflitos de integração</strong> ou <strong>conflitos de merge</strong>.</p>
@@ -216,7 +220,7 @@
 <p>Adicionalmente, branches de funcionalidades, principalmente aqueles com duração longa, ajudam a criar silos de conhecimento. Isto é, cada nova funcionalidade passa a ter um dono, pois um desenvolvedor ficou dedicado a ela por semanas. Por isso, esse desenvolvedor pode sentir-se confortável para adotar padrões diferentes do restante do time, incluindo padrões para leiaute do código, para organização de janelas e telas, para acesso a bancos de dados, etc.</p>
 </section>
 <section id="o-que-é-integração-contínua" data-number="1.3.2">
-<h3 data-number="10.3.2"><span class="header-section-number">10.3.2</span> O que é Integração Contínua?</h3>
+<h3 data-number="10.3.2"><span class="header-section-number">10.3.2</span> O que é Integração Contínua? <a href="#o-que-é-integração-contínua" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p><strong>Integração Contínua</strong> (<em>Continuous Integration</em> ou CI) é uma prática de desenvolvimento proposta por Extreme Programming (XP). O princípio motivador da prática já foi comentado na Introdução do presente capítulo: se uma tarefa causa <q>dor</q>, não podemos deixar que ela acumule. Em vez disso, devemos quebrá-la em subtarefas que possam ser realizadas de forma frequente. Como essas subtarefas são pequenas e simples, a <q>dor</q> decorrente da sua realização será menor.</p>
 <p>Adaptando para o contexto de integração de código, sabemos que grandes integrações são uma fonte de <q>dor</q> para os desenvolvedores, pois eles têm que resolver de forma manual diversos conflitos. Assim, CI recomenda integrar o código de forma frequente, isto é, contínua. Com isso, as integrações serão pequenas e irão gerar menos conflitos.</p>
@@ -227,14 +231,14 @@
 <p> Nessa citação, Beck defende várias integrações ao longo de um dia de trabalho de um desenvolvedor. No entanto, essa recomendação não é consensual. Outros autores, como Martin Fowler, mencionam pelo menos uma integração por dia por desenvolvedor (<a href="https://martinfowler.com/articles/continuousIntegration.html">link</a>), o que parece ser um limite mínimo para um time argumentar que está usando CI.</p>
 </section>
 <section id="boas-práticas-para-uso-de-ci" data-number="1.3.3">
-<h3 data-number="10.3.3"><span class="header-section-number">10.3.3</span> Boas Práticas para Uso de CI</h3>
+<h3 data-number="10.3.3"><span class="header-section-number">10.3.3</span> Boas Práticas para Uso de CI <a href="#boas-práticas-para-uso-de-ci" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Quando usa-se CI, o master é constantemente atualizado com código novo. Para garantir que ele não seja quebrado — isto é, deixe de compilar ou possua bugs —, recomenda-se o uso de algumas práticas em conjunto com CI, as quais vamos discutir a seguir.</p>
-<h4 class="unnumbered" id="build-automatizado">Build Automatizado</h4>
+<h4 class="unnumbered" id="build-automatizado">Build Automatizado <a href="#build-automatizado" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Build é o nome usado para designar a compilação de todos os arquivos de um sistema, até a geração de uma versão executável. Quando se usa CI, o build deve ser automatizado, isto é, não incluir nenhum passo manual. Além disso, é importante que ele seja o mais rápido possível, pois com integração contínua ele será sempre executado. Alguns autores, por exemplo, chegam a recomendar um limite de 10 minutos para execução de um build (<a href="https://dl.acm.org/doi/book/10.5555/318762">link</a>).</p>
-<h4 class="unnumbered" id="testes-automatizados">Testes Automatizados</h4>
+<h4 class="unnumbered" id="testes-automatizados">Testes Automatizados <a href="#testes-automatizados" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Além de garantir que o sistema compila sem erros após cada novo commit, é importante garantir também que ele continua com o comportamento esperado. Por isso, ao usar CI, deve-se ter uma boa cobertura de testes, principalmente testes de unidade, conforme estudamos no Capítulo 8.</p>
-<h4 class="unnumbered" id="servidores-de-integração-contínua">Servidores de Integração Contínua</h4>
+<h4 class="unnumbered" id="servidores-de-integração-contínua">Servidores de Integração Contínua <a href="#servidores-de-integração-contínua" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p> </p>
 <p>Por fim, os builds e testes automatizados devem ser executados com frequência, se possível após cada novo commit realizado no master. Para isso, existem <strong>Servidores de CI</strong>, que funcionam da seguinte forma (acompanhe também pela próxima figura):</p>
 <ul>
@@ -253,7 +257,7 @@
 <blockquote>
 <p><q>Na maioria das vezes, branches de funcionalidades constituem uma abordagem incompatível com CI. Um dos princípios de CI é que todos devem enviar commits para a linha de desenvolvimento principal diariamente. Então, a não ser que os branches de funcionalidades durem menos do que um dia, eles são um animal diferente de CI. É comum ouvir desenvolvedores dizendo que eles estão usando CI porque eles rodam builds automáticos, talvez usando um servidor de CI, após cada commit. Isso pode ser chamado de building contínuo e pode ser uma coisa boa. Porém, como não há integração, não podemos chamar essa prática de CI.</q></p>
 </blockquote>
-<h4 class="unnumbered" id="desenvolvimento-baseado-no-trunk">Desenvolvimento Baseado no Trunk</h4>
+<h4 class="unnumbered" id="desenvolvimento-baseado-no-trunk">Desenvolvimento Baseado no Trunk <a href="#desenvolvimento-baseado-no-trunk" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>  </p>
 <p>Como vimos, ao adotar CI, branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também <strong>desenvolvimento baseado no trunk</strong> (<em>trunk based development</em> ou TBD). Com TBD, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, também conhecido com trunk ou master.</p>
 <p><strong>Mundo Real</strong>: TBD é usado por grandes empresas desenvolvedoras de software, incluindo Google e Facebook:</p>
@@ -261,11 +265,11 @@
 <li><p>No Google,  <q>quase todo desenvolvimento ocorre no HEAD do repositório [isto é, no master]. Isso ajuda a identificar problemas de integração mais cedo e minimiza o esforço para realização de merges.</q> (<a href="https://arxiv.org/abs/1702.01715">link</a>)</p></li>
 <li><p>No Facebook,  <q>todos engenheiros de front-end trabalham em um único branch que é mantido sempre estável, o que também torna o desenvolvimento mais rápido, pois não dispende-se esforço na integração de branches de longa duração no trunk.</q> (<a href="https://doi.org/10.1109/MIC.2013.25">link</a>)</p></li>
 </ul>
-<h4 class="unnumbered" id="programação-em-pares">Programação em Pares</h4>
+<h4 class="unnumbered" id="programação-em-pares">Programação em Pares <a href="#programação-em-pares" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Programação em Pares (<em>Pair Programming</em>) pode ser considerada uma forma contínua de revisão de código. Quando se adota essa prática, qualquer novo trecho de código é revisado por um outro desenvolvedor, que encontra-se sentado ao lado do desenvolvedor líder da sessão de programação. Portanto, assim como builds e testes contínuos, recomenda-se usar programação em pares com CI. Porém, esse uso também não é obrigatório. Por exemplo, o código pode ser revisado após o commit ser realizado no master. No entanto, nesse caso, como o código já foi integrado, os custos de aplicar a revisão podem ser maiores.</p>
 </section>
 <section id="quando-não-usar-ci" data-number="1.3.4">
-<h3 data-number="10.3.4"><span class="header-section-number">10.3.4</span> Quando não usar CI?</h3>
+<h3 data-number="10.3.4"><span class="header-section-number">10.3.4</span> Quando não usar CI? <a href="#quando-não-usar-ci" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Os proponentes de CI definem um limite rígido para integrações no master: pelo menos uma integração por dia por desenvolvedor. No entanto, dependendo da organização, do domínio do sistema (que pode ser um sistema crítico) e do perfil dos desenvolvedores (que podem ser iniciantes), pode ser difícil seguir esse limite.</p>
 <p>Por outro lado, é bom lembrar que esse limite não é uma lei da natureza. Por exemplo, talvez seja mais factível realizar uma integração a cada dois ou três dias. Na verdade, qualquer prática de Engenharia de Software — incluindo integração contínua — não deve ser considerada ao pé da letra, isto é, exatamente como está descrita no manual ou neste livro-texto. Adaptações justificadas pelo contexto da organização são possíveis e devem ser consideradas. Experimentação com diferentes intervalos de integração pode também ajudar a definir a melhor configuração para uma organização.</p>
@@ -273,7 +277,7 @@
 </section>
 </section>
 <section id="deployment-contínuo" data-number="1.4">
-<h2 data-number="10.4"><span class="header-section-number">10.4</span> Deployment Contínuo</h2>
+<h2 data-number="10.4"><span class="header-section-number">10.4</span> Deployment Contínuo <a href="#deployment-contínuo" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Com integração contínua, código novo é frequentemente integrado no branch principal. No entanto, esse código não precisa estar pronto para entrar em produção. Ou seja, ele pode ser uma versão preliminar, que foi integrado para que os outros desenvolvedores tomem ciência da sua existência e, consequentemente, evitem conflitos de integração futuros. Por exemplo, você pode integrar uma versão preliminar de uma tela, com uma interface ainda ruim. Ou então, uma versão de uma função com problemas de desempenho.</p>
 <p>Porém, existe mais um passo da cadeia de automação proposta por DevOps, chamado de <strong>Deployment Contínuo (Continuous Deployment ou CD)</strong>. A diferença entre CI e CD é simples, mas seus impactos são profundos: quando usa-se CD, todo novo commit que chega no master entra rapidamente em produção, em questões de horas, por exemplo. O fluxo de trabalho quando se usa CD é o seguinte:</p>
@@ -293,7 +297,7 @@
 <p></p>
 <p><strong>Mundo Real</strong>: Diversas empresas que desenvolvem sistemas Web usam CD. Por exemplo, Savor e colegas reportam que no Facebook cada desenvolvedor coloca em produção, na média, 3.5 atualizações de software por semana (<a href="https://doi.org/10.1145/2889160.2889223">link</a>). Em cada atualização, na média, 92 linhas de código são adicionadas ou modificadas. Esses números revelam que, para funcionar bem, CD requer que as atualizações de código sejam pequenas. Portanto, os desenvolvedores têm que desenvolver a habilidade de quebrar qualquer tarefa de programação (por exemplo, uma nova funcionalidade, mesmo que complexa) em partes pequenas, que possam ser implementadas, testadas, integradas e entregues rapidamente.</p>
 <section id="entrega-contínua-continuous-delivery" data-number="1.4.1">
-<h3 data-number="10.4.1"><span class="header-section-number">10.4.1</span> Entrega Contínua (Continuous Delivery)</h3>
+<h3 data-number="10.4.1"><span class="header-section-number">10.4.1</span> Entrega Contínua (Continuous Delivery) <a href="#entrega-contínua-continuous-delivery" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Deployment Contínuo (CD) não é recomendável para certos tipos de sistemas, incluindo sistemas desktop (como uma IDE ou um navegador Web), aplicações móveis e aplicações embutidas em hardware. Provavelmente, você não gostaria de ser notificado diariamente de que existe uma nova versão do navegador que usa em seu desktop, ou do sistema de rede social que usa em seu celular ou ainda de que um novo driver está disponível para sua impressora. Esses sistemas demandam um processo de instalação que não é transparente para seus usuários, como é a atualização de um sistema Web.</p>
 <p>No entanto, mesmo nos sistemas mencionados no parágrafo anterior, pode-se usar um versão mais <em>fraca</em> de CD, chamada de <strong>Entrega Contínua (Continuous Delivery)</strong>. A ideia é simples: quando se usa entrega contínua, todo commit <em>pode</em> entrar em produção imediatamente. Ou seja, os desenvolvedores devem programar como se isso fosse acontecer. No entanto, existe uma autoridade externa — um gerente de projetos ou de releases, por exemplo — que toma a decisão sobre quando os commits, de fato, serão liberados para os usuários finais. Inclusive forças de mercado ou de estratégia da empresa podem influenciar nessa decisão. Uma outra maneira de explicar esses conceitos é por meio da seguinte diferença:</p>
@@ -306,7 +310,7 @@
 <p><strong>Mundo Real:</strong> Vamos citar alguns dados sobre a frequência de deployments em sistemas não-Web. Por exemplo, o Google libera novas releases do navegador Chrome para o público a cada seis semanas. Até 2019, a IDE Eclipse tinha uma única nova release por ano. A partir de 2019, o sistema passou a ter uma nova release a cada 13 semanas. Um dos motivos foi <q>permitir que os desenvolvedores liberem novas funcionalidades de forma rápida</q>. Como um terceiro exemplo, a versão para Android do Facebook sofria uma atualização a cada oito semanas. Mais recentemente, o Facebook encurtou esse tempo para uma semana (<a href="https://doi.org/10.1145/2950290.2994157">link</a>). Ou seja, as empresas estão lançando releases de forma mais rápida, para agradar os usuários, receber feedback, manter os desenvolvedores motivados e continuarem competitivas no mercado.</p>
 </section>
 <section id="feature-flags" data-number="1.4.2">
-<h3 data-number="10.4.2"><span class="header-section-number">10.4.2</span> Feature Flags</h3>
+<h3 data-number="10.4.2"><span class="header-section-number">10.4.2</span> Feature Flags <a href="#feature-flags" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>   </p>
 <p>Nem sempre todo commit estará pronto para entrar imediatamente em produção. Por exemplo, um desenvolvedor pode estar trabalhando em uma nova funcionalidade X, mas ainda falta implementar parte de seus requisitos. Portanto, esse desenvolvedor pode se perguntar:</p>
 <blockquote>
@@ -348,11 +352,11 @@ else
 <p><strong>Aprofundamento</strong>: Nesta seção, nosso foco foi no uso de feature flags para evitar a entrada em produção de um determinado trecho de código, em um cenário de deployment contínuo. Feature flags com esse propósito são chamados também de <strong>release flags</strong>. No entanto, feature flags podem ser usados com outros propósitos. Um deles é gerar diferentes versões de um mesmo sistema de software. Por exemplo, suponha um sistema que tenha uma versão gratuita e uma versão paga. Os clientes da versão paga têm acesso a mais funcionalidades, cujo código é delimitado por feature flags. Nesse caso específico, os flags são chamadas de <strong>flags de negócio</strong> (<strong>business flags</strong>).</p>
 </section>
 </section>
-<h2 class="unnumbered" id="bibliografia">Bibliografia</h2>
+<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de DevOps. Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas. Alta Books, 2018.</p>
 <p>Jez Humble, David Farley. Entrega Contínua: Como Entregar Software de Forma Rápida e Confiável. Bookman, 2014.</p>
 <p>Steve Matyas, Andrew Glover, Paul Duvall. Continuous Integration: Improving Software Quality and Reducing Risk. Addison-Wesley, 2007.</p>
-<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação</h2>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>1. Defina e descreva os objetivos de DevOps.</p>
 <p>2. Em sites de oferta de empregos na área de TI, é comum encontrar vagas para <q>Engenheiro DevOps</q>, requerendo habilidades como as seguintes:</p>
 <ul>
