@@ -17,7 +17,7 @@ da empresa. Segue uma imagem da capa do livro:
 Para apresentar Shape Up, vamos usar algumas analogias com outros
 métodos ágeis, principalmente com Scrum. Se quiser saber
 um pouco mais sobre métodos ágeis, você pode consultar o 
-[Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro.
+[Capítulo 2](../cap2.html) do livro.
 
 Um ciclo de desenvolvimento em Shape Up é composto por três etapas:
 
@@ -181,7 +181,7 @@ um método adequado para times que trabalham de forma remota?
 novidade em métodos ágeis. Por exemplo, em Extreme Programming 
 (XP) existe uma prática parecida, mas com um nome diferente. 
 Qual é esse nome adotado em XP? Se necessário, consulte o 
-[Capítulo 2](https://engsoftmoderna.info/cap2.html) 
+[Capítulo 2](../cap2.html#pr%C3%A1ticas-sobre-o-processo-de-desenvolvimento) 
 do livro texto, seção 2.3.3.
 
 * * * 
