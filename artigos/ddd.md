@@ -28,7 +28,7 @@ arquiteturas, linguagens de programação, etc.
 DDD defende que a separação entre domínio e tecnologia deve ser 
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
-[Capítulo 7](../cap7.html)), 
+[Capítulo 7](../cap7.html#arquitetura-em-camadas)), 
 Arquitetura Limpa (tratada neste outro [artigo didático](./arquitetura-limpa.html))
 ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html) separado) podem ser usados.
 
@@ -95,7 +95,7 @@ termos, como exemplificado a seguir:
 
 Para documentar de forma visual esses relacionamentos pode ser usado
 um **Diagrama de Classes** de UML, conforme estudamos 
-no [Capítulo 4](../cap4.html).
+no [Capítulo 4](../cap4.html#diagramas-de-classes).
 
 ## Objetos de Domínio {.unnumbered}
 
@@ -147,7 +147,7 @@ Já objetos de valor são mais simples. E também eles devem ser
 seus valores internos. Por exemplo, para alterar o `Endereço` 
 de um `Usuário` devemos abandonar o objeto antigo e criar um objeto 
 com o `Endereço` novo. Os benefícios de objetos imutáveis 
-já foram discutidos no [Capítulo 9](../cap9.html). 
+já foram discutidos no [Capítulo 9](../cap9.html#objetos-mut%C3%A1veis). 
 
 É interessante mencionar também que, recentemente, algumas linguagens de 
 programação passaram a oferecer suporte sintático para implementação de 
@@ -173,7 +173,7 @@ Por isso, eles não costumam ter atributos, mas apenas métodos.
 Serviços normalmente são implementados como **singletons**, ou seja,
 possuem uma única instância durante a execução do sistema.
 Mais detalhes sobre esse padrão de projeto no 
-[Capítulo 6](../cap6.html).
+[Capítulo 6](../cap6.html#singleton).
 
 **Exemplo**: no nosso sistema de bibliotecas, podemos ter um
 serviço que implementa as seguintes operações:

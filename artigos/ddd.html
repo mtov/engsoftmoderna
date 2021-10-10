@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -107,7 +111,7 @@
 <p>Os princípios defendidos por DDD têm, no seu conjunto, um objetivo central: permitir o desenvolvimento de sistemas cujo design é centrado em conceitos próximos e alinhados com um domínio de negócio.</p>
 <p>O <strong>domínio</strong> de um sistema consiste da área e problema de negócio que ele pretende resolver. Neste artigo, para explicar DDD, vamos usar como exemplo um sistema para gerenciar uma biblioteca. Logo, esse problema – gerenciamento de bibliotecas – constitui o domínio do nosso sistema de exemplo.</p>
 <p>DDD defende que os <strong>desenvolvedores</strong> devem ter um profundo conhecimento do domínio do sistema que eles desenvolvem. Esse conhecimento deve ser obtido por meio de conversas e discussões frequentes com <strong>especialistas no domínio</strong> (ou no negócio). Portanto, o design do sistema deve ser norteado para atender ao seu domínio. E não, por exemplo, para se moldar a uma determinada tecnologia de programação. Em suma, o design é dirigido pelo domínio, e não por frameworks, arquiteturas, linguagens de programação, etc.</p>
-<p>DDD defende que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html">Capítulo 7</a>), Arquitetura Limpa (tratada neste outro <a href="./arquitetura-limpa.html">artigo didático</a>) ou Arquitetura Hexagonal (também coberta em um <a href="./arquitetura-hexagonal.html">artigo</a> separado) podem ser usados.</p>
+<p>DDD defende que a separação entre domínio e tecnologia deve ser promovida e expressa na arquitetura do sistema. Para tanto, padrões como Arquitetura em Camadas (estudado no <a href="../cap7.html#arquitetura-em-camadas">Capítulo 7</a>), Arquitetura Limpa (tratada neste outro <a href="./arquitetura-limpa.html">artigo didático</a>) ou Arquitetura Hexagonal (também coberta em um <a href="./arquitetura-hexagonal.html">artigo</a> separado) podem ser usados.</p>
 <p>Antes de avançarmos, é importante mencionar também que DDD se sobressai quando é usado em sistemas para domínios complexos, cujas regras de negócio são mais difíceis de serem imediatamente entendidas e implementadas pelos desenvolvedores.</p>
 <h2 class="unnumbered" id="linguagem-ubíqua">Linguagem Ubíqua</h2>
 <p><strong>Linguagem Ubíqua</strong> (ou <strong>Linguagem Onipresente</strong>) é um conceito central de DDD. Ela consiste de um conjunto de termos que devem ser plenamente entendidos tanto por especialistas no domínio (usuários do sistema) como por desenvolvedores (implementadores do sistema).</p>
@@ -134,7 +138,7 @@
 <li>Existem três tipos de <code>Usuário</code>: <code>Aluno</code>, <code>Professor</code> e <code>UsuárioExterno</code>.</li>
 <li>O <code>Acervo</code> da biblioteca é formado por um conjunto de <code>Livros</code>.</li>
 </ul>
-<p>Para documentar de forma visual esses relacionamentos pode ser usado um <strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a href="../cap4.html">Capítulo 4</a>.</p>
+<p>Para documentar de forma visual esses relacionamentos pode ser usado um <strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a href="../cap4.html#diagramas-de-classes">Capítulo 4</a>.</p>
 <h2 class="unnumbered" id="objetos-de-domínio">Objetos de Domínio</h2>
 <p>DDD foi proposto pensando em sistemas implementados em linguagens orientadas a objetos. Então, quando se define o design desses sistemas, alguns tipos importantes de objetos se destacam. Dentre eles, DDD lista os seguintes:</p>
 <ul>
@@ -150,12 +154,12 @@
 <p>Por outro lado, <strong>objetos de valor</strong> (<em>value objects</em>) não possuem um identificador único. Assim, eles são caracterizados apenas por seu estado, isto é, pelos valores de seus atributos. Por exemplo, o <code>Endereço</code> de um <code>Usuário</code> da biblioteca é um objeto de valor. Veja que se dois <code>Endereços</code> tiverem exatamente os mesmos valores para <code>rua</code>, <code>número</code>, <code>cidade</code>, <code>CEP</code>, etc, eles serão idênticos.</p>
 <p>Outros exemplos de objetos de valor incluem: <code>Moeda</code>, <code>Data</code>, <code>Fone</code>, <code>Email</code>, <code>Hora</code>, <code>Cor</code>, etc.</p>
 <p><strong>Por que distinguir entre entidades e objetos de valor?</strong> Entidades são objetos mais importantes e devemos, por exemplo, projetar com cuidado como eles serão persistidos e depois recuperados de um banco de dados. Devemos também tomar cuidado com o ciclo de vida de entidades. Por exemplo, podem existir regras que governam a criação e remoção de entidades. No caso da nossa bibliotecas, não se pode remover um <code>Usuário</code> se ele tiver um <code>Empréstimo</code> pendente.</p>
-<p>Já objetos de valor são mais simples. E também eles devem ser <strong>imutáveis</strong>, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis já foram discutidos no <a href="../cap9.html">Capítulo 9</a>.</p>
+<p>Já objetos de valor são mais simples. E também eles devem ser <strong>imutáveis</strong>, ou seja, uma vez criados, não deve ser possível alterar seus valores internos. Por exemplo, para alterar o <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os benefícios de objetos imutáveis já foram discutidos no <a href="../cap9.html#objetos-mut%C3%A1veis">Capítulo 9</a>.</p>
 <p>É interessante mencionar também que, recentemente, algumas linguagens de programação passaram a oferecer suporte sintático para implementação de objetos de valor. Por exemplo, nas versões mais novas de Java, eles podem ser implementados por meio de <a href="https://docs.oracle.com/en/java/javase/16/language/records.html">records</a>.</p>
 <h3 class="unnumbered" id="serviços">Serviços</h3>
 <p>Existem operações importantes do domínio que não se encaixam em entidades e objetos de valor. Assim, o ideal é criar objetos específicos para implementar essas operações. No jargão de DDD, esses objetos são chamados de <strong>serviços</strong>. Em alguns sistemas, é comum ver esses objetos sendo chamados também de gerenciadores ou controladores.</p>
 <p>A assinatura das operações de um objeto de serviço pode incluir entidades e objetos de valor. No entanto, objetos de serviço não devem possuir estado, isto é, eles devem ser <strong>stateless</strong>. Por isso, eles não costumam ter atributos, mas apenas métodos.</p>
-<p>Serviços normalmente são implementados como <strong>singletons</strong>, ou seja, possuem uma única instância durante a execução do sistema. Mais detalhes sobre esse padrão de projeto no <a href="../cap6.html">Capítulo 6</a>.</p>
+<p>Serviços normalmente são implementados como <strong>singletons</strong>, ou seja, possuem uma única instância durante a execução do sistema. Mais detalhes sobre esse padrão de projeto no <a href="../cap6.html#singleton">Capítulo 6</a>.</p>
 <p><strong>Exemplo</strong>: no nosso sistema de bibliotecas, podemos ter um serviço que implementa as seguintes operações:</p>
 <pre><code>class ServicoDeEmprestimo {
   ...
