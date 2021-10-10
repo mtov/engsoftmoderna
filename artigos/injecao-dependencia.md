@@ -80,7 +80,7 @@ class A {
 
 Ou seja: quando usamos Injeção de Dependência devemos fazer uso do princípio 
 de projeto **Prefira Interfaces a Classes Concretas**, que estudamos no 
-[Capítulo 5](https://engsoftmoderna.info/cap5.html).
+[Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
 Para concluir, as vantagens de Injeção de Dependência são:
 
@@ -187,7 +187,7 @@ para outras linguagens.
 
 ## Exercícios {.unnumbered}
 
-1. Como explicamos no [Capítulo 6](https://engsoftmoderna.info/cap6.html),
+1. Como explicamos no [Capítulo 6](../cap6.html#introdu%C3%A7%C3%A3o),
 padrões de projeto são classificados em padrões criacionais,
 estruturais e comportamentais. Em qual dessas categorias você classificaria
 Injeção de Dependência? Justifique brevemente.
@@ -216,12 +216,12 @@ Para responder, compare os seguintes códigos:
 
 3. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
 de Dependência (princípio de projeto). Para saber mais sobre Inversão de 
-Dependência, consulte o [Capítulo 5](https://engsoftmoderna.info/cap5.html).
+Dependência, consulte o [Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
 4. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
 violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta
 use como exemplo a classe `Estacionamento` da Seção 5.3.1 do 
-[Capítulo 5](https://engsoftmoderna.info/cap5.html) do livro.
+[Capítulo 5](../cap5.html#exemplo-1) do livro.
 
 * * * 
 

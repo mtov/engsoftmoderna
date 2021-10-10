@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -149,7 +153,7 @@
       this.b = b;
    }
 }</code></pre>
-<p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso do princípio de projeto <strong>Prefira Interfaces a Classes Concretas</strong>, que estudamos no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p>
+<p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso do princípio de projeto <strong>Prefira Interfaces a Classes Concretas</strong>, que estudamos no <a href="../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias">Capítulo 5</a>.</p>
 <p>Para concluir, as vantagens de Injeção de Dependência são:</p>
 <ul>
 <li><p>Injeção de Dependência torna mais fácil mudar a dependência concreta (<code>B</code>) usada por uma classe <code>A</code>. Por exemplo, <code>A</code> pode ser uma classe que precisa enviar mails. Para isso, ela faz uso de uma classe <code>B1</code>. Amanhã, no entanto, podemos decidir que os mails serão enviados por uma classe <code>B2</code>. Para isso, basta que <code>B1</code> e <code>B2</code> implementem a interface <code>IB</code>.</p></li>
@@ -194,7 +198,7 @@
 <p>A explicação que acabamos de apresentar foi baseada no <a href="https://github.com/google/guice">Guice</a>, um framework de injeção de dependências para Java, desenvolvido pelo Google. No entanto, existem outros frameworks semelhantes, tanto para Java como para outras linguagens.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Como explicamos no <a href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a>, padrões de projeto são classificados em padrões criacionais, estruturais e comportamentais. Em qual dessas categorias você classificaria Injeção de Dependência? Justifique brevemente.</p></li>
+<li><p>Como explicamos no <a href="../cap6.html#introdu%C3%A7%C3%A3o">Capítulo 6</a>, padrões de projeto são classificados em padrões criacionais, estruturais e comportamentais. Em qual dessas categorias você classificaria Injeção de Dependência? Justifique brevemente.</p></li>
 <li><p>Injeção de Dependência, muitas vezes, é comparada com padrão de projeto Fábrica. Qual a desvantagem de <q>injetar</q> dependências por meio de fábricas? Para responder, compare os seguintes códigos:</p></li>
 </ol>
 <pre><code>class A {
@@ -210,8 +214,8 @@
   }
 }</code></pre>
 <ol start="3" type="1">
-<li><p>Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão de Dependência (princípio de projeto). Para saber mais sobre Inversão de Dependência, consulte o <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>.</p></li>
-<li><p>Por que costuma-se dizer que Injeção de Dependência pode, em certos casos, violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta use como exemplo a classe <code>Estacionamento</code> da Seção 5.3.1 do <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a> do livro.</p></li>
+<li><p>Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão de Dependência (princípio de projeto). Para saber mais sobre Inversão de Dependência, consulte o <a href="../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias">Capítulo 5</a>.</p></li>
+<li><p>Por que costuma-se dizer que Injeção de Dependência pode, em certos casos, violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta use como exemplo a classe <code>Estacionamento</code> da Seção 5.3.1 do <a href="../cap5.html#exemplo-1">Capítulo 5</a> do livro.</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
