@@ -95,7 +95,7 @@ mais facilmente a dependência para `B`. Por exemplo, em vez de um serviço de m
 (`B1` ou `B2`), podemos usar um serviço de mail fictício, que apenas emule o envio 
 de uma mensagem simples. Para isso, basta que esse serviço fictício implemente a 
 interface `IB`. Se você ainda não sabe o que é um mock, recomendamos a leitura
-do [Capítulo 8](../cap8.html#mocks).
+da seção do [Capítulo 8](../cap8.html#mocks) sobre o assunto.
  
 
 ## Frameworks para Injeção de Dependência {.unnumbered}

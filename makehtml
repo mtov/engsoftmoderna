@@ -1,5 +1,5 @@
 # path do pandoc incluindo parâmetros sempre usados
-pandoc_bin="pandoc --defaults=defaults.yaml"
+pandoc_bin="pandoc --defaults=defaults.yaml --lua-filter=helper/anchor-links.lua"
 
 $pandoc_bin  -T "Prefácio" cap0.md -o cap0.html
 $pandoc_bin --number-offset=0 -T "Cap. 1: Introdução" cap1.md -o cap1.html
