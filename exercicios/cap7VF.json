@@ -74,6 +74,10 @@
     "correct": "true"
   },
   {
+    "text": "Latência (isto é, o tempo que uma mensagem leva para chegar ao seu destino) é uma preocupação mais importante em arquiteturas de software monolíticas do que em arquiteturas baseadas em microsserviços.",
+    "correct": "false"
+  },
+  {
     "text": "Com microsserviços, a forma mais comum de escalabilidade é horizontal, por meio da adição de novos servidores no sistema.",
     "correct": "true"
   },
