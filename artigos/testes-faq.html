@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -106,7 +110,7 @@
 <h3 class="unnumbered" id="o-certo-é-teste-de-unidade-ou-teste-unitário">1. O certo é teste de unidade ou teste unitário?</h3>
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" id="o-que-é-uma-unidade">2. O que é uma unidade?</h3>
-<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos). Mais detalhes sobre esses princípios na Seção 8.3.1 do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>.</p>
+<p>No contexto de testes de unidade, a definição de unidade não é totalmente objetiva. Tendemos a dizer que uma unidade é uma classe, no caso de sistemas orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos considerar que certos testes vão testar um <strong>conjunto de classes</strong>. O fundamental é que tais testes atendam aos princípios FIRST, principalmente aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos). Mais detalhes sobre esses princípios na Seção 8.3.1 do <a href="../cap8.html#princ%C3%ADpios-first">Capítulo 8</a>.</p>
 <h3 class="unnumbered" id="no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo">3. No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?</h3>
 <p>Seguem as definições:</p>
 <ul>
@@ -145,7 +149,7 @@
 }</code></pre>
 <p>Veja que o método <code>push</code> retorna <code>void</code>. Ou seja, realmente, não conseguimos testar um <code>push</code> de forma usual: isto é, chamando-o e verificando se o valor que ele retorna é aquele esperado.</p>
 <h5 class="unnumbered" id="teste-comportamental-ou-de-interação">Teste comportamental (ou de interação)</h5>
-<p>Suponha agora que um método envia um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para testar se a mensagem, de fato, chegou. Uma possível solução consiste em usar um mock e realizar um tipo de teste chamado de <strong>teste comportamental</strong> ou <strong>teste de interação</strong>. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, devemos testar se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro)</p>
+<p>Suponha agora que um método envia um mail, que chega na caixa postal de um outro processo. Normalmente, não é fácil contactar esse processo para testar se a mensagem, de fato, chegou. Uma possível solução consiste em usar um mock e realizar um tipo de teste chamado de <strong>teste comportamental</strong> ou <strong>teste de interação</strong>. Isto é, testamos se a execução do método sob teste chamou algum método de interesse. No nosso caso, devemos testar se essa execução chamou o método que produz o efeito colateral que nos interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do <a href="../cap8.html#mocks-vs-stubs">Capítulo 8</a> do livro)</p>
 <pre><code>void testeEnvioDeMensagem {
   SomeObject obj = new SomeObject();    
   Mailer m = mock(Mailer.class);

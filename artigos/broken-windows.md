@@ -79,7 +79,7 @@ do que o encontrou. Você deve fazer isso mesmo que não seja o autor
 do código com problema.
 
 A Regra do Escoteiro relaciona-se com o conceito de **refactorings oportunistas** que
-estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. 
+estudamos no <a href="../cap9.html#pr%C3%A1tica-de-refactoring">Capítulo 9</a> do livro. 
 A ideia é que refactorings devem ser uma atividade contínua, 
 realizada "no meio" de atividades de correção de bugs e de implementação de 
 novas funcionalidades. 

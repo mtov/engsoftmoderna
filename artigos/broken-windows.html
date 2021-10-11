@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -138,7 +142,7 @@
 <p>Deixe o acampamento mais limpo do que você o encontrou.</p>
 </blockquote>
 <p>Ou seja, se você está corrigindo um bug em um sistema ou implementando uma nova funcionalidade e se depara com uma <q>janela quebrada</q> – isto é, com algum código de má qualidade – você não deve simplesmente fechar os olhos. Em vez disso, procure refatorar esse código, para entregá-lo mais <q>limpo</q> do que o encontrou. Você deve fazer isso mesmo que não seja o autor do código com problema.</p>
-<p>A Regra do Escoteiro relaciona-se com o conceito de <strong>refactorings oportunistas</strong> que estudamos no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a> do livro. A ideia é que refactorings devem ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
+<p>A Regra do Escoteiro relaciona-se com o conceito de <strong>refactorings oportunistas</strong> que estudamos no <a href="../cap9.html#pr%C3%A1tica-de-refactoring">Capítulo 9</a> do livro. A ideia é que refactorings devem ser uma atividade contínua, realizada <q>no meio</q> de atividades de correção de bugs e de implementação de novas funcionalidades.</p>
 <p>De fato, em um trabalho que publicamos em 2016 sobre motivações para refactorings (<a href="https://arxiv.org/abs/1607.02459">link</a>), diversos desenvolvedores nos reportaram que têm a preocupação de deixar o código mais limpo, após uma tarefa de manutenção. Eles não mencionaram explicitamente a Regra dos Escoteiros, mas suas respostas estão perfeitamente alinhadas com o propósito da regra. Veja exemplos de respostas:</p>
 <blockquote>
 <p>Quando eu estava corrigindo uma exceção, eu percebi que deveria adicionar o mesmo código em dois lugares. Em vez de fazer isso, eu extraí esse código para um método e apliquei a correção apenas nele.</p>

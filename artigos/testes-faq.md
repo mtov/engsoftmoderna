@@ -24,7 +24,7 @@ orientados a objetos. No entanto, não precisamos ser dogmáticos e podemos cons
 que certos testes vão testar um **conjunto de classes**.
 O fundamental é que tais testes atendam aos princípios FIRST, principalmente
 aqueles associados às três primeiras letras: rápidos, independentes e repetíveis (ou determinísticos). Mais detalhes sobre esses princípios na 
-Seção 8.3.1 do [Capítulo 8](https://engsoftmoderna.info/cap8.html).
+Seção 8.3.1 do [Capítulo 8](../cap8.html#princ%C3%ADpios-first).
 
 ### 3. No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo? {.unnumbered}
 
@@ -99,7 +99,7 @@ ou **teste de interação**. Isto é, testamos se a execução do método sob
 teste chamou algum método de interesse. No nosso caso, devemos testar 
 se essa execução chamou o método que produz o efeito colateral que nos 
 interessa (o envio de um mail). Veja um exemplo (retirado da Seção 8.6.2 do 
-[Capítulo 8](https://engsoftmoderna.info/cap8.html) do livro)
+[Capítulo 8](../cap8.html#mocks-vs-stubs) do livro)
 
 ```
 void testeEnvioDeMensagem {
