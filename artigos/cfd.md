@@ -1,6 +1,6 @@
 # Diagramas de Fluxo Cumulativo {.unnumbered}
 
-No [Capítulo 2](../cap2.html), estudamos
+No [Capítulo 2](../cap2.html#principais-artefatos-e-eventos), estudamos
 sobre Gráficos de Burndown e comentamos que eles podem ser usados 
 para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.
 
@@ -71,7 +71,7 @@ x podemos usar uma outra unidade de tempo, como dias, quinzenas, meses, etc.
 Além disso, neste artigo, para a explicação ficar mais simples, não vamos
 quebrar as histórias em tarefas menores no passo de Especificação, tal como
 fizemos na seção sobre Kanban no 
-[Capítulo 2](../cap2.html). Ou seja, imagine que as histórias são simples e 
+[Capítulo 2](../cap2.html#kanban). Ou seja, imagine que as histórias são simples e 
 podem ser Implementadas e Revisadas sem necessidade de divisão em tarefas 
 menores.
 
@@ -97,6 +97,7 @@ também que menos histórias estão sendo revisadas, pois a faixa vermelha
 praticamente sumiu. E, por fim, o acúmulo de histórias em Implementação 
 começa a gerar um represamento também em Especificação.
 
+<!--
 ### CFDs e Lei de Little {.unnumbered}
 
 Como vimos no [Capítulo 2](../cap2.html), a 
@@ -139,6 +140,8 @@ Portanto, podemos usar um CFD para calcular o lead time e throughput
 de cada passo de um quadro Kanban. No exemplo, fizemos isso para o 
 passo de Revisão, representado pela área em azul no diagrama.
 
+-->
+
 ### Para Saber Mais {.unnumbered}
 
 CFDs são tratados na maioria dos livros sobre Kanban. Especificamente,
@@ -153,21 +156,23 @@ Technology Business* -- é uma outra referência importante sobre CFDs.
 muito usados com Kanban. Mas é possível usar CFDs também com Scrum? 
 Justifique sua resposta.
 
+<!--
 2. Se quisermos diminuir o lead time de um passo de um Quadro Kanban, 
 devemos aumentar ou diminuir o seu limite WIP? Justifique sua resposta 
 usando a Lei de Little.
+-->
 
-3. Em um CFD estável, a taxa de chegada de novas histórias é igual à 
+2. Em um CFD estável, a taxa de chegada de novas histórias é igual à 
 taxa com que histórias são puxadas para o próximo passo. Verdadeiro ou 
 Falso? Justifique.
 
-4. Suponha um processo de desenvolvimento do tipo Waterfall, com três 
+3. Suponha um processo de desenvolvimento do tipo Waterfall, com três 
 fases: Especificação, Implementação e Testes. Crie um CFD para um projeto 
 desenvolvido nesse processo. No seu CFD, assuma um sistema cujo 
 desenvolvimento inclui 25 funcionalidades. As fases Especificação, 
 Implementação e Testes levam, respectivamente, 2, 3 e 1 semestre.
 
-5. Use um software de planilhas para criar CFDs hipotéticos, tal como 
+4. Use um software de planilhas para criar CFDs hipotéticos, tal como 
 fizemos neste artigo. Defina um horizonte de tempo (eixo x) e alguns 
 passos (colunas da planilha e, consequentemente, áreas do diagrama). 
 Em seguida, lance valores hipotéticos na sua planilha. Crie pelo menos 
