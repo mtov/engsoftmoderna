@@ -49,31 +49,31 @@ de interesse.
 Existem três tipos principais de squads voltados para desenvolvimento 
 de software:
 
-* Squads responsáveis por funcionalidades do software: por exemplo, em 
+* **Squads responsáveis por funcionalidades do software:** por exemplo, em 
 um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
 processo de compra (checkout), pelo pagamento, pela recomendação de 
 produtos, pelo catálogo de produtos, etc. No livro Team Topologies,
 os autores Manuel Pais e Matthew Skelton preferem chamar esses squads
-de alinhados aos fluxos de valores do negócio (*stream-aligned teams*).
+de **alinhados aos fluxos de valores do negócio** (*stream-aligned teams*).
 Ou seja, são squads que devem estar próximos de problemas do 
-negócio e, consequentemente, ter como missão clara agregar valor para
-os clientes do sistema. Segundo os mesmos autores, esse deve ser
+negócio e, consequentemente, ter como missão agregar valor para
+os seus clientes. Segundo os mesmos autores, esse deve ser
 o tipo mais frequente de squad em uma organização.
 
-* Squads responsáveis por componentes arquiteturais: o exemplo clássico 
+* **Squads responsáveis por componentes arquiteturais:** o exemplo clássico 
 são squads responsáveis pelos clientes móveis de um sistema, incluindo 
 Android, iOS, etc. Ou seja, a empresa pode ter squads para 
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend. Aproveitando
 o comentário feito anteriormente, no livro Team Topologies, os autores também
 possuem uma visão e nomenclatura diferentes para tais squads, chamando-os de 
-times responsáveis por sistemas complexos (*complicated-subsystem teams*), 
-isto é, sistemas cujo desenvolvimento demanda conhecimento muito específico. 
+**times responsáveis por sistemas complexos** (*complicated-subsystem teams*), 
+isto é, sistemas cujo desenvolvimento demanda um conhecimento específico. 
 Como exemplo, os autores citam sistemas para processamento de vídeos, 
-sistemas baseados em modelos matemáticos muito específicos, um sistema 
+sistemas que usam modelos matemáticos sofisticados, sistemas 
 para reconhecimento facial, etc.
 
-* Squads responsáveis por objetivos de negócio: por exemplo, pode-se criar 
+* **Squads responsáveis por objetivos de negócio:** por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
 (*Software as a Service*). As soluções desenhadas e implementadas por esse 
 squad podem incluir programas de fidelidade, cupons de desconto, etc. 

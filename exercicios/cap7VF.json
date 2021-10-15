@@ -88,6 +88,14 @@
   {
     "text": "Para ter boas arquiteturas de software é importante pensar também na organização dos times de desenvolvimento, já que -- de acordo com a Lei de Brooks -- a arquitetura de um sistema tende a refletir a arquitetura da organização que o desenvolve.",
     "correct": "false"
+  },
+  {
+    "text": "Na versão original de MVC (adotada em Smalltalk-80), um Controlador é um tratador de eventos de interfaces gráficas (mouse, teclado, etc).",
+    "correct": "true"
+  },
+  {
+    "text": "Na versão de MVC adotada em sistemas Web, um Controlador é um mediador da comunicação entre a Visão e o Modelo.",
+    "correct": "true"
   }
 ]
 }	 
