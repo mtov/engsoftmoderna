@@ -49,16 +49,29 @@ de interesse.
 Existem três tipos principais de squads voltados para desenvolvimento 
 de software:
 
+* Squads responsáveis por funcionalidades do software: por exemplo, em 
+um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
+processo de compra (checkout), pelo pagamento, pela recomendação de 
+produtos, pelo catálogo de produtos, etc. No livro Team Topologies,
+os autores Manuel Pais e Matthew Skelton preferem chamar esses squads
+de alinhados aos fluxos de valores do negócio (*stream-aligned teams*).
+Ou seja, são squads que devem estar próximos de problemas do 
+negócio e, consequentemente, ter como missão clara agregar valor para
+os clientes do sistema. Segundo os mesmos autores, esse deve ser
+o tipo mais frequente de squad em uma organização.
+
 * Squads responsáveis por componentes arquiteturais: o exemplo clássico 
 são squads responsáveis pelos clientes móveis de um sistema, incluindo 
 Android, iOS, etc. Ou seja, a empresa pode ter squads para 
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
-em empresas menores, podemos ter squads de frontend e backend.
-
-* Squads responsáveis por funcionalidades do software: por exemplo, em 
-um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
-processo de compra (checkout), pelo pagamento, pela recomendação de 
-produtos, pelo catálogo de produtos, etc. 
+em empresas menores, podemos ter squads de frontend e backend. Aproveitando
+o comentário feito anteriormente, no livro Team Topologies, os autores também
+possuem uma visão e nomenclatura diferentes para tais squads, chamando-os de 
+times responsáveis por sistemas complexos (*complicated-subsystem teams*), 
+isto é, sistemas cujo desenvolvimento demanda conhecimento muito específico. 
+Como exemplo, os autores citam sistemas para processamento de vídeos, 
+sistemas baseados em modelos matemáticos muito específicos, um sistema 
+para reconhecimento facial, etc.
 
 * Squads responsáveis por objetivos de negócio: por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
@@ -66,10 +79,6 @@ um squad para melhorar a retenção de clientes de um sistema SaaS
 squad podem incluir programas de fidelidade, cupons de desconto, etc. 
 Como um segundo exemplo, um squad pode ficar responsável por implantar
 o produto de software em um outro país.
-
-Assim, os squads de funcionalidades tratam de serviços bem conhecidos e 
-quase que obrigatórios em um sistema. Já os squads voltados para atender a
-um objetivo do negócio têm maior liberdade para desenhar seus serviços.
 
 Desenvolvedores são maioria nos dois primeiros tipos de squads.
 Já em squads voltados para um objetivo de negócio existe um 
