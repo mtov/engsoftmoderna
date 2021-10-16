@@ -46,18 +46,22 @@ de interesse.
 
 ### Tipos de Squads {.unnumbered}
 
-Existem três tipos principais de squads voltados para desenvolvimento 
+Existem quatro tipos principais de squads voltados para desenvolvimento 
 de software:
 
-* **Squads responsáveis por funcionalidades do software:** por exemplo, em 
+* **Squads responsáveis por funcionalidades:** por exemplo, em 
 um sistema de comércio eletrônico, podem existir squads responsáveis pelo 
 processo de compra (checkout), pelo pagamento, pela recomendação de 
 produtos, pelo catálogo de produtos, etc. No livro Team Topologies,
 os autores Manuel Pais e Matthew Skelton preferem chamar esses squads
 de **times alinhados aos fluxos de valores do negócio** (*stream-aligned teams*).
-Ou seja, são squads que tem como missão resolver problemas que afetam
-diretamente aos clientes do sistema. Segundo os autores, esse deve ser
-o tipo mais frequente de squad em uma organização.
+Ou seja, são squads que tem como missão resolver problemas que facilitam a vida
+dos clientes e, ao mesmo tempo, geram valor para a organização. Para tornar 
+essa associação mais clara, alguns squads são inclusive responsáveis por 
+personas específicas do sistema. Uma outra característica importante desses 
+squads é que eles têm responsabilidade ponta-a-ponta sobre o código que 
+desenvolvem, isto é, desde o projeto até a operação. Tais squads devem ser o 
+tipo mais frequente de squad em uma organização.
 
 * **Squads responsáveis por componentes arquiteturais:** o exemplo clássico 
 são squads responsáveis pelos clientes móveis de um sistema, incluindo 
@@ -66,11 +70,28 @@ desenvolver e manter cada um desses clientes. Como um segundo exemplo,
 em empresas menores, podemos ter squads de frontend e backend. No livro 
 Team Topologies, os autores também possuem uma visão e nomenclatura 
 diferentes para tais squads, optando por chamá-los de **times responsáveis 
-por sistemas complexos** (*complicated-subsystem teams*), 
-isto é, sistemas cujo desenvolvimento demanda um conhecimento específico. 
-Como exemplo, os autores citam sistemas para processamento de vídeos, 
-sistemas que usam modelos matemáticos sofisticados, sistemas 
+por subsistemas complexos** (*complicated-subsystem teams*), isto é, 
+subsistemas -- ou componentes -- cujo desenvolvimento requer um 
+conhecimento bastante específico. Como exemplo, os autores citam subsistemas para 
+processamento de vídeos, que usam modelos matemáticos sofisticados, 
 para reconhecimento facial, etc.
+
+* **Squads responsáveis por plataformas:** são squads que desenvolvem
+ferramentas e plataformas internas, que são usadas pelos demais
+squads, sejam eles de funcionalidades ou de componentes. Ou seja,
+são squads que prestam serviços para os outros squads da organização. 
+Por exemplo, eles podem desenvolver e manter ferramentas ou scripts para 
+facilitar a instalação do sistema na máquina local dos desenvolvedores, 
+para facilitar o deployment do sistema em serviços de cloud, para 
+implementar serviços de logging ou monitoramento, etc. Ou seja, o 
+objetivo é liberar os demais squads das preocupações relacionadas com
+tais problemas técnicos. Muitas vezes, além de desenvolver sistemas 
+internos, times de plataformas prestam serviços de consultoria para os 
+demais times da organização, auxiliando-os a melhorar aspectos do 
+desenvolvimento, tais como automação de testes, implementação de frontends, 
+qualidade de software, arquitetura, performance de bancos de dados, etc. 
+No caso de times que apenas prestam consultoria, eles costumam ser chamados
+de **enabling teams**.
 
 * **Squads responsáveis por objetivos de negócio:** por exemplo, pode-se criar 
 um squad para melhorar a retenção de clientes de um sistema SaaS 
@@ -79,16 +100,14 @@ squad podem incluir programas de fidelidade, cupons de desconto, etc.
 Como um segundo exemplo, um squad pode ficar responsável por implantar
 o produto de software em um outro país.
 
-Desenvolvedores são maioria nos dois primeiros tipos de squads.
+Desenvolvedores são maioria nos três primeiros tipos de squads.
 Já em squads voltados para um objetivo de negócio existe um 
 equilíbrio entre desenvolvedores e outros papéis, como gerentes 
 de produto, vendedores, analistas de marketing, cientistas de 
 dados, etc.
 
-É importante ressaltar que em uma mesma empresa podem co-existir squads 
-de componentes arquiteturais, de funcionalidades e associados a 
-objetivos de negócio.
-
+É importante ressaltar que em uma mesma empresa podem co-existir 
+os quatro tipos de squads que foram mencionados.
 
 ### Comentário Final {.unnumbered}
 
@@ -122,16 +141,14 @@ desempenhar um papel importante.
 
 1. Para fixar as principais ideias do Modelo Spotify, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Spotify) de V ou F, com correção online.
 
-2. Por que o Modelo Spotify é considerado uma estrutura matricial?
+2. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
 
-3. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
+3. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
-4. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes de frontend e 
+4. Descreva uma desvantagem do Modelo Spotify.
+
+5. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes de frontend e 
 outros *m* squads que implementam componentes de backend. Discorra sobre o principal problema desse tipo de organização de squads.
-
-5. Descreva uma desvantagem do Modelo Spotify.
-
-6. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
 
 * * * 
 
