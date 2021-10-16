@@ -54,20 +54,19 @@ um sistema de comércio eletrônico, podem existir squads responsáveis pelo
 processo de compra (checkout), pelo pagamento, pela recomendação de 
 produtos, pelo catálogo de produtos, etc. No livro Team Topologies,
 os autores Manuel Pais e Matthew Skelton preferem chamar esses squads
-de **alinhados aos fluxos de valores do negócio** (*stream-aligned teams*).
-Ou seja, são squads que devem estar próximos de problemas do 
-negócio e, consequentemente, ter como missão agregar valor para
-os seus clientes. Segundo os mesmos autores, esse deve ser
+de **times alinhados aos fluxos de valores do negócio** (*stream-aligned teams*).
+Ou seja, são squads que tem como missão resolver problemas que afetam
+diretamente aos clientes do sistema. Segundo os autores, esse deve ser
 o tipo mais frequente de squad em uma organização.
 
 * **Squads responsáveis por componentes arquiteturais:** o exemplo clássico 
 são squads responsáveis pelos clientes móveis de um sistema, incluindo 
 Android, iOS, etc. Ou seja, a empresa pode ter squads para 
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
-em empresas menores, podemos ter squads de frontend e backend. Aproveitando
-o comentário feito anteriormente, no livro Team Topologies, os autores também
-possuem uma visão e nomenclatura diferentes para tais squads, chamando-os de 
-**times responsáveis por sistemas complexos** (*complicated-subsystem teams*), 
+em empresas menores, podemos ter squads de frontend e backend. No livro 
+Team Topologies, os autores também possuem uma visão e nomenclatura 
+diferentes para tais squads, optando por chamá-los de **times responsáveis 
+por sistemas complexos** (*complicated-subsystem teams*), 
 isto é, sistemas cujo desenvolvimento demanda um conhecimento específico. 
 Como exemplo, os autores citam sistemas para processamento de vídeos, 
 sistemas que usam modelos matemáticos sofisticados, sistemas 
@@ -109,7 +108,7 @@ as coisas já mudaram.
 
 Por isso, como é normal quando o assunto são processos, a adoção do 
 Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao **contexto** são sempre necessárias. 
+Adaptações ao contexto são sempre necessárias. 
 
 Por isso, gostamos de dizer que o principal benefício do Modelo Spotify 
 consiste em adicionar algumas ferramentas conceituais na sua 
@@ -127,9 +126,12 @@ desempenhar um papel importante.
 
 3. Descreva um exemplo de um quarto tipo de squad. Isto é, um squad cuja finalidade não se encaixa em nenhuma das três categorias discutidas no artigo.
 
-4. Descreva uma desvantagem do Modelo Spotify.
+4. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes de frontend e 
+outros *m* squads que implementam componentes de backend. Discorra sobre o principal problema desse tipo de organização de squads.
 
-5. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
+5. Descreva uma desvantagem do Modelo Spotify.
+
+6. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
 
 * * * 
 
