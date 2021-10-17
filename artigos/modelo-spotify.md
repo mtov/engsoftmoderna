@@ -91,11 +91,15 @@ chamar esses squads de **times alinhados a fluxos de valores**
 (*stream-aligned teams*). Ou seja, são squads que têm como missão resolver 
 problemas que facilitam a vida dos clientes e, ao mesmo tempo, geram valor 
 para a organização. Para tornar essa missão mais clara, alguns squads são 
-inclusive responsáveis por personas específicas do sistema. Uma outra 
-característica importante desses squads é que eles têm responsabilidade 
-ponta-a-ponta sobre o código que desenvolvem, isto é, desde o projeto 
-até a operação. Eles devem ser o tipo mais frequente de squad em uma 
-organização.
+inclusive responsáveis por personas específicas do sistema. 
+
+<!--
+Uma outra característica importante desses squads é que eles têm 
+responsabilidade ponta-a-ponta sobre o código que desenvolvem, isto é, desde 
+o projeto até a operação. Essa característica costuma ser resumida
+na frase "se você implementar, você deve também operar" (em inglês,
+*you build it, you run it*), de autoria de Werner Vogels, CTO da Amazon. 
+--->
 
 #### Squads responsáveis por componentes arquiteturais  {.unnumbered}
 
@@ -190,10 +194,10 @@ outros *m* squads que implementam componentes back-end. Discorra sobre o princip
 problema desse tipo de organização de squads.
 
 6. No artigo sobre o Modelo Spotify, são citados os seguintes exemplos de 
-squads:(a) squads para implementar e manter o cliente Android do Spotify; (b) squads 
-para criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os sistemas
-de backend; (d) para prover funcionalidades de pagamento. Como você classificaria cada
-um desses squads de acordo com os tipos de squads que comentamos neste artigo.
+squads: (a) para implementar e manter o cliente Android do Spotify; (b) para 
+criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os componentes
+de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamento. 
+Como você classificaria cada um desses squads de acordo com os tipos de squads que comentamos neste artigo.
 
 * * * 
 
