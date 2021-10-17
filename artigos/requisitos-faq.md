@@ -1,4 +1,4 @@
-# Perguntas Frequentes sobre Métodos Ágeis {.unnumbered}
+# Perguntas Frequentes sobre Requisitos {.unnumbered}
 
 O objetivo deste artigo é responder perguntas sobre temas relacionados 
 com requisitos de software, isto é, sobre o 

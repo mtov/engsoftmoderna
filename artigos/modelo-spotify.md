@@ -66,12 +66,13 @@ nomes como comunidade de prática ou grupos de interesse.
 
 ## Tipos de Squads {.unnumbered}
 
-Existem quatro tipos principais de squads voltados para desenvolvimento 
+Existem cinco tipos principais de squads voltados para desenvolvimento 
 de software: 
 
 * Squads responsáveis por funcionalidades
-* Squads responsáveis por componentes arquiteturais
+* Squads responsáveis por componentes 
 * Squads responsáveis por plataformas
+* Squads responsáveis por boas práticas
 * Squads responsáveis por objetivos de negócio
 
 Iremos explicar cada um deles a seguir. Antes de começar a fazer isso, 
@@ -86,23 +87,28 @@ de comércio eletrônico, podem existir squads responsáveis pelo processo de
 compra (checkout), pelo pagamento, pela recomendação de produtos, pelo 
 catálogo de produtos, etc. 
 
+Para tornar essa missão mais clara, alguns squads de funcionalidades são 
+inclusive responsáveis por personas específicas do sistema. Por exemplo,
+um sistema com três personas X, Y e X pode ser desenvolvido por três
+squads, cada um deles responsáveis por uma das referidas personas.
+
 No livro Team Topologies, os autores Manuel Pais e Matthew Skelton preferem 
-chamar esses squads de **times alinhados a fluxos de valores** 
+chamar esses squads de **times alinhados a fluxos de negócio** 
 (*stream-aligned teams*). Ou seja, são squads que têm como missão resolver 
 problemas que facilitam a vida dos clientes e, ao mesmo tempo, geram valor 
-para a organização. Para tornar essa missão mais clara, alguns squads são 
-inclusive responsáveis por personas específicas do sistema. 
+para a organização. 
 
-<!--
-Uma outra característica importante desses squads é que eles têm 
-responsabilidade ponta-a-ponta sobre o código que desenvolvem, isto é, desde 
-o projeto até a operação. Essa característica costuma ser resumida
-na frase "se você implementar, você deve também operar" (em inglês,
-*you build it, you run it*), de autoria de Werner Vogels, CTO da Amazon. 
---->
+Eles afirmam que esses squads são largamente o tipo mais comum de squad
+em "organizações que são bem-sucedidas em entregar software com qualidade
+e rapidez". Especificamente, a proporção de squads alinhados a fluxos 
+em relação aos demais squads costuma variar entre 6:1 (isto é, de cada 
+sete squads, seis são alinhados a fluxos, enquanto um não é) 
+a 9:1 (nove squads alinhados a fluxos, para um squad de um outro tipo).
 
-#### Squads responsáveis por componentes arquiteturais  {.unnumbered}
 
+#### Squads responsáveis por componentes  {.unnumbered}
+
+Esses squads são responsáveis por um componente da arquitetura  do sistema.
 O exemplo clássico são squads responsáveis pelos clientes móveis de um sistema, 
 incluindo Android, iOS, etc. Ou seja, a empresa pode ter squads para 
 desenvolver e manter cada um desses clientes. Como um segundo exemplo,
@@ -116,25 +122,31 @@ conhecimento específico. Como exemplo, os autores citam subsistemas para
 processamento de vídeos, que usam modelos matemáticos sofisticados, 
 para reconhecimento facial, etc.
 
-
-#### Squads responsáveis por plataformas internas {.unnumbered}
+#### Squads responsáveis por plataformas  {.unnumbered}
 
 Esses squads desenvolvem ferramentas e plataformas internas que são usadas 
 pelos demais squads, sejam eles de funcionalidades ou de componentes. Ou seja,
-são squads que prestam serviços para os outros squads da organização. 
+são squads que implementam serviços para os outros squads da organização. 
 Por exemplo, eles podem desenvolver e manter ferramentas ou scripts para 
 facilitar a instalação do sistema na máquina local dos desenvolvedores, 
 para facilitar o deployment do sistema em serviços de cloud, para 
 implementar serviços de logging ou monitoramento, etc. Em última
 instância, o objetivo é liberar os demais squads das preocupações 
-relacionadas com tais problemas técnicos. 
+relacionadas com a implementação de tais funcionalidades técnicas,
+ou seja, não diretamente relacionadas com a finalidade do negócio. 
 
-Muitas vezes, além de desenvolver sistemas internos, times de plataformas 
-prestam serviços de consultoria para os demais times da organização, 
-auxiliando-os a melhorar aspectos como automação de testes, implementação 
-de front end, qualidade de software, arquitetura, performance de bancos de 
-dados, etc. No caso de times que apenas prestam consultoria, eles costumam 
-ser chamados de **times capacitadores** (*enabling teams*).
+#### Squads responsáveis por boas práticas  {.unnumbered}
+
+Em organizações maiores, podem existir squads cuja finalidade é prestar
+consultoria e capacitação para os demais times da organização sobre
+boas práticas para desenvolvimento de software, incluindo automação de testes, 
+implementação de front end, qualidade de software, arquitetura, performance 
+de bancos de dados, etc. Eles costumam ser chamados também de 
+**times capacitadores** (*enabling teams*).
+
+Adicionalmente, esses squads podem prospectar e recomendar novas tecnologias 
+para a empresa. 
+
 
 #### Squads responsáveis por objetivos de negócio   {.unnumbered}
 
@@ -144,10 +156,10 @@ clientes de um sistema SaaS (*Software as a Service*). As soluções desenhadas 
 desconto, etc. Como um segundo exemplo, um squad pode ficar responsável por 
 implantar o produto de software em um outro país.
 
-Desenvolvedores são maioria nos três primeiros tipos de squads. Já em squads 
-voltados para um objetivo de negócio existe um equilíbrio entre desenvolvedores 
-e outros papéis, como gerentes de produto, vendedores, analistas de marketing, 
-cientistas de dados, etc.
+Desenvolvedores são maioria nos tipos anteriores de squads. Já em squads 
+voltados para um objetivo de negócio existe um maior equilíbrio entre 
+desenvolvedores e outros papéis, como gerentes de produto, vendedores, 
+pesquisadores de UX, analistas de marketing, cientistas de dados, etc.
 
 ## Comentário Final {.unnumbered}
 
