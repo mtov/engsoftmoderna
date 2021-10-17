@@ -189,15 +189,15 @@ desempenhar um papel importante.
 
 4. Descreva uma desvantagem do Modelo Spotify.
 
-5. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
-outros *m* squads que implementam componentes back-end. Discorra sobre o principal 
-problema desse tipo de organização de squads.
-
-6. No artigo sobre o Modelo Spotify, são citados os seguintes exemplos de 
+5. No artigo sobre o Modelo Spotify, são citados os seguintes exemplos de 
 squads: (a) para implementar e manter o cliente Android do Spotify; (b) para 
 criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os componentes
 de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamento. 
 Como você classificaria cada um desses squads de acordo com os tipos de squads que comentamos neste artigo.
+
+6. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
+outros *m* squads que implementam componentes back-end. Discorra sobre o principal 
+problema desse tipo de organização de squads.
 
 * * * 
 

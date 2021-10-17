@@ -30,6 +30,9 @@ design-thinking: design-thinking.md
 mvp: mvp.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html
 
+requisitos-faq: requisitos-faq.md
+	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Requisitos" requisitos-faq.md -o requisitos-faq.html
+
 deep-modules: deep-modules.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Módulos devem ser Profundos!" deep-modules.md -o deep-modules.html
 

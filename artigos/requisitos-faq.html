@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Perguntas Frequentes sobre Requisitos – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="perguntas-frequentes-sobre-métodos-ágeis">Perguntas Frequentes sobre Métodos Ágeis</h1>
+<p>O objetivo deste artigo é responder perguntas sobre temas relacionados com requisitos de software, isto é, sobre o <a href="https://engsoftmoderna.info/cap3.html">Capítulo 3</a> do livro.</p>
+<h3 class="unnumbered" id="o-que-são-personas">1. O que são personas?</h3>
+<p>No contexto de Engenharia de Software, persona é uma técnica usada para aproximar os desenvolvedores de um sistema de seus usuários finais. Suponha o sistema de bibliotecas que usamos no <a href="https://engsoftmoderna.info/cap3.html">Capítulo 3</a> do livro. Nele, assumimos três papéis de usuários: usuário típico, professor e funcionário. A técnica de personas propõe representar esses papéis de uma forma mais <q>humana</q> por meio de nomes e de uma breve descrição. Por exemplo, podemos criar a seguinte persona:</p>
+<blockquote>
+<p><strong>Mariana</strong>: Estudante do segundo ano de Sistemas de Informação, 20 anos, cursa normalmente cinco disciplinas em cada semestre. Usa a biblioteca para estudar e para acessar os principais livros dessas disciplinas. Durante as férias, gosta de realizar empréstimos de livros de literatura.</p>
+</blockquote>
+<p>Uma persona é um usuário fictício e hipotético. Ou seja, no sistema de bibliotecas não existe necessariamente um usuário chamado Mariana. A descrição de uma persona é também acompanhada de uma foto. Normalmente, define-se um número pequeno de personas para um sistema. Por exemplo, menos de cinco ou seis personas. E então as histórias de usuários são pensadas e escritas para cada uma das personas definidas.</p>
+<p>Como dissemos, o principal objetivo da técnica de personas é criar uma relação empática entre os desenvolvedores de um sistema e os seus usuários. Com isso, pretende-se evitar que os desenvolvedores projetem o sistema pensando neles mesmos, isto é, apenas com as características que eles julgam importantes, caso tivessem que usar o sistema.</p>
+<p>Para definição das personas podem ser realizadas pesquisas com os potenciais usuários do sistema, por exemplo, por meio de questionários. Além de perguntas tradicionais (nome, sexo, idade, etc.) é importante que esses questionários revelem também os hábitos e comportamentos dos usuários, principalmente aqueles relacionados com o sistema que se pretende implementar. A partir das respostas dos questionários, deve-se agrupar usuários semelhantes e então criar uma persona para cada grupo.</p>
+<p>Antes de concluir, é importante mencionar que personas são usadas também em outras áreas, como projeto de interface com o usuário, marketing, vendas, etc.</p>
+<h3 class="unnumbered" id="o-que-é-dogfooding">2. O que é dogfooding?</h3>
+<p>Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos produtos de software que eles desenvolvem. No entanto, no caso de dogfooding, a aproximação é total: ou seja, além de desenvolver um sistema, desenvolvedores devem também usá-lo com frequência. O nome tem origem em uma frase comum em inglês: <q>comer a mesma comida do seu cachorro</q> (<em>eat you own dog food</em>).</p>
+<p>O objetivo é simples: fazer com os que os desenvolvedores experimentem os benefícios e, principalmente, os problemas e dificuldades relacionados com o uso de um sistema.</p>
+<p>Dogfooding é adotado pela maioria das grandes empresas de tecnologia. Por exemplo, no Facebook, <q>os engenheiros também são usuários da rede social, portanto, eles têm conhecimento em primeira mão do que o sistema faz e de quais serviços ele oferece.</q> (<a href="https://research.fb.com/wp-content/uploads/2016/11/development-and-deployment-at-facebook.pdf">link</a>).</p>
+<p>Como um segundo exemplo, veja o seguinte tweet do CEO do Google:</p>
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">
+Have been dogfooding the new <a href="https://twitter.com/gmail?ref_src=twsrc%5Etfw"><span class="citation" data-cites="Gmail">@Gmail</span></a> for a while now - very excited for this new redesign! <a href="https://t.co/Z7xcHwZTjO">https://t.co/Z7xcHwZTjO</a>
+</p>
+— Sundar Pichai (<span class="citation" data-cites="sundarpichai">@sundarpichai</span>) <a href="https://twitter.com/sundarpichai/status/989236143613820928?ref_src=twsrc%5Etfw">April 25, 2018</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>No entanto, dogfooding é mais complicado no caso de sistemas para domínios de negócio que requerem usuários especializados. Por exemplo, um sistema para cálculo e geração de apólices de seguros para navios. Mesmo que um desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo tal como um analista de seguros navais.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
