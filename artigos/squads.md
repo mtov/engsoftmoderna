@@ -1,14 +1,14 @@
-# Organização de Empresas de Software usando-se Squads {.unnumbered}
+# Organizando Times de Software em Squads {.unnumbered}
 
 Neste artigo, iremos começar apresentando o famoso Modelo Spotify, 
 que define um modelo matricial para organização de empresas de software
 centrado no conceito de squads (ou times ágeis), tribos, chapters e
 guildas. Iremos, em seguida, apresentar os principais tipos de squads que 
-podem existir em tais empresas.
+podem existir em empresas de software.
 
 ## Squads, Tribos, Chapters e Guildas {.unnumbered}
 
-O chamado **Modelo Spotify** define uma organização para times ágeis, principalmente 
+O **Modelo Spotify** define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
 aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma 
 de matriz, ilustrada na seguinte figura:
@@ -176,19 +176,10 @@ Este artigo é apenas uma fotografia de nossa forma atual de
 trabalhar -- uma jornada em andamento, não uma jornada concluída. 
 Quando você estiver lendo o artigo, provavelmente as coisas já mudaram.
 
-Por isso, como é normal quando o assunto são processos, a adoção do 
-chamado Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
+Por isso, como é normal quando o assunto são processos, a adoção de squads,
+tribos, chapters, etc não deve ocorrer cegamente de acordo com o manual. 
 Adaptações ao contexto são sempre necessárias. 
 
-<!--
-Por isso, gostamos de dizer que o principal benefício do Modelo Spotify 
-consiste em adicionar algumas ferramentas conceituais na sua 
-"caixa de ferramentas" sobre processos e organização de times de desenvolvimento
-de software. Nem todas as ferramentas dessa caixa podem ser úteis no contexto atual 
-da sua empresa. Porém, é importante conhecer todas elas, pois amanhã seu contexto 
-pode mudar e uma ferramenta que antes parecia inútil pode agora 
-desempenhar um papel importante.
--->
 
 ## Exercícios {.unnumbered}
 

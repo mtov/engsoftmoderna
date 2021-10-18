@@ -16,7 +16,7 @@ shape-up: shape-up.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
 squads: squads.md
-	$(pandoc_bin) --defaults=defaults.yaml -T "Organização de Empresas de Software usando-se Squads" squads.md -o squads.html
+	$(pandoc_bin) --defaults=defaults.yaml -T "Organizando Times de Software em Squads" squads.md -o squads.html
 
 processos-faq: processos-faq.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Perguntas Frequentes sobre Processos de Software" processos-faq.md -o processos-faq.html
