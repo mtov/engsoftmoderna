@@ -1,13 +1,14 @@
-# Organização de Times Ágeis usando o Modelo Spotify {.unnumbered}
+# Organização de Empresas de Software usando-se Squads {.unnumbered}
 
-Neste artigo, iremos apresentar o famoso Modelo Spotify, que define
-um modelo de organização para empresas de software. Iremos, 
-em seguida, apresentar os principais tipos de squads (isto é, 
-times ágeis) que podem existir em tais empresas.
+Neste artigo, iremos começar apresentando o famoso Modelo Spotify, 
+que define um modelo matricial para organização de empresas de software
+centrado no conceito de squads (ou times ágeis), tribos, chapters e
+guildas. Iremos, em seguida, apresentar os principais tipos de squads que 
+podem existir em tais empresas.
 
-## Modelo Spotify {.unnumbered}
+## Modelo Spotify: Squads, Tribos, Chapters e Guildas {.unnumbered}
 
-O Modelo Spotify define uma organização para times ágeis, principalmente 
+O chamado Modelo Spotify define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
 aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma 
 de matriz, ilustrada na seguinte figura:
@@ -161,22 +162,22 @@ pesquisadores de UX, analistas de marketing, cientistas de dados, etc.
 
 ## Comentário Final {.unnumbered}
 
-O Modelo Spotify foi proposto em 2012. Em 2014, 
+O conceito de squads foi proposto em 2012. Em 2014, 
 dois [vídeos](https://blog.crisp.se/2014/03/27/henrikkniberg/spotify-engineering-culture-part-1),
-com o formato de animação, viralizaram e ajudaram a tornar o modelo 
+com o formato de animação, viralizaram e ajudaram a tornar o conceito 
 largamente conhecido.
 
-Desde essa época, a sua adoção, mesmo na Spotify, passou por evoluções e 
-adaptações importantes. Isso é reconhecido, inclusive, pelos próprios 
-autores do artigo que descreve o modelo:
+Desde essa época, a adoção do modelo, mesmo na Spotify, passou por 
+evoluções e  adaptações importantes. Isso é reconhecido, inclusive, 
+pelos próprios autores do artigo que descreve esse modelo:
 
-> A Spotify (como qualquer boa empresa ágil) está evoluindo rapidamente. Este artigo
-é apenas uma fotografia de nossa forma atual de trabalhar -- uma jornada em andamento, 
-não uma jornada concluída. Quando você estiver lendo o artigo, provavelmente
-as coisas já mudaram.
+> A Spotify (como qualquer boa empresa ágil) está evoluindo rapidamente. 
+Este artigo é apenas uma fotografia de nossa forma atual de 
+trabalhar -- uma jornada em andamento, não uma jornada concluída. 
+Quando você estiver lendo o artigo, provavelmente as coisas já mudaram.
 
 Por isso, como é normal quando o assunto são processos, a adoção do 
-Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
+chamado Modelo Spotify não deve ocorrer cegamente de acordo com o manual. 
 Adaptações ao contexto são sempre necessárias. 
 
 <!--
@@ -191,16 +192,18 @@ desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
 
-1. Para fixar as principais ideias do Modelo Spotify, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Spotify) de V ou F, com correção online.
+1. Para fixar as principais ideias deste artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
 
-2. Suponha que você trabalha em um organização que segue o modelo Spotify. Então, você possui "dois chefes" (ou líderes). Explique quais são esses líderes e qual o papel de cada um deles.
+2. Suponha que você trabalha em uma empresa organizada em squads, tribos, 
+chapters e guildas. Então, você possui "dois chefes" (ou líderes). Explique 
+quais são esses líderes e qual o papel de cada um deles.
 
 3. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
 4. Descreva uma desvantagem do Modelo Spotify.
 
-5. No artigo sobre o Modelo Spotify, são citados os seguintes exemplos de 
-squads: (a) para implementar e manter o cliente Android do Spotify; (b) para 
+5. No artigo sobre a adoção de squads na Spotify, são citados os seguintes exemplos 
+de squads: (a) para implementar e manter o cliente Android do Spotify; (b) para 
 criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os componentes
 de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamento. 
 Como você classificaria cada um desses squads de acordo com os tipos de squads que comentamos neste artigo.
@@ -208,6 +211,9 @@ Como você classificaria cada um desses squads de acordo com os tipos de squads 
 6. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
 outros *m* squads que implementam componentes back-end. Discorra sobre o principal 
 problema desse tipo de organização de squads.
+
+7. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
+de boas práticas? E também qual é a diferença principal entre esses squads?
 
 * * * 
 
