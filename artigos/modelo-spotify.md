@@ -72,12 +72,10 @@ de software:
 * Squads responsáveis por funcionalidades
 * Squads responsáveis por componentes 
 * Squads responsáveis por plataformas
-* Squads responsáveis por boas práticas
+* Squads facilitadores de boas práticas
 * Squads responsáveis por objetivos de negócio
 
-Iremos explicar cada um deles a seguir. Antes de começar a fazer isso, 
-gostaríamos de ressaltar que em uma mesma empresa podem co-existir os quatro 
-tipos de squads que foram mencionados.
+Iremos explicar cada um deles a seguir. 
 
 #### Squads responsáveis por funcionalidades  {.unnumbered}
 
@@ -135,17 +133,17 @@ instância, o objetivo é liberar os demais squads das preocupações
 relacionadas com a implementação de tais funcionalidades técnicas,
 ou seja, não diretamente relacionadas com a finalidade do negócio. 
 
-#### Squads responsáveis por boas práticas  {.unnumbered}
+#### Squads facilitadores de boas práticas  {.unnumbered}
 
 Em organizações maiores, podem existir squads cuja finalidade é prestar
 consultoria e capacitação para os demais times da organização sobre
 boas práticas para desenvolvimento de software, incluindo automação de testes, 
 implementação de front end, qualidade de software, arquitetura, performance 
 de bancos de dados, etc. Eles costumam ser chamados também de 
-**times capacitadores** (*enabling teams*).
+**times facilitadores** (*enabling teams*).
 
-Adicionalmente, esses squads podem prospectar e recomendar novas tecnologias 
-para a empresa. 
+Adicionalmente, esses squads podem prospectar e recomendar novas 
+tecnologias para a empresa. 
 
 
 #### Squads responsáveis por objetivos de negócio   {.unnumbered}
