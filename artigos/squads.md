@@ -6,9 +6,9 @@ centrado no conceito de squads (ou times ágeis), tribos, chapters e
 guildas. Iremos, em seguida, apresentar os principais tipos de squads que 
 podem existir em tais empresas.
 
-## Modelo Spotify: Squads, Tribos, Chapters e Guildas {.unnumbered}
+## Squads, Tribos, Chapters e Guildas {.unnumbered}
 
-O chamado Modelo Spotify define uma organização para times ágeis, principalmente 
+O chamado **Modelo Spotify** define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
 aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma 
 de matriz, ilustrada na seguinte figura:
@@ -192,7 +192,7 @@ desempenhar um papel importante.
 
 ## Exercícios {.unnumbered}
 
-1. Para fixar as principais ideias deste artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
+1. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
 
 2. Suponha que você trabalha em uma empresa organizada em squads, tribos, 
 chapters e guildas. Então, você possui "dois chefes" (ou líderes). Explique 
