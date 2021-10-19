@@ -91,17 +91,19 @@ inclusive responsáveis por personas específicas do sistema. Por exemplo,
 um sistema com três personas X, Y e X pode ser desenvolvido por três
 squads, cada um deles responsáveis por uma das referidas personas.
 
-No livro Team Topologies, os autores Manuel Pais e Matthew Skelton preferem 
-chamar esses squads de **times alinhados a fluxos de negócio** 
-(*stream-aligned teams*). Ou seja, são squads que têm como missão resolver 
-problemas que facilitam a vida dos clientes e, ao mesmo tempo, geram valor 
-para a organização. 
+Algumas empresas preferem chamar esses squads de **squads de produto**.
+Já no livro Team Topologies, os autores Manuel Pais e Matthew Skelton adotam
+um terceiro nome: **times alinhados a fluxos de negócio** 
+(*stream-aligned teams*). Qualquer que seja o nome, o objetivo desses
+squads é sempre o mesmo: eles têm como missão resolver problemas que 
+facilitam a vida dos clientes e, ao mesmo tempo, geram valor para 
+a organização. 
 
-Eles afirmam que esses squads são largamente o tipo mais comum de squad
-em "organizações que são bem-sucedidas em entregar software com qualidade
-e rapidez". Especificamente, a proporção de squads alinhados a fluxos 
-em relação aos demais squads costuma variar entre 6:1 (isto é, de cada 
-sete squads, seis são alinhados a fluxos, enquanto um não é) 
+Pais e Skelton afirmam ainda que esses squads são largamente o tipo mais 
+comum de squad em "organizações que são bem-sucedidas em entregar software 
+com qualidade e rapidez". Segundo eles, a proporção de squads alinhados 
+a fluxos em relação aos demais squads costuma variar entre 6:1 (isto é, 
+de cada sete squads, seis são alinhados a fluxos, enquanto um não é) 
 a 9:1 (nove squads alinhados a fluxos, para um squad de um outro tipo).
 
 
@@ -129,8 +131,10 @@ são squads que implementam serviços para os outros squads da organização.
 Por exemplo, eles podem desenvolver e manter ferramentas ou scripts para 
 facilitar a instalação do sistema na máquina local dos desenvolvedores, 
 para facilitar o deployment do sistema em serviços de cloud, para 
-implementar serviços de logging ou monitoramento, etc. Em última
-instância, o objetivo é liberar os demais squads das preocupações 
+implementar serviços de autenticação, segurança, logging, monitoramento, 
+etc.  
+
+Em última instância, o objetivo é liberar os demais squads das preocupações 
 relacionadas com a implementação de tais funcionalidades técnicas,
 ou seja, não diretamente relacionadas com a finalidade do negócio. 
 
@@ -144,7 +148,8 @@ de bancos de dados, etc. Eles costumam ser chamados também de
 **times facilitadores** (*enabling teams*).
 
 Adicionalmente, esses squads podem prospectar e recomendar novas 
-tecnologias para a empresa. 
+tecnologias para a empresa. E também recomendar a aposentadoria
+de algumas tecnologias ou a atualização da versão de outras.
 
 
 #### Squads responsáveis por objetivos de negócio   {.unnumbered}
