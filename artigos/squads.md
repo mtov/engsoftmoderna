@@ -6,7 +6,7 @@ centrado no conceito de squads (ou times ágeis), tribos, chapters e
 guildas. Iremos, em seguida, apresentar os principais tipos de squads que 
 podem existir em empresas de software.
 
-## Squads, Tribos, Chapters e Guildas {.unnumbered}
+## Modelo Spotify {.unnumbered}
 
 O **Modelo Spotify** define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de times. Quando isso 
@@ -65,47 +65,42 @@ O conceito de guilda já existia antes do Modelo Spotify ser proposto, com
 nomes como comunidade de prática ou grupos de interesse.
 
 
-## Tipos de Squads {.unnumbered}
+## Tipo de Squad mais Comum: Squads de Produto {.unnumbered}
 
-Existem cinco tipos principais de squads voltados para desenvolvimento 
-de software: 
+Esses squads são responsáveis por funcionalidades específicas do produto 
+de software que está sendo desenvolvido e mantido pela organização. 
+Por exemplo, em uma loja online, podem existir squads 
+responsáveis pelo processo de compra (checkout), pelo pagamento, 
+pela recomendação de produtos, pelo catálogo de produtos, etc. 
 
-* Squads responsáveis por funcionalidades
+Para tornar essa missão mais clara, alguns squads de produto são 
+responsáveis por personas específicas do sistema. Por exemplo,
+um sistema com três personas X, Y e X pode ser desenvolvido por três
+squads de produto, cada um deles responsáveis por uma das referidas personas.
+
+No livro Team Topologies, os autores Manuel Pais e Matthew Skelton optam
+por chamar tais squads de **times alinhados a fluxos de negócio** 
+(*stream-aligned teams*). Qualquer que seja o nome, o objetivo é o mesmo: 
+esses squads têm como missão resolver problemas que facilitam a vida dos 
+clientes e, ao mesmo tempo, geram valor para a organização. 
+
+Squads de produto são o tipo mais comum de time em organizações
+que desenvolvem software. Por exemplo, segundo Pais e Skelton, a proporção 
+de squads de produto em relação aos demais squads costuma variar entre 6:1 
+(isto é, de cada sete squads, seis são de produto, enquanto um não é) 
+a 9:1 (nove squads de produto, para um squad de um outro tipo).
+
+## Outros Tipos de Squads {.unnumbered}
+
+Além de squads de produto,  existem pelo menos os seguintes tipos
+de squad:
+
 * Squads responsáveis por componentes 
 * Squads responsáveis por plataformas
 * Squads facilitadores de boas práticas
 * Squads responsáveis por objetivos de negócio
 
 Iremos explicar cada um deles a seguir. 
-
-#### Squads responsáveis por funcionalidades  {.unnumbered}
-
-Como o próprio nome diz, são squads que ficam responsáveis por desenvolver e 
-manter funcionalidades específicas do sistema. Por exemplo, em um sistema 
-de comércio eletrônico, podem existir squads responsáveis pelo processo de 
-compra (checkout), pelo pagamento, pela recomendação de produtos, pelo 
-catálogo de produtos, etc. 
-
-Para tornar essa missão mais clara, alguns squads de funcionalidades são 
-inclusive responsáveis por personas específicas do sistema. Por exemplo,
-um sistema com três personas X, Y e X pode ser desenvolvido por três
-squads, cada um deles responsáveis por uma das referidas personas.
-
-Algumas empresas preferem chamar esses squads de **squads de produto**.
-Já no livro Team Topologies, os autores Manuel Pais e Matthew Skelton adotam
-um terceiro nome: **times alinhados a fluxos de negócio** 
-(*stream-aligned teams*). Qualquer que seja o nome, o objetivo desses
-squads é sempre o mesmo: eles têm como missão resolver problemas que 
-facilitam a vida dos clientes e, ao mesmo tempo, geram valor para 
-a organização. 
-
-Pais e Skelton afirmam ainda que esses squads são largamente o tipo mais 
-comum de squad em "organizações que são bem-sucedidas em entregar software 
-com qualidade e rapidez". Segundo eles, a proporção de squads alinhados 
-a fluxos em relação aos demais squads costuma variar entre 6:1 (isto é, 
-de cada sete squads, seis são alinhados a fluxos, enquanto um não é) 
-a 9:1 (nove squads alinhados a fluxos, para um squad de um outro tipo).
-
 
 #### Squads responsáveis por componentes  {.unnumbered}
 
@@ -126,13 +121,12 @@ para reconhecimento facial, etc.
 #### Squads responsáveis por plataformas  {.unnumbered}
 
 Esses squads desenvolvem ferramentas e plataformas internas que são usadas 
-pelos demais squads, sejam eles de funcionalidades ou de componentes. Ou seja,
-são squads que implementam serviços para os outros squads da organização. 
-Por exemplo, eles podem desenvolver e manter ferramentas ou scripts para 
-facilitar a instalação do sistema na máquina local dos desenvolvedores, 
-para facilitar o deployment do sistema em serviços de cloud, para 
-implementar serviços de autenticação, segurança, logging, monitoramento, 
-etc.  
+pelos demais squads. Ou seja, são squads que implementam serviços para os 
+outros squads da organização. Por exemplo, eles podem desenvolver e manter 
+ferramentas ou scripts para facilitar a instalação do sistema na máquina 
+local dos desenvolvedores, para facilitar o deployment do sistema em 
+serviços de cloud, para implementar serviços de autenticação, segurança, 
+logging, monitoramento, etc.  
 
 Em última instância, o objetivo é liberar os demais squads das preocupações 
 relacionadas com a implementação de tais funcionalidades técnicas,
