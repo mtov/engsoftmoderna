@@ -1,7 +1,5 @@
 # Alguns Exemplos Reais e Interessantes de Testes {.unnumbered}
 
-#### Este artigo está em andamento; em breve, iremos adicionar mais exemplos, de outros sistemas {.unnumbered}
-
 ## Introdução  {.unnumbered}
 
 No [Capítulo 8](https://engsoftmoderna.info/cap8.html), 
@@ -9,10 +7,17 @@ explicamos os principais conceitos de testes de software
 e mostramos pelo menos uma dezena de exemplos de código.
 
 Neste artigo, vamos ampliar essa lista de exemplos, **mostrando 
-e explicando exemplos reais de testes implementados em 
-sistemas de código aberto**. Achamos isso relevante, 
-pois conhecer, ler e entender esses exemplos pode ajudar 
-o estudante na escrita de seus próprios testes.
+e explicando exemplos reais de testes implementados em sistemas 
+de código aberto**. Achamos isso relevante, pois conhecer, ler 
+e entender esses exemplos pode ajudá-lo na escrita de seus 
+próprios testes.
+
+Para ir direto para os exemplos de cada sistema, use os seguintes 
+links:
+
+* [Google Guava](#guava)
+* [Spring PetClinic](#spring-petclinic)
+* [JUnit](#junit)
 
 * * * 
 
@@ -25,8 +30,7 @@ para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como
 um complemento para a biblioteca padrão de Java. 
 
 Já mostramos um exemplo de teste do Guava no 
-[Capítulo 8](https://engsoftmoderna.info/cap8.html), mas vamos
-aqui mostrar mais três exemplos.
+[Capítulo 8](https://engsoftmoderna.info/cap8.html#n%C3%BAmero-de-assert-por-teste), mas vamos aqui mostrar mais três exemplos.
 
 #### Exemplo 1: Ints.contains {.unnumbered}
 
@@ -144,7 +148,7 @@ arquivos.
 * * *
 
 
-## Sprint PetClinic {.unnumbered}
+## Spring PetClinic {.unnumbered}
 
 [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) 
 é uma aplicação de demonstração do 
@@ -212,10 +216,11 @@ para garantir uma semântica de transações na sua execução. No caso
 de testes de integração, essa anotação está configurada para
 realizar automaticamente um rollback ao final de cada transação.
 Veja o que diz um comentário na própria classe de teste:
-*each test method is executed in its own transaction, which is 
+
+> each test method is executed in its own transaction, which is 
 automatically rolled back by default. Thus, even if tests
 insert or otherwise change database state, there is no need 
-for a teardown or cleanup script.*
+for a teardown or cleanup script.
 
 
 
