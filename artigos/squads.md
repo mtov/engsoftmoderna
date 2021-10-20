@@ -17,8 +17,12 @@ de matriz, ilustrada na seguinte figura:
 with Tribes, Squads, Chapters & Guilds.
 Henrik Kniberg & Anders Ivarsson, 2012.](./figs/modelo-spotify.jpg){width=75%}
 
-Nessa **estrutura matricial** temos estruturas verticais (squads e tribos)
-e também horizontais (chapter e guildas), conforme iremos detalhar a seguir.
+Nesse **modelo matricial** temos dois tipos principais de estruturas:
+
+* Estruturas verticais, representadas pelos squads e tribos.
+* Estruturas horizontais, representadas por chapters e guildas.
+
+A seguir, iremos detalhar cada uma dessas estruturas.
 
 #### Squads {.unnumbered}
 
@@ -65,9 +69,10 @@ O conceito de guilda já existia antes do Modelo Spotify ser proposto, com
 nomes como comunidade de prática ou grupos de interesse.
 
 
-## Tipo de Squad mais Comum: Squads de Produto {.unnumbered}
+## Squads de Produto {.unnumbered}
 
-Esses squads são responsáveis por funcionalidades específicas do produto 
+Squads de produto são o **tipo mais comum de squad**. Como o nome sugere, 
+esses squads são responsáveis por funcionalidades específicas do produto 
 de software que está sendo desenvolvido e mantido pela organização. 
 Por exemplo, em uma loja online, podem existir squads 
 responsáveis pelo processo de compra (checkout), pelo pagamento, 
@@ -159,13 +164,16 @@ voltados para um objetivo de negócio existe um maior equilíbrio entre
 desenvolvedores e outros papéis, como gerentes de produto, vendedores, 
 pesquisadores de UX, analistas de marketing, cientistas de dados, etc.
 
-## Comentário Final {.unnumbered}
+### Para Saber Mais {.unnumbered}
 
 O conceito de squads foi proposto em 2012. Em 2014, 
 dois [vídeos](https://blog.crisp.se/2014/03/27/henrikkniberg/spotify-engineering-culture-part-1),
 com o formato de animação, viralizaram e ajudaram a tornar o conceito 
-largamente conhecido.
+largamente conhecido. O livro 
+[Team Topologies](https://teamtopologies.com/book), publicado em 2019,
+é também uma referência importante sobre a organização de times de software.
 
+<!---
 Desde essa época, a adoção do modelo, mesmo na Spotify, passou por 
 evoluções e  adaptações importantes. Isso é reconhecido, inclusive, 
 pelos próprios autores do artigo que descreve esse modelo:
@@ -178,7 +186,7 @@ Quando você estiver lendo o artigo, provavelmente as coisas já mudaram.
 Por isso, como é normal quando o assunto são processos, a adoção de squads,
 tribos, chapters, etc não deve ocorrer cegamente de acordo com o manual. 
 Adaptações ao contexto são sempre necessárias. 
-
+-->
 
 ## Exercícios {.unnumbered}
 
