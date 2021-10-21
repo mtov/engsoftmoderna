@@ -1,7 +1,7 @@
 # pandoc_bin = /Users/mtov/pandoc-2.11.4/bin/pandoc
 # adicionar: -M document-css=false
 
-pandoc_bin = pandoc
+pandoc_bin = pandoc --lua-filter=../helper/anchor-links.lua
 
 desafios-engsoft: desafios-engsoft.md
 	$(pandoc_bin) --defaults=defaults.yaml -T "Desafios da Formação de Engenheiros de Software" desafios-engsoft.md -o desafios-engsoft.html

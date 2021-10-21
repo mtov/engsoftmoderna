@@ -32,7 +32,43 @@ de software, por David J. Anderson, na época trabalhando na Microsoft.
 - 2011: publicação do livro Lean Startup, de Eric Ries.
 
 
-### 2. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
+### 2. O que é mob programming? {.unnumbered}
+
+*Mob programming* pode ser vista como uma extensão da ideia de
+programação em pares. Ou seja, em vez de duas pessoas programarem
+juntas, em *mob programming* temos um time inteiro trabalhando 
+em uma mesma tarefa de programação. No entanto, recomenda-se que o
+tamanho desse time seja limitado a quatro ou cinco pessoas,
+incluindo desenvolvedores, mas também POs e outros profissionais.
+Um deles é chamado de piloto (*driver*) e comanda o teclado; os demais são os 
+navegadores. Cabe aos navegadores propor e discutir ideias e 
+auxiliar o piloto a codificá-las. 
+
+Veja como Woody Zuill -- um dos principais proponentes do conceito de 
+*mob programming* -- descreve a iteração entre navegadores e piloto:
+
+> É importante que os navegadores se expressem no nível de abstração
+mais alto que o piloto (e o resto do equipe) seja capaz de entender. 
+Às vezes, isso pode pode se dar em um nível bem alto,
+quando o piloto já entendeu o conceito que será codificado e pode 
+prosseguir sem necessidade de instruções detalhadas. Por outro lado,
+se necessário, os navegadores devem ser capazes de se expressar de 
+forma bem detalhada, praticamente ditando os comandos que deverão 
+ser usados pelo piloto.
+
+Se a sessão for realizada de forma presencial, um projetor 
+multimídia deve ser usado para facilitar a participação dos navegadores.
+Esses últimos podem usar também laptops próprios para realizar 
+pesquisas ou outras tarefas em paralelo. 
+
+Assim como em programação em pares, deve-se periodicamente fazer um 
+rodízio do piloto. Normalmente, esse rodízio ocorre em intervalos
+curtos, por exemplo, de 15 minutos. 
+
+*Mob programming* pode ser útil para integrar o time, para aprendizado 
+em grupo, para disseminação de conhecimento, etc. 
+
+### 3. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
 
 Quando se usa Scrum, histórias de usuários -- ou seja, 
 features ou requisitos funcionais do sistema -- são o principal 
@@ -56,7 +92,7 @@ trabalho que é "necessário para melhorar o produto" pode
 ser incluído no backlog do produto. 
 
 
-### 3. Posso estimar histórias de usuários em horas? {.unnumbered}
+### 4. Posso estimar histórias de usuários em horas? {.unnumbered}
 
 Sim, histórias podem ser estimadas em unidades de tempo, 
 tais como horas ou homens/hora, por exemplo.
@@ -88,7 +124,7 @@ uma hora ideal. Apesar disso, uma partida de futebol
 americano dura, quase sempre, mais de três horas.
 
 
-### 4. O que é Grooming? {.unnumbered}
+### 5. O que é Grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -103,8 +139,7 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
-
-### 5. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+### 6. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -129,7 +164,7 @@ portanto, ele não deve ser o controlador de todas as tarefas dos demais
 desenvolvedores.
 
 
-### 6. Em Scrum, o que é um líder servidor? {.unnumbered}
+### 7. Em Scrum, o que é um líder servidor? {.unnumbered}
 
 Scrum usa esse termo para descrever o estilo de liderança que deve ser
 exercido por um Scrum Master. Ou seja, o Scrum Master não é o "chefe"
@@ -141,7 +176,7 @@ assim resumido: "eles são líderes verdadeiros, que servem tanto o time
 Scrum, quanto a organização maior [na qual o time está inserido]."
 
 
-### 7. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 8. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -197,7 +232,7 @@ principal negócio são sistemas ou serviços de software --
 possuem times orientados por produto.
 
 
-### 8. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 9. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -246,7 +281,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 9. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 10. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
