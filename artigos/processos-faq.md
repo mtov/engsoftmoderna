@@ -49,24 +49,27 @@ Veja como Woody Zuill -- um dos principais proponentes do conceito de
 
 > É importante que os navegadores se expressem no nível de abstração
 mais alto que o piloto (e o resto do equipe) seja capaz de entender. 
-Às vezes, isso pode pode se dar em um nível bem alto,
+Às vezes, isso pode ocorrer em um nível bem alto,
 quando o piloto já entendeu o conceito que será codificado e pode 
 prosseguir sem necessidade de instruções detalhadas. Por outro lado,
 se necessário, os navegadores devem ser capazes de se expressar de 
 forma bem detalhada, praticamente ditando os comandos que deverão 
-ser usados pelo piloto.
+ser digitados pelo piloto.
 
 Se a sessão for realizada de forma presencial, um projetor 
 multimídia deve ser usado para facilitar a participação dos navegadores.
 Esses últimos podem usar também laptops próprios para realizar 
-pesquisas ou outras tarefas em paralelo. 
+pesquisas ou outras tarefas em paralelo. Já no caso de sessões
+de *mob programming* remotas, o piloto pode compartilhar sua 
+tela com os navegadores.
 
 Assim como em programação em pares, deve-se periodicamente fazer um 
 rodízio do piloto. Normalmente, esse rodízio ocorre em intervalos
 curtos, por exemplo, de 15 minutos. 
 
-*Mob programming* pode ser útil para integrar o time, para aprendizado 
-em grupo, para disseminação de conhecimento, etc. 
+*Mob programming* pode ser usada para integrar o time, para aprendizado 
+em grupo, para disseminação de conhecimento e evitar a formação de
+silos, etc. 
 
 ### 3. Além de histórias, quais outros itens podem fazer parte do backlog do produto? {.unnumbered}
 
