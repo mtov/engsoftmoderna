@@ -48,12 +48,12 @@ Veja como Woody Zuill -- um dos principais proponentes do conceito de
 *mob programming* -- descreve a iteração entre navegadores e piloto:
 
 > É importante que os navegadores se expressem no nível de abstração
-mais alto que o piloto (e o resto do equipe) seja capaz de entender. 
-Às vezes, isso pode ocorrer em um nível bem alto,
-quando o piloto já entendeu o conceito que será codificado e pode 
-prosseguir sem necessidade de instruções detalhadas. Por outro lado,
+mais alto que o piloto (e o resto da equipe) seja capaz de entender. 
+Às vezes, isso pode ocorrer de forma genérica, quando o piloto já 
+entendeu o conceito que será codificado e pode prosseguir sem 
+necessidade de instruções detalhadas. Por outro lado,
 se necessário, os navegadores devem ser capazes de se expressar de 
-forma bem detalhada, praticamente ditando os comandos que deverão 
+forma detalhada, praticamente ditando os comandos que deverão 
 ser digitados pelo piloto.
 
 Se a sessão for realizada de forma presencial, um projetor 

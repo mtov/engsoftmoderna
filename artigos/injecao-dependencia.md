@@ -215,7 +215,7 @@ Para responder, compare os seguintes códigos:
  ```
 
 3. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
-de Dependência (princípio de projeto). Para saber mais sobre Inversão de 
+de Dependência (princípio de projeto)? Para saber mais sobre Inversão de 
 Dependência, consulte o [Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
 4. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
