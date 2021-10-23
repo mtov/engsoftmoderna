@@ -38,6 +38,13 @@ para que cada squad funcione como uma "microempresa", com bastante autonomia
 dentro da organização. Para que isso seja possível, é importante que as 
 dependências entre squads sejam minimizadas.
 
+Portanto, em uma organização baseada em squads não existem silos funcionais, 
+tais como o time de banco de dados, o time de qualidade, o time de testadores, 
+o time de implantação (deployment), etc. Em vez disso, esses profissionais 
+-- com diferentes formações e responsabilidades -- estão distribuídos pelos
+diferentes squads, que assim transformam-se em células autônomas de
+desenvolvimento, manutenção e entrega de software.
+
 #### Tribos  {.unnumbered}
 
 Tribos são conjuntos de squads que trabalham em sistemas ou subsistemas 
@@ -200,17 +207,21 @@ quais são esses líderes e qual o papel de cada um deles.
 
 4. Descreva uma desvantagem do Modelo Spotify.
 
-5. No artigo sobre a adoção de squads na Spotify, são citados os seguintes exemplos 
+5. Descreva um problema de estruturas baseadas em silos funcionais 
+(isto é, times separados de desenvolvedores, administradores de bancos de 
+dados, testadores, operação, designers, etc)?
+
+6. No artigo sobre a adoção de squads na Spotify, são citados os seguintes exemplos 
 de squads: (a) para implementar e manter o cliente Android do Spotify; (b) para 
 criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os componentes
 de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamento. 
 Como você classificaria cada um desses squads de acordo com os tipos de squads que comentamos neste artigo.
 
-6. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
+7. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
 outros *m* squads que implementam componentes back-end. Discorra sobre o principal 
 problema desse tipo de organização de squads.
 
-7. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
+8. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
 de boas práticas? E também qual é a diferença principal entre esses squads?
 
 * * * 
