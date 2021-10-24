@@ -128,7 +128,8 @@ por subsistemas complexos** (*complicated-subsystem teams*), isto é,
 subsistemas -- ou componentes -- cujo desenvolvimento requer um 
 conhecimento específico. Como exemplo, os autores citam subsistemas para 
 processamento de vídeos, que usam modelos matemáticos sofisticados, 
-para reconhecimento facial, etc.
+para reconhecimento facial, etc. Porém, segundo os autores, tais times
+são opcionais e somente devem ser usados quando realmente for necessário.
 
 #### Squads responsáveis por plataformas  {.unnumbered}
 
