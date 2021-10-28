@@ -46,8 +46,9 @@ estudamos no [Capítulo 3](../cap3.html#diagramas-de-casos-de-uso).
 ## Adaptadores {.unnumbered}
 
 Na terceira camada, de dentro para fora, temos classes e interfaces
-chamadas de **Adaptadores**. A função delas é converter dados de um 
-formato para outro.
+chamadas de **Adaptadores**. Eles têm como função mediar a interação
+entre a camada mais externa da arquitetura (sistemas externos) e
+as camadas centrais (Casos de Uso e Entidades).
 
 Suponha, por exemplo, que o sistema use uma API REST para comunicação
 com seus clientes. As classes adaptadoras serão então 
@@ -57,17 +58,19 @@ correspondentes. E, também, fazer o caminho inverso: receber os resultados
 retornados pelos casos de uso e convertê-los em documentos JSON 
 que serão enviados para os clientes.
 
+<!--
 Se o sistema for implementado usando-se um framework MVC, 
 todos os componentes desse padrão arquitetural -- isto é, a Visão, 
 os controladores e o modelo -- pertencerão a essa camada.
+--->
 
 ## Frameworks Externos {.unnumbered}
 
-Na camada mais externa, temos as classes de bibliotecas e frameworks 
-externos (de terceiros), as quais podem ser responsáveis por 
-persistência em bancos de dados, construção de interfaces com usuários, 
-envio de mails, integração com outros sistemas, comunicação com um 
-determinado hardware, etc.
+Na camada mais externa, temos as classes de bibliotecas, frameworks
+e quaisquer sistemas externos. Por exemplo, é nessa camada que ficam
+os sistemas responsáveis por persistência em bancos de dados, construção 
+de interfaces com usuários, envio de mails, comunicação com provedores 
+de pagamento, comunicação com determinados hardware, etc.
 
 Por exemplo, a universidade do nosso exemplo pode possuir 
 um sistema para gerenciamento de cursos de extensão, que aceita 
@@ -97,10 +100,10 @@ classe de uma camada Y mais externa. No seu livro, Uncle Bob afirma categoricame
 Assim, em uma Arquitetura Limpa, as camadas centrais são mais estáveis -- menos
 sujeitas a mudanças -- do que as camadas mais externas. Por exemplo, as
 entidades de um sistema raramente precisam ser modificadas. 
-Sobre os casos de uso, é verdade que eles, às vezes, precisam ser mantidos.
-Porém, queremos evitar que essas mudanças sejam motivadas por mudanças 
-nas tecnologias adotadas na aplicação, como bancos de dados, frameworks 
-e bibliotecas. 
+Sobre os casos de uso, é verdade que eles, às vezes, precisam ser
+modificados. Porém, queremos evitar que essas modificações ocorram por 
+mudanças nas tecnologias usadas na aplicação, como bancos de dados, 
+frameworks e bibliotecas. 
 
 Resumindo, a Regra de Dependência garante que **entidades e casos de uso
 são classes "limpas" de qualquer tecnologia** ou serviço externo ao sistema.
@@ -247,7 +250,7 @@ uma Arquitetura Limpa. Especificamente, responda:
      Ela deve pertencer a qual camada?
 
    * Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, 
-     mongoDB, etc.) estará localizado em qual camada?
+     Oracle, etc.) estará localizado em qual camada?
 
 5. Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos
 certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance 

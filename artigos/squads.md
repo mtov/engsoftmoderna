@@ -129,7 +129,7 @@ pesquisadores de UX, analistas de marketing, cientistas de dados, etc.
 
 ## Modelo Spotify {.unnumbered}
 
-O **Modelo Spotify** define uma organização para times ágeis, 
+O Modelo Spotify define uma organização para times ágeis, 
 principalmente quando uma empresa cresce e passa a ter dezenas ou centenas 
 de squads. Quando isso aconteceu na Spotify, eles adotaram uma estrutura organizacional em forma de matriz, ilustrada na seguinte figura:
 

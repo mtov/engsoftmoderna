@@ -119,11 +119,15 @@
 <p>Já as classes da camada <strong>Casos de Uso</strong> implementam regras de negócio específicas de um sistema. Por exemplo, o sistema acadêmico do nosso exemplo pode ter uma classe <code>DiarioDeClasse</code> que armazena a lista de objetos do tipo <code>Aluno</code> matriculados em uma <code>Disciplina</code> que está sendo ofertada em um determinado semestre. Uma regra de negócio define que um <code>Aluno</code> somente pode ser incluído em um <code>DiarioDeClasse</code> se tiver cursado os pré-requisitos da sua <code>Disciplina</code>.</p>
 <p>Para evitar qualquer tipo de confusão, gostaríamos de comentar que os casos de uso em uma Arquitetura Limpa não tem uma correspondência, pelo menos direta, com casos de uso para especificação de requisitos e, menos ainda, com diagramas de casos de uso da UML, tal como estudamos no <a href="../cap3.html#diagramas-de-casos-de-uso">Capítulo 3</a>.</p>
 <h2 class="unnumbered" id="adaptadores">Adaptadores</h2>
-<p>Na terceira camada, de dentro para fora, temos classes e interfaces chamadas de <strong>Adaptadores</strong>. A função delas é converter dados de um formato para outro.</p>
+<p>Na terceira camada, de dentro para fora, temos classes e interfaces chamadas de <strong>Adaptadores</strong>. Eles têm como função mediar a interação entre a camada mais externa da arquitetura (sistemas externos) e as camadas centrais (Casos de Uso e Entidades).</p>
 <p>Suponha, por exemplo, que o sistema use uma API REST para comunicação com seus clientes. As classes adaptadoras serão então responsáveis por implementar os <em>endpoints</em> REST da API. Isto é, elas devem receber as requisições e encaminhá-las para os casos de uso correspondentes. E, também, fazer o caminho inverso: receber os resultados retornados pelos casos de uso e convertê-los em documentos JSON que serão enviados para os clientes.</p>
-<p>Se o sistema for implementado usando-se um framework MVC, todos os componentes desse padrão arquitetural – isto é, a Visão, os controladores e o modelo – pertencerão a essa camada.</p>
+<!--
+Se o sistema for implementado usando-se um framework MVC, 
+todos os componentes desse padrão arquitetural -- isto é, a Visão, 
+os controladores e o modelo -- pertencerão a essa camada.
+--->
 <h2 class="unnumbered" id="frameworks-externos">Frameworks Externos</h2>
-<p>Na camada mais externa, temos as classes de bibliotecas e frameworks externos (de terceiros), as quais podem ser responsáveis por persistência em bancos de dados, construção de interfaces com usuários, envio de mails, integração com outros sistemas, comunicação com um determinado hardware, etc.</p>
+<p>Na camada mais externa, temos as classes de bibliotecas, frameworks e quaisquer sistemas externos. Por exemplo, é nessa camada que ficam os sistemas responsáveis por persistência em bancos de dados, construção de interfaces com usuários, envio de mails, comunicação com provedores de pagamento, comunicação com determinados hardware, etc.</p>
 <p>Por exemplo, a universidade do nosso exemplo pode possuir um sistema para gerenciamento de cursos de extensão, que aceita pagamento por meio de cartões de crédito. Para isso, o sistema usa um serviço de terceiros, que oferece algumas classes para processamento de pagamentos. Logo, essa classes ficam na camada mais externa de uma Arquitetura Limpa.</p>
 <p>No livro <a href="https://dl.acm.org/doi/book/10.5555/3175742">Arquitetura Limpa</a>, veja como essa camada é descrita:</p>
 <blockquote>
@@ -134,7 +138,7 @@
 <blockquote>
 <p>O nome de um elemento declarado em uma camada externa não deve ser mencionado pelo código de uma camada interna. Isso inclui funções, classes, variáveis e qualquer outro elemento de código.</p>
 </blockquote>
-<p>Assim, em uma Arquitetura Limpa, as camadas centrais são mais estáveis – menos sujeitas a mudanças – do que as camadas mais externas. Por exemplo, as entidades de um sistema raramente precisam ser modificadas. Sobre os casos de uso, é verdade que eles, às vezes, precisam ser mantidos. Porém, queremos evitar que essas mudanças sejam motivadas por mudanças nas tecnologias adotadas na aplicação, como bancos de dados, frameworks e bibliotecas.</p>
+<p>Assim, em uma Arquitetura Limpa, as camadas centrais são mais estáveis – menos sujeitas a mudanças – do que as camadas mais externas. Por exemplo, as entidades de um sistema raramente precisam ser modificadas. Sobre os casos de uso, é verdade que eles, às vezes, precisam ser modificados. Porém, queremos evitar que essas modificações ocorram por mudanças nas tecnologias usadas na aplicação, como bancos de dados, frameworks e bibliotecas.</p>
 <p>Resumindo, a Regra de Dependência garante que <strong>entidades e casos de uso são classes <q>limpas</q> de qualquer tecnologia</strong> ou serviço externo ao sistema.</p>
 <h2 class="unnumbered" id="invertendo-o-fluxo-de-controle">Invertendo o Fluxo de Controle</h2>
 <p>Em uma Arquitetura Limpa, fluxos de controle de <q>fora para dentro</q> são implementados de forma <q>natural</q>, pois eles seguem o mesmo sentido da Regra de Dependência. Por exemplo, uma camada mais externa Y pode criar um objeto de um tipo mais interno X e então chamar um método desse objeto.</p>
@@ -192,7 +196,7 @@ public class MailServiceImpl implements MailServiceInterface {
 <li><p>Em qual camada será implementada uma classe com o código da consulta SQL que vai retornar os livros emprestados?</p></li>
 <li><p>Mostre a assinatura do principal método da interface implementada por essa classe? Essa interface pertence a qual camada?</p></li>
 <li><p>Nesse sistema, provavelmente, existe uma classe <code>Livro</code>. Ela deve pertencer a qual camada?</p></li>
-<li><p>Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, mongoDB, etc.) estará localizado em qual camada?</p></li>
+<li><p>Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, Oracle, etc.) estará localizado em qual camada?</p></li>
 </ul></li>
 <li><p>Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance de amanhã o sistema ter que usar uma tecnologia X’, Y’ ou Z’. Nesse cenário, você acha que ainda pode ser útil a adoção de uma Arquitetura Limpa? Justifique.</p></li>
 </ol>
