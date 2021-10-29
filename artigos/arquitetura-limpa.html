@@ -193,10 +193,10 @@ public class MailServiceImpl implements MailServiceInterface {
 </ul></li>
 <li><p>Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema precisa obter a lista de livros que estão emprestados para um certo usuário da biblioteca. Fisicamente, essa informação está armazenada em um banco de dados relacional. Modele então a implementação desse requisito assumindo que o sistema adota uma Arquitetura Limpa. Especificamente, responda:</p>
 <ul>
-<li><p>Em qual camada será implementada uma classe com o código da consulta SQL que vai retornar os livros emprestados?</p></li>
-<li><p>Mostre a assinatura do principal método da interface implementada por essa classe? Essa interface pertence a qual camada?</p></li>
 <li><p>Nesse sistema, provavelmente, existe uma classe <code>Livro</code>. Ela deve pertencer a qual camada?</p></li>
-<li><p>Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, Oracle, etc.) estará localizado em qual camada?</p></li>
+<li><p>No sistema, existe também uma uma interface com métodos de negócio. Por exemplo, um método que retorna a lista de livros emprestados para um certo usuário. Essa interface pertence a qual camada?</p></li>
+<li><p>Ainda sobre a interface mencionada no item anterior, existe uma classe que implementa os seus métodos. Por exemplo, essa classe implementa o método que retorna a lista de livros emprestados e, para isso, faz uso de consultas SQL. Essa classe deve ser implementada em qual camada?</p></li>
+<li><p>Para terminar, o gerenciador de banco de dados (seja ele MySQL, PostgreSQL, Oracle, etc.) estará localizado em qual camada?</p></li>
 </ul></li>
 <li><p>Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance de amanhã o sistema ter que usar uma tecnologia X’, Y’ ou Z’. Nesse cenário, você acha que ainda pode ser útil a adoção de uma Arquitetura Limpa? Justifique.</p></li>
 </ol>

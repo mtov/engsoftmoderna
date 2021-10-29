@@ -239,18 +239,22 @@ está armazenada em um banco de dados relacional. Modele então
 a implementação desse requisito assumindo que o sistema adota
 uma Arquitetura Limpa. Especificamente, responda:
 
-   * Em qual camada será implementada uma classe com o código da 
-     consulta SQL que vai retornar os livros emprestados?
-
-   * Mostre a assinatura do principal método da interface 
-     implementada por essa classe? Essa interface pertence a qual 
-     camada? 
-
    * Nesse sistema, provavelmente, existe uma classe `Livro`.
      Ela deve pertencer a qual camada?
 
-   * Nesse sistema, o banco de dados (seja ele MySQL, PostgreSQL, 
-     Oracle, etc.) estará localizado em qual camada?
+   * No sistema, existe também uma uma interface com métodos de 
+     negócio. Por exemplo, um método que retorna a lista de livros
+     emprestados para um certo usuário. Essa interface
+     pertence a qual camada?
+
+   * Ainda sobre a  interface mencionada no item anterior,
+     existe uma classe que implementa os seus métodos. 
+     Por exemplo, essa classe implementa o método que retorna a 
+     lista de livros emprestados e, para isso, faz uso de consultas 
+     SQL. Essa classe deve ser implementada em qual camada?
+
+   * Para terminar, o gerenciador de banco de dados (seja ele MySQL, 
+     PostgreSQL, Oracle, etc.) estará localizado em qual camada?
 
 5. Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos
 certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance 
