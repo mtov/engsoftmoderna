@@ -73,7 +73,52 @@ sistema para cálculo e geração de apólices de seguros para navios. Mesmo que
 desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo 
 tal como um analista de seguros navais.
 
+### 3. O que é Jobs to be Done? E qual a sua relação com requisitos de software? {.unnumbered}
 
+*Jobs to be done* é uma teoria desenvolvida por Clayton Christensen
+e colegas, em 2005, para explicar porque clientes escolhem comprar 
+determinados produtos ou serviços. A ideia é que as pessoas podem
+não considerar apenas as características intrínsecas de um produto 
+ao tomar uma decisão de compra. Em vez disso, elas podem ter um 
+"trabalho que precisa ser feito" e para isso elas então "contratam" 
+um produto. 
+
+**Exemplo:** O exemplo mais comum para explicar "Jobs to be 
+Done" usa um caso de consumidores de milkshake de franquias do McDonalds 
+nos EUA. Ao prestar uma consultoria para a rede de fast-food, os
+autores da teoria descobriram que um grande número de vendas de 
+milkshake ocorria nas primeiras horas da amanhã. Após algumas 
+entrevistas, eles concluíram que os clientes "contratavam" 
+esses milkshakes para resolver um "trabalho" bem específico: 
+para chegar ao seu emprego, esses clientes tinham que dirigir por 
+um longo tempo e então eles usavam o milkshake para tornar a 
+viagem menos tediosa... 
+
+Portanto, nem sempre é trivial para as empresas descobrir os 
+"trabalhos" para os quais seus "produtos" são contratados. 
+Esses "trabalhos" podem evoluir com o tempo e "trabalhos" 
+inesperados podem aparecer.
+
+**Por que é importante conhecer os "trabalhos" para os quais 
+os clientes "contratam" meus produtos ou serviços?** Porque 
+você pode se preparar para atendê-los melhor. Por exemplo, 
+no caso da rede de fast-food, eles poderiam abrir mais cedo 
+as vendas no drive-thru, evitando que os clientes tivessem 
+que estacionar o carro e entrar na loja. 
+
+**O que "Jobs to be Done" tem a ver com requisitos de software?** 
+A resposta é que tem tudo a ver, pois software é cada vez mais um 
+produto. Ou seja, ao desenvolver e evoluir um software não podemos 
+nos esquecer dos "trabalhos" para os quais ele está sendo 
+"contratado". Caso contrário, corremos o risco de ter um sistema 
+lotado de funcionalidades que não ajudam nos "trabalhos" que seus 
+clientes precisam entregar. 
+
+**Mais um exemplo:** Recentemente, o CEO do Twitter declarou 
+que eles pretendiam focar a evolução da rede social em três "trabalhos" estratégicos para seus usuários: descobrir o que está acontecendo,
+conversar online e receber compensações financeiras pelos seus tweets. O interessante é que ele não usou o termo requisitos na sua declaração, 
+mas sim "trabalhos". Para mais detalhes, veja o seguinte
+[artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) do site da revista Harvard Business Review. 
 
 * * * 
 
