@@ -11,26 +11,26 @@ ao tomar uma decisão de compra. Em vez disso, elas têm um
 o melhor produto capaz de ajudá-las a realizar esse trabalho
 com sucesso.
 
-Ou seja, segundo JTBD, as perguntas centrais que devemos responder 
+Portanto, segundo JTBD, as perguntas centrais que devemos responder 
 ao projetar e desenvolver qualquer produto, seja ele digital 
 ou não, são as seguintes: 
 
 * Por que os clientes "contratam" nossos produtos? 
-* Quais "problemas" de sua vida eles querem resolver com nossos produtos? 
-* Qual o "progresso" eles querem introduzir no seu dia a dia ao comprar 
-nossos produtos?
+* Quais os "problemas" de sua vida eles querem resolver com nossos produtos? 
+* Qual o "progresso" eles querem alcançar ao comprar nossos produtos?
 
 ### Exemplo: Milk-shakes do McDonalds {.unnumbered}
 
-O exemplo mais comum para explicar "Jobs to be Done" refere-se a 
+O exemplo mais comum para explicar JTBD refere-se a 
 consumidores de milk-shake de franquias do McDonalds 
 nos EUA. Ao prestar uma consultoria para a rede de fast-food, os
 autores da teoria descobriram que um grande número de vendas de 
-milk-shake ocorria nas primeiras horas da manhã. Após algumas 
-entrevistas, eles concluíram que os clientes "contratavam" 
-esses milk-shakes para resolver um "trabalho" específico: 
-para chegar ao seu emprego, eles tinham que dirigir por 
-um longo tempo e então eles usavam o milk-shake para tornar a 
+milk-shake ocorria nas primeiras horas da manhã. 
+
+Após algumas entrevistas, eles concluíram que os clientes 
+"contratavam" esses milk-shakes para resolver um "trabalho" 
+específico: para chegar ao seu emprego, eles tinham que dirigir por 
+um longo tempo e então eles usavam um milk-shake para tornar a 
 viagem menos tediosa.
 
 Como o exemplo tenta ilustrar, nem sempre é trivial para as 
@@ -39,14 +39,12 @@ são contratados. Particularmente, essa "contratação" pode acontecer
 em circunstâncias específicas. E também os "trabalhos" podem evoluir 
 com o tempo e "trabalhos" inesperados podem aparecer.
 
-### Por que é importante conhecer os "trabalhos" que motivam
-a "contratação" de nossos produtos? {.unnumbered}
+### Por que é importante conhecer os "trabalhos" que motivam a "contratação" de nossos produtos? {.unnumbered}
 
 Porque assim você pode se preparar para atender seus clientes melhor. 
 Por exemplo, no caso da rede de fast-food, eles poderiam abrir 
 mais cedo as vendas no drive-thru, evitando que os clientes 
 tivessem que estacionar o carro e entrar na loja. 
-
 Uma outra alternativa seria criar um tipo especial de milk-shake 
 para ser consumido durante viagens matutinas e, por exemplo, 
 com menos açúcar e mais viscosidade.
