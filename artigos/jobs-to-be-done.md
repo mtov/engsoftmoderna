@@ -111,6 +111,37 @@ declaração, mas sim "trabalhos". Para mais detalhes, veja o
 seguinte [artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) 
 do site da revista Harvard Business Review. 
 
+## Comentários Finais {.unnumbered} 
+
+Para os fins desse artigo, podemos considerar que existem dois 
+tipos de sistemas de software:
+
+1. Sistemas desenvolvidos sob medida para um certo cliente, o
+qual possui uma boa ideia dos requisitos que ele quer que 
+sejam implementados. Normalmente, esses sistemas automatizam 
+processos internos e particulares do cliente. Costumamos 
+dizer também que eles são desenvolvidos com uma mentalidade 
+de projeto. Por exemplo, o desenvolvimento costuma ter início, 
+meio e fim.
+
+2. Sistemas destinados a um público amplo e que, portanto, 
+costumam ser desenvolvidos com uma mentalidade de produto. Nesses 
+casos, o desenvolvimento nunca termina, no sentido de que o 
+sistema está em constante evolução e sempre incorpora novas 
+funcionalidades. Hoje, esse tipo de sistema é cada vez comum, 
+principalmente em empresas digitais, cujo negócio é concretizado 
+em um software.
+
+Estamos fazendo essa distinção porque JTBD destaca-se 
+-- junto com outras teorias, 
+como [Design Thinking](./design-thinking.html) -- principalmente no 
+segundo tipo de sistema, cujos requisitos tendem a ser emergentes, 
+ou seja, não estão claros na cabeça de nenhum cliente em particular. 
+Além disso, esses sistemas podem ter que competir com sistemas de 
+empresas concorrentes. Por isso, nesses casos, uma visão que procura 
+descobrir a necessidade dos clientes -- como aquela preconizada por 
+JTBD -- é muito útil.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
