@@ -30,6 +30,9 @@ design-thinking: design-thinking.md
 mvp: mvp.md
 	$(pandoc_bin) -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html
 
+jobs-to-be-done: jobs-to-be-done.md
+	$(pandoc_bin) -T "Jobs to be Done (JTBD) Aplicado a Produtos de Software" jobs-to-be-done.md -o jobs-to-be-done.html
+
 requisitos-faq: requisitos-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Requisitos" requisitos-faq.md -o requisitos-faq.html
 

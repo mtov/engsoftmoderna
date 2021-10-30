@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Jobs to be Done (JTBD) Aplicado a Produtos de Software – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="jobs-to-be-done-jtbd-aplicado-a-produtos-de-software">Jobs to be Done (JTBD) Aplicado a Produtos de Software</h1>
+<p><em>Jobs to be done (JTBD)</em> é uma teoria desenvolvida por Clayton Christensen e colegas, em 2005, para explicar porque clientes escolhem comprar determinados produtos ou serviços. A ideia é que as pessoas podem não considerar apenas as características intrínsecas de um produto ao tomar uma decisão de compra. Em vez disso, elas podem ter um <q>trabalho que precisa ser feito</q> e para isso elas então <q>contratam</q> um produto.</p>
+<h3 class="unnumbered" id="exemplo-mcdonalds">Exemplo: McDonalds</h3>
+<p>O exemplo mais comum para explicar <q>Jobs to be Done</q> usa um caso de consumidores de milk-shake de franquias do McDonalds nos EUA. Ao prestar uma consultoria para a rede de fast-food, os autores da teoria descobriram que um grande número de vendas de milk-shake ocorria nas primeiras horas da manhã. Após algumas entrevistas, eles descobriram que os clientes <q>contratavam</q> esses milk-shakes para resolver um <q>trabalho</q> bem específico: para chegar ao seu emprego, eles tinham que dirigir por um longo tempo e então eles usavam o milk-shake para tornar a viagem menos tediosa.</p>
+<p>Como o exemplo tenta ilustrar, nem sempre é trivial para as empresas descobrir os <q>trabalhos</q> para os quais seus <q>produtos</q> são contratados. Como vimos, essa contratação pode acontecer em circunstâncias específicas. E também os <q>trabalhos</q> podem evoluir com o tempo e <q>trabalhos</q> inesperados podem aparecer.</p>
+<p><strong>Por que é importante conhecer os <q>trabalhos</q> para os quais os clientes <q>contratam</q> meus produtos ou serviços?</strong> Porque você pode se preparar para atendê-los melhor. Por exemplo, no caso da rede de fast-food, eles poderiam abrir mais cedo as vendas no drive-thru, evitando que os clientes tivessem que estacionar o carro e entrar na loja.</p>
+<h2 class="unnumbered" id="o-que-jtbd-tem-a-ver-com-software">O que JTBD tem a ver com Software?</h2>
+<p>A resposta é que tem tudo a ver, pois software é cada vez mais um produto. Ou seja, ao desenvolver e evoluir um software não podemos nos esquecer dos <q>trabalhos</q> para os quais ele está sendo <q>contratado</q>. Caso contrário, corremos o risco de ter um sistema lotado de funcionalidades, mas que não ajuda nos <q>trabalhos</q> que seus clientes precisam entregar.</p>
+<p>E, como dito antes, em alguns produtos de software nem sempre é trivial definir os seus clientes e os trabalhos que eles precisam fazer.</p>
+<h3 class="unnumbered" id="exemplo-quickbooks">Exemplo: QuickBooks</h3>
+<p>No livro no qual apresentam a teoria de <q>Jobs to be Done</q>, Christensen e colegas mencionam o caso do QuickBooks, um software de contabilidade para pequenas empresas vendido pela Intuit. Essa empresa tinha um sistema de controle de finanças pessoais muito popular nos EUA, chamado Quicken. A Intuit então percebeu que alguns dos usuários do Quicken também usavam o sistema, de forma improvisada, para fazer a contabilidade das pequenas empresas que possuíam.</p>
+<p>Veja que o Quicken não era um sistema de contabilidade, mas sim de controle de finanças pessoais. Mas, mesmo assim, alguns usuários estavam <q>contratando</q> o sistema para fazer a contabilidade de suas pequenas empresas. Ou seja, eles preferiam usar o Quicken do que os sistemas de contabilidade que existiam no mercado, os quais eram complexos e voltados para contadores profissionais.</p>
+<p>A Intuit teve então a ideia de lançar o seu próprio sistema de contabilidade, chamado QuickBooks, voltado para pequenas empresas e que obteve um grande sucesso. No livro, Christensen resume assim esse estudo de caso:</p>
+<blockquote>
+<p>Os concorrentes estavam preocupados em produzir o melhor software contábil possível. Cook [o CEO da Intuit] e sua equipe se concentraram no trabalho que os clientes estavam tentando realizar.</p>
+</blockquote>
+<h3 class="unnumbered" id="exemplo-twitter">Exemplo: Twitter</h3>
+<p>Recentemente, o CEO do Twitter declarou que eles pretendiam focar a evolução da rede social em três <q>trabalhos</q> estratégicos para seus usuários: descobrir o que está acontecendo, conversar online e receber compensações financeiras pelos seus tweets. O interessante é que ele não usou o termo requisitos na sua declaração, mas sim <q>trabalhos</q>. Para mais detalhes, veja o seguinte <a href="https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy">artigo</a> do site da revista Harvard Business Review.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
