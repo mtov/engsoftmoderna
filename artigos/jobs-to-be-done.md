@@ -87,7 +87,7 @@ A Intuit teve então a ideia de lançar o seu próprio sistema
 de contabilidade, chamado QuickBooks, destinado a pequenas 
 empresas e que obteve um grande sucesso. Inclusive, seu
 preço era superior ao de vários sistemas concorrentes com 
-mais funcionalidades 
+mais funcionalidades.
 
 No livro, Christensen e colegas resumem assim esse estudo 
 de caso:
@@ -111,36 +111,84 @@ declaração, mas sim "trabalhos". Para mais detalhes, veja o
 seguinte [artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) 
 do site da revista Harvard Business Review. 
 
+## Job Stories {.unnumbered} 
+
+Para descobrir os trabalhos para os quais os clientes contratam 
+seu produto de software, é preciso observá-los e conversar com 
+eles. No exemplo do milkshake, os autores contam que fizeram 
+exatamente isso: foram cedo para o McDonalds e perguntaram 
+para os clientes porque eles estavam "contratando" aqueles 
+milkshakes logo nas primeiras horas da manhã.
+
+Então, quando estiver definindo histórias de usuário, é 
+importante esclarecer com os clientes **porque** eles estão 
+pedindo certas histórias, isto é, qual a motivação e o contexto 
+delas. 
+
+Para deixar a motivação de histórias de usuário mais claras, 
+existe o conceito de **job stories**, que é um template alternativo 
+para escrita de histórias com o seguinte formato:
+
+> Quando [situação], eu gosto de [motivo] de tal forma que [benefício]
+
+Veja um exemplo: quando eu *dirijo meu carro para o trabalho*, eu 
+gosto de *tomar um milkshake* de tal forma que *a viagem fique mais 
+agradável e eu não fique com fome logo ao começar a trabalhar*.
+
+No entanto, "histórias de trabalhos" devem ser usadas apenas para 
+histórias menos usuais. Ou seja, para muitas histórias, a motivação 
+é bem clara e, portanto, o template não agrega muito valor.
+
+Outra técnica importante é perguntar ao cliente como ele resolve 
+o problema atualmente, isto é, quando o sistema ainda não inclui 
+a história que ele está pedindo. Isso ajuda bastante a entender 
+o contexto e a motivação do seu pedido.
+
+
 ## Comentários Finais {.unnumbered} 
 
-Para os fins desse artigo, podemos considerar que existem dois 
+Para os fins desse artigo, vamos considerar que existem dois 
 tipos de sistemas de software:
 
-1. Sistemas desenvolvidos sob medida para um certo cliente, o
-qual possui uma boa ideia dos requisitos que ele quer que 
+1. Sistemas desenvolvidos sob medida para um certo cliente, que já
+possui uma boa ideia dos requisitos que ele quer que 
 sejam implementados. Normalmente, esses sistemas automatizam 
 processos internos e particulares do cliente. Costumamos 
 dizer também que eles são desenvolvidos com uma mentalidade 
-de projeto. Por exemplo, o desenvolvimento costuma ter início, 
+de **projeto**. Por exemplo, o desenvolvimento costuma ter início, 
 meio e fim.
 
 2. Sistemas destinados a um público amplo e que, portanto, 
-costumam ser desenvolvidos com uma mentalidade de produto. Nesses 
+costumam ser desenvolvidos com uma mentalidade de **produto**. Nesses 
 casos, o desenvolvimento nunca termina, no sentido de que o 
 sistema está em constante evolução e sempre incorpora novas 
 funcionalidades. Hoje, esse tipo de sistema é cada vez comum, 
 principalmente em empresas digitais, cujo negócio é concretizado 
 em um software.
 
-Estamos fazendo essa distinção porque JTBD destaca-se 
+Fizemos essa distinção porque JTBD destaca-se 
 -- junto com outras teorias, 
 como [Design Thinking](./design-thinking.html) -- principalmente no 
 segundo tipo de sistema, cujos requisitos tendem a ser emergentes, 
 ou seja, não estão claros na cabeça de nenhum cliente em particular. 
 Além disso, esses sistemas podem ter que competir com sistemas de 
-empresas concorrentes. Por isso, nesses casos, uma visão que procura 
-descobrir a necessidade dos clientes -- como aquela preconizada por 
+empresas concorrentes. Por isso, nesses casos, uma visão centrada
+nas necessidades dos clientes -- como aquela preconizada por 
 JTBD -- é muito útil.
+
+### Para saber mais {.unnumbered} 
+
+Talvez, o primeiro material para aprofundar os conhecimentos sobre 
+JTBD seja o livro dos autores da teoria, cujo título em português é 
+"Muito Além da Sorte: Processos Inovadores para Entender o que os 
+Clientes Querem", de 2016. Um 
+[artigo](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done), 
+publicado na Harvard Business Review, no mesmo ano, oferece uma 
+introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo
+2 do nosso livro, temos uma 
+[pergunta](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto) 
+sobre a diferença entre times de projeto e de produto.
+
 
 * * * 
 
