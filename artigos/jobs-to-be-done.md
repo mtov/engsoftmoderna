@@ -19,6 +19,13 @@ ou não, são as seguintes:
 * Quais os "problemas" de sua vida eles querem resolver com nossos produtos? 
 * Qual o "progresso" eles querem alcançar ao comprar nossos produtos?
 
+Quando projetamos um produto, incluindo um software, devemos pensar
+na oferta, representada pelas funcionalidades do produto e na
+a demanda, representada pelas necessidades dos clientes. Muitas
+vezes, começamos pela oferta para então conectá-la à demanda. Por 
+outro lado, JTBD advoga que o caminho inverso -- da demanda para a 
+oferta -- tem mais chances de dar certo.
+
 ### Exemplo: Milk-shakes do McDonalds {.unnumbered}
 
 O exemplo mais comum para explicar JTBD refere-se a 
@@ -111,7 +118,7 @@ declaração, mas sim "trabalhos". Para mais detalhes, veja o
 seguinte [artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) 
 do site da revista Harvard Business Review. 
 
-## Job Stories {.unnumbered} 
+## Descobrindo JTBD {.unnumbered} 
 
 Para descobrir os trabalhos para os quais os clientes contratam 
 seu produto de software, é preciso observá-los e conversar com 
@@ -164,7 +171,7 @@ casos, o desenvolvimento nunca termina, no sentido de que o
 sistema está em constante evolução e sempre incorpora novas 
 funcionalidades. Hoje, esse tipo de sistema é cada vez comum, 
 principalmente em empresas digitais, cujo negócio é concretizado 
-em um software.
+em um software. 
 
 Fizemos essa distinção porque JTBD destaca-se 
 -- junto com outras teorias, 
@@ -173,15 +180,15 @@ segundo tipo de sistema, cujos requisitos tendem a ser emergentes,
 ou seja, não estão claros na cabeça de nenhum cliente em particular. 
 Além disso, esses sistemas podem ter que competir com sistemas de 
 empresas concorrentes. Por isso, nesses casos, uma visão centrada
-nas necessidades dos clientes -- como aquela preconizada por 
-JTBD -- é muito útil.
+nas necessidades dos clientes -- como aquela proposta por 
+JTBD -- é muito útil. 
 
 ### Para saber mais {.unnumbered} 
 
 Talvez, o primeiro material para aprofundar os conhecimentos sobre 
 JTBD seja o livro dos autores da teoria, cujo título em português é 
 "Muito Além da Sorte: Processos Inovadores para Entender o que os 
-Clientes Querem", de 2016. Um 
+Clientes Querem", publicado pela Bookman em 2017. Um 
 [artigo](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done), 
 publicado na Harvard Business Review, no mesmo ano, oferece uma 
 introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo
@@ -189,6 +196,15 @@ introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo
 [pergunta](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto) 
 sobre a diferença entre times de projeto e de produto.
 
+## Exercícios {.unnumbered} 
+
+1. Por que em sistemas ou projetos de software que são contratados 
+por um cliente a ideia de JTBD é menos importante? Justifique.
+
+2. Qual a vantagem de JTBD em relação ao uso de personas? Para 
+conhecer mais sobre personas, veja uma 
+[pergunta](https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
+FAQ do Capítulo 3 do livro.
 
 * * * 
 
