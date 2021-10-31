@@ -118,7 +118,7 @@ declaração, mas sim "trabalhos". Para mais detalhes, veja o
 seguinte [artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) 
 do site da revista Harvard Business Review. 
 
-## Descobrindo JTBD {.unnumbered} 
+## Descobrindo os "Trabalhos" {.unnumbered} 
 
 Para descobrir os trabalhos para os quais os clientes contratam 
 seu produto de software, é preciso observá-los e conversar com 
@@ -148,22 +148,23 @@ histórias menos usuais. Ou seja, para muitas histórias, a motivação
 
 Outra técnica importante é perguntar ao cliente como ele resolve 
 o problema atualmente, isto é, quando o sistema ainda não inclui 
-a história que ele está pedindo. Isso ajuda bastante a entender 
+a história que ele está pedindo. Isso ajuda a entender 
 o contexto e a motivação do seu pedido.
 
 
 ## Comentários Finais {.unnumbered} 
 
+<!--
 Para os fins desse artigo, vamos considerar que existem dois 
 tipos de sistemas de software:
 
-1. Sistemas desenvolvidos sob medida para um certo cliente, que já
+1. Sistemas desenvolvidos sob medida para um cliente que 
 possui uma boa ideia dos requisitos que ele quer que 
 sejam implementados. Normalmente, esses sistemas automatizam 
-processos internos e particulares do cliente. Costumamos 
-dizer também que eles são desenvolvidos com uma mentalidade 
-de **projeto**. Por exemplo, o desenvolvimento costuma ter início, 
-meio e fim.
+processos internos e particulares desse cliente. Às vezes, eles
+são desenvolvidos para substituir um sistema legado. Por isso,
+eles podem ser desenvolvidos com uma mentalidade de **projeto**, 
+pois a demanda está relativamente bem definida.
 
 2. Sistemas destinados a um público amplo e que, portanto, 
 costumam ser desenvolvidos com uma mentalidade de **produto**. Nesses 
@@ -173,19 +174,20 @@ funcionalidades. Hoje, esse tipo de sistema é cada vez comum,
 principalmente em empresas digitais, cujo negócio é concretizado 
 em um software. 
 
-Fizemos essa distinção porque JTBD destaca-se 
--- junto com outras teorias, 
-como [Design Thinking](./design-thinking.html) -- principalmente no 
-segundo tipo de sistema, cujos requisitos tendem a ser emergentes, 
-ou seja, não estão claros na cabeça de nenhum cliente em particular. 
-Além disso, esses sistemas podem ter que competir com sistemas de 
-empresas concorrentes. Por isso, nesses casos, uma visão centrada
-nas necessidades dos clientes -- como aquela proposta por 
-JTBD -- é muito útil. 
+Fizemos essa distinção porque 
+--->
+
+No caso de software, JTBD destaca-se -- junto com outras teorias, 
+como [Design Thinking](./design-thinking.html) -- em cenários nos
+quais os requisitos são emergentes, ou seja, não estão claros 
+na cabeça de nenhum cliente em particular.  Nesses sistemas,
+vale a pena iniciar entendendo as reais demandas dos clientes
+(isto é, os "trabalhos" que são mais importantes para eles),
+para só então definir "o que" de fato será implementado.
 
 ### Para saber mais {.unnumbered} 
 
-Talvez, o primeiro material para aprofundar os conhecimentos sobre 
+Talvez, o primeiro material para aprofundar os seu conhecimentos sobre 
 JTBD seja o livro dos autores da teoria, cujo título em português é 
 "Muito Além da Sorte: Processos Inovadores para Entender o que os 
 Clientes Querem", publicado pela Bookman em 2017. Um 
@@ -198,13 +200,12 @@ sobre a diferença entre times de projeto e de produto.
 
 ## Exercícios {.unnumbered} 
 
-1. Por que em sistemas ou projetos de software que são contratados 
-por um cliente a ideia de JTBD é menos importante? Justifique.
-
-2. Qual a vantagem de JTBD em relação ao uso de personas? Para 
+1. Qual a vantagem de JTBD em relação ao uso de personas? Para 
 conhecer mais sobre personas, veja uma 
 [pergunta](https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
 FAQ do Capítulo 3 do livro.
+
+
 
 * * * 
 

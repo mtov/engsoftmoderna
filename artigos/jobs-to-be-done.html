@@ -114,7 +114,7 @@
 <li>Quais os <q>problemas</q> de sua vida eles querem resolver com nossos produtos?</li>
 <li>Qual o <q>progresso</q> eles querem alcançar ao comprar nossos produtos?</li>
 </ul>
-<p>Quando projetamos um produto, incluindo um software, temos duas <q>pontas</q>: a oferta, representada pelas funcionalidades do produto; e a demanda, representada pelas necessidades dos clientes. Muitas vezes, começamos pela oferta para então conectá-la à demanda. Por outro lado, JTBD advoga que o caminho no sentido inverso – da demanda para a oferta – tem muito mais chance de dar certo.</p>
+<p>Quando projetamos um produto, incluindo um software, devemos pensar na oferta, representada pelas funcionalidades do produto e na a demanda, representada pelas necessidades dos clientes. Muitas vezes, começamos pela oferta para então conectá-la à demanda. Por outro lado, JTBD advoga que o caminho inverso – da demanda para a oferta – tem mais chances de dar certo.</p>
 <h3 class="unnumbered" id="exemplo-milk-shakes-do-mcdonalds">Exemplo: Milk-shakes do McDonalds</h3>
 <p>O exemplo mais comum para explicar JTBD refere-se a consumidores de milk-shake de franquias do McDonalds nos EUA. Ao prestar uma consultoria para a rede de fast-food, os autores da teoria descobriram que um grande número de vendas de milk-shake ocorria nas primeiras horas da manhã.</p>
 <p>Após algumas entrevistas, eles concluíram que os clientes <q>contratavam</q> esses milk-shakes para resolver um <q>trabalho</q> específico: para chegar ao seu emprego, eles tinham que dirigir por um longo tempo e então eles usavam um milk-shake para tornar a viagem menos tediosa.</p>
@@ -136,7 +136,7 @@
 </blockquote>
 <h3 class="unnumbered" id="exemplo-twitter">Exemplo: Twitter</h3>
 <p>Recentemente, o CEO do Twitter declarou que eles pretendiam focar a evolução da rede social em três <q>trabalhos</q> estratégicos para seus usuários: descobrir o que está acontecendo, conversar online e receber compensações financeiras pelos seus tweets. O interessante é que ele não usou o termo requisitos na sua declaração, mas sim <q>trabalhos</q>. Para mais detalhes, veja o seguinte <a href="https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy">artigo</a> do site da revista Harvard Business Review.</p>
-<h2 class="unnumbered" id="descobrindo-jtbd">Descobrindo JTBD</h2>
+<h2 class="unnumbered" id="descobrindo-os-trabalhos">Descobrindo os <q>Trabalhos</q></h2>
 <p>Para descobrir os trabalhos para os quais os clientes contratam seu produto de software, é preciso observá-los e conversar com eles. No exemplo do milkshake, os autores contam que fizeram exatamente isso: foram cedo para o McDonalds e perguntaram para os clientes porque eles estavam <q>contratando</q> aqueles milkshakes logo nas primeiras horas da manhã.</p>
 <p>Então, quando estiver definindo histórias de usuário, é importante esclarecer com os clientes <strong>porque</strong> eles estão pedindo certas histórias, isto é, qual a motivação e o contexto delas.</p>
 <p>Para deixar a motivação de histórias de usuário mais claras, existe o conceito de <strong>job stories</strong>, que é um template alternativo para escrita de histórias com o seguinte formato:</p>
@@ -145,20 +145,36 @@
 </blockquote>
 <p>Veja um exemplo: quando eu <em>dirijo meu carro para o trabalho</em>, eu gosto de <em>tomar um milkshake</em> de tal forma que <em>a viagem fique mais agradável e eu não fique com fome logo ao começar a trabalhar</em>.</p>
 <p>No entanto, <q>histórias de trabalhos</q> devem ser usadas apenas para histórias menos usuais. Ou seja, para muitas histórias, a motivação é bem clara e, portanto, o template não agrega muito valor.</p>
-<p>Outra técnica importante é perguntar ao cliente como ele resolve o problema atualmente, isto é, quando o sistema ainda não inclui a história que ele está pedindo. Isso ajuda bastante a entender o contexto e a motivação do seu pedido.</p>
+<p>Outra técnica importante é perguntar ao cliente como ele resolve o problema atualmente, isto é, quando o sistema ainda não inclui a história que ele está pedindo. Isso ajuda a entender o contexto e a motivação do seu pedido.</p>
 <h2 class="unnumbered" id="comentários-finais">Comentários Finais</h2>
-<p>Para os fins desse artigo, vamos considerar que existem dois tipos de sistemas de software:</p>
-<ol type="1">
-<li><p>Sistemas desenvolvidos sob medida para um certo cliente, que já possui uma boa ideia dos requisitos que ele quer que sejam implementados. Normalmente, esses sistemas automatizam processos internos e particulares do cliente. Costumamos dizer também que eles são desenvolvidos com uma mentalidade de <strong>projeto</strong>. Por exemplo, o desenvolvimento costuma ter início, meio e fim.</p></li>
-<li><p>Sistemas destinados a um público amplo e que, portanto, costumam ser desenvolvidos com uma mentalidade de <strong>produto</strong>. Nesses casos, o desenvolvimento nunca termina, no sentido de que o sistema está em constante evolução e sempre incorpora novas funcionalidades. Hoje, esse tipo de sistema é cada vez comum, principalmente em empresas digitais, cujo negócio é concretizado em um software.</p></li>
-</ol>
-<p>Fizemos essa distinção porque JTBD destaca-se – junto com outras teorias, como <a href="./design-thinking.html">Design Thinking</a> – principalmente no segundo tipo de sistema, cujos requisitos tendem a ser emergentes, ou seja, não estão claros na cabeça de nenhum cliente em particular. Além disso, esses sistemas podem ter que competir com sistemas de empresas concorrentes. Por isso, nesses casos, uma visão centrada nas necessidades dos clientes – como aquela proposta por JTBD – é muito útil.</p>
+<!--
+Para os fins desse artigo, vamos considerar que existem dois 
+tipos de sistemas de software:
+
+1. Sistemas desenvolvidos sob medida para um cliente que 
+possui uma boa ideia dos requisitos que ele quer que 
+sejam implementados. Normalmente, esses sistemas automatizam 
+processos internos e particulares desse cliente. Às vezes, eles
+são desenvolvidos para substituir um sistema legado. Por isso,
+eles podem ser desenvolvidos com uma mentalidade de **projeto**, 
+pois a demanda está relativamente bem definida.
+
+2. Sistemas destinados a um público amplo e que, portanto, 
+costumam ser desenvolvidos com uma mentalidade de **produto**. Nesses 
+casos, o desenvolvimento nunca termina, no sentido de que o 
+sistema está em constante evolução e sempre incorpora novas 
+funcionalidades. Hoje, esse tipo de sistema é cada vez comum, 
+principalmente em empresas digitais, cujo negócio é concretizado 
+em um software. 
+
+Fizemos essa distinção porque 
+--->
+<p>No caso de software, JTBD destaca-se – junto com outras teorias, como <a href="./design-thinking.html">Design Thinking</a> – em cenários nos quais os requisitos são emergentes, ou seja, não estão claros na cabeça de nenhum cliente em particular. Nesses sistemas, vale a pena iniciar entendendo as reais demandas dos clientes (isto é, os <q>trabalhos</q> que são mais importantes para eles), para só então definir <q>o que</q> de fato será implementado.</p>
 <h3 class="unnumbered" id="para-saber-mais">Para saber mais</h3>
-<p>Talvez, o primeiro material para aprofundar os conhecimentos sobre JTBD seja o livro dos autores da teoria, cujo título em português é <q>Muito Além da Sorte: Processos Inovadores para Entender o que os Clientes Querem</q>, publicado pela Bookman em 2017. Um <a href="https://hbr.org/2016/09/know-your-customers-jobs-to-be-done">artigo</a>, publicado na Harvard Business Review, no mesmo ano, oferece uma introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo 2 do nosso livro, temos uma <a href="https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto">pergunta</a> sobre a diferença entre times de projeto e de produto.</p>
+<p>Talvez, o primeiro material para aprofundar os seu conhecimentos sobre JTBD seja o livro dos autores da teoria, cujo título em português é <q>Muito Além da Sorte: Processos Inovadores para Entender o que os Clientes Querem</q>, publicado pela Bookman em 2017. Um <a href="https://hbr.org/2016/09/know-your-customers-jobs-to-be-done">artigo</a>, publicado na Harvard Business Review, no mesmo ano, oferece uma introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo 2 do nosso livro, temos uma <a href="https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto">pergunta</a> sobre a diferença entre times de projeto e de produto.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Por que em sistemas ou projetos de software que são contratados por um cliente a ideia de JTBD é menos importante? Justifique.</p></li>
-<li><p>Qual a vantagem de JTBD em relação ao uso de personas? Para conhecer mais sobre personas, veja uma <a href="https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas">pergunta</a> sobre o tema no FAQ do Capítulo 3 do livro.</p></li>
+<li>Qual a vantagem de JTBD em relação ao uso de personas? Para conhecer mais sobre personas, veja uma <a href="https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas">pergunta</a> sobre o tema no FAQ do Capítulo 3 do livro.</li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
