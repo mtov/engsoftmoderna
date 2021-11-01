@@ -15,16 +15,10 @@ Portanto, segundo JTBD, as perguntas centrais que devemos responder
 ao projetar e desenvolver qualquer produto, seja ele digital 
 ou não, são as seguintes: 
 
-* Por que os clientes "contratam" nossos produtos? 
+* Por que os clientes "contratam" nossos produtos? Em quais "circunstâncias"?
 * Quais os "problemas" de sua vida eles querem resolver com nossos produtos? 
 * Qual o "progresso" eles querem alcançar ao comprar nossos produtos?
 
-Quando projetamos um produto, incluindo um software, devemos pensar
-na oferta, representada pelas funcionalidades do produto e na
-a demanda, representada pelas necessidades dos clientes. Muitas
-vezes, começamos pela oferta para então conectá-la à demanda. Por 
-outro lado, JTBD advoga que o caminho inverso -- da demanda para a 
-oferta -- tem mais chances de dar certo.
 
 ### Exemplo: Milk-shakes do McDonalds {.unnumbered}
 
@@ -177,34 +171,47 @@ em um software.
 Fizemos essa distinção porque 
 --->
 
-No caso de software, JTBD destaca-se -- junto com outras teorias, 
-como [Design Thinking](./design-thinking.html) -- em cenários nos
-quais os requisitos são emergentes, ou seja, não estão claros 
-na cabeça de nenhum cliente em particular.  Nesses sistemas,
+Quando projetamos um produto, incluindo um software, devemos pensar
+na oferta, representada pelas funcionalidades do produto e na
+demanda, representada pelas necessidades dos clientes. Muitas
+vezes, começamos pela oferta para então conectá-la à demanda. Por 
+outro lado, JTBD advoga que o caminho inverso -- da demanda para a 
+oferta -- tem mais chances de dar certo.
+
+No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
+como [Design Thinking](./design-thinking.html) -- em sistemas
+cujos requisitos são emergentes, ou seja, não estão claros 
+na cabeça de nenhum cliente em particular.  Nesses casos,
 vale a pena iniciar entendendo as reais demandas dos clientes
 (isto é, os "trabalhos" que são mais importantes para eles),
 para só então definir "o que" de fato será implementado.
 
 ### Para saber mais {.unnumbered} 
 
-Talvez, o primeiro material para aprofundar os seu conhecimentos sobre 
-JTBD seja o livro dos autores da teoria, cujo título em português é 
-"Muito Além da Sorte: Processos Inovadores para Entender o que os 
-Clientes Querem", publicado pela Bookman em 2017. Um 
+Talvez, o primeiro material para aprofundar os seu conhecimentos 
+sobre JTBD seja o livro dos autores da teoria, cujo título em 
+português é "Muito Além da Sorte: Processos Inovadores para 
+Entender o que os Clientes Querem", publicado pela Bookman 
+em 2017. Um 
 [artigo](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done), 
-publicado na Harvard Business Review, no mesmo ano, oferece uma 
-introdução mais resumida a JTBD. Finalmente, no FAQ sobre o Capítulo
-2 do nosso livro, temos uma 
-[pergunta](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto) 
-sobre a diferença entre times de projeto e de produto.
+publicado na Harvard Business Review, em 2016, oferece uma 
+introdução mais resumida a JTBD. 
 
 ## Exercícios {.unnumbered} 
 
-1. Qual a vantagem de JTBD em relação ao uso de personas? Para 
-conhecer mais sobre personas, veja uma 
+1. Frequentemente, afirma-se que software pode ser desenvolvido 
+como um projeto ou como um produto. Primeiro, para entender melhor 
+essas duas formas de desenvolvimento, leia a seguinte 
+[pergunta](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto) 
+do FAQ sobre o Capítulo 2 do livro. Em seguida,
+responda em qual tipo de cenário JTBD melhor se aplica: software 
+desenvolvido como um projeto ou software desenvolvido como um produto? 
+Justifique sua resposta.
+
+2. Qual a vantagem de JTBD em relação ao uso de personas? Para 
+conhecer mais sobre personas, leia a 
 [pergunta](https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
 FAQ do Capítulo 3 do livro.
-
 
 
 * * * 
