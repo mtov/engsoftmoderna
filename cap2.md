@@ -1561,8 +1561,8 @@ O Quadro Kanban é dividido em colunas, da seguinte forma:
      Implementação e Revisão de Código. A ideia, portanto, é que as
      histórias sejam processadas passo a passo, da esquerda para a
      direita, como em uma linha de montagem. Além disso, cada coluna é
-     dividida em duas sub-colunas: "em execução" e "concluídas".
-     Por exemplo, a coluna implementação tem duas sub-colunas: tarefas
+     dividida em duas subcolunas: "em execução" e "concluídas".
+     Por exemplo, a coluna implementação tem duas subcolunas: tarefas
      em implementação e tarefas implementadas. As tarefas concluídas em
      um passo estão aguardando serem puxadas, por um membro do time,
      para o próximo passo. Por isso, Kanban é chamado de um sistema
@@ -1620,7 +1620,7 @@ de um Quadro Kanban. Esse limite é conhecido pelo nome Limite WIP, isto
 é, trata-se do limite máximo de cartões presentes em cada passo,
 contando aqueles na primeira coluna (em andamento) e aqueles na segunda
 coluna (concluídos) do passo. A exceção é o último passo, no qual o WIP
-aplica-se apenas à primeira sub-coluna, já que não faz sentido aplicar
+aplica-se apenas à primeira subcoluna, já que não faz sentido aplicar
 um limite ao número de tarefas concluídas pelo time de desenvolvimento.
 
 A seguir, reproduzimos o último Quadro Kanban, mas com os limites WIP.
@@ -1633,9 +1633,9 @@ implementação (T4, T5, T6 e T7). Portanto, abaixo do WIP desse passo,
 que é igual a 5 tarefas. Em Revisão de Código, o limite é de 3 tarefas e
 também está sendo respeitado, pois existe apenas uma tarefa em revisão
 (T3). Veja que para fins de verificar o limite WIP contam-se as tarefas
-em andamento (1a sub-coluna de cada passo) e concluídas (2a sub-coluna
+em andamento (1a subcoluna de cada passo) e concluídas (2a subcoluna
 de cada passo), com exceção do último passo, no qual consideram-se
-apenas as tarefas da primeira sub-coluna (T3, no exemplo).
+apenas as tarefas da primeira subcoluna (T3, no exemplo).
 
 ![](figs/cap2/kanban3.png){width=80%}
 
@@ -1700,7 +1700,7 @@ Primeiro, temos que estimar quanto tempo em média uma tarefa vai ficar em cada 
 
  * LT(revisão) = 6 dias
 
-Veja que essa estimativa considera uma tarefa média, pois sabemos que vão existir tarefas mais complexas e mais simples. Veja ainda que o *lead time* inclui o tempo em fila, isto é, o tempo que a tarefa vai ficar na 2a sub-coluna dos passos do Quadro Kanban aguardando ser puxada para o passo seguinte.
+Veja que essa estimativa considera uma tarefa média, pois sabemos que vão existir tarefas mais complexas e mais simples. Veja ainda que o *lead time* inclui o tempo em fila, isto é, o tempo que a tarefa vai ficar na 2a subcoluna dos passos do Quadro Kanban aguardando ser puxada para o passo seguinte.
 
 Em seguida, deve-se estimar o **throughput (TP)** do passo com maior *lead time* do Quadro Kanban, isto é, o número de tarefas produzidas por dia nesse passo. No nosso exemplo, e na maioria dos projetos de desenvolvimento de software, esse passo é a Implementação. Assim, suponha que o time seja capaz de sustentar a implementação de 8 tarefas por mês. O **throughput** desse passo é então: 8 / 21 = 0.38 tarefas/dia. Veja que consideramos que um mês tem 21 dias úteis.
 
@@ -1958,7 +1958,7 @@ Assim como no Modelo Espiral, pode-se repetir várias vezes o processo;
 ou seja, o desenvolvimento é incremental, com novas funcionalidades
 sendo entregues a cada iteração. Adicionalmente, pode-se repetir cada um
 das fases. Por exemplo, construção — em uma dada iteração — pode
-ser dividida em duas sub-fases, cada uma construindo uma parte do
+ser dividida em duas subfases, cada uma construindo uma parte do
 produto. A próxima figura ilustra o modelo de iterações de UP.
 
 ![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=70%}
