@@ -19,6 +19,11 @@ ou não, são as seguintes:
 * Quais os "problemas" de sua vida eles querem resolver com nossos produtos? 
 * Qual o "progresso" eles querem alcançar ao comprar nossos produtos?
 
+JTBD é então uma teoria que foca nas origens das decisões de compra, isto é,
+nos mecanismos que explicam porque uma pessoa decide introduzir um produto 
+ou serviço na sua vida.  Por isso, os autores da teoria sempre ressaltam
+que JTBD procura entender o **mecanismo causal** subjacente às decisões 
+de compra ou uso de produtos.
 
 ### Exemplo: Milk-shakes do McDonalds {.unnumbered}
 
@@ -59,15 +64,23 @@ simples planilha eletrônica ou mesmo um caderno de anotações.
 ## O que JTBD tem a ver com Software? {.unnumbered}
 
 A resposta é que tem tudo a ver, pois software é cada vez mais um 
-produto. Ou seja, ao desenvolver e evoluir um software não podemos 
-nos esquecer dos "trabalhos" para os quais ele está sendo 
+produto. Quando um software é visto dessa maneira, o desenvolvimento 
+nunca termina, no sentido de que o sistema está em constante 
+evolução e sempre precisa incorporar novas funcionalidades para 
+preservar e ganhar mercados e clientes. 
+
+Na verdade, essa visão de software-produto é cada vez comum, 
+principalmente em empresas digitais, cujo negócio é concretizado em 
+sistemas de software. 
+
+Por isso, ao desenvolver e evoluir um produto de software é importante
+ter em mente os "trabalhos" para os quais ele está sendo 
 "contratado". Caso contrário, corremos o risco de ter um sistema 
-lotado de funcionalidades mas que não ajuda nos "trabalhos" que 
+lotado de funcionalidades, mas que não ajuda nos "trabalhos" que 
 seus clientes precisam entregar. 
 
-E, como comentamos antes, em alguns produtos de software não
-é trivial identificar os seus clientes e os trabalhos que eles
-precisam fazer.
+E, como comentamos antes, em alguns sistemas não é trivial identificar 
+os seus clientes e os trabalhos que eles precisam fazer.
 
 ### Exemplo: QuickBooks {.unnumbered} 
 
@@ -147,29 +160,6 @@ o contexto e a motivação do seu pedido.
 
 
 ## Comentários Finais {.unnumbered} 
-
-<!--
-Para os fins desse artigo, vamos considerar que existem dois 
-tipos de sistemas de software:
-
-1. Sistemas desenvolvidos sob medida para um cliente que 
-possui uma boa ideia dos requisitos que ele quer que 
-sejam implementados. Normalmente, esses sistemas automatizam 
-processos internos e particulares desse cliente. Às vezes, eles
-são desenvolvidos para substituir um sistema legado. Por isso,
-eles podem ser desenvolvidos com uma mentalidade de **projeto**, 
-pois a demanda está relativamente bem definida.
-
-2. Sistemas destinados a um público amplo e que, portanto, 
-costumam ser desenvolvidos com uma mentalidade de **produto**. Nesses 
-casos, o desenvolvimento nunca termina, no sentido de que o 
-sistema está em constante evolução e sempre incorpora novas 
-funcionalidades. Hoje, esse tipo de sistema é cada vez comum, 
-principalmente em empresas digitais, cujo negócio é concretizado 
-em um software. 
-
-Fizemos essa distinção porque 
---->
 
 Quando projetamos um produto, incluindo um software, devemos pensar
 na oferta, representada pelas funcionalidades do produto e na
