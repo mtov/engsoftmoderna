@@ -194,8 +194,8 @@ português é "Muito Além da Sorte: Processos Inovadores para
 Entender o que os Clientes Querem", publicado pela Bookman 
 em 2017. Um 
 [artigo](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done), 
-publicado na Harvard Business Review, em 2016, oferece uma 
-introdução mais resumida a JTBD. 
+publicado na Harvard Business Review, em setembro de 2016, oferece 
+uma introdução mais resumida a JTBD. 
 
 ## Exercícios {.unnumbered} 
 
@@ -213,6 +213,10 @@ conhecer mais sobre personas, leia a
 [pergunta](https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
 FAQ do Capítulo 3 do livro.
 
+3. Em um outro artigo didático, tratamos de 
+[Design Thinking (DT)](./design-thinking.html). 
+Descreva (a) uma característica comum entre JTBD e DT; (b) o principal conceito 
+novo que JTBD introduz, quando comparado a DT.
 
 * * * 
 

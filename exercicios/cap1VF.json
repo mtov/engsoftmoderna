@@ -64,6 +64,10 @@
   {
     "text": "Com o impacto crescente da profissão, códigos de ética ajudam a clarificar os princípios de conduta que devem ser observados por engenheiros de software.",
     "correct": "true"
+  },
+  {
+    "text": "Uma empresa X decidiu terceirizar o desenvolvimento de um sistema S com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders do sistema S.",
+    "correct": "false"
   }
 ]
 }	    
