@@ -1,0 +1,45 @@
+{
+"title": "Artigo - Arquitetura Limpa",  
+"questions": [
+  {
+    "text": "Uma Arquitetura Limpa permite escrever consultas SQL na camada de Entidades.",
+    "correct": "false"
+  },
+  {
+    "text": "Quando se adota uma Arquitetura Limpa, entidades podem ser usadas por mais de um sistema da empresa.",
+    "correct": "true"
+  },
+  {
+    "text": "Um sistema X segue uma Arquitetura Limpa. Atualmente, ele possui uma interface Web. Surgiu então a necessidade de criar uma versão móvel para celulares e tablets. No entanto, para atender à essa segunda interface, não será necessário modificar as duas camadas mais internas (Entidades e Casos de Uso).",
+    "correct": "true"
+  },
+  {
+    "text": "As camadas mais internas de uma Arquitetura Limpa são mais próximas do negócio e mais distantes da tecnologia.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando se usa uma Arquitetura Limpa, os casos de uso são sempre modelados usando-se Diagramas de Casos de Uso de UML.",
+    "correct": "false"
+  },
+  {
+    "text": "Em uma Arquitetura Limpa, as entidades não conhecem os casos de uso, que por sua vez não conhecem as tecnologias usadas no sistema.",
+    "correct": "true"
+  },
+  {
+    "text": "Ao separar tecnologia de regras de negócio, uma Arquitetura Limpa dificulta a implementação de testes automatizados.",
+    "correct": "false"
+  },
+  {
+    "text": "Se um caso de uso precisa persistir uma entidade X, ele deve fazer isso por meio de uma interface que seja independente de qualquer banco de dados ou tecnologia de persistência.",
+    "correct": "true"
+  },
+  {
+    "text": "Em um sistema de comércio eletrônico, \"Produto\" é uma entidade; já \"Limpar Carrinho de Compra\" é um Caso de Uso.",
+    "correct": "true"
+  },
+  {
+    "text": "Classes que são entidades, em uma Arquitetura Limpa, não podem implementar nenhum método, exceto getters e setters.",
+    "correct": "false"
+  }
+]
+}	    

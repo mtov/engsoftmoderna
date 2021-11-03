@@ -121,7 +121,7 @@ salvar e ler dados de empréstimos, etc. Plugado nessa porta temos um
 adaptador, que realiza as operações em um banco de dados relacional.
 
 Um sistema pode possuir várias portas de entrada e de saída (sempre 
-localizadas no hexágono interior, junto às classes de domínio). Em um 
+localizadas no hexágono interior, junto às classes de domínio). Em uma 
 determinada porta, seja ela de entrada ou de saída, podemos plugar 
 um ou mais adaptadores, os quais ficam sempre localizados no hexágono
 mais externo.

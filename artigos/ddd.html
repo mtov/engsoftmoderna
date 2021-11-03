@@ -209,15 +209,25 @@
 </blockquote>
 <p>A linguagem ubíqua do sistema deve ser usada também no seu código, para nomear variáveis, parâmetros, métodos, classes, pacotes, etc. Especificamente, um projeto DDD deve fazer uso dos seguintes tipos de objetos principais: entidades, objetos de valor, serviços, agregados e repositórios.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<!---
+1. Marque V ou F:
+
+   (&nbsp;&nbsp;) DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.
+
+   (&nbsp;&nbsp;) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner. 
+
+   (&nbsp;&nbsp;) Entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.
+
+   (&nbsp;&nbsp;) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.
+   
+   (&nbsp;&nbsp;) Objetos de valor (*value objects*) não devem possuir métodos `set*`.
+
+   (&nbsp;&nbsp;) Apenas entidades e agregados podem possuir repositórios.
+
+   (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
+--->
 <ol type="1">
-<li><p>Marque V ou F:</p>
-<p>(  ) DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.</p>
-<p>(  ) Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.</p>
-<p>(  ) Entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.</p>
-<p>(  ) DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.</p>
-<p>(  ) Objetos de valor (<em>value objects</em>) não devem possuir métodos <code>set*</code>.</p>
-<p>(  ) Apenas entidades e agregados podem possuir repositórios.</p>
-<p>(  ) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.</p></li>
+<li><p>Para fixar os principais conceitos de DDD, responda ao seguinte <a href="../exercicios/exvf.html#/cap/DDD">exercício</a> de V ou F, com correção online.</p></li>
 <li><p>Suponha que você trabalha em um empresa que possui um aplicativo para entrega de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:</p>
 <ol type="a">
 <li>Cinco termos da linguagem ubíqua do sistema</li>
@@ -229,7 +239,7 @@
 </ol>
 <p>Em suas respostas, basta citar os nomes que foram pedidos.</p></li>
 <li><p>Suponha um sistema de comércio eletrônico, com as seguintes classes <code>Pedido</code>, <code>ItensPedido</code> e <code>Produto</code>. Desenhe um diagrama de classes que represente as relações entre essas classes. Quais classes constituem um agregado? Qual classe está fora do agregado e porquê?</p></li>
-<li><p>Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?</p></li>
+<li><p>Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.</p></li>
 </ol>
 <pre><code>   Raiz
       |__ Entidades

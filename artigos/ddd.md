@@ -332,6 +332,7 @@ objetos de valor, serviços, agregados e  repositórios.
 
 ## Exercícios {.unnumbered}
 
+<!---
 1. Marque V ou F:
 
    (&nbsp;&nbsp;) DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.
@@ -347,7 +348,9 @@ objetos de valor, serviços, agregados e  repositórios.
    (&nbsp;&nbsp;) Apenas entidades e agregados podem possuir repositórios.
 
    (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
+--->
 
+1. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
    
 2. Suponha que você trabalha em um empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
@@ -366,7 +369,7 @@ de comida pela Internet. Você ficou responsável pelo projeto da camada de dom�
 relações entre essas classes. Quais classes constituem um agregado? Qual
 classe está fora do agregado e porquê?
 
-4. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD?
+4. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.
 
 ~~~~
    Raiz
