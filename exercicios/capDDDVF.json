@@ -1,0 +1,33 @@
+{
+"title": "Artigo - Domain-Driven Design (DDD)",  
+"questions": [
+  {
+    "text": "DDD recomenta arquitetar um sistema em camadas, incluindo uma camada focada no domínio e nas regras do negócio.",
+    "correct": "true"
+  },
+  {
+    "text": "Quando se usa Scrum, a linguagem ubíqua é definida apenas pelo Product Owner.",
+    "correct": "false"
+  },
+  {
+    "text": "Entidades são definidas por sua identidade; objetos de valor são definidos por seus atributos.",
+    "correct": "true"
+  },
+  {
+    "text": "DDD recomenda que entidades implementem internamente sua própria lógica de persistência em bancos de dados.",
+    "correct": "false"
+  },
+  {
+    "text": "Objetos de valor (value objects) não devem possuir métodos set*.",
+    "correct": "true"
+  },
+  {
+    "text": "Apenas entidades e agregados podem possuir repositórios.",
+    "correct": "true"
+  },
+  {
+    "text": "DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.",
+    "correct": "false"
+  }
+]
+}	    
