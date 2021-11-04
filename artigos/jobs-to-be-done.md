@@ -23,7 +23,7 @@ JTBD é então uma teoria que foca nas origens das decisões de compra, isto é,
 nos mecanismos que explicam porque uma pessoa decide introduzir um produto 
 ou serviço na sua vida.  Por isso, os autores da teoria sempre ressaltam
 que JTBD procura entender o **mecanismo causal** subjacente às decisões 
-de compra ou uso de produtos.
+de adoção de produtos, serviços ou inovações.
 
 ### Exemplo: Milk-shakes do McDonalds {.unnumbered}
 
@@ -67,11 +67,9 @@ A resposta é que tem tudo a ver, pois software é cada vez mais um
 produto. Quando um software é visto dessa maneira, o desenvolvimento 
 nunca termina, no sentido de que o sistema está em constante 
 evolução e sempre precisa incorporar novas funcionalidades para 
-preservar e ganhar mercados e clientes. 
-
-Na verdade, essa visão de software-produto é cada vez comum, 
-principalmente em empresas digitais, cujo negócio é concretizado em 
-sistemas de software. 
+preservar e ganhar mercados e clientes. Na verdade, essa visão de 
+software-produto é cada vez mais comum, principalmente em empresas 
+digitais, cujo negócio é concretizado em um ou vários aplicativos. 
 
 Por isso, ao desenvolver e evoluir um produto de software é importante
 ter em mente os "trabalhos" para os quais ele está sendo 
@@ -79,8 +77,8 @@ ter em mente os "trabalhos" para os quais ele está sendo
 lotado de funcionalidades, mas que não ajuda nos "trabalhos" que 
 seus clientes precisam entregar. 
 
-E, como comentamos antes, em alguns sistemas não é trivial identificar 
-os seus clientes e os trabalhos que eles precisam fazer.
+E, como comentamos antes, em alguns sistemas não é trivial 
+identificar os seus clientes e os trabalhos que eles precisam fazer.
 
 ### Exemplo: QuickBooks {.unnumbered} 
 
