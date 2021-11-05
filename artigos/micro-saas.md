@@ -111,19 +111,26 @@ Os fundadores de uma microempresa de software são responsáveis
 não apenas por desenvolver e manter o sistema, mas também por outras 
 funções, tais como:
 
+* Escolher os **canais de distribuição*** mais adequados e eficientes
+para seu sistema. Isto é, os meios pelos quais os clientes vão tomar
+conhecimento do seu produto. Costuma-se dizer que de nada adianta
+ter um excelente sistema, se ninguém tomar conhecimento dele. No caso de 
+um micro-SaaS, um possível canal de distribuição pode combinar
+marketing de conteúdo e técnicas de SEO (*Search Engine Optimization*). 
+Além disso, um modelo freemium também pode ajudar a atrair clientes. Nesse 
+modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
+
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de computação em nuvem que permitem 
 criar máquinas virtuais com todo o software básico instalado.
 
-* Cuidar da parte de cobrança e recebimento das assinaturas. Porém, hoje existem
-serviços de terceiros para isso.
+* Cuidar da parte de cobrança e recebimento das assinaturas. Porém, hoje 
+também existem serviços de terceiros para isso.
 
 * Cuidar da parte de atendimento e suporte a clientes. Para isso é importante 
 automatizar e documentar todos os processos e, também, usar sistemas de 
 low-code, como Zapier.
 
-* Cuidar da parte de marketing e divulgação, que hoje em dia pode se beneficiar 
-de marketing de conteúdo e de técnicas de SEO (*Search Engine Optimization*). Além disso, um modelo freemium pode ajudar a atrair clientes. Neste modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
 
 
 ## Crescendo a Empresa  {.unnumbered}

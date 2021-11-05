@@ -2,7 +2,22 @@
 
 O objetivo deste artigo é responder perguntas 
 sobre temas relacionados com métodos ágeis e que não são
-abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
+abordados no [Capítulo 2](../cap2.html) do livro. 
+
+Segue a lista atual de perguntas:
+
+ 1. [Quando surgiram os conceitos de métodos ágeis?](#quando-surgiram-os-conceitos-de-m%C3%A9todos-%C3%A1geis)
+ 2. [O que é mob programming?](#o-que-%C3%A9-mob-programming)
+ 3. [Além de histórias, quais outros itens podem fazer parte do backlog do produto?](#al%C3%A9m-de-hist%C3%B3rias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto)
+ 4. [Posso estimar histórias de usuários em horas? ](#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas)
+ 5. [O que é Grooming?](#o-que-%C3%A9-grooming)
+ 6. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
+ 7. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
+ 8. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+ 9. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
+ 10. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
+
+
 
 ### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
 
@@ -90,10 +105,18 @@ de dados ou linguagem de programação.
 * Refatorações grandes e importantes, bem como outras 
 atividades para pagamento de Débito Técnico.
 
+* Instalação ou configuração de algum sistema ou framework
+mais complexo, como um banco de dados.
+
 Resumindo, conforme afirmado no Scrum Guide, qualquer 
 trabalho que é "necessário para melhorar o produto" pode 
 ser incluído no backlog do produto. 
 
+Por outro lado, se temos uma tarefa técnica, como as descritas
+acima, mas que tem uma complexidade pequena, ela pode ir direto 
+para o backlog de um determinado sprint. Por último, se a tarefa 
+é bastante simples, nem para o backlog do sprint ela precisa ir...
+Basta que algum desenvolvedor a realize e pronto.
 
 ### 4. Posso estimar histórias de usuários em horas? {.unnumbered}
 

@@ -161,10 +161,10 @@ o contexto e a motivação do seu pedido.
 
 Quando projetamos um produto, incluindo um software, devemos pensar
 na oferta, representada pelas funcionalidades do produto e na
-demanda, representada pelas necessidades dos clientes. Muitas
-vezes, começamos pela oferta para então conectá-la à demanda. Por 
-outro lado, JTBD advoga que o caminho inverso -- da demanda para a 
-oferta -- tem mais chances de dar certo.
+demanda, representada pelas reais necessidades dos clientes. Muitas
+vezes, começamos pela oferta para então conectá-la à demanda. 
+Por outro lado, JTBD advoga que o caminho inverso -- da demanda 
+para a oferta -- tem mais chances de dar certo. 
 
 No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
 como [Design Thinking](./design-thinking.html) -- em sistemas
@@ -173,6 +173,11 @@ na cabeça de nenhum cliente em particular.  Nesses casos,
 vale a pena iniciar entendendo as reais demandas dos clientes
 (isto é, os "trabalhos" que são mais importantes para eles),
 para só então definir "o que" de fato será implementado.
+
+Portanto, e em última instância, teorias como JTBD nos ajudam a 
+evitar a implementação de sistemas com diversas funcionalidades 
+que geram pouco "progresso" real para os clientes e, por isso, 
+acabam não sendo usadas. 
 
 ### Para saber mais {.unnumbered} 
 
