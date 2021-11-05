@@ -111,7 +111,7 @@ Os fundadores de uma microempresa de software são responsáveis
 não apenas por desenvolver e manter o sistema, mas também por outras 
 funções, tais como:
 
-* Escolher os **canais de distribuição*** mais adequados e eficientes
+* Escolher os **canais de distribuição** mais adequados e eficientes
 para seu sistema. Isto é, os meios pelos quais os clientes vão tomar
 conhecimento do seu produto. Costuma-se dizer que de nada adianta
 ter um excelente sistema, se ninguém tomar conhecimento dele. No caso de 
