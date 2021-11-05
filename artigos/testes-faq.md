@@ -7,6 +7,19 @@ três tipos de testes abordados no capítulo: **unidade, integração e sistema*
 Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
+Segue a lista atual de perguntas:
+
+1. [O certo é teste de unidade ou teste unitário?](#o-certo-%C3%A9-teste-de-unidade-ou-teste-unit%C3%A1rio)
+2. [O que é uma unidade?](#o-que-%C3%A9-uma-unidade)
+3. [No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?](#no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo)
+4. [Precisamos testar métodos privados?](#precisamos-testar-m%C3%A9todos-privados)
+5. [Como testar métodos que têm efeito colateral?](#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral)
+6. [Como testar métodos que não têm efeito colateral?](#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral)
+7. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
+8. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
+9. [Por que não usam o termo dublê de testes no livro?](#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro)
+10. [ Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
+11. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 
 ### 1. O certo é teste de unidade ou teste unitário? {.unnumbered}
 

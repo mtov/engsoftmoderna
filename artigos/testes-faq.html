@@ -107,6 +107,20 @@
 </header>
 <h1 class="unnumbered" id="perguntas-frequentes-sobre-testes">Perguntas Frequentes sobre Testes <a href="#perguntas-frequentes-sobre-testes" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: <strong>unidade, integração e sistema</strong>. Também, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
+<p>Segue a lista atual de perguntas:</p>
+<ol type="1">
+<li><a href="#o-certo-%C3%A9-teste-de-unidade-ou-teste-unit%C3%A1rio">O certo é teste de unidade ou teste unitário?</a></li>
+<li><a href="#o-que-%C3%A9-uma-unidade">O que é uma unidade?</a></li>
+<li><a href="#no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo">No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?</a></li>
+<li><a href="#precisamos-testar-m%C3%A9todos-privados">Precisamos testar métodos privados?</a></li>
+<li><a href="#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral">Como testar métodos que têm efeito colateral?</a></li>
+<li><a href="#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral">Como testar métodos que não têm efeito colateral?</a></li>
+<li><a href="#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia">Quando preciso criar um mock para uma dependência?</a></li>
+<li><a href="#como-criar-um-mock-para-uma-depend%C3%AAncia-privada">Como criar um mock para uma dependência privada?</a></li>
+<li><a href="#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro">Por que não usam o termo dublê de testes no livro?</a></li>
+<li><a href="#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes">Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</a></li>
+<li><a href="#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test">O que é um teste de fumaça (smoke test)?</a></li>
+</ol>
 <h3 class="unnumbered" id="o-certo-é-teste-de-unidade-ou-teste-unitário">1. O certo é teste de unidade ou teste unitário? <a href="#o-certo-é-teste-de-unidade-ou-teste-unitário" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" id="o-que-é-uma-unidade">2. O que é uma unidade? <a href="#o-que-é-uma-unidade" class="anchor-link" aria-hidden="true">🔗</a></h3>
