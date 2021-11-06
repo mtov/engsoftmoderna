@@ -96,7 +96,12 @@
   {
     "text": "Na versão de MVC adotada em sistemas Web, um Controlador é um mediador da comunicação entre a Visão e o Modelo.",
     "correct": "true"
+  },
+  {
+    "text": "Monolitos, na maioria das vezes, são implementados usando-se múltiplas linguagens de programação.",
+    "correct": "false"
   }
 ]
 }	 
+
 

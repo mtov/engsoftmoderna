@@ -4,6 +4,11 @@ O objetivo deste artigo é responder perguntas sobre temas relacionados
 com requisitos de software, isto é, sobre o 
 [Capítulo 3](https://engsoftmoderna.info/cap3.html) do livro. 
 
+Segue a lista atual de perguntas:
+
+1. [O que são personas?](#o-que-s%C3%A3o-personas)
+2. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
+
 ### 1. O que são personas? {.unnumbered}
 
 No contexto de Engenharia de Software, persona é uma técnica usada para 

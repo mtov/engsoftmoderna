@@ -2,9 +2,14 @@
 
 Neste artigo, respondemos perguntas sobre temas relacionados com projeto 
 de software e que não são abordados nos capítulos 
-[5](https://engsoftmoderna.info/cap5.html) e 
-[6](https://engsoftmoderna.info/cap6.html) do livro. 
+[5](../cap5.html) e [6](../cap6.html) do livro. 
 
+Segue a lista atual de perguntas:
+
+1. [O que significa DRY (Don't Repeat Yourself)?](#o-que-significa-dry-dont-repeat-yourself)
+2. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
+3. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
+4. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
 
 ### 1. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
 
