@@ -105,20 +105,46 @@ estão enfrentando.
 "comer a mesma comida do seu cachorro". Ou seja, empreendedores 
 devem ser também usuários dos sistemas que desenvolvem.
 
+## Canais de Distribuição {.unnumbered}
+
+De nada adianta ter uma excelente ideia e não ter capacidade
+de execução, isto é, capacidade de concretizar sua ideia em um 
+produto de software que não tenha bugs, que tenha uma excelente
+interface, um desempenho muito bom e que não tenha problemas
+de segurança e privacidade.
+
+Porém, também de nada adianta ter um excelente produto se ninguém 
+tomar conhecimento dele. Por isso, é muito importante ter **canais 
+de distribuição** eficientes. Um canal de distribuição é um meio 
+usado pelos clientes para tomar conhecimento do seu produto. 
+
+Existem dois tipos principais de canais de distribuição:
+
+* Canais outbound, por meio dos quais você procura os clientes
+ativamente. Por exemplo, por meio de anúncios no Google, Facebook, 
+listas de emails, etc. Embora menos comum no caso de pequenos 
+sistemas, pode-se também contratar vendedores para entrar em
+contato com possíveis clientes do seu micro-SaaS.
+
+* Canais inbound, por meio dos quais o cliente "procura" seu
+sistema e site. Isso acontece principalmente quando você 
+investe em marketing de conteúdo, por exemplo, criando um blog
+com artigos relacionados com o problema resolvido pelo seu
+sistema. Os clientes podem então chegar a seus artigos
+por meio de pesquisas no Google. Além de blogs, é possível
+gerar conteúdo criando podcasts, canais no YouTube,
+ebooks, etc.
+
+Adicionalmente, um modelo freemium também pode ajudar a 
+conseguir clientes, assumindo que eles já tomaram conhecimento
+do seu produto e visitaram o seu site. Nesse modelo, os clientes 
+podem testar o sistema por um tempo de forma gratuita.
+
 ## Outras Responsabilidades {.unnumbered}
 
-Os fundadores de uma microempresa de software são responsáveis 
-não apenas por desenvolver e manter o sistema, mas também por outras 
+Além de construir, manter e "vender" o produto, os fundadores 
+de uma microempresa de software são responsáveis por outras 
 funções, tais como:
-
-* Escolher os **canais de distribuição** mais adequados e eficientes
-para seu sistema. Isto é, os meios pelos quais os clientes vão tomar
-conhecimento do seu produto. Costuma-se dizer que de nada adianta
-ter um excelente sistema, se ninguém tomar conhecimento dele. No caso de 
-um micro-SaaS, um possível canal de distribuição pode combinar
-marketing de conteúdo e técnicas de SEO (*Search Engine Optimization*). 
-Além disso, um modelo freemium também pode ajudar a atrair clientes. Nesse 
-modelo, os clientes podem testar o sistema por um tempo de forma gratuita.
 
 * Cuidar da parte de operação. No entanto, essa tarefa ficou mais simples, 
 devido à disponibilidade de sistemas de computação em nuvem que permitem 
@@ -130,7 +156,6 @@ também existem serviços de terceiros para isso.
 * Cuidar da parte de atendimento e suporte a clientes. Para isso é importante 
 automatizar e documentar todos os processos e, também, usar sistemas de 
 low-code, como Zapier.
-
 
 
 ## Crescendo a Empresa  {.unnumbered}
