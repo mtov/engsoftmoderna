@@ -126,14 +126,14 @@ listas de emails, etc. Embora menos comum no caso de pequenos
 sistemas, pode-se também contratar vendedores para entrar em
 contato com possíveis clientes do seu micro-SaaS.
 
-* Canais inbound, por meio dos quais o cliente "procura" seu
+* Canais inbound, por meio dos quais o cliente procura seu
 sistema e site. Isso acontece principalmente quando você 
 investe em marketing de conteúdo, por exemplo, criando um blog
-com artigos relacionados com o problema resolvido pelo seu
-sistema. Os clientes podem então chegar a seus artigos
-por meio de pesquisas no Google. Além de blogs, é possível
-gerar conteúdo criando podcasts, canais no YouTube,
-ebooks, etc.
+com artigos sobre o problema resolvido pelo seu sistema. Os 
+clientes podem então chegar a seus artigos por meio de pesquisas 
+no Google. Além de blogs, é possível gerar conteúdo criando 
+podcasts, canais no YouTube, e-books, etc.
+
 
 Adicionalmente, um modelo freemium também pode ajudar a 
 conseguir clientes, assumindo que eles já tomaram conhecimento

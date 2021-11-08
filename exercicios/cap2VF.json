@@ -92,6 +92,14 @@
   {
     "text": "Suponha uma empresa X que desenvolve um sistema Y usando Scrum. Neste caso, todos os times Scrum de X devem compartilhar o mesmo backlog do produto, o qual irá conter os itens de trabalho do sistema Y.",
     "correct": "false"
+  },
+  {
+    "text": "Um mesmo Scrum Master nunca pode fazer parte de mais de um time ágil.",
+    "correct": "false"
+  },
+  {
+    "text": "Um das funções de um Scrum Master é organizar e facilitar os eventos que ocorrem em um sprint, tais como reunião de planejamento, reuniões diárias, revisão e retrospectiva.",
+    "correct": "true"
   }
 ]
 }	    
