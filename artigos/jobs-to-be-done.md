@@ -164,7 +164,11 @@ na oferta, representada pelas funcionalidades do produto e na
 demanda, representada pelas reais necessidades dos clientes. Muitas
 vezes, começamos pela oferta para então conectá-la à demanda. 
 Por outro lado, JTBD advoga que o caminho inverso -- da demanda 
-para a oferta -- tem mais chances de dar certo. 
+para a oferta -- tem mais chances de dar certo, conforme ilustrado
+na seguinte figura.
+
+![](./figs/jtbd.jpg){width=70%}
+
 
 No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
 como [Design Thinking](./design-thinking.html) -- em sistemas
