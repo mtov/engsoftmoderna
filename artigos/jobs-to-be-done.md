@@ -167,7 +167,7 @@ Por outro lado, JTBD advoga que o caminho inverso -- da demanda
 para a oferta -- tem mais chances de dar certo, conforme ilustrado
 na seguinte figura.
 
-![](./figs/jtbd.jpg){width=70%}
+![](./figs/jtbd.jpg){width=77%}
 
 
 No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
