@@ -169,7 +169,6 @@ na seguinte figura.
 
 ![](./figs/jtbd.jpg){width=77%}
 
-
 No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
 como [Design Thinking](./design-thinking.html) -- em sistemas
 cujos requisitos são emergentes, ou seja, não estão claros 
