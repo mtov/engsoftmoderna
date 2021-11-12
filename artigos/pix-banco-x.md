@@ -6,7 +6,7 @@ Neste artigo, iremos descrever a organização de um time
 ágil -- ou [squad](./squads.html) -- que segue um método semelhante a 
 [Scrum](../cap2.html#scrum). Nosso objetivo é explicar a composição 
 desse squad hipotético, isto é, comentar sobre os principais profissionais 
-que fazem parte dele e sobre as responsabilidades e tarefas desses profissionais.
+que fazem parte dele e sobre as suas responsabilidades e tarefas.
 
 **Cenário:** Vamos assumir que o squad trabalha em um banco hipotético,
 chamado Banco X. Após a regulamentação do PIX pelo Banco Central,
@@ -41,7 +41,7 @@ de PIX no Banco X.
 estudar e entender os requisitos para operação do PIX, definidos pelo
 Banco Central. Para isso, o PO conta com o apoio das áreas de 
 negócio do banco, incluindo analistas financeiros, analistas bancários, 
-contadores, etc. 
+contadores, pessoal de marketing, etc. 
 
 Em seguida, o PO deve explicar para o time como o PIX funciona e "o que" 
 tem que ser implementado. Deve também explicar o cronograma do projeto,
@@ -52,8 +52,8 @@ Adicionalmente, deve propor e escrever as principais
 e também, muito importante, definir os testes de aceitação
 das mesmas.
 
-Por fim, deve tirar dúvidas dos desenvolvedores durante a 
-implementação do PIX.
+Por fim, deve tirar dúvidas dos desenvolvedores durante a implementação 
+do projeto.
 
 #### UI/UX Designer {.unnumbered}
 
@@ -68,12 +68,13 @@ testar e validar esses protótipos, sempre com usuários.
 #### Desenvolvedores Frontend e Mobile {.unnumbered}
 
 Esses desenvolvedores vão implementar a interface projetada pelo UI/UX 
-designer. Para isso, podem usar frameworks como React (no caso do frontend
+designer. Para isso, podem usar frameworks como React (no caso da versão
 Web) e React Native ou Flutter (no caso da versão mobile).
 
 Eles podem também sugerir e participar de testes com usuários, os quais
 serão mais uma vez acompanhados pelo  UI/UX designer. E, não menos 
-importante, podem implementar testes end-to-end, usando frameworks 
+importante, podem implementar 
+[testes end-to-end](../cap8.html#testes-de-sistema), usando frameworks 
 como o Cypress.
 
 #### Desenvolvedores Backend {.unnumbered}
@@ -82,10 +83,12 @@ Esses desenvolvedores vão implementar a "lógica" do PIX no Banco X,
 incluindo regras de negócio, persistência em bancos de dados, protocolos de 
 comunicação com o Banco Central e outros bancos, etc.
 
-Eles devem pensar e garantir que a implementação atende a 
+Eles devem pensar e garantir que essa implementação atende a 
 [requisitos não-funcionais](../cap3.html#introdu%C3%A7%C3%A3o), 
 tais como segurança, privacidade, disponibilidade, desempenho, etc. 
-E também implementar testes de unidade e de integração.
+E também implementar 
+[testes de unidade](../cap8.html#testes-de-unidade) e de 
+[integração](../cap8.html#testes-de-integra%C3%A7%C3%A3o).
 
 #### Scrum Master {.unnumbered}
 
@@ -95,16 +98,16 @@ de desenvolvimento do banco.
 
 Ele deve organizar e facilitar os eventos de um sprint, tais como 
 reuniões de planejamento, reuniões diárias, revisão e retrospectiva. E, 
-sempre, atuar como um "líder servidor", ajudando o time a remover 
-impedimentos não-técnicos que, inevitavelmente, vão surgir durante 
-a implementação.
+sempre, atuar como um 
+[líder servidor](./processos-faq.html#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor), ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, 
+vão surgir durante a implementação.
 
 #### Outros Profissionais {.unnumbered}
 
 Além daqueles mencionados, outros profissionais podem contribuir com a 
 implementação PIX no Banco X, incluindo:
 
-* Engenheiros de Infraestrutura (ou 
+* Engenheiro de Infraestrutura (ou 
 [DevOps](../cap10.html)): cabe a esse profissional
 definir onde o serviço de transferência vai rodar. Por exemplo, na nuvem 
 ou localmente. Ele deve também garantir, planejar e cuidar para que o 
@@ -120,8 +123,9 @@ validações ao final dos sprints.
 
 Antes de começar a rodar os sprints, pode-se realizar um workshop
 com todos os membros do time e alguns stakeholders importantes 
-do projeto. Em um projeto dessa complexidade, esse workshop pode 
-durar alguns dias.
+do projeto. Em um projeto dessa complexidade, esse 
+workshop -- normalmente chamado de inception -- pode durar alguns 
+dias.
 
 Os principais objetivos do encontro são os seguintes: definir o 
 escopo e cronograma do projeto; definir as principais tarefas e 
