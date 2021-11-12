@@ -18,6 +18,9 @@ shape-up: shape-up.md
 squads: squads.md
 	$(pandoc_bin) -T "Organizando Times de Software em Squads" squads.md -o squads.html
 
+pix-banco-x: pix-banco-x.md
+	$(pandoc_bin) -T "Estudo de Caso: Implementação do PIX em um Banco X" pix-banco-x.md -o pix-banco-x.html
+
 processos-faq: processos-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Processos de Software" processos-faq.md -o processos-faq.html
 

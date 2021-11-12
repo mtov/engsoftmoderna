@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Estudo de Caso: Implementação do PIX em um Banco X – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="estudo-de-caso-pix-no-banco-x">Estudo de Caso: PIX no Banco X</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
+<p>Neste artigo, iremos descrever a organização de um time ágil – ou <a href="./squads.html">squad</a> – que segue um método semelhante a <a href="../cap2.html#scrum">Scrum</a>. Nosso objetivo é explicar a composição desse squad hipotético, isto é, comentar sobre os principais profissionais que fazem parte dele e sobre as responsabilidades e tarefas desses profissionais.</p>
+<p><strong>Cenário:</strong> Vamos assumir que o squad trabalha em um banco hipotético, chamado Banco X. Após a regulamentação do PIX pelo Banco Central, o Banco X deseja implementar e disponibilizar esse serviço de transferência online. E nosso squad ficou responsável por essa implementação, já que ele cuida dos demais tipos de transferência do banco, tais como TED e DOC.</p>
+<p><strong>Importante:</strong> objetivo deste artigo é didático. Portanto, o Banco X e o nosso squad são hipotéticos. Além disso, fizemos algumas simplificações para tornar o exemplo compacto e mais fácil de entender.</p>
+<h2 class="unnumbered" id="composição-do-squad">Composição do Squad</h2>
+<p>Vamos assumir que o squad de exemplo, que usaremos no resto do artigo, é formado por:</p>
+<ul>
+<li>1 Project Owner (PO)</li>
+<li>1 UI/UX Designer</li>
+<li>1 Desenvolvedor de Frontend Web</li>
+<li>1 Desenvolvedor Mobile</li>
+<li>2 Desenvolvedores Backend</li>
+<li>1 Scrum Master</li>
+</ul>
+<p>A seguir comentamos sobre as responsabilidades e tarefas desses profissionais, sempre no contexto da implementação do nosso serviço de PIX no Banco X.</p>
+<h4 class="unnumbered" id="product-owner-po">Product Owner (PO)</h4>
+<p>Às vezes chamado também de Product Manager (PM), cabe a esse profissional estudar e entender os requisitos para operação do PIX, definidos pelo Banco Central. Para isso, o PO conta com o apoio das áreas de negócio do banco, incluindo analistas financeiros, analistas bancários, contadores, etc.</p>
+<p>Em seguida, o PO deve explicar para o time como o PIX funciona e <q>o que</q> tem que ser implementado. Deve também explicar o cronograma do projeto, pois existe uma data para o PIX entrar no ar.</p>
+<p>Adicionalmente, deve propor e escrever as principais <a href="../cap3.html#hist%C3%B3rias-de-usu%C3%A1rios">histórias de usuários</a> e também, muito importante, definir os testes de aceitação das mesmas.</p>
+<p>Por fim, deve tirar dúvidas dos desenvolvedores durante a implementação do PIX.</p>
+<h4 class="unnumbered" id="uiux-designer">UI/UX Designer</h4>
+<p>Esse profissional também deve entender bem os requisitos do PIX. Uma fez feito isso, ele deve observar e entrevistar possíveis usuários, incluindo clientes do banco e, talvez, também aqueles que ainda não são clientes.</p>
+<p>Como resultado, ele deve criar um protótipo de interface com o usuário (UI), usando mockups, wireframes, etc e ferramentas como Figma. Por fim, deve testar e validar esses protótipos, sempre com usuários.</p>
+<h4 class="unnumbered" id="desenvolvedores-frontend-e-mobile">Desenvolvedores Frontend e Mobile</h4>
+<p>Esses desenvolvedores vão implementar a interface projetada pelo UI/UX designer. Para isso, podem usar frameworks como React (no caso do frontend Web) e React Native ou Flutter (no caso da versão mobile).</p>
+<p>Eles podem também sugerir e participar de testes com usuários, os quais serão mais uma vez acompanhados pelo UI/UX designer. E, não menos importante, podem implementar testes end-to-end, usando frameworks como o Cypress.</p>
+<h4 class="unnumbered" id="desenvolvedores-backend">Desenvolvedores Backend</h4>
+<p>Esses desenvolvedores vão implementar a <q>lógica</q> do PIX no Banco X, incluindo regras de negócio, persistência em bancos de dados, protocolos de comunicação com o Banco Central e outros bancos, etc.</p>
+<p>Eles devem pensar e garantir que a implementação atende a <a href="../cap3.html#introdu%C3%A7%C3%A3o">requisitos não-funcionais</a>, tais como segurança, privacidade, disponibilidade, desempenho, etc. E também implementar testes de unidade e de integração.</p>
+<h4 class="unnumbered" id="scrum-master">Scrum Master</h4>
+<p>Às vezes chamado de Agile Master ou Agile Coach, cabe a esse profissional acompanhar a implementação do PIX e ajudar o time a seguir o processo de desenvolvimento do banco.</p>
+<p>Ele deve organizar e facilitar os eventos de um sprint, tais como reuniões de planejamento, reuniões diárias, revisão e retrospectiva. E, sempre, atuar como um <q>líder servidor</q>, ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, vão surgir durante a implementação.</p>
+<h4 class="unnumbered" id="outros-profissionais">Outros Profissionais</h4>
+<p>Além daqueles mencionados, outros profissionais podem contribuir com a implementação PIX no Banco X, incluindo:</p>
+<ul>
+<li><p>Engenheiros de Infraestrutura (ou <a href="../cap10.html">DevOps</a>): cabe a esse profissional definir onde o serviço de transferência vai rodar. Por exemplo, na nuvem ou localmente. Ele deve também garantir, planejar e cuidar para que o Banco X tenha infraestrutura adequada para operar o serviço com segurança, desempenho, disponibilidade, etc.</p></li>
+<li><p>QA (<q>Quality Assurance</q>): algumas empresas possuem profissionais dedicados para garantia de qualidade. Eles podem ajudar o PO a escrever testes de aceitação e também executar tais testes e validações ao final dos sprints.</p></li>
+</ul>
+<h2 class="unnumbered" id="como-começar-workshop-de-inception">Como Começar? Workshop de Inception</h2>
+<p>Antes de começar a rodar os sprints, pode-se realizar um workshop com todos os membros do time e alguns stakeholders importantes do projeto. Em um projeto dessa complexidade, esse workshop pode durar alguns dias.</p>
+<p>Os principais objetivos do encontro são os seguintes: definir o escopo e cronograma do projeto; definir as principais tarefas e histórias de usuários; identificar e mapear riscos e obstáculos; criar a primeira versão do <a href="../cap2.html#principais-artefatos-e-eventos">backlog do produto</a> e definir os objetivos dos primeiros sprints.</p>
+<p>Terminado o workshop de inception, os sprints podem começar!</p>
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<ol type="1">
+<li><p>Defina três histórias de usuários do projeto PIX no Banco X</p></li>
+<li><p>Suponha que o projeto PIX no Banco X foi concluído com sucesso. Meses depois, o Banco Central baixou a seguinte regra: transferências via PIX entre 20:00 e 06:00 são limitadas a R$ 1.000,00. Qual seria o papel de cada membro do time na implementação dessa nova regra? Descreva de forma simplificada.</p></li>
+</ol>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
