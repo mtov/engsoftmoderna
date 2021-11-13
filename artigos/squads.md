@@ -226,6 +226,10 @@ quais são esses líderes e qual o papel de cada um deles.
 
 8. Descreva uma desvantagem do Modelo Spotify.
 
+9. Suponha uma grande empresa de entrega de comida online. Descreva pelo menos
+três tribos que essa empresa poderia usar para organizar seus squads. Basta 
+descrever brevemente o objetivo de cada tribo.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).

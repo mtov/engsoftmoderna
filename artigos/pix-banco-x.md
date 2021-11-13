@@ -36,7 +36,9 @@ de PIX no Banco X.
 
 #### Product Owner (PO) {.unnumbered}
 
-Às vezes chamado também de Product Manager (PM), cabe a esse profissional
+Às vezes chamado também de 
+[Product Manager (PM)](./processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
+cabe a esse profissional
 estudar e entender os requisitos para operação do PIX, definidos pelo
 Banco Central. Para isso, o PO conta com o apoio das áreas de 
 negócio do banco, incluindo analistas financeiros, analistas bancários, 

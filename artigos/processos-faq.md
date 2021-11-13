@@ -213,36 +213,13 @@ clareza para os desenvolvedores de um time "o que" deve ser
 implementado. Devem também estar sempre disponíveis para tirar dúvidas.
 
 Sobre as diferenças, gostamos de explicá-las destacando as origens 
-de ambos os termos. Conforme estudamos no 
-[Capítulo 2](../cap2.html#scrum) PO é um termo de Scrum e tem uma 
-definição e responsabilidades claras nesse framework. Já PM é um termo 
-que tem suas origens e maior uso em empresas que produzem produtos 
-digitais, incluindo software. Neste caso, costuma existir uma 
-preocupação maior com o posicionamento estratégico do produto no 
-mercado e com variáveis tais como número de clientes, engajamento, 
-taxas de cancelamento, etc.
-
-<!--
-Além disso, ele costuma ser usado quando um 
-sistema tem clientes e usuários bem definidos.
-
-* PM é mais usado por empresas que fazem sistemas para o 
-mercado. Ou seja, software é o produto final dessas empresas. Cabe 
-então ao PM definir o rumo estratégico desse produto, sempre considerando
-variáveis como número de clientes, engajamento, taxas de
-cancelamento, etc.
-
-Exemplo 1: Suponha uma universidade, que tem um departamento
-de TI com times que implementam sistemas administrativos e 
-de apoio ao ensino, os quais são usados pelos professores, 
-alunos e funcionários da universidade. Normalmente, esses times 
-possuem então um PO.
-
-Exemplo 2: Suponha agora um banco digital, cujo principal produto 
-é um aplicativo usado por milhões de clientes, com os mais variados 
-perfis e interesses. Esse banco possui uma área de tecnologia, 
-com times de desenvolvimento, que, normalmente, possuem um PM.
---->
+dos termos. Conforme estudamos no [Capítulo 2](../cap2.html#scrum), 
+PO é um termo de Scrum e ele tem responsabilidades muito claras nesse 
+framework. Já PM é um termo que tem suas origens e maior uso em empresas 
+que desenvolvem produtos digitais, incluindo software. Nelas, 
+o PM deve se preocupar também com o posicionamento estratégico 
+do produto no mercado e com variáveis como número de clientes, 
+engajamento, taxas de cancelamento, etc.
 
 ### 9. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
