@@ -38,14 +38,13 @@ de PIX no Banco X.
 
 Às vezes chamado também de 
 [Product Manager (PM)](./processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
-cabe a esse profissional
-estudar e entender os requisitos para operação do PIX, definidos pelo
-Banco Central. Para isso, o PO conta com o apoio das áreas de 
-negócio do banco, incluindo analistas financeiros, analistas bancários, 
-contadores, pessoal de marketing, etc. 
+cabe a esse profissional estudar e entender os requisitos para operação do 
+PIX, definidos pelo Banco Central. Para isso, o PO conta com o apoio das 
+áreas de negócio do banco, incluindo analistas financeiros, analistas 
+bancários, contadores, pessoal de marketing, etc. 
 
 Em seguida, o PO deve explicar para o time como o PIX funciona e "o que" 
-tem que ser implementado. Deve também explicar o cronograma do projeto,
+deve ser implementado. Deve também explicar o cronograma do projeto,
 pois existe uma data para o PIX entrar no ar.
 
 Adicionalmente, deve propor e escrever as principais 
