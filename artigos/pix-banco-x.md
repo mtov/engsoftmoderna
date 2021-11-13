@@ -8,7 +8,7 @@ Neste artigo, iremos descrever a organização de um time
 desse squad hipotético, isto é, comentar sobre os principais profissionais 
 que fazem parte dele e sobre as suas responsabilidades e tarefas.
 
-**Cenário:** Vamos assumir que o squad trabalha em um banco hipotético,
+**Contexto:** Vamos assumir que o squad trabalha em um banco hipotético,
 chamado Banco X. Após a regulamentação do PIX pelo Banco Central,
 o Banco X deseja implementar e disponibilizar esse serviço de transferência 
 online. E nosso squad ficou responsável por essa implementação, já que 
@@ -21,12 +21,11 @@ simplificações para tornar o exemplo compacto e mais fácil de entender.
 
 ## Composição do Squad {.unnumbered}
 
-Vamos assumir que o squad de exemplo, que usaremos no resto do artigo, 
-é formado por:
+Vamos assumir que o squad de exemplo é formado por:
 
 * 1 Project Owner (PO)
 * 1 UI/UX Designer
-* 1 Desenvolvedor de Frontend Web
+* 1 Desenvolvedor Frontend
 * 1 Desenvolvedor Mobile 
 * 2 Desenvolvedores Backend
 * 1 Scrum Master
@@ -105,7 +104,7 @@ vão surgir durante a implementação.
 #### Outros Profissionais {.unnumbered}
 
 Além daqueles mencionados, outros profissionais podem contribuir com a 
-implementação PIX no Banco X, incluindo:
+implementação do PIX no Banco X, incluindo:
 
 * Engenheiro de Infraestrutura (ou 
 [DevOps](../cap10.html)): cabe a esse profissional
@@ -138,13 +137,13 @@ Terminado o workshop de inception, os sprints podem começar!
 
 ## Exercícios {.unnumbered}
 
-1. Defina três histórias de usuários do projeto PIX no Banco X
+1. Defina três histórias de usuários do projeto PIX no Banco X.
 
 2. Suponha que o projeto PIX no Banco X foi concluído com sucesso. 
 Meses depois, o Banco Central baixou a seguinte regra: transferências 
-via PIX entre 20:00 e 06:00 são limitadas a R$ 1.000,00. Qual seria 
-o papel de cada membro do time na implementação dessa nova regra? 
-Descreva de forma simplificada. 
+via PIX entre 20:00 e 06:00 devem obedecer ao limite de R$ 1.000,00. 
+Qual seria o papel de cada membro do time na implementação dessa 
+nova regra? Descreva de forma simplificada. 
 
 * * * 
 

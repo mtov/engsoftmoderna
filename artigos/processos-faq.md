@@ -13,9 +13,10 @@ Segue a lista atual de perguntas:
  5. [O que é Grooming?](#o-que-%C3%A9-grooming)
  6. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
  7. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
- 8. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
- 9. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
- 10. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
+ 8. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
+ 9. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+ 10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
+ 11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
 
 
 
@@ -201,8 +202,49 @@ Na versão mais recente do Scrum Guide (2020), o papel de um Scrum Master é
 assim resumido: "eles são líderes verdadeiros, que servem tanto o time 
 Scrum, quanto a organização maior [na qual o time está inserido]."
 
+### 8. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? {.unnumbered}
 
-### 8. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+Esta é uma pergunta difícil, pois o uso dos termos varia de empresa 
+para empresa e também evolui rapidamente com o tempo.
+
+Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: 
+tanto um PO como um PM devem ser capazes de definir e explicar com 
+clareza para os desenvolvedores de um time "o que" deve ser 
+implementado. Devem também estar sempre disponíveis para tirar dúvidas.
+
+Sobre as diferenças, gostamos de explicá-las destacando as origens 
+de ambos os termos. Conforme estudamos no 
+[Capítulo 2](../cap2.html#scrum) PO é um termo de Scrum e tem uma 
+definição e responsabilidades claras nesse framework. Já PM é um termo 
+que tem suas origens e maior uso em empresas que produzem produtos 
+digitais, incluindo software. Neste caso, costuma existir uma 
+preocupação maior com o posicionamento estratégico do produto no 
+mercado e com variáveis tais como número de clientes, engajamento, 
+taxas de cancelamento, etc.
+
+<!--
+Além disso, ele costuma ser usado quando um 
+sistema tem clientes e usuários bem definidos.
+
+* PM é mais usado por empresas que fazem sistemas para o 
+mercado. Ou seja, software é o produto final dessas empresas. Cabe 
+então ao PM definir o rumo estratégico desse produto, sempre considerando
+variáveis como número de clientes, engajamento, taxas de
+cancelamento, etc.
+
+Exemplo 1: Suponha uma universidade, que tem um departamento
+de TI com times que implementam sistemas administrativos e 
+de apoio ao ensino, os quais são usados pelos professores, 
+alunos e funcionários da universidade. Normalmente, esses times 
+possuem então um PO.
+
+Exemplo 2: Suponha agora um banco digital, cujo principal produto 
+é um aplicativo usado por milhões de clientes, com os mais variados 
+perfis e interesses. Esse banco possui uma área de tecnologia, 
+com times de desenvolvimento, que, normalmente, possuem um PM.
+--->
+
+### 9. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -231,9 +273,10 @@ Assim, o time tem autonomia para definir as funcionalidades
 do sistema. 
 
 Técnicas como [Design Thinking](./design-thinking.html),
-[MVPs](./mvp.html) e Testes A/B são frequentemente usadas por times orientados por produto. Também já está acordado que os times
-vão manter e evoluir o sistema desenvolvido, normalmente 
-por anos, até que ele seja descontinuado.
+[MVPs](./mvp.html) e Testes A/B são frequentemente usadas por 
+times orientados por produto. Também já está acordado que 
+os times vão manter e evoluir o sistema desenvolvido, 
+normalmente por anos, até que ele seja descontinuado.
 
 Normalmente, um time orientado por produto desenvolve um sistema 
 para clientes externos. No entanto, os clientes podem ser também 
@@ -257,8 +300,7 @@ orientados por projeto. Já empresas de tecnologia -- cujo
 principal negócio são sistemas ou serviços de software -- 
 possuem times orientados por produto.
 
-
-### 9. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
@@ -307,7 +349,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-### 10. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
