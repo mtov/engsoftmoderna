@@ -208,8 +208,9 @@ Esta é uma pergunta difícil, pois o uso dos termos varia de empresa
 para empresa e também evolui rapidamente com o tempo.
 
 Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: 
-tanto um PO como um PM devem ser capazes de definir e explicar com 
-clareza para os desenvolvedores de um time "o que" deve ser 
+tanto um PO como um PM devem entender profundamente dos problemas 
+e das necessidades dos clientes. E devem ser capazes de definir, 
+priorizar e explicar para os desenvolvedores "o que" deve ser 
 implementado. Devem também estar sempre disponíveis para tirar dúvidas.
 
 Sobre as diferenças, gostamos de explicá-las destacando as origens 
