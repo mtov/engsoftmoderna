@@ -72,6 +72,6 @@
   {
     "text": "Um desenvolvedor X levou 6 meses para desenvolver sozinho um certo sistema. Logo, de acordo com a Lei de Brooks, se tivéssemos alocado um segundo desenvolvedor Y no projeto, com o mesmo nível de proficiência de X, o desenvolvimento teria terminado em 3 meses.",
     "correct": "false"
-  },
+  }
 ]
 }	 
