@@ -41,7 +41,7 @@ de PIX no Banco X.
 cabe a esse profissional estudar e entender os requisitos para operação do 
 PIX, definidos pelo Banco Central. Para isso, o PO conta com o apoio das 
 áreas de negócio do banco, incluindo analistas financeiros, analistas 
-bancários, contadores, pessoal de marketing, etc. 
+bancários, contadores, pessoal de marketing, growth, etc. 
 
 Em seguida, o PO deve explicar para o time como o PIX funciona e "o que" 
 deve ser implementado. Deve também explicar o cronograma do projeto,

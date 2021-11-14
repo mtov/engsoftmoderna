@@ -25,13 +25,13 @@ ou serviço na sua vida.  Por isso, os autores da teoria sempre ressaltam
 que JTBD procura entender o **mecanismo causal** subjacente às decisões 
 de adoção de produtos, serviços ou inovações.
 
-### Exemplo: Milk-shakes do McDonalds {.unnumbered}
+### Exemplo: Milk-shakes {.unnumbered}
 
-O exemplo mais comum para explicar JTBD refere-se a 
-consumidores de milk-shake de franquias do McDonalds 
-nos EUA. Ao prestar uma consultoria para a rede de fast-food, os
-autores da teoria descobriram que um grande número de vendas de 
-milk-shake ocorria nas primeiras horas da manhã. 
+O exemplo mais comum para explicar JTBD refere-se a consumidores de 
+milk-shake de uma grande rede de fast-food nos EUA. Ao prestar uma 
+consultoria para a empresa, os autores da teoria descobriram que um 
+grande número de vendas de milk-shake ocorria nas primeiras horas da 
+manhã. 
 
 Após algumas entrevistas, eles concluíram que os clientes 
 "contratavam" esses milk-shakes para resolver um "trabalho" 
@@ -127,10 +127,10 @@ do site da revista Harvard Business Review.
 
 Para descobrir os trabalhos para os quais os clientes contratam 
 seu produto de software, é preciso observá-los e conversar com 
-eles. No exemplo do milkshake, os autores contam que fizeram 
-exatamente isso: foram cedo para o McDonalds e perguntaram 
+eles. No exemplo do milk-shake, os autores contam que fizeram 
+exatamente isso: foram cedo para os restaurantes e perguntaram 
 para os clientes porque eles estavam "contratando" aqueles 
-milkshakes logo nas primeiras horas da manhã.
+milk-shakes logo nas primeiras horas da manhã.
 
 Então, quando estiver definindo histórias de usuário, é 
 importante esclarecer com os clientes **porque** eles estão 
@@ -144,7 +144,7 @@ para escrita de histórias com o seguinte formato:
 > Quando [situação], eu gosto de [motivo] de tal forma que [benefício]
 
 Veja um exemplo: quando eu *dirijo meu carro para o trabalho*, eu 
-gosto de *tomar um milkshake* de tal forma que *a viagem fique mais 
+gosto de *tomar um milk-shake* de tal forma que *a viagem fique mais 
 agradável e eu não fique com fome logo ao começar a trabalhar*.
 
 No entanto, "histórias de trabalhos" devem ser usadas apenas para 
