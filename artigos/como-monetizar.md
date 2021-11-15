@@ -208,7 +208,7 @@ Além disso, o valor de um sistema pode variar de cliente para cliente.
 
 ### Artigo Relacionado {.unnumbered}
 
-Veja também este outro [artigo](https://engsoftmoderna.info/artigos/micro-saas.html)
+Veja também este outro [artigo](./micro-saas.html)
 sobre microempresas de software como serviço.
 
 ## Exercícios {.unnumbered}

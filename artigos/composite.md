@@ -4,7 +4,7 @@
 
 Neste artigo, vamos apresentar o padrão de projeto **Composite**,
 que -- por sem um padrão bem simples -- não foi tratado no 
-[Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro.
+[Capítulo 6](../cap6.html) do livro.
 
 Para isso, vamos usar a mesma estrutura dos padrões de projeto 
 que estudamos no referido capítulo. Ou seja, iremos apresentar o padrão

@@ -209,7 +209,7 @@ para empresa e também evolui rapidamente com o tempo.
 
 Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: 
 tanto um PO como um PM devem entender profundamente dos problemas 
-e das necessidades dos clientes. E devem ser capazes de definir, 
+e das "dores" dos clientes. E devem ser capazes de definir, 
 priorizar e explicar para os desenvolvedores "o que" deve ser 
 implementado. Devem também estar sempre disponíveis para tirar dúvidas.
 
@@ -281,7 +281,7 @@ possuem times orientados por produto.
 ### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
-[Capítulo 2](https://engsoftmoderna.info/cap2.html), começa à 
+[Capítulo 2](../cap2.html#kanban), começa à 
 sua esquerda com um backlog de tarefas.
 
 No entanto, se os times não tomarem cuidado, esse backlog pode 
@@ -301,7 +301,7 @@ priorizá-las. Assim, somente vão entrar no backlog as tarefas que,
 de fato, devem ser implementadas pelo time.
 
 * **Downstream Kanban**: representa o fluxo principal de Kanban, 
-tal como estudamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html), 
+tal como estudamos no [Capítulo 2](../cap2.html#kanban), 
 que começa com o backlog e prossegue com os passos de 
 implementação das tarefas, tais como especificação, 
 codificação e revisão.
