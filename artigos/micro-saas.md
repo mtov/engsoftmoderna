@@ -205,7 +205,7 @@ costuma-se recomendar que LTV / CAC > 3.0.
 
 ### Artigo Relacionado {.unnumbered}
 
-Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-monetizar.html) sobre monetização de software.
+Veja também este outro [artigo](./como-monetizar.html) sobre monetização de software.
 
 ## Exercícios {.unnumbered}
 

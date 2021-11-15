@@ -198,7 +198,7 @@ uma introdução mais resumida a JTBD.
 1. Frequentemente, afirma-se que software pode ser desenvolvido 
 como um projeto ou como um produto. Primeiro, para entender melhor 
 essas duas formas de desenvolvimento, leia a seguinte 
-[pergunta](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto) 
+[pergunta](./processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
 do FAQ sobre o Capítulo 2 do livro. Em seguida,
 responda em qual tipo de cenário JTBD melhor se aplica: software 
 desenvolvido como um projeto ou software desenvolvido como um produto? 
@@ -206,7 +206,7 @@ Justifique sua resposta.
 
 2. Qual a vantagem de JTBD em relação ao uso de personas? Para 
 conhecer mais sobre personas, leia a 
-[pergunta](https://engsoftmoderna.info/artigos/requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
+[pergunta](./requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
 FAQ do Capítulo 3 do livro.
 
 3. Em um outro artigo didático, tratamos de 
