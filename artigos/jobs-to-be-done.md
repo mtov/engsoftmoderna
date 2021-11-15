@@ -25,7 +25,7 @@ ou serviço na sua vida.  Por isso, os autores da teoria sempre ressaltam
 que JTBD procura entender o **mecanismo causal** subjacente às decisões 
 de adoção de produtos, serviços ou inovações.
 
-### Exemplo: Milk-shakes {.unnumbered}
+### Exemplo: Milk-shakes Matinais {.unnumbered}
 
 O exemplo mais comum para explicar JTBD refere-se a consumidores de 
 milk-shake de uma grande rede de fast-food nos EUA. Ao prestar uma 
