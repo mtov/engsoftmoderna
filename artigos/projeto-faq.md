@@ -114,7 +114,7 @@ representa uma configuração possível do sistema.
 Portanto, ortogonalidade é uma propriedade que costuma estar 
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
 alta coesão e baixo acoplamento, tal como estudamos no 
-Capítulo [5](https://engsoftmoderna.info/cap5.html).
+Capítulo [5](../cap5.html#coes%C3%A3o).
 
 ### 4. O que é uma dependência circular? {.unnumbered}
 

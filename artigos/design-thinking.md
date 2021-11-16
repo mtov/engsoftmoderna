@@ -83,7 +83,7 @@ interessantes.
 
 Para entender o problema, o designer deve entrevistar os usuários, visitar seus
 locais de trabalho, observar e estudar seus comportamentos, etc. Como vimos no
-[Capítulo 3](https://engsoftmoderna.info/cap3.html), tais estudos que observam 
+[Capítulo 3](../cap3.html#engenharia-de-requisitos), tais estudos que observam 
 *ao vivo* os usuários afetados por uma solução são chamados de **estudos etnográficos**. 
 No limite, o designer pode até se passar por um usuário. Por exemplo, em seu 
 livro sobre Design Thinking, Tim Brown -- que por um tempo foi um dos principais 
@@ -237,7 +237,7 @@ uso de Design Thinking.
 
 5. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
-[Capítulo 3](https://engsoftmoderna.info/cap3.html) do livro.
+[Capítulo 3](../cap3.html#construindo-o-primeiro-mvp) do livro.
 
 * * * 
 

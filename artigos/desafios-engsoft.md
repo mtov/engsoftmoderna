@@ -121,7 +121,7 @@ escrevendo uma carta longa ...
 
 No entanto, é importante ressaltar que extensões do livro já 
 estão em pleno andamento, mas na forma de
-[artigos didáticos](https://engsoftmoderna.info/artigos/artigos.html). 
+[artigos didáticos](./artigos.html). 
 Nesse caso, o propósito não é apenas apresentar um
 conteúdo novo, mas também usar os artigos como trabalhos para 
 os alunos. Esclareço: os artigos são auto-contidos ou, no máximo,
@@ -172,7 +172,7 @@ Product Owner, Scrum Master e consultor técnico dos times.
 roteiros e programas "ilustrativos", de pequeno porte e que 
 exercitam conceitos básicos de divisão processos, arquitetura, devops,
 testes, etc. Como um exemplo inicial, neste outro 
-[artigo](https://engsoftmoderna.info/artigos/exemplos-teste.html), 
+[artigo](./exemplos-teste.html), 
 começamos a documentar exemplos reais de testes de software.
 
 ## Eixo Transversal de Formação {.unnumbered}

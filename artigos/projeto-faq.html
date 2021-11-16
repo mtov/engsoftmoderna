@@ -149,7 +149,7 @@
 <p>Em um sistema bem projetado, o banco de dados é ortogonal à interface do usuário: pode-se alterar a interface sem afetar o banco de dados e trocar o banco de dados sem alterar a interface.</p>
 </blockquote>
 <p>Para explicar melhor, suponha um sistema no qual podemos usar um conjunto de interfaces com o usuário X e um conjunto de bancos de dados Y. Em um sistema ortogonal, a escolha da interface X não impacta ou restringe a escolha do banco de dados Y. Qualquer combinação de X e Y é possível. Por isso, podemos imaginar X e Y como duas retas ortogonais, que formam um plano, no qual qualquer coordenada (x,y) representa uma configuração possível do sistema.</p>
-<p>Portanto, ortogonalidade é uma propriedade que costuma estar presente, de graça, em sistemas bem projetados, cujos módulos possuem alta coesão e baixo acoplamento, tal como estudamos no Capítulo <a href="https://engsoftmoderna.info/cap5.html">5</a>.</p>
+<p>Portanto, ortogonalidade é uma propriedade que costuma estar presente, de graça, em sistemas bem projetados, cujos módulos possuem alta coesão e baixo acoplamento, tal como estudamos no Capítulo <a href="../cap5.html#coes%C3%A3o">5</a>.</p>
 <h3 class="unnumbered" id="o-que-é-uma-dependência-circular">4. O que é uma dependência circular? <a href="#o-que-é-uma-dependência-circular" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha dois pacotes P1 e P2. Existe uma dependência circular entre eles quando P1 usa P2 e vice-versa.</p>
 <p>Nessa explicação, <q>usar</q> significa que P1 declara variáveis, chama métodos, lança exceções ou estende classes implementadas em P2, dentre outros usos possíveis.</p>

@@ -8,7 +8,7 @@ alcance que ele alcançou. Hoje, o conceito é usado pelos mais
 diversos empreendedores, sejam eles de produtos digitais ou
 mesmo de produtos físicos. O conceito de MVP já faz parte também do
 vocabulário de desenvolvedores de software (como estudamos no
-[Capítulo 3](https://engsoftmoderna.info/cap3.html)), 
+[Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp)), 
 profissionais de marketing, consultores, analistas de negócio, etc.
 
 No entanto, principalmente na área de software, o conceito de
