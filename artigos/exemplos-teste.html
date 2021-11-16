@@ -105,9 +105,9 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="alguns-exemplos-reais-e-interessantes-de-testes">Alguns Exemplos Reais e Interessantes de Testes</h1>
-<h2 class="unnumbered" id="introdução">Introdução</h2>
-<p>No <a href="https://engsoftmoderna.info/cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
+<h1 class="unnumbered" id="alguns-exemplos-reais-e-interessantes-de-testes">Alguns Exemplos Reais e Interessantes de Testes <a href="#alguns-exemplos-reais-e-interessantes-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h2 class="unnumbered" id="introdução">Introdução <a href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>No <a href="../cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
 <p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudá-lo na escrita de seus próprios testes.</p>
 <p>Para ir direto para os exemplos de cada sistema, use os seguintes links:</p>
 <ul>
@@ -116,10 +116,10 @@
 <li><a href="#junit">JUnit</a></li>
 </ul>
 <hr />
-<h2 class="unnumbered" id="guava">Guava</h2>
+<h2 class="unnumbered" id="guava">Guava <a href="#guava" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p><a href="https://github.com/google/guava">Guava</a> é uma biblioteca de código aberto – implementada pelo Google – que oferece um conjunto de funções básicas para concorrência, cache, E/S e grafos. Ela inclui também funções utilitárias para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como um complemento para a biblioteca padrão de Java.</p>
-<p>Já mostramos um exemplo de teste do Guava no <a href="https://engsoftmoderna.info/cap8.html#n%C3%BAmero-de-assert-por-teste">Capítulo 8</a>, mas vamos aqui mostrar mais três exemplos.</p>
-<h4 class="unnumbered" id="exemplo-1-ints.contains">Exemplo 1: Ints.contains</h4>
+<p>Já mostramos um exemplo de teste do Guava no <a href="../cap8.html#n%C3%BAmero-de-assert-por-teste">Capítulo 8</a>, mas vamos aqui mostrar mais três exemplos.</p>
+<h4 class="unnumbered" id="exemplo-1-ints.contains">Exemplo 1: Ints.contains <a href="#exemplo-1-ints.contains" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Guava implementa uma classe chamada <a href="https://guava.dev/releases/snapshot-jre/api/docs/"><code>Ints</code></a> que oferece métodos estáticos para trabalhar com valores inteiros. Dentre eles, temos o seguinte método:</p>
 <pre><code>public static boolean contains(int[] array, int target)</code></pre>
 <p>Ele verifica se um vetor de inteiros (<code>array</code>) contem um determinado inteiro (<code>target</code>).</p>
@@ -138,7 +138,7 @@
 private static final int[] ARRAY1 = {(int) 1};
 private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
 </code></pre>
-<h4 class="unnumbered" id="exemplo-2-ints.reverse">Exemplo 2: Ints.reverse</h4>
+<h4 class="unnumbered" id="exemplo-2-ints.reverse">Exemplo 2: Ints.reverse <a href="#exemplo-2-ints.reverse" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Vamos aproveitar e mostrar mais um teste da classe <code>Ints</code>, desta vez do método <code>reverse</code>, que inverte um vetor de inteiros.</p>
 <pre><code>public void testReverse() {
   testReverse(new int[] {}, new int[] {});
@@ -154,7 +154,7 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
   assertTrue(Arrays.equals(expectedOutput, input));
 }</code></pre>
 <p>O código é bem simples: primeiro cria-se uma cópia do vetor <code>input</code> (basicamente, para o teste não alterar seus elementos quando retornar); depois chama-se o método de teste (<code>Ints.reverse</code>) e verifica-se se o resultado é aquele esperado, isto é, <code>expectedOutput</code>.</p>
-<h4 class="unnumbered" id="exemplo-3-files.copy">Exemplo 3: Files.copy</h4>
+<h4 class="unnumbered" id="exemplo-3-files.copy">Exemplo 3: Files.copy <a href="#exemplo-3-files.copy" class="anchor-link" aria-hidden="true">🔗</a></h4>
 <p>Guava disponibiliza uma classe <code>Files</code>, com métodos utilitários para trabalhar com arquivos. Dentre eles, temos um método <code>copy(File from, File to)</code> que copia todos os bytes de um arquivo para outro.</p>
 <p>Um dos testes desse método é o seguinte:</p>
 <pre><code>public void testCopyFile() throws IOException {
@@ -171,7 +171,7 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
 <p>Em tempo, a função <code>Files.toString</code> usada no <code>assertEquals</code> lê o conteúdo de um arquivo e retorna-o em uma string.</p>
 <p>Antes de terminar, queremos ressaltar que esse é um <strong>teste de integração</strong>, pois ele faz acesso ao disco para ler e gravar arquivos.</p>
 <hr />
-<h2 class="unnumbered" id="spring-petclinic">Spring PetClinic</h2>
+<h2 class="unnumbered" id="spring-petclinic">Spring PetClinic <a href="#spring-petclinic" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
 <p>O sistema tem alguns <strong>testes de integração</strong> interessantes, que se beneficiam de funcionalidades oferecidas de forma transparente pelo Spring.</p>
 <p>Por exemplo, a classe <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java">ClinicServiceTests</a> implementa um método que testa o serviço de atualização do nome do dono de um animal:</p>
@@ -199,7 +199,7 @@ void shouldUpdateOwner() {
   protected OwnerRepository owners;
   ...
 }</code></pre>
-<p>Para saber mais sobre injeção de dependência, você pode consultar esse <a href="https://engsoftmoderna.info/artigos/injecao-dependencia.html">artigo</a> do nosso site.</p>
+<p>Para saber mais sobre injeção de dependência, você pode consultar esse <a href="./injecao-dependencia.html">artigo</a> do nosso site.</p>
 <ul>
 <li>O teste é também anotado com <code>@Transactional</code> para garantir uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste:</li>
 </ul>
@@ -207,7 +207,7 @@ void shouldUpdateOwner() {
 <p>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</p>
 </blockquote>
 <hr />
-<h2 class="unnumbered" id="junit">JUnit</h2>
+<h2 class="unnumbered" id="junit">JUnit <a href="#junit" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>O JUnit também possui testes, que, evidentemente, são executados pelo próprio JUnit. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, do próprio conceito de testes de unidade automatizados.</p>
 <p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>ao lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
 <p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. A primeira versão dessa classe foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>). Os testes implementados nela funcionam conforme descrito a seguir.</p>
@@ -245,7 +245,7 @@ public class OneTestCase extends TestCase {
 <li><p>E, também, não ocorreu nenhum erro ou exceção;</p></li>
 <li><p>Por fim, o teste como um todo foi bem sucedido.</p></li>
 </ul>
-<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <ol type="1">
 <li><p>Spring PetClinic: estude e documente o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p></li>
 <li><p>JUnit: estude e documente o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p></li>

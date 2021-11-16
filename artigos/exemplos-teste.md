@@ -2,7 +2,7 @@
 
 ## Introdução  {.unnumbered}
 
-No [Capítulo 8](https://engsoftmoderna.info/cap8.html), 
+No [Capítulo 8](../cap8.html), 
 explicamos os principais conceitos de testes de software 
 e mostramos pelo menos uma dezena de exemplos de código.
 
@@ -30,7 +30,7 @@ para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como
 um complemento para a biblioteca padrão de Java. 
 
 Já mostramos um exemplo de teste do Guava no 
-[Capítulo 8](https://engsoftmoderna.info/cap8.html#n%C3%BAmero-de-assert-por-teste), mas vamos aqui mostrar mais três exemplos.
+[Capítulo 8](../cap8.html#n%C3%BAmero-de-assert-por-teste), mas vamos aqui mostrar mais três exemplos.
 
 #### Exemplo 1: Ints.contains {.unnumbered}
 
@@ -208,7 +208,7 @@ class ClinicServiceTests {
 ```
 
 Para saber mais sobre injeção de dependência, você pode
-consultar esse [artigo](https://engsoftmoderna.info/artigos/injecao-dependencia.html) 
+consultar esse [artigo](./injecao-dependencia.html) 
 do nosso site.
 
 * O teste é também anotado com `@Transactional` 
