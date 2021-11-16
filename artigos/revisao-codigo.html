@@ -53,6 +53,10 @@
     background-color: #FFFFFF;
     foreground-color: black;
   }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
   </style>
 </head>
 <body>
@@ -110,7 +114,7 @@
 <p>Assim, estabelece-se um <q>diálogo</q> – na forma de uma troca de comentários — entre o <strong>autor</strong> do código e o seu revisor. Como resultado, o autor pode modificar sua implementação para atender a alguma sugestão do revisor que ele achou procedente. Ou então, ele pode replicar e justificar que ela não faz sentido… Espera-se que após esse <q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado no repositório do projeto.</p>
 <h2 class="unnumbered" id="pull-requests">Pull Requests</h2>
 <p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar código usando o recurso de <strong>Pull Requests (PR)</strong> do GitHub. Por meio desse recurso, desenvolvedores podem submeter código para ser integrado no repositório principal de um projeto. No entanto, antes da integração, o GitHub permite que outros desenvolvedores revisem esse código.</p>
-<p>O exemplo a seguir usa a classe <code>Estacionamento</code> que já foi usada no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a> do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar tal classe no sistema. Após isso, teve início o processo de revisão, que você pode acompanhar também pela próxima figura.</p>
+<p>O exemplo a seguir usa a classe <code>Estacionamento</code> que já foi usada no <a href="../cap5.html#exemplo-1">Capítulo 5</a> do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar tal classe no sistema. Após isso, teve início o processo de revisão, que você pode acompanhar também pela próxima figura.</p>
 <ul>
 <li><p><strong>Comentário 1</strong>: o revisor comentou que alguns atributos da classe <code>Estacionamento</code> poderiam ser privados. E sugeriu também implementar um método <code>estaciona</code> para mediar o acesso a eles.</p></li>
 <li><p><strong>Comentário 2:</strong> a autora concordou com a sugestão do revisor e atualizou o seu código com a modificação sugerida.</p></li>
@@ -130,10 +134,10 @@
 <li>Bugs em geral</li>
 <li>Código mais complexo do que o necessário</li>
 <li>Código que usa um algoritmo e/ou estrutura de dados menos eficiente</li>
-<li>Código que viola princípios de projeto (veja mais no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 5</a>)</li>
-<li>Código que viola a arquitetura de camadas do sistema (veja mais no <a href="https://engsoftmoderna.info/cap5.html">Capítulo 7</a>)</li>
+<li>Código que viola princípios de projeto (veja mais no <a href="../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto">Capítulo 5</a>)</li>
+<li>Código que viola a arquitetura de camadas do sistema (veja mais no <a href="../cap7.html#arquitetura-em-camadas">Capítulo 7</a>)</li>
 <li>Código que não trata exceções e erros</li>
-<li>Código com code smells (veja mais no <a href="https://engsoftmoderna.info/cap9.html">Capítulo 9</a>)</li>
+<li>Código com code smells (veja mais no <a href="../cap9.html#code-smells">Capítulo 9</a>)</li>
 <li>Otimizações prematuras</li>
 <li>Ausência de testes</li>
 <li>Ausência de documentação, principalmente aquela mais relevante</li>
@@ -194,7 +198,7 @@ Ask a programmer to review 20 lines of code, they'll find 7 issues. Ask them to 
 <li><p>Qual a diferença principal entre revisão de código e programação em pares?</p></li>
 <li><p>Descreva uma desvantagem de revisão de código.</p></li>
 <li><p>Seja o seguinte código de uma classe <code>Stack</code>. Quais comentários você faria caso fosse responsável pela revisão do código dessa classe? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.</p>
-<p>Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe <code>Stack</code>. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do <a href="https://engsoftmoderna.info/capAp.html">Apêndice A</a>. Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código.</p></li>
+<p>Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe <code>Stack</code>. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do <a href="../capAp.html#pull-requests">Apêndice A</a>. Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código.</p></li>
 </ol>
 <pre><code>import java.util.ArrayList;
 import java.util.EmptyStackException;

@@ -20,7 +20,7 @@ Assim, estabelece-se um "diálogo" -- na forma de uma troca de comentários --- 
 Nesta seção, vamos apresentar um breve tutorial sobre como revisar código usando o recurso de **Pull Requests (PR)** do GitHub. Por meio desse recurso, desenvolvedores podem submeter código para ser integrado no repositório principal de um projeto. No entanto, antes da integração, o GitHub permite que outros desenvolvedores revisem esse código.
 
 O exemplo a seguir usa a classe `Estacionamento` que já foi usada no 
-[Capítulo 5](https://engsoftmoderna.info/cap5.html) do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar tal classe no sistema. Após isso, teve início o processo de revisão, que você pode acompanhar também pela próxima figura.
+[Capítulo 5](../cap5.html#exemplo-1) do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar tal classe no sistema. Após isso, teve início o processo de revisão, que você pode acompanhar também pela próxima figura.
 
 * **Comentário 1**: o revisor comentou que alguns atributos da classe `Estacionamento` poderiam ser privados. E sugeriu também implementar um método `estaciona` para mediar o acesso a eles.
 
@@ -49,10 +49,10 @@ Segue uma lista de questões que devem ser apontadas e consideradas em revisões
 * Bugs em geral
 * Código mais complexo do que o necessário
 * Código que usa um algoritmo e/ou estrutura de dados menos eficiente
-* Código que viola princípios de projeto (veja mais no [Capítulo 5](https://engsoftmoderna.info/cap5.html))
-* Código que viola a arquitetura de camadas do sistema (veja mais no [Capítulo 7](https://engsoftmoderna.info/cap5.html))
+* Código que viola princípios de projeto (veja mais no [Capítulo 5](../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto))
+* Código que viola a arquitetura de camadas do sistema (veja mais no [Capítulo 7](../cap7.html#arquitetura-em-camadas))
 * Código que não trata exceções e erros
-* Código com code smells (veja mais no [Capítulo 9](https://engsoftmoderna.info/cap9.html))
+* Código com code smells (veja mais no [Capítulo 9](../cap9.html#code-smells))
 * Otimizações prematuras 
 * Ausência de testes
 * Ausência de documentação, principalmente aquela mais relevante
@@ -133,7 +133,7 @@ Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em
 
 3. Seja o seguinte código de uma classe `Stack`. Quais comentários você faria caso fosse responsável pela revisão do código dessa classe? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.
 
-   Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do [Apêndice A](https://engsoftmoderna.info/capAp.html). Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código. 
+   Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe `Stack`. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do [Apêndice A](../capAp.html#pull-requests). Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código. 
 
 
 ```
