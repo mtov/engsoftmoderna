@@ -267,7 +267,7 @@ software com requisitos vagos ou sujeitos a mudanças; isto é,
 basicamente sistemas comerciais, na classificação que adotamos no
 Capítulo 1. Sendo um método ágil, XP possui todas as características que
 mencionamos na seção anterior, isto é: adota ciclos curtos e iterativos
-de desenvolvimento, concede menos ênfase a documentação e planos
+de desenvolvimento, concede menos ênfase para documentação e para planos
 detalhados, propõe que o design de um sistema também seja definido de
 forma incremental e sugere que as equipes de desenvolvimento sejam
 pequenas.
