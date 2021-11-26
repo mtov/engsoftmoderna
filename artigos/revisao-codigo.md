@@ -125,7 +125,7 @@ Se PRs forem muito grandes, existe também a chance de a qualidade da revisão c
 Antes de concluir, gostaríamos de comentar que diversos "problemas" tratados em uma revisão de código podem ser detectados de forma automática por meio de **ferramentas de análise estática**. Por exemplo, questões como convenções de nomes de identificadores (*camel case*, *snake case*, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de **linters**. Com isso, evita-se que um revisor humano tenha que perder tempo com tais questões.
 
 
-## Exercício {.unnumbered}
+## Exercícios {.unnumbered}
 
 1. Qual a diferença principal entre revisão de código e programação em pares?
 
@@ -168,9 +168,9 @@ public class Stack<T> {
 }
 ```
 
-4. É possível adotar simultaneamente Revisão de Código e Desenvolvimento Baseado no Trunk? Sim ou não? Justifique.
+4. É possível adotar simultaneamente Revisão de Código e Desenvolvimento Baseado no Trunk (TBD)? Sim ou não? Justifique sua resposta. Se necessário, consulte a seguinte [seção](../cap10.html#desenvolvimento-baseado-no-trunk) do livro texto para saber mais sobre TBD.
 
-5. É possível adotar simultaneamente Revisão de Código e Integração Contínua? Sim ou não? Justifique.
+5. É possível adotar simultaneamente Revisão de Código e Integração Contínua (CI)? Sim ou não? Justifique sua resposta. Se necessário, consulte a seguinte [seção](../cap10.html#o-que-%C3%A9-integra%C3%A7%C3%A3o-cont%C3%ADnua) do livro texto para saber mais sobre CI.
 
 
 * * * 
