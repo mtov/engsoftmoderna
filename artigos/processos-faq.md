@@ -17,7 +17,7 @@ Segue a lista atual de perguntas:
  9. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
  10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
  11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
-
+ 12. [12. Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
 
 
 ### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
@@ -339,6 +339,27 @@ um bom tempo para ser corrigido, não existe alternativa,
 a não ser voltar com o cartão que descreve a tarefa para o 
 passo de especificação, para que ela seja re-especificada e 
 re-implementada, agora de forma correta.
+
+### 12. Em Kanban, o que são classes de serviços? {.unnumbered}
+
+Classes de serviços é o conceito que Kanban oferece para possibilitar
+que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
+costuma-se definir quatro classes de serviços: (1) normal, (2) com deadline, 
+(3) urgente e (4) intangível. Feito isso, toda tarefa que chega para 
+o time deve ser alocada em uma dessas classes de serviço. Se 
+pensarmos nos cartões que descrevem a tarefa, eles devem ter cores 
+diferentes, em função de suas classes de serviço.
+
+Cada classe de serviço pode ter seu próprio fluxo de trabalho. 
+Particularmente, os limites WIP podem ser específicos para cada 
+classe de serviço. E algumas classes de serviços podem "pular" 
+certos passos do fluxo. Por exemplo, uma tarefa classificada como 
+urgente pode dispensar o passo de revisão. 
+
+Para melhor entender o conceito, você pode imaginar que 
+classes de serviço são "pistas horizontais" em um quadro Kanban. 
+Ou seja, o conceito lembra as pistas exclusivas que existem 
+em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
 
 * * * 
 
