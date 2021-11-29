@@ -56,7 +56,10 @@ alternativo que propicie uma experiência mais agradável para criação de form
 
 De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
-empresas ou consumidores finais.
+empresas ou consumidores finais. Especificamente no Brasil, o mercado em 
+ambos os casos é muito grande, pois o país possui mais de 210 milhões de 
+habitantes e quase 20 milhões de empresas ativas (dados de 2020, do 
+Ministério da Economia).
 
 ## Escolhendo o Sistema {.unnumbered}
 

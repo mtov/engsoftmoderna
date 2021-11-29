@@ -17,7 +17,7 @@ Segue a lista atual de perguntas:
  9. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
  10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
  11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
- 12. [12. Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+ 12. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
 
 
 ### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
@@ -342,7 +342,7 @@ re-implementada, agora de forma correta.
 
 ### 12. Em Kanban, o que são classes de serviços? {.unnumbered}
 
-Classes de serviços é o conceito que Kanban oferece para possibilitar
+Classes de serviços é um conceito de Kanban que possibilita
 que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
 costuma-se definir quatro classes de serviços: (1) normal, (2) com deadline, 
 (3) urgente e (4) intangível. Feito isso, toda tarefa que chega para 
