@@ -137,11 +137,16 @@ clientes podem então chegar a seus artigos por meio de pesquisas
 no Google. Além de blogs, é possível gerar conteúdo criando 
 podcasts, canais no YouTube, e-books, etc.
 
-
 Adicionalmente, um modelo freemium também pode ajudar a 
 conseguir clientes, assumindo que eles já tomaram conhecimento
 do seu produto e visitaram o seu site. Nesse modelo, os clientes 
 podem testar o sistema por um tempo de forma gratuita.
+
+Resumindo, ao montar um micro-SaaS, você deve focar em um problema real 
+que afeta um número relevante de usuários (seu mercado); em seguida, 
+você deve implementar o melhor sistema que resolve esse problema 
+(seu produto); e também deve encontrar os melhores canais de distribuição 
+que vão permitir que o mercado tome conhecimento do seu produto.
 
 ## Outras Responsabilidades {.unnumbered}
 

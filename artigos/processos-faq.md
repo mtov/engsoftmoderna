@@ -356,7 +356,7 @@ classe de serviço. E algumas classes de serviços podem "pular"
 certos passos do fluxo. Por exemplo, uma tarefa classificada como 
 urgente pode dispensar o passo de revisão. 
 
-Para melhor entender o conceito, você pode imaginar que 
+Para entender melhor o conceito, você pode imaginar que 
 classes de serviço são "pistas horizontais" em um quadro Kanban. 
 Ou seja, o conceito lembra as pistas exclusivas que existem 
 em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
