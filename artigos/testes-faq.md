@@ -18,10 +18,11 @@ Segue a lista atual de perguntas:
 7. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
 8. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
 9. [Por que não usam o termo dublê de testes no livro?](#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro)
-10. [ Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
+10. [Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
 11. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
-12. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-ci)
-13. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
+12. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci)
+13. [Para que servem suítes de testes?](#para-que-servem-su%C3%ADtes-de-testes)
+14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 
 ### 1. O certo é teste de unidade ou teste unitário? {.unnumbered}
 
@@ -252,7 +253,7 @@ o que inviabiliza a sua execução frequente.
 
 ### 12. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
 
-A resposta para essa pergunta é uma consequência direta da 
+A resposta para essa pergunta é uma consequência da 
 resposta da pergunta anterior. Basicamente, ela é a seguinte:
 
 * Testes de unidade: com certeza, devem ser executados por 
@@ -269,7 +270,17 @@ que levam bem mais tempo para rodar. Então, se o teste de integração
 rodar dentro de um limite de tempo razoável, ele pode ser sim 
 incluído no serviço de CI.
 
-### 13. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 13. Para que servem suítes de testes?  {.unnumbered}
+
+Uma suíte de testes é um conjunto de testes que
+pretendemos rodar juntos. Por exemplo, podemos optar por 
+particionar os testes de um dado sistema em duas suítes: a primeira 
+com os testes rápidos e que serão executados com frequência; e a 
+segunda com testes que demoram mais tempo e que, por isso mesmo, 
+queremos rodar mais raramente.
+
+
+### 14. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
