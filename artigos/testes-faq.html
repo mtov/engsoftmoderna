@@ -119,6 +119,7 @@
 <li><a href="#como-criar-um-mock-para-uma-depend%C3%AAncia-privada">Como criar um mock para uma dependência privada?</a></li>
 <li><a href="#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro">Por que não usam o termo dublê de testes no livro?</a></li>
 <li><a href="#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes">Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</a></li>
+<li><a href="#com-que-frequ%C3%AAncia-devemos-rodar-os-testes">Com que frequência devemos rodar os testes?</a></li>
 <li><a href="#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test">O que é um teste de fumaça (smoke test)?</a></li>
 </ol>
 <h3 class="unnumbered" id="o-certo-é-teste-de-unidade-ou-teste-unitário">1. O certo é teste de unidade ou teste unitário? <a href="#o-certo-é-teste-de-unidade-ou-teste-unitário" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -222,7 +223,15 @@
 <li>As classes e pacotes do sistema ficam em <code>src/com/google/common</code>.</li>
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
-<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">11. O que é um teste de fumaça (smoke test)? <a href="#o-que-é-um-teste-de-fumaça-smoke-test" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="com-que-frequência-devemos-rodar-os-testes">11. Com que frequência devemos rodar os testes? <a href="#com-que-frequência-devemos-rodar-os-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Evidentemente, essa resposta depende do tipo de teste!</p>
+<p>Por um lado, testes de unidade devem ser executados com grande frequência. Por exemplo, sempre que compilar o código, nada impede que você também execute os testes de unidade. Veja que, por definição, testes de unidade rodam rapidamente. Por isso, eles devem fazer parte de um serviço de integração contínua (CI). Para saber mais sobre CI, você pode consultar a <a href="../cap10.html#integra%C3%A7%C3%A3o-cont%C3%ADnua">Seção 10.3</a> do livro texto.</p>
+<p>No outro extremo, temos os testes de sistema ou testes end-to-end, os quais devem ser executados com uma frequência muito menor e, portanto, não costumam fazer parte da configuração de um serviço de CI. Por exemplo, os autores do livro Software Engineering at Google afirmam o seguinte:</p>
+<blockquote>
+<p>Os times no Google frequentemente isolam os testes maiores, executando-os somente durante o processo de build e de release, de forma a não impactar o fluxo de trabalho dos desenvolvedores.</p>
+</blockquote>
+<p>No meio do caminho, temos os testes de integração. Alguns desses testes costumam rodar rápido, em alguns minutos, o que viabiliza inclusive a sua execução por serviços de CI. Porém, sabemos que existem também testes de integração que levam horas para rodar, o que inviabiliza a sua execução frequente ou como parte de um serviço de CI.</p>
+<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">12. O que é um teste de fumaça (smoke test)? <a href="#o-que-é-um-teste-de-fumaça-smoke-test" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
 <p>Veja a descrição do teste de fumaça de uma aplicação:</p>
 <blockquote>

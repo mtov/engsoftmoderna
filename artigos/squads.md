@@ -1,4 +1,4 @@
-# Organizando Times de Software em Squads {.unnumbered}
+# Organizando Times de Desenvolvimento de Software em Squads {.unnumbered}
 
 Neste artigo, iremos começar explicando o que é um squad. Em seguida,
 iremos apresentar os principais tipos de squads que existem em 
@@ -60,7 +60,7 @@ No livro Team Topologies, os autores Manuel Pais e Matthew Skelton optam
 por chamar tais squads de **times alinhados a fluxos de negócio** 
 (*stream-aligned teams*). Independentemente do nome, o objetivo é o mesmo: 
 esses squads têm como missão resolver problemas que facilitam a vida dos 
-clientes e, ao mesmo tempo, geram valor para a organização. 
+clientes e que, ao mesmo tempo, geram valor para a organização. 
 
 Conforme já afirmamos, squads de produto são o tipo mais comum de squad.
 Segundo Pais e Skelton, a proporção de squads de produto em relação aos 
@@ -70,27 +70,27 @@ para um squad de um outro tipo**).
 
 #### Squads responsáveis por componentes  {.unnumbered}
 
-Esses squads são responsáveis por um componente da arquitetura  do sistema.
+Esses squads são responsáveis por componentes específicos da arquitetura  do sistema.
 O exemplo clássico são squads responsáveis pelos clientes móveis de um sistema, 
 incluindo Android, iOS, etc. Como um segundo exemplo, em empresas menores, 
 podemos ter squads para componentes front-end e back-end. 
 
-Os autores de Team Topologies também possuem uma visão e nomenclatura 
-diferentes para tais squads, optando por chamá-los de **times responsáveis 
+Os autores de Team Topologies também usam um nome 
+diferente para tais squads, optando por chamá-los de **times responsáveis 
 por subsistemas complexos** (*complicated-subsystem teams*), isto é, 
 subsistemas -- ou componentes -- cujo desenvolvimento requer um 
 conhecimento específico. Como exemplo, os autores citam subsistemas para 
 processamento de vídeos, que usam modelos matemáticos sofisticados, 
-para reconhecimento facial, etc. Porém, tais times são opcionais e somente 
-devem ser usados quando realmente for claramente necessário.
+para reconhecimento facial, etc. Porém, eles afirmam que tais times são 
+opcionais e somente devem ser usados quando for claramente necessário.
 
 
 #### Squads responsáveis por plataformas  {.unnumbered}
 
 Esses squads desenvolvem ferramentas e plataformas internas que são usadas 
 pelos demais squads. Ou seja, são squads que implementam serviços para os 
-outros squads da organização. Por exemplo, eles podem desenvolver e manter 
-ferramentas ou scripts para facilitar a instalação do sistema na máquina 
+outros squads da organização. Por exemplo, eles podem desenvolver 
+ferramentas para facilitar a instalação do sistema na máquina 
 local dos desenvolvedores, para facilitar o deployment do sistema em 
 serviços de cloud, para implementar serviços de autenticação, segurança, 
 logging, monitoramento, etc.  
@@ -116,7 +116,7 @@ de algumas tecnologias ou a atualização da versão de outras.
 
 #### Squads responsáveis por objetivos de negócio   {.unnumbered}
 
-Esses squads miram em em um problema específico que a empresa esteja 
+Esses squads miram em um problema específico que a empresa esteja 
 enfrentando. Por exemplo, pode-se criar um squad para melhorar a retenção de 
 clientes de um sistema SaaS (*Software as a Service*). As soluções 
 desenhadas e implementadas por esse squad podem incluir programas de 
@@ -197,7 +197,7 @@ trabalhar -- uma jornada em andamento, não uma jornada concluída.
 Quando você estiver lendo o artigo, provavelmente as coisas já mudaram.
 
 Por isso, como é normal quando o assunto são processos, a adoção de squads,
-tribos, chapters, etc não deve ocorrer cegamente de acordo com o manual. 
+tribos, chapters e guildas não deve ocorrer cegamente de acordo com o manual. 
 Adaptações ao contexto são sempre necessárias. 
 
 
@@ -216,8 +216,8 @@ de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamen
 Como você classificaria cada um desses squads de acordo com os tipos de 
 squads que comentamos neste artigo.
 
-4. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui *n* squads que implementam componentes front-end e 
-outros *m* squads que implementam componentes back-end. Discorra sobre o principal 
+4. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui squads que implementam componentes front-end e 
+outros squads que implementam componentes back-end. Discorra sobre o principal 
 problema desse tipo de organização de squads.
 
 5. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
