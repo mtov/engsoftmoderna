@@ -20,7 +20,8 @@ Segue a lista atual de perguntas:
 9. [Por que não usam o termo dublê de testes no livro?](#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro)
 10. [ Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
 11. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
-12. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
+12. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-ci)
+13. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 
 ### 1. O certo é teste de unidade ou teste unitário? {.unnumbered}
 
@@ -228,36 +229,47 @@ Veja o exemplo do sistema `google/guava`:
 
 ### 11. Com que frequência devemos rodar os testes? {.unnumbered}
 
-Evidentemente, essa resposta depende do tipo de teste!
+Basicamente, essa resposta depende do tipo de teste!
 
 Por um lado, testes de unidade devem ser executados com grande 
 frequência. Por exemplo, sempre que compilar o código, nada 
-impede que você também execute os testes de unidade. Veja que, 
-por definição, testes de unidade rodam rapidamente. Por
-isso, eles devem fazer parte de um serviço de integração 
-contínua (CI). Para saber mais sobre CI, você pode consultar a 
-[Seção 10.3](../cap10.html#integra%C3%A7%C3%A3o-cont%C3%ADnua) 
-do livro texto.
+impede que você também execute tais testes. Veja que, por definição, 
+testes de unidade rodam rapidamente. 
 
 No outro extremo, temos os testes de sistema ou testes end-to-end,
-os quais devem ser executados com uma frequência muito menor e, 
-portanto, não costumam fazer parte da configuração de um serviço de 
-CI. Por exemplo, os autores do livro Software Engineering at 
+os quais devem ser executados com uma frequência muito menor.
+Por exemplo, os autores do livro Software Engineering at 
 Google afirmam o seguinte: 
 
 > Os times no Google frequentemente isolam os testes maiores, 
 executando-os somente durante o processo de build e de release, 
 de forma a não impactar o fluxo de trabalho dos desenvolvedores.
 
-No meio do caminho, temos os testes de integração. Alguns desses
-testes costumam rodar rápido, em alguns minutos, o que viabiliza
-inclusive a sua execução por serviços de CI. Porém, sabemos que
+No meio do caminho, temos os testes de integração. Alguns deles 
+costumam rodar rápido, em alguns minutos. Porém, sabemos que
 existem também testes de integração que levam horas para rodar, 
-o que inviabiliza a sua execução frequente ou como parte de um 
-serviço de CI.
+o que inviabiliza a sua execução frequente.
 
+### 12. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
 
-### 12. O que é um teste de fumaça (smoke test)? {.unnumbered}
+A resposta para essa pergunta é uma consequência direta da 
+resposta da pergunta anterior. Basicamente, ela é a seguinte:
+
+* Testes de unidade: com certeza, devem ser executados por 
+um servidor de CI.
+
+* Testes de sistema, testes end-to-end ou testes de requisitos
+não funcionais (tais como testes de performance): normalmente, 
+como são testes mais lentos, eles não são incluídos no serviço 
+de CI.
+
+* Testes de integração: aqui a resposta varia, pois existem testes 
+de integração que rodam rápido (por exemplo, em alguns minutos) ou 
+que levam bem mais tempo para rodar. Então, se o teste de integração 
+rodar dentro de um limite de tempo razoável, ele pode ser sim 
+incluído no serviço de CI.
+
+### 13. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
