@@ -4,21 +4,35 @@ O objetivo deste artigo é responder perguntas
 sobre temas relacionados com métodos ágeis e que não são
 abordados no [Capítulo 2](../cap2.html) do livro. 
 
-Segue a lista atual de perguntas:
+A lista atual de perguntas está organizada em quatro grandes temas:
+
+##### Perguntas gerais sobre métodos ágeis {.unnumbered}
 
  1. [Quando surgiram os conceitos de métodos ágeis?](#quando-surgiram-os-conceitos-de-m%C3%A9todos-%C3%A1geis)
  2. [O que é mob programming?](#o-que-%C3%A9-mob-programming)
+ 
+##### Perguntas sobre Scrum {.unnumbered}
+
  3. [Além de histórias, quais outros itens podem fazer parte do backlog do produto?](#al%C3%A9m-de-hist%C3%B3rias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto)
  4. [Posso estimar histórias de usuários em horas? ](#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas)
- 5. [O que é Grooming?](#o-que-%C3%A9-grooming)
- 6. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
- 7. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
- 8. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
- 9. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
- 10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
- 11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
- 12. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+ 5. [O que é grooming?](#o-que-%C3%A9-grooming)
+ 6. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
+ 7. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
 
+##### Perguntas sobre Kanban {.unnumbered}
+
+ 8. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
+ 9. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
+ 10. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+
+##### Perguntas sobre Organização de Times Ágeis {.unnumbered}
+ 
+ 11. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
+ 12. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+
+Segue a lista de perguntas e suas respostas.
+
+* * * 
 
 ### 1. Quando surgiram os conceitos de métodos ágeis? {.unnumbered}
 
@@ -151,7 +165,7 @@ uma hora ideal. Apesar disso, uma partida de futebol
 americano dura, quase sempre, mais de três horas.
 
 
-### 5. O que é Grooming? {.unnumbered}
+### 5. O que é grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -166,7 +180,127 @@ existe um evento ou momento específico para realização do grooming.
 Ele pode ser realizado, por exemplo, em reuniões específicas 
 convocadas pelo PO.
 
-### 6. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+
+### 6. Em Scrum, o que é um líder servidor? {.unnumbered}
+
+Scrum usa esse termo para descrever o estilo de liderança que deve ser
+exercido por um Scrum Master. Ou seja, o Scrum Master não é o "chefe"
+de um time Scrum, que lidera dando ordens, cobrando tarefas e prazos, etc.
+Em vez disso, ele é apenas mais um membro do time, que procura prestar 
+serviços para o PO, para os desenvolvedores e também para a organização. 
+Na versão mais recente do Scrum Guide (2020), o papel de um Scrum Master é 
+assim resumido: "eles são líderes verdadeiros, que servem tanto o time 
+Scrum, quanto a organização maior [na qual o time está inserido]."
+
+
+### 7. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? {.unnumbered}
+
+Esta é uma pergunta difícil, pois o uso dos termos varia de empresa 
+para empresa e também evolui rapidamente com o tempo.
+
+Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: 
+tanto um PO como um PM devem entender profundamente dos problemas 
+e das "dores" dos clientes. E devem ser capazes de definir, 
+priorizar e explicar para os desenvolvedores "o que" deve ser 
+implementado. Devem também estar sempre disponíveis para tirar dúvidas.
+
+Sobre as diferenças, gostamos de explicá-las destacando as origens 
+dos termos. Conforme estudamos no [Capítulo 2](../cap2.html#scrum), 
+PO é um termo de Scrum e ele tem responsabilidades muito claras nesse 
+framework. Já PM é um termo que tem suas origens e maior uso em empresas 
+que desenvolvem produtos digitais, incluindo software. Nelas, 
+o PM deve se preocupar também com o posicionamento estratégico 
+do produto no mercado e com variáveis como número de clientes, 
+engajamento, taxas de cancelamento, etc.
+
+
+### 8. O que é Upstream e Downstream Kanban? {.unnumbered}
+
+O quadro Kanban, como explicamos no 
+[Capítulo 2](../cap2.html#kanban), começa à 
+sua esquerda com um backlog de tarefas.
+
+No entanto, se os times não tomarem cuidado, esse backlog pode 
+crescer muito e passar a incluir tarefas complexas, que ainda não
+foram devidamente entendidas pelo time ou que não vão agregar 
+valor ao produto. Pode ser então que o time não consiga escolher 
+as tarefas certas para implementar, já que o backlog 
+transformou-se em uma extensa lista não-priorizada de tarefas 
+obscuras.
+
+Para isso, o uso de Kanban costuma ser dividido em dois fluxos:
+
+* **Upstream Kanban**: define um fluxo de atividades para cuidar 
+do backlog, evitando que ele fique grande e confuso. Por exemplo, 
+pode-se prever atividades para entender as demandas dos clientes e 
+priorizá-las. Assim, somente vão entrar no backlog as tarefas que, 
+de fato, devem ser implementadas pelo time.
+
+* **Downstream Kanban**: representa o fluxo principal de Kanban, 
+tal como estudamos no [Capítulo 2](../cap2.html#kanban), 
+que começa com o backlog e prossegue com os passos de 
+implementação das tarefas, tais como especificação, 
+codificação e revisão.
+
+Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
+como na seguinte figura:
+
+![](./figs/upstream-kanban.svg){width=80%}
+
+O Upstream Kanban corresponde à parte do funil que vai se estreitando
+para deixar claro que nem toda demanda proposta pelos stakeholders
+precisa chegar ao backlog.
+
+Resumindo: no Upstream, especificamos e decidimos o que deve 
+ser implementado; no Downstream, implementa-se o que foi 
+decidido.
+
+Antes de concluir, gostaríamos de comentar sobre a origem
+dos termos upstream e downstream. Uma possível tradução seria
+montante (upstream) e jusante (downstream). Especificamente,
+quando se constrói uma barragem em um rio, a parte do
+seu leito que foi represada, dando origem ao repositório ou lago,
+chama-se montante do rio; a parte do rio após a barragem
+é chamada de jusante.
+
+
+### 9. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+
+Explicando melhor: suponha um quadro com passos Especificação,
+Implementação e Revisão. Suponha ainda que -- no passo de revisão
+-- detectou-se que uma tarefa foi especificada (e implementada)
+de forma errada. O que deve-se fazer?
+
+Nesse caso, e principalmente se o erro foi grave e demandará
+um bom tempo para ser corrigido, não existe alternativa, 
+a não ser voltar com o cartão que descreve a tarefa para o 
+passo de especificação, para que ela seja re-especificada e 
+re-implementada, agora de forma correta.
+
+
+### 10. Em Kanban, o que são classes de serviços? {.unnumbered}
+
+Classes de serviços é um conceito de Kanban que possibilita
+que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
+costuma-se definir quatro classes de serviços: (1) normal, (2) com deadline, 
+(3) urgente e (4) intangível. Feito isso, toda tarefa que chega para 
+o time deve ser alocada em uma dessas classes de serviço. Se 
+pensarmos nos cartões que descrevem a tarefa, eles devem ter cores 
+diferentes, em função de suas classes de serviço.
+
+Cada classe de serviço pode ter seu próprio fluxo de trabalho. 
+Particularmente, os limites WIP podem ser específicos para cada 
+classe de serviço. E algumas classes de serviços podem "pular" 
+certos passos do fluxo. Por exemplo, uma tarefa classificada como 
+urgente pode dispensar o passo de revisão. 
+
+Para entender melhor o conceito, você pode imaginar que 
+classes de serviço são "pistas horizontais" em um quadro Kanban. 
+Ou seja, o conceito lembra as pistas exclusivas que existem 
+em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
+
+
+### 11. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -190,39 +324,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-
-### 7. Em Scrum, o que é um líder servidor? {.unnumbered}
-
-Scrum usa esse termo para descrever o estilo de liderança que deve ser
-exercido por um Scrum Master. Ou seja, o Scrum Master não é o "chefe"
-de um time Scrum, que lidera dando ordens, cobrando tarefas e prazos, etc.
-Em vez disso, ele é apenas mais um membro do time, que procura prestar 
-serviços para o PO, para os desenvolvedores e também para a organização. 
-Na versão mais recente do Scrum Guide (2020), o papel de um Scrum Master é 
-assim resumido: "eles são líderes verdadeiros, que servem tanto o time 
-Scrum, quanto a organização maior [na qual o time está inserido]."
-
-### 8. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? {.unnumbered}
-
-Esta é uma pergunta difícil, pois o uso dos termos varia de empresa 
-para empresa e também evolui rapidamente com o tempo.
-
-Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: 
-tanto um PO como um PM devem entender profundamente dos problemas 
-e das "dores" dos clientes. E devem ser capazes de definir, 
-priorizar e explicar para os desenvolvedores "o que" deve ser 
-implementado. Devem também estar sempre disponíveis para tirar dúvidas.
-
-Sobre as diferenças, gostamos de explicá-las destacando as origens 
-dos termos. Conforme estudamos no [Capítulo 2](../cap2.html#scrum), 
-PO é um termo de Scrum e ele tem responsabilidades muito claras nesse 
-framework. Já PM é um termo que tem suas origens e maior uso em empresas 
-que desenvolvem produtos digitais, incluindo software. Nelas, 
-o PM deve se preocupar também com o posicionamento estratégico 
-do produto no mercado e com variáveis como número de clientes, 
-engajamento, taxas de cancelamento, etc.
-
-### 9. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 12. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
@@ -278,88 +380,6 @@ orientados por projeto. Já empresas de tecnologia -- cujo
 principal negócio são sistemas ou serviços de software -- 
 possuem times orientados por produto.
 
-### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
-
-O quadro Kanban, como explicamos no 
-[Capítulo 2](../cap2.html#kanban), começa à 
-sua esquerda com um backlog de tarefas.
-
-No entanto, se os times não tomarem cuidado, esse backlog pode 
-crescer muito e passar a incluir tarefas complexas, que ainda não
-foram devidamente entendidas pelo time ou que não vão agregar 
-valor ao produto. Pode ser então que o time não consiga escolher 
-as tarefas certas para implementar, já que o backlog 
-transformou-se em uma extensa lista não-priorizada de tarefas 
-obscuras.
-
-Para isso, o uso de Kanban costuma ser dividido em dois fluxos:
-
-* **Upstream Kanban**: define um fluxo de atividades para cuidar 
-do backlog, evitando que ele fique grande e confuso. Por exemplo, 
-pode-se prever atividades para entender as demandas dos clientes e 
-priorizá-las. Assim, somente vão entrar no backlog as tarefas que, 
-de fato, devem ser implementadas pelo time.
-
-* **Downstream Kanban**: representa o fluxo principal de Kanban, 
-tal como estudamos no [Capítulo 2](../cap2.html#kanban), 
-que começa com o backlog e prossegue com os passos de 
-implementação das tarefas, tais como especificação, 
-codificação e revisão.
-
-Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
-como na seguinte figura:
-
-![](./figs/upstream-kanban.svg){width=80%}
-
-O Upstream Kanban corresponde à parte do funil que vai se estreitando
-para deixar claro que nem toda demanda proposta pelos stakeholders
-precisa chegar ao backlog.
-
-Resumindo: no Upstream, especificamos e decidimos o que deve 
-ser implementado; no Downstream, implementa-se o que foi 
-decidido.
-
-Antes de concluir, gostaríamos de comentar sobre a origem
-dos termos upstream e downstream. Uma possível tradução seria
-montante (upstream) e jusante (downstream). Especificamente,
-quando se constrói uma barragem em um rio, a parte do
-seu leito que foi represada, dando origem ao repositório ou lago,
-chama-se montante do rio; a parte do rio após a barragem
-é chamada de jusante.
-
-### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
-
-Explicando melhor: suponha um quadro com passos Especificação,
-Implementação e Revisão. Suponha ainda que -- no passo de revisão
--- detectou-se que uma tarefa foi especificada (e implementada)
-de forma errada. O que deve-se fazer?
-
-Nesse caso, e principalmente se o erro foi grave e demandará
-um bom tempo para ser corrigido, não existe alternativa, 
-a não ser voltar com o cartão que descreve a tarefa para o 
-passo de especificação, para que ela seja re-especificada e 
-re-implementada, agora de forma correta.
-
-### 12. Em Kanban, o que são classes de serviços? {.unnumbered}
-
-Classes de serviços é um conceito de Kanban que possibilita
-que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
-costuma-se definir quatro classes de serviços: (1) normal, (2) com deadline, 
-(3) urgente e (4) intangível. Feito isso, toda tarefa que chega para 
-o time deve ser alocada em uma dessas classes de serviço. Se 
-pensarmos nos cartões que descrevem a tarefa, eles devem ter cores 
-diferentes, em função de suas classes de serviço.
-
-Cada classe de serviço pode ter seu próprio fluxo de trabalho. 
-Particularmente, os limites WIP podem ser específicos para cada 
-classe de serviço. E algumas classes de serviços podem "pular" 
-certos passos do fluxo. Por exemplo, uma tarefa classificada como 
-urgente pode dispensar o passo de revisão. 
-
-Para entender melhor o conceito, você pode imaginar que 
-classes de serviço são "pistas horizontais" em um quadro Kanban. 
-Ou seja, o conceito lembra as pistas exclusivas que existem 
-em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
 
 * * * 
 

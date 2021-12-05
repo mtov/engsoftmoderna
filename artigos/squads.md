@@ -93,7 +93,7 @@ outros squads da organização. Por exemplo, eles podem desenvolver
 ferramentas para facilitar a instalação do sistema na máquina 
 local dos desenvolvedores, para facilitar o deployment do sistema em 
 serviços de cloud, para implementar serviços de autenticação, segurança, 
-logging, monitoramento, etc.  
+logging ou monitoramento, para realizar testes A/B, etc.  
 
 Em última instância, o objetivo é liberar os demais squads das preocupações 
 relacionadas com a implementação de tais funcionalidades técnicas,

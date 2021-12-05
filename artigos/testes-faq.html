@@ -107,23 +107,32 @@
 </header>
 <h1 class="unnumbered" id="perguntas-frequentes-sobre-testes">Perguntas Frequentes sobre Testes <a href="#perguntas-frequentes-sobre-testes" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <p>O objetivo deste artigo é responder algumas perguntas frequentes que são feitas sobre o <a href="../cap8.html">Capítulo 8</a> do livro. No entanto, estamos interessados apenas em perguntas conceituais, principalmente sobre os três tipos de testes abordados no capítulo: <strong>unidade, integração e sistema</strong>. Também, não pretendemos abordar questões específicas de um framework de testes ou de qualquer outra tecnologia.</p>
-<p>Segue a lista atual de perguntas:</p>
+<p>A lista atual de perguntas está organizada em três grandes temas:</p>
+<h5 class="unnumbered" id="perguntas-sobre-conceitos-de-testes">Perguntas sobre conceitos de testes <a href="#perguntas-sobre-conceitos-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h5>
 <ol type="1">
 <li><a href="#o-certo-%C3%A9-teste-de-unidade-ou-teste-unit%C3%A1rio">O certo é teste de unidade ou teste unitário?</a></li>
 <li><a href="#o-que-%C3%A9-uma-unidade">O que é uma unidade?</a></li>
 <li><a href="#no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo">No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?</a></li>
+<li><a href="#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro">Por que não usam o termo dublê de testes no livro?</a></li>
+<li><a href="#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test">O que é um teste de fumaça (smoke test)?</a></li>
+</ol>
+<h5 class="unnumbered" id="perguntas-sobre-a-escrita-de-testes">Perguntas sobre a escrita de testes <a href="#perguntas-sobre-a-escrita-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h5>
+<ol start="6" type="1">
 <li><a href="#precisamos-testar-m%C3%A9todos-privados">Precisamos testar métodos privados?</a></li>
 <li><a href="#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral">Como testar métodos que têm efeito colateral?</a></li>
 <li><a href="#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral">Como testar métodos que não têm efeito colateral?</a></li>
 <li><a href="#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia">Quando preciso criar um mock para uma dependência?</a></li>
 <li><a href="#como-criar-um-mock-para-uma-depend%C3%AAncia-privada">Como criar um mock para uma dependência privada?</a></li>
-<li><a href="#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro">Por que não usam o termo dublê de testes no livro?</a></li>
 <li><a href="#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes">Em qual pacote (ou módulo, ou diretório) devo colocar os testes?</a></li>
+</ol>
+<h5 class="unnumbered" id="perguntas-sobre-a-execução-de-testes">Perguntas sobre a execução de testes <a href="#perguntas-sobre-a-execução-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h5>
+<ol start="12" type="1">
 <li><a href="#com-que-frequ%C3%AAncia-devemos-rodar-os-testes">Com que frequência devemos rodar os testes?</a></li>
 <li><a href="#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci">Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?</a></li>
 <li><a href="#para-que-servem-su%C3%ADtes-de-testes">Para que servem suítes de testes?</a></li>
-<li><a href="#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test">O que é um teste de fumaça (smoke test)?</a></li>
 </ol>
+<p>Segue a lista de perguntas e suas respostas.</p>
+<hr />
 <h3 class="unnumbered" id="o-certo-é-teste-de-unidade-ou-teste-unitário">1. O certo é teste de unidade ou teste unitário? <a href="#o-certo-é-teste-de-unidade-ou-teste-unitário" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Os dois termos são usados. Então, assumindo que a língua é uma entidade viva e dinâmica, não consideramos errado usar qualquer um deles. Dito isso, preferimos teste de unidade, porque teste unitário pode passar a ideia errada de que temos um único teste no sistema.</p>
 <h3 class="unnumbered" id="o-que-é-uma-unidade">2. O que é uma unidade? <a href="#o-que-é-uma-unidade" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -144,9 +153,26 @@
 <li>positivo = teste que falha, isto é, emite um <q>alerta</q></li>
 <li>negativo = teste que passa</li>
 </ul>
-<h3 class="unnumbered" id="precisamos-testar-métodos-privados">4. Precisamos testar métodos privados? <a href="#precisamos-testar-métodos-privados" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro">4. Por que não usam o termo dublê de testes no livro? <a href="#por-que-não-usam-o-termo-dublê-de-testes-no-livro" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Reconhecemos que <strong>dublê</strong> é um termo usado por diversos autores, desde que foi descrito no livro do Gerard Meszaros (<em>xUnit Test Patterns</em>).</p>
+<p>Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas de teste. Veja alguns exemplos:</p>
+<ul>
+<li><p><em>Jest uses a custom resolver for imports in your tests, making it simple to <strong>mock any object</strong> outside of your test’s scope.</em></p></li>
+<li><p><em>Mockito is a <strong>mocking framework</strong> that tastes really good.</em></p></li>
+<li><p><em>unittest.mock … allows you to replace parts of your system under test with <strong>mock objects</strong>.</em></p></li>
+</ul>
+<p>Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar o termo mock.</p>
+<p>Além disso, achamos que a diferença entre os vários tipos de dublês não é intuitiva, nem auto-explicativa. Ou seja, não é tão simples lembrar, no dia a dia, a característica distintiva de um spy, stub, dummy, fake, etc.</p>
+<p>Por outro lado, é importante ressaltar que acrescentamos, no livro, uma nota explicando o conceito de dublês e seus diferentes tipos.</p>
+<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">5. O que é um teste de fumaça (smoke test)? <a href="#o-que-é-um-teste-de-fumaça-smoke-test" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
+<p>Veja a descrição do teste de fumaça de uma aplicação:</p>
+<blockquote>
+<p>O nosso teste gera uma requisição HTTP para cada página da aplicação e então testamos se o código de resposta HTTP retornado está correto. Embora não seja nada sofisticado, ele nos permite responder uma questão essencial: a aplicação está rodando?</p>
+</blockquote>
+<h3 class="unnumbered" id="precisamos-testar-métodos-privados">6. Precisamos testar métodos privados? <a href="#precisamos-testar-métodos-privados" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, isso vai garantir que os métodos privados também estão funcionando.</p>
-<h3 class="unnumbered" id="como-testar-métodos-que-têm-efeito-colateral">5. Como testar métodos que têm efeito colateral? <a href="#como-testar-métodos-que-têm-efeito-colateral" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="como-testar-métodos-que-têm-efeito-colateral">7. Como testar métodos que têm efeito colateral? <a href="#como-testar-métodos-que-têm-efeito-colateral" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Primeiro, uma rápida definição de efeito colateral: o termo designa métodos cuja execução não apenas retorna um valor, mas também altera o contexto de execução. Por exemplo, um método tem um efeito colateral quando ele altera o valor de um atributo do seu objeto ou de uma variável global, salva um valor em algum arquivo, envia um mail, etc.</p>
 <p>Voltando à pergunta, temos duas possíveis respostas:</p>
 <ul>
@@ -175,7 +201,7 @@
 }</code></pre>
 <p>No teste acima, não testamos o efeito colateral (isto é, se a mensagem chegou no destino), mas sim se o método <code>send</code>, responsável por enviar a mensagem, foi chamado durante a execução de <code>someBusinessLogic</code>.</p>
 <p>Antes de concluir, gostaríamos de mencionar que testes de interação, como o mostrado acima, são mais frágeis, pois eles estão acoplados a detalhes da implementação interna do método que está sendo testado.</p>
-<h3 class="unnumbered" id="como-testar-métodos-que-não-têm-efeito-colateral">6. Como testar métodos que não têm efeito colateral? <a href="#como-testar-métodos-que-não-têm-efeito-colateral" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="como-testar-métodos-que-não-têm-efeito-colateral">8. Como testar métodos que não têm efeito colateral? <a href="#como-testar-métodos-que-não-têm-efeito-colateral" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Normalmente, esses são os métodos fáceis de serem testados: eles recebem alguns parâmetros, processam eles e retornam um resultado, sem alterar absolutamente nada do ambiente de execução. Veja um exemplo:</p>
 <pre><code>public void testeMetodoSemEfeitoColateral() {
   String s = &quot;smiles&quot;;
@@ -183,7 +209,7 @@
 }
 </code></pre>
 <p>Testes como o acima, que apenas verificam o resultado do método chamado — ou, no máximo, o estado de alguma outra estrutura de dados do sistema — são chamados de <strong>testes de estado</strong>.</p>
-<h3 class="unnumbered" id="quando-preciso-criar-um-mock-para-uma-dependência">7. Quando preciso criar um mock para uma dependência? <a href="#quando-preciso-criar-um-mock-para-uma-dependência" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="quando-preciso-criar-um-mock-para-uma-dependência">9. Quando preciso criar um mock para uma dependência? <a href="#quando-preciso-criar-um-mock-para-uma-dependência" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha que temos que testar um método <code>f</code> da seguinte classe:</p>
 <pre><code>class A {
  
@@ -204,28 +230,17 @@
 <li><p>Quando <code>D</code> é um serviço não-determinístico. Por exemplo, <code>D</code> é um serviço financeiro cujo resultado varia com a cotação do dólar.</p></li>
 <li><p>Quando a execução de um método de <code>D</code> for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, <code>D</code> é o tipo <code>Mailer</code>e precisamos testar se a execução de <code>f</code> vai enviar um mail.</p></li>
 </ul>
-<h3 class="unnumbered" id="como-criar-um-mock-para-uma-dependência-privada">8. Como criar um mock para uma dependência privada? <a href="#como-criar-um-mock-para-uma-dependência-privada" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="como-criar-um-mock-para-uma-dependência-privada">10. Como criar um mock para uma dependência privada? <a href="#como-criar-um-mock-para-uma-dependência-privada" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Se a dependência for configurável por meio do construtor da classe ou de um método <code>set</code> não existe problema.</p>
 <p>Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.</p>
-<h3 class="unnumbered" id="por-que-não-usam-o-termo-dublê-de-testes-no-livro">9. Por que não usam o termo dublê de testes no livro? <a href="#por-que-não-usam-o-termo-dublê-de-testes-no-livro" class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Reconhecemos que <strong>dublê</strong> é um termo usado por diversos autores, desde que foi descrito no livro do Gerard Meszaros (<em>xUnit Test Patterns</em>).</p>
-<p>Porém, achamos que mock é um termo mais comum, principalmente entre ferramentas de teste. Veja alguns exemplos:</p>
-<ul>
-<li><p><em>Jest uses a custom resolver for imports in your tests, making it simple to <strong>mock any object</strong> outside of your test’s scope.</em></p></li>
-<li><p><em>Mockito is a <strong>mocking framework</strong> that tastes really good.</em></p></li>
-<li><p><em>unittest.mock … allows you to replace parts of your system under test with <strong>mock objects</strong>.</em></p></li>
-</ul>
-<p>Ou seja, para ficarmos alinhados com a documentação dessas ferramentas, preferimos adotar o termo mock.</p>
-<p>Além disso, achamos que a diferença entre os vários tipos de dublês não é intuitiva, nem auto-explicativa. Ou seja, não é tão simples lembrar, no dia a dia, a característica distintiva de um spy, stub, dummy, fake, etc.</p>
-<p>Por outro lado, é importante ressaltar que acrescentamos, no livro, uma nota explicando o conceito de dublês e seus diferentes tipos.</p>
-<h3 class="unnumbered" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes">10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? <a href="#em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes">11. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? <a href="#em-qual-pacote-ou-módulo-ou-diretório-devo-colocar-os-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Tipicamente, na maioria das linguagens, os testes ficam em um diretório separado, apenas com o código de testes.</p>
 <p>Veja o exemplo do sistema <code>google/guava</code>:</p>
 <ul>
 <li>As classes e pacotes do sistema ficam em <code>src/com/google/common</code>.</li>
 <li>Os respectivos testes ficam em <code>test/com/google/common</code>.</li>
 </ul>
-<h3 class="unnumbered" id="com-que-frequência-devemos-rodar-os-testes">11. Com que frequência devemos rodar os testes? <a href="#com-que-frequência-devemos-rodar-os-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="com-que-frequência-devemos-rodar-os-testes">12. Com que frequência devemos rodar os testes? <a href="#com-que-frequência-devemos-rodar-os-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Basicamente, essa resposta depende do tipo de teste!</p>
 <p>Por um lado, testes de unidade devem ser executados com grande frequência. Por exemplo, sempre que compilar o código, nada impede que você também execute tais testes. Veja que, por definição, testes de unidade rodam rapidamente.</p>
 <p>No outro extremo, temos os testes de sistema ou testes end-to-end, os quais devem ser executados com uma frequência muito menor. Por exemplo, os autores do livro Software Engineering at Google afirmam o seguinte:</p>
@@ -233,21 +248,15 @@
 <p>Os times no Google frequentemente isolam os testes maiores, executando-os somente durante o processo de build e de release, de forma a não impactar o fluxo de trabalho dos desenvolvedores.</p>
 </blockquote>
 <p>No meio do caminho, temos os testes de integração. Alguns deles costumam rodar rápido, em alguns minutos. Porém, sabemos que existem também testes de integração que levam horas para rodar, o que inviabiliza a sua execução frequente.</p>
-<h3 class="unnumbered" id="quais-testes-devem-ser-rodados-por-um-servidor-de-integração-contínua-ci">12. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? <a href="#quais-testes-devem-ser-rodados-por-um-servidor-de-integração-contínua-ci" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="quais-testes-devem-ser-rodados-por-um-servidor-de-integração-contínua-ci">13. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? <a href="#quais-testes-devem-ser-rodados-por-um-servidor-de-integração-contínua-ci" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>A resposta para essa pergunta é uma consequência da resposta da pergunta anterior. Basicamente, ela é a seguinte:</p>
 <ul>
 <li><p>Testes de unidade: com certeza, devem ser executados por um servidor de CI.</p></li>
 <li><p>Testes de sistema, testes end-to-end ou testes de requisitos não funcionais (tais como testes de performance): normalmente, como são testes mais lentos, eles não são incluídos no serviço de CI.</p></li>
 <li><p>Testes de integração: aqui a resposta varia, pois existem testes de integração que rodam rápido (por exemplo, em alguns minutos) ou que levam bem mais tempo para rodar. Então, se o teste de integração rodar dentro de um limite de tempo razoável, ele pode ser sim incluído no serviço de CI.</p></li>
 </ul>
-<h3 class="unnumbered" id="para-que-servem-suítes-de-testes">13. Para que servem suítes de testes? <a href="#para-que-servem-suítes-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="para-que-servem-suítes-de-testes">14. Para que servem suítes de testes? <a href="#para-que-servem-suítes-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Uma suíte de testes é um conjunto de testes que pretendemos rodar juntos. Por exemplo, podemos optar por particionar os testes de um dado sistema em duas suítes: a primeira com os testes rápidos e que serão executados com frequência; e a segunda com testes que demoram mais tempo e que, por isso mesmo, queremos rodar mais raramente.</p>
-<h3 class="unnumbered" id="o-que-é-um-teste-de-fumaça-smoke-test">14. O que é um teste de fumaça (smoke test)? <a href="#o-que-é-um-teste-de-fumaça-smoke-test" class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>É um teste de sistema, porém rápido e superficial. O objetivo é garantir que não existe um erro grave no funcionamento do sistema. Ou seja, se não existe um <q>incêndio</q> (ou problema) de grandes proporções e que está gerando uma grande quantidade de <q>fumaça</q>. Por exemplo, um teste de fumaça pode verificar se algumas telas da aplicação estão abrindo ou se determinadas APIs respondem a solicitações básicas. Mas, complementando, um teste de fumaça é um teste automático.</p>
-<p>Veja a descrição do teste de fumaça de uma aplicação:</p>
-<blockquote>
-<p>O nosso teste gera uma requisição HTTP para cada página da aplicação e então testamos se o código de resposta HTTP retornado está correto. Embora não seja nada sofisticado, ele nos permite responder uma questão essencial: a aplicação está rodando?</p>
-</blockquote>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
