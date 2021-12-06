@@ -352,7 +352,7 @@ objetos de valor, serviços, agregados e  repositórios.
 
 1. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
    
-2. Suponha que você trabalha em um empresa que possui um aplicativo para entrega 
+2. Suponha que você trabalha em uma empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 
     (a) Cinco termos da linguagem ubíqua do sistema 

@@ -172,7 +172,7 @@ e também o início da Seção 7.4.
    * Com sagas, temos que escrever a lógica de rollback, isto é, o código das compensações.
      O mesmo acontece com transações distribuídas? Sim ou não? Justifique.  
 
-3. Como devemos proceder quando uma compensação Ci falha (isto é, não puder ser executada com sucesso)?
+3. Como um desenvolvedor deve proceder quando uma compensação Ci falhar (isto é, não puder ser executada com sucesso)?
 
 4. Qual problema de transações de longa duração é resolvido
 por meio de sagas? Se necessário, consulte o segundo parágrafo da 
