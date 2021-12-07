@@ -109,12 +109,21 @@
 <p>Neste artigo, respondemos perguntas sobre temas relacionados com projeto de software e que não são abordados nos capítulos <a href="../cap5.html">5</a> e <a href="../cap6.html">6</a> do livro.</p>
 <p>Segue a lista atual de perguntas:</p>
 <ol type="1">
+<li><a href="#princ%C3%ADpios-de-projeto-s%C3%A3o-leis-que-sempre-devem-ser-seguidas">Princípios de projeto são leis que sempre devem ser seguidas?</a></li>
 <li><a href="#o-que-significa-dry-dont-repeat-yourself">O que significa DRY (Don’t Repeat Yourself)?</a></li>
 <li><a href="#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries">O que significa Separação entre Comandos e Queries?</a></li>
 <li><a href="#o-que-%C3%A9-ortogonalidade">O que é ortogonalidade?</a></li>
 <li><a href="#o-que-%C3%A9-uma-depend%C3%AAncia-circular">O que é uma dependência circular?</a></li>
 </ol>
-<h3 class="unnumbered" id="o-que-significa-dry-dont-repeat-yourself">1. O que significa DRY (Don’t Repeat Yourself)? <a href="#o-que-significa-dry-dont-repeat-yourself" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<hr />
+<h3 class="unnumbered" id="princípios-de-projeto-são-leis-que-sempre-devem-ser-seguidas">1. Princípios de projeto são leis que sempre devem ser seguidas? <a href="#princípios-de-projeto-são-leis-que-sempre-devem-ser-seguidas" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Princípios de projeto, como SOLID e outros princípios que estudamos no <a href="../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto">Capítulo 5</a> são recomendações ou diretrizes (ou <q>dicas</q>). Ou seja, geralmente, eles são úteis e válidos, mas não necessariamente devem ser usados em toda e qualquer situação.</p>
+<p>Vamos dar dois exemplos para ilustrar melhor:</p>
+<ul>
+<li><p>Prefira Interfaces a Classes Concretas (ou Princípio da Inversão de Dependências): a ideia desse princípio é que quando usamos uma interface depois podemos trocar a sua implementação, ou seja, mudar a classe concreta que implementa a interface. Porém, podem existir situações – principalmente, em sistemas pequenos e menos relevantes – nas quais sabemos, com grande certeza, de que isso nunca irá ocorrer. Ou seja, como nunca vamos precisar de uma outra classe concreta, não vale a pena investir tempo criando uma estrutura intermediária, no caso, uma interface.</p></li>
+<li><p>Princípio Aberto/Fechado: esse princípio recomenda que devemos, já no momento da implementação de uma classe, pensar nos seus pontos de extensão. No <a href="../cap5.html#princ%C3%ADpio-abertofechado">livro</a>, para ilustrar o princípio, usamos o exemplo de um método <code>sort</code> com duas implementações: na primeira implementação, o método ordena uma lista em ordem lexicográfica; na segunda implementação, ele recebe como parâmetro um objeto cuja função é comparar dois elementos da lista segundo um outro critério. Logo, esse método <code>sort</code> está <q>aberto</q> a novos critérios de comparação. Porém, suponha que você seja responsável por implementar um método como <code>sort</code> em um contexto no qual sabemos, com grande certeza, que critérios de ordenação alternativos não são necessários. Logo, nesse caso, não vale a pena investir tempo em uma versão mais aberta, flexível e extensível de <code>sort</code>.</p></li>
+</ul>
+<h3 class="unnumbered" id="o-que-significa-dry-dont-repeat-yourself">2. O que significa DRY (Don’t Repeat Yourself)? <a href="#o-que-significa-dry-dont-repeat-yourself" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Este princípio de projeto foi enunciado pela primeira vez no livro <em>The Pragmatic Programmer</em>, de David Thomas e Andrew Hunt, de 1999. Ele recomenda o seguinte:</p>
 <blockquote>
 <p>Qualquer tipo de conhecimento deve ter uma representação única, inequívoca e oficial em um sistema.</p>
@@ -127,7 +136,7 @@
 <p>Porém, DRY não vale apenas para código, mas para qualquer conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma de documentação) que apenas repete o que está no código. Nesse caso, talvez a refatoração do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. Se isso acontecer, podemos remover o comentário.</p>
 <p>Na verdade, na escrita do nosso livro procuramos praticar esse princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no entanto, são geradas a partir de um mesmo arquivo fonte, escrito em Markdown. Se não fosse assim, qualquer pequena correção de português teria que ser repetida nos três formatos do livro.</p>
 <p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of Unix Programming</em>, Eric Raymond usa o termo SPOT (<em>Single Point of Truth</em>).</p>
-<h3 class="unnumbered" id="o-que-significa-separação-entre-comandos-e-queries">2. O que significa Separação entre Comandos e Queries? <a href="#o-que-significa-separação-entre-comandos-e-queries" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-significa-separação-entre-comandos-e-queries">3. O que significa Separação entre Comandos e Queries? <a href="#o-que-significa-separação-entre-comandos-e-queries" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Este princípio foi proposto por Bertrand Meyer, o mesmo autor do princípio Aberto/Fechado (Open/Closed), que dá origem à letra <q>O</q> dos princípios SOLID.</p>
 <p>O Princípio da Separação entre Comandos e Queries advoga que devem existir duas categorias de métodos em uma classe:</p>
 <ul>
@@ -142,7 +151,7 @@
 <p>O ato de fazer uma pergunta não deve mudar a sua resposta.</p>
 </blockquote>
 <p>Nessa frase, <q>fazer uma pergunta</q> significa chamar uma query. Isso não deve influenciar a resposta dessa query (caso a gente faça a pergunta de novo, por exemplo) ou a resposta de uma outra query (que, por exemplo, a gente faça logo a seguir).</p>
-<h3 class="unnumbered" id="o-que-é-ortogonalidade">3. O que é ortogonalidade? <a href="#o-que-é-ortogonalidade" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-ortogonalidade">4. O que é ortogonalidade? <a href="#o-que-é-ortogonalidade" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Dois componentes de um projeto são ortogonais se mudanças em um deles não afetam o outro. Logo, eles podem ser livremente combinados ou trocados.</p>
 <p>No livro <em>The Pragmatic Programmer</em>, o seguinte exemplo explica o conceito:</p>
 <blockquote>
@@ -150,7 +159,7 @@
 </blockquote>
 <p>Para explicar melhor, suponha um sistema no qual podemos usar um conjunto de interfaces com o usuário X e um conjunto de bancos de dados Y. Em um sistema ortogonal, a escolha da interface X não impacta ou restringe a escolha do banco de dados Y. Qualquer combinação de X e Y é possível. Por isso, podemos imaginar X e Y como duas retas ortogonais, que formam um plano, no qual qualquer coordenada (x,y) representa uma configuração possível do sistema.</p>
 <p>Portanto, ortogonalidade é uma propriedade que costuma estar presente, de graça, em sistemas bem projetados, cujos módulos possuem alta coesão e baixo acoplamento, tal como estudamos no <a href="../cap5.html#coes%C3%A3o">Capítulo 5</a>.</p>
-<h3 class="unnumbered" id="o-que-é-uma-dependência-circular">4. O que é uma dependência circular? <a href="#o-que-é-uma-dependência-circular" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-uma-dependência-circular">5. O que é uma dependência circular? <a href="#o-que-é-uma-dependência-circular" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha dois pacotes P1 e P2. Existe uma dependência circular entre eles quando P1 usa P2 e vice-versa.</p>
 <p>Nessa explicação, <q>usar</q> significa que P1 declara variáveis, chama métodos, lança exceções ou estende classes implementadas em P2, dentre outros usos possíveis.</p>
 <p>Uma dependência circular pode ser indireta também, isto é:</p>

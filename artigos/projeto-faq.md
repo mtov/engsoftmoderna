@@ -6,12 +6,50 @@ de software e que não são abordados nos capítulos
 
 Segue a lista atual de perguntas:
 
+1. [Princípios de projeto são leis que sempre devem ser seguidas?](#princ%C3%ADpios-de-projeto-s%C3%A3o-leis-que-sempre-devem-ser-seguidas)
 1. [O que significa DRY (Don't Repeat Yourself)?](#o-que-significa-dry-dont-repeat-yourself)
 2. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
 3. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 4. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
 
-### 1. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
+* * * 
+
+### 1. Princípios de projeto são leis que sempre devem ser seguidas? {.unnumbered}
+
+Princípios de projeto, como SOLID e outros princípios que estudamos no 
+[Capítulo 5](../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto) são 
+recomendações ou diretrizes (ou "dicas"). Ou seja, geralmente, eles são 
+úteis e válidos, mas não necessariamente devem ser usados em toda e 
+qualquer situação.
+
+Vamos dar dois exemplos para ilustrar melhor:
+
+* Prefira Interfaces a Classes Concretas (ou Princípio da Inversão de 
+Dependências): a ideia desse princípio é que quando usamos uma interface 
+depois podemos trocar a sua implementação, ou seja, mudar a 
+classe concreta que implementa a interface. Porém, podem existir 
+situações -- principalmente, em sistemas pequenos e menos relevantes --
+nas quais sabemos, com grande certeza, de que isso nunca irá ocorrer. 
+Ou seja, como nunca vamos precisar de uma outra classe concreta, 
+não vale a pena investir tempo criando uma estrutura intermediária, 
+no caso, uma interface.
+
+* Princípio Aberto/Fechado: esse princípio recomenda que devemos, já no 
+momento da implementação de uma classe, pensar nos seus pontos de 
+extensão. No [livro](../cap5.html#princ%C3%ADpio-abertofechado), para ilustrar 
+o princípio, usamos o exemplo de um método `sort` com duas implementações: 
+na primeira implementação, o método ordena uma lista em ordem lexicográfica; 
+na segunda implementação, ele recebe como parâmetro um objeto cuja 
+função é comparar dois elementos da lista segundo um outro critério. 
+Logo, esse método `sort` está "aberto" a novos critérios de comparação. 
+Porém, suponha que você seja responsável por implementar um método 
+como `sort` em um contexto no qual sabemos, com grande certeza, que critérios 
+de ordenação alternativos não são necessários. Logo, nesse caso, não vale 
+a pena investir tempo em uma versão mais aberta, flexível e 
+extensível de `sort`.
+
+
+### 2. O que significa DRY (Don't Repeat Yourself)? {.unnumbered}
 
 Este princípio de projeto foi enunciado pela primeira vez no 
 livro *The Pragmatic Programmer*, de David Thomas e Andrew Hunt, 
@@ -47,7 +85,7 @@ teria que ser repetida nos três formatos do livro.
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
-### 2. O que significa Separação entre Comandos e Queries? {.unnumbered}
+### 3. O que significa Separação entre Comandos e Queries? {.unnumbered}
 
 Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
 princípio Aberto/Fechado (Open/Closed), que dá origem à letra "O"
@@ -90,7 +128,7 @@ query. Isso não deve influenciar a resposta dessa query
 a resposta de uma outra query (que, por exemplo, a gente 
 faça logo a seguir).
 
-### 3. O que é ortogonalidade? {.unnumbered}
+### 4. O que é ortogonalidade? {.unnumbered}
 
 Dois componentes de um projeto são ortogonais se mudanças em um deles 
 não afetam o outro. Logo, eles podem ser livremente combinados 
@@ -116,7 +154,7 @@ presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no 
 [Capítulo 5](../cap5.html#coes%C3%A3o).
 
-### 4. O que é uma dependência circular? {.unnumbered}
+### 5. O que é uma dependência circular? {.unnumbered}
 
 Suponha dois pacotes P1 e P2. Existe uma dependência circular 
 entre eles quando P1 usa P2 e vice-versa.
