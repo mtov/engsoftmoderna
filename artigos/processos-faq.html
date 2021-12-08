@@ -116,19 +116,21 @@
 <h5 class="unnumbered" id="perguntas-sobre-scrum">Perguntas sobre Scrum <a href="#perguntas-sobre-scrum" class="anchor-link" aria-hidden="true">🔗</a></h5>
 <ol start="3" type="1">
 <li><a href="#al%C3%A9m-de-hist%C3%B3rias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto">Além de histórias, quais outros itens podem fazer parte do backlog do produto?</a></li>
+<li><a href="#hist%C3%B3rias-devem-ser-sempre-estimadas-em-story-points">Histórias devem ser sempre estimadas em story points?</a></li>
+<li><a href="#story-points-devem-seguir-os-valores-de-uma-sequ%C3%AAncia-de-fibonacci">Story points devem seguir os valores de uma sequência de Fibonacci?</a></li>
 <li><a href="#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas">Posso estimar histórias de usuários em horas?</a></li>
 <li><a href="#o-que-%C3%A9-grooming">O que é grooming?</a></li>
 <li><a href="#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor">Em Scrum, o que é um líder servidor?</a></li>
 <li><a href="#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm">Qual a diferença entre Product Owner (PO) e Product Manager (PM)?</a></li>
 </ol>
 <h5 class="unnumbered" id="perguntas-sobre-kanban">Perguntas sobre Kanban <a href="#perguntas-sobre-kanban" class="anchor-link" aria-hidden="true">🔗</a></h5>
-<ol start="8" type="1">
+<ol start="10" type="1">
 <li><a href="#o-que-%C3%A9-upstream-e-downstream-kanban">O que é Upstream e Downstream Kanban?</a></li>
 <li><a href="#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban">É possível voltar com o cartão em um quadro Kanban?</a></li>
 <li><a href="#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os">Em Kanban, o que são classes de serviços?</a></li>
 </ol>
 <h5 class="unnumbered" id="perguntas-sobre-organização-de-times-ágeis">Perguntas sobre Organização de Times Ágeis <a href="#perguntas-sobre-organização-de-times-ágeis" class="anchor-link" aria-hidden="true">🔗</a></h5>
-<ol start="11" type="1">
+<ol start="13" type="1">
 <li><a href="#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead">O que faz um Líder Técnico?</a></li>
 <li><a href="#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto">Qual a diferença entre times orientados por projeto e por produto?</a></li>
 </ol>
@@ -172,7 +174,21 @@
 </ul>
 <p>Resumindo, conforme afirmado no Scrum Guide, qualquer trabalho que é <q>necessário para melhorar o produto</q> pode ser incluído no backlog do produto.</p>
 <p>Por outro lado, se temos uma tarefa técnica, como as descritas acima, mas que tem uma complexidade pequena, ela pode ir direto para o backlog de um determinado sprint. Por último, se a tarefa é bastante simples, nem para o backlog do sprint ela precisa ir… Basta que algum desenvolvedor a realize e pronto.</p>
-<h3 class="unnumbered" id="posso-estimar-histórias-de-usuários-em-horas">4. Posso estimar histórias de usuários em horas? <a href="#posso-estimar-histórias-de-usuários-em-horas" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="histórias-devem-ser-sempre-estimadas-em-story-points">4. Histórias devem ser sempre estimadas em story points? <a href="#histórias-devem-ser-sempre-estimadas-em-story-points" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Não necessariamente. Por exemplo, o Guia do Scrum não inclui menção explícita ao uso de story points e apenas afirma o seguinte:</p>
+<blockquote>
+<p>Os desenvolvedores que farão o trabalho são responsáveis pelo seu dimensionamento.</p>
+</blockquote>
+<p>Logo, um time pode optar por outras escalas, por exemplo:</p>
+<ul>
+<li>Uma escala com apenas três tamanhos, isto é, histórias pequenas, médias e grandes.</li>
+<li>Uma escala com cinco tamanhos, isto é, histórias super pequenas, pequenas, médias, grandes e super grandes.</li>
+<li>etc</li>
+</ul>
+<h3 class="unnumbered" id="story-points-devem-seguir-os-valores-de-uma-sequência-de-fibonacci">5. Story points devem seguir os valores de uma sequência de Fibonacci? <a href="#story-points-devem-seguir-os-valores-de-uma-sequência-de-fibonacci" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Não precisamos obrigatoriamente usar Fibonacci para a escala de valores de story points, isto é: 1,2,3,5,8,13,21…</p>
+<p>Por outro lado, é importante dizer que uma escala com incrementos de 1 também não é recomendável, isto é: 1,2,3,4,5,6,7,8,9,… O motivo é que as estimativas de histórias não são totalmente precisas. Logo, é difícil justificar que uma história tem tamanho 8, por exemplo, em vez de 7 ou 9. Essa diferença é muito pequena, considerando o nível de conhecimento e de informações que temos sobre as histórias no início de um sprint.</p>
+<h3 class="unnumbered" id="posso-estimar-histórias-de-usuários-em-horas">6. Posso estimar histórias de usuários em horas? <a href="#posso-estimar-histórias-de-usuários-em-horas" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Sim, histórias podem ser estimadas em unidades de tempo, tais como horas ou homens/hora, por exemplo.</p>
 <p>Por outro lado, os defensores de story points argumentam que o maior problema de usar medidas de tempo é que existem sempre dois <q>tempos</q>: o tempo ideal e o tempo consumido (<em>elapsed</em>). Explicando melhor, quando alguém afirma que vai implementar uma história em um dia (tempo ideal), ele pode na verdade levar um pouco mais. O motivo é que sempre vão ocorrer interrupções, tais como reuniões, bugs críticos para corrigir, compromissos pessoais, idas ao médico, etc. Muitas vezes, essa diferença entre tempo ideal e tempo consumido pode acabar gerando um mal-entendido. Algo assim: você prometeu que ia fazer isso em um dia, mas já se passaram dois dias e você não entregou ainda!</p>
 <p>Por exemplo, em seu livro Scrum Essencial, Kenneth Rubin afirma o seguinte:</p>
@@ -180,15 +196,15 @@
 <p>Não há uma resposta certa ou errada sobre o uso de story points e dias ideais. No entanto, um argumento importante contra o uso do tempo ideal consiste no risco de mal-entendidos.</p>
 </blockquote>
 <p>E o autor conclui com o exemplo de um jogo de futebol americano, que tem quatro tempos de 15 minutos, ou seja, uma hora ideal. Apesar disso, uma partida de futebol americano dura, quase sempre, mais de três horas.</p>
-<h3 class="unnumbered" id="o-que-é-grooming">5. O que é grooming? <a href="#o-que-é-grooming" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-grooming">7. O que é grooming? <a href="#o-que-é-grooming" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>O termo grooming designa as atividades realizadas com o propósito de <q>cuidar</q> do backlog do produto. Portanto, são atividades que devem ser lideradas pelo Product Owner (PO), mas com a colaboração dos demais membros do time. Dentre essas atividades, podemos mencionar as seguintes: descobrir, criar, estimar, priorizar, remover, refinar, entender, especificar ou particionar histórias de usuários. Alguns autores, como Kenneth Rubim, no livro Scrum Essencial, sugerem que 10% do tempo dos membros de um time Scrum deve ser alocado para atividades de grooming. Ou seja, cerca de 4 horas semanais. No entanto, não existe um evento ou momento específico para realização do grooming. Ele pode ser realizado, por exemplo, em reuniões específicas convocadas pelo PO.</p>
-<h3 class="unnumbered" id="em-scrum-o-que-é-um-líder-servidor">6. Em Scrum, o que é um líder servidor? <a href="#em-scrum-o-que-é-um-líder-servidor" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="em-scrum-o-que-é-um-líder-servidor">8. Em Scrum, o que é um líder servidor? <a href="#em-scrum-o-que-é-um-líder-servidor" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Scrum usa esse termo para descrever o estilo de liderança que deve ser exercido por um Scrum Master. Ou seja, o Scrum Master não é o <q>chefe</q> de um time Scrum, que lidera dando ordens, cobrando tarefas e prazos, etc. Em vez disso, ele é apenas mais um membro do time, que procura prestar serviços para o PO, para os desenvolvedores e também para a organização. Na versão mais recente do Scrum Guide (2020), o papel de um Scrum Master é assim resumido: <q>eles são líderes verdadeiros, que servem tanto o time Scrum, quanto a organização maior [na qual o time está inserido].</q></p>
-<h3 class="unnumbered" id="qual-a-diferença-entre-product-owner-po-e-product-manager-pm">7. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? <a href="#qual-a-diferença-entre-product-owner-po-e-product-manager-pm" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="qual-a-diferença-entre-product-owner-po-e-product-manager-pm">9. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? <a href="#qual-a-diferença-entre-product-owner-po-e-product-manager-pm" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Esta é uma pergunta difícil, pois o uso dos termos varia de empresa para empresa e também evolui rapidamente com o tempo.</p>
 <p>Mas, primeiro, vamos comentar sobre o que os dois cargos têm em comum: tanto um PO como um PM devem entender profundamente dos problemas e das <q>dores</q> dos clientes. E devem ser capazes de definir, priorizar e explicar para os desenvolvedores <q>o que</q> deve ser implementado. Devem também estar sempre disponíveis para tirar dúvidas.</p>
 <p>Sobre as diferenças, gostamos de explicá-las destacando as origens dos termos. Conforme estudamos no <a href="../cap2.html#scrum">Capítulo 2</a>, PO é um termo de Scrum e ele tem responsabilidades muito claras nesse framework. Já PM é um termo que tem suas origens e maior uso em empresas que desenvolvem produtos digitais, incluindo software. Nelas, o PM deve se preocupar também com o posicionamento estratégico do produto no mercado e com variáveis como número de clientes, engajamento, taxas de cancelamento, etc.</p>
-<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">8. O que é Upstream e Downstream Kanban? <a href="#o-que-é-upstream-e-downstream-kanban" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-upstream-e-downstream-kanban">10. O que é Upstream e Downstream Kanban? <a href="#o-que-é-upstream-e-downstream-kanban" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>O quadro Kanban, como explicamos no <a href="../cap2.html#kanban">Capítulo 2</a>, começa à sua esquerda com um backlog de tarefas.</p>
 <p>No entanto, se os times não tomarem cuidado, esse backlog pode crescer muito e passar a incluir tarefas complexas, que ainda não foram devidamente entendidas pelo time ou que não vão agregar valor ao produto. Pode ser então que o time não consiga escolher as tarefas certas para implementar, já que o backlog transformou-se em uma extensa lista não-priorizada de tarefas obscuras.</p>
 <p>Para isso, o uso de Kanban costuma ser dividido em dois fluxos:</p>
@@ -201,14 +217,14 @@
 <p>O Upstream Kanban corresponde à parte do funil que vai se estreitando para deixar claro que nem toda demanda proposta pelos stakeholders precisa chegar ao backlog.</p>
 <p>Resumindo: no Upstream, especificamos e decidimos o que deve ser implementado; no Downstream, implementa-se o que foi decidido.</p>
 <p>Antes de concluir, gostaríamos de comentar sobre a origem dos termos upstream e downstream. Uma possível tradução seria montante (upstream) e jusante (downstream). Especificamente, quando se constrói uma barragem em um rio, a parte do seu leito que foi represada, dando origem ao repositório ou lago, chama-se montante do rio; a parte do rio após a barragem é chamada de jusante.</p>
-<h3 class="unnumbered" id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">9. É possível voltar com o cartão em um quadro Kanban? <a href="#é-possível-voltar-com-o-cartão-em-um-quadro-kanban" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">11. É possível voltar com o cartão em um quadro Kanban? <a href="#é-possível-voltar-com-o-cartão-em-um-quadro-kanban" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Explicando melhor: suponha um quadro com passos Especificação, Implementação e Revisão. Suponha ainda que – no passo de revisão – detectou-se que uma tarefa foi especificada (e implementada) de forma errada. O que deve-se fazer?</p>
 <p>Nesse caso, e principalmente se o erro foi grave e demandará um bom tempo para ser corrigido, não existe alternativa, a não ser voltar com o cartão que descreve a tarefa para o passo de especificação, para que ela seja re-especificada e re-implementada, agora de forma correta.</p>
-<h3 class="unnumbered" id="em-kanban-o-que-são-classes-de-serviços">10. Em Kanban, o que são classes de serviços? <a href="#em-kanban-o-que-são-classes-de-serviços" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="em-kanban-o-que-são-classes-de-serviços">12. Em Kanban, o que são classes de serviços? <a href="#em-kanban-o-que-são-classes-de-serviços" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Classes de serviços é um conceito de Kanban que possibilita que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, costuma-se definir quatro classes de serviços: (1) normal, (2) com deadline, (3) urgente e (4) intangível. Feito isso, toda tarefa que chega para o time deve ser alocada em uma dessas classes de serviço. Se pensarmos nos cartões que descrevem a tarefa, eles devem ter cores diferentes, em função de suas classes de serviço.</p>
 <p>Cada classe de serviço pode ter seu próprio fluxo de trabalho. Particularmente, os limites WIP podem ser específicos para cada classe de serviço. E algumas classes de serviços podem <q>pular</q> certos passos do fluxo. Por exemplo, uma tarefa classificada como urgente pode dispensar o passo de revisão.</p>
 <p>Para entender melhor o conceito, você pode imaginar que classes de serviço são <q>pistas horizontais</q> em um quadro Kanban. Ou seja, o conceito lembra as pistas exclusivas que existem em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.</p>
-<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">11. O que faz um Líder Técnico (Tech Lead)? <a href="#o-que-faz-um-líder-técnico-tech-lead" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">13. O que faz um Líder Técnico (Tech Lead)? <a href="#o-que-faz-um-líder-técnico-tech-lead" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Métodos ágeis não fazem distinção entre os desenvolvedores de um time. Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou hierarquias em um time. Porém, na prática, sabemos que os desenvolvedores têm níveis de experiência e conhecimento diferentes sobre o sistema que estão implementando ou mantendo. Além disso, existem tarefas que exigem maior responsabilidade, tais como:</p>
 <ul>
 <li>Implementar histórias mais complexas ou críticas.</li>
@@ -220,7 +236,7 @@
 <li>Ajudar na contratação de novos desenvolvedores.</li>
 </ul>
 <p>Então, para assumir essas tarefas de maior responsabilidade, algumas empresas têm em seus times a figura de um <strong>Líder Técnico (Tech Lead)</strong>. No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time e, portanto, ele não deve ser o controlador de todas as tarefas dos demais desenvolvedores.</p>
-<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">12. Qual a diferença entre times orientados por projeto e por produto? <a href="#qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">14. Qual a diferença entre times orientados por projeto e por produto? <a href="#qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Vamos responder discorrendo sobre cada um dessas formas de organização de times.</p>
 <p><strong>Times orientados por projeto</strong></p>
 <p>Recomenda-se ter times orientados por projeto quando o escopo e as funcionalidades do sistema que será desenvolvido estão bem definidos. Ou seja, <q>o que</q> o sistema deve fazer está claro. Logo, a função principal do time é implementar as funcionalidades requeridas pelos clientes. Isso não impede que exista um PO (<q>Product Owner</q>) que vai funcionar como uma ponte entre os clientes e os desenvolvedores do time.</p>

@@ -14,21 +14,23 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 ##### Perguntas sobre Scrum {.unnumbered}
 
  3. [Além de histórias, quais outros itens podem fazer parte do backlog do produto?](#al%C3%A9m-de-hist%C3%B3rias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto)
- 4. [Posso estimar histórias de usuários em horas? ](#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas)
- 5. [O que é grooming?](#o-que-%C3%A9-grooming)
- 6. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
- 7. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
+ 4. [Histórias devem ser sempre estimadas em story points?](#hist%C3%B3rias-devem-ser-sempre-estimadas-em-story-points)
+ 5. [Story points devem seguir os valores de uma sequência de Fibonacci?](#story-points-devem-seguir-os-valores-de-uma-sequ%C3%AAncia-de-fibonacci)
+ 6. [Posso estimar histórias de usuários em horas? ](#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas)
+ 7. [O que é grooming?](#o-que-%C3%A9-grooming)
+ 8. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
+ 9. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
 
 ##### Perguntas sobre Kanban {.unnumbered}
 
- 8. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
- 9. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
- 10. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+ 10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
+ 11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
+ 12. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
 
 ##### Perguntas sobre Organização de Times Ágeis {.unnumbered}
  
- 11. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
- 12. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+ 13. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
+ 14. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -133,7 +135,37 @@ para o backlog de um determinado sprint. Por último, se a tarefa
 é bastante simples, nem para o backlog do sprint ela precisa ir...
 Basta que algum desenvolvedor a realize e pronto.
 
-### 4. Posso estimar histórias de usuários em horas? {.unnumbered}
+### 4. Histórias devem ser sempre estimadas em story points? {.unnumbered}
+
+Não necessariamente. Por exemplo, o Guia do Scrum não inclui 
+menção explícita ao uso de story points e apenas afirma o 
+seguinte:
+
+> Os desenvolvedores que farão o trabalho são responsáveis pelo 
+seu dimensionamento.
+
+Logo, um time pode optar por outras escalas, por exemplo:
+
+* Uma escala com apenas três tamanhos, isto é, histórias pequenas, 
+médias e grandes.
+* Uma escala com cinco tamanhos, isto é, histórias super pequenas, 
+pequenas, médias, grandes e super grandes.
+* etc
+
+### 5. Story points devem seguir os valores de uma sequência de Fibonacci? {.unnumbered}
+
+Não precisamos obrigatoriamente usar Fibonacci para a escala de 
+valores de story points, isto é: 1,2,3,5,8,13,21...
+
+Por outro lado, é importante dizer que uma escala com incrementos
+de 1 também não é recomendável, isto é: 1,2,3,4,5,6,7,8,9,... O motivo 
+é que as estimativas de histórias não são totalmente precisas. 
+Logo, é difícil justificar que uma história tem tamanho 8, por 
+exemplo, em vez de 7 ou 9. Essa diferença é muito pequena, 
+considerando o nível de conhecimento e de informações que 
+temos sobre as histórias no início de um sprint.
+
+### 6. Posso estimar histórias de usuários em horas? {.unnumbered}
 
 Sim, histórias podem ser estimadas em unidades de tempo, 
 tais como horas ou homens/hora, por exemplo.
@@ -165,7 +197,7 @@ uma hora ideal. Apesar disso, uma partida de futebol
 americano dura, quase sempre, mais de três horas.
 
 
-### 5. O que é grooming? {.unnumbered}
+### 7. O que é grooming? {.unnumbered}
 
 O termo grooming designa as atividades realizadas com o propósito de "cuidar" do backlog do
 produto. Portanto, são atividades que devem ser lideradas pelo Product 
@@ -181,7 +213,7 @@ Ele pode ser realizado, por exemplo, em reuniões específicas
 convocadas pelo PO.
 
 
-### 6. Em Scrum, o que é um líder servidor? {.unnumbered}
+### 8. Em Scrum, o que é um líder servidor? {.unnumbered}
 
 Scrum usa esse termo para descrever o estilo de liderança que deve ser
 exercido por um Scrum Master. Ou seja, o Scrum Master não é o "chefe"
@@ -193,7 +225,7 @@ assim resumido: "eles são líderes verdadeiros, que servem tanto o time
 Scrum, quanto a organização maior [na qual o time está inserido]."
 
 
-### 7. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? {.unnumbered}
+### 9. Qual a diferença entre Product Owner (PO) e Product Manager (PM)? {.unnumbered}
 
 Esta é uma pergunta difícil, pois o uso dos termos varia de empresa 
 para empresa e também evolui rapidamente com o tempo.
@@ -214,7 +246,7 @@ do produto no mercado e com variáveis como número de clientes,
 engajamento, taxas de cancelamento, etc.
 
 
-### 8. O que é Upstream e Downstream Kanban? {.unnumbered}
+### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 O quadro Kanban, como explicamos no 
 [Capítulo 2](../cap2.html#kanban), começa à 
@@ -264,7 +296,7 @@ chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
 
-### 9. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
@@ -278,7 +310,7 @@ passo de especificação, para que ela seja re-especificada e
 re-implementada, agora de forma correta.
 
 
-### 10. Em Kanban, o que são classes de serviços? {.unnumbered}
+### 12. Em Kanban, o que são classes de serviços? {.unnumbered}
 
 Classes de serviços é um conceito de Kanban que possibilita
 que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
@@ -300,7 +332,7 @@ Ou seja, o conceito lembra as pistas exclusivas que existem
 em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
 
 
-### 11. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+### 13. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -324,7 +356,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 12. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 14. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
