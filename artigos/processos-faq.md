@@ -15,7 +15,7 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 
  3. [Além de histórias, quais outros itens podem fazer parte do backlog do produto?](#al%C3%A9m-de-hist%C3%B3rias-quais-outros-itens-podem-fazer-parte-do-backlog-do-produto)
  4. [Histórias devem ser sempre estimadas em story points?](#hist%C3%B3rias-devem-ser-sempre-estimadas-em-story-points)
- 5. [Story points devem seguir os valores de uma sequência de Fibonacci?](#story-points-devem-seguir-os-valores-de-uma-sequ%C3%AAncia-de-fibonacci)
+ 5. [Story points devem sempre seguir os valores de uma sequência de Fibonacci?](#story-points-devem-sempre-seguir-os-valores-de-uma-sequ%C3%AAncia-de-fibonacci)
  6. [Posso estimar histórias de usuários em horas? ](#posso-estimar-hist%C3%B3rias-de-usu%C3%A1rios-em-horas)
  7. [O que é grooming?](#o-que-%C3%A9-grooming)
  8. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
@@ -152,7 +152,7 @@ médias e grandes.
 pequenas, médias, grandes e super grandes.
 * etc
 
-### 5. Story points devem seguir os valores de uma sequência de Fibonacci? {.unnumbered}
+### 5. Story points devem sempre seguir os valores de uma sequência de Fibonacci? {.unnumbered}
 
 Não precisamos obrigatoriamente usar Fibonacci para a escala de 
 valores de story points, isto é: 1,2,3,5,8,13,21...
@@ -160,8 +160,8 @@ valores de story points, isto é: 1,2,3,5,8,13,21...
 Por outro lado, é importante dizer que uma escala com incrementos
 de 1 também não é recomendável, isto é: 1,2,3,4,5,6,7,8,9,... O motivo 
 é que as estimativas de histórias não são totalmente precisas. 
-Logo, é difícil justificar que uma história tem tamanho 8, por 
-exemplo, em vez de 7 ou 9. Essa diferença é muito pequena, 
+Logo, é difícil justificar que uma história tem tamanho 9, por 
+exemplo, em vez de 8 ou 10. Essa diferença é muito pequena, 
 considerando o nível de conhecimento e de informações que 
 temos sobre as histórias no início de um sprint.
 
