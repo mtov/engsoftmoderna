@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+</script>
+
+<script>
+var trackOutboundLink = function(url, doc, label) {
+    gtag('event', doc, {
+      'event_category': label,
+      'event_label': url,
+      'transport_type': 'beacon',
+      'event_callback': function(){document.location = url;}
+    });
+}
+</script>
+
+<link rel="shortcut icon" type="image/x-icon" href="figs/favicon.ico">
+
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://engsoftmoderna.info" />
+<meta property="og:title" content="Engenharia de Software Moderna (Livro Digital)" />
+<meta property="og:description" content="Princípios e Práticas para Desenvolvimento de Software com Produtividade." />
+<meta property="og:image" content="https://engsoftmoderna.info/twittercard.jpg"/>
+
+<meta name="keywords" content="Engenharia de Software, Processos de Software, Requisitos de Software, Projeto de Software, Arquitetura de Software, Testes de Software, Refactoring, DevOps">
+
+<title>Engenharia de Software Moderna</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+<style>
+body {
+  background-color: #FFFFFF;
+  foreground-color: black;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+<div class="row cols-sm-12 cols-md-8">
+<div class="col-md-offset-2">
+
+
+<div class="row">
+
+<div>
+<img src="figs/capa/foto-capa-papel3.png" width="310">
+<p><a href="https://engsoftmoderna.info/">Página principal do livro</a></p>
+
+</div>
+
+<!--
+<div>
+<h1>Engenharia de Software Moderna</h1>
+<h4>Princípios e Práticas para Desenvolvimento de Software com Produtividade</h4>
+<h4>Marco Tulio Valente</h4>
+</div>
+-->
+
+</div>
+
+<h2>Aulas Práticas</h2>
+
+<p>
+Seguem roteiros de aulas práticas sobre alguns capítulos do livro. Os roteiros incluem um passo a passo detalhado e, por isso, podem ser seguidos por alunos de forma independente, mesmo que eles não tenham qualquer experiência nas tecnologias envolvidas.
+</p>
+
+<p>
+Para facilitar a sua realização, todos os roteiros estão armazenados em repositórios do GitHub.
+</p>
+
+
+<h4 id="cap6">Cap. 7: Arquitetura</h4>
+
+<ul>
+<li><a href="https://github.com/aserg-ufmg/micro-livraria">Microsserviços</a>, usando Node.js, REST, gRPC e Docker</li> 
+<li><a href="https://github.com/aserg-ufmg/pub-sub-store">Publish/Subscribe</a>, usando RabbitMQ</li>
+</ul>
+
+<h4 id="cap6">Cap. 8: Testes</h4>
+
+<ul>
+<li><a href="https://github.com/mtov/AulaPraticaTDD">Desenvolvimento Dirigido por Testes (TDD)</a>, usando um exemplo do livro de TDD do Kent Beck</li> 
+<li><a href="https://github.com/aserg-ufmg/demo-cypress">Testes end-to-end</a>, usando Cypress</li> 
+</ul>
+
+<h4 id="cap6">Cap. 9: Refactoring </h4>
+
+<ul>
+<li><a href="https://github.com/mtov/AulaPraticaRefactoring">Refactoring</a>, usando um exemplo do livro do Martin Fowler</li> 
+</ul>
+
+<h4 id="cap6">Cap. 10: DevOps</h4>
+
+<ul>
+<li><a href="https://github.com/aserg-ufmg/demo-ci">Integração Contínua</a>, usando GitHub Actions</li> 
+</ul>
+
+<hr>
+
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
