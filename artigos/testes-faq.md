@@ -7,7 +7,7 @@ três tipos de testes abordados no capítulo: **unidade, integração e sistema*
 Também, não pretendemos abordar questões específicas de um framework 
 de testes ou de qualquer outra tecnologia.
 
-A lista atual de perguntas está organizada em três grandes temas:
+A lista atual de perguntas está organizada em quatro grandes temas:
 
 ##### Perguntas sobre conceitos de testes {.unnumbered}
 
@@ -15,22 +15,26 @@ A lista atual de perguntas está organizada em três grandes temas:
 2. [O que é uma unidade?](#o-que-%C3%A9-uma-unidade)
 3. [No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?](#no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo)
 4. [Por que não usam o termo dublê de testes no livro?](#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro)
-5. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 
 ##### Perguntas sobre a escrita de testes {.unnumbered}
 
-6. [Precisamos testar métodos privados?](#precisamos-testar-m%C3%A9todos-privados)
-7. [Como testar métodos que têm efeito colateral?](#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral)
-8. [Como testar métodos que não têm efeito colateral?](#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral)
-9. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
-10. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
-11. [Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
+5. [Precisamos testar métodos privados?](#precisamos-testar-m%C3%A9todos-privados)
+6. [Como testar métodos que têm efeito colateral?](#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral)
+7. [Como testar métodos que não têm efeito colateral?](#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral)
+8. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
+9. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
+10. [Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
 
 ##### Perguntas sobre a execução de testes {.unnumbered}
 
-12. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
-13. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci)
-14. [Para que servem suítes de testes?](#para-que-servem-su%C3%ADtes-de-testes)
+11. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
+12. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci)
+13. [Para que servem suítes de testes?](#para-que-servem-su%C3%ADtes-de-testes)
+
+##### Perguntas sobre outros tipos de testes {.unnumbered}
+
+14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
+15. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -97,33 +101,14 @@ Por outro lado, é importante ressaltar que acrescentamos, no livro, uma nota
 explicando o conceito de dublês e seus diferentes tipos.
 
 
-### 5. O que é um teste de fumaça (smoke test)? {.unnumbered}
-
-É um teste de sistema, porém rápido e superficial. O objetivo é 
-garantir que não existe um erro grave no funcionamento do sistema.
-Ou seja, se não existe um "incêndio" (ou problema) de grandes
-proporções e que está gerando uma grande quantidade de "fumaça".
-Por exemplo, um teste de fumaça pode verificar se algumas telas da
-aplicação estão abrindo ou se determinadas APIs respondem a
-solicitações básicas. Mas, complementando, um teste de fumaça é um
-teste automático. 
-
-Veja a descrição do teste de fumaça de uma aplicação:
-
-> O nosso teste gera uma requisição HTTP para cada página da aplicação e então 
-> testamos se o código de resposta HTTP retornado está correto. Embora não seja
-> nada sofisticado, ele nos permite responder uma questão essencial:
-> a aplicação está rodando?
-
-
-### 6. Precisamos testar métodos privados? {.unnumbered}
+### 5. Precisamos testar métodos privados? {.unnumbered}
 
 Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
 Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, 
 isso vai garantir que os métodos privados também estão funcionando.
 
 
-### 7. Como testar métodos que têm efeito colateral? {.unnumbered}
+### 6. Como testar métodos que têm efeito colateral? {.unnumbered}
 
 Primeiro, uma rápida definição de efeito colateral: o termo designa métodos 
 cuja execução não apenas retorna um valor, mas também altera o contexto de 
@@ -191,7 +176,7 @@ o mostrado acima, são mais frágeis, pois eles estão acoplados a
 detalhes da implementação interna do método que está sendo testado.
 
 
-### 8. Como testar métodos que não têm efeito colateral? {.unnumbered}
+### 7. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
 Normalmente, esses são os métodos fáceis de serem testados: eles 
 recebem alguns parâmetros, processam eles e retornam um resultado, 
@@ -211,7 +196,7 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 9. Quando preciso criar um mock para uma dependência? {.unnumbered}
+### 8. Quando preciso criar um mock para uma dependência? {.unnumbered}
 
 Suponha que temos que testar um método `f` da seguinte classe:
 
@@ -242,14 +227,14 @@ criar um mock para essa dependência?
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
-### 10. Como criar um mock para uma dependência privada? {.unnumbered}
+### 9. Como criar um mock para uma dependência privada? {.unnumbered}
 
 Se a dependência for configurável por meio do construtor da classe ou de um método `set` não existe problema.
 
 Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
 
 
-### 11. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -260,7 +245,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 12. Com que frequência devemos rodar os testes? {.unnumbered}
+### 11. Com que frequência devemos rodar os testes? {.unnumbered}
 
 Basicamente, essa resposta depende do tipo de teste!
 
@@ -283,7 +268,7 @@ costumam rodar rápido, em alguns minutos. Porém, sabemos que
 existem também testes de integração que levam horas para rodar, 
 o que inviabiliza a sua execução frequente.
 
-### 13. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
+### 12. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
 
 A resposta para essa pergunta é uma consequência da 
 resposta da pergunta anterior. Basicamente, ela é a seguinte:
@@ -302,7 +287,7 @@ que levam bem mais tempo para rodar. Então, se o teste de integração
 rodar dentro de um limite de tempo razoável, ele pode ser sim 
 incluído no serviço de CI.
 
-### 14. Para que servem suítes de testes?  {.unnumbered}
+### 13. Para que servem suítes de testes?  {.unnumbered}
 
 Uma suíte de testes é um conjunto de testes que
 pretendemos rodar juntos. Por exemplo, podemos optar por 
@@ -311,6 +296,36 @@ com os testes rápidos e que serão executados com frequência; e a
 segunda com testes que demoram mais tempo e que, por isso mesmo, 
 queremos rodar mais raramente.
 
+
+### 14. O que é um teste de fumaça (smoke test)? {.unnumbered}
+
+É um teste de sistema, porém rápido e superficial. O objetivo é 
+garantir que não existe um erro grave no funcionamento do sistema.
+Ou seja, se não existe um "incêndio" (ou problema) de grandes
+proporções e que está gerando uma grande quantidade de "fumaça".
+Por exemplo, um teste de fumaça pode verificar se algumas telas da
+aplicação estão abrindo ou se determinadas APIs respondem a
+solicitações básicas. Mas, complementando, um teste de fumaça é um
+teste automático. 
+
+Veja a descrição do teste de fumaça de uma aplicação:
+
+> O nosso teste gera uma requisição HTTP para cada página da aplicação e então 
+> testamos se o código de resposta HTTP retornado está correto. Embora não seja
+> nada sofisticado, ele nos permite responder uma questão essencial:
+> a aplicação está rodando?
+
+### 15. O que é um teste de snapshot? {.unnumbered}
+
+Esses testes são usados para testar a saída de componentes visuais, como, por exemplo, componentes implementados usando-se frameworks como React, Vue.js, etc.
+
+Nessa definição, o termo saída refere-se ao resultado visual produzido pelo componente na forma de um fragmento de código HTML.
+
+Um teste snapshot funciona então assim:
+
+* Na primeira vez que o teste for executado, ele simplesmente vai renderizar o componente que está sendo testado e obter a sua saída HTML. Essa saída textual é chamada de snapshot e será gravada em um arquivo específico.
+
+* Nas execuções seguintes do teste, ele vai renderizar de novo o componente que está sendo testado e comparar a saída gerada com o snapshot gravado em disco. Se os arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos dois arquivos (saída atual vs snapshot).
 
 * * * 
 
