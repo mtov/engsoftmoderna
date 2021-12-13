@@ -3,7 +3,7 @@
 ## Introdução  {.unnumbered}
 
 Neste artigo, vamos apresentar o padrão de projeto **Composite**,
-que -- por sem um padrão bem simples -- não foi tratado no 
+que -- por ser um padrão bem simples -- não foi tratado no 
 [Capítulo 6](../cap6.html) do livro.
 
 Para isso, vamos usar a mesma estrutura dos padrões de projeto 

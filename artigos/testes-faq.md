@@ -319,20 +319,20 @@ Veja a descrição do teste de fumaça de uma aplicação:
 
 Esses testes são usados para testar a saída de componentes visuais, como, por exemplo, componentes implementados usando-se frameworks como React, Vue.js, etc.
 
-Na definição acima, o termo saída refere-se ao leiaute do componente na forma, por exemplo, de fragmento de código em HTML ou JSON.
+Na definição acima, o termo saída refere-se ao leiaute do componente, conforme definido, por exemplo, por um fragmento de código em HTML ou JSON.
 
 Um teste de snapshot funciona então assim:
 
 * Na primeira vez que o teste for executado, ele simplesmente vai renderizar o componente que está sendo testado e obter a sua saída em HTML. Essa saída textual é chamada de snapshot e será gravada em um arquivo específico.
-
-* Nas execuções seguintes, o teste renderiza de novo o componente que está sendo testado e compara a saída com o snapshot gravado em disco. Se os dois arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos arquivos.
+ 
+* Nas execuções seguintes, o teste renderiza de novo o componente que está sendo testado e compara o seu leiaute atual com o snapshot gravado em disco. Se os dois arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos arquivos.
 
 Em caso de falha, o framework de teste oferece um comando para resetar, isto é, apagar o snapshot. Feito isso, o processo acima se repete.
 
 A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois pequenas mudanças no leiaute de uma página podem resultar em falsos positivos.
 
-Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram *warnings* que alertam sobre mudanças na apresentação um componente.
-Esses warnings devem ser analisados para comprovar se, de fato, são regressões ou não. Se não forem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.
+Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram *warnings* que alertam sobre mudanças na apresentação de um componente.
+Esses warnings devem ser analisados para comprovar se, de fato, eles representam regressões ou não. Se não representarem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.
 
 
 * * * 
