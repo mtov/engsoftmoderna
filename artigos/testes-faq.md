@@ -329,7 +329,7 @@ Um teste de snapshot funciona então assim:
 
 Em caso de falha, o framework de teste oferece um comando para resetar, isto é, apagar o snapshot. Feito isso, o processo acima se repete.
 
-A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois pequenas mudanças no leiaute de uma página podem resultar em falsos positivos.
+A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois mesmo pequenas mudanças no leiaute de uma página resultam em falsos positivos.
 
 Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram *warnings* que alertam sobre mudanças na apresentação de um componente.
 Esses warnings devem ser analisados para comprovar se, de fato, eles representam regressões ou não. Se não representarem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.

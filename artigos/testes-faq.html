@@ -270,7 +270,7 @@
 <li><p>Nas execuções seguintes, o teste renderiza de novo o componente que está sendo testado e compara o seu leiaute atual com o snapshot gravado em disco. Se os dois arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos arquivos.</p></li>
 </ul>
 <p>Em caso de falha, o framework de teste oferece um comando para resetar, isto é, apagar o snapshot. Feito isso, o processo acima se repete.</p>
-<p>A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois pequenas mudanças no leiaute de uma página podem resultar em falsos positivos.</p>
+<p>A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois mesmo pequenas mudanças no leiaute de uma página resultam em falsos positivos.</p>
 <p>Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram <em>warnings</em> que alertam sobre mudanças na apresentação de um componente. Esses warnings devem ser analisados para comprovar se, de fato, eles representam regressões ou não. Se não representarem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
