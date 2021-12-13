@@ -263,12 +263,15 @@
 </blockquote>
 <h3 class="unnumbered" id="o-que-é-um-teste-de-snapshot">15. O que é um teste de snapshot? <a href="#o-que-é-um-teste-de-snapshot" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Esses testes são usados para testar a saída de componentes visuais, como, por exemplo, componentes implementados usando-se frameworks como React, Vue.js, etc.</p>
-<p>Nessa definição, o termo saída refere-se ao resultado visual produzido pelo componente na forma de um fragmento de código HTML.</p>
-<p>Um teste snapshot funciona então assim:</p>
+<p>Na definição acima, o termo saída refere-se ao leiaute do componente na forma, por exemplo, de fragmento de código em HTML ou JSON.</p>
+<p>Um teste de snapshot funciona então assim:</p>
 <ul>
-<li><p>Na primeira vez que o teste for executado, ele simplesmente vai renderizar o componente que está sendo testado e obter a sua saída HTML. Essa saída textual é chamada de snapshot e será gravada em um arquivo específico.</p></li>
-<li><p>Nas execuções seguintes do teste, ele vai renderizar de novo o componente que está sendo testado e comparar a saída gerada com o snapshot gravado em disco. Se os arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos dois arquivos (saída atual vs snapshot).</p></li>
+<li><p>Na primeira vez que o teste for executado, ele simplesmente vai renderizar o componente que está sendo testado e obter a sua saída em HTML. Essa saída textual é chamada de snapshot e será gravada em um arquivo específico.</p></li>
+<li><p>Nas execuções seguintes, o teste renderiza de novo o componente que está sendo testado e compara a saída com o snapshot gravado em disco. Se os dois arquivos forem iguais, o teste vai passar. Caso contrário, o teste vai falhar e será mostrado o diff dos arquivos.</p></li>
 </ul>
+<p>Em caso de falha, o framework de teste oferece um comando para resetar, isto é, apagar o snapshot. Feito isso, o processo acima se repete.</p>
+<p>A principal vantagem de testes de snapshot é que eles podem ser implementados de forma simples, por meio de pequenos trechos de código. Por outro lado, a principal desvantagem é a sua fragilidade, pois pequenas mudanças no leiaute de uma página podem resultar em falsos positivos.</p>
+<p>Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram <em>warnings</em> que alertam sobre mudanças na apresentação um componente. Esses warnings devem ser analisados para comprovar se, de fato, são regressões ou não. Se não forem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
