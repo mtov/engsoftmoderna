@@ -13,6 +13,7 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <!--[if lt IE 9]>
@@ -109,12 +110,22 @@
 <p>Segue a lista atual de perguntas:</p>
 <ol type="1">
 <li><a href="#o-que-significa-o-conceito-de-servidor-stateless">O que significa o conceito de servidor stateless?</a></li>
+<li><a href="">2. O que é uma arquitetura serverless?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-significa-o-conceito-de-servidor-stateless">1. O que significa o conceito de servidor stateless? <a href="#o-que-significa-o-conceito-de-servidor-stateless" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Antes de responder, é importante explicar que esse conceito se aplica a aplicações distribuídas construídas de acordo com uma arquitetura cliente/servidor. Mais especificamente, aos servidores de tais aplicações.</p>
 <p>Dizemos que um servidor é stateless quando ele não armazena qualquer informação sobre o estado de seus clientes. Consequentemente, as requisições dos clientes devem incluir todas as informações necessárias para o seu devido processamento pelo servidor.</p>
 <p>Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os clientes após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.</p>
+<h3 class="unnumbered" id="o-que-é-uma-arquitetura-serverless">2. O que é uma arquitetura serverless? <a href="#o-que-é-uma-arquitetura-serverless" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Para explicar, vamos começar com uma recapitulação histórica:</p>
+<ul>
+<li><p>Décadas atrás, as empresas tinham que ter servidores físicos para hospedar seus sistemas. Ou seja, além de comprar máquinas, elas tinham que dispor de um espaço físico para elas.</p></li>
+<li><p>Em seguida, surgiram datacenters que hospedavam servidores físicos para terceiros. Com isso, não era preciso ter espaços próprios para instalar máquinas e, consequentemente, não era preciso se preocupar com instalações elétricas, refrigeração, etc.</p></li>
+<li><p>Então, surgiram os sistemas de cloud oferecendo máquinas virtuais para as empresas contratantes. A partir desse momento, não era mais preciso comprar ou alugar máquinas físicas. Isso passou a ser uma responsabilidade das empresas de cloud, que alugavam (e alugam) máquinas virtuais que rodam <q>em cima</q> de suas máquinas físicas.</p></li>
+</ul>
+<p>O conceito de serverless pode ser visto como a próxima evolução desse processo. Basicamente, a empresa contratante agora apenas implementa um conjunto de funções e faz o seu deployment em um sistema de cloud. Cada uma dessas funções possui um endpoint que é usado por aplicações clientes para solicitar a sua execução. Consequentemente, não existe mais aluguel de máquinas virtuais ou físicas e paga-se apenas pelo tempo de execução das funções mencionadas.</p>
+<p>Funções serverless são stateless, isto é, elas não guardam qualquer estado entre uma execução e outra. E elas podem ser implementadas em uma variedade de linguagens de programação.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
