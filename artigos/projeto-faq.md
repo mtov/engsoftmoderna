@@ -11,7 +11,10 @@ Segue a lista atual de perguntas:
 3. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
 4. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 5. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
-6. [O que significa o conceito de stateless?](#o-que-significa-o-conceito-de-stateless)
+6. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
+7. [Qual a diferença entre Strategy e Template Method?]()
+8. [O que significa o conceito de stateless?](#o-que-significa-o-conceito-de-stateless)
+
 
 * * * 
 
@@ -45,7 +48,7 @@ função é comparar dois elementos da lista segundo um outro critério.
 Logo, esse método `sort` está "aberto" a novos critérios de comparação. 
 Porém, suponha que você seja responsável por implementar um método 
 como `sort` em um contexto no qual sabemos, com grande certeza, que critérios 
-de ordenação alternativos não são necessários. Logo, nesse caso, não vale 
+de ordenação alternativos não serão necessários. Logo, nesse caso, não vale 
 a pena investir tempo em uma versão mais aberta, flexível e 
 extensível de `sort`.
 
@@ -85,6 +88,7 @@ teria que ser repetida nos três formatos do livro.
 
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
+
 
 ### 3. O que significa Separação entre Comandos e Queries? {.unnumbered}
 
@@ -129,6 +133,7 @@ query. Isso não deve influenciar a resposta dessa query
 a resposta de uma outra query (que, por exemplo, a gente 
 faça logo a seguir).
 
+
 ### 4. O que é ortogonalidade? {.unnumbered}
 
 Dois componentes de um projeto são ortogonais se mudanças em um deles 
@@ -154,6 +159,7 @@ Portanto, ortogonalidade é uma propriedade que costuma estar
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
 alta coesão e baixo acoplamento, tal como estudamos no 
 [Capítulo 5](../cap5.html#coes%C3%A3o).
+
 
 ### 5. O que é uma dependência circular? {.unnumbered}
 
@@ -185,35 +191,66 @@ implementação. Mas, por outro lado, o que o diagrama revela é que
 manutenções no pacote antigo (`awt`) introduziram também
 dependências para o pacote novo (`swing`).
 
-### 6. O que significa o conceito de stateless? {.unnumbered}
 
-Antes de responder, é importante explicar que esse conceito se aplica a aplicações distribuídas construídas em um modelo cliente/servidor. Mais especificamente, aos servidores de tais aplicações.
-
-Dizemos que um servidor é stateless quando ele não guarda qualquer informação sobre o estado de seus clientes. Consequentemente, todas as requisições feitas por clientes devem incluir todas as informações necessárias para o seu devido processamento pelo servidor.
-
-Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os seus clientes, após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.
-
-
-<!---
-### 4. Qual a diferença entre os padrões de projeto Proxy e Adaptador? {.unnumbered}
+### 6. Qual a diferença entre um Proxy e um Adaptador? {.unnumbered}
 
 Suponha um objeto que tenha uma interface `I`. 
 
-* Um **proxy** implementa a interface`I`, isto é, implementa todos os seus métodos.
+* Um **proxy** implementa a interface`I`, isto é, implementa todos 
+os seus métodos. Normalmente, um proxy é usado para implementar 
+requisitos não-funcionais, tais como segurança, persistência, 
+distribuição, etc.
 
-* Já um **adaptador** implementa uma outra interface, digamos que `I'` e 
+* Já um **adaptador** implementa uma outra interface, digamos que `J` e 
 fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
 lembre-se de um adaptador de tomadas do padrão novo para o antigo 
 ou vice-versa.
 
-Quando eu devo usar cada um desses padrões?
+### 7. Qual a diferença entre Strategy e Template Method? {.unnumbered}
 
-* Proxy: para implementar requisitos não-funcionais, tais como segurança, 
-persistência, distribuição, etc.
+Suponha uma classe X:
 
-* Adaptador: para compatibilizar interfaces diferentes.
+* Suponha que a implementação de X precisa usar um serviço Y,
+o qual possui implementações alternativas Y1, Y2, Y3, etc. Porém, X não 
+quer se comprometer com nenhuma dessas implementações. Nesse caso, 
+podemos usar o padrão de projeto **Strategy** para encapsular a 
+implementação de Y em uma hierarquia separada de classes e para permitir 
+que sejam criadas instâncias de X que usam determinadas classes de 
+tal hierarquia.
 
--->
+* Suponha agora que ao implementar X queremos definir o esqueleto
+de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma 
+parcial. Isso significa que as implementações de Y serão "completadas" 
+em subclasses de X. Nesse caso, podemos usar o padrão de projeto 
+**Template Method** para implementar esse esqueleto de Y na classe X.
+
+
+### 8. O que significa o conceito de stateless? {.unnumbered}
+
+Antes de responder, é importante explicar que esse conceito se 
+aplica a aplicações distribuídas construídas de acordo com uma
+arquitetura cliente/servidor. Mais especificamente, aos servidores 
+de tais aplicações.
+
+Dizemos que um servidor é stateless quando ele não armazena 
+qualquer informação sobre o estado de seus clientes. 
+Consequentemente, as requisições dos clientes devem incluir 
+todas as informações necessárias para o seu devido processamento 
+pelo servidor.
+
+Recomenda-se, por exemplo, que aplicações Web sejam stateless. 
+Os motivos são pelo menos os seguintes: escalabilidade e 
+confiabilidade, as quais são propriedades mais fáceis de serem 
+conseguidas quando os servidores são stateless. A confiabilidade 
+dos servidores melhora pelo simples fato de eles não terem que 
+restaurar qualquer informação sobre os clientes após uma 
+possível falha ou queda. A escalabilidade aumenta pelo fato de 
+eles não precisarem armazenar nada sobre seus clientes. 
+Por exemplo, após atender a uma requisição pode-se liberar 
+todos os recursos que foram alocados durante o seu processamento.
+
+
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
