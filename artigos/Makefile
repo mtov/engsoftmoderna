@@ -48,6 +48,9 @@ ddd: ddd.md
 projeto-faq: projeto-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
 
+padroes-faq: padroes-faq.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Padrões de Projeto" padroes-faq.md -o padroes-faq.html
+
 composite: composite.md
 	$(pandoc_bin) -T "Criando objetos compostos com o Padrão de Projeto Composite" composite.md -o composite.html
 

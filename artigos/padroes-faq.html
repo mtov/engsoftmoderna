@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Perguntas Frequentes sobre Padrões de Projeto – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="perguntas-frequentes-sobre-padrões-de-projeto">Perguntas Frequentes sobre Padrões de Projeto <a href="#perguntas-frequentes-sobre-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h1>
+<p>Neste artigo, respondemos perguntas sobre temas relacionados com padrões de projeto, isto é, sobre o <a href="../cap6.html">Capítulo 6</a> do livro.</p>
+<p>Segue a lista atual de perguntas:</p>
+<ol type="1">
+<li><a href="#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador">Qual a diferença entre um Proxy e um Adaptador?</a></li>
+<li><a href="">Qual a diferença entre Strategy e Template Method?</a></li>
+</ol>
+<hr />
+<h3 class="unnumbered" id="qual-a-diferença-entre-um-proxy-e-um-adaptador">1. Qual a diferença entre um Proxy e um Adaptador? <a href="#qual-a-diferença-entre-um-proxy-e-um-adaptador" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Suponha um objeto que tenha uma interface <code>I</code>.</p>
+<ul>
+<li><p>Um <strong>proxy</strong> implementa a interface<code>I</code>, isto é, implementa todos os seus métodos. Normalmente, um proxy é usado para implementar requisitos não-funcionais, tais como segurança, persistência, distribuição, etc.</p></li>
+<li><p>Já um <strong>adaptador</strong> implementa uma outra interface, digamos que <code>J</code> e fica responsável por adaptá-la para a interface <code>I</code>. Para ilustrar, lembre-se de um adaptador de tomadas do padrão novo para o antigo ou vice-versa.</p></li>
+</ul>
+<h3 class="unnumbered" id="qual-a-diferença-entre-strategy-e-template-method">2. Qual a diferença entre Strategy e Template Method? <a href="#qual-a-diferença-entre-strategy-e-template-method" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Suponha uma classe X:</p>
+<ul>
+<li><p>Suponha que a implementação de X precisa usar um serviço Y, o qual possui implementações alternativas Y1, Y2, Y3, etc. Porém, X não quer se comprometer com nenhuma dessas implementações. Nesse caso, podemos usar o padrão de projeto <strong>Strategy</strong> para encapsular a implementação de Y em uma hierarquia separada de classes e para permitir que sejam criadas instâncias de X que usam determinadas classes de tal hierarquia.</p></li>
+<li><p>Suponha agora que ao implementar X queremos definir o esqueleto de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma parcial. Isso significa que as implementações de Y serão <q>completadas</q> em subclasses de X. Nesse caso, podemos usar o padrão de projeto <strong>Template Method</strong> para implementar esse esqueleto de Y na classe X.</p></li>
+</ul>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

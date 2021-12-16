@@ -1,8 +1,8 @@
 # Perguntas Frequentes sobre Projeto de Software {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com projeto 
-de software e que não são abordados nos capítulos 
-[5](../cap5.html) e [6](../cap6.html) do livro. 
+de software e que não são abordados no [Capítulo 5](../cap5.html) do 
+livro. 
 
 Segue a lista atual de perguntas:
 
@@ -11,9 +11,7 @@ Segue a lista atual de perguntas:
 3. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
 4. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 5. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
-6. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
-7. [Qual a diferença entre Strategy e Template Method?]()
-8. [O que significa o conceito de stateless?](#o-que-significa-o-conceito-de-stateless)
+6. [O que significa o conceito de stateless?](#o-que-significa-o-conceito-de-stateless)
 
 
 * * * 
@@ -192,40 +190,7 @@ manutenções no pacote antigo (`awt`) introduziram também
 dependências para o pacote novo (`swing`).
 
 
-### 6. Qual a diferença entre um Proxy e um Adaptador? {.unnumbered}
-
-Suponha um objeto que tenha uma interface `I`. 
-
-* Um **proxy** implementa a interface`I`, isto é, implementa todos 
-os seus métodos. Normalmente, um proxy é usado para implementar 
-requisitos não-funcionais, tais como segurança, persistência, 
-distribuição, etc.
-
-* Já um **adaptador** implementa uma outra interface, digamos que `J` e 
-fica responsável por adaptá-la para a interface `I`. Para ilustrar, 
-lembre-se de um adaptador de tomadas do padrão novo para o antigo 
-ou vice-versa.
-
-### 7. Qual a diferença entre Strategy e Template Method? {.unnumbered}
-
-Suponha uma classe X:
-
-* Suponha que a implementação de X precisa usar um serviço Y,
-o qual possui implementações alternativas Y1, Y2, Y3, etc. Porém, X não 
-quer se comprometer com nenhuma dessas implementações. Nesse caso, 
-podemos usar o padrão de projeto **Strategy** para encapsular a 
-implementação de Y em uma hierarquia separada de classes e para permitir 
-que sejam criadas instâncias de X que usam determinadas classes de 
-tal hierarquia.
-
-* Suponha agora que ao implementar X queremos definir o esqueleto
-de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma 
-parcial. Isso significa que as implementações de Y serão "completadas" 
-em subclasses de X. Nesse caso, podemos usar o padrão de projeto 
-**Template Method** para implementar esse esqueleto de Y na classe X.
-
-
-### 8. O que significa o conceito de stateless? {.unnumbered}
+### 6. O que significa o conceito de stateless? {.unnumbered}
 
 Antes de responder, é importante explicar que esse conceito se 
 aplica a aplicações distribuídas construídas de acordo com uma
