@@ -11,7 +11,6 @@ Segue a lista atual de perguntas:
 3. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
 4. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 5. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
-6. [O que significa o conceito de stateless?](#o-que-significa-o-conceito-de-stateless)
 
 
 * * * 
@@ -188,32 +187,6 @@ então esperado que ele usasse código antigo, para facilitar a sua
 implementação. Mas, por outro lado, o que o diagrama revela é que
 manutenções no pacote antigo (`awt`) introduziram também
 dependências para o pacote novo (`swing`).
-
-
-### 6. O que significa o conceito de stateless? {.unnumbered}
-
-Antes de responder, é importante explicar que esse conceito se 
-aplica a aplicações distribuídas construídas de acordo com uma
-arquitetura cliente/servidor. Mais especificamente, aos servidores 
-de tais aplicações.
-
-Dizemos que um servidor é stateless quando ele não armazena 
-qualquer informação sobre o estado de seus clientes. 
-Consequentemente, as requisições dos clientes devem incluir 
-todas as informações necessárias para o seu devido processamento 
-pelo servidor.
-
-Recomenda-se, por exemplo, que aplicações Web sejam stateless. 
-Os motivos são pelo menos os seguintes: escalabilidade e 
-confiabilidade, as quais são propriedades mais fáceis de serem 
-conseguidas quando os servidores são stateless. A confiabilidade 
-dos servidores melhora pelo simples fato de eles não terem que 
-restaurar qualquer informação sobre os clientes após uma 
-possível falha ou queda. A escalabilidade aumenta pelo fato de 
-eles não precisarem armazenar nada sobre seus clientes. 
-Por exemplo, após atender a uma requisição pode-se liberar 
-todos os recursos que foram alocados durante o seu processamento.
-
 
 
 * * * 

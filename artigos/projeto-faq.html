@@ -114,7 +114,6 @@
 <li><a href="#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries">O que significa Separação entre Comandos e Queries?</a></li>
 <li><a href="#o-que-%C3%A9-ortogonalidade">O que é ortogonalidade?</a></li>
 <li><a href="#o-que-%C3%A9-uma-depend%C3%AAncia-circular">O que é uma dependência circular?</a></li>
-<li><a href="#o-que-significa-o-conceito-de-stateless">O que significa o conceito de stateless?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="princípios-de-projeto-são-leis-que-sempre-devem-ser-seguidas">1. Princípios de projeto são leis que sempre devem ser seguidas? <a href="#princípios-de-projeto-são-leis-que-sempre-devem-ser-seguidas" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -171,10 +170,6 @@
 <img src="./figs/dep-circular.png" style="width:70.0%" alt="Dependência circular entre dois pacotes da biblioteca de Java. Os retângulos maiores são pacotes (ou módulos) e os menores são classes." /><figcaption aria-hidden="true">Dependência circular entre dois pacotes da biblioteca de Java. Os retângulos maiores são pacotes (ou módulos) e os menores são classes.</figcaption>
 </figure>
 <p>O interessante nesse exemplo é que <code>swing</code> é um pacote para construção de interfaces gráficas mais novo do que <code>awt</code>. De certo modo, seria então esperado que ele usasse código antigo, para facilitar a sua implementação. Mas, por outro lado, o que o diagrama revela é que manutenções no pacote antigo (<code>awt</code>) introduziram também dependências para o pacote novo (<code>swing</code>).</p>
-<h3 class="unnumbered" id="o-que-significa-o-conceito-de-stateless">6. O que significa o conceito de stateless? <a href="#o-que-significa-o-conceito-de-stateless" class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Antes de responder, é importante explicar que esse conceito se aplica a aplicações distribuídas construídas de acordo com uma arquitetura cliente/servidor. Mais especificamente, aos servidores de tais aplicações.</p>
-<p>Dizemos que um servidor é stateless quando ele não armazena qualquer informação sobre o estado de seus clientes. Consequentemente, as requisições dos clientes devem incluir todas as informações necessárias para o seu devido processamento pelo servidor.</p>
-<p>Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os clientes após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
