@@ -7,7 +7,7 @@ arquitetura de software e que não são abordados no
 Segue a lista atual de perguntas:
 
 1. [O que significa o conceito de servidor stateless?](#o-que-significa-o-conceito-de-servidor-stateless)
-2. [2. O que é uma arquitetura serverless?]()
+2. [2. O que é uma arquitetura serverless?](#o-que-%C3%A9-uma-arquitetura-serverless)
 
 
 * * * 
@@ -40,20 +40,20 @@ todos os recursos que foram alocados durante o seu processamento.
 
 ### 2. O que é uma arquitetura serverless? {.unnumbered}
 
-Para explicar, vamos começar com um pouco de histórica:
+Para responder, vamos começar com um pouco de história:
 
 * Até a década de 1990, as empresas tinham que comprar servidores 
 físicos para hospedar seus sistemas. E também tinham que dispor de 
 um espaço físico para acomodá-los.
 
-* Em seguida, surgiram datacenters que hospedavam servidores físicos 
+* Então, surgiram datacenters que hospedavam servidores físicos 
 para terceiros. Com isso, não era mais preciso ter espaços próprios
 para instalar máquinas e, consequentemente, não era preciso se 
 preocupar com instalações elétricas, refrigeração, acesso à 
 Internet, etc.
 
 * Então, no início dos anos 2000, surgiram os sistemas de cloud 
-oferecendo máquinas virtuais para empresas contratantes. Por isso,
+oferecendo máquinas virtuais para as empresas contratantes. Assim,
 a compra ou aluguel de máquinas físicas deixou de ser obrigatória. 
 Isso passou a ser responsabilidade das empresas de cloud, que 
 começaram a alugar máquinas virtuais que executam "em cima" de suas 
@@ -62,15 +62,26 @@ máquinas físicas.
 O conceito de serverless pode ser visto como a próxima evolução 
 desse processo. Basicamente, a empresa contratante agora apenas 
 implementa um conjunto de funções e faz o seu deployment em um 
-sistema de cloud. Assim, não existe mais aluguel de 
+sistema de cloud. Portanto, não existe mais aluguel de 
 máquinas, sejam elas virtuais ou físicas. Em vez disso, paga-se apenas 
 pelo tempo de execução das funções mencionadas. Apenas quando ocorre um 
 determinado evento ou chamada é que essas funções são 
 carregadas, executadas e encerradas.
 
-Veja que funções serverless são stateless, isto é, elas não 
-guardam qualquer estado entre uma execução e outra. E elas podem 
-ser implementadas em uma variedade de linguagens de programação.
+Logo, esse modelo de pagamento é semelhante ao de certos serviços 
+utilitários, como energia elétrica. Por exemplo, você somente paga o 
+que usa de eletricidade. Se não tiver nenhum uso no mês, sua conta 
+também é zero. E se precisar aumentar o seu consumo, dentro de certos 
+limites, você tem certeza de que a companhia de eletricidade irá 
+conseguir prover a energia necessária.
+
+Funções serverless têm, pelo menos, as seguintes características:
+(1) elas são stateless, isto é, elas não guardam qualquer estado entre 
+uma execução e outra; (2) elas somente podem executar por um intervalo de
+tempo máximo, normalmente, da ordem de alguns minutos (após esse 
+intervalo elas são automaticamente encerradas pela plataforma de cloud); 
+(3) e elas podem ser implementadas em uma variedade de linguagens de 
+programação.
 
 
 * * * 
