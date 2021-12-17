@@ -40,35 +40,38 @@ todos os recursos que foram alocados durante o seu processamento.
 
 ### 2. O que é uma arquitetura serverless? {.unnumbered}
 
-Para explicar, vamos começar com uma recapitulação histórica:
+Para explicar, vamos começar com um pouco de histórica:
 
-* Décadas atrás, as empresas tinham que ter servidores físicos para 
-hospedar seus sistemas. Ou seja, além de comprar máquinas, elas
-tinham que dispor de um espaço físico para elas.
+* Até a década de 1990, as empresas tinham que comprar servidores 
+físicos para hospedar seus sistemas. E também tinham que dispor de 
+um espaço físico para acomodá-los.
 
 * Em seguida, surgiram datacenters que hospedavam servidores físicos 
-para terceiros. Com isso, não era preciso ter espaços próprios
+para terceiros. Com isso, não era mais preciso ter espaços próprios
 para instalar máquinas e, consequentemente, não era preciso se 
-preocupar com instalações elétricas, refrigeração, etc.
+preocupar com instalações elétricas, refrigeração, acesso à 
+Internet, etc.
 
-* Então, surgiram os sistemas de cloud oferecendo máquinas virtuais 
-para as empresas contratantes. A partir desse momento, não era mais 
-preciso comprar ou alugar máquinas físicas. Isso passou a ser 
-uma responsabilidade das empresas de cloud, que alugavam (e alugam)
-máquinas virtuais que rodam "em cima" de suas máquinas físicas. 
+* Então, no início dos anos 2000, surgiram os sistemas de cloud 
+oferecendo máquinas virtuais para empresas contratantes. Por isso,
+a compra ou aluguel de máquinas físicas deixou de ser obrigatória. 
+Isso passou a ser responsabilidade das empresas de cloud, que 
+começaram a alugar máquinas virtuais que executam "em cima" de suas 
+máquinas físicas. 
 
 O conceito de serverless pode ser visto como a próxima evolução 
 desse processo. Basicamente, a empresa contratante agora apenas 
 implementa um conjunto de funções e faz o seu deployment em um 
-sistema de cloud. Cada uma dessas funções possui um endpoint que é 
-usado por aplicações clientes para solicitar a sua execução. 
-Consequentemente, não existe mais aluguel de máquinas virtuais ou 
-físicas e paga-se apenas pelo tempo de execução das funções 
-mencionadas.
+sistema de cloud. Assim, não existe mais aluguel de 
+máquinas, sejam elas virtuais ou físicas. Em vez disso, paga-se apenas 
+pelo tempo de execução das funções mencionadas. Apenas quando ocorre um 
+determinado evento ou chamada é que essas funções são 
+carregadas, executadas e encerradas.
 
-Funções serverless são stateless, isto é, elas não guardam qualquer 
-estado entre uma execução e outra. E elas podem ser implementadas
-em uma variedade de linguagens de programação.
+Veja que funções serverless são stateless, isto é, elas não 
+guardam qualquer estado entre uma execução e outra. E elas podem 
+ser implementadas em uma variedade de linguagens de programação.
+
 
 * * * 
 
