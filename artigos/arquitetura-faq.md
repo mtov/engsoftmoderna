@@ -83,6 +83,18 @@ intervalo elas são automaticamente encerradas pela plataforma de cloud);
 (3) e elas podem ser implementadas em uma variedade de linguagens de 
 programação.
 
+O nome serverless explica-se então pelo fato de que os desenvolvedores
+não precisam se preocupar com instalação, configuração e 
+escalabilidade de servidores, sejam eles físicos ou virtuais.
+Essas preocupações ficam delegadas para a plataforma de 
+cloud.
+
+Por fim, as principais desvantagens de serverless são as seguintes:
+(1) a complexidade de gerenciar uma arquitetura constituída por um
+grande número de pequenas funções autônomas; (2) os riscos de alto
+acoplamento com uma determinada plataforma de cloud, tornando
+difícil uma mudança para uma outra plataforma. Esse último 
+problema é chamado de *vendor lock-in*.
 
 * * * 
 
