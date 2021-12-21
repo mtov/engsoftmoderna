@@ -109,15 +109,19 @@
 <p>Neste artigo, respondemos perguntas sobre temas relacionados com arquitetura de software e que não são abordados no <a href="../cap7.html">Capítulo 7</a> do livro.</p>
 <p>Segue a lista atual de perguntas:</p>
 <ol type="1">
+<li><a href="#o-que-%C3%A9-um-sistema-multi-tenant">O que é um sistema multi-tenant?</a></li>
 <li><a href="#o-que-significa-o-conceito-de-servidor-stateless">O que significa o conceito de servidor stateless?</a></li>
 <li><a href="#o-que-%C3%A9-uma-arquitetura-serverless">2. O que é uma arquitetura serverless?</a></li>
 </ol>
 <hr />
-<h3 class="unnumbered" id="o-que-significa-o-conceito-de-servidor-stateless">1. O que significa o conceito de servidor stateless? <a href="#o-que-significa-o-conceito-de-servidor-stateless" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-um-sistema-multi-tenant">1. O que é um sistema multi-tenant? <a href="#o-que-é-um-sistema-multi-tenant" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Um sistema multi-tenant (<q>multi-inquilino</q>) é aquele que pode atender simultaneamente a diversos clientes. Por exemplo, suponha que você desenvolve um sistema para controle acadêmico de escolas. Então, naturalmente, você quer atender a diversas escolas, as quais vão pagar uma assinatura mensal para uso do seu sistema. Porém, você gostaria também de desenvolver, manter e colocar em produção uma única instância do sistema, a qual será acessada por todas as escolas. Quando isso ocorre, dizemos que o sistema é multi-tenant.</p>
+<p>Por outro lado, se você tiver que manter instâncias e servidores diferentes para cada escola, o seu sistema é single-tenant. Ou seja, nesse caso, cada instância de execução atende a um único <q>inquilino</q></p>
+<h3 class="unnumbered" id="o-que-significa-o-conceito-de-servidor-stateless">2. O que significa o conceito de servidor stateless? <a href="#o-que-significa-o-conceito-de-servidor-stateless" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Antes de responder, é importante explicar que esse conceito se aplica a aplicações distribuídas construídas de acordo com uma arquitetura cliente/servidor. Mais especificamente, aos servidores de tais aplicações.</p>
 <p>Dizemos que um servidor é stateless quando ele não armazena qualquer informação sobre o estado de seus clientes. Consequentemente, as requisições dos clientes devem incluir todas as informações necessárias para o seu devido processamento pelo servidor.</p>
 <p>Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os clientes após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.</p>
-<h3 class="unnumbered" id="o-que-é-uma-arquitetura-serverless">2. O que é uma arquitetura serverless? <a href="#o-que-é-uma-arquitetura-serverless" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered" id="o-que-é-uma-arquitetura-serverless">3. O que é uma arquitetura serverless? <a href="#o-que-é-uma-arquitetura-serverless" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Para responder, vamos começar com um pouco de história:</p>
 <ul>
 <li><p>Até a década de 1990, as empresas tinham que comprar servidores físicos para hospedar seus sistemas. E também tinham que dispor de um espaço físico para acomodá-los.</p></li>

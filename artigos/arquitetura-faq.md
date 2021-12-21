@@ -6,14 +6,30 @@ arquitetura de software e que não são abordados no
 
 Segue a lista atual de perguntas:
 
-1. [O que significa o conceito de servidor stateless?](#o-que-significa-o-conceito-de-servidor-stateless)
-2. [2. O que é uma arquitetura serverless?](#o-que-%C3%A9-uma-arquitetura-serverless)
+1. [O que é um sistema multi-tenant?](#o-que-%C3%A9-um-sistema-multi-tenant)
+2. [O que significa o conceito de servidor stateless?](#o-que-significa-o-conceito-de-servidor-stateless)
+3. [2. O que é uma arquitetura serverless?](#o-que-%C3%A9-uma-arquitetura-serverless)
 
 
 * * * 
 
 
-### 1. O que significa o conceito de servidor stateless? {.unnumbered}
+### 1. O que é um sistema multi-tenant? {.unnumbered}
+
+Um sistema multi-tenant ("multi-inquilino") é aquele que pode atender 
+simultaneamente a diversos clientes. Por exemplo, suponha que você desenvolve 
+um sistema para controle acadêmico de escolas. Então, naturalmente, 
+você quer atender a diversas escolas, as quais vão pagar uma assinatura 
+mensal para uso do seu sistema. Porém, você gostaria também de desenvolver,
+manter e colocar em produção uma única instância do sistema, a qual
+será acessada por todas as escolas. Quando isso ocorre, dizemos que o 
+sistema possui uma arquitetura multi-tenant.
+
+Por outro lado, se você tiver que manter instâncias de execução 
+diferentes para cada cliente, o seu sistema é single-tenant.
+
+
+### 2. O que significa o conceito de servidor stateless? {.unnumbered}
 
 Antes de responder, é importante explicar que esse conceito se 
 aplica a aplicações distribuídas construídas de acordo com uma
@@ -38,7 +54,7 @@ Por exemplo, após atender a uma requisição pode-se liberar
 todos os recursos que foram alocados durante o seu processamento.
 
 
-### 2. O que é uma arquitetura serverless? {.unnumbered}
+### 3. O que é uma arquitetura serverless? {.unnumbered}
 
 Para responder, vamos começar com um pouco de história:
 
