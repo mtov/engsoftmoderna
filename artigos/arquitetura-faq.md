@@ -28,6 +28,21 @@ sistema possui uma arquitetura multi-tenant.
 Por outro lado, se você tiver que manter instâncias de execução 
 diferentes para cada cliente, o seu sistema é single-tenant.
 
+Por que o conceito de multi-tenant é importante? Em muitos casos,
+é fácil perceber que um sistema, desde o primeiro dia, deverá
+ser multi-tenant. No entanto, em outros casos, isso pode não
+ser tão claro. Por isso, quando for planejar a arquitetura de
+um sistema, sempre vale a pena avaliar a adoção de uma solução
+multi-tenant, mesmo que ela não seja necessária nos seus rimeiros 
+anos de vida.
+
+Arquiteturas multi-tenant são apenas úteis em sistemas SaaS
+("software as a Service")? Não necessariamente. Um exemplo é
+o Stack Overflow, que além do site principal, possui outros
+sites de perguntas e respostas, por exemplo sobre Matemática,
+Estatística, Teoria da Computação, Engenharia de Software, etc.
+No entanto, as perguntas e respostas de todos eles são 
+tratadas por uma única instância do sistema. 
 
 ### 2. O que significa o conceito de servidor stateless? {.unnumbered}
 
