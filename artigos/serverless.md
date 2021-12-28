@@ -55,7 +55,7 @@ mais aluguel de máquinas, sejam elas virtuais ou físicas.
 A próxima figura resume essa linha do tempo que acabamos de
 descrever:
 
-    até 1990:  datacenters próprios  
+    até 1990:  datacenters próprios (on-premises)
                     ⇓
     1990-2000: colocation (compartilhamento de infraestrutura)
                     ⇓
@@ -69,10 +69,10 @@ escalabilidade de servidores, sejam eles físicos ou virtuais.
 Ou seja, continuam existindo servidores, mas eles são mantidos e 
 configurados pelas empresas de cloud.
 
-## Modelo de Pagamento {.unnumbered}
+## Modelo de Cobrança {.unnumbered}
 
-Com serverless, paga-se pelo tempo de execução das **funções 
-serverless**. Apenas quando ocorre um determinado evento 
+Com serverless, paga-se pelo tempo de execução das funções 
+serverles. Ou seja, apenas quando ocorre um determinado evento 
 ou chamada é que as funções são carregadas, executadas, encerradas
 e cobradas do cliente.
 
@@ -139,16 +139,37 @@ você encontra outros exemplos de funções serverless, podendo
 também chamá-las a partir de seu browser.
 
 
-## Desvantagens {.unnumbered}
+## Comentários Finais {.unnumbered}
 
-As principais desvantagens de serverless são as seguintes:
+Para explicar as vantagens de serverless, os autores de um 
+[artigo](https://m-cacm.acm.org/magazines/2021/5/252179-what-serverless-computing-is-and-should-become/fulltext)
+publicado em maio de 2021 na revista Communications da ACM
+fazem uma comparação interessante entre esse tipo de arquitetura
+e linguagens de programação de alto nível:
+
+> Assim como linguagens de programação de alto nível ocultam detalhes 
+de como uma CPU opera, arquiteturas serverless ocultam diversos detalhes 
+relativos à construção de sistemas distribuídos confiáveis, escalonáveis
+e seguros.
+
+Por outro lado, as principais desvantagens de serverless são as 
+seguintes:
 
 * Complexidade de gerenciar uma arquitetura constituída por um
-grande número de pequenas funções autônomas; 
+grande número de pequenas funções autônomas.
+
+* Maior latência, principalmente na primeira execução de uma 
+função serverless. Essa latência extra deve-se à necessidade
+de criar um container para executar uma função serverless
+e, em seguida, copiar o código da função para o container criado. 
+Só então a função é executada. A literatura de serverless refere-se 
+a esse problema como **problema da partida a frio** (*cold start 
+problem*). Ele é mais crítico na primeira execução de uma função 
+serverless, pois depois o container pode ser mantido em cache por um certo tempo.
 
 * Riscos de alto acoplamento com a plataforma de cloud, tornando mais 
 difícil uma mudança para uma outra plataforma. Esse  problema é 
-chamado de *vendor lock-in*.
+chamado de **vendor lock-in**.
 
 
 * * * 
