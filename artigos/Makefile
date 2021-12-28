@@ -69,6 +69,9 @@ arquitetura-limpa: arquitetura-limpa.md
 arquitetura-hexagonal: arquitetura-hexagonal.md
 	$(pandoc_bin) -T "O que é uma Arquitetura Hexagonal" arquitetura-hexagonal.md -o arquitetura-hexagonal.html
 
+serverless: serverless.md
+	$(pandoc_bin) -T "O que é uma Arquitetura Serverless" serverless.md -o serverless.html
+
 testes-faq: testes-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Testes de Software" testes-faq.md -o testes-faq.html
 

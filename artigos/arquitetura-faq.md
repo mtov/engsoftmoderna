@@ -8,8 +8,7 @@ Segue a lista atual de perguntas:
 
 1. [O que é uma camada de domínio?](#o-que-%C3%A9-uma-camada-de-dom%C3%ADnio)
 2. [O que é um sistema multi-tenant?](#o-que-%C3%A9-um-sistema-multi-tenant)
-3. [O que é servidor stateless?](#o-que-%C3%A9-um-servidor-stateless)
-4. [O que é uma arquitetura serverless?](#o-que-%C3%A9-uma-arquitetura-serverless)
+3. [O que é um servidor stateless?](#o-que-%C3%A9-um-servidor-stateless)
 
 
 * * * 
@@ -19,13 +18,16 @@ Segue a lista atual de perguntas:
 Esse termo, na prática, é usado para referenciar a camada de um 
 sistema que trata da sua lógica de negócio. Por exemplo, se um 
 sistema seguir uma [arquitetura com três camadas](../cap7.html#arquitetura-em-tr%C3%AAs-camadas), o domínio corresponde 
-à camada do meio.
+à camada do meio. Isto é, a camada que fica entre a camada
+de interface com o usuário e a camada de persistência.
 
-Muitas vezes, usa-se também o termo modelo de domínio 
-(*domain model*). Isso ocorre quando o interesse principal está no 
-projeto da camada de domínio, por exemplo, na interface pública de 
-suas principais classes. 
+Muitas vezes, usa-se também o termo **modelo de domínio** 
+(*domain model*), principalmente quando queremos focar no projeto 
+da camada de domínio, por exemplo, quando queremos ressaltar
+quais são as suas principais classes e interfaces. 
 
+Se quiser saber mais sobre o camadas e modelos de domínio, você pode 
+consultar nosso artigo sobre [Domain-Driven Design (DDD)](./ddd.html).
 
 ### 2. O que é um sistema multi-tenant? {.unnumbered}
 
@@ -82,64 +84,6 @@ eles não precisarem armazenar nada sobre seus clientes.
 Por exemplo, após atender a uma requisição pode-se liberar 
 todos os recursos que foram alocados durante o seu processamento.
 
-
-### 4. O que é uma arquitetura serverless? {.unnumbered}
-
-Para responder, vamos começar com um pouco de história:
-
-* Até a década de 1990, as empresas tinham que comprar servidores 
-físicos para hospedar seus sistemas. E também tinham que dispor de 
-um espaço físico para acomodá-los.
-
-* Então, surgiram datacenters que hospedavam servidores físicos 
-para terceiros. Com isso, não era mais preciso ter espaços próprios
-para instalar máquinas e, consequentemente, não era preciso se 
-preocupar com instalações elétricas, refrigeração, acesso à 
-Internet, etc.
-
-* Então, no início dos anos 2000, surgiram os sistemas de cloud 
-oferecendo máquinas virtuais para as empresas contratantes. Assim,
-a compra ou aluguel de máquinas físicas deixou de ser obrigatória. 
-Isso passou a ser responsabilidade das empresas de cloud, que 
-começaram a alugar máquinas virtuais que executam "em cima" de suas 
-máquinas físicas. 
-
-O conceito de serverless pode ser visto como a próxima evolução 
-desse processo. Basicamente, a empresa contratante agora apenas 
-implementa um conjunto de funções e faz o seu deployment em um 
-sistema de cloud. Portanto, não existe mais aluguel de 
-máquinas, sejam elas virtuais ou físicas. Em vez disso, paga-se apenas 
-pelo tempo de execução das funções mencionadas. Apenas quando ocorre um 
-determinado evento ou chamada é que essas funções são 
-carregadas, executadas e encerradas.
-
-Logo, esse modelo de pagamento é semelhante ao de certos serviços 
-utilitários, como energia elétrica. Por exemplo, você somente paga o 
-que usa de eletricidade. Se não tiver nenhum uso no mês, sua conta 
-também é zero. E se precisar aumentar o seu consumo, dentro de certos 
-limites, você tem certeza de que a companhia de eletricidade irá 
-conseguir prover a energia necessária.
-
-Funções serverless têm, pelo menos, as seguintes características:
-(1) elas são stateless, isto é, elas não guardam qualquer estado entre 
-uma execução e outra; (2) elas somente podem executar por um intervalo de
-tempo máximo, normalmente, da ordem de alguns minutos (após esse 
-intervalo elas são automaticamente encerradas pela plataforma de cloud); 
-(3) e elas podem ser implementadas em uma variedade de linguagens de 
-programação.
-
-O nome serverless explica-se então pelo fato de que os desenvolvedores
-não precisam se preocupar com instalação, configuração e 
-escalabilidade de servidores, sejam eles físicos ou virtuais.
-Essas preocupações ficam delegadas para a plataforma de 
-cloud.
-
-Por fim, as principais desvantagens de serverless são as seguintes:
-(1) a complexidade de gerenciar uma arquitetura constituída por um
-grande número de pequenas funções autônomas; (2) os riscos de alto
-acoplamento com uma determinada plataforma de cloud, tornando
-difícil uma mudança para uma outra plataforma. Esse último 
-problema é chamado de *vendor lock-in*.
 
 * * * 
 

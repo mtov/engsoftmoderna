@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>O que é uma Arquitetura Serverless – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
+  --->
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <style>
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
+  }
+  .anchor-link {
+    opacity: 0.17;
+    font-size: 70%;
+  }
+  </style>
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504"
+      onclick="trackOutboundLink('https://www.amazon.com.br/gp/product/6500019504', 'amazon-caps', 'amazon-caps'); return false;">
+      Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna"
+      onclick="trackOutboundLink('https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna', 'submarino-caps', 'submarino-caps'); return false;">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
+      onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
+      MercadoLivre</a>.
+</p>
+
+<!---
+
+<p>
+<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</p>
+
+
+<p> <b> Novidade:</b> Estamos também no 
+<a href="https://twitter.com/engsoftmoderna"
+  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
+  Twitter</a>.
+</p>
+
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="o-que-é-uma-arquitetura-serverless">O que é uma Arquitetura Serverless?</h1>
+<h2 class="unnumbered" id="introdução">Introdução</h2>
+<p>Neste artigo, iremos descrever o conceito de arquiteturas serverless, que é um tipo de arquitetura que tem sido cada vez mais adotado por algumas empresas de software.</p>
+<p>Iremos começar descrevendo o contexto histórico, pois achamos que para entender os conceitos de serverless é importante conhecer a evolução dos procedimentos de compra, aluguel, instalação, configuração e disponibilização de servidores de software.</p>
+<p>Em seguida, iremos apresentar o conceito de funções serverless e mostrar um exemplo desse tipo de função. Por fim, iremos listar algumas desvantagens de arquiteturas serverless.</p>
+<h2 class="unnumbered" id="histórico">Histórico</h2>
+<p>Até a década de 1990, as empresas tinham que comprar servidores físicos para hospedar seus sistemas. E também tinham que dispor de um espaço físico para acomodá-los, chamado de <strong>data center</strong> ou então de centro de processamento de dados, que era o termo mais comum nessa época. Atualmente, costuma-se também chamar esse modelo de <strong>on-premises</strong>, pois os servidores estão localizados nas próprias instalações da empresa que vai usar um sistema (em inglês, a expressão <em>on premises</em> designa os terrenos e as edificações que são de propriedade de uma empresa ou organização).</p>
+<p>Então, também na década de 1990, começaram a surgir data centers que hospedavam servidores físicos para terceiros. Com isso, não era mais preciso ter espaços próprios para instalar máquinas e, consequentemente, não era preciso se preocupar com instalações elétricas, climatização, no-breaks, acesso à Internet, controle de acesso físico às máquinas, etc. Esses data centers são chamados de <strong>colocation</strong>, pois no mesmo local são instalados servidores de empresas diferentes.</p>
+<p>Prosseguindo, no início dos anos 2000, surgiram as <strong>plataformas de cloud</strong> oferecendo máquinas virtuais para as empresas contratantes. Assim, a compra ou aluguel de máquinas físicas deixou de ser obrigatória. Isso passou a ser responsabilidade das empresas de cloud, que alugam máquinas virtuais que executam <q>em cima</q> de suas máquinas físicas.</p>
+<p>O conceito de serverless pode ser visto como a próxima evolução desse processo. Basicamente, a empresa que precisa desenvolver um sistema implementa um conjunto de funções – normalmente, chamadas de <strong>funções serverless</strong> ou <strong>funções lambda</strong> – e copia as mesmas para um sistema de cloud. Portanto, não existe mais aluguel de máquinas, sejam elas virtuais ou físicas.</p>
+<p>A próxima figura resume essa linha do tempo que acabamos de descrever:</p>
+<pre><code>até 1990:  datacenters próprios  
+                ⇓
+1990-2000: colocation (compartilhamento de infraestrutura)
+                ⇓
+2000-hoje: plataformas de cloud (com aluguel de servidores virtuais)
+                ⇓
+2010-hoje: arquiteturas serverless (sem aluguel de servidores físicos ou virtuais)</code></pre>
+<p>O nome serverless explica-se pelo fato de que os desenvolvedores não precisam se preocupar com instalação, configuração e escalabilidade de servidores, sejam eles físicos ou virtuais. Ou seja, continuam existindo servidores, mas eles são mantidos e configurados pelas empresas de cloud.</p>
+<h2 class="unnumbered" id="modelo-de-pagamento">Modelo de Pagamento</h2>
+<p>Com serverless, paga-se pelo tempo de execução das <strong>funções serverless</strong>. Apenas quando ocorre um determinado evento ou chamada é que as funções são carregadas, executadas, encerradas e cobradas do cliente.</p>
+<p>Esse modelo de pagamento é semelhante ao de serviços utilitários, como energia elétrica. Por exemplo, você somente paga o que usa de eletricidade. Se não tiver nenhum uso no mês, sua conta será zero. E se precisar aumentar o seu consumo, dentro de certos limites, você tem certeza de que a companhia de eletricidade irá prover a energia necessária.</p>
+<p>No entanto, mesmo não havendo pagamento pelo tempo em que as funções ficaram ociosas, não pode-se afirmar que uma solução baseada em serverless é sempre mais barata. Isso vai depender também dos preços cobrados pelo provedor de cloud para execução de funções serverless e para aluguel de máquinas virtuais. E também do preço para comprar servidores físicos e mantê-los em data centers particulares ou em espaços de colocation.</p>
+<h2 class="unnumbered" id="funções-serverless">Funções Serverless</h2>
+<p>Funções serverless – também chamadas, dependendo da plataforma de cloud, de funções lambda ou<br />
+– têm as seguintes características principais:</p>
+<ul>
+<li><p>Elas são stateless, isto é, elas não guardam qualquer estado entre uma execução e outra.</p></li>
+<li><p>Elas executam por um intervalo de tempo máximo, normalmente, da ordem de alguns minutos. Após esse intervalo, elas são encerradas pela plataforma de cloud.</p></li>
+<li><p>Elas podem ser implementadas em uma variedade de linguagens de programação.</p></li>
+</ul>
+<h4 class="unnumbered" id="exemplo">Exemplo</h4>
+<p>A Netlify é uma empresa de cloud que oferece um serviço serverless. A seguir mostramos um exemplo de função serverless para a plataforma de cloud da Netlify:</p>
+<pre><code>exports.handler = async (event, context) =&gt; {
+  return {
+    statusCode: 200,
+    body: &quot;Hello, World&quot;
+  };
+};</code></pre>
+<p>Como pode ser visto, a função retorna um objeto com dois campos: o primeiro é o código de status da chamada, no caso igual a 200 que indica que a requisição foi processada com sucesso; o segundo é o corpo da resposta, o qual corresponde à string <q>Hello, World</q></p>
+<p>Para adotar uma arquitetura serverless, um cliente da Netlify deve implementar um conjunto de funções semelhantes a essa que acabamos de mostrar e copiá-las para uma determinada pasta de sua conta na plataforma. Feito isso, pode-se chamar a função por meio da seguinte URL:</p>
+<p><a href="https://functions.netlify.com/.netlify/functions/hello">https://functions.netlify.com/.netlify/functions/hello</a></p>
+<p>Na seguinte <a href="https://functions.netlify.com/playground/">página</a>, você encontra outros exemplos de funções serverless, podendo também chamá-las a partir de seu browser.</p>
+<h2 class="unnumbered" id="desvantagens">Desvantagens</h2>
+<p>As principais desvantagens de serverless são as seguintes:</p>
+<ul>
+<li><p>Complexidade de gerenciar uma arquitetura constituída por um grande número de pequenas funções autônomas;</p></li>
+<li><p>Riscos de alto acoplamento com a plataforma de cloud, tornando mais difícil uma mudança para uma outra plataforma. Esse problema é chamado de <em>vendor lock-in</em>.</p></li>
+</ul>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
