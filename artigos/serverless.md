@@ -52,8 +52,12 @@ chamadas de **funções serverless** ou **funções lambda** -- e
 copia as mesmas para um sistema de cloud. Portanto, não existe 
 mais aluguel de máquinas, sejam elas virtuais ou físicas. 
 
-A próxima figura resume essa linha do tempo que acabamos de
-descrever:
+A próxima figura compara essas alternativas para uso de servidores 
+e construção de aplicações.
+
+![Comparando On-Premises, Colocation, Cloud e Serverless](./figs/serverless.svg){width=95%}
+
+<!---
 
     até 1990:  datacenters próprios (on-premises)
                     ⇓
@@ -62,6 +66,7 @@ descrever:
     2000-hoje: plataformas de cloud (com aluguel de servidores virtuais)
                     ⇓
     2010-hoje: arquiteturas serverless (sem aluguel de servidores físicos ou virtuais)
+-->
 
 O nome serverless explica-se pelo fato de que os desenvolvedores
 não precisam se preocupar com instalação, configuração e 
@@ -83,8 +88,8 @@ E se precisar aumentar o seu consumo, dentro de certos limites,
 você tem certeza de que a companhia de eletricidade irá prover a 
 energia necessária.
 
-No entanto, mesmo não havendo pagamento pelo tempo em que as funções
-ficaram ociosas, não pode-se afirmar que uma solução baseada em 
+No entanto, mesmo não havendo pagamento pelo tempo de ociosidade
+das funções, não se pode afirmar que uma solução baseada em 
 serverless é sempre mais barata. Isso vai depender também dos preços 
 cobrados pelo provedor de cloud para execução de funções serverless 
 e para aluguel de máquinas virtuais. E também do preço para comprar 
@@ -169,7 +174,45 @@ serverless, pois depois o container pode ser mantido em cache por um certo tempo
 
 * Riscos de alto acoplamento com a plataforma de cloud, tornando mais 
 difícil uma mudança para uma outra plataforma. Esse  problema é 
-chamado de **vendor lock-in**.
+chamado de **dependência de fornecedores** (*vendor lock-in*).
+Analisando o código da função de exemplo mostrado acima, esse
+problema pode não ficar claro, pois ele parece bastante com o código
+de uma função normal em JavaScript. Porém, a dependência e o acoplamento com a 
+plataforma de cloud começam a surgir quando a função serverless 
+faz uso de outros serviços oferecidos pela plataforma, como autenticação,
+filas de mensagens, logging, bancos de dados, etc.
+
+## Exercícios  {.unnumbered}
+
+1. Suponha uma agenda de compromissos construída usando-se uma arquitetura
+baseada em funções serverless. Mostra-se abaixo uma das funções dessa
+aplicação, a qual retorna todos os compromissos inseridos na agenda
+(esse código foi copiado do 
+[repositório](https://github.com/pmuens/serverless-book) de um livro 
+sobre serverless). Qual o problema -- ou desvantagem de serverless, conforme 
+discutido na seção final do artigo -- fica mais claro ao analisarmos o 
+código dessa função? Justifique brevemente sua resposta.
+
+```
+'use strict';
+
+const AWS = require('aws-sdk');
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
+
+module.exports = (event, callback) => {
+  const params = {
+    TableName: 'todos',
+  };
+
+  return dynamoDb.scan(params, (error, data) => {
+    if (error) {
+      callback(error);
+    }
+    callback(error, data.Items);
+  });
+};
+```
+
 
 
 * * * 
