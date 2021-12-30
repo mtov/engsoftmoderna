@@ -2,7 +2,7 @@ from: markdown
 to: html5	
 
 metadata:	
-  title: Engenharia de Software Moderna	(Livro Digital)
+  title: Engenharia de Software Moderna
   author:	
   - Marco Tulio Valente	
 
