@@ -38,7 +38,7 @@ chamados de **colocation**, pois no mesmo local são instalados
 servidores de várias empresas.
 
 
-Prosseguindo, no início dos anos 2000, surgiram então as **plataformas 
+Prosseguindo, no início dos anos 2000, surgiram as **plataformas 
 de cloud** oferecendo servidores virtuais para as empresas contratantes. 
 Assim, a compra ou aluguel de servidores físicos deixou de ser obrigatória. 
 Isso passou a ser responsabilidade das empresas de cloud, que 
@@ -77,7 +77,7 @@ então igual a um valor mínimo. E se precisar aumentar o seu consumo,
 dentro de certos limites, você tem certeza de que a companhia de 
 eletricidade irá prover a energia necessária.
 
-Porém é importante ressaltar que, mesmo não havendo pagamento pelo tempo 
+Porém, mesmo não havendo pagamento pelo tempo 
 de ociosidade das funções, uma solução baseada em serverless não é 
 sempre mais barata. Isso vai depender também dos preços cobrados pelo 
 provedor de cloud para execução de funções serverless e para aluguel de 
@@ -98,7 +98,7 @@ encerradas pela plataforma de cloud.
 * Elas podem ser implementadas em uma variedade de linguagens de 
 programação.
 
-#### Exemplo {.unnumbered}
+##### Exemplo {.unnumbered}
 
 A Netlify é uma empresa de cloud que oferece um serviço serverless.
 A seguir mostramos um exemplo de função serverless para a
@@ -118,7 +118,7 @@ o primeiro é o código de status da chamada, no caso igual a 200,
 o que sinaliza que a requisição foi processada com sucesso; o segundo
 é o corpo da resposta, o qual corresponde à string "Hello, World"
 
-Então, pode-se chamar essa função por meio da seguinte URL:
+Pode-se chamar essa função por meio da seguinte URL:
 
 [https://functions.netlify.com/.netlify/functions/hello](https://functions.netlify.com/.netlify/functions/hello)
 
@@ -166,9 +166,9 @@ pois depois o container pode ser mantido em cache por um certo tempo.
 difícil uma mudança para uma outra plataforma. Esse  problema é 
 chamado de **dependência de fornecedores** (*vendor lock-in*).
 Analisando a função de exemplo acima, esse problema pode não ficar 
-claro, pois seu código parece bastante com o de uma função normal 
-em JavaScript. Porém, a dependência e o acoplamento com a plataforma 
-de cloud surgem quando a função serverless faz uso de outros serviços 
+claro, pois seu código parece bastante com uma função normal 
+em JavaScript. Porém, o acoplamento com a plataforma 
+de cloud surge quando a função serverless faz uso de outros serviços 
 oferecidos pela plataforma, como autenticação, filas de mensagens, 
 logging, bancos de dados, etc.
 
@@ -181,11 +181,11 @@ implementados por meio de funções serverless.
 1. Suponha uma agenda de compromissos construída usando-se uma arquitetura
 baseada em funções serverless. Mostra-se abaixo uma das funções dessa
 aplicação, a qual retorna todos os compromissos inseridos na agenda
-(esse código foi copiado do 
-[repositório](https://github.com/pmuens/serverless-book) de um livro 
-sobre serverless). Qual a desvantagem de serverless, conforme 
-discutido na seção final do artigo, fica mais clara ao analisarmos o 
-código dessa função? Justifique brevemente sua resposta.
+(esse código foi copiado do seguinte
+[repositório](https://github.com/pmuens/serverless-book). Qual a 
+desvantagem de serverless, conforme discutido na seção final do artigo, 
+fica mais clara ao analisarmos o código dessa função? Justifique brevemente 
+sua resposta.
 
 ```
 'use strict';

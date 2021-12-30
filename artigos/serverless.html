@@ -65,7 +65,7 @@
 <div class="col-md-offset-1 col-lg-offset-3">
 
 <p>
-<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/foto-capitulos-html.jpg"></a>
+<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
 </p>
 
 <p>
@@ -87,20 +87,6 @@
       MercadoLivre</a>.
 </p>
 
-<!---
-
-<p>
-<a href="https://twitter.com/engsoftmoderna?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="pt" data-show-count="true">Follow @engsoftmoderna</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</p>
-
-
-<p> <b> Novidade:</b> Estamos também no 
-<a href="https://twitter.com/engsoftmoderna"
-  onclick="trackOutboundLink('https://twitter.com/engsoftmoderna', 'twitter', 'twitter'); return false;">
-  Twitter</a>.
-</p>
-
---->
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -113,7 +99,7 @@
 <h2 class="unnumbered" id="histórico">Histórico</h2>
 <p>Até a década de 1990, as empresas tinham que comprar servidores físicos para hospedar seus sistemas. E também tinham que dispor de um espaço físico para acomodá-los, chamado de <strong>data center</strong> ou então de centro de processamento de dados, que era inclusive o termo mais comum nessa época. Atualmente, costuma-se também chamar esse modelo de <strong>on-premises</strong>, pois os servidores estão localizados nas próprias instalações da empresa que vai usar o sistema (em inglês, a expressão <em>on premises</em> designa os terrenos e as edificações de propriedade de uma empresa).</p>
 <p>Em seguida, mas ainda na década de 1990, começaram a surgir data centers que hospedavam servidores físicos para terceiros. Com isso, não era mais preciso ter espaços próprios para instalar máquinas e, consequentemente, não era preciso se preocupar com instalações elétricas, climatização, no-breaks, acesso à Internet, controle de acesso físico às máquinas, etc. Esses data centers são chamados de <strong>colocation</strong>, pois no mesmo local são instalados servidores de várias empresas.</p>
-<p>Prosseguindo, no início dos anos 2000, surgiram então as <strong>plataformas de cloud</strong> oferecendo servidores virtuais para as empresas contratantes. Assim, a compra ou aluguel de servidores físicos deixou de ser obrigatória. Isso passou a ser responsabilidade das empresas de cloud, que alugam servidores virtuais que executam <q>em cima</q> de suas máquinas físicas.</p>
+<p>Prosseguindo, no início dos anos 2000, surgiram as <strong>plataformas de cloud</strong> oferecendo servidores virtuais para as empresas contratantes. Assim, a compra ou aluguel de servidores físicos deixou de ser obrigatória. Isso passou a ser responsabilidade das empresas de cloud, que alugam servidores virtuais que executam <q>em cima</q> de suas máquinas físicas.</p>
 <p>O conceito de serverless pode ser visto como a próxima evolução desse processo. Basicamente, a empresa que precisa desenvolver um sistema implementa um conjunto de funções – normalmente, chamadas de <strong>funções serverless</strong> ou <strong>funções lambda</strong> – e copia as mesmas para um sistema de cloud. Portanto, não existe mais aluguel de servidores, sejam eles virtuais ou físicos.</p>
 <p>A próxima figura compara essas alternativas para uso de servidores e construção de aplicações.</p>
 <figure>
@@ -123,7 +109,7 @@
 <h2 class="unnumbered" id="modelo-de-cobrança">Modelo de Cobrança</h2>
 <p>Com serverless, paga-se pelo tempo de execução das funções serverless. Ou seja, apenas quando ocorre um determinado evento ou chamada é que as funções são carregadas, executadas, encerradas e cobradas do cliente.</p>
 <p>Esse modelo de pagamento é semelhante ao de serviços utilitários, como energia elétrica. Por exemplo, você somente paga o que usa de eletricidade. Se não tiver nenhum uso no mês, sua conta será zero ou então igual a um valor mínimo. E se precisar aumentar o seu consumo, dentro de certos limites, você tem certeza de que a companhia de eletricidade irá prover a energia necessária.</p>
-<p>Porém é importante ressaltar que, mesmo não havendo pagamento pelo tempo de ociosidade das funções, uma solução baseada em serverless não é sempre mais barata. Isso vai depender também dos preços cobrados pelo provedor de cloud para execução de funções serverless e para aluguel de servidores virtuais. E também do preço para comprar servidores físicos e mantê-los em data centers ou em espaços de colocation.</p>
+<p>Porém, mesmo não havendo pagamento pelo tempo de ociosidade das funções, uma solução baseada em serverless não é sempre mais barata. Isso vai depender também dos preços cobrados pelo provedor de cloud para execução de funções serverless e para aluguel de servidores virtuais. E também do preço para comprar servidores físicos e mantê-los em data centers ou em espaços de colocation.</p>
 <h2 class="unnumbered" id="funções-serverless">Funções Serverless</h2>
 <p>Funções serverless têm as seguintes características principais:</p>
 <ul>
@@ -131,7 +117,7 @@
 <li><p>Elas executam por um intervalo de tempo máximo, normalmente, da ordem de alguns minutos. Após esse intervalo, elas são automaticamente encerradas pela plataforma de cloud.</p></li>
 <li><p>Elas podem ser implementadas em uma variedade de linguagens de programação.</p></li>
 </ul>
-<h4 class="unnumbered" id="exemplo">Exemplo</h4>
+<h5 class="unnumbered" id="exemplo">Exemplo</h5>
 <p>A Netlify é uma empresa de cloud que oferece um serviço serverless. A seguir mostramos um exemplo de função serverless para a plataforma de cloud dessa empresa:</p>
 <pre><code>exports.handler = async (event, context) =&gt; {
   return {
@@ -140,7 +126,7 @@
   };
 };</code></pre>
 <p>Como pode ser visto, a função retorna um objeto com dois campos: o primeiro é o código de status da chamada, no caso igual a 200, o que sinaliza que a requisição foi processada com sucesso; o segundo é o corpo da resposta, o qual corresponde à string <q>Hello, World</q></p>
-<p>Então, pode-se chamar essa função por meio da seguinte URL:</p>
+<p>Pode-se chamar essa função por meio da seguinte URL:</p>
 <p><a href="https://functions.netlify.com/.netlify/functions/hello">https://functions.netlify.com/.netlify/functions/hello</a></p>
 <p>Concluindo, para adotar uma arquitetura serverless, um cliente da Netlify deve implementar um conjunto de funções semelhantes a essa que acabamos de mostrar e copiá-las para sua conta na plataforma.</p>
 <p>Na seguinte <a href="https://functions.netlify.com/playground/">página</a>, você encontra outros exemplos de funções serverless.</p>
@@ -153,12 +139,12 @@
 <ul>
 <li><p>Complexidade de gerenciar uma arquitetura constituída por um grande número de pequenas funções. Na verdade, cada função serverless é uma aplicação autônoma, no sentido de que ela deve importar todas as dependências necessárias para a sua execução. Isso inclui bibliotecas de terceiros e também outros módulos da aplicação, como módulos de domínio.</p></li>
 <li><p>Maior latência, principalmente na primeira execução de uma função serverless. Essa latência adicional deve-se à necessidade de criar um container para executar uma função serverless e, em seguida, copiar o código da função para o container criado. Só então a função é executada. A literatura de serverless refere-se a esse problema como <strong>problema da partida a frio</strong> (<em>cold start problem</em>). Ele é mais crítico na primeira execução de uma função, pois depois o container pode ser mantido em cache por um certo tempo.</p></li>
-<li><p>Riscos de alto acoplamento com a plataforma de cloud, tornando mais difícil uma mudança para uma outra plataforma. Esse problema é chamado de <strong>dependência de fornecedores</strong> (<em>vendor lock-in</em>). Analisando a função de exemplo acima, esse problema pode não ficar claro, pois seu código parece bastante com o de uma função normal em JavaScript. Porém, a dependência e o acoplamento com a plataforma de cloud surgem quando a função serverless faz uso de outros serviços oferecidos pela plataforma, como autenticação, filas de mensagens, logging, bancos de dados, etc.</p></li>
+<li><p>Riscos de alto acoplamento com a plataforma de cloud, tornando mais difícil uma mudança para uma outra plataforma. Esse problema é chamado de <strong>dependência de fornecedores</strong> (<em>vendor lock-in</em>). Analisando a função de exemplo acima, esse problema pode não ficar claro, pois seu código parece bastante com uma função normal em JavaScript. Porém, o acoplamento com a plataforma de cloud surge quando a função serverless faz uso de outros serviços oferecidos pela plataforma, como autenticação, filas de mensagens, logging, bancos de dados, etc.</p></li>
 </ul>
 <p>Antes de concluir, é importante mencionar que é possível, também, ter uma arquitetura híbrida, na qual apenas alguns serviços são implementados por meio de funções serverless.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li>Suponha uma agenda de compromissos construída usando-se uma arquitetura baseada em funções serverless. Mostra-se abaixo uma das funções dessa aplicação, a qual retorna todos os compromissos inseridos na agenda (esse código foi copiado do <a href="https://github.com/pmuens/serverless-book">repositório</a> de um livro sobre serverless). Qual a desvantagem de serverless, conforme discutido na seção final do artigo, fica mais clara ao analisarmos o código dessa função? Justifique brevemente sua resposta.</li>
+<li>Suponha uma agenda de compromissos construída usando-se uma arquitetura baseada em funções serverless. Mostra-se abaixo uma das funções dessa aplicação, a qual retorna todos os compromissos inseridos na agenda (esse código foi copiado do seguinte <a href="https://github.com/pmuens/serverless-book">repositório</a>. Qual a desvantagem de serverless, conforme discutido na seção final do artigo, fica mais clara ao analisarmos o código dessa função? Justifique brevemente sua resposta.</li>
 </ol>
 <pre><code>&#39;use strict&#39;;
 
