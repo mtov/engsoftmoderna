@@ -1819,7 +1819,7 @@ gerentes e executivos da organização.
 
 
 
-## Quando não Usar Métodos Ágeis?
+## Quando Não Usar Métodos Ágeis?
 
 \index{Métodos Ágeis}
 Apesar de métodos ágeis — como aqueles estudados nas seções

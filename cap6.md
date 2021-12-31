@@ -1379,7 +1379,7 @@ pública e estática de `Livro`. Por isso, é que podemos chamar `new
 Livro.Builder()` diretamente, sem precisar de instanciar antes um objeto
 do tipo `Livro`.
 
-## Quando Não Usar Padrões de Projeto
+## Quando Não Usar Padrões de Projeto?
 
 Padrões de projeto têm como objetivo tornar o projeto de um sistema mais
 flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos

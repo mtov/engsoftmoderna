@@ -710,7 +710,7 @@ os interesses, muitas vezes conflitantes, das diversas equipes de
 desenvolvimento. Por isso, suas decisões podem se tornar lentas e
 burocráticas, atrasando a evolução do sistema.
 
-### Quando não usar microsserviços? 
+### Quando Não Usar Microsserviços? 
 \index{Microsserviços!Quando não Usar}
 
 Até esse momento, apresentamos as vantagens e benefícios de
