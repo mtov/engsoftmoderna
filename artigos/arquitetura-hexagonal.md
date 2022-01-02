@@ -150,6 +150,9 @@ pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro
 Já o segundo [artigo](http://wiki.c2.com/?PortsAndAdaptersArchitecture) 
 tenta renomeá-la para incluir os termos portas e adaptadores.
 
+Se quiser, veja também nosso artigo sobre
+[Arquitetura Limpa](./arquitetura-limpa.html).
+
 ## Exercícios {.unnumbered}
 
 1. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do 
