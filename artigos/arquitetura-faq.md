@@ -9,7 +9,7 @@ Segue a lista atual de perguntas:
 1. [O que é uma camada de domínio?](#o-que-%C3%A9-uma-camada-de-dom%C3%ADnio)
 2. [O que é um sistema multi-tenant?](#o-que-%C3%A9-um-sistema-multi-tenant)
 3. [O que é um servidor stateless?](#o-que-%C3%A9-um-servidor-stateless)
-4.´[O que é o Teorema CAP?]()
+4. [O que é o Teorema CAP?](#o-que-%C3%A9-o-teorema-cap)
 
 * * * 
 
@@ -93,11 +93,11 @@ distribuídos, como é comum, por exemplo, em arquiteturas baseadas
 em [microsserviços](../cap7.html#microsservi%C3%A7os).
 
 Nesses cenários, sempre vai haver partições (P) entre os bancos de 
-dados (BD). Por exemplo, suponha que temos dois BDs, A e B, localizados 
+dados (BD). Por exemplo, suponha dois BDs, A e B, localizados 
 em seus seus respectivos microsserviços. Logo, um problema de rede, 
 pode fazer com que A não consiga se comunicar com B ou vice-versa.
 
-Então, assumindo que partições vão ocorrer, o teorema CAP, de forma 
+Assumindo que partições vão ocorrer, o teorema CAP, de forma 
 simplificada, diz que arquitetos de sistemas distribuídos têm que 
 fazer uma escolha:
 
@@ -113,15 +113,15 @@ de disponibilidade (A). O motivo é que para garantir consistência
 temos que adotar um protocolo (ou algoritmo) para propagar dados de A 
 para B e vice-versa. Isto é, para manter os dois BDs sincronizados.
 Mas esse protocolo vai ter que "travar" um BD quando o outro não estiver 
-disponível. Nesse cenário particular, o BD travado não vai responder 
+disponível. Ou seja, o BD travado não vai responder 
 requisições de seus clientes para não entregar dados desatualizados 
 ou inconsistentes.
 
 Em resumo, o Teorema CAP afirma que, em um sistema com BDs distribuídos, 
 vamos sempre ter partições de comunicação (P). Por isso, ao definir uma 
 arquitetura distribuída, temos que fazer uma escolha: priorizar 
-consistência (C) ou disponibilidade (A). Ou seja, o teorema afirma que 
-sistemas com dados distribuídos são AP ou CP, mas nunca CAP.
+consistência (C) ou disponibilidade (A). Portanto, sistemas com dados 
+distribuídos são AP ou CP, mas nunca CAP.
 
 * * * 
 

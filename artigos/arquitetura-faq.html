@@ -98,7 +98,8 @@
 <ol type="1">
 <li><a href="#o-que-%C3%A9-uma-camada-de-dom%C3%ADnio">O que é uma camada de domínio?</a></li>
 <li><a href="#o-que-%C3%A9-um-sistema-multi-tenant">O que é um sistema multi-tenant?</a></li>
-<li><a href="#o-que-%C3%A9-um-servidor-stateless">O que é um servidor stateless?</a> 4.´<a href="">O que é o Teorema CAP?</a></li>
+<li><a href="#o-que-%C3%A9-um-servidor-stateless">O que é um servidor stateless?</a></li>
+<li><a href="#o-que-%C3%A9-o-teorema-cap">O que é o Teorema CAP?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-é-uma-camada-de-domínio">1. O que é uma camada de domínio? <a href="#o-que-é-uma-camada-de-domínio" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -116,13 +117,13 @@
 <p>Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os clientes após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.</p>
 <h3 class="unnumbered" id="o-que-é-o-teorema-cap">4. O que é o Teorema CAP? <a href="#o-que-é-o-teorema-cap" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Esse teorema trata de cenários envolvendo bancos de dados distribuídos, como é comum, por exemplo, em arquiteturas baseadas em <a href="../cap7.html#microsservi%C3%A7os">microsserviços</a>.</p>
-<p>Nesses cenários, sempre vai haver partições (P) entre os bancos de dados (BD). Por exemplo, suponha que temos dois BDs, A e B, localizados em seus seus respectivos microsserviços. Logo, um problema de rede, pode fazer com que A não consiga se comunicar com B ou vice-versa.</p>
-<p>Então, assumindo que partições vão ocorrer, o teorema CAP, de forma simplificada, diz que arquitetos de sistemas distribuídos têm que fazer uma escolha:</p>
+<p>Nesses cenários, sempre vai haver partições (P) entre os bancos de dados (BD). Por exemplo, suponha dois BDs, A e B, localizados em seus seus respectivos microsserviços. Logo, um problema de rede, pode fazer com que A não consiga se comunicar com B ou vice-versa.</p>
+<p>Assumindo que partições vão ocorrer, o teorema CAP, de forma simplificada, diz que arquitetos de sistemas distribuídos têm que fazer uma escolha:</p>
 <ul>
 <li><p>Priorizar disponibilidade (<em>availabliliy</em> ou A), abrindo mão de consistência (C), pelo menos em certos casos. Explicando melhor, suponha que a versão mais nova de um dado está em A, mas uma partição na rede impede que ela seja propagada para B. Como o primeiro objetivo é disponibilidade, o sistema vai entregar para os clientes de B a versão desatualizada do dado.</p></li>
-<li><p>Priorizar consistência (C) e abrir mão, quando for inevitável, de disponibilidade (A). O motivo é que para garantir consistência temos que adotar um protocolo (ou algoritmo) para propagar dados de A para B e vice-versa. Isto é, para manter os dois BDs sincronizados. Mas esse protocolo vai ter que <q>travar</q> um BD quando o outro não estiver disponível. Nesse cenário particular, o BD travado não vai responder requisições de seus clientes para não entregar dados desatualizados ou inconsistentes.</p></li>
+<li><p>Priorizar consistência (C) e abrir mão, quando for inevitável, de disponibilidade (A). O motivo é que para garantir consistência temos que adotar um protocolo (ou algoritmo) para propagar dados de A para B e vice-versa. Isto é, para manter os dois BDs sincronizados. Mas esse protocolo vai ter que <q>travar</q> um BD quando o outro não estiver disponível. Ou seja, o BD travado não vai responder requisições de seus clientes para não entregar dados desatualizados ou inconsistentes.</p></li>
 </ul>
-<p>Em resumo, o Teorema CAP afirma que, em um sistema com BDs distribuídos, vamos sempre ter partições de comunicação (P). Por isso, ao definir uma arquitetura distribuída, temos que fazer uma escolha: priorizar consistência (C) ou disponibilidade (A). Ou seja, o teorema afirma que sistemas com dados distribuídos são AP ou CP, mas nunca CAP.</p>
+<p>Em resumo, o Teorema CAP afirma que, em um sistema com BDs distribuídos, vamos sempre ter partições de comunicação (P). Por isso, ao definir uma arquitetura distribuída, temos que fazer uma escolha: priorizar consistência (C) ou disponibilidade (A). Portanto, sistemas com dados distribuídos são AP ou CP, mas nunca CAP.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
