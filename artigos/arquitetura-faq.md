@@ -111,17 +111,22 @@ desatualizada do dado.
 * Priorizar consistência (C) e abrir mão, quando for inevitável, 
 de disponibilidade (A). O motivo é que para garantir consistência 
 temos que adotar um protocolo (ou algoritmo) para propagar dados de A 
-para B e vice-versa. Isto é, para manter os dois BDs sincronizados.
-Mas esse protocolo vai ter que "travar" um BD quando o outro não estiver 
-disponível. Ou seja, o BD travado não vai responder 
-requisições de seus clientes para não entregar dados desatualizados 
-ou inconsistentes.
+para B e vice-versa. Isto é, esse protocolo vai manter os dois BDs 
+sincronizados. Mas, para isso, ele tem que "travar" um BD quando 
+o outro não estiver disponível. Consequentemente, o BD travado não vai 
+responder requisições de seus clientes para não entregar dados 
+desatualizados ou inconsistentes.
 
 Em resumo, o Teorema CAP afirma que, em um sistema com BDs distribuídos, 
 vamos sempre ter partições de comunicação (P). Por isso, ao definir uma 
 arquitetura distribuída, temos que fazer uma escolha: priorizar 
 consistência (C) ou disponibilidade (A). Portanto, sistemas com dados 
 distribuídos são AP ou CP, mas nunca CAP.
+
+Sempre que possível, devemos optar por sistemas AP, pois eles são
+mais fáceis de implementar e são também mais escaláveis. Por outro 
+lado, em alguns cenários não podemos prescindir de consistência,
+como pode ser o caso de sistemas bancários e financeiros.
 
 * * * 
 
