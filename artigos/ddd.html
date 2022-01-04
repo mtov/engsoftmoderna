@@ -189,6 +189,17 @@
 <p>Com o tempo, sistemas de software ficam mais complexos e abrangentes. Por isso, é irrealista imaginar que sistemas de organizações grandes e complexas vão possuir um modelo de domínio único e baseado na mesma linguagem ubíqua.</p>
 <p>Em vez disso, é natural que tais organizações tenham sistemas que atendem a usuários com perfis e necessidades diferentes, o que complica a definição de uma linguagem ubíqua. A solução para esse problema consiste em quebrar tais domínios complexos em domínios menores, os quais em DDD são chamados de <strong>Contextos Delimitados</strong> (<em>Bounded Contexts</em>).</p>
 <p><strong>Exemplo:</strong> Suponha que a nossa biblioteca tenha um setor financeiro. Esse setor tem necessidades específicas, que começam a justificar um projeto separado, com uma linguagem própria. Por exemplo, nesse domínio financeiro, a classe <code>Usuário</code> pode, inclusive, ser chamada de <code>Cliente</code> e ter novos atributos.</p>
+<h2 class="unnumbered" id="camada-anticorrupção">Camada Anticorrupção</h2>
+<p>Às vezes, temos que integrar sistemas que estão em contextos delimitados diferentes. Por exemplo, um sistema A precisa usar serviços de um sistema B, que pode inclusive ser um sistema externo, isto é, de uma outra organização. Para evitar que A tenha que se adaptar e usar, mesmo que parcialmente, a linguagem ubíqua de B, pode-se usar uma <strong>Camada Anticorrupção</strong> para mediar essa comunicação.</p>
+<p>Essa camada é formada por três tipos principais de classes:</p>
+<ul>
+<li><p>Classes de Serviço, cujos métodos serão chamados por A e que, portanto, seguem a linguagem ubíqua desse sistema.</p></li>
+<li><p><a href="../cap6.html#adaptador">Classes Adaptadoras</a>, que convertem o modelo e os tipos de dados de B para o modelo e tipos de dados de A. Ou seja, essas classes vão isolar elementos próprios de B e evitar que eles cheguem até o sistema A.</p></li>
+<li><p>Uma <a href="../cap6.html#fachada">Classe de Fachada</a>, usada para acessar o sistema B. O papel dessa classe é facilitar o uso de B, principalmente quando ele é um sistema legado com uma interface complexa e antiga.</p></li>
+</ul>
+<p>Logo, o fluxo costuma ser o seguinte:</p>
+<pre><code>Sistema A -&gt; [ Serviços -&gt; Adaptadores -&gt; Fachada ] -&gt; Sistema B</code></pre>
+<p>Nesse fluxo, as classes entre colchetes constituem a Camada Anticorrupção que foi construída para integrar os sistemas A e B.</p>
 <h2 class="unnumbered" id="comentários-finais">Comentários Finais</h2>
 <p>Em um material de referência, que escreveu em 2014, Eric Evans define assim DDD:</p>
 <blockquote>

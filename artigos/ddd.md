@@ -312,6 +312,39 @@ própria. Por exemplo, nesse domínio financeiro, a classe
 `Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
 atributos.
 
+## Camada Anticorrupção {.unnumbered}
+
+Às vezes, temos que integrar sistemas que estão em contextos delimitados
+diferentes. Por exemplo, um sistema A precisa usar serviços de um sistema
+B, que pode inclusive ser um sistema externo, isto é, de uma outra organização.
+Para evitar que A tenha que se adaptar e usar, mesmo que parcialmente, a 
+linguagem ubíqua de B, pode-se usar uma **Camada Anticorrupção** para mediar 
+essa comunicação. 
+
+Essa camada é formada por três tipos principais de classes: 
+
+* Classes de Serviço, cujos métodos serão chamados por A e que, portanto,
+seguem a linguagem ubíqua desse sistema.
+
+* [Classes Adaptadoras](../cap6.html#adaptador), 
+que convertem o modelo e os tipos de 
+dados de B para o modelo e tipos de dados de A. Ou seja, essas
+classes vão isolar elementos próprios de B e evitar que eles
+cheguem até o sistema A.
+
+* Uma [Classe de Fachada](../cap6.html#fachada),
+usada para acessar o sistema B. O papel dessa classe é facilitar 
+o uso de B, principalmente quando ele é um sistema 
+legado com uma interface complexa e antiga.
+
+Logo, o fluxo costuma ser o seguinte:
+
+    Sistema A -> [ Serviços -> Adaptadores -> Fachada ] -> Sistema B
+
+Nesse fluxo, as classes entre colchetes constituem a 
+Camada Anticorrupção que foi construída para integrar os 
+sistemas A e B.
+
 ## Comentários Finais {.unnumbered}
 
 Em um material de referência, que escreveu em 2014, Eric Evans 
