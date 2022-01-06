@@ -129,12 +129,21 @@ mais externo.
 ##### Código de Exemplo {.unnumbered}
 
 Uma implementação mínima do Sistema de Bibliotecas, em Python e com 
-motivação meramente didática, está disponível neste 
-[link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal)
-da IDE online Repl.it, a qual permite execuções sem qualquer configuração. 
-No caso de contas gratuitas do Repl.it, a compilação e execução 
-costumam ser lentas, principalmente na primeira vez. Mas basta ter um 
-pouco de paciência.
+motivação meramente didática, está disponível na IDE online Repl.it. 
+Implementamos apenas um serviço bem simples de pesquisa de livros 
+por autor (clique em "Code" na parte de baixo do repl.it para ver o
+código).
+
+<iframe 
+frameborder="0" 
+width="100%" 
+height="500px" 
+src="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal?embed=true">
+</iframe>
+
+Seq quiser, você pode também abrir o código no site do Repl.it, usando 
+o seguinte [link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
+
 
 ## Comentário Final {.unnumbered}
 
