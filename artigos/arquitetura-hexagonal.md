@@ -126,6 +126,16 @@ determinada porta, seja ela de entrada ou de saída, podemos plugar
 um ou mais adaptadores, os quais ficam sempre localizados no hexágono
 mais externo.
 
+##### Código de Exemplo {.unnumbered}
+
+Uma implementação mínima do Sistema de Bibliotecas, em Python e com 
+motivação meramente didática, está disponível neste 
+[link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal)
+da IDE online Repl.it, a qual permite execuções sem qualquer configuração. 
+No caso de contas gratuitas do Repl.it, a compilação e execução 
+costumam ser lentas, principalmente na primeira vez. Mas basta ter um 
+pouco de paciência.
+
 ## Comentário Final {.unnumbered}
 
 Em 2005, Cockburn tentou renomear o nome de sua arquitetura para 
