@@ -51,6 +51,9 @@ um sistema implementa um conjunto de funções -- normalmente,
 chamadas de **funções serverless** ou **funções lambda** -- e 
 copia as mesmas para um sistema de cloud. Portanto, não existe 
 mais aluguel de servidores, sejam eles virtuais ou físicos. 
+E as funções serverless podem ser invocadas por aplicações
+clientes do sistema ou então serem automaticamente chamadas após 
+a ocorrência de determinados eventos.
 
 A próxima figura compara essas alternativas para uso de servidores 
 e construção de aplicações.
@@ -89,7 +92,8 @@ e mantê-los em data centers ou em espaços de colocation.
 Funções serverless têm as seguintes características principais:
 
 * Elas são stateless, isto é, elas não guardam qualquer estado entre 
-uma execução e outra.
+uma execução e outra. No entanto, elas podem acessar serviços
+externos, como bancos de dados e serviços de envio de e-mail.
 
 * Elas executam por um intervalo de tempo máximo, normalmente, da 
 ordem de alguns minutos. Após esse intervalo, elas são automaticamente

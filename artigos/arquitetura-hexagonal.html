@@ -137,10 +137,10 @@ encaminham essas chamadas para métodos adequados das portas de entrada.</p></li
 <p>O sistema precisa também persistir algumas informações. Para isso, ele usa uma porta de saída, com métodos para salvar e ler dados de livros, salvar e ler dados de empréstimos, etc. Plugado nessa porta temos um adaptador, que realiza as operações em um banco de dados relacional.</p>
 <p>Um sistema pode possuir várias portas de entrada e de saída (sempre localizadas no hexágono interior, junto às classes de domínio). Em uma determinada porta, seja ela de entrada ou de saída, podemos plugar um ou mais adaptadores, os quais ficam sempre localizados no hexágono mais externo.</p>
 <h5 class="unnumbered" id="código-de-exemplo">Código de Exemplo</h5>
-<p>Uma implementação mínima do Sistema de Bibliotecas, em Python e com motivação meramente didática, está disponível na IDE online Repl.it. Implementamos apenas um serviço bem simples de pesquisa de livros por autor (clique em <q>Code</q> na parte de baixo do repl.it para ver o código).</p>
+<p>Uma implementação mínima do Sistema de Bibliotecas, em Python e com motivação meramente didática, está disponível na IDE online Repl.it. Basicamente, implementamos apenas um serviço simples de pesquisa de livros por autor. Para ver o código, clique em <q>Code</q> na parte de baixo do repl.it.</p>
 <iframe frameborder="0" width="100%" height="500px" src="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal?embed=true">
 </iframe>
-<p>Seq quiser, você pode também abrir o código no site do Repl.it, usando o seguinte <a href="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal">link</a>.</p>
+<p>Se quiser, você pode também abrir o código no site do Repl.it, usando o seguinte <a href="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal">link</a>.</p>
 <h2 class="unnumbered" id="comentário-final">Comentário Final</h2>
 <p>Em 2005, Cockburn tentou renomear o nome de sua arquitetura para <strong>Arquitetura baseada em Portas e Adaptadores</strong>, com a seguinte justificativa:</p>
 <blockquote>

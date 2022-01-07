@@ -130,9 +130,9 @@ mais externo.
 
 Uma implementação mínima do Sistema de Bibliotecas, em Python e com 
 motivação meramente didática, está disponível na IDE online Repl.it. 
-Implementamos apenas um serviço bem simples de pesquisa de livros 
-por autor (clique em "Code" na parte de baixo do repl.it para ver o
-código).
+Basicamente, implementamos apenas um serviço simples de pesquisa de 
+livros por autor. Para ver o código, clique em "Code" na parte de 
+baixo do repl.it.
 
 <iframe 
 frameborder="0" 
@@ -141,7 +141,7 @@ height="500px"
 src="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal?embed=true">
 </iframe>
 
-Seq quiser, você pode também abrir o código no site do Repl.it, usando 
+Se quiser, você pode também abrir o código no site do Repl.it, usando 
 o seguinte [link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
 
 
