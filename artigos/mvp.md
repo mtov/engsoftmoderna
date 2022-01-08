@@ -158,7 +158,7 @@ funcionalidade para mostrar para seu cliente.
 A pergunta então é a seguinte: esse primeiro sistema é um MVP?
 
 Não queremos ser dogmáticos e puristas quanto ao uso
-de termos, mas a resposta é **negativa**.
+de termos, mas a resposta é **negativa**. 
 
 Conforme definimos, um MVP é um experimento para testar 
 uma ameaça importante ao sucesso de um projeto. No exemplo
@@ -170,7 +170,11 @@ pagar pelo seu desenvolvimento.
 
 Por isso, os incrementos de produto produzidos nos sprints iniciais 
 de um projeto não têm -- na maioria das vezes -- características 
-típicas de um experimento, isto é, de um MVP. 
+típicas de um experimento, isto é, de um MVP. O seguinte tweet, de 
+um consultor de software conhecido, reforça e resume essa nossa 
+resposta:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">An MVP is an experiment that tests the hypothesis that something’s worth building. It is NOT Version 1 of a product.</p>&mdash; Allen Holub (@allenholub) <a href="https://twitter.com/allenholub/status/1479181061938503688?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Pivôs vs Restarts {.unnumbered}
 
