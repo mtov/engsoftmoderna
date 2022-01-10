@@ -19,6 +19,7 @@ links:
 * [Spring PetClinic](#spring-petclinic)
 * [JUnit](#junit)
 * [Vue.js](#vue.js)
+* [Microsoft PowerToys](#microsoft-powertoys)
 
 * * * 
 
@@ -318,7 +319,8 @@ teste (subclasse de `TestCase`);
 
 ## Vue.js {.unnumbered}
 
-Vue.js é um framework JavaScript para implementação de
+[Vue.js](https://vuejs.org/) 
+é um framework JavaScript para implementação de
 [single-page applications](https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications).
  O sistema permite criar componentes que possuem dados, operações 
  e também uma apresentação em HTML, isto é, a parte visual do componente
@@ -355,6 +357,75 @@ it('chained usage', () => {
 
  Como `msg` é a string `hi`, o teste espera (`expect`), na sua última linha,
  que o texto exibido pelo componente seja igual a `IH`.
+
+
+* * * 
+
+
+## Microsoft PowerToys {.unnumbered}
+
+PowerToys é um conjunto de utilitários Windows. Por exemplo,
+um dos utilitários permite fixar uma janela para que ela
+apareça "por cima" de qualquer outra janela do sistema.
+
+O código desses utilitários, implementados em C#, está público em um 
+[repositório](https://github.com/microsoft/PowerToys) do GitHub.
+E eles possuem um conjunto interessante de **testes end-to-end**
+implementados usando dois frameworks: Apium e WinAppDriver.
+
+Primeiro, mostramos um teste do utilitário FancyZones, 
+que "é um gerenciador de janelas que facilita a criação de 
+layouts de janela complexos e o posicionamento rápido de janelas 
+nesses layouts".
+
+```
+private void SaveChanges()
+{
+   string isEnabled = _saveButton.GetAttribute("IsEnabled");
+   Assert.AreEqual("True", isEnabled);
+
+   _saveButton.Click();
+
+   isEnabled = _saveButton.GetAttribute("IsEnabled");
+   Assert.AreEqual("False", isEnabled);
+}
+```        
+
+Inicialmente, testa-se se o botão "Save" do utilitário está disponível
+ (*enabled*). Então, simula-se um click no mesmo. Feito isso, o botão 
+não deve estar mais habilitado, pois acabamos de realizar um salvamento 
+e, portanto, não faz sentido salvar de novo.
+
+O segundo teste simula a abertura do menu de configuração
+dos utilitários, que fica na barra de ícones do Windows.
+Os comentários presentes no teste já ajudam bastante a
+entender o seu funcionamento.
+
+```
+[TestMethod]
+public void SettingsOpenWithContextMenu()
+{
+  //open tray
+  trayButton.Click();
+  WaitSeconds(1);
+  isTrayOpened = true;
+
+  //open PowerToys context menu
+  AppiumWebElement pt = PowerToysTrayButton();
+  Assert.IsNotNull(pt);
+
+  new Actions(session).MoveToElement(pt).ContextClick().Perform();
+
+  //open settings
+  session.FindElementByXPath("//MenuItem[@Name=\"Settings\"]").Click();
+
+  //check settings window opened
+  WindowsElement settingsWindow = session.FindElementByName("PowerToys Settings");
+  Assert.IsNotNull(settingsWindow);
+
+  isSettingsOpened = true;
+}
+```
 
  
 ## Exercícios {.unnumbered}

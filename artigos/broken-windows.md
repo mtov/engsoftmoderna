@@ -1,10 +1,11 @@
 
-# Teoria das Janelas Quebradas & Regra dos Escoteiros {.unnumbered}
+# Teoria das Janelas Quebradas & Regra dos Escoteiros (aplicadas a Desenvolvimento de Software) {.unnumbered}
+
+## Introdução {.unnumbered}
 
 Neste artigo, vamos apresentar uma teoria e uma regra, propostas
-originalmente para outras áreas, mas que
-aplicam-se a desenvolvimento de software. São
-elas:
+originalmente para outras áreas, mas que aplicam-se a 
+**desenvolvimento de software**. São elas:
 
 * Teoria das Janelas Quebradas
 * Regra dos Escoteiros

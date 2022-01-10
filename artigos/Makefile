@@ -79,7 +79,7 @@ exemplos-teste: exemplos-teste.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
 
 broken-windows: broken-windows.md
-	$(pandoc_bin) -T "Teoria das Janelas Quebradas & Regra do Escoteiros?" broken-windows.md -o broken-windows.html
+	$(pandoc_bin) -T "Teoria das Janelas Quebradas & Regra do Escoteiros (aplicadas a Desenvolvimento de Software)" broken-windows.md -o broken-windows.html
 
 revisao-codigo: revisao-codigo.md
 	$(pandoc_bin) -T "Revisão de Código: Uma Breve Introdução" revisao-codigo.md -o revisao-codigo.html

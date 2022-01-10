@@ -102,6 +102,7 @@
 <li><a href="#spring-petclinic">Spring PetClinic</a></li>
 <li><a href="#junit">JUnit</a></li>
 <li><a href="#vue.js">Vue.js</a></li>
+<li><a href="#microsoft-powertoys">Microsoft PowerToys</a></li>
 </ul>
 <hr />
 <h2 class="unnumbered" id="guava">Guava <a href="#guava" class="anchor-link" aria-hidden="true">🔗</a></h2>
@@ -235,7 +236,7 @@ public class OneTestCase extends TestCase {
 </ul>
 <hr />
 <h2 class="unnumbered" id="vue.js">Vue.js <a href="#vue.js" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Vue.js é um framework JavaScript para implementação de <a href="https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications">single-page applications</a>. O sistema permite criar componentes que possuem dados, operações e também uma apresentação em HTML, isto é, a parte visual do componente que será vista no browser.</p>
+<p><a href="https://vuejs.org/">Vue.js</a> é um framework JavaScript para implementação de <a href="https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications">single-page applications</a>. O sistema permite criar componentes que possuem dados, operações e também uma apresentação em HTML, isto é, a parte visual do componente que será vista no browser.</p>
 <p>Veja um teste do Vue.js, implementado usando o framework de testes Jest.</p>
 <pre><code>it(&#39;chained usage&#39;, () =&gt; {
    const vm = new Vue({
@@ -254,6 +255,46 @@ public class OneTestCase extends TestCase {
 <p>Esses filtros são usados no template do componente da seguinte forma (a qual lembra <em>pipes</em> de linhas de comando do Unix):</p>
 <p><code>msg | upper | reverse</code></p>
 <p>Como <code>msg</code> é a string <code>hi</code>, o teste espera (<code>expect</code>), na sua última linha, que o texto exibido pelo componente seja igual a <code>IH</code>.</p>
+<hr />
+<h2 class="unnumbered" id="microsoft-powertoys">Microsoft PowerToys <a href="#microsoft-powertoys" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>PowerToys é um conjunto de utilitários Windows. Por exemplo, um dos utilitários permite fixar uma janela para que ela apareça <q>por cima</q> de qualquer outra janela do sistema.</p>
+<p>O código desses utilitários, implementados em C#, está público em um <a href="https://github.com/microsoft/PowerToys">repositório</a> do GitHub. E eles possuem um conjunto interessante de <strong>testes end-to-end</strong> implementados usando dois frameworks: Apium e WinAppDriver.</p>
+<p>Primeiro, mostramos um teste do utilitário FancyZones, que <q>é um gerenciador de janelas que facilita a criação de layouts de janela complexos e o posicionamento rápido de janelas nesses layouts</q>.</p>
+<pre><code>private void SaveChanges()
+{
+   string isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
+   Assert.AreEqual(&quot;True&quot;, isEnabled);
+
+   _saveButton.Click();
+
+   isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
+   Assert.AreEqual(&quot;False&quot;, isEnabled);
+}</code></pre>
+<p>Inicialmente, testa-se se o botão <q>Save</q> do utilitário está disponível (<em>enabled</em>). Então, simula-se um click no mesmo. Feito isso, o botão não deve estar mais habilitado, pois acabamos de realizar um salvamento e, portanto, não faz sentido salvar de novo.</p>
+<p>O segundo teste simula a abertura do menu de configuração dos utilitários, que fica na barra de ícones do Windows. Os comentários presentes no teste já ajudam bastante a entender o seu funcionamento.</p>
+<pre><code>[TestMethod]
+public void SettingsOpenWithContextMenu()
+{
+  //open tray
+  trayButton.Click();
+  WaitSeconds(1);
+  isTrayOpened = true;
+
+  //open PowerToys context menu
+  AppiumWebElement pt = PowerToysTrayButton();
+  Assert.IsNotNull(pt);
+
+  new Actions(session).MoveToElement(pt).ContextClick().Perform();
+
+  //open settings
+  session.FindElementByXPath(&quot;//MenuItem[@Name=\&quot;Settings\&quot;]&quot;).Click();
+
+  //check settings window opened
+  WindowsElement settingsWindow = session.FindElementByName(&quot;PowerToys Settings&quot;);
+  Assert.IsNotNull(settingsWindow);
+
+  isSettingsOpened = true;
+}</code></pre>
 <h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <ol type="1">
 <li><p>Spring PetClinic: estude e documente o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p></li>
