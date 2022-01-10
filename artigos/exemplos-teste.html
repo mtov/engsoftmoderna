@@ -101,6 +101,7 @@
 <li><a href="#guava">Google Guava</a></li>
 <li><a href="#spring-petclinic">Spring PetClinic</a></li>
 <li><a href="#junit">JUnit</a></li>
+<li><a href="#vue.js">Vue.js</a></li>
 </ul>
 <hr />
 <h2 class="unnumbered" id="guava">Guava <a href="#guava" class="anchor-link" aria-hidden="true">🔗</a></h2>
@@ -232,6 +233,27 @@ public class OneTestCase extends TestCase {
 <li><p>E, também, não ocorreu nenhum erro ou exceção;</p></li>
 <li><p>Por fim, o teste como um todo foi bem sucedido.</p></li>
 </ul>
+<hr />
+<h2 class="unnumbered" id="vue.js">Vue.js <a href="#vue.js" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Vue.js é um framework JavaScript para implementação de <a href="https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications">single-page applications</a>. O sistema permite criar componentes que possuem dados, operações e também uma apresentação em HTML, isto é, a parte visual do componente que será vista no browser.</p>
+<p>Veja um teste do Vue.js, implementado usando o framework de testes Jest.</p>
+<pre><code>it(&#39;chained usage&#39;, () =&gt; {
+   const vm = new Vue({
+   template: &#39;&lt;div&gt;{{ msg | upper | reverse }}&lt;/div&gt;&#39;,
+   data: {
+     msg: &#39;hi&#39;
+   },
+   filters: {
+     upper: v =&gt; v.toUpperCase(),
+     reverse: v =&gt; v.split(&#39;&#39;).reverse().join(&#39;&#39;)
+   }
+   }).$mount()
+   expect(vm.$el.textContent).toBe(&#39;IH&#39;)
+}) </code></pre>
+<p>Primeiro, instancia-se (<code>new</code>) e exibe-se (<code>mount</code>) um componente Vue, que possui um <code>template</code> HTML, dados (<code>msg</code>) e dois filtros. O primeiro filtro (<code>upper</code>) converte uma string para maiúsculo e o segundo (<code>reverse</code>) converte uma string para um vetor de caracteres, inverte a ordem deles e concatena de volta os resultados.</p>
+<p>Esses filtros são usados no template do componente da seguinte forma (a qual lembra <em>pipes</em> de linhas de comando do Unix):</p>
+<p><code>msg | upper | reverse</code></p>
+<p>Como <code>msg</code> é a string <code>hi</code>, o teste espera (<code>expect</code>), na sua última linha, que o texto exibido pelo componente seja igual a <code>IH</code>.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <ol type="1">
 <li><p>Spring PetClinic: estude e documente o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p></li>

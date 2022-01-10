@@ -254,8 +254,8 @@ não? Justifique e argumente a favor de sua resposta.
 
 4. Suponha que você planeja abrir uma empresa para entrega de
 comida pela Internet, em uma cidade como Belo Horizonte, e
-pretende, portanto, concorrer com empresas estabelecidas como iFood, 
-Uber Eats, Rappi, etc. A criação de um MVP seria recomendada nesse
+pretende, portanto, concorrer com empresas estabelecidas e
+conhecidas do ramo. A criação de um MVP seria recomendada nesse
 contexto? Sim ou Não? Justifique e argumente  a favor de sua 
 resposta.
 

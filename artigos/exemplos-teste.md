@@ -18,6 +18,7 @@ links:
 * [Google Guava](#guava)
 * [Spring PetClinic](#spring-petclinic)
 * [JUnit](#junit)
+* [Vue.js](#vue.js)
 
 * * * 
 
@@ -313,6 +314,49 @@ teste (subclasse de `TestCase`);
 * Por fim, o teste como um todo foi bem sucedido.
 
 
+* * *
+
+## Vue.js {.unnumbered}
+
+Vue.js é um framework JavaScript para implementação de
+[single-page applications](https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications).
+ O sistema permite criar componentes que possuem dados, operações 
+ e também uma apresentação em HTML, isto é, a parte visual do componente
+ que será vista no browser.
+
+Veja um teste do Vue.js, implementado usando o framework de testes Jest.
+
+```
+it('chained usage', () => {
+   const vm = new Vue({
+   template: '<div>{{ msg | upper | reverse }}</div>',
+   data: {
+     msg: 'hi'
+   },
+   filters: {
+     upper: v => v.toUpperCase(),
+     reverse: v => v.split('').reverse().join('')
+   }
+   }).$mount()
+   expect(vm.$el.textContent).toBe('IH')
+}) 
+ ```
+
+ Primeiro, instancia-se (`new`) e exibe-se (`mount`) um componente Vue, que 
+ possui um `template` HTML, dados (`msg`) e dois filtros. O primeiro filtro
+ (`upper`) converte uma string para maiúsculo e o segundo (`reverse`)
+ converte uma string para um vetor de caracteres, inverte a ordem deles e 
+ concatena de volta os resultados. 
+
+ Esses filtros são usados no template do componente da 
+ seguinte forma (a qual lembra *pipes* de linhas de comando do Unix):
+
+ `msg | upper | reverse`
+
+ Como `msg` é a string `hi`, o teste espera (`expect`), na sua última linha,
+ que o texto exibido pelo componente seja igual a `IH`.
+
+ 
 ## Exercícios {.unnumbered}
 
 1. Spring PetClinic: estude e documente o funcionamento do método de teste
