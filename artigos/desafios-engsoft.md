@@ -24,12 +24,23 @@ para os alunos o seguinte diagrama.
 
 ![](./figs/desafios-engsoft.png)
 
-Esclareço que ele não é baseado em nenhum estudo científico, mas 
-na minha experiência acadêmica e profissional. Porém, a mensagem 
-para os alunos é clara: quando vocês se formarem, não todos, mas a 
-maioria será Engenheiro de Software. Ou terá um título equivalente, 
-como Frontend/Backend/Fullstack/Mobile developer, Arquiteto de 
-Software, Tech/Squad Lead, etc.
+Esclareço que ele não é baseado em nenhum estudo científico, mas na 
+minha experiência acadêmica e profissional. 
+
+Costumo usar também o seguinte tweet de um profissional com larga 
+experiência no mercado de desenvolvimento de software para reforçar o 
+meu argumento:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A lot of people are excited about other tech disciplines than software engineering. But it&#39;s good to know ratios I&#39;ve seen at Uber &amp; similar places:<br><br>PMs: 1 for every 10-20 engineers<br>PMM: 1:30-100<br>Data Scientist/analyist: 1:10-20<br>Designer: 1:10-20<br>UX researcher: 1:20-50</p>&mdash; Gergely Orosz (@GergelyOrosz) <a href="https://twitter.com/GergelyOrosz/status/1402327236032831494?ref_src=twsrc%5Etfw">June 8, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+Segundo o tweet, grandes empresas de tecnologia possuem de 10 a 20 mais 
+engenheiros de software do que Product Managers (PMs), analistas e cientistas
+de dados e designers de interfaces, por exemplo.
+
+Portanto, a mensagem para os alunos é clara: quando vocês se formarem, 
+não todos, mas a maioria será Engenheiro de Software. Ou terá um título 
+equivalente, como Frontend, Backend, Fullstack, Mobile developer, Arquiteto de 
+Software, Tech ou Squad Lead, etc.
 
 ### Contexto Brasileiro {.unnumbered}
 

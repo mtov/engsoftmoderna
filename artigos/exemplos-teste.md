@@ -373,6 +373,8 @@ O código desses utilitários, implementados em C#, está público em um
 E eles possuem um conjunto interessante de **testes end-to-end**
 implementados usando dois frameworks: Apium e WinAppDriver.
 
+#### Exemplo 1: FancyZones {.unnumbered}
+
 Primeiro, mostramos um teste do utilitário FancyZones, 
 que "é um gerenciador de janelas que facilita a criação de 
 layouts de janela complexos e o posicionamento rápido de janelas 
@@ -396,8 +398,10 @@ Inicialmente, testa-se se o botão "Save" do utilitário está disponível
 não deve estar mais habilitado, pois acabamos de realizar um salvamento 
 e, portanto, não faz sentido salvar de novo.
 
+#### Exemplo 2: Menu de Configuração {.unnumbered}
+
 O segundo teste simula a abertura do menu de configuração
-dos utilitários, que fica na barra de ícones do Windows.
+do PowerToys, o qual fica na barra de ícones do Windows.
 Os comentários presentes no teste já ajudam bastante a
 entender o seu funcionamento.
 
