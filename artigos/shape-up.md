@@ -172,7 +172,8 @@ na própria página do [livro](https://basecamp.com/shapeup).
 (*sprint planning*) em Scrum?
 
 2. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 
-do [livro](https://basecamp.com/shapeup) que descreve o método, seção "The circuit breaker".
+do [livro](https://basecamp.com/shapeup/2.2-chapter-08#the-circuit-breaker) 
+que descreve o método, seção "The circuit breaker".
 
 3. Qual a principal característica que torna Shape Up 
 um método adequado para times que trabalham de forma remota?
