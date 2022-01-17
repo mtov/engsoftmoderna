@@ -100,6 +100,7 @@
 <li><a href="#o-que-%C3%A9-um-sistema-multi-tenant">O que é um sistema multi-tenant?</a></li>
 <li><a href="#o-que-%C3%A9-um-servidor-stateless">O que é um servidor stateless?</a></li>
 <li><a href="#o-que-%C3%A9-o-teorema-cap">O que é o Teorema CAP?</a></li>
+<li><a href="#o-que-%C3%A9-o-padr%C3%A3o-strangler-fig">O que é o padrão Strangler Fig?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-é-uma-camada-de-domínio">1. O que é uma camada de domínio? <a href="#o-que-é-uma-camada-de-domínio" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -116,7 +117,7 @@
 <p>Dizemos que um servidor é stateless quando ele não armazena qualquer informação sobre o estado de seus clientes. Consequentemente, as requisições dos clientes devem incluir todas as informações necessárias para o seu devido processamento pelo servidor.</p>
 <p>Recomenda-se, por exemplo, que aplicações Web sejam stateless. Os motivos são pelo menos os seguintes: escalabilidade e confiabilidade, as quais são propriedades mais fáceis de serem conseguidas quando os servidores são stateless. A confiabilidade dos servidores melhora pelo simples fato de eles não terem que restaurar qualquer informação sobre os clientes após uma possível falha ou queda. A escalabilidade aumenta pelo fato de eles não precisarem armazenar nada sobre seus clientes. Por exemplo, após atender a uma requisição pode-se liberar todos os recursos que foram alocados durante o seu processamento.</p>
 <h3 class="unnumbered" id="o-que-é-o-teorema-cap">4. O que é o Teorema CAP? <a href="#o-que-é-o-teorema-cap" class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Esse teorema trata de cenários envolvendo bancos de dados distribuídos, como é comum, por exemplo, em arquiteturas baseadas em <a href="../cap7.html#microsservi%C3%A7os">microsserviços</a>.</p>
+<p>Esse teorema, conforme proposto por Eric Brewer, trata de cenários envolvendo bancos de dados distribuídos, como é comum, por exemplo, em arquiteturas baseadas em <a href="../cap7.html#microsservi%C3%A7os">microsserviços</a>.</p>
 <p>Nesses cenários, sempre vai haver partições (P) entre os bancos de dados (BD). Por exemplo, suponha dois BDs, A e B, localizados em seus seus respectivos microsserviços. Logo, um problema de rede, pode fazer com que A não consiga se comunicar com B ou vice-versa.</p>
 <p>Assumindo que partições vão ocorrer, o teorema CAP, de forma simplificada, diz que arquitetos de sistemas distribuídos têm que fazer uma escolha:</p>
 <ul>
@@ -125,6 +126,16 @@
 </ul>
 <p>Em resumo, o Teorema CAP afirma que, em um sistema com BDs distribuídos, vamos sempre ter partições de comunicação (P). Por isso, ao definir uma arquitetura distribuída, temos que fazer uma escolha: priorizar consistência (C) ou disponibilidade (A). Portanto, sistemas com dados distribuídos são AP ou CP, mas nunca CAP.</p>
 <p>Sempre que possível, devemos optar por sistemas AP, pois eles são mais fáceis de implementar e são também mais escaláveis. Por outro lado, em alguns cenários não podemos prescindir de consistência, como pode ser o caso de sistemas bancários e financeiros.</p>
+<h3 class="unnumbered" id="o-que-é-o-padrão-strangler-fig">5. O que é o padrão Strangler Fig? <a href="#o-que-é-o-padrão-strangler-fig" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Strangler Fig é um padrão para migração de sistemas legados para uma nova tecnologia ou arquitetura. Especificamente, quando precisamos <q>aposentar</q> um sistema X, podemos fazer isso de duas maneiras:</p>
+<ul>
+<li><p>De uma só vez, isto é, podemos implementar um sistema substituto Y e então, em uma data definida, desligar X e ativar Y. Evidentemente, os riscos dessa <q>virada única de chave</q> costumam ser altos.</p></li>
+<li><p>De forma gradativa. Por exemplo, suponha que o sistema X implementa funcionalidades X1, X2,…, Xn. Então, iremos implementar gradativamente funcionalidades equivalentes Y1, Y2,…, Yn, as quais serão ativadas de forma também gradual. Por exemplo, em um determinado momento, o sistema poderá ter a seguinte configuração:</p>
+<p>[Y1, Y2, Y3] [X4, X5, .., Xn].</p>
+<p>Ou seja, nesse momento da migração, Y1, Y2 e Y3 já são funcionalidades desenvolvidas na nova tecnologia ou arquitetura e X4 a Xn ainda estão na versão legada.</p></li>
+</ul>
+<p>O padrão de migração gradual, que comentamos acima, é chamado de <strong>Strangler Fig</strong>, pois a nova tecnologia ou arquitetura vai gradativamente <q>estrangulando</q> o sistema legado. O nome, proposto por Martin Fowler, é inspirado em um tipo específico de figueira, isto é, a árvore que produz a fruta figo. Dentre as várias espécies de figueira, existe uma que cresce em volta de uma árvore hospedeira e que vai gradativamente estrangulando-a. Você pode ver algumas fotos desse tipo de figueira na <a href="https://en.wikipedia.org/wiki/Strangler_fig">Wikipédia</a>.</p>
+<p>Strangler Fig pode ser útil, por exemplo, quando planejamos migrar um monolito para uma arquitetura baseada em microsserviços. O padrão, também nesse caso, advoga que a migração deve ser gradual, isto é, um microsserviço de cada vez.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
