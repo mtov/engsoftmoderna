@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -58,6 +55,9 @@
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -92,44 +92,93 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="módulos-devem-ser-profundos">Módulos devem ser Profundos!</h1>
+<h1 class="unnumbered" id="módulos-devem-ser-profundos">Módulos devem
+ser Profundos!</h1>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
-<p><a href="https://web.stanford.edu/~ouster/cgi-bin/home.php">John Ousterhout</a> é professor da Universidade de Stanford e criador da linguagem de script Tcl/Tk. Em 2018, ele lançou um <a href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">livro</a> sobre filosofia e princípios de projeto de software.</p>
-<p>Neste livro, uma das principais recomendações – e, provavelmente, uma das mais originais, se comparada com o restante da literatura sobre projeto de software – é a seguinte: <strong>os módulos de um sistema devem ser profundos</strong>.</p>
-<p>Vamos, primeiro, definir o que é um módulo. Basicamente, é qualquer elemento de código que tem uma implementação e uma interface. Assim, podemos ter módulos de diferentes tamanhos, incluindo funções, classes, subsistemas, pacotes, etc.</p>
+<p><a href="https://web.stanford.edu/~ouster/cgi-bin/home.php">John
+Ousterhout</a> é professor da Universidade de Stanford e criador da
+linguagem de script Tcl/Tk. Em 2018, ele lançou um <a
+href="https://www.goodreads.com/book/show/39996759-a-philosophy-of-software-design">livro</a>
+sobre filosofia e princípios de projeto de software.</p>
+<p>Neste livro, uma das principais recomendações – e, provavelmente, uma
+das mais originais, se comparada com o restante da literatura sobre
+projeto de software – é a seguinte: <strong>os módulos de um sistema
+devem ser profundos</strong>.</p>
+<p>Vamos, primeiro, definir o que é um módulo. Basicamente, é qualquer
+elemento de código que tem uma implementação e uma interface. Assim,
+podemos ter módulos de diferentes tamanhos, incluindo funções, classes,
+subsistemas, pacotes, etc.</p>
 <h2 class="unnumbered" id="módulos-profundos">Módulos Profundos</h2>
-<p>Mas voltando à recomendação de Ousterhout, um módulo é profundo (<em>deep</em>) quando sua implementação é bem mais complexa do que sua interface. Em outras palavras, módulos devem oferecer para seus clientes uma interface simples. Porém, por trás dessa interface, deve existir uma implementação complexa.</p>
-<p>O contrário é um módulo raso, quando a interface é quase tão complexa quanto a própria implementação do módulo. Para ajudar a entender, vejas as seguintes ilustrações retiradas do livro:</p>
+<p>Mas voltando à recomendação de Ousterhout, um módulo é profundo
+(<em>deep</em>) quando sua implementação é bem mais complexa do que sua
+interface. Em outras palavras, módulos devem oferecer para seus clientes
+uma interface simples. Porém, por trás dessa interface, deve existir uma
+implementação complexa.</p>
+<p>O contrário é um módulo raso, quando a interface é quase tão complexa
+quanto a própria implementação do módulo. Para ajudar a entender, vejas
+as seguintes ilustrações retiradas do livro:</p>
 <p><img src="./figs/deep-modules.png" style="width:75.0%" /></p>
-<p>Como exemplo de módulo profundo, o autor menciona o sistema de arquivos do Unix, cuja interface é composta por apenas cinco funções:</p>
+<p>Como exemplo de módulo profundo, o autor menciona o sistema de
+arquivos do Unix, cuja interface é composta por apenas cinco
+funções:</p>
 <pre><code>int open(const char* path, int flags, mode_t permissions);
 ssize_t read(int fd, void* buffer, size_t count);
 ssize_t write(int fd, const void* buffer, size_t count);
 off_t lseek(int fd, off_t offset, int referencePosition);
 int close(int fd);</code></pre>
-<p>Ou seja, a implementação de um sistema de arquivos em um sistema operacional é bastante complexa, pois envolve lidar com uma variedade de dispositivos de hardware, criar estruturas para armazenar arquivos, gerenciar permisssões, permitir acesso concorrente a arquivos, manipular caches, etc. Porém, toda essa monstruosa complexidade fica escondida por trás de uma interface muito simples (as cinco funções mostradas acima). Inclusive, o autor comenta que a implementação de sistemas de arquivos no Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível aos usuários, pois a assinatura das cinco funções de interface permaneceu inalterada.</p>
-<p>O autor menciona um segundo exemplo de módulo profundo: coletores de lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados em módulos que, basicamente, não possuem uma interface. Pelo menos uma interface visível à maioria dos programadores de linguagens como Go ou Java.</p>
-<p>Nas minhas aulas, eu costumo usar também uma metáfora alternativa, originalmente sugerida em um <a href="https://en.wikipedia.org/wiki/Object-Oriented_Software_Construction">livro</a> do prof. Bertrand Meyer. Segundo ele, módulos devem ser como icebergs, com uma pequena <q>ponta</q> (a interface) e uma grande base (a implementação), que fica submersa e invisível aos olhos externos. Veja a figura usada no livro de Meyer:</p>
+<p>Ou seja, a implementação de um sistema de arquivos em um sistema
+operacional é bastante complexa, pois envolve lidar com uma variedade de
+dispositivos de hardware, criar estruturas para armazenar arquivos,
+gerenciar permisssões, permitir acesso concorrente a arquivos, manipular
+caches, etc. Porém, toda essa monstruosa complexidade fica escondida por
+trás de uma interface muito simples (as cinco funções mostradas acima).
+Inclusive, o autor comenta que a implementação de sistemas de arquivos
+no Unix evoluiu radicalmente ao longo dos anos, mas de forma invisível
+aos usuários, pois a assinatura das cinco funções de interface
+permaneceu inalterada.</p>
+<p>O autor menciona um segundo exemplo de módulo profundo: coletores de
+lixo. Apesar de complexos, algoritmos de coleta de lixo são encapsulados
+em módulos que, basicamente, não possuem uma interface. Pelo menos uma
+interface visível à maioria dos programadores de linguagens como Go ou
+Java.</p>
+<p>Nas minhas aulas, eu costumo usar também uma metáfora alternativa,
+originalmente sugerida em um <a
+href="https://en.wikipedia.org/wiki/Object-Oriented_Software_Construction">livro</a>
+do prof. Bertrand Meyer. Segundo ele, módulos devem ser como icebergs,
+com uma pequena <q>ponta</q> (a interface) e uma grande base (a
+implementação), que fica submersa e invisível aos olhos externos. Veja a
+figura usada no livro de Meyer:</p>
 <p><img src="./figs/deep-modules-iceberg.png" style="width:45.0%" /></p>
 <h2 class="unnumbered" id="módulos-rasos">Módulos Rasos</h2>
-<p>Por outro lado, a interface de um módulo raso (<em>shallow</em>) é relativamente complexa, quando comparada com a implementação do módulo. Como exemplo extremo, o autor menciona a seguinte função:</p>
+<p>Por outro lado, a interface de um módulo raso (<em>shallow</em>) é
+relativamente complexa, quando comparada com a implementação do módulo.
+Como exemplo extremo, o autor menciona a seguinte função:</p>
 <pre><code>private void addNullValueForAttribute(String attribute) { // interface
     data.put(attribute, null);    // implementação
 }</code></pre>
 <p>Para ele, é mais simples e fácil chamar diretamente:</p>
 <pre><code>data.put(attribute, null);</code></pre>
-<p>do que criar uma função com apenas essa finalidade. Ou seja, a função <code>addNullValueForAttribute</code> adiciona complexidade ao sistema, mas sem proporcionar grandes benefícios.</p>
+<p>do que criar uma função com apenas essa finalidade. Ou seja, a função
+<code>addNullValueForAttribute</code> adiciona complexidade ao sistema,
+mas sem proporcionar grandes benefícios.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Dê dois exemplos de módulos profundos. Para facilitar sua resposta, pense em pacotes ou bibliotecas de sua linguagem preferida.</p></li>
-<li><p>Seja a seguinte afirmação: módulos profundos implicam obrigatoriamente em funções ou classes grandes, com muitas linhas de código. Ela é verdadeira ou falsa? Justifique e discuta.</p></li>
-<li><p>Suponha o seguinte método da classe <code>String</code> de Java:</p></li>
+<li><p>Dê dois exemplos de módulos profundos. Para facilitar sua
+resposta, pense em pacotes ou bibliotecas de sua linguagem
+preferida.</p></li>
+<li><p>Seja a seguinte afirmação: módulos profundos implicam
+obrigatoriamente em funções ou classes grandes, com muitas linhas de
+código. Ela é verdadeira ou falsa? Justifique e discuta.</p></li>
+<li><p>Suponha o seguinte método da classe <code>String</code> de
+Java:</p></li>
 </ol>
 <pre><code>public boolean isEmpty() {
   return value.length == 0;
 }</code></pre>
 <p>Esse método é raso? Justifique e discuta.</p>
-<p>Sugestão: Para responder à pergunta pense no código que chama <code>isEmpty()</code>. Por exemplo, você trocaria o seguinte código cliente</p>
+<p>Sugestão: Para responder à pergunta pense no código que chama
+<code>isEmpty()</code>. Por exemplo, você trocaria o seguinte código
+cliente</p>
 <pre><code>if (myString.isEmpty()) {
     ...
 }</code></pre>
@@ -138,13 +187,21 @@ int close(int fd);</code></pre>
     ...
 }</code></pre>
 <ol start="4" type="1">
-<li><p>Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem todo módulo pequeno é raso. Ela é verdadeira ou falsa? Justifique e discuta. (observação: um módulo pequeno é aquele que tem poucas linhas de código.)</p></li>
-<li><p>Seja a seguinte afirmação retirada do livro de Refactoring de Martin Fowler:</p></li>
+<li><p>Seja a seguinte afirmação: todo módulo raso é pequeno, mas nem
+todo módulo pequeno é raso. Ela é verdadeira ou falsa? Justifique e
+discuta. (observação: um módulo pequeno é aquele que tem poucas linhas
+de código.)</p></li>
+<li><p>Seja a seguinte afirmação retirada do livro de Refactoring de
+Martin Fowler:</p></li>
 </ol>
 <blockquote>
-<p>Small methods really work only when you have good names, so you need to pay attention to naming. People sometimes ask me what length I look for in a method. To me length is not the issue. The key is the semantic distance between the method name and the method body.</p>
+<p>Small methods really work only when you have good names, so you need
+to pay attention to naming. People sometimes ask me what length I look
+for in a method. To me length is not the issue. The key is the semantic
+distance between the method name and the method body.</p>
 </blockquote>
-<p>Explique conceito de <em>distância semântica entre o nome de um método e o corpo desse método</em>, mencionado na citação acima.</p>
+<p>Explique conceito de <em>distância semântica entre o nome de um
+método e o corpo desse método</em>, mencionado na citação acima.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

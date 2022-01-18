@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -58,6 +55,9 @@
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -92,12 +92,21 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="criando-objetos-compostos-com-o-padrão-de-projeto-composite">Criando Objetos Compostos com o Padrão de Projeto Composite</h1>
+<h1 class="unnumbered"
+id="criando-objetos-compostos-com-o-padrão-de-projeto-composite">Criando
+Objetos Compostos com o Padrão de Projeto Composite</h1>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
-<p>Neste artigo, vamos apresentar o padrão de projeto <strong>Composite</strong>, que – por ser um padrão bem simples – não foi tratado no <a href="../cap6.html">Capítulo 6</a> do livro.</p>
-<p>Para isso, vamos usar a mesma estrutura dos padrões de projeto que estudamos no referido capítulo. Ou seja, iremos apresentar o padrão descrevendo primeiro um contexto, depois um problema enfrentado nesse contexto e, por fim, a solução que é proposta por Composite.</p>
+<p>Neste artigo, vamos apresentar o padrão de projeto
+<strong>Composite</strong>, que – por ser um padrão bem simples – não
+foi tratado no <a href="../cap6.html">Capítulo 6</a> do livro.</p>
+<p>Para isso, vamos usar a mesma estrutura dos padrões de projeto que
+estudamos no referido capítulo. Ou seja, iremos apresentar o padrão
+descrevendo primeiro um contexto, depois um problema enfrentado nesse
+contexto e, por fim, a solução que é proposta por Composite.</p>
 <h2 class="unnumbered" id="contexto">Contexto</h2>
-<p>Suponha que estamos desenvolvendo um editor gráfico, similar ao Paint (para Windows) ou Canva (Web). Nesse editor, temos interfaces e classes como as seguintes:</p>
+<p>Suponha que estamos desenvolvendo um editor gráfico, similar ao Paint
+(para Windows) ou Canva (Web). Nesse editor, temos interfaces e classes
+como as seguintes:</p>
 <pre><code>interface Figura {
   void desenha();
   void mudaCorDeFundo(Cor cor); 
@@ -111,13 +120,26 @@ class Triangulo implements Figura {
   ...
 }</code></pre>
 <h2 class="unnumbered" id="problema">Problema</h2>
-<p>No nosso editor, queremos implementar uma funcionalidade que permita <strong>agrupar figuras</strong> e então tratar a figura resultante desse agrupamento como uma figura única.</p>
-<p>Por exemplo, uma figura agrupada pode ser composta por um círculo e dois triângulos (veja ilustração). Criado esse agrupamento, queremos, em seguida, realizar uma operação no mesmo – por exemplo, mudar a cor de fundo de suas três figuras – usando para isso uma única chamada de método.</p>
+<p>No nosso editor, queremos implementar uma funcionalidade que permita
+<strong>agrupar figuras</strong> e então tratar a figura resultante
+desse agrupamento como uma figura única.</p>
+<p>Por exemplo, uma figura agrupada pode ser composta por um círculo e
+dois triângulos (veja ilustração). Criado esse agrupamento, queremos, em
+seguida, realizar uma operação no mesmo – por exemplo, mudar a cor de
+fundo de suas três figuras – usando para isso uma única chamada de
+método.</p>
 <p><img src="./figs/composite-pattern.jpg" style="width:85.0%" /></p>
-<p>Explicando melhor, um código cliente vai poder trabalhar com figuras simples ou com figuras agrupadas da mesma forma, usando apenas a interface <code>Figura</code>. Esse código não vai precisar saber qual tipo de figura (simples ou agrupada) ele está manipulando.</p>
+<p>Explicando melhor, um código cliente vai poder trabalhar com figuras
+simples ou com figuras agrupadas da mesma forma, usando apenas a
+interface <code>Figura</code>. Esse código não vai precisar saber qual
+tipo de figura (simples ou agrupada) ele está manipulando.</p>
 <h2 class="unnumbered" id="solução">Solução</h2>
-<p>O <strong>padrão de projeto Composite</strong> é a solução para o problema que enunciamos. Ele permite armazenar objetos compostos (ou agrupados) em uma estrutura com forma de árvore e então possibilita que clientes manipulem esses objetos como se fossem objetos simples.</p>
-<p>A classe principal do padrão é aquela responsável pelo agrupamento. No nosso exemplo, temos então que criar uma classe como a seguinte:</p>
+<p>O <strong>padrão de projeto Composite</strong> é a solução para o
+problema que enunciamos. Ele permite armazenar objetos compostos (ou
+agrupados) em uma estrutura com forma de árvore e então possibilita que
+clientes manipulem esses objetos como se fossem objetos simples.</p>
+<p>A classe principal do padrão é aquela responsável pelo agrupamento.
+No nosso exemplo, temos então que criar uma classe como a seguinte:</p>
 <pre><code>class FiguraAgrupada implements Figura {
 
   private ArrayList&lt;Figura&gt; figuras = new ArrayList&lt;Figura&gt;();
@@ -143,14 +165,22 @@ class Triangulo implements Figura {
     }
   }
 }</code></pre>
-<p>Dois aspectos principais devem ser ressaltados sobre a classe <code>FiguraAgrupada</code>:</p>
+<p>Dois aspectos principais devem ser ressaltados sobre a classe
+<code>FiguraAgrupada</code>:</p>
 <ul>
-<li><p>Ela implementa métodos para adicionar e remover uma figura do agrupamento.</p></li>
-<li><p>Ela também é uma figura, pois implementa a interface <code>Figura</code>. A implementação dos métodos de <code>Figura</code> apenas delega a mesma operação para todas as figuras do agrupamento, usando para isso um comando <code>for</code>.</p></li>
+<li><p>Ela implementa métodos para adicionar e remover uma figura do
+agrupamento.</p></li>
+<li><p>Ela também é uma figura, pois implementa a interface
+<code>Figura</code>. A implementação dos métodos de <code>Figura</code>
+apenas delega a mesma operação para todas as figuras do agrupamento,
+usando para isso um comando <code>for</code>.</p></li>
 </ul>
 <p>Veja também um diagrama UML com as classes que criamos até agora:</p>
-<p><img src="./figs/composite-pattern-uml.svg" style="width:95.0%" /></p>
-<p>Como resultado, para um código cliente, não interessa se ele está trabalhando com um figura simples ou com uma figura agrupada, como no seguinte caso:</p>
+<p><img src="./figs/composite-pattern-uml.svg"
+style="width:95.0%" /></p>
+<p>Como resultado, para um código cliente, não interessa se ele está
+trabalhando com um figura simples ou com uma figura agrupada, como no
+seguinte caso:</p>
 <pre><code>class Cliente {
   void foo(Figura fig) {
     ...
@@ -176,25 +206,42 @@ class Main {
     cliente.foo(grupo); // chama foo com figura agrupada
   } 
 }</code></pre>
-<p>Por fim, veja que podemos criar uma hierarquia, em forma de árvore, com figuras agrupadas <q>contendo</q> outras figuras agrupadas, como em:</p>
+<p>Por fim, veja que podemos criar uma hierarquia, em forma de árvore,
+com figuras agrupadas <q>contendo</q> outras figuras agrupadas, como
+em:</p>
 <pre><code>FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada</code></pre>
 <h2 class="unnumbered" id="comentário-final">Comentário Final</h2>
-<p>Devemos usar o padrão Composite quando precisamos representar de forma uniforme objetos simples e objetos compostos (isto é, objetos formados pelo agrupamento de objetos simples). Isso simplifica a implementação de código que precisa manipular tais objetos, pois fica transparente se a manipulação ocorre sobre um objeto simples ou sobre um objeto composto.</p>
-<p><strong>Código fonte:</strong> O código fonte do exemplo usado neste artigo está disponível <a href="https://repl.it/@mtvalente/Padrao-de-Projeto-Composite">aqui</a>.</p>
+<p>Devemos usar o padrão Composite quando precisamos representar de
+forma uniforme objetos simples e objetos compostos (isto é, objetos
+formados pelo agrupamento de objetos simples). Isso simplifica a
+implementação de código que precisa manipular tais objetos, pois fica
+transparente se a manipulação ocorre sobre um objeto simples ou sobre um
+objeto composto.</p>
+<p><strong>Código fonte:</strong> O código fonte do exemplo usado neste
+artigo está disponível <a
+href="https://repl.it/@mtvalente/Padrao-de-Projeto-Composite">aqui</a>.</p>
 <h2 class="unnumbered" id="exercício">Exercício</h2>
 <ol type="1">
-<li><p>Existem três tipos de classes ou interfaces no padrão Composite:</p>
+<li><p>Existem três tipos de classes ou interfaces no padrão
+Composite:</p>
 <ul>
-<li>Uma interface visível para o cliente (no nosso exemplo, <code>Figura</code>)</li>
-<li>Classes de objetos simples (no nosso exemplo, <code>Circulo</code> e <code>Triangulo</code>)</li>
-<li>Classe responsável pela composição (no nosso exemplo, <code>FiguraAgrupada</code>)</li>
+<li>Uma interface visível para o cliente (no nosso exemplo,
+<code>Figura</code>)</li>
+<li>Classes de objetos simples (no nosso exemplo, <code>Circulo</code> e
+<code>Triangulo</code>)</li>
+<li>Classe responsável pela composição (no nosso exemplo,
+<code>FiguraAgrupada</code>)</li>
 </ul>
-<p>Considerando essas classes, pense em um outro exemplo de uso do padrão Composite. E então responda:</p>
+<p>Considerando essas classes, pense em um outro exemplo de uso do
+padrão Composite. E então responda:</p>
 <ol type="a">
-<li>Qual é a interface visível para o cliente? Quais métodos ela define?</li>
-<li>Quais são as classes de objetos simples? Basta citar o nome delas.</li>
-<li>Qual a classe responsável pela composição? Basta citar o nome dela.</li>
+<li>Qual é a interface visível para o cliente? Quais métodos ela
+define?</li>
+<li>Quais são as classes de objetos simples? Basta citar o nome
+delas.</li>
+<li>Qual a classe responsável pela composição? Basta citar o nome
+dela.</li>
 </ol></li>
 </ol>
 <hr />
