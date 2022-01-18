@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -58,6 +55,9 @@
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -65,7 +65,8 @@
 <div class="col-md-offset-1 col-lg-offset-3">
 
 <p>
-<a href="https://engsoftmoderna.info"><img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+<a href="https://engsoftmoderna.info">
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
 </p>
 
 <p>
@@ -84,32 +85,65 @@
 
 <a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM"
       onclick="trackOutboundLink('https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM', 'mercadolivre-caps', 'mercadolivre-caps'); return false;">
-      MercadoLivre</a>.
+      Mercado Livre</a>.
 </p>
 
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="perguntas-frequentes-sobre-padrões-de-projeto">Perguntas Frequentes sobre Padrões de Projeto <a href="#perguntas-frequentes-sobre-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h1>
-<p>Neste artigo, respondemos perguntas sobre temas relacionados com padrões de projeto, isto é, sobre o <a href="../cap6.html">Capítulo 6</a> do livro.</p>
+<h1 class="unnumbered"
+id="perguntas-frequentes-sobre-padrões-de-projeto">Perguntas Frequentes
+sobre Padrões de Projeto <a
+href="#perguntas-frequentes-sobre-padrões-de-projeto"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<p>Neste artigo, respondemos perguntas sobre temas relacionados com
+padrões de projeto, isto é, sobre o <a href="../cap6.html">Capítulo
+6</a> do livro.</p>
 <p>Segue a lista atual de perguntas:</p>
 <ol type="1">
-<li><a href="#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador">Qual a diferença entre um Proxy e um Adaptador?</a></li>
-<li><a href="">Qual a diferença entre Strategy e Template Method?</a></li>
+<li><a href="#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador">Qual
+a diferença entre um Proxy e um Adaptador?</a></li>
+<li><a href="">Qual a diferença entre Strategy e Template
+Method?</a></li>
 </ol>
 <hr />
-<h3 class="unnumbered" id="qual-a-diferença-entre-um-proxy-e-um-adaptador">1. Qual a diferença entre um Proxy e um Adaptador? <a href="#qual-a-diferença-entre-um-proxy-e-um-adaptador" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered"
+id="qual-a-diferença-entre-um-proxy-e-um-adaptador">1. Qual a diferença
+entre um Proxy e um Adaptador? <a
+href="#qual-a-diferença-entre-um-proxy-e-um-adaptador"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha um objeto que tenha uma interface <code>I</code>.</p>
 <ul>
-<li><p>Um <strong>proxy</strong> implementa a interface<code>I</code>, isto é, implementa todos os seus métodos. Normalmente, um proxy é usado para implementar requisitos não-funcionais, tais como segurança, persistência, distribuição, etc.</p></li>
-<li><p>Já um <strong>adaptador</strong> implementa uma outra interface, digamos que <code>J</code> e fica responsável por adaptá-la para a interface <code>I</code>. Para ilustrar, lembre-se de um adaptador de tomadas do padrão novo para o antigo ou vice-versa.</p></li>
+<li><p>Um <strong>proxy</strong> implementa a interface<code>I</code>,
+isto é, implementa todos os seus métodos. Normalmente, um proxy é usado
+para implementar requisitos não-funcionais, tais como segurança,
+persistência, distribuição, etc.</p></li>
+<li><p>Já um <strong>adaptador</strong> implementa uma outra interface,
+digamos que <code>J</code> e fica responsável por adaptá-la para a
+interface <code>I</code>. Para ilustrar, lembre-se de um adaptador de
+tomadas do padrão novo para o antigo ou vice-versa.</p></li>
 </ul>
-<h3 class="unnumbered" id="qual-a-diferença-entre-strategy-e-template-method">2. Qual a diferença entre Strategy e Template Method? <a href="#qual-a-diferença-entre-strategy-e-template-method" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 class="unnumbered"
+id="qual-a-diferença-entre-strategy-e-template-method">2. Qual a
+diferença entre Strategy e Template Method? <a
+href="#qual-a-diferença-entre-strategy-e-template-method"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha uma classe X:</p>
 <ul>
-<li><p>Suponha que a implementação de X precisa usar um serviço Y, o qual possui implementações alternativas Y1, Y2, Y3, etc. Porém, X não quer se comprometer com nenhuma dessas implementações. Nesse caso, podemos usar o padrão de projeto <strong>Strategy</strong> para encapsular a implementação de Y em uma hierarquia separada de classes e para permitir que sejam criadas instâncias de X que usam determinadas classes de tal hierarquia.</p></li>
-<li><p>Suponha agora que ao implementar X queremos definir o esqueleto de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma parcial. Isso significa que as implementações de Y serão <q>completadas</q> em subclasses de X. Nesse caso, podemos usar o padrão de projeto <strong>Template Method</strong> para implementar esse esqueleto de Y na classe X.</p></li>
+<li><p>Suponha que a implementação de X precisa usar um serviço Y, o
+qual possui implementações alternativas Y1, Y2, Y3, etc. Porém, X não
+quer se comprometer com nenhuma dessas implementações. Nesse caso,
+podemos usar o padrão de projeto <strong>Strategy</strong> para
+encapsular a implementação de Y em uma hierarquia separada de classes e
+para permitir que sejam criadas instâncias de X que usam determinadas
+classes de tal hierarquia.</p></li>
+<li><p>Suponha agora que ao implementar X queremos definir o esqueleto
+de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma parcial.
+Isso significa que as implementações de Y serão <q>completadas</q> em
+subclasses de X. Nesse caso, podemos usar o padrão de projeto
+<strong>Template Method</strong> para implementar esse esqueleto de Y na
+classe X.</p></li>
 </ul>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
