@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -58,6 +55,9 @@
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -92,39 +92,102 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="revisão-de-código-uma-breve-introdução">Revisão de Código: Uma Breve Introdução</h1>
-<p>Artigo de autoria de <strong>Aline Torres</strong> e <strong>Marco Tulio Valente</strong>. Elaborado como parte da Monografia de Sistemas de Informação da primeira autora no DCC/UFMG.</p>
+<h1 class="unnumbered"
+id="revisão-de-código-uma-breve-introdução">Revisão de Código: Uma Breve
+Introdução</h1>
+<p>Artigo de autoria de <strong>Aline Torres</strong> e <strong>Marco
+Tulio Valente</strong>. Elaborado como parte da Monografia de Sistemas
+de Informação da primeira autora no DCC/UFMG.</p>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
-<p>Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, <strong>apenas 23% não usavam revisão de código</strong> no seu trabalho (<a href="https://insights.stackoverflow.com/survey/2019#development-practices">link</a>).</p>
-<p><img src="./figs/stackoverflow-survey-2019-pt.svg" style="width:80.0%" /></p>
-<p>A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de <strong>revisor</strong>. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerindo melhorias, indicando bugs, etc.</p>
-<p>Assim, estabelece-se um <q>diálogo</q> – na forma de uma troca de comentários — entre o <strong>autor</strong> do código e o seu revisor. Como resultado, o autor pode modificar sua implementação para atender a alguma sugestão do revisor que ele achou procedente. Ou então, ele pode replicar e justificar que ela não faz sentido… Espera-se que após esse <q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado no repositório do projeto.</p>
+<p>Revisão de código é uma das práticas mais importantes para garantir a
+saúde a médio e longo prazo da base de código de um sistema. Ela é hoje
+adotada por várias empresas que desenvolvem software. Por exemplo, o
+Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da
+prática (veja figura). Dentre os mais de 70 mil desenvolvedores que
+responderam a essa pergunta, <strong>apenas 23% não usavam revisão de
+código</strong> no seu trabalho (<a
+href="https://insights.stackoverflow.com/survey/2019#development-practices">link</a>).</p>
+<p><img src="./figs/stackoverflow-survey-2019-pt.svg"
+style="width:80.0%" /></p>
+<p>A ideia de revisão de código é simples: todo código desenvolvido por
+um desenvolvedor tem que ser, em seguida, analisado por pelo menos um
+outro desenvolvedor, chamado de <strong>revisor</strong>. O revisor pode
+adicionar comentários no código sob revisão, procurando esclarecer
+dúvidas, sugerindo melhorias, indicando bugs, etc.</p>
+<p>Assim, estabelece-se um <q>diálogo</q> – na forma de uma troca de
+comentários — entre o <strong>autor</strong> do código e o seu revisor.
+Como resultado, o autor pode modificar sua implementação para atender a
+alguma sugestão do revisor que ele achou procedente. Ou então, ele pode
+replicar e justificar que ela não faz sentido… Espera-se que após esse
+<q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado
+no repositório do projeto.</p>
 <h2 class="unnumbered" id="pull-requests">Pull Requests</h2>
-<p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar código usando o recurso de <strong>Pull Requests (PR)</strong> do GitHub. Por meio desse recurso, desenvolvedores podem submeter código para ser integrado no repositório principal de um projeto. No entanto, antes da integração, o GitHub permite que outros desenvolvedores revisem esse código.</p>
-<p>O exemplo a seguir usa a classe <code>Estacionamento</code> que já foi usada no <a href="../cap5.html#exemplo-1">Capítulo 5</a> do livro. Especificamente, vamos supor que uma autora criou um PR, no qual ela sugere adicionar tal classe no sistema. Após isso, teve início o processo de revisão, que você pode acompanhar também pela próxima figura.</p>
+<p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar
+código usando o recurso de <strong>Pull Requests (PR)</strong> do
+GitHub. Por meio desse recurso, desenvolvedores podem submeter código
+para ser integrado no repositório principal de um projeto. No entanto,
+antes da integração, o GitHub permite que outros desenvolvedores revisem
+esse código.</p>
+<p>O exemplo a seguir usa a classe <code>Estacionamento</code> que já
+foi usada no <a href="../cap5.html#exemplo-1">Capítulo 5</a> do livro.
+Especificamente, vamos supor que uma autora criou um PR, no qual ela
+sugere adicionar tal classe no sistema. Após isso, teve início o
+processo de revisão, que você pode acompanhar também pela próxima
+figura.</p>
 <ul>
-<li><p><strong>Comentário 1</strong>: o revisor comentou que alguns atributos da classe <code>Estacionamento</code> poderiam ser privados. E sugeriu também implementar um método <code>estaciona</code> para mediar o acesso a eles.</p></li>
-<li><p><strong>Comentário 2:</strong> a autora concordou com a sugestão do revisor e atualizou o seu código com a modificação sugerida.</p></li>
-<li><p><strong>Comentário 3:</strong> o revisor aprovou o PR. A mensagem LGTM significa <em>Looks Good to Me</em>. Então, o PR pode ser integrado no branch principal do projeto. Isso pode ser feito pela própria autora, caso ela tenha permissão de escrita nesse branch.</p></li>
+<li><p><strong>Comentário 1</strong>: o revisor comentou que alguns
+atributos da classe <code>Estacionamento</code> poderiam ser privados. E
+sugeriu também implementar um método <code>estaciona</code> para mediar
+o acesso a eles.</p></li>
+<li><p><strong>Comentário 2:</strong> a autora concordou com a sugestão
+do revisor e atualizou o seu código com a modificação sugerida.</p></li>
+<li><p><strong>Comentário 3:</strong> o revisor aprovou o PR. A mensagem
+LGTM significa <em>Looks Good to Me</em>. Então, o PR pode ser integrado
+no branch principal do projeto. Isso pode ser feito pela própria autora,
+caso ela tenha permissão de escrita nesse branch.</p></li>
 </ul>
 <figure>
-<img src="./figs/pull-request-screenshot.jpg" style="width:95.0%" alt="Exemplo de revisão de código realizada em um PR" /><figcaption aria-hidden="true">Exemplo de revisão de código realizada em um PR</figcaption>
+<img src="./figs/pull-request-screenshot.jpg" style="width:95.0%"
+alt="Exemplo de revisão de código realizada em um PR" />
+<figcaption aria-hidden="true">Exemplo de revisão de código realizada em
+um PR</figcaption>
 </figure>
 <h2 class="unnumbered" id="motivações">Motivações</h2>
-<p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores e testadores da Microsoft (<a href="https://doi.org/10.1109/ICSE.2013.6606617">link</a>). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos participantes do estudo.</p>
-<p><img src="./figs/code-review-paper-microsoft.svg" style="width:80.0%" /></p>
-<p>Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa.</p>
-<p>Apenas reforçando o terceiro ponto acima, revisão de código tem um benefício importante que é evitar a formação de <q>ilhas de conhecimento</q> em um projeto. Em vez disso, ela ajuda a socializar o conhecimento sobre o código e a criar uma cultura de colaboração e troca de ideias entre os membros do time.</p>
+<p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo
+sobre revisão de código com 873 desenvolvedores e testadores da
+Microsoft (<a
+href="https://doi.org/10.1109/ICSE.2013.6606617">link</a>). A próxima
+figura ilustra as principais motivações para realização de revisão de
+código, na opinião dos participantes do estudo.</p>
+<p><img src="./figs/code-review-paper-microsoft.svg"
+style="width:80.0%" /></p>
+<p>Conforme respondido pelos participantes, a principal motivação é
+encontrar bugs no código submetido. Porém, outros fatores também são
+importantes, como (1) melhorar o código, (2) propor soluções
+alternativas e (3) transferir conhecimento. Esse último benefício pode
+ocorrer nos dois sentidos, isto é, o autor pode aprender com os
+comentários do revisor e vice-versa.</p>
+<p>Apenas reforçando o terceiro ponto acima, revisão de código tem um
+benefício importante que é evitar a formação de <q>ilhas de
+conhecimento</q> em um projeto. Em vez disso, ela ajuda a socializar o
+conhecimento sobre o código e a criar uma cultura de colaboração e troca
+de ideias entre os membros do time.</p>
 <h2 class="unnumbered" id="o-que-revisar">O que Revisar?</h2>
-<p>Segue uma lista de questões que devem ser apontadas e consideradas em revisões de código:</p>
+<p>Segue uma lista de questões que devem ser apontadas e consideradas em
+revisões de código:</p>
 <ul>
 <li>Bugs em geral</li>
 <li>Código mais complexo do que o necessário</li>
-<li>Código que usa um algoritmo e/ou estrutura de dados menos eficiente</li>
-<li>Código que viola princípios de projeto (veja mais no <a href="../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto">Capítulo 5</a>)</li>
-<li>Código que viola a arquitetura de camadas do sistema (veja mais no <a href="../cap7.html#arquitetura-em-camadas">Capítulo 7</a>)</li>
+<li>Código que usa um algoritmo e/ou estrutura de dados menos
+eficiente</li>
+<li>Código que viola princípios de projeto (veja mais no <a
+href="../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto">Capítulo
+5</a>)</li>
+<li>Código que viola a arquitetura de camadas do sistema (veja mais no
+<a href="../cap7.html#arquitetura-em-camadas">Capítulo 7</a>)</li>
 <li>Código que não trata exceções e erros</li>
-<li>Código com code smells (veja mais no <a href="../cap9.html#code-smells">Capítulo 9</a>)</li>
+<li>Código com code smells (veja mais no <a
+href="../cap9.html#code-smells">Capítulo 9</a>)</li>
 <li>Otimizações prematuras</li>
 <li>Ausência de testes</li>
 <li>Ausência de documentação, principalmente aquela mais relevante</li>
@@ -138,54 +201,149 @@
 <li>Código com problemas de leiaute ou indentação</li>
 <li>Código que viola convenções de nome</li>
 </ul>
-<h2 class="unnumbered" id="recomendações-para-revisores">Recomendações para Revisores</h2>
-<p>Nesta seção, vamos listar algumas recomendações sobre como se <q>portar</q> em uma revisão de código.</p>
-<p>Para chegar até elas, partimos do artigo <em>How to Give Respectful and Constructive Code Review Feedback</em>, de autoria de Michaela Greiler (<a href="https://www.michaelagreiler.com/respectful-constructive-code-review-feedback">link</a>). Em seguida, fizemos uma análise de mais de 120 PRs de projetos de código aberto, hospedados no GitHub, buscando por casos concretos de comentários que seguem as recomendações que coletamos inicialmente. Ao todo, analisamos pelo menos 259 comentários para selecionar os exemplos que iremos mostrar a seguir.</p>
-<h3 class="unnumbered" id="recomendações-genéricas">Recomendações Genéricas</h3>
+<h2 class="unnumbered" id="recomendações-para-revisores">Recomendações
+para Revisores</h2>
+<p>Nesta seção, vamos listar algumas recomendações sobre como se
+<q>portar</q> em uma revisão de código.</p>
+<p>Para chegar até elas, partimos do artigo <em>How to Give Respectful
+and Constructive Code Review Feedback</em>, de autoria de Michaela
+Greiler (<a
+href="https://www.michaelagreiler.com/respectful-constructive-code-review-feedback">link</a>).
+Em seguida, fizemos uma análise de mais de 120 PRs de projetos de código
+aberto, hospedados no GitHub, buscando por casos concretos de
+comentários que seguem as recomendações que coletamos inicialmente. Ao
+todo, analisamos pelo menos 259 comentários para selecionar os exemplos
+que iremos mostrar a seguir.</p>
+<h3 class="unnumbered" id="recomendações-genéricas">Recomendações
+Genéricas</h3>
 <p>Vamos começar com algumas recomendações genéricas:</p>
 <ol type="1">
-<li><p>Revisores sempre devem lembrar que o objetivo da revisão é <strong>detectar problemas inequívocos</strong> no código submetido. Por exemplo, é natural que o revisor pudesse ter optado por resolver o mesmo problema de um modo diferente… Porém, a revisão não é para propor alternativas que não tenham vantagens claras e inequívocas. Ou seja, um revisor somente deve propor uma alternativa se ela for, de fato, bem melhor!</p></li>
-<li><p>Na linha da recomendação anterior, <strong>evite comentários subjetivos e relacionados a estilos pessoais</strong>. Um exemplo são nomes de variáveis. A não ser que o nome de uma variável seja muito ruim, recomenda-se não iniciar um debate sobre ele.</p></li>
-<li><p>Em suas revisões, <strong>nunca use palavras ofensivas</strong>, sarcásticas ou mesmo irônicas. Em vez disso, seja sempre educado e profissional.</p></li>
-<li><p>Sempre <strong>restrinja seus comentários ao código</strong> que foi submetido e evite tratar de assuntos pessoais ou de outras questões.</p></li>
+<li><p>Revisores sempre devem lembrar que o objetivo da revisão é
+<strong>detectar problemas inequívocos</strong> no código submetido. Por
+exemplo, é natural que o revisor pudesse ter optado por resolver o mesmo
+problema de um modo diferente… Porém, a revisão não é para propor
+alternativas que não tenham vantagens claras e inequívocas. Ou seja, um
+revisor somente deve propor uma alternativa se ela for, de fato, bem
+melhor!</p></li>
+<li><p>Na linha da recomendação anterior, <strong>evite comentários
+subjetivos e relacionados a estilos pessoais</strong>. Um exemplo são
+nomes de variáveis. A não ser que o nome de uma variável seja muito
+ruim, recomenda-se não iniciar um debate sobre ele.</p></li>
+<li><p>Em suas revisões, <strong>nunca use palavras ofensivas</strong>,
+sarcásticas ou mesmo irônicas. Em vez disso, seja sempre educado e
+profissional.</p></li>
+<li><p>Sempre <strong>restrinja seus comentários ao código</strong> que
+foi submetido e evite tratar de assuntos pessoais ou de outras
+questões.</p></li>
 </ol>
-<h3 class="unnumbered" id="recomendações-específicas">Recomendações Específicas</h3>
+<h3 class="unnumbered" id="recomendações-específicas">Recomendações
+Específicas</h3>
 <p>Seguem agora algumas recomendações mais específicas:</p>
 <ol start="5" type="1">
-<li><p>Nos seus comentários, <strong>procure fazer perguntas e não julgamentos</strong>. Segue um exemplo de pergunta real feita por um revisor de um dos projetos que estudamos: <em>Is this actually used? Or is it something necessary to make the template magic work?</em></p></li>
-<li><p>Se você tiver feito um comentário errado ou sem sentido, <strong>reconheça o seu erro</strong> e agradeça, como no seguinte exemplo: <em>Ah, I see the point. Thanks for your explanation.</em></p></li>
-<li><p>Sempre que possível, <strong>use emojis</strong>, pois eles deixam a linguagem mais coloquial e amigável. Veja um exemplo real: <em>run yarn task… It’ll save time to everybody</em> 😄</p></li>
-<li><p>Sempre que for esclarecedor, <strong>referencie a documentação</strong> interna ou externa ao projeto. Isso vai ajudar a embasar seus comentários, como neste exemplo: <em>[a given feature] allows id as in [URL]</em></p></li>
-<li><p>Não deixe de <strong>elogiar o código</strong> submetido, se achar que ele possui um nível de qualidade superior, como neste caso: <em>Thanks for the clear test instructions.</em></p></li>
-<li><p>Se necessário, <strong>use imagens e screenshots</strong> para explicar sua dúvida. Veja um exemplo na próxima figura. Por meio dela, o revisor quis deixar claro que o código submetido poderia ter um comportamento errado quando um determinado filtro fosse definido como <em>All</em>.</p></li>
+<li><p>Nos seus comentários, <strong>procure fazer perguntas e não
+julgamentos</strong>. Segue um exemplo de pergunta real feita por um
+revisor de um dos projetos que estudamos: <em>Is this actually used? Or
+is it something necessary to make the template magic work?</em></p></li>
+<li><p>Se você tiver feito um comentário errado ou sem sentido,
+<strong>reconheça o seu erro</strong> e agradeça, como no seguinte
+exemplo: <em>Ah, I see the point. Thanks for your
+explanation.</em></p></li>
+<li><p>Sempre que possível, <strong>use emojis</strong>, pois eles
+deixam a linguagem mais coloquial e amigável. Veja um exemplo real:
+<em>run yarn task… It’ll save time to everybody</em> 😄</p></li>
+<li><p>Sempre que for esclarecedor, <strong>referencie a
+documentação</strong> interna ou externa ao projeto. Isso vai ajudar a
+embasar seus comentários, como neste exemplo: <em>[a given feature]
+allows id as in [URL]</em></p></li>
+<li><p>Não deixe de <strong>elogiar o código</strong> submetido, se
+achar que ele possui um nível de qualidade superior, como neste caso:
+<em>Thanks for the clear test instructions.</em></p></li>
+<li><p>Se necessário, <strong>use imagens e screenshots</strong> para
+explicar sua dúvida. Veja um exemplo na próxima figura. Por meio dela, o
+revisor quis deixar claro que o código submetido poderia ter um
+comportamento errado quando um determinado filtro fosse definido como
+<em>All</em>.</p></li>
 </ol>
 <figure>
-<img src="./figs/code-review-screenshot.jpg" style="width:60.0%" alt="Exemplo de screenshot adicionado por um revisor em sua revisão" /><figcaption aria-hidden="true">Exemplo de screenshot adicionado por um revisor em sua revisão</figcaption>
+<img src="./figs/code-review-screenshot.jpg" style="width:60.0%"
+alt="Exemplo de screenshot adicionado por um revisor em sua revisão" />
+<figcaption aria-hidden="true">Exemplo de screenshot adicionado por um
+revisor em sua revisão</figcaption>
 </figure>
 <ol start="11" type="1">
-<li><p>Procure <strong>justificar os seus comentários</strong> quando a motivação não for clara ou quando o autor do código for um desenvolvedor júnior. Veja um exemplo: <em>Sugiro trocar o ArrayList de Aluno por um HashMap&lt;String, Aluno&gt;, porque aí podemos verificar de forma mais eficiente se um determinado Aluno está presente na sua turma…</em>.</p></li>
-<li><p>Sempre que for razoável, <strong>use o pronome <q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o pronome <q>você</q>, pois assim você deixa claro que estão – autor e revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que você não poderia tornar esse atributo privado?</em>, você pode perguntar: <em>será que a gente não poderia tornar esse atributo privado?</em></p></li>
-<li><p>Por último, mas não menos importante, se você tiver uma divergência muito forte em relação ao código submetido (por exemplo, se achar que está tudo errado…) ou se a troca de comentários não estiver convergindo para aprovar o PR, tente <strong>agendar uma reunião com o autor</strong> para expor sua visão e tentarem chegar a um consenso. Porém, essa interação síncrona deve ser uma exceção e reservada para casos mais importantes.</p></li>
+<li><p>Procure <strong>justificar os seus comentários</strong> quando a
+motivação não for clara ou quando o autor do código for um desenvolvedor
+júnior. Veja um exemplo: <em>Sugiro trocar o ArrayList de Aluno por um
+HashMap&lt;String, Aluno&gt;, porque aí podemos verificar de forma mais
+eficiente se um determinado Aluno está presente na sua
+turma…</em>.</p></li>
+<li><p>Sempre que for razoável, <strong>use o pronome
+<q>nós</q></strong> ou a expressão <q>a gente</q>, em vez de usar o
+pronome <q>você</q>, pois assim você deixa claro que estão – autor e
+revisor – trabalhando juntos. Por exemplo, em vez de dizer, <em>será que
+você não poderia tornar esse atributo privado?</em>, você pode
+perguntar: <em>será que a gente não poderia tornar esse atributo
+privado?</em></p></li>
+<li><p>Por último, mas não menos importante, se você tiver uma
+divergência muito forte em relação ao código submetido (por exemplo, se
+achar que está tudo errado…) ou se a troca de comentários não estiver
+convergindo para aprovar o PR, tente <strong>agendar uma reunião com o
+autor</strong> para expor sua visão e tentarem chegar a um consenso.
+Porém, essa interação síncrona deve ser uma exceção e reservada para
+casos mais importantes.</p></li>
 </ol>
-<h2 class="unnumbered" id="recomendações-para-autores">Recomendações para Autores</h2>
-<p>Os autores também devem ser profissionais e educados em suas respostas. Eles devem entender também que <strong>revisão de código não é um exame de proficiência</strong>. Ou seja, como autor, não leve a revisão para o lado pessoal e nunca imagine que o revisor está julgando sua competência.</p>
-<p>Outro ponto muito importante é que os autores devem submeter PRs pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos revisores. Por exemplo, os autores do livro <em>Software Engineering at Google</em>, recomendam que <strong>um PR deve ter no máximo 200 linhas de código</strong>.</p>
-<p>Se PRs forem muito grandes, existe também a chance de a qualidade da revisão cair muito, como sumarizado no tweet deste engenheiro de software:</p>
+<h2 class="unnumbered" id="recomendações-para-autores">Recomendações
+para Autores</h2>
+<p>Os autores também devem ser profissionais e educados em suas
+respostas. Eles devem entender também que <strong>revisão de código não
+é um exame de proficiência</strong>. Ou seja, como autor, não leve a
+revisão para o lado pessoal e nunca imagine que o revisor está julgando
+sua competência.</p>
+<p>Outro ponto muito importante é que os autores devem submeter PRs
+pequenos, caso queiram obter uma resposta rápida e mais proveitosa dos
+revisores. Por exemplo, os autores do livro <em>Software Engineering at
+Google</em>, recomendam que <strong>um PR deve ter no máximo 200 linhas
+de código</strong>.</p>
+<p>Se PRs forem muito grandes, existe também a chance de a qualidade da
+revisão cair muito, como sumarizado no tweet deste engenheiro de
+software:</p>
 <blockquote class="twitter-tweet">
 <p lang="en" dir="ltr">
-Ask a programmer to review 20 lines of code, they'll find 7 issues. Ask them to review 500 lines &amp; they'll find 0 issues.
+Ask a programmer to review 20 lines of code, they'll find 7 issues. Ask
+them to review 500 lines &amp; they'll find 0 issues.
 </p>
-— Hays Stanford (<span class="citation" data-cites="haysstanford">@haysstanford</span>) <a href="https://twitter.com/haysstanford/status/1369721213963079680?ref_src=twsrc%5Etfw">March 10, 2021</a>
+— Hays Stanford (<span class="citation"
+data-cites="haysstanford">@haysstanford</span>)
+<a href="https://twitter.com/haysstanford/status/1369721213963079680?ref_src=twsrc%5Etfw">March
+10, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<h2 class="unnumbered" id="automatizando-a-revisão">Automatizando a Revisão</h2>
-<p>Antes de concluir, gostaríamos de comentar que diversos <q>problemas</q> tratados em uma revisão de código podem ser detectados de forma automática por meio de <strong>ferramentas de análise estática</strong>. Por exemplo, questões como convenções de nomes de identificadores (<em>camel case</em>, <em>snake case</em>, etc), leiaute de código e estilo de indentação (tab ou espaços, por exemplo) podem ser padronizadas por meio de <strong>linters</strong>. Com isso, evita-se que um revisor humano tenha que perder tempo com tais questões.</p>
+<h2 class="unnumbered" id="automatizando-a-revisão">Automatizando a
+Revisão</h2>
+<p>Antes de concluir, gostaríamos de comentar que diversos
+<q>problemas</q> tratados em uma revisão de código podem ser detectados
+de forma automática por meio de <strong>ferramentas de análise
+estática</strong>. Por exemplo, questões como convenções de nomes de
+identificadores (<em>camel case</em>, <em>snake case</em>, etc), leiaute
+de código e estilo de indentação (tab ou espaços, por exemplo) podem ser
+padronizadas por meio de <strong>linters</strong>. Com isso, evita-se
+que um revisor humano tenha que perder tempo com tais questões.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Qual a diferença principal entre revisão de código e programação em pares?</p></li>
+<li><p>Qual a diferença principal entre revisão de código e programação
+em pares?</p></li>
 <li><p>Descreva uma desvantagem de revisão de código.</p></li>
-<li><p>Seja o seguinte código de uma classe <code>Stack</code>. Quais comentários você faria caso fosse responsável pela revisão do código dessa classe? Sugestão: existem quatro questões sobre esse código que achamos que deveriam ser mencionadas em uma revisão.</p>
-<p>Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja, abra um PR em um de seus repositórios com o código da classe <code>Stack</code>. Se não sabe fazer isso, leia antes a seção sobre Pull Requests do <a href="../capAp.html#pull-requests">Apêndice A</a>. Esse procedimento pode parecer um pouco estranho, pois você estará revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas simular, com fins didáticos, uma revisão de código.</p></li>
+<li><p>Seja o seguinte código de uma classe <code>Stack</code>. Quais
+comentários você faria caso fosse responsável pela revisão do código
+dessa classe? Sugestão: existem quatro questões sobre esse código que
+achamos que deveriam ser mencionadas em uma revisão.</p>
+<p>Se preferir, você pode fazer sua revisão em um PR do GitHub. Ou seja,
+abra um PR em um de seus repositórios com o código da classe
+<code>Stack</code>. Se não sabe fazer isso, leia antes a seção sobre
+Pull Requests do <a href="../capAp.html#pull-requests">Apêndice A</a>.
+Esse procedimento pode parecer um pouco estranho, pois você estará
+revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas
+simular, com fins didáticos, uma revisão de código.</p></li>
 </ol>
 <pre><code>import java.util.ArrayList;
 import java.util.EmptyStackException;
@@ -217,8 +375,16 @@ public class Stack&lt;T&gt; {
   }
 }</code></pre>
 <ol start="4" type="1">
-<li><p>É possível adotar simultaneamente Revisão de Código e Desenvolvimento Baseado no Trunk (TBD)? Sim ou não? Justifique sua resposta. Se necessário, consulte a seguinte <a href="../cap10.html#desenvolvimento-baseado-no-trunk">seção</a> do livro texto para saber mais sobre TBD.</p></li>
-<li><p>É possível adotar simultaneamente Revisão de Código e Integração Contínua (CI)? Sim ou não? Justifique sua resposta. Se necessário, consulte a seguinte <a href="../cap10.html#o-que-%C3%A9-integra%C3%A7%C3%A3o-cont%C3%ADnua">seção</a> do livro texto para saber mais sobre CI.</p></li>
+<li><p>É possível adotar simultaneamente Revisão de Código e
+Desenvolvimento Baseado no Trunk (TBD)? Sim ou não? Justifique sua
+resposta. Se necessário, consulte a seguinte <a
+href="../cap10.html#desenvolvimento-baseado-no-trunk">seção</a> do livro
+texto para saber mais sobre TBD.</p></li>
+<li><p>É possível adotar simultaneamente Revisão de Código e Integração
+Contínua (CI)? Sim ou não? Justifique sua resposta. Se necessário,
+consulte a seguinte <a
+href="../cap10.html#o-que-%C3%A9-integra%C3%A7%C3%A3o-cont%C3%ADnua">seção</a>
+do livro texto para saber mais sobre CI.</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>

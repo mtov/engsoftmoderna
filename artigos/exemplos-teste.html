@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -58,6 +55,9 @@
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -92,11 +92,23 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="alguns-exemplos-reais-e-interessantes-de-testes">Alguns Exemplos Reais e Interessantes de Testes <a href="#alguns-exemplos-reais-e-interessantes-de-testes" class="anchor-link" aria-hidden="true">🔗</a></h1>
-<h2 class="unnumbered" id="introdução">Introdução <a href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>No <a href="../cap8.html">Capítulo 8</a>, explicamos os principais conceitos de testes de software e mostramos pelo menos uma dezena de exemplos de código.</p>
-<p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando e explicando exemplos reais de testes implementados em sistemas de código aberto</strong>. Achamos isso relevante, pois conhecer, ler e entender esses exemplos pode ajudá-lo na escrita de seus próprios testes.</p>
-<p>Para ir direto para os exemplos de cada sistema, use os seguintes links:</p>
+<h1 class="unnumbered"
+id="alguns-exemplos-reais-e-interessantes-de-testes">Alguns Exemplos
+Reais e Interessantes de Testes <a
+href="#alguns-exemplos-reais-e-interessantes-de-testes"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h2 class="unnumbered" id="introdução">Introdução <a href="#introdução"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>No <a href="../cap8.html">Capítulo 8</a>, explicamos os principais
+conceitos de testes de software e mostramos pelo menos uma dezena de
+exemplos de código.</p>
+<p>Neste artigo, vamos ampliar essa lista de exemplos, <strong>mostrando
+e explicando exemplos reais de testes implementados em sistemas de
+código aberto</strong>. Achamos isso relevante, pois conhecer, ler e
+entender esses exemplos pode ajudá-lo na escrita de seus próprios
+testes.</p>
+<p>Para ir direto para os exemplos de cada sistema, use os seguintes
+links:</p>
 <ul>
 <li><a href="#guava">Google Guava</a></li>
 <li><a href="#spring-petclinic">Spring PetClinic</a></li>
@@ -105,13 +117,27 @@
 <li><a href="#microsoft-powertoys">Microsoft PowerToys</a></li>
 </ul>
 <hr />
-<h2 class="unnumbered" id="guava">Guava <a href="#guava" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p><a href="https://github.com/google/guava">Guava</a> é uma biblioteca de código aberto – implementada pelo Google – que oferece um conjunto de funções básicas para concorrência, cache, E/S e grafos. Ela inclui também funções utilitárias para trabalhar com tipos primitivos. Logo, o sistema pode ser visto como um complemento para a biblioteca padrão de Java.</p>
-<p>Já mostramos um exemplo de teste do Guava no <a href="../cap8.html#n%C3%BAmero-de-assert-por-teste">Capítulo 8</a>, mas vamos aqui mostrar mais três exemplos.</p>
-<h4 class="unnumbered" id="exemplo-1-ints.contains">Exemplo 1: Ints.contains <a href="#exemplo-1-ints.contains" class="anchor-link" aria-hidden="true">🔗</a></h4>
-<p>Guava implementa uma classe chamada <a href="https://guava.dev/releases/snapshot-jre/api/docs/"><code>Ints</code></a> que oferece métodos estáticos para trabalhar com valores inteiros. Dentre eles, temos o seguinte método:</p>
+<h2 class="unnumbered" id="guava">Guava <a href="#guava"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p><a href="https://github.com/google/guava">Guava</a> é uma biblioteca
+de código aberto – implementada pelo Google – que oferece um conjunto de
+funções básicas para concorrência, cache, E/S e grafos. Ela inclui
+também funções utilitárias para trabalhar com tipos primitivos. Logo, o
+sistema pode ser visto como um complemento para a biblioteca padrão de
+Java.</p>
+<p>Já mostramos um exemplo de teste do Guava no <a
+href="../cap8.html#n%C3%BAmero-de-assert-por-teste">Capítulo 8</a>, mas
+vamos aqui mostrar mais três exemplos.</p>
+<h4 class="unnumbered" id="exemplo-1-ints.contains">Exemplo 1:
+Ints.contains <a href="#exemplo-1-ints.contains" class="anchor-link"
+aria-hidden="true">🔗</a></h4>
+<p>Guava implementa uma classe chamada <a
+href="https://guava.dev/releases/snapshot-jre/api/docs/"><code>Ints</code></a>
+que oferece métodos estáticos para trabalhar com valores inteiros.
+Dentre eles, temos o seguinte método:</p>
 <pre><code>public static boolean contains(int[] array, int target)</code></pre>
-<p>Ele verifica se um vetor de inteiros (<code>array</code>) contem um determinado inteiro (<code>target</code>).</p>
+<p>Ele verifica se um vetor de inteiros (<code>array</code>) contem um
+determinado inteiro (<code>target</code>).</p>
 <p>O teste desse método é o seguinte:</p>
 <pre><code>public void testContains() {
   assertFalse(Ints.contains(EMPTY, (int) 1));
@@ -122,13 +148,21 @@
   assertTrue(Ints.contains(ARRAY234, (int) 3));
   assertTrue(Ints.contains(ARRAY234, (int) 4));
 }</code></pre>
-<p>Esse teste é quase que auto-explicativo. Na verdade, basta entender que os identificadores em maiúsculo são constantes definidas na classe de teste, chamada <a href="https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/primitives/IntsTest.java">IntsTest</a>, da seguinte forma:</p>
+<p>Esse teste é quase que auto-explicativo. Na verdade, basta entender
+que os identificadores em maiúsculo são constantes definidas na classe
+de teste, chamada <a
+href="https://github.com/google/guava/blob/master/guava-tests/test/com/google/common/primitives/IntsTest.java">IntsTest</a>,
+da seguinte forma:</p>
 <pre><code>private static final int[] EMPTY = {};
 private static final int[] ARRAY1 = {(int) 1};
 private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
 </code></pre>
-<h4 class="unnumbered" id="exemplo-2-ints.reverse">Exemplo 2: Ints.reverse <a href="#exemplo-2-ints.reverse" class="anchor-link" aria-hidden="true">🔗</a></h4>
-<p>Vamos aproveitar e mostrar mais um teste da classe <code>Ints</code>, desta vez do método <code>reverse</code>, que inverte um vetor de inteiros.</p>
+<h4 class="unnumbered" id="exemplo-2-ints.reverse">Exemplo 2:
+Ints.reverse <a href="#exemplo-2-ints.reverse" class="anchor-link"
+aria-hidden="true">🔗</a></h4>
+<p>Vamos aproveitar e mostrar mais um teste da classe <code>Ints</code>,
+desta vez do método <code>reverse</code>, que inverte um vetor de
+inteiros.</p>
 <pre><code>public void testReverse() {
   testReverse(new int[] {}, new int[] {});
   testReverse(new int[] {1}, new int[] {1});
@@ -136,15 +170,26 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
   testReverse(new int[] {3, 1, 1}, new int[] {1, 1, 3});
   testReverse(new int[] {-1, 1, -2, 2}, new int[] {2, -2, 1, -1});
 }</code></pre>
-<p>Esse método de teste sempre chama um segundo método, também chamado <code>testReverse</code>, mas que recebe como parâmetro dois vetores de inteiros, sendo que um é o inverso do outro. Veja seu código:</p>
+<p>Esse método de teste sempre chama um segundo método, também chamado
+<code>testReverse</code>, mas que recebe como parâmetro dois vetores de
+inteiros, sendo que um é o inverso do outro. Veja seu código:</p>
 <pre><code>private static void testReverse(int[] input, int[] expectedOutput) {
   input = Arrays.copyOf(input, input.length);
   Ints.reverse(input);
   assertTrue(Arrays.equals(expectedOutput, input));
 }</code></pre>
-<p>O código é bem simples: primeiro cria-se uma cópia do vetor <code>input</code> (basicamente, para o teste não alterar seus elementos quando retornar); depois chama-se o método de teste (<code>Ints.reverse</code>) e verifica-se se o resultado é aquele esperado, isto é, <code>expectedOutput</code>.</p>
-<h4 class="unnumbered" id="exemplo-3-files.copy">Exemplo 3: Files.copy <a href="#exemplo-3-files.copy" class="anchor-link" aria-hidden="true">🔗</a></h4>
-<p>Guava disponibiliza uma classe <code>Files</code>, com métodos utilitários para trabalhar com arquivos. Dentre eles, temos um método <code>copy(File from, File to)</code> que copia todos os bytes de um arquivo para outro.</p>
+<p>O código é bem simples: primeiro cria-se uma cópia do vetor
+<code>input</code> (basicamente, para o teste não alterar seus elementos
+quando retornar); depois chama-se o método de teste
+(<code>Ints.reverse</code>) e verifica-se se o resultado é aquele
+esperado, isto é, <code>expectedOutput</code>.</p>
+<h4 class="unnumbered" id="exemplo-3-files.copy">Exemplo 3: Files.copy
+<a href="#exemplo-3-files.copy" class="anchor-link"
+aria-hidden="true">🔗</a></h4>
+<p>Guava disponibiliza uma classe <code>Files</code>, com métodos
+utilitários para trabalhar com arquivos. Dentre eles, temos um método
+<code>copy(File from, File to)</code> que copia todos os bytes de um
+arquivo para outro.</p>
 <p>Um dos testes desse método é o seguinte:</p>
 <pre><code>public void testCopyFile() throws IOException {
   File i18nFile = getTestFile(&quot;i18n.txt&quot;); // setup
@@ -154,16 +199,42 @@ private static final int[] ARRAY234 = {(int) 2, (int) 3, (int) 4};
 
   assertEquals(I18N, Files.toString(temp, Charsets.UTF_8));
 }</code></pre>
-<p>Primeiro, abre-se um arquivo que já existe no diretório de teste, chamado <code>i18n.txt</code>. Em seguida, cria-se um arquivo vazio, também no diretório de teste. Ambas as tarefas são realizadas por funções utilitárias: <code>getTestFile</code> e <code>createTempFile</code>.</p>
-<p>Depois, o método <code>copy</code> é chamado para copiar o conteúdo de um dos arquivos (<code>i18nFile</code>) para o outro arquivo (<code>temp</code>).</p>
-<p>Por fim, temos um <code>assert</code>. Ele verifica se o conteúdo do arquivo <code>temp</code> de fato passou a ser o conteúdo previamente lido de <code>i18n.txt</code>. Esse conteúdo já é conhecido e está armazenado em uma constante string chamada <code>I18N</code>.</p>
-<p>Em tempo, a função <code>Files.toString</code> usada no <code>assertEquals</code> lê o conteúdo de um arquivo e retorna-o em uma string.</p>
-<p>Antes de terminar, queremos ressaltar que esse é um <strong>teste de integração</strong>, pois ele faz acesso ao disco para ler e gravar arquivos.</p>
+<p>Primeiro, abre-se um arquivo que já existe no diretório de teste,
+chamado <code>i18n.txt</code>. Em seguida, cria-se um arquivo vazio,
+também no diretório de teste. Ambas as tarefas são realizadas por
+funções utilitárias: <code>getTestFile</code> e
+<code>createTempFile</code>.</p>
+<p>Depois, o método <code>copy</code> é chamado para copiar o conteúdo
+de um dos arquivos (<code>i18nFile</code>) para o outro arquivo
+(<code>temp</code>).</p>
+<p>Por fim, temos um <code>assert</code>. Ele verifica se o conteúdo do
+arquivo <code>temp</code> de fato passou a ser o conteúdo previamente
+lido de <code>i18n.txt</code>. Esse conteúdo já é conhecido e está
+armazenado em uma constante string chamada <code>I18N</code>.</p>
+<p>Em tempo, a função <code>Files.toString</code> usada no
+<code>assertEquals</code> lê o conteúdo de um arquivo e retorna-o em uma
+string.</p>
+<p>Antes de terminar, queremos ressaltar que esse é um <strong>teste de
+integração</strong>, pois ele faz acesso ao disco para ler e gravar
+arquivos.</p>
 <hr />
-<h2 class="unnumbered" id="spring-petclinic">Spring PetClinic <a href="#spring-petclinic" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p><a href="https://github.com/spring-projects/spring-petclinic">Spring PetClinic</a> é uma aplicação de demonstração do <a href="https://spring.io/projects/spring-framework">Spring</a>, um framework para desenvolvimento Web para Java. A PetClinic implementa um sistema simples para controle de uma clínica veterinária. Por exemplo, o sistema armazena informações sobre os animais internados na clínica e seus respectivos donos.</p>
-<p>O sistema tem alguns <strong>testes de integração</strong> interessantes, que se beneficiam de funcionalidades oferecidas de forma transparente pelo Spring.</p>
-<p>Por exemplo, a classe <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java">ClinicServiceTests</a> implementa um método que testa o serviço de atualização do nome do dono de um animal:</p>
+<h2 class="unnumbered" id="spring-petclinic">Spring PetClinic <a
+href="#spring-petclinic" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p><a href="https://github.com/spring-projects/spring-petclinic">Spring
+PetClinic</a> é uma aplicação de demonstração do <a
+href="https://spring.io/projects/spring-framework">Spring</a>, um
+framework para desenvolvimento Web para Java. A PetClinic implementa um
+sistema simples para controle de uma clínica veterinária. Por exemplo, o
+sistema armazena informações sobre os animais internados na clínica e
+seus respectivos donos.</p>
+<p>O sistema tem alguns <strong>testes de integração</strong>
+interessantes, que se beneficiam de funcionalidades oferecidas de forma
+transparente pelo Spring.</p>
+<p>Por exemplo, a classe <a
+href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java">ClinicServiceTests</a>
+implementa um método que testa o serviço de atualização do nome do dono
+de um animal:</p>
 <pre><code>@Test
 @Transactional
 void shouldUpdateOwner() {
@@ -177,10 +248,20 @@ void shouldUpdateOwner() {
   owner = this.owners.findById(1);
   assertThat(owner.getLastName()).isEqualTo(newLastName);
 }</code></pre>
-<p>Esse teste recupera o nome do dono cujo ID é 1. Em seguida, ele altera esse nome acrescentando um <q>X</q> no final e salva a alteração no banco de dados. Para finalizar, ele recupera de novo o mesmo nome e verifica se ele agora termina com um <q>X</q>.</p>
-<p>Esse teste é um teste de integração, pois ele recupera e salva dados no banco de dados da aplicação. Além disso, ele usa dois serviços interessantes do Spring:</p>
+<p>Esse teste recupera o nome do dono cujo ID é 1. Em seguida, ele
+altera esse nome acrescentando um <q>X</q> no final e salva a alteração
+no banco de dados. Para finalizar, ele recupera de novo o mesmo nome e
+verifica se ele agora termina com um <q>X</q>.</p>
+<p>Esse teste é um teste de integração, pois ele recupera e salva dados
+no banco de dados da aplicação. Além disso, ele usa dois serviços
+interessantes do Spring:</p>
 <ul>
-<li>O valor do atributo <code>owners</code> – com métodos para recuperar e salvar dados de donos de animais – é injetado automaticamente pelo Spring, que também implementa um serviço de <strong>injeção de dependências</strong>. Para isso, a declaração desse atributo na classe <code>ClinicServiceTests</code> possui uma anotação <code>@Autowired</code>:</li>
+<li>O valor do atributo <code>owners</code> – com métodos para recuperar
+e salvar dados de donos de animais – é injetado automaticamente pelo
+Spring, que também implementa um serviço de <strong>injeção de
+dependências</strong>. Para isso, a declaração desse atributo na classe
+<code>ClinicServiceTests</code> possui uma anotação
+<code>@Autowired</code>:</li>
 </ul>
 <pre><code>class ClinicServiceTests {
   ...
@@ -188,19 +269,41 @@ void shouldUpdateOwner() {
   protected OwnerRepository owners;
   ...
 }</code></pre>
-<p>Para saber mais sobre injeção de dependência, você pode consultar esse <a href="./injecao-dependencia.html">artigo</a> do nosso site.</p>
+<p>Para saber mais sobre injeção de dependência, você pode consultar
+esse <a href="./injecao-dependencia.html">artigo</a> do nosso site.</p>
 <ul>
-<li>O teste é também anotado com <code>@Transactional</code> para garantir uma semântica de transações na sua execução. No caso de testes de integração, essa anotação está configurada para realizar automaticamente um rollback ao final de cada transação. Veja o que diz um comentário na própria classe de teste:</li>
+<li>O teste é também anotado com <code>@Transactional</code> para
+garantir uma semântica de transações na sua execução. No caso de testes
+de integração, essa anotação está configurada para realizar
+automaticamente um rollback ao final de cada transação. Veja o que diz
+um comentário na própria classe de teste:</li>
 </ul>
 <blockquote>
-<p>each test method is executed in its own transaction, which is automatically rolled back by default. Thus, even if tests insert or otherwise change database state, there is no need for a teardown or cleanup script.</p>
+<p>each test method is executed in its own transaction, which is
+automatically rolled back by default. Thus, even if tests insert or
+otherwise change database state, there is no need for a teardown or
+cleanup script.</p>
 </blockquote>
 <hr />
-<h2 class="unnumbered" id="junit">JUnit <a href="#junit" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>O JUnit também possui testes, que, evidentemente, são executados pelo próprio JUnit. As primeiras versões desses testes foram implementadas por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, do próprio conceito de testes de unidade automatizados.</p>
-<p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica <q>ao lado</q> do diretório principal (<em>main</em>) com o código do sistema.</p>
-<p>Alguns testes interessantes estão implementados em <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>. A primeira versão dessa classe foi implementada por Erich Gamma, em dezembro de 2000 (confira o <a href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>). Os testes implementados nela funcionam conforme descrito a seguir.</p>
-<p>Primeiro, no mesmo diretório de <code>SuiteTest.java</code>, existem arquivos que implementam alguns casos de teste. Vamos mostrar um deles (os comentários foram acrescentados por nós mesmos):</p>
+<h2 class="unnumbered" id="junit">JUnit <a href="#junit"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>O JUnit também possui testes, que, evidentemente, são executados pelo
+próprio JUnit. As primeiras versões desses testes foram implementadas
+por Kent Beck e Erich Gamma, criadores do JUnit e, em grande medida, do
+próprio conceito de testes de unidade automatizados.</p>
+<p>Os testes do JUnit – versão 4 – ficam em um diretório chamado <a
+href="https://github.com/mtov/junit4/tree/main/src">test</a>, que fica
+<q>ao lado</q> do diretório principal (<em>main</em>) com o código do
+sistema.</p>
+<p>Alguns testes interessantes estão implementados em <a
+href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java">SuiteTest.java</a>.
+A primeira versão dessa classe foi implementada por Erich Gamma, em
+dezembro de 2000 (confira o <a
+href="https://github.com/mtov/junit4/commit/b6a0693454ac8ded32b3a1ea7c859c5a840169dc">commit</a>).
+Os testes implementados nela funcionam conforme descrito a seguir.</p>
+<p>Primeiro, no mesmo diretório de <code>SuiteTest.java</code>, existem
+arquivos que implementam alguns casos de teste. Vamos mostrar um deles
+(os comentários foram acrescentados por nós mesmos):</p>
 <pre><code>// OneTestCase.java
 public class OneTestCase extends TestCase {
   public void noTestCase() { // não começa com test
@@ -213,8 +316,16 @@ public class OneTestCase extends TestCase {
   }
 }
 </code></pre>
-<p>Esse arquivo declara um <code>TestCase</code> simples, que usa a convenção antiga do JUnit para implementação de testes. Segundo essa convenção: (1) casos de teste devem ser implementados em subclasses de <code>TestCase</code>; (2) cada teste deve começar com o prefixo <code>test</code>, não possuir parâmetro e retornar <code>void</code>.</p>
-<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas um método de teste válido (<code>testCase()</code>), cujo corpo é vazio. Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte método de <code>SuiteTest</code>:</p>
+<p>Esse arquivo declara um <code>TestCase</code> simples, que usa a
+convenção antiga do JUnit para implementação de testes. Segundo essa
+convenção: (1) casos de teste devem ser implementados em subclasses de
+<code>TestCase</code>; (2) cada teste deve começar com o prefixo
+<code>test</code>, não possuir parâmetro e retornar
+<code>void</code>.</p>
+<p>Logo, <code>OneTestCase</code> é um caso de teste que possui apenas
+um método de teste válido (<code>testCase()</code>), cujo corpo é vazio.
+Essa propriedade de <code>OneTestCase</code> é testada pelo seguinte
+método de <code>SuiteTest</code>:</p>
 <pre><code>public void testOneTestCase() {
   TestSuite t = new TestSuite(OneTestCase.class); // setup
 
@@ -225,19 +336,39 @@ public class OneTestCase extends TestCase {
   assertTrue(fResult.errorCount() == 0);
   assertTrue(fResult.wasSuccessful());
 }</code></pre>
-<p>Para ficar bem claro: como JUnit é um framework de teste, os seus métodos de teste rodam testes implementados em algum outro arquivo e verificam se o resultado é aquele esperado. Esses testes são interessantes porque neles o JUnit tem um duplo papel: ele é tanto o framework de testes como o SUT, isto é, o sistema que está sendo testado.</p>
-<p>Como mostrado no código acima, <code>testOneTestCase</code> executa o teste implementado na classe <code>OneTestCase</code> (duas primeiras linhas). Ao executar o teste, passa-se como parâmetro um objeto (<code>fResult</code>) que vai armazenar o resultado da execução. Para ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code> e foi inicializado no <code>setUp</code> do teste.</p>
-<p>Por fim, são usados quatro comandos <code>assert</code> para assegurar que:</p>
+<p>Para ficar bem claro: como JUnit é um framework de teste, os seus
+métodos de teste rodam testes implementados em algum outro arquivo e
+verificam se o resultado é aquele esperado. Esses testes são
+interessantes porque neles o JUnit tem um duplo papel: ele é tanto o
+framework de testes como o SUT, isto é, o sistema que está sendo
+testado.</p>
+<p>Como mostrado no código acima, <code>testOneTestCase</code> executa o
+teste implementado na classe <code>OneTestCase</code> (duas primeiras
+linhas). Ao executar o teste, passa-se como parâmetro um objeto
+(<code>fResult</code>) que vai armazenar o resultado da execução. Para
+ficar mais claro, <code>fResult</code> é do tipo <code>TestResult</code>
+e foi inicializado no <code>setUp</code> do teste.</p>
+<p>Por fim, são usados quatro comandos <code>assert</code> para
+assegurar que:</p>
 <ul>
-<li><p>A suíte de teste que foi executada possui um único caso de teste (subclasse de <code>TestCase</code>);</p></li>
-<li><p>Dentre os métodos de teste executados, nenhum deles falhou.</p></li>
+<li><p>A suíte de teste que foi executada possui um único caso de teste
+(subclasse de <code>TestCase</code>);</p></li>
+<li><p>Dentre os métodos de teste executados, nenhum deles
+falhou.</p></li>
 <li><p>E, também, não ocorreu nenhum erro ou exceção;</p></li>
 <li><p>Por fim, o teste como um todo foi bem sucedido.</p></li>
 </ul>
 <hr />
-<h2 class="unnumbered" id="vue.js">Vue.js <a href="#vue.js" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p><a href="https://vuejs.org/">Vue.js</a> é um framework JavaScript para implementação de <a href="https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications">single-page applications</a>. O sistema permite criar componentes que possuem dados, operações e também uma apresentação em HTML, isto é, a parte visual do componente que será vista no browser.</p>
-<p>Veja um teste do Vue.js, implementado usando o framework de testes Jest.</p>
+<h2 class="unnumbered" id="vue.js">Vue.js <a href="#vue.js"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p><a href="https://vuejs.org/">Vue.js</a> é um framework JavaScript
+para implementação de <a
+href="https://engsoftmoderna.info/cap7.html#exemplo-single-page-applications">single-page
+applications</a>. O sistema permite criar componentes que possuem dados,
+operações e também uma apresentação em HTML, isto é, a parte visual do
+componente que será vista no browser.</p>
+<p>Veja um teste do Vue.js, implementado usando o framework de testes
+Jest.</p>
 <pre><code>it(&#39;chained usage&#39;, () =&gt; {
    const vm = new Vue({
    template: &#39;&lt;div&gt;{{ msg | upper | reverse }}&lt;/div&gt;&#39;,
@@ -251,16 +382,37 @@ public class OneTestCase extends TestCase {
    }).$mount()
    expect(vm.$el.textContent).toBe(&#39;IH&#39;)
 }) </code></pre>
-<p>Primeiro, instancia-se (<code>new</code>) e exibe-se (<code>mount</code>) um componente Vue, que possui um <code>template</code> HTML, dados (<code>msg</code>) e dois filtros. O primeiro filtro (<code>upper</code>) converte uma string para maiúsculo e o segundo (<code>reverse</code>) converte uma string para um vetor de caracteres, inverte a ordem deles e concatena de volta os resultados.</p>
-<p>Esses filtros são usados no template do componente da seguinte forma (a qual lembra <em>pipes</em> de linhas de comando do Unix):</p>
+<p>Primeiro, instancia-se (<code>new</code>) e exibe-se
+(<code>mount</code>) um componente Vue, que possui um
+<code>template</code> HTML, dados (<code>msg</code>) e dois filtros. O
+primeiro filtro (<code>upper</code>) converte uma string para maiúsculo
+e o segundo (<code>reverse</code>) converte uma string para um vetor de
+caracteres, inverte a ordem deles e concatena de volta os
+resultados.</p>
+<p>Esses filtros são usados no template do componente da seguinte forma
+(a qual lembra <em>pipes</em> de linhas de comando do Unix):</p>
 <p><code>msg | upper | reverse</code></p>
-<p>Como <code>msg</code> é a string <code>hi</code>, o teste espera (<code>expect</code>), na sua última linha, que o texto exibido pelo componente seja igual a <code>IH</code>.</p>
+<p>Como <code>msg</code> é a string <code>hi</code>, o teste espera
+(<code>expect</code>), na sua última linha, que o texto exibido pelo
+componente seja igual a <code>IH</code>.</p>
 <hr />
-<h2 class="unnumbered" id="microsoft-powertoys">Microsoft PowerToys <a href="#microsoft-powertoys" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>PowerToys é um conjunto de utilitários Windows. Por exemplo, um dos utilitários permite fixar uma janela para que ela apareça <q>por cima</q> de qualquer outra janela do sistema.</p>
-<p>O código desses utilitários, implementados em C#, está público em um <a href="https://github.com/microsoft/PowerToys">repositório</a> do GitHub. E eles possuem um conjunto interessante de <strong>testes end-to-end</strong> implementados usando dois frameworks: Apium e WinAppDriver.</p>
-<h4 class="unnumbered" id="exemplo-1-fancyzones">Exemplo 1: FancyZones <a href="#exemplo-1-fancyzones" class="anchor-link" aria-hidden="true">🔗</a></h4>
-<p>Primeiro, mostramos um teste do utilitário FancyZones, que <q>é um gerenciador de janelas que facilita a criação de layouts de janela complexos e o posicionamento rápido de janelas nesses layouts</q>.</p>
+<h2 class="unnumbered" id="microsoft-powertoys">Microsoft PowerToys <a
+href="#microsoft-powertoys" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>PowerToys é um conjunto de utilitários Windows. Por exemplo, um dos
+utilitários permite fixar uma janela para que ela apareça <q>por
+cima</q> de qualquer outra janela do sistema.</p>
+<p>O código desses utilitários, implementados em C#, está público em um
+<a href="https://github.com/microsoft/PowerToys">repositório</a> do
+GitHub. E eles possuem um conjunto interessante de <strong>testes
+end-to-end</strong> implementados usando dois frameworks: Apium e
+WinAppDriver.</p>
+<h4 class="unnumbered" id="exemplo-1-fancyzones">Exemplo 1: FancyZones
+<a href="#exemplo-1-fancyzones" class="anchor-link"
+aria-hidden="true">🔗</a></h4>
+<p>Primeiro, mostramos um teste do utilitário FancyZones, que <q>é um
+gerenciador de janelas que facilita a criação de layouts de janela
+complexos e o posicionamento rápido de janelas nesses layouts</q>.</p>
 <pre><code>private void SaveChanges()
 {
    string isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
@@ -271,9 +423,17 @@ public class OneTestCase extends TestCase {
    isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
    Assert.AreEqual(&quot;False&quot;, isEnabled);
 }</code></pre>
-<p>Inicialmente, testa-se se o botão <q>Save</q> do utilitário está disponível (<em>enabled</em>). Então, simula-se um click no mesmo. Feito isso, o botão não deve estar mais habilitado, pois acabamos de realizar um salvamento e, portanto, não faz sentido salvar de novo.</p>
-<h4 class="unnumbered" id="exemplo-2-menu-de-configuração">Exemplo 2: Menu de Configuração <a href="#exemplo-2-menu-de-configuração" class="anchor-link" aria-hidden="true">🔗</a></h4>
-<p>O segundo teste simula a abertura do menu de configuração do PowerToys, o qual fica na barra de ícones do Windows. Os comentários presentes no teste já ajudam bastante a entender o seu funcionamento.</p>
+<p>Inicialmente, testa-se se o botão <q>Save</q> do utilitário está
+disponível (<em>enabled</em>). Então, simula-se um click no mesmo. Feito
+isso, o botão não deve estar mais habilitado, pois acabamos de realizar
+um salvamento e, portanto, não faz sentido salvar de novo.</p>
+<h4 class="unnumbered" id="exemplo-2-menu-de-configuração">Exemplo 2:
+Menu de Configuração <a href="#exemplo-2-menu-de-configuração"
+class="anchor-link" aria-hidden="true">🔗</a></h4>
+<p>O segundo teste simula a abertura do menu de configuração do
+PowerToys, o qual fica na barra de ícones do Windows. Os comentários
+presentes no teste já ajudam bastante a entender o seu
+funcionamento.</p>
 <pre><code>[TestMethod]
 public void SettingsOpenWithContextMenu()
 {
@@ -297,10 +457,17 @@ public void SettingsOpenWithContextMenu()
 
   isSettingsOpened = true;
 }</code></pre>
-<h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <ol type="1">
-<li><p>Spring PetClinic: estude e documente o funcionamento do método de teste <a href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>, também da classe <code>ClinicServiceTests</code>.</p></li>
-<li><p>JUnit: estude e documente o funcionamento do teste <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>, que testa a execução do seguinte <a href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p></li>
+<li><p>Spring PetClinic: estude e documente o funcionamento do método de
+teste <a
+href="https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102">shouldInsertOwner()</a>,
+também da classe <code>ClinicServiceTests</code>.</p></li>
+<li><p>JUnit: estude e documente o funcionamento do teste <a
+href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44">testInheritedTests</a>,
+que testa a execução do seguinte <a
+href="https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java">teste</a>.</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
