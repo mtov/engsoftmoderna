@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -54,10 +51,13 @@
     foreground-color: black;
   }
   .anchor-link {
-    opacity: 0.17;
+    opacity: 0.5;
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -93,47 +93,145 @@
 <p class="author">Marco Tulio Valente</p>
 </header>
 <section id="padrões-de-projeto" data-number="1">
-<h1 data-number="6"><span class="header-section-number">6</span> Padrões de Projeto <a href="#padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h1 data-number="6"><span class="header-section-number">6</span> Padrões
+de Projeto <a href="#padrões-de-projeto" class="anchor-link"
+aria-hidden="true">🔗</a></h1>
 <blockquote>
-<p><em>A design that doesn’t take change into account risks major redesign in the future.</em> – Gang of Four</p>
+<p><em>A design that doesn’t take change into account risks major
+redesign in the future.</em> – Gang of Four</p>
 </blockquote>
-<p>Este capítulo inicia com uma introdução ao conceito e aos objetivos de padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada, Decorador, Strategy, Observador, Template Method e Visitor. Cada um desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A apresentação de cada padrão é organizada em três partes: (1) um contexto, isto é, um sistema no qual o padrão poderia ser útil; (2) um problema no projeto desse sistema; (3) uma solução para esse problema por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns padrões. Terminamos o capítulo alertando que padrões de projeto não são uma bala de prata, ou seja, discutimos situações nas quais o uso de padrões de projeto não é recomendado (Seção 6.13).</p>
+<p>Este capítulo inicia com uma introdução ao conceito e aos objetivos
+de padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes
+dez padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada,
+Decorador, Strategy, Observador, Template Method e Visitor. Cada um
+desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A
+apresentação de cada padrão é organizada em três partes: (1) um
+contexto, isto é, um sistema no qual o padrão poderia ser útil; (2) um
+problema no projeto desse sistema; (3) uma solução para esse problema
+por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
+padrões. Terminamos o capítulo alertando que padrões de projeto não são
+uma bala de prata, ou seja, discutimos situações nas quais o uso de
+padrões de projeto não é recomendado (Seção 6.13).</p>
 <section id="introdução" data-number="1.1">
-<h2 data-number="6.1"><span class="header-section-number">6.1</span> Introdução <a href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
+Introdução <a href="#introdução" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p>Padrões de projeto são inspirados em uma ideia proposta por Cristopher Alexander, um arquiteto — de construções civis e não de software — e professor da Universidade de Berkeley. Em 1977, Alexander lançou um livro chamado <em>A Patterns Language</em>, no qual ele documenta diversos padrões para construção de cidades e prédios. Segundo Alexander:</p>
+<p>Padrões de projeto são inspirados em uma ideia proposta por
+Cristopher Alexander, um arquiteto — de construções civis e não de
+software — e professor da Universidade de Berkeley. Em 1977, Alexander
+lançou um livro chamado <em>A Patterns Language</em>, no qual ele
+documenta diversos padrões para construção de cidades e prédios. Segundo
+Alexander:</p>
 <blockquote>
-<p>Cada padrão descreve um problema que sempre ocorre em nosso contexto e uma solução para ele, de forma que possamos usá-la um milhão de vezes.</p>
+<p>Cada padrão descreve um problema que sempre ocorre em nosso contexto
+e uma solução para ele, de forma que possamos usá-la um milhão de
+vezes.</p>
 </blockquote>
-<p>   </p>
-<p>Em 1995, Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides lançaram um livro adaptando as ideias de Alexander para o mundo de desenvolvimento de software (<a href="https://dl.acm.org/citation.cfm?id=186897">link</a>). Em vez de propor um catálogo de soluções para projeto de cidades e prédios, eles propuseram um catálogo com soluções para resolver problemas recorrentes em projeto de software. Eles deram o nome de <strong>Padrões de Projeto</strong> às soluções propostas no livro. Eles definem padrões de projeto da seguinte forma:</p>
+<p> </p>
+<p>Em 1995, Erich Gamma, Richard Helm, Ralph Johnson e John Vlissides
+lançaram um livro adaptando as ideias de Alexander para o mundo de
+desenvolvimento de software (<a
+href="https://dl.acm.org/citation.cfm?id=186897">link</a>). Em vez de
+propor um catálogo de soluções para projeto de cidades e prédios, eles
+propuseram um catálogo com soluções para resolver problemas recorrentes
+em projeto de software. Eles deram o nome de <strong>Padrões de
+Projeto</strong> às soluções propostas no livro. Eles definem padrões de
+projeto da seguinte forma:</p>
 <blockquote>
-<p>Padrões de projeto descrevem objetos e classes que se relacionam para resolver um problema de projeto genérico em um contexto particular.</p>
+<p>Padrões de projeto descrevem objetos e classes que se relacionam para
+resolver um problema de projeto genérico em um contexto particular.</p>
 </blockquote>
-<p> Assim, para entender os padrões propostos pela <em>Gang of Four</em> — nome pelo qual ficaram conhecidos os autores e também o livro de padrões de projeto — precisamos entender: (1) o problema que o padrão pretende resolver; (2) o contexto em que esse problema ocorre; (3) a solução proposta. Neste livro, vamos descrever alguns padrões de projeto, sempre focando nesses elementos: contexto, problema e solução. Iremos também mostrar vários exemplos de código fonte.</p>
-<p>Além de oferecer soluções prontas para problemas de projeto, padrões de projeto transformaram-se em um vocabulário largamente adotado por desenvolvedores de software. Assim, é comum ouvir desenvolvedores dizendo que usaram uma fábrica para resolver um certo problema, enquanto que um segundo problema foi resolvido por meio de decoradores. Ou seja, eles apenas mencionam o nome do padrão e subentendem que a solução adotada já está clara. De forma semelhante, o vocabulário de padrões de projeto é muito usado na documentação de sistemas. Por exemplo, a figura da próxima página mostra a documentação de uma das classes da biblioteca padrão de Java. Podemos ver que o nome da classe termina em <code>Factory</code> — que é um dos padrões de projeto que vamos estudar daqui a pouco. Na descrição da classe, volta-se a mencionar que ela é uma fábrica. Portanto, desenvolvedores que conhecem esse padrão de projeto terão mais facilidade para entender e usar a classe em questão.</p>
+<p> Assim, para entender os padrões propostos pela <em>Gang of Four</em>
+— nome pelo qual ficaram conhecidos os autores e também o livro de
+padrões de projeto — precisamos entender: (1) o problema que o padrão
+pretende resolver; (2) o contexto em que esse problema ocorre; (3) a
+solução proposta. Neste livro, vamos descrever alguns padrões de
+projeto, sempre focando nesses elementos: contexto, problema e solução.
+Iremos também mostrar vários exemplos de código fonte.</p>
+<p>Além de oferecer soluções prontas para problemas de projeto, padrões
+de projeto transformaram-se em um vocabulário largamente adotado por
+desenvolvedores de software. Assim, é comum ouvir desenvolvedores
+dizendo que usaram uma fábrica para resolver um certo problema, enquanto
+que um segundo problema foi resolvido por meio de decoradores. Ou seja,
+eles apenas mencionam o nome do padrão e subentendem que a solução
+adotada já está clara. De forma semelhante, o vocabulário de padrões de
+projeto é muito usado na documentação de sistemas. Por exemplo, a figura
+da próxima página mostra a documentação de uma das classes da biblioteca
+padrão de Java. Podemos ver que o nome da classe termina em
+<code>Factory</code> — que é um dos padrões de projeto que vamos estudar
+daqui a pouco. Na descrição da classe, volta-se a mencionar que ela é
+uma fábrica. Portanto, desenvolvedores que conhecem esse padrão de
+projeto terão mais facilidade para entender e usar a classe em
+questão.</p>
 <figure>
-<img src="figs/cap6/doc-pattern.png" style="width:55.0%" alt="Documentação de uma classe Factory da API de Java" /><figcaption aria-hidden="true">Documentação de uma classe <code>Factory</code> da API de Java</figcaption>
+<img src="figs/cap6/doc-pattern.png" style="width:55.0%"
+alt="Documentação de uma classe Factory da API de Java" />
+<figcaption aria-hidden="true">Documentação de uma classe
+<code>Factory</code> da API de Java</figcaption>
 </figure>
-<p>Um desenvolvedor pode se beneficiar do domínio de padrões de projeto em dois cenários principais:</p>
+<p>Um desenvolvedor pode se beneficiar do domínio de padrões de projeto
+em dois cenários principais:</p>
 <ul>
-<li><p>Quando ele estiver implementando o seu próprio sistema. Nesse caso, conhecer padrões de projeto pode ajudá-lo a adotar, no seu sistema, uma solução de projeto já testada e validada.</p></li>
-<li><p>Quando ele estiver usando um sistema de terceiros, como o pacote de Java que implementa a classe <code>DocumentBuilderFactory</code> da figura. Nesse caso, conhecimento de padrões de projeto pode ajudá-lo a entender o comportamento e a estrutura da classe que ele precisa usar.</p></li>
+<li><p>Quando ele estiver implementando o seu próprio sistema. Nesse
+caso, conhecer padrões de projeto pode ajudá-lo a adotar, no seu
+sistema, uma solução de projeto já testada e validada.</p></li>
+<li><p>Quando ele estiver usando um sistema de terceiros, como o pacote
+de Java que implementa a classe <code>DocumentBuilderFactory</code> da
+figura. Nesse caso, conhecimento de padrões de projeto pode ajudá-lo a
+entender o comportamento e a estrutura da classe que ele precisa
+usar.</p></li>
 </ul>
-<p>É importante entender que padrões de projeto visam a criação de projetos de software flexíveis e extensíveis. Neste livro, antes de explicar cada um dos padrões, vamos apresentar um contexto e um trecho de código que funciona e produz um resultado. Porém, ele não dá origem a um projeto flexível. Para deixar essa inflexibilidade clara, apresentaremos um cenário de extensão do código mostrado, envolvendo a implementação de novos requisitos. Então vamos argumentar que essa extensão exigirá algum esforço, que poderá ser minimizado se usarmos um padrão de projeto.</p>
-<p> Os quatro autores do livro de padrões de projeto defendem que devemos projetar um sistema pensando em mudanças que inevitavelmente vão ocorrer — eles chamam essa preocupação de <em>design for change</em>. Conforme afirmado por eles na frase que abre este capítulo, se design for change não for uma preocupação, os desenvolvedores correm o risco de em breve ter que planejar um profundo reprojeto de seus sistemas.</p>
-<p>No livro sobre padrões de projeto, são propostos 23 padrões, divididos nas seguintes três categorias (os padrões que estudaremos neste capítulo estão em negrito, seguido do número da seção em que eles são apresentados):</p>
+<p>É importante entender que padrões de projeto visam a criação de
+projetos de software flexíveis e extensíveis. Neste livro, antes de
+explicar cada um dos padrões, vamos apresentar um contexto e um trecho
+de código que funciona e produz um resultado. Porém, ele não dá origem a
+um projeto flexível. Para deixar essa inflexibilidade clara,
+apresentaremos um cenário de extensão do código mostrado, envolvendo a
+implementação de novos requisitos. Então vamos argumentar que essa
+extensão exigirá algum esforço, que poderá ser minimizado se usarmos um
+padrão de projeto.</p>
+<p> Os quatro autores do livro de padrões de projeto defendem que
+devemos projetar um sistema pensando em mudanças que inevitavelmente vão
+ocorrer — eles chamam essa preocupação de <em>design for change</em>.
+Conforme afirmado por eles na frase que abre este capítulo, se design
+for change não for uma preocupação, os desenvolvedores correm o risco de
+em breve ter que planejar um profundo reprojeto de seus sistemas.</p>
+<p>No livro sobre padrões de projeto, são propostos 23 padrões,
+divididos nas seguintes três categorias (os padrões que estudaremos
+neste capítulo estão em negrito, seguido do número da seção em que eles
+são apresentados):</p>
 <ul>
-<li><p><strong>Criacionais</strong>: padrões  que propõem soluções flexíveis para criação de objetos. São eles: <strong>Abstract Factory (6.2)</strong>, Factory Method, <strong>Singleton (6.3)</strong>, <strong>Builder (6.12)</strong> e Prototype.</p></li>
-<li><p><strong>Estruturais</strong>:  padrões que propõem soluções flexíveis para composição de classes e objetos. São eles: <strong>Proxy (6.4)</strong>, <strong>Adapter (6.5)</strong>, <strong>Facade (6.6)</strong>, <strong>Decorator (6.7)</strong>, Bridge, Composite e Flyweight.</p></li>
-<li><p><strong>Comportamentais</strong>: padrões  que propõem soluções flexíveis para interação e divisão de responsabilidades entre classes e objetos. São eles: <strong>Strategy (6.8)</strong>, <strong>Observer (6.9)</strong>, <strong>Template Method (6.10)</strong>, <strong>Visitor (6.11)</strong>, Chain of Responsibility, Command, Interpreter, <strong>Iterator (6.12)</strong>, Mediator, Memento e State.</p></li>
+<li><p><strong>Criacionais</strong>: padrões que propõem soluções
+flexíveis para criação de objetos. São eles: <strong>Abstract Factory
+(6.2)</strong>, Factory Method, <strong>Singleton (6.3)</strong>,
+<strong>Builder (6.12)</strong> e Prototype.</p></li>
+<li><p><strong>Estruturais</strong>: padrões que propõem soluções
+flexíveis para composição de classes e objetos. São eles: <strong>Proxy
+(6.4)</strong>, <strong>Adapter (6.5)</strong>, <strong>Facade
+(6.6)</strong>, <strong>Decorator (6.7)</strong>, Bridge, Composite e
+Flyweight.</p></li>
+<li><p><strong>Comportamentais</strong>: padrões que propõem soluções
+flexíveis para interação e divisão de responsabilidades entre classes e
+objetos. São eles: <strong>Strategy (6.8)</strong>, <strong>Observer
+(6.9)</strong>, <strong>Template Method (6.10)</strong>, <strong>Visitor
+(6.11)</strong>, Chain of Responsibility, Command, Interpreter,
+<strong>Iterator (6.12)</strong>, Mediator, Memento e State.</p></li>
 </ul>
-<p><strong>Tradução</strong>: Por ser uma tradução direta, vamos traduzir os nomes dos padrões Fábrica Abstrata, Método Fábrica, Adaptador, Fachada, Decorador, Observador e Iterador. Os demais serão referenciados usando o nome original.</p>
+<p><strong>Tradução</strong>: Por ser uma tradução direta, vamos
+traduzir os nomes dos padrões Fábrica Abstrata, Método Fábrica,
+Adaptador, Fachada, Decorador, Observador e Iterador. Os demais serão
+referenciados usando o nome original.</p>
 </section>
 <section id="fábrica" data-number="1.2">
-<h2 data-number="6.2"><span class="header-section-number">6.2</span> Fábrica <a href="#fábrica" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.2"><span class="header-section-number">6.2</span>
+Fábrica <a href="#fábrica" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha um sistema distribuído baseado em TCP/IP. Nesse sistema, três funções <code>f</code>, <code>g</code> e <code>h</code> criam objetos do tipo <code>TCPChannel</code> para comunicação remota, como mostra o próximo código.</p>
+<p><strong>Contexto</strong>: Suponha um sistema distribuído baseado em
+TCP/IP. Nesse sistema, três funções <code>f</code>, <code>g</code> e
+<code>h</code> criam objetos do tipo <code>TCPChannel</code> para
+comunicação remota, como mostra o próximo código.</p>
 <pre><code>void f() {
   TCPChannel c = new TCPChannel();  
   ...
@@ -148,8 +246,26 @@ void h() {
   TCPChannel c = new TCPChannel();
   ...
 }</code></pre>
-<p><strong>Problema</strong>: Suponha que — em determinadas configurações do sistema — precisaremos usar UDP para comunicação. Portanto, se considerarmos esse requisito, o sistema não atende ao Princípio Aberto/Fechado, isto é, ele não está fechado para modificações e aberto para extensões nos protocolos de comunicação usados. Sendo mais claro, gostaríamos de <q>parametrizar</q> o código acima para criar objetos dos tipos <code>TCPChannel</code> ou <code>UDPChannel</code>, dependendo dos clientes. O problema é que o operador <code>new</code> deve ser seguido do nome literal de uma classe. Esse operador — pelo menos em linguagens como Java, C++ e C# — não permite que a classe dos objetos que se pretende criar seja passada como um parâmetro. Resumindo, o problema consiste em parametrizar a instanciação dos canais de comunicação no código acima, de forma que ele consiga trabalhar com protocolos diferentes.</p>
-<p><strong>Solução</strong>: A solução que vamos descrever baseia-se no padrão de projeto <strong>Fábrica</strong>. Esse padrão possui algumas variações, mas no nosso problema vamos adotar um método estático que: (1) apenas cria e retorna objetos de uma determinada classe; (2) e também oculta o tipo desses objetos por trás de uma interface. Um exemplo é mostrado a seguir:</p>
+<p><strong>Problema</strong>: Suponha que — em determinadas
+configurações do sistema — precisaremos usar UDP para comunicação.
+Portanto, se considerarmos esse requisito, o sistema não atende ao
+Princípio Aberto/Fechado, isto é, ele não está fechado para modificações
+e aberto para extensões nos protocolos de comunicação usados. Sendo mais
+claro, gostaríamos de <q>parametrizar</q> o código acima para criar
+objetos dos tipos <code>TCPChannel</code> ou <code>UDPChannel</code>,
+dependendo dos clientes. O problema é que o operador <code>new</code>
+deve ser seguido do nome literal de uma classe. Esse operador — pelo
+menos em linguagens como Java, C++ e C# — não permite que a classe dos
+objetos que se pretende criar seja passada como um parâmetro. Resumindo,
+o problema consiste em parametrizar a instanciação dos canais de
+comunicação no código acima, de forma que ele consiga trabalhar com
+protocolos diferentes.</p>
+<p><strong>Solução</strong>: A solução que vamos descrever baseia-se no
+padrão de projeto <strong>Fábrica</strong>. Esse padrão possui algumas
+variações, mas no nosso problema vamos adotar um método estático que:
+(1) apenas cria e retorna objetos de uma determinada classe; (2) e
+também oculta o tipo desses objetos por trás de uma interface. Um
+exemplo é mostrado a seguir:</p>
 <pre><code>class ChannelFactory {
   public static Channel create() {// método fábrica estático
     return new TCPChannel();
@@ -169,9 +285,29 @@ void h() {
   Channel c = ChannelFactory.create();
   ...
 }</code></pre>
-<p>   Nessa nova versão, as funções <code>f</code>, <code>g</code> e <code>h</code> não têm consciência do tipo de <code>Channel</code> que vão criar e usar. Elas chamam um <strong>Método Fábrica Estático</strong>, que instancia e retorna um objeto de uma classe concreta — para ser claro, essa variante do padrão Fábrica não foi proposta no livro da Gangue dos Quatro, mas sim alguns anos depois por Joshua Bloch (<a href="https://dl.acm.org/citation.cfm?id=1377533">link</a>). É importante também destacar que as três funções usam sempre uma interface <code>Channel</code> para manipular os objetos criados pelo método fábrica estático. Ou seja, aplicamos o princípio <q>Prefira Interfaces a Classes</q> (ou Inversão de Dependências).</p>
-<p>No novo código, o sistema continua funcionando com canais do tipo <code>TCPChannel</code>. Porém, se quisermos mudar o tipo de canal, temos agora que modificar um único elemento do código: o método create da classe <code>ChannelFactory</code>. Dizendo de outra forma, um método fábrica estático funciona como um <q>aspirador</q> de métodos <code>new</code>: todas as chamadas antigas de <code>new</code> migram para uma única chamada, no método fábrica estático.</p>
-<p>Existem ainda algumas variações do padrão Fábrica. Em uma delas, uma classe abstrata é usada para concentrar vários métodos fábrica. Essa classe recebe então o nome de <strong>Fábrica Abstrata</strong>. Um exemplo é mostrado no código a seguir:</p>
+<p> Nessa nova versão, as funções <code>f</code>, <code>g</code> e
+<code>h</code> não têm consciência do tipo de <code>Channel</code> que
+vão criar e usar. Elas chamam um <strong>Método Fábrica
+Estático</strong>, que instancia e retorna um objeto de uma classe
+concreta — para ser claro, essa variante do padrão Fábrica não foi
+proposta no livro da Gangue dos Quatro, mas sim alguns anos depois por
+Joshua Bloch (<a
+href="https://dl.acm.org/citation.cfm?id=1377533">link</a>). É
+importante também destacar que as três funções usam sempre uma interface
+<code>Channel</code> para manipular os objetos criados pelo método
+fábrica estático. Ou seja, aplicamos o princípio <q>Prefira Interfaces a
+Classes</q> (ou Inversão de Dependências).</p>
+<p>No novo código, o sistema continua funcionando com canais do tipo
+<code>TCPChannel</code>. Porém, se quisermos mudar o tipo de canal,
+temos agora que modificar um único elemento do código: o método create
+da classe <code>ChannelFactory</code>. Dizendo de outra forma, um método
+fábrica estático funciona como um <q>aspirador</q> de métodos
+<code>new</code>: todas as chamadas antigas de <code>new</code> migram
+para uma única chamada, no método fábrica estático.</p>
+<p>Existem ainda algumas variações do padrão Fábrica. Em uma delas, uma
+classe abstrata é usada para concentrar vários métodos fábrica. Essa
+classe recebe então o nome de <strong>Fábrica Abstrata</strong>. Um
+exemplo é mostrado no código a seguir:</p>
 <pre><code>abstract class ProtocolFactory { // Fábrica Abstrata
   abstract Channel createChannel();
   abstract Port createPort();  
@@ -183,12 +319,20 @@ void f(ProtocolFactory pf) {
   Port p = pf.createPort();
   ...
 }</code></pre>
-<p>No exemplo acima, omitimos as classes que estendem a classe abstrata <code>ProtocolFactory</code> e que vão implementar, de fato, os métodos concretos para criação de canais e portas de comunicação. Podemos, por exemplo, ter duas subclasses: <code>TCPProtocolFactory</code> e <code>UDPProtocolFactory</code>.</p>
+<p>No exemplo acima, omitimos as classes que estendem a classe abstrata
+<code>ProtocolFactory</code> e que vão implementar, de fato, os métodos
+concretos para criação de canais e portas de comunicação. Podemos, por
+exemplo, ter duas subclasses: <code>TCPProtocolFactory</code> e
+<code>UDPProtocolFactory</code>.</p>
 </section>
 <section id="singleton" data-number="1.3">
-<h2 data-number="6.3"><span class="header-section-number">6.3</span> Singleton <a href="#singleton" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.3"><span class="header-section-number">6.3</span>
+Singleton <a href="#singleton" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha uma classe <code>Logger</code>, usada para registrar as operações realizadas em um sistema. Um uso dessa classe é mostrado a seguir:</p>
+<p><strong>Contexto</strong>: Suponha uma classe <code>Logger</code>,
+usada para registrar as operações realizadas em um sistema. Um uso dessa
+classe é mostrado a seguir:</p>
 <pre><code>void f() {
   Logger log = new Logger();  
   log.println(&quot;Executando f&quot;);
@@ -204,8 +348,24 @@ void h() {
   log.println(&quot;Executando h&quot;);
   ...
 }</code></pre>
-<p><strong>Problema</strong>: No código anterior, cada método que precisa registrar eventos cria sua própria instância de <code>Logger</code>. No entanto, gostaríamos que todos os usos de <code>Logger</code> tivessem como alvo a mesma instância da classe. Em outras palavras, não queremos uma proliferação de objetos <code>Logger</code>. Em vez disso, gostaríamos que existisse, no máximo, uma única instância dessa classe e que ela fosse usada em todas as partes do sistema que precisam registrar algum evento. Isso é importante, por exemplo, caso o registro de eventos seja feito em arquivos. Se for possível a criação de vários objetos <code>Logger</code>, todo novo objeto instanciado vai apagar o arquivo anterior, criado por outros objetos do tipo <code>Logger</code>.</p>
-<p><strong>Solução</strong>: A solução para esse problema consiste em transformar a classe <code>Logger</code> em um <strong>Singleton</strong>. Esse padrão de projeto define como implementar classes que terão, como o próprio nome indica, no máximo uma instância. Mostramos a seguir a versão de <code>Logger</code> que funciona como um Singleton:</p>
+<p><strong>Problema</strong>: No código anterior, cada método que
+precisa registrar eventos cria sua própria instância de
+<code>Logger</code>. No entanto, gostaríamos que todos os usos de
+<code>Logger</code> tivessem como alvo a mesma instância da classe. Em
+outras palavras, não queremos uma proliferação de objetos
+<code>Logger</code>. Em vez disso, gostaríamos que existisse, no máximo,
+uma única instância dessa classe e que ela fosse usada em todas as
+partes do sistema que precisam registrar algum evento. Isso é
+importante, por exemplo, caso o registro de eventos seja feito em
+arquivos. Se for possível a criação de vários objetos
+<code>Logger</code>, todo novo objeto instanciado vai apagar o arquivo
+anterior, criado por outros objetos do tipo <code>Logger</code>.</p>
+<p><strong>Solução</strong>: A solução para esse problema consiste em
+transformar a classe <code>Logger</code> em um
+<strong>Singleton</strong>. Esse padrão de projeto define como
+implementar classes que terão, como o próprio nome indica, no máximo uma
+instância. Mostramos a seguir a versão de <code>Logger</code> que
+funciona como um Singleton:</p>
 <pre><code>class Logger {
 
   private Logger() {} // proíbe clientes chamar new Logger()
@@ -223,7 +383,12 @@ void h() {
     System.out.println(msg);      
   }
 }</code></pre>
-<p>Primeiro, essa classe tem um construtor <em>default</em> privado. Com isso, um erro de compilação ocorrerá quando qualquer código fora da classe tentar chamar <code>new Logger()</code>. Além disso, um atributo estático armazena a instância única da classe. Quando precisarmos dessa instância, devemos chamar o método público e estático <code>getInstance()</code>. Um exemplo é mostrado a seguir:</p>
+<p>Primeiro, essa classe tem um construtor <em>default</em> privado. Com
+isso, um erro de compilação ocorrerá quando qualquer código fora da
+classe tentar chamar <code>new Logger()</code>. Além disso, um atributo
+estático armazena a instância única da classe. Quando precisarmos dessa
+instância, devemos chamar o método público e estático
+<code>getInstance()</code>. Um exemplo é mostrado a seguir:</p>
 <pre><code>void f() {
   Logger log = Logger.getInstance();  
   log.println(&quot;Executando f&quot;);
@@ -241,24 +406,86 @@ void h() {
   log.println(&quot;Executando h&quot;);
   ...
 }</code></pre>
-<p>Nesse novo código, temos certeza de que as três chamadas de <code>getInstance</code> retornam a mesma instância de <code>Logger</code>. Todas as mensagens serão então registradas usando-se essa instância.</p>
-<p>Dentre os padrões de projeto propostos no livro da <q>Gangue dos Quatro</q>, Singleton é o mais polêmico e criticado. O motivo é que ele pode ser usado para camuflar a criação de variáveis e estruturas de dados globais. No nosso caso, a instância única de <code>Logger</code> é, na prática, uma variável global que pode ser lida e alterada em qualquer parte do programa. Para isso, basta chamar <code>Logger.getInstance()</code>. Como vimos no Capítulo 5, variáveis globais representam uma forma de acoplamento ruim (ou forte) entre classes, isto é, uma forma de acoplamento que não é mediada por meio de interfaces estáveis. Porém, no caso de <code>Logger</code>, o uso de Singleton não gera preocupações, pois ele é exatamente aquele recomendado pelo padrão: temos um recurso que é único — um arquivo de log, no caso — e queremos refletir essa característica no projeto, garantindo que ele seja manipulado por meio de uma classe que, por construção, possuirá no máximo uma instância.</p>
-<p>Em resumo: Singleton deve ser usado para modelar recursos que, conceitualmente, devem possuir no máximo uma instância durante a execução de um programa. Por outro lado, um uso abusivo do padrão ocorre quando ele é adotado como um artifício para criação de variáveis globais.</p>
-<p>Por fim, existe mais uma crítica ao uso de Singletons: eles tornam o teste automático de métodos mais complicado. O motivo é que o resultado da execução de um método pode agora depender de um <q>estado global</q> armazenado em um Singleton. Por exemplo, suponha um método <code>m</code> que retorna o valor de <code>x + y</code>, onde <code>x</code> é um parâmetro de entrada e <code>y</code> é uma variável global, que é parte de um Singleton. Logo, para testar esse método precisamos fornecer o valor <code>x</code>; o que é bastante fácil, pois ele é um parâmetro do método. Mas também precisamos garantir que <code>y</code> terá um valor conhecido; o que pode ser mais difícil, pois ele é um atributo de uma outra classe.</p>
-<p><strong>Código Fonte</strong>: O código do exemplo de Singleton usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/704348e216e85918d7375a6b3d40dcdb">link</a>.</p>
+<p>Nesse novo código, temos certeza de que as três chamadas de
+<code>getInstance</code> retornam a mesma instância de
+<code>Logger</code>. Todas as mensagens serão então registradas
+usando-se essa instância.</p>
+<p>Dentre os padrões de projeto propostos no livro da <q>Gangue dos
+Quatro</q>, Singleton é o mais polêmico e criticado. O motivo é que ele
+pode ser usado para camuflar a criação de variáveis e estruturas de
+dados globais. No nosso caso, a instância única de <code>Logger</code>
+é, na prática, uma variável global que pode ser lida e alterada em
+qualquer parte do programa. Para isso, basta chamar
+<code>Logger.getInstance()</code>. Como vimos no Capítulo 5, variáveis
+globais representam uma forma de acoplamento ruim (ou forte) entre
+classes, isto é, uma forma de acoplamento que não é mediada por meio de
+interfaces estáveis. Porém, no caso de <code>Logger</code>, o uso de
+Singleton não gera preocupações, pois ele é exatamente aquele
+recomendado pelo padrão: temos um recurso que é único — um arquivo de
+log, no caso — e queremos refletir essa característica no projeto,
+garantindo que ele seja manipulado por meio de uma classe que, por
+construção, possuirá no máximo uma instância.</p>
+<p>Em resumo: Singleton deve ser usado para modelar recursos que,
+conceitualmente, devem possuir no máximo uma instância durante a
+execução de um programa. Por outro lado, um uso abusivo do padrão ocorre
+quando ele é adotado como um artifício para criação de variáveis
+globais.</p>
+<p>Por fim, existe mais uma crítica ao uso de Singletons: eles tornam o
+teste automático de métodos mais complicado. O motivo é que o resultado
+da execução de um método pode agora depender de um <q>estado global</q>
+armazenado em um Singleton. Por exemplo, suponha um método
+<code>m</code> que retorna o valor de <code>x + y</code>, onde
+<code>x</code> é um parâmetro de entrada e <code>y</code> é uma variável
+global, que é parte de um Singleton. Logo, para testar esse método
+precisamos fornecer o valor <code>x</code>; o que é bastante fácil, pois
+ele é um parâmetro do método. Mas também precisamos garantir que
+<code>y</code> terá um valor conhecido; o que pode ser mais difícil,
+pois ele é um atributo de uma outra classe.</p>
+<p><strong>Código Fonte</strong>: O código do exemplo de Singleton usado
+nesta seção está disponível neste <a
+href="https://gist.github.com/mtov/704348e216e85918d7375a6b3d40dcdb">link</a>.</p>
 </section>
 <section id="proxy" data-number="1.4">
-<h2 data-number="6.4"><span class="header-section-number">6.4</span> Proxy <a href="#proxy" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.4"><span class="header-section-number">6.4</span>
+Proxy <a href="#proxy" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha uma classe <code>BookSearch</code>, cujo principal método pesquisa por um livro, dado o seu ISBN:</p>
+<p><strong>Contexto</strong>: Suponha uma classe
+<code>BookSearch</code>, cujo principal método pesquisa por um livro,
+dado o seu ISBN:</p>
 <pre><code>class BookSearch {
   ...
   Book getBook(String ISBN) { ... }
   ...
 }</code></pre>
-<p><strong>Problema</strong>: Suponha que nosso serviço de pesquisa de livros esteja ficando popular e ganhando usuários. Para melhorar seu desempenho, pensamos em introduzir um sistema de cache: antes de pesquisar por um livro, iremos verificar se ele está no cache. Se sim, o livro será imediatamente retornado. Caso contrário, a pesquisa prosseguirá segundo a lógica normal do método <code>getBook()</code>. Porém, não gostaríamos que esse novo requisito — pesquisa em cache — fosse implementado na classe <code>BookSearch</code>. O motivo é que queremos manter a classe coesa e aderente ao Princípio da Responsabilidade Única. Na verdade, o cache será implementado por um desenvolvedor diferente daquele que é responsável por manter <code>BookSearch</code>. Além disso, vamos usar uma biblioteca de cache de terceiros, com diversos recursos e customizações. Por isso, achamos importante separar, em classes distintas, o interesse <q>pesquisar livros por ISBN</q> (que é um requisito funcional) do interesse <q>usar um cache nas pesquisas por livros</q> (que é um requisito não-funcional).</p>
-<p><strong>Solução</strong>: O padrão de projeto <strong>Proxy</strong> defende a inserção de um objeto intermediário, chamado proxy, entre um objeto base e seus clientes. Assim, os clientes não terão mais uma referência direta para o objeto base, mas sim para o proxy. Por sua vez, o proxy possui uma referência para o objeto base. Além disso, o proxy deve implementar as mesmas interfaces do objeto base.</p>
-<p>O objetivo de um proxy é mediar o acesso a um objeto base, agregando-lhe funcionalidades, sem que ele tome conhecimento disso. No nosso caso, o objeto base é do tipo <code>BookSearch</code>; a funcionalidade que pretendemos agregar é um cache; e o proxy é um objeto da seguinte classe:</p>
+<p><strong>Problema</strong>: Suponha que nosso serviço de pesquisa de
+livros esteja ficando popular e ganhando usuários. Para melhorar seu
+desempenho, pensamos em introduzir um sistema de cache: antes de
+pesquisar por um livro, iremos verificar se ele está no cache. Se sim, o
+livro será imediatamente retornado. Caso contrário, a pesquisa
+prosseguirá segundo a lógica normal do método <code>getBook()</code>.
+Porém, não gostaríamos que esse novo requisito — pesquisa em cache —
+fosse implementado na classe <code>BookSearch</code>. O motivo é que
+queremos manter a classe coesa e aderente ao Princípio da
+Responsabilidade Única. Na verdade, o cache será implementado por um
+desenvolvedor diferente daquele que é responsável por manter
+<code>BookSearch</code>. Além disso, vamos usar uma biblioteca de cache
+de terceiros, com diversos recursos e customizações. Por isso, achamos
+importante separar, em classes distintas, o interesse <q>pesquisar
+livros por ISBN</q> (que é um requisito funcional) do interesse <q>usar
+um cache nas pesquisas por livros</q> (que é um requisito
+não-funcional).</p>
+<p><strong>Solução</strong>: O padrão de projeto <strong>Proxy</strong>
+defende a inserção de um objeto intermediário, chamado proxy, entre um
+objeto base e seus clientes. Assim, os clientes não terão mais uma
+referência direta para o objeto base, mas sim para o proxy. Por sua vez,
+o proxy possui uma referência para o objeto base. Além disso, o proxy
+deve implementar as mesmas interfaces do objeto base.</p>
+<p>O objetivo de um proxy é mediar o acesso a um objeto base,
+agregando-lhe funcionalidades, sem que ele tome conhecimento disso. No
+nosso caso, o objeto base é do tipo <code>BookSearch</code>; a
+funcionalidade que pretendemos agregar é um cache; e o proxy é um objeto
+da seguinte classe:</p>
 <pre><code>class BookSearchProxy implements BookSearchInterface {
 
   private BookSearchInterface base;
@@ -279,15 +506,27 @@ void h() {
   }
   ...
 }</code></pre>
-<p>Deve ser criada também uma interface <code>BookSearchInterface</code>, não mostrada no código. Tanto a classe base como a classe do proxy devem implementar essa interface. Isso permitirá que os clientes não tomem conhecimento da existência de um proxy entre eles e o objeto base. Mais uma vez, estamos lançando mão do Princípio <q>Prefira Interfaces a Classes</q>.</p>
-<p>O próximo código ilustra a instanciação do proxy. Primeiro, mostramos o código antes do proxy. Nesse código (a seguir), um objeto <code>BookSearch</code> é criado no programa principal e depois passado como parâmetro de qualquer classe ou função que precise do serviço de pesquisa de livros, como a classe <code>View</code>.</p>
+<p>Deve ser criada também uma interface
+<code>BookSearchInterface</code>, não mostrada no código. Tanto a classe
+base como a classe do proxy devem implementar essa interface. Isso
+permitirá que os clientes não tomem conhecimento da existência de um
+proxy entre eles e o objeto base. Mais uma vez, estamos lançando mão do
+Princípio <q>Prefira Interfaces a Classes</q>.</p>
+<p>O próximo código ilustra a instanciação do proxy. Primeiro, mostramos
+o código antes do proxy. Nesse código (a seguir), um objeto
+<code>BookSearch</code> é criado no programa principal e depois passado
+como parâmetro de qualquer classe ou função que precise do serviço de
+pesquisa de livros, como a classe <code>View</code>.</p>
 <pre><code>void main() {
   BookSearch bs = new BookSearch();
   ...
   View view = new View(bs);
   ...
 }</code></pre>
-<p>Com a decisão de usar um proxy, vamos ter que modificar esse código para instanciar o proxy (código a seguir). Além disso, <code>View</code> passou a receber como parâmetro de sua construtora uma referência para o proxy, em vez de uma referência para o objeto base.</p>
+<p>Com a decisão de usar um proxy, vamos ter que modificar esse código
+para instanciar o proxy (código a seguir). Além disso, <code>View</code>
+passou a receber como parâmetro de sua construtora uma referência para o
+proxy, em vez de uma referência para o objeto base.</p>
 <pre><code>void main() {
   BookSearch bs = new BookSearch();
   BookSearchProxy pbs;
@@ -296,21 +535,41 @@ void h() {
   View view = new View(pbs);
   ...
 }</code></pre>
-<p>A próxima figura ilustra os objetos e as referências entre eles, considerando a solução que usa um proxy:</p>
+<p>A próxima figura ilustra os objetos e as referências entre eles,
+considerando a solução que usa um proxy:</p>
 <figure>
-<img src="figs/cap6/padrao-proxy.svg" style="width:75.0%" alt="Padrão de projeto Proxy" /><figcaption aria-hidden="true">Padrão de projeto Proxy</figcaption>
+<img src="figs/cap6/padrao-proxy.svg" style="width:75.0%"
+alt="Padrão de projeto Proxy" />
+<figcaption aria-hidden="true">Padrão de projeto Proxy</figcaption>
 </figure>
-<p>Além de ajudar na implementação de caches, proxies podem ser usados para implementar outros requisitos não-funcionais. Alguns exemplos incluem:</p>
+<p>Além de ajudar na implementação de caches, proxies podem ser usados
+para implementar outros requisitos não-funcionais. Alguns exemplos
+incluem:</p>
 <ul>
-<li><p>Comunicação com um cliente remoto, isto é, pode-se usar um proxy para encapsular protocolos e detalhes de comunicação. Esses proxies  são chamados de <strong>stubs</strong>.</p></li>
-<li><p>Alocação de memória por demanda para objetos que consomem muita memória. Por exemplo, uma classe pode manipular uma imagem em alta resolução. Então, podemos usar um proxy para evitar que a imagem fique carregada o tempo todo na memória principal. Ela somente será carregada, possivelmente do disco, antes da execução de alguns métodos.</p></li>
-<li><p>Controlar o acesso de diversos clientes a um objeto base. Por exemplo, os clientes devem estar autenticados e ter permissão para executar certas operações do objeto base. Com isso, a classe do objeto base pode se concentrar na implementação de requisitos funcionais.</p></li>
+<li><p>Comunicação com um cliente remoto, isto é, pode-se usar um proxy
+para encapsular protocolos e detalhes de comunicação. Esses proxies são
+chamados de <strong>stubs</strong>.</p></li>
+<li><p>Alocação de memória por demanda para objetos que consomem muita
+memória. Por exemplo, uma classe pode manipular uma imagem em alta
+resolução. Então, podemos usar um proxy para evitar que a imagem fique
+carregada o tempo todo na memória principal. Ela somente será carregada,
+possivelmente do disco, antes da execução de alguns métodos.</p></li>
+<li><p>Controlar o acesso de diversos clientes a um objeto base. Por
+exemplo, os clientes devem estar autenticados e ter permissão para
+executar certas operações do objeto base. Com isso, a classe do objeto
+base pode se concentrar na implementação de requisitos
+funcionais.</p></li>
 </ul>
 </section>
 <section id="adaptador" data-number="1.5">
-<h2 data-number="6.5"><span class="header-section-number">6.5</span> Adaptador <a href="#adaptador" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.5"><span class="header-section-number">6.5</span>
+Adaptador <a href="#adaptador" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha um sistema que tenha que controlar projetores multimídia. Para isso ele deve instanciar objetos de classes fornecidas pelos fabricantes de cada projetor, como ilustrado a seguir:</p>
+<p><strong>Contexto</strong>: Suponha um sistema que tenha que controlar
+projetores multimídia. Para isso ele deve instanciar objetos de classes
+fornecidas pelos fabricantes de cada projetor, como ilustrado a
+seguir:</p>
 <pre><code>class ProjetorSamsung {
   public void turnOn() { ... }
   ...
@@ -320,8 +579,19 @@ class ProjetorLG {
   public void enable(int timer) { ... }
   ...
 }</code></pre>
-<p>Para simplificar, estamos mostrando apenas duas classes. Porém, um cenário real pode envolver classes de outros fabricantes de projetores. Também estamos mostrando apenas um método de cada classe, mas elas podem conter outros métodos. Particularmente, o método mostrado é responsável por ligar o projetor. No caso dos projetores da Samsung, esse método não possui parâmetros. No caso dos projetores da LG podemos passar um intervalo em minutos para ligação do projetor. Se esse parâmetro for igual a zero, o projetor é ligado imediatamente. Veja ainda que o nome dos métodos é diferente nas duas classes.</p>
-<p><strong>Problema</strong>: No sistema de controle de projetores multimídia, queremos usar uma interface única para ligar os projetores, independentemente de marca. O próximo código mostra essa interface e uma classe cliente do sistema:</p>
+<p>Para simplificar, estamos mostrando apenas duas classes. Porém, um
+cenário real pode envolver classes de outros fabricantes de projetores.
+Também estamos mostrando apenas um método de cada classe, mas elas podem
+conter outros métodos. Particularmente, o método mostrado é responsável
+por ligar o projetor. No caso dos projetores da Samsung, esse método não
+possui parâmetros. No caso dos projetores da LG podemos passar um
+intervalo em minutos para ligação do projetor. Se esse parâmetro for
+igual a zero, o projetor é ligado imediatamente. Veja ainda que o nome
+dos métodos é diferente nas duas classes.</p>
+<p><strong>Problema</strong>: No sistema de controle de projetores
+multimídia, queremos usar uma interface única para ligar os projetores,
+independentemente de marca. O próximo código mostra essa interface e uma
+classe cliente do sistema:</p>
 <pre><code>interface Projetor {
 
   void liga();
@@ -335,9 +605,21 @@ class SistemaControleProjetores {
   }
 
 }</code></pre>
-<p>Porém, as classes de cada projetor — mostradas anteriormente — foram implementadas pelos seus fabricantes e estão prontas para uso. Ou seja, não temos acesso ao código dessas classes para fazer com que elas implementem a interface <code>Projetor</code>.</p>
-<p> <strong>Solução</strong>: O padrão de projeto <strong>Adaptador</strong> — também conhecido como <strong>Wrapper</strong> — é uma solução para o nosso problema. Recomenda-se usar esse padrão quando temos que converter a interface de uma classe para outra interface, esperada pelos seus clientes. No nosso exemplo, ele pode ser usado para converter a interface <code>Projetor</code> — usada no sistema de controle de projetores — para as interfaces (métodos públicos) das classes implementadas pelos fabricantes dos projetores.</p>
-<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para <code>Projetor</code>, é mostrado a seguir:</p>
+<p>Porém, as classes de cada projetor — mostradas anteriormente — foram
+implementadas pelos seus fabricantes e estão prontas para uso. Ou seja,
+não temos acesso ao código dessas classes para fazer com que elas
+implementem a interface <code>Projetor</code>.</p>
+<p> <strong>Solução</strong>: O padrão de projeto
+<strong>Adaptador</strong> — também conhecido como
+<strong>Wrapper</strong> — é uma solução para o nosso problema.
+Recomenda-se usar esse padrão quando temos que converter a interface de
+uma classe para outra interface, esperada pelos seus clientes. No nosso
+exemplo, ele pode ser usado para converter a interface
+<code>Projetor</code> — usada no sistema de controle de projetores —
+para as interfaces (métodos públicos) das classes implementadas pelos
+fabricantes dos projetores.</p>
+<p>Um exemplo de classe adaptadora, de <code>ProjetorSamsung</code> para
+<code>Projetor</code>, é mostrado a seguir:</p>
 <pre><code>class AdaptadorProjetorSamsung implements Projetor {
 
   private ProjetorSamsung projetor;
@@ -350,23 +632,54 @@ class SistemaControleProjetores {
     projetor.turnOn();
   }
 }</code></pre>
-<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface <code>Projetor</code>. Logo, objetos dessa classe podem ser passados como parâmetro do método <code>init()</code> do sistema para controle de projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de chamadas é então a seguinte (acompanhe também pelo diagrama de sequência UML, mostrado na próxima página): primeiro, o cliente — no nosso caso, representado pelo método <code>init</code> — chama <code>liga()</code> da classe adaptadora; em seguida, a execução desse método chama o método equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo <q>adaptado</q>; isto é, um objeto que acessa projetores Samsung.</p>
+<p>A classe <code>AdaptadorProjetorSamsung</code> implementa a interface
+<code>Projetor</code>. Logo, objetos dessa classe podem ser passados
+como parâmetro do método <code>init()</code> do sistema para controle de
+projetores. A classe <code>AdaptadorProjetorSamsung</code> também possui
+um atributo privado do tipo <code>ProjetorSamsung</code>. A sequência de
+chamadas é então a seguinte (acompanhe também pelo diagrama de sequência
+UML, mostrado na próxima página): primeiro, o cliente — no nosso caso,
+representado pelo método <code>init</code> — chama <code>liga()</code>
+da classe adaptadora; em seguida, a execução desse método chama o método
+equivalente — no caso, <code>turnOn()</code> — do objeto que está sendo
+<q>adaptado</q>; isto é, um objeto que acessa projetores Samsung.</p>
 <figure>
-<img src="figs/cap6/padrao-adapter.svg" style="width:70.0%" alt="Padrão de projeto Adaptador" /><figcaption aria-hidden="true">Padrão de projeto Adaptador</figcaption>
+<img src="figs/cap6/padrao-adapter.svg" style="width:70.0%"
+alt="Padrão de projeto Adaptador" />
+<figcaption aria-hidden="true">Padrão de projeto Adaptador</figcaption>
 </figure>
-<p>Se quisermos manipular projetores LG, vamos ter que implementar uma segunda classe adaptadora. No entanto, seu código será parecido com <code>AdaptadorProjetorSamsung</code>.</p>
+<p>Se quisermos manipular projetores LG, vamos ter que implementar uma
+segunda classe adaptadora. No entanto, seu código será parecido com
+<code>AdaptadorProjetorSamsung</code>.</p>
 </section>
 <section id="fachada" data-number="1.6">
-<h2 data-number="6.6"><span class="header-section-number">6.6</span> Fachada <a href="#fachada" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.6"><span class="header-section-number">6.6</span>
+Fachada <a href="#fachada" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha que implementamos um interpretador para uma linguagem X. Esse interpretador permite executar programas X a partir de uma linguagem hospedeira, no caso Java. Se quiser tornar o exemplo mais real, imagine que X é uma linguagem para consulta a dados, semelhante a SQL. Para executar programas X, a partir de um código em Java, os seguintes passos são necessários:</p>
+<p><strong>Contexto</strong>: Suponha que implementamos um interpretador
+para uma linguagem X. Esse interpretador permite executar programas X a
+partir de uma linguagem hospedeira, no caso Java. Se quiser tornar o
+exemplo mais real, imagine que X é uma linguagem para consulta a dados,
+semelhante a SQL. Para executar programas X, a partir de um código em
+Java, os seguintes passos são necessários:</p>
 <pre><code>Scanner s = new Scanner(&quot;prog1.x&quot;);
 Parser p = new Parser(s);
 AST ast = p.parse();
 CodeGenerator code = new CodeGenerator(ast);
 code.eval();</code></pre>
-<p><strong>Problema</strong>: Como a linguagem X está ficando popular, os desenvolvedores estão reclamando da complexidade do código acima, pois ele requer conhecimento de classes internas do interpretador de X. Logo, os usuários frequentemente pedem uma interface mais simples para chamar o interpretador da linguagem X.</p>
-<p><strong>Solução</strong>: O padrão de projeto <strong>Fachada</strong> é uma solução para o nosso problema. Uma Fachada é uma classe que oferece uma interface mais simples para um sistema. O objetivo é evitar que os usuários tenham que conhecer classes internas desse sistema; em vez disso, eles precisam interagir apenas com a classe de Fachada. As classes internas ficam encapsuladas por trás dessa Fachada.</p>
+<p><strong>Problema</strong>: Como a linguagem X está ficando popular,
+os desenvolvedores estão reclamando da complexidade do código acima,
+pois ele requer conhecimento de classes internas do interpretador de X.
+Logo, os usuários frequentemente pedem uma interface mais simples para
+chamar o interpretador da linguagem X.</p>
+<p><strong>Solução</strong>: O padrão de projeto
+<strong>Fachada</strong> é uma solução para o nosso problema. Uma
+Fachada é uma classe que oferece uma interface mais simples para um
+sistema. O objetivo é evitar que os usuários tenham que conhecer classes
+internas desse sistema; em vez disso, eles precisam interagir apenas com
+a classe de Fachada. As classes internas ficam encapsuladas por trás
+dessa Fachada.</p>
 <p>No nosso problema, a Fachada poderia ser:</p>
 <pre><code>class InterpretadorX {
 
@@ -384,14 +697,22 @@ code.eval();</code></pre>
     code.eval();
   }
 }</code></pre>
-<p>Assim, os desenvolvedores que precisam executar programas X, a partir de Java, poderão fazê-lo por meio de uma única linha de código:</p>
+<p>Assim, os desenvolvedores que precisam executar programas X, a partir
+de Java, poderão fazê-lo por meio de uma única linha de código:</p>
 <pre><code> new InterpretadorX(&quot;prog1.x&quot;).eval();</code></pre>
-<p>Antes de implementar a fachada, os clientes precisavam criar três objetos de tipos internos do interpretador e chamar dois métodos. Agora, basta criar um único objeto e chamar <code>eval</code>.</p>
+<p>Antes de implementar a fachada, os clientes precisavam criar três
+objetos de tipos internos do interpretador e chamar dois métodos. Agora,
+basta criar um único objeto e chamar <code>eval</code>.</p>
 </section>
 <section id="decorador" data-number="1.7">
-<h2 data-number="6.7"><span class="header-section-number">6.7</span> Decorador <a href="#decorador" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.7"><span class="header-section-number">6.7</span>
+Decorador <a href="#decorador" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Vamos voltar ao sistema de comunicação remota usado para explicar o Padrão Fábrica. Suponha que as classes <code>TCPChannel</code> e <code>UDPChannel</code> implementam uma interface <code>Channel</code>:</p>
+<p><strong>Contexto</strong>: Vamos voltar ao sistema de comunicação
+remota usado para explicar o Padrão Fábrica. Suponha que as classes
+<code>TCPChannel</code> e <code>UDPChannel</code> implementam uma
+interface <code>Channel</code>:</p>
 <pre><code>interface Channel {
   void send(String msg);
   String receive();
@@ -404,24 +725,50 @@ class TCPChannel implements Channel {
 class UDPChannel implements Channel {
   ...
 }</code></pre>
-<p><strong>Problema</strong>: Os clientes dessas classes precisam adicionar funcionalidades extras em canais, tais como buffers, compactação das mensagens, log das mensagens trafegadas, etc. Mas essas funcionalidades são opcionais: dependendo do cliente precisamos de apenas algumas funcionalidades ou, talvez, nenhuma delas. Uma primeira solução consiste no uso de herança para criar subclasses com cada possível seleção de funcionalidades. No quadro abaixo, mostramos algumas das subclasses que teríamos que criar (<code>extends</code> significa relação de herança):</p>
+<p><strong>Problema</strong>: Os clientes dessas classes precisam
+adicionar funcionalidades extras em canais, tais como buffers,
+compactação das mensagens, log das mensagens trafegadas, etc. Mas essas
+funcionalidades são opcionais: dependendo do cliente precisamos de
+apenas algumas funcionalidades ou, talvez, nenhuma delas. Uma primeira
+solução consiste no uso de herança para criar subclasses com cada
+possível seleção de funcionalidades. No quadro abaixo, mostramos algumas
+das subclasses que teríamos que criar (<code>extends</code> significa
+relação de herança):</p>
 <ul>
 <li><p><code>TCPZipChannel extends TCPChannel</code></p></li>
 <li><p><code>TCPBufferedChannel extends TCPChannel</code></p></li>
-<li><p><code>TCPBufferedZipChannel extends TCPZipChannel extends TCPChannel</code></p></li>
+<li><p><code>TCPBufferedZipChannel extends TCPZipChannel extends
+TCPChannel</code></p></li>
 <li><p><code>TCPLogChannel extends TCPChannel</code></p></li>
-<li><p><code>TCPLogBufferedZipChannel extends TCPBufferedZipChannel extends</code></p>
+<li><p><code>TCPLogBufferedZipChannel extends TCPBufferedZipChannel
+extends</code></p>
 <p><code>TCPZipChannel extends TCPChannel</code></p></li>
 <li><p><code>UDPZipChannel extends UDPChannel</code></p></li>
 <li><p><code>UDPBufferedChannel extends UDPChannel</code></p></li>
-<li><p><code>UDPBufferedZipChannel extends UDPZipChannel extends UDPChannel</code></p></li>
+<li><p><code>UDPBufferedZipChannel extends UDPZipChannel extends
+UDPChannel</code></p></li>
 <li><p><code>UDPLogChannel extends UDPChannel</code></p></li>
-<li><p><code>UDPLogBufferedZipChannel extends UDPBufferedZipChannel extends</code></p>
+<li><p><code>UDPLogBufferedZipChannel extends UDPBufferedZipChannel
+extends</code></p>
 <p><code>UDPZipChannel extends UDPChannel</code></p></li>
 </ul>
-<p>Nessa solução, usamos herança para implementar subclasses para cada conjunto de funcionalidades. Suponha que o usuário precise de um canal UDP com buffer e compactação. Para isso, tivemos que implementar <code>UDPBufferedZipChannel</code> como subclasse de <code>UDPZipChannel</code>, que por sua vez foi implementada como subclasse de <code>UDPChannel</code>. Como o leitor deve ter percebido, uma solução via herança é quase que inviável, pois ela gera uma explosão combinatória do número de classes relacionadas com canais de comunicação.</p>
-<p><strong>Solução</strong>: O Padrão Decorador representa uma alternativa a herança quando se precisa adicionar novas funcionalidades em uma classe base. Em vez de usar herança, usa-se composição para adicionar tais funcionalidades dinamicamente nas classes base. Portanto, Decorador é um exemplo de aplicação do princípio de projeto <q>Prefira Composição a Herança</q>, que estudamos no capítulo anterior.</p>
-<p>No nosso problema, ao optarmos por decoradores, o cliente poderá configurar um <code>Channel</code> da seguinte forma:</p>
+<p>Nessa solução, usamos herança para implementar subclasses para cada
+conjunto de funcionalidades. Suponha que o usuário precise de um canal
+UDP com buffer e compactação. Para isso, tivemos que implementar
+<code>UDPBufferedZipChannel</code> como subclasse de
+<code>UDPZipChannel</code>, que por sua vez foi implementada como
+subclasse de <code>UDPChannel</code>. Como o leitor deve ter percebido,
+uma solução via herança é quase que inviável, pois ela gera uma explosão
+combinatória do número de classes relacionadas com canais de
+comunicação.</p>
+<p><strong>Solução</strong>: O Padrão Decorador representa uma
+alternativa a herança quando se precisa adicionar novas funcionalidades
+em uma classe base. Em vez de usar herança, usa-se composição para
+adicionar tais funcionalidades dinamicamente nas classes base. Portanto,
+Decorador é um exemplo de aplicação do princípio de projeto <q>Prefira
+Composição a Herança</q>, que estudamos no capítulo anterior.</p>
+<p>No nosso problema, ao optarmos por decoradores, o cliente poderá
+configurar um <code>Channel</code> da seguinte forma:</p>
 <pre><code>channel = new ZipChannel(new TCPChannel());
 // TCPChannel que compacte/descompacte dados 
 
@@ -433,8 +780,18 @@ channel = new BufferChannel(new UDPChannel());
 
 channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 // TCPChannel com compactação e um buffer associado</code></pre>
-<p>Portanto, em uma solução com decoradores, a configuração de um <code>Channel</code> é feita no momento da sua instanciação, por meio de uma sequência aninhada de operadores <code>new</code>. O <code>new</code> mais interno sempre cria uma classe base, no nosso exemplo <code>TCPChannel</code> ou <code>UDPChannel</code>. Feito isso, os operadores mais externos são usados para <q>decorar</q> o objeto criado com novas funcionalidades.</p>
-<p>Falta então explicar as classes que são os decoradores propriamente ditos, como <code>ZipChannel</code> e <code>BufferChannel</code>. Primeiro, elas são subclasses da seguinte classe que não aparece no exemplo, mas que é fundamental para o funcionamento do padrão Decorador:</p>
+<p>Portanto, em uma solução com decoradores, a configuração de um
+<code>Channel</code> é feita no momento da sua instanciação, por meio de
+uma sequência aninhada de operadores <code>new</code>. O
+<code>new</code> mais interno sempre cria uma classe base, no nosso
+exemplo <code>TCPChannel</code> ou <code>UDPChannel</code>. Feito isso,
+os operadores mais externos são usados para <q>decorar</q> o objeto
+criado com novas funcionalidades.</p>
+<p>Falta então explicar as classes que são os decoradores propriamente
+ditos, como <code>ZipChannel</code> e <code>BufferChannel</code>.
+Primeiro, elas são subclasses da seguinte classe que não aparece no
+exemplo, mas que é fundamental para o funcionamento do padrão
+Decorador:</p>
 <pre><code>class ChannelDecorator implements Channel {
 
   private Channel channel;
@@ -454,10 +811,21 @@ channel= new BufferChannel(new ZipChannel(new TCPChannel()));
 }</code></pre>
 <p>Essa classe tem duas características importantes:</p>
 <ul>
-<li><p>Ela é uma <code>Channel</code>, isto é, ela implementa essa interface e, portanto, os seus dois métodos. Assim, sempre que for esperado um objeto do tipo <code>Channel</code> podemos passar um objeto do tipo <code>ChannelDecorator</code> no lugar.</p></li>
-<li><p>Ela possui internamente um objeto do tipo <code>Channel</code> para o qual delega as chamadas aos métodos <code>send</code> e <code>receive</code>. Em outras palavras, um decorador, no nosso caso, vai sempre referenciar um outro decorador. Após implementar a funcionalidade que lhe cabe — um buffer, compactação, etc. — ele repassa a chamada para esse decorador.</p></li>
+<li><p>Ela é uma <code>Channel</code>, isto é, ela implementa essa
+interface e, portanto, os seus dois métodos. Assim, sempre que for
+esperado um objeto do tipo <code>Channel</code> podemos passar um objeto
+do tipo <code>ChannelDecorator</code> no lugar.</p></li>
+<li><p>Ela possui internamente um objeto do tipo <code>Channel</code>
+para o qual delega as chamadas aos métodos <code>send</code> e
+<code>receive</code>. Em outras palavras, um decorador, no nosso caso,
+vai sempre referenciar um outro decorador. Após implementar a
+funcionalidade que lhe cabe — um buffer, compactação, etc. — ele repassa
+a chamada para esse decorador.</p></li>
 </ul>
-<p>Por fim, chegamos aos decoradores reais. Eles são subclasses de <code>ChannelDecorator</code>, como no código a seguir, que implementa um decorador que compacta e descompacta as mensagens trafegadas pelo canal:</p>
+<p>Por fim, chegamos aos decoradores reais. Eles são subclasses de
+<code>ChannelDecorator</code>, como no código a seguir, que implementa
+um decorador que compacta e descompacta as mensagens trafegadas pelo
+canal:</p>
 <pre><code>class ZipChannel extends ChannelDecorator {
 
   public ZipChannel(Channel c) {
@@ -476,22 +844,36 @@ channel= new BufferChannel(new ZipChannel(new TCPChannel()));
   }
 
 }</code></pre>
-<p>Para entender o funcionamento de <code>ZipChannel</code>, suponha o seguinte código:</p>
+<p>Para entender o funcionamento de <code>ZipChannel</code>, suponha o
+seguinte código:</p>
 <pre><code>Channel c = new ZipChannel(new TCPChannel());
 c.send(&quot;Hello, world&quot;)</code></pre>
-<p>A chamada de <code>send</code> na última linha do exemplo dispara as seguintes execuções de métodos:</p>
+<p>A chamada de <code>send</code> na última linha do exemplo dispara as
+seguintes execuções de métodos:</p>
 <ul>
-<li><p>Primeiro, executa-se <code>ZipChannel.send</code>, que vai compactar a mensagem.</p></li>
-<li><p>Após a compactação, <code>ZipChannel.send</code> chama <code>super.send</code>, que vai executar <code>ChannelDecorator.send</code>, pois <code>ChannelDecorator</code> é a superclasse da classe <code>ZipChannel</code>.</p></li>
-<li><p><code>ChannelDecorator.send</code> apenas repassa a chamada para o <code>Channel</code> por ele referenciado, que no caso é um <code>TCPChannel</code>.</p></li>
-<li><p>Finalmente, chegamos a <code>TCPChannel.send</code>, que vai transmitir a mensagem via TCP.</p></li>
+<li><p>Primeiro, executa-se <code>ZipChannel.send</code>, que vai
+compactar a mensagem.</p></li>
+<li><p>Após a compactação, <code>ZipChannel.send</code> chama
+<code>super.send</code>, que vai executar
+<code>ChannelDecorator.send</code>, pois <code>ChannelDecorator</code> é
+a superclasse da classe <code>ZipChannel</code>.</p></li>
+<li><p><code>ChannelDecorator.send</code> apenas repassa a chamada para
+o <code>Channel</code> por ele referenciado, que no caso é um
+<code>TCPChannel</code>.</p></li>
+<li><p>Finalmente, chegamos a <code>TCPChannel.send</code>, que vai
+transmitir a mensagem via TCP.</p></li>
 </ul>
-<p><strong>Código Fonte</strong>: O código do exemplo de Decorador usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/c8d65378a2904af01c20c53922f5ae1d">link</a>.</p>
+<p><strong>Código Fonte</strong>: O código do exemplo de Decorador usado
+nesta seção está disponível neste <a
+href="https://gist.github.com/mtov/c8d65378a2904af01c20c53922f5ae1d">link</a>.</p>
 </section>
 <section id="strategy" data-number="1.8">
-<h2 data-number="6.8"><span class="header-section-number">6.8</span> Strategy <a href="#strategy" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.8"><span class="header-section-number">6.8</span>
+Strategy <a href="#strategy" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha que estamos implementando um pacote de estruturas de dados, com a seguinte classe lista:</p>
+<p><strong>Contexto</strong>: Suponha que estamos implementando um
+pacote de estruturas de dados, com a seguinte classe lista:</p>
 <pre><code>class MyList {
 
   ... // dados de uma lista
@@ -501,9 +883,28 @@ c.send(&quot;Hello, world&quot;)</code></pre>
     ... // ordena a lista usando Quicksort
   }
 }</code></pre>
-<p><strong>Problema</strong>: os nossos clientes estão solicitando que novos algoritmos de ordenação possam ser usados para ordenar os elementos da lista. Explicando melhor, eles querem ter a opção de alterar e definir, por conta própria, o algoritmo de ordenação. No entanto, a versão atual da classe sempre ordena a lista usando o algoritmo Quicksort. Se lembrarmos dos princípios de projeto que estudamos no capítulo anterior, podemos dizer que a classe <code>MyList</code> não segue o princípio Aberto/Fechado, considerando o algoritmo de ordenação.</p>
-<p><strong>Solução</strong>: o Padrão <strong>Strategy</strong> é a solução para o nosso problema de <q>abrir</q> a classe <code>MyList</code> para novos algoritmos de ordenação, mas sem alterar o seu código fonte. O objetivo do padrão é parametrizar os algoritmos usados por uma classe. Ele prescreve como encapsular uma família de algoritmos e como torná-los intercambiáveis. Assim, seu uso é recomendado quando uma classe é usuária de um certo algoritmo (de ordenação, no nosso exemplo). Porém, como existem diversos algoritmos com esse propósito, não se quer antecipar uma decisão e implementar apenas um deles no corpo da classe, como ocorre na primeira versão de <code>MyList</code>.</p>
-<p>Mostra-se a seguir o novo código de <code>MyList</code>, usando o Padrão Strategy para configuração do algoritmo de ordenação:</p>
+<p><strong>Problema</strong>: os nossos clientes estão solicitando que
+novos algoritmos de ordenação possam ser usados para ordenar os
+elementos da lista. Explicando melhor, eles querem ter a opção de
+alterar e definir, por conta própria, o algoritmo de ordenação. No
+entanto, a versão atual da classe sempre ordena a lista usando o
+algoritmo Quicksort. Se lembrarmos dos princípios de projeto que
+estudamos no capítulo anterior, podemos dizer que a classe
+<code>MyList</code> não segue o princípio Aberto/Fechado, considerando o
+algoritmo de ordenação.</p>
+<p><strong>Solução</strong>: o Padrão <strong>Strategy</strong> é a
+solução para o nosso problema de <q>abrir</q> a classe
+<code>MyList</code> para novos algoritmos de ordenação, mas sem alterar
+o seu código fonte. O objetivo do padrão é parametrizar os algoritmos
+usados por uma classe. Ele prescreve como encapsular uma família de
+algoritmos e como torná-los intercambiáveis. Assim, seu uso é
+recomendado quando uma classe é usuária de um certo algoritmo (de
+ordenação, no nosso exemplo). Porém, como existem diversos algoritmos
+com esse propósito, não se quer antecipar uma decisão e implementar
+apenas um deles no corpo da classe, como ocorre na primeira versão de
+<code>MyList</code>.</p>
+<p>Mostra-se a seguir o novo código de <code>MyList</code>, usando o
+Padrão Strategy para configuração do algoritmo de ordenação:</p>
 <pre><code>class MyList {
 
   ... // dados de uma lista
@@ -523,8 +924,16 @@ c.send(&quot;Hello, world&quot;)</code></pre>
     strategy.sort(this);
   }
 }</code></pre>
-<p>Nessa nova versão, o algoritmo de ordenação transformou-se em um atributo da classe <code>MyList</code> e um método <code>set</code> foi criado para configurar esse algoritmo. O método <code>sort</code> repassa a tarefa de ordenação para um método de mesmo nome do objeto com a estratégia de ordenação. Nessa chamada, passa-se <code>this</code> como parâmetro, pois o algoritmo a ser executado deve ter acesso à lista para ordenar seus elementos.</p>
-<p>Para encerrar a apresentação do padrão, mostramos o código das classes que implementam as estratégias — isto é, os algoritmos — de ordenação:</p>
+<p>Nessa nova versão, o algoritmo de ordenação transformou-se em um
+atributo da classe <code>MyList</code> e um método <code>set</code> foi
+criado para configurar esse algoritmo. O método <code>sort</code>
+repassa a tarefa de ordenação para um método de mesmo nome do objeto com
+a estratégia de ordenação. Nessa chamada, passa-se <code>this</code>
+como parâmetro, pois o algoritmo a ser executado deve ter acesso à lista
+para ordenar seus elementos.</p>
+<p>Para encerrar a apresentação do padrão, mostramos o código das
+classes que implementam as estratégias — isto é, os algoritmos — de
+ordenação:</p>
 <pre><code>abstract class SortStrategy {
   abstract void sort(MyList list);
 }
@@ -538,20 +947,54 @@ class ShellSortStrategy extends SortStrategy {
 }</code></pre>
 </section>
 <section id="observador" data-number="1.9">
-<h2 data-number="6.9"><span class="header-section-number">6.9</span> Observador <a href="#observador" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.9"><span class="header-section-number">6.9</span>
+Observador <a href="#observador" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha que estamos implementando um sistema para controlar uma estação meteorológica. Nesse sistema, temos que manipular objetos de duas classes: <code>Temperatura</code>, que são objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na estação meteorológica; e <code>Termometro</code>, que é uma classe usada para criar objetos visuais que exibem as temperaturas sob monitoramento. Termômetros devem exibir a temperatura atual que foi monitorada. Se a temperatura mudar, os termômetros devem ser atualizados.</p>
-<p><strong>Problema</strong>: Não queremos acoplar <code>Temperatura</code> (classe de modelo) a <code>Termometro</code> (classe de interface). O motivo é simples: classes de interface mudam com frequência. Na versão atual, o sistema possui uma interface textual, que exibe temperaturas em Celsius no console do sistema operacional. Mas, em breve, pretendemos ter interfaces Web, para celulares e para outros sistemas. Pretendemos também oferecer outras interfaces de termômetros, tais como digital, analógico, etc. Por fim, temos mais classes semelhantes a <code>Temperatura</code> e <code>Termometro</code> em nosso sistema, tais como: <code>PressaoAtmosferica</code> e <code>Barometro</code>, <code>UmidadeDoAr</code> e <code>Higrometro</code>, <code>VelocidadeDoVento</code> e <code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos de reusar o mecanismo de notificação também nesses outros pares de classes.</p>
-<p><strong>Solução:</strong> O padrão <strong>Observador</strong> é a solução recomendada para o nosso contexto e problema. Esse padrão define como implementar uma relação do tipo um-para-muitos entre objetos sujeito e observadores. Quando o estado de um sujeito muda, seus observadores devem ser notificados.</p>
-<p>Primeiro, vamos mostrar um programa principal para o nosso problema:</p>
+<p><strong>Contexto</strong>: Suponha que estamos implementando um
+sistema para controlar uma estação meteorológica. Nesse sistema, temos
+que manipular objetos de duas classes: <code>Temperatura</code>, que são
+objetos de <q>modelo</q> que armazenam as temperaturas monitoradas na
+estação meteorológica; e <code>Termometro</code>, que é uma classe usada
+para criar objetos visuais que exibem as temperaturas sob monitoramento.
+Termômetros devem exibir a temperatura atual que foi monitorada. Se a
+temperatura mudar, os termômetros devem ser atualizados.</p>
+<p><strong>Problema</strong>: Não queremos acoplar
+<code>Temperatura</code> (classe de modelo) a <code>Termometro</code>
+(classe de interface). O motivo é simples: classes de interface mudam
+com frequência. Na versão atual, o sistema possui uma interface textual,
+que exibe temperaturas em Celsius no console do sistema operacional.
+Mas, em breve, pretendemos ter interfaces Web, para celulares e para
+outros sistemas. Pretendemos também oferecer outras interfaces de
+termômetros, tais como digital, analógico, etc. Por fim, temos mais
+classes semelhantes a <code>Temperatura</code> e <code>Termometro</code>
+em nosso sistema, tais como: <code>PressaoAtmosferica</code> e
+<code>Barometro</code>, <code>UmidadeDoAr</code> e
+<code>Higrometro</code>, <code>VelocidadeDoVento</code> e
+<code>Anemometro</code>, etc. Logo, na medida do possível, gostaríamos
+de reusar o mecanismo de notificação também nesses outros pares de
+classes.</p>
+<p><strong>Solução:</strong> O padrão <strong>Observador</strong> é a
+solução recomendada para o nosso contexto e problema. Esse padrão define
+como implementar uma relação do tipo um-para-muitos entre objetos
+sujeito e observadores. Quando o estado de um sujeito muda, seus
+observadores devem ser notificados.</p>
+<p>Primeiro, vamos mostrar um programa principal para o nosso
+problema:</p>
 <pre><code>void main() {
   Temperatura t = new Temperatura();
   t.addObserver(new TermometroCelsius());
   t.addObserver(new TermometroFahrenheit());
   t.setTemp(100.0);
 }</code></pre>
-<p>Esse programa cria um objeto do tipo <code>Temperatura</code> (um sujeito) e então adiciona dois observadores nele: um <code>TermometroCelsius</code> e um <code>TermometroFahrenheit</code>. Por fim, define-se o valor da temperatura para 100 graus Celsius. A suposição é que temperaturas são, por <em>default</em>, monitoradas na escala Celsius.</p>
-<p>As classes <code>Temperatura</code> e <code>TermometroCelsius</code> são mostradas a seguir:</p>
+<p>Esse programa cria um objeto do tipo <code>Temperatura</code> (um
+sujeito) e então adiciona dois observadores nele: um
+<code>TermometroCelsius</code> e um <code>TermometroFahrenheit</code>.
+Por fim, define-se o valor da temperatura para 100 graus Celsius. A
+suposição é que temperaturas são, por <em>default</em>, monitoradas na
+escala Celsius.</p>
+<p>As classes <code>Temperatura</code> e <code>TermometroCelsius</code>
+são mostradas a seguir:</p>
 <pre><code>class Temperatura extends Subject {
 
   private double temp;
@@ -573,30 +1016,82 @@ class TermometroCelsius implements Observer {
     System.out.println(&quot;Temperatura Celsius: &quot; + temp);
   }
 }</code></pre>
-<p>Veja que <code>Temperatura</code> herda de uma classe chamada <code>Subject</code>. Na solução proposta, todos os sujeitos devem estender essa classe. Ao fazer isso, eles herdam dois métodos:</p>
+<p>Veja que <code>Temperatura</code> herda de uma classe chamada
+<code>Subject</code>. Na solução proposta, todos os sujeitos devem
+estender essa classe. Ao fazer isso, eles herdam dois métodos:</p>
 <ul>
-<li><p><code>addObserver</code>. No exemplo, esse método é usado no programa principal para adicionar dois termômetros como observadores de uma instância de <code>Temperatura</code>.</p></li>
-<li><p><code>notifyObservers</code>. No exemplo, esse método é chamado por <code>Temperatura</code> para notificar seus observadores de que o seu valor foi alterado no método <code>setTemp</code>.</p></li>
+<li><p><code>addObserver</code>. No exemplo, esse método é usado no
+programa principal para adicionar dois termômetros como observadores de
+uma instância de <code>Temperatura</code>.</p></li>
+<li><p><code>notifyObservers</code>. No exemplo, esse método é chamado
+por <code>Temperatura</code> para notificar seus observadores de que o
+seu valor foi alterado no método <code>setTemp</code>.</p></li>
 </ul>
-<p>A implementação de <code>notifyObservers</code> — que é omitida no exemplo — chama o método <code>update</code> dos objetos que se registraram como observadores de uma determinada instância de <code>Temperatura</code>. O método <code>update</code> faz parte da interface <code>Observer</code>, que deve ser implementada por todo observador, como é o caso de <code>TermometroCelsius</code>.</p>
-<p>A figura da próxima página mostra um diagrama de sequência UML que ilustra a comunicação entre uma temperatura (sujeito) e três possíveis termômetros (observadores). Assume-se que os três termômetros estão registrados como observadores da temperatura. A sequência de chamadas começa com temperatura recebendo uma chamada para executar <code>setTemp()</code>.</p>
+<p>A implementação de <code>notifyObservers</code> — que é omitida no
+exemplo — chama o método <code>update</code> dos objetos que se
+registraram como observadores de uma determinada instância de
+<code>Temperatura</code>. O método <code>update</code> faz parte da
+interface <code>Observer</code>, que deve ser implementada por todo
+observador, como é o caso de <code>TermometroCelsius</code>.</p>
+<p>A figura da próxima página mostra um diagrama de sequência UML que
+ilustra a comunicação entre uma temperatura (sujeito) e três possíveis
+termômetros (observadores). Assume-se que os três termômetros estão
+registrados como observadores da temperatura. A sequência de chamadas
+começa com temperatura recebendo uma chamada para executar
+<code>setTemp()</code>.</p>
 <figure>
-<img src="figs/cap6/padrao-observer.svg" style="width:90.0%" alt="Padrão de projeto Observador" /><figcaption aria-hidden="true">Padrão de projeto Observador</figcaption>
+<img src="figs/cap6/padrao-observer.svg" style="width:90.0%"
+alt="Padrão de projeto Observador" />
+<figcaption aria-hidden="true">Padrão de projeto Observador</figcaption>
 </figure>
 <p>O padrão Observador possui as seguintes vantagens principais:</p>
 <ul>
-<li><p>Ele não acopla os sujeitos a seus observadores. Na verdade, os sujeitos — como <code>Temperatura</code>, no exemplo — não conhecem os seus observadores. De forma genérica, os sujeitos publicam um evento anunciando a mudança de seu estado — chamando <code>notifyObservers</code> — e os observadores interessados são notificados. Esse comportamento facilita o reúso dos sujeitos em diversos cenários e, também, a implementação de diversos tipos de observadores para o mesmo tipo de sujeito.</p></li>
-<li><p>Uma vez implementado, o padrão Observador disponibiliza um mecanismo de notificação que pode ser reusado por diferentes pares de sujeito-observador. Por exemplo, podemos reusar a classe <code>Subject</code> e a interface <code>Observer</code> para notificações envolvendo pressão atmosférica e barômetros, umidade do ar e higrômetros, velocidade do vento e anemômetros, etc.</p></li>
+<li><p>Ele não acopla os sujeitos a seus observadores. Na verdade, os
+sujeitos — como <code>Temperatura</code>, no exemplo — não conhecem os
+seus observadores. De forma genérica, os sujeitos publicam um evento
+anunciando a mudança de seu estado — chamando
+<code>notifyObservers</code> — e os observadores interessados são
+notificados. Esse comportamento facilita o reúso dos sujeitos em
+diversos cenários e, também, a implementação de diversos tipos de
+observadores para o mesmo tipo de sujeito.</p></li>
+<li><p>Uma vez implementado, o padrão Observador disponibiliza um
+mecanismo de notificação que pode ser reusado por diferentes pares de
+sujeito-observador. Por exemplo, podemos reusar a classe
+<code>Subject</code> e a interface <code>Observer</code> para
+notificações envolvendo pressão atmosférica e barômetros, umidade do ar
+e higrômetros, velocidade do vento e anemômetros, etc.</p></li>
 </ul>
-<p><strong>Código Fonte</strong>: Se quiser conferir o código completo do nosso exemplo de Observador, incluindo o código das classes <code>Subject</code> e da interface <code>Observer</code>, acesse o seguinte <a href="https://gist.github.com/mtov/5fadb0e599cb84fd6bd124b2ff37c03c">link</a>.</p>
+<p><strong>Código Fonte</strong>: Se quiser conferir o código completo
+do nosso exemplo de Observador, incluindo o código das classes
+<code>Subject</code> e da interface <code>Observer</code>, acesse o
+seguinte <a
+href="https://gist.github.com/mtov/5fadb0e599cb84fd6bd124b2ff37c03c">link</a>.</p>
 </section>
 <section id="template-method" data-number="1.10">
-<h2 data-number="6.10"><span class="header-section-number">6.10</span> Template Method <a href="#template-method" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.10"><span class="header-section-number">6.10</span>
+Template Method <a href="#template-method" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha que estamos desenvolvendo uma folha de pagamento. Nela, temos uma classe <code>Funcionario</code>, com duas subclasses: <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code>.</p>
-<p><strong>Problema</strong>: Pretendemos padronizar um modelo (ou template) para cálculo dos salários na classe base <code>Funcionario</code>, que possa depois ser herdado pelas suas subclasses. Assim, as subclasses terão apenas que adaptar a rotina de cálculo de salários às suas particularidades. Mais especificamente, as subclasses saberão exatamente os métodos que precisam implementar para calcular o salário de um funcionário.</p>
-<p><strong>Solução</strong>: O padrão de projeto <strong>Template Method</strong> resolve o problema que enunciamos. Ele especifica como implementar o <q>esqueleto</q> de um algoritmo em uma classe abstrata X, mas deixando pendente alguns passos — ou métodos abstratos. Esses métodos serão implementados nas subclasses de X. Em resumo, um Template Method permite que subclasses customizem um algoritmo, mas sem mudar a sua estrutura geral implementada na classe base.</p>
-<p>Um exemplo de Template Method para o nosso contexto e problema é mostrado a seguir:</p>
+<p><strong>Contexto</strong>: Suponha que estamos desenvolvendo uma
+folha de pagamento. Nela, temos uma classe <code>Funcionario</code>, com
+duas subclasses: <code>FuncionarioPublico</code> e
+<code>FuncionarioCLT</code>.</p>
+<p><strong>Problema</strong>: Pretendemos padronizar um modelo (ou
+template) para cálculo dos salários na classe base
+<code>Funcionario</code>, que possa depois ser herdado pelas suas
+subclasses. Assim, as subclasses terão apenas que adaptar a rotina de
+cálculo de salários às suas particularidades. Mais especificamente, as
+subclasses saberão exatamente os métodos que precisam implementar para
+calcular o salário de um funcionário.</p>
+<p><strong>Solução</strong>: O padrão de projeto <strong>Template
+Method</strong> resolve o problema que enunciamos. Ele especifica como
+implementar o <q>esqueleto</q> de um algoritmo em uma classe abstrata X,
+mas deixando pendente alguns passos — ou métodos abstratos. Esses
+métodos serão implementados nas subclasses de X. Em resumo, um Template
+Method permite que subclasses customizem um algoritmo, mas sem mudar a
+sua estrutura geral implementada na classe base.</p>
+<p>Um exemplo de Template Method para o nosso contexto e problema é
+mostrado a seguir:</p>
 <pre><code>abstract class Funcionario {
 
   double salario;
@@ -612,15 +1107,60 @@ class TermometroCelsius implements Observer {
     return salario - prev - saude - outros;
   }
 }</code></pre>
-<p>Nesse exemplo, <code>calcSalarioLiquido</code> é um método template para cálculo do salário de funcionários. Ele padroniza que temos que calcular três descontos: para a previdência, para o plano de saúde do funcionário e outros descontos. Feito isso, o salário líquido é o salário do funcionário subtraído desses três descontos. Porém, em <code>Funcionario</code>, não sabemos ainda como calcular os descontos, pois eles variam conforme o tipo de funcionário (público ou CLT). Logo, são criados métodos abstratos para representar cada um desses passos da rotina de cálculo de salários. Como eles são abstratos, a classe <code>Funcionario</code> também foi declarada como abstrata. Como o leitor já deve ter percebido, subclasses de <code>Funcionario</code> — como <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code> — vão herdar o método <code>calcSalarioLiquido</code>, que não precisará sofrer nenhuma modificação. No entanto, caberá às subclasses implementar os três passos (métodos) abstratos: <code>calcDescontosPrevidencia</code>, <code>calcDescontosPlanoSaude</code> e <code>calcOutrosDescontos</code>.</p>
-<p>  Métodos template permitem que <q>código antigo</q> chame <q>código novo</q>. No exemplo, a classe <code>Funcionario</code> provavelmente foi implementada antes de <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code>. Logo, dizemos que <code>Funcionario</code> é mais antiga do que as suas subclasses. Mesmo assim, <code>Funcionario</code> inclui um método que vai chamar <q>código novo</q>, implementado nas subclasses. Esse recurso de sistemas orientados a objetos é chamado de <strong>inversão de controle</strong>. Ele é fundamental, por exemplo, para implementação de <strong>frameworks</strong>, isto é, aplicações semi-prontas, que antes de serem usadas devem ser customizadas por seus clientes. Apesar de não ser o único instrumento disponível para esse fim, métodos template constituem uma alternativa interessante para que um cliente implemente o código faltante em um framework.</p>
+<p>Nesse exemplo, <code>calcSalarioLiquido</code> é um método template
+para cálculo do salário de funcionários. Ele padroniza que temos que
+calcular três descontos: para a previdência, para o plano de saúde do
+funcionário e outros descontos. Feito isso, o salário líquido é o
+salário do funcionário subtraído desses três descontos. Porém, em
+<code>Funcionario</code>, não sabemos ainda como calcular os descontos,
+pois eles variam conforme o tipo de funcionário (público ou CLT). Logo,
+são criados métodos abstratos para representar cada um desses passos da
+rotina de cálculo de salários. Como eles são abstratos, a classe
+<code>Funcionario</code> também foi declarada como abstrata. Como o
+leitor já deve ter percebido, subclasses de <code>Funcionario</code> —
+como <code>FuncionarioPublico</code> e <code>FuncionarioCLT</code> — vão
+herdar o método <code>calcSalarioLiquido</code>, que não precisará
+sofrer nenhuma modificação. No entanto, caberá às subclasses implementar
+os três passos (métodos) abstratos:
+<code>calcDescontosPrevidencia</code>,
+<code>calcDescontosPlanoSaude</code> e
+<code>calcOutrosDescontos</code>.</p>
+<p> Métodos template permitem que <q>código antigo</q> chame <q>código
+novo</q>. No exemplo, a classe <code>Funcionario</code> provavelmente
+foi implementada antes de <code>FuncionarioPublico</code> e
+<code>FuncionarioCLT</code>. Logo, dizemos que <code>Funcionario</code>
+é mais antiga do que as suas subclasses. Mesmo assim,
+<code>Funcionario</code> inclui um método que vai chamar <q>código
+novo</q>, implementado nas subclasses. Esse recurso de sistemas
+orientados a objetos é chamado de <strong>inversão de controle</strong>.
+Ele é fundamental, por exemplo, para implementação de
+<strong>frameworks</strong>, isto é, aplicações semi-prontas, que antes
+de serem usadas devem ser customizadas por seus clientes. Apesar de não
+ser o único instrumento disponível para esse fim, métodos template
+constituem uma alternativa interessante para que um cliente implemente o
+código faltante em um framework.</p>
 </section>
 <section id="visitor" data-number="1.11">
-<h2 data-number="6.11"><span class="header-section-number">6.11</span> Visitor <a href="#visitor" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.11"><span class="header-section-number">6.11</span>
+Visitor <a href="#visitor" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Contexto</strong>: Suponha o sistema de estacionamentos que usamos no Capítulo 5. Suponha que nesse sistema existe uma classe <code>Veiculo</code>, com subclasses <code>Carro</code>, <code>Onibus</code> e <code>Motocicleta</code>. Essas classes são usadas para armazenar informações sobre os veículos estacionados no estacionamento. Suponha ainda que todos esses veículos estão armazenados em uma lista. Dizemos que essa lista é uma estrutura de dados <strong>polimórfica</strong>, pois ela pode armazenar objetos de classes diferentes, desde que eles sejam subclasses de <code>Veiculo</code>.</p>
-<p><strong>Problema:</strong> Com frequência, no sistema de estacionamentos, temos que realizar uma operação em todos os veículos estacionados. Como exemplo, podemos citar: imprimir informações sobre os veículos estacionados, persistir os dados dos veículos ou enviar uma mensagem para os donos dos veículos.</p>
-<p>No entanto, o objetivo é implementar essas operações fora das classes de <code>Veiculo</code> por meio de um código como o seguinte:</p>
+<p><strong>Contexto</strong>: Suponha o sistema de estacionamentos que
+usamos no Capítulo 5. Suponha que nesse sistema existe uma classe
+<code>Veiculo</code>, com subclasses <code>Carro</code>,
+<code>Onibus</code> e <code>Motocicleta</code>. Essas classes são usadas
+para armazenar informações sobre os veículos estacionados no
+estacionamento. Suponha ainda que todos esses veículos estão armazenados
+em uma lista. Dizemos que essa lista é uma estrutura de dados
+<strong>polimórfica</strong>, pois ela pode armazenar objetos de classes
+diferentes, desde que eles sejam subclasses de <code>Veiculo</code>.</p>
+<p><strong>Problema:</strong> Com frequência, no sistema de
+estacionamentos, temos que realizar uma operação em todos os veículos
+estacionados. Como exemplo, podemos citar: imprimir informações sobre os
+veículos estacionados, persistir os dados dos veículos ou enviar uma
+mensagem para os donos dos veículos.</p>
+<p>No entanto, o objetivo é implementar essas operações fora das classes
+de <code>Veiculo</code> por meio de um código como o seguinte:</p>
 <pre><code>interface Visitor {
   void visit(Carro c);
   void visit(Onibus o);
@@ -632,23 +1172,63 @@ class PrintVisitor implements Visitor {
   public void visit(Onibus o) { &quot;imprime dados de onibus&quot; }
   public void visit(Motocicleta m) {&quot;imprime dados de moto&quot;}
 }</code></pre>
-<p>Nesse código, a classe <code>PrintVisitor</code> inclui métodos que imprimem os dados de um <code>Carro</code>, <code>Onibus</code> e <code>Motocicleta</code>. Uma vez implementada essa classe, gostaríamos de usar o seguinte código para <q>visitar</q> todos os veículos do estacionamento::</p>
+<p>Nesse código, a classe <code>PrintVisitor</code> inclui métodos que
+imprimem os dados de um <code>Carro</code>, <code>Onibus</code> e
+<code>Motocicleta</code>. Uma vez implementada essa classe, gostaríamos
+de usar o seguinte código para <q>visitar</q> todos os veículos do
+estacionamento::</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
   visitor.visit(veiculo); // erro de compilação
 }</code></pre>
-<p>No entanto, no código mostrado, o método <code>visit</code> a ser chamado depende do tipo dinâmico do objeto alvo da chamada (<code>visitor</code>) e do tipo dinâmico de um parâmetro (<code>veiculo</code>). Porém, em linguagens como Java, C++ ou C# apenas o tipo do objeto alvo da chamada é considerado na escolha do método a ser chamado. Dizendo de outro modo, em Java e em linguagens similares, o compilador somente conhece o tipo estático de <code>veiculo</code>, que é <code>Veiculo</code>. Por isso, ele não consegue inferir qual implementação de <code>visit</code> deve ser chamada.</p>
-<p>Para ficar mais claro, o seguinte erro ocorre ao compilar o código anterior:</p>
+<p>No entanto, no código mostrado, o método <code>visit</code> a ser
+chamado depende do tipo dinâmico do objeto alvo da chamada
+(<code>visitor</code>) e do tipo dinâmico de um parâmetro
+(<code>veiculo</code>). Porém, em linguagens como Java, C++ ou C# apenas
+o tipo do objeto alvo da chamada é considerado na escolha do método a
+ser chamado. Dizendo de outro modo, em Java e em linguagens similares, o
+compilador somente conhece o tipo estático de <code>veiculo</code>, que
+é <code>Veiculo</code>. Por isso, ele não consegue inferir qual
+implementação de <code>visit</code> deve ser chamada.</p>
+<p>Para ficar mais claro, o seguinte erro ocorre ao compilar o código
+anterior:</p>
 <pre><code>visitor.visit(veiculo);  
          ^
 method PrintVisitor.visit(Carro) is not applicable
   (argument mismatch; Veiculo cannot be converted to Carro)
 method PrintVisitor.visit(Onibus) is not applicable
   (argument mismatch; Veiculo cannot be converted to Onibus)</code></pre>
-<p>   Na verdade, esse código somente compila em linguagens que oferecem <strong>despacho duplo</strong> de chamadas de métodos (<em>double dispatch</em>). Nessas linguagens, os tipos do objeto alvo e de um dos parâmetros de chamada são usados para escolher o método que será invocado. No entanto, despacho duplo somente está disponível em linguagens mais antigas e menos conhecidas hoje em dia, como Common Lisp.</p>
-<p>Portanto, o nosso problema é o seguinte: como simular <em>double dispatch</em> em uma linguagem como Java? Se conseguirmos fazer isso, poderemos contornar o erro de compilação que ocorre no código que mostramos.</p>
-<p><strong>Solução</strong>: A solução para o nosso problema consiste em usar o padrão de projeto <strong>Visitor</strong>. Esse padrão define como <q>adicionar</q> uma operação em uma família de objetos, sem que seja preciso modificar as classes dos mesmos. Além disso, o padrão Visitor deve funcionar mesmo em linguagens com <em>single dispatching</em> de métodos, como Java.</p>
-<p> Como primeiro passo, temos que implementar um método <code>accept</code> em cada classe da hierarquia. Na classe raiz, ele é abstrato. Nas subclasses, ele recebe como parâmetro um objeto do tipo <code>Visitor</code>. E a sua implementação apenas chama o método <code>visit</code> desse <code>Visitor</code>, passando <code>this</code> como parâmetro. Porém, como a chamada ocorre no corpo de uma classe, o compilador conhece o tipo de <code>this</code>. Por exemplo, na classe <code>Carro</code>, o compilador sabe que o tipo de <code>this</code> é <code>Carro</code>. Logo, ele sabe que deve chamar a implementação de <code>visit</code> que tem <code>Carro</code> como parâmetro. Para ser preciso, o método exato a ser chamado depende do tipo dinâmico do objeto alvo da chamada (<code>v</code>). Porém, isso não é um problema, pois significa que temos um caso de <em>single dispatch</em>, que é permitido em linguagens como Java.</p>
+<p> Na verdade, esse código somente compila em linguagens que oferecem
+<strong>despacho duplo</strong> de chamadas de métodos (<em>double
+dispatch</em>). Nessas linguagens, os tipos do objeto alvo e de um dos
+parâmetros de chamada são usados para escolher o método que será
+invocado. No entanto, despacho duplo somente está disponível em
+linguagens mais antigas e menos conhecidas hoje em dia, como Common
+Lisp.</p>
+<p>Portanto, o nosso problema é o seguinte: como simular <em>double
+dispatch</em> em uma linguagem como Java? Se conseguirmos fazer isso,
+poderemos contornar o erro de compilação que ocorre no código que
+mostramos.</p>
+<p><strong>Solução</strong>: A solução para o nosso problema consiste em
+usar o padrão de projeto <strong>Visitor</strong>. Esse padrão define
+como <q>adicionar</q> uma operação em uma família de objetos, sem que
+seja preciso modificar as classes dos mesmos. Além disso, o padrão
+Visitor deve funcionar mesmo em linguagens com <em>single
+dispatching</em> de métodos, como Java.</p>
+<p> Como primeiro passo, temos que implementar um método
+<code>accept</code> em cada classe da hierarquia. Na classe raiz, ele é
+abstrato. Nas subclasses, ele recebe como parâmetro um objeto do tipo
+<code>Visitor</code>. E a sua implementação apenas chama o método
+<code>visit</code> desse <code>Visitor</code>, passando
+<code>this</code> como parâmetro. Porém, como a chamada ocorre no corpo
+de uma classe, o compilador conhece o tipo de <code>this</code>. Por
+exemplo, na classe <code>Carro</code>, o compilador sabe que o tipo de
+<code>this</code> é <code>Carro</code>. Logo, ele sabe que deve chamar a
+implementação de <code>visit</code> que tem <code>Carro</code> como
+parâmetro. Para ser preciso, o método exato a ser chamado depende do
+tipo dinâmico do objeto alvo da chamada (<code>v</code>). Porém, isso
+não é um problema, pois significa que temos um caso de <em>single
+dispatch</em>, que é permitido em linguagens como Java.</p>
 <pre><code>abstract class Veiculo {
   abstract public void accept(Visitor v);
 }
@@ -670,100 +1250,257 @@ class Onibus extends Veiculo {
 }
 
 // Idem para Motocicleta</code></pre>
-<p>Por último, temos que modificar o laço que percorre a lista de veículos estacionados. Agora, chamaremos os métodos <code>accept</code> de cada veículo, passando o visitor como parâmetro.</p>
+<p>Por último, temos que modificar o laço que percorre a lista de
+veículos estacionados. Agora, chamaremos os métodos <code>accept</code>
+de cada veículo, passando o visitor como parâmetro.</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
 foreach (Veiculo veiculo: listaDeVeiculosEstacionados) {
   veiculo.accept(visitor);
 }</code></pre>
-<p>Resumindo, visitors facilitam a adição de um método em uma hierarquia de classes. Um visitor congrega operações relacionadas — no exemplo, impressão de dados de <code>Veiculo</code> e de suas subclasses. Mas poderia também existir um segundo visitor, com outras operações — por exemplo, persistir os objetos em disco. Por outro lado, a adição de uma nova classe na hierarquia, por exemplo, <code>Caminhao</code>, requer a atualização de todos os visitors com um novo método: <code>visit(Caminhao)</code>.</p>
-<p>Antes de concluir, é importante mencionar que visitors possuem uma desvantagem importante: eles podem forçar uma quebra no encapsulamento das classes que serão visitadas. Por exemplo, <code>Veiculo</code> pode ter que implementar métodos públicos expondo seu estado interno para que os visitors tenham acesso a eles.</p>
-<p><strong>Código Fonte</strong>: O código do exemplo de Visitor usado nesta seção está disponível neste <a href="https://gist.github.com/mtov/d447fd22974c57688d0fd109cb9509ea">link</a>.</p>
+<p>Resumindo, visitors facilitam a adição de um método em uma hierarquia
+de classes. Um visitor congrega operações relacionadas — no exemplo,
+impressão de dados de <code>Veiculo</code> e de suas subclasses. Mas
+poderia também existir um segundo visitor, com outras operações — por
+exemplo, persistir os objetos em disco. Por outro lado, a adição de uma
+nova classe na hierarquia, por exemplo, <code>Caminhao</code>, requer a
+atualização de todos os visitors com um novo método:
+<code>visit(Caminhao)</code>.</p>
+<p>Antes de concluir, é importante mencionar que visitors possuem uma
+desvantagem importante: eles podem forçar uma quebra no encapsulamento
+das classes que serão visitadas. Por exemplo, <code>Veiculo</code> pode
+ter que implementar métodos públicos expondo seu estado interno para que
+os visitors tenham acesso a eles.</p>
+<p><strong>Código Fonte</strong>: O código do exemplo de Visitor usado
+nesta seção está disponível neste <a
+href="https://gist.github.com/mtov/d447fd22974c57688d0fd109cb9509ea">link</a>.</p>
 </section>
 <section id="outros-padrões-de-projeto" data-number="1.12">
-<h2 data-number="6.12"><span class="header-section-number">6.12</span> Outros Padrões de Projeto <a href="#outros-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.12"><span class="header-section-number">6.12</span>
+Outros Padrões de Projeto <a href="#outros-padrões-de-projeto"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
-<p><strong>Iterador</strong> é um padrão de projeto que padroniza uma interface para caminhar sobre uma estrutura de dados. Normalmente, essa interface inclui métodos como <code>hasNext()</code> e <code>next()</code>, como mostrado no seguinte exemplo:</p>
+<p><strong>Iterador</strong> é um padrão de projeto que padroniza uma
+interface para caminhar sobre uma estrutura de dados. Normalmente, essa
+interface inclui métodos como <code>hasNext()</code> e
+<code>next()</code>, como mostrado no seguinte exemplo:</p>
 <pre><code>List&lt;String&gt; list = Arrays.asList(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;);
 Iterator it = list.iterator();
 while(it.hasNext()) {
   String s = (String) it.next();
   System.out.println(s);
 }</code></pre>
-<p>Um iterador permite percorrer uma estrutura de dados sem conhecer o seu tipo concreto. Em vez disso, basta conhecer os métodos da interface Iterator. Iteradores também permitem que múltiplos caminhamentos sejam realizadas de forma simultânea em cima da mesma estrutura de dados.</p>
+<p>Um iterador permite percorrer uma estrutura de dados sem conhecer o
+seu tipo concreto. Em vez disso, basta conhecer os métodos da interface
+Iterator. Iteradores também permitem que múltiplos caminhamentos sejam
+realizadas de forma simultânea em cima da mesma estrutura de dados.</p>
 <p> </p>
-<p><strong>Builder</strong> é um padrão de projeto que facilita a instanciação de objetos que têm muitos atributos, sendo alguns deles opcionais. Se o valor desses atributos opcionais não for informado, eles devem ser inicializados com um valor <em>default</em>. Em vez de criar diversos métodos construtores, um método para cada combinação possível de parâmetros, podemos delegar o processo de inicialização dos campos de um objeto para uma classe <code>Builder</code>. Um exemplo é mostrado a seguir, para uma classe <code>Livro</code>.</p>
+<p><strong>Builder</strong> é um padrão de projeto que facilita a
+instanciação de objetos que têm muitos atributos, sendo alguns deles
+opcionais. Se o valor desses atributos opcionais não for informado, eles
+devem ser inicializados com um valor <em>default</em>. Em vez de criar
+diversos métodos construtores, um método para cada combinação possível
+de parâmetros, podemos delegar o processo de inicialização dos campos de
+um objeto para uma classe <code>Builder</code>. Um exemplo é mostrado a
+seguir, para uma classe <code>Livro</code>.</p>
 <pre><code>Livro esm = new Livro.Builder().
                   setNome(&quot;Engenharia Soft Moderna&quot;).
                   setEditora(&quot;UFMG&quot;).setAno(2020).build();
 
 Livro gof = new Livro.Builder().setName(&quot;Design Patterns&quot;).
                   setAutores(&quot;GoF&quot;).setAno(1995).build();</code></pre>
-<p>Uma primeira alternativa ao uso de um Builder seria implementar a instanciação por meio de construtores. Porém, teríamos que criar diversos construtores, pois <code>Livro</code> possui diversos atributos, nem todos obrigatórios. Além disso, a chamada desses construtores poderia gerar confusão, pois o desenvolvedor teria que conhecer exatamente a ordem dos diversos parâmetros. Com o padrão Builder, os métodos <code>set</code> deixam claro qual atributo de <code>Livro</code> está sendo inicializado. Uma segunda alternativa seria implementar os métodos <code>set</code> diretamente na classe <code>Livro</code>. Porém, isso quebraria o princípio de ocultamento da informação, pois tornaria possível alterar, a qualquer momento, qualquer atributo da classe. Por outro lado, com um Builder, os atributos somente podem ser definidos em tempo de instanciação da classe.</p>
-<p>Em tempo, a versão de Builder que apresentamos não corresponde à descrição original do padrão contida no livro da Gangue dos Quatro. Em vez disso, apresentamos uma versão proposta por Joshua Bloch (<a href="https://dl.acm.org/citation.cfm?id=1377533">link</a>). Acreditamos que essa versão, hoje em dia, corresponde ao uso mais comum de Builders. Ela é usada, por exemplo, em classes da API de Java, como <code>Calendar.Builder</code> (<a href="https://docs.oracle.com/javase/9/docs/api/java/util/Calendar.Builder.html">link</a>).</p>
-<p><strong>Código Fonte</strong>: O código do exemplo de Builder — incluindo as classes <code>Livro</code> e <code>Livro.Builder</code> — está disponível neste <a href="https://gist.github.com/mtov/cb98612474f01eccc5e10fa08f82a62b">link</a>. Ao estudá-lo, você perceberá que <code>Livro.Builder</code> é uma classe interna, pública e estática de <code>Livro</code>. Por isso, é que podemos chamar <code>new Livro.Builder()</code> diretamente, sem precisar de instanciar antes um objeto do tipo <code>Livro</code>.</p>
+<p>Uma primeira alternativa ao uso de um Builder seria implementar a
+instanciação por meio de construtores. Porém, teríamos que criar
+diversos construtores, pois <code>Livro</code> possui diversos
+atributos, nem todos obrigatórios. Além disso, a chamada desses
+construtores poderia gerar confusão, pois o desenvolvedor teria que
+conhecer exatamente a ordem dos diversos parâmetros. Com o padrão
+Builder, os métodos <code>set</code> deixam claro qual atributo de
+<code>Livro</code> está sendo inicializado. Uma segunda alternativa
+seria implementar os métodos <code>set</code> diretamente na classe
+<code>Livro</code>. Porém, isso quebraria o princípio de ocultamento da
+informação, pois tornaria possível alterar, a qualquer momento, qualquer
+atributo da classe. Por outro lado, com um Builder, os atributos somente
+podem ser definidos em tempo de instanciação da classe.</p>
+<p>Em tempo, a versão de Builder que apresentamos não corresponde à
+descrição original do padrão contida no livro da Gangue dos Quatro. Em
+vez disso, apresentamos uma versão proposta por Joshua Bloch (<a
+href="https://dl.acm.org/citation.cfm?id=1377533">link</a>). Acreditamos
+que essa versão, hoje em dia, corresponde ao uso mais comum de Builders.
+Ela é usada, por exemplo, em classes da API de Java, como
+<code>Calendar.Builder</code> (<a
+href="https://docs.oracle.com/javase/9/docs/api/java/util/Calendar.Builder.html">link</a>).</p>
+<p><strong>Código Fonte</strong>: O código do exemplo de Builder —
+incluindo as classes <code>Livro</code> e <code>Livro.Builder</code> —
+está disponível neste <a
+href="https://gist.github.com/mtov/cb98612474f01eccc5e10fa08f82a62b">link</a>.
+Ao estudá-lo, você perceberá que <code>Livro.Builder</code> é uma classe
+interna, pública e estática de <code>Livro</code>. Por isso, é que
+podemos chamar <code>new Livro.Builder()</code> diretamente, sem
+precisar de instanciar antes um objeto do tipo <code>Livro</code>.</p>
 </section>
 <section id="quando-não-usar-padrões-de-projeto" data-number="1.13">
-<h2 data-number="6.13"><span class="header-section-number">6.13</span> Quando Não Usar Padrões de Projeto? <a href="#quando-não-usar-padrões-de-projeto" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Padrões de projeto têm como objetivo tornar o projeto de um sistema mais flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos manipulados por um programa. Um decorador permite personalizar uma classe com novas funcionalidades, tornando-a flexível a outros cenários de uso. O padrão Strategy permite configurar os algoritmos usados por uma classe, apenas para citar alguns exemplos.</p>
-<p>Porém, como quase tudo em Computação, o uso de padrões também tem um custo. Por exemplo, uma fábrica requer a implementação de pelo menos mais uma classe no sistema. Para citar um segundo exemplo, Strategy requer a criação de uma classe abstrata e mais uma classe para cada algoritmo. Por isso, a adoção de padrões de projeto exige uma análise cuidadosa. Para ilustrar esse tipo de análise, vamos continuar a usar os exemplos de Fábrica e Strategy:</p>
+<h2 data-number="6.13"><span class="header-section-number">6.13</span>
+Quando Não Usar Padrões de Projeto? <a
+href="#quando-não-usar-padrões-de-projeto" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Padrões de projeto têm como objetivo tornar o projeto de um sistema
+mais flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos
+manipulados por um programa. Um decorador permite personalizar uma
+classe com novas funcionalidades, tornando-a flexível a outros cenários
+de uso. O padrão Strategy permite configurar os algoritmos usados por
+uma classe, apenas para citar alguns exemplos.</p>
+<p>Porém, como quase tudo em Computação, o uso de padrões também tem um
+custo. Por exemplo, uma fábrica requer a implementação de pelo menos
+mais uma classe no sistema. Para citar um segundo exemplo, Strategy
+requer a criação de uma classe abstrata e mais uma classe para cada
+algoritmo. Por isso, a adoção de padrões de projeto exige uma análise
+cuidadosa. Para ilustrar esse tipo de análise, vamos continuar a usar os
+exemplos de Fábrica e Strategy:</p>
 <ul>
-<li><p>Antes de usar uma fábrica, devemos fazer (e responder) a seguinte pergunta: vamos mesmo precisar criar objetos de tipos diferentes no nosso sistema? Existem boas chances de que tais objetos sejam, de fato, necessários? Se sim, então vale a pena usar uma Fábrica para encapsular a criação de tais objetos. Caso contrário, é melhor criar os objetos usando o operador <code>new</code>, que é a solução nativa para criação de objetos em linguagens como Java.</p></li>
-<li><p>De forma semelhante, antes de incluir o padrão Strategy em uma certa classe devemos nos perguntar: vamos mesmo precisar de parametrizar os algoritmos usados na implementação dessa classe? Existem, de fato, usuários que vão precisar de algoritmos alternativos? Se sim, vale a pena usar o padrão Strategy. Caso contrário, é preferível implementar o algoritmo diretamente no corpo da classe.</p></li>
+<li><p>Antes de usar uma fábrica, devemos fazer (e responder) a seguinte
+pergunta: vamos mesmo precisar criar objetos de tipos diferentes no
+nosso sistema? Existem boas chances de que tais objetos sejam, de fato,
+necessários? Se sim, então vale a pena usar uma Fábrica para encapsular
+a criação de tais objetos. Caso contrário, é melhor criar os objetos
+usando o operador <code>new</code>, que é a solução nativa para criação
+de objetos em linguagens como Java.</p></li>
+<li><p>De forma semelhante, antes de incluir o padrão Strategy em uma
+certa classe devemos nos perguntar: vamos mesmo precisar de parametrizar
+os algoritmos usados na implementação dessa classe? Existem, de fato,
+usuários que vão precisar de algoritmos alternativos? Se sim, vale a
+pena usar o padrão Strategy. Caso contrário, é preferível implementar o
+algoritmo diretamente no corpo da classe.</p></li>
 </ul>
-<p>Apesar de usarmos apenas dois padrões como exemplo, perguntas semelhantes podem ser feita para outros padrões.</p>
-<p>No entanto, em muitos sistemas observa-se um uso exagerado de padrões de projeto, em situações nas quais os ganhos de flexibilidade e extensibilidade são questionáveis. Existe até um termo para se referir a essa situação: <strong>paternite</strong>, isto é, uma <q>inflamação</q> associada ao uso precipitado de padrões de projeto.</p>
-<p> John Ousterhout tem um comentário relacionado a essa <q>doença</q>:</p>
+<p>Apesar de usarmos apenas dois padrões como exemplo, perguntas
+semelhantes podem ser feita para outros padrões.</p>
+<p>No entanto, em muitos sistemas observa-se um uso exagerado de padrões
+de projeto, em situações nas quais os ganhos de flexibilidade e
+extensibilidade são questionáveis. Existe até um termo para se referir a
+essa situação: <strong>paternite</strong>, isto é, uma <q>inflamação</q>
+associada ao uso precipitado de padrões de projeto.</p>
+<p> John Ousterhout tem um comentário relacionado a essa
+<q>doença</q>:</p>
 <blockquote>
-<p><q>O maior risco de padrões de projetos é a sua super-aplicação (<em>over-application</em>). Nem todo problema precisa ser resolvido por meio dos padrões de projeto; por isso, não tente forçar um problema a caber em um padrão de projeto quando uma abordagem tradicional funcionar melhor. O uso de padrões de projeto não necessariamente melhora o projeto de um sistema de software; isso só acontece se esse uso for justificado. Assim como ocorre com outros conceitos, a noção de que padrões de projetos são uma boa coisa não significa que quanto mais padrões de projeto usarmos, melhor será nosso sistema.</q></p>
+<p><q>O maior risco de padrões de projetos é a sua super-aplicação
+(<em>over-application</em>). Nem todo problema precisa ser resolvido por
+meio dos padrões de projeto; por isso, não tente forçar um problema a
+caber em um padrão de projeto quando uma abordagem tradicional funcionar
+melhor. O uso de padrões de projeto não necessariamente melhora o
+projeto de um sistema de software; isso só acontece se esse uso for
+justificado. Assim como ocorre com outros conceitos, a noção de que
+padrões de projetos são uma boa coisa não significa que quanto mais
+padrões de projeto usarmos, melhor será nosso sistema.</q></p>
 </blockquote>
-<p>Ousterhout ilustra seu argumento citando o emprego de decoradores durante a abertura de arquivos em Java, como mostrado no seguinte trecho de código:</p>
+<p>Ousterhout ilustra seu argumento citando o emprego de decoradores
+durante a abertura de arquivos em Java, como mostrado no seguinte trecho
+de código:</p>
 <pre><code>FileInputStream fs = new FileInputStream(fileName);
 BufferedInputStream bs = new BufferedInputStream(fs);
 ObjectInputStream os = new ObjectInputStream(bs);</code></pre>
-<p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária ao processo de criação de arquivos em Java. O principal motivo é que, via de regra, iremos sempre nos beneficiar de um buffer ao abrir qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser oferecidos por <em>default</em>, em vez de por meio de uma classe decoradora específica. Assim, e de acordo com esse raciocínio, as classes <code>FileInputStream</code> e <code>BufferedInputStream</code> poderiam ser fundidas em uma única classe.</p>
+<p>Segundo Ousterhout, decoradores adicionam complexidade desnecessária
+ao processo de criação de arquivos em Java. O principal motivo é que,
+via de regra, iremos sempre nos beneficiar de um buffer ao abrir
+qualquer arquivo. Portanto, buffers de entrada/saída deveriam ser
+oferecidos por <em>default</em>, em vez de por meio de uma classe
+decoradora específica. Assim, e de acordo com esse raciocínio, as
+classes <code>FileInputStream</code> e <code>BufferedInputStream</code>
+poderiam ser fundidas em uma única classe.</p>
 </section>
-<h2 class="unnumbered" id="bibliografia">Bibliografia <a href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995.</p>
+<h2 class="unnumbered" id="bibliografia">Bibliografia <a
+href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design
+Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley,
+1995.</p>
 <p>Joshua Bloch. Effective Java. 3rd edition. Prentice Hall, 2017.</p>
-<p>Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First Design Patterns: A Brain-Friendly Guide. O'Reilly, 2004.</p>
-<p>Eduardo Guerra. Design Patterns com Java: Projeto Orientado a Objetos guiado por Padrões. Caso do Código, 2014.</p>
-<p>Fernando Pereira, Marco Tulio Valente, Roberto Bigonha, Mariza Bigonha. Arcademis: A Framework for Object Oriented Communication Middleware Development. Software: Practice and Experience, 2006.</p>
-<p>Fabio Tirelo, Roberto Bigonha, Mariza Bigonha, Marco Tulio Valente. Desenvolvimento de Software Orientado por Aspectos. XXIII Jornada de Atualização em Informática (JAI), 2004.</p>
-<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação <a href="#exercícios-de-fixação" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>1. (ENADE 2011, adaptado) Sobre padrões de projeto, assinale V ou F.</p>
+<p>Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First
+Design Patterns: A Brain-Friendly Guide. O'Reilly, 2004.</p>
+<p>Eduardo Guerra. Design Patterns com Java: Projeto Orientado a Objetos
+guiado por Padrões. Caso do Código, 2014.</p>
+<p>Fernando Pereira, Marco Tulio Valente, Roberto Bigonha, Mariza
+Bigonha. Arcademis: A Framework for Object Oriented Communication
+Middleware Development. Software: Practice and Experience, 2006.</p>
+<p>Fabio Tirelo, Roberto Bigonha, Mariza Bigonha, Marco Tulio Valente.
+Desenvolvimento de Software Orientado por Aspectos. XXIII Jornada de
+Atualização em Informática (JAI), 2004.</p>
+<h2 class="unnumbered" id="exercícios-de-fixação">Exercícios de Fixação
+<a href="#exercícios-de-fixação" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>1. (ENADE 2011, adaptado) Sobre padrões de projeto, assinale V ou
+F.</p>
 <p>( ) Prototype é um tipo de padrão estrutural.</p>
-<p>( ) Singleton tem por objetivo garantir que uma classe tenha ao menos uma instância e fornecer um ponto global de acesso para ela.</p>
-<p>( ) Template Method tem por objetivo definir o esqueleto de um algoritmo em uma operação, postergando a definição de alguns passos para subclasses.</p>
-<p>( ) Iterator fornece uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor sua representação subjacente.</p>
+<p>( ) Singleton tem por objetivo garantir que uma classe tenha ao menos
+uma instância e fornecer um ponto global de acesso para ela.</p>
+<p>( ) Template Method tem por objetivo definir o esqueleto de um
+algoritmo em uma operação, postergando a definição de alguns passos para
+subclasses.</p>
+<p>( ) Iterator fornece uma maneira de acessar sequencialmente os
+elementos de um objeto agregado sem expor sua representação
+subjacente.</p>
 <p>2. Dê o nome dos seguintes padrões de projeto:</p>
 <ol type="a">
-<li><p>Oferece uma interface unificada e de alto nível que torna mais fácil o uso de um sistema.</p></li>
-<li><p>Garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela.</p></li>
-<li><p>Facilita a construção de objetos complexos com vários atributos, sendo alguns deles opcionais.</p></li>
-<li><p>Converte a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces.</p></li>
-<li><p>Oferece uma interface ou classe abstrata para criação de uma família de objetos relacionados.</p></li>
-<li><p>Oferece um método para centralizar a criação de um tipo de objeto.</p></li>
-<li><p>Funciona como um intermediário que controla o acesso a um objeto base.</p></li>
-<li><p>Permite adicionar dinamicamente novas funcionalidades a uma classe.</p></li>
-<li><p>Oferece uma interface padronizada para caminhar em estruturas de dados.</p></li>
-<li><p>Permite parametrizar os algoritmos usados por uma classe.</p></li>
-<li><p>Torna uma estrutura de dados aberta a extensões, isto é, permite adicionar uma função em cada elemento de uma estrutura de dados, mas sem alterar o código de tais elementos.</p></li>
-<li><p>Permite que um objeto avise outros objetos de que seu estado mudou.</p></li>
-<li><p>Define o esqueleto de um algoritmo em uma classe base e delega a implementação de alguns passos para subclasses.</p></li>
+<li><p>Oferece uma interface unificada e de alto nível que torna mais
+fácil o uso de um sistema.</p></li>
+<li><p>Garante que uma classe possui, no máximo, uma instância e oferece
+um ponto único de acesso a ela.</p></li>
+<li><p>Facilita a construção de objetos complexos com vários atributos,
+sendo alguns deles opcionais.</p></li>
+<li><p>Converte a interface de uma classe para outra interface esperada
+pelos clientes. Permite que classes trabalhem juntas, o que não seria
+possível devido à incompatibilidade de suas interfaces.</p></li>
+<li><p>Oferece uma interface ou classe abstrata para criação de uma
+família de objetos relacionados.</p></li>
+<li><p>Oferece um método para centralizar a criação de um tipo de
+objeto.</p></li>
+<li><p>Funciona como um intermediário que controla o acesso a um objeto
+base.</p></li>
+<li><p>Permite adicionar dinamicamente novas funcionalidades a uma
+classe.</p></li>
+<li><p>Oferece uma interface padronizada para caminhar em estruturas de
+dados.</p></li>
+<li><p>Permite parametrizar os algoritmos usados por uma
+classe.</p></li>
+<li><p>Torna uma estrutura de dados aberta a extensões, isto é, permite
+adicionar uma função em cada elemento de uma estrutura de dados, mas sem
+alterar o código de tais elementos.</p></li>
+<li><p>Permite que um objeto avise outros objetos de que seu estado
+mudou.</p></li>
+<li><p>Define o esqueleto de um algoritmo em uma classe base e delega a
+implementação de alguns passos para subclasses.</p></li>
 </ol>
-<p>3. Dentre os padrões de projeto que respondeu na questão (2), quais são padrões criacionais?</p>
-<p>4. Considerando as respostas da questão (2), liste padrões de projeto que:</p>
+<p>3. Dentre os padrões de projeto que respondeu na questão (2), quais
+são padrões criacionais?</p>
+<p>4. Considerando as respostas da questão (2), liste padrões de projeto
+que:</p>
 <ol type="a">
-<li><p>Ajudam a tornar uma classe aberta a extensões, sem que seja preciso modificar o seu código fonte (isto é, padrões que colocam em prática o princípio Aberto/Fechado).</p></li>
+<li><p>Ajudam a tornar uma classe aberta a extensões, sem que seja
+preciso modificar o seu código fonte (isto é, padrões que colocam em
+prática o princípio Aberto/Fechado).</p></li>
 <li><p>Ajudam a desacoplar dois tipos de classes.</p></li>
-<li><p>Ajudam a incrementar a coesão de uma classe (isto é, fazem com que a classe tenha Responsabilidade Única).</p></li>
+<li><p>Ajudam a incrementar a coesão de uma classe (isto é, fazem com
+que a classe tenha Responsabilidade Única).</p></li>
 <li><p>Simplificam o uso de um sistema.</p></li>
 </ol>
-<p>5. Qual a semelhança entre Proxy, Decorador e Visitor? E qual a diferença entre esses padrões?</p>
-<p>6. No exemplo de Adaptador, mostramos o código de uma única classe adaptadora (<code>AdaptadorProjetorSamsung</code>). Escreva o código de uma classe semelhante, mas que adapte a interface <code>Projetor</code> para a interface <code>ProjetorLG</code> (o código de ambas interfaces é mostrado na Seção 6.5). Chame essa classe de <code>AdaptadorProjetorLG</code>.</p>
-<p>7. Suponha uma classe base A. Suponha que queremos adicionar quatro funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades podem ser adicionadas em qualquer ordem, isto é, a ordem não é importante. Se usarmos herança, quantas subclasses de A teremos que implementar? Se optarmos por uma solução por meio de decoradores, quantas classes teremos que implementar (sem contar a classe A). Justifique e explique sua resposta.</p>
-<p>8. No exemplo de Decorador, mostramos o código de um único decorador (<code>ZipChannel</code>). Escreva o código de uma classe semelhante, mas que imprima a mensagem a ser transmitida ou recebida no console. Chame essa classe decoradora de <code>LogChannel</code>.</p>
-<p>9. Dado o código abaixo de uma classe <code>Subject</code> (do padrão Observador):</p>
+<p>5. Qual a semelhança entre Proxy, Decorador e Visitor? E qual a
+diferença entre esses padrões?</p>
+<p>6. No exemplo de Adaptador, mostramos o código de uma única classe
+adaptadora (<code>AdaptadorProjetorSamsung</code>). Escreva o código de
+uma classe semelhante, mas que adapte a interface <code>Projetor</code>
+para a interface <code>ProjetorLG</code> (o código de ambas interfaces é
+mostrado na Seção 6.5). Chame essa classe de
+<code>AdaptadorProjetorLG</code>.</p>
+<p>7. Suponha uma classe base A. Suponha que queremos adicionar quatro
+funcionalidades opcionais F1, F2, F3 e F4 em A. Essas funcionalidades
+podem ser adicionadas em qualquer ordem, isto é, a ordem não é
+importante. Se usarmos herança, quantas subclasses de A teremos que
+implementar? Se optarmos por uma solução por meio de decoradores,
+quantas classes teremos que implementar (sem contar a classe A).
+Justifique e explique sua resposta.</p>
+<p>8. No exemplo de Decorador, mostramos o código de um único decorador
+(<code>ZipChannel</code>). Escreva o código de uma classe semelhante,
+mas que imprima a mensagem a ser transmitida ou recebida no console.
+Chame essa classe decoradora de <code>LogChannel</code>.</p>
+<p>9. Dado o código abaixo de uma classe <code>Subject</code> (do padrão
+Observador):</p>
 <pre><code>interface Observer {
   public void update(Subject s);
 }
@@ -781,17 +1518,42 @@ class Subject {
   }
 
 }</code></pre>
-<p>Implemente o código de <code>notifyObservers</code>, comentado com um (A) acima.</p>
-<p>10. Suponha a API de Java para E/S. Suponha que para evitar o que chamamos de paternite, você fez a união das classes <code>FileInputStream</code> e <code>BufferedInputStream</code> em uma única classe. Como discutimos na Seção 6.13, o mecanismo de buffer será ativado por <em>default</em> na classe que você criou. Porém, como você tornaria possível desativar buffers nessa nova classe, caso isso fosse necessário?</p>
-<p>11. Suponha o exemplo de Visitor que usamos na Seção 6.11. Especificamente, suponha o seguinte código, mostrado no final da seção.</p>
+<p>Implemente o código de <code>notifyObservers</code>, comentado com um
+(A) acima.</p>
+<p>10. Suponha a API de Java para E/S. Suponha que para evitar o que
+chamamos de paternite, você fez a união das classes
+<code>FileInputStream</code> e <code>BufferedInputStream</code> em uma
+única classe. Como discutimos na Seção 6.13, o mecanismo de buffer será
+ativado por <em>default</em> na classe que você criou. Porém, como você
+tornaria possível desativar buffers nessa nova classe, caso isso fosse
+necessário?</p>
+<p>11. Suponha o exemplo de Visitor que usamos na Seção 6.11.
+Especificamente, suponha o seguinte código, mostrado no final da
+seção.</p>
 <pre><code>PrintVisitor visitor = new PrintVisitor();
 
 foreach(Veiculo veiculo: listaDeVeiculosEstacionados) {
   veiculo.accept(visitor);
 }</code></pre>
-<p>Suponha que <code>listaDeVeiculosEstacionados</code> armazene três objetos: <code>umCarro</code>, <code>umOnibus</code> e <code>umOutroCarro</code>. Desenhe um diagrama de sequência UML que mostre os métodos executados por esse trecho de código (suponha que ele é executado por um objeto <code>main</code>).</p>
+<p>Suponha que <code>listaDeVeiculosEstacionados</code> armazene três
+objetos: <code>umCarro</code>, <code>umOnibus</code> e
+<code>umOutroCarro</code>. Desenhe um diagrama de sequência UML que
+mostre os métodos executados por esse trecho de código (suponha que ele
+é executado por um objeto <code>main</code>).</p>
 <p> </p>
-<p>12. Em uma entrevista dada ao site InformIT, em 2009, por ocasião dos 15 anos do lançamento da primeira edição do GoF, três dos autores do livro mencionaram que — se tivessem que lançar uma segunda edição do trabalho — provavelmente manteriam os padrões originais e incluiriam alguns novos, que se tornaram comuns desde o lançamento da primeira edição, em 1994. Um dos novos padrões que eles mencionaram na entrevista é chamado de <strong>Null Object</strong>. Estude e explique o funcionamento e os benefícios desse padrão de projeto. Para isso, você vai encontrar diversos artigos na Web. Mas se preferir consultar um livro, uma boa referência é o Capítulo 25 do livro <em>Agile Principles, Patterns, and Practices in C#</em>, de Robert C. Martin e Micah Martin. Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de Refactoring de Martin Fowler.</p>
+<p>12. Em uma entrevista dada ao site InformIT, em 2009, por ocasião dos
+15 anos do lançamento da primeira edição do GoF, três dos autores do
+livro mencionaram que — se tivessem que lançar uma segunda edição do
+trabalho — provavelmente manteriam os padrões originais e incluiriam
+alguns novos, que se tornaram comuns desde o lançamento da primeira
+edição, em 1994. Um dos novos padrões que eles mencionaram na entrevista
+é chamado de <strong>Null Object</strong>. Estude e explique o
+funcionamento e os benefícios desse padrão de projeto. Para isso, você
+vai encontrar diversos artigos na Web. Mas se preferir consultar um
+livro, uma boa referência é o Capítulo 25 do livro <em>Agile Principles,
+Patterns, and Practices in C#</em>, de Robert C. Martin e Micah Martin.
+Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de
+Refactoring de Martin Fowler.</p>
 </section>
 </div>
 </div>
