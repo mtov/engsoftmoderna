@@ -16,9 +16,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
   <script>
@@ -54,10 +51,13 @@
     foreground-color: black;
   }
   .anchor-link {
-    opacity: 0.17;
+    opacity: 0.5;
     font-size: 70%;
   }
   </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -92,41 +92,152 @@
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered" id="prefácio">Prefácio <a href="#prefácio" class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h1 class="unnumbered" id="prefácio">Prefácio <a href="#prefácio"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
-<p><em>A inutilidade dos prefácios é um lugar comum da história dos prefácios, portanto serei breve.</em> – Eduardo Giannetti</p>
+<p><em>A inutilidade dos prefácios é um lugar comum da história dos
+prefácios, portanto serei breve.</em> – Eduardo Giannetti</p>
 </blockquote>
-<p>A ideia de escrever este livro surgiu no início de 2019, quando fui alocado para ministrar a disciplina Engenharia de Software, do Bacharelado em Ciência da Computação, da UFMG. Para preparar o curso, comecei com uma análise dos principais livros de Engenharia de Software. Para minha surpresa, percebi que eles tinham mudado pouco desde que cursei a disciplina na minha graduação há mais de 25 anos!</p>
-<p>Meu objetivo era escolher um livro que permitisse, no início de uma aula, dizer para os alunos: <q>hoje vamos estudar tal assunto, que corresponde a tal capítulo do livro-texto</q>. No final da aula, gostaria de sugerir aos alunos: <q>para fixar a matéria que acabamos de ver, sugiro que façam tais exercícios</q>. No entanto, infelizmente, não encontrei esse livro. Em vez disso, tive que fazer uma extensa pesquisa e leitura de pelo menos 15 livros.</p>
-<p>Como resultado, preparei mais de 600 slides, que considero conter o principal material que deve ser tratado em uma disciplina de graduação em Engenharia de Software, especificamente em cursos que possuem uma única disciplina na área. Porém, estudar apenas por slides não proporciona a mesma experiência de aprendizado obtida com a leitura atenta de um texto completo e contextualizado.</p>
-<p>Assim, surgiu a ideia de transformar os slides em um livro que pudesse desempenhar o papel do sonhado livro-texto, já visando a futuras ofertas da disciplina. E que fosse útil também para outros professores, que devem enfrentar problemas semelhantes ao meu quando têm que ministrar um curso de graduação em Engenharia de Software.</p>
-<p>Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a organização e a estratégia usada na escrita do livro:</p>
+<p>A ideia de escrever este livro surgiu no início de 2019, quando fui
+alocado para ministrar a disciplina Engenharia de Software, do
+Bacharelado em Ciência da Computação, da UFMG. Para preparar o curso,
+comecei com uma análise dos principais livros de Engenharia de Software.
+Para minha surpresa, percebi que eles tinham mudado pouco desde que
+cursei a disciplina na minha graduação há mais de 25 anos!</p>
+<p>Meu objetivo era escolher um livro que permitisse, no início de uma
+aula, dizer para os alunos: <q>hoje vamos estudar tal assunto, que
+corresponde a tal capítulo do livro-texto</q>. No final da aula,
+gostaria de sugerir aos alunos: <q>para fixar a matéria que acabamos de
+ver, sugiro que façam tais exercícios</q>. No entanto, infelizmente, não
+encontrei esse livro. Em vez disso, tive que fazer uma extensa pesquisa
+e leitura de pelo menos 15 livros.</p>
+<p>Como resultado, preparei mais de 600 slides, que considero conter o
+principal material que deve ser tratado em uma disciplina de graduação
+em Engenharia de Software, especificamente em cursos que possuem uma
+única disciplina na área. Porém, estudar apenas por slides não
+proporciona a mesma experiência de aprendizado obtida com a leitura
+atenta de um texto completo e contextualizado.</p>
+<p>Assim, surgiu a ideia de transformar os slides em um livro que
+pudesse desempenhar o papel do sonhado livro-texto, já visando a futuras
+ofertas da disciplina. E que fosse útil também para outros professores,
+que devem enfrentar problemas semelhantes ao meu quando têm que
+ministrar um curso de graduação em Engenharia de Software.</p>
+<p>Gostaria, então, de destacar os seguintes pontos sobre o conteúdo, a
+organização e a estratégia usada na escrita do livro:</p>
 <ul>
-<li><p>Ele foi escrito para ser um livro moderno, com ênfase em técnicas e princípios que são largamente usados na construção de software nos dias de hoje.</p></li>
-<li><p>Por outro lado, o livro também cobre técnicas e princípios tradicionais, porém de forma rápida. O motivo é que achamos importante cobrir a história da área, mencionando o que deu certo e o que não deu. Achamos que essa visão é importante na formação e amadurecimento dos alunos.</p></li>
-<li><p>O livro inclui inúmeros exemplos e discussões de casos reais. Para isso, criei a seção <q>Mundo Real</q>, na qual os assuntos são ilustrados com exemplos recentes e reais, provenientes de grandes empresas de software e também de artigos científicos, buscando-se apresentar o que se faz de melhor tanto na indústria como na academia.</p></li>
-<li><p>O livro foi escrito em português, pois o objetivo é contribuir, primeiro, com os cursos e alunos brasileiros. Porém, optamos por não traduzir alguns termos — como refactoring, branches e sprint — pois achamos que eles são usados, também sem tradução, pelos desenvolvedores brasileiros no seu dia a dia.</p></li>
-<li><p>Apesar de tratar de temas modernos, a intenção foi escrever um livro duradouro. Por isso, temas e tecnologias que ainda não passaram pelo teste do tempo não são abordados (ou são abordados de forma rápida). Um exemplo são os últimos frameworks e arquiteturas para implementação de sistemas, que tendem a mudar rapidamente. Também não acoplamos o livro a nenhuma linguagem de programação. Por exemplo, os trechos de código são mostrados em uma sintaxe neutra.</p></li>
-<li><p>Ele não é um livro extenso, com diversos capítulos que, na prática, tratam de assuntos que não são importantes nos cursos atuais.</p></li>
-<li><p>Cada vez mais, engenheiros de software têm que escrever código. Hoje, há pouco espaço para dizer que eu não preciso programar, pois sou arquiteto ou analista. Por isso, nos capítulos de projeto, testes e refatoração procuramos seguir a recomendação de Linus Torvalds (criador do Linux): <q>falar é fácil, mas mostre-me o código</q>. Assim, esses capítulos incluem dezenas de exemplos de código, que simulam problemas e soluções típicos de sistemas reais.</p></li>
-<li><p>Ao longo da escrita, procuramos praticar o que enfatizamos no livro, principalmente no que diz respeito à prevalência atual de métodos de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios ágeis. Cada capítulo foi tratado como sendo um sprint; uma vez pronto, ele foi disponibilizado para uso, para receber críticas e sugestões. Como ocorre com software, acho arriscado, nos dias de hoje, passar anos escrevendo um manuscrito, trancado em minha sala, para só então torná-lo público.</p></li>
+<li><p>Ele foi escrito para ser um livro moderno, com ênfase em técnicas
+e princípios que são largamente usados na construção de software nos
+dias de hoje.</p></li>
+<li><p>Por outro lado, o livro também cobre técnicas e princípios
+tradicionais, porém de forma rápida. O motivo é que achamos importante
+cobrir a história da área, mencionando o que deu certo e o que não deu.
+Achamos que essa visão é importante na formação e amadurecimento dos
+alunos.</p></li>
+<li><p>O livro inclui inúmeros exemplos e discussões de casos reais.
+Para isso, criei a seção <q>Mundo Real</q>, na qual os assuntos são
+ilustrados com exemplos recentes e reais, provenientes de grandes
+empresas de software e também de artigos científicos, buscando-se
+apresentar o que se faz de melhor tanto na indústria como na
+academia.</p></li>
+<li><p>O livro foi escrito em português, pois o objetivo é contribuir,
+primeiro, com os cursos e alunos brasileiros. Porém, optamos por não
+traduzir alguns termos — como refactoring, branches e sprint — pois
+achamos que eles são usados, também sem tradução, pelos desenvolvedores
+brasileiros no seu dia a dia.</p></li>
+<li><p>Apesar de tratar de temas modernos, a intenção foi escrever um
+livro duradouro. Por isso, temas e tecnologias que ainda não passaram
+pelo teste do tempo não são abordados (ou são abordados de forma
+rápida). Um exemplo são os últimos frameworks e arquiteturas para
+implementação de sistemas, que tendem a mudar rapidamente. Também não
+acoplamos o livro a nenhuma linguagem de programação. Por exemplo, os
+trechos de código são mostrados em uma sintaxe neutra.</p></li>
+<li><p>Ele não é um livro extenso, com diversos capítulos que, na
+prática, tratam de assuntos que não são importantes nos cursos
+atuais.</p></li>
+<li><p>Cada vez mais, engenheiros de software têm que escrever código.
+Hoje, há pouco espaço para dizer que eu não preciso programar, pois sou
+arquiteto ou analista. Por isso, nos capítulos de projeto, testes e
+refatoração procuramos seguir a recomendação de Linus Torvalds (criador
+do Linux): <q>falar é fácil, mas mostre-me o código</q>. Assim, esses
+capítulos incluem dezenas de exemplos de código, que simulam problemas e
+soluções típicos de sistemas reais.</p></li>
+<li><p>Ao longo da escrita, procuramos praticar o que enfatizamos no
+livro, principalmente no que diz respeito à prevalência atual de métodos
+de desenvolvimento ágeis. Assim, o livro foi escrito seguindo princípios
+ágeis. Cada capítulo foi tratado como sendo um sprint; uma vez pronto,
+ele foi disponibilizado para uso, para receber críticas e sugestões.
+Como ocorre com software, acho arriscado, nos dias de hoje, passar anos
+escrevendo um manuscrito, trancado em minha sala, para só então torná-lo
+público.</p></li>
 </ul>
-<h2 class="unnumbered" id="público-alvo">Público-Alvo <a href="#público-alvo" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>O livro destina-se a alunos de cursos de graduação. Ele foi escrito para ser adotado em cursos que possuem uma única disciplina de Engenharia de Software, com 60 horas. Porém, achamos também que ele pode ser usado — junto com outros livros — em cursos com duas ou mais disciplinas na área.</p>
-<p>Além disso, ele pode ser adotado em cursos técnicos e tecnológicos. Na verdade, fizemos um esforço para usar uma linguagem clara, próxima à linguagem coloquial, exatamente para não criar barreiras à adoção do livro. Por fim, também escrevemos o livro pensando em profissionais da área, que estão em busca de aperfeiçoamento em temas e métodos modernos de Engenharia de Software.</p>
-<h2 class="unnumbered" id="pré-requisitos">Pré-requisitos <a href="#pré-requisitos" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Os leitores devem ter domínio de conceitos básicos de programação e de algoritmos e estruturas de dados. Além disso, recomendamos domínio de orientação a objetos. Supondo um curso de graduação de 4 anos, os alunos devem estar na metade final para melhor aproveitar o conteúdo do livro.</p>
-<h2 class="unnumbered" id="website">Website <a href="#website" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 class="unnumbered" id="público-alvo">Público-Alvo <a
+href="#público-alvo" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>O livro destina-se a alunos de cursos de graduação. Ele foi escrito
+para ser adotado em cursos que possuem uma única disciplina de
+Engenharia de Software, com 60 horas. Porém, achamos também que ele pode
+ser usado — junto com outros livros — em cursos com duas ou mais
+disciplinas na área.</p>
+<p>Além disso, ele pode ser adotado em cursos técnicos e tecnológicos.
+Na verdade, fizemos um esforço para usar uma linguagem clara, próxima à
+linguagem coloquial, exatamente para não criar barreiras à adoção do
+livro. Por fim, também escrevemos o livro pensando em profissionais da
+área, que estão em busca de aperfeiçoamento em temas e métodos modernos
+de Engenharia de Software.</p>
+<h2 class="unnumbered" id="pré-requisitos">Pré-requisitos <a
+href="#pré-requisitos" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Os leitores devem ter domínio de conceitos básicos de programação e
+de algoritmos e estruturas de dados. Além disso, recomendamos domínio de
+orientação a objetos. Supondo um curso de graduação de 4 anos, os alunos
+devem estar na metade final para melhor aproveitar o conteúdo do
+livro.</p>
+<h2 class="unnumbered" id="website">Website <a href="#website"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>O livro possui uma versão aberta, em HTML, disponível em:</p>
-<p><a href="https://engsoftmoderna.info">https://engsoftmoderna.info</a></p>
-<p>Nesse site, estão também disponíveis diversos exercícios de múltipla escolha. Não menos importante: para reportar qualquer erro, mesmo que um simples erro ortográfico, você pode usar este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.</p>
+<p><a
+href="https://engsoftmoderna.info">https://engsoftmoderna.info</a></p>
+<p>Nesse site, estão também disponíveis diversos exercícios de múltipla
+escolha. Não menos importante: para reportar qualquer erro, mesmo que um
+simples erro ortográfico, você pode usar este <a
+href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.</p>
 <p>Marco Tulio Valente</p>
 <p>Belo Horizonte, 10 de fevereiro de 2020.</p>
-<h2 class="unnumbered" id="sobre-o-autor">Sobre o Autor <a href="#sobre-o-autor" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Marco Tulio Valente é doutor em Ciência da Computação pela Universidade Federal de Minas Gerais, onde atualmente é Professor Associado do Departamento de Ciência da Computação. Seus interesses de pesquisa concentram-se em Engenharia de Software, especificamente nas áreas de Manutenção e Evolução de Software, Qualidade de Software e Mineração de Repositórios de Software. Ele é Bolsista de Produtividade Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG. É autor de mais de 100 artigos em periódicos e conferências internacionais, muitos deles em co-autoria com pesquisadores internacionais de renome. Orientou mais de 30 dissertações de mestrado e cerca de uma dezena de teses de doutorado. Desde 2010, coordena o Applied Software Engineering Research Group (<a href="http://aserg.labsoft.dcc.ufmg.br">ASERG</a>), do DCC/UFMG. É responsável também pelo <a href="https://csindexbr.org">CSIndexbr</a>, sistema que oferece dados transparentes sobre a produção científica brasileira em Computação.</p>
+<h2 class="unnumbered" id="sobre-o-autor">Sobre o Autor <a
+href="#sobre-o-autor" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Marco Tulio Valente é doutor em Ciência da Computação pela
+Universidade Federal de Minas Gerais, onde atualmente é Professor
+Associado do Departamento de Ciência da Computação. Seus interesses de
+pesquisa concentram-se em Engenharia de Software, especificamente nas
+áreas de Manutenção e Evolução de Software, Qualidade de Software e
+Mineração de Repositórios de Software. Ele é Bolsista de Produtividade
+Nível 1D do CNPq e bolsista do Programa Pesquisador Mineiro da FAPEMIG.
+É autor de mais de 100 artigos em periódicos e conferências
+internacionais, muitos deles em co-autoria com pesquisadores
+internacionais de renome. Orientou mais de 30 dissertações de mestrado e
+cerca de uma dezena de teses de doutorado. Desde 2010, coordena o
+Applied Software Engineering Research Group (<a
+href="http://aserg.labsoft.dcc.ufmg.br">ASERG</a>), do DCC/UFMG. É
+responsável também pelo <a href="https://csindexbr.org">CSIndexbr</a>,
+sistema que oferece dados transparentes sobre a produção científica
+brasileira em Computação.</p>
 <p><img src="figs/cap0/mtov.png" style="width:25.0%" /></p>
-<h2 class="unnumbered" id="agradecimentos">Agradecimentos <a href="#agradecimentos" class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>Gostaria de agradecer aos mais de 30 alunos que passaram pelo grupo de pesquisa ASERG na última década. Parte relevante do conteúdo deste livro tem sua origem nos trabalhos do nosso grupo. Gostaria de agradecer aos professores Eduardo Figueiredo e André Hora, colegas de departamento, que revisaram alguns capítulos do livro. E ao Prof. José Luis Braga, que fez uma leitura cuidadosa e deu sugestões valiosas para melhoria do texto. Gostaria de agradecer aos alunos do curso de pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a calibrar e refinar o conteúdo deste livro. Especialmente, a Ulisses Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de agradecer a Aline Brito, que ajudou na conversão do texto para o formato final, e a João Eduardo Montandon e Hudson Borges, pela revisão do apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia Valente, pela revisão gramatical de partes do livro.</p>
+<h2 class="unnumbered" id="agradecimentos">Agradecimentos <a
+href="#agradecimentos" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Gostaria de agradecer aos mais de 30 alunos que passaram pelo grupo
+de pesquisa ASERG na última década. Parte relevante do conteúdo deste
+livro tem sua origem nos trabalhos do nosso grupo. Gostaria de agradecer
+aos professores Eduardo Figueiredo e André Hora, colegas de
+departamento, que revisaram alguns capítulos do livro. E ao Prof. José
+Luis Braga, que fez uma leitura cuidadosa e deu sugestões valiosas para
+melhoria do texto. Gostaria de agradecer aos alunos do curso de
+pós-graduação que ofertamos no segundo semestre de 2019 e que ajudaram a
+calibrar e refinar o conteúdo deste livro. Especialmente, a Ulisses
+Fernandes e Fábio Ferreira, pela cuidadosa revisão. Gostaria de
+agradecer a Aline Brito, que ajudou na conversão do texto para o formato
+final, e a João Eduardo Montandon e Hudson Borges, pela revisão do
+apêndice sobre Git. Gostaria de agradecer ainda a Osvaldo e Cynthia
+Valente, pela revisão gramatical de partes do livro.</p>
 </div>
 </div>
 </div>
