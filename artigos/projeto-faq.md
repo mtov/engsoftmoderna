@@ -11,7 +11,7 @@ Segue a lista atual de perguntas:
 3. [O que significa Separação entre Comandos e Queries?](#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries)
 4. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 5. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
-
+6. [Existe diferença entre os termos Ocultamento de Informações e Encapsulamento?](#existe-diferen%C3%A7a-entre-os-termos-ocultamento-de-informa%C3%A7%C3%B5es-e-encapsulamento)
 
 * * * 
 
@@ -187,6 +187,22 @@ então esperado que ele usasse código antigo, para facilitar a sua
 implementação. Mas, por outro lado, o que o diagrama revela é que
 manutenções no pacote antigo (`awt`) introduziram também
 dependências para o pacote novo (`swing`).
+
+### 6. Existe diferença entre os termos Ocultamento de Informações e Encapsulamento? {.unnumbered}
+
+Na prática, os dois termos são sinônimos. Por exemplo, o livro 
+*Object-Oriented Software Construction*, de Bertrand Meyer, 
+inclui um glossário de termos relacionados com orientação a objetos. 
+Nesse glossário, a entrada destinada a encapsulamento simplesmente
+redireciona o leitor para a entrada sobre ocultamento de informação.
+
+Dito isso, gostaríamos de comentar que o termo ocultamento 
+de informação tende a ser mais usado quando estamos tratando de
+projeto de software, tal como fizemos no 
+[Capítulo 5](../cap5.html#ocultamento-de-informa%C3%A7%C3%A3o) do livro.
+Ou seja, ocultamento de informação é uma propriedade de 
+mais alto nível, por assim dizer. Já encapsulamento tende 
+a ser mais usado em textos sobre linguagens de programação. 
 
 
 * * * 
