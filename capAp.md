@@ -403,8 +403,9 @@ por chamá-los de virtuais. Explorando mais essa comparação, podemos
 pensar que o comando `git branch [nome]` equivale ao comando `mkdir
 [nome]`, com a diferença que o git não apenas cria um branch mas copia
 para ele todos os arquivos do branch pai. Por outro lado, diretórios são
-criados vazios pelo sistema operacional. Já o comando `git checkout
-[nome]` lembra o comando `cd [nome]`. E `git status` lembra um misto de
+criados vazios pelo sistema operacional. Já o 
+comando `git checkout [nome]` lembra o comando `cd [nome]`. 
+E `git status` lembra um misto de
 comandos `ls` e `pwd`. Também para reforçar essa comparação, existem certos
 comandos que permitem adicionar ao prompt do sistema operacional não
 apenas o nome do diretório corrente mas também o nome do branch
@@ -529,8 +530,8 @@ pode, por exemplo, ser um repositório do GitHub. O parâmetro `-u` indica
 que, no futuro, vamos querer sincronizar os dois repositórios por meio
 de um  `pull` (a letra do parâmetro vem da palavra *upstream*). Essa
 sintaxe vale apenas para o primeiro `push` de um branch remoto. Nos
-comandos seguintes, pode-se omitir o `-u`, isto é, usar apenas `git  push
-origin g-novo`.
+comandos seguintes, pode-se omitir o `-u`, isto é, usar 
+apenas `git  push origin g-novo`.
 
 No repositório remoto, será criado um branch `g-novo`. Para trabalhar
 nesse branch, Alice deve primeiro criá-lo na sua máquina local, mas

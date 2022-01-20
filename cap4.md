@@ -646,7 +646,7 @@ a funcionalidade ou propriedade do sistema que pretendemos esboçar.
 \index{UML!Diagrama de Pacotes}
 \index{Diagramas UML!Pacotes}
 
-Diagrama de pacotes são recomendados quando se pretende oferecer um
+Diagramas de pacotes são recomendados quando se pretende oferecer um
 modelo de mais alto nível de um sistema, que mostre apenas grupos de
 classes — isto é, pacotes — e as dependências entre eles. Para
 isso, UML define um retângulo especial para representar pacotes,
