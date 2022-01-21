@@ -22,7 +22,7 @@ Informação, Engenharia de Computação, etc.
 Para ressaltar esse fato, na primeira aula da minha disciplina apresento 
 para os alunos o seguinte diagrama.
 
-![](./figs/desafios-engsoft.png)
+![](./figs/desafios-engsoft.png){width=75%}
 
 Esclareço que ele não é baseado em nenhum estudo científico, mas na 
 minha experiência acadêmica e profissional. 
@@ -77,7 +77,7 @@ principalmente, um domínio de **habilidades comportamentais**
 (*soft skills*) e também uma visão -- mesmo que mais ampla -- de 
 **negócios**.
 
-![](./figs/eixos-formacao-es.jpg)
+![](./figs/eixos-formacao-es.jpg){width=70%}
 
 A seguir, detalho um pouco mais sobre esses eixos e suas 
 respectivas categorias de formação.
