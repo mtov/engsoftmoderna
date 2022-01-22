@@ -516,7 +516,7 @@ branches que discutimos existem apenas no repositório local. No entanto,
 remoto. Para ilustrar esse recurso, vamos usar um exemplo semelhante ao
 da seção anterior.
 
-**Exemplo:** Suponha que Bob criou um branch, chamado g-novo, para
+**Exemplo:** Suponha que Bob criou um branch, chamado `g-novo`, para
 implementar uma nova funcionalidade. Ele realizou alguns commits nesse
 branch e agora gostaria de compartilhá-lo com Alice, para que ela
 implemente parte da nova funcionalidade. Para isso, Bob deve usar o

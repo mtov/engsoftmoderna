@@ -361,7 +361,7 @@ no site da OMG ([link](https://www.omg.org/)).
 \end{aviso}
 ```
 
-## Diagramas de Classes
+## Diagrama de Classes
 \index{UML!Diagrama de Classes}
 \index{Diagramas UML!Classes}
 
@@ -642,7 +642,7 @@ entanto, não se costuma representar todas elas em diagramas de classes,
 mas apenas as mais importantes e que estão diretamente relacionadas com
 a funcionalidade ou propriedade do sistema que pretendemos esboçar.
 
-## Diagramas de Pacotes
+## Diagrama de Pacotes
 \index{UML!Diagrama de Pacotes}
 \index{Diagramas UML!Pacotes}
 
@@ -692,7 +692,7 @@ Para concluir, gostaríamos de acrescentar duas observações:
 ![](figs/cap4/package1){width=60%}
 
 
-## Diagramas de Sequência
+## Diagrama de Sequência
 \index{UML!Diagrama de Sequência}
 \index{Diagramas UML!Sequência}
 
@@ -778,7 +778,7 @@ solicita um depósito de certo valor em sua conta.
 ![](figs/cap4/sequence3){width=75%}
 
 
-## Diagramas de Atividades
+## Diagrama de Atividades
 \index{UML!Diagrama de Atividades}
 \index{Diagramas UML!Atividades}
 
