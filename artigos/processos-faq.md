@@ -26,11 +26,12 @@ A lista atual de perguntas está organizada em quatro grandes temas:
  10. [O que é Upstream e Downstream Kanban?](#o-que-%C3%A9-upstream-e-downstream-kanban)
  11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
  12. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+ 13. [O que é um fluxo de valor?](#o-que-%C3%A9-um-fluxo-de-valor)
 
 ##### Perguntas sobre Organização de Times Ágeis {.unnumbered}
  
- 13. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
- 14. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+ 14. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
+ 15. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -331,8 +332,35 @@ classes de serviço são "pistas horizontais" em um quadro Kanban.
 Ou seja, o conceito lembra as pistas exclusivas que existem 
 em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
 
+### 13. O que é um fluxo de valor? {.unnumbered}
 
-### 13. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+Fluxo de valor (*value stream*) é um termo que tem sua origem 
+e inspiração em princípios de Manufatura Lean. Suponha, por 
+exemplo, uma fábrica que produz um produto X. Os passos necessários 
+para produzir X nessa fábrica -- ou seja, para gerar valor para a 
+fábrica e para seus clientes -- constituem um fluxo de valor.
+
+O conceito pode ser adaptado para o contexto de processos de 
+software. Nesse caso, um fluxo de valor inclui os passos necessários 
+para desenvolver uma determinada funcionalidade em um sistema, 
+começando do momento em que ela foi requisitada  até o momento em 
+que ela de fato tornou-se disponível para uso.
+
+Adeptos de Kanban e de processos de desenvolvimento Lean
+recomendam um mapeamento cuidadoso de fluxos de valores.
+Argumenta-se que isso permite entender bem o processo de
+desenvolvimento de uma organização, para então otimizá-lo e 
+também para evitar desperdícios de tempo e recursos.
+
+Após terem sido mapeados, entendidos e otimizados, os passos
+de um fluxo de valor devem corresponder, então, aos passos
+de um Quadro Kanban. Isso é sugerido, por exemplo, por
+Mary Poppendieck em um tutorial sobre desenvolvimento Lean: 
+"em um sistema Kanban, o fluxo de valor é mapeado em um quadro 
+com colunas para cada um dos seus passos" (veja 
+[artigo](https://doi.org/10.1109/MS.2012.107)).
+
+### 14. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -356,7 +384,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 14. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 15. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
