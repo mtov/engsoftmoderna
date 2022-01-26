@@ -11,6 +11,7 @@ Segue a lista atual de perguntas:
 3. [O que é um servidor stateless?](#o-que-%C3%A9-um-servidor-stateless)
 4. [O que é o Teorema CAP?](#o-que-%C3%A9-o-teorema-cap)
 5. [O que é o padrão Strangler Fig?](#o-que-%C3%A9-o-padr%C3%A3o-strangler-fig)
+6. [O que é um orquestrador?](#o-que-%C3%A9-um-orquestrador)
 
 * * * 
 
@@ -164,6 +165,18 @@ Strangler Fig pode ser útil, por exemplo, quando planejamos migrar um
 monolito para uma arquitetura baseada em microsserviços. O padrão,
 também nesse caso, advoga que a migração deve ser gradual, isto é,
 um microsserviço de cada vez.
+
+### 6. O que é um orquestrador? {.unnumbered}
+
+Frequentemente, uma operação de negócio deve ser executada em múltiplos
+serviços ou microsserviços. Nesse contexto, chama-se de **orquestrador** 
+o módulo que dispara essa execução e monitora os seus resultados.
+
+Por exemplo, suponha que para cadastrar um aluno em uma faculdade temos
+que cadastrá-lo em dois sistemas: acadêmico e financeiro. O programa 
+responsável por disparar esses dois cadastros, monitorar se eles foram
+concluídos com sucesso e tratar eventuais erros é chamado então de 
+orquestrador da operação de cadastro de alunos.
 
 * * * 
 

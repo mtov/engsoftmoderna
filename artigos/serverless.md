@@ -182,11 +182,14 @@ implementados por meio de funções serverless.
 
 ## Exercícios  {.unnumbered}
 
-1. Suponha uma agenda de compromissos construída usando-se uma arquitetura
+1. Por que o termo serverless não deve ser interpretado de forma literal, 
+isto é, como sendo sinônimo de computação "sem servidores"?
+
+2. Suponha uma agenda de compromissos construída usando-se uma arquitetura
 baseada em funções serverless. Mostra-se abaixo uma das funções dessa
 aplicação, a qual retorna todos os compromissos inseridos na agenda
 (esse código foi copiado do seguinte
-[repositório](https://github.com/pmuens/serverless-book). Qual a 
+[repositório](https://github.com/pmuens/serverless-book)). Qual a 
 desvantagem de serverless, conforme discutido na seção final do artigo, 
 fica mais clara ao analisarmos o código dessa função? Justifique brevemente 
 sua resposta.
@@ -210,8 +213,6 @@ module.exports = (event, callback) => {
   });
 };
 ```
-
-
 
 * * * 
 

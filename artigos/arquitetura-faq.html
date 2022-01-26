@@ -39,22 +39,10 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
-  <!--
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
-  --->
-
   <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
 
-  <style>
-  body {
-    background-color: #FFFFFF;
-    foreground-color: black;
-  }
-  .anchor-link {
-    opacity: 0.5;
-    font-size: 70%;
-  }
-  </style>
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -112,6 +100,8 @@ stateless?</a></li>
 CAP?</a></li>
 <li><a href="#o-que-%C3%A9-o-padr%C3%A3o-strangler-fig">O que é o padrão
 Strangler Fig?</a></li>
+<li><a href="#o-que-%C3%A9-um-orquestrador">O que é um
+orquestrador?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-é-uma-camada-de-domínio">1. O que é uma
@@ -250,6 +240,18 @@ href="https://en.wikipedia.org/wiki/Strangler_fig">Wikipédia</a>.</p>
 monolito para uma arquitetura baseada em microsserviços. O padrão,
 também nesse caso, advoga que a migração deve ser gradual, isto é, um
 microsserviço de cada vez.</p>
+<h3 class="unnumbered" id="o-que-é-um-orquestrador">6. O que é um
+orquestrador? <a href="#o-que-é-um-orquestrador" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
+<p>Frequentemente, uma operação de negócio deve ser executada em
+múltiplos serviços ou microsserviços. Nesse contexto, chama-se de
+<strong>orquestrador</strong> o módulo que dispara essa execução e
+monitora os seus resultados.</p>
+<p>Por exemplo, suponha que para cadastrar um aluno em uma faculdade
+temos que cadastrá-lo em dois sistemas: acadêmico e financeiro. O
+programa responsável por disparar esses dois cadastros, monitorar se
+eles foram concluídos com sucesso e tratar eventuais erros é chamado
+então de orquestrador da operação de cadastro de alunos.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>
