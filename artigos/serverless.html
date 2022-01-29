@@ -235,8 +235,8 @@ uma arquitetura híbrida, na qual apenas alguns serviços são
 implementados por meio de funções serverless.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
-<li><p>Por que o nome serverless não deve ser interpretado de forma
-literal, isto é, como sendo equivalente a uma computação <q>sem
+<li><p>Por que o termo serverless não deve ser interpretado de forma
+literal, isto é, como sendo sinônimo de computação <q>sem
 servidores</q>?</p></li>
 <li><p>Suponha uma agenda de compromissos construída usando-se uma
 arquitetura baseada em funções serverless. Mostra-se abaixo uma das
@@ -264,6 +264,26 @@ module.exports = (event, callback) =&gt; {
     callback(error, data.Items);
   });
 };</code></pre>
+<ol start="3" type="1">
+<li><p>Analise e estude os diagramas de sequência mostrados nas figuras
+1 e 2 da página 4 do seguinte <a
+href="https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf">artigo</a>.
+Eles são de uma aplicação que inicialmente estava implementada usando
+uma arquitetura monolítica (figura 1) e que então foi migrada para usar
+funções serverless (figura 2). Basicamente, a funcionalidade mostrada
+permite que um usuário faça o upload de um arquivo e solicite a sua
+conversão para um outro formato (pdf, svg, etc). Em seguida,
+responda:</p>
+<ol type="a">
+<li><p>Quais dos dois diagramas é mais simples e fácil de entender?
+Justifique sua resposta.</p></li>
+<li><p>Descreva uma diferença importante entre os dois diagramas. Ou
+seja, descreva uma mudança relevante que teve que ser realizada na
+estrutura original da aplicação (mostrada na figura 1) para torná-la
+adequada para uma arquitetura baseada em serverless (conforme mostrado
+na figura 2). Justifique sua resposta.</p></li>
+</ol></li>
+</ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

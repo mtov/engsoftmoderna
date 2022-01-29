@@ -259,6 +259,9 @@ conhecidas do ramo. A criação de um MVP seria recomendada nesse
 contexto? Sim ou Não? Justifique e argumente  a favor de sua 
 resposta.
 
+5. Descreva um tipo de domínio (ou aplicação) para o qual é mais
+difícil e desafiador criar um MVP. Justifique sua resposta.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).

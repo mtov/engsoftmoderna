@@ -214,6 +214,26 @@ module.exports = (event, callback) => {
 };
 ```
 
+3. Analise e estude os diagramas de sequência mostrados nas figuras 
+1 e 2 da página 4 do seguinte 
+[artigo](https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf).
+Eles são de uma aplicação que inicialmente estava implementada 
+usando uma arquitetura monolítica (figura 1) e que então foi migrada 
+para usar funções serverless (figura 2). Basicamente, a funcionalidade 
+mostrada permite que um usuário faça o upload de um arquivo e solicite 
+a sua conversão para um outro formato (pdf, svg, etc). Em seguida,
+responda:
+
+    (a) Quais dos dois diagramas é mais simples e fácil de entender? 
+    Justifique sua resposta.
+
+    (b) Descreva uma diferença importante entre os dois diagramas. Ou seja, 
+    descreva uma  mudança relevante que teve que ser realizada na estrutura 
+    original da aplicação (mostrada na figura 1) para torná-la adequada 
+    para  uma arquitetura baseada em serverless (conforme mostrado na 
+    figura 2). Justifique sua resposta. 
+
+  
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
