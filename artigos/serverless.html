@@ -235,6 +235,15 @@ uma arquitetura híbrida, na qual apenas alguns serviços são
 implementados por meio de funções serverless.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
+<li><p>Quando usamos serverless não precisamos nos preocupar com as
+questões abaixo, EXCETO:</p>
+<ol type="a">
+<li>Planejamento de capacidade</li>
+<li>Balanceamento de carga</li>
+<li>Escalabilidade</li>
+<li>Tolerância a falhas</li>
+<li>Persistência de dados</li>
+</ol></li>
 <li><p>Por que o termo serverless não deve ser interpretado de forma
 literal, isto é, como sendo sinônimo de computação <q>sem
 servidores</q>?</p></li>
@@ -264,7 +273,7 @@ module.exports = (event, callback) =&gt; {
     callback(error, data.Items);
   });
 };</code></pre>
-<ol start="3" type="1">
+<ol start="4" type="1">
 <li><p>Analise e estude os diagramas de sequência mostrados nas figuras
 1 e 2 da página 4 do seguinte <a
 href="https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf">artigo</a>.
@@ -275,7 +284,7 @@ permite que um usuário faça o upload de um arquivo e solicite a sua
 conversão para um outro formato (pdf, svg, etc). Em seguida,
 responda:</p>
 <ol type="a">
-<li><p>Quais dos dois diagramas é mais simples e fácil de entender?
+<li><p>Qual dos dois diagramas é mais simples e fácil de entender?
 Justifique sua resposta.</p></li>
 <li><p>Descreva uma diferença importante entre os dois diagramas. Ou
 seja, descreva uma mudança relevante que teve que ser realizada na

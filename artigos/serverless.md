@@ -182,10 +182,19 @@ implementados por meio de funções serverless.
 
 ## Exercícios  {.unnumbered}
 
-1. Por que o termo serverless não deve ser interpretado de forma literal, 
+1. Quando usamos serverless não precisamos nos preocupar com 
+   as questões abaixo, EXCETO:
+
+   a. Planejamento de capacidade
+   b. Balanceamento de carga
+   c. Escalabilidade
+   d. Tolerância a falhas
+   e. Persistência de dados
+ 
+2. Por que o termo serverless não deve ser interpretado de forma literal, 
 isto é, como sendo sinônimo de computação "sem servidores"?
 
-2. Suponha uma agenda de compromissos construída usando-se uma arquitetura
+3. Suponha uma agenda de compromissos construída usando-se uma arquitetura
 baseada em funções serverless. Mostra-se abaixo uma das funções dessa
 aplicação, a qual retorna todos os compromissos inseridos na agenda
 (esse código foi copiado do seguinte
@@ -214,7 +223,7 @@ module.exports = (event, callback) => {
 };
 ```
 
-3. Analise e estude os diagramas de sequência mostrados nas figuras 
+4. Analise e estude os diagramas de sequência mostrados nas figuras 
 1 e 2 da página 4 do seguinte 
 [artigo](https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf).
 Eles são de uma aplicação que inicialmente estava implementada 
@@ -224,7 +233,7 @@ mostrada permite que um usuário faça o upload de um arquivo e solicite
 a sua conversão para um outro formato (pdf, svg, etc). Em seguida,
 responda:
 
-    (a) Quais dos dois diagramas é mais simples e fácil de entender? 
+    (a) Qual dos dois diagramas é mais simples e fácil de entender? 
     Justifique sua resposta.
 
     (b) Descreva uma diferença importante entre os dois diagramas. Ou seja, 
