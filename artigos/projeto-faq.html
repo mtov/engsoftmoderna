@@ -39,22 +39,10 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
-  <!--
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
-  --->
-
   <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
 
-  <style>
-  body {
-    background-color: #FFFFFF;
-    foreground-color: black;
-  }
-  .anchor-link {
-    opacity: 0.5;
-    font-size: 70%;
-  }
-  </style>
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -118,6 +106,8 @@ dependência circular?</a></li>
 href="#existe-diferen%C3%A7a-entre-os-conceitos-de-ocultamento-de-informa%C3%A7%C3%A3o-e-encapsulamento">Existe
 diferença entre os conceitos de Ocultamento de Informação e
 Encapsulamento?</a></li>
+<li><a href="#o-que-%C3%A9-um-design-doc">O que é um design
+doc?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered"
@@ -304,6 +294,31 @@ href="../cap5.html#ocultamento-de-informa%C3%A7%C3%A3o">Capítulo 5</a>.
 Ou seja, ocultamento de informação é uma propriedade de mais alto nível,
 por assim dizer. Já encapsulamento costuma ser mais usado em textos
 sobre linguagens de programação.</p>
+<h3 class="unnumbered" id="o-que-é-um-design-doc">7. O que é um design
+doc? <a href="#o-que-é-um-design-doc" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
+<p>Algumas vezes, antes de iniciar a implementação de um novo sistema ou
+antes de implementar uma nova funcionalidade mais complexa em um sistema
+existente, recomenda-se escrever um documento abordando questões de
+projeto relevantes nessa implementação, o qual é chamado de
+<strong>design doc</strong>.</p>
+<p>Um design doc deve conter seções como as seguintes:</p>
+<ul>
+<li>Contexto e objetivos do novo sistema ou funcionalidade.</li>
+<li>Design proposto, incluindo, se for interessante, um diagrama de alto
+nível.</li>
+<li>Trade-offs, isto é, pontos positivos e negativos do design
+proposto.</li>
+<li>Designs alternativos e uma justificativa de porque eles não estão
+sendo propostos.</li>
+<li>Impactos em requisitos não-funcionais, tais como desempenho,
+segurança, privacidade, etc.</li>
+</ul>
+<p>Um design doc, no entanto, não é um documento extenso. Normalmente,
+ele possui menos de 5 páginas. Porém, existem exceções, nas quais esse
+tamanho pode chegar a 15-20 páginas. Ele deve ser discutido, revisado e
+aprovado por todos os membros do time que ficará responsável pela
+implementação da nova funcionalidade ou sistema.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

@@ -12,6 +12,7 @@ Segue a lista atual de perguntas:
 4. [O que é ortogonalidade?](#o-que-%C3%A9-ortogonalidade)
 5. [O que é uma dependência circular?](#o-que-%C3%A9-uma-depend%C3%AAncia-circular)
 6. [Existe diferença entre os conceitos de Ocultamento de Informação e Encapsulamento?](#existe-diferen%C3%A7a-entre-os-conceitos-de-ocultamento-de-informa%C3%A7%C3%A3o-e-encapsulamento)
+7. [O que é um design doc?](#o-que-%C3%A9-um-design-doc)
 
 * * * 
 
@@ -204,6 +205,31 @@ Ou seja, ocultamento de informação é uma propriedade de
 mais alto nível, por assim dizer. Já encapsulamento costuma 
 ser mais usado em textos sobre linguagens de programação. 
 
+### 7. O que é um design doc? {.unnumbered}
+
+Algumas vezes, antes de iniciar a implementação
+de um novo sistema ou antes de implementar uma nova funcionalidade 
+mais complexa em um sistema existente, recomenda-se escrever um 
+documento abordando questões de projeto relevantes nessa 
+implementação, o qual é chamado de **design doc**. 
+
+Um design doc deve conter seções como as seguintes:
+
+* Contexto e objetivos do novo sistema ou funcionalidade.
+* Design proposto, incluindo, se for interessante, um diagrama de 
+alto nível.
+* Trade-offs, isto é, pontos positivos e negativos do design proposto. 
+* Designs alternativos e uma justificativa de porque eles não 
+estão sendo propostos.
+* Impactos em requisitos não-funcionais, tais como desempenho, 
+segurança, privacidade, etc.
+
+Um design doc, no entanto, não é um documento extenso.
+Normalmente, ele possui menos de 5 páginas. Porém, existem exceções,
+nas quais esse tamanho pode chegar a 15-20 páginas. Ele deve ser 
+discutido, revisado e aprovado por todos os membros do time que ficará
+responsável pela implementação da nova funcionalidade ou
+sistema.
 
 * * * 
 
