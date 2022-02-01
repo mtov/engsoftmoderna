@@ -241,7 +241,7 @@ Pode ser interessante estudar também conceitos de
 
 3. Suponha um time de desenvolvimento de software que usa Scrum no seu dia a dia. Como e quando os conceitos de Design Thinking podem ajudar esse time? Isto é, em qual situação hipotética? 
 
-4. Descreva resumidamente um problema que possa se beneficiar do 
+4. Descreva um problema que possa se beneficiar do 
 uso de Design Thinking.
 
 5. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
