@@ -5,7 +5,7 @@
 
 Design Thinking é uma abordagem para solução de problemas -- não apenas
 de Engenharia de Software, mas qualquer tipo de problema.
-A abordagem é inspirada em técnicas usadas há tempo
+A abordagem é inspirada em técnicas usadas desde a década de 60
 por designers de produtos, designers gráficos, designers
 de interface com o usuário, etc.
 
