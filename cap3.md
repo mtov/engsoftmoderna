@@ -268,7 +268,7 @@ Mostra-se a seguir um caso de uso, referente a um sistema bancário e que especi
 >
 > 2 - Cliente informa agência e conta de destino da transferência
 >
-> 3 - Ciente informa valor que deseja transferir
+> 3 - Cliente informa valor que deseja transferir
 >
 > 4 - Cliente informa a data em que pretende realizar a operação
 >
