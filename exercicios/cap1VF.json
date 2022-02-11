@@ -14,7 +14,7 @@
     "correct": "true"
   },
   {
-    "text": "Arquitetura preocupa-se, principalmente, com a implementação interna de classes e de seus métodos.",
+    "text": "Arquitetura preocupa-se, principalmente, com a implementação interna das classes e métodos de um sistema.",
     "correct": "false"
   },
   {
@@ -34,7 +34,7 @@
     "correct": "false"
   },
   {
-    "text": "Gerência de configuração trata dos arquivos de configuração de um sistema, como arquivos .ini e .yaml",
+    "text": "Gerência de configuração trata dos arquivos de configuração de um sistema, tais como arquivos .ini e .yaml",
     "correct": "false"
   },
   {
@@ -46,7 +46,7 @@
     "correct": "true"
   },
   {
-    "text": "Refactorings são modificações realizadas em um sistema que preservam o seu comportamento e visam exclusivamente a melhoria do seu código ou projeto.",
+    "text": "Refactorings são modificações realizadas em um sistema que preservam o seu comportamento e que visam exclusivamente a melhoria do seu código ou projeto.",
     "correct": "true"
   },
   {
@@ -66,7 +66,7 @@
     "correct": "true"
   },
   {
-    "text": "Uma empresa decidiu terceirizar o desenvolvimento de um sistema S com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders do sistema S.",
+    "text": "Uma empresa decidiu terceirizar o desenvolvimento de um sistema com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders desse sistema.",
     "correct": "false"
   },
   {
