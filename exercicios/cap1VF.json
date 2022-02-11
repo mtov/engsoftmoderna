@@ -18,7 +18,7 @@
     "correct": "false"
   },
   {
-    "text": "Verificação de software preocupa-se em garantir que o sistema está de acordo com com sua especificação.",
+    "text": "Verificação de software preocupa-se em garantir que o sistema está de acordo com a sua especificação.",
     "correct": "true"
   },
   {
@@ -58,7 +58,7 @@
     "correct": "false"
   },
   {
-    "text": "São exemplos de refactorings: extração de um método menor (a partir de um método maior); renomear uma variável local; mover um método para uma classe mais apropriada.",
+    "text": "São exemplos de refactorings: extrair um método menor (a partir de um método maior); renomear uma variável local; mover um método para uma classe mais apropriada.",
     "correct": "true"
   },
   {

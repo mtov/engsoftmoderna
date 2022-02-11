@@ -97,8 +97,8 @@ deverá ser implementado.
 
 Hoje em dia, o termo discovery é muito comum na comunidade de criadores 
 de produtos digitais, incluindo software. Dentre algumas técnicas 
-que podem ser usadas para apoiar esse processo, podemos citar  
-[Design Thinking](./design-thinking.html),
+que podem ser usadas para apoiar esse processo, podemos citar 
+[Design Thinking](./design-thinking.html), 
 [Jobs to be Done](./jobs-to-be-done.html),
 [Design Sprints](./#construindo-o-primeiro-mvp) e 
 [MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp),
@@ -106,6 +106,11 @@ que podem ser usadas para apoiar esse processo, podemos citar
 O processo de discovery é liderado por profissionais como Product 
 Owners (PO), Product Managers (PM) ou UX Researchers. No entanto, 
 é importante ouvir também os desenvolvedores e outros stakeholders.
+
+E, antes de concluir, gostaríamos de comentar que quando se usa Kanban, 
+discovery é uma das atividades que devem ser realizados na parte 
+[upstream](./processos-faq.html#o-que-%C3%A9-upstream-e-downstream-kanban)
+ do fluxo de trabalho.
 
 * * * 
 
