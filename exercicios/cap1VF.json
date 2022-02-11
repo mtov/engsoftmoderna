@@ -14,11 +14,11 @@
     "correct": "true"
   },
   {
-    "text": "Arquitetura trata de projeto em nível de classes, métodos e atributos.",
+    "text": "Arquitetura preocupa-se, principalmente, com a implementação interna de classes e de seus métodos.",
     "correct": "false"
   },
   {
-    "text": "Verificação de software preocupa-se em garantir que o sistema está de acordo com seus requisitos, isto é, com sua especificação.",
+    "text": "Verificação de software preocupa-se em garantir que o sistema está de acordo com com sua especificação.",
     "correct": "true"
   },
   {
@@ -30,11 +30,11 @@
     "correct": "false"
   },
   {
-    "text": "Uma das formas de reduzir o atraso de um projeto de software é aumentando o tamanho do time de desenvolvedores.",
+    "text": "Uma das formas mais seguras para reduzir o atraso de um projeto consiste em aumentar o tamanho do time de desenvolvedores.",
     "correct": "false"
   },
   {
-    "text": "Gerência de configuração trata dos arquivos de configuração de um sistema, como arquivos .INI.",
+    "text": "Gerência de configuração trata dos arquivos de configuração de um sistema, como arquivos .ini e .yaml",
     "correct": "false"
   },
   {
@@ -46,7 +46,7 @@
     "correct": "true"
   },
   {
-    "text": "Refactorings são modificações realizadas em um software que preservam o seu comportamento e visam exclusivamente a melhoria do código ou projeto.",
+    "text": "Refactorings são modificações realizadas em um sistema que preservam o seu comportamento e visam exclusivamente a melhoria do seu código ou projeto.",
     "correct": "true"
   },
   {
@@ -62,11 +62,11 @@
     "correct": "true"
   },
   {
-    "text": "Com o impacto crescente da profissão, códigos de ética ajudam a clarificar os princípios de conduta que devem ser observados por engenheiros de software.",
+    "text": "Códigos de ética ajudam a clarificar os princípios de conduta que devem ser observados por engenheiros de software.",
     "correct": "true"
   },
   {
-    "text": "Uma empresa X decidiu terceirizar o desenvolvimento de um sistema S com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders do sistema S.",
+    "text": "Uma empresa decidiu terceirizar o desenvolvimento de um sistema S com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders do sistema S.",
     "correct": "false"
   },
   {
