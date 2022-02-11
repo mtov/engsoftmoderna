@@ -8,6 +8,7 @@ Segue a lista atual de perguntas:
 
 1. [O que são personas?](#o-que-s%C3%A3o-personas)
 2. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
+3. [O que é "discovery" de produtos?](#o-que-%C3%A9-discovery-de-produtos)
 
 ### 1. O que são personas? {.unnumbered}
 
@@ -77,6 +78,29 @@ negócio que requerem usuários especializados. Por exemplo, um
 sistema para cálculo e geração de apólices de seguros para navios. Mesmo que um 
 desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo 
 tal como um analista de seguros navais.
+
+### 3. O que é "discovery" de produtos? {.unnumbered}
+
+Vamos dividir a resposta em dois cenários:
+
+* Em alguns cenários, o sistema de software que devemos construir 
+é bem definido e claro. Por isso, faz sentido usar a 
+palavra **requisito**, pois o cliente consegue expressar muito bem
+"o que" o sistema deve fazer.
+
+* No entanto, em outros cenários, essa clareza simplesmente não existe. 
+Por exemplo, muitas vezes não temos nem certeza de que o software será
+necessário e possuirá mercado. Então, nesse segundo cenário, 
+costuma-se usar o termo **discovery** para designar um conjunto de 
+atividades realizadas com o objetivo de "descobrir" o que de fato 
+deverá ser implementado. 
+
+Hoje em dia, o termo discovery é muito comum na comunidade de criadores 
+de produtos digitais, incluindo software. Dentre algumas técnicas 
+que podem ser usadas para apoiar esse processo, podemos citar 
+[MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp), 
+[Design Thinking](./design-thinking.html) e 
+[Jobs to be Done](./jobs-to-be-done.html).
 
 
 * * * 
