@@ -101,16 +101,31 @@ que podem ser usadas para apoiar esse processo, podemos citar
 [Design Thinking](./design-thinking.html), 
 [Jobs to be Done](./jobs-to-be-done.html),
 [Design Sprints](./#construindo-o-primeiro-mvp) e 
-[MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp),
+[MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
 O processo de discovery é liderado por profissionais como Product 
 Owners (PO), Product Managers (PM) ou UX Researchers. No entanto, 
 é importante ouvir também os desenvolvedores e outros stakeholders.
 
-E, antes de concluir, gostaríamos de comentar que quando se usa Kanban, 
-discovery é uma das atividades que devem ser realizados na parte 
+Para incluir atividades de discovery em Scrum, costuma-se adotar um 
+sistema com duas trilhas de trabalho (ou **dual track**), que rodam 
+em paralelo, conforme mostrado na seguinte figura.
+
+![Sistema de duas trilhas (dual track) com Scrum](./figs/discovery-dual-track.svg)
+
+A primeira trilha inclui atividades de 
+discovery, lideradas por POs e PMs, e seu objetivo é descobrir 
+histórias de usuários para o backlog do produto.
+Já a segunda trilha inclui sprints de **delivery**, que são os
+sprints que seguem Scrum de forma tradicional, conforme explicamos
+no [Capítulo 2](../cap2.html). O objetivo dessa trilha é implementar 
+e entregar histórias de usuários. 
+
+Já quando se usa Kanban, discovery é uma atividade que deve ser 
+realizada na parte 
 [upstream](./processos-faq.html#o-que-%C3%A9-upstream-e-downstream-kanban)
- do fluxo de trabalho.
+do fluxo de trabalho. 
+
 
 * * * 
 
