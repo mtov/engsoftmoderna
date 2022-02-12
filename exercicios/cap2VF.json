@@ -10,23 +10,23 @@
     "correct": "false"
   },
   {
-    "text": "O Manifesto Ágil advoga que documentação abrangente não tem qualquer importância.",
+    "text": "O Manifesto Ágil defende que documentação abrangente não tem qualquer importância.",
     "correct": "false"
   },
   {
-    "text": "Quando surgiram, métodos ágeis propuseram novas práticas de programação, como programação em pares, testes automatizados e integração contínua.",
+    "text": "Métodos ágeis popularizaram novas práticas de programação, como programação em pares, testes automatizados e integração contínua.",
     "correct": "true"
   },
   {
-    "text": "Métodos ágeis defendem desenvolvimento com times pequenos, com cerca de uma dezena de desenvolvedores, no máximo.",
+    "text": "Métodos ágeis defendem desenvolvimento com times pequenos, com cerca de 10 desenvolvedores, no máximo.",
     "correct": "true"
   },
   {
-    "text": "XP defende que os contratos de software tenham um escopo fechado, isto é, requisitos, preços e prazos são definidos a priori.",
+    "text": "XP defende o uso de contratos de software com escopo fechado, isto é, requisitos, preços e prazos são definidos no contrato.",
     "correct": "false"
   },
   {
-    "text": "Diferentemente de Scrum, XP é um método exclusivo para projetos de desenvolvimento de software, pois ele advoga o uso de diversas práticas de programação.",
+    "text": "Ao contrário de Scrum, XP é um método exclusivo para projetos de desenvolvimento de software, pois ele advoga o uso de diversas práticas de programação.",
     "correct": "true"
   },
   {
@@ -38,11 +38,11 @@
     "correct": "false"
   },
   {
-    "text": "Times Scrum são cross-funcionais (isto é, multidisciplinares) e auto-organizáveis (isto é, têm autonomia para decidir como as histórias serão implementadas).",
+    "text": "Times Scrum são multidisciplinares e auto-organizáveis (isto é, têm autonomia para decidir como as histórias serão implementadas).",
     "correct": "true"
   },
   {
-    "text": "Reuniões diárias podem durar de 10 a 40 minutos, dependendo da duração do sprint.",
+    "text": "Reuniões diárias devem durar de 10 a 60 minutos, dependendo da duração do sprint.",
     "correct": "false"
   },
   {
@@ -54,15 +54,15 @@
     "correct": "true"
   },
   {
-    "text": "Em times menores e com menos recursos, recomenda-se que o Product Owner (PO) acumule as funções de Scrum Master.",
+    "text": "Em times menores, recomenda-se que o Product Owner (PO) acumule as funções de Scrum Master.",
     "correct": "false"
   },
   {
-    "text": "Todos os eventos Scrum têm uma duração bem definida, chamada de time-box do evento.",
+    "text": "Em Scrum, todos os eventos têm uma duração bem definida, chamada de time-box do evento.",
     "correct": "true"
   },
   {
-    "text": "Apenas o Dono do Produto tem autoridade para cancelar um sprint.",
+    "text": "Apenas o Product Owner (PO) tem autoridade para cancelar um sprint.",
     "correct": "true"
   },
   {
@@ -74,15 +74,15 @@
     "correct": "false"
   },
   {
-    "text": "Kanban é um sistema push, isto é, ao terminar uma tarefa, um desenvolvedor a empurra para o próximo passo.",
+    "text": "Kanban é um sistema empurrado, isto é, ao terminar uma tarefa, um desenvolvedor a empurra para o próximo passo.",
     "correct": "false"
   },
   {
-    "text": "Se conhecermos o lead time e o throughput de um passo Kanban, podemos usar a Lei de Little para calcular o seu limite WIP.",
+    "text": "Se a gente conhece o lead time e o throughput de um passo Kanban, podemos usar a Lei de Little para calcular o seu limite WIP.",
     "correct": "true"
   },
   {
-    "text": "Times Kanban não devem realizar eventos típicos de Scrum, como reuniões diárias, revisões e retrospectivas.",
+    "text": "Times Kanban nunca devem realizar reuniões diárias, revisões e retrospectivas.",
     "correct": "false"
   },
   {
@@ -90,11 +90,11 @@
     "correct": "false"
   },
   {
-    "text": "Suponha uma empresa X que desenvolve um sistema Y usando Scrum. Neste caso, todos os times Scrum de X devem compartilhar o mesmo backlog do produto, o qual irá conter os itens de trabalho do sistema Y.",
+    "text": "Suponha uma empresa X que desenvolve um sistema usando Scrum. Nesse caso, todos os times Scrum de X devem compartilhar o mesmo backlog do produto.",
     "correct": "false"
   },
   {
-    "text": "Um mesmo Scrum Master nunca pode fazer parte de mais de um time ágil.",
+    "text": "Um Scrum Master nunca pode fazer parte de mais de um time Scrum.",
     "correct": "false"
   },
   {
