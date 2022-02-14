@@ -93,19 +93,27 @@ Por exemplo, muitas vezes não temos nem certeza de que o software será
 necessário e possuirá mercado. Então, nesse segundo cenário, 
 costuma-se usar o termo **discovery** para designar um conjunto de 
 atividades realizadas com o objetivo de "descobrir" o que de fato 
-deverá ser implementado. 
+deve ser implementado.
+
+Em cenários que envolvem discovery, costuma-se usar o
+termo **hipótese**, no lugar da palavra requisito. O objetivo é
+deixar claro que primeiro precisamos realizar alguns experimentos
+para então chegar naquilo que, de fato, será implementado.
 
 Hoje em dia, o termo discovery é muito comum na comunidade de criadores 
-de produtos digitais, incluindo software. Dentre algumas técnicas 
+de produtos digitais, incluindo software. Normalmente, o processo 
+é liderado por profissionais como Product Owners (PO), Product 
+Managers (PM) ou UX Researchers. No entanto, é importante ouvir também 
+os desenvolvedores e outros stakeholders.
+
+Dentre algumas técnicas 
 que podem ser usadas para apoiar esse processo, podemos citar 
 [Design Thinking](./design-thinking.html), 
 [Jobs to be Done](./jobs-to-be-done.html),
 [Design Sprints](./#construindo-o-primeiro-mvp) e 
 [MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
-O processo de discovery é liderado por profissionais como Product 
-Owners (PO), Product Managers (PM) ou UX Researchers. No entanto, 
-é importante ouvir também os desenvolvedores e outros stakeholders.
+**Uso Conjunto com Scrum e Kanban**
 
 Para incluir atividades de discovery em Scrum, costuma-se adotar um 
 sistema com duas trilhas de trabalho (ou **dual track**), que rodam 
