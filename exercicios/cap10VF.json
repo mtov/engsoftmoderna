@@ -26,7 +26,7 @@
     "correct": "false"
   },
   {
-    "text": "Uma vantagem de multirepos é a possibilidade de realizar atomicamente (em um único commit) refatorações em larga escala, como a renomeação de uma função que é chamada em sistemas distintos.",
+    "text": "Uma vantagem de multirepos é a possibilidade de realizar atomicamente (isto é, em um único commit) refatorações em larga escala, como a renomeação de uma função que é chamada em sistemas armazenados em repositórios distintos.",
     "correct": "false"
   },
   {
@@ -34,19 +34,19 @@
     "correct": "true"
   },
   {
-    "text": "O uso de um servidor de integração contínua é condição suficiente para uma empresa dizer que adota tal prática.",
+    "text": "A instalação e ativação de um servidor de integração contínua é condição suficiente para uma empresa dizer que adota tal prática.",
     "correct": "false"
   },
   {
-    "text": "CI tem como objetivo diminuir o esforço requerido na integração de branches de funcionalidades.",
+    "text": "CI tem como objetivo reduzir o esforço requerido na integração de branches de funcionalidades.",
     "correct": "true"
   },
   {
-    "text": "Integração contínua é uma das práticas de programação propostas por Scrum.",
+    "text": "Integração contínua é uma das práticas de programação propostas originalmente por Scrum.",
     "correct": "false"
   },
   {
-    "text": "Feature flags são recursos fundamentais quando adota-se Deployment Contínuo.",
+    "text": "Feature flags são recursos fundamentais quando se adota Deployment Contínuo.",
     "correct": "true"
   },
   {
@@ -58,15 +58,15 @@
     "correct": "true"
   },
   {
-    "text": "Release canário disponibiliza uma nova funcionalidade primeiro para um grupo pequeno de usuários.",
+    "text": "Em um release canário, disponibiliza-se uma nova funcionalidade primeiro para um grupo pequeno de usuários.",
     "correct": "true"
   },
   {
-    "text": "São exemplos de boas práticas quando usa-se DevOps: Sistemas de Controle de Versões; Integração Contínua; Desenvolvimento Baseado no Trunk e Deployment (ou Delivery) Contínuo.",
+    "text": "São exemplos de boas práticas quando se usa DevOps: Sistemas de Controle de Versões; Integração Contínua; Desenvolvimento Baseado no Trunk e Deployment (ou Delivery) Contínuo.",
     "correct": "true"
   },
   {
-    "text": "Quando adota-se Desenvolvimento Baseado no Trunk (TBD) não existem mais branches de funcionalidades.",
+    "text": "Quando se adota Desenvolvimento Baseado no Trunk (TBD) não existem mais branches de funcionalidades.",
     "correct": "true"
   },
   {

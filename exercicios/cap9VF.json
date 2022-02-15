@@ -2,7 +2,7 @@
 "title": "Cap. 9 - Refactoring",  
 "questions": [
   {
-    "text": "As Leis de Lehman são leis empíricas sobre manutenção e evolução de software. Uma delas afirma que manutenções tornam a estrutura interna de um sistema mais complexa e difícil de manter no futuro.",
+    "text": "As Leis de Lehman são leis empíricas sobre manutenção e evolução de software. Uma delas afirma que manutenções tornam a estrutura interna de um sistema mais complexa e difícil de entender no futuro.",
     "correct": "true"
   },
   {
@@ -22,7 +22,7 @@
     "correct": "false"
   },
   {
-    "text": "A prática de refactoring depende da existência de bons testes de unidade.",
+    "text": "Para o sucesso da prática de refactoring, recomenda-se a existência de bons testes de unidade.",
     "correct": "true"
   },
   {
@@ -38,11 +38,11 @@
     "correct": "true"
   },
   {
-    "text": "Um clone do Tipo 4 ocorre quando existem trechos de código A e B que são semanticamente equivalentes, mas suas implementações são baseadas em algoritmos diferentes.",
+    "text": "Um clone do Tipo 4 ocorre quando dois trechos de código A e B são semanticamente equivalentes, mas suas implementações são baseadas em algoritmos diferentes.",
     "correct": "true"
   },
   {
-    "text": "Variáveis globais são um code smell porque elas impactam negativamente na coesão das classes nas quais são referenciadas.",
+    "text": "variáveis globais devem ser evitadas porque elas dão origem a um tipo de acoplamento ruim.",
     "correct": "true"
   },
   {
@@ -58,11 +58,11 @@
     "correct": "false"
   },
   {
-    "text": "Débito técnico designa o possível déficit de proficiência técnica de alguns membros de um time de desenvolvimento.",
+    "text": "Débito técnico designa o déficit de proficiência técnica de alguns membros de um time de desenvolvimento.",
     "correct": "false"
   },
   {
-    "text": "Uma refatoração é geralmente motivada por alguma tarefa de implementação específica que (a refatoração) tornará mais fácil, em oposição a melhorias simples do código.",
+    "text": "Uma refatoração é geralmente motivada por uma tarefa de implementação específica que (a refatoração) tornará mais fácil, em oposição a melhorias simples do código.",
     "correct": "true"
   },
   {
