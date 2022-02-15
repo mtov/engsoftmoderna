@@ -18,7 +18,7 @@
     "correct": "true"
   },
   {
-    "text": "Engenharia Reversa é o nome que se dá a qualquer técnica que permita analisar alternativas de design antes que exista qualquer linha de código.",
+    "text": "Engenharia Reversa é o nome que se dá a técnicas que permitem analisar alternativas de design antes que exista qualquer linha de código.",
     "correct": "false"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "true"
   },
   {
-    "text": "Em Diagramas de Classes, setas representam associações, dependências ou herança.",
+    "text": "Em Diagramas de Classes, setas podem representar associações, dependências ou herança.",
     "correct": "true"
   },
   {
@@ -38,11 +38,11 @@
     "correct": "false"
   },
   {
-    "text": "Cardinalidade é o mecanismo que UML oferece para indicar quantos objetos podem estar associados ao atributo responsável por uma associação.",
+    "text": "Em UML, não é possível indicar quantos objetos podem estar associados ao atributo responsável por uma associação.",
     "correct": "false"
   },
   {
-    "text": "Dependências em UML -- representadas por setas contínuas -- indicam relações entre classes que não são devidas a associações ou herança.",
+    "text": "Dependências em UML — representadas por setas contínuas — indicam relações entre classes que não são devidas a associações ou herança.",
     "correct": "false"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "false"
   },
   {
-    "text": "Dentre os nodos de Diagramas de Atividades, temos: inicial, ações, decisões, merges, forks, joins e final.",
+    "text": "Dentre os nodos de Diagramas de Atividades, temos: nodo inicial, ações, decisões, merges, forks, joins e nodo final.",
     "correct": "true"
   },
   {
@@ -62,7 +62,7 @@
     "correct": "false"
   },
   {
-    "text": "Como exemplos de notações alternativas a Diagramas de Atividades, podemos citar: fluxogramas, redes de petri e BPMN.",
+    "text": "Como exemplos de notações alternativas a Diagramas de Atividades, podemos citar fluxogramas, redes de petri e BPMN.",
     "correct": "true"
   }
 ]

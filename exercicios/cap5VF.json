@@ -22,7 +22,7 @@
     "correct": "false"
   },
   {
-    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em sua implementação uma classe B. Por exemplo, a classe A declara um atributo ou parâmetro do tipo B ou cria um objeto do tipo B.",
+    "text": "Acoplamento estrutural ocorre quando uma classe A referencia em sua implementação uma classe B. Por exemplo, a classe A declara um atributo ou um parâmetro do tipo B ou cria um objeto do tipo B.",
     "correct": "true"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Segregação de Variáveis e Responsabilidade Única são princípios úteis para obter classes coesas.",
+    "text": "Segregação de Variáveis e Responsabilidade Única são princípios importantes para obter classes coesas.",
     "correct": "false"
   },
   {
@@ -38,7 +38,7 @@
     "correct": "true"
   },
   {
-    "text": "Um nome mais intuitivo para Inversão de Dependências é Prefira Composição a Herança, como Java e C++.",
+    "text": "Um nome mais intuitivo para Inversão de Dependências é Prefira Composição a Herança.",
     "correct": "false"
   },
   {
@@ -46,7 +46,7 @@
     "correct": "true"
   },
   {
-    "text": "Composição é um mecanismo de reúso caixa-branca, pois a classe cliente tem acesso a diversos detalhes de implementação da classe servidora.",
+    "text": "Composição é um mecanismo de reúso caixa-branca, pois a classe cliente tem acesso a detalhes de implementação da classe servidora.",
     "correct": "false"
   },
   {
@@ -62,7 +62,7 @@
     "correct": "true"
   },
   {
-    "text": "O Princípio de Liskov recomenda que não devemos usar objetos apenas como intermediários para chegar até um objeto de interesse.",
+    "text": "O Princípio de Substituição de Liskov recomenda que não devemos usar objetos apenas como intermediários para chegar até um objeto de interesse.",
     "correct": "false"
   },
   {
@@ -90,7 +90,7 @@
     "correct": "true"
   },
   {
-    "text": "Todos os atributos de uma classe X são privados. Logo, com certeza, X possibilita Ocultamento de Informação.",
+    "text": "Todos os atributos de uma classe X são privados. Logo, com certeza, X oferece Ocultamento de Informação.",
     "correct": "false"
   },
   {
@@ -102,7 +102,7 @@
     "correct": "false"
   },
   {
-    "text": "Uma interface I é implementada, atualmente, por duas classes C1 e C2. Amanhã, novas classes podem também vir a implementar I. Logo, um cliente C deve depender de I e nunca das classes concretas que implementam essa interface (tais como C1 e C2).",
+    "text": "Uma interface I é implementada, atualmente, por duas classes C1 e C2. Amanhã, novas classes podem também implementar I. Logo, um cliente C deve depender de I e nunca das classes concretas que implementam essa interface (tais como C1 e C2).",
     "correct": "true"
   }
 ]
