@@ -106,7 +106,7 @@ de produtos digitais, incluindo software. Normalmente, o processo
 Managers (PM) ou UX Researchers. No entanto, é importante ouvir também 
 os desenvolvedores e outros stakeholders.
 
-Dentre algumas técnicas 
+Dentre as técnicas 
 que podem ser usadas para apoiar esse processo, podemos citar 
 [Design Thinking](./design-thinking.html), 
 [Jobs to be Done](./jobs-to-be-done.html),

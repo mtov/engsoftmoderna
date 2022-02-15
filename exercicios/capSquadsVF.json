@@ -2,7 +2,7 @@
 "title": "Artigo - Modelo Spotify",  
 "questions": [
   {
-    "text": "Um squad é um pequeno time multidisciplinar que possui grande autonomia para trabalhar e resolver um problema importante da empresa.",
+    "text": "Um squad é um pequeno time multidisciplinar que possui autonomia para resolver um problema importante da empresa.",
     "correct": "true"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Quando uma empresa adota revisão de código, o código produzido por um squad deve ser sempre revisado por membros de outros squads, para garantir maior independência e qualidade da revisão.",
+    "text": "Quando uma empresa adota revisão de código, o código produzido por um squad deve ser sempre revisado por outros squads, para garantir maior independência e qualidade da revisão.",
     "correct": "false"
   },
   {

@@ -18,7 +18,7 @@
     "correct": "false"
   },
   {
-    "text": "Histórias de usuários são compostas de três partes, todas começando com a letra C: Cartão, Conversas e Código.",
+    "text": "Histórias de usuários possuem três partes, todas começando com a letra C: Cartão, Conversas e Código.",
     "correct": "false"
   },
   {
@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "Casos de uso devem tratar de aspectos tecnológicos ou de design.",
+    "text": "Sempre que possível, casos de uso devem tratar de aspectos tecnológicos ou de design.",
     "correct": "false"
   },
   {
@@ -42,7 +42,7 @@
     "correct": "true"
   },
   {
-    "text": "As extensões de um caso de uso representam alternativas de execução ou então situações de erro.",
+    "text": "Extensões de um caso de uso representam alternativas de execução ou então situações de erro.",
     "correct": "true"
   },
   {
@@ -50,11 +50,11 @@
     "correct": "false"
   },
   {
-    "text": "Quando se faz um teste A/A, ele deve falhar em 100% dos casos.",
+    "text": "Quando se faz um teste A/A, ele vai falhar em 100% dos casos.",
     "correct": "false"
   },
   {
-    "text": "Em Engenharia de Software, MVPs devem ser vistos como técnicas de validação de requisitos.",
+    "text": "Em Engenharia de Software, MVPs podem ser vistos como técnicas de validação de requisitos.",
     "correct": "true"
   },
   {
@@ -62,7 +62,7 @@
     "correct": "true"
   },
   {
-    "text": "Quando o mercado de um produto de software é estável e bem conhecido, não há necessidade de construir MVPs. ",
+    "text": "Quando o mercado é estável e bem conhecido, não há necessidade de construir MVPs. ",
     "correct": "true"
   },
   {
@@ -70,7 +70,7 @@
     "correct": "true"
   },
   {
-    "text": "Um pivô ocorre quando abandona-se a visão original de um sistema e tenta-se um novo MVP.",
+    "text": "Um pivô ocorre quando se abandona a visão original de um sistema e tenta-se um novo MVP.",
     "correct": "true"
   },
   {
@@ -94,7 +94,7 @@
     "correct": "true"
   },
   {
-    "text": "Um MVP deve sempre implementar e automatizar tarefas de back-office -- como pagamentos, entregas e cancelamentos -- pois elas são fundamentais para uma boa experiência dos clientes.",
+    "text": "Um MVP deve sempre implementar e automatizar tarefas de back-office — como pagamentos, entregas e cancelamentos — pois elas são fundamentais para uma boa experiência dos clientes.",
     "correct": "false"
   },
   {
