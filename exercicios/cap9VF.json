@@ -30,7 +30,7 @@
     "correct": "false"
   },
   {
-    "text": "São exemplos de code smells: classes grandes, métodos longos e features longas.",
+    "text": "São exemplos de code smells: classes grandes, métodos longos e features polimórficas.",
     "correct": "false"
   },
   {

@@ -106,12 +106,15 @@ de produtos digitais, incluindo software. Normalmente, o processo
 Managers (PM) ou UX Researchers. No entanto, é importante ouvir também 
 os desenvolvedores e outros stakeholders.
 
+**Técnicas**
+
 Dentre as técnicas 
-que podem ser usadas para apoiar esse processo, podemos citar 
-[Design Thinking](./design-thinking.html), 
-[Jobs to be Done](./jobs-to-be-done.html),
-[Design Sprints](./#construindo-o-primeiro-mvp) e 
-[MVPs](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
+que podem ser usadas para apoiar um processo de discovery, podemos citar:
+
+* Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
+* Jobs to be Done (JTBD), que também tratamos em um [artigo didático](./jobs-to-be-done.html) específico.
+* Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
+* MVPs, que também estudamos no [Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
 **Uso Conjunto com Scrum e Kanban**
 
