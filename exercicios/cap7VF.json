@@ -26,7 +26,7 @@
     "correct": "true"
   },
   {
-    "text": "São vantagens de MVC: separação entre interface e modelo; especialização do trabalho de desenvolvimento; e testabilidade.",
+    "text": "São vantagens de MVC: separação entre interface gráfica e modelo; especialização do trabalho de desenvolvimento; e testabilidade.",
     "correct": "true"
   },
   {
@@ -42,7 +42,7 @@
     "correct": "false"
   },
   {
-    "text": "Dentre outras vantagens, microsserviços oferecem independência de tecnologia, toleram falhas parciais e oferecem uma menor latência na comunicação.",
+    "text": "Dentre outras vantagens, microsserviços oferecem independência de tecnologia, tolerância a falhas parciais e uma menor latência na comunicação entre os componentes uma aplicação.",
     "correct": "false"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "false"
   },
   {
-    "text": "Em arquiteturas Publish/Subscribe temos um estilo de comunicação de 1 para 1, pois um evento é enviado sempre para um único assinante (subscriber).",
+    "text": "Em arquiteturas Publish/Subscribe temos um estilo de comunicação de 1 para 1, pois um evento é sempre enviado para um único assinante (subscriber).",
     "correct": "false"
   },
   {
@@ -62,7 +62,7 @@
     "correct": "false"
   },
   {
-    "text": "A Lei de Conway afirma que o organograma de uma empresa imita a arquitetura de seus sistemas.",
+    "text": "A Lei de Conway afirma que o organograma de uma empresa tende a imitar a arquitetura de seus sistemas.",
     "correct": "false"
   },
   {
@@ -74,7 +74,7 @@
     "correct": "true"
   },
   {
-    "text": "Latência (isto é, o tempo que uma mensagem leva para chegar ao seu destino) é uma preocupação mais importante em arquiteturas de software monolíticas do que em arquiteturas baseadas em microsserviços.",
+    "text": "Latência (isto é, o tempo que uma mensagem leva para chegar até o seu destino) é uma preocupação mais importante em arquiteturas baseadas em monolitos do que em arquiteturas baseadas em microsserviços.",
     "correct": "false"
   },
   {
@@ -82,7 +82,7 @@
     "correct": "true"
   },
   {
-    "text": "Com monolitos, a forma mais comum de escalabilidade é vertical, por meio da adição de mais recursos (CPU, memória, discos, etc) no servidor no qual o monolito já é executado.",
+    "text": "Com monolitos, a forma mais comum de escalabilidade é vertical, por meio da adição de mais recursos (CPU, memória, discos, etc) no servidor que roda o monolito.",
     "correct": "true"
   },
   {
@@ -90,7 +90,7 @@
     "correct": "false"
   },
   {
-    "text": "Na versão original de MVC (adotada em Smalltalk-80), um Controlador é um tratador de eventos de interfaces gráficas (mouse, teclado, etc).",
+    "text": "Na versão original de MVC (adotada em Smalltalk-80), um Controlador é um tratador de eventos de interfaces gráficas, tais como eventos gerados pelo mouse, teclado, etc.",
     "correct": "true"
   },
   {
