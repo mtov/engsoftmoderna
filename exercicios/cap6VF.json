@@ -6,7 +6,7 @@
     "correct": "true"
   },
   {
-    "text": "Singleton é um padrão que garante que uma classe possui, no máximo, uma única instância e oferece um ponto único de acesso a ela.",
+    "text": "Singleton é um padrão que garante que uma classe possui, no máximo, uma instância e oferece um ponto único de acesso a ela.",
     "correct": "true"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "false"
   },
   {
-    "text": "Um das desvantagens de Fachadas é aumentar o acoplamento entre um subsistema e seus clientes.",
+    "text": "Uma desvantagem de Fachadas é aumentar o acoplamento entre um subsistema e seus clientes.",
     "correct": "false"
   },
   {
@@ -82,7 +82,7 @@
     "correct": "false"
   },
   {
-    "text": "A diferença entre frameworks e bibliotecas é que os primeiros (frameworks) fazem uso intenso de inversão de controle.",
+    "text": "Uma diferença entre frameworks e bibliotecas é que os primeiros (frameworks) fazem uso intenso de inversão de controle.",
     "correct": "true"
   },
   {
@@ -90,11 +90,11 @@
     "correct": "true"
   },
   {
-    "text": "[ENADE 2019, Eng. Computação, adaptado] No padrão Strategy, a raiz da hieraquia de estratégias pode ser uma classe abstrata ou uma interface, pois corresponde a uma abstração dos diversos tipos de estratégias definidas.",
+    "text": "[ENADE 2019, Eng. Computação, adaptado] No padrão Strategy, a raiz da hierarquia de estratégias pode ser uma classe abstrata ou uma interface, pois ela vai funcionar como uma abstração dos diversos tipos de estratégias que serão definidas.",
     "correct": "true"
   },
   {
-    "text": "[ENADE 2019, Eng. Computação, adaptado] Sobre o padrão Strategy, o baixo acoplamento permite que estratégias sejam incluídas ou retiradas da aplicação sem alterar a estrutura das demais classes do sistema.",
+    "text": "[ENADE 2019, Eng. Computação, adaptado] Quando se usa o padrão Strategy, viabiliza-se que estratégias sejam incluídas ou retiradas da aplicação sem alterar as demais classes do sistema.",
     "correct": "true"
   }
   ]  
