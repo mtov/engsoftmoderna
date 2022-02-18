@@ -14,7 +14,7 @@
     "correct": "true"
   },
   {
-    "text": "Concorrência é um das principais causas de testes com comportamento flaky.",
+    "text": "Concorrência é uma das principais causas de testes com comportamento flaky (ou não-determinístico).",
     "correct": "true"
   },
   {
@@ -22,19 +22,19 @@
     "correct": "true"
   },
   {
-    "text": "Todo teste deve ter sempre um único comando assert.",
+    "text": "Todo teste deve ter obrigatoriamente um único comando assert.",
     "correct": "false"
   },
   {
-    "text": "Uma regressão ocorre apenas quando a implementação de uma nova funcionalidade introduz bugs em código antigo.",
-    "correct": "false"
+    "text": "Uma regressão ocorre, por exemplo, quando a implementação de uma nova funcionalidade introduz bugs em código antigo e que estava funcionando.",
+    "correct": "true"
   },
   {
     "text": "Um ciclo TDD possui dois passos: escrever um teste que falha e fazer o teste passar.",
     "correct": "false"
   },
   {
-    "text": "Sempre que se usa TDD a cobertura de testes alcança 100%.",
+    "text": "Sempre que se usa TDD, a cobertura de testes alcança 100%.",
     "correct": "false"
   },
   {
@@ -70,7 +70,7 @@
     "correct": "true"
   },
   {
-    "text": "Teste comportamental é aquele que verifica os eventos que ocorreram durante a execução do Sistema sob Testes (SUT).",
+    "text": "Um teste comportamental verifica eventos que ocorreram durante a execução do Sistema sob Testes (SUT).",
     "correct": "true"
   },
   {
@@ -78,7 +78,7 @@
     "correct": "true"
   }, 
   {
-    "text": "Na fase de testes de unidade, o objetivo é explorar a menor unidade de projeto, procurando identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software, estabelecida na fase de projeto. (ENADE 2005)",
+    "text": "Na fase de testes de unidade, o objetivo é explorar a menor unidade de projeto, procurando identificar erros de lógica e de implementação de cada módulo; na fase de teste de integração, o objetivo é descobrir erros associados às interfaces entre os módulos quando esses são integrados, para se construir a estrutura do software. (ENADE 2005)",
     "correct": "true"
   },
   {
