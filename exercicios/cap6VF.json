@@ -6,7 +6,7 @@
     "correct": "true"
   },
   {
-    "text": "Singleton é um padrão que garante que uma classe possui uma única instância e oferece um ponto único de acesso a ela.",
+    "text": "Singleton é um padrão que garante que uma classe possui, no máximo, uma única instância e oferece um ponto único de acesso a ela.",
     "correct": "true"
   },
   {
@@ -14,7 +14,7 @@
     "correct": "false"
   },
   {
-    "text": "Decorador é um padrão que permite converter a interface de uma classe para outra interface esperada pelos clientes. Permite que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces.",
+    "text": "Decorador é um padrão que permite converter a interface de uma classe para outra interface esperada pelos seus clientes. Ele viabiliza então que classes trabalhem juntas, o que não seria possível devido à incompatibilidade de suas interfaces.",
     "correct": "false"
   },
   {
@@ -42,7 +42,7 @@
     "correct": "false"
   },
   {
-    "text": "Observador é uma padrão que permite que um objeto avise outros objetos de que seu estado mudou.",
+    "text": "Observador é um padrão que permite que um objeto avise outros objetos de que seu estado mudou.",
     "correct": "true"
   },
   {
@@ -62,11 +62,11 @@
     "correct": "true"
   },
   {
-    "text": "Um proxy encaminha todas as chamadas realizadas em métodos de sua interface para métodos equivalentes do objeto base, podendo, no entanto, realizar algum processamento antes ou depois desse encaminhamento.",
+    "text": "Um proxy tem que encaminhar todas as chamadas realizadas em métodos de sua interface para métodos equivalentes do objeto base, podendo, no entanto, realizar algum processamento antes ou depois desse encaminhamento.",
     "correct": "false"
   },
   {
-    "text": "No padrão Observador, os objetos sujeito conhecem e possuem dependências para as classes concretas dos observadores.",
+    "text": "No padrão Observador, os objetos sujeito (Subject) conhecem e possuem dependências para as classes concretas dos observadores.",
     "correct": "false"
   },
   {

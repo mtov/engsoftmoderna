@@ -10,7 +10,7 @@
     "correct": "true"
   },
   {
-    "text": "Um sistema X segue uma Arquitetura Limpa. Atualmente, ele possui uma interface Web. Surgiu então a necessidade de criar uma versão móvel para celulares e tablets. No entanto, para atender à essa segunda interface, não será necessário modificar as duas camadas mais internas (Entidades e Casos de Uso).",
+    "text": "Um sistema X segue uma Arquitetura Limpa. Atualmente, ele possui uma interface Web. Surgiu então a necessidade de criar uma versão móvel para celulares e tablets. No entanto, para atender a essa segunda interface, não será necessário modificar as duas camadas mais internas (Entidades e Casos de Uso).",
     "correct": "true"
   },
   {
