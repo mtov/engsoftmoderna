@@ -128,7 +128,7 @@ mais externo.
 
 ##### Código de Exemplo {.unnumbered}
 
-Uma implementação mínima do Sistema de Bibliotecas, em Python e com 
+Uma implementação mínima do Sistema de Bibliotecas, em Java e com 
 motivação meramente didática, está disponível na IDE online Repl.it. 
 Basicamente, implementamos apenas um serviço simples de pesquisa de 
 livros por autor. Você pode ver o código no seguinte 
