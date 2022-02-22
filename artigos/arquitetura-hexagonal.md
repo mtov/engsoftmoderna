@@ -128,25 +128,13 @@ mais externo.
 
 ##### Código de Exemplo {.unnumbered}
 
-Uma implementação mínima do Sistema de Bibliotecas, em Java e com 
+Uma implementação mínima do Sistema de Bibliotecas, com 
 motivação meramente didática, está disponível na IDE online Repl.it. 
-Basicamente, implementamos apenas um serviço simples de pesquisa de 
-livros por autor. Você pode ver o código no seguinte 
+Basicamente, implementamos um serviço muito simples de pesquisa de 
+livros por autor, em Java, usando ferramentas como SparkJava (para 
+implementar APIs REST) e SQLite (banco de dados). Você pode ver o 
+código no seguinte 
 [link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
-
-
-<!---
-Para ver o código, clique em "Code" na parte de 
-baixo do repl.it.
-
-<iframe 
-frameborder="0" 
-width="100%" 
-height="500px" 
-src="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal?embed=true">
-</iframe>
---->
-
 
 
 ## Comentário Final {.unnumbered}

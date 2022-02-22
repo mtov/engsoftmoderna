@@ -1,7 +1,0 @@
-rm esm-book.*
-rm esm-book-leanpub.pdf
-
-git add .
-git commit -a -m "update"
-
-git push origin master
