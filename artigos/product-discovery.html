@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Product Discovery: Uma Breve Introdução – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
+  </script>
+
+  <script>
+  var trackOutboundLink = function(url, action, category) {
+      gtag('event', action, {
+        'event_category': category,
+        'event_label': url,
+        'transport_type': 'beacon',
+        'event_callback': function(){document.location = url;}
+      });
+  }
+  </script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
+      Submarino</a> ou 
+
+<a href="https://produto.mercadolivre.com.br/MLB-1552071489-engenharia-de-software-moderna-_JM">
+      Mercado Livre</a>.
+</p>
+
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered"
+id="product-discovery-uma-breve-introdução">Product Discovery: Uma Breve
+Introdução <a href="#product-discovery-uma-breve-introdução"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h2 class="unnumbered" id="contexto">Contexto <a href="#contexto"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Em certos cenários, o sistema de software que devemos construir está
+bem definido e claro. Por isso, nesses cenários, faz sentido usar a
+palavra <strong>requisito</strong>, pois o cliente consegue expressar
+muito bem <q>o que</q> o sistema deve fazer.</p>
+<p>No entanto, em outros cenários, essa clareza não existe. Por exemplo,
+muitas vezes não temos nem certeza de que o software será necessário e
+possuirá mercado. Então, nesse tipo de cenário, costuma-se usar o termo
+<strong>discovery</strong> para designar um conjunto de atividades
+realizadas com o objetivo de <q>descobrir</q> o que de fato deve ser
+implementado.</p>
+<p>Em cenários de discovery, costuma-se usar o termo
+<strong>hipótese</strong>, no lugar da palavra requisito. O objetivo é
+deixar claro que primeiro precisamos realizar alguns experimentos para
+então chegar naquilo que, de fato, será implementado.</p>
+<p>Hoje em dia, o termo discovery é muito comum na comunidade de
+criadores de produtos digitais, incluindo software. Normalmente, o
+processo é liderado por profissionais como Product Owners (PO), Product
+Managers (PM) ou UX Researchers. No entanto, é importante ouvir também
+os desenvolvedores e outros stakeholders.</p>
+<h2 class="unnumbered" id="técnicas">Técnicas <a href="#técnicas"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Dentre as técnicas que podem ser usadas para apoiar processos de
+discovery, podemos citar:</p>
+<ul>
+<li>Design Thinking, que tratamos no seguinte <a
+href="./design-thinking.html">artigo didático</a>.</li>
+<li>Jobs to be Done (JTBD), que também tratamos em um <a
+href="./jobs-to-be-done.html">artigo didático</a> específico.</li>
+<li>Design Sprints, que estudamos no <a
+href="../cap3.html#construindo-o-primeiro-mvp">Capítulo 3</a>.</li>
+<li>MVPs, que também estudamos no <a
+href="../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp">Capítulo
+3</a>.</li>
+</ul>
+<h2 class="unnumbered" id="discovery-com-scrum">Discovery com Scrum <a
+href="#discovery-com-scrum" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Para incluir atividades de discovery em Scrum, costuma-se adotar um
+sistema com duas trilhas de trabalho (ou <strong>dual track</strong>),
+que rodam em paralelo, conforme mostrado na seguinte figura.</p>
+<figure>
+<img src="./figs/discovery-dual-track.svg"
+alt="Sistema de duas trilhas (dual track) com Scrum" />
+<figcaption aria-hidden="true">Sistema de duas trilhas (dual track) com
+Scrum</figcaption>
+</figure>
+<p>A primeira trilha inclui atividades de discovery, lideradas por POs e
+PMs, e seu objetivo é descobrir histórias de usuários para o backlog do
+produto.</p>
+<p>Já a segunda trilha inclui sprints de <strong>delivery</strong>, que
+são os sprints que seguem Scrum de forma tradicional, conforme
+explicamos no <a href="../cap2.html">Capítulo 2</a>. O objetivo dessa
+trilha é implementar e entregar histórias de usuários.</p>
+<h2 class="unnumbered" id="discovery-com-kanban">Discovery com Kanban <a
+href="#discovery-com-kanban" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Também podemos adaptar Kanban para incluir atividades de discovery.
+Normalmente, isso envolve o uso de dois fluxos de trabalho:</p>
+<ul>
+<li><p><strong>Upstream Kanban</strong>: esse é um novo fluxo (com seu
+respectivo quadro Kanban) que é criado para incluir apenas atividades de
+discovery. Por exemplo, ele pode incluir atividades para entender as
+demandas dos clientes e priorizá-las. Assim, somente vão entrar no
+backlog do produto as tarefas que, de fato, devem ser implementadas pelo
+time.</p></li>
+<li><p><strong>Downstream Kanban</strong>: representa o fluxo principal
+de Kanban, tal como estudamos no <a href="../cap2.html#kanban">Capítulo
+2</a>, que começa com o backlog e prossegue com os passos de
+implementação das tarefas, tais como especificação, codificação e
+revisão.</p></li>
+</ul>
+<p>Para ilustrar esses dois fluxos, costuma-se usar a imagem de um
+funil, como na seguinte figura:</p>
+<p><img src="./figs/upstream-kanban.svg" style="width:80.0%" /></p>
+<p>O Upstream Kanban corresponde à parte do funil que vai se estreitando
+para deixar claro que nem toda demanda proposta pelos stakeholders
+precisa chegar ao backlog.</p>
+<p>Achamos importante comentar também sobre a origem dos termos upstream
+e downstream. Uma possível tradução seria montante (upstream) e jusante
+(downstream). Especificamente, quando se constrói uma barragem em um
+rio, a parte do seu leito que foi represada, dando origem ao repositório
+ou lago, chama-se montante do rio; a parte do rio após a barragem é
+chamada de jusante.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

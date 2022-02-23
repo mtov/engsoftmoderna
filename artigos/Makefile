@@ -39,6 +39,9 @@ jobs-to-be-done: jobs-to-be-done.md
 requisitos-faq: requisitos-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Requisitos" requisitos-faq.md -o requisitos-faq.html
 
+product-discovery: product-discovery.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Product Discovery: Uma Breve Introdução" product-discovery.md -o product-discovery.html
+
 deep-modules: deep-modules.md
 	$(pandoc_bin) -T "Módulos devem ser Profundos!" deep-modules.md -o deep-modules.html
 
