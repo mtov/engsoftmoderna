@@ -14,26 +14,86 @@ o termo **discovery** para designar um conjunto de atividades
 realizadas com o objetivo de "descobrir" o que de fato deve ser 
 implementado.
 
-Em cenários de discovery, costuma-se usar o
-termo **hipótese**, no lugar da palavra requisito. O objetivo é
-deixar claro que primeiro precisamos realizar alguns experimentos
-para então chegar naquilo que, de fato, será implementado.
+Em cenários de discovery, costuma-se usar o termo **hipótese**, 
+no lugar da palavra requisito. O objetivo é deixar claro que 
+primeiro precisamos realizar alguns experimentos para então chegar 
+naquilo que, de fato, será implementado.
 
-Hoje em dia, o termo discovery é muito comum na comunidade de criadores 
-de produtos digitais, incluindo software. Normalmente, o processo 
-é liderado por profissionais como Product Owners (PO), Product 
-Managers (PM) ou UX Researchers. No entanto, é importante ouvir também 
-os desenvolvedores e outros stakeholders.
+Normalmente, o processo de discovery é liderado por profissionais como 
+Product Owners (PO), Product Managers (PM) ou UX Researchers. 
+No entanto, é importante contar com a participação também de 
+desenvolvedores e outros stakeholders.
+
+## Exemplo {.unnumbered}
+
+Suponha que trabalhamos em uma empresa que desenvolve um sistema de 
+ensino a distância. Os clientes são universidades que pagam uma 
+assinatura mensal. Então, queremos implementar uma nova funcionalidade
+nesse sistema: um chat para comunicação entre professores e alunos 
+de forma direta e privativa.
+
+A nossa hipótese é a seguintes: 
+
+> Um mecanismo de chat vai melhorar a experiência de aprendizado dos 
+alunos. Consequentemente, o nosso sistema será melhor avaliado pelos gestores 
+das universidades. E, por isso, mais universidades vão assinar o sistema 
+e menos universidades vão solicitar o seu cancelamento. Isso vai ajudar a
+atingir nossos principais objetivos de negócio neste trimestre.
+
+Então, para validar essa hipótese temos que verificar os seguintes itens:
+
+* Se a falta de um mecanismo para comunicação privativa com os
+professores é uma "dor" real que incomoda os alunos.
+
+* Se os professores estão dispostos a responder a dúvidas individuais dos 
+alunos. Ou, então, se as universidades estão dispostas a instruir os 
+professores a responder tais dúvidas.
+
+* Se existe algum problema legal relacionado com a implementação
+dessa nova funcionalidade. Por exemplo, só para fins hipotéticos, será
+que existe algum risco trabalhista caso os professores respondam as dúvidas 
+fora do seu horário de trabalho. 
+
+* Se a nossa empresa possui capacidade técnica e recursos humanos, no 
+momento, para implementar essa nova funcionalidade. E também se 
+conseguimos fazer isso em um período de tempo razoável.
+
+Uma vez que a hipótese tenha sido validada, ela pode ser transformada
+em uma ou mais histórias de usuário.
 
 ## Técnicas {.unnumbered}
 
-Dentre as técnicas que podem ser usadas para apoiar processos de 
-discovery, podemos citar:
+A principal técnica usada em processos de discovery são **entrevistas**
+com os clientes. Ou seja, é importante ouvir os clientes do sistema para
+entender profundamente seus problemas, hábitos e rotinas. E, assim, 
+confirmar (ou não) se nossas hipóteses fazem sentido e, portanto, vão
+agregar valor para eles.
 
+No entanto, é importante evitar um erro comum nessas entrevistas: perguntar
+para os clientes, abertamente, se nossa ideia é boa e se eles iriam usá-la,
+caso fosse disponibilizada no sistema. Quando fazemos esse tipo de 
+pergunta, o mais comum é receber uma resposta afirmativa, mas apenas por 
+uma questão de educação ou gentileza. Ou, simplesmente, porque os clientes 
+querem encerrar logo a conversa.
+
+Em vez disso, uma entrevista deve focar nos problemas e rotinas dos clientes. 
+E também focar na experiência passada deles, em vez de perguntar como eles 
+gostariam que fosse o futuro. No caso do nosso sistema de exemplo, as perguntas 
+poderiam ser as seguintes:
+
+* Qual foi a última vez que você fez uma pergunta para um professor?
+* Qual foi essa pergunta?
+* Como você fez a pergunta? Usou o nosso sistema? Se sim, como?
+
+Porém, em alguns casos, nós não temos ideia de como resolver um
+certo problema. Ou seja, trata-se de um cenário diferente do nosso 
+exemplo, no qual já tínhamos uma funcionalidade que pretendíamos implementar 
+no sistema. Nesses cenários nos quais mesmo as ideias e hipóteses não 
+estão claras, podemos usar técnicas mais abrangentes, tais como:
+
+* Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
 * Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
 * Jobs to be Done (JTBD), que também tratamos em um [artigo didático](./jobs-to-be-done.html) específico.
-* Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
-* MVPs, que também estudamos no [Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
 ## Discovery com Scrum {.unnumbered}
 
@@ -85,6 +145,13 @@ quando se constrói uma barragem em um rio, a parte do
 seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
+
+
+## Exercícios {.unnumbered}
+
+1. Qual problema que pode existir quando se adota Scrum ou 
+Kanban tradicionais e que atividades de discovery se propõem 
+a resolver?
 
 
 * * * 
