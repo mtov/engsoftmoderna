@@ -8,7 +8,8 @@ usar a palavra **requisito**, pois o cliente consegue expressar
 muito bem "o que" o sistema deve fazer.
 
 No entanto, em outros cenários, essa clareza não existe. Por exemplo, 
-muitas vezes não temos nem certeza de que o software será necessário 
+muitas vezes não temos nem certeza de que o software -- ou alguma
+funcionalidade importante dele -- será necessário 
 e possuirá mercado. Então, nesse tipo de cenário, costuma-se usar 
 o termo **discovery** para designar um conjunto de atividades 
 realizadas com o objetivo de "descobrir" o que de fato deve ser 
@@ -50,18 +51,18 @@ alunos. Ou, então, se as universidades estão dispostas a instruir os
 professores a responder tais dúvidas.
 
 * Se existe algum problema legal relacionado com a implementação
-dessa nova funcionalidade. Por exemplo, só para fins hipotéticos, será
-que existe algum risco trabalhista caso os professores respondam as dúvidas 
-fora do seu horário de trabalho. 
+dessa nova funcionalidade. Por exemplo, só para fins hipotéticos, 
+devemos avaliar se existe algum risco trabalhista caso os professores 
+respondam as dúvidas fora do horário de trabalho. 
 
 * Se a nossa empresa possui capacidade técnica e recursos humanos, no 
 momento, para implementar essa nova funcionalidade. E também se 
 conseguimos fazer isso em um período de tempo razoável.
 
-Uma vez que a hipótese tenha sido validada, ela pode ser transformada
+Uma vez que a hipótese tenha sido validada, ela deve ser transformada
 em uma ou mais histórias de usuário.
 
-## Técnicas {.unnumbered}
+## Entrevistas com Clientes {.unnumbered}
 
 A principal técnica usada em processos de discovery são **entrevistas**
 com os clientes. Ou seja, é importante ouvir os clientes do sistema para
@@ -70,7 +71,7 @@ confirmar (ou não) se nossas hipóteses fazem sentido e, portanto, vão
 agregar valor para eles.
 
 No entanto, é importante evitar um erro comum nessas entrevistas: perguntar
-para os clientes, abertamente, se nossa ideia é boa e se eles iriam usá-la,
+para os clientes, diretamente, se nossa ideia é boa e se eles iriam usá-la,
 caso fosse disponibilizada no sistema. Quando fazemos esse tipo de 
 pergunta, o mais comum é receber uma resposta afirmativa, mas apenas por 
 uma questão de educação ou gentileza. Ou, simplesmente, porque os clientes 
@@ -78,18 +79,24 @@ querem encerrar logo a conversa.
 
 Em vez disso, uma entrevista deve focar nos problemas e rotinas dos clientes. 
 E também focar na experiência passada deles, em vez de perguntar como eles 
-gostariam que fosse o futuro. No caso do nosso sistema de exemplo, as perguntas 
+gostariam que fosse o futuro. No sistema de exemplo, as perguntas 
 poderiam ser as seguintes:
 
-* Qual foi a última vez que você fez uma pergunta para um professor?
-* Qual foi essa pergunta?
-* Como você fez a pergunta? Usou o nosso sistema? Se sim, como?
+* Qual foi a última vez que você precisou contactar um professor fora da 
+  sala de aula?
+* Qual era o problema que você estava enfrentando?
+* Como você fez para resolver esse problema? Usou o nosso sistema de ensino 
+  a distância? Se sim, como?
 
-Porém, em alguns casos, nós não temos ideia de como resolver um
-certo problema. Ou seja, trata-se de um cenário diferente do nosso 
-exemplo, no qual já tínhamos uma funcionalidade que pretendíamos implementar 
-no sistema. Nesses cenários nos quais mesmo as ideias e hipóteses não 
-estão claras, podemos usar técnicas mais abrangentes, tais como:
+## Outras Técnicas {.unnumbered}
+
+Em certos cenários, no entanto, nós não temos nem mesmo ideia de como resolver 
+um certo problema. Ou seja, são cenários diferentes daquele do nosso 
+exemplo, no qual já tínhamos uma funcionalidade em mente e que pretendíamos 
+implementar no sistema. 
+
+Em cenários nos quais nem mesmo as ideias e hipóteses estão claras, podemos 
+usar técnicas mais abrangentes de discovery, tais como:
 
 * Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
 * Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
@@ -149,9 +156,10 @@ chama-se montante do rio; a parte do rio após a barragem
 
 ## Exercícios {.unnumbered}
 
-1. Qual problema que pode existir quando se adota Scrum ou 
-Kanban tradicionais e que atividades de discovery se propõem 
-a resolver?
+1. Qual problema pode ocorrer quando se adota Scrum ou 
+Kanban (de forma tradicional) e que atividades de discovery podem 
+ajudar a resolver?
+
 
 
 * * * 
