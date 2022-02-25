@@ -30,12 +30,13 @@ desenvolvedores e outros stakeholders.
 Suponha que trabalhamos em uma empresa que desenvolve um sistema de 
 ensino a distância. Os clientes são universidades que pagam uma 
 assinatura mensal. Então, queremos implementar uma nova funcionalidade
-nesse sistema: um chat para comunicação entre professores e alunos 
-de forma direta e privativa.
+nesse sistema: a possibilidade dos alunos marcarem reuniões síncronas
+de curta duração com os professores das disciplinas para tirarem 
+dúvidas individualmente.
 
 A nossa hipótese é a seguintes: 
 
-> Um mecanismo de chat vai melhorar a experiência de aprendizado dos 
+> Essas reuniões síncronas vão melhorar a experiência de aprendizado dos 
 alunos. Consequentemente, o nosso sistema será melhor avaliado pelos gestores 
 das universidades. E, por isso, mais universidades vão assinar o sistema 
 e menos universidades vão solicitar o seu cancelamento. Isso vai ajudar a
@@ -43,17 +44,20 @@ atingir nossos principais objetivos de negócio neste trimestre.
 
 Então, para validar essa hipótese temos que verificar os seguintes itens:
 
-* Se a falta de um mecanismo para comunicação privativa com os
-professores é uma "dor" real que incomoda os alunos.
+* Se a falta de uma interação síncrona e individual com os professores é 
+uma "dor" real que incomoda os alunos.
 
-* Se os professores estão dispostos a responder a dúvidas individuais dos 
-alunos. Ou, então, se as universidades estão dispostas a instruir os 
-professores a responder tais dúvidas.
+* Se as universidades estão dispostas a alocar tempo de seus professores
+para participarem dessas reuniões.
 
-* Se existe algum problema legal relacionado com a implementação
-dessa nova funcionalidade. Por exemplo, só para fins hipotéticos, 
-devemos avaliar se existe algum risco trabalhista caso os professores 
-respondam as dúvidas fora do horário de trabalho. 
+* Se essa funcionalidade será viável economicamente. Por exemplo, 
+teríamos que verificar se as universidades poderiam cobrar por essas 
+reuniões.
+
+* Se existe algum eventual problema legal relacionado com a 
+implementação dessa nova funcionalidade. Por exemplo, temos que 
+verificar se o contrato de trabalho dos professores permite esse 
+tipo de atividade.
 
 * Se a nossa empresa possui capacidade técnica e recursos humanos, no 
 momento, para implementar essa nova funcionalidade. E também se 
@@ -71,7 +75,7 @@ confirmar (ou não) se nossas hipóteses fazem sentido e, portanto, vão
 agregar valor para eles.
 
 No entanto, é importante evitar um erro comum nessas entrevistas: perguntar
-para os clientes, diretamente, se nossa ideia é boa e se eles iriam usá-la,
+diretamente para os clientes se nossa ideia é boa e se eles iriam usá-la,
 caso fosse disponibilizada no sistema. Quando fazemos esse tipo de 
 pergunta, o mais comum é receber uma resposta afirmativa, mas apenas por 
 uma questão de educação ou gentileza. Ou, simplesmente, porque os clientes 
@@ -79,14 +83,20 @@ querem encerrar logo a conversa.
 
 Em vez disso, uma entrevista deve focar nos problemas e rotinas dos clientes. 
 E também focar na experiência passada deles, em vez de perguntar como eles 
-gostariam que fosse o futuro. No sistema de exemplo, as perguntas 
-poderiam ser as seguintes:
+gostariam que fosse o futuro. 
 
-* Qual foi a última vez que você precisou contactar um professor fora da 
-  sala de aula?
-* Qual era o problema que você estava enfrentando?
-* Como você fez para resolver esse problema? Usou o nosso sistema de ensino 
-  a distância? Se sim, como?
+No sistema de exemplo, as perguntas poderiam ser as seguintes:
+
+* Qual foi a última vez que você precisou tirar uma dúvida importante com um 
+professor? Isso aconteceu em quais disciplinas?
+* Como você fez para tirar sua dúvida? 
+* Você costuma fazer perguntas no fórum do sistema de ensino a distância? 
+Elas te ajudam a tirar dúvidas?
+
+Após as entrevistas e caso nossas hipóteses tenham se mostrado promissoras, 
+podemos dar um próximo passo, que normalmente envolve a construção de 
+alguns protótipos ou 
+[MVPs](https://engsoftmoderna.info/cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp). 
 
 ## Outras Técnicas {.unnumbered}
 
@@ -160,7 +170,13 @@ chama-se montante do rio; a parte do rio após a barragem
 Kanban (de forma tradicional) e que atividades de discovery podem 
 ajudar a resolver?
 
+2. Descreva brevemente três requisitos de um sistema que seja
+estável e bem conhecido.
 
+3. Descreva uma hipótese associada a uma funcionalidade menos 
+clara e com maior risco de um determinado sistema. Descreva também 
+três perguntas que você faria, em uma entrevista com usuários,
+para validar essa hipótese.
 
 * * * 
 
