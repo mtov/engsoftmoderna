@@ -7,9 +7,9 @@ está bem definido e claro. Por isso, nesses cenários, faz sentido
 usar a palavra **requisito**, pois o cliente consegue expressar 
 muito bem "o que" o sistema deve fazer.
 
-No entanto, em outros cenários, essa clareza não existe. Por exemplo, 
-muitas vezes não temos nem certeza de que o software -- ou alguma
-funcionalidade importante dele -- será necessário 
+No entanto, em outros cenários, essa clareza simplesmente não existe. 
+Por exemplo, muitas vezes não temos nem certeza de que o 
+software -- ou alguma funcionalidade importante dele -- será necessário 
 e possuirá mercado. Então, nesse tipo de cenário, costuma-se usar 
 o termo **discovery** para designar um conjunto de atividades 
 realizadas com o objetivo de "descobrir" o que de fato deve ser 
@@ -17,8 +17,8 @@ implementado.
 
 Em cenários de discovery, costuma-se usar o termo **hipótese**, 
 no lugar da palavra requisito. O objetivo é deixar claro que 
-primeiro precisamos realizar alguns experimentos para então chegar 
-naquilo que, de fato, será implementado.
+primeiro precisamos realizar alguns experimentos para então 
+definir, de fato, o que será implementado.
 
 Normalmente, o processo de discovery é liderado por profissionais como 
 Product Owners (PO), Product Managers (PM) ou UX Researchers. 
@@ -36,7 +36,7 @@ dúvidas individualmente.
 
 A nossa hipótese é a seguintes: 
 
-> Essas reuniões síncronas vão melhorar a experiência de aprendizado dos 
+> Reuniões síncronas vão melhorar a experiência de aprendizado dos 
 alunos. Consequentemente, o nosso sistema será melhor avaliado pelos gestores 
 das universidades. E, por isso, mais universidades vão assinar o sistema 
 e menos universidades vão solicitar o seu cancelamento. Isso vai ajudar a
@@ -92,24 +92,25 @@ No sistema de exemplo, as perguntas poderiam ser as seguintes:
 
 * Qual foi a última vez que você precisou tirar uma dúvida importante com um 
 professor? Isso aconteceu em quais disciplinas?
-* Como você fez para tirar sua dúvida? 
+* Você conseguiu tirar sua dúvida? Se sim, conte-nos como fez. Se não, houve
+algum tipo de "prejuízo" 
 * Você costuma fazer perguntas no fórum do sistema de ensino a distância? 
 Elas te ajudam a tirar dúvidas?
 
-Após as entrevistas e caso nossas hipóteses tenham se mostrado promissoras, 
+Após as entrevistas e, caso nossas hipóteses tenham se mostrado promissoras, 
 podemos dar um próximo passo, que normalmente envolve a construção de 
 alguns protótipos ou 
 [MVPs](https://engsoftmoderna.info/cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp). 
 
 ## Outras Técnicas {.unnumbered}
 
-Em certos cenários, no entanto, nós não temos nem mesmo ideia de como resolver 
-um certo problema. Ou seja, são cenários diferentes daquele do nosso 
-exemplo, no qual já tínhamos uma funcionalidade em mente e que pretendíamos 
-implementar no sistema. 
+É importante mencionar também que, em certos cenários, nós não temos nenhuma
+ideia de como resolver um certo problema. Ou seja, esses cenários são ]
+diferentes daquele do nosso exemplo, no qual já tínhamos uma funcionalidade 
+em mente que pretendíamos implementar no sistema. 
 
-Em cenários nos quais nem mesmo as ideias e hipóteses estão claras, podemos 
-usar técnicas mais abrangentes de discovery, tais como:
+Em tais cenários, nos quais nem mesmo as ideias e hipóteses estão claras, 
+podemos usar técnicas mais abrangentes de discovery, tais como:
 
 * Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
 * Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
@@ -128,7 +129,7 @@ PMs, e seu objetivo é descobrir histórias de usuários para o backlog do
 produto. 
 
 Já a segunda trilha inclui sprints de **delivery**, que são os
-sprints que seguem Scrum de forma tradicional, conforme explicamos
+sprints que seguem Scrum de forma tradicional, conforme estudamos
 no [Capítulo 2](../cap2.html). O objetivo dessa trilha é implementar 
 e entregar histórias de usuários. 
 
@@ -169,7 +170,7 @@ chama-se montante do rio; a parte do rio após a barragem
 ## Comentários Finais {.unnumbered}
 
 Vamos concluir com um frase de Martin Cagan, um autor conhecido
-na comunidade de produtos digitais.
+na comunidade de produtos digitais:
 
 > O objetivo de "product discovery" é separar rapidamente as boas 
 ideias das ideias ruins. O resultado esperado é um backlog do 
@@ -184,7 +185,7 @@ ajudar a resolver?
 2. Durante o processo de discovery, ao entrevistar usuários, 
 por exemplo, podemos ter novas ideias, que vão gerar novas
 hipóteses. Descreva então uma nova hipótese de funcionalidade
-para o exemplo de ensino a distância e que tente solucionar
+para o exemplo de ensino a distância e que também tente solucionar
 um problema enfrentado pelos alunos.
 
 3. Descreva uma hipótese associada a uma funcionalidade menos 
