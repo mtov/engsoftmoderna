@@ -64,7 +64,10 @@ momento, para implementar essa nova funcionalidade. E também se
 conseguimos fazer isso em um período de tempo razoável.
 
 Uma vez que a hipótese tenha sido validada, ela deve ser transformada
-em uma ou mais histórias de usuário.
+em uma ou mais histórias de usuário. Por outro lado, caso ela não
+tenha se mostrado promissora, ela deve ser descartada. Porém, 
+pelo menos, não perdemos tempo implementando e disponibilizando 
+uma solução que não seria usada ou não iria agregar valor ao produto.
 
 ## Entrevistas com Clientes {.unnumbered}
 
@@ -163,6 +166,14 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
+## Comentários Finais {.unnumbered}
+
+Vamos concluir com um frase de Martin Cagan, um autor conhecido
+na comunidade de produtos digitais.
+
+> O objetivo de "product discovery" é separar rapidamente as boas 
+ideias das ideias ruins. O resultado esperado é um backlog do 
+produto com itens validados.
 
 ## Exercícios {.unnumbered}
 
@@ -170,8 +181,11 @@ chama-se montante do rio; a parte do rio após a barragem
 Kanban (de forma tradicional) e que atividades de discovery podem 
 ajudar a resolver?
 
-2. Descreva brevemente três requisitos de um sistema que seja
-estável e bem conhecido.
+2. Durante o processo de discovery, ao entrevistar usuários, 
+por exemplo, podemos ter novas ideias, que vão gerar novas
+hipóteses. Descreva então uma nova hipótese de funcionalidade
+para o exemplo de ensino a distância e que tente solucionar
+um problema enfrentado pelos alunos.
 
 3. Descreva uma hipótese associada a uma funcionalidade menos 
 clara e com maior risco de um determinado sistema. Descreva também 
