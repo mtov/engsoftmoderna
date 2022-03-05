@@ -250,8 +250,8 @@ engajamento, taxas de cancelamento, etc.
 ### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
 A resposta foi movida para o 
-[artigo didático](./artigos/product-discovery.html#discovery-com-kanban)
-sobre Product Discovery
+[artigo didático](./product-discovery.html#discovery-com-kanban)
+sobre Product Discovery.
 
 ### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
