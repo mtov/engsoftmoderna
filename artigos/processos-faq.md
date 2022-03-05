@@ -249,53 +249,9 @@ engajamento, taxas de cancelamento, etc.
 
 ### 10. O que é Upstream e Downstream Kanban? {.unnumbered}
 
-O quadro Kanban, como explicamos no 
-[Capítulo 2](../cap2.html#kanban), começa à 
-sua esquerda com um backlog de tarefas.
-
-No entanto, se os times não tomarem cuidado, esse backlog pode 
-crescer muito e passar a incluir tarefas complexas, que ainda não
-foram devidamente entendidas pelo time ou que não vão agregar 
-valor ao produto. Pode ser então que o time não consiga escolher 
-as tarefas certas para implementar, já que o backlog 
-transformou-se em uma extensa lista não-priorizada de tarefas 
-obscuras.
-
-Para isso, o uso de Kanban costuma ser dividido em dois fluxos:
-
-* **Upstream Kanban**: define um fluxo de atividades para cuidar 
-do backlog, evitando que ele fique grande e confuso. Por exemplo, 
-pode-se prever atividades para entender as demandas dos clientes e 
-priorizá-las. Assim, somente vão entrar no backlog as tarefas que, 
-de fato, devem ser implementadas pelo time.
-
-* **Downstream Kanban**: representa o fluxo principal de Kanban, 
-tal como estudamos no [Capítulo 2](../cap2.html#kanban), 
-que começa com o backlog e prossegue com os passos de 
-implementação das tarefas, tais como especificação, 
-codificação e revisão.
-
-Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
-como na seguinte figura:
-
-![](./figs/upstream-kanban.svg){width=80%}
-
-O Upstream Kanban corresponde à parte do funil que vai se estreitando
-para deixar claro que nem toda demanda proposta pelos stakeholders
-precisa chegar ao backlog.
-
-Resumindo: no Upstream, especificamos e decidimos o que deve 
-ser implementado; no Downstream, implementa-se o que foi 
-decidido.
-
-Antes de concluir, gostaríamos de comentar sobre a origem
-dos termos upstream e downstream. Uma possível tradução seria
-montante (upstream) e jusante (downstream). Especificamente,
-quando se constrói uma barragem em um rio, a parte do
-seu leito que foi represada, dando origem ao repositório ou lago,
-chama-se montante do rio; a parte do rio após a barragem
-é chamada de jusante.
-
+A resposta foi movida para o 
+[artigo didático](./artigos/product-discovery.html#discovery-com-kanban)
+sobre Product Discovery
 
 ### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 

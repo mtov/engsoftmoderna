@@ -93,7 +93,7 @@ No sistema de exemplo, as perguntas poderiam ser as seguintes:
 * Qual foi a última vez que você precisou tirar uma dúvida importante com um 
 professor? Isso aconteceu em quais disciplinas?
 * Você conseguiu tirar sua dúvida? Se sim, conte-nos como fez. Se não, houve
-algum tipo de "prejuízo" 
+algum tipo de "prejuízo"?
 * Você costuma fazer perguntas no fórum do sistema de ensino a distância? 
 Elas te ajudam a tirar dúvidas?
 
@@ -105,11 +105,11 @@ alguns protótipos ou
 ## Outras Técnicas {.unnumbered}
 
 É importante mencionar também que, em certos cenários, nós não temos nenhuma
-ideia de como resolver um certo problema. Ou seja, esses cenários são ]
+ideia de como resolver um certo problema. Ou seja, esses cenários são 
 diferentes daquele do nosso exemplo, no qual já tínhamos uma funcionalidade 
 em mente que pretendíamos implementar no sistema. 
 
-Em tais cenários, nos quais nem mesmo as ideias e hipóteses estão claras, 
+Em tais cenários, nos quais as ideias e hipóteses não estão claras, 
 podemos usar técnicas mais abrangentes de discovery, tais como:
 
 * Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
