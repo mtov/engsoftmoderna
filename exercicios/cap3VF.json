@@ -106,8 +106,8 @@
     "correct": "true"
   },
   {
-    "text": "Testes de aceitação de histórias são definidos pelo PO.",
-    "correct": "true"
+    "text": "Testes de aceitação de histórias são definidos pelo líder técnico do time.",
+    "correct": "false"
   },
   {
     "text": "Como exemplos de critérios de conclusão de histórias (done criteria) podemos citar a implementação de testes automatizados e a revisão do código por pelo menos um segundo desenvolvedor.",
