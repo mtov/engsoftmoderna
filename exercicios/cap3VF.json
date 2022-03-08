@@ -110,7 +110,7 @@
     "correct": "false"
   },
   {
-    "text": "Como exemplos de critérios de conclusão de histórias (done criteria) podemos citar a implementação de testes automatizados e a revisão do código por pelo menos um segundo desenvolvedor.",
+    "text": "Como exemplos de critérios de conclusão de histórias (done criteria) podemos citar a implementação de testes de unidade e a revisão do código por um segundo desenvolvedor.",
     "correct": "true"
   }
 ]
