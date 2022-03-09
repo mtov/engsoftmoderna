@@ -1,11 +1,11 @@
 
-# Teoria das Janelas Quebradas & Regra dos Escoteiros (aplicadas a Desenvolvimento de Software) {.unnumbered}
+# Duas Recomendações para Manutenção de Software {.unnumbered}
 
 ## Introdução {.unnumbered}
 
-Neste artigo, vamos apresentar uma teoria e uma regra, propostas
-originalmente para outras áreas, mas que aplicam-se a 
-**desenvolvimento de software**. São elas:
+Neste artigo, vamos apresentar duas recomendações, propostas
+originalmente para outras áreas, mas que se aplicam a 
+manutenção de software. São elas:
 
 * Teoria das Janelas Quebradas
 * Regra dos Escoteiros
@@ -35,7 +35,7 @@ com problemas aparentemente pequenos. Caso contrário, eles podem
 se acumular, criando uma espiral de abandono e descontrole.
 
 Apesar de mais discutida entre psicólogos sociais, a Teoria
-das Janelas Quebradas aplica-se também a sistemas de software. Um dos
+das Janelas Quebradas aplica-se também a manutenção de software. Um dos
 primeiros livros a fazer essa conexão foi "O Programador Pragmático",
 de Andrew Hunt e David Thomas. Veja o que os autores dizem:
 
@@ -68,7 +68,7 @@ de variáveis globais, código duplicado, etc.
 
 A Regra do Escoteiro foi descrita por Robert Martin no seu livro "Código Limpo". 
 Segundo ele, os escoteiros norte-americanos têm uma regra simples que pode 
-ser adaptada para o contexto de desenvolvimento de software. A regra é a seguinte:
+ser adaptada para o contexto de manutenção de software. A regra é a seguinte:
 
 > Deixe o acampamento mais limpo do que você o encontrou.
 
