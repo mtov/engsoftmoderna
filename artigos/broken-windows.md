@@ -3,9 +3,10 @@
 
 ## Introdução {.unnumbered}
 
-Neste artigo, vamos apresentar duas recomendações, propostas
-originalmente para outras áreas, mas que se aplicam a 
-manutenção de software. São elas:
+Neste artigo, vamos apresentar duas recomendações (ou "dicas"), 
+propostas originalmente para outras áreas, mas que se aplicam a 
+manutenção de software. Essas recomendações são conhecidas
+pelos seguintes nomes:
 
 * Teoria das Janelas Quebradas
 * Regra dos Escoteiros
@@ -48,8 +49,8 @@ negligência acelera esse processo mais rapidamente do que
 qualquer outro fator.
 
 A seguir, listamos mais alguns exemplos de "janelas quebradas" 
-que não devem ser toleradas quando almeja-se produzir software 
-com qualidade:
+que não devem ser toleradas quando almeja-se produzir e manter
+software com qualidade:
 
 * código com bugs conhecidos e graves, mas que mesmo assim entram em 
 produção.
