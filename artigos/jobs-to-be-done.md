@@ -61,7 +61,7 @@ os concorrentes de um software podem incluir não apenas
 sistemas semelhantes de outras empresas, mas também uma 
 simples planilha eletrônica ou mesmo um caderno de anotações.
 
-## O que JTBD tem a ver com Software? {.unnumbered}
+## O que JTBD tem a ver com software? {.unnumbered}
 
 A resposta é que tem tudo a ver, pois software é cada vez mais um 
 produto. Quando um software é visto dessa maneira, o desenvolvimento 
@@ -77,8 +77,13 @@ ter em mente os "trabalhos" para os quais ele está sendo
 lotado de funcionalidades, mas que não ajuda nos "trabalhos" que 
 seus clientes precisam entregar. 
 
-E, como comentamos antes, em alguns sistemas não é trivial 
-identificar os seus clientes e os trabalhos que eles precisam fazer.
+O tweet abaixo, do fundador do Gumroad, um site para comercialização
+de produtos digitais, ilustra muito bem a importância de JTBD no 
+contexto de software. 
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">People don&#39;t want to use your software.<br><br>They want to lose weight, laugh, be entertained, get smarter, spend time with loved ones, go home on time, sleep adequately, eat good food, be happy.<br><br>Your product is only as good as the experiences it enables people to have.</p>&mdash; Sahil Lavingia (@shl) <a href="https://twitter.com/shl/status/1162031786248900609?ref_src=twsrc%5Etfw">August 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+O tweet deixa claro que os usuários não usam um software apenas por usar. Na verdade, o que eles querem é uma melhoria de vida, a qual pode incluir, de forma mais específica, perder peso, dar algumas risadas, ter momentos de divertimento, ficar mais inteligente, etc.
 
 ### Exemplo: QuickBooks {.unnumbered} 
 
