@@ -140,13 +140,13 @@ vendidas como se fossem balas de prata.
 
 Segundo Brooks, as dificuldades essenciais são as seguintes:
 
-* **Complexidade**: dentre as construções que o homem se propõe a
+1.  **Complexidade**: dentre as construções que o homem se propõe a
     realizar, software é uma das mais desafiadoras e mais complexas
     que existe. Na verdade, como dissemos antes, mesmo construções de
     engenharia tradicional, como um satélite, uma usina nuclear ou um
     foguete, são cada vez mais dependentes de software.
 
-*  **Conformidade**: pela sua natureza software tem que se adaptar ao seu
+2.  **Conformidade**: pela sua natureza software tem que se adaptar ao seu
     ambiente, que muda a todo momento no mundo moderno. Por exemplo,
     se as leis para recolhimento de impostos mudam, normalmente
     espera-se que os sistemas sejam rapidamente adaptados à nova
@@ -154,12 +154,12 @@ Segundo Brooks, as dificuldades essenciais são as seguintes:
     Física, pois as leis da natureza não mudam de acordo com os
     caprichos dos homens.
 
-*  **Facilidade de mudanças**: que consiste na
+3.  **Facilidade de mudanças**: que consiste na
     necessidade de evoluir sempre, incorporando novas funcionalidades.
     Na verdade, quanto mais bem sucedido for um sistema de software,
     mais demanda por mudanças ele recebe.
 
-*  **Invisibilidade**: devido à sua natureza abstrata, é difícil
+4.  **Invisibilidade**: devido à sua natureza abstrata, é difícil
     visualizar o tamanho e consequentemente estimar o esforço de
     construir um sistema de software.
 
