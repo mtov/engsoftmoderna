@@ -421,3 +421,7 @@ classe está fora do agregado e porquê?
       |__ Repositorios
       |  | arquivos que implementam repositórios
 ~~~~
+
+* * * 
+
+Voltar para a lista de [artigos](./artigos.html). Se quiser, você pode também nos seguir no <a href="https://www.linkedin.com/in/mtov">LinkedIn</a>.
