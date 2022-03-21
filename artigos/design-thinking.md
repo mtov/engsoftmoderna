@@ -211,7 +211,14 @@ Existe um vasto material sobre Design Thinking. Uma das boas
 referência sobre o assunto é o 
 [livro](https://www.altabooks.com.br/produto/design-thinking/) 
 de Tim Brown, que usamos como referência para elaboração 
-deste artigo.
+deste artigo. O seguinte [artigo](https://hbr.org/2008/06/design-thinking), 
+do mesmo autor, na Harvard Business Review, também é bastante interessante. 
+Inclusive, foi dele que tiramos a definição das atividades 
+principais que devem fazer parte de processos de Design Thinking 
+(inspiração, ideação e implementação). É importante, no entanto, 
+ressaltar que outros autores costumam incluir mais atividades em 
+suas definições de Design Thinking, tais como: (re-)definição do 
+problema, síntese, ideação, prototipação e testes.
 
 Pode ser interessante estudar também conceitos de 
 **Jobs to be Done**, os quais são o tema do nosso próximo 
