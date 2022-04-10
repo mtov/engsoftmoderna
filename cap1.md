@@ -1296,13 +1296,12 @@ comerciais) com os quais já tenha interagido.
 10\. Dê exemplos de sistemas C (casuais) que você já tenha desenvolvido.
 
 \index{Volkswagen, Escândalo}
-11\. Em 2015, descobriu-se que o software instalado em mais de 11
-milhões de carros da Volkswagen detectava quando eles estavam sendo
-testados em um laboratório de certificação. Nessas situações, o carro
-emitia poluentes dentro das normas legais. Fora do laboratório,
-emitia-se mais poluentes, para melhorar o desempenho. Ou seja, o código
-incluía uma estrutura de decisão como a seguinte
-(meramente ilustrativa, para fins deste exercício):
+11\. Em 2015, descobriu-se que mais de 11 milhões de carros da Volkswagen 
+emitiam poluentes dentro das normas legais apenas quando eles estavam sendo 
+testados em um laboratório de certificação. Fora do laboratório, os carros 
+emitiam mais poluentes, para melhorar o desempenho. Ou seja, o código incluía 
+uma estrutura de decisão como a seguinte (meramente ilustrativa, para fins 
+deste exercício):
 
 ```
 if "Carro sendo testado em um laboratório"
