@@ -185,6 +185,11 @@ Qual é esse nome adotado em XP? Se necessário, consulte o
 [Capítulo 2](../cap2.html#pr%C3%A1ticas-sobre-o-processo-de-desenvolvimento) 
 do livro texto, seção 2.3.3.
 
+5. Pense em um pitch para um determinado problema ou 
+sistema. (a) Explique brevemente o seu pitch (basta dar uma 
+ideia geral); (b) Descreva um *rabbit hole* que deveria ser 
+documentado neste pitch.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
