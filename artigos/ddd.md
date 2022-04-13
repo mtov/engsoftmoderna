@@ -424,4 +424,4 @@ classe está fora do agregado e porquê?
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html). Se quiser, você pode também nos seguir no <a href="https://www.linkedin.com/in/mtov">LinkedIn</a>.
+Voltar para a lista de [artigos](./artigos.html). 
