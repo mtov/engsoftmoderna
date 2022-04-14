@@ -193,6 +193,39 @@ clara e com maior risco de um determinado sistema. Descreva também
 três perguntas que você faria, em uma entrevista com usuários,
 para validar essa hipótese.
 
+4. Além de ter sido feita com a mãe do entrevistador, qual o principal 
+problema com a seguinte entrevista? 
+
+   > Filho: Mãe, mãe, eu tenho uma ideia para um negócio — posso apresentá-la para você?
+   >
+   > Mãe: Claro, querido.
+   >
+   > Filho: Você gosta do seu iPad, certo? Você usa ele muito?
+   >
+   > Mãe: Sim.
+   >
+   > Filho: Então você compraria um aplicativo que fosse como um livro de receitas para o seu iPad?
+   >
+   > Mãe: Humm.
+   >
+   > Filho: Deve custar apenas US$ 40 -- ou seja, mais barato do que muitos livros de receita na sua prateleira.
+   >
+   > Mãe: Bem...
+   >
+   > Filho: E você vai poder compartilhar as receitas com seus amigos, e também virá com um aplicativo para iPhone que permite criar listas de compras. E vídeos daquele chef famoso que você ama.
+   >
+   > Mãe: Oh, sim querido, parece incrível. E você está certo, US$ 40 é um bom negócio. Terá fotos das receitas?
+   >
+   > Filho: Sim, com certeza. Obrigado mãe -- te amo!
+
+   Fonte: este exemplo foi extraído do livro
+   *The Mom Test: How to talk to customers & learn if your business is a good 
+  idea when everyone is lying to you*, de Rob Fitzpatrick.
+
+
+5. Descreva três perguntas mais importantes que o entrevistador 
+deveria ter feito na entrevista anterior.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
