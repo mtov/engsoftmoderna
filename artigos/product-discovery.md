@@ -188,12 +188,14 @@ hipóteses. Descreva então uma nova hipótese de funcionalidade
 para o exemplo de ensino a distância e que também tente solucionar
 um problema enfrentado pelos alunos.
 
+<!---
 3. Descreva uma hipótese associada a uma funcionalidade menos 
 clara e com maior risco de um determinado sistema. Descreva também 
 três perguntas que você faria, em uma entrevista com usuários,
 para validar essa hipótese.
+--->
 
-4. Além de ter sido feita com a mãe do entrevistador, qual o principal 
+3. Além de ter sido feita com a mãe do entrevistador, qual o principal 
 problema com a seguinte entrevista? 
 
    > Filho: Mãe, mãe, eu tenho uma ideia para um negócio — posso apresentá-la para você?
@@ -218,12 +220,12 @@ problema com a seguinte entrevista?
    >
    > Filho: Sim, com certeza. Obrigado mãe -- te amo!
 
-   Fonte: este exemplo foi extraído do livro
+   Fonte: exemplo extraído do livro
    *The Mom Test: How to talk to customers & learn if your business is a good 
   idea when everyone is lying to you*, de Rob Fitzpatrick.
 
 
-5. Descreva três perguntas mais importantes que o entrevistador 
+4. Descreva três perguntas mais importantes que o entrevistador 
 deveria ter feito na entrevista anterior.
 
 * * * 
