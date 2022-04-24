@@ -217,7 +217,7 @@ FAQ do Capítulo 3 do livro.
 3. Em um outro artigo didático, tratamos de 
 [Design Thinking (DT)](./design-thinking.html). 
 Descreva (a) uma característica comum entre JTBD e DT; (b) o principal conceito 
-novo que JTBD introduz, quando comparado a DT.
+novo que JTBD introduz quando comparado a DT.
 
 * * * 
 

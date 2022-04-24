@@ -107,7 +107,7 @@ Dentre eles, DDD lista os seguintes:
 * Entidades
 * Objetos de Valor
 * Serviços
-* Agregações
+* Agregados
 * Repositórios
 
 Esses tipos de objetos de domínio devem ser entendidos como as 
@@ -211,7 +211,7 @@ resto do sistema, ou seja, apenas a raiz pode referenciá-los.
 
 Como formam uma unidade coerente, agregados são persistidos em 
 conjunto em bancos de dados. A deleção de um agregado, da
-memória principal e/ou de um banco de dados, implica na deleção
+memória principal ou de um banco de dados, implica na deleção
 da sua raiz e de todos os objetos internos.
 
 Como eles são objetos mais complexos e com objetos internos,
