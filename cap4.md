@@ -895,7 +895,7 @@ instrumento dos seguintes tipos de engenharia:
    (b) Engenharia Avante (*Forward Engineering*).
 
 3\. Modele os cenários descritos a seguir usando Diagramas de Classe
-UML.Veja que as classes são grafadas em uma fonte diferente.
+UML. Veja que as classes são grafadas em uma fonte diferente.
 
 (a) `ContaBancaria` possui exatamente um `Cliente`. Um `Cliente`, por sua vez,
         pode ter várias `ContaBancaria`. Existe navegabilidade em ambos os

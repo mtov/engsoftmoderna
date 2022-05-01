@@ -2014,8 +2014,8 @@ edição, 2014.
 3\.  Times Scrum são ditos cross-funcionais e auto-organizáveis. Por quê?
      Defina esses termos.
 
-4\.  Qual a diferença entre as histórias do "topo" e do "fundo" do
-     Backlog do Produto, em Scrum?
+4\.  Em Scrum, qual a diferença entre as histórias do "topo" e do "fundo" do
+     Backlog do Produto?
 
 5\.  O que são e para que servem story points?
 
