@@ -252,9 +252,29 @@ hexágono? Eles poderiam ser desenhados na mesma face?</p></li>
 <li><p>A definição do termo hexagonal é arbitrária, pois, dependendo da
 aplicação, ela poderia ser chamada de quadrangular, pentagonal,
 heptagonal, octogonal, etc. Justifique essa afirmação.</p></li>
-<li><p>Descreva, resumidamente, as diferenças entre a Arquitetura
-Hexagonal e a Arquitetura Limpa (que estudamos em um outro <a
-href="./arquitetura-limpa.html">artigo</a> didático).</p></li>
+<li><p>A seguir, mostramos o código de duas classes de domínio que são
+usadas na documentação do Django, um conhecido framework para construção
+de aplicações Web em Python. O código mostrado define regras para
+mapeamento de campos de objetos dessas classes para colunas de tabelas
+de um BD relacional. Esta implementação segue os princípios de uma
+arquitetura hexagonal? Justifique sua resposta.</p></li>
+</ol>
+<pre><code>from django.db import models
+
+class Musician(models.Model):
+  first_name = models.CharField(max_length=50) 
+  last_name = models.CharField(max_length=50)
+  instrument = models.CharField(max_length=100)
+
+class Album(models.Model):
+  artist = models.ForeignKey(Musician, on_delete=models.CASCADE)
+  name = models.CharField(max_length=100)
+  release_date = models.DateField()
+  num_stars = models.IntegerField()</code></pre>
+<ol start="5" type="1">
+<li>Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
+e a Arquitetura Limpa (que estudamos em um outro <a
+href="./arquitetura-limpa.html">artigo</a> didático).</li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
