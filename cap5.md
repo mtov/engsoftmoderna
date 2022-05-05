@@ -1966,7 +1966,7 @@ void onclick() {
 ```
 void sendMail(ContaBancaria conta, String msg) {
   Cliente cliente = conta.getCliente();
-  String mail = cliente.getMailAddress();
+  String endereco = cliente.getMailAddress();
   "Envia mail"
 }  
 ```
