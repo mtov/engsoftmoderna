@@ -229,14 +229,15 @@ início da Seção 7.4.</p></li>
 <li><p>Qual a diferença entre uma transação distribuída e uma saga? Mais
 especificamente:</p>
 <ul>
-<li>Quando consideradas individualmente, as transações T1, T2,…, Tn de
-uma saga são atômicas?</li>
-<li>Quando consideradas em conjunto, as transações T1, T2,…, Tn de uma
-saga são atômicas?</li>
+<li>Quando consideradas individualmente, as transações de uma saga são
+atômicas?</li>
+<li>Se não houvesse compensações, as transações de uma saga, quando
+consideradas em conjunto, seriam sempre atômicas?</li>
 <li>Suponha uma transação Ti de uma saga. Uma transação T’ que não faz
-parte da saga pode observar os resultados de Ti?</li>
+parte da saga pode observar os resultados de Ti antes da execução
+completa da saga?</li>
 <li>Suponha uma transação distribuída T. Uma segunda transação T’ pode
-observar os resultados intermediários de T?</li>
+observar os resultados ainda intermediários de T?</li>
 <li>Com sagas, temos que escrever a lógica de rollback, isto é, o código
 das compensações. O mesmo acontece com transações distribuídas? Sim ou
 não? Justifique.</li>
