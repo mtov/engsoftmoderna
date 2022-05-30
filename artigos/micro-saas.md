@@ -221,6 +221,8 @@ Veja também este outro [artigo](./como-monetizar.html) sobre monetização de s
 relação a uma pequena app não-SaaS comercializada em lojas como 
 Google Play e Apple Store?
 
+2. Leia e faça um breve resumo do seguinte artigo: *Do Things that Don't Scale* ([link](http://paulgraham.com/ds.html)), de autoria de Paul Graham (2013). No seu resumo,  liste algumas tarefas mencionadas no artigo e que, exatamente por não escalarem, devem ser feitas por fundadores nos estágios iniciais de criação de uma empresa de software.
+
 2. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
 àquela que fizemos no artigo.
 
