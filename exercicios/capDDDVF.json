@@ -28,6 +28,10 @@
   {
     "text": "DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.",
     "correct": "false"
+  },
+  {
+    "text": "Uma vantagem de repositórios é permitir que se mude a implementação concreta da fonte de dados. Por exemplo, para facilitar a implementação de testes de unidade, pode-se usar repositórios que acessam dados armazenados em memória principal.",
+    "correct": "true"
   }
 ]
 }	    
