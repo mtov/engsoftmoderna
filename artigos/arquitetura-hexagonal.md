@@ -73,11 +73,15 @@ Existem dois tipos de portas:
 
 * **Portas de entrada:** são interfaces usadas para comunicação 
 de fora para dentro, isto é, quando uma classe externa precisa chamar 
-um método de uma classe de domínio. 
+um método de uma classe de domínio. Logo, essas portas declaram os 
+serviços providos pelo sistema, isto é, serviços que o sistema 
+oferece para o mundo exterior.
 
 * **Portas de saída:** são interfaces usadas para comunicação de 
 dentro para fora, isto é, quando uma classe de domínio precisa 
-chamar um método de uma classe externa. 
+chamar um método de uma classe externa. Logo, essas portas declaram
+os serviços requeridos pelo sistema, isto é, serviços do mundo 
+exterior que são necessários para o funcionamento do sistema.
 
 O importante é que **as portas são independentes de tecnologia**. 
 Portanto, elas estão localizadas no hexágono interior.
