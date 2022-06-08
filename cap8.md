@@ -1125,7 +1125,7 @@ public class BookSearch {
     String json = rbs.search(isbn);
     JSONObject obj = new JSONObject(json);
     String titulo;
-    titulo = (String)obj.get("titulo");
+    titulo = (String) obj.get("titulo");
     return new Book(titulo);
   }
 
@@ -1568,7 +1568,7 @@ void testAddGetTotal() {
   ShoppingCart cart = new ShoppingCart();
   cart.add(b1);
   cart.add(b2);
-  assertEquals(30.0,cart.getTotal());
+  assertEquals(30.0, cart.getTotal());
 }
 ```
 

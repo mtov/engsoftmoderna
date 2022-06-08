@@ -1111,7 +1111,7 @@ public class BookSearch {
     String json = rbs.search(isbn);
     JSONObject obj = new JSONObject(json);
     String titulo;
-    titulo = (String)obj.get(&quot;titulo&quot;);
+    titulo = (String) obj.get(&quot;titulo&quot;);
     return new Book(titulo);
   }
 
@@ -1520,7 +1520,7 @@ void testAddGetTotal() {
   ShoppingCart cart = new ShoppingCart();
   cart.add(b1);
   cart.add(b2);
-  assertEquals(30.0,cart.getTotal());
+  assertEquals(30.0, cart.getTotal());
 }</code></pre>
 <p>Apesar de simples e de fácil entendimento, esse teste ainda não
 compila, pois não existe implementação para as classes <code>Book</code>
