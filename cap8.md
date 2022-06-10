@@ -1648,7 +1648,7 @@ public class ShoppingCart {
 
   public void add(Book b) {
     items.add(b);
-    total += b.price();
+    total += b.price;
   }
 
   double getTotal() {
