@@ -2134,7 +2134,7 @@ void f(int x, int y) {
      if (y > 0) {
         y = 2 * y;
      }
-   }
+  }
 }
 ```
 
