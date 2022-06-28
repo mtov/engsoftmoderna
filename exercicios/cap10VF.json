@@ -46,7 +46,7 @@
     "correct": "false"
   },
   {
-    "text": "Feature flags são recursos fundamentais quando se adota Deployment Contínuo.",
+    "text": "Feature flags são recursos muito usados quando se adota Deployment Contínuo.",
     "correct": "true"
   },
   {

@@ -42,7 +42,7 @@
     "correct": "true"
   },
   {
-    "text": "variáveis globais devem ser evitadas porque elas dão origem a um tipo de acoplamento ruim.",
+    "text": "Variáveis globais devem ser evitadas porque elas dão origem a um tipo de acoplamento ruim.",
     "correct": "true"
   },
   {
