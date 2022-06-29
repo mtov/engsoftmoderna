@@ -222,7 +222,7 @@ relação a uma pequena app não-SaaS comercializada em lojas como
 Google Play e Apple Store?
 
 2. Define-se como "churn de receita negativo" a situação na qual o novo 
-faturamento obtido com os clientes atuais de uma sistema supera a perda 
+faturamento obtido com os clientes atuais de um sistema supera a perda 
 de faturamento devido aos cancelamentos de outros clientes. Por exemplo, 
 um SaaS tinha 100 clientes e faturava R$ 10 mil/mês. Em um dado mês, ele 
 perdeu 10 clientes, porém os 90 clientes que ficaram geraram um 

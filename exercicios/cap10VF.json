@@ -72,6 +72,10 @@
   {
     "text": "Um VCS funciona como a fonte única da verdade (single source of truth) quando precisamos obter a versão mais recente de um arquivo.",
     "correct": "true"
+  },
+  {
+    "text": "Em um Teste A/B, um sistema é liberado primeiro para um percentual pequeno de seus usuários, com o objetivo de verificar a existência de eventuais bugs.",
+    "correct": "false"
   }
 ]
 }	    
