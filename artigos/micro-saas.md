@@ -221,10 +221,24 @@ Veja também este outro [artigo](./como-monetizar.html) sobre monetização de s
 relação a uma pequena app não-SaaS comercializada em lojas como 
 Google Play e Apple Store?
 
-2. Leia e faça um breve resumo do seguinte artigo: *Do Things that Don't Scale* ([link](http://paulgraham.com/ds.html)), de autoria de Paul Graham (2013). No seu resumo,  liste algumas tarefas mencionadas no artigo e que, exatamente por não escalarem, devem ser feitas por fundadores nos estágios iniciais de criação de uma empresa de software.
+2. Define-se como "churn de receita negativo" a situação na qual o novo 
+faturamento obtido com os clientes atuais de uma sistema supera a perda 
+de faturamento devido aos cancelamentos de outros clientes. Por exemplo, 
+um SaaS tinha 100 clientes e faturava R$ 10 mil/mês. Em um dado mês, ele 
+perdeu 10 clientes, porém os 90 clientes que ficaram geraram um 
+faturamento de R$ 11 mil. Em outras palavras, tivemos uma perda negativa de 
+receita, ou seja, um ganho de receita. Explique como isso é possível. Quais 
+eventos podem ter sido responsáveis por essa situação?
 
-2. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
+3. Leia e faça um breve resumo do seguinte artigo: *Do Things that 
+Don't Scale* ([link](http://paulgraham.com/ds.html)), de autoria de 
+Paul Graham (2013). No seu resumo,  liste algumas tarefas mencionadas 
+no artigo e que, exatamente por não escalarem, devem ser feitas por 
+fundadores nos estágios iniciais de criação de uma empresa de software.
+
+4. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
 àquela que fizemos no artigo.
+
 
 * * * 
 
