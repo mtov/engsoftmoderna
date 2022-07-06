@@ -27,12 +27,7 @@
   }
 </style>
 
-<!--
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mini.css/3.0.1/mini-default.min.css">
--->
-
 </head>
-
 
 <body>
 
@@ -189,13 +184,10 @@ var Exercise = {
     const file = 'https://engsoftmoderna.info/exercicios/cap' + id + 'VF.json';
     const id_event = 'vf-cap' + id;
 
-    // old version - google analytics track event
-    // ga('send', 'event', id_event, id_event, id_event);
-    
-    gtag('event', id_event, {
-      'event_category': id_event,
-      'event_label': id_event,
-    });
+    //gtag('event', id_event, {
+    //  'event_category': id_event,
+    //  'event_label': id_event,
+    //});
 
     fetch(file)
       .then(res => res.json())
