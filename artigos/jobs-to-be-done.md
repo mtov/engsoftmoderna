@@ -189,8 +189,8 @@ acabam não sendo usadas.
 
 ### Para saber mais {.unnumbered} 
 
-Talvez, o primeiro material para aprofundar os seu conhecimentos 
-sobre JTBD seja o livro dos autores da teoria, cujo título em 
+Talvez, o primeiro material para aprofundar no estudo de 
+JTBD seja o livro dos autores da teoria, cujo título em 
 português é "Muito Além da Sorte: Processos Inovadores para 
 Entender o que os Clientes Querem", publicado pela Bookman 
 em 2017. Um 
