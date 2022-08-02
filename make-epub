@@ -1,4 +1,5 @@
-cat cap0.md > esm-book.md
+cat dedicatoria.md > esm-book.md
+cat cap0.md >> esm-book.md
 cat cap1.md >> esm-book.md
 cat cap2.md >> esm-book.md
 cat cap3.md >> esm-book.md
@@ -11,10 +12,8 @@ cat cap9.md >> esm-book.md
 cat cap10.md >> esm-book.md
 cat capAp.md >> esm-book.md
 
-pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.tex
-
-pdflatex esm-book.tex
+pandoc title.txt --defaults=defaults-epub.yaml esm-book.md -o esm-book.epub
 
 rm esm-book.md
 
-
+java -jar ../epubcheck/epubcheck.jar esm-book.epub
