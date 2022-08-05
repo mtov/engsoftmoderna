@@ -766,6 +766,7 @@ e Bob, por exemplo), a sugestão é criar dois diretórios locais e usá-los
 para reproduzir os comandos de cada usuário.
 
 \small
+\providecommand*\lettergroup[1]{} 
 \printindex
 
 \clearpage

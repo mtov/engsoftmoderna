@@ -15,6 +15,9 @@ pandoc --defaults=defaults-latex.yaml esm-book.md -o esm-book.tex
 
 pdflatex esm-book.tex
 
+# gerador de índice remissivo
+texindy -q -L portuguese -C utf8 esm-book.idx
+
 rm esm-book.md
 
 

@@ -29,7 +29,13 @@
 
 \setcounter{tocdepth}{1}
 
-\usepackage{imakeidx}
+%\usepackage{imakeidx}
+
+% texindy: gerador de índices alternativo
+% Não estamos usando o gerador default do latex, porque ele não ordena
+% corretamente palavras acentuadas (ou elas vêm todas antes, no início;
+% ou então vem todas juntas no final)
+\usepackage[texindy]{imakeidx}
 \makeindex[title=Índice Remissivo, intoc]
 
 \usepackage{csquotes}
@@ -72,15 +78,18 @@
 
 \usepackage[compact]{titlesec}
 
-% Windows (descomentar as próximas duas linhas)
+% Windows (descomentar as próximas 3 linhas)
 % Motivo: elas criam um espaço antes e depois de cada section e subsection
 % Sem elas, esse espaço no Windows fica muito pequeno
-%\titlespacing*{\section}{0pt}{\parskip}{\parskip}
-%\titlespacing*{\subsection}{0pt}{\parskip}{\parskip}
+% Causa do problema: nova versão de parskip introduziu um novo comportamento
+% Veja: https://tex.stackexchange.com/questions/559005/different-outputs-for-documents-built-on-different-texlive-versions
+\titlespacing*{\section}{0pt}{\parskip}{\parskip}
+\titlespacing*{\subsection}{0pt}{\parskip}{\parskip}
+\titlespacing*{\subsubsection}{0pt}{1em}{1em}
 
-% Mac
-\titlespacing*{\section}{0pt}{*0}{0pt}
-\titlespacing*{\subsection}{0pt}{*0}{0pt}
+% Mac - descomentar as próximas duas linhas
+%\titlespacing*{\section}{0pt}{*0}{0pt}
+%\titlespacing*{\subsection}{0pt}{*0}{0pt}
 
 \usepackage{float}
 \let\origfigure\figure
