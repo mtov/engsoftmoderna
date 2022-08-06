@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,10 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="requisitos" data-number="1">
-<h1 data-number="3"><span class="header-section-number">3</span>
-Requisitos <a href="#requisitos" class="anchor-link"
-aria-hidden="true">🔗</a></h1>
+<h1 data-number="3" id="requisitos"><span
+class="header-section-number">3</span> Requisitos <a href="#requisitos"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>The hardest single part of building a software system is deciding
 precisely what to build.</em> – Frederick Brooks</p>
@@ -115,10 +119,9 @@ Mínimo Viável (MVP), muito usados modernamente para prospectar e validar
 requisitos. Para concluir, na Seção 3.6 tratamos de Testes A/B, também
 muito usados hoje em dia para validar e definir os requisitos de
 produtos de software.</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="3.1"><span class="header-section-number">3.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.1" id="introdução"><span
+class="header-section-number">3.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> <strong>Requisitos</strong> definem o que um sistema deve fazer e
 sob quais restrições. Requisitos relacionados com a primeira parte dessa
 definição — <q>o que um sistema deve fazer</q>, ou seja, suas
@@ -218,11 +221,10 @@ quais vão detalhar e especificar o protocolo a ser usado para realização
 de tais transferências entre bancos. Portanto, requisitos de usuário
 estão mais próximos do problema, enquanto que requisitos de sistema
 estão mais próximos da solução.</p>
-</section>
-<section id="engenharia-de-requisitos" data-number="1.2">
-<h2 data-number="3.2"><span class="header-section-number">3.2</span>
-Engenharia de Requisitos <a href="#engenharia-de-requisitos"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.2" id="engenharia-de-requisitos"><span
+class="header-section-number">3.2</span> Engenharia de Requisitos <a
+href="#engenharia-de-requisitos" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> <strong>Engenharia de Requisitos</strong> é o nome que se dá ao
 conjunto de atividades relacionadas com a descoberta, análise,
 especificação e manutenção dos requisitos de um sistema. O termo
@@ -363,9 +365,9 @@ percentual de empresas que apontou cada problema):</p>
 <li><p>Falta de acesso às necessidades dos clientes ou do negócio
 (18%)</p></li>
 </ul>
-<section id="o-que-vamos-estudar" data-number="1.2.1">
-<h3 data-number="3.2.1"><span class="header-section-number">3.2.1</span>
-O que Vamos Estudar? <a href="#o-que-vamos-estudar" class="anchor-link"
+<h3 data-number="3.2.1" id="o-que-vamos-estudar"><span
+class="header-section-number">3.2.1</span> O que Vamos Estudar? <a
+href="#o-que-vamos-estudar" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>A próxima figura resume um pouco o que foi estudado sobre requisitos
 até agora. Ela mostra que os requisitos são a <q>ponte</q> que liga um
@@ -420,12 +422,10 @@ viabilidade de um produto ou sistema. Dada a importância contemporânea
 de tais cenários — sistemas para resolver problemas em mercados
 desconhecidos ou incertos — estudaremos mais sobre MVPs na Seção
 3.5.</p>
-</section>
-</section>
-<section id="histórias-de-usuários" data-number="1.3">
-<h2 data-number="3.3"><span class="header-section-number">3.3</span>
-Histórias de Usuários <a href="#histórias-de-usuários"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.3" id="histórias-de-usuários"><span
+class="header-section-number">3.3</span> Histórias de Usuários <a
+href="#histórias-de-usuários" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> Documentos de requisitos tradicionais, como aqueles produzidos
 quando se usa Waterfall, possuem centenas de páginas e levam às vezes
 mais de um ano para ficarem prontos. Além disso, eles sofrem dos
@@ -575,12 +575,11 @@ suas principais funcionalidades, etc. Ao final do workshop, que
 dependendo do tamanho do sistema pode durar uma semana, deve-se ter em
 mãos uma boa lista de histórias de usuários, que demandem alguns sprints
 para serem implementadas.</p>
-<section id="exemplo-sistema-de-controle-de-bibliotecas"
-data-number="1.3.1">
-<h3 data-number="3.3.1"><span class="header-section-number">3.3.1</span>
-Exemplo: Sistema de Controle de Bibliotecas <a
-href="#exemplo-sistema-de-controle-de-bibliotecas" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.3.1"
+id="exemplo-sistema-de-controle-de-bibliotecas"><span
+class="header-section-number">3.3.1</span> Exemplo: Sistema de Controle
+de Bibliotecas <a href="#exemplo-sistema-de-controle-de-bibliotecas"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Nesta seção, vamos mostrar exemplos de histórias para um sistema de
 controle de bibliotecas. Elas estão associadas a três tipos de usuários:
 usuário típico, professor e funcionário da biblioteca.</p>
@@ -681,10 +680,9 @@ histórias — ou requisitos, de forma mais genérica —, sem que isso tenha
 sido pedido pelos clientes. Em uma tradução literal, os desenvolvedores
 ficam cobrindo as histórias com camadas de ouro, quando isso não irá
 gerar valor para os usuários do sistema.</p>
-</section>
-<section id="perguntas-frequentes" data-number="1.3.2">
-<h3 data-number="3.3.2"><span class="header-section-number">3.3.2</span>
-Perguntas Frequentes <a href="#perguntas-frequentes" class="anchor-link"
+<h3 data-number="3.3.2" id="perguntas-frequentes"><span
+class="header-section-number">3.3.2</span> Perguntas Frequentes <a
+href="#perguntas-frequentes" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>Antes de finalizar, e como comum neste livro, vamos responder algumas
 perguntas sobre histórias de usuários:</p>
@@ -717,12 +715,9 @@ emprego do framework X na implementação da interface Web</q>. Por outro
 lado, esse estudo pode ser uma tarefa, necessária para implementar uma
 determinada história. Tarefas para aquisição de conhecimento são
 chamadas de <strong>spikes</strong>.</p>
-</section>
-</section>
-<section id="casos-de-uso" data-number="1.4">
-<h2 data-number="3.4"><span class="header-section-number">3.4</span>
-Casos de Uso <a href="#casos-de-uso" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.4" id="casos-de-uso"><span
+class="header-section-number">3.4</span> Casos de Uso <a
+href="#casos-de-uso" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> <strong>Casos de uso</strong> (<em>use cases</em>) são documentos
 textuais de especificação de requisitos. Como veremos nesta seção, eles
 incluem descrições mais detalhadas do que histórias de usuários.
@@ -868,10 +863,10 @@ projeto no qual os usuários e desenvolvedores referem-se às mesmas
 coisas usando nomes diferentes e, pior ainda, referem-se a coisas
 diferentes pelo mesmo nome</q>.</p></li>
 </ul>
-<section id="diagramas-de-casos-de-uso" data-number="1.4.1">
-<h3 data-number="3.4.1"><span class="header-section-number">3.4.1</span>
-Diagramas de Casos de Uso <a href="#diagramas-de-casos-de-uso"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.4.1" id="diagramas-de-casos-de-uso"><span
+class="header-section-number">3.4.1</span> Diagramas de Casos de Uso <a
+href="#diagramas-de-casos-de-uso" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>No Capítulo 4, vamos estudar a linguagem de modelagem gráfica UML. No
 entanto, gostaríamos de adiantar e comentar sobre um dos diagramas UML,
@@ -913,11 +908,10 @@ Portanto, quando for adotar casos de uso coloque sua energia no
 texto</q>. Por outro lado, outros autores, para evitar qualquer confusão
 optam por usar o termo <strong>cenários de uso</strong>, em vez de casos
 de uso.</p>
-</section>
-<section id="perguntas-frequentes-1" data-number="1.4.2">
-<h3 data-number="3.4.2"><span class="header-section-number">3.4.2</span>
-Perguntas Frequentes <a href="#perguntas-frequentes-1"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.4.2" id="perguntas-frequentes-1"><span
+class="header-section-number">3.4.2</span> Perguntas Frequentes <a
+href="#perguntas-frequentes-1" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p>Vamos responder agora duas perguntas sobre casos de uso.</p>
 <p><strong>Qual a diferença entre casos de uso e histórias de
 usuários</strong>? A resposta simples é que casos de uso são
@@ -940,12 +934,10 @@ Especificamente, casos de uso foram concebidos para ser um dos
 principais produtos da fase de Elaboração do UP. Conforme dito no
 Capítulo 2, UP enfatiza comunicação escrita entre usuários e
 desenvolvedores, usando documentos como casos de uso.</p>
-</section>
-</section>
-<section id="produto-mínimo-viável-mvp" data-number="1.5">
-<h2 data-number="3.5"><span class="header-section-number">3.5</span>
-Produto Mínimo Viável (MVP) <a href="#produto-mínimo-viável-mvp"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.5" id="produto-mínimo-viável-mvp"><span
+class="header-section-number">3.5</span> Produto Mínimo Viável (MVP) <a
+href="#produto-mínimo-viável-mvp" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> O conceito de MVP foi popularizado no livro <strong>Lean
 Startup</strong>, de Eric Ries (<a
 href="https://isbnsearch.org/isbn/0307887898">link</a>). Por sua vez, o
@@ -1060,9 +1052,9 @@ conta.</p></li>
 <li><p>Recomendação: clientes que recomendaram o sistema para
 terceiros.</p></li>
 </ul>
-<section id="exemplos-de-mvp" data-number="1.5.1">
-<h3 data-number="3.5.1"><span class="header-section-number">3.5.1</span>
-Exemplos de MVP <a href="#exemplos-de-mvp" class="anchor-link"
+<h3 data-number="3.5.1" id="exemplos-de-mvp"><span
+class="header-section-number">3.5.1</span> Exemplos de MVP <a
+href="#exemplos-de-mvp" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>Um MVP não precisa ser um software real, implementado em uma
 linguagem de programação, com bancos de dados, integração com outros
@@ -1124,11 +1116,10 @@ professores com artigos indexados aumentou de menos de 100 para mais de
 900 professores. A interface do usuário deixou de ser um conjunto de
 planilhas e passou a ser um conjunto de gráficos implementados em
 JavaScript.</p>
-</section>
-<section id="perguntas-frequentes-2" data-number="1.5.2">
-<h3 data-number="3.5.2"><span class="header-section-number">3.5.2</span>
-Perguntas Frequentes <a href="#perguntas-frequentes-2"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.5.2" id="perguntas-frequentes-2"><span
+class="header-section-number">3.5.2</span> Perguntas Frequentes <a
+href="#perguntas-frequentes-2" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p>Para finalizar, vamos responder algumas perguntas sobre MVPs.</p>
 <p><strong>Apenas startups devem usar MVPs?</strong> Definitivamente
 não. Como tentamos discutir nesta seção, MVPs são um mecanismo para
@@ -1174,11 +1165,10 @@ hipótese de negócio é falsamente invalidada. No nosso exemplo, o motivo
 do insucesso não estaria no MVP, mas sim no fato de os usuários não
 conseguirem acessar o sistema, pois o servidor frequentemente estava
 fora do ar.</p>
-</section>
-<section id="construindo-o-primeiro-mvp" data-number="1.5.3">
-<h3 data-number="3.5.3"><span class="header-section-number">3.5.3</span>
-Construindo o Primeiro MVP <a href="#construindo-o-primeiro-mvp"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.5.3" id="construindo-o-primeiro-mvp"><span
+class="header-section-number">3.5.3</span> Construindo o Primeiro MVP <a
+href="#construindo-o-primeiro-mvp" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p>Lean startup não define como construir o primeiro MVP de um sistema.
 Em alguns casos isso não é um problema, pois os proponentes do MVP têm
 uma ideia precisa de suas funcionalidades e requisitos. Então, eles já
@@ -1228,12 +1218,9 @@ usada para propor uma solução para qualquer problema. Por exemplo,
 pode-se organizar um design sprint para reformular a interface de um
 sistema, já em produção, mas que está apresentando uma alta taxa de
 abandono.</p>
-</section>
-</section>
-<section id="testes-ab" data-number="1.6">
-<h2 data-number="3.6"><span class="header-section-number">3.6</span>
-Testes A/B <a href="#testes-ab" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="3.6" id="testes-ab"><span
+class="header-section-number">3.6</span> Testes A/B <a href="#testes-ab"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> <strong>Testes A/B</strong> (ou <em>split tests</em>) são usados
 para escolher, dentre duas versões de um sistema, aquela que desperta
 maior interesse dos usuários. As duas versões são idênticas, exceto que
@@ -1352,10 +1339,10 @@ a probabilidade de rejeitar H0 corretamente. Normalmente, esse valor é
 chamado de Nível de Confiança. Tomamos essa decisão porque (1 - <span
 class="math inline"><em>α</em></span>) é o parâmetro de entrada mais
 comum de calculadoras de tamanho de amostras de Testes A/B.</p>
-<section id="perguntas-frequentes-3" data-number="1.6.1">
-<h3 data-number="3.6.1"><span class="header-section-number">3.6.1</span>
-Perguntas Frequentes <a href="#perguntas-frequentes-3"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="3.6.1" id="perguntas-frequentes-3"><span
+class="header-section-number">3.6.1</span> Perguntas Frequentes <a
+href="#perguntas-frequentes-3" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p>Seguem algumas perguntas e esclarecimentos sobre testes A/B.</p>
 <p><strong>Posso testar mais de duas variações?</strong> Sim, a
 metodologia que explicamos adapta-se a mais de dois testes. Basta
@@ -1431,8 +1418,6 @@ milhões de dólares, por permitir a descoberta de ideias que foram
 avaliadas por milhares de experimentos controlados.</q> (<a
 href="https://doi.ieeecomputersociety.org/10.1109/MS.2017.86">link</a>)</p></li>
 </ul>
-</section>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Mike Cohn. User Stories Applied: For Agile Software Development.
@@ -1550,7 +1535,6 @@ seria o tamanho da amostra que deveria testar em cada uma das versões?
 Para responder, use uma calculadora de tamanho de amostras de testes
 A/B, como aquela que citamos na Seção 3.6.</p></li>
 </ol>
-</section>
 </div>
 </div>
 </div>

@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,10 +98,10 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="princípios-de-projeto" data-number="1">
-<h1 data-number="5"><span class="header-section-number">5</span>
-Princípios de Projeto <a href="#princípios-de-projeto"
-class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h1 data-number="5" id="princípios-de-projeto"><span
+class="header-section-number">5</span> Princípios de Projeto <a
+href="#princípios-de-projeto" class="anchor-link"
+aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>The most fundamental problem in computer science is problem
 decomposition: how to take a complex problem and divide it up into
@@ -114,10 +119,9 @@ Segregação de Interfaces, Inversão de Dependências, Prefira Composição a
 Herança, Demeter, Aberto/Fechado e Substituição de Liskov. Por fim,
 tratamos de métricas para avaliar a qualidade de projetos de software
 (Seção 5.7).</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="5.1"><span class="header-section-number">5.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.1" id="introdução"><span
+class="header-section-number">5.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> A afirmação de John Ousterhout que abre este capítulo é uma
 excelente definição para <strong>projeto de software</strong>. Apesar de
 não afirmar explicitamente, a citação assume que quando falamos de
@@ -153,10 +157,9 @@ essas partes devem ser abstratas. Em outras palavras, a implementação
 delas pode ser desafiadora e complexa, mas apenas para os
 desenvolvedores envolvidos em tal tarefa. Para os demais
 desenvolvedores, deve ser simples usar a abstração que foi criada.</p>
-<section id="exemplo" data-number="1.1.1">
-<h3 data-number="5.1.1"><span class="header-section-number">5.1.1</span>
-Exemplo <a href="#exemplo" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.1.1" id="exemplo"><span
+class="header-section-number">5.1.1</span> Exemplo <a href="#exemplo"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Para ilustrar essa introdução a projetos de software, vamos usar o
 exemplo de um compilador. Os requisitos no caso são claros: dado um
 programa em uma linguagem X devemos convertê-lo em um programa em uma
@@ -204,10 +207,9 @@ token do arquivo de entrada, como no seguinte código:</p>
 <p>Portanto, a complexidade envolvida na implementação de um analisador
 léxico está abstraída (ou, se preferir, encapsulada) na função
 <code>next_token()</code>, cujo uso é bem simples.</p>
-</section>
-<section id="o-que-vamos-estudar" data-number="1.1.2">
-<h3 data-number="5.1.2"><span class="header-section-number">5.1.2</span>
-O Que Vamos Estudar? <a href="#o-que-vamos-estudar" class="anchor-link"
+<h3 data-number="5.1.2" id="o-que-vamos-estudar"><span
+class="header-section-number">5.1.2</span> O Que Vamos Estudar? <a
+href="#o-que-vamos-estudar" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>É verdade que o projeto de sistemas de software depende de
@@ -232,12 +234,10 @@ valem para projetos que serão implementados em linguagens estruturadas
 (como C) ou em linguagens funcionais (como Haskell, Clojure ou Erlang).
 Mas não podemos garantir que oferecemos uma cobertura completa dos
 aspectos de projeto mais importantes em tais casos.</p>
-</section>
-</section>
-<section id="integridade-conceitual" data-number="1.2">
-<h2 data-number="5.2"><span class="header-section-number">5.2</span>
-Integridade Conceitual <a href="#integridade-conceitual"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.2" id="integridade-conceitual"><span
+class="header-section-number">5.2</span> Integridade Conceitual <a
+href="#integridade-conceitual" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> Integridade conceitual é uma propriedade de projeto proposta por
 Frederick Brooks — o mesmo da Lei de Brooks mencionada no Capítulo 1. O
 princípio foi enunciado em 1975, na primeira edição do livro <em>The
@@ -336,11 +336,10 @@ usuários confusos, pois já existia no sistema a possibilidade de
 comentar posts. Logo, a confusão acontecia devido a duas funcionalidades
 parecidas: comentários (em posts normais) e respostas (em posts cujos
 títulos terminavam com um ponto de interrogação).</p>
-</section>
-<section id="ocultamento-de-informação" data-number="1.3">
-<h2 data-number="5.3"><span class="header-section-number">5.3</span>
-Ocultamento de Informação <a href="#ocultamento-de-informação"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.3" id="ocultamento-de-informação"><span
+class="header-section-number">5.3</span> Ocultamento de Informação <a
+href="#ocultamento-de-informação" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> Essa propriedade, uma tradução da expressão <em>information
 hiding</em>, foi discutida pela primeira vez em 1972, por David Parnas,
 em um dos artigos mais importantes e influentes da área de Engenharia de
@@ -416,10 +415,9 @@ método seja alterada — para, por exemplo, retornar uma exceção caso o
 valor do parâmetro seja negativo. Essa alteração terá impacto em todo
 código cliente do método <code>sqrt</code>, que deverá ser alterado para
 tratar a nova exceção.</p>
-<section id="exemplo-1" data-number="1.3.1">
-<h3 data-number="5.3.1"><span class="header-section-number">5.3.1</span>
-Exemplo <a href="#exemplo-1" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.3.1" id="exemplo-1"><span
+class="header-section-number">5.3.1</span> Exemplo <a href="#exemplo-1"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha um sistema para controle de estacionamentos. Suponha ainda
 que, em uma primeira versão, a classe principal desse sistema seja a
 seguinte:</p>
@@ -514,10 +512,9 @@ em usuários externos. Sem nenhuma exceção à regra.</p></li>
 <li><p>Quem não seguir essas recomendações está demitido.</p></li>
 <li><p>Obrigado; tenham um excelente dia!</p></li>
 </ol>
-</section>
-<section id="getters-e-setters" data-number="1.3.2">
-<h3 data-number="5.3.2"><span class="header-section-number">5.3.2</span>
-Getters e Setters <a href="#getters-e-setters" class="anchor-link"
+<h3 data-number="5.3.2" id="getters-e-setters"><span
+class="header-section-number">5.3.2</span> Getters e Setters <a
+href="#getters-e-setters" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Métodos <code>get</code> e <code>set</code> — muitas vezes chamados
@@ -578,12 +575,9 @@ seus clientes.</p></li>
 <p>Além disso, getters e setters são requeridos por algumas bibliotecas,
 tais como bibliotecas de depuração, serialização e mocks (iremos estudar
 mais sobre mocks no capítulo de Testes).</p>
-</section>
-</section>
-<section id="coesão" data-number="1.4">
-<h2 data-number="5.4"><span class="header-section-number">5.4</span>
-Coesão <a href="#coesão" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.4" id="coesão"><span
+class="header-section-number">5.4</span> Coesão <a href="#coesão"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>A implementação de qualquer classe deve ser coesa, isto é, toda
 classe deve implementar uma única funcionalidade ou serviço.
@@ -611,10 +605,9 @@ qualquer funcionalidade, requisito ou responsabilidade da classe.
 Portanto, as seguintes recomendações são equivalentes: (1) uma classe
 deve ter uma única responsabilidade; (2) uma classe deve implementar um
 único interesse; (3) uma classe deve ser coesa.</p>
-<section id="exemplos" data-number="1.4.1">
-<h3 data-number="5.4.1"><span class="header-section-number">5.4.1</span>
-Exemplos <a href="#exemplos" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.4.1" id="exemplos"><span
+class="header-section-number">5.4.1</span> Exemplos <a href="#exemplos"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p><strong>Exemplo 1:</strong> A discussão anterior foi voltada para
 coesão de classes. No entanto, o conceito se adapta também a métodos ou
 funções. Por exemplo, suponha uma função como a seguinte:</p>
@@ -657,12 +650,9 @@ Portanto, ela não deveria assumir responsabilidades relacionadas com o
 gerenciamento dos funcionários do estacionamento. Para isso, poderia ser
 criada uma segunda classe, chamada, por exemplo,
 <code>Funcionario</code>.</p>
-</section>
-</section>
-<section id="acoplamento" data-number="1.5">
-<h2 data-number="5.5"><span class="header-section-number">5.5</span>
-Acoplamento <a href="#acoplamento" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.5" id="acoplamento"><span
+class="header-section-number">5.5</span> Acoplamento <a
+href="#acoplamento" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Acoplamento é a força (<em>strength</em>) da conexão entre duas
 classes. Apesar de parecer simples, o conceito possui algumas nuances,
@@ -720,10 +710,9 @@ acoplamento de uma classe com outras classes, pois é natural que uma
 classe precise de outras classes, principalmente daquelas que
 implementam serviços básicos, como estruturas de dados, entrada/saída,
 etc.</p>
-<section id="exemplos-1" data-number="1.5.1">
-<h3 data-number="5.5.1"><span class="header-section-number">5.5.1</span>
-Exemplos <a href="#exemplos-1" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.5.1" id="exemplos-1"><span
+class="header-section-number">5.5.1</span> Exemplos <a
+href="#exemplos-1" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p><strong>Exemplo 1:</strong> Suponha a classe
 <code>Estacionamento</code>, usada na Seção 5.3, a qual possui um
 atributo que é uma <code>Hashtable</code>. Logo, dizemos que
@@ -882,13 +871,10 @@ de forma direta ou indireta — ficaram fora do ar por algumas horas, até
 que a biblioteca fosse inserida de novo no npm. Em resumo, os sistemas
 foram afetados por um problema em uma biblioteca trivial; e eles não
 tinham a menor ideia de que estavam acoplados a ela.</p>
-</section>
-</section>
-<section id="solid-e-outros-princípios-de-projeto" data-number="1.6">
-<h2 data-number="5.6"><span class="header-section-number">5.6</span>
-SOLID e Outros Princípios de Projeto <a
-href="#solid-e-outros-princípios-de-projeto" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.6" id="solid-e-outros-princípios-de-projeto"><span
+class="header-section-number">5.6</span> SOLID e Outros Princípios de
+Projeto <a href="#solid-e-outros-princípios-de-projeto"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Princípios de projeto são recomendações mais concretas que
 desenvolvedores de software devem seguir para atender às propriedades de
@@ -962,10 +948,9 @@ apenas entregar um projeto capaz de resolver um problema, mas também que
 facilite manutenções futuras. Lembre-se que a principal regra sobre
 requisitos de software é que eles mudam com frequência. O mesmo acontece
 com tecnologias de implementação, como bibliotecas e frameworks.</p>
-<section id="princípio-da-responsabilidade-única" data-number="1.6.1">
-<h3 data-number="5.6.1"><span class="header-section-number">5.6.1</span>
-Princípio da Responsabilidade Única <a
-href="#princípio-da-responsabilidade-única" class="anchor-link"
+<h3 data-number="5.6.1" id="princípio-da-responsabilidade-única"><span
+class="header-section-number">5.6.1</span> Princípio da Responsabilidade
+Única <a href="#princípio-da-responsabilidade-única" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Esse princípio é uma aplicação direta da ideia de coesão. Ele propõe
@@ -1023,12 +1008,10 @@ class Disciplina {
   }
 
 }</code></pre>
-</section>
-<section id="princípio-da-segregação-de-interfaces" data-number="1.6.2">
-<h3 data-number="5.6.2"><span class="header-section-number">5.6.2</span>
-Princípio da Segregação de Interfaces <a
-href="#princípio-da-segregação-de-interfaces" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.6.2" id="princípio-da-segregação-de-interfaces"><span
+class="header-section-number">5.6.2</span> Princípio da Segregação de
+Interfaces <a href="#princípio-da-segregação-de-interfaces"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Assim como o princípio anterior, esse princípio é uma aplicação da
 ideia de coesão. Melhor dizendo, ele é um caso particular de
@@ -1084,12 +1067,10 @@ interface FuncionarioPublico extends Funcionario {
   int getSIAPE();
   ...
 }</code></pre>
-</section>
-<section id="princípio-de-inversão-de-dependências" data-number="1.6.3">
-<h3 data-number="5.6.3"><span class="header-section-number">5.6.3</span>
-Princípio de Inversão de Dependências <a
-href="#princípio-de-inversão-de-dependências" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.6.3" id="princípio-de-inversão-de-dependências"><span
+class="header-section-number">5.6.3</span> Princípio de Inversão de
+Dependências <a href="#princípio-de-inversão-de-dependências"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Esse princípio recomenda que uma classe cliente deve estabelecer
 dependências prioritariamente com abstrações e não com implementações
@@ -1165,24 +1146,24 @@ Sempre que possível, em código cliente desse pacote, declare variáveis,
 parâmetros ou atributos usando o tipo <code>List</code>, pois assim você
 estará criando código compatível com as diversas implementações
 concretas dessa interface.</p>
-</section>
-<section id="prefira-composição-a-herança" data-number="1.6.4">
-<h3 data-number="5.6.4"><span class="header-section-number">5.6.4</span>
-Prefira Composição a Herança <a href="#prefira-composição-a-herança"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.6.4" id="prefira-composição-a-herança"><span
+class="header-section-number">5.6.4</span> Prefira Composição a Herança
+<a href="#prefira-composição-a-herança" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Antes de explicar o princípio, vamos esclarecer que existem dois
 tipos de herança:</p>
 <ul>
-<li><p><strong>Herança de classes</strong> (exemplo: <code>class A
-extends B</code>), que é aquela que envolve reúso de código. Não apenas
-neste capítulo, mas em todo o livro, quando mencionarmos apenas o termo
-herança estaremos nos referindo a herança de classes.</p></li>
-<li><p><strong>Herança de interfaces</strong> (exemplo: <code>interface
-I extends J</code>), que não envolve reúso de código. Essa forma de
-herança é mais simples e não suscita preocupações. Quando precisarmos de
-nos referir a ela, iremos usar o nome completo: herança de
-interfaces.</p></li>
+<li><p><strong>Herança de classes</strong> (exemplo:
+<code>class A extends B</code>), que é aquela que envolve reúso de
+código. Não apenas neste capítulo, mas em todo o livro, quando
+mencionarmos apenas o termo herança estaremos nos referindo a herança de
+classes.</p></li>
+<li><p><strong>Herança de interfaces</strong> (exemplo:
+<code>interface I extends J</code>), que não envolve reúso de código.
+Essa forma de herança é mais simples e não suscita preocupações. Quando
+precisarmos de nos referir a ela, iremos usar o nome completo: herança
+de interfaces.</p></li>
 </ul>
 <p>Voltando ao princípio, quando orientação a objetos se tornou comum,
 na década de 80, houve um incentivo ao uso de herança. Acreditava-se que
@@ -1271,10 +1252,9 @@ que vamos estudar no próximo capítulo.</p></li>
 programação mais recentes — como Go e Rust — não incluem suporte a
 herança.</p></li>
 </ul>
-</section>
-<section id="princípio-de-demeter" data-number="1.6.5">
-<h3 data-number="5.6.5"><span class="header-section-number">5.6.5</span>
-Princípio de Demeter <a href="#princípio-de-demeter" class="anchor-link"
+<h3 data-number="5.6.5" id="princípio-de-demeter"><span
+class="header-section-number">5.6.5</span> Princípio de Demeter <a
+href="#princípio-de-demeter" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>O nome desse princípio faz referência a um grupo de pesquisa da
@@ -1369,11 +1349,10 @@ carteira. Essa informação está encapsulada na classe
 <code>pagar</code>, que deve ser chamado pelo jornaleiro. Finalmente,
 uma exceção sinaliza quando o <code>Cliente</code> não possui recursos
 suficientes para pagar pelo jornal.</p>
-</section>
-<section id="princípio-abertofechado" data-number="1.6.6">
-<h3 data-number="5.6.6"><span class="header-section-number">5.6.6</span>
-Princípio Aberto/Fechado <a href="#princípio-abertofechado"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.6.6" id="princípio-abertofechado"><span
+class="header-section-number">5.6.6</span> Princípio Aberto/Fechado <a
+href="#princípio-abertofechado" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Esse princípio, originalmente proposto por Bertrand Meyer ainda na
 década de 80 (<a
@@ -1453,12 +1432,10 @@ esse algoritmo, tendo que se contentar com a implementação default que é
 oferecida. Logo, sob o critério de customização do algoritmo de
 ordenação, o método <code>sort</code> não atende ao Princípio
 Aberto/Fechado.</p>
-</section>
-<section id="princípio-de-substituição-de-liskov" data-number="1.6.7">
-<h3 data-number="5.6.7"><span class="header-section-number">5.6.7</span>
-Princípio de Substituição de Liskov <a
-href="#princípio-de-substituição-de-liskov" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.6.7" id="princípio-de-substituição-de-liskov"><span
+class="header-section-number">5.6.7</span> Princípio de Substituição de
+Liskov <a href="#princípio-de-substituição-de-liskov"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Conforme já discutimos ao falar do princípio <q>Prefira Composição a
 Herança</q>, herança não é mais um conceito popular como foi na década
@@ -1566,12 +1543,10 @@ manter a classe <code>Cliente</code> a situação fica bastante confusa.
 Em uma execução, a chamada <code>soma(1,2)</code> retorna 3 (isto é,
 1+2); na execução seguinte, a mesma chamada irá retornar 12 (isto é,
 <q>1</q>+ <q>2</q> = <q>12</q> ou 12, como inteiro).</p>
-</section>
-</section>
-<section id="métricas-de-código-fonte" data-number="1.7">
-<h2 data-number="5.7"><span class="header-section-number">5.7</span>
-Métricas de Código Fonte <a href="#métricas-de-código-fonte"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="5.7" id="métricas-de-código-fonte"><span
+class="header-section-number">5.7</span> Métricas de Código Fonte <a
+href="#métricas-de-código-fonte" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Ao longo dos anos, diversas métricas foram propostas para quantificar
 propriedades de um projeto de software. Normalmente, essas métricas
@@ -1597,10 +1572,9 @@ complexidade. Iremos detalhar os procedimentos de cálculo dessas
 métricas e dar alguns exemplos. Existem ainda ferramentas que calculam
 essas métricas de forma automática. Algumas delas funcionam como plugins
 de IDEs conhecidas.</p>
-<section id="tamanho" data-number="1.7.1">
-<h3 data-number="5.7.1"><span class="header-section-number">5.7.1</span>
-Tamanho <a href="#tamanho" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.7.1" id="tamanho"><span
+class="header-section-number">5.7.1</span> Tamanho <a href="#tamanho"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> A métrica de código fonte mais popular é <strong>linhas de
 código</strong> (LOC, <em>lines of code</em>). Ela pode ser usada para
 medir o tamanho de uma função, classe, pacote ou de um sistema inteiro.
@@ -1627,11 +1601,9 @@ exemplo, incentivar os desenvolvedores a gerar código duplicado apenas
 para cumprir a meta estabelecida.</p>
 <p>Outras metas de tamanho de um sistema incluem: número de métodos,
 número de atributos, número de classes e número de pacotes.</p>
-</section>
-<section id="coesão-1" data-number="1.7.2">
-<h3 data-number="5.7.2"><span class="header-section-number">5.7.2</span>
-Coesão <a href="#coesão-1" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.7.2" id="coesão-1"><span
+class="header-section-number">5.7.2</span> Coesão <a href="#coesão-1"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Uma das métricas mais conhecidas para se calcular coesão é chamada de
 <strong>LCOM</strong> (<em>Lack of Cohesion Between Methods</em>). Na
@@ -1709,11 +1681,9 @@ href="https://doi.org/10.1145/118014.117970">link</a>). As versões
 alternativas ganham os nomes de LCOM2, LCOM3, etc. Por isso, ao reportar
 valores de LCOM, é importante deixar claro qual versão da métrica está
 sendo adotada.</p>
-</section>
-<section id="acoplamento-1" data-number="1.7.3">
-<h3 data-number="5.7.3"><span class="header-section-number">5.7.3</span>
-Acoplamento <a href="#acoplamento-1" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.7.3" id="acoplamento-1"><span
+class="header-section-number">5.7.3</span> Acoplamento <a
+href="#acoplamento-1" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p><strong>CBO</strong> (<em>Coupling Between Objects</em>) é uma
 métrica para medir <strong>acoplamento estrutural</strong> entre duas
@@ -1759,11 +1729,9 @@ do tipo B</p></li>
 depende. Por exemplo, tanto faz se a dependência é para uma classe da
 biblioteca de Java (por exemplo, String) ou uma classe mais instável da
 própria aplicação que está sendo desenvolvida.</p>
-</section>
-<section id="complexidade" data-number="1.7.4">
-<h3 data-number="5.7.4"><span class="header-section-number">5.7.4</span>
-Complexidade <a href="#complexidade" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="5.7.4" id="complexidade"><span
+class="header-section-number">5.7.4</span> Complexidade <a
+href="#complexidade" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p><strong>Complexidade Ciclomática</strong> (CC) é uma métrica proposta
 por Thomas McCabe em 1976 para medir a complexidade do código de uma
@@ -1793,8 +1761,6 @@ Consequentemente, o menor valor de CC é 1, que ocorre em um código que
 não possui nenhum comando de decisão. No artigo em que definiu a
 métrica, McCabe sugere que um <q>limite superior razoável, mas não
 mágico</q> para CC é 10.</p>
-</section>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Robert C. Martin. Clean Architecture: A Craftsman's Guide to Software
@@ -1988,7 +1954,6 @@ solução OO sobre a versão monolítica. Para isso, tente extrapolar o
 tamanho do sistema. Suponha que ele será implementado por
 desenvolvedores diferentes e que cada um ficará responsável por uma
 parte do projeto.</p>
-</section>
 </div>
 </div>
 </div>

@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,9 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="modelos" data-number="1">
-<h1 data-number="4"><span class="header-section-number">4</span> Modelos
-<a href="#modelos" class="anchor-link" aria-hidden="true">🔗</a></h1>
+<h1 data-number="4" id="modelos"><span
+class="header-section-number">4</span> Modelos <a href="#modelos"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>All models are wrong, but some models are useful. So the question
 you need to ask is not <q>Is the model true?</q> (it never is) but <q>Is
@@ -112,9 +117,9 @@ seguintes, apresentamos quatro diagramas UML com um maior nível de
 detalhes: Diagramas de Classes (Seção 4.3), Diagramas de Pacotes (Seção
 4.4), Diagramas de Sequência (Seção 4.5) e Diagramas de Atividades
 (Seção 4.6).</p>
-<section id="modelos-de-software" data-number="1.1">
-<h2 data-number="4.1"><span class="header-section-number">4.1</span>
-Modelos de Software <a href="#modelos-de-software" class="anchor-link"
+<h2 data-number="4.1" id="modelos-de-software"><span
+class="header-section-number">4.1</span> Modelos de Software <a
+href="#modelos-de-software" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Como vimos no capítulo anterior, requisitos documentam <q>o que</q>
@@ -205,10 +210,9 @@ uso de formalismos e especificações matemáticas em Engenharia de
 Software não avançou como em outras Engenharias. Por isso, eles são
 pouco usados atualmente, com exceção talvez de alguns sistemas de missão
 crítica.</p>
-</section>
-<section id="uml" data-number="1.2">
-<h2 data-number="4.2"><span class="header-section-number">4.2</span> UML
-<a href="#uml" class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="4.2" id="uml"><span
+class="header-section-number">4.2</span> UML <a href="#uml"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>UML é uma notação gráfica para modelagem de software. A linguagem
 define um conjunto de diagramas para documentar e ajudar no design de
@@ -411,10 +415,9 @@ se ter uma ideia do nível de detalhe alcançado por UML, a especificação
 da versão mais recente da linguagem — versão 2.5.1, no momento da
 escrita deste capítulo — possui 796 páginas. Ela pode ser encontrada no
 site da OMG (<a href="https://www.omg.org/">link</a>).</p>
-</section>
-<section id="diagrama-de-classes" data-number="1.3">
-<h2 data-number="4.3"><span class="header-section-number">4.3</span>
-Diagrama de Classes <a href="#diagrama-de-classes" class="anchor-link"
+<h2 data-number="4.3" id="diagrama-de-classes"><span
+class="header-section-number">4.3</span> Diagrama de Classes <a
+href="#diagrama-de-classes" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de classes são os diagramas mais usados da UML. Eles
@@ -451,10 +454,9 @@ usadas para representar três tipos de relacionamentos:
 <strong>associação</strong>, <strong>herança</strong> e
 <strong>dependência</strong>. Vamos tratar de cada um deles nos próximos
 parágrafos.</p>
-<section id="associações" data-number="1.3.1">
-<h3 data-number="4.3.1"><span class="header-section-number">4.3.1</span>
-Associações <a href="#associações" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="4.3.1" id="associações"><span
+class="header-section-number">4.3.1</span> Associações <a
+href="#associações" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Quando uma classe A possui um atributo <code>b</code> de um tipo B,
 dizemos que existe uma associação de A para B, a qual é representada por
@@ -613,11 +615,9 @@ sem sentido; portanto, eu recomendo que você ignore esse conceito em
 seus diagramas</q> (<a
 href="https://dl.acm.org/citation.cfm?id=861282">link</a>, página
 68).</p>
-</section>
-<section id="herança" data-number="1.3.2">
-<h3 data-number="4.3.2"><span class="header-section-number">4.3.2</span>
-Herança <a href="#herança" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="4.3.2" id="herança"><span
+class="header-section-number">4.3.2</span> Herança <a href="#herança"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Em diagramas de classes, relações de herança são representadas por
 meio de setas com a extremidade não preenchida. Essas setas são usadas
@@ -629,11 +629,9 @@ também podem adicionar novos membros. Por exemplo, apenas
 <code>PessoaFisica</code> tem <code>cpf</code> e apenas
 <code>PessoaJuridica</code> tem <code>cnpj</code>.</p>
 <p><img src="figs/cap4/class10.svg" style="width:95.0%" /></p>
-</section>
-<section id="dependências" data-number="1.3.3">
-<h3 data-number="4.3.3"><span class="header-section-number">4.3.3</span>
-Dependências <a href="#dependências" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="4.3.3" id="dependências"><span
+class="header-section-number">4.3.3</span> Dependências <a
+href="#dependências" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Existe uma dependência de uma classe A para uma classe B,
 representada por uma seta com uma linha tracejada de A para B, quando a
@@ -673,11 +671,9 @@ de dependência que <code>ShapeFactory</code> estabelece com a classe
 entanto, não se costuma representar todas elas em diagramas de classes,
 mas apenas as mais importantes e que estão diretamente relacionadas com
 a funcionalidade ou propriedade do sistema que pretendemos esboçar.</p>
-</section>
-</section>
-<section id="diagrama-de-pacotes" data-number="1.4">
-<h2 data-number="4.4"><span class="header-section-number">4.4</span>
-Diagrama de Pacotes <a href="#diagrama-de-pacotes" class="anchor-link"
+<h2 data-number="4.4" id="diagrama-de-pacotes"><span
+class="header-section-number">4.4</span> Diagrama de Pacotes <a
+href="#diagrama-de-pacotes" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de pacotes são recomendados quando se pretende oferecer um
@@ -718,11 +714,10 @@ representadas por meio de setas contínuas. Apenas as demais dependências
 são representadas por meio de setas tracejadas.</p></li>
 </ul>
 <p><img src="figs/cap4/package1.svg" style="width:60.0%" /></p>
-</section>
-<section id="diagrama-de-sequência" data-number="1.5">
-<h2 data-number="4.5"><span class="header-section-number">4.5</span>
-Diagrama de Sequência <a href="#diagrama-de-sequência"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="4.5" id="diagrama-de-sequência"><span
+class="header-section-number">4.5</span> Diagrama de Sequência <a
+href="#diagrama-de-sequência" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de sequência são diagramas dinâmicos, também chamados de
 comportamentais. Por isso, em vez de classes, eles modelam objetos de um
@@ -794,11 +789,10 @@ seguir. Observe como a chamada de <code>g()</code> feita por
 ilustra os métodos chamados quando o cliente de uma caixa eletrônico
 solicita um depósito de certo valor em sua conta.</p>
 <p><img src="figs/cap4/sequence3.svg" style="width:75.0%" /></p>
-</section>
-<section id="diagrama-de-atividades" data-number="1.6">
-<h2 data-number="4.6"><span class="header-section-number">4.6</span>
-Diagrama de Atividades <a href="#diagrama-de-atividades"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="4.6" id="diagrama-de-atividades"><span
+class="header-section-number">4.6</span> Diagrama de Atividades <a
+href="#diagrama-de-atividades" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Diagramas de atividades são usados para representar, em alto nível,
 um processo ou fluxo de execução. Os principais elementos desses
@@ -879,7 +873,6 @@ de processos de negócio do que aquela oferecida por diagramas de
 atividades. Um dos objetivos é propiciar que analistas de negócio possam
 ler, interpretar e validar diagramas BPMN.</p></li>
 </ul>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Martin Fowler. UML Distilled: A Brief Guide to the Standard Object
@@ -986,7 +979,6 @@ class A {
 diagrama de forma a refletir corretamente a intenção do projetista.</p>
 <p><img src="figs/cap4/activity-exercicio.svg"
 style="width:50.0%" /></p>
-</section>
 </div>
 </div>
 </div>
