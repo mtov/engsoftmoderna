@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,10 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="refactoring" data-number="1">
-<h1 data-number="9"><span class="header-section-number">9</span>
-Refactoring <a href="#refactoring" class="anchor-link"
-aria-hidden="true">🔗</a></h1>
+<h1 data-number="9" id="refactoring"><span
+class="header-section-number">9</span> Refactoring <a
+href="#refactoring" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>I'm not a great programmer; I'm just a good programmer with great
 habits.</em> – Kent Beck</p>
@@ -113,10 +117,9 @@ automatizada de refactorings. Para finalizar, a Seção 9.5 descreve uma
 lista de code smells, isto é, indicadores de que uma determinada
 estrutura de código não está <q>cheirando bem</q> e que, portanto,
 poderia ser objeto de uma refatoração.</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="9.1"><span class="header-section-number">9.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="9.1" id="introdução"><span
+class="header-section-number">9.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>No capítulo anterior, vimos que software precisa ser testado, como
 qualquer produto de engenharia. A mesma recomendação vale para
@@ -219,20 +222,19 @@ desempenho, para introduzir concorrência, para melhorar a usabilidade de
 sua interface, etc. No entanto, neste livro, vamos usar o termo restrito
 à sua definição original, isto é, apenas para denotar modificações de
 código que melhoram a sua manutenibilidade.</p>
-</section>
-<section id="catálogo-de-refactorings" data-number="1.2">
-<h2 data-number="9.2"><span class="header-section-number">9.2</span>
-Catálogo de Refactorings <a href="#catálogo-de-refactorings"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="9.2" id="catálogo-de-refactorings"><span
+class="header-section-number">9.2</span> Catálogo de Refactorings <a
+href="#catálogo-de-refactorings" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p>Nesta seção, vamos apresentar os principais refactorings do catálogo
 de Fowler. Assim como adotado nesse catálogo, vamos comentar sobre os
 seguintes tópicos na apresentação de cada refactoring: nome, motivação,
 mecânica de aplicação e exemplos de uso. Além disso, vamos usar alguns
 exemplos de refactorings reais, realizados por desenvolvedores de
 sistemas de código aberto disponíveis no GitHub.</p>
-<section id="extração-de-método" data-number="1.2.1">
-<h3 data-number="9.2.1"><span class="header-section-number">9.2.1</span>
-Extração de Método <a href="#extração-de-método" class="anchor-link"
+<h3 data-number="9.2.1" id="extração-de-método"><span
+class="header-section-number">9.2.1</span> Extração de Método <a
+href="#extração-de-método" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Extração de Método é um dos principais refactorings, tendo como
@@ -333,12 +335,10 @@ dados no qual as tabelas serão criadas.</p>
   createDefaultMCCTable(database);
   createEventLogTable(database);
  }</code></pre>
-</section>
-<section id="motivações-para-extração-de-métodos" data-number="1.2.2">
-<h3 data-number="9.2.2"><span class="header-section-number">9.2.2</span>
-Motivações para Extração de Métodos <a
-href="#motivações-para-extração-de-métodos" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.2.2" id="motivações-para-extração-de-métodos"><span
+class="header-section-number">9.2.2</span> Motivações para Extração de
+Métodos <a href="#motivações-para-extração-de-métodos"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Em 2016, junto com Danilo Silva e com o Prof. Nikolaos Tsantalis (da
 Universidade Concordia, em Montreal, no Canadá), realizamos um estudo
 com desenvolvedores de sistemas GitHub para descobrir suas reais
@@ -460,10 +460,9 @@ exemplo anterior é uma Extração de Método. Primeiro, todo o código de
 pequenos ajustes foram realizados no código extraído. Especificamente,
 foi adicionado um comando <code>if</code>. Tais ajustes são comuns e não
 descaracterizam a transformação como uma Extração de Método.</p>
-</section>
-<section id="inline-de-método" data-number="1.2.3">
-<h3 data-number="9.2.3"><span class="header-section-number">9.2.3</span>
-Inline de Método <a href="#inline-de-método" class="anchor-link"
+<h3 data-number="9.2.3" id="inline-de-método"><span
+class="header-section-number">9.2.3</span> Inline de Método <a
+href="#inline-de-método" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Esse refactoring funciona no sentido contrário a uma extração de
@@ -503,11 +502,10 @@ chamada. O código após o refactoring é mostrado a seguir.</p>
   ...
 }
 </code></pre>
-</section>
-<section id="movimentação-de-método" data-number="1.2.4">
-<h3 data-number="9.2.4"><span class="header-section-number">9.2.4</span>
-Movimentação de Método <a href="#movimentação-de-método"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.2.4" id="movimentação-de-método"><span
+class="header-section-number">9.2.4</span> Movimentação de Método <a
+href="#movimentação-de-método" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Não é raro encontrar um método implementado na classe errada. Ou
 seja, apesar de implementado em uma classe A, um método <code>f</code>
@@ -690,10 +688,9 @@ class B {
   }
 
 }</code></pre>
-</section>
-<section id="extração-de-classes" data-number="1.2.5">
-<h3 data-number="9.2.5"><span class="header-section-number">9.2.5</span>
-Extração de Classes <a href="#extração-de-classes" class="anchor-link"
+<h3 data-number="9.2.5" id="extração-de-classes"><span
+class="header-section-number">9.2.5</span> Extração de Classes <a
+href="#extração-de-classes" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Esse refactoring é recomendado quando um sistema possui uma classe A
@@ -735,11 +732,9 @@ podemos extrair uma interface <code>List</code>, com os métodos comuns a
 elas. Assim, os clientes de tais classes podem começar a praticar o
 princípio de projeto <q>Prefira Interfaces a Classes Concretas</q>, que
 estudamos no Capítulo 5.</p>
-</section>
-<section id="renomeação" data-number="1.2.6">
-<h3 data-number="9.2.6"><span class="header-section-number">9.2.6</span>
-Renomeação <a href="#renomeação" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.2.6" id="renomeação"><span
+class="header-section-number">9.2.6</span> Renomeação <a
+href="#renomeação" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Existe uma frase provocativa, atribuída a Phil Karlton, que afirma
 que <q>existem apenas duas coisas difíceis em Ciência da Computação:
@@ -792,10 +787,9 @@ a usar o novo nome. Na verdade, refactorings — mesmo os mais simples,
 como uma renomeação — devem ser realizado em pequenos passos, ou em
 <strong>baby steps</strong>, para ter certeza que eles não vão
 prejudicar o correto funcionamento de um sistema.</p>
-</section>
-<section id="outros-refactorings" data-number="1.2.7">
-<h3 data-number="9.2.7"><span class="header-section-number">9.2.7</span>
-Outros Refactorings <a href="#outros-refactorings" class="anchor-link"
+<h3 data-number="9.2.7" id="outros-refactorings"><span
+class="header-section-number">9.2.7</span> Outros Refactorings <a
+href="#outros-refactorings" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>Os refactorings apresentados anteriormente têm maior potencial para
 melhorar o projeto de um sistema, pois eles envolvem operações com um
@@ -875,12 +869,10 @@ Remoção de Código Morto é um refactoring raro, mas em grandes sistemas,
 desenvolvidos ao longo de anos por programadores diferentes, costuma
 existir uma quantidade considerável de código que não é mais
 chamado.</p>
-</section>
-</section>
-<section id="prática-de-refactoring" data-number="1.3">
-<h2 data-number="9.3"><span class="header-section-number">9.3</span>
-Prática de Refactoring <a href="#prática-de-refactoring"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="9.3" id="prática-de-refactoring"><span
+class="header-section-number">9.3</span> Prática de Refactoring <a
+href="#prática-de-refactoring" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p>Tendo apresentado diversos refactorings na seção anterior, vamos
 agora discutir como a prática de refactoring pode ser adotada em
 projetos reais de desenvolvimento de software.</p>
@@ -950,11 +942,10 @@ pendentes, é melhor planejá-los para um período de tempo específico. No
 entanto, como afirma Fowler <q>tais episódios de refactorings planejados
 devem ser raros. A maior parte do esforço de refactoring deve ser do
 tipo normal e oportunista.</q></p>
-</section>
-<section id="refactorings-automatizados" data-number="1.4">
-<h2 data-number="9.4"><span class="header-section-number">9.4</span>
-Refactorings Automatizados <a href="#refactorings-automatizados"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="9.4" id="refactorings-automatizados"><span
+class="header-section-number">9.4</span> Refactorings Automatizados <a
+href="#refactorings-automatizados" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Diversas IDEs oferecem suporte para automatizar a realização de
 refactorings, da seguinte forma: o usuário seleciona o trecho de código
@@ -990,12 +981,11 @@ de compilação ou então mudar o comportamento do programa. No exemplo
 anterior, se o usuário pedir para renomear <code>m1</code> para
 <code>m2</code>, a IDE vai informar que esse refactoring não pode ser
 realizado, pois a classe já tem um método chamado <code>m2</code>.</p>
-<section id="verificação-de-pré-condições-de-refactorings"
-data-number="1.4.1">
-<h3 data-number="9.4.1"><span class="header-section-number">9.4.1</span>
-Verificação de Pré-condições de Refactorings <a
-href="#verificação-de-pré-condições-de-refactorings" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.4.1"
+id="verificação-de-pré-condições-de-refactorings"><span
+class="header-section-number">9.4.1</span> Verificação de Pré-condições
+de Refactorings <a href="#verificação-de-pré-condições-de-refactorings"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>A verificação das pré-condições de refactorings não é uma tarefa
 trivial. Para ilustrar a complexidade dessa tarefa, vamos reusar um
 pequeno programa em Java, proposto por Friedrich Steimann e Andreas
@@ -1048,12 +1038,9 @@ pacote.</p>
 realizado com o apoio de uma IDE, caberia a ela detectar tal fato e
 avisar ao usuário que o refactoring não poderá ser realizado, pois ele
 muda o comportamento do programa.</p>
-</section>
-</section>
-<section id="code-smells" data-number="1.5">
-<h2 data-number="9.5"><span class="header-section-number">9.5</span>
-Code Smells <a href="#code-smells" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="9.5" id="code-smells"><span
+class="header-section-number">9.5</span> Code Smells <a
+href="#code-smells" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Code Smells — também conhecidos como <strong>bad smells</strong> —
 são indicadores de código de baixa qualidade, isto é, código difícil de
@@ -1065,9 +1052,9 @@ refatorado. Essa decisão depende de outros fatores, como a importância
 do trecho de código e a frequência com que ele precisará ser mantido.
 Feita essa ressalva, vamos apresentar, no restante desta seção, alguns
 dos principais code smells.</p>
-<section id="código-duplicado" data-number="1.5.1">
-<h3 data-number="9.5.1"><span class="header-section-number">9.5.1</span>
-Código Duplicado <a href="#código-duplicado" class="anchor-link"
+<h3 data-number="9.5.1" id="código-duplicado"><span
+class="header-section-number">9.5.1</span> Código Duplicado <a
+href="#código-duplicado" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Duplicação de código é o principal code smell e aquele com o maior
@@ -1159,10 +1146,9 @@ eles tinham mais preocupação, a resposta mais comum foi Código
 Duplicado, com quase 20 pontos na escala usada pelos pesquisadores para
 ordenar as respostas. Em segundo lugar, com metade dos pontos, ficou
 Métodos Longos, que é o code smell que estudaremos a seguir.</p>
-</section>
-<section id="métodos-longos" data-number="1.5.2">
-<h3 data-number="9.5.2"><span class="header-section-number">9.5.2</span>
-Métodos Longos <a href="#métodos-longos" class="anchor-link"
+<h3 data-number="9.5.2" id="métodos-longos"><span
+class="header-section-number">9.5.2</span> Métodos Longos <a
+href="#métodos-longos" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Em qualquer sistema, métodos devem ser pequenos, com nomes
@@ -1176,10 +1162,9 @@ para classificar métodos longos, pois isso depende da linguagem de
 programação, da relevância do método, do domínio do sistema, etc. Porém,
 modernamente, existe uma tendência em escrever métodos pequenos, com
 menos de 20 linhas de código, por exemplo.</p>
-</section>
-<section id="classes-grandes" data-number="1.5.3">
-<h3 data-number="9.5.3"><span class="header-section-number">9.5.3</span>
-Classes Grandes <a href="#classes-grandes" class="anchor-link"
+<h3 data-number="9.5.3" id="classes-grandes"><span
+class="header-section-number">9.5.3</span> Classes Grandes <a
+href="#classes-grandes" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Assim como métodos, classes não devem assumir muitas
@@ -1199,11 +1184,9 @@ sistema, ela é chamada de <strong>God Class</strong> — ou então de
 <strong>Blob</strong>. Classes com nomes muito genéricos, como
 <code>Manager</code>, <code>System</code> ou <code>Subsystem</code>
 podem representar instâncias desse smell.</p>
-</section>
-<section id="feature-envy" data-number="1.5.4">
-<h3 data-number="9.5.4"><span class="header-section-number">9.5.4</span>
-Feature Envy <a href="#feature-envy" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.5.4" id="feature-envy"><span
+class="header-section-number">9.5.4</span> Feature Envy <a
+href="#feature-envy" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Esse smell designa um método que parece <q>invejar</q> os dados e
 métodos de uma outra classe. Dizendo de outro modo, ele acessa mais
@@ -1228,11 +1211,10 @@ Logo, deve-se analisar a conveniência de mover esse método para
   }
   ...
 }</code></pre>
-</section>
-<section id="métodos-com-muitos-parâmetros" data-number="1.5.5">
-<h3 data-number="9.5.5"><span class="header-section-number">9.5.5</span>
-Métodos com Muitos Parâmetros <a href="#métodos-com-muitos-parâmetros"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.5.5" id="métodos-com-muitos-parâmetros"><span
+class="header-section-number">9.5.5</span> Métodos com Muitos Parâmetros
+<a href="#métodos-com-muitos-parâmetros" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Além de pequenos, métodos, na medida do possível, devem ter poucos
 parâmetros. Isto é, <strong>Métodos com Muitos Parâmetros</strong> é um
@@ -1262,10 +1244,9 @@ faixa de datas. O código refatorado ficaria assim:</p>
 void f(DateRange range} {
   ...
 }</code></pre>
-</section>
-<section id="variáveis-globais" data-number="1.5.6">
-<h3 data-number="9.5.6"><span class="header-section-number">9.5.6</span>
-Variáveis Globais <a href="#variáveis-globais" class="anchor-link"
+<h3 data-number="9.5.6" id="variáveis-globais"><span
+class="header-section-number">9.5.6</span> Variáveis Globais <a
+href="#variáveis-globais" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Conforme estudamos no capítulo sobre princípios de projeto, variáveis
@@ -1290,11 +1271,10 @@ basta que essa linha altere o valor de <code>g</code>. Antes de
 concluir, em linguagens como Java, atributos estáticos de classes
 funcionam exatamente como variáveis globais. Logo, eles também
 representam um code smell.</p>
-</section>
-<section id="obsessão-por-tipos-primitivos" data-number="1.5.7">
-<h3 data-number="9.5.7"><span class="header-section-number">9.5.7</span>
-Obsessão por Tipos Primitivos <a href="#obsessão-por-tipos-primitivos"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="9.5.7" id="obsessão-por-tipos-primitivos"><span
+class="header-section-number">9.5.7</span> Obsessão por Tipos Primitivos
+<a href="#obsessão-por-tipos-primitivos" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Este code smell ocorre quando tipos primitivos (isto é,
 <code>int</code>, <code>float</code>, <code>String</code>, etc.) são
@@ -1313,10 +1293,9 @@ criar classes que encapsulem valores primitivos e que ofereçam operações
 para manipulá-los. No próximo code smell, iremos complementar essa
 recomendação e sugerir que tais objetos, sempre que possível, devem ser
 também imutáveis.</p>
-</section>
-<section id="objetos-mutáveis" data-number="1.5.8">
-<h3 data-number="9.5.8"><span class="header-section-number">9.5.8</span>
-Objetos Mutáveis <a href="#objetos-mutáveis" class="anchor-link"
+<h3 data-number="9.5.8" id="objetos-mutáveis"><span
+class="header-section-number">9.5.8</span> Objetos Mutáveis <a
+href="#objetos-mutáveis" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Na segunda versão de seu livro, Fowler considera que <strong>Objetos
@@ -1390,10 +1369,9 @@ implementação de uma classe <code>Data</code> imutável:</p>
   // outros métodos
 }
 </code></pre>
-</section>
-<section id="classes-de-dados" data-number="1.5.9">
-<h3 data-number="9.5.9"><span class="header-section-number">9.5.9</span>
-Classes de Dados <a href="#classes-de-dados" class="anchor-link"
+<h3 data-number="9.5.9" id="classes-de-dados"><span
+class="header-section-number">9.5.9</span> Classes de Dados <a
+href="#classes-de-dados" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Tais classes possuem apenas atributos e nenhum método. No máximo,
@@ -1403,9 +1381,7 @@ um erro de projeto. Em vez disso, o importante é analisar o código e
 verificar a possibilidade de mover comportamento para essas classes.
 Isto é, criar métodos nessas classes, para realizar operações que já
 estão sendo realizadas, mas de forma espalhada em outras classes.</p>
-</section>
-<section id="comentários" data-number="1.5.10">
-<h3 data-number="9.5.10"><span
+<h3 data-number="9.5.10" id="comentários"><span
 class="header-section-number">9.5.10</span> Comentários <a
 href="#comentários" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
@@ -1475,8 +1451,6 @@ que vamos estender o módulo com apenas F1, ainda não há vantagem. Porém,
 suponha que nos próximos meses vamos ter que implementar mais
 funcionalidades em M, tais como F2, F3, F4, etc. Nesse caso, a
 eliminação do principal do débito técnico pode compensar.</p>
-</section>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Martin Fowler. Refactoring: Improving the Design of Existing Code,
@@ -1622,7 +1596,6 @@ discutido na Seção 9.4.1, isto é, o exemplo com classes <code>A</code> e
 <code>B</code> e pacotes <code>P1</code> e <code>P2</code>. Se realizar
 a Movimentação de Classe discutida nesse exemplo via IDE, ocorrerá algum
 erro? Se sim, descreva o erro detectado pela IDE.</p>
-</section>
 </div>
 </div>
 </div>

@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,10 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="devops" data-number="1">
-<h1 data-number="10"><span class="header-section-number">10</span>
-DevOps <a href="#devops" class="anchor-link"
-aria-hidden="true">🔗</a></h1>
+<h1 data-number="10" id="devops"><span
+class="header-section-number">10</span> DevOps <a href="#devops"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>Imagine a world where product owners, development, QA, IT
 Operations, and Infosec work together, not only to help each other, but
@@ -111,10 +115,9 @@ sistema vai entrar em produção. Além de discutir o conceito, tratamos de
 três práticas importantes quando se adota DevOps. São elas: Controle de
 Versões (Seção 10.2), Integração Contínua (Seção 10.3) e Deployment
 Contínuo (Seção 10.4).</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="10.1"><span class="header-section-number">10.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="10.1" id="introdução"><span
+class="header-section-number">10.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Até agora, neste livro, estudamos um conjunto de práticas para
 desenvolvimento de software com qualidade e agilidade. Por meio de
@@ -280,10 +283,9 @@ que os times de desenvolvimento e de operações trabalham em silos
 independentes e troquem informações apenas na véspera de uma
 implantação.</p></li>
 </ul>
-</section>
-<section id="controle-de-versões" data-number="1.2">
-<h2 data-number="10.2"><span class="header-section-number">10.2</span>
-Controle de Versões <a href="#controle-de-versões" class="anchor-link"
+<h2 data-number="10.2" id="controle-de-versões"><span
+class="header-section-number">10.2</span> Controle de Versões <a
+href="#controle-de-versões" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Como mencionamos algumas vezes neste livro, software é desenvolvido
@@ -400,8 +402,7 @@ BitBucket.</p>
 <p>No Apêndice A, apresentamos e ilustramos os principais comandos do
 sistema Git. São explicados também os conceitos de forks e pull
 requests, os quais são específicos do GitHub.</p>
-<section id="multirepos-vs-monorepos" data-number="1.2.1">
-<h3 data-number="10.2.1"><span
+<h3 data-number="10.2.1" id="multirepos-vs-monorepos"><span
 class="header-section-number">10.2.1</span> Multirepos vs Monorepos <a
 href="#multirepos-vs-monorepos" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -466,11 +467,9 @@ obrigados a implementar internamente um plug-in para a IDE Eclipse, que
 facilita o trabalho com uma base de código muito grande, como a que eles
 possuem na empresa (<a
 href="https://doi.org/10.1145/2854146">link</a>).</p>
-</section>
-</section>
-<section id="integração-contínua" data-number="1.3">
-<h2 data-number="10.3"><span class="header-section-number">10.3</span>
-Integração Contínua <a href="#integração-contínua" class="anchor-link"
+<h2 data-number="10.3" id="integração-contínua"><span
+class="header-section-number">10.3</span> Integração Contínua <a
+href="#integração-contínua" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Para explicar o conceito de Integração Contínua (CI), iniciamos com
@@ -479,8 +478,7 @@ propriamente dito. Feito isso, discutimos outras práticas que uma
 organização deve adotar junto com CI. Terminamos com uma breve discussão
 sobre cenários que podem desmotivar o emprego de CI em uma
 organização.</p>
-<section id="motivação" data-number="1.3.1">
-<h3 data-number="10.3.1"><span
+<h3 data-number="10.3.1" id="motivação"><span
 class="header-section-number">10.3.1</span> Motivação <a
 href="#motivação" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Antes de definir o que é integração contínua, vamos descrever o
@@ -554,9 +552,7 @@ dedicado a ela por semanas. Por isso, esse desenvolvedor pode sentir-se
 confortável para adotar padrões diferentes do restante do time,
 incluindo padrões para leiaute do código, para organização de janelas e
 telas, para acesso a bancos de dados, etc.</p>
-</section>
-<section id="o-que-é-integração-contínua" data-number="1.3.2">
-<h3 data-number="10.3.2"><span
+<h3 data-number="10.3.2" id="o-que-é-integração-contínua"><span
 class="header-section-number">10.3.2</span> O que é Integração Contínua?
 <a href="#o-que-é-integração-contínua" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -592,9 +588,7 @@ integração por dia por desenvolvedor (<a
 href="https://martinfowler.com/articles/continuousIntegration.html">link</a>),
 o que parece ser um limite mínimo para um time argumentar que está
 usando CI.</p>
-</section>
-<section id="boas-práticas-para-uso-de-ci" data-number="1.3.3">
-<h3 data-number="10.3.3"><span
+<h3 data-number="10.3.3" id="boas-práticas-para-uso-de-ci"><span
 class="header-section-number">10.3.3</span> Boas Práticas para Uso de CI
 <a href="#boas-práticas-para-uso-de-ci" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -734,9 +728,7 @@ recomenda-se usar programação em pares com CI. Porém, esse uso também
 não é obrigatório. Por exemplo, o código pode ser revisado após o commit
 ser realizado no master. No entanto, nesse caso, como o código já foi
 integrado, os custos de aplicar a revisão podem ser maiores.</p>
-</section>
-<section id="quando-não-usar-ci" data-number="1.3.4">
-<h3 data-number="10.3.4"><span
+<h3 data-number="10.3.4" id="quando-não-usar-ci"><span
 class="header-section-number">10.3.4</span> Quando não usar CI? <a
 href="#quando-não-usar-ci" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -760,11 +752,9 @@ das vezes, os desenvolvedores desses projetos são voluntários e não têm
 disponibilidade para trabalhar diariamente no seu código. Nesses casos,
 um modelo baseado em Pull Requests e Forks, conforme usado pelo GitHub,
 é mais adequado.</p>
-</section>
-</section>
-<section id="deployment-contínuo" data-number="1.4">
-<h2 data-number="10.4"><span class="header-section-number">10.4</span>
-Deployment Contínuo <a href="#deployment-contínuo" class="anchor-link"
+<h2 data-number="10.4" id="deployment-contínuo"><span
+class="header-section-number">10.4</span> Deployment Contínuo <a
+href="#deployment-contínuo" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p></p>
 <p>Com integração contínua, código novo é frequentemente integrado no
@@ -833,8 +823,7 @@ desenvolvedores têm que desenvolver a habilidade de quebrar qualquer
 tarefa de programação (por exemplo, uma nova funcionalidade, mesmo que
 complexa) em partes pequenas, que possam ser implementadas, testadas,
 integradas e entregues rapidamente.</p>
-<section id="entrega-contínua-continuous-delivery" data-number="1.4.1">
-<h3 data-number="10.4.1"><span
+<h3 data-number="10.4.1" id="entrega-contínua-continuous-delivery"><span
 class="header-section-number">10.4.1</span> Entrega Contínua (Continuous
 Delivery) <a href="#entrega-contínua-continuous-delivery"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -883,9 +872,7 @@ semana (<a href="https://doi.org/10.1145/2950290.2994157">link</a>). Ou
 seja, as empresas estão lançando releases de forma mais rápida, para
 agradar os usuários, receber feedback, manter os desenvolvedores
 motivados e continuarem competitivas no mercado.</p>
-</section>
-<section id="feature-flags" data-number="1.4.2">
-<h3 data-number="10.4.2"><span
+<h3 data-number="10.4.2" id="feature-flags"><span
 class="header-section-number">10.4.2</span> Feature Flags <a
 href="#feature-flags" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
@@ -1001,8 +988,6 @@ e uma versão paga. Os clientes da versão paga têm acesso a mais
 funcionalidades, cujo código é delimitado por feature flags. Nesse caso
 específico, os flags são chamadas de <strong>flags de negócio</strong>
 (<strong>business flags</strong>).</p>
-</section>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Gene Kim, Jez Humble, John Willis, Patrick Debois. Manual de DevOps.
@@ -1082,7 +1067,6 @@ para viabilizar essa atualização na interface do GMail? Qual nome o
 artigo dá para essa tecnologia?</p></li>
 <li><p>E qual nome usamos no capítulo para referenciá-la?</p></li>
 </ol>
-</section>
 </div>
 </div>
 </div>

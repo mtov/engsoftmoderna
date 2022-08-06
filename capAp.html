@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -392,11 +397,11 @@ forma:</p>
 desenvolvedor que não conseguiu dar um <code>push</code> e teve que dar
 um <code>pull</code>. <code>HEAD</code> designa que o código foi
 modificado no último commit realizado por Bob.</p></li>
-<li><p>Entre <code>=======</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;
-f25bce8 ...</code> temos o código modificado por Alice, isto é, pela
-desenvolvedora que executou com sucesso seu <code>push</code>.
-<code>f225bce8...</code> é o ID do commit no qual Alice modificou essa
-parte do código.</p></li>
+<li><p>Entre <code>=======</code> e
+<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; f25bce8 ...</code> temos o código
+modificado por Alice, isto é, pela desenvolvedora que executou com
+sucesso seu <code>push</code>. <code>f225bce8...</code> é o ID do commit
+no qual Alice modificou essa parte do código.</p></li>
 </ul>
 <p>Cabe então a Bob resolver o conflito, o que é sempre uma tarefa
 manual. Para isso, ele tem que escolher o trecho de código que vai
@@ -462,9 +467,9 @@ pensar que o comando <code>git branch [nome]</code> equivale ao comando
 <code>mkdir [nome]</code>, com a diferença que o git não apenas cria um
 branch mas copia para ele todos os arquivos do branch pai. Por outro
 lado, diretórios são criados vazios pelo sistema operacional. Já o
-comando <code>git checkout [nome]</code> lembra o comando <code>cd
-[nome]</code>. E <code>git status</code> lembra um misto de comandos
-<code>ls</code> e <code>pwd</code>. Também para reforçar essa
+comando <code>git checkout [nome]</code> lembra o comando
+<code>cd [nome]</code>. E <code>git status</code> lembra um misto de
+comandos <code>ls</code> e <code>pwd</code>. Também para reforçar essa
 comparação, existem certos comandos que permitem adicionar ao prompt do
 sistema operacional não apenas o nome do diretório corrente mas também o
 nome do branch corrente. Assim, o prompt pode ser exibido como
@@ -578,8 +583,8 @@ futuro, vamos querer sincronizar os dois repositórios por meio de um
 <code>pull</code> (a letra do parâmetro vem da palavra
 <em>upstream</em>). Essa sintaxe vale apenas para o primeiro
 <code>push</code> de um branch remoto. Nos comandos seguintes, pode-se
-omitir o <code>-u</code>, isto é, usar apenas <code>git  push origin
-g-novo</code>.</p>
+omitir o <code>-u</code>, isto é, usar apenas
+<code>git  push origin g-novo</code>.</p>
 <p>No repositório remoto, será criado um branch <code>g-novo</code>.
 Para trabalhar nesse branch, Alice deve primeiro criá-lo na sua máquina
 local, mas associado ao branch remoto, por meio dos seguintes comandos,
@@ -640,8 +645,7 @@ time.</p>
 presente apêndice do livro Engenharia de Software Moderna. Para isso,
 ele primeiro clonou o repositório e criou um branch, chamado
 <code>livro-esm</code>, por meio dos seguintes comandos:</p>
-<p><code>git clone
-https://github.com/aserg-ufmg/awesome-git.git</code><br />
+<p><code>git clone https://github.com/aserg-ufmg/awesome-git.git</code><br />
 <code>git checkout livro-esm</code></p>
 <p>Em seguida, Bob editou o arquivo README.md, adicionando a URL do
 apêndice. Por fim, ele realizou um <code>add</code>, um
