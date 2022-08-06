@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -166,6 +171,8 @@ class="anchor-link" aria-hidden="true">🔗</a></h5>
 um teste de fumaça (smoke test)?</a></li>
 <li><a href="#o-que-%C3%A9-um-teste-de-snapshot">O que é um teste de
 snapshot?</a></li>
+<li><a href="#o-que-s%C3%A3o-testes-explorat%C3%B3rios">O que são testes
+exploratórios?</a></li>
 </ol>
 <p>Segue a lista de perguntas e suas respostas.</p>
 <hr />
@@ -502,6 +509,28 @@ apresentação de um componente. Esses warnings devem ser analisados para
 comprovar se, de fato, eles representam regressões ou não. Se não
 representarem, os defensores de testes de snapshot argumentam que o
 processo de resetar os snapshots é simples e rápido.</p>
+<h3 class="unnumbered" id="o-que-são-testes-exploratórios">16. O que são
+testes exploratórios? <a href="#o-que-são-testes-exploratórios"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Basicamente, existem dois tipos de testes manuais:</p>
+<ul>
+<li><p>Testes baseados em Casos de Teste. Um caso de teste documenta o
+que deve ser testado, incluindo as entradas que devem ser fornecidas no
+teste, como fornecer essas entradas (por exemplo, por meio de quais
+telas e campos) e, por fim, eles especificam os resultados esperados.
+Logo, supondo a existência de casos de teste precisos e completos, mesmo
+um testador com pouca experiência deve ser capaz de testar um sistema de
+forma manual.</p></li>
+<li><p>Testes Exploratórios. Neste caso, um testador executa e testa um
+sistema com um maior grau de liberdade, ou seja, não existe um roteiro
+pré-definido formado por um conjunto detalhado de casos de teste. Em vez
+disso, o testador usa de sua experiência e habilidade para navegar pelo
+sistema e verificar o seu comportamento. Testes exploratórios podem ser
+usados para ajudar na escrita de casos de teste (assumindo que iremos
+ter testes manuais) e também para subsidiar a escrita de testes
+automatizados (principalmente, testes de integração e testes
+end-to-end).</p></li>
+</ul>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 </div>

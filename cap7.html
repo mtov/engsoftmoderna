@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,10 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="arquitetura" data-number="1">
-<h1 data-number="7"><span class="header-section-number">7</span>
-Arquitetura <a href="#arquitetura" class="anchor-link"
-aria-hidden="true">🔗</a></h1>
+<h1 data-number="7" id="arquitetura"><span
+class="header-section-number">7</span> Arquitetura <a
+href="#arquitetura" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>Architecture is about the important stuff. Whatever that is.</em>
 – Ralph Johnson</p>
@@ -113,10 +117,9 @@ escalabilidade e desacoplamento em sistemas distribuídos: Filas de
 Mensagens (Seção 7.5) e Publish/Subscribe (Seção 7.6). Terminamos o
 capítulo discutindo outros padrões arquiteturais (Seção 7.7) e dando um
 exemplo de anti-padrão arquitetural (Seção 7.8).</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="7.1"><span class="header-section-number">7.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.1" id="introdução"><span
+class="header-section-number">7.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> Existe mais de uma definição para arquitetura de software. Uma das
 mais comuns considera que arquitetura preocupa-se com <q>projeto em mais
 alto nível</q>. Ou seja, o foco deixa de ser a organização e interfaces
@@ -180,10 +183,10 @@ de separar apresentação e modelo em sistemas de interfaces gráficas. Por
 outro lado, Pipes &amp; Filtros constituem um estilo arquitetural. Neste
 capítulo, porém, não vamos fazer essa distinção. Em vez disso,
 chamaremos todos eles de padrões arquiteturais.</p>
-<section id="debate-tanenbaum-torvalds" data-number="1.1.1">
-<h3 data-number="7.1.1"><span class="header-section-number">7.1.1</span>
-Debate Tanenbaum-Torvalds <a href="#debate-tanenbaum-torvalds"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.1.1" id="debate-tanenbaum-torvalds"><span
+class="header-section-number">7.1.1</span> Debate Tanenbaum-Torvalds <a
+href="#debate-tanenbaum-torvalds" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> No início de 1992, um debate acalorado sobre a arquitetura de
 sistemas operacionais tomou conta de um grupo de discussão da Internet.
 Apesar de vários desenvolvedores e pesquisadores terem participado da
@@ -232,12 +235,10 @@ objeto de diversas matérias em sites de tecnologia na época. Ele revela
 que arquitetura não são apenas decisões importantes e difíceis de
 reverter. Muitas vezes, são também decisões que levam anos para que seus
 efeitos negativos fiquem mais claros e comecem a causar problemas.</p>
-</section>
-</section>
-<section id="arquitetura-em-camadas" data-number="1.2">
-<h2 data-number="7.2"><span class="header-section-number">7.2</span>
-Arquitetura em Camadas <a href="#arquitetura-em-camadas"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.2" id="arquitetura-em-camadas"><span
+class="header-section-number">7.2</span> Arquitetura em Camadas <a
+href="#arquitetura-em-camadas" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p></p>
 <p><strong>Arquitetura em camadas</strong> é um dos padrões
 arquiteturais mais usados, desde que os primeiros sistemas de software
@@ -275,10 +276,10 @@ gerenciamento de entrada/saída (camada 3) e programas dos usuários
 (camada 4). Dijkstra conclui o artigo destacando que os benefícios de
 uma estrutura hierárquica são mais importantes ainda em projetos de
 maior porte.</p>
-<section id="arquitetura-em-três-camadas" data-number="1.2.1">
-<h3 data-number="7.2.1"><span class="header-section-number">7.2.1</span>
-Arquitetura em Três Camadas <a href="#arquitetura-em-três-camadas"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.2.1" id="arquitetura-em-três-camadas"><span
+class="header-section-number">7.2.1</span> Arquitetura em Três Camadas
+<a href="#arquitetura-em-três-camadas" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p></p>
 <p> Esse tipo de arquitetura é comum na construção de sistemas de
 informação corporativos. Até o final da década de 80, aplicações
@@ -338,11 +339,9 @@ de aplicação são unidas em uma única camada, que executa no cliente. A
 camada restante continua sendo o banco de dados. A desvantagem de
 arquiteturas em duas camadas é que todo o processamento ocorre nos
 clientes, que, portanto, devem ter um maior poder de computação.</p>
-</section>
-</section>
-<section id="arquitetura-mvc" data-number="1.3">
-<h2 data-number="7.3"><span class="header-section-number">7.3</span>
-Arquitetura MVC <a href="#arquitetura-mvc" class="anchor-link"
+<h2 data-number="7.3" id="arquitetura-mvc"><span
+class="header-section-number">7.3</span> Arquitetura MVC <a
+href="#arquitetura-mvc" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>O padrão arquitetural MVC (Model-View-Controller) foi proposto no
@@ -479,11 +478,10 @@ de responder à pergunta é afirmar que existem duas vertentes de sistemas
 MVC: a vertente clássica, que surgiu com Smalltalk-80 e a vertente Web,
 que se tornou comum na década de 90 e início dos anos 2000. Essa última
 vertente lembra bastante sistemas três camadas.</p>
-<section id="exemplo-single-page-applications" data-number="1.3.1">
-<h3 data-number="7.3.1"><span class="header-section-number">7.3.1</span>
-Exemplo: Single Page Applications <a
-href="#exemplo-single-page-applications" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.3.1" id="exemplo-single-page-applications"><span
+class="header-section-number">7.3.1</span> Exemplo: Single Page
+Applications <a href="#exemplo-single-page-applications"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> </p>
 <p>Em uma aplicação Web tradicional, com formulários, menus e botões,
 toda vez que o usuário gera um evento — por exemplo, clica em um botão
@@ -562,11 +560,9 @@ temperatura é automaticamente atualizado na interface. O processo
 contrário também é verdadeiro, apesar de não ser exercitado em nosso
 exemplo, que é bem simples. Esse recurso de frameworks para construção
 de SPAs é chamado de <strong>two-way data binding</strong>.</p>
-</section>
-</section>
-<section id="microsserviços" data-number="1.4">
-<h2 data-number="7.4"><span class="header-section-number">7.4</span>
-Microsserviços <a href="#microsserviços" class="anchor-link"
+<h2 data-number="7.4" id="microsserviços"><span
+class="header-section-number">7.4</span> Microsserviços <a
+href="#microsserviços" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Como discutimos no Capítulo 2, métodos ágeis preconizam iterações
@@ -722,10 +718,10 @@ usados, principalmente, por grandes empresas de Internet que possuem
 centenas de times de desenvolvimento distribuídos em diversos países.
 Além de descentralizados, esses times são autônomos e sempre
 incentivados a produzir inovações.</p>
-<section id="gerenciamento-de-dados" data-number="1.4.1">
-<h3 data-number="7.4.1"><span class="header-section-number">7.4.1</span>
-Gerenciamento de Dados <a href="#gerenciamento-de-dados"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.4.1" id="gerenciamento-de-dados"><span
+class="header-section-number">7.4.1</span> Gerenciamento de Dados <a
+href="#gerenciamento-de-dados" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Pelo menos na sua forma pura, microsserviços devem ser autônomos
 também do ponto de vista de dados. Isto é, eles devem gerenciar os dados
@@ -747,12 +743,10 @@ dados. Logo, essa autoridade central tem que conciliar os interesses,
 muitas vezes conflitantes, das diversas equipes de desenvolvimento. Por
 isso, suas decisões podem se tornar lentas e burocráticas, atrasando a
 evolução do sistema.</p>
-</section>
-<section id="quando-não-usar-microsserviços" data-number="1.4.2">
-<h3 data-number="7.4.2"><span class="header-section-number">7.4.2</span>
-Quando Não Usar Microsserviços? <a
-href="#quando-não-usar-microsserviços" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.4.2" id="quando-não-usar-microsserviços"><span
+class="header-section-number">7.4.2</span> Quando Não Usar
+Microsserviços? <a href="#quando-não-usar-microsserviços"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p></p>
 <p>Até esse momento, apresentamos as vantagens e benefícios de
 microsserviços. Mas é importante dizer que essa arquitetura é mais
@@ -795,13 +789,10 @@ commit</strong>, podem ser necessários para garantir uma semântica de
 transações em operações que escrevem em mais de um banco de
 dados.</p></li>
 </ul>
-</section>
-</section>
-<section id="arquiteturas-orientadas-a-mensagens" data-number="1.5">
-<h2 data-number="7.5"><span class="header-section-number">7.5</span>
-Arquiteturas Orientadas a Mensagens <a
-href="#arquiteturas-orientadas-a-mensagens" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.5" id="arquiteturas-orientadas-a-mensagens"><span
+class="header-section-number">7.5</span> Arquiteturas Orientadas a
+Mensagens <a href="#arquiteturas-orientadas-a-mensagens"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Neste tipo de arquitetura, a comunicação entre clientes e servidores
 é mediada por um terceiro serviço que têm a única função de prover uma
@@ -868,11 +859,10 @@ alt="Fila de Mensagens com vários consumidores" />
 <figcaption aria-hidden="true">Fila de Mensagens com vários
 consumidores</figcaption>
 </figure>
-<section id="exemplo-empresa-de-telecomunicações" data-number="1.5.1">
-<h3 data-number="7.5.1"><span class="header-section-number">7.5.1</span>
-Exemplo: Empresa de Telecomunicações <a
-href="#exemplo-empresa-de-telecomunicações" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.5.1" id="exemplo-empresa-de-telecomunicações"><span
+class="header-section-number">7.5.1</span> Exemplo: Empresa de
+Telecomunicações <a href="#exemplo-empresa-de-telecomunicações"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha que uma empresa de telecomunicações tenha dois sistemas
 principais: vendas e engenharia. O sistema de vendas é responsável pela
 interação com os clientes da empresa, incluindo vendas de pacotes de
@@ -899,12 +889,10 @@ vendas geraria ao final de cada dia um arquivo com todos os pacotes
 vendidos. Esse arquivo seria processado durante a noite pelo sistema de
 engenharia. Portanto, um cliente poderia ter que esperar quase 24 horas
 para ter seu serviço ativado.</p>
-</section>
-</section>
-<section id="arquiteturas-publishsubscribe" data-number="1.6">
-<h2 data-number="7.6"><span class="header-section-number">7.6</span>
-Arquiteturas Publish/Subscribe <a href="#arquiteturas-publishsubscribe"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.6" id="arquiteturas-publishsubscribe"><span
+class="header-section-number">7.6</span> Arquiteturas Publish/Subscribe
+<a href="#arquiteturas-publishsubscribe" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> Em arquiteturas publish/subscribe, as mensagens são chamadas de
 <strong>eventos</strong>. Os componentes da arquitetura são chamados de
 <strong>publicadores</strong> (<em>publishers</em>) e
@@ -957,10 +945,10 @@ distribuídos. Ou seja, produtores e assinantes são processos distintos
 e, na maioria das vezes, distribuídos. Por outro lado, o padrão de
 projeto Observador não foi proposto no contexto de arquiteturas
 distribuídas.</p>
-<section id="exemplo-companhia-aérea" data-number="1.6.1">
-<h3 data-number="7.6.1"><span class="header-section-number">7.6.1</span>
-Exemplo: Companhia Aérea <a href="#exemplo-companhia-aérea"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="7.6.1" id="exemplo-companhia-aérea"><span
+class="header-section-number">7.6.1</span> Exemplo: Companhia Aérea <a
+href="#exemplo-companhia-aérea" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p>Vamos agora usar os sistemas de uma companhia aérea para ilustrar uma
 arquitetura publish/subscribe. Suponha que essa companhia tem um sistema
 de vendas, que é usado pelos clientes para comprar passagens aéreas.
@@ -990,12 +978,10 @@ eventos caso os sistemas assinantes estejam fora do ar; (4) notificação
 assíncrona, pois os assinantes são notificados assim que um evento
 ocorre; isto é, eles não precisam consultar periodicamente o sistema
 publish/subscribe sobre a ocorrência dos eventos de interesse.</p>
-</section>
-</section>
-<section id="outros-padrões-arquiteturais" data-number="1.7">
-<h2 data-number="7.7"><span class="header-section-number">7.7</span>
-Outros Padrões Arquiteturais <a href="#outros-padrões-arquiteturais"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.7" id="outros-padrões-arquiteturais"><span
+class="header-section-number">7.7</span> Outros Padrões Arquiteturais <a
+href="#outros-padrões-arquiteturais" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Pipes e Filtros</strong> é um tipo de arquitetura orientada a
 dados, na qual os programas — chamados de <strong>filtros</strong> — têm
@@ -1035,11 +1021,10 @@ como provedores de recursos. Por exemplo, BitTorrent é um protocolo
 peer-to-peer para compartilhamento de arquivos na Internet. Aplicações
 que implementam o protocolo podem tanto prover arquivos como realizar o
 download de arquivos disponíveis na rede.</p>
-</section>
-<section id="anti-padrões-arquiteturais" data-number="1.8">
-<h2 data-number="7.8"><span class="header-section-number">7.8</span>
-Anti-padrões Arquiteturais <a href="#anti-padrões-arquiteturais"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="7.8" id="anti-padrões-arquiteturais"><span
+class="header-section-number">7.8</span> Anti-padrões Arquiteturais <a
+href="#anti-padrões-arquiteturais" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Vamos encerrar este capítulo com a descrição de um
 <strong>anti-padrão</strong> arquitetural, isto é, uma organização de
@@ -1086,7 +1071,6 @@ o banco tentou contornar o problema adotando práticas como documentação
 detalhada, revisões de código e programação em pares. Porém, todas se
 mostraram incapazes de atenuar os problemas causados pela arquitetura em
 forma de <q>big ball of mud</q>.</p>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>James Lewis, Martin Fowler. Microservices: a definition of this new
@@ -1137,7 +1121,6 @@ mediação que permite um desacoplamento entre clientes e servidores.</p>
 problema sendo resolvido, nem sempre ele é adequado. Fatores como
 contexto e o sistema de forças que afeta a solução fazem também parte do
 processo de avaliação e da escolha de padrões adequados.</p>
-</section>
 </div>
 </div>
 </div>

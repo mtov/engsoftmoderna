@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -93,9 +98,9 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<section id="padrões-de-projeto" data-number="1">
-<h1 data-number="6"><span class="header-section-number">6</span> Padrões
-de Projeto <a href="#padrões-de-projeto" class="anchor-link"
+<h1 data-number="6" id="padrões-de-projeto"><span
+class="header-section-number">6</span> Padrões de Projeto <a
+href="#padrões-de-projeto" class="anchor-link"
 aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>A design that doesn’t take change into account risks major
@@ -113,10 +118,9 @@ por meio de padrões. Na Seção 6.12, discutimos brevemente mais alguns
 padrões. Terminamos o capítulo alertando que padrões de projeto não são
 uma bala de prata, ou seja, discutimos situações nas quais o uso de
 padrões de projeto não é recomendado (Seção 6.13).</p>
-<section id="introdução" data-number="1.1">
-<h2 data-number="6.1"><span class="header-section-number">6.1</span>
-Introdução <a href="#introdução" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.1" id="introdução"><span
+class="header-section-number">6.1</span> Introdução <a
+href="#introdução" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p>Padrões de projeto são inspirados em uma ideia proposta por
 Cristopher Alexander, um arquiteto — de construções civis e não de
@@ -223,11 +227,9 @@ objetos. São eles: <strong>Strategy (6.8)</strong>, <strong>Observer
 traduzir os nomes dos padrões Fábrica Abstrata, Método Fábrica,
 Adaptador, Fachada, Decorador, Observador e Iterador. Os demais serão
 referenciados usando o nome original.</p>
-</section>
-<section id="fábrica" data-number="1.2">
-<h2 data-number="6.2"><span class="header-section-number">6.2</span>
-Fábrica <a href="#fábrica" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.2" id="fábrica"><span
+class="header-section-number">6.2</span> Fábrica <a href="#fábrica"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha um sistema distribuído baseado em
 TCP/IP. Nesse sistema, três funções <code>f</code>, <code>g</code> e
@@ -325,11 +327,9 @@ void f(ProtocolFactory pf) {
 concretos para criação de canais e portas de comunicação. Podemos, por
 exemplo, ter duas subclasses: <code>TCPProtocolFactory</code> e
 <code>UDPProtocolFactory</code>.</p>
-</section>
-<section id="singleton" data-number="1.3">
-<h2 data-number="6.3"><span class="header-section-number">6.3</span>
-Singleton <a href="#singleton" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.3" id="singleton"><span
+class="header-section-number">6.3</span> Singleton <a href="#singleton"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha uma classe <code>Logger</code>,
 usada para registrar as operações realizadas em um sistema. Um uso dessa
@@ -445,11 +445,9 @@ pois ele é um atributo de uma outra classe.</p>
 <p><strong>Código Fonte</strong>: O código do exemplo de Singleton usado
 nesta seção está disponível neste <a
 href="https://gist.github.com/mtov/704348e216e85918d7375a6b3d40dcdb">link</a>.</p>
-</section>
-<section id="proxy" data-number="1.4">
-<h2 data-number="6.4"><span class="header-section-number">6.4</span>
-Proxy <a href="#proxy" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.4" id="proxy"><span
+class="header-section-number">6.4</span> Proxy <a href="#proxy"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha uma classe
 <code>BookSearch</code>, cujo principal método pesquisa por um livro,
@@ -561,11 +559,9 @@ executar certas operações do objeto base. Com isso, a classe do objeto
 base pode se concentrar na implementação de requisitos
 funcionais.</p></li>
 </ul>
-</section>
-<section id="adaptador" data-number="1.5">
-<h2 data-number="6.5"><span class="header-section-number">6.5</span>
-Adaptador <a href="#adaptador" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.5" id="adaptador"><span
+class="header-section-number">6.5</span> Adaptador <a href="#adaptador"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha um sistema que tenha que controlar
 projetores multimídia. Para isso ele deve instanciar objetos de classes
@@ -652,11 +648,9 @@ alt="Padrão de projeto Adaptador" />
 <p>Se quisermos manipular projetores LG, vamos ter que implementar uma
 segunda classe adaptadora. No entanto, seu código será parecido com
 <code>AdaptadorProjetorSamsung</code>.</p>
-</section>
-<section id="fachada" data-number="1.6">
-<h2 data-number="6.6"><span class="header-section-number">6.6</span>
-Fachada <a href="#fachada" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.6" id="fachada"><span
+class="header-section-number">6.6</span> Fachada <a href="#fachada"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que implementamos um interpretador
 para uma linguagem X. Esse interpretador permite executar programas X a
@@ -704,11 +698,9 @@ de Java, poderão fazê-lo por meio de uma única linha de código:</p>
 <p>Antes de implementar a fachada, os clientes precisavam criar três
 objetos de tipos internos do interpretador e chamar dois métodos. Agora,
 basta criar um único objeto e chamar <code>eval</code>.</p>
-</section>
-<section id="decorador" data-number="1.7">
-<h2 data-number="6.7"><span class="header-section-number">6.7</span>
-Decorador <a href="#decorador" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.7" id="decorador"><span
+class="header-section-number">6.7</span> Decorador <a href="#decorador"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Vamos voltar ao sistema de comunicação
 remota usado para explicar o Padrão Fábrica. Suponha que as classes
@@ -738,19 +730,15 @@ relação de herança):</p>
 <ul>
 <li><p><code>TCPZipChannel extends TCPChannel</code></p></li>
 <li><p><code>TCPBufferedChannel extends TCPChannel</code></p></li>
-<li><p><code>TCPBufferedZipChannel extends TCPZipChannel extends
-TCPChannel</code></p></li>
+<li><p><code>TCPBufferedZipChannel extends TCPZipChannel extends TCPChannel</code></p></li>
 <li><p><code>TCPLogChannel extends TCPChannel</code></p></li>
-<li><p><code>TCPLogBufferedZipChannel extends TCPBufferedZipChannel
-extends</code></p>
+<li><p><code>TCPLogBufferedZipChannel extends TCPBufferedZipChannel extends</code></p>
 <p><code>TCPZipChannel extends TCPChannel</code></p></li>
 <li><p><code>UDPZipChannel extends UDPChannel</code></p></li>
 <li><p><code>UDPBufferedChannel extends UDPChannel</code></p></li>
-<li><p><code>UDPBufferedZipChannel extends UDPZipChannel extends
-UDPChannel</code></p></li>
+<li><p><code>UDPBufferedZipChannel extends UDPZipChannel extends UDPChannel</code></p></li>
 <li><p><code>UDPLogChannel extends UDPChannel</code></p></li>
-<li><p><code>UDPLogBufferedZipChannel extends UDPBufferedZipChannel
-extends</code></p>
+<li><p><code>UDPLogBufferedZipChannel extends UDPBufferedZipChannel extends</code></p>
 <p><code>UDPZipChannel extends UDPChannel</code></p></li>
 </ul>
 <p>Nessa solução, usamos herança para implementar subclasses para cada
@@ -867,11 +855,9 @@ transmitir a mensagem via TCP.</p></li>
 <p><strong>Código Fonte</strong>: O código do exemplo de Decorador usado
 nesta seção está disponível neste <a
 href="https://gist.github.com/mtov/c8d65378a2904af01c20c53922f5ae1d">link</a>.</p>
-</section>
-<section id="strategy" data-number="1.8">
-<h2 data-number="6.8"><span class="header-section-number">6.8</span>
-Strategy <a href="#strategy" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.8" id="strategy"><span
+class="header-section-number">6.8</span> Strategy <a href="#strategy"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um
 pacote de estruturas de dados, com a seguinte classe lista:</p>
@@ -946,11 +932,9 @@ class QuickSortStrategy extends SortStrategy {
 class ShellSortStrategy extends SortStrategy {
   void sort(MyList list) { ... }
 }</code></pre>
-</section>
-<section id="observador" data-number="1.9">
-<h2 data-number="6.9"><span class="header-section-number">6.9</span>
-Observador <a href="#observador" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.9" id="observador"><span
+class="header-section-number">6.9</span> Observador <a
+href="#observador" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos implementando um
 sistema para controlar uma estação meteorológica. Nesse sistema, temos
@@ -1067,10 +1051,9 @@ do nosso exemplo de Observador, incluindo o código das classes
 <code>Subject</code> e da interface <code>Observer</code>, acesse o
 seguinte <a
 href="https://gist.github.com/mtov/5fadb0e599cb84fd6bd124b2ff37c03c">link</a>.</p>
-</section>
-<section id="template-method" data-number="1.10">
-<h2 data-number="6.10"><span class="header-section-number">6.10</span>
-Template Method <a href="#template-method" class="anchor-link"
+<h2 data-number="6.10" id="template-method"><span
+class="header-section-number">6.10</span> Template Method <a
+href="#template-method" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha que estamos desenvolvendo uma
@@ -1140,11 +1123,9 @@ de serem usadas devem ser customizadas por seus clientes. Apesar de não
 ser o único instrumento disponível para esse fim, métodos template
 constituem uma alternativa interessante para que um cliente implemente o
 código faltante em um framework.</p>
-</section>
-<section id="visitor" data-number="1.11">
-<h2 data-number="6.11"><span class="header-section-number">6.11</span>
-Visitor <a href="#visitor" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.11" id="visitor"><span
+class="header-section-number">6.11</span> Visitor <a href="#visitor"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Contexto</strong>: Suponha o sistema de estacionamentos que
 usamos no Capítulo 5. Suponha que nesse sistema existe uma classe
@@ -1274,11 +1255,10 @@ os visitors tenham acesso a eles.</p>
 <p><strong>Código Fonte</strong>: O código do exemplo de Visitor usado
 nesta seção está disponível neste <a
 href="https://gist.github.com/mtov/d447fd22974c57688d0fd109cb9509ea">link</a>.</p>
-</section>
-<section id="outros-padrões-de-projeto" data-number="1.12">
-<h2 data-number="6.12"><span class="header-section-number">6.12</span>
-Outros Padrões de Projeto <a href="#outros-padrões-de-projeto"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.12" id="outros-padrões-de-projeto"><span
+class="header-section-number">6.12</span> Outros Padrões de Projeto <a
+href="#outros-padrões-de-projeto" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> </p>
 <p><strong>Iterador</strong> é um padrão de projeto que padroniza uma
 interface para caminhar sobre uma estrutura de dados. Normalmente, essa
@@ -1338,12 +1318,10 @@ Ao estudá-lo, você perceberá que <code>Livro.Builder</code> é uma classe
 interna, pública e estática de <code>Livro</code>. Por isso, é que
 podemos chamar <code>new Livro.Builder()</code> diretamente, sem
 precisar de instanciar antes um objeto do tipo <code>Livro</code>.</p>
-</section>
-<section id="quando-não-usar-padrões-de-projeto" data-number="1.13">
-<h2 data-number="6.13"><span class="header-section-number">6.13</span>
-Quando Não Usar Padrões de Projeto? <a
-href="#quando-não-usar-padrões-de-projeto" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="6.13" id="quando-não-usar-padrões-de-projeto"><span
+class="header-section-number">6.13</span> Quando Não Usar Padrões de
+Projeto? <a href="#quando-não-usar-padrões-de-projeto"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Padrões de projeto têm como objetivo tornar o projeto de um sistema
 mais flexível. Por exemplo, fábricas facilitam trocar o tipo dos objetos
 manipulados por um programa. Um decorador permite personalizar uma
@@ -1406,7 +1384,6 @@ oferecidos por <em>default</em>, em vez de por meio de uma classe
 decoradora específica. Assim, e de acordo com esse raciocínio, as
 classes <code>FileInputStream</code> e <code>BufferedInputStream</code>
 poderiam ser fundidas em uma única classe.</p>
-</section>
 <h2 class="unnumbered" id="bibliografia">Bibliografia <a
 href="#bibliografia" class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design
@@ -1555,7 +1532,6 @@ livro, uma boa referência é o Capítulo 25 do livro <em>Agile Principles,
 Patterns, and Practices in C#</em>, de Robert C. Martin e Micah Martin.
 Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de
 Refactoring de Martin Fowler.</p>
-</section>
 </div>
 </div>
 </div>

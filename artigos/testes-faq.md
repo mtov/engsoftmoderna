@@ -35,6 +35,7 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 
 14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 15. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
+16. [O que são testes exploratórios?](#o-que-s%C3%A3o-testes-explorat%C3%B3rios)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -334,6 +335,26 @@ A principal vantagem de testes de snapshot é que eles podem ser implementados d
 Por isso, alguns desenvolvedores consideram que testes de snapshot, na verdade, geram *warnings* que alertam sobre mudanças na apresentação de um componente.
 Esses warnings devem ser analisados para comprovar se, de fato, eles representam regressões ou não. Se não representarem, os defensores de testes de snapshot argumentam que o processo de resetar os snapshots é simples e rápido.
 
+
+### 16. O que são testes exploratórios? {.unnumbered}
+
+Basicamente, existem dois tipos de testes manuais:
+
+* Testes baseados em Casos de Teste. Um caso de teste documenta o que deve 
+ser testado, incluindo as entradas que devem ser fornecidas no teste, como
+ fornecer essas entradas (por exemplo, por meio de quais telas e campos) e, 
+ por fim, eles especificam os resultados esperados. Logo, supondo a existência 
+ de casos de teste precisos e completos, mesmo um testador com pouca 
+ experiência deve ser capaz de testar um sistema de forma manual.
+
+* Testes Exploratórios. Neste caso, um testador executa e testa um sistema 
+com um maior grau de liberdade, ou seja, não existe um roteiro pré-definido 
+formado por um conjunto detalhado de casos de teste. Em vez disso, o 
+testador usa de sua experiência e habilidade para navegar pelo sistema e 
+verificar o seu comportamento. Testes exploratórios podem ser usados para 
+ajudar na escrita de casos de teste (assumindo que iremos ter testes manuais) 
+e também para subsidiar a escrita de testes automatizados (principalmente, 
+testes de integração e testes end-to-end).
 
 * * * 
 
