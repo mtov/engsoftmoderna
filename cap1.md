@@ -1007,7 +1007,7 @@ dependeria do código requisitado.
 \index{Economia de Software}
 Diversas decisões e questões econômicas se entrelaçam com o
 desenvolvimento de sistemas. Por exemplo, uma startup de software deve
-decidir qual o modelo de rentabilização pretende adotar, se baseado em
+decidir qual modelo de rentabilização pretende adotar, se baseado em
 assinaturas ou em anúncios. Desenvolvedores de apps para celulares têm
 que decidir sobre o preço que irão cobrar pela sua aplicação, o que,
 dentre outras variáveis, requer conhecimento sobre o preço das apps
