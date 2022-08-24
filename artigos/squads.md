@@ -79,9 +79,9 @@ Os autores de Team Topologies também usam um nome
 diferente para tais squads, optando por chamá-los de **times responsáveis 
 por subsistemas complexos** (*complicated-subsystem teams*), isto é, 
 subsistemas -- ou componentes -- cujo desenvolvimento requer um 
-conhecimento específico. Como exemplo, os autores citam subsistemas para 
-processamento de vídeos, que usam modelos matemáticos sofisticados, 
-para reconhecimento facial, etc. Porém, eles afirmam que tais times são 
+conhecimento específico. Como exemplo, podemos mencionar subsistemas para 
+processamento de vídeos, subsistemas que usam modelos matemáticos sofisticados, 
+subsistemas para detecção de fraudes, etc. Porém, eles afirmam que tais times são 
 opcionais e somente devem ser usados quando for claramente necessário.
 
 
@@ -198,7 +198,7 @@ Quando você estiver lendo o artigo, provavelmente as coisas já mudaram.
 
 Por isso, como é normal quando o assunto são processos, a adoção de squads,
 tribos, chapters e guildas não deve ocorrer cegamente de acordo com o manual. 
-Adaptações ao contexto são sempre necessárias. 
+Adaptações ao contexto serão sempre necessárias. 
 
 
 ## Exercícios {.unnumbered}

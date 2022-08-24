@@ -40,6 +40,14 @@
   {
     "text": "Quando se usa o modelo de squads, existem times separados para desenvolvimento, manutenção e implantação de cada sistema da empresa.",
     "correct": "false"
+  },
+  {
+    "text": "Um chapter deve incluir profissionais que trabalham em tribos diferentes.",
+    "correct": "false"
+  },
+  {
+    "text": "Uma guilda pode incluir profissionais que trabalham em tribos diferentes.",
+    "correct": "false"
   }
 ]
 }	    

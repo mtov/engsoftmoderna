@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -164,11 +169,11 @@ componentes front-end e back-end.</p>
 squads, optando por chamá-los de <strong>times responsáveis por
 subsistemas complexos</strong> (<em>complicated-subsystem teams</em>),
 isto é, subsistemas – ou componentes – cujo desenvolvimento requer um
-conhecimento específico. Como exemplo, os autores citam subsistemas para
-processamento de vídeos, que usam modelos matemáticos sofisticados, para
-reconhecimento facial, etc. Porém, eles afirmam que tais times são
-opcionais e somente devem ser usados quando for claramente
-necessário.</p>
+conhecimento específico. Como exemplo, podemos mencionar subsistemas
+para processamento de vídeos, subsistemas que usam modelos matemáticos
+sofisticados, subsistemas para detecção de fraudes, etc. Porém, eles
+afirmam que tais times são opcionais e somente devem ser usados quando
+for claramente necessário.</p>
 <h4 class="unnumbered" id="squads-responsáveis-por-plataformas">Squads
 responsáveis por plataformas</h4>
 <p>Esses squads desenvolvem ferramentas e plataformas internas que são
@@ -274,7 +279,7 @@ você estiver lendo o artigo, provavelmente as coisas já mudaram.</p>
 </blockquote>
 <p>Por isso, como é normal quando o assunto são processos, a adoção de
 squads, tribos, chapters e guildas não deve ocorrer cegamente de acordo
-com o manual. Adaptações ao contexto são sempre necessárias.</p>
+com o manual. Adaptações ao contexto serão sempre necessárias.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
 <li><p>Para fixar as principais ideias do artigo, responda ao seguinte
