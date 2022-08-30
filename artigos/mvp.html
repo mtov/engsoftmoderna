@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   
@@ -96,18 +101,17 @@ Veja também os cursos de extensão a distância
 – e também o que não é – um MVP?</h1>
 <h2 class="unnumbered" id="introdução">Introdução</h2>
 <p><strong>Produto Mínimo Viável (MVP)</strong> é um conceito
-popularizado por Eric Eries no seu livro Lean Startup. E é
-impressionante o sucesso e o alcance que ele alcançou. Hoje, o conceito
-é usado pelos mais diversos empreendedores, sejam eles de produtos
-digitais ou mesmo de produtos físicos. O conceito de MVP já faz parte
-também do vocabulário de desenvolvedores de software (como estudamos no
-<a href="../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp">Capítulo
-3</a>), profissionais de marketing, consultores, analistas de negócio,
-etc.</p>
+popularizado por Eric Ries no seu livro Lean Startup. E é impressionante
+o sucesso e o alcance que ele alcançou. Hoje, o conceito é usado pelos
+mais diversos empreendedores, sejam eles de produtos digitais ou mesmo
+de produtos físicos. O conceito de MVP já faz parte também do
+vocabulário de desenvolvedores de software (como estudamos no <a
+href="../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp">Capítulo 3</a>),
+profissionais de marketing, consultores, analistas de negócio, etc.</p>
 <p>No entanto, principalmente na área de software, o conceito de MVP é
 algumas vezes usado de uma forma que não é totalmente fiel à sua
 definição original. Então, neste pequeno artigo, vamos tentar esclarecer
-o significado mais preciso do conceito.</p>
+o significado mais preciso desse conceito.</p>
 <h2 class="unnumbered" id="primeiro-o-que-é-um-mvp">Primeiro, o que é um
 MVP?</h2>
 <p>Para entender para que serve um MVP, temos que começar lembrando que
@@ -116,8 +120,8 @@ que operam em um ambiente de grande risco e cujas chances de insucesso
 são grandes.</p>
 <p>Nesse contexto, é importante testar o mais rapidamente possível as
 hipóteses mais arriscadas do empreendimento. A <strong>metodologia
-lean</strong> para criação de startups, empresas e produtos possui então
-dois passos principais:</p>
+lean</strong> para criação de startups defende então que duas perguntas
+fundamentais devem ser respondidas o quanto antes:</p>
 <ol type="1">
 <li><p>Qual a hipótese mais arriscada do meu projeto? Isto é, qual a
 hipótese que se não for verdade vai resultar no fracasso do

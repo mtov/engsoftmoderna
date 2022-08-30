@@ -2,7 +2,7 @@
 
 ## Introdução  {.unnumbered}
 
-**Produto Mínimo Viável (MVP)** é um conceito popularizado por Eric Eries 
+**Produto Mínimo Viável (MVP)** é um conceito popularizado por Eric Ries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
 alcance que ele alcançou. Hoje, o conceito é usado pelos mais
 diversos empreendedores, sejam eles de produtos digitais ou
@@ -14,7 +14,7 @@ profissionais de marketing, consultores, analistas de negócio, etc.
 No entanto, principalmente na área de software, o conceito de
 MVP é algumas vezes usado de uma forma que não é totalmente fiel 
 à sua definição original. Então, neste pequeno artigo, vamos
-tentar esclarecer o significado mais preciso do conceito.
+tentar esclarecer o significado mais preciso desse conceito.
 
 ## Primeiro, o que é um MVP?  {.unnumbered}
 
@@ -25,8 +25,8 @@ risco e cujas chances de insucesso são grandes.
 
 Nesse contexto, é importante testar o mais rapidamente possível 
 as hipóteses mais arriscadas do empreendimento. A **metodologia
-lean** para criação de startups, empresas e produtos possui então
-dois passos principais:
+lean** para criação de startups defende então que duas perguntas
+fundamentais devem ser respondidas o quanto antes:
 
 1. Qual a hipótese mais arriscada do meu projeto? Isto é, qual a
 hipótese que se não for verdade vai resultar no fracasso 
