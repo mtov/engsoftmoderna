@@ -53,6 +53,13 @@
   }
   </script>
   --->
+  
+<style>
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+</style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -2266,9 +2273,20 @@ políticas de liberação de software.</p>
 <p>19. Por que métodos como o Processo Unificado (UP) e Espiral não são
 considerados ágeis? E qual a diferença deles para o Modelo
 Waterfall?</p>
+
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>
+
 
 <footer>
 Direitos autorais reservados. Versão para uso pessoal.
