@@ -32,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -965,13 +954,13 @@ class C {
 }
 
 class B { 
-   void m2() { ... c.m1(); ... this.m3(); ... }   
+   void m2() { ... c.m1(); ... this.m3(); ... }
    void m3() { ... c.m1(); ... }
    void m4() { ... }
 }
 
 class A { 
-   void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }   
+   void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }
 }     </code></pre>
 <p>7. Em diagramas de atividades, explique a diferença entre um nodo de
 <em>merge</em> e um nodo de <em>join</em>.</p>
@@ -979,6 +968,15 @@ class A {
 diagrama de forma a refletir corretamente a intenção do projetista.</p>
 <p><img src="figs/cap4/activity-exercicio.svg"
 style="width:50.0%" /></p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>

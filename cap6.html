@@ -32,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -276,7 +265,7 @@ exemplo é mostrado a seguir:</p>
 }
 
 void f() {
-  Channel c = ChannelFactory.create();  
+  Channel c = ChannelFactory.create();
   ...
 }
 
@@ -335,17 +324,17 @@ class="anchor-link" aria-hidden="true">🔗</a></h2>
 usada para registrar as operações realizadas em um sistema. Um uso dessa
 classe é mostrado a seguir:</p>
 <pre><code>void f() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println(&quot;Executando f&quot;);
   ...
 }
 void g() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println(&quot;Executando g&quot;);
   ...
 }
 void h() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println(&quot;Executando h&quot;);
   ...
 }</code></pre>
@@ -381,7 +370,7 @@ funciona como um Singleton:</p>
 
   public void println(String msg) {
     // registra msg no console, mas poderia ser em arquivo
-    System.out.println(msg);      
+    System.out.println(msg);
   }
 }</code></pre>
 <p>Primeiro, essa classe tem um construtor <em>default</em> privado. Com
@@ -391,19 +380,19 @@ estático armazena a instância única da classe. Quando precisarmos dessa
 instância, devemos chamar o método público e estático
 <code>getInstance()</code>. Um exemplo é mostrado a seguir:</p>
 <pre><code>void f() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println(&quot;Executando f&quot;);
   ...
 }
 
 void g() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println(&quot;Executando g&quot;);
   ...
 }
 
 void h() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println(&quot;Executando h&quot;);
   ...
 }</code></pre>
@@ -1532,6 +1521,15 @@ livro, uma boa referência é o Capítulo 25 do livro <em>Agile Principles,
 Patterns, and Practices in C#</em>, de Robert C. Martin e Micah Martin.
 Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de
 Refactoring de Martin Fowler.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>

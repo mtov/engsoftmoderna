@@ -189,7 +189,7 @@ class ChannelFactory {
 }
 
 void f() {
-  Channel c = ChannelFactory.create();  
+  Channel c = ChannelFactory.create();
   ...
 }
 
@@ -259,17 +259,17 @@ seguir:
 
 ```
 void f() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println("Executando f");
   ...
 }
 void g() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println("Executando g");
   ...
 }
 void h() {
-  Logger log = new Logger();  
+  Logger log = new Logger();
   log.println("Executando h");
   ...
 }
@@ -308,7 +308,7 @@ class Logger {
 
   public void println(String msg) {
     // registra msg no console, mas poderia ser em arquivo
-    System.out.println(msg);      
+    System.out.println(msg);
   }
 }
 ```
@@ -322,19 +322,19 @@ a seguir:
 
 ```
 void f() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println("Executando f");
   ...
 }
 
 void g() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println("Executando g");
   ...
 }
 
 void h() {
-  Logger log = Logger.getInstance();  
+  Logger log = Logger.getInstance();
   log.println("Executando h");
   ...
 }

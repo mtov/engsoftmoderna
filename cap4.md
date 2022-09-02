@@ -977,13 +977,13 @@ class C {
 }
 
 class B { 
-   void m2() { ... c.m1(); ... this.m3(); ... }   
+   void m2() { ... c.m1(); ... this.m3(); ... }
    void m3() { ... c.m1(); ... }
    void m4() { ... }
 }
 
 class A { 
-   void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }   
+   void m5() { ... b.m2(); ... b.m3(); ... b.m4(); ...  }
 }     
 ```
 
