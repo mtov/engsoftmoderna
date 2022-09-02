@@ -389,7 +389,7 @@ private void write(byte[] revision) {
   VirtualFile virtualFile = getVirtualFile();
   ...
   if (document == null) {
-       writeContentToFile(revision); // única chamada      
+       writeContentToFile(revision); // única chamada
   }
    ...
  }
