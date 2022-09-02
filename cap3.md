@@ -492,7 +492,7 @@ Por fim, precisamos instrumentar o sistema de forma que metade dos clientes use 
 version = Math.Random(); // número aleatório entre 0 e 1
 if (version < 0.5)
    "execute a versão de controle"
-else                                                 
+else
    "execute a versão de tratamento"
 ```
 

@@ -319,14 +319,14 @@ propor uma classe para representar contas bancárias, como a seguinte:
 
 
 ```
-class ContaBancaria {                                                                          
-   private Cliente cliente;                        
-   private double saldo;                           
-   public double getSaldo() { ... }               
-   public String getNomeCliente() { ... }         
-   public String getExtrato (Date inicio) { ... } 
-   ...                                            
- }                                               
+class ContaBancaria {
+   private Cliente cliente;
+   private double saldo;
+   public double getSaldo() { ... }
+   public String getNomeCliente() { ... }
+   public String getExtrato (Date inicio) { ... }
+   ...
+}
 ```
 
 
