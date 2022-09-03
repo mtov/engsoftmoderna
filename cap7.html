@@ -32,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -1121,6 +1110,15 @@ mediação que permite um desacoplamento entre clientes e servidores.</p>
 problema sendo resolvido, nem sempre ele é adequado. Fatores como
 contexto e o sistema de forças que afeta a solução fazem também parte do
 processo de avaliação e da escolha de padrões adequados.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>

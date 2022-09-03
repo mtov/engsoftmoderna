@@ -1032,7 +1032,7 @@ uso desse comando torna o teste não-determinístico.
 ```
 public class MyMath {
 
-  public void asyncPI(int prec, TaskResult task) { 
+  public void asyncPI(int prec, TaskResult task) {
     new Thread (new Runnable() {
       public void run() {
         double pi = "calcula PI com precisão prec"
@@ -1058,7 +1058,7 @@ public class MyMath {
     double pi = "calcula PI com precisão prec"
     return pi;
   }
-  public void asyncPI(int prec, TaskResult task) { 
+  public void asyncPI(int prec, TaskResult task) {
     new Thread (new Runnable() {
       public void run() {
         double pi = syncPI(prec);
@@ -1164,7 +1164,7 @@ import static org.junit.Assert.*;
 class BookConst {
 
   public static String ESM = 
-          "{ \"titulo\": \"Eng Soft Moderna\" }";        
+          "{ \"titulo\": \"Eng Soft Moderna\" }";
 
   public static String NULLBOOK = 
           "{ \"titulo\": \"NULL\" }";
@@ -1188,7 +1188,7 @@ public class BookSearchTest {
   @Before
   public void init() {
     service = new MockBookService();
-  }        
+  }
 
   @Test
   public void testGetBook() {
@@ -1642,7 +1642,7 @@ public class ShoppingCart {
   private double total;
 
   public ShoppingCart() {
-    items = new ArrayList<Book>();  
+    items = new ArrayList<Book>();
     total = 0.0;  
   }
 
