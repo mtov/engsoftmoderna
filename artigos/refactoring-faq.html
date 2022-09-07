@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Perguntas Frequentes sobre Refactoring – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYNKH464F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGYNKH464F');
+  </script>
+
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
+      Submarino</a> ou 
+
+<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
+      UmLivro</a>
+</p>
+
+<p>
+Veja também os cursos de extensão a distância 
+<a href="http://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
+
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered"
+id="perguntas-frequentes-sobre-refactoring">Perguntas Frequentes sobre
+Refactoring <a href="#perguntas-frequentes-sobre-refactoring"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<p>Neste artigo, respondemos perguntas sobre refactoring, isto é, sobre
+o <a href="../cap9.html">Capítulo 9</a> do livro.</p>
+<p>Segue a lista atual de perguntas:</p>
+<ol type="1">
+<li><a
+href="#uma-mudan%C3%A7a-no-c%C3%B3digo-para-melhorar-o-desempenho-de-um-sistema-%C3%A9-um-refactoring">Uma
+mudança no código feita para melhorar o desempenho de um sistema é um
+refactoring?</a></li>
+</ol>
+<hr />
+<h3 class="unnumbered"
+id="uma-mudança-no-código-feita-para-melhorar-o-desempenho-de-um-sistema-é-um-refactoring">1.
+Uma mudança no código feita para melhorar o desempenho de um sistema é
+um refactoring? <a
+href="#uma-mudança-no-código-feita-para-melhorar-o-desempenho-de-um-sistema-é-um-refactoring"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>A resposta é <strong>não</strong>, pois refactorings devem ter como
+único objetivo melhorar o entendimento, a organização ou estrutura de um
+sistema e, consequentemente, facilitar manutenções futuras.</p>
+<p>A mesma opinião é compartilhada por Fowler em seu livro sobre
+refactoring (1a edição, página 47):</p>
+<blockquote>
+<p>Você pode fazer diversas modificações em um sistema que terão pouco
+ou nenhum efeito no seu comportamento observável. [Porém], apenas
+aquelas feitas para tornar o sistema mais fácil de entender são
+refatorações. Um bom contraste é com otimizações de desempenho. Assim
+como refatorações, otimizações de desempenho geralmente não alteram o
+comportamento de um componente (além de sua velocidade) […] No entanto,
+o objetivo é diferente. Uma otimização de desempenho geralmente torna o
+código mais difícil de entender.</p>
+</blockquote>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

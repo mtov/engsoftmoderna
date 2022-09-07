@@ -81,6 +81,9 @@ testes-faq: testes-faq.md
 exemplos-teste: exemplos-teste.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
 
+refactoring-faq: refactoring-faq.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Refactoring" refactoring-faq.md -o refactoring-faq.html
+
 broken-windows: broken-windows.md
 	$(pandoc_bin) -T "Duas Recomendações para Manutenção de Software" broken-windows.md -o broken-windows.html
 
