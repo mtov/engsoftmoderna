@@ -89,3 +89,6 @@ broken-windows: broken-windows.md
 
 revisao-codigo: revisao-codigo.md
 	$(pandoc_bin) -T "Revisão de Código: Uma Breve Introdução" revisao-codigo.md -o revisao-codigo.html
+
+git-faq: git-faq.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Git (Apêndice)" git-faq.md -o git-faq.html

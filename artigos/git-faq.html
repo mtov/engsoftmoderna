@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Perguntas Frequentes sobre Git (Apêndice) – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYNKH464F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGYNKH464F');
+  </script>
+
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-8 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
+
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
+      Submarino</a> ou 
+
+<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
+      UmLivro</a>
+</p>
+
+<p>
+Veja também os cursos de extensão a distância 
+<a href="http://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
+
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 class="unnumbered" id="perguntas-frequentes-sobre-git">Perguntas
+Frequentes sobre Git <a href="#perguntas-frequentes-sobre-git"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<p>Neste artigo, respondemos perguntas sobre git, isto é, sobre o <a
+href="../capAp.html">apêndice</a> do livro.</p>
+<p>Segue a lista atual de perguntas:</p>
+<ol type="1">
+<li><a href="#para-que-serve-a-%C3%A1rea-de-stage">Para que serve a área
+de stage?</a></li>
+</ol>
+<hr />
+<h3 class="unnumbered" id="para-que-serve-a-área-de-stage">1. Para que
+serve a área de stage? <a href="#para-que-serve-a-área-de-stage"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Esta é uma dúvida recorrente de usuários git. Talvez, mais
+especificamente, a dúvida seja a seguinte: por que não podemos executar
+um <code>commit</code> diretamente sem antes realizar um
+<code>add</code>?</p>
+<p>A dúvida é procedente porque a área de stage é um recurso avançado do
+git, que apenas faz sentido em cenários bem específicos. Apesar disso,
+ela tem que ser usada por qualquer usuário, mesmo aqueles que fazem um
+uso mais simples e convencional do git.</p>
+<p>Veja, por exemplo, a seguinte crítica de um usuário do git em seu <a
+href="https://gregoryszorc.com/blog/2017/12/11/high-level-problems-with-git-and-how-to-fix-them/">blog</a>
+pessoal:</p>
+<blockquote>
+<p>A área de stag constitui um fardo desnecessário e uma carga cognitiva
+a mais para os usuários do git. Embora poderosa, sua complexidade e
+capacidade de gerar confusão não justificam sua existência na
+configuração padrão do Git. A área de stage é um recurso para usuários
+avançados e que deveria ser opcional.</p>
+</blockquote>
+<h5 class="unnumbered"
+id="mas-então-qual-o-uso-avançado-que-pode-se-beneficiar-da-área-de-stage">Mas
+então qual o uso avançado que pode se beneficiar da área de stage? <a
+href="#mas-então-qual-o-uso-avançado-que-pode-se-beneficiar-da-área-de-stage"
+class="anchor-link" aria-hidden="true">🔗</a></h5>
+<p>Por exemplo, suponha que realizou uma mudança no código que já atende
+a seus objetivos. Então, por garantia, você realiza um
+<code>git add</code>.</p>
+<p>Porém, você acha que ainda pode melhorar a sua implementação, então
+você decide trabalhar um pouco mais no código e, de fato, consegue uma
+solução<br />
+melhor e, portanto, conclui realizando um novo <code>git add</code>,
+seguido de um <code>git commit</code>.</p>
+<p>Por outro lado, suponha que sua ideia de melhoria foi mal sucedida.
+Então, você pode realizar um <code>commit</code> para persistir a
+primeira mudança (que já estava salva no <code>stage</code>). E realizar
+um <code>git checkout</code> para descartar as mudanças que não deram
+certo e que estão no diretório de trabalho.</p>
+<p>Em resumo, o stage é uma área de armazenamento temporário que permite
+você salvar temporariamente alguns arquivos e só realizar um commit
+quando tiver certeza de que eles contém a versão final de uma
+mudança.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>

@@ -8,6 +8,7 @@ Segue a lista atual de perguntas:
 
 1. [O que são personas?](#o-que-s%C3%A3o-personas)
 2. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
+3. [Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução?](#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o)
 
 ### 1. O que são personas? {.unnumbered}
 
@@ -76,6 +77,14 @@ negócio que requerem usuários especializados. Por exemplo, um
 sistema para cálculo e geração de apólices de seguros para navios. Mesmo que um 
 desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo 
 tal como um analista de seguros navais.
+
+### 3. Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução? {.unnumbered}
+
+Se ela for realizada após uma reclamação de usuários do sistema, trata-se de 
+uma manutenção corretiva. Se ela for realizada para evitar reclamações futuras 
+sobre uma possível lentidão do sistema, trata-se de uma manutenção preventiva.
+Porém, se ela for realizada para adaptar o sistema a uma demanda externa 
+(por exemplo, alguma regulamentação), trata-se de uma manutenção adaptativa.
 
 * * * 
 

@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -27,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -104,6 +98,10 @@ href="../cap3.html">Capítulo 3</a> do livro.</p>
 <ol type="1">
 <li><a href="#o-que-s%C3%A3o-personas">O que são personas?</a></li>
 <li><a href="#o-que-%C3%A9-dogfooding">O que é dogfooding?</a></li>
+<li><a
+href="#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o">Como
+podemos classificar uma manutenção realizada para melhorar o desempenho
+de um sistema em tempo de execução?</a></li>
 </ol>
 <h3 class="unnumbered" id="o-que-são-personas">1. O que são personas? <a
 href="#o-que-são-personas" class="anchor-link"
@@ -182,8 +180,29 @@ domínios de negócio que requerem usuários especializados. Por exemplo,
 um sistema para cálculo e geração de apólices de seguros para navios.
 Mesmo que um desenvolvedor implemente uma parte desse sistema, ele pode
 não conseguir usá-lo tal como um analista de seguros navais.</p>
+<h3 class="unnumbered"
+id="como-podemos-classificar-uma-manutenção-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execução">3.
+Como podemos classificar uma manutenção realizada para melhorar o
+desempenho de um sistema em tempo de execução? <a
+href="#como-podemos-classificar-uma-manutenção-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execução"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Se ela for realizada após uma reclamação de usuários do sistema,
+trata-se de uma manutenção corretiva. Se ela for realizada para evitar
+reclamações futuras sobre uma possível lentidão do sistema, trata-se de
+uma manutenção preventiva. Porém, se ela for realizada para adaptar o
+sistema a uma demanda externa (por exemplo, alguma regulamentação),
+trata-se de uma manutenção adaptativa.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>
