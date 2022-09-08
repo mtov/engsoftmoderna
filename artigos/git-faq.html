@@ -105,37 +105,37 @@ especificamente, a dúvida seja a seguinte: por que não podemos executar
 um <code>commit</code> diretamente sem antes realizar um
 <code>add</code>?</p>
 <p>A dúvida é procedente porque a área de stage é um recurso avançado do
-git, que apenas faz sentido em cenários bem específicos. Apesar disso,
-ela tem que ser usada por qualquer usuário, mesmo aqueles que fazem um
-uso mais simples e convencional do git.</p>
+git, que apenas faz sentido em cenários específicos. Apesar disso, ela
+tem que ser usada por qualquer usuário, mesmo aqueles que fazem um uso
+mais simples e convencional do git.</p>
 <p>Veja, por exemplo, a seguinte crítica de um usuário do git em seu <a
 href="https://gregoryszorc.com/blog/2017/12/11/high-level-problems-with-git-and-how-to-fix-them/">blog</a>
 pessoal:</p>
 <blockquote>
-<p>A área de stag constitui um fardo desnecessário e uma carga cognitiva
-a mais para os usuários do git. Embora poderosa, sua complexidade e
-capacidade de gerar confusão não justificam sua existência na
-configuração padrão do Git. A área de stage é um recurso para usuários
-avançados e que deveria ser opcional.</p>
+<p>A área de stage constitui um fardo desnecessário e uma carga
+cognitiva a mais para os usuários do git. Embora poderosa, sua
+complexidade e capacidade de gerar confusão não justificam sua
+existência na configuração padrão do git. A área de stage é um recurso
+para usuários avançados e que deveria ser opcional.</p>
 </blockquote>
 <h5 class="unnumbered"
 id="mas-então-qual-o-uso-avançado-que-pode-se-beneficiar-da-área-de-stage">Mas
 então qual o uso avançado que pode se beneficiar da área de stage? <a
 href="#mas-então-qual-o-uso-avançado-que-pode-se-beneficiar-da-área-de-stage"
 class="anchor-link" aria-hidden="true">🔗</a></h5>
-<p>Por exemplo, suponha que realizou uma mudança no código que já atende
-a seus objetivos. Então, por garantia, você realiza um
+<p>Por exemplo, suponha que você realizou uma mudança no código que já
+atende a seus objetivos. Então, por garantia, você realiza um
 <code>git add</code>.</p>
 <p>Porém, você acha que ainda pode melhorar a sua implementação, então
 você decide trabalhar um pouco mais no código e, de fato, consegue uma
 solução<br />
-melhor e, portanto, conclui realizando um novo <code>git add</code>,
-seguido de um <code>git commit</code>.</p>
+melhor e, portanto, conclui com um novo <code>git add</code>, seguido de
+um <code>git commit</code>.</p>
 <p>Por outro lado, suponha que sua ideia de melhoria foi mal sucedida.
 Então, você pode realizar um <code>commit</code> para persistir a
 primeira mudança (que já estava salva no <code>stage</code>). E realizar
 um <code>git checkout</code> para descartar as mudanças que não deram
-certo e que estão no diretório de trabalho.</p>
+certo e que ainda estão no diretório de trabalho.</p>
 <p>Em resumo, o stage é uma área de armazenamento temporário que permite
 você salvar temporariamente alguns arquivos e só realizar um commit
 quando tiver certeza de que eles contém a versão final de uma
