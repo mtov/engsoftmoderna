@@ -88,4 +88,4 @@ Porém, se ela for realizada para adaptar o sistema a uma demanda externa
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+Voltar para a [página principal](../index.html).

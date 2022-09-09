@@ -358,4 +358,4 @@ testes de integração e testes end-to-end).
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+Voltar para a [página principal](../index.html).

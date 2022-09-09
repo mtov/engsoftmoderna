@@ -52,4 +52,4 @@ certeza de que eles contém a versão final de uma mudança.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+Voltar para a [página principal](../index.html).

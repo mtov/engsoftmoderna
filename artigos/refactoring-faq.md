@@ -24,4 +24,4 @@ mais fácil de entender são refatorações. Um bom contraste é com otimizaçõ
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+Voltar para a [página principal](../index.html).

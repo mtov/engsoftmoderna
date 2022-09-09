@@ -47,4 +47,4 @@ em subclasses de X. Nesse caso, podemos usar o padrão de projeto
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+Voltar para a [página principal](../index.html).
