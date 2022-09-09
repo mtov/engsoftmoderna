@@ -765,6 +765,15 @@ um repositório do GitHub. Nos exemplos que envolvem dois usuários (Alice
 e Bob, por exemplo), a sugestão é criar dois diretórios locais e usá-los
 para reproduzir os comandos de cada usuário.
 
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/git-faq.html">FAQ</a> deste capítulo.</p>
+```
+
+
+
 \small
 \providecommand*\lettergroup[1]{} 
 \printindex
