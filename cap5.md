@@ -2110,3 +2110,10 @@ solução OO sobre a versão monolítica. Para isso, tente extrapolar o
 tamanho do sistema. Suponha que ele será implementado por
 desenvolvedores diferentes e que cada um ficará responsável por uma
 parte do projeto.
+
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/projeto-faq.html">FAQ</a> deste capítulo.</p>
+```

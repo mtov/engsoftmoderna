@@ -1664,3 +1664,8 @@ discutido na Seção 9.4.1, isto é, o exemplo
 com classes `A` e `B` e pacotes `P1` e `P2`. Se realizar a Movimentação de
 Classe discutida nesse exemplo via IDE, ocorrerá algum erro? Se sim,
 descreva o erro detectado pela IDE.
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/refactoring-faq.html">FAQ</a> deste capítulo.</p>
+```

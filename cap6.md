@@ -1625,3 +1625,10 @@ referência é o Capítulo 25 do livro *Agile Principles, Patterns, and
 Practices in C\#*, de Robert C. Martin e Micah Martin. Ou então o
 refactoring chamado "Introduce Null Object" do livro de Refactoring de
 Martin Fowler.
+
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/padroes-faq.html">FAQ</a> deste capítulo.</p>
+```

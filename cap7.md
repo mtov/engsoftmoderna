@@ -1123,3 +1123,8 @@ vol. 4, John Wiley & Sons, 2007.
 ( ) Mesmo que um dado padrão arquitetural ofereça uma solução para o problema sendo resolvido, nem sempre ele é adequado. Fatores como contexto e o sistema de forças que afeta a solução fazem também parte do processo de avaliação e da escolha de padrões adequados.
 
 
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/arquitetura-faq.html">FAQ</a> deste capítulo.</p>
+```
