@@ -16,7 +16,7 @@ Segue a lista atual de perguntas:
 A resposta é **não**, pois refactorings devem ter como único objetivo melhorar o entendimento, a organização ou estrutura de um sistema e, consequentemente, facilitar manutenções futuras.
 
 A mesma opinião é compartilhada por Fowler em seu livro sobre refactoring (1a edição,
-página 47):
+página 54):
 
 > Você pode fazer diversas modificações em um sistema que terão pouco ou nenhum efeito no seu comportamento observável. [Porém], apenas aquelas feitas para tornar o sistema
 mais fácil de entender são refatorações. Um bom contraste é com otimizações de desempenho. Assim como refatorações, otimizações de desempenho geralmente não alteram o comportamento de um componente (além de sua velocidade) [...] No entanto, o objetivo é diferente. Uma otimização de desempenho geralmente torna o código mais difícil de entender.
