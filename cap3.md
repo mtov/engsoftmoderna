@@ -705,3 +705,10 @@ então algumas extensões para ele.
 (a) Qual seria a métrica usada como taxa de conversão nesse teste? 
 
 (b) Supondo que no sistema original a taxa de conversão seja de 5% e que você deseja avaliar um ganho de 1% com a mensagem da versão B, qual seria o tamanho da amostra que deveria testar em cada uma das versões? Para responder, use uma calculadora de tamanho de amostras de testes A/B, como aquela que citamos na Seção 3.6.
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/requisitos-faq.html">FAQ</a> deste capítulo.</p>
+```
+

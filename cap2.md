@@ -2118,3 +2118,9 @@ edição, 2014.
 19\. Por que métodos como o Processo Unificado (UP) e Espiral não são
      considerados ágeis? E qual a diferença deles para o Modelo
      Waterfall?
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/processos-faq.html">FAQ</a> deste capítulo.</p>
+```

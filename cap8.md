@@ -2207,3 +2207,9 @@ B\'. Ou seja, B\' esconde um bug, que só vai aparecer no teste de
 integração. Dizendo de outra maneira, B\' não simula precisamente o
 comportamento de B; quando B\' é removido, no teste de integração, surge
 então um bug.
+
+
+```{=html}
+<h2 class="unnumbered">Perguntas Frequentes</h2>
+<p>Veja também o <a href="./artigos/testes-faq.html">FAQ</a> deste capítulo.</p>
+```
