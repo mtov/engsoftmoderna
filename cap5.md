@@ -269,7 +269,7 @@ discutida pela primeira vez em 1972, por David Parnas, em um dos artigos
 mais importantes e influentes da área de Engenharia de Software, de
 todos os tempos, cujo título é *On the criteria to be used in
 decomposing systems into modules*
-([link](https://dl.acm.org/citation.cfm?id=361623)). O
+([link](https://doi.org/10.1145/361598.361623)). O
 resumo do artigo começa da seguinte forma:
 
 > "Este artigo discute modularização como sendo um mecanismo capaz de tornar sistemas de software mais flexíveis e fáceis de entender e, ao mesmo tempo, reduzir o tempo de desenvolvimento deles. A efetividade de uma determinada modularização depende do critério usado para dividir um sistema em módulos."
@@ -1833,7 +1833,7 @@ própria aplicação que está sendo desenvolvida.
 **Complexidade Ciclomática** (CC) é uma métrica proposta por Thomas
 McCabe em 1976 para medir a complexidade do código de uma função ou
 método
-([link](https://dl.acm.org/citation.cfm?id=1313586)). Às
+([link](https://doi.org/10.1109/TSE.1976.233837)). Às
 vezes, ela é chamada também de Complexidade de McCabe. No contexto dessa
 métrica, o conceito de complexidade relaciona-se com a dificuldade de
 manter e testar uma função. A definição de CC baseia-se no conceito de

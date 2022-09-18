@@ -561,8 +561,7 @@ observação sobre o uso de associações bidirecionais sem setas:
 "infelizmente, isso pode introduzir ambiguidade na notação gráfica,
 porque não conseguimos mais distinguir entre associações bidirecionais e
 associações sem especificação de navegabilidade" em uma de suas
-extremidades.
-([link](http://www.jot.fm/issues/issue_2003_09/article4/),
+extremidades ([link](http://dx.doi.org/10.5381/jot.2003.2.5.a4),
 Seção 3, quarto parágrafo). Existem ainda dois conceitos frequentemente
 mencionados quando estudamos associações em UML: composição e agregação.
 Composição é uma relação na qual a classe de destino *não* pode existir

@@ -1311,4 +1311,4 @@ else
 ```
 O que você faria se seu chefe pedisse para escrever um *if* como o
 acima? Para mais informações sobre esse episódio, consulte essa página da
-[Wikipedia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal).
+[Wikipédia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal).

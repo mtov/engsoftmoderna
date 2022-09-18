@@ -1973,7 +1973,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da Wikipedia, licença: domínio público).](figs/cap2/rup2.png){width=65%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da Wikipédia, licença: domínio público).](figs/cap2/rup2.png){width=65%}
 
 ## Bibliografia {.unnumbered}
 
@@ -2096,7 +2096,7 @@ edição, 2014.
 ![](figs/cap2/custo-mudancas.png){width=55%}
 
 18\. O artigo "*Development and Deployment at Facebook*"
-     ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+     ([link](https://doi.org/10.1109/MIC.2013.25))
      apresenta os métodos e práticas de desenvolvimento de software
      \index{Facebook}
      usados no Facebook. Na sua primeira seção (páginas 2-3; figura 2),

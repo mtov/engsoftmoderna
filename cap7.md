@@ -141,7 +141,7 @@ seguinte em uma conferência:
 
 > "Não somos mais o kernel simples, pequeno e hiper-eficiente que imaginei há 15 anos. Em vez disso, nosso kernel está ficando grande e inchado. E sempre que adicionamos novas funcionalidades, o cenário piora."
 
-Esse comentário consta de uma página da Wikipedia
+Esse comentário consta de uma página da Wikipédia
 ([link](https://en.wikipedia.org/wiki/Criticism_of_Linux))
 e foi objeto de diversas matérias em sites de tecnologia na época. Ele
 revela que arquitetura não são apenas decisões importantes e difíceis de

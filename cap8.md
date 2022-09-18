@@ -419,7 +419,7 @@ Antes de avançar, vamos apresentar algumas definições:
     é um equipamento que
     "fixa" uma peça que se pretende construir (veja uma
     [foto](https://en.wikipedia.org/wiki/Fixture_(tool))
-    na Wikipedia). No contexto de testes de unidade, a função de uma
+    na Wikipédia). No contexto de testes de unidade, a função de uma
     fixture é "fixar" o estado — isto é, os dados e objetos
     — exercitados no teste.
 
@@ -550,7 +550,7 @@ processo e as práticas de desenvolvimento de software dessas empresas:
     qualquer código novo que eles desenvolvam. Além disso, esse código
     deve passar por testes de regressão, os quais são executados
     automaticamente, como parte dos processos de commit e push."
-    ([link](https://research.fb.com/publications/development-and-deployment-at-facebook/))
+    ([link](https://doi.org/10.1109/MIC.2013.25))
 ```{=latex}
 \end{esmbox}
 ```
