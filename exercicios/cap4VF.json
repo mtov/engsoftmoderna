@@ -64,6 +64,14 @@
   {
     "text": "Como exemplos de notações alternativas a Diagramas de Atividades, podemos citar fluxogramas, redes de petri e BPMN.",
     "correct": "true"
+  },
+  {
+    "text": "UML como blueprint é recomendado quando se emprega processos do tipo Waterfall ou Unificado (RUP).",
+    "correct": "true"
+  },
+  {
+    "text": "Em diagramas de sequência, forks possuem um único fluxo de entrada e um ou mais fluxos de saída.",
+    "correct": "true"
   }
 ]
 }	    
