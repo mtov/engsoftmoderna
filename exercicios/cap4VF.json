@@ -70,7 +70,7 @@
     "correct": "true"
   },
   {
-    "text": "Em diagramas de sequência, forks possuem um único fluxo de entrada e um ou mais fluxos de saída.",
+    "text": "Em diagramas de atividades, forks possuem um único fluxo de entrada e um ou mais fluxos de saída.",
     "correct": "true"
   }
 ]
