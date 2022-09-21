@@ -70,8 +70,8 @@
     "correct": "true"
   },
   {
-    "text": "Um pivô ocorre quando se abandona parte da visão original de um sistema e tenta-se um novo MVP.",
-    "correct": "true"
+    "text": "Um pivô ocorre quando se abandona completamente a visão original de um sistema e tenta-se um novo MVP.",
+    "correct": "false"
   },
   {
     "text": "São exemplos de requisitos não-funcionais: desempenho, confiabilidade, robustez, usabilidade e modularidade.",
