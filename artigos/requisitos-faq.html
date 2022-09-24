@@ -102,6 +102,10 @@ href="../cap3.html">Capítulo 3</a> do livro.</p>
 href="#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o">Como
 podemos classificar uma manutenção realizada para melhorar o desempenho
 de um sistema em tempo de execução?</a></li>
+<li><a
+href="#como-escrever-hist%C3%B3rias-que-valem-para-dois-ou-mais-pap%C3%A9is-de-usu%C3%A1rios-user-roles">Como
+escrever histórias que valem para dois ou mais papéis de usuários (user
+roles)?</a></li>
 </ol>
 <h3 class="unnumbered" id="o-que-são-personas">1. O que são personas? <a
 href="#o-que-são-personas" class="anchor-link"
@@ -192,6 +196,28 @@ reclamações futuras sobre uma possível lentidão do sistema, trata-se de
 uma manutenção preventiva. Porém, se ela for realizada para adaptar o
 sistema a uma demanda externa (por exemplo, alguma regulamentação),
 trata-se de uma manutenção adaptativa.</p>
+<h3 class="unnumbered"
+id="como-escrever-histórias-que-valem-para-dois-ou-mais-papéis-de-usuários-user-roles">4.
+Como escrever histórias que valem para dois ou mais papéis de usuários
+(user roles)? <a
+href="#como-escrever-histórias-que-valem-para-dois-ou-mais-papéis-de-usuários-user-roles"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Por exemplo, suponha que em um sistema para controle de bibliotecas
+tanto professores como alunos possam doar livros. Logo, podemos escrever
+essa história assim:</p>
+<blockquote>
+<p>Como professor ou aluno, eu gostaria de doar livros para a
+biblioteca</p>
+</blockquote>
+<p>Porém, se tivermos várias histórias que valem tanto para professores
+como para alunos, podemos também criar um novo papel no sistema:
+usuário, o qual pode ser tanto um professor como um aluno. Feito isso,
+podemos reescrever a história acima:</p>
+<blockquote>
+<p>Como usuário, eu gostaria de doar livros para a biblioteca.</p>
+</blockquote>
+<p>Assim, os papeis professor e aluno serão usados apenas para histórias
+que são específicas e restritas aos mesmos.</p>
 <hr />
 <p>Voltar para a <a href="../index.html">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

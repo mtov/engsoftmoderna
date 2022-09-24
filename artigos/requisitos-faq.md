@@ -9,6 +9,7 @@ Segue a lista atual de perguntas:
 1. [O que são personas?](#o-que-s%C3%A3o-personas)
 2. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
 3. [Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução?](#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o)
+4. [Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)?](#como-escrever-hist%C3%B3rias-que-valem-para-dois-ou-mais-pap%C3%A9is-de-usu%C3%A1rios-user-roles)
 
 ### 1. O que são personas? {.unnumbered}
 
@@ -85,6 +86,18 @@ uma manutenção corretiva. Se ela for realizada para evitar reclamações futur
 sobre uma possível lentidão do sistema, trata-se de uma manutenção preventiva.
 Porém, se ela for realizada para adaptar o sistema a uma demanda externa 
 (por exemplo, alguma regulamentação), trata-se de uma manutenção adaptativa.
+
+### 4. Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)? {.unnumbered}
+
+Por exemplo, suponha que em um sistema para controle de bibliotecas tanto professores como alunos possam doar livros. Logo, podemos escrever essa história assim:
+
+> Como professor ou aluno, eu gostaria de doar livros para a biblioteca
+
+Porém, se tivermos várias histórias que valem tanto para professores como para alunos, podemos também criar um novo papel no sistema: usuário, o qual pode ser tanto um professor como um aluno. Feito isso, podemos reescrever a história acima:
+
+> Como usuário, eu gostaria de doar livros para a biblioteca.
+
+Assim, os papeis professor e aluno serão usados apenas para histórias que são específicas e restritas aos mesmos.
 
 * * * 
 
