@@ -95,7 +95,7 @@ Por exemplo, suponha que em um sistema para controle de bibliotecas tanto profes
 
 Porém, se tivermos várias histórias que valem tanto para professores como para alunos, podemos também criar um novo papel no sistema: usuário, o qual pode ser tanto um professor como um aluno. Feito isso, podemos reescrever a história acima:
 
-> Como usuário, eu gostaria de doar livros para a biblioteca.
+> Como usuário, eu gostaria de doar livros para a biblioteca
 
 Assim, os papeis professor e aluno ficarão reservados para histórias que são específicas e restritas aos mesmos.
 
