@@ -97,7 +97,7 @@ Porém, se tivermos várias histórias que valem tanto para professores como par
 
 > Como usuário, eu gostaria de doar livros para a biblioteca.
 
-Assim, os papeis professor e aluno serão usados apenas para histórias que são específicas e restritas aos mesmos.
+Assim, os papeis professor e aluno ficarão reservados para histórias que são específicas e restritas aos mesmos.
 
 * * * 
 
