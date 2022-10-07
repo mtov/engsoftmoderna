@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -27,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -284,13 +278,16 @@ interesses de tecnologia. E assim, será mais fácil testar seu sistema e
 também adaptá-lo às novas tecnologias que, com certeza, vão surgir no
 futuro.</p>
 <h3 class="unnumbered" id="para-saber-mais">Para Saber Mais</h3>
-<p>Para saber mais sobre Arquitetura Limpa, você pode consultar o <a
-href="https://dl.acm.org/doi/book/10.5555/3175742">livro</a> de mesmo
-nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista
-interessante de <a
-href="https://www.youtube.com/playlist?list=PLpJIjBkNnEt_IyTngYRkXXwxqz-Ae74ub">vídeos</a>
-no YouTube sobre o tema.</p>
-<p>Se quiser, veja também nosso artigo sobre <a
+<p>Veja também o seguinte vídeo que gravamos sobre o conteúdo deste
+artigo didático.</p>
+<p>
+<iframe width="476" height="268" src="https://www.youtube.com/embed/k_y6whzQ1z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</p>
+<p>Se quiser saber mais sobre Arquitetura Limpa, você pode consultar o
+<a href="https://dl.acm.org/doi/book/10.5555/3175742">livro</a> de mesmo
+nome do Uncle Bob.</p>
+<p>E temos também um artigo didático sobre <a
 href="./arquitetura-hexagonal.html">Arquitetura Hexagonal</a>.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
@@ -340,6 +337,15 @@ Arquitetura Limpa? Justifique.</p></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>

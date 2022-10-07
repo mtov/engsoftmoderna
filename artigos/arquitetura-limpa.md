@@ -208,13 +208,17 @@ futuro.
 
 ### Para Saber Mais {.unnumbered}
 
-Para saber mais sobre Arquitetura Limpa, você pode consultar o 
-[livro](https://dl.acm.org/doi/book/10.5555/3175742) de 
-mesmo nome do Uncle Bob. O Prof. Otavio Lemos (UNIFESP) tem também uma lista interessante de 
-[vídeos](https://www.youtube.com/playlist?list=PLpJIjBkNnEt_IyTngYRkXXwxqz-Ae74ub) 
-no YouTube sobre o tema.
+Veja também o seguinte vídeo que gravamos sobre o conteúdo deste artigo didático.
 
-Se quiser, veja também nosso artigo sobre
+<p>
+<iframe width="476" height="268" src="https://www.youtube.com/embed/k_y6whzQ1z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+Se quiser saber mais sobre Arquitetura Limpa, você pode consultar o 
+[livro](https://dl.acm.org/doi/book/10.5555/3175742) de 
+mesmo nome do Uncle Bob. 
+
+E temos também um artigo didático sobre
 [Arquitetura Hexagonal](./arquitetura-hexagonal.html).
 
 ## Exercícios {.unnumbered}
