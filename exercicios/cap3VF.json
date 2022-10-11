@@ -6,7 +6,7 @@
     "correct": "true"
   },
   {
-    "text": "Requisitos não-funcionais, na maioria das vezes, são especificados em linguagem natural.",
+    "text": "Requisitos não-funcionais, na maioria das vezes, são especificados usando-se casos de uso.",
     "correct": "false"
   },
   {
@@ -54,7 +54,7 @@
     "correct": "false"
   },
   {
-    "text": "Em Engenharia de Software, MVPs podem ser vistos como técnicas de validação de requisitos.",
+    "text": "Em Engenharia de Software, MVPs podem ser vistos como técnicas de validação de ideias de sistemas.",
     "correct": "true"
   },
   {

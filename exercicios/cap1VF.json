@@ -10,8 +10,8 @@
     "correct": "false"
   },
   {
-    "text": "São exemplos de requisitos não-funcionais: usabilidade, segurança, desempenho e confiabilidade.",
-    "correct": "true"
+    "text": "São exemplos de requisitos não-funcionais em um aplicativo de banco: usabilidade, segurança, desempenho e suporte ao PIX.",
+    "correct": "false"
   },
   {
     "text": "Arquitetura preocupa-se, principalmente, com a implementação interna das classes e métodos de um sistema.",
@@ -66,7 +66,7 @@
     "correct": "true"
   },
   {
-    "text": "Uma empresa decidiu terceirizar o desenvolvimento de um sistema com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders desse sistema.",
+    "text": "Uma empresa X decidiu terceirizar o desenvolvimento de um sistema com uma empresa Y. Então, como é uma empresa externa, Y não é um dos stakeholders desse sistema.",
     "correct": "false"
   },
   {
@@ -74,4 +74,3 @@
     "correct": "false"
   }
 ]
-}	 

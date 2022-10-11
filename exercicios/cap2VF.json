@@ -10,7 +10,7 @@
     "correct": "false"
   },
   {
-    "text": "O Manifesto Ágil defende que documentação abrangente não tem qualquer importância.",
+    "text": "O Manifesto Ágil defende que documentação não tem qualquer importância.",
     "correct": "false"
   },
   {
@@ -74,7 +74,7 @@
     "correct": "false"
   },
   {
-    "text": "Kanban é um sistema empurrado, isto é, ao terminar uma tarefa, um desenvolvedor a empurra para o próximo passo.",
+    "text": "Kanban é um sistema empurrado, isto é, ao terminar uma tarefa, um desenvolvedor a empurra para o próximo passo do quadro.",
     "correct": "false"
   },
   {
