@@ -159,13 +159,18 @@ provavelmente, continua sendo mais conhecida como Arquitetura Hexagonal.
 
 ### Para Saber Mais {.unnumbered}
 
-Se quiser conhecer mais sobre Arquitetura Hexagonal, recomendamos dois
-pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro 
-[artigo](http://wiki.c2.com/?HexagonalArchitecture) define a arquitetura. 
+Veja também o seguinte vídeo que gravamos sobre o conteúdo deste artigo didático.
+
+<iframe width="476" height="268" src="https://www.youtube.com/embed/JxgaUJmWVQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Também recomendamos dois pequenos artigos do Alistair Cockburn 
+na WikiWikiWeb. O primeiro 
+[artigo](http://wiki.c2.com/?HexagonalArchitecture) discute as propriedades
+principais de uma arquitetura hexagonal. 
 Já o segundo [artigo](http://wiki.c2.com/?PortsAndAdaptersArchitecture) 
 tenta renomeá-la para incluir os termos portas e adaptadores.
 
-Se quiser, veja também nosso artigo sobre
+E, se quiser, veja nosso artigo sobre
 [Arquitetura Limpa](./arquitetura-limpa.html).
 
 ## Exercícios {.unnumbered}

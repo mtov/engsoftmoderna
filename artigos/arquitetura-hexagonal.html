@@ -9,10 +9,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
@@ -27,27 +32,16 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <!----
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8249107-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-8249107-3', {'anonymize_ip': true});
-  </script>
-
-  <script>
-  var trackOutboundLink = function(url, action, category) {
-      gtag('event', action, {
-        'event_category': category,
-        'event_label': url,
-        'transport_type': 'beacon',
-        'event_callback': function(){document.location = url;}
-      });
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
   }
-  </script>
-  --->
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
 
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
@@ -246,13 +240,17 @@ propus com o nome Arquitetura Hexagonal.</p>
 arquitetura, provavelmente, continua sendo mais conhecida como
 Arquitetura Hexagonal.</p>
 <h3 class="unnumbered" id="para-saber-mais">Para Saber Mais</h3>
-<p>Se quiser conhecer mais sobre Arquitetura Hexagonal, recomendamos
-dois pequenos artigos do Alistair Cockburn na WikiWikiWeb. O primeiro <a
-href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> define a
-arquitetura. Já o segundo <a
+<p>Veja também o seguinte vídeo que gravamos sobre o conteúdo deste
+artigo didático.</p>
+<iframe width="476" height="268" src="https://www.youtube.com/embed/JxgaUJmWVQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p>Também recomendamos dois pequenos artigos do Alistair Cockburn na
+WikiWikiWeb. O primeiro <a
+href="http://wiki.c2.com/?HexagonalArchitecture">artigo</a> discute as
+propriedades principais de uma arquitetura hexagonal. Já o segundo <a
 href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">artigo</a> tenta
 renomeá-la para incluir os termos portas e adaptadores.</p>
-<p>Se quiser, veja também nosso artigo sobre <a
+<p>E, se quiser, veja nosso artigo sobre <a
 href="./arquitetura-limpa.html">Arquitetura Limpa</a>.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <ol type="1">
@@ -294,6 +292,15 @@ href="./arquitetura-limpa.html">artigo</a> didático).</li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
 </div>
 </div>
 </div>
