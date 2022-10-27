@@ -172,6 +172,7 @@ public class Stack<T> {
 
 5. É possível adotar simultaneamente Revisão de Código e Integração Contínua (CI)? Sim ou não? Justifique sua resposta. Se necessário, consulte a seguinte [seção](../cap10.html#o-que-%C3%A9-integra%C3%A7%C3%A3o-cont%C3%ADnua) do livro texto para saber mais sobre CI.
 
+6. O seguinte [link](./exemplo-funcao-revisao-codigo.txt) contém o código de uma função de um sistema de código aberto, chamado FitNesse, a qual é usada também em um dos exemplos do livro Clean Code. Se você ficasse encarregado de revisar o código dessa função, qual a principal observação que você faria?
 
 * * * 
 
