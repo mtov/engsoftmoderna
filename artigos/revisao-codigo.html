@@ -385,7 +385,35 @@ contém o código de uma função de um sistema de código aberto, chamado
 FitNesse, a qual é usada também em um dos exemplos do livro Clean Code.
 Se você ficasse encarregado de revisar o código dessa função, qual a
 principal observação que você faria?</p></li>
+<li><p>Como você revisaria cada um dos trechos de código a
+seguir?</p></li>
 </ol>
+<ol type="a">
+<li></li>
+</ol>
+<pre><code>const yyyymmdstr = moment().format(&quot;YYYY/MM/DD&quot;);</code></pre>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<pre><code>getUserInfo();
+getClientData();
+getCustomerRecord();
+</code></pre>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<pre><code>const locations = [&quot;Austin&quot;, &quot;New York&quot;, &quot;San Francisco&quot;];
+locations.forEach(l =&gt; {
+  doStuff();
+  doSomeOtherStuff();
+  // ...
+  // ...
+  // ...
+  dispatch(l);
+});</code></pre>
+<p>Esses exemplos são do seguinte <a
+href="https://github.com/ryanmcdermott/clean-code-javascript">repositório</a>
+que documenta boas práticas para escrita de código em JavaScript.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

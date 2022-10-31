@@ -174,6 +174,37 @@ public class Stack<T> {
 
 6. O seguinte [link](./exemplo-funcao-revisao-codigo.txt) contém o código de uma função de um sistema de código aberto, chamado FitNesse, a qual é usada também em um dos exemplos do livro Clean Code. Se você ficasse encarregado de revisar o código dessa função, qual a principal observação que você faria?
 
+7. Como você revisaria cada um dos trechos de código a seguir?
+
+(a)
+```
+const yyyymmdstr = moment().format("YYYY/MM/DD");
+```
+
+(b)
+```
+getUserInfo();
+getClientData();
+getCustomerRecord();
+
+```
+(c)
+```
+const locations = ["Austin", "New York", "San Francisco"];
+locations.forEach(l => {
+  doStuff();
+  doSomeOtherStuff();
+  // ...
+  // ...
+  // ...
+  dispatch(l);
+});
+```
+
+Esses exemplos são do seguinte 
+[repositório](https://github.com/ryanmcdermott/clean-code-javascript) 
+que documenta boas práticas para escrita de código em JavaScript.
+
 * * * 
 
 Voltar para a lista de [artigos](./artigos.html).
