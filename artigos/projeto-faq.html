@@ -100,13 +100,6 @@ href="../cap5.html">Capítulo 5</a> do livro.</p>
 <li><a
 href="#princ%C3%ADpios-de-projeto-s%C3%A3o-leis-que-sempre-devem-ser-seguidas">Princípios
 de projeto são leis que sempre devem ser seguidas?</a></li>
-<li><a href="#o-que-significa-dry-dont-repeat-yourself">O que significa
-DRY (Don’t Repeat Yourself)?</a></li>
-<li><a
-href="#o-que-significa-separa%C3%A7%C3%A3o-entre-comandos-e-queries">O
-que significa Separação entre Comandos e Queries?</a></li>
-<li><a href="#o-que-%C3%A9-ortogonalidade">O que é
-ortogonalidade?</a></li>
 <li><a href="#o-que-%C3%A9-uma-depend%C3%AAncia-circular">O que é uma
 dependência circular?</a></li>
 <li><a
@@ -155,104 +148,7 @@ alternativos não serão necessários. Logo, nesse caso, não vale a pena
 investir tempo em uma versão mais aberta, flexível e extensível de
 <code>sort</code>.</p></li>
 </ul>
-<h3 class="unnumbered" id="o-que-significa-dry-dont-repeat-yourself">2.
-O que significa DRY (Don’t Repeat Yourself)? <a
-href="#o-que-significa-dry-dont-repeat-yourself" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
-<p>Este princípio de projeto foi enunciado pela primeira vez no livro
-<em>The Pragmatic Programmer</em>, de David Thomas e Andrew Hunt, de
-1999. Ele recomenda o seguinte:</p>
-<blockquote>
-<p>Qualquer tipo de conhecimento deve ter uma representação única,
-inequívoca e oficial em um sistema.</p>
-</blockquote>
-<p>A forma mais fácil de entender DRY é pensando em termos de código.
-Por exemplo, em um sistema nunca devemos ter duas funções X e Y
-duplicadas, isto é, com exatamente o mesmo propósito. Isso é ruim por
-dois motivos principais:</p>
-<ul>
-<li><p>Suponha que X tenha sido implementada primeiro; logo, o esforço
-para implementar Y foi desnecessário, pois já existia uma função
-idêntica no sistema.</p></li>
-<li><p>Suponha que temos que realizar uma manutenção em X; logo, teremos
-que repetir esse esforço em Y.</p></li>
-</ul>
-<p>Porém, DRY não vale apenas para código, mas para qualquer
-conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma
-de documentação) que apenas repete o que está no código. Nesse caso,
-talvez a refatoração do código, com nomes e intenções mais claras, pode
-torná-lo auto-explicativo. Se isso acontecer, podemos remover o
-comentário.</p>
-<p>Na verdade, na escrita do nosso livro procuramos praticar esse
-princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no
-entanto, são geradas a partir de um mesmo arquivo fonte, escrito em
-Markdown. Se não fosse assim, qualquer pequena correção de português
-teria que ser repetida nos três formatos do livro.</p>
-<p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of
-Unix Programming</em>, Eric Raymond usa o termo SPOT (<em>Single Point
-of Truth</em>).</p>
-<h3 class="unnumbered"
-id="o-que-significa-separação-entre-comandos-e-queries">3. O que
-significa Separação entre Comandos e Queries? <a
-href="#o-que-significa-separação-entre-comandos-e-queries"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
-princípio Aberto/Fechado (Open/Closed), que dá origem à letra <q>O</q>
-dos princípios SOLID.</p>
-<p>O Princípio da Separação entre Comandos e Queries advoga que devem
-existir duas categorias de métodos em uma classe:</p>
-<ul>
-<li><p>Comandos, que são métodos que não retornam valor (isto é,
-retornam <code>void</code>), mas que possuem efeito colateral. Ou seja,
-eles <em>alteram</em> o estado do sistema. Por exemplo, eles gravam
-alguma informação no banco de dados, alteram um atributo da classe ou
-uma variável global, etc.</p></li>
-<li><p>Queries, que são métodos que apenas retornam valores, sem mudar o
-estado do sistema.</p></li>
-</ul>
-<p>Então, o princípio recomenda que um método: (1) ou deve ser um
-comando; (2) ou deve ser uma query. O que não é recomendável é que um
-método desempenhe ambos os papeis.</p>
-<p>Ou seja, para ficar ainda mais claro: (1) um comando não deve
-retornar valores; (2) uma query não deve ter efeitos colaterais.</p>
-<p>O objetivo do princípio é fomentar uma divisão clara entre essas duas
-categorias de métodos, pois é mais <q>seguro</q> e simples você chamar
-uma query do que chamar um comando. Por exemplo, ao chamar uma query a
-desenvolvedora tem certeza de que não vai alterar nada no sistema. O
-mesmo, no entanto, não acontece com comandos.</p>
-<p>Bertrand Meyer justifica assim o seu princípio:</p>
-<blockquote>
-<p>O ato de fazer uma pergunta não deve mudar a sua resposta.</p>
-</blockquote>
-<p>Nessa frase, <q>fazer uma pergunta</q> significa chamar uma query.
-Isso não deve influenciar a resposta dessa query (caso a gente faça a
-pergunta de novo, por exemplo) ou a resposta de uma outra query (que,
-por exemplo, a gente faça logo a seguir).</p>
-<h3 class="unnumbered" id="o-que-é-ortogonalidade">4. O que é
-ortogonalidade? <a href="#o-que-é-ortogonalidade" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
-<p>Dois componentes de um projeto são ortogonais se mudanças em um deles
-não afetam o outro. Logo, eles podem ser livremente combinados ou
-trocados.</p>
-<p>No livro <em>The Pragmatic Programmer</em>, o seguinte exemplo
-explica o conceito:</p>
-<blockquote>
-<p>Em um sistema bem projetado, o banco de dados é ortogonal à interface
-do usuário: pode-se alterar a interface sem afetar o banco de dados e
-trocar o banco de dados sem alterar a interface.</p>
-</blockquote>
-<p>Para explicar melhor, suponha um sistema no qual podemos usar um
-conjunto de interfaces com o usuário X e um conjunto de bancos de dados
-Y. Em um sistema ortogonal, a escolha da interface X não impacta ou
-restringe a escolha do banco de dados Y. Qualquer combinação de X e Y é
-possível. Por isso, podemos imaginar X e Y como duas retas ortogonais,
-que formam um plano, no qual qualquer coordenada (x,y) representa uma
-configuração possível do sistema.</p>
-<p>Portanto, ortogonalidade é uma propriedade que costuma estar
-presente, de graça, em sistemas bem projetados, cujos módulos possuem
-alta coesão e baixo acoplamento, tal como estudamos no <a
-href="../cap5.html#coes%C3%A3o">Capítulo 5</a>.</p>
-<h3 class="unnumbered" id="o-que-é-uma-dependência-circular">5. O que é
+<h3 class="unnumbered" id="o-que-é-uma-dependência-circular">2. O que é
 uma dependência circular? <a href="#o-que-é-uma-dependência-circular"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Suponha dois pacotes P1 e P2. Existe uma dependência circular entre
@@ -284,7 +180,7 @@ o que o diagrama revela é que manutenções no pacote antigo
 (<code>awt</code>) introduziram também dependências para o pacote novo
 (<code>swing</code>).</p>
 <h3 class="unnumbered"
-id="existe-diferença-entre-os-conceitos-de-ocultamento-de-informação-e-encapsulamento">6.
+id="existe-diferença-entre-os-conceitos-de-ocultamento-de-informação-e-encapsulamento">3.
 Existe diferença entre os conceitos de Ocultamento de Informação e
 Encapsulamento? <a
 href="#existe-diferença-entre-os-conceitos-de-ocultamento-de-informação-e-encapsulamento"
@@ -301,7 +197,7 @@ href="../cap5.html#ocultamento-de-informa%C3%A7%C3%A3o">Capítulo 5</a>.
 Ou seja, ocultamento de informação é uma propriedade de mais alto nível,
 por assim dizer. Já encapsulamento costuma ser mais usado em textos
 sobre linguagens de programação.</p>
-<h3 class="unnumbered" id="o-que-é-um-design-doc">7. O que é um design
+<h3 class="unnumbered" id="o-que-é-um-design-doc">4. O que é um design
 doc? <a href="#o-que-é-um-design-doc" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>Algumas vezes, antes de iniciar a implementação de um novo sistema ou

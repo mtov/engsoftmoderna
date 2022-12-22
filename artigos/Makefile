@@ -48,6 +48,9 @@ deep-modules: deep-modules.md
 ddd: ddd.md
 	$(pandoc_bin) -T "Domain-Driven Design (DDD): Um Resumo" ddd.md -o ddd.html
 
+outros-principios: outros-principios.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Mais Alguns Princípios e Propriedades de Projeto" outros-principios.md -o outros-principios.html
+
 projeto-faq: projeto-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
 
