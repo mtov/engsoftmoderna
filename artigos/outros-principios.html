@@ -129,7 +129,7 @@ torná-lo auto-explicativo. Se isso acontecer, podemos remover o
 comentário.</p>
 <p>Na verdade, na escrita do nosso livro procuramos praticar esse
 princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no
-entanto, são geradas a partir de um mesmo arquivo fonte, escrito em
+entanto, são geradas a partir de um mesmo arquivo fonte escrito em
 Markdown. Se não fosse assim, qualquer pequena correção de português
 teria que ser repetida nos três formatos do livro.</p>
 <p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of
@@ -155,14 +155,9 @@ estado do sistema.</p></li>
 </ul>
 <p>Então, o princípio recomenda que um método: (1) ou deve ser um
 comando; (2) ou deve ser uma query. O que não é recomendável é que um
-método desempenhe ambos os papeis.</p>
+método desempenhe ambos os papéis.</p>
 <p>Ou seja, para ficar ainda mais claro: (1) um comando não deve
 retornar valores; (2) uma query não deve ter efeitos colaterais.</p>
-<p>O objetivo do princípio é fomentar uma divisão clara entre essas duas
-categorias de métodos, pois é mais <q>seguro</q> e simples você chamar
-uma query do que chamar um comando. Por exemplo, ao chamar uma query a
-desenvolvedora tem certeza de que não vai alterar nada no sistema. O
-mesmo, no entanto, não acontece com comandos.</p>
 <p>Bertrand Meyer justifica assim o seu princípio:</p>
 <blockquote>
 <p>O ato de fazer uma pergunta não deve mudar a sua resposta.</p>
@@ -171,6 +166,17 @@ mesmo, no entanto, não acontece com comandos.</p>
 Isso não deve influenciar a resposta dessa query (caso a gente faça a
 pergunta de novo, por exemplo) ou a resposta de uma outra query (que,
 por exemplo, a gente faça logo a seguir).</p>
+<p>O objetivo do princípio é fomentar uma divisão clara entre essas duas
+categorias de métodos, pois é mais seguro e simples você chamar uma
+query do que chamar um comando. Por exemplo, ao chamar uma query temos
+certeza de que não vamos alterar nada no sistema. O mesmo, no entanto,
+não acontece com comandos.</p>
+<p>Em outras palavras, e tentando dar uma interpretação mais ampla para
+o princípio, ao projetar um sistema devemos nos esforçar para separar a
+parte imperativa (comandos) da parte funcional (queries). E, melhor
+ainda, devemos procurar maximizar a parte funcional e minimizar o número
+de comandos. Isso é importante porque queries (funções) são mais fáceis
+de entender, de chamar e de testar.</p>
 <h2 class="unnumbered" id="ortogonalidade">Ortogonalidade <a
 href="#ortogonalidade" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
@@ -195,6 +201,19 @@ configuração possível do sistema.</p>
 presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no <a
 href="../cap5.html#coes%C3%A3o">Capítulo 5</a>.</p>
+<h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<ol type="1">
+<li><p>Seja uma aplicação CRUD (<em>Create</em>, <em>Read</em>,
+<em>Update</em>, <em>Delete</em>). Quais dessas operações devem ser
+implementadas como Comandos? E quais devem ser Queries?</p></li>
+<li><p>Seja a classe <code>Stack</code> implementada no seguinte <a
+href="https://gist.github.com/mtov/3601acd0b32a1d0a85b4a81a43af4284">arquivo</a>.
+(1) Qual método dessa implementação viola o princípio de Separação de
+Comandos e Queries (CQS)? (2) Como você reimplementaria esse método de
+forma compatível com CQS? (3) Você acha que valeria a pena adotar a
+solução compatível com CQS nesse caso?</p></li>
+</ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

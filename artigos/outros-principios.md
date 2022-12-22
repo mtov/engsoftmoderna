@@ -38,7 +38,7 @@ Se isso acontecer, podemos remover o comentário.
 
 Na verdade, na escrita do nosso livro procuramos praticar esse 
 princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, 
-no entanto, são geradas a partir de um mesmo arquivo fonte, escrito 
+no entanto, são geradas a partir de um mesmo arquivo fonte escrito 
 em Markdown. Se não fosse assim, qualquer pequena correção de português 
 teria que ser repetida nos três formatos do livro.
 
@@ -67,18 +67,11 @@ mudar o estado do sistema.
 
 Então, o princípio recomenda que um método: (1) ou deve
 ser um comando; (2) ou deve ser uma query. O que não é 
-recomendável é que um método desempenhe ambos os papeis.
+recomendável é que um método desempenhe ambos os papéis.
 
 Ou seja, para ficar ainda mais claro: (1) um comando não
 deve retornar valores; (2) uma query não deve ter efeitos
 colaterais.
-
-O objetivo do princípio é fomentar uma divisão clara entre 
-essas duas categorias de métodos, pois é mais "seguro" e 
-simples você chamar uma query do que chamar um comando. Por 
-exemplo, ao chamar uma query a desenvolvedora tem certeza de 
-que não vai alterar nada no sistema. O mesmo, no entanto, 
-não acontece com comandos.
 
 Bertrand Meyer justifica assim o seu princípio:
 
@@ -90,6 +83,20 @@ query. Isso não deve influenciar a resposta dessa query
 a resposta de uma outra query (que, por exemplo, a gente 
 faça logo a seguir).
 
+O objetivo do princípio é fomentar uma divisão clara entre 
+essas duas categorias de métodos, pois é mais seguro e 
+simples você chamar uma query do que chamar um comando. Por 
+exemplo, ao chamar uma query temos certeza de 
+que não vamos alterar nada no sistema. O mesmo, no entanto, 
+não acontece com comandos.
+
+Em outras palavras, e tentando dar uma interpretação mais
+ampla para o princípio, ao projetar um sistema devemos
+nos esforçar para separar a parte imperativa (comandos) 
+da parte funcional (queries). E, melhor ainda, devemos 
+procurar maximizar a parte funcional e minimizar o número de
+comandos. Isso é importante porque queries (funções) são 
+mais fáceis de entender, de chamar e de testar.
 
 ## Ortogonalidade {.unnumbered}
 
@@ -116,6 +123,20 @@ Em geral, ortogonalidade é uma propriedade que costuma estar
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
 alta coesão e baixo acoplamento, tal como estudamos no 
 [Capítulo 5](../cap5.html#coes%C3%A3o).
+
+## Exercícios {.unnumbered}
+
+1. Seja uma aplicação CRUD (*Create*, *Read*, *Update*, *Delete*). 
+Quais dessas operações devem ser implementadas como Comandos? 
+E quais devem ser Queries?
+
+2. Seja a classe `Stack` implementada no 
+seguinte [arquivo](https://gist.github.com/mtov/3601acd0b32a1d0a85b4a81a43af4284). (1) Qual método dessa implementação viola o princípio de Separação 
+de Comandos e Queries (CQS)? (2) Como você reimplementaria esse método
+de forma compatível com CQS? (3) Você acha que valeria a pena adotar 
+a solução compatível com CQS nesse caso?
+
+
 
 * * * 
 
