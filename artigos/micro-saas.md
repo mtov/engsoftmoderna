@@ -211,6 +211,26 @@ média é de R$ 100 e a taxa de cancelamento for de 25%, temos que LTV =
 Para um SaaS ser viável, LTV > CAC. Na verdade,
 costuma-se recomendar que LTV / CAC > 3.0.
 
+Uma outra métrica muito usada para avaliar a satisfação de 
+sistemas SaaS é o **NPS (Net Promoter Score)**. Para calcular 
+essa métrica, precisamos fazer a seguinte pergunta para um 
+conjunto de clientes:
+
+> Em uma escala de 0 a 10, qual a chance de você recomendar nosso sistema para um amigo?
+
+Então, o NPS é assim calculado: 
+
+> NPS = % de respostas 9 e 10 (promotores) menos o % de respostas 0 a 6 (detratores). 
+
+Valores de NPS acima de 75% são considerados excelentes 
+e entre 50% e 74% já são considerados muito bons. Por exemplo, 
+grandes empresas da Internet costumam ter NPS próximo de 
+60% ou até mesmo um pouco inferior.
+
+O NPS é importante porque se um empresa ou sistema tem um 
+NPS alto então o seu CAC e Churn tendem a ser menores. E, 
+consequentemente, o LTV será maior.
+
 ### Artigo Relacionado {.unnumbered}
 
 Veja também este outro [artigo](./como-monetizar.html) sobre monetização de software.
