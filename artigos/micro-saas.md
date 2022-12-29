@@ -222,9 +222,14 @@ Então, o NPS é assim calculado:
 
 > NPS = % de respostas 9 e 10 (promotores) menos o % de respostas 0 a 6 (detratores). 
 
-Valores de NPS acima de 50% já são considerados muito bons. 
+Logo, se uma empresa, serviço ou sistema tem 70% de promotores 
+e 10% de detratores, seu NPS será 60 (70-10). Veja que as respostas
+7 e 8 são consideradas neutras e, por isso, não entram no
+cálculo do NPS.
+
+Valores de NPS acima de 50 já são considerados bons. 
 Por exemplo, grandes empresas da Internet costumam ter NPS 
-próximo de 60% ou até mesmo um pouco inferior.
+próximo de 60 ou até mesmo um pouco inferior.
 
 O NPS é importante porque se um empresa ou sistema tem um 
 NPS alto então o seu CAC e Churn tendem a ser menores. E, 
