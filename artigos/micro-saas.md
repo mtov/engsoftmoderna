@@ -222,10 +222,9 @@ Então, o NPS é assim calculado:
 
 > NPS = % de respostas 9 e 10 (promotores) menos o % de respostas 0 a 6 (detratores). 
 
-Valores de NPS acima de 75% são considerados excelentes 
-e entre 50% e 74% já são considerados muito bons. Por exemplo, 
-grandes empresas da Internet costumam ter NPS próximo de 
-60% ou até mesmo um pouco inferior.
+Valores de NPS acima de 50% já são considerados muito bons. 
+Por exemplo, grandes empresas da Internet costumam ter NPS 
+próximo de 60% ou até mesmo um pouco inferior.
 
 O NPS é importante porque se um empresa ou sistema tem um 
 NPS alto então o seu CAC e Churn tendem a ser menores. E, 
@@ -256,8 +255,10 @@ Paul Graham (2013). No seu resumo,  liste algumas tarefas mencionadas
 no artigo e que, exatamente por não escalarem, devem ser feitas por 
 fundadores nos estágios iniciais de criação de uma empresa de software.
 
-4. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante 
-àquela que fizemos no artigo.
+4. Qual o maior e o menor valor possível para a métrica NPS? Em quais
+situações eles ocorrem?
+
+5. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante àquela que fizemos no artigo.
 
 
 * * * 
