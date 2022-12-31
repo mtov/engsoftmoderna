@@ -212,7 +212,7 @@ Para um SaaS ser viável, LTV > CAC. Na verdade,
 costuma-se recomendar que LTV / CAC > 3.0.
 
 Uma outra métrica muito usada para avaliar a satisfação de 
-sistemas SaaS é o **NPS (Net Promoter Score)**. Para calcular 
+sistemas SaaS é o **Net Promoter Score (NPS)**. Para calcular 
 essa métrica, precisamos fazer a seguinte pergunta para um 
 conjunto de clientes:
 

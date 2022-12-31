@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Marco Tulio Valente" />
-  <title>Mais Alguns Princípios e Propriedades de Projeto – Engenharia de Software Moderna</title>
+  <title>Mais Alguns Princípios de Projeto: CQS, DRY, YAGNI e KISS – Engenharia de Software Moderna</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -88,53 +88,21 @@ Veja também os cursos de extensão a distância
 <p class="author">Marco Tulio Valente</p>
 </header>
 <h1 class="unnumbered"
-id="mais-alguns-princípios-e-propriedades-de-projeto">Mais Alguns
-Princípios e Propriedades de Projeto <a
-href="#mais-alguns-princípios-e-propriedades-de-projeto"
+id="mais-alguns-princípios-de-projeto-cqs-dry-yagni-e-kiss">Mais Alguns
+Princípios de Projeto: CQS, DRY, YAGNI e KISS <a
+href="#mais-alguns-princípios-de-projeto-cqs-dry-yagni-e-kiss"
 class="anchor-link" aria-hidden="true">🔗</a></h1>
 <p>Neste artigo, vamos complementar os princípios de projeto, estudados
-no <a href="../cap5.html">Capítulo 5</a>, com dois novos princípios:</p>
+no <a href="../cap5.html">Capítulo 5</a>, com quatro novos
+princípios:</p>
 <ul>
-<li>DRY: Don’t Repeat Yourself</li>
 <li>CQS: Command-Query Separation</li>
+<li>DRY: Don’t Repeat Yourself</li>
+<li>YAGNI: You aren’t gonna need it</li>
+<li>KISS: Keep It Simple Stupid</li>
 </ul>
 <p>Para finalizar, vamos falar sobre ortogonalidade, que é uma
 propriedade interessante em projetos de projeto</p>
-<h2 class="unnumbered" id="dry-dont-repeat-yourself">DRY: Don’t Repeat
-Yourself <a href="#dry-dont-repeat-yourself" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
-<p>Este princípio de projeto foi enunciado pela primeira vez no livro
-<em>The Pragmatic Programmer</em>, de David Thomas e Andrew Hunt, de
-1999. Ele recomenda o seguinte:</p>
-<blockquote>
-<p>Qualquer tipo de conhecimento deve ter uma representação única,
-inequívoca e oficial em um sistema.</p>
-</blockquote>
-<p>A forma mais fácil de entender DRY é pensando em termos de código.
-Por exemplo, em um sistema nunca devemos ter duas funções X e Y
-duplicadas, isto é, com exatamente o mesmo propósito. Isso é ruim por
-dois motivos principais:</p>
-<ul>
-<li><p>Suponha que X tenha sido implementada primeiro; logo, o esforço
-para implementar Y foi desnecessário, pois já existia uma função
-idêntica no sistema.</p></li>
-<li><p>Suponha que temos que realizar uma manutenção em X; logo, teremos
-que repetir esse esforço em Y.</p></li>
-</ul>
-<p>Porém, DRY não vale apenas para código, mas para qualquer
-conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma
-de documentação) que apenas repete o que está no código. Nesse caso,
-talvez a refatoração do código, com nomes e intenções mais claras, pode
-torná-lo auto-explicativo. Se isso acontecer, podemos remover o
-comentário.</p>
-<p>Na verdade, na escrita do nosso livro procuramos praticar esse
-princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no
-entanto, são geradas a partir de um mesmo arquivo fonte escrito em
-Markdown. Se não fosse assim, qualquer pequena correção de português
-teria que ser repetida nos três formatos do livro.</p>
-<p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of
-Unix Programming</em>, Eric Raymond usa o termo SPOT (<em>Single Point
-of Truth</em>).</p>
 <h2 class="unnumbered" id="cqs-command-query-separation">CQS:
 Command-Query Separation <a href="#cqs-command-query-separation"
 class="anchor-link" aria-hidden="true">🔗</a></h2>
@@ -177,6 +145,92 @@ parte imperativa (comandos) da parte funcional (queries). E, melhor
 ainda, devemos procurar maximizar a parte funcional e minimizar o número
 de comandos. Isso é importante porque queries (funções) são mais fáceis
 de entender, de chamar e de testar.</p>
+<h2 class="unnumbered" id="dry-dont-repeat-yourself">DRY: Don’t Repeat
+Yourself <a href="#dry-dont-repeat-yourself" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Este princípio de projeto foi enunciado pela primeira vez no livro
+<em>The Pragmatic Programmer</em>, de David Thomas e Andrew Hunt, de
+1999. Ele recomenda o seguinte:</p>
+<blockquote>
+<p>Qualquer tipo de conhecimento deve ter uma representação única,
+inequívoca e oficial em um sistema.</p>
+</blockquote>
+<p>A forma mais fácil de entender DRY é pensando em termos de código.
+Por exemplo, em um sistema nunca devemos ter duas funções X e Y
+duplicadas, isto é, com exatamente o mesmo propósito. Isso é ruim por
+dois motivos principais:</p>
+<ul>
+<li><p>Suponha que X tenha sido implementada primeiro; logo, o esforço
+para implementar Y foi desnecessário, pois já existia uma função
+idêntica no sistema.</p></li>
+<li><p>Suponha que temos que realizar uma manutenção em X; logo, teremos
+que repetir esse esforço em Y.</p></li>
+</ul>
+<p>Porém, DRY não vale apenas para código, mas para qualquer
+conhecimento. Por exemplo, às vezes temos um comentário (ou outra forma
+de documentação) que apenas repete o que está no código. Nesse caso,
+talvez a refatoração do código, com nomes e intenções mais claras, pode
+torná-lo auto-explicativo. Se isso acontecer, podemos remover o
+comentário.</p>
+<p>Na verdade, na escrita do nosso livro procuramos praticar esse
+princípio. O livro tem três versões (HTML, e-book e PDF). Todas elas, no
+entanto, são geradas a partir de um mesmo arquivo fonte escrito em
+Markdown. Se não fosse assim, qualquer pequena correção de português
+teria que ser repetida nos três formatos do livro.</p>
+<p>Existem outros nomes para DRY. Por exemplo, no livro <em>The Art of
+Unix Programming</em>, Eric Raymond usa o termo SPOT (<em>Single Point
+of Truth</em>).</p>
+<h2 class="unnumbered" id="yagni-you-arent-gonna-need-it">YAGNI: You
+aren’t gonna need it <a href="#yagni-you-arent-gonna-need-it"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Este princípio é muito comentado entre adotantes de Extreme
+Programming (XP). Na verdade, já falamos rapidamente sobre ele no <a
+href="https://engsoftmoderna.info/cap2.html#pr%C3%A1ticas-de-programa%C3%A7%C3%A3o">Capítulo
+2</a>.</p>
+<p>Mas, explicando com um pouco mais de calma, a motivação do princípio
+é o fato de que desenvolvedores, muitas vezes, projetam e implementam
+funcionalidades que não serão usadas ou que não são relevantes no atual
+momento de vida de um sistema.</p>
+<p>Em outras palavras, como é sempre fácil pedir, os clientes de um
+sistema podem demandar uma lista enorme de funcionalidades, sendo que
+algumas delas não são tão importantes. Inclusive, pode ser que elas
+nunca serão fato usadas.</p>
+<p>Por isso, o princípio YAGNI (ou <q>você não vai precisar disso</q>)
+diz o seguinte:</p>
+<blockquote>
+<p>Somente implemente uma funcionalidade quanto tiver fortes evidências
+de que ela será de fato usada… Ou seja, evite implementar
+funcionalidades que serão úteis a médio e longo prazo. Pode ser que,
+antes disso, elas perderão importância…</p>
+</blockquote>
+<h2 class="unnumbered" id="kiss-keep-it-simple-stupid">KISS: Keep It
+Simple, Stupid <a href="#kiss-keep-it-simple-stupid" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Esta sigla é usada em diversos contextos e domínios. Mas,
+especificamente no caso de projeto de software, ela diz respeito à
+tendência de desenvolvedores complicarem o projeto de um software para
+além do necessário.</p>
+<p>Por exemplo, muitas vezes os desenvolvedores propõem uma arquitetura
+super complexa, baseada em padrões elaborados, tais como <a
+href="https://engsoftmoderna.info/cap7.html#microsservi%C3%A7os">microsserviços</a>,
+<a
+href="https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html">Arquitetura
+Hexagonal</a>, <a
+href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">Arquitetura
+Limpa</a>, etc. Ou então optam por implementações que fazem um uso
+exagerado de<br />
+<a href="https://engsoftmoderna.info/cap6.html">padrões de projeto</a>.
+Não que esses padrões sejam inúteis… Mas em algumas aplicações – menores
+e menos sujeitas a mudanças – eles simplesmente não se <q>pagam</q>. Ou
+seja, é como usar um <q>canhão para matar uma formiga</q>.</p>
+<p>Por isso, ao projetar um sistema, tente conter sua veia por adotar
+soluções tecnicamente sofisticadas. E somente as use quando for
+necessário.</p>
+<p>Quando não seguimos o princípio KISS, costuma-se dizer que solução
+complexa adotada no lugar é um exemplo de
+<strong>overengineering</strong>, ou seja, um uso superestimado e
+injustificado de técnicas e princípios de Engenharia (no nosso caso, de
+Engenharia de Software).</p>
 <h2 class="unnumbered" id="ortogonalidade">Ortogonalidade <a
 href="#ortogonalidade" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
