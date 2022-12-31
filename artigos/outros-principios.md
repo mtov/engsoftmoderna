@@ -3,13 +3,14 @@
 Neste artigo, vamos complementar os princípios de projeto, estudados 
 no [Capítulo 5](../cap5.html), com quatro novos princípios:
 
-* CQS: Command-Query Separation
-* DRY: Don't Repeat Yourself
-* YAGNI: You aren't gonna need it
-* KISS: Keep It Simple Stupid 
+* [CQS](#cqs-command-query-separation): Command-Query Separation
+* [DRY](#dry-dont-repeat-yourself): Don't Repeat Yourself
+* [YAGNI](#yagni-you-arent-gonna-need-it): You Aren't Gonna Need It
+* [KISS](#kiss-keep-it-simple-stupid): Keep It Simple, Stupid 
 
-Para finalizar, vamos falar sobre ortogonalidade, que é uma 
-propriedade interessante em projetos de projeto
+Para finalizar, vamos falar sobre 
+[ortogonalidade](#ortogonalidade), 
+que é uma propriedade importante em projetos de projeto
 
 ## CQS: Command-Query Separation {.unnumbered}
 
@@ -99,7 +100,7 @@ teria que ser repetida nos três formatos do livro.
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
-## YAGNI: You aren't gonna need it {.unnumbered}
+## YAGNI: You Aren't Gonna Need It {.unnumbered}
 
 Este princípio é muito comentado entre adotantes de Extreme
 Programming (XP). Na verdade, já falamos rapidamente sobre
@@ -114,16 +115,26 @@ sistema.
 Em outras palavras, como é sempre fácil pedir, os clientes de 
 um sistema podem demandar uma lista enorme de funcionalidades, 
 sendo que algumas delas não são tão importantes. Inclusive, 
-pode ser que elas nunca serão fato usadas.
+pode ser que elas nunca sejam fato usadas.
 
 Por isso, o princípio YAGNI (ou "você não vai precisar disso")
 diz o seguinte:
 
 > Somente implemente uma funcionalidade quanto tiver fortes
-evidências de que ela será de fato usada... Ou seja, evite
+evidências de que ela será de fato usada. Ou seja, evite
 implementar funcionalidades que serão úteis a 
 médio e longo prazo. Pode ser que, antes disso, elas
-perderão importância...
+perderão importância.
+
+Para dar um exemplo, suponha que você esteja implementando um 
+aplicativo para entrega de comida online. E que o cliente --
+que está solicitando o aplicativo -- sugira que as mensagens
+estejam em Português e, também, em Espanhol, pois ele pretende, 
+no futuro, expandir seu negócio para outros países da 
+América Latina. Nesse contexto, pode ser interessante argumentar
+com o cliente se mensagens em espanhol são mesmo importantes,
+pelo menos nessa primeira versão do sistema.
+
 
 ## KISS: Keep It Simple, Stupid {.unnumbered}
 
@@ -152,9 +163,15 @@ somente as use quando for necessário.
 Quando não seguimos o princípio KISS, costuma-se dizer que 
 solução complexa adotada no lugar é um exemplo de 
 **overengineering**, ou seja, um uso superestimado 
-e injustificado de técnicas e princípios de Engenharia
+e injustificado de técnicas e princípios de engenharia
 (no nosso caso, de Engenharia de Software).
 
+Antes de concluir, é interessante correlacionar YAGNI com
+KISS. O primeiro princípio recomenda que devemos postergar
+qualquer implementação até o momento em que ela seja,
+de fato, necessária. Quando tal momento chegar, KISS
+recomenda que a implementação seja feita da forma mais
+simples possível. 
 
 ## Ortogonalidade {.unnumbered}
 
