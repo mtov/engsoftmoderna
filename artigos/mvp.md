@@ -4,33 +4,32 @@
 
 **Produto Mínimo Viável (MVP)** é um conceito popularizado por Eric Ries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
-alcance que ele alcançou. Hoje, o conceito é usado pelos mais
+alcance que ele alcançou. Hoje, o conceito é usado por
 diversos empreendedores, sejam eles de produtos digitais ou
 mesmo de produtos físicos. O conceito de MVP já faz parte também do
-vocabulário de desenvolvedores de software (como estudamos no
-[Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp)), 
-profissionais de marketing, consultores, analistas de negócio, etc.
+vocabulário de desenvolvedores de software, tal como estudamos no
+[Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
-No entanto, principalmente na área de software, o conceito de
-MVP é algumas vezes usado de uma forma que não é totalmente fiel 
-à sua definição original. Então, neste pequeno artigo, vamos
-tentar esclarecer o significado mais preciso desse conceito.
+No entanto, na área de software, o termo MVP é algumas vezes usado 
+de uma forma que não é totalmente fiel à sua definição original. 
+Por isso, neste artigo didático, vamos tentar esclarecer o significado 
+mais preciso desse conceito.
 
 ## Primeiro, o que é um MVP?  {.unnumbered}
 
-Para entender para que serve um MVP, temos que começar lembrando que 
-o conceito foi proposto no contexto de startups, isto é, 
+Para entender para que serve um MVP, temos que lembrar que 
+o conceito foi proposto para o contexto de startups, isto é, 
 empreendimentos que operam em um ambiente de grande 
-risco e cujas chances de insucesso são grandes.
+risco e cujas chances de insucesso são enormes.
 
-Nesse contexto, é importante testar o mais rapidamente possível 
-as hipóteses mais arriscadas do empreendimento. A **metodologia
-lean** para criação de startups defende então que duas perguntas
+Em tais contextos, é importante testar rapidamente as hipóteses 
+mais arriscadas do empreendimento. A **metodologia lean** 
+para criação de startups defende que duas perguntas
 fundamentais devem ser respondidas o quanto antes:
 
-1. Qual a hipótese mais arriscada do meu projeto? Isto é, qual a
-hipótese que se não for verdade vai resultar no fracasso 
-do projeto?
+1. Qual a hipótese mais arriscada do meu empreendimento? 
+Isto é, qual a hipótese que se não for verdade vai resultar 
+no seu fracasso?
 
 2. Qual o menor experimento (isto é, MVP) que eu posso construir
 para validar essa hipótese?
@@ -38,17 +37,17 @@ para validar essa hipótese?
 Normalmente, a primeira hipótese que deve ser testada é a 
 capacidade da empresa atrair clientes dispostos a pagar 
 pelo seu produto ou serviço. Dizendo de outro modo, essa
-hipótese pode ser anunciada da seguinte forma: existem 
+hipótese pode ser enunciada da seguinte forma: existem 
 clientes dispostos a pagar por uma solução X para um 
-problema Y.
+problema Y?
 
 Desse modo, o primeiro MVP de uma startup não costuma ser um 
 sistema, pois o custo de desenvolver um sistema -- mesmo que 
 mínimo -- pode ser alto. Em vez disso, costuma-se usar como
 primeiro MVP apenas uma *landing page*, um vídeo de demonstração ou 
-sketches de telas em papel. Ou seja, um produto que pode ser 
-construído em poucos dias. Feito isso, ele deve ser 
-apresentado a potenciais clientes, para obter 
+sketches de telas em papel. Ou seja, algo que pode ser 
+construído em poucos dias. Feito isso, esse primeiro MVP 
+deve ser apresentado a potenciais clientes, para obter 
 uma primeira ideia do potencial de sucesso do empreendimento.
 
 Por exemplo, suponha que seu primeiro MVP seja apenas uma
@@ -62,36 +61,33 @@ frase famosa sobre metodologias lean:
 > Em um MVP, você decide o que é mínimo, mas é o cliente quem
 decide se o produto é viável.
 
-Ou seja, viável, na sigla MVP, significa um produto que atende 
-e atrai clientes -- em vez de significar um produto que você
-consegue implementar.
+Ou seja, viável, na sigla MVP, significa um produto que 
+atrai clientes -- em vez de um produto que você consegue 
+implementar.
 
 Continuando com o exemplo anterior, se ninguém se cadastrar
 na sua lista de mails, mesmo após algum esforço de promoção, 
-você deve avaliar com calma se vale a pena continuar com a 
-sua ideia.
+você deve avaliar se vale a pena continuar com a sua ideia.
 
 Por outro lado, se os primeiros experimentos forem bem 
-sucedidos, você vai ter que começar a construir seus
+sucedidos, você deve começar a construir seus
 primeiros MVPs na forma de sistemas. Algumas recomendações
 nesse momento são as seguintes:
 
-* Mesmo quando o MVP passa a ser um sistema, continue 
-focando em adotantes iniciais (*early adopters*), pois
-é mais difícil criar um produto para um grupo 
-amplo e genérico de usuários.
+* Mesmo quando o MVP é um sistema, continue focando em adotantes 
+iniciais (*early adopters*), pois é mais difícil criar um produto 
+para um grupo amplo e genérico de usuários.
 
-* Passe a exigir algum pagamento dos clientes, por exemplo,
-após um período de experimentação de 30 dias.
-Ou seja, é importante validar se seus clientes estão 
-dispostos a pagar pelo sistema. Se eles não quiserem pagar,
-isso costuma ser uma ameaça séria à sobrevivência do negócio.
+* Passe a exigir algum pagamento, pois é importante validar se 
+seus clientes estão dispostos a pagar pelo sistema. Se eles 
+não quiserem pagar, isso será uma ameaça à sobrevivência do 
+negócio.
 
 * Não tente automatizar tudo ainda. Como você vai ter
 poucos clientes, várias tarefas -- incluindo pagamentos,
 devoluções, cancelamentos, mudanças de planos de pagamento, 
-entregas, etc -- podem ser feitas de modo manual. 
-Esse tipo de MVP é chamado de **MVP Mágico de Oz**.
+etc -- podem ser feitas de modo manual. Esse tipo de MVP 
+é chamado de **MVP Mágico de Oz**.
 
 * Sempre reuse bibliotecas ou serviços de terceiros. 
 Os exemplos clássicos são serviços de autenticação de 
@@ -100,46 +96,32 @@ usuários e de cobrança por cartões de crédito.
 * Preste atenção também em alguns requisitos não-funcionais,
 como desempenho, usabilidade, segurança e privacidade. Esses
 requisitos -- se não tratados de forma adequada -- podem causar 
-o fracasso do seu projeto. Por fim, avalie também se seu projeto
+o fracasso do seu projeto. Por fim, avalie se seu projeto
 possui algum risco legal ou jurídico.
 
 Por outro lado, **otimização prematura** é algo que deve
 ser evitado na construção de MVPs. Veja, como o MVP pode
-falhar, não devemos nos preocupar neste momento em usar a última 
-tecnologia da moda. Em vez disso, tente usar linguagens e frameworks
-conhecidos e robustos. A seguinte frase resume bem essa recomendação:
+falhar, não devemos nos preocupar em usar a última 
+tecnologia da moda. Em vez disso, tente usar linguagens 
+e frameworks conhecidos e robustos. A seguinte frase resume 
+essa recomendação:
 
 > Ame o problema e não a solução ou tecnologia que você está usando.
 
 Escalabilidade é outro aspecto que não é tão importante. 
 Se o MVP der certo, você terá tempo e dinheiro para resolver 
-eventuais problemas de escala. Da mesma forma, preocupações com 
-uma arquitetura extensível e com uma alta cobertura de testes 
-não são fundamentais neste momento inicial.
-
-<!---
-Idealmente, com MVPs gostaríamos que o risco e a preocupação com
-qualidade de software evoluíssem conforme ilustrado no seguinte 
-gráfico.
-
-![Evolução do risco de fracasso e da importância de qualidade de software em MVPs (os valores nos eixos x e y são meramente ilustrativos)](./figs/qualidade-mvp.svg){width=75%}
-
-Ou seja, com o passar do tempo, o MVP vai se tornando bem sucedido
-(seu risco de fracasso cai) e vamos ter recursos para 
-investir na melhoria da qualidade interna e externa do software.
-Se quiser conhecer melhor sobre fatores de qualidade interna e externa
-de software, recomendamos ler a Seção 1.2.10 do 
-[Capítulo 1](https://engsoftmoderna.info/cap1.html) do livro.
---->
+problemas de escala. Da mesma forma, preocupações com 
+uma arquitetura de software extensível e com uma alta cobertura de 
+testes não são fundamentais neste momento inicial.
 
 ## E o que não é um MVP? {.unnumbered}
 
-Suponha agora que você seja contratado 
-para fazer um sistema conhecido para uma certa empresa. Por sistema
-conhecido estamos nos referindo a um sistema cujos requisitos
-são claros e bem entendidos e delimitados. Pode ser, inclusive, que
+Suponha agora que você seja contratado para fazer um sistema 
+conhecido para uma certa empresa. Por sistema conhecido 
+estamos nos referindo a um sistema cujos requisitos
+são claros e delimitados. Pode ser, inclusive, que
 você já tenha feito um sistema parecido para outras empresas.
-O importante aqui são dois fatores:
+O importante aqui são dois pontos:
 
 * Não existe risco de o sistema -- à medida que ele for
 sendo desenvolvido -- se revelar mais complexo e desafiador.
@@ -147,13 +129,16 @@ sendo desenvolvido -- se revelar mais complexo e desafiador.
 * Não existe risco financeiro, pois o sistema já tem um 
 cliente que está pagando pelo seu desenvolvimento.
 
-Então, você resolve usar um método como Scrum ou XP para 
+Então, você resolve usar um método como 
+[Scrum](../cap2.html#scrum) ou 
+[XP](../cap2.html#extreme-programming) para 
 implementar esse sistema (imagine, para ficar mais realista,
 que você é dono de uma empresa de desenvolvimento e vai contar com 
-ajuda de alguns desenvolvedores nesse projeto). Mais precisamente, 
-o projeto será dividido em sprints com duração de duas semanas. 
-Assim, após o primeiro sprint, você já terá um sistema com alguma 
-funcionalidade para mostrar para seu cliente. 
+ajuda de alguns desenvolvedores nesse projeto). 
+
+Mais precisamente, o projeto será dividido em sprints 
+de duas semanas. Assim, após o primeiro sprint, você já terá 
+um sistema com alguma funcionalidade para mostrar para o cliente. 
 
 A pergunta então é a seguinte: esse primeiro sistema é um MVP?
 
@@ -168,71 +153,69 @@ sistema estão claros, você tem competência e experiência
 para desenvolvê-lo e o sistema já tem um cliente garantido, que vai
 pagar pelo seu desenvolvimento. 
 
-Por isso, os incrementos de produto produzidos nos sprints iniciais 
-de um projeto não têm -- na maioria das vezes -- características 
-típicas de um experimento, isto é, de um MVP. O seguinte tweet, de 
-um consultor de software conhecido, reforça e resume essa nossa 
-resposta:
+Por isso, os incrementos de produto produzidos nos sprints 
+iniciais desse projeto não têm características de um experimento, 
+isto é, de um MVP. O seguinte tweet, de um consultor de software, 
+reforça e resume essa visão:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">An MVP is an experiment that tests the hypothesis that something’s worth building. It is NOT Version 1 of a product.</p>&mdash; Allen Holub (@allenholub) <a href="https://twitter.com/allenholub/status/1479181061938503688?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Pivôs vs Restarts {.unnumbered}
 
-Às vezes, costumamos usar o termo **pivô** também de forma imprecisa.
+Às vezes, também usamos o termo **pivô** de forma imprecisa.
 Para ficar claro, após criar um MVP, recebemos feedback de potenciais 
 clientes. Podem então ocorrer três situações:
 
 1. O experimento foi bem sucedido! Vamos então começar a implementar
 um sistema de verdade.
 
-2. O experimento foi um total fracasso! Portanto, talvez seja melhor 
-desistir, enquanto o prejuízo é pequeno.
+2. O experimento foi um fracasso! Portanto, talvez seja melhor 
+desistir enquanto o prejuízo é pequeno.
 
 3. Com o que aprendemos com o experimento, a gente consegue 
 criar um novo MVP, dessa vez com mais chances de sucesso. Ou 
 seja, vamos realizar um **pivô**!
 
-Por exemplo, em um pivô podemos realizar as seguintes mudanças:
+Em um pivô podemos realizar as seguintes mudanças:
 
 * Tentar atrair um outro tipo de cliente ou adotante inicial. Por
 exemplo, focar em empresas em vez de pessoas físicas.
 
-* Realizar mudanças importantes nas funcionalidades no MVP. Por
+* Realizar mudanças importantes nas funcionalidades do MVP. Por
 exemplo, o Instagram começou como um aplicativo de *check-in*,
 chamado de Burbn, que permitia avisar seus amigos que você estava
 em um determinado local e, então, compartilhar fotos com eles. No 
 entanto, essa última funcionalidade -- compartilhamento de fotos com 
-amigos -- fez tanto sucesso que se transformou sozinha em um 
+amigos -- fez tanto sucesso que se transformou em um 
 novo produto, que os fundadores renomearam para Instagram.
 
 * Migrar para uma nova tecnologia. Por exemplo, focar em
-aplicativos Android em vez de apenas iOS.
+aplicativos para celulares em vez de um sistema Web.
 
 Porém, não podemos confundir um pivô com um **restart**. Um restart 
 ocorre quando os fundadores abandonam, por completo, o propósito 
 da empresa e recomeçam o empreendimento do zero. Ou seja, um restart 
-é uma desistência seguida por um recomeço em uma área totalmente
-nova.
+é uma desistência seguida por um recomeço em uma área nova.
 
 **Exemplo**: antes de criarem o Twitter, os seus fundadores 
 trabalharam em uma plataforma de distribuição de podcasts, chamada 
 Odeo. Como a iniciativa não deu certo, eles desistiram da Odeo e 
 começaram a trabalhar em um novo sistema, dessa vez uma rede social 
 para compartilhamento de mensagens de texto com 140 caracteres, 
-a qual chamaram de Twitter (veja figura).
+a qual chamaram de Twitter.
 
 ![](./figs/odeo-twitter-restart.jpg){width=95%}
 
 Essa mudança completa de objetivo -- de um sistema para distribuição 
-de podcasts para uma rede social baseada em texto -- não foi apenas 
-um pivô, mas sim um recomeço do zero.
+de podcasts para uma rede social baseada em mensagens de texto -- 
+não foi um pivô, mas um recomeço do zero.
 
 ## Comentário Final {.unnumbered}
 
 Quando falamos de MVP, o mais importante não é o produto em si, mas a
-hipótese de risco (ou a preocupação ou ameaça) que procuramos testar. 
-Se alguém comentar com você sobre um MVP, não se esqueça então de 
-perguntar sobre a hipótese de risco que está sendo testada.
+hipótese de risco que procuramos testar. Se alguém comentar com você 
+sobre um MVP, não se esqueça então de perguntar sobre a hipótese 
+de risco que está sendo testada.
 
 
 ## Exercícios {.unnumbered}
@@ -254,13 +237,12 @@ não? Justifique e argumente a favor de sua resposta.
 
 4. Suponha que você planeja abrir uma empresa para entrega de
 comida pela Internet, em uma cidade como Belo Horizonte, e
-pretende, portanto, concorrer com empresas estabelecidas e
-conhecidas do ramo. A criação de um MVP seria recomendada nesse
-contexto? Sim ou Não? Justifique e argumente  a favor de sua 
-resposta.
+pretende concorrer com empresas estabelecidas do ramo. A criação 
+de um MVP seria recomendada nesse contexto? Sim ou Não? Justifique 
+e argumente  a favor de sua resposta.
 
-5. Descreva um tipo de domínio (ou aplicação) para o qual é mais
-difícil e desafiador criar um MVP. Justifique sua resposta.
+5. Descreva um domínio no qual é mais desafiador criar um MVP. 
+Justifique sua resposta.
 
 * * * 
 
