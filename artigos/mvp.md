@@ -166,8 +166,9 @@ reforça e resume essa visão:
 Para ficar claro, após criar um MVP, recebemos feedback de potenciais 
 clientes. Podem então ocorrer três situações:
 
-1. O experimento foi bem sucedido! Vamos então começar a implementar
-um sistema de verdade.
+1. O experimento foi bem sucedido e, por isso, alcançamos o que 
+se chama de **product-market fit**. Vamos então começar a 
+implementar um sistema de verdade.
 
 2. O experimento foi um fracasso! Portanto, talvez seja melhor 
 desistir enquanto o prejuízo é pequeno.
