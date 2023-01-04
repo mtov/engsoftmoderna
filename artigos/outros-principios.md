@@ -88,7 +88,7 @@ que repetir esse esforço em Y.
 Porém, DRY não vale apenas para código, mas para qualquer conhecimento.
 Por exemplo, às vezes temos um comentário (ou outra forma de documentação)
 que apenas repete o que está no código. Nesse caso, talvez a refatoração
-do código, com nomes e intenções mais claras, pode torná-lo auto-explicativo. 
+do código, com nomes e intenções mais claras, pode torná-lo autoexplicativo. 
 Se isso acontecer, podemos remover o comentário.
 
 Na verdade, na escrita do nosso livro procuramos praticar esse 

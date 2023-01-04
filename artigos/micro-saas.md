@@ -13,16 +13,16 @@ sobre a criação e administração de startups financiadas por
 meio de capital de risco.
 
 Por outro lado, existe um caminho oposto, que se costuma chamar 
-de auto-financiado (*bootstrapped*), no qual a empresa é criada 
-com recursos próprios e mantida com os resultados de seu 
+de autofinanciado (*bootstrapped*), no qual a empresa é criada 
+com recursos próprios e mantida com os resultados do seu 
 faturamento. Como ele é menos comentado, pelo menos na literatura, 
-resolvemos escrever esse pequeno artigo sobre o assunto.
+resolvemos escrever este pequeno artigo sobre o assunto.
 
 Quando adotam um modelo de assinatura, essas empresas são chamadas 
 de **micro-SaaS**. Podemos definir esse conceito da seguinte forma:
 
 > Micro-SaaS é um pequeno empreendimento de software, 
-> auto-financiado, administrado por um ou dois desenvolvedores 
+> autofinanciado, administrado por um ou dois desenvolvedores 
 > e que atende a uma necessidade específica. 
 > Um micro-SaaS segue um modelo de serviços (*Software as a Service*), 
 > com pagamentos recorrentes (assinaturas) por parte
@@ -48,7 +48,7 @@ distribuição de podcasts, que é mantido por dois fundadores.
 propõe a resolver um problema enfrentado por autores de livros 
 digitais: esses livros incorporam diversos links que com o tempo 
 podem "quebrar". A ideia então é disponibilizar uma URL 
-permanente para os documentos referenciados. Enquanto um link 
+permanente para os documentos referenciados. Enquanto o link 
 estiver ativo, o sistema redireciona a conexão para ele; se o link 
 quebrar, retorna-se uma cópia da página armazenada localmente pelo 
 sistema. 
@@ -70,7 +70,7 @@ habitantes e quase 20 milhões de empresas ativas (dados de 2020).
 ## Escolhendo o Sistema {.unnumbered}
 
 O grande **desafio de uma microempresa de software é achar um 
-segmento de mercado**, que tenha um problema real que possa ser 
+segmento de mercado** que tenha um problema real que possa ser 
 resolvido por meio de um sistema relativamente pequeno. E, mais 
 importante, esse problema tem que ser relevante para **atrair 
 clientes dispostos a pagar uma assinatura mensal** para ter 
@@ -79,7 +79,7 @@ acesso a um sistema que o resolva.
 Os resultados de uma pesquisa realizada em 2020 pela MicroConf, 
 uma empresa organizadora de  eventos, ajudam a entender 
 como a escolha desse problema e sistema ocorre na prática. Nessa 
-pesquisa, foram entrevistados fundadores de SaaS auto-financiados. 
+pesquisa, foram entrevistados fundadores de SaaS autofinanciados. 
 Uma das perguntas era a seguinte: **Como você teve a ideia para 
 o seu produto ou empresa?** 
 Veja as respostas:
@@ -123,10 +123,10 @@ interface, um desempenho muito bom e que não tenha brechas
 de segurança e privacidade.
 
 Porém, também de nada adianta ter um excelente produto se ninguém 
-tomar conhecimento dele. E também é preciso entender que a premissa 
-de que um "produto bom se vende sozinho" costuma ser falsa.
+tomar conhecimento dele. Na verdade, a premissa de que um "produto 
+bom se vende sozinho" costuma ser falsa.
 
-Por tudo isso, é fundamental planejar, testar e orçar os 
+Logo, é fundamental planejar, testar e orçar os 
 **canais de distribuição** que pretende usar para divulgar o seu 
 micro-SaaS. Existem dois tipos principais de canais de 
 distribuição:
@@ -137,7 +137,7 @@ Instagram, etc. Embora menos comum no caso de pequenos
 sistemas, pode-se também contratar vendedores para entrar em
 contato com possíveis clientes do seu micro-SaaS.
 
-* Canais *inbound*, por meio dos quais o cliente procura seu
+* Canais *inbound*, por meio dos quais o cliente descobre seu
 sistema e site. Isso acontece principalmente quando você 
 investe em marketing de conteúdo, por exemplo, criando um blog
 com artigos sobre o problema resolvido pelo seu sistema. Os 
@@ -177,16 +177,16 @@ software básico instalado.
 Porém, hoje também existem serviços de terceiros para isso.
 
 * Cuidar da parte de atendimento e suporte a clientes. 
-Para isso é importante automatizar e documentar todos os 
+Para isso, é importante automatizar e documentar todos os 
 processos e, também, usar sistemas de low-code, como Zapier.
 
 
 ## Crescendo a Empresa  {.unnumbered}
 
 Quando uma microempresa de software faz sucesso e atrai um 
-número maior de clientes, é natural que o empreendimento também 
+número maior de clientes, é natural que o empreendimento 
 cresça, principalmente na parte de atendimento a 
-clientes. E isso também pode ocorrer de forma auto-financiada, 
+clientes. E isso também pode ocorrer de forma autofinanciada, 
 com os recursos das próprias assinaturas do serviço.
 
 Um caso interessante é o sistema 
@@ -203,7 +203,7 @@ e 19 colaboradores, a maior parte atuando em atendimento a
 clientes.
 
 Um segundo exemplo de empresa de SaaS que começou pequena 
-e cresceu bastante, mas mantendo o modelo de auto-financiamento, 
+e cresceu bastante, mas mantendo o modelo de autofinanciamento, 
 é a [Balsamiq](https://balsamiq.com), que faz uma ferramenta para 
 criação de wireframes de baixa fidelidade. A empresa, localizada 
 na Itália, foi fundada em 2008 e, em 2020, obteve um faturamento 
@@ -211,7 +211,7 @@ de US$ 7.3 milhões, com 33 colaboradores.
 
 ## Métricas {.unnumbered}
 
-Antes de concluir, gostaríamos de comentar sobre algumas métricas 
+Antes de concluir, vamos comentar sobre algumas métricas 
 para avaliar o sucesso de sistemas SaaS:
 
 * **Custo de Aquisição de Clientes (CAC)** (ou *Customer Acquisition Cost*): 
@@ -253,7 +253,7 @@ Valores de NPS acima de 50 já são considerados bons.
 Por exemplo, grandes empresas da Internet costumam ter NPS 
 próximo de 60 ou até mesmo um pouco inferior.
 
-O NPS é importante porque se um empresa ou sistema tem um 
+O NPS é importante porque se um empresa tem um 
 NPS alto então o seu CAC e Churn tendem a ser menores. E, 
 consequentemente, o LTV será maior.
 
