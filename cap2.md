@@ -1190,7 +1190,8 @@ descreveremos a seguir.
 *   O **Backlog do Produto** 
      \index{Backlog!Produto}
      \index{Scrum!Backlog do Produto}
-     é uma lista de histórias, ordenada por
+     é uma lista de histórias (e outros itens de trabalho relevantes), 
+     ordenada por
      prioridades. Assim como em XP, as histórias são escritas e
      priorizadas pelo Dono do Produto e constituem uma descrição
      resumida das funcionalidades que devem ser implementadas no
@@ -1915,22 +1916,40 @@ O **Processo Unificado (UP)**, proposto no final da década de 90, é
 outro exemplo de método iterativo de desenvolvimento. UP foi proposto
 por profissionais ligados a uma empresa de consultoria e de ferramentas
 de apoio ao desenvolvimento de software chamada Rational, que em 2003
-seria comprada pela IBM. Por isso, o método é também chamado de
+seria comprada pela IBM. Especificamente, a versão do método 
+implementada pela Rational é chamada de 
 **Rational Unified Process (RUP)**.
 
-Devido a suas origens, UP é vinculado a duas tecnologias específicas:
+<!--
+Por isso, o método é também chamado de
+**Rational Unified Process (RUP)**.
+--->
 
-* UP é baseado na linguagem de modelagem UML. Todos os seus resultados são documentados e representados usando-se diagramas gráficos de UML. No Capítulo 4, iremos estudar UML com mais calma. Por enquanto, vamos ressaltar que a proposta era ter uma linguagem de modelagem "unificada" (UML) e também um processo "unificado" (UP), ambos propostos pelo mesmo grupo de profissionais.
+Devido a suas origens, o RUP é vinculado a duas tecnologias específicas:
 
-* UP é associado a ferramentas de apoio ao projeto e análise de software, conhecidas como **ferramentas CASE** (*Computer-Aided Software Engineering*). 
+* Linguagem de modelagem UML, pois muitos dos resultados do RUP 
+são documentados e representados usando-se diagramas gráficos 
+de UML. No Capítulo 4, iremos estudar UML com mais calma. Por enquanto, 
+vamos ressaltar que a proposta era ter uma linguagem de modelagem 
+unificada (UML) e também um processo unificado (RUP), ambos propostos 
+pelo mesmo grupo de profissionais.
+
+* Ferramentas de apoio ao projeto e análise de software, conhecidas como **ferramentas CASE** (*Computer-Aided Software Engineering*). 
 \index{CASE (Computer-Aided Software Engineering)}
-O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. A ideia era que o projeto e análise de um sistema deveriam ser integralmente baseados em diagramas UML. Mas esses diagramas não seriam desenhados em papel e sim usando-se ferramentas computacionais (veja um exemplo na figura da próxima página). A Rational, além de propor o método UP, também desenvolvia e vendia licenças de uso de ferramentas CASE.
+O nome é uma analogia com ferramentas CAD (*Computer Aided-Design*), 
+usadas em projetos de Engenharia Civil, Engenharia Mecânica, Arquitetura, etc. 
+A ideia era que o projeto e análise de um sistema deveriam ser 
+integralmente baseados em diagramas UML. Mas esses diagramas não seriam 
+desenhados em papel e sim usando-se ferramentas computacionais (veja 
+um exemplo na figura da próxima página). A Rational, além de propor 
+o seu método de desenvolvimento, também vendia licenças de uso 
+de ferramentas CASE.
 
 
 ![Projeto usando ferramenta CASE. Figura gentilmente cedida pelos desenvolvedores do sistema ArgoUML.](figs/cap2/case.png){width=70%}
 
 
-UP propõe que o desenvolvimento seja decomposto nas
+O RUP propõe que o desenvolvimento seja decomposto nas
 seguintes fases:
 
 * **Inception** 
@@ -1941,7 +1960,7 @@ seguintes fases:
   inclusive decidir que não vale a pena desenvolver o sistema, mas sim comprar um sistema
   pronto.
  
-*  **Elaboração**: que incluiu especificação de requisitos (via casos de uso de UML), 
+*  **Elaboração**: que inclui especificação de requisitos (via diagramas de casos de uso de UML, por exemplo), 
    definição da arquitetura do sistema, bem como de um plano para o seu desenvolvimento. Ao
    final dessa fase, todos os riscos identificados na fase anterior devem estar devidamente 
    controlados e mitigados.
@@ -1956,14 +1975,14 @@ seguintes fases:
 
 Assim como no Modelo Espiral, pode-se repetir várias vezes o processo;
 ou seja, o desenvolvimento é incremental, com novas funcionalidades
-sendo entregues a cada iteração. Adicionalmente, pode-se repetir cada um
-das fases. Por exemplo, construção — em uma dada iteração — pode
-ser dividida em duas subfases, cada uma construindo uma parte do
-produto. A próxima figura ilustra o modelo de iterações de UP.
+sendo entregues a cada ciclo. Adicionalmente, pode-se repetir cada um
+das fases. Por exemplo, construção pode
+ser dividida em duas iterações, cada uma construindo uma parte do
+produto. A próxima figura ilustra o modelo de iterações do RUP.
 
-![Fases e iterações do Processo Unificado (UP). Repetições são possíveis em cada fase (auto-laços). E também pode-se repetir todo o fluxo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=70%}
+![Fases e iterações do RUP. Iterações são possíveis em cada fase (auto-laços). E também pode-se repetir todo o ciclo (laço externo), para gerar mais um incremento de produto.](figs/cap2/rup1){width=70%}
 
-UP define também um conjunto de disciplinas de engenharia que incluem
+O RUP define também um conjunto de disciplinas de engenharia que incluem
 por exemplo: modelagem de negócios, definição de requisitos, análise e
 design, implementação, testes e implantação. Essas disciplinas — ou
 fluxos de trabalho — podem ocorrer em qualquer fase. Porém,
@@ -1973,7 +1992,7 @@ modelagem de negócio estão concentradas nas fases iniciais do projeto
 (inception e elaboração) e quase não ocorrem nas fases seguintes. Por
 outro lado, implementação está concentrada na fase de Construção.
 
-![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando UP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da Wikipédia, licença: domínio público).](figs/cap2/rup2.png){width=65%}
+![Fases (na horizontal) e disciplinas (na vertical) de um projeto desenvolvido usando o RUP. A área da curva mostra a intensidade da disciplina durante cada fase (imagem da Wikipédia, licença: domínio público).](figs/cap2/rup2.png){width=65%}
 
 ## Bibliografia {.unnumbered}
 

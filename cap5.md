@@ -74,8 +74,8 @@ a qual é ilustrada na figura da próxima página.
 ![Principais módulos de um compilador](figs/cap5/compiler-design){width=100%}
 
 O problema inicial — projetar um compilador — foi decomposto em
-quatro problemas menores, que vamos descrever brevemente neste
-parágrafo. Primeiro, temos que implementar um analisador léxico, que vai
+quatro problemas menores, que vamos descrever brevemente nesta
+seção. Primeiro, temos que implementar um analisador léxico, que vai
 ler o arquivo de entrada e dividi-lo em tokens (como `if`, `for`, `while`, `x`,
 `+`, etc.).
 

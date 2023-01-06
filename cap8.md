@@ -38,7 +38,7 @@ Quando o desenvolvimento era em cascata, os testes ocorriam em uma fase
 separada, após as fases de levantamento de requisitos, análise, projeto
 e codificação. Além disso, existia uma equipe separada de testes,
 responsável por verificar se a implementação atendia aos requisitos do
-sistema. Para garantir isso, frequentemente os testes eram manuais, isto
+sistema. Para checar isso, frequentemente os testes eram manuais, isto
 é, uma pessoa usava o sistema, informava dados de entrada e verificava
 se as saídas eram aquelas esperadas. Assim, o objetivo de tais testes
 era apenas detectar bugs, antes que o sistema entrasse
@@ -62,7 +62,7 @@ reformulada, conforme explicamos a seguir:
 
 -   Testes não são mais um instrumento exclusivo para detecção de bugs.
     Claro, isso continua sendo importante, mas testes ganharam novas
-    funções, como garantir que uma classe continuará funcionando após
+    funções, como verificar se uma classe continuará funcionando após
     um bug ser corrigido em uma outra parte do sistema. E testes são
     também usados como documentação para o código de produção.
 

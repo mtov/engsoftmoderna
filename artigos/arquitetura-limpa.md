@@ -76,7 +76,7 @@ Por exemplo, a universidade do nosso exemplo pode possuir
 um sistema para gerenciamento de cursos de extensão, que aceita 
 pagamento por meio de cartões de crédito. 
 Para isso, o sistema usa um serviço de terceiros, que oferece 
-algumas classes para processamento de pagamentos. Logo, essa classes
+algumas classes para processamento de pagamentos. Logo, tais classes
 ficam na camada mais externa de uma Arquitetura Limpa.
 
 No livro [Arquitetura Limpa](https://dl.acm.org/doi/book/10.5555/3175742), 
