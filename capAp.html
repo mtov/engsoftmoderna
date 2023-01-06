@@ -355,18 +355,22 @@ realizou a trinca de comandos <code>add</code>, <code>commit</code> e
 executou um <code>add</code>, seguido de um <code>commit</code>. Por
 fim, ele executou <code>push</code>, mas o comando falhou com a seguinte
 mensagem de erro:</p>
-<div class="line-block">Updates were rejected because the remote
-contains work that you do<br />
-not have locally. This is usually caused by another repository<br />
-pushing to the same ref. You may want to first integrate the<br />
-remote changes (e.g., git pull …) before pushing again.</div>
+<div class="line-block">  <em>Updates were rejected because the remote
+contains work that you do</em><br />
+  <em>not have locally. This is usually caused by another
+repository</em><br />
+  <em>pushing to the same ref. You may want to first integrate
+the</em><br />
+  <em>remote changes (e.g., git pull …) before pushing again.</em></div>
 <p>A mensagem é bem clara: Bob não pode executar um <code>push</code>,
 pois o repositório remoto possui conteúdo novo, no caso, gerado por
 Alice. Antes de executar um <code>push</code>, Bob precisa executar um
 <code>pull</code>. Porém, ao fazer isso, ele recebe uma nova mensagem de
 erro:</p>
-<div class="line-block">CONFLICT (content): Merge conflict in arq2<br />
-Automatic merge failed; fix conflicts and then commit the result.</div>
+<div class="line-block">  <em>CONFLICT (content): Merge conflict in
+arq2</em><br />
+  <em>Automatic merge failed; fix conflicts and then commit the
+result.</em></div>
 <p>Essa nova mensagem é também clara: existe um conflito de merge no
 arquivo <code>arq2</code>. Ao editar esse arquivo, Bob vai perceber que
 ele foi modificado pelo git, para destacar as linhas que geraram o
@@ -469,11 +473,11 @@ A para B se as modificações que ele fez em A estiverem salvas. Isto é,
 se ele tiver realizado antes um <code>add</code> e <code>commit</code>.
 Caso ele tenha esquecido de chamar esses comandos, um comando git
 checkout B irá falhar com a seguinte mensagem de erro:</p>
-<div class="line-block">Your local changes to the following files would
-be overwritten by checkout:<br />
-[list of files]<br />
-Please commit your changes or stash them before you switch
-branches.</div>
+<div class="line-block">  <em>Your local changes to the following files
+would be overwritten by checkout:</em><br />
+  <em>[list of files]</em><br />
+  <em>Please commit your changes or stash them before you switch
+branches.</em></div>
 <p>Voltando ao exemplo, após Bob ter criado o seu branch, ele deve
 proceder do seguinte modo. Quando ele quiser trabalhar na nova
 implementação de <code>f</code>, ele deve primeiro mudar o branch

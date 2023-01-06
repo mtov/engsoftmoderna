@@ -290,10 +290,10 @@ Bob, após corrigir o erro de ortografia, salvou o arquivo e também
 executou um  `add`, seguido de um  `commit`. Por fim, ele executou  `push`, mas o
 comando falhou com a seguinte mensagem de erro:
 
-| Updates were rejected because the remote contains work that you do 
-| not have locally. This is usually caused by another repository 
-| pushing to the same ref. You may want to first integrate the 
-| remote changes (e.g., git pull ...) before pushing again.
+|   *Updates were rejected because the remote contains work that you do*
+|   *not have locally. This is usually caused by another repository* 
+|   *pushing to the same ref. You may want to first integrate the* 
+|   *remote changes (e.g., git pull ...) before pushing again.*
 
 
 A mensagem é bem clara: Bob não pode executar um  `push`, pois o
@@ -301,8 +301,8 @@ repositório remoto possui conteúdo novo, no caso, gerado por Alice.
 Antes de executar um `push`, Bob precisa executar um  `pull`. Porém, ao fazer
 isso, ele recebe uma nova mensagem de erro:
 
-| CONFLICT (content): Merge conflict in arq2
-| Automatic merge failed; fix conflicts and then commit the result.
+|   *CONFLICT (content): Merge conflict in arq2*
+|   *Automatic merge failed; fix conflicts and then commit the result.*
 
 Essa nova mensagem é também clara: existe um conflito de merge no
 arquivo `arq2`. Ao editar esse arquivo, Bob vai perceber que ele foi
@@ -419,9 +419,9 @@ ele tiver realizado antes um  `add` e  `commit`. Caso ele tenha esquecido de
 chamar esses comandos, um comando git checkout B irá falhar com a
 seguinte mensagem de erro:
 
-| Your local changes to the following files would be overwritten by checkout:
-| \[list of files\] 
-| Please commit your changes or stash them before you switch branches.
+|   *Your local changes to the following files would be overwritten by checkout:*
+|   *\[list of files\]*
+|   *Please commit your changes or stash them before you switch branches.*
 
 
 Voltando ao exemplo, após Bob ter criado o seu branch, ele deve proceder
