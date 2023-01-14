@@ -1,0 +1,36 @@
+
+cat desafios-engsoft.md > esm-artigos.md
+
+cat pix-banco-x.md >> esm-artigos.md
+cat shape-up.md >> esm-artigos.md
+cat squads.md >> esm-artigos.md
+cat cfd.md >> esm-artigos.md
+
+cat design-thinking.md >> esm-artigos.md
+cat mvp.md >> esm-artigos.md
+cat jobs-to-be-done.md >> esm-artigos.md
+cat product-discovery.md >> esm-artigos.md
+ 
+cat deep-modules.md >> esm-artigos.md
+cat ddd.md >> esm-artigos.md
+cat outros-principios.md >> esm-artigos.md
+
+cat composite.md >> esm-artigos.md
+cat injecao-dependencia.md >> esm-artigos.md
+
+cat arquitetura-limpa.md >> esm-artigos.md
+cat arquitetura-hexagonal.md >> esm-artigos.md
+cat sagas.md >> esm-artigos.md
+cat serverless.md >> esm-artigos.md
+
+cat broken-windows.md >> esm-artigos.md
+cat revisao-codigo.md >> esm-artigos.md
+
+cat como-monetizar.md >> esm-artigos.md
+cat micro-saas.md >> esm-artigos.md
+
+pandoc --defaults=defaults-latex-artigos.yaml esm-artigos.md -o esm-artigos.tex
+
+pdflatex esm-artigos.tex
+
+rm esm-artigos.md

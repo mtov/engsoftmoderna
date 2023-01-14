@@ -1,3 +1,4 @@
+
 # Product Discovery: Uma Breve Introdução {.unnumbered}
 
 ## Contexto {.unnumbered}
@@ -122,7 +123,7 @@ Para incluir atividades de discovery em Scrum, costuma-se adotar um
 sistema com duas trilhas de trabalho (ou **dual track**), que rodam 
 em paralelo, conforme mostrado na seguinte figura.
 
-![Sistema de duas trilhas (dual track) com Scrum](./figs/discovery-dual-track.svg)
+![Sistema de duas trilhas (dual track) com Scrum](./figs/discovery-dual-track)
 
 A primeira trilha inclui atividades de discovery, lideradas por POs e 
 PMs, e seu objetivo é descobrir histórias de usuários para o backlog do 
@@ -153,7 +154,7 @@ codificação e revisão.
 Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
 como na seguinte figura:
 
-![](./figs/upstream-kanban.svg){width=80%}
+![](./figs/upstream-kanban){width=80%}
 
 O Upstream Kanban corresponde à parte do funil que vai se estreitando
 para deixar claro que nem toda demanda proposta pelos stakeholders

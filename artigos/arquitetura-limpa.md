@@ -1,3 +1,4 @@
+
 # Construindo Sistemas com uma Arquitetura Limpa {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -12,7 +13,7 @@ a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
 (baseada em uma figura semelhante do seguinte [post](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) do "The Clean Code Blog").
 
-![Arquitetura Limpa](./figs/arquitetura-limpa-novo.svg){width=70%}
+![Arquitetura Limpa](./figs/arquitetura-limpa-novo){width=70%}
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
@@ -173,7 +174,7 @@ uma camada mais interna. No caso, esse elemento é uma interface
 
 O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 
-![Dependências em uma arquitetura limpa](./figs/arquitetura-limpa-exemplo.svg){width=75%}
+![Dependências em uma arquitetura limpa](./figs/arquitetura-limpa-exemplo){width=75%}
 
 ## Conclusão {.unnumbered}
 

@@ -1,3 +1,5 @@
+
+
 # Domain-Driven Design (DDD): Um Resumo {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -52,7 +54,7 @@ falar a mesma língua, que vai constituir a chamada Linguagem
 Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:
 
 ![A linguagem ubíqua representa o conhecimento compartilhado 
-entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente.svg){width=85%}
+entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente){width=85%}
 
 A figura deixa claro que existem termos que só os 
 especialistas de domínio conhecem. Já outros termos, de cunho 

@@ -1,3 +1,5 @@
+
+
 # Mais Alguns Princípios de Projeto: CQS, DRY, YAGNI e KISS {.unnumbered}
 
 Neste artigo, vamos complementar os princípios de projeto, estudados 

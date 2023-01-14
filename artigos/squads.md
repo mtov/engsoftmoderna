@@ -1,3 +1,5 @@
+
+
 # Organizando Times de Desenvolvimento de Software em Squads {.unnumbered}
 
 Neste artigo, iremos começar explicando o que é um squad. Em seguida,

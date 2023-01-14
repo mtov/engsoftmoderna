@@ -70,8 +70,8 @@ expectativas irrealistas, eles podem ter um papel importante no
 desenvolvimento de sistemas de software, tal como veremos na próxima
 seção.
 
-Se pensarmos em termos de atividades de desenvolvimento de software, a
-criação de modelos é considerada uma atividade de projeto (*design*).
+Se pensarmos em termos de atividades de desenvolvimento de software, 
+a criação de modelos tem uma importância grande na fase de projeto (*design*).
 Durante o levantamento de requisitos, as atenções estão voltadas para a
 definição do problema que será resolvido pelo sistema. Quando se avança
 para atividades de projeto, o problema já deve estar devidamente

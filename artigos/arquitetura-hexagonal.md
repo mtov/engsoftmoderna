@@ -1,3 +1,4 @@
+
 # O que é uma Arquitetura Hexagonal? {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -47,7 +48,7 @@ concêntricos (veja figura). No hexágono interno, ficam as classes do domínio
 adaptadores. Por fim, as classes de interface com o usuário, classes de
 tecnologia ou de sistemas externos ficam fora desses dois hexágonos.
 
-![Arquitetura Hexagonal](./figs/arquitetura-hexagonal.svg){width=40%}
+![Arquitetura Hexagonal](./figs/arquitetura-hexagonal){width=40%}
 
 Assim, o nome hexagonal tem sua origem na figura acima.
 Cockburn justifica o uso de um hexágono do seguinte modo:
@@ -108,7 +109,7 @@ de terceiros.
 A próxima figura mostra a arquitetura hexagonal de um sistema para
 gerenciamento de bibliotecas:
 
-![Arquitetura Hexagonal do Sistema de Bibliotecas](./figs/hex-ports-adapters.svg){width=90%}
+![Arquitetura Hexagonal do Sistema de Bibliotecas](./figs/hex-ports-adapters){width=90%}
 
 Na figura, podemos observar que os usuários acessam o sistema por meio 
 de três interfaces: Web, mobile e por meio de um sistema externo. Qualquer 

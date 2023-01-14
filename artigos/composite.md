@@ -1,3 +1,5 @@
+
+
 # Criando Objetos Compostos com o Padrão de Projeto Composite {.unnumbered}
 
 ## Introdução  {.unnumbered}
@@ -102,7 +104,7 @@ agrupamento, usando para isso um comando `for`.
 
 Veja também um diagrama UML com as classes que criamos até agora:
 
-![](./figs/composite-pattern-uml.svg){width=95%}
+![](./figs/composite-pattern-uml){width=95%}
 
 Como resultado, para um código cliente, não interessa se ele está trabalhando com um
 figura simples ou com uma figura agrupada, como no seguinte caso:

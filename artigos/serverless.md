@@ -1,3 +1,5 @@
+
+
 # O que é uma Arquitetura Serverless?  {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -58,7 +60,7 @@ a ocorrência de determinados eventos.
 A próxima figura compara essas alternativas para uso de servidores 
 e construção de aplicações.
 
-![Comparando On-Premises, Colocation, Cloud e Serverless](./figs/serverless.svg){width=95%}
+![Comparando On-Premises, Colocation, Cloud e Serverless](./figs/serverless){width=95%}
 
 O nome serverless explica-se pelo fato de que os desenvolvedores
 não precisam se preocupar com instalação, configuração e 

@@ -1,3 +1,5 @@
+
+
 # Diagramas de Fluxo Cumulativo {.unnumbered}
 
 No [Capítulo 2](../cap2.html#principais-artefatos-e-eventos), estudamos
@@ -57,7 +59,7 @@ Assim, a última coluna empilhada, no nosso exemplo, é Especificação.
 Para facilitar o entendimento, segue uma segunda versão do CFD anterior, 
 agora com labels indicando o valor de cada ponto do gráfico:
 
-![](./figs/cfd2.svg){width=80%}
+![](./figs/cfd2){width=80%}
 
 Ele está disponível também para acesso online no 
 Google Sheets, neste [link](https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit?usp=sharing).
@@ -87,7 +89,7 @@ CFD mostrado na seção anterior.
 Por outro, quando existem problemas em um passo, a sua área no diagrama 
 tende a crescer, como mostrado no seguinte exemplo (acesse também neste [link](https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit#gid=882423560)):
 
-![Sistema instável, com acúmulo crescente de histórias em Implementação](./figs/cfd3.svg){width=80%}
+![Sistema instável, com acúmulo crescente de histórias em Implementação](./figs/cfd3){width=80%}
 
 Nesse CFD, o passo de implementação está ocupando, gradativamente, uma 
 área maior no diagrama, o que significa que as histórias estão se acumulando 
