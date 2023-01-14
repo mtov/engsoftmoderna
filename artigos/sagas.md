@@ -8,7 +8,7 @@ em arquiteturas baseadas em microsserviços, recomenda-se que cada
 microsserviço possua sua própria base de dados. Ou seja, recomenda-se 
 uma arquitetura como a seguinte.
 
-![Microsserviços devem ter sua própria base de dados](../figs/cap7/dados2.svg){width=35%}
+![Microsserviços devem ter sua própria base de dados](../figs/cap7/dados2){width=35%}
 
 Por outro lado, ao adotar essa recomendação, frequentemente surge 
 o seguinte problema: *como garantir a consistência dos dados do sistema 
@@ -181,4 +181,6 @@ Introdução do [artigo](https://doi.org/10.1145/38713.38742) que definiu o conc
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

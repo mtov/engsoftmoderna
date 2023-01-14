@@ -193,4 +193,6 @@ documentado neste pitch.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

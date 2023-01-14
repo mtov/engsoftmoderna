@@ -1,15 +1,12 @@
 # Desafios da Formação de Engenheiros de Software {.unnumbered}
 
-Por Marco Tulio Valente (versão 1.1 - 11/01/2021)
-
 ## Introdução {.unnumbered}
 
 Em 2019, ministrei pela primeira vez um curso de Engenharia de 
 Software para alunos de graduação. Desde então, tenho estudado, 
 trabalhado e refletido sobre questões ligadas à formação 
-qualificada de Engenheiros de Software no Brasil.
-
-Assim, neste artigo, vou compartilhar minha visão sobre os desafios 
+qualificada de Engenheiros de Software no Brasil. Assim, neste 
+artigo, vou compartilhar minha visão sobre os desafios 
 envolvidos em tal tarefa.
 
 ## Relevância {.unnumbered}
@@ -280,10 +277,11 @@ para dizer que eu não preciso programar, pois sou arquiteto ou
 analista."
 
 * É muito importante também que o aluno **saiba programar**. Ou seja,
-o aluno já deve ter domíno de conceitos básicos de programação, algoritmos
+o aluno já deve ter domínio de conceitos básicos de programação, algoritmos
 e estruturas de dados. 
 
 * * *
 
-
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

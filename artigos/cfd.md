@@ -16,7 +16,7 @@ Por isso, times Kanban costumam usar um outro tipo de gráfico para
 acompanhar o seu fluxo de trabalho, chamado de **Diagrama de Fluxo 
 Cumulativo** (CFD, de *Cumulative Flow Diagram*).
 
-### Definição {.unnumbered}
+## Definição {.unnumbered}
 
 Um CFD é gerado a partir de uma tabela como a seguinte
 
@@ -77,7 +77,7 @@ fizemos na seção sobre Kanban no
 podem ser Implementadas e Revisadas sem necessidade de divisão em tarefas 
 menores.
 
-### Para que serve um CFD? {.unnumbered}
+## Para que serve um CFD? {.unnumbered}
 
 Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban 
 está **estável** ou não.
@@ -144,7 +144,7 @@ passo de Revisão, representado pela área em azul no diagrama.
 
 -->
 
-### Para Saber Mais {.unnumbered}
+## Para Saber Mais {.unnumbered}
 
 CFDs são tratados na maioria dos livros sobre Kanban. Especificamente,
 o livro "Diagrama de Fluxo Cumulativo", de autoria de Paulo Caroli, 
@@ -152,7 +152,7 @@ oferece uma introdução objetiva ao assunto. O livro do
 David Anderson -- *Kanban: Successful Evolutionary Change for Your 
 Technology Business* -- é uma outra referência importante sobre CFDs.
 
-### Exercícios {.unnumbered}
+## Exercícios {.unnumbered}
 
 1. Neste artigo, comentamos que Diagramas de Fluxo Cumulativo (CFD) são 
 muito usados com Kanban. Mas é possível usar CFDs também com Scrum? 
@@ -183,4 +183,6 @@ um CFD com instabilidade em algum passo do quadro.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

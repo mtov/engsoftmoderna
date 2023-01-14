@@ -1,6 +1,8 @@
 
 # O que é Injeção de Dependência?   {.unnumbered}
 
+## Introdução
+
 Injeção de Dependência não faz parte dos padrões de projeto do livro 
 GoF. Porém, a solução é frequentemente listada como um padrão que 
 poderia ser incluído em uma possível segunda edição do livro.
@@ -225,4 +227,6 @@ use como exemplo a classe `Estacionamento` da Seção 5.3.1 do
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

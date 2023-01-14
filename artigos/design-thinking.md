@@ -136,7 +136,7 @@ de atividades:
 
 Essa primeira atividade é ilustrada na próxima figura:
 
-![](./figs/divergencia-convergencia.png){width=60%}
+![](./figs/divergencia-convergencia){width=60%}
 
 Em um primeiro momento, todos os membros da equipe são incentivados a 
 rascunhar soluções para o problema proposto, sejam elas convencionais 
@@ -257,5 +257,6 @@ resumida de Design Sprint é apresentada na Seção 3.5.3 do
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
-
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

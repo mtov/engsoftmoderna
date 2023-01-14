@@ -1,4 +1,5 @@
 
+
 # Jobs to be Done (JTBD) Aplicado a Produtos de Software {.unnumbered}
  
 ## Introdução {.unnumbered}
@@ -173,7 +174,7 @@ Por outro lado, JTBD advoga que o caminho inverso -- da demanda
 para a oferta -- tem mais chances de dar certo, conforme ilustrado
 na seguinte figura.
 
-![](./figs/jtbd.svg){width=77%}
+![](./figs/jtbd){width=77%}
 
 No caso específico de software, JTBD destaca-se -- junto com outras teorias, 
 como [Design Thinking](./design-thinking.html) -- em sistemas
@@ -222,4 +223,6 @@ novo que JTBD introduz quando comparado a DT.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

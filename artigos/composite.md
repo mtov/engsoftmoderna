@@ -1,6 +1,6 @@
 
 
-# Criando Objetos Compostos com o Padrão de Projeto Composite {.unnumbered}
+# Criando Objetos Compostos com o Padrão Composite {.unnumbered}
 
 ## Introdução  {.unnumbered}
 
@@ -177,4 +177,6 @@ artigo está disponível
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

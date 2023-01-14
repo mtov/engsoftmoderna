@@ -1,6 +1,6 @@
 
 
-# Organizando Times de Desenvolvimento de Software em Squads {.unnumbered}
+# Organizando Times em Squads {.unnumbered}
 
 Neste artigo, iremos começar explicando o que é um squad. Em seguida,
 iremos apresentar os principais tipos de squads que existem em 
@@ -239,4 +239,6 @@ seus squads. Basta descrever brevemente o objetivo de cada tribo.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

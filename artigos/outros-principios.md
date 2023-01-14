@@ -1,6 +1,6 @@
 
 
-# Mais Alguns Princípios de Projeto: CQS, DRY, YAGNI e KISS {.unnumbered}
+# Mais Alguns Princípios de Projeto {.unnumbered}
 
 Neste artigo, vamos complementar os princípios de projeto, estudados 
 no [Capítulo 5](../cap5.html), com quatro novos princípios:
@@ -217,4 +217,6 @@ a solução compatível com CQS nesse caso?
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

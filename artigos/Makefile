@@ -16,7 +16,7 @@ shape-up: shape-up.md
 	$(pandoc_bin) -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
 squads: squads.md
-	$(pandoc_bin) -T "Organizando Times de Software em Squads" squads.md -o squads.html
+	$(pandoc_bin) -T "Organizando Times em Squads" squads.md -o squads.html
 
 pix-banco-x: pix-banco-x.md
 	$(pandoc_bin) -T "Estudo de Caso: Implementação do PIX em um Banco X" pix-banco-x.md -o pix-banco-x.html
@@ -49,7 +49,7 @@ ddd: ddd.md
 	$(pandoc_bin) -T "Domain-Driven Design (DDD): Um Resumo" ddd.md -o ddd.html
 
 outros-principios: outros-principios.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Mais Alguns Princípios de Projeto: CQS, DRY, YAGNI e KISS" outros-principios.md -o outros-principios.html
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Mais Alguns Princípios de Projeto" outros-principios.md -o outros-principios.html
 
 projeto-faq: projeto-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
@@ -61,7 +61,7 @@ arquitetura-faq: arquitetura-faq.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Arquitetura de Software" arquitetura-faq.md -o arquitetura-faq.html
 
 composite: composite.md
-	$(pandoc_bin) -T "Criando objetos compostos com o Padrão de Projeto Composite" composite.md -o composite.html
+	$(pandoc_bin) -T "Criando objetos compostos com o Padrão Composite" composite.md -o composite.html
 
 injecao-dependencia: injecao-dependencia.md
 	$(pandoc_bin) -T "O que é Injeção de Dependência?" injecao-dependencia.md -o injecao-dependencia.html
