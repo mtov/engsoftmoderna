@@ -1,8 +1,8 @@
 
 
-# O que é -- e também o que não é -- um MVP?  {.unnumbered}
+# O que é -- e também o que não é -- um MVP?  
 
-## Introdução  {.unnumbered}
+## Introdução 
 
 **Produto Mínimo Viável (MVP)** é um conceito popularizado por Eric Ries 
 no seu livro Lean Startup. E é impressionante o sucesso e o
@@ -17,7 +17,7 @@ de uma forma que não é totalmente fiel à sua definição original.
 Por isso, neste artigo didático, vamos tentar esclarecer o significado 
 mais preciso desse conceito.
 
-## Primeiro, o que é um MVP?  {.unnumbered}
+## Primeiro, o que é um MVP?  
 
 Para entender para que serve um MVP, temos que lembrar que 
 o conceito foi proposto para o contexto de startups, isto é, 
@@ -116,7 +116,7 @@ problemas de escala. Da mesma forma, preocupações com
 uma arquitetura de software extensível e com uma alta cobertura de 
 testes não são fundamentais neste momento inicial.
 
-## E o que não é um MVP? {.unnumbered}
+## E o que não é um MVP? 
 
 Suponha agora que você seja contratado para fazer um sistema 
 conhecido para uma certa empresa. Por sistema conhecido 
@@ -162,7 +162,7 @@ reforça e resume essa visão:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">An MVP is an experiment that tests the hypothesis that something’s worth building. It is NOT Version 1 of a product.</p>&mdash; Allen Holub (@allenholub) <a href="https://twitter.com/allenholub/status/1479181061938503688?ref_src=twsrc%5Etfw">January 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-## Pivôs vs Restarts {.unnumbered}
+## Pivôs vs Restarts 
 
 Às vezes, também usamos o termo **pivô** de forma imprecisa.
 Para ficar claro, após criar um MVP, recebemos feedback de potenciais 
@@ -213,7 +213,7 @@ Essa mudança completa de objetivo -- de um sistema para distribuição
 de podcasts para uma rede social baseada em mensagens de texto -- 
 não foi um pivô, mas um recomeço do zero.
 
-## Comentário Final {.unnumbered}
+## Comentário Final 
 
 Quando falamos de MVP, o mais importante não é o produto em si, mas a
 hipótese de risco que procuramos testar. Se alguém comentar com você 
@@ -221,7 +221,7 @@ sobre um MVP, não se esqueça então de perguntar sobre a hipótese
 de risco que está sendo testada.
 
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Qual a diferença entre um MVP e uma pesquisa de mercado?
 

@@ -1,7 +1,7 @@
 
-# Design Thinking: Principais Conceitos e Atividades   {.unnumbered}
+# Design Thinking: Principais Conceitos e Atividades  
 
-## Introdução {.unnumbered}
+## Introdução 
 
 Design Thinking é uma abordagem para solução de problemas -- não apenas
 de Engenharia de Software, mas qualquer tipo de problema.
@@ -53,7 +53,7 @@ de sistemas de software. Então, a universidade -- ou um departamento
 dela -- pode usar Design Thinking para entender melhor o problema 
 e prototipar uma primeira solução.
 
-## Principais Atividades {.unnumbered}
+## Principais Atividades 
 
 Design Thinking não é definido por meio de um conjunto de passos, 
 tarefas e papéis. Isto é, Design Thinking não é uma fórmula ou um 
@@ -181,7 +181,7 @@ a sua implementação. Por exemplo, ele deve ajudar a explicar a solução
 para o resto da organização. Deve também ajudar na criação de uma 
 estratégia de divulgação e marketing.
 
-## Comentários Finais {.unnumbered}
+## Comentários Finais 
 
 Talvez, a explicação anterior leve o leitor a pensar que Design 
 Thinking é um processo sequencial. No entanto, em qualquer atividade 
@@ -224,7 +224,7 @@ Pode ser interessante estudar também conceitos de
 **Jobs to be Done**, os quais são o tema do nosso próximo 
 [artigo](./jobs-to-be-done.html).
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Marque a alternativa INCORRETA:
 

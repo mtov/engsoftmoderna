@@ -1,8 +1,8 @@
 
 
-# Jobs to be Done (JTBD) Aplicado a Produtos de Software {.unnumbered}
+# Jobs to be Done (JTBD) Aplicado a Produtos de Software 
  
-## Introdução {.unnumbered}
+## Introdução 
 
 *Jobs to be done (JTBD)* é uma teoria desenvolvida por Clayton Christensen
 e colegas, em 2005, para explicar porque clientes escolhem comprar 
@@ -63,7 +63,7 @@ os concorrentes de um software podem incluir não apenas
 sistemas semelhantes de outras empresas, mas também uma 
 simples planilha eletrônica ou mesmo um caderno de anotações.
 
-## O que JTBD tem a ver com software? {.unnumbered}
+## O que JTBD tem a ver com software? 
 
 A resposta é que tem tudo a ver, pois software é cada vez mais um 
 produto. Quando um software é visto dessa maneira, o desenvolvimento 
@@ -130,7 +130,7 @@ declaração, mas sim "trabalhos". Para mais detalhes, veja o
 seguinte [artigo](https://hbr.org/2021/10/how-twitter-applied-the-jobs-to-be-done-approach-to-strategy) 
 do site da revista Harvard Business Review. 
 
-## Descobrindo os "Trabalhos" {.unnumbered} 
+## Descobrindo os "Trabalhos" 
 
 Para descobrir os trabalhos para os quais os clientes contratam 
 seu produto de software, é preciso observá-los e conversar com 
@@ -164,7 +164,7 @@ a história que ele está pedindo. Isso ajuda a entender
 o contexto e a motivação do seu pedido.
 
 
-## Comentários Finais {.unnumbered} 
+## Comentários Finais 
 
 Quando projetamos um produto, incluindo um software, devemos pensar
 na oferta, representada pelas funcionalidades do produto e na
@@ -200,7 +200,7 @@ em 2017. Um
 publicado na Harvard Business Review, em setembro de 2016, oferece 
 uma introdução mais resumida a JTBD. 
 
-## Exercícios {.unnumbered} 
+## Exercícios 
 
 1. Frequentemente, afirma-se que software pode ser desenvolvido 
 como um projeto ou como um produto. Primeiro, para entender melhor 

@@ -1,7 +1,7 @@
 
-# Product Discovery: Uma Breve Introdução {.unnumbered}
+# Product Discovery: Uma Breve Introdução 
 
-## Contexto {.unnumbered}
+## Introdução
 
 Em certos cenários, o sistema de software que devemos construir 
 está bem definido e claro. Por isso, nesses cenários, faz sentido 
@@ -26,7 +26,7 @@ Product Owners (PO), Product Managers (PM) ou UX Researchers.
 No entanto, é importante contar com a participação também de 
 desenvolvedores e outros stakeholders.
 
-## Exemplo {.unnumbered}
+## Exemplo 
 
 Suponha que trabalhamos em uma empresa que desenvolve um sistema de 
 ensino a distância. Os clientes são universidades que pagam uma 
@@ -70,7 +70,7 @@ tenha se mostrado promissora, ela deve ser descartada. Porém,
 pelo menos, não perdemos tempo implementando e disponibilizando 
 uma solução que não seria usada ou não iria agregar valor ao produto.
 
-## Entrevistas com Clientes {.unnumbered}
+## Entrevistas com Clientes 
 
 A principal técnica usada em processos de discovery são **entrevistas**
 com os clientes. Ou seja, é importante ouvir os clientes do sistema para
@@ -103,7 +103,7 @@ podemos dar um próximo passo, que normalmente envolve a construção de
 alguns protótipos ou 
 [MVPs](https://engsoftmoderna.info/cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp). 
 
-## Outras Técnicas {.unnumbered}
+## Outras Técnicas 
 
 É importante mencionar também que, em certos cenários, nós não temos nenhuma
 ideia de como resolver um certo problema. Ou seja, esses cenários são 
@@ -117,7 +117,7 @@ podemos usar técnicas mais abrangentes de discovery, tais como:
 * Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
 * Jobs to be Done (JTBD), que também tratamos em um [artigo didático](./jobs-to-be-done.html) específico.
 
-## Discovery com Scrum {.unnumbered}
+## Discovery com Scrum 
 
 Para incluir atividades de discovery em Scrum, costuma-se adotar um 
 sistema com duas trilhas de trabalho (ou **dual track**), que rodam 
@@ -134,7 +134,7 @@ sprints que seguem Scrum de forma tradicional, conforme estudamos
 no [Capítulo 2](../cap2.html). O objetivo dessa trilha é implementar 
 e entregar histórias de usuários. 
 
-## Discovery com Kanban {.unnumbered}
+## Discovery com Kanban 
 
 Também podemos adaptar Kanban para incluir atividades de discovery. 
 Normalmente, isso envolve o uso de dois fluxos de trabalho:
@@ -168,7 +168,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-## Comentários Finais {.unnumbered}
+## Comentários Finais 
 
 Vamos concluir com um frase de Martin Cagan, um autor conhecido
 na comunidade de produtos digitais:
@@ -177,7 +177,7 @@ na comunidade de produtos digitais:
 ideias das ideias ruins. O resultado esperado é um backlog do 
 produto com itens validados.
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Qual problema pode ocorrer quando se adota Scrum ou 
 Kanban (de forma tradicional) e que atividades de discovery podem 

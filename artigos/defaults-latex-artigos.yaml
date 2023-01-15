@@ -11,7 +11,7 @@ listings: true
 default-image-extension: png
 
 top-level-division: chapter
-number-sections: false
+number-sections: true
 
 variables:
   documentclass: book

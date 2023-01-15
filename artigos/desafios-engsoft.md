@@ -1,6 +1,6 @@
-# Desafios da Formação de Engenheiros de Software {.unnumbered}
+# Desafios da Formação de Engenheiros de Software 
 
-## Introdução {.unnumbered}
+## Introdução 
 
 Em 2019, ministrei pela primeira vez um curso de Engenharia de 
 Software para alunos de graduação. Desde então, tenho estudado, 
@@ -9,7 +9,7 @@ qualificada de Engenheiros de Software no Brasil. Assim, neste
 artigo, vou compartilhar minha visão sobre os desafios 
 envolvidos em tal tarefa.
 
-## Relevância {.unnumbered}
+## Relevância 
 
 Primeiro, para delimitar o contexto deste artigo, acho importante 
 começar lembrando que Engenharia de Software é cada vez mais essencial 
@@ -60,7 +60,7 @@ Assim, acredito que nunca foi tão importante formar, no Brasil,
 um maior número de profissionais com capacidade e interesse 
 de atuar na área de Engenharia de Software.
 
-### Eixos de Formação {.unnumbered}
+## Eixos de Formação 
 
 O propósito central deste artigo é destacar 
 que a formação qualificada de Engenheiros de Software requer 
@@ -79,7 +79,7 @@ principalmente, um domínio de **habilidades comportamentais**
 A seguir, detalho um pouco mais sobre esses eixos e suas 
 respectivas categorias de formação.
 
-## Eixo Central de Formação {.unnumbered}
+## Eixo Central de Formação 
 
 Este eixo envolve a formação básica de um Engenheiro de Software,
 a qual deve contemplar, em nossa opinião, o desenvolvimento de
@@ -183,7 +183,7 @@ testes, etc. Como um exemplo inicial, neste outro
 [artigo](./exemplos-teste.html), 
 começamos a documentar exemplos reais de testes de software.
 
-## Eixo Transversal de Formação {.unnumbered}
+## Eixo Transversal de Formação 
 
 Neste eixo estão incluídas duas categorias de formação:
 comportamental e em negócios. Decidimos chamar o eixo de transversal 
@@ -264,7 +264,7 @@ as empresas cobram cada vez mais uma mentalidade empreendedora
 de seus colaboradores, por meio do que costuma-se chamar de
 **empreendedorismo interno**.
 
-## Comentário Final {.unnumbered}
+## Comentário Final 
 
 Antes de concluir, gostaríamos de mencionar dois **pré-requisitos**
 que achamos fundamentais para iniciar a formação de engenheiros de 

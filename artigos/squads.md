@@ -1,6 +1,6 @@
 
 
-# Organizando Times em Squads {.unnumbered}
+# Organizando Times em Squads 
 
 Neste artigo, iremos começar explicando o que é um squad. Em seguida,
 iremos apresentar os principais tipos de squads que existem em 
@@ -9,7 +9,7 @@ Modelo Spotify, que define um modelo matricial para organização de
 empresas de software em squads, mas que também inclui outras 
 estruturas, como tribos, chapters e guildas. 
 
-## O que é um Squad? {.unnumbered}
+## O que é um Squad? 
 
 Squads são os times ágeis, isto é, times multidisciplinares, 
 auto-organizáveis e autônomos. Tipicamente, um squad tem menos de 10 
@@ -31,7 +31,7 @@ responsabilidades -- estão distribuídos pelos diferentes squads, que assim
 transformam-se em células autônomas de desenvolvimento, manutenção e 
 entrega de software.
 
-## Tipos de Squads {.unnumbered}
+## Tipos de Squads 
 
 Em organizações que desenvolvem software,  podem existir os 
 seguintes tipos de squad:
@@ -131,7 +131,7 @@ desenvolvedores e outros papéis, como gerentes de produto, vendedores,
 pesquisadores de UX, analistas de marketing, cientistas de dados, etc.
 
 
-## Modelo Spotify {.unnumbered}
+## Modelo Spotify 
 
 O Modelo Spotify define uma organização para times ágeis, principalmente 
 quando uma empresa cresce e passa a ter dezenas ou centenas de squads. 
@@ -203,7 +203,7 @@ tribos, chapters e guildas não deve ocorrer cegamente de acordo com o manual.
 Adaptações ao contexto serão sempre necessárias. 
 
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
 

@@ -1,8 +1,8 @@
 
 
-# Estudo de Caso: PIX no Banco X {.unnumbered}
+# Estudo de Caso: PIX no Banco X 
 
-## Introdução {.unnumbered}
+## Introdução
 
 Neste artigo, iremos descrever a organização de um time 
 ágil -- ou [squad](./squads.html) -- que segue um método semelhante a 
@@ -21,7 +21,7 @@ TED e DOC.
 e o nosso squad são hipotéticos. Além disso, fizemos algumas
 simplificações para tornar o exemplo compacto e mais fácil de entender.
 
-## Composição do Squad {.unnumbered}
+## Composição do Squad 
 
 Vamos assumir que o squad de exemplo é formado por:
 
@@ -121,7 +121,7 @@ dedicados para garantia de qualidade. Eles podem ajudar o PO a
 escrever testes de aceitação e também executar tais testes e 
 validações ao final dos sprints.
 
-## Como Começar? Workshop de Inception {.unnumbered}
+## Como Começar? Workshop de Inception
 
 Antes de começar a rodar os sprints, pode-se realizar um workshop
 com todos os membros do time e alguns stakeholders importantes 
@@ -138,7 +138,7 @@ e definir os objetivos dos primeiros sprints.
 
 Terminado o workshop de inception, os sprints podem começar!
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Defina três histórias de usuários do projeto PIX no Banco X.
 

@@ -1,8 +1,8 @@
 
 
-# Mais Alguns Princípios de Projeto {.unnumbered}
+# Mais Alguns Princípios de Projeto 
 
-## Introdução {.unnumbered}
+## Introdução
 
 Neste artigo, vamos complementar os princípios de projeto, estudados 
 no [Capítulo 5](../cap5.html), com quatro novos princípios:
@@ -16,7 +16,7 @@ Para finalizar, vamos falar sobre
 [ortogonalidade](#ortogonalidade), 
 que é uma propriedade importante em projetos de projeto
 
-## CQS: Command-Query Separation {.unnumbered}
+## CQS: Command-Query Separation 
 
 Este princípio foi proposto por Bertrand Meyer, o mesmo autor do
 princípio Aberto/Fechado (Open/Closed), que dá origem à letra "O"
@@ -68,7 +68,7 @@ procurar maximizar a parte funcional e minimizar o número de
 comandos. Isso é importante porque queries (funções) são 
 mais fáceis de entender, de chamar e de testar.
 
-## DRY: Don't Repeat Yourself {.unnumbered}
+## DRY: Don't Repeat Yourself 
 
 Este princípio de projeto foi enunciado pela primeira vez no 
 livro *The Pragmatic Programmer*, de David Thomas e Andrew Hunt, 
@@ -104,7 +104,7 @@ teria que ser repetida nos três formatos do livro.
 Existem outros nomes para DRY. Por exemplo, no livro *The Art of Unix 
 Programming*, Eric Raymond usa o termo SPOT (*Single Point of Truth*).
 
-## YAGNI: You Aren't Gonna Need It {.unnumbered}
+## YAGNI: You Aren't Gonna Need It 
 
 Este princípio é muito comentado entre adotantes de Extreme
 Programming (XP). Na verdade, já falamos rapidamente sobre
@@ -140,7 +140,7 @@ com o cliente se mensagens em espanhol são mesmo importantes,
 pelo menos nessa primeira versão do sistema.
 
 
-## KISS: Keep It Simple, Stupid {.unnumbered}
+## KISS: Keep It Simple, Stupid 
 
 Esta sigla é usada em diversos contextos e domínios. 
 Mas, especificamente no caso de projeto de software,
@@ -177,7 +177,7 @@ de fato, necessária. Quando tal momento chegar, KISS
 recomenda que a implementação seja feita da forma mais
 simples possível. 
 
-## Ortogonalidade {.unnumbered}
+## Ortogonalidade 
 
 Dois componentes de um projeto são ortogonais se mudanças em um deles 
 não afetam o outro. Logo, eles podem ser livremente combinados 
@@ -203,7 +203,7 @@ presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no 
 [Capítulo 5](../cap5.html#coes%C3%A3o).
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 1. Seja uma aplicação CRUD (*Create*, *Read*, *Update*, *Delete*). 
 Quais dessas operações devem ser implementadas como Comandos? 
