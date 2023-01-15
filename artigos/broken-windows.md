@@ -1,4 +1,5 @@
 
+
 # Duas Recomendações para Manutenção de Software {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -110,7 +111,8 @@ terrivelmente mais complicado manter o código no futuro.
 desenvolvedores mencionadas na seção sobre a Regra dos Escoteiros.
 
 
-
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

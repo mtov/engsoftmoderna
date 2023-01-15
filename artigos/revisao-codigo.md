@@ -1,4 +1,5 @@
 
+
 # Revisão de Código: Uma Breve Introdução {.unnumbered}
 
 Artigo de autoria de **Aline Torres** e **Marco Tulio Valente**. Elaborado como parte da Monografia de Sistemas de Informação da primeira autora no DCC/UFMG.
@@ -207,4 +208,6 @@ que documenta boas práticas para escrita de código em JavaScript.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

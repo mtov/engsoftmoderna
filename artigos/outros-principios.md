@@ -2,6 +2,8 @@
 
 # Mais Alguns Princípios de Projeto {.unnumbered}
 
+## Introdução {.unnumbered}
+
 Neste artigo, vamos complementar os princípios de projeto, estudados 
 no [Capítulo 5](../cap5.html), com quatro novos princípios:
 

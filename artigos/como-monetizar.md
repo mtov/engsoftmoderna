@@ -1,10 +1,8 @@
 
-# Como monetizar sistemas de software? {.unnumbered}
+# Como Monetizar Sistemas de Software? {.unnumbered}
 
-Este é um **artigo em andamento**. Provavelmente, ainda vamos acrescentar mais
-informações nele. No entanto, na versão atual, acreditamos que ele já
-oferece uma boa visão sobre modelos de monetização (ou precificação) de
-produtos de software.
+Este artigo didático oferece uma visãogeral sobre modelos de 
+monetização (ou precificação) de produtos de software.
 
 ## Licenças {.unnumbered}
 
@@ -231,4 +229,6 @@ Eles adotam o modelo freemium?
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

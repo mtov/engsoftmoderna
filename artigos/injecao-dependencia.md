@@ -1,7 +1,7 @@
 
 # O que é Injeção de Dependência?   {.unnumbered}
 
-## Introdução
+## Introdução {.unnumbered}
 
 Injeção de Dependência não faz parte dos padrões de projeto do livro 
 GoF. Porém, a solução é frequentemente listada como um padrão que 

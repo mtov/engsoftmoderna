@@ -1,4 +1,5 @@
 
+
 # O que é uma Arquitetura Hexagonal? {.unnumbered}
 
 ## Introdução {.unnumbered}
@@ -214,5 +215,6 @@ e a Arquitetura Limpa (que estudamos em um outro
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html). 
-
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```
