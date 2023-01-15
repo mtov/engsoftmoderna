@@ -1,3 +1,5 @@
+
+
 # Alguns Exemplos Reais e Interessantes de Testes {.unnumbered}
 
 ## Introdução  {.unnumbered}
@@ -203,7 +205,7 @@ possui uma anotação `@Autowired`:
 ```
 class ClinicServiceTests {
   ...
-  @Autowired     // informa para o Spring que ele deve injetar essa dependência
+  @Autowired     // Spring vai injetar essa dependência
   protected OwnerRepository owners;
   ...
 }
@@ -424,7 +426,8 @@ public void SettingsOpenWithContextMenu()
   session.FindElementByXPath("//MenuItem[@Name=\"Settings\"]").Click();
 
   //check settings window opened
-  WindowsElement settingsWindow = session.FindElementByName("PowerToys Settings");
+  WindowsElement settingsWindow = 
+     session.FindElementByName("PowerToys Settings");
   Assert.IsNotNull(settingsWindow);
 
   isSettingsOpened = true;
@@ -446,7 +449,9 @@ que testa a execução do seguinte
 
 
 
-
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

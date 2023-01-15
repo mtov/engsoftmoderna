@@ -3,8 +3,8 @@ to: latex
    
 pdf-engine: pdflatex
 
-include-in-header: packages.tex
-include-before-body: begin-document.tex 
+include-in-header: packages-artigos.tex
+include-before-body: begin-document-artigos.tex 
 
 listings: true
 

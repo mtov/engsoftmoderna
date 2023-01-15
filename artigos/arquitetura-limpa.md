@@ -210,13 +210,9 @@ futuro.
 
 ### Para Saber Mais {.unnumbered}
 
-Veja também o seguinte vídeo que gravamos sobre o conteúdo deste artigo didático.
+Veja um <a href="https://youtu.be/k_y6whzQ1z0">vídeo</a> que gravamos sobre o conteúdo deste artigo didático.
 
-<p>
-<iframe width="476" height="268" src="https://www.youtube.com/embed/k_y6whzQ1z0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-
-Se quiser saber mais sobre Arquitetura Limpa, você pode consultar o 
+Se quiser saber mais sobre Arquitetura Limpa, você pode também consultar o 
 [livro](https://dl.acm.org/doi/book/10.5555/3175742) de 
 mesmo nome do Uncle Bob. 
 

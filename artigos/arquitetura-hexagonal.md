@@ -161,9 +161,7 @@ provavelmente, continua sendo mais conhecida como Arquitetura Hexagonal.
 
 ### Para Saber Mais {.unnumbered}
 
-Veja também o seguinte vídeo que gravamos sobre o conteúdo deste artigo didático.
-
-<iframe width="476" height="268" src="https://www.youtube.com/embed/JxgaUJmWVQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Veja um <a href="https://youtu.be/JxgaUJmWVQQ">vídeo</a> que gravamos sobre o conteúdo deste artigo didático.
 
 Também recomendamos dois pequenos artigos do Alistair Cockburn 
 na WikiWikiWeb. O primeiro 

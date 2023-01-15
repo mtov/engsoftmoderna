@@ -23,6 +23,8 @@ cat arquitetura-hexagonal.md >> esm-artigos.md
 cat sagas.md >> esm-artigos.md
 cat serverless.md >> esm-artigos.md
 
+cat exemplos-teste.md >> esm-artigos.md
+
 cat broken-windows.md >> esm-artigos.md
 cat revisao-codigo.md >> esm-artigos.md
 

@@ -260,7 +260,7 @@ dependências</strong>. Para isso, a declaração desse atributo na classe
 </ul>
 <pre><code>class ClinicServiceTests {
   ...
-  @Autowired     // informa para o Spring que ele deve injetar essa dependência
+  @Autowired     // Spring vai injetar essa dependência
   protected OwnerRepository owners;
   ...
 }</code></pre>
@@ -447,7 +447,8 @@ public void SettingsOpenWithContextMenu()
   session.FindElementByXPath(&quot;//MenuItem[@Name=\&quot;Settings\&quot;]&quot;).Click();
 
   //check settings window opened
-  WindowsElement settingsWindow = session.FindElementByName(&quot;PowerToys Settings&quot;);
+  WindowsElement settingsWindow = 
+     session.FindElementByName(&quot;PowerToys Settings&quot;);
   Assert.IsNotNull(settingsWindow);
 
   isSettingsOpened = true;
