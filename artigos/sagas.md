@@ -1,7 +1,7 @@
 
-# Consistência de Dados em Microsserviços usando-se Sagas {.unnumbered}
+# Consistência de Dados em Microsserviços usando-se Sagas
 
-## Introdução {.unnumbered}
+## Introdução
 
 Como discutimos no [Capítulo 7](../cap7.html#microsservi%C3%A7os),
 em arquiteturas baseadas em microsserviços, recomenda-se que cada 
@@ -32,7 +32,7 @@ banco de dados. Portanto, o que não pode ocorrer é executar uma operação e
 não executar a outra, pois isso deixaria o sistema em um estado 
 inconsistente.
 
-## Garantindo Atomicidade {.unnumbered}
+## Garantindo Atomicidade
  
 A seguir, vamos discutir as maneiras tradicionais para garantir
 atomicidade. Primeiro, em bancos de dados centralizados. Depois,
@@ -93,7 +93,7 @@ Por isso, começou-se a procurar alternativas mais viáveis para consistência
 dos dados de microsserviços. Uma delas é o conceito de sagas, que descreveremos 
 a seguir.
 
-## Sagas {.unnumbered}
+## Sagas
 
 **Sagas** é um conceito antigo de bancos  de dados, proposto em 1987 por 
 Hector Garcia-Molina e Kenneth Salem. Se quiser, veja 
@@ -152,7 +152,7 @@ catch (FailureT3) {
 }
 ```
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Por que microsserviços não devem compartilhar um único banco de dados?
 Para responder, você pode consultar a Seção 7.4.1 do 

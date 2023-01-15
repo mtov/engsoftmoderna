@@ -1,8 +1,8 @@
 
 
-# O que é uma Arquitetura Serverless?  {.unnumbered}
+# O que é uma Arquitetura Serverless?
 
-## Introdução {.unnumbered}
+## Introdução
 
 Neste artigo, iremos descrever o conceito de arquiteturas 
 serverless, que tem sido cada vez mais adotado por empresas 
@@ -17,7 +17,7 @@ Em seguida, iremos apresentar o conceito de funções serverless
 e mostrar um exemplo desse tipo de função. Por fim, iremos 
 listar algumas desvantagens de arquiteturas serverless.
 
-## Histórico {.unnumbered}
+## Histórico
 
 Até a década de 1990, as empresas tinham que comprar 
 servidores físicos para hospedar seus sistemas. E também tinham 
@@ -68,7 +68,7 @@ escalabilidade de servidores, sejam eles físicos ou virtuais.
 Ou seja, para ficar bem claro, continuam existindo servidores, 
 mas eles são mantidos e configurados pelas empresas de cloud.
 
-## Modelo de Cobrança {.unnumbered}
+## Modelo de Cobrança
 
 Com serverless, paga-se pelo tempo de execução das funções 
 serverless. Ou seja, apenas quando ocorre um determinado evento 
@@ -89,7 +89,7 @@ provedor de cloud para execução de funções serverless e para aluguel de
 servidores virtuais. E também do preço para comprar servidores físicos 
 e mantê-los em data centers ou em espaços de colocation.
 
-## Funções Serverless {.unnumbered}
+## Funções Serverless
 
 Funções serverless têm as seguintes características principais:
 
@@ -136,7 +136,7 @@ Na seguinte [página](https://functions.netlify.com/playground/),
 você encontra outros exemplos de funções serverless.
 
 
-## Comentários Finais {.unnumbered}
+## Comentários Finais
 
 Para explicar as vantagens de serverless, os autores de um 
 [artigo](https://m-cacm.acm.org/magazines/2021/5/252179-what-serverless-computing-is-and-should-become/fulltext)
@@ -182,7 +182,7 @@ Antes de concluir, é importante mencionar que é possível, também,
 ter uma arquitetura híbrida, na qual apenas alguns serviços são
 implementados por meio de funções serverless.
 
-## Exercícios  {.unnumbered}
+## Exercícios
 
 1. Quando usamos serverless não precisamos nos preocupar com 
    as questões abaixo, EXCETO:

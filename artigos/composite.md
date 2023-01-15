@@ -1,8 +1,8 @@
 
 
-# Criando Objetos Compostos com o Padrão Composite {.unnumbered}
+# Criando Objetos Compostos com o Padrão Composite 
 
-## Introdução  {.unnumbered}
+## Introdução  
 
 Neste artigo, vamos apresentar o padrão de projeto **Composite**,
 que -- por ser um padrão bem simples -- não foi tratado no 
@@ -14,7 +14,7 @@ descrevendo primeiro um contexto, depois um problema
 enfrentado nesse contexto e, por fim, a solução que é proposta 
 por Composite.
 
-## Contexto {.unnumbered}
+## Contexto 
 
 Suponha que estamos desenvolvendo um editor gráfico, similar 
 ao Paint (para Windows) ou Canva (Web). Nesse editor, temos
@@ -35,7 +35,7 @@ class Triangulo implements Figura {
 }
 ```
 
-## Problema {.unnumbered}
+## Problema 
 
 No nosso editor, queremos implementar uma funcionalidade
 que permita **agrupar figuras** e então tratar a figura
@@ -54,7 +54,7 @@ com figuras simples ou com figuras agrupadas da mesma
 forma, usando apenas a interface `Figura`. Esse código não vai precisar saber qual tipo de
 figura (simples ou agrupada) ele está manipulando.
 
-## Solução {.unnumbered}
+## Solução 
 
 O **padrão de projeto Composite** é a solução para o
 problema que enunciamos. Ele permite armazenar objetos
@@ -146,7 +146,7 @@ FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
 ```
 
-## Comentário Final {.unnumbered}
+## Comentário Final 
 
 Devemos usar o padrão Composite quando precisamos representar
 de forma uniforme objetos simples e objetos compostos (isto é,
@@ -159,7 +159,7 @@ ocorre sobre um objeto simples ou sobre um objeto composto.
 artigo está disponível 
 [aqui](https://repl.it/@mtvalente/Padrao-de-Projeto-Composite).
 
-## Exercício {.unnumbered}
+## Exercício
 
 1. Existem três tipos de classes ou interfaces no padrão Composite:
 

@@ -1,8 +1,8 @@
 
 
-# Duas Recomendações para Manutenção de Software {.unnumbered}
+# Duas Recomendações para Manutenção de Software
 
-## Introdução {.unnumbered}
+## Introdução
 
 Neste artigo, vamos apresentar duas recomendações (ou "dicas"), 
 propostas originalmente para outras áreas, mas que se aplicam a 
@@ -15,7 +15,7 @@ pelos seguintes nomes:
 Além de apresentar ambos os conceitos, vamos mostrar 
 que existe uma conexão entre eles.
 
-## Teoria das Janelas Quebradas {.unnumbered}
+## Teoria das Janelas Quebradas
 
 A Teoria das Janelas Quebradas é famosa entre criminologistas, 
 policiais e autoridades da área de segurança. Proposta em 1982 
@@ -67,7 +67,7 @@ de variáveis globais, código duplicado, etc.
 * código com vulnerabilidades graves de segurança.
 * etc
 
-## Regra dos Escoteiros {.unnumbered}
+## Regra dos Escoteiros
 
 A Regra do Escoteiro foi descrita por Robert Martin no seu livro "Código Limpo". 
 Segundo ele, os escoteiros norte-americanos têm uma regra simples que pode 
@@ -106,7 +106,7 @@ na minha tela. Então eu extraí uma parte dele.
 fazer isso, porque quando existe muita redundância torna-se
 terrivelmente mais complicado manter o código no futuro.
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Qual o nome do refactoring aplicado nas duas primeiras respostas de 
 desenvolvedores mencionadas na seção sobre a Regra dos Escoteiros.

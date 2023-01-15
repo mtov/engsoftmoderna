@@ -1,7 +1,7 @@
 
-# O que é Injeção de Dependência?   {.unnumbered}
+# O que é Injeção de Dependência?
 
-## Introdução {.unnumbered}
+## Introdução
 
 Injeção de Dependência não faz parte dos padrões de projeto do livro 
 GoF. Porém, a solução é frequentemente listada como um padrão que 
@@ -100,7 +100,7 @@ interface `IB`. Se você ainda não sabe o que é um mock, recomendamos a leitur
 da seção do [Capítulo 8](../cap8.html#mocks) sobre o assunto.
  
 
-## Frameworks para Injeção de Dependência {.unnumbered}
+## Frameworks para Injeção de Dependência
 
 Uma desvantagem de Injeção de Dependência é que a responsabilidade por criar as
 dependências -- isto é, instanciar os objetos que serão passados para a classe
@@ -187,7 +187,7 @@ um framework de injeção de dependências para Java, desenvolvido pelo Google.
 No entanto, existem outros frameworks semelhantes, tanto para Java como 
 para outras linguagens.
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Como explicamos no [Capítulo 6](../cap6.html#introdu%C3%A7%C3%A3o),
 padrões de projeto são classificados em padrões criacionais,

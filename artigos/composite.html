@@ -87,10 +87,12 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered"
-id="criando-objetos-compostos-com-o-padrão-composite">Criando Objetos
-Compostos com o Padrão Composite</h1>
-<h2 class="unnumbered" id="introdução">Introdução</h2>
+<h1 data-number="1"
+id="criando-objetos-compostos-com-o-padrão-composite"><span
+class="header-section-number">1</span> Criando Objetos Compostos com o
+Padrão Composite</h1>
+<h2 data-number="1.1" id="introdução"><span
+class="header-section-number">1.1</span> Introdução</h2>
 <p>Neste artigo, vamos apresentar o padrão de projeto
 <strong>Composite</strong>, que – por ser um padrão bem simples – não
 foi tratado no <a href="../cap6.html">Capítulo 6</a> do livro.</p>
@@ -98,7 +100,8 @@ foi tratado no <a href="../cap6.html">Capítulo 6</a> do livro.</p>
 estudamos no referido capítulo. Ou seja, iremos apresentar o padrão
 descrevendo primeiro um contexto, depois um problema enfrentado nesse
 contexto e, por fim, a solução que é proposta por Composite.</p>
-<h2 class="unnumbered" id="contexto">Contexto</h2>
+<h2 data-number="1.2" id="contexto"><span
+class="header-section-number">1.2</span> Contexto</h2>
 <p>Suponha que estamos desenvolvendo um editor gráfico, similar ao Paint
 (para Windows) ou Canva (Web). Nesse editor, temos interfaces e classes
 como as seguintes:</p>
@@ -114,7 +117,8 @@ class Circulo implements Figura {
 class Triangulo implements Figura {
   ...
 }</code></pre>
-<h2 class="unnumbered" id="problema">Problema</h2>
+<h2 data-number="1.3" id="problema"><span
+class="header-section-number">1.3</span> Problema</h2>
 <p>No nosso editor, queremos implementar uma funcionalidade que permita
 <strong>agrupar figuras</strong> e então tratar a figura resultante
 desse agrupamento como uma figura única.</p>
@@ -132,7 +136,8 @@ alt="Figuras simples e agrupadas" />
 simples ou com figuras agrupadas da mesma forma, usando apenas a
 interface <code>Figura</code>. Esse código não vai precisar saber qual
 tipo de figura (simples ou agrupada) ele está manipulando.</p>
-<h2 class="unnumbered" id="solução">Solução</h2>
+<h2 data-number="1.4" id="solução"><span
+class="header-section-number">1.4</span> Solução</h2>
 <p>O <strong>padrão de projeto Composite</strong> é a solução para o
 problema que enunciamos. Ele permite armazenar objetos compostos (ou
 agrupados) em uma estrutura com forma de árvore e então possibilita que
@@ -214,7 +219,8 @@ com figuras agrupadas <q>contendo</q> outras figuras agrupadas, como
 em:</p>
 <pre><code>FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada</code></pre>
-<h2 class="unnumbered" id="comentário-final">Comentário Final</h2>
+<h2 data-number="1.5" id="comentário-final"><span
+class="header-section-number">1.5</span> Comentário Final</h2>
 <p>Devemos usar o padrão Composite quando precisamos representar de
 forma uniforme objetos simples e objetos compostos (isto é, objetos
 formados pelo agrupamento de objetos simples). Isso simplifica a
@@ -224,7 +230,8 @@ objeto composto.</p>
 <p><strong>Código fonte:</strong> O código fonte do exemplo usado neste
 artigo está disponível <a
 href="https://repl.it/@mtvalente/Padrao-de-Projeto-Composite">aqui</a>.</p>
-<h2 class="unnumbered" id="exercício">Exercício</h2>
+<h2 data-number="1.6" id="exercício"><span
+class="header-section-number">1.6</span> Exercício</h2>
 <ol type="1">
 <li><p>Existem três tipos de classes ou interfaces no padrão
 Composite:</p>

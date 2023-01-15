@@ -1,8 +1,8 @@
 
 
-# O que é uma Arquitetura Hexagonal? {.unnumbered}
+# O que é uma Arquitetura Hexagonal?
 
-## Introdução {.unnumbered}
+## Introdução
 
 O conceito de Arquitetura Hexagonal foi proposto por Alistair Cockburn, 
 em meados dos anos 90, em um [artigo](http://wiki.c2.com/?HexagonalArchitecture) 
@@ -64,7 +64,7 @@ exterior podemos citar os seguintes: interagir com seus usuários
 terminal, etc), persistir informações, enviar informações para 
 outros sistemas, etc.
 
-## Adaptadores e Portas {.unnumbered}
+## Adaptadores e Portas
 
 Em uma Arquitetura Hexagonal, o termo **porta** designa as interfaces
 usadas para comunicação com as classes de domínio (veja que interface
@@ -105,7 +105,7 @@ das classes de domínio, e as direcionam para um sistema externo,
 tais como um banco de dados, um outro sistema da organização ou mesmo
 de terceiros.
 
-## Exemplo: Sistema de Bibliotecas {.unnumbered}
+## Exemplo: Sistema de Bibliotecas
 
 A próxima figura mostra a arquitetura hexagonal de um sistema para
 gerenciamento de bibliotecas:
@@ -143,7 +143,7 @@ código no seguinte
 [link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
 
 
-## Comentário Final {.unnumbered}
+## Comentário Final
 
 Em 2005, Cockburn tentou renomear o nome de sua arquitetura para 
 **Arquitetura baseada em Portas e Adaptadores**, com a seguinte
@@ -173,7 +173,7 @@ tenta renomeá-la para incluir os termos portas e adaptadores.
 E, se quiser, veja nosso artigo sobre
 [Arquitetura Limpa](./arquitetura-limpa.html).
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do 
 padrão de projeto de mesmo nome. E as portas? Elas podem ser 

@@ -86,10 +86,12 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered"
-id="consistência-de-dados-em-microsserviços-usando-se-sagas">Consistência
-de Dados em Microsserviços usando-se Sagas</h1>
-<h2 class="unnumbered" id="introdução">Introdução</h2>
+<h1 data-number="1"
+id="consistência-de-dados-em-microsserviços-usando-se-sagas"><span
+class="header-section-number">1</span> Consistência de Dados em
+Microsserviços usando-se Sagas</h1>
+<h2 data-number="1.1" id="introdução"><span
+class="header-section-number">1.1</span> Introdução</h2>
 <p>Como discutimos no <a
 href="../cap7.html#microsservi%C3%A7os">Capítulo 7</a>, em arquiteturas
 baseadas em microsserviços, recomenda-se que cada microsserviço possua
@@ -124,8 +126,8 @@ possíveis:</p>
 registrados no banco de dados. Portanto, o que não pode ocorrer é
 executar uma operação e não executar a outra, pois isso deixaria o
 sistema em um estado inconsistente.</p>
-<h2 class="unnumbered" id="garantindo-atomicidade">Garantindo
-Atomicidade</h2>
+<h2 data-number="1.2" id="garantindo-atomicidade"><span
+class="header-section-number">1.2</span> Garantindo Atomicidade</h2>
 <p>A seguir, vamos discutir as maneiras tradicionais para garantir
 atomicidade. Primeiro, em bancos de dados centralizados. Depois, em
 bancos de dados distribuídos.</p>
@@ -178,7 +180,8 @@ microsserviços.</p>
 <p>Por isso, começou-se a procurar alternativas mais viáveis para
 consistência dos dados de microsserviços. Uma delas é o conceito de
 sagas, que descreveremos a seguir.</p>
-<h2 class="unnumbered" id="sagas">Sagas</h2>
+<h2 data-number="1.3" id="sagas"><span
+class="header-section-number">1.3</span> Sagas</h2>
 <p><strong>Sagas</strong> é um conceito antigo de bancos de dados,
 proposto em 1987 por Hector Garcia-Molina e Kenneth Salem. Se quiser,
 veja o <a href="https://doi.org/10.1145/38713.38742">artigo</a>
@@ -226,7 +229,8 @@ catch (FailureT3) {
    C2();
    C1();
 }</code></pre>
-<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<h2 data-number="1.4" id="exercícios"><span
+class="header-section-number">1.4</span> Exercícios</h2>
 <ol type="1">
 <li><p>Por que microsserviços não devem compartilhar um único banco de
 dados? Para responder, você pode consultar a Seção 7.4.1 do <a

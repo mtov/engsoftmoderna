@@ -1,8 +1,8 @@
 
 
-# Alguns Exemplos Reais e Interessantes de Testes {.unnumbered}
+# Alguns Exemplos Reais e Interessantes de Testes
 
-## Introdução  {.unnumbered}
+## Introdução
 
 No [Capítulo 8](../cap8.html), 
 explicamos os principais conceitos de testes de software 
@@ -23,9 +23,7 @@ links:
 * [Vue.js](#vue.js)
 * [Microsoft PowerToys](#microsoft-powertoys)
 
-* * * 
-
-## Guava {.unnumbered}
+## Guava
 
 [Guava](https://github.com/google/guava) é uma biblioteca de código aberto -- 
 implementada pelo Google -- que oferece um conjunto de funções básicas para 
@@ -149,10 +147,8 @@ Antes de terminar, queremos ressaltar que esse é um **teste de
 integração**, pois ele faz acesso ao disco para ler e gravar 
 arquivos.
 
-* * *
 
-
-## Spring PetClinic {.unnumbered}
+## Spring PetClinic
 
 [Spring PetClinic](https://github.com/spring-projects/spring-petclinic) 
 é uma aplicação de demonstração do 
@@ -227,10 +223,7 @@ insert or otherwise change database state, there is no need
 for a teardown or cleanup script.
 
 
-
-* * *
-
-## JUnit {.unnumbered}
+## JUnit
 
 O JUnit também possui testes, que, evidentemente, são executados 
 pelo próprio JUnit. As primeiras versões desses testes foram 
@@ -317,9 +310,7 @@ teste (subclasse de `TestCase`);
 * Por fim, o teste como um todo foi bem sucedido.
 
 
-* * *
-
-## Vue.js {.unnumbered}
+## Vue.js
 
 [Vue.js](https://vuejs.org/) 
 é um framework JavaScript para implementação de
@@ -361,10 +352,8 @@ it('chained usage', () => {
  que o texto exibido pelo componente seja igual a `IH`.
 
 
-* * * 
 
-
-## Microsoft PowerToys {.unnumbered}
+## Microsoft PowerToys
 
 PowerToys é um conjunto de utilitários Windows. Por exemplo,
 um dos utilitários permite fixar uma janela para que ela
@@ -435,7 +424,7 @@ public void SettingsOpenWithContextMenu()
 ```
 
  
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Spring PetClinic: estude e documente o funcionamento do método de teste
 [shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da

@@ -1,8 +1,8 @@
 
 
-# Construindo Sistemas com uma Arquitetura Limpa {.unnumbered}
+# Construindo Sistemas com uma Arquitetura Limpa 
 
-## Introdução {.unnumbered}
+## Introdução
 
 **Arquitetura Limpa** (*Clean Architecture*) é um padrão arquitetural proposto
 por Robert Martin -- mais conhecido como Uncle Bob -- com o objetivo de 
@@ -18,7 +18,7 @@ Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
 
 A seguir, vamos comentar sobre cada um das camadas da arquitetura.
 
-## Entidades e Casos de Uso {.unnumbered}
+## Entidades e Casos de Uso
 
 No centro da arquitetura, temos as classes responsáveis pelas regras de negócio, 
 que podem ser de dois tipos: Entidades e Casos de Uso.
@@ -45,7 +45,7 @@ pelo menos direta, com casos de uso para especificação de requisitos
 e, menos ainda, com diagramas de casos de uso da UML, tal como 
 estudamos no [Capítulo 3](../cap3.html#diagramas-de-casos-de-uso).
  
-## Adaptadores {.unnumbered}
+## Adaptadores
 
 Na terceira camada, de dentro para fora, temos classes e interfaces
 chamadas de **Adaptadores**. Eles têm como função mediar a interação
@@ -66,7 +66,7 @@ todos os componentes desse padrão arquitetural -- isto é, a Visão,
 os controladores e o modelo -- pertencerão a essa camada.
 --->
 
-## Frameworks Externos {.unnumbered}
+## Frameworks Externos
 
 Na camada mais externa, temos as classes de bibliotecas, frameworks
 e quaisquer sistemas externos. Por exemplo, é nessa camada que ficam
@@ -90,7 +90,7 @@ veja como essa camada é descrita:
 > podem fazer menos mal.
 
 
-## Regra de Dependência {.unnumbered}
+## Regra de Dependência
 
 Em uma Arquitetura Limpa, as classes de uma camada X não devem conhecer nenhuma 
 classe de uma camada Y mais externa. No seu livro, Uncle Bob afirma categoricamente:
@@ -110,7 +110,7 @@ frameworks e bibliotecas.
 Resumindo, a Regra de Dependência garante que **entidades e casos de uso
 são classes "limpas" de qualquer tecnologia** ou serviço externo ao sistema.
 
-## Invertendo o Fluxo de Controle {.unnumbered}
+## Invertendo o Fluxo de Controle
 
 Em uma Arquitetura Limpa, fluxos de controle de "fora para dentro" são 
 implementados de forma "natural", pois eles seguem o mesmo sentido 
@@ -177,7 +177,7 @@ O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 
 ![Dependências em uma arquitetura limpa](./figs/arquitetura-limpa-exemplo){width=75%}
 
-## Conclusão {.unnumbered}
+## Conclusão
 
 Uma Arquitetura Limpa é uma aplicação de diversos conceitos
 que estudamos no [Capítulo 5](../cap5.html), 
@@ -219,7 +219,7 @@ mesmo nome do Uncle Bob.
 E temos também um artigo didático sobre
 [Arquitetura Hexagonal](./arquitetura-hexagonal.html).
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
 

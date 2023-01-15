@@ -1,8 +1,8 @@
 
 
-# Domain-Driven Design (DDD): Um Resumo {.unnumbered}
+# Domain-Driven Design (DDD): Um Resumo 
 
-## Introdução {.unnumbered}
+## Introdução 
 
 Domain-Driven Design (DDD) é um conjunto de princípios para projeto 
 de software, organizados e sistematizados em 2003, por Eric Evans, 
@@ -40,7 +40,7 @@ cujas regras de negócio são mais difíceis de serem imediatamente
 entendidas e implementadas pelos desenvolvedores.
 
 
-## Linguagem Ubíqua {.unnumbered}
+## Linguagem Ubíqua 
 
 **Linguagem Ubíqua** (ou **Linguagem Onipresente**) é um conceito 
 central de DDD. Ela consiste de um conjunto de termos que 
@@ -99,7 +99,7 @@ Para documentar de forma visual esses relacionamentos pode ser usado
 um **Diagrama de Classes** de UML, conforme estudamos 
 no [Capítulo 4](../cap4.html#diagramas-de-classes).
 
-## Objetos de Domínio {.unnumbered}
+## Objetos de Domínio 
 
 DDD foi proposto pensando em sistemas implementados em linguagens
 orientadas a objetos. Então, quando se define o design desses 
@@ -293,7 +293,7 @@ class RepositorioDeEmprestimos {
 }
 ```
 
-## Contextos Delimitados {.unnumbered}
+## Contextos Delimitados 
 
 Com o tempo, sistemas de software ficam mais complexos e 
 abrangentes. Por isso, é irrealista imaginar que sistemas de 
@@ -314,7 +314,7 @@ própria. Por exemplo, nesse domínio financeiro, a classe
 `Usuário` pode, inclusive, ser chamada de `Cliente` e ter novos 
 atributos.
 
-## Camada Anticorrupção {.unnumbered}
+## Camada Anticorrupção 
 
 Às vezes, temos que integrar sistemas que estão em contextos delimitados
 diferentes. Por exemplo, um sistema A precisa usar serviços de um sistema
@@ -347,7 +347,7 @@ Nesse fluxo, as classes entre colchetes constituem a
 Camada Anticorrupção que foi construída para integrar os 
 sistemas A e B.
 
-## Comentários Finais {.unnumbered}
+## Comentários Finais 
 
 Em um material de referência, que escreveu em 2014, Eric Evans 
 define assim DDD:
@@ -365,7 +365,7 @@ classes, pacotes, etc. Especificamente, um projeto DDD
 deve fazer uso dos seguintes tipos de objetos principais: entidades, 
 objetos de valor, serviços, agregados e  repositórios.
 
-## Exercícios {.unnumbered}
+## Exercícios 
 
 <!---
 1. Marque V ou F:

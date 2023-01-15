@@ -87,10 +87,12 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered"
-id="construindo-sistemas-com-uma-arquitetura-limpa">Construindo Sistemas
-com uma Arquitetura Limpa</h1>
-<h2 class="unnumbered" id="introdução">Introdução</h2>
+<h1 data-number="1"
+id="construindo-sistemas-com-uma-arquitetura-limpa"><span
+class="header-section-number">1</span> Construindo Sistemas com uma
+Arquitetura Limpa</h1>
+<h2 data-number="1.1" id="introdução"><span
+class="header-section-number">1.1</span> Introdução</h2>
 <p><strong>Arquitetura Limpa</strong> (<em>Clean Architecture</em>) é um
 padrão arquitetural proposto por Robert Martin – mais conhecido como
 Uncle Bob – com o objetivo de promover a implementação de sistemas que
@@ -109,8 +111,8 @@ alt="Arquitetura Limpa" />
 </figure>
 <p>A seguir, vamos comentar sobre cada um das camadas da
 arquitetura.</p>
-<h2 class="unnumbered" id="entidades-e-casos-de-uso">Entidades e Casos
-de Uso</h2>
+<h2 data-number="1.2" id="entidades-e-casos-de-uso"><span
+class="header-section-number">1.2</span> Entidades e Casos de Uso</h2>
 <p>No centro da arquitetura, temos as classes responsáveis pelas regras
 de negócio, que podem ser de dois tipos: Entidades e Casos de Uso.</p>
 <p><strong>Entidades</strong> são classes comuns a vários sistemas da
@@ -136,7 +138,8 @@ casos de uso em uma Arquitetura Limpa não tem uma correspondência, pelo
 menos direta, com casos de uso para especificação de requisitos e, menos
 ainda, com diagramas de casos de uso da UML, tal como estudamos no <a
 href="../cap3.html#diagramas-de-casos-de-uso">Capítulo 3</a>.</p>
-<h2 class="unnumbered" id="adaptadores">Adaptadores</h2>
+<h2 data-number="1.3" id="adaptadores"><span
+class="header-section-number">1.3</span> Adaptadores</h2>
 <p>Na terceira camada, de dentro para fora, temos classes e interfaces
 chamadas de <strong>Adaptadores</strong>. Eles têm como função mediar a
 interação entre a camada mais externa da arquitetura (sistemas externos)
@@ -153,7 +156,8 @@ Se o sistema for implementado usando-se um framework MVC,
 todos os componentes desse padrão arquitetural -- isto é, a Visão, 
 os controladores e o modelo -- pertencerão a essa camada.
 --->
-<h2 class="unnumbered" id="frameworks-externos">Frameworks Externos</h2>
+<h2 data-number="1.4" id="frameworks-externos"><span
+class="header-section-number">1.4</span> Frameworks Externos</h2>
 <p>Na camada mais externa, temos as classes de bibliotecas, frameworks e
 quaisquer sistemas externos. Por exemplo, é nessa camada que ficam os
 sistemas responsáveis por persistência em bancos de dados, construção de
@@ -172,8 +176,8 @@ Limpa</a>, veja como essa camada é descrita:</p>
 detalhe. O banco de dados é um detalhe. Mantemos essas tecnologias na
 camada mais externa porque é onde elas podem fazer menos mal.</p>
 </blockquote>
-<h2 class="unnumbered" id="regra-de-dependência">Regra de
-Dependência</h2>
+<h2 data-number="1.5" id="regra-de-dependência"><span
+class="header-section-number">1.5</span> Regra de Dependência</h2>
 <p>Em uma Arquitetura Limpa, as classes de uma camada X não devem
 conhecer nenhuma classe de uma camada Y mais externa. No seu livro,
 Uncle Bob afirma categoricamente:</p>
@@ -192,8 +196,9 @@ dados, frameworks e bibliotecas.</p>
 <p>Resumindo, a Regra de Dependência garante que <strong>entidades e
 casos de uso são classes <q>limpas</q> de qualquer tecnologia</strong>
 ou serviço externo ao sistema.</p>
-<h2 class="unnumbered" id="invertendo-o-fluxo-de-controle">Invertendo o
-Fluxo de Controle</h2>
+<h2 data-number="1.6" id="invertendo-o-fluxo-de-controle"><span
+class="header-section-number">1.6</span> Invertendo o Fluxo de
+Controle</h2>
 <p>Em uma Arquitetura Limpa, fluxos de controle de <q>fora para
 dentro</q> são implementados de forma <q>natural</q>, pois eles seguem o
 mesmo sentido da Regra de Dependência. Por exemplo, uma camada mais
@@ -248,7 +253,8 @@ alt="Dependências em uma arquitetura limpa" />
 <figcaption aria-hidden="true">Dependências em uma arquitetura
 limpa</figcaption>
 </figure>
-<h2 class="unnumbered" id="conclusão">Conclusão</h2>
+<h2 data-number="1.7" id="conclusão"><span
+class="header-section-number">1.7</span> Conclusão</h2>
 <p>Uma Arquitetura Limpa é uma aplicação de diversos conceitos que
 estudamos no <a href="../cap5.html">Capítulo 5</a>, incluindo
 propriedades de projeto como <strong>coesão</strong>,
@@ -286,7 +292,8 @@ href="https://dl.acm.org/doi/book/10.5555/3175742">livro</a> de mesmo
 nome do Uncle Bob.</p>
 <p>E temos também um artigo didático sobre <a
 href="./arquitetura-hexagonal.html">Arquitetura Hexagonal</a>.</p>
-<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<h2 data-number="1.8" id="exercícios"><span
+class="header-section-number">1.8</span> Exercícios</h2>
 <ol type="1">
 <li><p>Para fixar os principais conceitos de uma Arquitetura Limpa,
 responda ao seguinte <a

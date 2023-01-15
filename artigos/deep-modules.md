@@ -1,8 +1,8 @@
 
 
-# Módulos devem ser Profundos! {.unnumbered}
+# Módulos devem ser Profundos! 
 
-## Introdução {.unnumbered}
+## Introdução 
 
 [John Ousterhout](https://web.stanford.edu/~ouster/cgi-bin/home.php)
 é professor da Universidade de Stanford e criador da
@@ -21,7 +21,7 @@ uma implementação e uma interface. Assim, podemos ter
 módulos de diferentes tamanhos, incluindo funções, classes,
 subsistemas, pacotes, etc.
 
-## Módulos Profundos {.unnumbered}
+## Módulos Profundos 
 
 Mas voltando à recomendação de Ousterhout, um módulo é profundo (*deep*) quando sua implementação
 é bem mais complexa do que sua interface. Em outras
@@ -80,7 +80,7 @@ Meyer:
 
 
 
-## Módulos Rasos {.unnumbered}
+## Módulos Rasos
 
 Por outro lado, a interface de um módulo raso (*shallow*)
 é relativamente complexa, quando comparada com a implementação
@@ -105,7 +105,7 @@ adiciona complexidade ao sistema, mas sem proporcionar
 grandes benefícios.
 
 
-## Exercícios {.unnumbered}
+## Exercícios
 
 1. Dê dois exemplos de módulos profundos. Para facilitar sua resposta,
 pense em pacotes ou bibliotecas de sua linguagem preferida.
