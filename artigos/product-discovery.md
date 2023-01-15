@@ -154,7 +154,7 @@ codificação e revisão.
 Para ilustrar esses dois fluxos, costuma-se usar a imagem de um funil, 
 como na seguinte figura:
 
-![](./figs/upstream-kanban){width=80%}
+![Upstream e Downstream Kanban](./figs/upstream-kanban){width=80%}
 
 O Upstream Kanban corresponde à parte do funil que vai se estreitando
 para deixar claro que nem toda demanda proposta pelos stakeholders
@@ -231,4 +231,6 @@ deveria ter feito na entrevista anterior.
 
 * * * 
 
-Voltar para a lista de [artigos](./artigos.html).
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

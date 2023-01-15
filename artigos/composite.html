@@ -123,7 +123,11 @@ dois triângulos (veja ilustração). Criado esse agrupamento, queremos, em
 seguida, realizar uma operação no mesmo – por exemplo, mudar a cor de
 fundo de suas três figuras – usando para isso uma única chamada de
 método.</p>
-<p><img src="./figs/composite-pattern.jpg" style="width:85.0%" /></p>
+<figure>
+<img src="./figs/composite-pattern.jpg" style="width:85.0%"
+alt="Figuras simples e agrupadas" />
+<figcaption aria-hidden="true">Figuras simples e agrupadas</figcaption>
+</figure>
 <p>Explicando melhor, um código cliente vai poder trabalhar com figuras
 simples ou com figuras agrupadas da mesma forma, usando apenas a
 interface <code>Figura</code>. Esse código não vai precisar saber qual
@@ -171,8 +175,12 @@ apenas delega a mesma operação para todas as figuras do agrupamento,
 usando para isso um comando <code>for</code>.</p></li>
 </ul>
 <p>Veja também um diagrama UML com as classes que criamos até agora:</p>
-<p><img src="./figs/composite-pattern-uml.svg"
-style="width:95.0%" /></p>
+<figure>
+<img src="./figs/composite-pattern-uml.svg" style="width:95.0%"
+alt="Classes de uma implementação do padrão de projeto Composite" />
+<figcaption aria-hidden="true">Classes de uma implementação do padrão de
+projeto Composite</figcaption>
+</figure>
 <p>Como resultado, para um código cliente, não interessa se ele está
 trabalhando com um figura simples ou com uma figura agrupada, como no
 seguinte caso:</p>

@@ -11,7 +11,7 @@ trás do software de gerenciamento de projetos de mesmo nome. O método
 autoria de Ryan Singer, que é um dos principais gerentes de produto
 da empresa. Segue uma imagem da capa do livro:
 
-![Capa do livro](./figs/shapeup-cover.jpg){width=45%}
+![Capa do livro sobre Shape Up](./figs/shapeup-cover.jpg){width=45%}
 
 ## Principais Conceitos {.unnumbered}
 
@@ -50,7 +50,7 @@ sendo formados  por um designer de UI e, no máximo, dois
 desenvolvedores.
 
 
-## Fase de Projeto Inicial (Shaping)  {.unnumbered}
+## Fase de Shaping  {.unnumbered}
 
 Shaping é a fase principal do método e que dá nome a ele. A ideia é
 proporcionar uma solução de meio termo, entre um planejamento

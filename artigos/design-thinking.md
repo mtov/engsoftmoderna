@@ -136,7 +136,7 @@ de atividades:
 
 Essa primeira atividade é ilustrada na próxima figura:
 
-![](./figs/divergencia-convergencia){width=60%}
+![Pensamento divergente e convergente](./figs/divergencia-convergencia){width=60%}
 
 Em um primeiro momento, todos os membros da equipe são incentivados a 
 rascunhar soluções para o problema proposto, sejam elas convencionais 
@@ -197,7 +197,7 @@ Por isso, costuma-se ilustrar essas atividades por meio de
 (extraída do [site](https://designthinking.ideo.com/)
 da IDEO):
 
-![](./figs/design-thinking-fases){width=50%}
+![Design Thinking não é um processo sequencial](./figs/design-thinking-fases){width=50%}
 
 Para concluir gostaríamos de listar as habilidades importantes
 em um Design Thinker, segundo Tim Brown: "capacidade de identificar

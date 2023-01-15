@@ -14,7 +14,7 @@ Por exemplo, no início da empresa, a Microsoft somente vendia licenças
 de uso de seus sistemas. Veja um exemplo de anúncio do sistema
 operacional Windows na próxima figura:
 
-![](./figs/windows10.png){width=60%}
+![Exemplo de software comercializado por meio de licenças](./figs/windows10.png){width=60%}
 
 Os usuários compravam licenças de sistemas como
 Windows e Office e, assim, ganhavam o direito de instalá-los na 
@@ -70,7 +70,7 @@ Para dar um exemplo de um sistema SaaS brasileiro, a próxima
 figura mostra os preços do sistema de gestão financeira 
 e contábil da empresa ContaAzul.
 
-![](./figs/conta-azul.jpg){width=85%}
+![Exemplo de software comercializado no modelo de assinaturas](./figs/conta-azul.jpg){width=85%}
 
 Veja que o sistema oferece diferentes planos de assinatura
 (Básico, Controle, Avançado, etc). Cada plano possui um

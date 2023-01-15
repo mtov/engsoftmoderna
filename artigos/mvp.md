@@ -207,7 +207,7 @@ começaram a trabalhar em um novo sistema, dessa vez uma rede social
 para compartilhamento de mensagens de texto com 140 caracteres, 
 a qual chamaram de Twitter.
 
-![](./figs/odeo-twitter-restart.jpg){width=95%}
+![Exemplo de recomeço no caso do Twitter](./figs/odeo-twitter-restart.jpg){width=95%}
 
 Essa mudança completa de objetivo -- de um sistema para distribuição 
 de podcasts para uma rede social baseada em mensagens de texto -- 

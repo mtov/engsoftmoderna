@@ -30,7 +30,8 @@ muitas janelas podem estar quebradas, o telhado pode também
 começar a ter problemas e uma sensação de abandono vai tomar conta da casa 
 e até mesmo de sua vizinhança.
 
-![Créditos: <a href="https://www.publicdomainpictures.net/en/view-image.php?image=244290&picture=broken-windows-and-tiles">link</a>. Licença CC0 (domínio público).](./figs/broken-windows.jpg)
+![Exemplo de casa abandonada e com janelas quebradas. Créditos: <a href="https://www.publicdomainpictures.net/en/view-image.php?image=244290&picture=broken-windows-and-tiles">link</a>. Licença CC0 (domínio público).](./figs/broken-windows.jpg){width=75%}
+
 
 A mensagem que a teoria tenta passar é que devemos ter "tolerância zero" 
 com problemas aparentemente pequenos. Caso contrário, eles podem 

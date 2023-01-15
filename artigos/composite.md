@@ -47,7 +47,7 @@ queremos, em seguida, realizar uma operação no mesmo --
 por exemplo, mudar a cor de fundo de suas três figuras -- 
 usando para isso uma única chamada de método.
 
-![](./figs/composite-pattern.jpg){width=85%}
+![Figuras simples e agrupadas](./figs/composite-pattern.jpg){width=85%}
 
 Explicando melhor, um código cliente vai poder trabalhar
 com figuras simples ou com figuras agrupadas da mesma
@@ -104,7 +104,7 @@ agrupamento, usando para isso um comando `for`.
 
 Veja também um diagrama UML com as classes que criamos até agora:
 
-![](./figs/composite-pattern-uml){width=95%}
+![Classes de uma implementação do padrão de projeto Composite](./figs/composite-pattern-uml){width=95%}
 
 Como resultado, para um código cliente, não interessa se ele está trabalhando com um
 figura simples ou com uma figura agrupada, como no seguinte caso:

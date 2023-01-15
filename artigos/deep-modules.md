@@ -34,7 +34,7 @@ tão complexa quanto a própria implementação do módulo.
 Para ajudar a entender, 
 vejas as seguintes ilustrações retiradas do livro:
 
-![](./figs/deep-modules.png){width=75%}
+![Módulos profundos vs módulos rasos](./figs/deep-modules.png){width=75%}
 
 Como exemplo de módulo profundo, o autor menciona o sistema
 de arquivos do Unix, cuja interface é composta por apenas
@@ -76,7 +76,7 @@ pequena "ponta" (a interface) e uma grande base
 aos olhos externos. Veja a figura usada no livro de
 Meyer:
 
-![](./figs/deep-modules-iceberg.png){width=45%}
+![Módulos devem ser como icebergs](./figs/deep-modules-iceberg.png){width=45%}
 
 
 

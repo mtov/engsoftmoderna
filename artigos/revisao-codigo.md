@@ -9,7 +9,7 @@ Artigo de autoria de **Aline Torres** e **Marco Tulio Valente**. Elaborado como 
 
 Revisão de código é uma das práticas mais importantes para garantir a saúde a médio e longo prazo da base de código de um sistema. Ela é hoje adotada por várias empresas que desenvolvem software. Por exemplo, o Stack Overflow Survey de 2019 incluiu uma pergunta sobre o emprego da prática (veja figura). Dentre os mais de 70 mil desenvolvedores que responderam a essa pergunta, **apenas 23% não usavam revisão de código** no seu trabalho ([link](https://insights.stackoverflow.com/survey/2019#development-practices)).
 
-![](./figs/stackoverflow-survey-2019-pt){width=80%}
+![Resultados de pergunta do Stack Overflow survey sobre a adoção de revisão de código](./figs/stackoverflow-survey-2019-pt){width=80%}
 
 A ideia de revisão de código é simples: todo código desenvolvido por um desenvolvedor tem que ser, em seguida, analisado por pelo menos um outro desenvolvedor, chamado de **revisor**. O revisor pode adicionar comentários no código sob revisão, procurando esclarecer dúvidas, sugerindo melhorias, indicando bugs, etc. 
 
@@ -36,7 +36,7 @@ O exemplo a seguir usa a classe `Estacionamento` que já foi usada no
 
 Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo sobre revisão de código com 873 desenvolvedores e testadores da Microsoft ([link](https://doi.org/10.1109/ICSE.2013.6606617)). A próxima figura ilustra as principais motivações para realização de revisão de código, na opinião dos participantes do estudo. 
 
-![](./figs/code-review-paper-microsoft){width=80%}
+![Resultados de survey com desenvolvedores da Microsoft sobre as motivações para realização de revisões de código](./figs/code-review-paper-microsoft){width=80%}
 
 Conforme respondido pelos participantes, a principal motivação é encontrar bugs no código submetido. Porém, outros fatores também são importantes, como (1) melhorar o código, (2) propor soluções alternativas e (3) transferir conhecimento. Esse último benefício pode ocorrer nos dois sentidos, isto é, o autor pode aprender com os comentários do revisor e vice-versa. 
 

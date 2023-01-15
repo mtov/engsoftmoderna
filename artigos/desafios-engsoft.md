@@ -19,7 +19,7 @@ Informação, Engenharia de Computação, etc.
 Para ressaltar esse fato, na primeira aula da minha disciplina apresento 
 para os alunos o seguinte diagrama.
 
-![](./figs/desafios-engsoft.png){width=75%}
+![Proporção de Engenheiros de Software versus Cientistas da Computação](./figs/desafios-engsoft.png){width=75%}
 
 Esclareço que ele não é baseado em nenhum estudo científico, mas na 
 minha experiência acadêmica e profissional. 
@@ -74,7 +74,7 @@ principalmente, um domínio de **habilidades comportamentais**
 (*soft skills*) e também uma visão -- mesmo que mais ampla -- de 
 **negócios**.
 
-![](./figs/eixos-formacao-es.jpg){width=70%}
+![Eixos de formação de Engenheiros de Software](./figs/eixos-formacao-es.jpg){width=70%}
 
 A seguir, detalho um pouco mais sobre esses eixos e suas 
 respectivas categorias de formação.
@@ -212,7 +212,7 @@ postadas no Stack Overflow Jobs. Pudemos confirmar que a grande
 maioria faz referência a soft skills. Veja a seguir aqueles que são 
 mais demandados:
 
-![Soft skilss demandados em Engenheiros de Software](./figs/soft-skills.jpg)
+![Soft skills demandados em Engenheiros de Software](./figs/soft-skills.jpg)
 
 Porém, a abordagem da dimensão comportamental em cursos de Engenharia 
 de Software é ainda um problema em aberto, pelo menos para mim. Talvez, 
