@@ -197,7 +197,7 @@ Por isso, costuma-se ilustrar essas atividades por meio de
 (extraída do [site](https://designthinking.ideo.com/)
 da IDEO):
 
-![](./figs/design-thinking-fases.svg){width=50%}
+![](./figs/design-thinking-fases){width=50%}
 
 Para concluir gostaríamos de listar as habilidades importantes
 em um Design Thinker, segundo Tim Brown: "capacidade de identificar

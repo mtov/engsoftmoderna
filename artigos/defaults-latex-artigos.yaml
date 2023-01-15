@@ -11,12 +11,12 @@ listings: true
 default-image-extension: png
 
 top-level-division: chapter
-number-sections: true
+number-sections: false
 
 variables:
   documentclass: book
-  fontsize: 11pt
-  classoption: twoside
+  fontsize: 12pt
+  classoption: oneside
   colorlinks: true
   linkcolor: blue
   urlcolor: blue

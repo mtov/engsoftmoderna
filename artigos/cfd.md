@@ -49,7 +49,7 @@ A partir dessa tabela gera-se um gráfico de áreas empilhadas, que é chamado
 de **Diagrama de Fluxo Cumulativo** (CFD, de *Cumulative Flow Diagram*).
 Veja o CFD gerado a partir da tabela anterior:
 
-![](./figs/cfd1.svg){width=80%}
+![](./figs/cfd1){width=80%}
 
 Em um CFD, a faixa inferior corresponde à coluna mais à direita
 do quadro Kanban. No nosso exemplo, a coluna Pronto. A partir dela, são

@@ -1,7 +1,7 @@
 
 # Como Monetizar Sistemas de Software? {.unnumbered}
 
-Este artigo didático oferece uma visãogeral sobre modelos de 
+Este artigo didático oferece uma visão geral sobre modelos de 
 monetização (ou precificação) de produtos de software.
 
 ## Licenças {.unnumbered}
