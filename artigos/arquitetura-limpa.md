@@ -219,46 +219,47 @@ mesmo nome do Uncle Bob.
 E temos também um artigo didático sobre
 [Arquitetura Hexagonal](./arquitetura-hexagonal.html).
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
+1\. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
 
-2. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
+2\. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 
 principal vantagem ou benefício dessa regra?
 
-3. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
+3\. No texto do artigo, propositalmente não mencionamos a camada da classe `MailServiceImpl`.
 
-   * Se quisermos ter um código totalmente aderente aos princípios de uma Arquitetura Limpa,
-     por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
+   (a) Se quisermos ter um código totalmente aderente aos princípios de uma Arquitetura Limpa,
+   por que `MailServiceImpl` não pode pertencer à camada de Adaptadores?
 
-   * Em qual camada você implementaria então `MailServiceImpl`?
+   (b) Em qual camada você implementaria então `MailServiceImpl`?
 
-4. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
+4\. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
 precisa obter a lista de livros que estão emprestados para um 
 certo usuário da biblioteca. Fisicamente, essa informação
 está armazenada em um banco de dados relacional. Modele então
 a implementação desse requisito assumindo que o sistema adota
 uma Arquitetura Limpa. Especificamente, responda:
 
-   * Nesse sistema, provavelmente, existe uma classe `Livro`.
-     Ela deve pertencer a qual camada?
+   (a) Nesse sistema, provavelmente, existe uma classe `Livro`.
+   Ela deve pertencer a qual camada?
 
-   * No sistema, existe também uma uma interface com métodos de 
-     negócio. Por exemplo, um método que retorna a lista de livros
-     emprestados para um certo usuário. Essa interface
-     pertence a qual camada?
+   (b) No sistema, existe também uma uma interface com métodos de 
+   negócio. Por exemplo, um método que retorna a lista de livros
+   emprestados para um certo usuário. Essa interface
+   pertence a qual camada?
 
-   * Ainda sobre a  interface mencionada no item anterior,
-     existe uma classe que implementa os seus métodos. 
-     Por exemplo, essa classe implementa o método que retorna a 
-     lista de livros emprestados e, para isso, faz uso de consultas 
-     SQL. Essa classe deve ser implementada em qual camada?
+   (c) Ainda sobre a  interface mencionada no item anterior,
+   existe uma classe que implementa os seus métodos. 
+   Por exemplo, essa classe implementa o método que retorna a 
+   lista de livros emprestados e, para isso, faz uso de consultas 
+   SQL. Essa classe deve ser implementada em qual camada?
 
-   * Para terminar, o gerenciador de banco de dados (seja ele MySQL, 
-     PostgreSQL, Oracle, etc.) estará localizado em qual camada?
+   (d) Para terminar, o gerenciador de banco de dados (seja ele MySQL, 
+   PostgreSQL, Oracle, etc.) estará localizado em qual camada?
 
-5. Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos
+
+5\. Suponha que um sistema use tecnologias X, Y e Z. E suponha que temos
 certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance 
 de amanhã o sistema ter que usar uma tecnologia X', Y' ou Z'. Nesse cenário,
 você acha que ainda pode ser útil a adoção de uma Arquitetura Limpa?

@@ -136,7 +136,7 @@ Na seguinte [página](https://functions.netlify.com/playground/),
 você encontra outros exemplos de funções serverless.
 
 
-## Comentários Finais
+## Conclusão
 
 Para explicar as vantagens de serverless, os autores de um 
 [artigo](https://m-cacm.acm.org/magazines/2021/5/252179-what-serverless-computing-is-and-should-become/fulltext)
@@ -182,9 +182,9 @@ Antes de concluir, é importante mencionar que é possível, também,
 ter uma arquitetura híbrida, na qual apenas alguns serviços são
 implementados por meio de funções serverless.
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Quando usamos serverless não precisamos nos preocupar com 
+1\. Quando usamos serverless não precisamos nos preocupar com 
    as questões abaixo, EXCETO:
 
    a. Planejamento de capacidade
@@ -193,10 +193,10 @@ implementados por meio de funções serverless.
    d. Tolerância a falhas
    e. Persistência de dados
  
-2. Por que o termo serverless não deve ser interpretado de forma literal, 
+2\. Por que o termo serverless não deve ser interpretado de forma literal, 
 isto é, como sendo sinônimo de computação "sem servidores"?
 
-3. Suponha uma agenda de compromissos construída usando-se uma arquitetura
+3\. Suponha uma agenda de compromissos construída usando-se uma arquitetura
 baseada em funções serverless. Mostra-se abaixo uma das funções dessa
 aplicação, a qual retorna todos os compromissos inseridos na agenda
 (esse código foi copiado do seguinte
@@ -225,7 +225,7 @@ module.exports = (event, callback) => {
 };
 ```
 
-4. Analise e estude os diagramas de sequência mostrados nas figuras 
+4\. Analise e estude os diagramas de sequência mostrados nas figuras 
 1 e 2 da página 4 do seguinte 
 [artigo](https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf).
 Eles são de uma aplicação que inicialmente estava implementada 
@@ -235,14 +235,14 @@ mostrada permite que um usuário faça o upload de um arquivo e solicite
 a sua conversão para um outro formato (pdf, svg, etc). Em seguida,
 responda:
 
-    (a) Qual dos dois diagramas é mais simples e fácil de entender? 
-    Justifique sua resposta.
+  (a) Qual dos dois diagramas é mais simples e fácil de entender? 
+  Justifique sua resposta.
 
-    (b) Descreva uma diferença importante entre os dois diagramas. Ou seja, 
-    descreva uma  mudança relevante que teve que ser realizada na estrutura 
-    original da aplicação (mostrada na figura 1) para torná-la adequada 
-    para  uma arquitetura baseada em serverless (conforme mostrado na 
-    figura 2). Justifique sua resposta. 
+  (b) Descreva uma diferença importante entre os dois diagramas. Ou seja, 
+  descreva uma  mudança relevante que teve que ser realizada na estrutura 
+  original da aplicação (mostrada na figura 1) para torná-la adequada 
+  para  uma arquitetura baseada em serverless (conforme mostrado na 
+  figura 2). Justifique sua resposta. 
 
   
 * * * 

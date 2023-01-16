@@ -146,7 +146,7 @@ FiguraAgrupada grupo2 = new FiguraAgrupada();
 grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
 ```
 
-## Comentário Final 
+## Conclusão 
 
 Devemos usar o padrão Composite quando precisamos representar
 de forma uniforme objetos simples e objetos compostos (isto é,
@@ -159,9 +159,9 @@ ocorre sobre um objeto simples ou sobre um objeto composto.
 artigo está disponível 
 [aqui](https://repl.it/@mtvalente/Padrao-de-Projeto-Composite).
 
-## Exercício
+## Exercícios {.unnumbered}
 
-1. Existem três tipos de classes ou interfaces no padrão Composite:
+1\. Existem três tipos de classes ou interfaces no padrão Composite:
 
    * Uma interface visível para o cliente (no nosso exemplo, `Figura`)
    * Classes de objetos simples (no nosso exemplo, `Circulo` e `Triangulo`)

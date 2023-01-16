@@ -152,30 +152,34 @@ catch (FailureT3) {
 }
 ```
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Por que microsserviços não devem compartilhar um único banco de dados?
+1\. Por que microsserviços não devem compartilhar um único banco de dados?
 Para responder, você pode consultar a Seção 7.4.1 do 
 [Capítulo 7](../cap7.html#gerenciamento-de-dados)
 e também o início da Seção 7.4.
 
-2. Qual a diferença entre uma transação distribuída e uma saga? Mais especificamente:
+2\. Qual a diferença entre uma transação distribuída e uma saga? Mais especificamente:
 
-   * Quando consideradas individualmente, as transações de uma saga são
-     atômicas?
-   * Se não houvesse compensações, as transações de uma saga, quando consideradas 
-     em conjunto, seriam sempre atômicas?
-   * Suponha uma transação Ti de uma saga. Uma transação T’ que não faz parte 
-     da saga pode observar os resultados de Ti antes da execução completa da saga?
-   * Suponha uma transação distribuída T. Uma segunda transação T' pode observar os 
-     resultados ainda intermediários de T?
-   * Com sagas, temos que escrever a lógica de rollback, isto é, o código 
-     das compensações. O mesmo acontece com transações distribuídas? Sim 
-     ou não? Justifique.  
+   (a) Quando consideradas individualmente, as transações de uma saga são
+   atômicas?
+   
+   (b) Se não houvesse compensações, as transações de uma saga, quando consideradas 
+   em conjunto, seriam sempre atômicas?
+   
+   (c) Suponha uma transação Ti de uma saga. Uma transação T’ que não faz parte 
+   da saga pode observar os resultados de Ti antes da execução completa da saga?
+   
+   (d) Suponha uma transação distribuída T. Uma segunda transação T' pode observar os 
+   resultados ainda intermediários de T?
+   
+   (e) Com sagas, temos que escrever a lógica de rollback, isto é, o código 
+   das compensações. O mesmo acontece com transações distribuídas? Sim 
+   ou não? Justifique.  
 
-3. Como um desenvolvedor deve proceder quando uma compensação Ci falhar (isto é, não puder ser executada com sucesso)?
+3\. Como um desenvolvedor deve proceder quando uma compensação Ci falhar (isto é, não puder ser executada com sucesso)?
 
-4. Qual problema de transações de longa duração é resolvido
+4\. Qual problema de transações de longa duração é resolvido
 por meio de sagas? Se necessário, consulte o segundo parágrafo da 
 Introdução do [artigo](https://doi.org/10.1145/38713.38742) que definiu o conceito.
 

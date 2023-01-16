@@ -143,7 +143,7 @@ código no seguinte
 [link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
 
 
-## Comentário Final
+## Conclusão
 
 Em 2005, Cockburn tentou renomear o nome de sua arquitetura para 
 **Arquitetura baseada em Portas e Adaptadores**, com a seguinte
@@ -173,24 +173,24 @@ tenta renomeá-la para incluir os termos portas e adaptadores.
 E, se quiser, veja nosso artigo sobre
 [Arquitetura Limpa](./arquitetura-limpa.html).
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do 
+1\. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do 
 padrão de projeto de mesmo nome. E as portas? Elas podem ser 
 vistas como sendo uma implementação -- pelo menos aproximada -- de 
 qual padrão de projeto? Se necessário, consulte o 
 [Capítulo 6](../cap6.html) para responder.
 
-2. Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas,
+2\. Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas,
 por que os adaptadores de interface externa (HTTP, GraphQL e REST) e
 o adaptador de persistência (SQL) estão em faces distintas do hexágono?
 Eles poderiam ser desenhados na mesma face?
 
-3. A definição do termo hexagonal é arbitrária, pois, dependendo
+3\. A definição do termo hexagonal é arbitrária, pois, dependendo
 da aplicação, ela poderia ser chamada de quadrangular, pentagonal, heptagonal,
 octogonal, etc. Justifique essa afirmação.
 
-3. A seguir, mostramos o código de duas classes de domínio que são usadas na documentação do Django, um conhecido framework para construção de aplicações Web em Python. O código mostrado define regras para mapeamento de campos de objetos dessas classes para colunas de tabelas de um  BD relacional. Esta implementação segue os princípios de uma arquitetura hexagonal? Justifique sua resposta.
+3\. A seguir, mostramos o código de duas classes de domínio que são usadas na documentação do Django, um conhecido framework para construção de aplicações Web em Python. O código mostrado define regras para mapeamento de campos de objetos dessas classes para colunas de tabelas de um  BD relacional. Esta implementação segue os princípios de uma arquitetura hexagonal? Justifique sua resposta.
 
 ```
 from django.db import models
@@ -207,7 +207,7 @@ class Album(models.Model):
   num_stars = models.IntegerField()
 ```
 
-5. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
+5\. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
 e a Arquitetura Limpa (que estudamos em um outro 
 [artigo](./arquitetura-limpa.html) didático).
 

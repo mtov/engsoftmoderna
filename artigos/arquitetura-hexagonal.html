@@ -227,8 +227,8 @@ implementamos um serviço muito simples de pesquisa de livros por autor,
 em Java, usando ferramentas como SparkJava (para implementar APIs REST)
 e SQLite (banco de dados). Você pode ver o código no seguinte <a
 href="https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal">link</a>.</p>
-<h2 data-number="1.4" id="comentário-final"><span
-class="header-section-number">1.4</span> Comentário Final</h2>
+<h2 data-number="1.4" id="conclusão"><span
+class="header-section-number">1.4</span> Conclusão</h2>
 <p>Em 2005, Cockburn tentou renomear o nome de sua arquitetura para
 <strong>Arquitetura baseada em Portas e Adaptadores</strong>, com a
 seguinte justificativa:</p>
@@ -254,28 +254,25 @@ href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">artigo</a> tenta
 renomeá-la para incluir os termos portas e adaptadores.</p>
 <p>E, se quiser, veja nosso artigo sobre <a
 href="./arquitetura-limpa.html">Arquitetura Limpa</a>.</p>
-<h2 data-number="1.5" id="exercícios"><span
-class="header-section-number">1.5</span> Exercícios</h2>
-<ol type="1">
-<li><p>Em uma Arquitetura Hexagonal, um adaptador é uma implementação do
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<p>1. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do
 padrão de projeto de mesmo nome. E as portas? Elas podem ser vistas como
 sendo uma implementação – pelo menos aproximada – de qual padrão de
 projeto? Se necessário, consulte o <a href="../cap6.html">Capítulo 6</a>
-para responder.</p></li>
-<li><p>Na figura que mostra a arquitetura hexagonal do sistema de
+para responder.</p>
+<p>2. Na figura que mostra a arquitetura hexagonal do sistema de
 bibliotecas, por que os adaptadores de interface externa (HTTP, GraphQL
 e REST) e o adaptador de persistência (SQL) estão em faces distintas do
-hexágono? Eles poderiam ser desenhados na mesma face?</p></li>
-<li><p>A definição do termo hexagonal é arbitrária, pois, dependendo da
+hexágono? Eles poderiam ser desenhados na mesma face?</p>
+<p>3. A definição do termo hexagonal é arbitrária, pois, dependendo da
 aplicação, ela poderia ser chamada de quadrangular, pentagonal,
-heptagonal, octogonal, etc. Justifique essa afirmação.</p></li>
-<li><p>A seguir, mostramos o código de duas classes de domínio que são
+heptagonal, octogonal, etc. Justifique essa afirmação.</p>
+<p>3. A seguir, mostramos o código de duas classes de domínio que são
 usadas na documentação do Django, um conhecido framework para construção
 de aplicações Web em Python. O código mostrado define regras para
 mapeamento de campos de objetos dessas classes para colunas de tabelas
 de um BD relacional. Esta implementação segue os princípios de uma
-arquitetura hexagonal? Justifique sua resposta.</p></li>
-</ol>
+arquitetura hexagonal? Justifique sua resposta.</p>
 <pre><code>from django.db import models
 
 class Musician(models.Model):
@@ -288,11 +285,9 @@ class Album(models.Model):
   name = models.CharField(max_length=100)
   release_date = models.DateField()
   num_stars = models.IntegerField()</code></pre>
-<ol start="5" type="1">
-<li>Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
-e a Arquitetura Limpa (que estudamos em um outro <a
-href="./arquitetura-limpa.html">artigo</a> didático).</li>
-</ol>
+<p>5. Descreva, resumidamente, as diferenças entre a Arquitetura
+Hexagonal e a Arquitetura Limpa (que estudamos em um outro <a
+href="./arquitetura-limpa.html">artigo</a> didático).</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

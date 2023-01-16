@@ -202,8 +202,8 @@ acabamos de mostrar e copiá-las para sua conta na plataforma.</p>
 <p>Na seguinte <a
 href="https://functions.netlify.com/playground/">página</a>, você
 encontra outros exemplos de funções serverless.</p>
-<h2 data-number="1.5" id="comentários-finais"><span
-class="header-section-number">1.5</span> Comentários Finais</h2>
+<h2 data-number="1.5" id="conclusão"><span
+class="header-section-number">1.5</span> Conclusão</h2>
 <p>Para explicar as vantagens de serverless, os autores de um <a
 href="https://m-cacm.acm.org/magazines/2021/5/252179-what-serverless-computing-is-and-should-become/fulltext">artigo</a>
 publicado em maio de 2021 na revista Communications da ACM fazem uma
@@ -246,10 +246,8 @@ dados, etc.</p></li>
 <p>Antes de concluir, é importante mencionar que é possível, também, ter
 uma arquitetura híbrida, na qual apenas alguns serviços são
 implementados por meio de funções serverless.</p>
-<h2 data-number="1.6" id="exercícios"><span
-class="header-section-number">1.6</span> Exercícios</h2>
-<ol type="1">
-<li><p>Quando usamos serverless não precisamos nos preocupar com as
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<p>1. Quando usamos serverless não precisamos nos preocupar com as
 questões abaixo, EXCETO:</p>
 <ol type="a">
 <li>Planejamento de capacidade</li>
@@ -257,19 +255,18 @@ questões abaixo, EXCETO:</p>
 <li>Escalabilidade</li>
 <li>Tolerância a falhas</li>
 <li>Persistência de dados</li>
-</ol></li>
-<li><p>Por que o termo serverless não deve ser interpretado de forma
+</ol>
+<p>2. Por que o termo serverless não deve ser interpretado de forma
 literal, isto é, como sendo sinônimo de computação <q>sem
-servidores</q>?</p></li>
-<li><p>Suponha uma agenda de compromissos construída usando-se uma
+servidores</q>?</p>
+<p>3. Suponha uma agenda de compromissos construída usando-se uma
 arquitetura baseada em funções serverless. Mostra-se abaixo uma das
 funções dessa aplicação, a qual retorna todos os compromissos inseridos
 na agenda (esse código foi copiado do seguinte <a
 href="https://github.com/pmuens/serverless-book">repositório</a>). Qual
 a desvantagem de serverless, conforme discutido na seção final do
 artigo, fica mais clara ao analisarmos o código dessa função? Justifique
-brevemente sua resposta.</p></li>
-</ol>
+brevemente sua resposta.</p>
 <pre><code>&#39;use strict&#39;;
 
 const AWS = require(&#39;aws-sdk&#39;);
@@ -287,9 +284,8 @@ module.exports = (event, callback) =&gt; {
     callback(error, data.Items);
   });
 };</code></pre>
-<ol start="4" type="1">
-<li><p>Analise e estude os diagramas de sequência mostrados nas figuras
-1 e 2 da página 4 do seguinte <a
+<p>4. Analise e estude os diagramas de sequência mostrados nas figuras 1
+e 2 da página 4 do seguinte <a
 href="https://www.doc.ic.ac.uk/~rbc/papers/fse-serverless-17.pdf">artigo</a>.
 Eles são de uma aplicação que inicialmente estava implementada usando
 uma arquitetura monolítica (figura 1) e que então foi migrada para usar
@@ -305,7 +301,6 @@ seja, descreva uma mudança relevante que teve que ser realizada na
 estrutura original da aplicação (mostrada na figura 1) para torná-la
 adequada para uma arquitetura baseada em serverless (conforme mostrado
 na figura 2). Justifique sua resposta.</p></li>
-</ol></li>
 </ol>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>

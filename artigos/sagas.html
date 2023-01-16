@@ -229,36 +229,33 @@ catch (FailureT3) {
    C2();
    C1();
 }</code></pre>
-<h2 data-number="1.4" id="exercícios"><span
-class="header-section-number">1.4</span> Exercícios</h2>
-<ol type="1">
-<li><p>Por que microsserviços não devem compartilhar um único banco de
+<h2 class="unnumbered" id="exercícios">Exercícios</h2>
+<p>1. Por que microsserviços não devem compartilhar um único banco de
 dados? Para responder, você pode consultar a Seção 7.4.1 do <a
 href="../cap7.html#gerenciamento-de-dados">Capítulo 7</a> e também o
-início da Seção 7.4.</p></li>
-<li><p>Qual a diferença entre uma transação distribuída e uma saga? Mais
+início da Seção 7.4.</p>
+<p>2. Qual a diferença entre uma transação distribuída e uma saga? Mais
 especificamente:</p>
-<ul>
-<li>Quando consideradas individualmente, as transações de uma saga são
-atômicas?</li>
-<li>Se não houvesse compensações, as transações de uma saga, quando
-consideradas em conjunto, seriam sempre atômicas?</li>
-<li>Suponha uma transação Ti de uma saga. Uma transação T’ que não faz
-parte da saga pode observar os resultados de Ti antes da execução
-completa da saga?</li>
-<li>Suponha uma transação distribuída T. Uma segunda transação T’ pode
-observar os resultados ainda intermediários de T?</li>
-<li>Com sagas, temos que escrever a lógica de rollback, isto é, o código
-das compensações. O mesmo acontece com transações distribuídas? Sim ou
-não? Justifique.</li>
-</ul></li>
-<li><p>Como um desenvolvedor deve proceder quando uma compensação Ci
-falhar (isto é, não puder ser executada com sucesso)?</p></li>
-<li><p>Qual problema de transações de longa duração é resolvido por meio
+<ol type="a">
+<li><p>Quando consideradas individualmente, as transações de uma saga
+são atômicas?</p></li>
+<li><p>Se não houvesse compensações, as transações de uma saga, quando
+consideradas em conjunto, seriam sempre atômicas?</p></li>
+<li><p>Suponha uma transação Ti de uma saga. Uma transação T’ que não
+faz parte da saga pode observar os resultados de Ti antes da execução
+completa da saga?</p></li>
+<li><p>Suponha uma transação distribuída T. Uma segunda transação T’
+pode observar os resultados ainda intermediários de T?</p></li>
+<li><p>Com sagas, temos que escrever a lógica de rollback, isto é, o
+código das compensações. O mesmo acontece com transações distribuídas?
+Sim ou não? Justifique.</p></li>
+</ol>
+<p>3. Como um desenvolvedor deve proceder quando uma compensação Ci
+falhar (isto é, não puder ser executada com sucesso)?</p>
+<p>4. Qual problema de transações de longa duração é resolvido por meio
 de sagas? Se necessário, consulte o segundo parágrafo da Introdução do
 <a href="https://doi.org/10.1145/38713.38742">artigo</a> que definiu o
-conceito.</p></li>
-</ol>
+conceito.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

@@ -106,9 +106,9 @@ na minha tela. Então eu extraí uma parte dele.
 fazer isso, porque quando existe muita redundância torna-se
 terrivelmente mais complicado manter o código no futuro.
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Qual o nome do refactoring aplicado nas duas primeiras respostas de 
+1\. Qual o nome do refactoring aplicado nas duas primeiras respostas de 
 desenvolvedores mencionadas na seção sobre a Regra dos Escoteiros.
 
 

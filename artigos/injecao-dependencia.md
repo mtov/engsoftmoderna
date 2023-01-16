@@ -187,14 +187,14 @@ um framework de injeção de dependências para Java, desenvolvido pelo Google.
 No entanto, existem outros frameworks semelhantes, tanto para Java como 
 para outras linguagens.
 
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Como explicamos no [Capítulo 6](../cap6.html#introdu%C3%A7%C3%A3o),
+1\. Como explicamos no [Capítulo 6](../cap6.html#introdu%C3%A7%C3%A3o),
 padrões de projeto são classificados em padrões criacionais,
 estruturais e comportamentais. Em qual dessas categorias você classificaria
 Injeção de Dependência? Justifique brevemente.
 
-2. Injeção de Dependência, muitas vezes, é comparada com padrão de projeto
+2\. Injeção de Dependência, muitas vezes, é comparada com padrão de projeto
 Fábrica. Qual a desvantagem de "injetar" dependências por meio de fábricas?
 Para responder, compare os seguintes códigos:
 
@@ -216,11 +216,11 @@ Para responder, compare os seguintes códigos:
  }
  ```
 
-3. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
+3\. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
 de Dependência (princípio de projeto)? Para saber mais sobre Inversão de 
 Dependência, consulte o [Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
-4. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
+4\. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
 violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta
 use como exemplo a classe `Estacionamento` da Seção 5.3.1 do 
 [Capítulo 5](../cap5.html#exemplo-1) do livro.

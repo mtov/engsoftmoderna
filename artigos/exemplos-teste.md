@@ -424,13 +424,13 @@ public void SettingsOpenWithContextMenu()
 ```
 
  
-## Exercícios
+## Exercícios {.unnumbered}
 
-1. Spring PetClinic: estude e documente o funcionamento do método de teste
+1\. Spring PetClinic: estude e documente o funcionamento do método de teste
 [shouldInsertOwner()](https://github.com/mtov/spring-petclinic/blob/main/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java#L102), também da
 classe `ClinicServiceTests`.
 
-2. JUnit: estude e documente o funcionamento do teste 
+2\. JUnit: estude e documente o funcionamento do teste 
 [testInheritedTests](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/SuiteTest.java#L44),
 que testa a execução do seguinte 
 [teste](https://github.com/mtov/junit4/blob/main/src/test/java/junit/tests/framework/InheritedTestCase.java).
