@@ -87,13 +87,14 @@ Veja também os cursos de extensão a distância
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
 </header>
-<h1 class="unnumbered"
-id="revisão-de-código-uma-breve-introdução">Revisão de Código: Uma Breve
+<h1 data-number="1" id="revisão-de-código-uma-breve-introdução"><span
+class="header-section-number">1</span> Revisão de Código: Uma Breve
 Introdução</h1>
 <p>Artigo de autoria de <strong>Aline Torres</strong> e <strong>Marco
 Tulio Valente</strong>. Elaborado como parte da Monografia de Sistemas
 de Informação da primeira autora no DCC/UFMG.</p>
-<h2 class="unnumbered" id="introdução">Introdução</h2>
+<h2 data-number="1.1" id="introdução"><span
+class="header-section-number">1.1</span> Introdução</h2>
 <p>Revisão de código é uma das práticas mais importantes para garantir a
 saúde a médio e longo prazo da base de código de um sistema. Ela é hoje
 adotada por várias empresas que desenvolvem software. Por exemplo, o
@@ -120,7 +121,8 @@ alguma sugestão do revisor que ele achou procedente. Ou então, ele pode
 replicar e justificar que ela não faz sentido… Espera-se que após esse
 <q>diálogo</q> o código seja aprovado pelo revisor e possa ser integrado
 no repositório do projeto.</p>
-<h2 class="unnumbered" id="pull-requests">Pull Requests</h2>
+<h2 data-number="1.2" id="pull-requests"><span
+class="header-section-number">1.2</span> Pull Requests</h2>
 <p>Nesta seção, vamos apresentar um breve tutorial sobre como revisar
 código usando o recurso de <strong>Pull Requests (PR)</strong> do
 GitHub. Por meio desse recurso, desenvolvedores podem submeter código
@@ -151,7 +153,8 @@ alt="Exemplo de revisão de código realizada em um PR" />
 <figcaption aria-hidden="true">Exemplo de revisão de código realizada em
 um PR</figcaption>
 </figure>
-<h2 class="unnumbered" id="motivações">Motivações</h2>
+<h2 data-number="1.3" id="motivações"><span
+class="header-section-number">1.3</span> Motivações</h2>
 <p>Em 2013, Alberto Bacchelli e Christian Bird realizaram um estudo
 sobre revisão de código com 873 desenvolvedores e testadores da
 Microsoft (<a
@@ -176,7 +179,8 @@ benefício importante que é evitar a formação de <q>ilhas de
 conhecimento</q> em um projeto. Em vez disso, ela ajuda a socializar o
 conhecimento sobre o código e a criar uma cultura de colaboração e troca
 de ideias entre os membros do time.</p>
-<h2 class="unnumbered" id="o-que-revisar">O que Revisar?</h2>
+<h2 data-number="1.4" id="o-que-revisar"><span
+class="header-section-number">1.4</span> O que Revisar?</h2>
 <p>Segue uma lista de questões que devem ser apontadas e consideradas em
 revisões de código:</p>
 <ul>
@@ -205,8 +209,9 @@ href="../cap9.html#code-smells">Capítulo 9</a>)</li>
 <li>Código com problemas de leiaute ou indentação</li>
 <li>Código que viola convenções de nome</li>
 </ul>
-<h2 class="unnumbered" id="recomendações-para-revisores">Recomendações
-para Revisores</h2>
+<h2 data-number="1.5" id="recomendações-para-revisores"><span
+class="header-section-number">1.5</span> Recomendações para
+Revisores</h2>
 <p>Nesta seção, vamos listar algumas recomendações sobre como se
 <q>portar</q> em uma revisão de código.</p>
 <p>Para chegar até elas, partimos do artigo <em>How to Give Respectful
@@ -299,8 +304,8 @@ autor</strong> para expor sua visão e tentarem chegar a um consenso.
 Porém, essa interação síncrona deve ser uma exceção e reservada para
 casos mais importantes.</p></li>
 </ol>
-<h2 class="unnumbered" id="recomendações-para-autores">Recomendações
-para Autores</h2>
+<h2 data-number="1.6" id="recomendações-para-autores"><span
+class="header-section-number">1.6</span> Recomendações para Autores</h2>
 <p>Os autores também devem ser profissionais e educados em suas
 respostas. Eles devem entender também que <strong>revisão de código não
 é um exame de proficiência</strong>. Ou seja, como autor, não leve a
@@ -325,8 +330,8 @@ data-cites="haysstanford">@haysstanford</span>)
 10, 2021</a>
 </blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<h2 class="unnumbered" id="automatizando-a-revisão">Automatizando a
-Revisão</h2>
+<h2 data-number="1.7" id="automatizando-a-revisão"><span
+class="header-section-number">1.7</span> Automatizando a Revisão</h2>
 <p>Antes de concluir, gostaríamos de comentar que diversos
 <q>problemas</q> tratados em uma revisão de código podem ser detectados
 de forma automática por meio de <strong>ferramentas de análise
@@ -336,11 +341,10 @@ de código e estilo de indentação (tab ou espaços, por exemplo) podem ser
 padronizadas por meio de <strong>linters</strong>. Com isso, evita-se
 que um revisor humano tenha que perder tempo com tais questões.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
-<ol type="1">
-<li><p>Qual a diferença principal entre revisão de código e programação
-em pares?</p></li>
-<li><p>Descreva uma desvantagem de revisão de código.</p></li>
-<li><p>Seja o seguinte código de uma classe <code>Stack</code>. Quais
+<p>1. Qual a diferença principal entre revisão de código e programação
+em pares?</p>
+<p>2. Descreva uma desvantagem de revisão de código.</p>
+<p>3. Seja o seguinte código de uma classe <code>Stack</code>. Quais
 comentários você faria caso fosse responsável pela revisão do código
 dessa classe? Sugestão: existem quatro questões sobre esse código que
 achamos que deveriam ser mencionadas em uma revisão.</p>
@@ -350,8 +354,7 @@ abra um PR em um de seus repositórios com o código da classe
 Pull Requests do <a href="../capAp.html#pull-requests">Apêndice A</a>.
 Esse procedimento pode parecer um pouco estranho, pois você estará
 revisando um PR que você mesmo criou. Porém, nosso objetivo é apenas
-simular, com fins didáticos, uma revisão de código.</p></li>
-</ol>
+simular, com fins didáticos, uma revisão de código.</p>
 <pre><code>import java.util.ArrayList;
 import java.util.EmptyStackException;
 
@@ -381,25 +384,22 @@ public class Stack&lt;T&gt; {
     return elem;
   }
 }</code></pre>
-<ol start="4" type="1">
-<li><p>É possível adotar simultaneamente Revisão de Código e
+<p>4. É possível adotar simultaneamente Revisão de Código e
 Desenvolvimento Baseado no Trunk (TBD)? Sim ou não? Justifique sua
 resposta. Se necessário, consulte a seguinte <a
 href="../cap10.html#desenvolvimento-baseado-no-trunk">seção</a> do livro
-texto para saber mais sobre TBD.</p></li>
-<li><p>É possível adotar simultaneamente Revisão de Código e Integração
+texto para saber mais sobre TBD.</p>
+<p>5. É possível adotar simultaneamente Revisão de Código e Integração
 Contínua (CI)? Sim ou não? Justifique sua resposta. Se necessário,
 consulte a seguinte <a
 href="../cap10.html#o-que-%C3%A9-integra%C3%A7%C3%A3o-cont%C3%ADnua">seção</a>
-do livro texto para saber mais sobre CI.</p></li>
-<li><p>O seguinte <a href="./exemplo-funcao-revisao-codigo.txt">link</a>
+do livro texto para saber mais sobre CI.</p>
+<p>6. O seguinte <a href="./exemplo-funcao-revisao-codigo.txt">link</a>
 contém o código de uma função de um sistema de código aberto, chamado
 FitNesse, a qual é usada também em um dos exemplos do livro Clean Code.
 Se você ficasse encarregado de revisar o código dessa função, qual a
-principal observação que você faria?</p></li>
-<li><p>Como você revisaria cada um dos trechos de código a
-seguir?</p></li>
-</ol>
+principal observação que você faria?</p>
+<p>7. Como você revisaria cada um dos trechos de código a seguir?</p>
 <ol type="a">
 <li></li>
 </ol>

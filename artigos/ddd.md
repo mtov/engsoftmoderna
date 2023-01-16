@@ -347,7 +347,7 @@ Nesse fluxo, as classes entre colchetes constituem a
 Camada Anticorrupção que foi construída para integrar os 
 sistemas A e B.
 
-## Comentários Finais 
+## Conclusão 
 
 Em um material de referência, que escreveu em 2014, Eric Evans 
 define assim DDD:
@@ -365,7 +365,7 @@ classes, pacotes, etc. Especificamente, um projeto DDD
 deve fazer uso dos seguintes tipos de objetos principais: entidades, 
 objetos de valor, serviços, agregados e  repositórios.
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
 <!---
 1. Marque V ou F:
@@ -385,26 +385,26 @@ objetos de valor, serviços, agregados e  repositórios.
    (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
 --->
 
-1. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
+1\. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
    
-2. Suponha que você trabalha em uma empresa que possui um aplicativo para entrega 
+2\. Suponha que você trabalha em uma empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
 
-    (a) Cinco termos da linguagem ubíqua do sistema 
-    (b) Três entidades 
-    (c) Três objetos de valor
-    (d) Um agregado (incluindo o objeto raiz e seus objetos internos)
-    (e) Dois métodos de um serviço 
-    (f) Dois métodos de um repositório 
+  (a) Cinco termos da linguagem ubíqua do sistema 
+  (b) Três entidades 
+  (c) Três objetos de valor
+  (d) Um agregado (incluindo o objeto raiz e seus objetos internos)
+  (e) Dois métodos de um serviço 
+  (f) Dois métodos de um repositório 
 
-    Em suas respostas, basta citar os nomes que foram pedidos.
+  Em suas respostas, basta citar os nomes que foram pedidos.
 
-3. Suponha um sistema de comércio eletrônico, com as seguintes classes `Pedido`, 
+3\. Suponha um sistema de comércio eletrônico, com as seguintes classes `Pedido`, 
 `ItensPedido` e `Produto`. Desenhe um diagrama de classes que represente as
 relações entre essas classes. Quais classes constituem um agregado? Qual
 classe está fora do agregado e porquê?
 
-4. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.
+4\. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.
 
 ~~~~
    Raiz

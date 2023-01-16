@@ -213,7 +213,7 @@ Essa mudança completa de objetivo -- de um sistema para distribuição
 de podcasts para uma rede social baseada em mensagens de texto -- 
 não foi um pivô, mas um recomeço do zero.
 
-## Comentário Final 
+## Conclusão 
 
 Quando falamos de MVP, o mais importante não é o produto em si, mas a
 hipótese de risco que procuramos testar. Se alguém comentar com você 
@@ -221,30 +221,30 @@ sobre um MVP, não se esqueça então de perguntar sobre a hipótese
 de risco que está sendo testada.
 
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Qual a diferença entre um MVP e uma pesquisa de mercado?
+1\. Qual a diferença entre um MVP e uma pesquisa de mercado?
 
-2. O seguinte artigo do blog da incubadora de startups YCombinador
+2\. O seguinte artigo do blog da incubadora de startups YCombinador
 tem um título interessante: 
 [A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/library/4Q-a-minimum-viable-product-is-not-a-product-it-s-a-process).
 Por que o artigo defende essa tese? Isto é, por que, segundo o artigo,
 um MVP não é um produto, mas sim um processo?
 
-3. Nos seus primeiros dez anos de vida (1997-2007), a Netflix era
+3\. Nos seus primeiros dez anos de vida (1997-2007), a Netflix era
 uma empresa que entregava DVDs fisicamente pelo correio, já tendo 
 nessa época centenas de milhares de assinantes. Então, em 2007, a
 empresa migrou para o serviço de streaming, tal qual conhecemos e
 usamos hoje. Você classificaria essa mudança como um pivô? Sim ou
 não? Justifique e argumente a favor de sua resposta.
 
-4. Suponha que você planeja abrir uma empresa para entrega de
+4\. Suponha que você planeja abrir uma empresa para entrega de
 comida pela Internet, em uma cidade como Belo Horizonte, e
 pretende concorrer com empresas estabelecidas do ramo. A criação 
 de um MVP seria recomendada nesse contexto? Sim ou Não? Justifique 
 e argumente  a favor de sua resposta.
 
-5. Descreva um domínio no qual é mais desafiador criar um MVP. 
+5\. Descreva um domínio no qual é mais desafiador criar um MVP. 
 Justifique sua resposta.
 
 * * * 

@@ -181,7 +181,7 @@ a sua implementação. Por exemplo, ele deve ajudar a explicar a solução
 para o resto da organização. Deve também ajudar na criação de uma 
 estratégia de divulgação e marketing.
 
-## Comentários Finais 
+## Conclusão 
 
 Talvez, a explicação anterior leve o leitor a pensar que Design 
 Thinking é um processo sequencial. No entanto, em qualquer atividade 
@@ -224,9 +224,9 @@ Pode ser interessante estudar também conceitos de
 **Jobs to be Done**, os quais são o tema do nosso próximo 
 [artigo](./jobs-to-be-done.html).
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Marque a alternativa INCORRETA:
+1\. Marque a alternativa INCORRETA:
 
    a. Design Thinking é um abordagem iterativa e colaborativa para solução de problemas 
       complexos e para os quais não existe uma solução conhecida.
@@ -239,19 +239,19 @@ Pode ser interessante estudar também conceitos de
    e. Para resolver problemas, Design Thinking recomenda que o time trabalhe
       de forma exploratória (divergente) e depois de forma convergente.         
 
-2. Qual dessas práticas NÃO é comum quando se usa Design Thinking:
+2\. Qual dessas práticas NÃO é comum quando se usa Design Thinking:
    a. Reframing
    b. Pensamento convergente e divergente
    c. Prototipação
    d. Pesquisas de mercado
    e. Estudos etnográficos
 
-3. Suponha um time de desenvolvimento de software que usa Scrum no seu dia a dia. Como e quando os conceitos de Design Thinking podem ajudar esse time? Isto é, em qual situação hipotética? 
+3\. Suponha um time de desenvolvimento de software que usa Scrum no seu dia a dia. Como e quando os conceitos de Design Thinking podem ajudar esse time? Isto é, em qual situação hipotética? 
 
-4. Descreva um problema que possa se beneficiar do 
+4\. Descreva um problema que possa se beneficiar do 
 uso de Design Thinking.
 
-5. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
+5\. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
 [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp) do livro.
 

@@ -80,11 +80,9 @@ menores.
 ## Para que serve um CFD? 
 
 Um CFD é usado para indicar se o fluxo de trabalho de um time Kanban 
-está **estável** ou não.
-
-Especificamente, o fluxo está normal e estável quando as áreas do diagrama 
-crescem de forma linear, com praticamente a mesma inclinação, como no 
-CFD mostrado na seção anterior.
+está **estável** ou não. Especificamente, o fluxo está normal e estável 
+quando as áreas do diagrama crescem de forma linear, com praticamente 
+a mesma inclinação, como no CFD mostrado na seção anterior.
 
 Por outro, quando existem problemas em um passo, a sua área no diagrama 
 tende a crescer, como mostrado no seguinte exemplo (acesse também neste [link](https://docs.google.com/spreadsheets/d/1cJpV_R2xnhXxSpVWYc7ZY0_o069Ano9oMc-VcK6PDLo/edit#gid=882423560)):
@@ -144,7 +142,7 @@ passo de Revisão, representado pela área em azul no diagrama.
 
 -->
 
-## Para Saber Mais {.unnumbered}
+### Para Saber Mais {.unnumbered}
 
 CFDs são tratados na maioria dos livros sobre Kanban. Especificamente,
 o livro "Diagrama de Fluxo Cumulativo", de autoria de Paulo Caroli, 
@@ -152,9 +150,9 @@ oferece uma introdução objetiva ao assunto. O livro do
 David Anderson -- *Kanban: Successful Evolutionary Change for Your 
 Technology Business* -- é uma outra referência importante sobre CFDs.
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Neste artigo, comentamos que Diagramas de Fluxo Cumulativo (CFD) são 
+1\. Neste artigo, comentamos que Diagramas de Fluxo Cumulativo (CFD) são 
 muito usados com Kanban. Mas é possível usar CFDs também com Scrum? 
 Justifique sua resposta.
 
@@ -164,17 +162,17 @@ devemos aumentar ou diminuir o seu limite WIP? Justifique sua resposta
 usando a Lei de Little.
 -->
 
-2. Em um CFD estável, a taxa de chegada de novas histórias é igual à 
+2\. Em um CFD estável, a taxa de chegada de novas histórias é igual à 
 taxa com que histórias são puxadas para o próximo passo. Verdadeiro ou 
 Falso? Justifique.
 
-3. Suponha um processo de desenvolvimento do tipo Waterfall, com três 
+3\. Suponha um processo de desenvolvimento do tipo Waterfall, com três 
 fases: Especificação, Implementação e Testes. Crie um CFD para um projeto 
 desenvolvido nesse processo. No seu CFD, assuma um sistema cujo 
 desenvolvimento inclui 25 funcionalidades. As fases Especificação, 
 Implementação e Testes levam, respectivamente, 2, 3 e 1 semestre.
 
-4. Use um software de planilhas para criar CFDs hipotéticos, tal como 
+4\. Use um software de planilhas para criar CFDs hipotéticos, tal como 
 fizemos neste artigo. Defina um horizonte de tempo (eixo x) e alguns 
 passos (colunas da planilha e, consequentemente, áreas do diagrama). 
 Em seguida, lance valores hipotéticos na sua planilha. Crie pelo menos 

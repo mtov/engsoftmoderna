@@ -203,37 +203,37 @@ tribos, chapters e guildas não deve ocorrer cegamente de acordo com o manual.
 Adaptações ao contexto serão sempre necessárias. 
 
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
+1\. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
 
-2. Descreva um problema de estruturas baseadas em silos funcionais, 
+2\. Descreva um problema de estruturas baseadas em silos funcionais, 
 isto é, times separados de desenvolvedores, administradores de bancos de 
 dados, testadores, operação, designers, etc.
 
-3. No artigo sobre a adoção de squads na Spotify, são citados os seguintes exemplos 
+3\. No artigo sobre a adoção de squads na Spotify, são citados os seguintes exemplos 
 de squads: (a) para implementar o cliente Android do Spotify; (b) para 
 criar uma "experiência de rádio" ao usar o Spotify; (c) para escalar os componentes
 de backend da arquitetura do Spotify; (d) para prover funcionalidades de pagamento. 
 Como você classificaria cada um desses squads de acordo com os tipos de 
 squads que comentamos neste artigo.
 
-4. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui squads que implementam componentes front-end e 
+4\. Suponha uma organização que organiza seus squads em componentes arquiteturais. Especificamente, ela possui squads que implementam componentes front-end e 
 outros squads que implementam componentes back-end. Discorra sobre o principal 
 problema desse tipo de organização de squads.
 
-5. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
+5\. Qual a principal semelhança entre squads de plataformas e squads facilitadores 
 de boas práticas? E também qual é a diferença principal entre esses squads?
 
-6. Suponha que você trabalha em uma empresa organizada em squads, tribos, 
+6\. Suponha que você trabalha em uma empresa organizada em squads, tribos, 
 chapters e guildas. Então, você possui "dois chefes" (ou líderes). Explique 
 quais são esses líderes e qual o papel de cada um deles.
 
-7. Por que o Modelo Spotify é considerado uma estrutura matricial?
+7\. Por que o Modelo Spotify é considerado uma estrutura matricial?
 
-8. Descreva uma desvantagem do Modelo Spotify.
+8\. Descreva uma desvantagem do Modelo Spotify.
 
-9. Suponha uma grande empresa de entrega de comida online. Descreva 
+9\. Suponha uma grande empresa de entrega de comida online. Descreva 
 pelo menos três tribos que essa empresa poderia usar para organizar 
 seus squads. Basta descrever brevemente o objetivo de cada tribo.
 

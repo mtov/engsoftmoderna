@@ -168,7 +168,7 @@ seu leito que foi represada, dando origem ao repositório ou lago,
 chama-se montante do rio; a parte do rio após a barragem
 é chamada de jusante.
 
-## Comentários Finais 
+## Conclusão 
 
 Vamos concluir com um frase de Martin Cagan, um autor conhecido
 na comunidade de produtos digitais:
@@ -177,13 +177,13 @@ na comunidade de produtos digitais:
 ideias das ideias ruins. O resultado esperado é um backlog do 
 produto com itens validados.
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Qual problema pode ocorrer quando se adota Scrum ou 
+1\. Qual problema pode ocorrer quando se adota Scrum ou 
 Kanban (de forma tradicional) e que atividades de discovery podem 
 ajudar a resolver?
 
-2. Durante o processo de discovery, ao entrevistar usuários, 
+2\. Durante o processo de discovery, ao entrevistar usuários, 
 por exemplo, podemos ter novas ideias, que vão gerar novas
 hipóteses. Descreva então uma nova hipótese de funcionalidade
 para o exemplo de ensino a distância e que também tente solucionar
@@ -196,7 +196,7 @@ três perguntas que você faria, em uma entrevista com usuários,
 para validar essa hipótese.
 --->
 
-3. Além de ter sido feita com a mãe do entrevistador, qual o principal 
+3\. Além de ter sido feita com a mãe do entrevistador, qual o principal 
 problema com a seguinte entrevista? 
 
    > Filho: Mãe, mãe, eu tenho uma ideia para um negócio — posso apresentá-la para você?
@@ -226,7 +226,7 @@ problema com a seguinte entrevista?
   idea when everyone is lying to you*, de Rob Fitzpatrick.
 
 
-4. Descreva três perguntas mais importantes que o entrevistador 
+4\. Descreva três perguntas mais importantes que o entrevistador 
 deveria ter feito na entrevista anterior.
 
 * * * 

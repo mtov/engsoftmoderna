@@ -1,10 +1,10 @@
 
-# Como Monetizar Sistemas de Software? {.unnumbered}
+# Como Monetizar Sistemas de Software?
 
 Este artigo didático oferece uma visão geral sobre modelos de 
 monetização (ou precificação) de produtos de software.
 
-## Licenças {.unnumbered}
+## Licenças
 
 Até um tempo atrás, a principal maneira de comercializar um sistema
 de software -- que você ou sua empresa desenvolveu e pretende agora
@@ -31,7 +31,7 @@ são servidores de bancos de dados, onde o cliente pode pagar pelo número
 de conexões simultâneas que serão aceitas pelo servidor.
 
 
-### Licenças & Serviços {.unnumbered}
+### Licenças & Serviços
 
 Uma alternativa ao modelo de licenças puro consiste na aquisição
 de uma licença e também na contração de serviços. 
@@ -46,7 +46,7 @@ integrados de gestão (ERPs).
 Além de serviços de manutenção, podem ser firmados também contratos
 relativos a serviços de treinamento de usuários, instalação e suporte.
 
-## SaaS: Software as a Service{.unnumbered}
+## SaaS: Software as a Service
 
 Esse modelo popularizou-se com o surgimento da Web. 
 A ideia é que os clientes não adquirem
@@ -116,7 +116,7 @@ um sistema para atuar nesse nicho e então possuem algumas centenas
 de usuários, no máximo milhares, que pagam valores relativamente
 baixo de assinaturas. 
 
-## Anúncios {.unnumbered}
+## Anúncios
 
 No mundo da Web, existe uma máxima que diz que quando você usa
 "um sistema gratuito, você não é um usuário, mas sim um produto". 
@@ -135,7 +135,7 @@ uma assinatura, o usuário fica livre dos anúncios e, possivelmente,
 tem acesso a mais funcionalidades.
 
 
-## Open Source {.unnumbered}
+## Open Source
 
 Este é o tipo de sistema mais desafiador de se monetizar.
 O motivo é que, por definição, sistemas de código aberto podem ser
@@ -161,7 +161,7 @@ que adotou esse padrão foi a Red Hat, que oferece serviços de suporte
 e consultoria para empresas que usam Linux.
 
 
-## Conclusão {.unnumbered}
+## Conclusão
 
 Neste artigo, apresentamos os modelos que você pode usar para monetizar
 um software que você ou sua empresa pretende desenvolver. Faltou, no 
@@ -211,11 +211,11 @@ sobre microempresas de software como serviço.
 
 ## Exercícios {.unnumbered}
 
-1. Pesquise sistemas de empresas brasileiras que adotam o modelo SaaS.
+1\. Pesquise sistemas de empresas brasileiras que adotam o modelo SaaS.
 O que esses sistemas fazem? Qual o valor da assinatura cobrada?
 Eles adotam o modelo freemium?
 
-2. São vantagens de sistemas SaaS, EXCETO:
+2\. São vantagens de sistemas SaaS, EXCETO:
 
    (a) Clientes não precisam ter o hardware adequado para executar a funcionalidade principal de um sistema SaaS.
    (b) Clientes não precisam realizar backups dos seus dados.
@@ -224,7 +224,7 @@ Eles adotam o modelo freemium?
    (e) Clientes não precisam comprar uma nova licença quando uma versão importante do sistema for lançada.
 
 
-3. Defina: (a) custo de um sistema; (b) valor de um sistema.
+3\. Defina: (a) custo de um sistema; (b) valor de um sistema.
 
 
 * * * 

@@ -138,11 +138,11 @@ e definir os objetivos dos primeiros sprints.
 
 Terminado o workshop de inception, os sprints podem começar!
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Defina três histórias de usuários do projeto PIX no Banco X.
+1\. Defina três histórias de usuários do projeto PIX no Banco X.
 
-2. Suponha que o projeto PIX no Banco X foi concluído com sucesso. 
+2\. Suponha que o projeto PIX no Banco X foi concluído com sucesso. 
 Meses depois, o Banco Central baixou a seguinte regra: transferências 
 via PIX entre 20:00 e 06:00 devem obedecer ao limite de R$ 1.000,00. 
 Qual seria o papel de cada membro do time na implementação dessa 

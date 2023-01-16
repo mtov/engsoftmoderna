@@ -1,8 +1,8 @@
 
 
-# Microempresas de Software como Serviço {.unnumbered}
+# Microempresas de Software como Serviço
 
-## Introdução {.unnumbered}
+## Introdução
 
 Existem diversos caminhos na área de empreendedorismo envolvendo 
 Engenharia de Software. Hoje em dia, talvez, o caminho mais 
@@ -29,7 +29,7 @@ de **micro-SaaS**. Podemos definir esse conceito da seguinte forma:
 > com pagamentos recorrentes (assinaturas) por parte
 > de centenas ou alguns milhares de clientes.
 
-## Exemplos {.unnumbered}
+## Exemplos de Micro-SaaS
 
 Para ficar mais claro, vamos dar alguns exemplos de sistemas 
 micro-SaaS:
@@ -68,7 +68,7 @@ empresas ou consumidores finais. No Brasil, o mercado em ambos
 os casos é muito grande, pois o país possui mais de 210 milhões de 
 habitantes e quase 20 milhões de empresas ativas (dados de 2020).
 
-## Escolhendo o Sistema {.unnumbered}
+## Escolhendo o Problema
 
 O grande **desafio de uma microempresa de software é achar um 
 segmento de mercado** que tenha um problema real que possa ser 
@@ -115,7 +115,7 @@ estão enfrentando.
 "comer a mesma comida do seu cachorro". Ou seja, empreendedores 
 devem ser também usuários dos sistemas que desenvolvem.
 
-## Canais de Distribuição {.unnumbered}
+## Canais de Distribuição
 
 De nada adianta ter uma excelente ideia e não ter capacidade
 de execução, isto é, capacidade de concretizar sua ideia em um 
@@ -163,7 +163,7 @@ esse problema (seu produto);
 que vão permitir que o mercado tome conhecimento do seu produto.
 
 
-## Outras Responsabilidades {.unnumbered}
+## Outras Responsabilidades
 
 Além de construir, manter e vender o produto, os fundadores 
 de uma microempresa de software são responsáveis por outras 
@@ -182,7 +182,7 @@ Para isso, é importante automatizar e documentar todos os
 processos e, também, usar sistemas de low-code, como Zapier.
 
 
-## Crescendo a Empresa  {.unnumbered}
+## Crescendo a Empresa 
 
 Quando uma microempresa de software faz sucesso e atrai um 
 número maior de clientes, é natural que o empreendimento 
@@ -210,7 +210,7 @@ criação de wireframes de baixa fidelidade. A empresa, localizada
 na Itália, foi fundada em 2008 e, em 2020, obteve um faturamento 
 de US$ 7.3 milhões, com 33 colaboradores.
 
-## Métricas {.unnumbered}
+## Métricas
 
 Antes de concluir, vamos comentar sobre algumas métricas 
 para avaliar o sucesso de sistemas SaaS:
@@ -265,11 +265,11 @@ monetização de software.
 
 ## Exercícios {.unnumbered}
 
-1. Do ponto de vista de monetização, qual a vantagem de micro-SaaS em 
+1\. Do ponto de vista de monetização, qual a vantagem de micro-SaaS em 
 relação a uma pequena app não-SaaS comercializada em lojas como 
 Google Play e Apple Store?
 
-2. Define-se como "churn de receita negativo" a situação na qual o novo 
+2\. Define-se como "churn de receita negativo" a situação na qual o novo 
 faturamento obtido com os clientes atuais de um sistema supera a perda 
 de faturamento devido aos cancelamentos de outros clientes. Por exemplo, 
 um SaaS tinha 100 clientes e faturava R$ 10 mil/mês. Em um dado mês, ele 
@@ -278,16 +278,16 @@ faturamento de R$ 11 mil. Em outras palavras, tivemos uma perda negativa de
 receita, ou seja, um ganho de receita. Explique como isso é possível. Quais 
 eventos podem ter sido responsáveis por essa situação?
 
-3. Leia e faça um breve resumo do seguinte artigo: *Do Things that 
+3\. Leia e faça um breve resumo do seguinte artigo: *Do Things that 
 Don't Scale* ([link](http://paulgraham.com/ds.html)), de autoria de 
 Paul Graham (2013). No seu resumo,  liste algumas tarefas mencionadas 
 no artigo e que, exatamente por não escalarem, devem ser feitas por 
 fundadores nos estágios iniciais de criação de uma empresa de software.
 
-4. Qual o maior e o menor valor possível para a métrica NPS? Em quais
+4\. Qual o maior e o menor valor possível para a métrica NPS? Em quais
 situações eles ocorrem?
 
-5. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante àquela que fizemos no artigo.
+5\. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante àquela que fizemos no artigo.
 
 
 * * * 

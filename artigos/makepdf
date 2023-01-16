@@ -2,14 +2,14 @@
 cat desafios-engsoft.md > esm-artigos.md
 
 cat pix-banco-x.md >> esm-artigos.md
-cat shape-up.md >> esm-artigos.md
 cat squads.md >> esm-artigos.md
 cat cfd.md >> esm-artigos.md
+cat shape-up.md >> esm-artigos.md
 
 cat mvp.md >> esm-artigos.md
+cat product-discovery.md >> esm-artigos.md
 cat design-thinking.md >> esm-artigos.md
 cat jobs-to-be-done.md >> esm-artigos.md
-cat product-discovery.md >> esm-artigos.md
  
 cat outros-principios.md >> esm-artigos.md
 cat deep-modules.md >> esm-artigos.md

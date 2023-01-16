@@ -203,13 +203,13 @@ presente, de graça, em sistemas bem projetados, cujos módulos possuem
 alta coesão e baixo acoplamento, tal como estudamos no 
 [Capítulo 5](../cap5.html#coes%C3%A3o).
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Seja uma aplicação CRUD (*Create*, *Read*, *Update*, *Delete*). 
+1\. Seja uma aplicação CRUD (*Create*, *Read*, *Update*, *Delete*). 
 Quais dessas operações devem ser implementadas como Comandos? 
 E quais devem ser Queries?
 
-2. Seja a classe `Stack` implementada no 
+2\. Seja a classe `Stack` implementada no 
 seguinte [arquivo](https://gist.github.com/mtov/3601acd0b32a1d0a85b4a81a43af4284). (1) Qual método dessa implementação viola o princípio de Separação 
 de Comandos e Queries (CQS)? (2) Como você reimplementaria esse método
 de forma compatível com CQS? (3) Você acha que valeria a pena adotar 

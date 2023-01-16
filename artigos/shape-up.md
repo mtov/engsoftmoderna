@@ -125,7 +125,7 @@ de fato, implementado no ciclo. Veja que, no início de um ciclo, eles
 recebem um pitch, que é uma especificação de requisitos relativamente
 aberta e flexível.
 
-## Conclusão 
+## Conclusão
 
 Shape Up tem diferenças importantes para métodos como Scrum:
 
@@ -167,26 +167,26 @@ na própria página do [livro](https://basecamp.com/shapeup). Por fim,
 o seguinte [vídeo](https://youtu.be/h_8M23wVjXk) é uma excelente e 
 breve introdução ao método.
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Qual a diferença entre a fase de *shaping* e o planejamento do sprint 
+1\. Qual a diferença entre a fase de *shaping* e o planejamento do sprint 
 (*sprint planning*) em Scrum?
 
-2. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 
+2\. Em Shape Up, o que acontece quando um ciclo termina mas o time não consegue implementar o que foi especificado no *pitch*? Para responder, consulte o Capítulo 8 
 do [livro](https://basecamp.com/shapeup/2.2-chapter-08#the-circuit-breaker) 
 que descreve o método, seção "The circuit breaker".
 
-3. Qual a principal característica que torna Shape Up 
+3\. Qual a principal característica que torna Shape Up 
 um método adequado para times que trabalham de forma remota?
 
-4. O período de Cool Down -- existente em Shape Up -- não é uma 
+4\. O período de Cool Down -- existente em Shape Up -- não é uma 
 novidade em métodos ágeis. Por exemplo, em Extreme Programming 
 (XP) existe uma prática parecida, mas com um nome diferente. 
 Qual é esse nome adotado em XP? Se necessário, consulte o 
 [Capítulo 2](../cap2.html#pr%C3%A1ticas-sobre-o-processo-de-desenvolvimento) 
 do livro texto, seção 2.3.3.
 
-5. Pense em um pitch para um determinado problema ou 
+5\. Pense em um pitch para um determinado problema ou 
 sistema. (a) Explique brevemente o seu pitch (basta dar uma 
 ideia geral); (b) Descreva um *rabbit hole* que deveria ser 
 documentado neste pitch.

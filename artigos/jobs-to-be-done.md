@@ -164,7 +164,7 @@ a história que ele está pedindo. Isso ajuda a entender
 o contexto e a motivação do seu pedido.
 
 
-## Comentários Finais 
+## Conclusão 
 
 Quando projetamos um produto, incluindo um software, devemos pensar
 na oferta, representada pelas funcionalidades do produto e na
@@ -200,9 +200,9 @@ em 2017. Um
 publicado na Harvard Business Review, em setembro de 2016, oferece 
 uma introdução mais resumida a JTBD. 
 
-## Exercícios 
+## Exercícios {.unnumbered}
 
-1. Frequentemente, afirma-se que software pode ser desenvolvido 
+1\. Frequentemente, afirma-se que software pode ser desenvolvido 
 como um projeto ou como um produto. Primeiro, para entender melhor 
 essas duas formas de desenvolvimento, leia a seguinte 
 [pergunta](./processos-faq.html#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
@@ -211,12 +211,12 @@ responda em qual tipo de cenário JTBD melhor se aplica: software
 desenvolvido como um projeto ou software desenvolvido como um produto? 
 Justifique sua resposta.
 
-2. Qual a vantagem de JTBD em relação ao uso de personas? Para 
+2\. Qual a vantagem de JTBD em relação ao uso de personas? Para 
 conhecer mais sobre personas, leia a 
 [pergunta](./requisitos-faq.html#o-que-s%C3%A3o-personas) sobre o tema no
 FAQ do Capítulo 3 do livro.
 
-3. Em um outro artigo didático, tratamos de 
+3\. Em um outro artigo didático, tratamos de 
 [Design Thinking (DT)](./design-thinking.html). 
 Descreva (a) uma característica comum entre JTBD e DT; (b) o principal conceito 
 novo que JTBD introduz quando comparado a DT.
