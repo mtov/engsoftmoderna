@@ -1,5 +1,7 @@
 
-cat desafios-engsoft.md > esm-artigos.md
+cat prefacio.md > esm-artigos.md
+
+cat desafios-engsoft.md >> esm-artigos.md
 
 cat pix-banco-x.md >> esm-artigos.md
 cat squads.md >> esm-artigos.md

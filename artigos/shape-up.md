@@ -8,8 +8,7 @@ Shape Up é um novo método para desenvolvimento de software que está
 sendo proposto pela [Basecamp](https://basecamp.com/),  a empresa por
 trás do software de gerenciamento de projetos de mesmo nome. O método
 é descrito em um [livro](https://basecamp.com/shapeup) aberto, de
-autoria de Ryan Singer, que é um dos principais gerentes de produto
-da empresa. Segue uma imagem da capa do livro:
+autoria de Ryan Singer. Segue uma imagem da capa do livro:
 
 ![Capa do livro sobre Shape Up](./figs/shapeup-cover.jpg){width=45%}
 
@@ -59,7 +58,7 @@ detalhado (como em Waterfall) e um planejamento mais vago e abstrato
 figura ilustra o nível de detalhe que deve ser objeto da fase de
 shaping.
 
-![Fase de Shaping](./figs/shapeup-fig1.png)
+![Fase de shaping](./figs/shapeup-fig1.png)
 
 O livro não detalha os responsáveis pela fase de shaping, mas sugere que
 devem ser desenvolvedores e gerentes de nível sênior. Além disso, é
@@ -80,7 +79,7 @@ demandar menos de seis semanas (um ciclo). Pode-se, por exemplo, ter
 funcionalidades de duas semanas.
 
 * Uma descrição em alto nível da solução proposta. Como o autor é 
-originalmente um designer, os exemplos de soluções mostrados no livro
+originalmente um designer, os exemplos mostrados no livro
 são descrições (ou sketches) de mais alto nível de telas e
 interfaces.
 
@@ -121,7 +120,7 @@ que ele pretende propor e defender na próxima *bet table*.
 Por fim, Shape Up defende a ideia de "tempo fixo, mas escopo aberto".
 Isto é, os ciclos têm uma duração bem definida (por exemplo, 6 semanas).
 Porém, os times têm flexibilidade para adaptar o escopo do que será,
-de fato, implementado no ciclo. Veja que, no início de um ciclo, eles 
+de fato, implementado no ciclo. Por isso, no início de um ciclo, eles 
 recebem um pitch, que é uma especificação de requisitos relativamente
 aberta e flexível.
 
@@ -152,7 +151,7 @@ como os pitches serão implementados no intervalo de seis semanas.
 logo no seu início, durante a reunião de planejamento do sprint.
 
 * Ciclos são um pouco mais longos que os sprints de Scrum. Por exemplo,
-um ciclo pode durar 6 semamas, enquanto um sprint dura, no máximo, um
+um ciclo pode durar seis semamas, enquanto um sprint dura, no máximo, um
 mês e, frequentemente, menos do que isso. Além disso, os ciclos são
 seguidos de um período de cool down, que não envolve a implementação
 de novas funcionalidades.

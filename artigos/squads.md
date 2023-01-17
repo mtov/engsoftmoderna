@@ -2,6 +2,8 @@
 
 # Organizando Times em Squads 
 
+## Introdução
+
 Neste artigo, iremos começar explicando o que é um squad. Em seguida,
 iremos apresentar os principais tipos de squads que existem em 
 empresas de software. Por fim, vamos concluir apresentando o famoso 

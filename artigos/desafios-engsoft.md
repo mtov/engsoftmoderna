@@ -1,3 +1,5 @@
+
+
 # Desafios da Formação de Engenheiros de Software 
 
 ## Introdução 
@@ -7,7 +9,7 @@ Software para alunos de graduação. Desde então, tenho estudado,
 trabalhado e refletido sobre questões ligadas à formação 
 qualificada de Engenheiros de Software no Brasil. Assim, neste 
 artigo, vou compartilhar minha visão sobre os desafios 
-envolvidos em tal tarefa.
+envolvidos nessa tarefa.
 
 ## Relevância 
 
@@ -89,11 +91,10 @@ habilidades conceituais e práticas.
 
 Quando ministrei a disciplina de Engenharia de Software pela 
 primeira vez, na graduação, senti uma falta de livros 
-didáticos mais modernos na área. 
-
-Por isso, resolvi dedicar um ano de intenso trabalho para escrever 
-um [livro-texto](https://engsoftmoderna.info/) sobre Engenharia 
-de Software. Veja a sua capa no topo desta página.
+didáticos mais modernos na área. Por isso, resolvi dedicar um 
+ano de intenso trabalho para escrever um 
+[livro-texto](https://engsoftmoderna.info/) sobre Engenharia 
+de Software. 
 
 Sou suspeito para afirmar, mas acredito que, após a escrita desse 
 livro, estou conseguindo cobrir essa dimensão do ensino de 
@@ -102,7 +103,7 @@ conceitos, práticas e princípios, sempre modernos, de processos,
 projeto, arquitetura, testes, manutenção, etc de software.
 
 Na verdade, estamos bastante satisfeitos com a adoção do livro.
-Após um ano de seu lançamento, mais de 100 professores estão
+Após três anos de seu lançamento, mais de 200 professores estão
 usando o nosso material.
 
 Também gostaríamos de comentar sobre dois problemas que
@@ -140,11 +141,12 @@ de exercícios.
 ### Formação Prática {.unnumbered}
 
 Porém, de nada adianta dominar a teoria, se o aluno nunca colocou 
-ela em prática. Ou seja, o aluno tem também que aplicar os conceitos
-que viu na teoria, dentro do ambiente acadêmico e de sua estrutura 
-curricular.
+ela em prática. Ou seja, ainda dentro do ambiente acadêmico e 
+de sua estrutura curricular, é interessante que o aluno possa
+aplicar os conceitos que viu na teoria.
 
-Ao comentar sobre isso, sempre me lembro da frase do Torvalds (Linus):
+Ao comentar sobre isso, sempre me lembro da frase do Linus
+Torvalds:
 
 > Falar é fácil, mas quero ver o código!
 
@@ -167,7 +169,7 @@ Assim, para atender à formação prática dos alunos, estamos trabalhando
 em duas frentes principais:
 
 * Oferecendo para graduação, na UFMG, uma disciplina chamada **Prática de 
-Desenvolvimento de Software**, na qual 60% da nota refere-se a um trabalho
+Desenvolvimento de Software**, na qual metade da nota refere-se a um trabalho
 em equipe, que requer o desenvolvimento de um sistema real (ou com 
 características próximas de um sistema real). Nesse trabalho,
 os alunos devem usar um método ágil e, portanto, têm que escrever 
@@ -179,9 +181,7 @@ Product Owner, Scrum Master e consultor técnico dos times.
 * Estamos também iniciando o desenvolvimento de um conjunto de 
 roteiros e programas "ilustrativos", de pequeno porte e que 
 exercitam conceitos básicos de divisão processos, arquitetura, devops,
-testes, etc. Como um exemplo inicial, neste outro 
-[artigo](./exemplos-teste.html), 
-começamos a documentar exemplos reais de testes de software.
+testes, etc. 
 
 ## Eixo Transversal de Formação 
 
@@ -246,13 +246,13 @@ Por exemplo, uma determinada funcionalidade pode estar sendo implementada
 porque ela tem potencial para ampliar a base de clientes em
 x% ou reduzir a taxa de cancelamentos em y%. Ela pode ainda 
 permitir que a empresa economize z milhões de reais em serviços
-de cloud ou em serviços de terceiros.
+de computação em nuvem ou em outros serviços.
 
 Evidentemente, do ponto de vista de ensino, não dá para tratar da 
 variedade de negócios que beneficiam-se atualmente de software. 
 Porém, pelo menos transversalmente, é importante comentar com 
-os alunos sobre a importância desse alinhamento: sistemas e 
-negócio.
+os alunos sobre a importância do alinhamento entre sistemas e 
+negócios.
 
 Outras disciplinas de graduação -- como uma disciplina de 
 **empreendedorismo** -- podem também ajudar nessa formação.
@@ -264,19 +264,19 @@ as empresas cobram cada vez mais uma mentalidade empreendedora
 de seus colaboradores, por meio do que costuma-se chamar de
 **empreendedorismo interno**.
 
-## Comentário Final 
+## Conclusão
 
-Antes de concluir, gostaríamos de mencionar dois **pré-requisitos**
+Para concluir, gostaríamos de mencionar dois pré-requisitos
 que achamos fundamentais para iniciar a formação de engenheiros de 
 software:
 
-* É muito importante que o aluno **goste de programar**. Como fizemos
+* É muito importante que o aluno goste de programar. Como fizemos
 questão de dizer no prefácio do nosso livro "cada vez mais, 
 engenheiros de software têm que escrever código. Hoje, há pouco espaço 
 para dizer que eu não preciso programar, pois sou arquiteto ou 
 analista."
 
-* É muito importante também que o aluno **saiba programar**. Ou seja,
+* É muito importante também que o aluno saiba programar. Ou seja,
 o aluno já deve ter domínio de conceitos básicos de programação, algoritmos
 e estruturas de dados. 
 

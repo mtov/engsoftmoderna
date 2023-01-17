@@ -4,11 +4,12 @@
 
 ## Introdução
 
-Neste artigo, iremos descrever a organização de um time 
-ágil -- ou [squad](./squads.html) -- que segue um método semelhante a 
-[Scrum](../cap2.html#scrum). Nosso objetivo é explicar a composição 
-desse squad hipotético, isto é, comentar sobre os principais profissionais 
-que fazem parte dele e sobre as suas responsabilidades e tarefas.
+Neste artigo, iremos apresentar um estudo de caso sobre a 
+organização de um time ágil -- ou [squad](./squads.html) -- 
+que segue um método semelhante a [Scrum](../cap2.html#scrum). 
+Nosso objetivo é explicar a composição desse squad hipotético, 
+isto é, comentar sobre os principais profissionais que fazem 
+parte dele e sobre as suas responsabilidades e tarefas.
 
 **Contexto:** Vamos assumir que o squad trabalha em um banco hipotético,
 chamado Banco X. Após a regulamentação do PIX pelo Banco Central,
@@ -17,9 +18,10 @@ online. E nosso squad ficou responsável por essa implementação, já que
 ele cuida dos demais tipos de transferência do banco, tais como 
 TED e DOC.
 
-**Importante:** objetivo deste artigo é didático. Portanto, o Banco X
-e o nosso squad são hipotéticos. Além disso, fizemos algumas
-simplificações para tornar o exemplo compacto e mais fácil de entender.
+**Importante:** objetivo deste artigo é totalmente didático. 
+Portanto, o Banco X e o nosso squad são hipotéticos. Além disso, 
+fizemos algumas simplificações para tornar o exemplo compacto 
+e mais fácil de entender.
 
 ## Composição do Squad 
 
@@ -61,7 +63,7 @@ do projeto.
 
 Esse profissional também deve entender bem os requisitos do PIX. Uma fez 
 feito isso, ele deve observar e entrevistar possíveis usuários, incluindo 
-clientes do banco e, talvez, também aqueles que ainda não são clientes.
+clientes do banco e, talvez, aqueles que ainda não são clientes.
 
 Como resultado, ele deve criar um protótipo de interface com o usuário (UI),
 usando mockups, wireframes, etc e ferramentas como Figma. Por fim, deve 
@@ -140,7 +142,7 @@ Terminado o workshop de inception, os sprints podem começar!
 
 ## Exercícios {.unnumbered}
 
-1\. Defina três histórias de usuários do projeto PIX no Banco X.
+1\. Escreva três histórias de usuários do projeto PIX no Banco X.
 
 2\. Suponha que o projeto PIX no Banco X foi concluído com sucesso. 
 Meses depois, o Banco Central baixou a seguinte regra: transferências 
