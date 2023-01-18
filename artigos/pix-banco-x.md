@@ -61,7 +61,7 @@ do projeto.
 
 #### UI/UX Designer {.unnumbered}
 
-Esse profissional também deve entender bem os requisitos do PIX. Uma fez 
+Esse profissional também deve entender bem os requisitos do PIX. Uma vez 
 feito isso, ele deve observar e entrevistar possíveis usuários, incluindo 
 clientes do banco e, talvez, aqueles que ainda não são clientes.
 

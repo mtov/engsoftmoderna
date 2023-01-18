@@ -107,11 +107,20 @@ começa-se o ciclo de seis semanas.
 Veja então que não existe um backlog de pitches, conforme comenta o 
 autor:
 
+<!---
 > If we decide to bet on a pitch, it goes into the next cycle to
 build. If we don’t, we let it go. There’s nothing we need to track or
 hold on to. What if the pitch was great, but the time just wasn’t
 right? Anyone who wants to advocate for it again simply tracks it
 independently—their own way—and then lobbies for it six weeks later. 
+-->
+
+> Se ficar decidido que iremos apostar em um pitch, ele irá entrar 
+no próximo ciclo. Caso contrário, deixaremos ele passar, sem que nada 
+de especial seja feito para registrá-lo. E se o pitch for ótimo, 
+mas o momento não for o certo para implementá-lo? Basta então que
+você armazene o pitch de forma independente -- isto é, à sua maneira 
+-- e volte a defendê-lo daqui a seis semanas.
 
 Ou seja, na verdade, o que não existe é um backlog global. Mas
 cada tomador de decisão pode ter seu backlog local de pitches 

@@ -28,8 +28,8 @@ emergentes em Engenharia de Software, como novos métodos ágeis
 serverless). Outros tratam de temas bastante comentados no mercado 
 de desenvolvimento, como Domain-Driven Design (DDD), Arquitetura 
 Limpa e Arquitetura Hexagonal. Ou seja, os artigos são um instrumento 
-que estou usando para **manter o leitor do livro -- seja ele um 
-professor, aluno ou profissional do mercado -- sempre atualizado**. 
+que estou usando para manter o leitor do livro -- seja ele um 
+professor, aluno ou profissional do mercado -- sempre atualizado. 
 Futuramente, em uma possível segunda edição, alguns desses artigos 
 podem então ser incorporados ao conteúdo "estático" do livro.
 
@@ -40,9 +40,9 @@ https://engsoftmoderna.info/artigos/artigos.html
 Nesta página, você vai encontrar ainda os slides 
 que uso nas minhas aulas.
 
-Apesar de já estarem online há um bom tempo, eu espero que a 
+Apesar de já estarem online há um bom tempo, espero que a 
 disponibilização agora de todos os artigos em um único arquivo 
-pode facilitar a leitura linear e completa deles. Então, boa 
+possa facilitar a leitura linear e completa deles. Então, boa 
 leitura a todos!
 
 
