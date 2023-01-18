@@ -9,7 +9,7 @@ Este capítulo inicia com uma introdução ao conceito e aos objetivos de
 padrões de projeto (Seção 6.1). Em seguida, discutimos com detalhes dez
 padrões de projetos: Fábrica, Singleton, Proxy, Adaptador, Fachada,
 Decorador, Strategy, Observador, Template Method e Visitor. Cada um
-desses padrões é discutido em uma seção separada (Seções 6.1 a 6.11). A
+desses padrões é discutido em uma seção separada (Seções 6.2 a 6.11). A
 apresentação de cada padrão é organizada em três partes: (1) um
 contexto, isto é, um sistema no qual o padrão poderia ser útil; (2) um
 problema no projeto desse sistema; (3) uma solução para esse problema

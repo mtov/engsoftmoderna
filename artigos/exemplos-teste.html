@@ -111,7 +111,7 @@ links:</p>
 <li><a href="#spring-petclinic">Spring PetClinic</a></li>
 <li><a href="#junit">JUnit</a></li>
 <li><a href="#vue.js">Vue.js</a></li>
-<li><a href="#microsoft-powertoys">Microsoft PowerToys</a></li>
+<li><a href="#powertoys">PowerToys</a></li>
 </ul>
 <h2 data-number="1.2" id="guava"><span
 class="header-section-number">1.2</span> Guava <a href="#guava"
@@ -392,10 +392,9 @@ resultados.</p>
 <p>Como <code>msg</code> é a string <code>hi</code>, o teste espera
 (<code>expect</code>), na sua última linha, que o texto exibido pelo
 componente seja igual a <code>IH</code>.</p>
-<h2 data-number="1.6" id="microsoft-powertoys"><span
-class="header-section-number">1.6</span> Microsoft PowerToys <a
-href="#microsoft-powertoys" class="anchor-link"
-aria-hidden="true">🔗</a></h2>
+<h2 data-number="1.6" id="powertoys"><span
+class="header-section-number">1.6</span> PowerToys <a href="#powertoys"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>PowerToys é um conjunto de utilitários Windows. Por exemplo, um dos
 utilitários permite fixar uma janela para que ela apareça <q>por
 cima</q> de qualquer outra janela do sistema.</p>
@@ -410,15 +409,14 @@ aria-hidden="true">🔗</a></h4>
 <p>Primeiro, mostramos um teste do utilitário FancyZones, que <q>é um
 gerenciador de janelas que facilita a criação de layouts de janela
 complexos e o posicionamento rápido de janelas nesses layouts</q>.</p>
-<pre><code>private void SaveChanges()
-{
-   string isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
-   Assert.AreEqual(&quot;True&quot;, isEnabled);
+<pre><code>private void SaveChanges() {
+  string isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
+  Assert.AreEqual(&quot;True&quot;, isEnabled);
 
-   _saveButton.Click();
+  _saveButton.Click();
 
-   isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
-   Assert.AreEqual(&quot;False&quot;, isEnabled);
+  isEnabled = _saveButton.GetAttribute(&quot;IsEnabled&quot;);
+  Assert.AreEqual(&quot;False&quot;, isEnabled);
 }</code></pre>
 <p>Inicialmente, testa-se se o botão <q>Save</q> do utilitário está
 disponível (<em>enabled</em>). Então, simula-se um click no mesmo. Feito
@@ -432,8 +430,7 @@ PowerToys, o qual fica na barra de ícones do Windows. Os comentários
 presentes no teste já ajudam bastante a entender o seu
 funcionamento.</p>
 <pre><code>[TestMethod]
-public void SettingsOpenWithContextMenu()
-{
+public void SettingsOpenWithContextMenu() {
   //open tray
   trayButton.Click();
   WaitSeconds(1);

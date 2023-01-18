@@ -25,7 +25,7 @@ tipo `B`, como em:
 
 ```
 class A {
-   B b = new B();  // instanciação incompatível com injeção de dependência 
+   B b = new B(); // instanciação incompatível com injeção de dependência 
 }
 ```
 

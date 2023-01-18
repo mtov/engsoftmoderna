@@ -143,7 +143,7 @@ agrupadas, como em:
 
 ```
 FiguraAgrupada grupo2 = new FiguraAgrupada();
-grupo2.adicionar(grupo1); // figura agrupada contendo outra figura agrupada
+grupo2.adicionar(grupo1); // fig. agrupada contendo outra fig. agrupada
 ```
 
 ## Conclusão 

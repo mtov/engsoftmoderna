@@ -21,7 +21,7 @@ links:
 * [Spring PetClinic](#spring-petclinic)
 * [JUnit](#junit)
 * [Vue.js](#vue.js)
-* [Microsoft PowerToys](#microsoft-powertoys)
+* [PowerToys](#powertoys)
 
 ## Guava
 
@@ -353,7 +353,7 @@ it('chained usage', () => {
 
 
 
-## Microsoft PowerToys
+## PowerToys
 
 PowerToys é um conjunto de utilitários Windows. Por exemplo,
 um dos utilitários permite fixar uma janela para que ela
@@ -372,15 +372,14 @@ layouts de janela complexos e o posicionamento rápido de janelas
 nesses layouts".
 
 ```
-private void SaveChanges()
-{
-   string isEnabled = _saveButton.GetAttribute("IsEnabled");
-   Assert.AreEqual("True", isEnabled);
+private void SaveChanges() {
+  string isEnabled = _saveButton.GetAttribute("IsEnabled");
+  Assert.AreEqual("True", isEnabled);
 
-   _saveButton.Click();
+  _saveButton.Click();
 
-   isEnabled = _saveButton.GetAttribute("IsEnabled");
-   Assert.AreEqual("False", isEnabled);
+  isEnabled = _saveButton.GetAttribute("IsEnabled");
+  Assert.AreEqual("False", isEnabled);
 }
 ```        
 
@@ -398,8 +397,7 @@ entender o seu funcionamento.
 
 ```
 [TestMethod]
-public void SettingsOpenWithContextMenu()
-{
+public void SettingsOpenWithContextMenu() {
   //open tray
   trayButton.Click();
   WaitSeconds(1);
