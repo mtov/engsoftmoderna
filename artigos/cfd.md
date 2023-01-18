@@ -2,7 +2,7 @@
 
 # Diagramas de Fluxo Cumulativo 
 
-No [Capítulo 2](../cap2.html#principais-artefatos-e-eventos), estudamos
+No [Capítulo 2](https://engsoftmoderna.info/cap2.html#principais-artefatos-e-eventos), estudamos
 sobre Gráficos de Burndown e comentamos que eles podem ser usados 
 para acompanhar o fluxo de trabalho em um sprint, quando usa-se Scrum.
 
@@ -73,7 +73,7 @@ x podemos usar uma outra unidade de tempo, como dias, quinzenas, meses, etc.
 Além disso, neste artigo, para a explicação ficar mais simples, não vamos
 quebrar as histórias em tarefas menores no passo de Especificação, tal como
 fizemos na seção sobre Kanban no 
-[Capítulo 2](../cap2.html#kanban). Ou seja, imagine que as histórias são simples e 
+[Capítulo 2](https://engsoftmoderna.info/cap2.html#kanban). Ou seja, imagine que as histórias são simples e 
 podem ser Implementadas e Revisadas sem necessidade de divisão em tarefas 
 menores.
 

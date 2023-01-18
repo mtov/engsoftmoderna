@@ -5,8 +5,8 @@
 ## Introdução
 
 Neste artigo, iremos apresentar um estudo de caso sobre a 
-organização de um time ágil -- ou [squad](./squads.html) -- 
-que segue um método semelhante a [Scrum](../cap2.html#scrum). 
+organização de um time ágil -- ou [squad](https://engsoftmoderna.info/artigos/squads.html) -- 
+que segue um método semelhante a [Scrum](https://engsoftmoderna.info/cap2.html#scrum). 
 Nosso objetivo é explicar a composição desse squad hipotético, 
 isto é, comentar sobre os principais profissionais que fazem 
 parte dele e sobre as suas responsabilidades e tarefas.
@@ -41,7 +41,7 @@ de PIX no Banco X.
 #### Product Owner (PO) {.unnumbered}
 
 Às vezes chamado também de 
-[Product Manager (PM)](./processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
+[Product Manager (PM)](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
 cabe a esse profissional estudar e entender os requisitos para operação do 
 PIX, definidos pelo Banco Central. Para isso, o PO conta com o apoio das 
 áreas de negócio do banco, incluindo analistas financeiros, analistas 
@@ -52,7 +52,7 @@ deve ser implementado. Deve também explicar o cronograma do projeto,
 pois existe uma data para o PIX entrar no ar.
 
 Adicionalmente, deve propor e escrever as principais 
-[histórias de usuários](../cap3.html#hist%C3%B3rias-de-usu%C3%A1rios)
+[histórias de usuários](https://engsoftmoderna.info/cap3.html#hist%C3%B3rias-de-usu%C3%A1rios)
 e também, muito importante, definir os testes de aceitação
 das mesmas.
 
@@ -78,7 +78,7 @@ Web) e React Native ou Flutter (no caso da versão mobile).
 Eles podem também sugerir e participar de testes com usuários, os quais
 serão mais uma vez acompanhados pelo  UI/UX designer. E, não menos 
 importante, podem implementar 
-[testes end-to-end](../cap8.html#testes-de-sistema), usando frameworks 
+[testes end-to-end](https://engsoftmoderna.info/cap8.html#testes-de-sistema), usando frameworks 
 como o Cypress.
 
 #### Desenvolvedores Backend {.unnumbered}
@@ -88,11 +88,11 @@ incluindo regras de negócio, persistência em bancos de dados, protocolos de
 comunicação com o Banco Central e outros bancos, etc.
 
 Eles devem pensar e garantir que essa implementação atende a 
-[requisitos não-funcionais](../cap3.html#introdu%C3%A7%C3%A3o), 
+[requisitos não-funcionais](https://engsoftmoderna.info/cap3.html#introdu%C3%A7%C3%A3o), 
 tais como segurança, privacidade, disponibilidade, desempenho, etc. 
 E também implementar 
-[testes de unidade](../cap8.html#testes-de-unidade) e de 
-[integração](../cap8.html#testes-de-integra%C3%A7%C3%A3o).
+[testes de unidade](https://engsoftmoderna.info/cap8.html#testes-de-unidade) e de 
+[integração](https://engsoftmoderna.info/cap8.html#testes-de-integra%C3%A7%C3%A3o).
 
 #### Scrum Master {.unnumbered}
 
@@ -103,7 +103,7 @@ de desenvolvimento do banco.
 Ele deve organizar e facilitar os eventos de um sprint, tais como 
 reuniões de planejamento, reuniões diárias, revisão e retrospectiva. E, 
 sempre, atuar como um 
-[líder servidor](./processos-faq.html#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor), ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, 
+[líder servidor](https://engsoftmoderna.info/artigos/processos-faq.html#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor), ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, 
 vão surgir durante a implementação.
 
 #### Outros Profissionais {.unnumbered}
@@ -112,7 +112,7 @@ Além daqueles mencionados, outros profissionais podem contribuir com a
 implementação do PIX no Banco X, incluindo:
 
 * Engenheiro de Infraestrutura (ou 
-[DevOps](../cap10.html)): cabe a esse profissional
+[DevOps](https://engsoftmoderna.info/cap10.html)): cabe a esse profissional
 definir onde o serviço de transferência vai rodar. Por exemplo, na nuvem 
 ou localmente. Ele deve também garantir, planejar e cuidar para que o 
 Banco X tenha infraestrutura adequada para operar o serviço com segurança, 

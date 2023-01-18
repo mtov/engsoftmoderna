@@ -87,7 +87,7 @@ para ter ideias interessantes de soluções.
 Para entender o problema, o designer deve entrevistar os 
 usuários, visitar seus locais de trabalho, observar e estudar 
 seus comportamentos, etc. Como vimos no 
-[Capítulo 3](../cap3.html#engenharia-de-requisitos), tais estudos 
+[Capítulo 3](https://engsoftmoderna.info/cap3.html#engenharia-de-requisitos), tais estudos 
 que observam *ao vivo* os usuários afetados por um problema são
  chamados de **estudos etnográficos**. 
 
@@ -194,7 +194,7 @@ escolhida não está funcionando bem. Logo, devemos escolher
 
 Por isso, costuma-se ilustrar essas atividades por meio de
 "anéis" (ou espaços) interconectados, como na seguinte figura 
-(extraída do [site](https://designthinking.ideo.com/)
+(extraída do [site](https://designthinking.ideo.com)
 da IDEO):
 
 ![Design Thinking não é um processo sequencial](./figs/design-thinking-fases){width=50%}
@@ -209,7 +209,7 @@ diferentes dele mesmo."
 
 Existe um vasto material sobre Design Thinking. Uma das boas
 referência sobre o assunto é o 
-[livro](https://www.altabooks.com.br/produto/design-thinking/) 
+[livro](https://www.altabooks.com.br/produto/design-thinking) 
 de Tim Brown, que usamos como referência para elaboração 
 deste artigo. O seguinte [artigo](https://hbr.org/2008/06/design-thinking), 
 do mesmo autor, na Harvard Business Review, também é bastante interessante. 
@@ -222,7 +222,7 @@ problema, síntese, ideação, prototipação e testes.
 
 Pode ser interessante estudar também conceitos de 
 **Jobs to be Done**, os quais são o tema do nosso próximo 
-[artigo](./jobs-to-be-done.html).
+[artigo](https://engsoftmoderna.info/artigos/jobs-to-be-done.html).
 
 ## Exercícios {.unnumbered}
 
@@ -253,7 +253,7 @@ uso de Design Thinking.
 
 5\. Qual a diferença entre Design Thinking e Design Sprint? Uma descrição
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
-[Capítulo 3](../cap3.html#construindo-o-primeiro-mvp) do livro.
+[Capítulo 3](https://engsoftmoderna.info/cap3.html#construindo-o-primeiro-mvp) do livro.
 
 * * * 
 

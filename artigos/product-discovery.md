@@ -113,9 +113,9 @@ em mente que pretendíamos implementar no sistema.
 Em tais cenários, nos quais as ideias e hipóteses não estão claras, 
 podemos usar técnicas mais abrangentes de discovery, tais como:
 
-* Design Sprints, que estudamos no [Capítulo 3](../cap3.html#construindo-o-primeiro-mvp). 
-* Design Thinking, que tratamos no seguinte [artigo didático](./design-thinking.html).
-* Jobs to be Done (JTBD), que também tratamos em um [artigo didático](./jobs-to-be-done.html) específico.
+* Design Sprints, que estudamos no [Capítulo 3](https://engsoftmoderna.info/cap3.html#construindo-o-primeiro-mvp). 
+* Design Thinking, que tratamos no seguinte [artigo didático](https://engsoftmoderna.info/artigos/design-thinking.html).
+* Jobs to be Done (JTBD), que também tratamos em um [artigo didático](https://engsoftmoderna.info/artigos/jobs-to-be-done.html) específico.
 
 ## Discovery com Scrum 
 
@@ -131,7 +131,7 @@ produto.
 
 Já a segunda trilha inclui sprints de **delivery**, que são os
 sprints que seguem Scrum de forma tradicional, conforme estudamos
-no [Capítulo 2](../cap2.html). O objetivo dessa trilha é implementar 
+no [Capítulo 2](https://engsoftmoderna.info/cap2.html). O objetivo dessa trilha é implementar 
 e entregar histórias de usuários. 
 
 ## Discovery com Kanban 
@@ -146,7 +146,7 @@ clientes e priorizá-las. Assim, somente vão entrar no backlog do
 produto as tarefas que, de fato, devem ser implementadas pelo time.
 
 * **Downstream Kanban**: representa o fluxo principal de Kanban, 
-tal como estudamos no [Capítulo 2](../cap2.html#kanban), 
+tal como estudamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html#kanban), 
 que começa com o backlog e prossegue com os passos de 
 implementação das tarefas, tais como especificação, 
 codificação e revisão.

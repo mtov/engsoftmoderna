@@ -207,7 +207,7 @@ Adaptações ao contexto serão sempre necessárias.
 
 ## Exercícios {.unnumbered}
 
-1\. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
+1\. Para fixar as principais ideias do artigo, responda ao seguinte [exercício](https://engsoftmoderna.info/exercicios/exvf.html#/cap/Squads) de V ou F, com correção online.
 
 2\. Descreva um problema de estruturas baseadas em silos funcionais, 
 isto é, times separados de desenvolvedores, administradores de bancos de 

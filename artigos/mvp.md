@@ -10,7 +10,7 @@ alcance que ele alcançou. Hoje, o conceito é usado por
 diversos empreendedores, sejam eles de produtos digitais ou
 mesmo de produtos físicos. O conceito de MVP já faz parte também do
 vocabulário de desenvolvedores de software, tal como estudamos no
-[Capítulo 3](../cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
+[Capítulo 3](https://engsoftmoderna.info/cap3.html#produto-m%C3%ADnimo-vi%C3%A1vel-mvp).
 
 No entanto, na área de software, o termo MVP é algumas vezes usado 
 de uma forma que não é totalmente fiel à sua definição original. 
@@ -132,8 +132,8 @@ sendo desenvolvido -- se revelar mais complexo e desafiador.
 cliente que está pagando pelo seu desenvolvimento.
 
 Então, você resolve usar um método como 
-[Scrum](../cap2.html#scrum) ou 
-[XP](../cap2.html#extreme-programming) para 
+[Scrum](https://engsoftmoderna.info/cap2.html#scrum) ou 
+[XP](https://engsoftmoderna.info/cap2.html#extreme-programming) para 
 implementar esse sistema (imagine, para ficar mais realista,
 que você é dono de uma empresa de desenvolvimento e vai contar com 
 ajuda de alguns desenvolvedores nesse projeto). 

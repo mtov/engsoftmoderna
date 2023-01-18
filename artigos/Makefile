@@ -13,7 +13,7 @@ micro-saas: micro-saas.md
 	$(pandoc_bin) -T "Micro-SaaS: Microempresas de Software como Serviço" micro-saas.md -o micro-saas.html
 
 shape-up: shape-up.md
-	$(pandoc_bin) -T "ShapeUp: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
+	$(pandoc_bin) -T "Shape Up: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
 squads: squads.md
 	$(pandoc_bin) -T "Organizando Times em Squads" squads.md -o squads.html

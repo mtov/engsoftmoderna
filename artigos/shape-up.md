@@ -5,7 +5,7 @@
 ## Introdução
 
 Shape Up é um novo método para desenvolvimento de software que está
-sendo proposto pela [Basecamp](https://basecamp.com/),  a empresa por
+sendo proposto pela [Basecamp](https://basecamp.com),  a empresa por
 trás do software de gerenciamento de projetos de mesmo nome. O método
 é descrito em um [livro](https://basecamp.com/shapeup) aberto, de
 autoria de Ryan Singer. Segue uma imagem da capa do livro:
@@ -17,7 +17,7 @@ autoria de Ryan Singer. Segue uma imagem da capa do livro:
 Para apresentar Shape Up, vamos usar algumas analogias com outros
 métodos ágeis, principalmente com Scrum. Se quiser saber
 um pouco mais sobre métodos ágeis, você pode consultar o 
-[Capítulo 2](../cap2.html) do livro.
+[Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro.
 
 Um ciclo de desenvolvimento em Shape Up é composto por três etapas:
 
@@ -191,7 +191,7 @@ um método adequado para times que trabalham de forma remota?
 novidade em métodos ágeis. Por exemplo, em Extreme Programming 
 (XP) existe uma prática parecida, mas com um nome diferente. 
 Qual é esse nome adotado em XP? Se necessário, consulte o 
-[Capítulo 2](../cap2.html#pr%C3%A1ticas-sobre-o-processo-de-desenvolvimento) 
+[Capítulo 2](https://engsoftmoderna.info/cap2.html#pr%C3%A1ticas-sobre-o-processo-de-desenvolvimento) 
 do livro texto, seção 2.3.3.
 
 5\. Pense em um pitch para um determinado problema ou 
