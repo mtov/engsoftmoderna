@@ -100,10 +100,10 @@ tratavam principalmente de temas relacionados com Engenharia de
 Software).</p>
 <p>Os objetivos de uma Arquitetura Hexagonal são parecidos com os de uma
 Arquitetura Limpa, tal como descrevemos em um outro <a
-href="./arquitetura-limpa.html">artigo</a>. Mas, para reforçar, a ideia
-é construir sistemas que favorecem reusabilidade de código, alta coesão,
-baixo acoplamento, independência de tecnologia e que são mais fáceis de
-serem testados.</p>
+href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo</a>.
+Mas, para reforçar, a ideia é construir sistemas que favorecem
+reusabilidade de código, alta coesão, baixo acoplamento, independência
+de tecnologia e que são mais fáceis de serem testados.</p>
 <p>Uma Arquitetura Hexagonal divide as classes de um sistema em dois
 grupos principais:</p>
 <ul>
@@ -126,8 +126,8 @@ etc).</p>
 <p>Em uma arquitetura hexagonal, a comunicação entre as classes dos dois
 grupos é mediada por <strong>adaptadores</strong>, isto é, por classes
 que implementam o padrão de projeto de mesmo nome que estudamos no <a
-href="../cap6.html#adaptador">Capítulo 6</a>. Iremos explicar melhor o
-papel dos adaptadores logo a seguir.</p>
+href="https://engsoftmoderna.info/cap6.html#adaptador">Capítulo 6</a>.
+Iremos explicar melhor o papel dos adaptadores logo a seguir.</p>
 <p>Visualmente, a arquitetura é representada por meio de dois hexágonos
 concêntricos (veja figura). No hexágono interno, ficam as classes do
 domínio (ou classes de negócio, se você preferir). No hexágono externo,
@@ -253,13 +253,15 @@ propriedades principais de uma arquitetura hexagonal. Já o segundo <a
 href="http://wiki.c2.com/?PortsAndAdaptersArchitecture">artigo</a> tenta
 renomeá-la para incluir os termos portas e adaptadores.</p>
 <p>E, se quiser, veja nosso artigo sobre <a
-href="./arquitetura-limpa.html">Arquitetura Limpa</a>.</p>
+href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">Arquitetura
+Limpa</a>.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios</h2>
 <p>1. Em uma Arquitetura Hexagonal, um adaptador é uma implementação do
 padrão de projeto de mesmo nome. E as portas? Elas podem ser vistas como
 sendo uma implementação – pelo menos aproximada – de qual padrão de
-projeto? Se necessário, consulte o <a href="../cap6.html">Capítulo 6</a>
-para responder.</p>
+projeto? Se necessário, consulte o <a
+href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> para
+responder.</p>
 <p>2. Na figura que mostra a arquitetura hexagonal do sistema de
 bibliotecas, por que os adaptadores de interface externa (HTTP, GraphQL
 e REST) e o adaptador de persistência (SQL) estão em faces distintas do
@@ -287,7 +289,8 @@ class Album(models.Model):
   num_stars = models.IntegerField()</code></pre>
 <p>5. Descreva, resumidamente, as diferenças entre a Arquitetura
 Hexagonal e a Arquitetura Limpa (que estudamos em um outro <a
-href="./arquitetura-limpa.html">artigo</a> didático).</p>
+href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo</a>
+didático).</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

@@ -82,7 +82,7 @@ class A {
 
 Ou seja: quando usamos Injeção de Dependência devemos fazer uso do princípio 
 de projeto **Prefira Interfaces a Classes Concretas**, que estudamos no 
-[Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
+[Capítulo 5](https://engsoftmoderna.info/cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
 Para concluir, as vantagens de Injeção de Dependência são:
 
@@ -97,7 +97,7 @@ mais facilmente a dependência para `B`. Por exemplo, em vez de um serviço de m
 (`B1` ou `B2`), podemos usar um serviço de mail fictício, que apenas emule o envio 
 de uma mensagem simples. Para isso, basta que esse serviço fictício implemente a 
 interface `IB`. Se você ainda não sabe o que é um mock, recomendamos a leitura
-da seção do [Capítulo 8](../cap8.html#mocks) sobre o assunto.
+da seção do [Capítulo 8](https://engsoftmoderna.info/cap8.html#mocks) sobre o assunto.
  
 
 ## Frameworks para Injeção de Dependência
@@ -189,7 +189,7 @@ para outras linguagens.
 
 ## Exercícios {.unnumbered}
 
-1\. Como explicamos no [Capítulo 6](../cap6.html#introdu%C3%A7%C3%A3o),
+1\. Como explicamos no [Capítulo 6](https://engsoftmoderna.info/cap6.html#introdu%C3%A7%C3%A3o),
 padrões de projeto são classificados em padrões criacionais,
 estruturais e comportamentais. Em qual dessas categorias você classificaria
 Injeção de Dependência? Justifique brevemente.
@@ -218,12 +218,12 @@ Para responder, compare os seguintes códigos:
 
 3\. Qual a relação entre Injeção de Dependência (padrão de projeto) e Inversão
 de Dependência (princípio de projeto)? Para saber mais sobre Inversão de 
-Dependência, consulte o [Capítulo 5](../cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
+Dependência, consulte o [Capítulo 5](https://engsoftmoderna.info/cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-depend%C3%AAncias).
 
 4\. Por que costuma-se dizer que Injeção de Dependência pode, em certos casos,
 violar a propriedade de Ocultamento de Informação? Para ilustrar a sua resposta
 use como exemplo a classe `Estacionamento` da Seção 5.3.1 do 
-[Capítulo 5](../cap5.html#exemplo-1) do livro.
+[Capítulo 5](https://engsoftmoderna.info/cap5.html#exemplo-1) do livro.
 
 * * * 
 

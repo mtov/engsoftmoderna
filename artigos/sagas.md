@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Como discutimos no [Capítulo 7](../cap7.html#microsservi%C3%A7os),
+Como discutimos no [Capítulo 7](https://engsoftmoderna.info/cap7.html#microsservi%C3%A7os),
 em arquiteturas baseadas em microsserviços, recomenda-se que cada 
 microsserviço possua sua própria base de dados. Ou seja, recomenda-se 
 uma arquitetura como a seguinte.
@@ -156,7 +156,7 @@ catch (FailureT3) {
 
 1\. Por que microsserviços não devem compartilhar um único banco de dados?
 Para responder, você pode consultar a Seção 7.4.1 do 
-[Capítulo 7](../cap7.html#gerenciamento-de-dados)
+[Capítulo 7](https://engsoftmoderna.info/cap7.html#gerenciamento-de-dados)
 e também o início da Seção 7.4.
 
 2\. Qual a diferença entre uma transação distribuída e uma saga? Mais especificamente:

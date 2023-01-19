@@ -34,7 +34,7 @@ de **micro-SaaS**. Podemos definir esse conceito da seguinte forma:
 Para ficar mais claro, vamos dar alguns exemplos de sistemas 
 micro-SaaS:
 
-* [Saber Feedback](https://saberfeedback.com/) é uma aplicação 
+* [Saber Feedback](https://saberfeedback.com) é uma aplicação 
 que possibilita adicionar um pequeno botão "Feedback" na lateral 
 direita de todas as páginas de um site Web. Usuários podem usar 
 esse botão para dar feedback sobre o site e suas páginas, 
@@ -42,10 +42,10 @@ reportando desde erros ortográficos até bugs de lógica ou de
 interface. O sistema é mantido por um único fundador, mais 
 alguns freelancers. 
 
-* [Transistor](https://transistor.fm/) é um sistema para hospedagem e 
+* [Transistor](https://transistor.fm) é um sistema para hospedagem e 
 distribuição de podcasts, que é mantido por dois fundadores.
 
-* [Permanentlink](https://permanent.link/) é um sistema que se 
+* [Permanentlink](https://permanent.link) é um sistema que se 
 propõe a resolver um problema enfrentado por autores de livros 
 digitais: esses livros incorporam diversos links que com o tempo 
 podem "quebrar". A ideia então é disponibilizar uma URL 
@@ -54,7 +54,7 @@ estiver ativo, o sistema redireciona a conexão para ele; se o link
 quebrar, retorna-se uma cópia da página armazenada localmente pelo 
 sistema. 
 
-* [Reform](https://www.reform.app/) é um sistema para criação de 
+* [Reform](https://www.reform.app) é um sistema para criação de 
 formulários. Ou seja, o sistema tem que competir com concorrentes 
 importantes, tal como sumarizado na seguinte 
 [página](https://en.wikipedia.org/wiki/Comparison_of_survey_software) 
@@ -260,7 +260,7 @@ consequentemente, o LTV será maior.
 
 ### Artigo Relacionado {.unnumbered}
 
-Veja também este outro [artigo](./como-monetizar.html) sobre 
+Veja também este outro [artigo](https://engsoftmoderna.info/artigos/como-monetizar.html) sobre 
 monetização de software.
 
 ## Exercícios {.unnumbered}

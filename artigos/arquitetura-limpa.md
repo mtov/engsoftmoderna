@@ -8,7 +8,7 @@
 por Robert Martin -- mais conhecido como Uncle Bob -- com o objetivo de 
 promover a implementação de sistemas que favorecem reusabilidade de código,
 coesão, independência de tecnologia e testabilidade. Se quisermos adotar a 
-classificação do [Capítulo 7](../cap7.html), 
+classificação do [Capítulo 7](https://engsoftmoderna.info/cap7.html), 
 a Arquitetura Limpa pode ser considerada como uma arquitetura em camadas.
 
 Normalmente, Arquitetura Limpa é ilustrada por meio da seguinte figura
@@ -43,7 +43,7 @@ Para evitar qualquer tipo de confusão, gostaríamos de comentar que
 os casos de uso em uma Arquitetura Limpa não tem uma correspondência,
 pelo menos direta, com casos de uso para especificação de requisitos 
 e, menos ainda, com diagramas de casos de uso da UML, tal como 
-estudamos no [Capítulo 3](../cap3.html#diagramas-de-casos-de-uso).
+estudamos no [Capítulo 3](https://engsoftmoderna.info/cap3.html#diagramas-de-casos-de-uso).
  
 ## Adaptadores
 
@@ -180,12 +180,12 @@ O seguinte diagrama de classes ilustra a solução que acabamos de descrever.
 ## Conclusão
 
 Uma Arquitetura Limpa é uma aplicação de diversos conceitos
-que estudamos no [Capítulo 5](../cap5.html), 
+que estudamos no [Capítulo 5](https://engsoftmoderna.info/cap5.html), 
 incluindo propriedades de projeto
 como **coesão**, **acoplamento** e **separação de interesses** e princípios
 de projeto como **responsabilidade única** e **inversão de dependências**.
 Ela faz uso também do padrão de projeto **adaptador**, que estudamos no
-[Capítulo 6](../cap6.html#adaptador).
+[Capítulo 6](https://engsoftmoderna.info/cap6.html#adaptador).
 
 As recomendações principais de uma Arquitetura Limpa são as seguintes:
 
@@ -217,11 +217,11 @@ Se quiser saber mais sobre Arquitetura Limpa, você pode também consultar o
 mesmo nome do Uncle Bob. 
 
 E temos também um artigo didático sobre
-[Arquitetura Hexagonal](./arquitetura-hexagonal.html).
+[Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html).
 
 ## Exercícios {.unnumbered}
 
-1\. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
+1\. Para fixar os principais conceitos de uma Arquitetura Limpa, responda ao seguinte [exercício](https://engsoftmoderna.info/exercicios/exvf.html#/cap/ArqLimpa) de V ou F, com correção online.
 
 2\. Em uma arquitetura limpa "o nome de um elemento declarado em uma camada 
 externa não deve ser mencionado pelo código de uma camada interna"? Qual a 

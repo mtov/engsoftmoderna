@@ -12,7 +12,7 @@ Engenharia de Software).
 
 Os objetivos de uma Arquitetura Hexagonal são parecidos com os
 de uma Arquitetura Limpa, tal como descrevemos em um outro 
-[artigo](./arquitetura-limpa.html). Mas, 
+[artigo](https://engsoftmoderna.info/artigos/arquitetura-limpa.html). Mas, 
 para reforçar, a ideia é construir sistemas que favorecem 
 reusabilidade de código, alta coesão, baixo acoplamento, independência 
 de tecnologia e que são mais fáceis de serem testados. 
@@ -40,7 +40,7 @@ interfaces (Web, mobile, etc).
 Em uma arquitetura hexagonal, a comunicação entre as classes dos dois 
 grupos é mediada por **adaptadores**, isto é, por classes que 
 implementam o padrão de projeto de mesmo nome que estudamos no 
-[Capítulo 6](../cap6.html#adaptador). Iremos explicar
+[Capítulo 6](https://engsoftmoderna.info/cap6.html#adaptador). Iremos explicar
 melhor o papel dos adaptadores logo a seguir.
 
 Visualmente, a arquitetura é representada por meio de dois hexágonos 
@@ -171,7 +171,7 @@ Já o segundo [artigo](http://wiki.c2.com/?PortsAndAdaptersArchitecture)
 tenta renomeá-la para incluir os termos portas e adaptadores.
 
 E, se quiser, veja nosso artigo sobre
-[Arquitetura Limpa](./arquitetura-limpa.html).
+[Arquitetura Limpa](https://engsoftmoderna.info/artigos/arquitetura-limpa.html).
 
 ## Exercícios {.unnumbered}
 
@@ -179,7 +179,7 @@ E, se quiser, veja nosso artigo sobre
 padrão de projeto de mesmo nome. E as portas? Elas podem ser 
 vistas como sendo uma implementação -- pelo menos aproximada -- de 
 qual padrão de projeto? Se necessário, consulte o 
-[Capítulo 6](../cap6.html) para responder.
+[Capítulo 6](https://engsoftmoderna.info/cap6.html) para responder.
 
 2\. Na figura que mostra a arquitetura hexagonal do sistema de bibliotecas,
 por que os adaptadores de interface externa (HTTP, GraphQL e REST) e
@@ -209,7 +209,7 @@ class Album(models.Model):
 
 5\. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
 e a Arquitetura Limpa (que estudamos em um outro 
-[artigo](./arquitetura-limpa.html) didático).
+[artigo](https://engsoftmoderna.info/artigos/arquitetura-limpa.html) didático).
 
 * * * 
 

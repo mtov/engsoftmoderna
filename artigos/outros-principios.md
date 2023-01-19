@@ -5,7 +5,7 @@
 ## Introdução
 
 Neste artigo, vamos complementar os princípios de projeto, estudados 
-no [Capítulo 5](../cap5.html), com quatro novos princípios:
+no [Capítulo 5](https://engsoftmoderna.info/cap5.html), com quatro novos princípios:
 
 * [CQS](#cqs-command-query-separation): Command-Query Separation
 * [DRY](#dry-dont-repeat-yourself): Don't Repeat Yourself
@@ -201,7 +201,7 @@ representa uma configuração possível do sistema.
 Em geral, ortogonalidade é uma propriedade que costuma estar 
 presente, de graça, em sistemas bem projetados, cujos módulos possuem 
 alta coesão e baixo acoplamento, tal como estudamos no 
-[Capítulo 5](../cap5.html#coes%C3%A3o).
+[Capítulo 5](https://engsoftmoderna.info/cap5.html#coes%C3%A3o).
 
 ## Exercícios {.unnumbered}
 

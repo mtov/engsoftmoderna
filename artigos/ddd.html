@@ -114,11 +114,12 @@ não por frameworks, arquiteturas, linguagens de programação, etc.</p>
 <p>DDD defende que a separação entre domínio e tecnologia deve ser
 promovida e expressa na arquitetura do sistema. Para tanto, padrões como
 Arquitetura em Camadas (estudado no <a
-href="../cap7.html#arquitetura-em-camadas">Capítulo 7</a>), Arquitetura
-Limpa (tratada neste outro <a href="./arquitetura-limpa.html">artigo
+href="https://engsoftmoderna.info/cap7.html#arquitetura-em-camadas">Capítulo
+7</a>), Arquitetura Limpa (tratada neste outro <a
+href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo
 didático</a>) ou Arquitetura Hexagonal (também coberta em um <a
-href="./arquitetura-hexagonal.html">artigo</a> separado) podem ser
-usados.</p>
+href="https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html">artigo</a>
+separado) podem ser usados.</p>
 <p>Antes de avançarmos, é importante mencionar também que DDD se
 sobressai quando é usado em sistemas para domínios complexos, cujas
 regras de negócio são mais difíceis de serem imediatamente entendidas e
@@ -182,7 +183,8 @@ termos, como exemplificado a seguir:</p>
 </ul>
 <p>Para documentar de forma visual esses relacionamentos pode ser usado
 um <strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a
-href="../cap4.html#diagramas-de-classes">Capítulo 4</a>.</p>
+href="https://engsoftmoderna.info/cap4.html#diagrama-de-classes">Capítulo
+4</a>.</p>
 <h2 data-number="1.3" id="objetos-de-domínio"><span
 class="header-section-number">1.3</span> Objetos de Domínio</h2>
 <p>DDD foi proposto pensando em sistemas implementados em linguagens
@@ -232,7 +234,8 @@ possível alterar seus valores internos. Por exemplo, para alterar o
 <code>Endereço</code> de um <code>Usuário</code> devemos abandonar o
 objeto antigo e criar um objeto com o <code>Endereço</code> novo. Os
 benefícios de objetos imutáveis já foram discutidos no <a
-href="../cap9.html#objetos-mut%C3%A1veis">Capítulo 9</a>.</p>
+href="https://engsoftmoderna.info/cap9.html#objetos-mut%C3%A1veis">Capítulo
+9</a>.</p>
 <p>É interessante mencionar também que, recentemente, algumas linguagens
 de programação passaram a oferecer suporte sintático para implementação
 de objetos de valor. Por exemplo, nas versões mais novas de Java, eles
@@ -252,7 +255,9 @@ isso, eles não costumam ter atributos, mas apenas métodos.</p>
 <p>Serviços normalmente são implementados como
 <strong>singletons</strong>, ou seja, possuem uma única instância
 durante a execução do sistema. Mais detalhes sobre esse padrão de
-projeto no <a href="../cap6.html#singleton">Capítulo 6</a>.</p>
+projeto no <a
+href="https://engsoftmoderna.info/cap6.html#singleton">Capítulo
+6</a>.</p>
 <p><strong>Exemplo</strong>: no nosso sistema de bibliotecas, podemos
 ter um serviço que implementa as seguintes operações:</p>
 <pre><code>class ServicoDeEmprestimo {
@@ -372,14 +377,16 @@ mesmo que parcialmente, a linguagem ubíqua de B, pode-se usar uma
 <ul>
 <li><p>Classes de Serviço, cujos métodos serão chamados por A e que,
 portanto, seguem a linguagem ubíqua desse sistema.</p></li>
-<li><p><a href="../cap6.html#adaptador">Classes Adaptadoras</a>, que
-convertem o modelo e os tipos de dados de B para o modelo e tipos de
-dados de A. Ou seja, essas classes vão isolar elementos próprios de B e
-evitar que eles cheguem até o sistema A.</p></li>
-<li><p>Uma <a href="../cap6.html#fachada">Classe de Fachada</a>, usada
-para acessar o sistema B. O papel dessa classe é facilitar o uso de B,
-principalmente quando ele é um sistema legado com uma interface complexa
-e antiga.</p></li>
+<li><p><a href="https://engsoftmoderna.info/cap6.html#adaptador">Classes
+Adaptadoras</a>, que convertem o modelo e os tipos de dados de B para o
+modelo e tipos de dados de A. Ou seja, essas classes vão isolar
+elementos próprios de B e evitar que eles cheguem até o sistema
+A.</p></li>
+<li><p>Uma <a
+href="https://engsoftmoderna.info/cap6.html#fachada">Classe de
+Fachada</a>, usada para acessar o sistema B. O papel dessa classe é
+facilitar o uso de B, principalmente quando ele é um sistema legado com
+uma interface complexa e antiga.</p></li>
 </ul>
 <p>Logo, o fluxo costuma ser o seguinte:</p>
 <pre><code>Sistema A -&gt; [ Serviços -&gt; Adaptadores -&gt; Fachada ] -&gt; Sistema B</code></pre>
@@ -420,8 +427,8 @@ repositórios.</p>
    (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
 --->
 <p>1. Para fixar os principais conceitos de DDD, responda ao seguinte <a
-href="../exercicios/exvf.html#/cap/DDD">exercício</a> de V ou F, com
-correção online.</p>
+href="https://engsoftmoderna.info/exercicios/exvf.html#/cap/DDD">exercício</a>
+de V ou F, com correção online.</p>
 <p>2. Suponha que você trabalha em uma empresa que possui um aplicativo
 para entrega de comida pela Internet. Você ficou responsável pelo
 projeto da camada de domínio do backend desse sistema. Para isso, você

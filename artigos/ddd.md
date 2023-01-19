@@ -30,9 +30,9 @@ arquiteturas, linguagens de programação, etc.
 DDD defende que a separação entre domínio e tecnologia deve ser 
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
-[Capítulo 7](../cap7.html#arquitetura-em-camadas)), 
-Arquitetura Limpa (tratada neste outro [artigo didático](./arquitetura-limpa.html))
-ou Arquitetura Hexagonal (também coberta em um [artigo](./arquitetura-hexagonal.html) separado) podem ser usados.
+[Capítulo 7](https://engsoftmoderna.info/cap7.html#arquitetura-em-camadas)), 
+Arquitetura Limpa (tratada neste outro [artigo didático](https://engsoftmoderna.info/artigos/arquitetura-limpa.html))
+ou Arquitetura Hexagonal (também coberta em um [artigo](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html) separado) podem ser usados.
 
 Antes de avançarmos, é importante mencionar também que DDD se 
 sobressai quando é usado em sistemas para domínios complexos, 
@@ -97,7 +97,7 @@ termos, como exemplificado a seguir:
 
 Para documentar de forma visual esses relacionamentos pode ser usado
 um **Diagrama de Classes** de UML, conforme estudamos 
-no [Capítulo 4](../cap4.html#diagramas-de-classes).
+no [Capítulo 4](https://engsoftmoderna.info/cap4.html#diagrama-de-classes).
 
 ## Objetos de Domínio 
 
@@ -149,7 +149,7 @@ Já objetos de valor são mais simples. E também eles devem ser
 seus valores internos. Por exemplo, para alterar o `Endereço` 
 de um `Usuário` devemos abandonar o objeto antigo e criar um objeto 
 com o `Endereço` novo. Os benefícios de objetos imutáveis 
-já foram discutidos no [Capítulo 9](../cap9.html#objetos-mut%C3%A1veis). 
+já foram discutidos no [Capítulo 9](https://engsoftmoderna.info/cap9.html#objetos-mut%C3%A1veis). 
 
 É interessante mencionar também que, recentemente, algumas linguagens de 
 programação passaram a oferecer suporte sintático para implementação de 
@@ -175,7 +175,7 @@ Por isso, eles não costumam ter atributos, mas apenas métodos.
 Serviços normalmente são implementados como **singletons**, ou seja,
 possuem uma única instância durante a execução do sistema.
 Mais detalhes sobre esse padrão de projeto no 
-[Capítulo 6](../cap6.html#singleton).
+[Capítulo 6](https://engsoftmoderna.info/cap6.html#singleton).
 
 **Exemplo**: no nosso sistema de bibliotecas, podemos ter um
 serviço que implementa as seguintes operações:
@@ -328,13 +328,13 @@ Essa camada é formada por três tipos principais de classes:
 * Classes de Serviço, cujos métodos serão chamados por A e que, portanto,
 seguem a linguagem ubíqua desse sistema.
 
-* [Classes Adaptadoras](../cap6.html#adaptador), 
+* [Classes Adaptadoras](https://engsoftmoderna.info/cap6.html#adaptador), 
 que convertem o modelo e os tipos de 
 dados de B para o modelo e tipos de dados de A. Ou seja, essas
 classes vão isolar elementos próprios de B e evitar que eles
 cheguem até o sistema A.
 
-* Uma [Classe de Fachada](../cap6.html#fachada),
+* Uma [Classe de Fachada](https://engsoftmoderna.info/cap6.html#fachada),
 usada para acessar o sistema B. O papel dessa classe é facilitar 
 o uso de B, principalmente quando ele é um sistema 
 legado com uma interface complexa e antiga.
@@ -385,7 +385,7 @@ objetos de valor, serviços, agregados e  repositórios.
    (&nbsp;&nbsp;) DDD defende que um sistema de software complexo deve ter um modelo de domínio único, baseado na mesma linguagem ubíqua.
 --->
 
-1\. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](../exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
+1\. Para fixar os principais conceitos de DDD, responda ao seguinte [exercício](https://engsoftmoderna.info/exercicios/exvf.html#/cap/DDD) de V ou F, com correção online.
    
 2\. Suponha que você trabalha em uma empresa que possui um aplicativo para entrega 
 de comida pela Internet. Você ficou responsável pelo projeto da camada de domínio do backend desse sistema. Para isso, você decidiu usar DDD. Descreva então:
