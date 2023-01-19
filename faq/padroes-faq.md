@@ -1,7 +1,7 @@
 # Perguntas Frequentes sobre Padrões de Projeto {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com padrões
-de projeto, isto é, sobre o [Capítulo 6](../cap6.html) do livro. 
+de projeto, isto é, sobre o [Capítulo 6](https://engsoftmoderna.info/cap6.html) do livro. 
 
 Segue a lista atual de perguntas:
 

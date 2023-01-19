@@ -2,7 +2,7 @@
 
 O objetivo deste artigo é responder perguntas 
 sobre temas relacionados com métodos ágeis e que não são
-abordados no [Capítulo 2](../cap2.html) do livro. 
+abordados no [Capítulo 2](https://engsoftmoderna.info/cap2.html) do livro. 
 
 A lista atual de perguntas está organizada em quatro grandes temas:
 
@@ -237,7 +237,7 @@ priorizar e explicar para os desenvolvedores "o que" deve ser
 implementado. Devem também estar sempre disponíveis para tirar dúvidas.
 
 Sobre as diferenças, gostamos de explicá-las destacando as origens 
-dos termos. Conforme estudamos no [Capítulo 2](../cap2.html#scrum), 
+dos termos. Conforme estudamos no [Capítulo 2](https://engsoftmoderna.info/cap2.html#scrum), 
 PO é um termo de Scrum e ele tem responsabilidades muito claras nesse 
 framework. Já PM é um termo que tem suas origens e maior uso em empresas 
 que desenvolvem produtos digitais, incluindo software. Nelas, 
@@ -360,8 +360,9 @@ e deve "descobrir" o melhor sistema que vai solucioná-lo.
 Assim, o time tem autonomia para definir as funcionalidades 
 do sistema. 
 
-Técnicas como [Design Thinking](./design-thinking.html),
-[MVPs](./mvp.html) e Testes A/B são frequentemente usadas por 
+Técnicas como [Design Thinking](https://engsoftmoderna.info/artigos/design-thinking.html),
+[MVPs](https://engsoftmoderna.info/artigos/mvp.html) e 
+[Testes A/B](https://engsoftmoderna.info/cap3.html#testes-ab) são frequentemente usadas por 
 times orientados por produto. Também já está acordado que 
 os times vão manter e evoluir o sistema desenvolvido, 
 normalmente por anos, até que ele seja descontinuado.

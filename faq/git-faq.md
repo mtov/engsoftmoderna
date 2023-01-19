@@ -1,7 +1,7 @@
 # Perguntas Frequentes sobre Git {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre git, isto é, sobre 
-o [apêndice](../capAp.html) do livro. 
+o [apêndice](https://engsoftmoderna.info/capAp.html) do livro. 
 
 Segue a lista atual de perguntas:
 

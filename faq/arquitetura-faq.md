@@ -2,7 +2,7 @@
 
 Neste artigo, respondemos perguntas sobre temas relacionados com 
 arquitetura de software e que não são abordados no 
-[Capítulo 7](../cap7.html) do livro. 
+[Capítulo 7](https://engsoftmoderna.info/cap7.html) do livro. 
 
 Segue a lista atual de perguntas:
 
@@ -19,7 +19,7 @@ Segue a lista atual de perguntas:
 
 Esse termo, na prática, é usado para referenciar a camada de um 
 sistema que trata da sua lógica de negócio. Por exemplo, se um 
-sistema seguir uma [arquitetura com três camadas](../cap7.html#arquitetura-em-tr%C3%AAs-camadas), o domínio corresponde 
+sistema seguir uma [arquitetura com três camadas](https://engsoftmoderna.info/cap7.html#arquitetura-em-tr%C3%AAs-camadas), o domínio corresponde 
 à camada do meio. Isto é, a camada que fica entre a camada
 de interface com o usuário e a camada de persistência.
 
@@ -29,7 +29,7 @@ da camada de domínio, por exemplo, quando queremos ressaltar
 quais são as suas principais classes e interfaces. 
 
 Se quiser saber mais sobre o camadas e modelos de domínio, você pode 
-consultar nosso artigo sobre [Domain-Driven Design (DDD)](./ddd.html).
+consultar nosso artigo sobre [Domain-Driven Design (DDD)](https://engsoftmoderna.info/artigos/ddd.html).
 
 ### 2. O que é um sistema multi-tenant? {.unnumbered}
 
@@ -92,7 +92,7 @@ todos os recursos que foram alocados durante o seu processamento.
 
 Esse teorema, conforme proposto por Eric Brewer, trata de cenários 
 envolvendo bancos de dados distribuídos, como é comum, por exemplo, 
-em arquiteturas baseadas em [microsserviços](../cap7.html#microsservi%C3%A7os).
+em arquiteturas baseadas em [microsserviços](https://engsoftmoderna.info/cap7.html#microsservi%C3%A7os).
 
 Nesses cenários, sempre vai haver partições (P) entre os bancos de 
 dados (BD). Por exemplo, suponha dois BDs, A e B, localizados 

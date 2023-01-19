@@ -1,7 +1,7 @@
 # Perguntas Frequentes sobre Projeto de Software {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com projeto 
-de software e que não são abordados no [Capítulo 5](../cap5.html) do 
+de software e que não são abordados no [Capítulo 5](https://engsoftmoderna.info/cap5.html) do 
 livro. 
 
 Segue a lista atual de perguntas:
@@ -16,7 +16,7 @@ Segue a lista atual de perguntas:
 ### 1. Princípios de projeto são leis que sempre devem ser seguidas? {.unnumbered}
 
 Princípios de projeto, como SOLID e outros princípios que estudamos no 
-[Capítulo 5](../cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto) são 
+[Capítulo 5](https://engsoftmoderna.info/cap5.html#solid-e-outros-princ%C3%ADpios-de-projeto) são 
 recomendações ou diretrizes (ou "dicas"). Ou seja, geralmente, eles são 
 úteis e válidos, mas não necessariamente devem ser usados em toda e 
 qualquer situação.
@@ -35,7 +35,7 @@ no caso, uma interface.
 
 * Princípio Aberto/Fechado: esse princípio recomenda que devemos, já no 
 momento da implementação de uma classe, pensar nos seus pontos de 
-extensão. No [livro](../cap5.html#princ%C3%ADpio-abertofechado), para ilustrar 
+extensão. No [livro](https://engsoftmoderna.info/cap5.html#princ%C3%ADpio-abertofechado), para ilustrar 
 o princípio, usamos o exemplo de um método `sort` com duas implementações: 
 na primeira implementação, o método ordena uma lista em ordem lexicográfica; 
 na segunda implementação, ele recebe como parâmetro um objeto cuja 
@@ -88,7 +88,7 @@ redireciona o leitor para a entrada sobre ocultamento de informação.
 Dito isso, gostaríamos de comentar que o termo ocultamento 
 de informação costuma ser mais usado quando estamos tratando de
 projeto de software, tal como fizemos no 
-[Capítulo 5](../cap5.html#ocultamento-de-informa%C3%A7%C3%A3o).
+[Capítulo 5](https://engsoftmoderna.info/cap5.html#ocultamento-de-informa%C3%A7%C3%A3o).
 Ou seja, ocultamento de informação é uma propriedade de 
 mais alto nível, por assim dizer. Já encapsulamento costuma 
 ser mais usado em textos sobre linguagens de programação. 
