@@ -21,9 +21,6 @@ squads: squads.md
 pix-banco-x: pix-banco-x.md
 	$(pandoc_bin) -T "Estudo de Caso: Implementação do PIX em um Banco X" pix-banco-x.md -o pix-banco-x.html
 
-processos-faq: processos-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Processos de Software" processos-faq.md -o processos-faq.html
-
 cfd: cfd.md
 	$(pandoc_bin) -T "Diagramas de Fluxo Cumulativo" cfd.md -o cfd.html
 
@@ -36,9 +33,6 @@ mvp: mvp.md
 jobs-to-be-done: jobs-to-be-done.md
 	$(pandoc_bin) -T "Jobs to be Done (JTBD) Aplicado a Produtos de Software" jobs-to-be-done.md -o jobs-to-be-done.html
 
-requisitos-faq: requisitos-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Requisitos" requisitos-faq.md -o requisitos-faq.html
-
 product-discovery: product-discovery.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Product Discovery: Uma Breve Introdução" product-discovery.md -o product-discovery.html
 
@@ -50,15 +44,6 @@ ddd: ddd.md
 
 outros-principios: outros-principios.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Mais Alguns Princípios de Projeto" outros-principios.md -o outros-principios.html
-
-projeto-faq: projeto-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Projeto de Software" projeto-faq.md -o projeto-faq.html
-
-padroes-faq: padroes-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Padrões de Projeto" padroes-faq.md -o padroes-faq.html
-
-arquitetura-faq: arquitetura-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Arquitetura de Software" arquitetura-faq.md -o arquitetura-faq.html
 
 composite: composite.md
 	$(pandoc_bin) -T "Criando objetos compostos com o Padrão Composite" composite.md -o composite.html
@@ -78,20 +63,11 @@ arquitetura-hexagonal: arquitetura-hexagonal.md
 serverless: serverless.md
 	$(pandoc_bin) -T "O que é uma Arquitetura Serverless" serverless.md -o serverless.html
 
-testes-faq: testes-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Testes de Software" testes-faq.md -o testes-faq.html
-
 exemplos-teste: exemplos-teste.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
-
-refactoring-faq: refactoring-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Refactoring" refactoring-faq.md -o refactoring-faq.html
 
 broken-windows: broken-windows.md
 	$(pandoc_bin) -T "Duas Recomendações para Manutenção de Software" broken-windows.md -o broken-windows.html
 
 revisao-codigo: revisao-codigo.md
 	$(pandoc_bin) -T "Revisão de Código: Uma Breve Introdução" revisao-codigo.md -o revisao-codigo.html
-
-git-faq: git-faq.md
-	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Perguntas Frequentes sobre Git (Apêndice)" git-faq.md -o git-faq.html

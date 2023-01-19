@@ -41,7 +41,7 @@ de PIX no Banco X.
 #### Product Owner (PO) {.unnumbered}
 
 Às vezes chamado também de 
-[Product Manager (PM)](https://engsoftmoderna.info/artigos/processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
+[Product Manager (PM)](https://engsoftmoderna.info/faq/processos-faq.html#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm),
 cabe a esse profissional estudar e entender os requisitos para operação do 
 PIX, definidos pelo Banco Central. Para isso, o PO conta com o apoio das 
 áreas de negócio do banco, incluindo analistas financeiros, analistas 
@@ -103,7 +103,7 @@ de desenvolvimento do banco.
 Ele deve organizar e facilitar os eventos de um sprint, tais como 
 reuniões de planejamento, reuniões diárias, revisão e retrospectiva. E, 
 sempre, atuar como um 
-[líder servidor](https://engsoftmoderna.info/artigos/processos-faq.html#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor), ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, 
+[líder servidor](https://engsoftmoderna.info/faq/processos-faq.html#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor), ajudando o time a remover impedimentos não-técnicos que, inevitavelmente, 
 vão surgir durante a implementação.
 
 #### Outros Profissionais {.unnumbered}

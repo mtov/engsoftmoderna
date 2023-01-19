@@ -1,0 +1,4 @@
+git add *
+git commit -a -m "update artigos"
+
+git push origin master
