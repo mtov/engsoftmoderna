@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Refactoring {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre refactoring, isto é, sobre 
@@ -24,4 +26,6 @@ mais fácil de entender são refatorações. Um bom contraste é com otimizaçõ
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

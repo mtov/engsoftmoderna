@@ -1,4 +1,4 @@
 git add *
-git commit -a -m "update artigos"
+git commit -a -m "update faq"
 
 git push origin master

@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Requisitos {.unnumbered}
 
 O objetivo deste artigo é responder perguntas sobre temas relacionados 
@@ -101,4 +103,6 @@ Assim, os papeis professor e aluno ficarão reservados para histórias que são 
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

@@ -1,0 +1,14 @@
+cat processos-faq.md > esm-faq.md
+cat requisitos-faq.md >> esm-faq.md
+cat projeto-faq.md >> esm-faq.md
+cat padroes-faq.md >> esm-faq.md
+cat arquitetura-faq.md >> esm-faq.md
+cat testes-faq.md >> esm-faq.md
+cat refactoring-faq.md >> esm-faq.md
+cat git-faq.md >> esm-faq.md
+
+pandoc --defaults=defaults-latex-faq.yaml esm-faq.md -o esm-faq.tex
+
+pdflatex esm-faq.tex
+
+rm esm-faq.md

@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Métodos Ágeis {.unnumbered}
 
 O objetivo deste artigo é responder perguntas 
@@ -392,4 +394,6 @@ possuem times orientados por produto.
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

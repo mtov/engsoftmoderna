@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Projeto de Software {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com projeto 
@@ -121,4 +123,6 @@ sistema.
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Git {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre git, isto é, sobre 
@@ -52,4 +54,6 @@ certeza de que eles contém a versão final de uma mudança.
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

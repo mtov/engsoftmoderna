@@ -1,0 +1,24 @@
+from: markdown
+to: latex
+   
+pdf-engine: pdflatex
+
+include-in-header: ../artigos/packages-artigos.tex
+include-before-body: begin-document-faq.tex 
+
+listings: true
+
+default-image-extension: png
+
+top-level-division: chapter
+number-sections: true
+
+variables:
+  documentclass: book
+  fontsize: 12pt
+  classoption: oneside
+  colorlinks: true
+  linkcolor: blue
+  urlcolor: blue
+  links-as-notes: true
+

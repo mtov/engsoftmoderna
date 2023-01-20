@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Padrões de Projeto {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com padrões
@@ -47,4 +49,6 @@ em subclasses de X. Nesse caso, podemos usar o padrão de projeto
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```

@@ -1,3 +1,5 @@
+
+
 # Perguntas Frequentes sobre Arquitetura de Software {.unnumbered}
 
 Neste artigo, respondemos perguntas sobre temas relacionados com 
@@ -180,4 +182,6 @@ orquestrador da operação de cadastro de alunos.
 
 * * * 
 
-Voltar para a [página principal](../index.html).
+```{=html}
+<p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
+```
