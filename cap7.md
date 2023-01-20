@@ -770,7 +770,7 @@ sistema distribuído. Dentre eles, podemos citar:
 \index{Arquitetura Orientada a Mensagens}
 
 Neste tipo de arquitetura, a comunicação entre clientes e servidores é
-mediada por um terceiro serviço que têm a única função de prover uma
+mediada por um terceiro serviço que tem a única função de prover uma
 **fila de mensagens**, como mostra a próxima figura.
 
 ![Arquitetura Orientada a Mensagens](figs/cap7/mom){width="80%"}

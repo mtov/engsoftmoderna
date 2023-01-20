@@ -31,7 +31,7 @@ Limpa e Arquitetura Hexagonal. Ou seja, os artigos são um instrumento
 que estou usando para manter o leitor do livro -- seja ele um 
 professor, aluno ou profissional do mercado -- sempre atualizado. 
 Futuramente, em uma possível segunda edição, alguns desses artigos 
-podem então ser incorporados ao conteúdo "estático" do livro.
+poderão ser incorporados ao conteúdo "estático" do livro.
 
 Todos os artigos estão disponíveis também no site:
 
