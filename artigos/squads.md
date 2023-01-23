@@ -1,6 +1,6 @@
 
 
-# Organizando Times em Squads 
+# Organizando Times Ágeis em Squads
 
 ## Introdução
 

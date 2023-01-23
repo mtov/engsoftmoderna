@@ -16,7 +16,7 @@ shape-up: shape-up.md
 	$(pandoc_bin) -T "Shape Up: Uma possível alternativa a Scrum?" shape-up.md -o shape-up.html
 
 squads: squads.md
-	$(pandoc_bin) -T "Organizando Times em Squads" squads.md -o squads.html
+	$(pandoc_bin) -T "Organizando Times Ágeis em Squads" squads.md -o squads.html
 
 pix-banco-x: pix-banco-x.md
 	$(pandoc_bin) -T "Estudo de Caso: Implementação do PIX em um Banco X" pix-banco-x.md -o pix-banco-x.html
