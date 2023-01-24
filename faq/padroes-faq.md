@@ -8,8 +8,8 @@ de projeto, isto é, sobre o [Capítulo 6](https://engsoftmoderna.info/cap6.html
 Segue a lista atual de perguntas:
 
 1. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
-2. [Qual a diferença entre Strategy e Template Method?]()
-
+2. [Qual a diferença entre Strategy e Template Method?](#qual-a-diferen%C3%A7a-entre-strategy-e-template-method)
+3. [O que é uma especificação (specification)?](#o-que-%C3%A9-uma-especifica%C3%A7%C3%A3o-specification)
 
 * * * 
 
@@ -45,6 +45,59 @@ de um algoritmo Y. Ou seja, X vai implementar Y, porém de forma
 parcial. Isso significa que as implementações de Y serão "completadas" 
 em subclasses de X. Nesse caso, podemos usar o padrão de projeto 
 **Template Method** para implementar esse esqueleto de Y na classe X.
+
+
+### 3. O que é uma especificação (specification)? {.unnumbered}
+
+Uma especificação é um padrão proposto por Eric Evans e 
+Martin Fowler no seguinte 
+[artigo](http://www.martinfowler.com/apsupp/spec.pdf). Ele é
+também comentado no livro sobre Domain-Driven Design do Evans.
+
+Em termos mais concretos, uma especificação é um predicado lógico
+-- isto é, uma função que retorna verdadeiro ou falso -- e que 
+encapsula uma regra de negócio importante e complexa.
+
+Uma especificação testa se um objeto está em um certo estado. Seja, 
+por exemplo, uma fábrica que recebe pedidos de clientes para 
+produção de certos itens. Suponha ainda que a regra para determinar 
+se um `Pedido` está atrasado, em relação ao seu prazo planejado de 
+entrega, é complicada. Por exemplo, ela pode depender dos itens 
+que foram pedidos, da capacidade de produção da fábrica,
+do tempo que leva para entregar o pedido para o cliente, etc.
+Veja ainda que essas condições são dinâmicas, pois o estoque
+da fábrica muda diariamente.
+
+Logo, podemos criar uma classe para encapsular 
+a verificação de pedidos atrasados:
+
+```
+class EspecificacaoPedidosAtrasados {
+   boolean pedidoEstaAtrasado(Pedido p) {
+     // regra que verifica se "p" está atrasado  
+   } 	
+}
+```
+
+Ou seja, a regra para determinar se um pedido está atrasado é
+complexa a ponto de justificar sua "especificação" em uma classe 
+a parte. E, então, `Pedido` referencia essa nova classe:
+
+```
+class Pedido {
+  ...
+  EspecificacaoPedidoAtrasado espec = new EspecificacaoPedidoAtrasado();
+  ...
+}
+```
+
+Resumindo, especificação é o nome que se dá para classes que 
+apenas implementam métodos booleanos que testam se um dado objeto
+atende a uma regra de negócio mais complexa. Logo, uma especificação
+torna a classe que usa a regra de negócio (no nosso exemplo, `Pedido`)
+mais simples e com menos dependências. Fica também mais fácil criar 
+regras de negócio alternativas. Por exemplo, uma segunda regra pode
+verificar se pedidos expressos estão atrasados.
 
 
 * * * 
