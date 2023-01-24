@@ -2211,5 +2211,5 @@ então um bug.
 
 ```{=html}
 <h2 class="unnumbered">Perguntas Frequentes</h2>
-<p>Veja também o <a href="./artigos/testes-faq.html">FAQ</a> deste capítulo.</p>
+<p>Veja também o <a href="./faq/testes-faq.html">FAQ</a> deste capítulo.</p>
 ```

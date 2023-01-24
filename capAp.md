@@ -769,7 +769,7 @@ para reproduzir os comandos de cada usuário.
 
 ```{=html}
 <h2 class="unnumbered">Perguntas Frequentes</h2>
-<p>Veja também o <a href="./artigos/git-faq.html">FAQ</a> deste capítulo.</p>
+<p>Veja também o <a href="./faq/git-faq.html">FAQ</a> deste capítulo.</p>
 ```
 
 

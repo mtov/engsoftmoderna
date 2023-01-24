@@ -1126,5 +1126,5 @@ vol. 4, John Wiley & Sons, 2007.
 
 ```{=html}
 <h2 class="unnumbered">Perguntas Frequentes</h2>
-<p>Veja também o <a href="./artigos/arquitetura-faq.html">FAQ</a> deste capítulo.</p>
+<p>Veja também o <a href="./faq/arquitetura-faq.html">FAQ</a> deste capítulo.</p>
 ```

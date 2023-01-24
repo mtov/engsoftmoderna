@@ -709,6 +709,6 @@ então algumas extensões para ele.
 
 ```{=html}
 <h2 class="unnumbered">Perguntas Frequentes</h2>
-<p>Veja também o <a href="./artigos/requisitos-faq.html">FAQ</a> deste capítulo.</p>
+<p>Veja também o <a href="./faq/requisitos-faq.html">FAQ</a> deste capítulo.</p>
 ```
 

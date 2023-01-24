@@ -2141,5 +2141,5 @@ edição, 2014.
 
 ```{=html}
 <h2 class="unnumbered">Perguntas Frequentes</h2>
-<p>Veja também o <a href="./artigos/processos-faq.html">FAQ</a> deste capítulo.</p>
+<p>Veja também o <a href="./faq/processos-faq.html">FAQ</a> deste capítulo.</p>
 ```

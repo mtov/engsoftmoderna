@@ -54,7 +54,7 @@ Martin Fowler no seguinte
 [artigo](http://www.martinfowler.com/apsupp/spec.pdf). Ele é
 também comentado no livro sobre Domain-Driven Design do Evans.
 
-Em termos mais concretos, uma especificação é um predicado lógico
+Conceitualmente, uma especificação é um predicado lógico
 -- isto é, uma função que retorna verdadeiro ou falso -- e que 
 encapsula uma regra de negócio importante e complexa.
 
@@ -95,9 +95,9 @@ Resumindo, especificação é o nome que se dá para classes que
 apenas implementam métodos booleanos que testam se um dado objeto
 atende a uma regra de negócio mais complexa. Logo, uma especificação
 torna a classe que usa a regra de negócio (no nosso exemplo, `Pedido`)
-mais simples e com menos dependências. Fica também mais fácil criar 
-regras de negócio alternativas. Por exemplo, uma segunda regra pode
-verificar se pedidos expressos estão atrasados.
+mais simples e mais "leve", isto é, com menos dependências. Fica também 
+mais fácil criar regras de negócio alternativas. Por exemplo, uma 
+segunda regra pode verificar se pedidos expressos estão atrasados.
 
 
 * * * 
