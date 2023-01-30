@@ -382,10 +382,14 @@ testes de integração e testes end-to-end).
 
 ### 17. O que é um Teste de Mutação? {.unnumbered}
 
-Para começar, o principal ponto que deve ser lembrado é que 
-um teste de mutação não tem como objetivo detectar bugs no 
-código de produção, tal como ocorre, por exemplo, com testes 
-de unidade, integração, end-to-end, snapshot, etc.
+O conceito de teste de mutação é antigo, tendo sido proposto pela
+primeira vez em 1978 
+no seguinte [artigo](https://doi.org/10.1109/C-M.1978.218136). 
+Para entender melhor o conceito, o principal 
+ponto que deve ser lembrado é que um teste de mutação não tem como 
+objetivo detectar bugs no código de produção, tal como ocorre, 
+por exemplo, com testes de unidade, integração, end-to-end, 
+snapshot, etc.
 
 Em vez disso, testes de mutação são usados para avaliar a 
 efetividade dos testes automatizados que já existem no sistema. 
@@ -408,6 +412,12 @@ bugs. E, então, os testes existentes devem falhar ao serem
 executados sobre elas. Se isso não acontecer, podemos 
 concluir que esses testes não são "bons" o suficiente.
 
+Teste de mutação é uma técnica de teste caixa-branca,
+pois o seu funcionamento requer conhecimento da estrutura 
+interna do código das funções de um sistema. Conforme
+afirmado, esse conhecimento é necessário para gerar
+as mutações. 
+
 Cobertura de mutações é uma métrica muito usada com esse tipo 
 de teste. Ela é assim definida:
 
@@ -417,6 +427,11 @@ Diz-se que um mutante foi morto quando ele foi detectado
 por algum teste existente. Assim, idealmente, gostaríamos
 que a cobertura de mutações fosse sempre de 100%.
 
+Um dos principais problemas de um teste de mutação é o seu 
+elevado custo computacional. Em um sistema real, de médio porte, 
+por exemplo, podem ser geradas milhares ou dezenas de milhares
+de mutações, que vão demandar horas ou mesmo dias para serem 
+testadas.
 
 * * * 
 

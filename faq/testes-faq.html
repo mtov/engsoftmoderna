@@ -528,10 +528,13 @@ end-to-end).</p></li>
 <h3 class="unnumbered" id="o-que-é-um-teste-de-mutação">17. O que é um
 Teste de Mutação? <a href="#o-que-é-um-teste-de-mutação"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Para começar, o principal ponto que deve ser lembrado é que um teste
-de mutação não tem como objetivo detectar bugs no código de produção,
-tal como ocorre, por exemplo, com testes de unidade, integração,
-end-to-end, snapshot, etc.</p>
+<p>O conceito de teste de mutação é antigo, tendo sido proposto pela
+primeira vez em 1978 no seguinte <a
+href="https://doi.org/10.1109/C-M.1978.218136">artigo</a>. Para entender
+melhor o conceito, o principal ponto que deve ser lembrado é que um
+teste de mutação não tem como objetivo detectar bugs no código de
+produção, tal como ocorre, por exemplo, com testes de unidade,
+integração, end-to-end, snapshot, etc.</p>
 <p>Em vez disso, testes de mutação são usados para avaliar a efetividade
 dos testes automatizados que já existem no sistema. Ou seja, o
 pressuposto é que você já tem diversos testes e quer saber se eles são
@@ -551,8 +554,12 @@ por um operador de subtração (-).</li>
 bugs. E, então, os testes existentes devem falhar ao serem executados
 sobre elas. Se isso não acontecer, podemos concluir que esses testes não
 são <q>bons</q> o suficiente.</p>
-<p>Score de mutação ou cobertura de mutações é uma métrica muito usada
-com esse tipo de teste. Ela é assim definida:</p>
+<p>Teste de mutação é uma técnica de teste caixa-branca, pois o seu
+funcionamento requer conhecimento da estrutura interna do código das
+funções de um sistema. Conforme afirmado, esse conhecimento é necessário
+para gerar as mutações.</p>
+<p>Cobertura de mutações é uma métrica muito usada com esse tipo de
+teste. Ela é assim definida:</p>
 <blockquote>
 <p>cobertura de mutações = número de mutantes mortos / total de mutantes
 gerados</p>
@@ -560,6 +567,10 @@ gerados</p>
 <p>Diz-se que um mutante foi morto quando ele foi detectado por algum
 teste existente. Assim, idealmente, gostaríamos que a cobertura de
 mutações fosse sempre de 100%.</p>
+<p>Um dos principais problemas de um teste de mutação é o seu elevado
+custo computacional. Em um sistema real, de médio porte, por exemplo,
+podem ser geradas milhares ou dezenas de milhares de mutações, que vão
+demandar horas ou mesmo dias para serem testadas.</p>
 <hr />
 <p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>
