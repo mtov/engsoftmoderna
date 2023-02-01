@@ -1,0 +1,150 @@
+
+# Testes de Mutação: Uma Visão Prática
+
+## Introdução
+
+O conceito de teste de mutação é antigo, tendo sido proposto pela
+primeira vez em 1978 
+no seguinte [artigo](https://doi.org/10.1109/C-M.1978.218136). 
+Para entender melhor o conceito, o principal 
+ponto que deve ser lembrado é que um teste de mutação não tem como 
+objetivo detectar bugs no código de produção, tal como ocorre, 
+por exemplo, com testes de unidade, integração, end-to-end, 
+snapshot, etc.
+
+Em vez disso, testes de mutação são usados para avaliar a 
+efetividade dos testes automatizados que já existem no sistema. 
+Ou seja, o pressuposto é que você já tem diversos testes e quer 
+saber se eles são efetivos, isto é, realmente capazes de detectar 
+bugs e regressões.
+
+Para isso, uma ferramenta de testes de mutação realiza pequenas 
+modificações aleatórias no código de produção, gerando uma versão
+do código que é chamada de **mutante**. Por exemplo, mutantes 
+podem ser gerados por meio de operações como as seguintes:
+
+* Remover ou duplicar algum comando.
+* Trocar operadores, por exemplo, trocar um operador de 
+adição (+) por um de subtração (-). 
+* Inserir um operador, por exemplo, `cond` vira `!cond`.
+* Trocar alguma constante, por exemplo, `True` por `False`.
+
+Como as mutações são realizadas de forma aleatória, elas 
+naturalmente representam bugs. E, então, os testes existentes devem 
+falhar ao serem executados sobre elas. Se isso não acontecer, podemos 
+concluir que esses testes não são "bons" o suficiente.
+
+Teste de mutação é considerada uma técnica de teste caixa-branca,
+pois o seu funcionamento requer conhecimento da estrutura 
+interna do código das funções de um sistema. Conforme
+afirmado, esse conhecimento é necessário para gerar
+as mutações. 
+
+A próxima figura -- retirada de um 
+[post](https://testing.googleblog.com/2021/04/mutation-testing.html)
+de um blog do Google --
+ilustra um uso real de testes de mutação. A mensagem em fundo cinza 
+informa que uma mutação foi realizada na expressão do comando `if`, 
+trocando `a == b` por `a != b`. No entanto, como também informado 
+na mensagem, essa mutação não implicou na falha de nenhum dos 
+testes existentes.
+
+![Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog](./figs/testes-mutacao-google.jpg){width=75%}
+
+Ao se deparar com a mensagem acima, o desenvolvedor deve 
+analisar a mutação realizada e inferir o comportamento do sistema 
+que foi comprometido pela mesma. Em seguida, ele deve escrever 
+um teste de unidade que seja capaz de exercitar esse 
+comportamento e, portanto, falhar quando executado sobre o mutante 
+mostrado. 
+
+## Score de Mutações
+
+Score de mutações é uma métrica muito usada com esse tipo 
+de teste. Ela é assim definida:
+
+> score de mutações = número de mutantes mortos / total de mutantes gerados
+
+Diz-se que um mutante foi morto quando ele foi detectado
+por algum teste existente. Assim, idealmente, gostaríamos
+que o score de mutações fosse sempre de 100%.
+
+## Exemplo: JFreeChart
+
+JFreeChart é uma biblioteca Java para construção de gráficos. A versão
+1.0.19 do sistema possui 47 KLOC e 1320 testes.
+
+Conforme reportado no seguinte [artigo](https://arxiv.org/abs/1601.02351), 
+a ferramenta de teste de mutação [Pitest](https://pitest.org),
+para programas Java, gera 256K mutantes para essa versão do JFreeChart.
+Para isso, são gastos 109 minutos. O score de mutações é igual a 19%.
+
+Esse exemplo ilustra um dos principais problemas de testes de 
+mutação, isto é, o seu elevado custo computacional. Veja que em um 
+sistema relativamente pequeno (47 KLOC) foram necessárias quase 
+duas horas para testar todos os mutantes gerados. Por outro lado, 
+chegou-se a um score de mutação relativamente baixo (19%), o que
+sugere que existe um espaço para escrever novos testes para 
+esse sistema.
+
+## Comentários Finais
+
+Testes de mutação podem ser vistos como sendo os **testes dos testes**. 
+Isto é, eles são úteis principalmente quando é muito importante 
+ter testes com a máxima qualidade e confiabilidade possível.
+
+Por outro, em muitos sistemas, os desenvolvedores já têm 
+consciência de que os testes não são tão "bons". Muitas vezes, eles 
+até já conhecem as partes e funcionalidades de um sistema que 
+precisam de uma melhor cobertura de testes. Logo, nesses casos, o 
+investimento em testes de mutação pode não ser uma prioridade.
+
+## Exercícios {.unnumbered}
+
+1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
+seu saldo e seu tempo de relacionamento com um banco:
+
+```
+def isClienteVIP(saldo, tempo):
+    if (saldo > 10000) or (tempo > 10):
+       return True
+    return False
+```
+
+Seja ainda o seguinte teste dessa função:
+
+```
+def teste():
+    assertTrue(isClienteVIP(15000, 5))
+```
+
+Então: (1) gere um mutante para a função que não é "morto" pelo 
+teste; (2) modifique o teste para que ele falhe com o mutante que 
+você gerou.
+
+2\. Seja a seguinte função:
+```
+def isConceitoA(nota):
+    if (nota >= 90):
+       return True
+    return False
+```
+
+Seja ainda o seguinte teste:
+
+```
+def teste():
+    assertTrue(isConceitoA(95))
+    assertFalse(isConceitoA(85))
+```
+
+Então: (1) qual a cobertura de comandos desse teste? (2) gere um mutante 
+para a função que não é "morto" por esse teste; (3) modifique o teste 
+para que ele falhe com o mutante que você gerou.
+
+
+* * * 
+
+```{=html}
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+```

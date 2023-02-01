@@ -66,6 +66,9 @@ serverless: serverless.md
 exemplos-teste: exemplos-teste.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
 
+testes-mutacao: testes-mutacao.md
+	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Testes de Mutação: Um Visão Prática" testes-mutacao.md -o testes-mutacao.html
+
 broken-windows: broken-windows.md
 	$(pandoc_bin) -T "Duas Recomendações para Manutenção de Software" broken-windows.md -o broken-windows.html
 

@@ -38,7 +38,6 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 15. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
 16. [O que são testes exploratórios?](#o-que-s%C3%A3o-testes-explorat%C3%B3rios)
-17. [O que é um Teste de Mutação?](#o-que-%C3%A9-um-teste-de-muta%C3%A7%C3%A3o)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -380,58 +379,6 @@ ajudar na escrita de casos de teste (assumindo que iremos ter testes manuais)
 e também para subsidiar a escrita de testes automatizados (principalmente, 
 testes de integração e testes end-to-end).
 
-### 17. O que é um Teste de Mutação? {.unnumbered}
-
-O conceito de teste de mutação é antigo, tendo sido proposto pela
-primeira vez em 1978 
-no seguinte [artigo](https://doi.org/10.1109/C-M.1978.218136). 
-Para entender melhor o conceito, o principal 
-ponto que deve ser lembrado é que um teste de mutação não tem como 
-objetivo detectar bugs no código de produção, tal como ocorre, 
-por exemplo, com testes de unidade, integração, end-to-end, 
-snapshot, etc.
-
-Em vez disso, testes de mutação são usados para avaliar a 
-efetividade dos testes automatizados que já existem no sistema. 
-Ou seja, o pressuposto é que você já tem diversos testes e quer 
-saber se eles são efetivos, isto é, realmente capazes de detectar 
-bugs e regressões.
-
-Para isso, uma ferramenta de testes de mutação realiza pequenas 
-modificações aleatórias no código de produção, gerando uma versão
-do código que é chamada de **mutação**. Por exemplo, 
-mutações podem ser geradas por meio das seguintes operações.
-
-* Remoção ou duplicação de algum comando.
-* Troca de operadores, por exemplo, trocar um operador de 
-adição (+) por um operador de subtração (-). 
-* Troca de constantes, por exemplo, `True` por `False`.
-
-Como as mutações são realizadas de forma aleatória, elas possuem 
-bugs. E, então, os testes existentes devem falhar ao serem 
-executados sobre elas. Se isso não acontecer, podemos 
-concluir que esses testes não são "bons" o suficiente.
-
-Teste de mutação é uma técnica de teste caixa-branca,
-pois o seu funcionamento requer conhecimento da estrutura 
-interna do código das funções de um sistema. Conforme
-afirmado, esse conhecimento é necessário para gerar
-as mutações. 
-
-Cobertura de mutações é uma métrica muito usada com esse tipo 
-de teste. Ela é assim definida:
-
-> cobertura de mutações = número de mutantes mortos / total de mutantes gerados
-
-Diz-se que um mutante foi morto quando ele foi detectado
-por algum teste existente. Assim, idealmente, gostaríamos
-que a cobertura de mutações fosse sempre de 100%.
-
-Um dos principais problemas de um teste de mutação é o seu 
-elevado custo computacional. Em um sistema real, de médio porte, 
-por exemplo, podem ser geradas milhares ou dezenas de milhares
-de mutações, que vão demandar horas ou mesmo dias para serem 
-testadas.
 
 * * * 
 
