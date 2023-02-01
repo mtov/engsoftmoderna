@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Marco Tulio Valente" />
-  <title>Testes de Mutação: Um Visão Prática – Engenharia de Software Moderna</title>
+  <title>Testes de Mutação: Uma Visão Prática – Engenharia de Software Moderna</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -106,26 +106,26 @@ dos testes automatizados que já existem no sistema. Ou seja, o
 pressuposto é que você já tem diversos testes e quer saber se eles são
 efetivos, isto é, realmente capazes de detectar bugs e regressões.</p>
 <p>Para isso, uma ferramenta de testes de mutação realiza pequenas
-modificações aleatórias no código de produção, gerando uma versão do
-código que é chamada de <strong>mutante</strong>. Por exemplo, mutantes
-podem ser gerados por meio de operações como as seguintes:</p>
+modificações no código de produção, gerando uma versão do código que é
+chamada de <strong>mutante</strong>. Por exemplo, mutantes podem ser
+gerados por meio das seguintes operações:</p>
 <ul>
-<li>Remover ou duplicar algum comando.</li>
-<li>Trocar operadores, por exemplo, trocar um operador de adição (+) por
-um de subtração (-).</li>
-<li>Inserir um operador, por exemplo, <code>cond</code> vira
+<li>Remoção ou duplicação de algum comando.</li>
+<li>Troca de operadores, por exemplo, troca de um operador de adição (+)
+por um de subtração (-).</li>
+<li>Inserção um operador, por exemplo, <code>cond</code> vira
 <code>!cond</code>.</li>
-<li>Trocar alguma constante, por exemplo, <code>True</code> por
+<li>Troca de alguma constante, por exemplo, <code>True</code> por
 <code>False</code>.</li>
 </ul>
-<p>Como as mutações são realizadas de forma aleatória, elas naturalmente
-representam bugs. E, então, os testes existentes devem falhar ao serem
-executados sobre elas. Se isso não acontecer, podemos concluir que esses
-testes não são <q>bons</q> o suficiente.</p>
-<p>Teste de mutação é considerada uma técnica de teste caixa-branca,
-pois o seu funcionamento requer conhecimento da estrutura interna do
-código das funções de um sistema. Conforme afirmado, esse conhecimento é
-necessário para gerar as mutações.</p>
+<p>Como as mutações são realizadas de forma arbitrária, elas
+naturalmente representam bugs. E, então, os testes existentes devem
+falhar ao serem executados sobre elas. Se isso não acontecer, podemos
+concluir que esses testes não são <q>bons</q> o suficiente.</p>
+<p>Testes de mutação é considerado tipo de teste caixa-branca, pois o
+seu funcionamento requer conhecimento da estrutura interna do código das
+funções de um sistema. Conforme afirmado, esse conhecimento é necessário
+para gerar as mutações.</p>
 <p>A próxima figura – retirada de um <a
 href="https://testing.googleblog.com/2021/04/mutation-testing.html">post</a>
 de um blog do Google – ilustra um uso real de testes de mutação. A
@@ -142,8 +142,8 @@ execução dos testes. Fonte: Google Testing Blog</figcaption>
 <p>Ao se deparar com a mensagem acima, o desenvolvedor deve analisar a
 mutação realizada e inferir o comportamento do sistema que foi
 comprometido pela mesma. Em seguida, ele deve escrever um teste de
-unidade que seja capaz de exercitar esse comportamento e, portanto,
-falhar quando executado sobre o mutante mostrado.</p>
+unidade que exercite esse comportamento e que, portanto, falhe quando
+executado sobre o mutante mostrado.</p>
 <h2 data-number="1.2" id="score-de-mutações"><span
 class="header-section-number">1.2</span> Score de Mutações <a
 href="#score-de-mutações" class="anchor-link"
@@ -155,8 +155,8 @@ Ela é assim definida:</p>
 gerados</p>
 </blockquote>
 <p>Diz-se que um mutante foi morto quando ele foi detectado por algum
-teste existente. Assim, idealmente, gostaríamos que o score de mutações
-fosse sempre de 100%.</p>
+teste existente. Portanto, idealmente, gostaríamos que o score de
+mutações fosse sempre de 100%.</p>
 <h2 data-number="1.3" id="exemplo-jfreechart"><span
 class="header-section-number">1.3</span> Exemplo: JFreeChart <a
 href="#exemplo-jfreechart" class="anchor-link"
@@ -165,25 +165,24 @@ aria-hidden="true">🔗</a></h2>
 versão 1.0.19 do sistema possui 47 KLOC e 1320 testes.</p>
 <p>Conforme reportado no seguinte <a
 href="https://arxiv.org/abs/1601.02351">artigo</a>, a ferramenta de
-teste de mutação <a href="https://pitest.org">Pitest</a>, para programas
-Java, gera 256K mutantes para essa versão do JFreeChart. Para isso, são
-gastos 109 minutos. O score de mutações é igual a 19%.</p>
-<p>Esse exemplo ilustra um dos principais problemas de testes de
+testes de mutação <a href="https://pitest.org">Pitest</a>, para
+programas Java, gera 256K mutantes para essa versão do JFreeChart. Para
+tanto, são gastos 109 minutos. O score de mutações é igual a 19%.</p>
+<p>Assim, esse exemplo ilustra um dos principais problemas de testes de
 mutação, isto é, o seu elevado custo computacional. Veja que em um
-sistema relativamente pequeno (47 KLOC) foram necessárias quase duas
+sistema relativamente pequeno (47 KLOC) foram necessárias quase que duas
 horas para testar todos os mutantes gerados. Por outro lado, chegou-se a
 um score de mutação relativamente baixo (19%), o que sugere que existe
-um espaço para escrever novos testes para esse sistema.</p>
+espaço para escrever novos testes para esse sistema.</p>
 <h2 data-number="1.4" id="comentários-finais"><span
 class="header-section-number">1.4</span> Comentários Finais <a
 href="#comentários-finais" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p>Testes de mutação podem ser vistos como sendo os <strong>testes dos
 testes</strong>. Isto é, eles são úteis principalmente quando é muito
-importante ter testes com a máxima qualidade e confiabilidade
-possível.</p>
+importante ter testes com a máxima qualidade e confiabilidade.</p>
 <p>Por outro, em muitos sistemas, os desenvolvedores já têm consciência
-de que os testes não são tão <q>bons</q>. Muitas vezes, eles até já
+de que os testes não são tão <q>bons</q>. Muitas vezes, eles até
 conhecem as partes e funcionalidades de um sistema que precisam de uma
 melhor cobertura de testes. Logo, nesses casos, o investimento em testes
 de mutação pode não ser uma prioridade.</p>
@@ -211,8 +210,8 @@ gerou.</p>
     assertTrue(isConceitoA(95))
     assertFalse(isConceitoA(85))</code></pre>
 <p>Então: (1) qual a cobertura de comandos desse teste? (2) gere um
-mutante para a função que não é <q>morto</q> por esse teste; (3)
-modifique o teste para que ele falhe com o mutante que você gerou.</p>
+mutante para a função que não é <q>morto</q> pelo teste; (3) modifique o
+teste para que ele falhe com o mutante que você gerou.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>
