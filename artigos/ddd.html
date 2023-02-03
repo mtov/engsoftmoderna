@@ -115,14 +115,14 @@ não por frameworks, arquiteturas, linguagens de programação, etc.</p>
 promovida e expressa na arquitetura do sistema. Para tanto, padrões como
 Arquitetura em Camadas (estudado no <a
 href="https://engsoftmoderna.info/cap7.html#arquitetura-em-camadas">Capítulo
-7</a>), Arquitetura Limpa (tratada neste outro <a
+7</a>), Arquitetura Limpa (tratado neste outro <a
 href="https://engsoftmoderna.info/artigos/arquitetura-limpa.html">artigo
-didático</a>) ou Arquitetura Hexagonal (também coberta em um <a
-href="https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html">artigo</a>
-separado) podem ser usados.</p>
-<p>Antes de avançarmos, é importante mencionar também que DDD se
-sobressai quando é usado em sistemas para domínios complexos, cujas
-regras de negócio são mais difíceis de serem imediatamente entendidas e
+didático</a>) ou Arquitetura Hexagonal (também coberto em um <a
+href="https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html">artigo</a>)
+podem ser usados.</p>
+<p>Antes de avançarmos, é importante mencionar que DDD se sobressai
+quando é usado em sistemas para domínios complexos, cujas regras de
+negócio são mais difíceis de serem imediatamente entendidas e
 implementadas pelos desenvolvedores.</p>
 <h2 data-number="1.2" id="linguagem-ubíqua"><span
 class="header-section-number">1.2</span> Linguagem Ubíqua</h2>
@@ -136,7 +136,7 @@ papéis – especialistas no domínio e desenvolvedores – devem falar a
 mesma língua, que vai constituir a chamada Linguagem Ubíqua do sistema.
 Essa ideia é ilustrada na seguinte figura:</p>
 <figure>
-<img src="./figs/linguagem-onipresente.svg" style="width:85.0%"
+<img src="./figs/linguagem-onipresente.svg" style="width:80.0%"
 alt="A linguagem ubíqua representa o conhecimento compartilhado entre especialistas do negócio e desenvolvedores." />
 <figcaption aria-hidden="true">A linguagem ubíqua representa o
 conhecimento compartilhado entre especialistas do negócio e
@@ -181,10 +181,12 @@ termos, como exemplificado a seguir:</p>
 <li>O <code>Acervo</code> da biblioteca é formado por um conjunto de
 <code>Livros</code>.</li>
 </ul>
-<p>Para documentar de forma visual esses relacionamentos pode ser usado
-um <strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a
+<p>Para documentar esses relacionamentos pode ser usado um
+<strong>Diagrama de Classes</strong> de UML, conforme estudamos no <a
 href="https://engsoftmoderna.info/cap4.html#diagrama-de-classes">Capítulo
-4</a>.</p>
+4</a>. No entanto, esse diagrama pode ser simples e leve. Ele não
+precisa, por exemplo, incluir todos os atributos e métodos de cada
+classe.</p>
 <h2 data-number="1.3" id="objetos-de-domínio"><span
 class="header-section-number">1.3</span> Objetos de Domínio</h2>
 <p>DDD foi proposto pensando em sistemas implementados em linguagens
@@ -238,8 +240,8 @@ href="https://engsoftmoderna.info/cap9.html#objetos-mut%C3%A1veis">Capítulo
 9</a>.</p>
 <p>É interessante mencionar também que, recentemente, algumas linguagens
 de programação passaram a oferecer suporte sintático para implementação
-de objetos de valor. Por exemplo, nas versões mais novas de Java, eles
-podem ser implementados por meio de <a
+de objetos de valor. Por exemplo, nas versões mais recentes de Java,
+eles podem ser implementados por meio de <a
 href="https://docs.oracle.com/en/java/javase/16/language/records.html">records</a>.</p>
 <h3 class="unnumbered" id="serviços">Serviços</h3>
 <p>Existem operações importantes do domínio que não se encaixam em
@@ -271,7 +273,7 @@ ter um serviço que implementa as seguintes operações:</p>
 operação, um <code>Usuário</code> devolve um <code>Livro</code> que ele
 tenha sob empréstimo.</p>
 <p>Ambas as operações não são específicas nem de <code>Usuário</code>,
-nem de <code>Livro</code>. Logo, a recomendação de criar um objeto de
+nem de <code>Livro</code>. Por isso, DDD recomenda criar um objeto de
 serviço para acomodá-las.</p>
 <h3 class="unnumbered" id="agregados">Agregados</h3>
 <p><strong>Agregados</strong> (<em>aggregates</em>) são coleções de
@@ -294,20 +296,23 @@ agregados, os quais são chamados de <strong>fábricas</strong>. Ou seja,
 tais métodos são implementações do padrão de projeto de mesmo nome.</p>
 <p><strong>Exemplo</strong>: No sistema de bibliotecas, um
 <code>Empréstimo</code> possui um <code>Usuário</code> (que é uma
-entidade), uma data de realização (que é um objeto de valor) e uma lista
-de <code>Itens Emprestados</code>. Cada <code>Item Emprestado</code>
-contém informações sobre um certo <code>Livro</code> que foi emprestado
-e sua data de devolução (estamos pressupondo que alguns livros devem ser
-devolvidos mais rapidamente do que outros, por exemplo).</p>
-<p>Logo, <code>Empréstimo</code> e <code>Itens de Empréstimo</code>
-formam um agregado. Isto é, uma entidade única do ponto de vista
-conceitual. <code>Empréstimo</code> é a raiz do agregado e
-<code>Itens Emprestados</code> são os seus objetos internos, que não
-podem ser manipulados sem passar antes pela raiz.</p>
-<p>Observe que <code>Itens Emprestados</code> referenciam
-<code>Livros</code>, porém esses últimos não fazem parte do agregado,
-pois eles têm vida própria, isto é, eles existem independentemente de
-estarem emprestados ou não.</p>
+entidade) e uma lista de <code>ItemEmpréstimo</code>. Cada
+<code>ItemEmpréstimo</code> contém informações sobre um certo
+<code>Livro</code> que foi emprestado.</p>
+<p>Logo, <code>Empréstimo</code> e <code>ItemEmpréstimo</code> formam um
+agregado, como mostrado na figura. Isto é, uma entidade única do ponto
+de vista conceitual. <code>Empréstimo</code> é a raiz do agregado e
+<code>ItemEmpréstimo</code> é a classe dos objetos internos, os quais
+não podem ser manipulados sem passar antes pela raiz.</p>
+<figure>
+<img src="./figs/ddd-agregado.png" style="width:35.0%"
+alt="Exemplo de agregado" />
+<figcaption aria-hidden="true">Exemplo de agregado</figcaption>
+</figure>
+<p>Observe que <code>ItemEmpréstimo</code> referencia
+<code>Livro</code>, porém essa última classe não faz parte do agregado,
+pois seus objetos têm vida própria, isto é, eles existem
+independentemente de estarem emprestados ou não.</p>
 <h3 class="unnumbered" id="repositórios">Repositórios</h3>
 <p>Para implementar certos serviços do domínio precisamos antes obter
 referências para determinados objetos.</p>
@@ -327,11 +332,11 @@ continuem focados no domínio, em vez de ter sua atenção desviada, em
 certos momentos, para uma tecnologia de armazenamento de dados. Em
 termos mais concretos, um repositório permite manipular objetos de
 domínio como se eles fossem listas (ou coleções) armazenadas na memória
-principal. A implementação interna do repositório cuida então de ler e
-salvar essas listas no banco de dados.</p>
+principal. A implementação interna do repositório cuida de ler e salvar
+essas listas no banco de dados.</p>
 <p><strong>Exemplo:</strong> No sistema de bibliotecas, existe um
-repositório com métodos para recuperar <code>Empréstimos</code> salvos
-em um banco de dados:</p>
+repositório com métodos para recuperar <code>Empréstimos</code>
+armazenados em um banco de dados:</p>
 <pre><code>class RepositorioDeEmprestimos {
   List&lt;Emprestimo&gt; findEmprestimosDeUsuario(Usuario u) {...}
   List&lt;Emprestimo&gt; findEmprestimosPorData(Data inicio, Data fim) {...}
@@ -394,8 +399,8 @@ uma interface complexa e antiga.</p></li>
 Anticorrupção que foi construída para integrar os sistemas A e B.</p>
 <h2 data-number="1.6" id="conclusão"><span
 class="header-section-number">1.6</span> Conclusão</h2>
-<p>Em um material de referência, que escreveu em 2014, Eric Evans define
-assim DDD:</p>
+<p>Em um material de referência, que escreveu em 2014, Eric Evans
+definiu assim DDD:</p>
 <blockquote>
 <p>DDD é uma abordagem para desenvolvimento de sistemas de software
 complexos, em que: (1) o foco está no domínio do sistema; (2)

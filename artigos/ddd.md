@@ -31,10 +31,11 @@ DDD defende que a separação entre domínio e tecnologia deve ser
 promovida e expressa na arquitetura do sistema. Para tanto, padrões 
 como Arquitetura em Camadas (estudado no 
 [Capítulo 7](https://engsoftmoderna.info/cap7.html#arquitetura-em-camadas)), 
-Arquitetura Limpa (tratada neste outro [artigo didático](https://engsoftmoderna.info/artigos/arquitetura-limpa.html))
-ou Arquitetura Hexagonal (também coberta em um [artigo](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html) separado) podem ser usados.
+Arquitetura Limpa (tratado neste outro [artigo didático](https://engsoftmoderna.info/artigos/arquitetura-limpa.html))
+ou Arquitetura Hexagonal (também coberto em um [artigo](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html)) 
+podem ser usados.
 
-Antes de avançarmos, é importante mencionar também que DDD se 
+Antes de avançarmos, é importante mencionar que DDD se 
 sobressai quando é usado em sistemas para domínios complexos, 
 cujas regras de negócio são mais difíceis de serem imediatamente 
 entendidas e implementadas pelos desenvolvedores.
@@ -54,7 +55,7 @@ falar a mesma língua, que vai constituir a chamada Linguagem
 Ubíqua do sistema. Essa ideia é ilustrada na seguinte figura:
 
 ![A linguagem ubíqua representa o conhecimento compartilhado 
-entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente){width=85%}
+entre especialistas do negócio e desenvolvedores.](./figs/linguagem-onipresente){width=80%}
 
 A figura deixa claro que existem termos que só os 
 especialistas de domínio conhecem. Já outros termos, de cunho 
@@ -95,9 +96,12 @@ termos, como exemplificado a seguir:
 * Existem três tipos de `Usuário`: `Aluno`, `Professor` e `UsuárioExterno`.
 * O `Acervo` da biblioteca é formado por um conjunto de `Livros`. 
 
-Para documentar de forma visual esses relacionamentos pode ser usado
+Para documentar esses relacionamentos pode ser usado
 um **Diagrama de Classes** de UML, conforme estudamos 
 no [Capítulo 4](https://engsoftmoderna.info/cap4.html#diagrama-de-classes).
+No entanto, esse diagrama pode ser simples e leve. Ele não
+precisa, por exemplo, incluir todos os atributos e métodos de cada
+classe.
 
 ## Objetos de Domínio 
 
@@ -153,7 +157,7 @@ já foram discutidos no [Capítulo 9](https://engsoftmoderna.info/cap9.html#obje
 
 É interessante mencionar também que, recentemente, algumas linguagens de 
 programação passaram a oferecer suporte sintático para implementação de 
-objetos de valor. Por exemplo, nas versões mais novas de Java, eles podem 
+objetos de valor. Por exemplo, nas versões mais recentes de Java, eles podem 
 ser implementados por meio de 
 [records](https://docs.oracle.com/en/java/javase/16/language/records.html).
 
@@ -194,7 +198,7 @@ para um certo `Usuário`. Na segunda operação, um `Usuário` devolve
 um `Livro` que ele tenha sob empréstimo. 
 
 Ambas as operações não são específicas nem de `Usuário`, 
-nem de `Livro`. Logo, a recomendação de criar um objeto de
+nem de `Livro`. Por isso, DDD recomenda criar um objeto de
 serviço para acomodá-las.
 
 ### Agregados {.unnumbered}
@@ -223,23 +227,23 @@ para criação de agregados, os quais são chamados de
 de projeto de mesmo nome.
 
 **Exemplo**: No sistema de bibliotecas, um `Empréstimo`
-possui um `Usuário` (que é uma entidade), uma data de realização
-(que é um objeto de valor) e uma lista de `Itens Emprestados`.
-Cada `Item Emprestado` contém informações sobre um certo `Livro`
-que foi emprestado e sua data de devolução (estamos pressupondo
-que alguns livros devem ser devolvidos mais rapidamente do que
-outros, por exemplo).
+possui um `Usuário` (que é uma entidade) e uma lista 
+de `ItemEmpréstimo`. Cada `ItemEmpréstimo` contém informações 
+sobre um certo `Livro` que foi emprestado.
 
-Logo, `Empréstimo` e `Itens de Empréstimo` formam um agregado.
+Logo, `Empréstimo` e `ItemEmpréstimo` formam um agregado,
+como mostrado na figura.
 Isto é, uma entidade única do ponto de vista conceitual. 
-`Empréstimo` é a raiz do agregado e `Itens Emprestados`
-são os seus objetos internos, que não podem ser manipulados sem 
+`Empréstimo` é a raiz do agregado e `ItemEmpréstimo` é a classe
+dos objetos internos, os quais não podem ser manipulados sem 
 passar antes pela raiz.
 
-Observe que `Itens Emprestados` referenciam `Livros`, porém
-esses últimos não fazem parte do agregado, pois eles têm vida
-própria, isto é, eles existem independentemente de estarem
-emprestados ou não.
+![Exemplo de agregado](./figs/ddd-agregado.png){width=35%}
+
+Observe que `ItemEmpréstimo` referencia `Livro`, porém
+essa última classe não faz parte do agregado, pois seus objetos
+têm vida própria, isto é, eles existem independentemente de 
+estarem emprestados ou não.
 
 ### Repositórios {.unnumbered}
 
@@ -265,10 +269,10 @@ desviada, em certos momentos, para uma tecnologia de armazenamento
 de dados. Em termos mais concretos, um repositório permite manipular 
 objetos de domínio como se eles fossem listas (ou coleções) 
 armazenadas na memória principal. A implementação interna do repositório
-cuida então de ler e salvar essas listas no banco de dados.
+cuida de ler e salvar essas listas no banco de dados.
 
 **Exemplo:** No sistema de bibliotecas, existe um repositório com
- métodos para recuperar `Empréstimos`  salvos em um banco de dados:
+ métodos para recuperar `Empréstimos`  armazenados em um banco de dados:
 
 ```
 class RepositorioDeEmprestimos {
@@ -350,7 +354,7 @@ sistemas A e B.
 ## Conclusão 
 
 Em um material de referência, que escreveu em 2014, Eric Evans 
-define assim DDD:
+definiu assim DDD:
 
 > DDD é uma abordagem para desenvolvimento de sistemas
 de software complexos, em que: (1) o foco está no 
