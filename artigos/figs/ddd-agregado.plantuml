@@ -1,0 +1,13 @@
+@startuml
+hide empty members
+hide circle
+class Usuário
+package agregado <<Rectangle>> #DDDDDD {
+  class Empréstimo 
+  class ItemEmpréstimo
+}
+class Livro
+Empréstimo --> "1" Usuário
+Empréstimo --> "*" ItemEmpréstimo
+ItemEmpréstimo --> "1" Livro
+@enduml
