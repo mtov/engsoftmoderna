@@ -3,7 +3,7 @@
 # Domain-Driven Design (DDD): Um Resumo 
 
 > *The heart of software is its ability to solve domain-related 
-problems for its users.* -- Eric Evans
+problems for its user.* -- Eric Evans
 
 ## Introdução 
 

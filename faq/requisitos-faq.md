@@ -48,10 +48,38 @@ principalmente aqueles relacionados com o sistema que se pretende
 implementar. A partir das respostas dos questionários, deve-se agrupar 
 usuários semelhantes e então criar uma persona para cada grupo.
 
-Antes de concluir, é importante mencionar que personas são usadas
-também em outras áreas, como projeto de interface
+Personas são usadas também em outras áreas, como projeto de interface
 com o usuário, marketing, vendas, etc.
 
+**Exemplo:** Para concluir, segue um exercício no qual listamos as 
+personas do nosso livro e projeto. Mas vamos fazer isso de forma 
+resumida, sem, por exemplo, dar um nome para elas. Então, 
+acreditamos que nossas principais personas são as seguintes:
+
+* Aluno de curso de graduação. Para atender às necessidades dessa
+persona procuramos usar uma linguagem leve e direta
+no livro. Evitamos também fazer um livro  extenso e que 
+demandasse um grande esforço para sua leitura e entendimento.
+
+* Professor de Engenharia de Software. Na verdade, como descrito no
+[prefácio](https://engsoftmoderna.info/cap0.html), nossa maior motivação 
+para a escrita do livro foi resolver uma dor que acreditamos comum 
+nesses professores, isto é, a falta de um livro sobre práticas e 
+princípios modernos de desenvolvimento de software. Adicionalmente,
+como sabemos que esses professores também ministram disciplinas 
+específicas da área de Engenharia de Software (por exemplo, 
+uma disciplina sobre Arquitetura de Software) resolvemos criar 
+nossa coletânea de 
+[artigos didáticos](https://engsoftmoderna.info/artigos/artigos.html).
+
+* Profissional da área de Engenharia de Software, que busca uma
+atualização básica sobre certos temas. Assim, para atender
+às necessidades desses profissionais, também criamos um 
+[curso de extensão](http://www.engsoftmoderna.dcc.ufmg.br) 
+à distância.
+
+Como essas personas são pessoas do Brasil, o livro foi escrito
+em Português.
 
 ### 2. O que é dogfooding? {.unnumbered}
 

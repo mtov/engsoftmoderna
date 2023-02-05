@@ -1399,7 +1399,7 @@ capítulo é considerada como sendo um sprint. Na reunião de Planejamento
 do Sprint, define-se a divisão do capítulo em seções, que são
 equivalentes às tarefas. Então começa-se a escrita de cada capítulo,
 isto é, tem início um sprint. Via de regra, os sprints são planejados
-para ter uma duração de três meses. Para ficar mais claro, mostra-se a
+para ter uma duração de dois meses. Para ficar mais claro, mostra-se a
 seguir o backlog do sprint atual, bem como o estado de cada tarefa,
 exatamente no momento em que se está escrevendo este parágrafo:
 
