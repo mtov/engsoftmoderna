@@ -174,8 +174,25 @@ sistema relativamente pequeno (47 KLOC) foram necessárias quase que duas
 horas para testar todos os mutantes gerados. Por outro lado, chegou-se a
 um score de mutação relativamente baixo (19%), o que sugere que existe
 espaço para escrever novos testes para esse sistema.</p>
-<h2 data-number="1.4" id="comentários-finais"><span
-class="header-section-number">1.4</span> Comentários Finais <a
+<h2 data-number="1.4" id="mutantes-equivalentes"><span
+class="header-section-number">1.4</span> Mutantes Equivalentes <a
+href="#mutantes-equivalentes" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Em situações específicas, os operadores de mutação podem gerar
+mutantes que representam um comportamento válido, ou seja, que não
+incluem nenhum bug. Esses mutantes são chamados de <strong>mutantes
+equivalentes</strong>.</p>
+<p>Um exemplo simples é uma mutação em algum código morto, isto é, que
+não é mais chamado por nenhuma parte do sistema.</p>
+<p>O problema é que, por definição, não se consegue matar mutantes
+equivalentes. Ou seja, como eles não mudam o comportamento esperado do
+programa, não é possível escrever um teste que falhe ao ser executado
+sobre o mutante. Nesses casos, a melhor solução consiste em refatorar o
+código para eliminar a situação que causou a geração do mutante
+equivalente. No nosso exemplo, podemos deletar o código morto, pois ele
+não é mais necessário no sistema.</p>
+<h2 data-number="1.5" id="comentários-finais"><span
+class="header-section-number">1.5</span> Comentários Finais <a
 href="#comentários-finais" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p>Testes de mutação podem ser vistos como sendo os <strong>testes dos

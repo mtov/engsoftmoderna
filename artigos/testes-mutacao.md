@@ -87,6 +87,25 @@ chegou-se a um score de mutação relativamente baixo (19%), o que
 sugere que existe espaço para escrever novos testes para 
 esse sistema.
 
+## Mutantes Equivalentes
+
+Em situações específicas, os operadores de mutação podem gerar
+mutantes que representam um comportamento válido, ou seja, 
+que não incluem nenhum bug. Esses mutantes são chamados 
+de **mutantes equivalentes**.
+
+Um exemplo simples é uma mutação em algum código morto,
+isto é, que não é mais chamado por nenhuma parte do sistema.
+
+O problema é que, por definição, não se consegue matar
+mutantes equivalentes. Ou seja, como eles não mudam o 
+comportamento esperado do programa, não é possível escrever um 
+teste que falhe ao ser executado sobre o mutante. Nesses casos,
+a melhor solução consiste em refatorar o código para 
+eliminar a situação que causou a geração do mutante equivalente. 
+No nosso exemplo, podemos deletar o código morto, 
+pois ele não é mais necessário no sistema.
+
 ## Comentários Finais
 
 Testes de mutação podem ser vistos como sendo os **testes dos testes**. 

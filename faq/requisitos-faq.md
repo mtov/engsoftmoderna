@@ -79,7 +79,7 @@ atualização básica sobre certos temas. Assim, para atender
 à distância.
 
 Como essas personas são pessoas do Brasil, o livro foi escrito
-em Português.
+em português.
 
 ### 2. O que é dogfooding? {.unnumbered}
 
