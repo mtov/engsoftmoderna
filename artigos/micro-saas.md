@@ -181,6 +181,39 @@ Porém, hoje também existem serviços de terceiros para isso.
 Para isso, é importante automatizar e documentar todos os 
 processos e, também, usar sistemas de low-code, como Zapier.
 
+## Precificação
+
+Um desafio sempre importante consiste na definição do 
+preço da assinatura de um SaaS. Normalmente, uma vantagem 
+desses sistemas está na sua capacidade de escala. 
+Isso implica que o preço de um SaaS não precisa estar 
+unicamente relacionado com os seus custos. Em vez 
+disso, a precificação pode se basear no valor que
+o sistema gera para os seus assinantes. 
+
+Explicando de modo mais prático, deve-se definir 
+algumas faixas de preço, de forma que o preço aumente 
+quando o cliente usa mais o sistema e, portanto, 
+tira mais valor dele.
+
+Suponha, por exemplo, um sistema para aplicação de provas
+online. Hipoteticamente, esse sistema pode ter quatro 
+faixas de preço:
+
+1. Gratuito, permitindo no máximo uma prova por mês, para
+um número máximo de 40 alunos por prova.
+2. Básico, três provas por mês, para até 100 alunos por prova.
+3. Profissional, dez provas por mês, para até 100 alunos por prova.
+4. Corporativo, oitenta provas por mês, sem limites  no número 
+de alunos por prova.
+
+Ou seja, o preço aumenta em função do valor e da importância 
+que o sistema tem para cada perfil de assinante. 
+
+Na verdade, esse procedimento costuma ocorrer também com 
+outras assinaturas, como de Internet (preço varia com a 
+velocidade de acesso) ou TV a cabo (preço varia com o número 
+de canais contratados).
 
 ## Crescendo a Empresa 
 
