@@ -10050,7 +10050,7 @@ header.masthead {
   padding-bottom: calc(10rem - 4.5rem);
   /* background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/bg-masthead.jpg");
   */
-  background-color: olive;
+  background-color: #2F4F4F;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
