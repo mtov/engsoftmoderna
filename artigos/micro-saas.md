@@ -183,7 +183,7 @@ processos e, também, usar sistemas de low-code, como Zapier.
 
 ## Precificação
 
-Um desafio sempre importante consiste na definição do 
+Um outro desafio importante consiste na definição do 
 preço da assinatura de um SaaS. Normalmente, uma vantagem 
 desses sistemas está na sua capacidade de escala. 
 Isso implica que o preço de um SaaS não precisa estar 
@@ -287,7 +287,7 @@ Valores de NPS acima de 50 já são considerados bons.
 Por exemplo, grandes empresas da Internet costumam ter NPS 
 próximo de 60 ou até mesmo um pouco inferior.
 
-O NPS é importante porque se um empresa tem um 
+O NPS é importante porque se uma empresa tem um 
 NPS alto então o seu CAC e Churn tendem a ser menores. E, 
 consequentemente, o LTV será maior.
 

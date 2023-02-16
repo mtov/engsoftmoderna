@@ -78,11 +78,16 @@
       UmLivro</a>
 </p>
 
+<!--
 <p>
 Veja também os cursos de extensão a distância 
 <a href="https://engsoftmoderna.info/curso">Engenharia de Software Moderna</a> (48 horas) e
 <a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
+-->
 
+<p>
+Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. Matrículas abertas para a primeira turma de 2023.
+</p>
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -206,17 +211,17 @@ de mutação pode não ser uma prioridade.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios"
 class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>1. Seja a seguinte função que verifica se um cliente é VIP, dado o
-seu saldo e seu tempo de relacionamento com um banco:</p>
-<pre><code>def isClienteVIP(saldo, tempo):
-    if (saldo &gt; 10000) or (tempo &gt; 10):
+seu saldo no banco:</p>
+<pre><code>def isClienteVIP(saldo):
+    if (saldo &gt; 10000):
        return True
     return False</code></pre>
 <p>Seja ainda o seguinte teste dessa função:</p>
 <pre><code>def teste():
-    assertTrue(isClienteVIP(15000, 5))</code></pre>
-<p>Então: (1) gere um mutante para a função que não é <q>morto</q> pelo
-teste; (2) modifique o teste para que ele falhe com o mutante que você
-gerou.</p>
+    assertTrue(isClienteVIP(15000))</code></pre>
+<p>Então: (a) qual a cobertura de comandos desse teste? (b) gere um
+mutante para a função que não é <q>morto</q> pelo teste; (c) modifique o
+teste para que ele falhe com o mutante que você gerou.</p>
 <p>2. Seja a seguinte função:</p>
 <pre><code>def isConceitoA(nota):
     if (nota &gt;= 90):
@@ -226,8 +231,8 @@ gerou.</p>
 <pre><code>def teste():
     assertTrue(isConceitoA(95))
     assertFalse(isConceitoA(85))</code></pre>
-<p>Então: (1) qual a cobertura de comandos desse teste? (2) gere um
-mutante para a função que não é <q>morto</q> pelo teste; (3) modifique o
+<p>Então: (a) qual a cobertura de comandos desse teste? (b) gere um
+mutante para a função que não é <q>morto</q> pelo teste; (c) modifique o
 teste para que ele falhe com o mutante que você gerou.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>

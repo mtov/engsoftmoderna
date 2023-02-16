@@ -121,11 +121,11 @@ investimento em testes de mutação pode não ser uma prioridade.
 ## Exercícios {.unnumbered}
 
 1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
-seu saldo e seu tempo de relacionamento com um banco:
+seu saldo no banco:
 
 ```
-def isClienteVIP(saldo, tempo):
-    if (saldo > 10000) or (tempo > 10):
+def isClienteVIP(saldo):
+    if (saldo > 10000):
        return True
     return False
 ```
@@ -134,12 +134,12 @@ Seja ainda o seguinte teste dessa função:
 
 ```
 def teste():
-    assertTrue(isClienteVIP(15000, 5))
+    assertTrue(isClienteVIP(15000))
 ```
 
-Então: (1) gere um mutante para a função que não é "morto" pelo 
-teste; (2) modifique o teste para que ele falhe com o mutante que 
-você gerou.
+Então: (a) qual a cobertura de comandos desse teste? (b) gere 
+um mutante para a função que não é "morto" pelo teste; (c) modifique 
+o teste para que ele falhe com o mutante que você gerou.
 
 2\. Seja a seguinte função:
 ```
@@ -157,8 +157,8 @@ def teste():
     assertFalse(isConceitoA(85))
 ```
 
-Então: (1) qual a cobertura de comandos desse teste? (2) gere um mutante 
-para a função que não é "morto" pelo teste; (3) modifique o teste 
+Então: (a) qual a cobertura de comandos desse teste? (b) gere um mutante 
+para a função que não é "morto" pelo teste; (c) modifique o teste 
 para que ele falhe com o mutante que você gerou.
 
 
