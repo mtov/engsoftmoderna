@@ -139,7 +139,7 @@ expressão do comando <code>if</code>, trocando <code>a == b</code> por
 <code>a != b</code>. No entanto, como também informado na mensagem, essa
 mutação não implicou na falha de nenhum dos testes existentes.</p>
 <figure>
-<img src="./figs/testes-mutacao-google.jpg" style="width:75.0%"
+<img src="./figs/testes-mutacao-google.jpg" style="width:50.0%"
 alt="Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog" />
 <figcaption aria-hidden="true">Exemplo de mutação que sobreviveu à
 execução dos testes. Fonte: Google Testing Blog</figcaption>
@@ -234,6 +234,31 @@ teste para que ele falhe com o mutante que você gerou.</p>
 <p>Então: (a) qual a cobertura de comandos desse teste? (b) gere um
 mutante para a função que não é <q>morto</q> pelo teste; (c) modifique o
 teste para que ele falhe com o mutante que você gerou.</p>
+<p>3. Seja a seguinte versão modificada da função do primeiro exercício,
+a qual considera também o tempo de relacionamento do cliente com o banco
+para verificar se ele é VIP.</p>
+<pre><code>def isClienteVIP(saldo, tempo):
+    if (saldo &gt; 10000) or (tempo &gt; 10):
+       return True
+    return False</code></pre>
+<p>Segue também o novo teste dessa função (que possui uma cobertura de
+comandos de 100%):</p>
+<pre><code>def teste():
+    assertTrue(isClienteVIP(11000, 11))
+    assertTrue(isClienteVIP(10000, 11))
+    assertFalse(isClienteVIP(9000, 9))</code></pre>
+<p>Ao usar uma ferramenta de testes de mutação, foi gerado então o
+seguinte mutante:</p>
+<pre><code># mutante: primeira condição do if foi removida
+def isClienteVIP(saldo, tempo):
+    if (tempo &gt; 10): 
+       return True
+    return False</code></pre>
+<p>Veja, no entanto, que o teste mostrado acima <strong>não</strong> é
+capaz de matar esse mutante. Isto é, ele <strong>não</strong> falha ao
+ser executado com o mutante.</p>
+<p>Então, adicione mais um <code>assert</code> no teste de modo que ele
+agora <q>mate</q> o mutante.</p>
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

@@ -50,7 +50,7 @@ trocando `a == b` por `a != b`. No entanto, como também informado
 na mensagem, essa mutação não implicou na falha de nenhum dos 
 testes existentes.
 
-![Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog](./figs/testes-mutacao-google.jpg){width=75%}
+![Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog](./figs/testes-mutacao-google.jpg){width=50%}
 
 Ao se deparar com a mensagem acima, o desenvolvedor deve 
 analisar a mutação realizada e inferir o comportamento do sistema 
@@ -142,6 +142,7 @@ um mutante para a função que não é "morto" pelo teste; (c) modifique
 o teste para que ele falhe com o mutante que você gerou.
 
 2\. Seja a seguinte função:
+
 ```
 def isConceitoA(nota):
     if (nota >= 90):
@@ -161,6 +162,44 @@ Então: (a) qual a cobertura de comandos desse teste? (b) gere um mutante
 para a função que não é "morto" pelo teste; (c) modifique o teste 
 para que ele falhe com o mutante que você gerou.
 
+3\. Seja a seguinte versão modificada da função do primeiro 
+exercício, a qual considera também o tempo de relacionamento
+do cliente com o banco para verificar se ele é VIP.
+
+```
+def isClienteVIP(saldo, tempo):
+    if (saldo > 10000) or (tempo > 10):
+       return True
+    return False
+```
+
+Segue também o novo teste dessa função (que possui uma cobertura de 
+comandos de 100%):
+
+```
+def teste():
+    assertTrue(isClienteVIP(11000, 11))
+    assertTrue(isClienteVIP(10000, 11))
+    assertFalse(isClienteVIP(9000, 9))
+```
+
+Ao usar uma ferramenta de testes de mutação, foi gerado então o seguinte 
+mutante:
+
+```
+# mutante: primeira condição do if foi removida
+def isClienteVIP(saldo, tempo):
+    if (tempo > 10): 
+       return True
+    return False
+```
+
+Veja, no entanto, que o teste mostrado acima **não** é capaz de 
+matar esse mutante. Isto é, ele **não** falha ao ser executado com 
+o mutante.
+
+Então, adicione mais um `assert` no teste de modo que ele agora
+"mate" o mutante.
 
 * * * 
 
