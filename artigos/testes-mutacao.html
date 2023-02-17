@@ -115,7 +115,7 @@ modificações no código de produção, gerando uma versão do código que é
 chamada de <strong>mutante</strong>. Por exemplo, mutantes podem ser
 gerados por meio das seguintes operações:</p>
 <ul>
-<li>Remoção ou duplicação de algum comando.</li>
+<li>Remoção ou duplicação de algum comando ou expressão.</li>
 <li>Troca de operadores, por exemplo, troca de um operador de adição (+)
 por um de subtração (-).</li>
 <li>Inserção um operador, por exemplo, <code>cond</code> vira
@@ -247,7 +247,7 @@ comandos de 100%):</p>
     assertTrue(isClienteVIP(11000, 11))
     assertTrue(isClienteVIP(10000, 11))
     assertFalse(isClienteVIP(9000, 9))</code></pre>
-<p>Ao usar uma ferramenta de testes de mutação, foi gerado então o
+<p>Então, ao usar uma ferramenta de testes de mutação, foi gerado o
 seguinte mutante:</p>
 <pre><code># mutante: primeira condição do if foi removida
 def isClienteVIP(saldo, tempo):
