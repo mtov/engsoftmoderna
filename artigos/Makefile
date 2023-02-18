@@ -58,10 +58,10 @@ arquitetura-limpa: arquitetura-limpa.md
 	$(pandoc_bin) -T "Construindo Sistemas com uma Arquitetura Limpa" arquitetura-limpa.md -o arquitetura-limpa.html
 
 arquitetura-hexagonal: arquitetura-hexagonal.md
-	$(pandoc_bin) -T "O que é uma Arquitetura Hexagonal" arquitetura-hexagonal.md -o arquitetura-hexagonal.html
+	$(pandoc_bin) -T "O que é uma Arquitetura Hexagonal?" arquitetura-hexagonal.md -o arquitetura-hexagonal.html
 
 serverless: serverless.md
-	$(pandoc_bin) -T "O que é uma Arquitetura Serverless" serverless.md -o serverless.html
+	$(pandoc_bin) -T "O que é uma Arquitetura Serverless?" serverless.md -o serverless.html
 
 exemplos-teste: exemplos-teste.md
 	$(pandoc_bin) --lua-filter=../helper/anchor-links.lua -T "Alguns Exemplos Reais e Interessantes de Testes" exemplos-teste.md -o exemplos-teste.html
