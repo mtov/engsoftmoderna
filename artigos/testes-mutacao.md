@@ -120,28 +120,8 @@ investimento em testes de mutação pode não ser uma prioridade.
 
 ## Exercícios {.unnumbered}
 
-1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
-seu saldo no banco:
 
-```
-def isClienteVIP(saldo):
-    if (saldo > 10000):
-       return True
-    return False
-```
-
-Seja ainda o seguinte teste dessa função:
-
-```
-def teste():
-    assertTrue(isClienteVIP(15000))
-```
-
-Então: (a) qual a cobertura de comandos desse teste? (b) gere 
-um mutante para a função que não é "morto" pelo teste; (c) modifique 
-o teste para que ele falhe com o mutante que você gerou.
-
-2\. Seja a seguinte função:
+1\. Seja a seguinte função:
 
 ```
 def isConceitoA(nota):
@@ -162,9 +142,8 @@ Então: (a) qual a cobertura de comandos desse teste? (b) gere um mutante
 para a função que não é "morto" pelo teste; (c) modifique o teste 
 para que ele falhe com o mutante que você gerou.
 
-3\. Seja a seguinte versão modificada da função do primeiro 
-exercício, a qual considera também o tempo de relacionamento
-do cliente com o banco para verificar se ele é VIP.
+2\. Seja a seguinte função que verifica se um cliente de um banco é VIP,
+dependendo do seu saldo e tempo de relacionamento com o banco:
 
 ```
 def isClienteVIP(saldo, tempo):
@@ -173,7 +152,7 @@ def isClienteVIP(saldo, tempo):
     return False
 ```
 
-Segue também o novo teste dessa função (que possui uma cobertura de 
+Segue também o seguinte teste dessa função (que possui uma cobertura de 
 comandos de 100%):
 
 ```
@@ -200,6 +179,71 @@ o mutante.
 
 Então, adicione mais um `assert` no teste de modo que ele agora
 "mate" o mutante.
+
+3. Seja a seguinte classe, agora em Java:
+
+```
+public class Cliente {
+  public boolean isVIP (double saldo) {
+    if (saldo > 10000) {
+       return true;
+    }  
+    return false;
+  }
+}
+```
+
+E seja o seu seguinte teste de unidade:
+
+```
+public class Teste {
+  @Test
+  public void teste1() {
+    Cliente cliente = new Cliente();
+    assertTrue(cliente.isVIP(15000));
+  }
+}  
+```
+
+Por fim, seja a seguinte saída gerada pela ferramenta Pitest
+quando executada no programa formado pela classe e teste
+mostrados anteriormente:
+
+![Relatório gerado pelo Pitest com dois mutantes sobreviventes](./figs/teste-mutacao-pitest.jpg){width=60%}
+
+Conforme podemos observar, foram gerados quatro mutantes, sendo que
+dois foram mortos (linhas com fundo verde), um sobreviveu (primeira linha
+com fundo vermelho) e o último mutante não foi coberto pelo teste. 
+
+Então, modifique o teste de unidade, acrescentando mais dois comandos 
+`assert`, de forma que ele mate todos os quatro mutantes. 
+Consequentemente, o novo relatório gerado pela ferramenta deverá
+ser o seguinte:
+
+![Relatório gerado pelo Pitest indicando que todos mutantes foram mortos](./figs/teste-mutacao-pitest-verde.jpg){width=60%}
+
+<!---
+1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
+seu saldo no banco:
+
+```
+def isClienteVIP(saldo):
+    if (saldo > 10000):
+       return True
+    return False
+```
+
+Seja ainda o seguinte teste dessa função:
+
+```
+def teste():
+    assertTrue(isClienteVIP(15000))
+```
+
+Então: (a) qual a cobertura de comandos desse teste? (b) gere 
+um mutante para a função que não é "morto" pelo teste; (c) modifique 
+o teste para que ele falhe com o mutante que você gerou.
+--->
 
 * * * 
 

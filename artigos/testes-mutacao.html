@@ -211,19 +211,7 @@ melhor cobertura de testes. Logo, nesses casos, o investimento em testes
 de mutação pode não ser uma prioridade.</p>
 <h2 class="unnumbered" id="exercícios">Exercícios <a href="#exercícios"
 class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p>1. Seja a seguinte função que verifica se um cliente é VIP, dado o
-seu saldo no banco:</p>
-<pre><code>def isClienteVIP(saldo):
-    if (saldo &gt; 10000):
-       return True
-    return False</code></pre>
-<p>Seja ainda o seguinte teste dessa função:</p>
-<pre><code>def teste():
-    assertTrue(isClienteVIP(15000))</code></pre>
-<p>Então: (a) qual a cobertura de comandos desse teste? (b) gere um
-mutante para a função que não é <q>morto</q> pelo teste; (c) modifique o
-teste para que ele falhe com o mutante que você gerou.</p>
-<p>2. Seja a seguinte função:</p>
+<p>1. Seja a seguinte função:</p>
 <pre><code>def isConceitoA(nota):
     if (nota &gt;= 90):
        return True
@@ -235,15 +223,14 @@ teste para que ele falhe com o mutante que você gerou.</p>
 <p>Então: (a) qual a cobertura de comandos desse teste? (b) gere um
 mutante para a função que não é <q>morto</q> pelo teste; (c) modifique o
 teste para que ele falhe com o mutante que você gerou.</p>
-<p>3. Seja a seguinte versão modificada da função do primeiro exercício,
-a qual considera também o tempo de relacionamento do cliente com o banco
-para verificar se ele é VIP.</p>
+<p>2. Seja a seguinte função que verifica se um cliente de um banco é
+VIP, dependendo do seu saldo e tempo de relacionamento com o banco:</p>
 <pre><code>def isClienteVIP(saldo, tempo):
     if (saldo &gt; 10000) or (tempo &gt; 10):
        return True
     return False</code></pre>
-<p>Segue também o novo teste dessa função (que possui uma cobertura de
-comandos de 100%):</p>
+<p>Segue também o seguinte teste dessa função (que possui uma cobertura
+de comandos de 100%):</p>
 <pre><code>def teste():
     assertTrue(isClienteVIP(11000, 11))
     assertTrue(isClienteVIP(10000, 11))
@@ -260,6 +247,70 @@ capaz de matar esse mutante. Isto é, ele <strong>não</strong> falha ao
 ser executado com o mutante.</p>
 <p>Então, adicione mais um <code>assert</code> no teste de modo que ele
 agora <q>mate</q> o mutante.</p>
+<ol start="3" type="1">
+<li>Seja a seguinte classe, agora em Java:</li>
+</ol>
+<pre><code>public class Cliente {
+  public boolean isVIP (double saldo) {
+    if (saldo &gt; 10000) {
+       return true;
+    }  
+    return false;
+  }
+}</code></pre>
+<p>E seja o seu seguinte teste de unidade:</p>
+<pre><code>public class Teste {
+  @Test
+  public void teste1() {
+    Cliente cliente = new Cliente();
+    assertTrue(cliente.isVIP(15000));
+  }
+}  </code></pre>
+<p>Por fim, seja a seguinte saída gerada pela ferramenta Pitest quando
+executada no programa formado pela classe e teste mostrados
+anteriormente:</p>
+<figure>
+<img src="./figs/teste-mutacao-pitest.jpg" style="width:60.0%"
+alt="Relatório gerado pelo Pitest com dois mutantes sobreviventes" />
+<figcaption aria-hidden="true">Relatório gerado pelo Pitest com dois
+mutantes sobreviventes</figcaption>
+</figure>
+<p>Conforme podemos observar, foram gerados quatro mutantes, sendo que
+dois foram mortos (linhas com fundo verde), um sobreviveu (primeira
+linha com fundo vermelho) e o último mutante não foi coberto pelo
+teste.</p>
+<p>Então, modifique o teste de unidade, acrescentando mais dois comandos
+<code>assert</code>, de forma que ele mate todos os quatro mutantes.
+Consequentemente, o novo relatório gerado pela ferramenta deverá ser o
+seguinte:</p>
+<figure>
+<img src="./figs/teste-mutacao-pitest-verde.jpg" style="width:60.0%"
+alt="Relatório gerado pelo Pitest indicando que todos mutantes foram mortos" />
+<figcaption aria-hidden="true">Relatório gerado pelo Pitest indicando
+que todos mutantes foram mortos</figcaption>
+</figure>
+<!---
+1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
+seu saldo no banco:
+
+```
+def isClienteVIP(saldo):
+    if (saldo > 10000):
+       return True
+    return False
+```
+
+Seja ainda o seguinte teste dessa função:
+
+```
+def teste():
+    assertTrue(isClienteVIP(15000))
+```
+
+Então: (a) qual a cobertura de comandos desse teste? (b) gere 
+um mutante para a função que não é "morto" pelo teste; (c) modifique 
+o teste para que ele falhe com o mutante que você gerou.
+--->
 <hr />
 <p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>
