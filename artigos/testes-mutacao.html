@@ -140,7 +140,7 @@ expressão do comando <code>if</code>, trocando <code>a == b</code> por
 <code>a != b</code>. No entanto, como também informado na mensagem, essa
 mutação não implicou na falha de nenhum dos testes existentes.</p>
 <figure>
-<img src="./figs/testes-mutacao-google.jpg" style="width:50.0%"
+<img src="./figs/testes-mutacao-google.jpg" style="width:60.0%"
 alt="Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog" />
 <figcaption aria-hidden="true">Exemplo de mutação que sobreviveu à
 execução dos testes. Fonte: Google Testing Blog</figcaption>
@@ -163,25 +163,42 @@ gerados</p>
 <p>Diz-se que um mutante foi morto quando ele foi detectado por algum
 teste existente. Portanto, idealmente, gostaríamos que o score de
 mutações fosse sempre de 100%.</p>
-<h2 data-number="1.3" id="exemplo-jfreechart"><span
-class="header-section-number">1.3</span> Exemplo: JFreeChart <a
+<h2 data-number="1.3" id="ferramentas-para-testes-de-mutação"><span
+class="header-section-number">1.3</span> Ferramentas para Testes de
+Mutação <a href="#ferramentas-para-testes-de-mutação"
+class="anchor-link" aria-hidden="true">🔗</a></h2>
+<p>Existem diversas ferramentas para realização de testes de mutação. No
+caso de Java, uma das ferramentas mais populares é o <a
+href="https://pitest.org">Pitest</a>, a qual implementa diversas
+estratégias para reduzir o tempo de execução dos testes de mutação.
+Dentre elas, podemos citar as seguintes:</p>
+<ul>
+<li><p>Pitest realiza as mutações diretamente no código compilado. Ou
+seja, não é preciso compilar um mutante para saber se ele sobrevive ou
+não aos testes existentes.</p></li>
+<li><p>Para determinar se um mutante M é morto pelos testes, Pitest não
+roda todos os testes do programa, mas apenas aqueles que executam o
+código de M.</p></li>
+</ul>
+<h2 data-number="1.4" id="exemplo-jfreechart"><span
+class="header-section-number">1.4</span> Exemplo: JFreeChart <a
 href="#exemplo-jfreechart" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p>JFreeChart é uma biblioteca Java para construção de gráficos. A
 versão 1.0.19 do sistema possui 47 KLOC e 1320 testes.</p>
-<p>Conforme reportado no seguinte <a
-href="https://arxiv.org/abs/1601.02351">artigo</a>, a ferramenta de
-testes de mutação <a href="https://pitest.org">Pitest</a>, para
-programas Java, gera 256K mutantes para essa versão do JFreeChart. Para
-tanto, são gastos 109 minutos. O score de mutações é igual a 19%.</p>
+<p>O seguinte <a href="https://arxiv.org/abs/1601.02351">artigo</a>
+documenta e analisa o uso da ferramenta Pitest no JFreeChart. Quando
+executado sobre a versão mencionada do JFreeChart, o Pitest gera 256K
+mutantes em 109 minutos. O score de mutações é igual a 19%.</p>
 <p>Assim, esse exemplo ilustra um dos principais problemas de testes de
-mutação, isto é, o seu elevado custo computacional. Veja que em um
-sistema relativamente pequeno (47 KLOC) foram necessárias quase que duas
-horas para testar todos os mutantes gerados. Por outro lado, chegou-se a
-um score de mutação relativamente baixo (19%), o que sugere que existe
-espaço para escrever novos testes para esse sistema.</p>
-<h2 data-number="1.4" id="mutantes-equivalentes"><span
-class="header-section-number">1.4</span> Mutantes Equivalentes <a
+mutação, isto é, o seu elevado custo computacional, mesmo com todas as
+otimizações implementadas pelo Pitest. Em um sistema relativamente
+pequeno (47 KLOC), foram necessárias quase que duas horas para testar
+todos os mutantes gerados. Por outro lado, chegou-se a um score de
+mutação relativamente baixo (19%), o que sugere que existe espaço para
+escrever novos testes para esse sistema.</p>
+<h2 data-number="1.5" id="mutantes-equivalentes"><span
+class="header-section-number">1.5</span> Mutantes Equivalentes <a
 href="#mutantes-equivalentes" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p>Em situações específicas, os operadores de mutação podem gerar
@@ -197,8 +214,8 @@ sobre o mutante. Nesses casos, a melhor solução consiste em refatorar o
 código para eliminar a situação que causou a geração do mutante
 equivalente. No nosso exemplo, podemos deletar o código morto, pois ele
 não é mais necessário no sistema.</p>
-<h2 data-number="1.5" id="comentários-finais"><span
-class="header-section-number">1.5</span> Comentários Finais <a
+<h2 data-number="1.6" id="comentários-finais"><span
+class="header-section-number">1.6</span> Comentários Finais <a
 href="#comentários-finais" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p>Testes de mutação podem ser vistos como sendo os <strong>testes dos

@@ -50,7 +50,7 @@ trocando `a == b` por `a != b`. No entanto, como também informado
 na mensagem, essa mutação não implicou na falha de nenhum dos 
 testes existentes.
 
-![Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog](./figs/testes-mutacao-google.jpg){width=50%}
+![Exemplo de mutação que sobreviveu à execução dos testes. Fonte: Google Testing Blog](./figs/testes-mutacao-google.jpg){width=60%}
 
 Ao se deparar com a mensagem acima, o desenvolvedor deve 
 analisar a mutação realizada e inferir o comportamento do sistema 
@@ -69,19 +69,35 @@ Diz-se que um mutante foi morto quando ele foi detectado
 por algum teste existente. Portanto, idealmente, gostaríamos
 que o score de mutações fosse sempre de 100%.
 
+## Ferramentas para Testes de Mutação
+
+Existem diversas ferramentas para realização de testes de mutação.
+No caso de Java, uma das ferramentas mais populares é o 
+[Pitest](https://pitest.org), a qual implementa diversas estratégias 
+para reduzir o tempo de execução dos testes de mutação. 
+Dentre elas, podemos citar as seguintes:
+
+* Pitest realiza as mutações diretamente no código compilado. Ou seja,
+não é preciso compilar um mutante para saber se ele sobrevive ou não aos
+testes existentes.
+
+* Para determinar se um mutante M é morto pelos testes, Pitest não roda 
+todos os testes do programa, mas apenas aqueles que executam o código de M.
+
 ## Exemplo: JFreeChart
 
 JFreeChart é uma biblioteca Java para construção de gráficos. A versão
 1.0.19 do sistema possui 47 KLOC e 1320 testes.
 
-Conforme reportado no seguinte [artigo](https://arxiv.org/abs/1601.02351), 
-a ferramenta de testes de mutação [Pitest](https://pitest.org),
-para programas Java, gera 256K mutantes para essa versão do JFreeChart.
-Para tanto, são gastos 109 minutos. O score de mutações é igual a 19%.
+O seguinte [artigo](https://arxiv.org/abs/1601.02351) documenta e analisa
+o uso da ferramenta Pitest no JFreeChart. Quando executado sobre a 
+versão mencionada do JFreeChart, o Pitest gera 256K mutantes em 109 minutos. 
+O score de mutações é igual a 19%.
 
 Assim, esse exemplo ilustra um dos principais problemas de testes de 
-mutação, isto é, o seu elevado custo computacional. Veja que em um 
-sistema relativamente pequeno (47 KLOC) foram necessárias quase que
+mutação, isto é, o seu elevado custo computacional, mesmo com todas
+as otimizações implementadas pelo Pitest. Em um 
+sistema relativamente pequeno (47 KLOC), foram necessárias quase que
 duas horas para testar todos os mutantes gerados. Por outro lado, 
 chegou-se a um score de mutação relativamente baixo (19%), o que
 sugere que existe espaço para escrever novos testes para 
