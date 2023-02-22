@@ -89,10 +89,10 @@ todos os testes do programa, mas apenas aqueles que executam o código de M.
 JFreeChart é uma biblioteca Java para construção de gráficos. A versão
 1.0.19 do sistema possui 47 KLOC e 1320 testes.
 
-O seguinte [artigo](https://arxiv.org/abs/1601.02351) documenta e analisa
-o uso da ferramenta Pitest no JFreeChart. Quando executado sobre a 
-versão mencionada do JFreeChart, o Pitest gera 256K mutantes em 109 minutos. 
-O score de mutações é igual a 19%.
+O seguinte [artigo](https://arxiv.org/abs/1601.02351) analisa
+o uso da ferramenta Pitest no JFreeChart. Conforme descrito no artigo,
+quando executado sobre a versão mencionada do JFreeChart, o Pitest gera
+256K mutantes em 109 minutos. O score de mutações é igual a 19%.
 
 Assim, esse exemplo ilustra um dos principais problemas de testes de 
 mutação, isto é, o seu elevado custo computacional, mesmo com todas
