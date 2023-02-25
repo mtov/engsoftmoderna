@@ -238,6 +238,12 @@ ser o seguinte:
 
 ![Relatório gerado pelo Pitest indicando que todos mutantes foram mortos](./figs/teste-mutacao-pitest-verde.jpg){width=60%}
 
+Se quiser, você pode também rodar o Pitest na sua própria
+máquina. Para facilitar essa tarefa, o código fonte usado neste
+exercício está disponível no seguinte 
+[repositório](https://github.com/mtov/demo-mutacao) 
+do GitHub.
+
 <!---
 1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
 seu saldo no banco:
