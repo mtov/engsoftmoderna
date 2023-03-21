@@ -69,25 +69,27 @@
 
 <p>Compre na
 
-<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
-
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<!--
 <a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
       Submarino</a> ou 
-
 <a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
       UmLivro</a>
+-->
+<a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
 </p>
 
-<!--
 <p>
 Veja também os cursos de extensão a distância 
-<a href="https://engsoftmoderna.info/curso">Engenharia de Software Moderna</a> (48 horas) e
-<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
--->
+<a href="http://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
 
+
+<!---
 <p>
-Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. Matrículas abertas para a primeira turma de 2023.
+Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. 
 </p>
+--->
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -137,11 +139,15 @@ que é um líder servidor?</a></li>
 <li><a
 href="#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm">Qual
 a diferença entre Product Owner (PO) e Product Manager (PM)?</a></li>
+<li><a
+href="#qual-a-diferen%C3%A7a-entre-definition-of-ready-e-definition-of-done">Qual
+a diferença entre <em>Definition of Ready</em> e <em>Definition of
+Done</em>?</a></li>
 </ol>
 <h5 class="unnumbered" id="perguntas-sobre-kanban">Perguntas sobre
 Kanban <a href="#perguntas-sobre-kanban" class="anchor-link"
 aria-hidden="true">🔗</a></h5>
-<ol start="10" type="1">
+<ol start="11" type="1">
 <li><a
 href="#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban">É
 possível voltar com o cartão em um quadro Kanban?</a></li>
@@ -155,7 +161,7 @@ id="perguntas-sobre-organização-de-times-ágeis">Perguntas sobre
 Organização de Times Ágeis <a
 href="#perguntas-sobre-organização-de-times-ágeis" class="anchor-link"
 aria-hidden="true">🔗</a></h5>
-<ol start="13" type="1">
+<ol start="14" type="1">
 <li><a href="#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead">O que faz
 um Líder Técnico?</a></li>
 <li><a
@@ -379,7 +385,30 @@ se preocupar também com o posicionamento estratégico do produto no
 mercado e com variáveis como número de clientes, engajamento, taxas de
 cancelamento, etc.</p>
 <h3 class="unnumbered"
-id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">10. É possível
+id="qual-a-diferença-entre-definition-of-ready-e-definition-of-done">10.
+Qual a diferença entre <em>Definition of Ready</em> e <em>Definition of
+Done</em>? <a
+href="#qual-a-diferença-entre-definition-of-ready-e-definition-of-done"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Essas duas definições dizem respeito ao estado de uma história de
+usuário. E a diferença entre elas é a seguinte:</p>
+<ul>
+<li><p><em>Done</em>: quando a implementação de uma história está
+concluída, isto é, ela já passou pelos testes, revisão de código, etc.
+Na verdade, o time deve definir internamente quais são os critérios para
+considerar uma história <em>done</em>, conforme discutimos no <a
+href="https://engsoftmoderna.info/cap2.html#principais-artefatos-e-eventos">Capítulo
+2</a>.</p></li>
+<li><p><em>Ready</em>: quando a história está pronta para ser alocada em
+um sprint. Por exemplo, ela já foi refinada pelo PO, discutida com as
+áreas de negócio, os testes de aceitação já foram especificados,
+etc.</p></li>
+</ul>
+<p>Ou seja, <em>ready</em> indica que estamos prontos para começar a
+implementação de uma história. E <em>done</em> indica que essa
+implementação foi terminada.</p>
+<h3 class="unnumbered"
+id="é-possível-voltar-com-o-cartão-em-um-quadro-kanban">11. É possível
 voltar com o cartão em um quadro Kanban? <a
 href="#é-possível-voltar-com-o-cartão-em-um-quadro-kanban"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -391,7 +420,7 @@ errada. O que deve-se fazer?</p>
 tempo para ser corrigido, não existe alternativa, a não ser voltar com o
 cartão que descreve a tarefa para o passo de especificação, para que ela
 seja re-especificada e re-implementada, agora de forma correta.</p>
-<h3 class="unnumbered" id="em-kanban-o-que-são-classes-de-serviços">11.
+<h3 class="unnumbered" id="em-kanban-o-que-são-classes-de-serviços">12.
 Em Kanban, o que são classes de serviços? <a
 href="#em-kanban-o-que-são-classes-de-serviços" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -411,7 +440,7 @@ dispensar o passo de revisão.</p>
 serviço são <q>pistas horizontais</q> em um quadro Kanban. Ou seja, o
 conceito lembra as pistas exclusivas que existem em determinadas
 avenidas para ônibus, ambulâncias, bicicletas, etc.</p>
-<h3 class="unnumbered" id="o-que-é-um-fluxo-de-valor">12. O que é um
+<h3 class="unnumbered" id="o-que-é-um-fluxo-de-valor">13. O que é um
 fluxo de valor? <a href="#o-que-é-um-fluxo-de-valor" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p>Fluxo de valor (<em>value stream</em>) é um termo que tem sua origem
@@ -436,7 +465,7 @@ tutorial sobre desenvolvimento Lean: <q>em um sistema Kanban, o fluxo de
 valor é mapeado em um quadro com colunas para cada um dos seus
 passos</q> (veja <a
 href="https://doi.org/10.1109/MS.2012.107">artigo</a>).</p>
-<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">13. O
+<h3 class="unnumbered" id="o-que-faz-um-líder-técnico-tech-lead">14. O
 que faz um Líder Técnico (Tech Lead)? <a
 href="#o-que-faz-um-líder-técnico-tech-lead" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -462,7 +491,7 @@ Lead)</strong>. No entanto, como o próprio nome diz, o Líder Técnico não
 é o chefe do time e, portanto, ele não deve ser o controlador de todas
 as tarefas dos demais desenvolvedores.</p>
 <h3 class="unnumbered"
-id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">14.
+id="qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto">15.
 Qual a diferença entre times orientados por projeto e por produto? <a
 href="#qual-a-diferença-entre-times-orientados-por-projeto-e-por-produto"
 class="anchor-link" aria-hidden="true">🔗</a></h3>

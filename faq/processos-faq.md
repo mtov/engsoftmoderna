@@ -22,17 +22,18 @@ A lista atual de perguntas está organizada em quatro grandes temas:
  7. [O que é grooming?](#o-que-%C3%A9-grooming)
  8. [ Em Scrum, o que é um líder servidor?](#em-scrum-o-que-%C3%A9-um-l%C3%ADder-servidor)
  9. [Qual a diferença entre Product Owner (PO) e Product Manager (PM)?](#qual-a-diferen%C3%A7a-entre-product-owner-po-e-product-manager-pm)
+10. [Qual a diferença entre *Definition of Ready* e *Definition of Done*?](#qual-a-diferen%C3%A7a-entre-definition-of-ready-e-definition-of-done)
 
 ##### Perguntas sobre Kanban {.unnumbered}
 
- 10. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
- 11. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
- 12. [O que é um fluxo de valor?](#o-que-%C3%A9-um-fluxo-de-valor)
+ 11. [É possível voltar com o cartão em um quadro Kanban?](#%C3%A9-poss%C3%ADvel-voltar-com-o-cart%C3%A3o-em-um-quadro-kanban)
+ 12. [Em Kanban, o que são classes de serviços?](#em-kanban-o-que-s%C3%A3o-classes-de-servi%C3%A7os)
+ 13. [O que é um fluxo de valor?](#o-que-%C3%A9-um-fluxo-de-valor)
 
 ##### Perguntas sobre Organização de Times Ágeis {.unnumbered}
  
- 13. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
- 14. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
+ 14. [O que faz um Líder Técnico?](#o-que-faz-um-l%C3%ADder-t%C3%A9cnico-tech-lead)
+ 15. [Qual a diferença entre times orientados por projeto e por produto?](#qual-a-diferen%C3%A7a-entre-times-orientados-por-projeto-e-por-produto)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -247,7 +248,18 @@ o PM deve se preocupar também com o posicionamento estratégico
 do produto no mercado e com variáveis como número de clientes, 
 engajamento, taxas de cancelamento, etc.
 
-### 10. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
+### 10. Qual a diferença entre *Definition of Ready* e *Definition of Done*? {.unnumbered}
+
+Essas duas definições dizem respeito ao estado de uma história de usuário. E a diferença entre elas é a seguinte:
+
+* *Done*: quando a implementação de uma história está concluída, isto é, ela já passou pelos testes, revisão de código, etc. Na verdade, o time deve definir internamente quais são os critérios para considerar uma história *done*, conforme
+discutimos no [Capítulo 2](https://engsoftmoderna.info/cap2.html#principais-artefatos-e-eventos).
+
+* *Ready*: quando a história está pronta para ser alocada em um sprint. Por exemplo, ela já foi refinada pelo PO, discutida com as áreas de negócio, os  testes de aceitação já foram especificados, etc.
+
+Ou seja, *ready* indica que estamos prontos para começar a implementação de uma história. E *done* indica que essa implementação foi terminada.
+
+### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
 Explicando melhor: suponha um quadro com passos Especificação,
 Implementação e Revisão. Suponha ainda que -- no passo de revisão
@@ -261,7 +273,7 @@ passo de especificação, para que ela seja re-especificada e
 re-implementada, agora de forma correta.
 
 
-### 11. Em Kanban, o que são classes de serviços? {.unnumbered}
+### 12. Em Kanban, o que são classes de serviços? {.unnumbered}
 
 Classes de serviços é um conceito de Kanban que possibilita
 que tarefas diferentes sejam trabalhadas de forma diferente. Por exemplo, 
@@ -282,7 +294,7 @@ classes de serviço são "pistas horizontais" em um quadro Kanban.
 Ou seja, o conceito lembra as pistas exclusivas que existem 
 em determinadas avenidas para ônibus, ambulâncias, bicicletas, etc.
 
-### 12. O que é um fluxo de valor? {.unnumbered}
+### 13. O que é um fluxo de valor? {.unnumbered}
 
 Fluxo de valor (*value stream*) é um termo que tem sua origem 
 e inspiração em princípios de Manufatura Lean. Suponha, por 
@@ -310,7 +322,7 @@ Mary Poppendieck em um tutorial sobre desenvolvimento Lean:
 com colunas para cada um dos seus passos" (veja 
 [artigo](https://doi.org/10.1109/MS.2012.107)).
 
-### 13. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
+### 14. O que faz um Líder Técnico (Tech Lead)? {.unnumbered}
 
 Métodos ágeis não fazem distinção entre os desenvolvedores de um time. 
 Por exemplo, o Guia do Scrum diz explicitamente que não devem existir sub-times ou 
@@ -334,7 +346,7 @@ No entanto, como o próprio nome diz, o Líder Técnico não é o chefe do time 
 portanto, ele não deve ser o controlador de todas as tarefas dos demais 
 desenvolvedores.
 
-### 14. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
+### 15. Qual a diferença entre times orientados por projeto e por produto? {.unnumbered}
 
 Vamos responder discorrendo sobre cada um dessas formas de organização de times.
 
