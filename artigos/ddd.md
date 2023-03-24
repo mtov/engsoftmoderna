@@ -148,7 +148,7 @@ projetar com cuidado como eles serão persistidos e depois
 recuperados de um banco de dados. Devemos também tomar
 cuidado com o ciclo de vida de entidades. Por exemplo, podem
 existir regras que governam a criação e remoção de entidades.
-No caso da nossa bibliotecas, não se pode remover 
+No caso da nossa biblioteca, não se pode remover 
 um `Usuário` se ele tiver um `Empréstimo` pendente.
 
 Já objetos de valor são mais simples. E também eles devem ser 

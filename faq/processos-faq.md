@@ -250,14 +250,14 @@ engajamento, taxas de cancelamento, etc.
 
 ### 10. Qual a diferença entre *Definition of Ready* e *Definition of Done*? {.unnumbered}
 
-Essas duas definições dizem respeito ao estado de uma história de usuário. E a diferença entre elas é a seguinte:
+Essas definições dizem respeito ao estado de uma história de usuário. E a diferença entre elas é a seguinte:
+
+* *Ready*: quando a história está pronta para ser implementada em um sprint. Por exemplo, ela já foi refinada pelo PO, discutida com as áreas de negócio, os  testes de aceitação foram especificados, etc.
 
 * *Done*: quando a implementação de uma história está concluída, isto é, ela já passou pelos testes, revisão de código, etc. Na verdade, o time deve definir internamente quais são os critérios para considerar uma história *done*, conforme
 discutimos no [Capítulo 2](https://engsoftmoderna.info/cap2.html#principais-artefatos-e-eventos).
 
-* *Ready*: quando a história está pronta para ser alocada em um sprint. Por exemplo, ela já foi refinada pelo PO, discutida com as áreas de negócio, os  testes de aceitação já foram especificados, etc.
-
-Ou seja, *ready* indica que estamos prontos para começar a implementação de uma história. E *done* indica que essa implementação foi terminada.
+Ou seja, *ready* indica que estamos prontos para começar a implementação de uma história, se o PO assim desejar. E *done* indica que essa implementação foi integralmente terminada e, portanto, já pode entrar em produção, se o PO assim desejar.
 
 ### 11. É possível voltar com o cartão em um quadro Kanban? {.unnumbered}
 
