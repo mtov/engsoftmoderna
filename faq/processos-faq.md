@@ -250,7 +250,7 @@ engajamento, taxas de cancelamento, etc.
 
 ### 10. Qual a diferença entre *Definition of Ready* e *Definition of Done*? {.unnumbered}
 
-Essas definições dizem respeito ao estado de uma história de usuário. E a diferença entre elas é a seguinte:
+Esses termos dizem respeito ao estado de uma história de usuário. E a diferença entre elas é a seguinte:
 
 * *Ready*: quando a história está pronta para ser implementada em um sprint. Por exemplo, ela já foi refinada pelo PO, discutida com as áreas de negócio, os  testes de aceitação foram especificados, etc.
 
