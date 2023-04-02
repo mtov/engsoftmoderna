@@ -10,6 +10,7 @@ Segue a lista atual de perguntas:
 1. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
 2. [Qual a diferença entre Strategy e Template Method?](#qual-a-diferen%C3%A7a-entre-strategy-e-template-method)
 3. [O que é uma especificação (specification)?](#o-que-%C3%A9-uma-especifica%C3%A7%C3%A3o-specification)
+4. ´[Qual a diferença entre uma Fachada e um API Gateway?](#qual-a-diferen%C3%A7a-entre-uma-fachada-e-um-api-gateway)
 
 * * * 
 
@@ -99,6 +100,32 @@ mais simples e mais "leve", isto é, com menos dependências. Fica também
 mais fácil criar regras de negócio alternativas. Por exemplo, uma 
 segunda regra pode verificar se pedidos expressos estão atrasados.
 
+### 4. Qual a diferença entre uma Fachada e um API Gateway? {.unnumbered}
+
+Na verdade, essa diferença é pequena e sutil. Para explicá-la,
+vamos primeiro reproduzir a definição de Fachada, que usamos
+no [Capítulo 6](https://engsoftmoderna.info/cap6.html#fachada):
+
+> Uma Fachada é uma classe que oferece uma interface mais 
+simples para um sistema. O objetivo é evitar que os usuários 
+tenham que conhecer classes internas desse sistema; em vez disso, 
+eles precisam interagir apenas com a classe de Fachada. As 
+classes internas ficam encapsuladas por trás dessa Fachada.
+
+Já API Gateway é um conceito parecido, porém mais usado no 
+contexto de arquiteturas de software, particularmente arquiteturas baseadas em microsserviços. Veja uma definição adaptada 
+do seguinte [artigo](https://doi.org/10.5220/0006798302210232):
+
+> Um API Gateway é um ponto de entrada único de um sistema e
+responsável por rotear as requisições dos clientes para os 
+microsserviços apropriados, podendo interagir com múltiplos
+microsserviços e também combinar os resultados de tais interações.
+Um API Gateway pode ser também responsável por converter 
+protocolos e implementar lógica relacionada com autenticação, 
+limites de taxas de requisições e balanceamento de carga.
+
+Veja então que essas últimas funcionalidades -- conversão de protocolos, autenticação, balanceamento de cargas, etc
+-- não são comuns em Fachadas.
 
 * * * 
 

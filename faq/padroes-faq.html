@@ -69,25 +69,27 @@
 
 <p>Compre na
 
-<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
-
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<!--
 <a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
       Submarino</a> ou 
-
 <a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
       UmLivro</a>
+-->
+<a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
 </p>
 
-<!--
 <p>
 Veja também os cursos de extensão a distância 
-<a href="https://engsoftmoderna.info/curso">Engenharia de Software Moderna</a> (48 horas) e
-<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
--->
+<a href="http://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
 
+
+<!---
 <p>
-Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. Matrículas abertas para a primeira turma de 2023.
+Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. 
 </p>
+--->
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -110,6 +112,9 @@ href="#qual-a-diferen%C3%A7a-entre-strategy-e-template-method">Qual a
 diferença entre Strategy e Template Method?</a></li>
 <li><a href="#o-que-%C3%A9-uma-especifica%C3%A7%C3%A3o-specification">O
 que é uma especificação (specification)?</a></li>
+<li>´<a
+href="#qual-a-diferen%C3%A7a-entre-uma-fachada-e-um-api-gateway">Qual a
+diferença entre uma Fachada e um API Gateway?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered"
@@ -190,6 +195,37 @@ que usa a regra de negócio (no nosso exemplo, <code>Pedido</code>) mais
 simples e mais <q>leve</q>, isto é, com menos dependências. Fica também
 mais fácil criar regras de negócio alternativas. Por exemplo, uma
 segunda regra pode verificar se pedidos expressos estão atrasados.</p>
+<h3 class="unnumbered"
+id="qual-a-diferença-entre-uma-fachada-e-um-api-gateway">4. Qual a
+diferença entre uma Fachada e um API Gateway? <a
+href="#qual-a-diferença-entre-uma-fachada-e-um-api-gateway"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Na verdade, essa diferença é pequena e sutil. Para explicá-la, vamos
+primeiro reproduzir a definição de Fachada, que usamos no <a
+href="https://engsoftmoderna.info/cap6.html#fachada">Capítulo 6</a>:</p>
+<blockquote>
+<p>Uma Fachada é uma classe que oferece uma interface mais simples para
+um sistema. O objetivo é evitar que os usuários tenham que conhecer
+classes internas desse sistema; em vez disso, eles precisam interagir
+apenas com a classe de Fachada. As classes internas ficam encapsuladas
+por trás dessa Fachada.</p>
+</blockquote>
+<p>Já API Gateway é um conceito parecido, porém mais usado no contexto
+de arquiteturas de software, particularmente arquiteturas baseadas em
+microsserviços. Veja uma definição adaptada do seguinte <a
+href="https://doi.org/10.5220/0006798302210232">artigo</a>:</p>
+<blockquote>
+<p>Um API Gateway é um ponto de entrada único de um sistema e
+responsável por rotear as requisições dos clientes para os
+microsserviços apropriados, podendo interagir com múltiplos
+microsserviços e também combinar os resultados de tais interações. Um
+API Gateway pode ser também responsável por converter protocolos e
+implementar lógica relacionada com autenticação, limites de taxas de
+requisições e balanceamento de carga.</p>
+</blockquote>
+<p>Veja então que essas últimas funcionalidades – conversão de
+protocolos, autenticação, balanceamento de cargas, etc – não são comuns
+em Fachadas.</p>
 <hr />
 <p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>
