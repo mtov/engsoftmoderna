@@ -113,7 +113,7 @@ eles precisam interagir apenas com a classe de Fachada. As
 classes internas ficam encapsuladas por trás dessa Fachada.
 
 Já API Gateway é um conceito parecido, porém mais usado no 
-contexto de arquiteturas de software, particularmente arquiteturas baseadas em microsserviços. Veja uma definição adaptada 
+contexto de arquiteturas de software, particularmente arquiteturas baseadas em microsserviços. Segue uma definição adaptada 
 do seguinte [artigo](https://doi.org/10.5220/0006798302210232):
 
 > Um API Gateway é um ponto de entrada único de um sistema e
