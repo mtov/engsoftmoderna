@@ -482,14 +482,14 @@ que mostramos nesta seção, com as classes <code>Pessoa</code> e
 é que na primeira versão as classes aparecem <q>ilhadas</q>. Já na
 segunda versão, mostrada acima, fica visualmente claro que existe uma
 associação de <code>Pessoa</code> para <code>Fone</code>. Reforçando, em
-ambos diagramas, <code>Pessoa</code> tem um atributo fone do tipo
-<code>Fone</code>. Porém, na primeira versão, esse atributo é mostrado
-dentro do compartimento de atributos da classe <code>Pessoa</code>. Já
-na segunda versão, ele é apresentado <q>fora</q> desse compartimento.
-Mais especificamente, na extremidade da seta que liga
-<code>Pessoa</code> a <code>Fone</code>. O objetivo é deixar claro que o
-atributo pertence a <code>Pessoa</code>, mas ele <q>aponta</q> para um
-objeto do tipo <code>Fone</code>.</p>
+ambos diagramas, <code>Pessoa</code> tem um atributo <code>fone</code>
+do tipo <code>Fone</code>. Porém, na primeira versão, esse atributo é
+mostrado dentro do compartimento de atributos da classe
+<code>Pessoa</code>. Já na segunda versão, ele é apresentado <q>fora</q>
+desse compartimento. Mais especificamente, na extremidade da seta que
+liga <code>Pessoa</code> a <code>Fone</code>. O objetivo é deixar claro
+que o atributo pertence a <code>Pessoa</code>, mas ele <q>aponta</q>
+para um objeto do tipo <code>Fone</code>.</p>
 <p> Frequentemente, associações incluem informações de
 <strong>multiplicidade</strong>, que indicam quantos objetos podem estar
 associados ao atributo responsável pela associação. As informações de
@@ -498,12 +498,13 @@ multiplicidade mais comuns são as seguintes: 1 (exatamente um objeto),
 <p>No próximo exemplo, incluímos informação sobre a multiplicidade da
 associação entre <code>Pessoa</code> e <code>Fone</code>, que no caso
 definimos como sendo 0..1. Essa informação consta acima do nome do
-atributo responsável pela associação, no caso, fone. E ela explicita que
-uma <code>Pessoa</code> pode ter zero ou um único telefone. Usando
-termos de programação, o atributo fone de <code>Pessoa</code> pode ter o
-valor null, isto é, a <code>Pessoa</code> em questão não tem
-<code>Fone</code> associado. Ou então ela pode se associar a um único
-objeto do tipo <code>Fone</code>.</p>
+atributo responsável pela associação, no caso, <code>fone</code>. E ela
+explicita que uma <code>Pessoa</code> pode ter zero ou um único
+telefone. Usando termos de programação, o atributo <code>fone</code> de
+<code>Pessoa</code> pode ter o valor <code>null</code>, isto é, a
+<code>Pessoa</code> em questão não tem <code>Fone</code> associado. Ou
+então ela pode se associar a um único objeto do tipo
+<code>Fone</code>.</p>
 <p><img src="figs/cap4/class4.svg" style="width:85.0%" /></p>
 <p>No próximo exemplo, a semântica já é diferente. Nesse caso, uma
 <code>Pessoa</code> pode estar associada a múltiplos objetos do tipo
@@ -540,13 +541,14 @@ foi adicionada na extremidade oposta da seta, isto é, a multiplicidade
 uma <code>Pessoa</code>. Em outras palavras, duas pessoas, distintas,
 podem compartilhar o mesmo objeto do tipo <code>Fone</code>. No entanto,
 a associação continua sendo unidirecional, isto é, <code>Pessoa</code>
-tem um atributo fone que representa o seu <code>Fone</code>. Porém,
-<code>Fone</code> não possui um atributo para armazenar as diversas
-pessoas a que ele pode estar associado. Tentando ser mais claro, dada
-uma <code>Pessoa</code> pode-se recuperar o seu <code>Fone</code>. Para
-isso, basta acessar o atributo fone. Mas dado um <code>Fone</code> não é
-possível saber, pelo menos via atributos, a quais objetos do tipo
-<code>Pessoa</code> ele está associado.</p>
+tem um atributo <code>fone</code> que representa o seu
+<code>Fone</code>. Porém, <code>Fone</code> não possui um atributo para
+armazenar as diversas pessoas a que ele pode estar associado. Tentando
+ser mais claro, dada uma <code>Pessoa</code> pode-se recuperar o seu
+<code>Fone</code>. Para isso, basta acessar o atributo
+<code>fone</code>. Mas dado um <code>Fone</code> não é possível saber,
+pelo menos via atributos, a quais objetos do tipo <code>Pessoa</code>
+ele está associado.</p>
 <p>Para concluir, suponha que seja importante <q>navegar</q> nos dois
 sentidos da associação, isto é, de <code>Pessoa</code> para
 <code>Fone</code> e também de <code>Fone</code> para
@@ -569,11 +571,12 @@ class Fone {
    ...
 }</code></pre>
 <p>Nesse código, <code>Pessoa</code> possui um atributo privado
-<code>fone</code> do tipo <code>Fone</code>, que pode ser null; com
-isso, satisfazemos a extremidade 0..1 da associação bidirecional. Por
-outro lado, <code>Fone</code> possui um vetor privado, de nome
-<code>dono</code>, que referencia objetos do tipo <code>Pessoa</code>;
-assim, satisfazemos a extremidade * da mesma associação.</p>
+<code>fone</code> do tipo <code>Fone</code>, que pode ser
+<code>null</code>; com isso, satisfazemos a extremidade 0..1 da
+associação bidirecional. Por outro lado, <code>Fone</code> possui um
+vetor privado, de nome <code>dono</code>, que referencia objetos do tipo
+<code>Pessoa</code>; assim, satisfazemos a extremidade * da mesma
+associação.</p>
 <p>No último diagrama de classes, omitimos todos os símbolos de
 visibilidade, tanto pública (+) como privada (-). Isso foi feito, de
 forma deliberada, para destacar que estamos tratando do uso de UML para

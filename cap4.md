@@ -436,7 +436,7 @@ diagrama:
 
 ![](figs/cap4/class3){width=90%}
 
-As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo fone do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
+As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo `fone` do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
 
 \index{UML!Multiplicidade}
 Frequentemente, associações incluem informações de **multiplicidade**,
@@ -448,9 +448,9 @@ objeto) e \* (zero ou mais objetos).
 No próximo exemplo, incluímos informação sobre a multiplicidade da
 associação entre `Pessoa` e `Fone`, que no caso definimos como sendo 0..1.
 Essa informação consta acima do nome do atributo responsável pela
-associação, no caso, fone. E ela explicita que uma `Pessoa` pode ter zero
-ou um único telefone. Usando termos de programação, o atributo fone de
-`Pessoa` pode ter o valor null, isto é, a `Pessoa` em questão não tem `Fone`
+associação, no caso, `fone`. E ela explicita que uma `Pessoa` pode ter zero
+ou um único telefone. Usando termos de programação, o atributo `fone` de
+`Pessoa` pode ter o valor `null`, isto é, a `Pessoa` em questão não tem `Fone`
 associado. Ou então ela pode se associar a um único objeto do tipo `Fone`.
 
 ![](figs/cap4/class4){width=85%}
@@ -496,10 +496,10 @@ oposta da seta, isto é, a multiplicidade \*. Ela indica que um `Fone` pode
 estar associado a mais de uma `Pessoa`. Em outras palavras, duas pessoas,
 distintas, podem compartilhar o mesmo objeto do tipo `Fone`. No entanto, a
 associação continua sendo unidirecional, isto é, `Pessoa` tem um atributo
-fone que representa o seu `Fone`. Porém, `Fone` não possui um atributo para
+`fone` que representa o seu `Fone`. Porém, `Fone` não possui um atributo para
 armazenar as diversas pessoas a que ele pode estar associado. Tentando
 ser mais claro, dada uma `Pessoa` pode-se recuperar o seu `Fone`. Para isso,
-basta acessar o atributo fone. Mas dado um `Fone` não é possível saber,
+basta acessar o atributo `fone`. Mas dado um `Fone` não é possível saber,
 pelo menos via atributos, a quais objetos do tipo `Pessoa` ele está
 associado.
 
@@ -529,7 +529,7 @@ class Fone {
 ```
 
 Nesse código, `Pessoa` possui um atributo privado `fone` do tipo `Fone`, que
-pode ser null; com isso, satisfazemos a extremidade 0..1 da associação
+pode ser `null`; com isso, satisfazemos a extremidade 0..1 da associação
 bidirecional. Por outro lado, `Fone` possui um vetor privado, de nome
 `dono`, que referencia objetos do tipo `Pessoa`; assim, satisfazemos a
 extremidade \* da mesma associação.
