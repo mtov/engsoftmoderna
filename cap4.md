@@ -436,7 +436,17 @@ diagrama:
 
 ![](figs/cap4/class3){width=90%}
 
-As duas versões do diagrama são semanticamente idênticas. A diferença é que na primeira versão as classes aparecem "ilhadas". Já na segunda versão, mostrada acima, fica visualmente claro que existe uma associação de `Pessoa` para `Fone`. Reforçando, em ambos diagramas, `Pessoa` tem um atributo `fone` do tipo `Fone`. Porém, na primeira versão, esse atributo é mostrado dentro do compartimento de atributos da classe `Pessoa`. Já na segunda versão, ele é apresentado "fora" desse compartimento. Mais especificamente, na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" para um objeto do tipo `Fone`.
+As duas versões do diagrama são semanticamente idênticas. A diferença 
+é que na primeira versão as classes aparecem "ilhadas". Já na segunda 
+versão, mostrada acima, fica visualmente claro que existe uma 
+associação de `Pessoa` para `Fone`. Reforçando, em ambos 
+diagramas, `Pessoa` tem um atributo `fone` do tipo `Fone`. Porém, na 
+primeira versão, esse atributo é mostrado dentro do compartimento 
+de atributos da classe `Pessoa`. Já na segunda versão, ele é 
+apresentado "fora" desse compartimento. Mais especificamente, 
+na extremidade da seta que liga `Pessoa` a `Fone`. O objetivo 
+é deixar claro que o atributo pertence a `Pessoa`, mas ele "aponta" 
+para um objeto do tipo `Fone`.
 
 \index{UML!Multiplicidade}
 Frequentemente, associações incluem informações de **multiplicidade**,
