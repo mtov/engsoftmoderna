@@ -199,7 +199,7 @@ representam Entidades e Casos de Uso "limpas" de qualquer tecnologia.
 Lembre-se "a Web é um detalhe; o banco de dados é um detalhe".
 
 * Por fim, pense nas classes Adaptadoras, que vão funcionar como 
-portas de entrada e saída, para comunicação entre as classes internas 
+tradutores que viabilizam a comunicação entre as classes internas 
 e o mundo externo.
 
 Seguindo essas recomendações, você vai produzir uma arquitetura que separa
