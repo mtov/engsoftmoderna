@@ -105,6 +105,8 @@ href="https://engsoftmoderna.info/cap6.html">Capítulo 6</a> do
 livro.</p>
 <p>Segue a lista atual de perguntas:</p>
 <ol type="1">
+<li><a href="#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-decorador">Qual
+a diferença entre um Proxy e um Decorador?</a></li>
 <li><a href="#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador">Qual
 a diferença entre um Proxy e um Adaptador?</a></li>
 <li><a
@@ -118,7 +120,19 @@ diferença entre uma Fachada e um API Gateway?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered"
-id="qual-a-diferença-entre-um-proxy-e-um-adaptador">1. Qual a diferença
+id="qual-a-diferença-entre-um-proxy-e-um-decorador">1. Qual a diferença
+entre um Proxy e um Decorador? <a
+href="#qual-a-diferença-entre-um-proxy-e-um-decorador"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>A diferença principal é a seguinte:</p>
+<ul>
+<li><p>No padrão Proxy, temos um objeto intermediário (o proxy) que dá
+acesso a um objeto base.</p></li>
+<li><p>No padrão Decorador, temos uma cadeia de objetos (os decoradores)
+que adicionam funcionalidades a um objeto base.</p></li>
+</ul>
+<h3 class="unnumbered"
+id="qual-a-diferença-entre-um-proxy-e-um-adaptador">2. Qual a diferença
 entre um Proxy e um Adaptador? <a
 href="#qual-a-diferença-entre-um-proxy-e-um-adaptador"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -134,7 +148,7 @@ interface <code>I</code>. Para ilustrar, lembre-se de um adaptador de
 tomadas do padrão novo para o antigo ou vice-versa.</p></li>
 </ul>
 <h3 class="unnumbered"
-id="qual-a-diferença-entre-strategy-e-template-method">2. Qual a
+id="qual-a-diferença-entre-strategy-e-template-method">3. Qual a
 diferença entre Strategy e Template Method? <a
 href="#qual-a-diferença-entre-strategy-e-template-method"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -154,7 +168,7 @@ subclasses de X. Nesse caso, podemos usar o padrão de projeto
 <strong>Template Method</strong> para implementar esse esqueleto de Y na
 classe X.</p></li>
 </ul>
-<h3 class="unnumbered" id="o-que-é-uma-especificação-specification">3. O
+<h3 class="unnumbered" id="o-que-é-uma-especificação-specification">4. O
 que é uma especificação (specification)? <a
 href="#o-que-é-uma-especificação-specification" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
@@ -196,7 +210,7 @@ simples e mais <q>leve</q>, isto é, com menos dependências. Fica também
 mais fácil criar regras de negócio alternativas. Por exemplo, uma
 segunda regra pode verificar se pedidos expressos estão atrasados.</p>
 <h3 class="unnumbered"
-id="qual-a-diferença-entre-uma-fachada-e-um-api-gateway">4. Qual a
+id="qual-a-diferença-entre-uma-fachada-e-um-api-gateway">5. Qual a
 diferença entre uma Fachada e um API Gateway? <a
 href="#qual-a-diferença-entre-uma-fachada-e-um-api-gateway"
 class="anchor-link" aria-hidden="true">🔗</a></h3>

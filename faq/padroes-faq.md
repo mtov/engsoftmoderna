@@ -7,15 +7,24 @@ de projeto, isto é, sobre o [Capítulo 6](https://engsoftmoderna.info/cap6.html
 
 Segue a lista atual de perguntas:
 
-1. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
-2. [Qual a diferença entre Strategy e Template Method?](#qual-a-diferen%C3%A7a-entre-strategy-e-template-method)
-3. [O que é uma especificação (specification)?](#o-que-%C3%A9-uma-especifica%C3%A7%C3%A3o-specification)
-4. ´[Qual a diferença entre uma Fachada e um API Gateway?](#qual-a-diferen%C3%A7a-entre-uma-fachada-e-um-api-gateway)
+1. [Qual a diferença entre um Proxy e um Decorador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-decorador)
+2. [Qual a diferença entre um Proxy e um Adaptador?](#qual-a-diferen%C3%A7a-entre-um-proxy-e-um-adaptador)
+3. [Qual a diferença entre Strategy e Template Method?](#qual-a-diferen%C3%A7a-entre-strategy-e-template-method)
+4. [O que é uma especificação (specification)?](#o-que-%C3%A9-uma-especifica%C3%A7%C3%A3o-specification)
+5. ´[Qual a diferença entre uma Fachada e um API Gateway?](#qual-a-diferen%C3%A7a-entre-uma-fachada-e-um-api-gateway)
 
 * * * 
 
 
-### 1. Qual a diferença entre um Proxy e um Adaptador? {.unnumbered}
+### 1. Qual a diferença entre um Proxy e um Decorador? {.unnumbered}
+
+A diferença principal é a seguinte:
+
+* No padrão Proxy, temos um objeto intermediário (o proxy) que dá acesso a um objeto base.
+
+* No padrão Decorador, temos uma cadeia de objetos (os decoradores) que adicionam funcionalidades a um objeto base.
+
+### 2. Qual a diferença entre um Proxy e um Adaptador? {.unnumbered}
 
 Suponha um objeto que tenha uma interface `I`. 
 
@@ -29,7 +38,7 @@ fica responsável por adaptá-la para a interface `I`. Para ilustrar,
 lembre-se de um adaptador de tomadas do padrão novo para o antigo 
 ou vice-versa.
 
-### 2. Qual a diferença entre Strategy e Template Method? {.unnumbered}
+### 3. Qual a diferença entre Strategy e Template Method? {.unnumbered}
 
 Suponha uma classe X:
 
@@ -48,7 +57,7 @@ em subclasses de X. Nesse caso, podemos usar o padrão de projeto
 **Template Method** para implementar esse esqueleto de Y na classe X.
 
 
-### 3. O que é uma especificação (specification)? {.unnumbered}
+### 4. O que é uma especificação (specification)? {.unnumbered}
 
 Uma especificação é um padrão proposto por Eric Evans e 
 Martin Fowler no seguinte 
@@ -100,7 +109,7 @@ mais simples e mais "leve", isto é, com menos dependências. Fica também
 mais fácil criar regras de negócio alternativas. Por exemplo, uma 
 segunda regra pode verificar se pedidos expressos estão atrasados.
 
-### 4. Qual a diferença entre uma Fachada e um API Gateway? {.unnumbered}
+### 5. Qual a diferença entre uma Fachada e um API Gateway? {.unnumbered}
 
 Na verdade, essa diferença é pequena e sutil. Para explicá-la,
 vamos primeiro reproduzir a definição de Fachada, que usamos

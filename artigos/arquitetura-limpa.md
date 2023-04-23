@@ -234,12 +234,8 @@ principal vantagem ou benefício dessa regra?
 
    (b) Em qual camada você implementaria então `MailServiceImpl`?
 
-4\. Suponha um Sistema de Bibliotecas. Um Caso de Uso desse sistema
-precisa obter a lista de livros que estão emprestados para um 
-certo usuário da biblioteca. Fisicamente, essa informação
-está armazenada em um banco de dados relacional. Modele então
-a implementação desse requisito assumindo que o sistema adota
-uma Arquitetura Limpa. Especificamente, responda:
+4\. Supondo sempre um Sistema de Bibliotecas que usa uma Arquitetura 
+Limpa, responda as perguntas abaixo: 
 
    (a) Nesse sistema, provavelmente, existe uma classe `Livro`.
    Ela deve pertencer a qual camada?
@@ -264,6 +260,8 @@ certeza de que elas nunca vão mudar no futuro. Ou seja, não existe chance
 de amanhã o sistema ter que usar uma tecnologia X', Y' ou Z'. Nesse cenário,
 você acha que ainda pode ser útil a adoção de uma Arquitetura Limpa?
 Justifique.
+
+6\. Quando não vale a pena usar uma Arquitetura Limpa?
 
 * * * 
 
