@@ -190,7 +190,7 @@ Eles poderiam ser desenhados na mesma face?
 da aplicação, ela poderia ser chamada de quadrangular, pentagonal, heptagonal,
 octogonal, etc. Justifique essa afirmação.
 
-3\. A seguir, mostramos o código de duas classes de domínio que são usadas na documentação do Django, um conhecido framework para construção de aplicações Web em Python. O código mostrado define regras para mapeamento de campos de objetos dessas classes para colunas de tabelas de um  BD relacional. Esta implementação segue os princípios de uma arquitetura hexagonal? Justifique sua resposta.
+4\. A seguir, mostramos o código de duas classes de domínio que são usadas na documentação do Django, um conhecido framework para construção de aplicações Web em Python. O código mostrado define regras para mapeamento de campos de objetos dessas classes para colunas de tabelas de um  BD relacional. Esta implementação segue os princípios de uma arquitetura hexagonal? Justifique sua resposta.
 
 ```
 from django.db import models
@@ -206,6 +206,7 @@ class Album(models.Model):
   release_date = models.DateField()
   num_stars = models.IntegerField()
 ```
+
 
 5\. Descreva, resumidamente, as diferenças entre a Arquitetura Hexagonal
 e a Arquitetura Limpa (que estudamos em um outro 

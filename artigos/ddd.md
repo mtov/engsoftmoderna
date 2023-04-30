@@ -411,7 +411,30 @@ de comida pela Internet. Você ficou responsável pelo projeto da camada de dom�
 relações entre essas classes. Quais classes constituem um agregado? Qual
 classe está fora do agregado e porquê?
 
-4\. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.
+4\. Seja o seguinte método do sistema de bibliotecas discutido no artigo e que usa DDD:
+
+```
+void emprestarLivros(int userId, int livroId) {
+  Usuario usuario = "recuperar dados de userId"
+  Livro livro = "recuperar dados de livroId"
+  usuario_ok = "checar se usuário em dia com a biblioteca"
+  livro_disponivel = "checar se livro tem exemplares disponíveis"
+  if (usuario_ok && livro_disponivel)
+     "criar empréstimo de livro para usuario"        
+}
+
+```
+
+   (a) O método `emprestarLivro()` pertenceria a qual tipo de classe de DDD?
+
+   (b) Como você classificaria as classes `Usuario` e `Livro`?
+
+   (c) As operações "recuperar dados de usuário", "recuperar dados de livro" e "criar empréstimo de livro" pertenceriam a qual tipo de classe?
+
+   (d) Suponha que `Emprestimo` (uma classe) tenha um conjunto de `ItemEmprestimo` (outra classe). O conjunto dessas duas classes forma que tipo de estrutura em DDD?
+
+
+5\. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu sistema, que é bastante complexo, como mostrado a seguir. Basicamente, ele criou um pacote (ou, se preferir, um módulo ou diretório) para agrupar os arquivos que implementam os tipos de objetos de domínio preconizados por DDD. Essa decisão é recomendável ou não? Em outras palavras, ela é fiel e consistente com os princípios de DDD? Justifique sua resposta.
 
 ~~~~
    Raiz

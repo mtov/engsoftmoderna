@@ -463,7 +463,30 @@ classes <code>Pedido</code>, <code>ItensPedido</code> e
 <code>Produto</code>. Desenhe um diagrama de classes que represente as
 relações entre essas classes. Quais classes constituem um agregado? Qual
 classe está fora do agregado e porquê?</p>
-<p>4. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu
+<p>4. Seja o seguinte método do sistema de bibliotecas discutido no
+artigo e que usa DDD:</p>
+<pre><code>void emprestarLivros(int userId, int livroId) {
+  Usuario usuario = &quot;recuperar dados de userId&quot;
+  Livro livro = &quot;recuperar dados de livroId&quot;
+  usuario_ok = &quot;checar se usuário em dia com a biblioteca&quot;
+  livro_disponivel = &quot;checar se livro tem exemplares disponíveis&quot;
+  if (usuario_ok &amp;&amp; livro_disponivel)
+     &quot;criar empréstimo de livro para usuario&quot;        
+}
+</code></pre>
+<ol type="a">
+<li><p>O método <code>emprestarLivro()</code> pertenceria a qual tipo de
+classe de DDD?</p></li>
+<li><p>Como você classificaria as classes <code>Usuario</code> e
+<code>Livro</code>?</p></li>
+<li><p>As operações <q>recuperar dados de usuário</q>, <q>recuperar
+dados de livro</q> e <q>criar empréstimo de livro</q> pertenceriam a
+qual tipo de classe?</p></li>
+<li><p>Suponha que <code>Emprestimo</code> (uma classe) tenha um
+conjunto de <code>ItemEmprestimo</code> (outra classe). O conjunto
+dessas duas classes forma que tipo de estrutura em DDD?</p></li>
+</ol>
+<p>5. Depois de aprender DDD, um desenvolvedor resolveu estruturar seu
 sistema, que é bastante complexo, como mostrado a seguir. Basicamente,
 ele criou um pacote (ou, se preferir, um módulo ou diretório) para
 agrupar os arquivos que implementam os tipos de objetos de domínio
