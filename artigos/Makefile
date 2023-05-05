@@ -28,7 +28,7 @@ design-thinking: design-thinking.md
 	$(pandoc_bin) -T "Design Thinking: Principais Conceitos e Atividades" design-thinking.md -o design-thinking.html
 
 mvp: mvp.md
-	$(pandoc_bin) -T "O que é (e que o não é) um MVP?" mvp.md -o mvp.html
+	$(pandoc_bin) -T "O que é (e também o que não é) um MVP?" mvp.md -o mvp.html
 
 jobs-to-be-done: jobs-to-be-done.md
 	$(pandoc_bin) -T "Jobs to be Done (JTBD) Aplicado a Produtos de Software" jobs-to-be-done.md -o jobs-to-be-done.html
