@@ -231,7 +231,7 @@ Conforme podemos observar, foram gerados quatro mutantes, sendo que
 dois foram mortos (linhas com fundo verde), um sobreviveu (primeira linha
 com fundo vermelho) e o último mutante não foi coberto pelo teste. 
 
-Então, modifique o teste de unidade, acrescentando mais dois comandos 
+Então, modifique o teste de unidade, acrescentando mais um comando 
 `assert`, de forma que ele mate todos os quatro mutantes. 
 Consequentemente, o novo relatório gerado pela ferramenta deverá
 ser o seguinte:
@@ -243,29 +243,6 @@ máquina. Para facilitar essa tarefa, o código fonte usado neste
 exercício está disponível no seguinte 
 [repositório](https://github.com/mtov/demo-mutacao) 
 do GitHub.
-
-<!---
-1\. Seja a seguinte função que verifica se um cliente é VIP, dado o 
-seu saldo no banco:
-
-```
-def isClienteVIP(saldo):
-    if (saldo > 10000):
-       return True
-    return False
-```
-
-Seja ainda o seguinte teste dessa função:
-
-```
-def teste():
-    assertTrue(isClienteVIP(15000))
-```
-
-Então: (a) qual a cobertura de comandos desse teste? (b) gere 
-um mutante para a função que não é "morto" pelo teste; (c) modifique 
-o teste para que ele falhe com o mutante que você gerou.
---->
 
 * * * 
 
