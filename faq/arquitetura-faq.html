@@ -69,25 +69,27 @@
 
 <p>Compre na
 
-<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a>, 
-
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<!--
 <a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
       Submarino</a> ou 
-
 <a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
       UmLivro</a>
+-->
+<a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
 </p>
 
-<!--
 <p>
 Veja também os cursos de extensão a distância 
-<a href="https://engsoftmoderna.info/curso">Engenharia de Software Moderna</a> (48 horas) e
-<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/ICEX/UFMG.</p>
--->
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="https://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
 
+
+<!---
 <p>
-Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. Matrículas abertas para a primeira turma de 2023.
+Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. 
 </p>
+--->
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -115,6 +117,8 @@ CAP?</a></li>
 Strangler Fig?</a></li>
 <li><a href="#o-que-%C3%A9-um-orquestrador">O que é um
 orquestrador?</a></li>
+<li><a href="#o-que-%C3%A9-escalabilidade-vertical-e-horizontal">O que é
+escalabilidade vertical e horizontal?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-é-uma-camada-de-domínio">1. O que é uma
@@ -266,6 +270,26 @@ temos que cadastrá-lo em dois sistemas: acadêmico e financeiro. O
 programa responsável por disparar esses dois cadastros, monitorar se
 eles foram concluídos com sucesso e tratar eventuais erros é chamado
 então de orquestrador da operação de cadastro de alunos.</p>
+<h3 class="unnumbered"
+id="o-que-é-escalabilidade-vertical-e-horizontal">7. O que é
+escalabilidade vertical e horizontal? <a
+href="#o-que-é-escalabilidade-vertical-e-horizontal" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
+<p>Suponha que você desenvolve um sistema que está fazendo sucesso e
+atraindo cada vez mais usuários. Uma solução para melhorar o desempenho
+desse sistema consiste em migrar sua execução para uma máquina mais
+poderosa. Isso se chama de <strong>escalabilidade vertical</strong>.</p>
+<p>Porém, pode ser que você já esteja rodando o sistema em uma máquina
+muito poderosa e que não seja mais possível ou economicamente viável
+aumentar o poder de processamento dessa máquina. Então, uma solução
+consiste em dividir a execução do sistema em duas ou mais máquinas. E
+isso se chama de <strong>escalabilidade horizontal</strong>.</p>
+<p>Se o sistema for um monolito, horizontalmente, você deve ter a mesma
+instância do sistema rodando nas diversas máquinas. Por outro lado, se o
+sistema tiver sido desenvolvido usando microsserviços, você pode dividir
+os microsserviços pelas máquinas disponíveis. Ou seja, em uma
+determinada máquina você não executa todos os microsserviços, mas apenas
+alguns deles.</p>
 <hr />
 <p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

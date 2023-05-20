@@ -14,6 +14,7 @@ Segue a lista atual de perguntas:
 4. [O que é o Teorema CAP?](#o-que-%C3%A9-o-teorema-cap)
 5. [O que é o padrão Strangler Fig?](#o-que-%C3%A9-o-padr%C3%A3o-strangler-fig)
 6. [O que é um orquestrador?](#o-que-%C3%A9-um-orquestrador)
+7. [O que é escalabilidade vertical e horizontal?](#o-que-%C3%A9-escalabilidade-vertical-e-horizontal)
 
 * * * 
 
@@ -179,6 +180,31 @@ que cadastrá-lo em dois sistemas: acadêmico e financeiro. O programa
 responsável por disparar esses dois cadastros, monitorar se eles foram
 concluídos com sucesso e tratar eventuais erros é chamado então de 
 orquestrador da operação de cadastro de alunos.
+
+### 7. O que é escalabilidade vertical e horizontal? {.unnumbered}
+
+Suponha que você desenvolve um sistema que está fazendo
+sucesso e atraindo cada vez mais usuários. Uma solução 
+para melhorar o desempenho desse sistema consiste em 
+migrar sua execução para uma máquina mais poderosa. 
+Isso se chama de **escalabilidade vertical**.
+
+Porém, pode ser que você já esteja rodando o sistema em uma 
+máquina muito poderosa e que não seja mais possível 
+ou economicamente viável aumentar o poder de processamento 
+dessa máquina. Então, uma segunda solução consiste em 
+dividir a execução do sistema em duas ou mais máquinas. 
+E isso se chama de **escalabilidade horizontal**.
+
+Se o sistema for um monolito, horizontalmente, você deve 
+ter a mesma instância do sistema rodando nas diversas
+máquinas. Por outro lado, se o sistema tiver sido desenvolvido 
+usando microsserviços, você pode dividir os microsserviços 
+pelas máquinas disponíveis. Ou seja, em uma determinada 
+máquina você não executa todos os microsserviços, mas 
+apenas alguns deles.
+
+
 
 * * * 
 
