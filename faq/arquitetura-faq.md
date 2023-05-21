@@ -196,13 +196,13 @@ dessa máquina. Então, uma segunda solução consiste em
 dividir a execução do sistema em duas ou mais máquinas. 
 E isso se chama de **escalabilidade horizontal**.
 
-Se o sistema for um monolito, horizontalmente, você deve 
-ter a mesma instância do sistema rodando nas diversas
-máquinas. Por outro lado, se o sistema tiver sido desenvolvido 
-usando microsserviços, você pode dividir os microsserviços 
-pelas máquinas disponíveis. Ou seja, em uma determinada 
-máquina você não executa todos os microsserviços, mas 
-apenas alguns deles.
+Se o sistema for um monolito, em um contexto de escalabilidade
+horizontal, você deve ter a mesma instância do sistema 
+rodando nas diversas máquinas. Por outro lado, se o sistema 
+tiver sido desenvolvido usando microsserviços, você pode 
+dividir os microsserviços pelas máquinas disponíveis. 
+Ou seja, em uma determinada máquina você não executa todos 
+os microsserviços, mas apenas alguns deles.
 
 
 
