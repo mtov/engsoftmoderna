@@ -233,7 +233,15 @@ Uma dúvida comum é se CI é compatível com o uso de branches. Mantendo coerê
 \index{Trunk Based Development}
 \index{Integração Contínua!Desenvolvimento Baseado no Trunk}
 
-Como vimos, ao adotar CI, branches devem durar no máximo um dia de trabalho. Logo, o custo/benefício de criá-los pode não compensar. Por isso, quando migram para CI, é comum que as organizações usem também **desenvolvimento baseado no trunk** (*trunk based development* ou TBD). Com TBD, não existem mais branches para implementação de novas funcionalidades ou para correção de bugs. Em vez disso, todo desenvolvimento ocorre no branch principal, também conhecido com trunk ou master. 
+Como vimos, ao adotar CI, branches devem durar no máximo um 
+dia de trabalho. Logo, o custo/benefício de criá-los pode 
+não compensar. Por isso, quando migram para CI, é comum que 
+as organizações usem também **desenvolvimento baseado no 
+trunk** (*trunk based development* ou TBD). Com TBD, não 
+existem mais branches para implementação de novas 
+funcionalidades ou para correção de bugs. Em vez disso, 
+todo desenvolvimento ocorre no branch principal, também 
+conhecido como trunk ou master. 
 
 ```{=latex}
 \begin{esmbox}
