@@ -59,8 +59,8 @@ de release são integrados no `main`, já que agora temos uma
 nova versão do sistema pronta para entrar em produção. 
 
 Se no processo de aprovação tiverem sido realizadas mudanças 
-no código, o branch de release deve ser integrado de volta também em 
-`develop`. 
+no código, o branch de release deve ser integrado de volta 
+também em `develop`. 
 
 **Exemplo:**  Após implementar as três funcionalidades da 
 figura anterior, o líder do time decidiu gerar uma release 1.0 
@@ -90,17 +90,30 @@ o branch foi também integrado em *develop*.
 
 ![Branch de hotfix (último branch da figura) usando Git-flow](./figs/git-flow-hotfix-branch.png){width=95%}
 
-#### Quando usar? Quais desvantagens do Git-flow? {.unnumbered}
+#### Comentários Finais {.unnumbered}
 
-Git-flow dever ser usado, principalmente, quando existem testes manuais 
-e times de QA. E também quando os clientes precisam testar e aprovar 
-qualquer nova versão do código antes que ela entre em produção.
+O fluxo mais comum de Git-Flow é o seguinte:
+
+Funcionalidade ⇒ develop ⇒ release ⇒ main
+
+Ou seja, uma funcionalidade é sempre implementada em um branch 
+específico. Em seguida, esse branch é integrado em `develop`, onde 
+a funcionalidade passa por "testes de integração". De tempos em 
+tempos, um branch de release é gerado para mostrar uma nova versão 
+do sistema para o cliente final. Uma vez aprovada, essa versão
+é integrada no `main` e disponibilizada para a base completa 
+de usuários.
+
+Portanto, Git-flow dever ser usado, principalmente, quando existem 
+testes manuais e times de QA. E também quando os clientes precisam 
+testar e aprovar qualquer nova versão do código antes que ela entre 
+em produção.
 
 Porém, quando se usa Git-flow, os branches de funcionalidade podem 
 demorar muito tempo para serem integrados em `develop`, o que pode 
 ocasionar diversos conflitos de integração (*merge hell*). 
 Adicionalmente, caso a integração dos branches de release também 
-demore, os times de desenvolvimento vão demorar para receber feedback 
+demore, os desenvolvedores vão demorar para receber feedback 
 sobre as novas funcionalidades que eles implementaram.
 
 ## GitHubFlow 
@@ -117,9 +130,16 @@ Quando se usa GitHubFlow, os principais passos são os seguintes:
 2. Implementa uma funcionalidade ou corrige um bug.
 3. Faz um push do branch para o GitHub.
 4. Entra no GitHub e abre um Pull Request (PR), isto é, um
-  pedido para alguém revisar seu branch.
+  pedido para alguém revisar seu branch. 
 5. Um revisor, isto é, um outro desenvolvedor revisa e, eventualmente,
   faz o merge do PR no `main`.
+
+Um exemplo de pedido de abertura de PR é mostrado na próxima figura,
+a qual foi extraída da documentação do GitHub. Nessa figura, um PR
+está sendo aberto para revisar o branch de nome  `my-patch-1`. 
+Terminada essa revisão, esse branch será integrado no `main`.
+
+![Interface para abertura de Pull Request (fonte: GitHub)](./figs/github-flow-pr.png){width=70%}
 
 No [apêndice](https://engsoftmoderna.info/capAp.html#pull-requests) 
 sobre git nós comentamos e explicamos melhor o conceito de Pull Request. 
@@ -148,6 +168,12 @@ Paul Hammant em um livro sobre TBD (e também neste
 e removido. Colocando de forma simples, o branch deve durar apenas 
 alguns dias. Após mais de dois dias há o risco de que ele se torne
 um branch de longa duração, o que constitui a antítese de TBD.
+
+Para usar TBD, é importante que exista uma boa quantidade de testes
+de unidade e de integração, para evitar que bugs e regressões sejam
+introduzidos no `main`. Por outro lado, ao se usar TBD, fica mais
+fácil adotar práticas como integração contínua (CI) e deployment
+contínuo (CD). 
 
 No [Capítulo 10](https://engsoftmoderna.info/cap10.html#desenvolvimento-baseado-no-trunk) do livro apresentamos uma 
 descrição mais detalhada de TBD e também explicamos o mecanismo de 

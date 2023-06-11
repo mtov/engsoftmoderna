@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Marco Tulio Valente" />
-  <title>Gerenciando Branches usando Git-flow – Engenharia de Software Moderna</title>
+  <title>Gerenciando Branches com Git-flow, GitHubFlow e TBD – Engenharia de Software Moderna</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -18,6 +18,7 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   
@@ -100,7 +101,7 @@ Git-flow, GitHubFlow e TBD</h1>
 <p>Neste artigo vamos apresentar três modelos que padronizam os branches
 que devem ser criados por times de desenvolvimento de software. Trata-se
 de um assunto importante e prático, pois ele disciplina o fluxo de
-trabalho que dever ser usado por times para implementar novas
+trabalho que deve ser usado por times para implementar novas
 funcionalidades ou para corrigir bugs, por exemplo.</p>
 <h2 data-number="1.1" id="git-flow"><span
 class="header-section-number">1.1</span> Git-flow</h2>
@@ -187,26 +188,33 @@ alt="Branch de hotfix (último branch da figura) usando Git-flow" />
 <figcaption aria-hidden="true">Branch de hotfix (último branch da
 figura) usando Git-flow</figcaption>
 </figure>
-<h4 class="unnumbered"
-id="quando-usar-quais-desvantagens-do-git-flow">Quando usar? Quais
-desvantagens do Git-flow?</h4>
-<p>Git-flow dever ser usado, principalmente, quando existem testes
-manuais e times de QA. E também quando os clientes precisam testar e
-aprovar qualquer nova versão do código, antes que ela entre em
+<h4 class="unnumbered" id="comentários-finais">Comentários Finais</h4>
+<p>O fluxo mais comum de Git-Flow é o seguinte:</p>
+<p>Funcionalidade ⇒ develop ⇒ release ⇒ main</p>
+<p>Ou seja, uma funcionalidade é sempre implementada em um branch
+específico. Em seguida, esse branch é integrado em <code>develop</code>,
+onde a funcionalidade passa por <q>testes de integração</q>. De tempos
+em tempos, um branch de release é gerado para mostrar uma nova versão do
+sistema para o cliente final. Uma vez aprovada, essa versão é integrada
+no <code>main</code> e disponibilizada para a base completa de
+usuários.</p>
+<p>Portanto, Git-flow dever ser usado, principalmente, quando existem
+testes manuais e times de QA. E também quando os clientes precisam
+testar e aprovar qualquer nova versão do código antes que ela entre em
 produção.</p>
 <p>Porém, quando se usa Git-flow, os branches de funcionalidade podem
 demorar muito tempo para serem integrados em <code>develop</code>, o que
 pode ocasionar diversos conflitos de integração (<em>merge hell</em>).
 Adicionalmente, caso a integração dos branches de release também demore,
-os times de desenvolvimento vão demorar para receber feedback sobre as
-novas funcionalidades que eles implementaram.</p>
+os desenvolvedores vão demorar para receber feedback sobre as novas
+funcionalidades que eles implementaram.</p>
 <h2 data-number="1.2" id="githubflow"><span
 class="header-section-number">1.2</span> GitHubFlow</h2>
 <p>GitHubFlow é um modelo de branches muito comum quando se usa GitHub.
 Trata-se de um modelo mais simples do que Git-Flow, pois existem apenas
-o branch principal e branches de funcionalidade. Porém, existe suporte a
-revisão de código antes de integração, por meio do conceito de Pull
-Requests (PR) do GitHub.</p>
+o branch principal e branches de funcionalidade. Por outro lado, existe
+suporte a revisão de código antes de integração, por meio do mecanismo
+de Pull Requests (PR) do GitHub.</p>
 <p>Quando se usa GitHubFlow, os principais passos são os seguintes:</p>
 <ol type="1">
 <li>Uma desenvolvedora cria um branch no seu repositório local.</li>
@@ -217,10 +225,21 @@ alguém revisar seu branch.</li>
 <li>Um revisor, isto é, um outro desenvolvedor revisa e, eventualmente,
 faz o merge do PR no <code>main</code>.</li>
 </ol>
+<p>Um exemplo de pedido de abertura de PR é mostrado na próxima figura,
+a qual foi extraída da documentação do GitHub. Nessa figura, um PR está
+sendo aberto para revisar o branch de nome <code>my-patch-1</code>.
+Terminada essa revisão, esse branch será integrado no
+<code>main</code>.</p>
+<figure>
+<img src="./figs/github-flow-pr.png" style="width:70.0%"
+alt="Interface para abertura de Pull Request (fonte: GitHub)" />
+<figcaption aria-hidden="true">Interface para abertura de Pull Request
+(fonte: GitHub)</figcaption>
+</figure>
 <p>No <a
 href="https://engsoftmoderna.info/capAp.html#pull-requests">apêndice</a>
-sobre git do livro nós comentamos e explicamos melhor o conceito de Pull
-Request. Se quiser, você pode conferir também o artigo didático sobre <a
+sobre git nós comentamos e explicamos melhor o conceito de Pull Request.
+Se quiser, você pode conferir também o artigo didático sobre <a
 href="https://engsoftmoderna.info/artigos/revisao-codigo.html">revisão
 de código</a>.</p>
 <p>GitHubFlow é usado, principalmente, em sistemas com apenas uma versão
@@ -245,6 +264,11 @@ removido. Colocando de forma simples, o branch deve durar apenas alguns
 dias. Após mais de dois dias há o risco de que ele se torne um branch de
 longa duração, o que constitui a antítese de TBD.</p>
 </blockquote>
+<p>Para usar TBD, é importante que exista uma boa quantidade de testes
+de unidade e de integração, para evitar que bugs e regressões sejam
+introduzidos no <code>main</code>. Por outro lado, ao se usar TBD, fica
+mais fácil adotar práticas como integração contínua (CI) e deployment
+contínuo (CD).</p>
 <p>No <a
 href="https://engsoftmoderna.info/cap10.html#desenvolvimento-baseado-no-trunk">Capítulo
 10</a> do livro apresentamos uma descrição mais detalhada de TBD e
