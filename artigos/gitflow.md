@@ -92,7 +92,7 @@ o branch foi também integrado em *develop*.
 
 #### Comentários Finais {.unnumbered}
 
-O fluxo mais comum de Git-Flow é o seguinte:
+Em resumo, o fluxo mais comum quando se usa Git-flow é o seguinte:
 
 Funcionalidade ⇒ develop ⇒ release ⇒ main
 
