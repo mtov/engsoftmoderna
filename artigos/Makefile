@@ -74,3 +74,6 @@ broken-windows: broken-windows.md
 
 revisao-codigo: revisao-codigo.md
 	$(pandoc_bin) -T "Revisão de Código: Uma Breve Introdução" revisao-codigo.md -o revisao-codigo.html
+
+gitflow: gitflow.md
+	$(pandoc_bin) -T "Gerenciando Branches com Git-flow, GitHubFlow e TBD" gitflow.md -o gitflow.html

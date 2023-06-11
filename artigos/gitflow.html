@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Gerenciando Branches usando Git-flow – Engenharia de Software Moderna</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: 1;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYNKH464F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGYNKH464F');
+  </script>
+
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-10 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p>
+<a href="https://engsoftmoderna.info">
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+</p>
+
+<p>
+<a href="https://engsoftmoderna.info">Página principal do livro</a>
+</p>
+
+<p>Compre na
+
+<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<!--
+<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
+      Submarino</a> ou 
+<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
+      UmLivro</a>
+-->
+<a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
+</p>
+
+<p>
+Veja também os cursos de extensão a distância 
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
+<a href="https://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
+
+
+<!---
+<p>
+Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. 
+</p>
+--->
+<header id="title-block-header">
+<h1 class="title">Engenharia de Software Moderna</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 data-number="1"
+id="gerenciando-branches-com-git-flow-githubflow-e-tbd"><span
+class="header-section-number">1</span> Gerenciando Branches com
+Git-flow, GitHubFlow e TBD</h1>
+<p>Neste artigo vamos apresentar três modelos que padronizam os branches
+que devem ser criados por times de desenvolvimento de software. Trata-se
+de um assunto importante e prático, pois ele disciplina o fluxo de
+trabalho que dever ser usado por times para implementar novas
+funcionalidades ou para corrigir bugs, por exemplo.</p>
+<h2 data-number="1.1" id="git-flow"><span
+class="header-section-number">1.1</span> Git-flow</h2>
+<p>Git-flow é um modelo de gerenciamento de branches muito comum em
+times que usam Git, tendo sido proposto por Vincent Driessen em 2010 (<a
+href="https://nvie.com/posts/a-successful-git-branching-model/">link</a>).
+Basicamente, o modelo usa dois branches principais e permanentes:</p>
+<ul>
+<li><p><code>Main</code> – também conhecido por <code>master</code> ou
+<code>trunk</code> – é usado para armazenar as versões de um sistema que
+estão em produção.</p></li>
+<li><p><code>Develop</code> é usado para armazenar código com
+funcionalidades que já foram implementadas, mas que ainda não passaram
+por um teste final. Normalmente, esse teste é realizado por um analista
+de qualidade (QA).</p></li>
+</ul>
+<p>Git-flow prevê ainda três branches temporários:</p>
+<ul>
+<li>Branches de funcionalidade</li>
+<li>Branches de release</li>
+<li>Branches de hotfix</li>
+</ul>
+<p>Esses branches serão descritos a seguir. Eles podem ser criados
+usando-se os próprios comandos do git (veja alguns exemplos <a
+href="https://nvie.com/posts/a-successful-git-branching-model">aqui</a>)
+ou então usando plugins com macros que facilitam o uso do Git-flow.</p>
+<h4 class="unnumbered" id="branches-de-funcionalidade">Branches de
+Funcionalidade</h4>
+<p>Esses branches nascem de <code>develop</code> e devem ser criados por
+desenvolvedores antes de começar a implementação de uma nova
+funcionalidade. Quando essa funcionalidade fica pronta, eles são
+integrados (via um <code>merge</code>) de volta em <code>develop</code>
+e são então removidos. Por isso, são branches que muitas vezes existem
+apenas no repositório local de um desenvolvedor.</p>
+<p><strong>Exemplo:</strong> Na próxima figura, mostramos três branches
+de funcionalidades. Os círculos cheios representam <code>commits</code>
+e os círculos vazios representam <code>merges</code>. Veja que os
+branches de funcionalidade sempre nascem e voltam para
+<code>develop</code>.</p>
+<figure>
+<img src="./figs/git-flow-feature-branch.png" style="width:85.0%"
+alt="Três branches de funcionalidade criados a partir de develop usando Git-flow" />
+<figcaption aria-hidden="true">Três branches de funcionalidade criados a
+partir de develop usando Git-flow</figcaption>
+</figure>
+<h4 class="unnumbered" id="branches-de-release">Branches de Release</h4>
+<p>Esses branches também nascem de <code>develop</code>. E eles são
+usados para preparar uma nova release, a qual deve ser aprovada pelo
+cliente final. Quando o cliente dá o sinal verde, os branches de release
+são integrados no <code>main</code>, já que agora temos uma nova versão
+do sistema pronta para entrar em produção.</p>
+<p>Se no processo de aprovação tiverem sido realizadas mudanças no
+código, o branch de release deve ser integrado de volta também em
+<code>develop</code>.</p>
+<p><strong>Exemplo:</strong> Após implementar as três funcionalidades da
+figura anterior, o líder do time decidiu gerar uma release 1.0 do
+sistema. Para isso, ele criou um branch de release (veja figura), que
+foi usado para mostrar o sistema para o seu cliente final. Após algumas
+modificações requisitadas pelo cliente, o sistema foi aprovado e entrou
+em produção, isto é, foi integrado no <code>main</code>. Por fim, as
+mudanças realizadas no branch de release foram também aplicadas em
+<code>develop</code>.</p>
+<figure>
+<img src="./figs/git-flow-release-branch.png" style="width:95.0%"
+alt="Branch de release (último branch da figura) usando Git-flow" />
+<figcaption aria-hidden="true">Branch de release (último branch da
+figura) usando Git-flow</figcaption>
+</figure>
+<h4 class="unnumbered" id="branches-de-hotfix">Branches de Hotfix</h4>
+<p>Esses branches são usados para corrigir um erro crítico que foi
+detectado em produção, ou seja, em um código que está no
+<code>main</code>. Por isso, eles nascem do <code>main</code>, recebem
+commits que corrigem o bug crítico e, por último, são de novo integrados
+no <code>main</code> e também em <code>develop</code>.</p>
+<p><strong>Exemplo:</strong> Após lançar a nova release, os usuários
+começaram a reportar um bug crítico na mesma. Assim, criou-se um branch
+para corrigir esse bug crítico (veja na figura a seguir), o qual nasceu
+do <code>main</code>. Após a correção do bug, o branch foi integrado de
+volta no <code>main</code> e uma nova release foi gerada, com a tag
+1.0.1. Por fim, o branch foi também integrado em <em>develop</em>.</p>
+<figure>
+<img src="./figs/git-flow-hotfix-branch.png" style="width:95.0%"
+alt="Branch de hotfix (último branch da figura) usando Git-flow" />
+<figcaption aria-hidden="true">Branch de hotfix (último branch da
+figura) usando Git-flow</figcaption>
+</figure>
+<h4 class="unnumbered"
+id="quando-usar-quais-desvantagens-do-git-flow">Quando usar? Quais
+desvantagens do Git-flow?</h4>
+<p>Git-flow dever ser usado, principalmente, quando existem testes
+manuais e times de QA. E também quando os clientes precisam testar e
+aprovar qualquer nova versão do código, antes que ela entre em
+produção.</p>
+<p>Porém, quando se usa Git-flow, os branches de funcionalidade podem
+demorar muito tempo para serem integrados em <code>develop</code>, o que
+pode ocasionar diversos conflitos de integração (<em>merge hell</em>).
+Adicionalmente, caso a integração dos branches de release também demore,
+os times de desenvolvimento vão demorar para receber feedback sobre as
+novas funcionalidades que eles implementaram.</p>
+<h2 data-number="1.2" id="githubflow"><span
+class="header-section-number">1.2</span> GitHubFlow</h2>
+<p>GitHubFlow é um modelo de branches muito comum quando se usa GitHub.
+Trata-se de um modelo mais simples do que Git-Flow, pois existem apenas
+o branch principal e branches de funcionalidade. Porém, existe suporte a
+revisão de código antes de integração, por meio do conceito de Pull
+Requests (PR) do GitHub.</p>
+<p>Quando se usa GitHubFlow, os principais passos são os seguintes:</p>
+<ol type="1">
+<li>Uma desenvolvedora cria um branch no seu repositório local.</li>
+<li>Implementa uma funcionalidade ou corrige um bug.</li>
+<li>Faz um push do branch para o GitHub.</li>
+<li>Entra no GitHub e abre um Pull Request (PR), isto é, um pedido para
+alguém revisar seu branch.</li>
+<li>Um revisor, isto é, um outro desenvolvedor revisa e, eventualmente,
+faz o merge do PR no <code>main</code>.</li>
+</ol>
+<p>No <a
+href="https://engsoftmoderna.info/capAp.html#pull-requests">apêndice</a>
+sobre git do livro nós comentamos e explicamos melhor o conceito de Pull
+Request. Se quiser, você pode conferir também o artigo didático sobre <a
+href="https://engsoftmoderna.info/artigos/revisao-codigo.html">revisão
+de código</a>.</p>
+<p>GitHubFlow é usado, principalmente, em sistemas com apenas uma versão
+em produção, como costuma ser o caso de sistemas Web. Uma desvantagem do
+modelo é que os PRs podem levar muito tempo para serem revisados.</p>
+<h2 data-number="1.3" id="desenvolvimento-baseado-no-trunk-tbd"><span
+class="header-section-number">1.3</span> Desenvolvimento Baseado no
+Trunk (TBD)</h2>
+<p>TBD é ainda mais simples do que GitHubFlow, pois usa apenas um
+branch, isto é, o branch principal, chamado também de <code>main</code>,
+<code>master</code> ou <code>trunk</code>. Ou seja, todos os
+desenvolvedores realizam seus commits diretamente no branch
+principal.</p>
+<p>Na verdade, mesmo em TBD, desenvolvedores podem criar branches de
+funcionalidade, mas tais branches devem ter uma duração limitada, por
+exemplo, de no máximo dois dias, conforme sugerido por Paul Hammant em
+um livro sobre TBD (e também neste <a
+href="https://trunkbaseddevelopment.com/short-lived-feature-branches/">post</a>):</p>
+<blockquote>
+<p>Uma regra importante é a duração do branch antes de ser integrado e
+removido. Colocando de forma simples, o branch deve durar apenas alguns
+dias. Após mais de dois dias há o risco de que ele se torne um branch de
+longa duração, o que constitui a antítese de TBD.</p>
+</blockquote>
+<p>No <a
+href="https://engsoftmoderna.info/cap10.html#desenvolvimento-baseado-no-trunk">Capítulo
+10</a> do livro apresentamos uma descrição mais detalhada de TBD e
+também explicamos o mecanismo de <a
+href="https://engsoftmoderna.info/cap10.html#feature-flags">feature
+flags</a>, que é usado para evitar que implementações incompletas de uma
+funcionalidade entrem em produção.</p>
+<hr />
+<p>Voltar para a lista de <a href="./artigos.html">artigos</a>.</p>
+<button onclick="darkMode()">Modo noturno</button>
+
+<script>
+function darkMode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+</div>
+</div>
+</div>
+
+<footer>
+Direitos autorais reservados. Versão para uso pessoal.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+</footer>
+</body>
+</html>
