@@ -15,14 +15,14 @@ que usam Git, tendo sido proposto por Vincent Driessen em 2010
 ([link](https://nvie.com/posts/a-successful-git-branching-model/)).
 Basicamente, o modelo usa dois branches principais e permanentes:
 
-* `Main` -- também conhecido por `master` ou `trunk` -- é usado para 
+* `Main` — também conhecido por `master` ou `trunk` — é usado para 
 armazenar as versões de um sistema que estão em produção.
 
 * `Develop` é usado para armazenar código com funcionalidades que já foram
 implementadas, mas que ainda não passaram por um teste final.
 Normalmente, esse teste é realizado por um analista de qualidade (QA).
 
-Git-flow prevê ainda três branches temporários: 
+Git-flow prevê três branches temporários: 
 
 * Branches de funcionalidade
 * Branches de release
@@ -53,12 +53,13 @@ voltam para `develop`.
 #### Branches de Release {.unnumbered}
 
 Esses branches também nascem de `develop`. E eles são usados 
-para preparar uma nova release, a qual deve ser aprovada pelo 
-cliente final. Quando o cliente dá o sinal verde, os branches 
-de release são integrados no `main`, já que agora temos uma 
-nova versão do sistema pronta para entrar em produção. 
+para preparar uma nova release, a qual deve ser aprovada 
+(ou homologada) pelo cliente final. Quando o cliente dá o 
+sinal verde, os branches de release são integrados no `main`, 
+já que agora temos uma nova versão do sistema pronta para 
+entrar em produção. 
 
-Se no processo de aprovação tiverem sido realizadas mudanças 
+Se no processo de aprovação forem realizadas mudanças 
 no código, o branch de release deve ser integrado de volta 
 também em `develop`. 
 
@@ -98,15 +99,15 @@ Funcionalidade ⇒ develop ⇒ release ⇒ main
 
 Ou seja, uma funcionalidade é sempre implementada em um branch 
 específico. Em seguida, esse branch é integrado em `develop`, onde 
-a funcionalidade passa por "testes de integração". De tempos em 
+a funcionalidade passa por testes de integração. De tempos em 
 tempos, um branch de release é gerado para mostrar uma nova versão 
 do sistema para o cliente final. Uma vez aprovada, essa versão
 é integrada no `main` e disponibilizada para a base completa 
 de usuários.
 
-Portanto, Git-flow dever ser usado, principalmente, quando existem 
+Git-flow dever ser usado, principalmente, quando existem 
 testes manuais e times de QA. E também quando os clientes precisam 
-testar e aprovar qualquer nova versão do código antes que ela entre 
+aprovar e homologar qualquer nova versão do código antes que ela entre 
 em produção.
 
 Porém, quando se usa Git-flow, os branches de funcionalidade podem 
@@ -139,7 +140,7 @@ a qual foi extraída da documentação do GitHub. Nessa figura, um PR
 está sendo aberto para revisar o branch de nome  `my-patch-1`. 
 Terminada essa revisão, esse branch será integrado no `main`.
 
-![Interface para abertura de Pull Request (fonte: GitHub)](./figs/github-flow-pr.png){width=70%}
+![Interface para abertura de Pull Request (fonte: GitHub)](./figs/github-flow-pr.png){width=85%}
 
 No [apêndice](https://engsoftmoderna.info/capAp.html#pull-requests) 
 sobre git nós comentamos e explicamos melhor o conceito de Pull Request. 
@@ -150,6 +151,9 @@ GitHubFlow é usado, principalmente, em sistemas com apenas uma
 versão em produção, como costuma ser o caso de sistemas Web.
 Uma desvantagem do modelo é que os PRs podem levar muito tempo 
 para serem revisados.
+
+Apesar do nome, o mesmo fluxo pode ser usado com outros serviços
+de controle de versão, como GitLab. 
 
 ## Desenvolvimento Baseado no Trunk (TBD) 
 

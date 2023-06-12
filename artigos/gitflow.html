@@ -18,7 +18,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   
@@ -110,15 +109,15 @@ times que usam Git, tendo sido proposto por Vincent Driessen em 2010 (<a
 href="https://nvie.com/posts/a-successful-git-branching-model/">link</a>).
 Basicamente, o modelo usa dois branches principais e permanentes:</p>
 <ul>
-<li><p><code>Main</code> – também conhecido por <code>master</code> ou
-<code>trunk</code> – é usado para armazenar as versões de um sistema que
+<li><p><code>Main</code> — também conhecido por <code>master</code> ou
+<code>trunk</code> — é usado para armazenar as versões de um sistema que
 estão em produção.</p></li>
 <li><p><code>Develop</code> é usado para armazenar código com
 funcionalidades que já foram implementadas, mas que ainda não passaram
 por um teste final. Normalmente, esse teste é realizado por um analista
 de qualidade (QA).</p></li>
 </ul>
-<p>Git-flow prevê ainda três branches temporários:</p>
+<p>Git-flow prevê três branches temporários:</p>
 <ul>
 <li>Branches de funcionalidade</li>
 <li>Branches de release</li>
@@ -149,12 +148,12 @@ partir de develop usando Git-flow</figcaption>
 </figure>
 <h4 class="unnumbered" id="branches-de-release">Branches de Release</h4>
 <p>Esses branches também nascem de <code>develop</code>. E eles são
-usados para preparar uma nova release, a qual deve ser aprovada pelo
-cliente final. Quando o cliente dá o sinal verde, os branches de release
-são integrados no <code>main</code>, já que agora temos uma nova versão
-do sistema pronta para entrar em produção.</p>
-<p>Se no processo de aprovação tiverem sido realizadas mudanças no
-código, o branch de release deve ser integrado de volta também em
+usados para preparar uma nova release, a qual deve ser aprovada (ou
+homologada) pelo cliente final. Quando o cliente dá o sinal verde, os
+branches de release são integrados no <code>main</code>, já que agora
+temos uma nova versão do sistema pronta para entrar em produção.</p>
+<p>Se no processo de aprovação forem realizadas mudanças no código, o
+branch de release deve ser integrado de volta também em
 <code>develop</code>.</p>
 <p><strong>Exemplo:</strong> Após implementar as três funcionalidades da
 figura anterior, o líder do time decidiu gerar uma release 1.0 do
@@ -194,14 +193,14 @@ seguinte:</p>
 <p>Funcionalidade ⇒ develop ⇒ release ⇒ main</p>
 <p>Ou seja, uma funcionalidade é sempre implementada em um branch
 específico. Em seguida, esse branch é integrado em <code>develop</code>,
-onde a funcionalidade passa por <q>testes de integração</q>. De tempos
-em tempos, um branch de release é gerado para mostrar uma nova versão do
+onde a funcionalidade passa por testes de integração. De tempos em
+tempos, um branch de release é gerado para mostrar uma nova versão do
 sistema para o cliente final. Uma vez aprovada, essa versão é integrada
 no <code>main</code> e disponibilizada para a base completa de
 usuários.</p>
-<p>Portanto, Git-flow dever ser usado, principalmente, quando existem
-testes manuais e times de QA. E também quando os clientes precisam
-testar e aprovar qualquer nova versão do código antes que ela entre em
+<p>Git-flow dever ser usado, principalmente, quando existem testes
+manuais e times de QA. E também quando os clientes precisam aprovar e
+homologar qualquer nova versão do código antes que ela entre em
 produção.</p>
 <p>Porém, quando se usa Git-flow, os branches de funcionalidade podem
 demorar muito tempo para serem integrados em <code>develop</code>, o que
@@ -232,7 +231,7 @@ sendo aberto para revisar o branch de nome <code>my-patch-1</code>.
 Terminada essa revisão, esse branch será integrado no
 <code>main</code>.</p>
 <figure>
-<img src="./figs/github-flow-pr.png" style="width:70.0%"
+<img src="./figs/github-flow-pr.png" style="width:85.0%"
 alt="Interface para abertura de Pull Request (fonte: GitHub)" />
 <figcaption aria-hidden="true">Interface para abertura de Pull Request
 (fonte: GitHub)</figcaption>
@@ -246,6 +245,8 @@ de código</a>.</p>
 <p>GitHubFlow é usado, principalmente, em sistemas com apenas uma versão
 em produção, como costuma ser o caso de sistemas Web. Uma desvantagem do
 modelo é que os PRs podem levar muito tempo para serem revisados.</p>
+<p>Apesar do nome, o mesmo fluxo pode ser usado com outros serviços de
+controle de versão, como GitLab.</p>
 <h2 data-number="1.3" id="desenvolvimento-baseado-no-trunk-tbd"><span
 class="header-section-number">1.3</span> Desenvolvimento Baseado no
 Trunk (TBD)</h2>
