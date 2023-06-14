@@ -22,3 +22,4 @@ make testes-mutacao
 make deep-modules
 make pix-banco-x
 make desafios-engsoft
+make gitflow
