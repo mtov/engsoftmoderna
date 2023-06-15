@@ -52,6 +52,12 @@ Em resumo, o stage é uma área de armazenamento temporário que permite você
 salvar temporariamente alguns arquivos e só realizar um commit quando tiver 
 certeza de que eles contém a versão final de uma mudança.
 
+**Observação:** fora do contexto de sistemas de controle de versão, o termo 
+*stage* também significa um ambiente para realização de testes e 
+para homologação de um sistema, antes que ele seja colocado no ambiente 
+realmente de produção. Ou seja, é um ambiente intermediário,
+entre o ambiente de desenvolvimento e o ambiente de produção.
+
 * * * 
 
 ```{=html}
