@@ -9,9 +9,10 @@ com requisitos de software, isto é, sobre o
 Segue a lista atual de perguntas:
 
 1. [O que são personas?](#o-que-s%C3%A3o-personas)
-2. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
-3. [Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução?](#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o)
-4. [Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)?](#como-escrever-hist%C3%B3rias-que-valem-para-dois-ou-mais-pap%C3%A9is-de-usu%C3%A1rios-user-roles)
+2. [O que significa Ideal Customer Profile (ICP)?](#o-que-significa-ideal-customer-profile-icp)
+3. [O que é dogfooding?](#o-que-%C3%A9-dogfooding)
+4. [Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução?](#como-podemos-classificar-uma-manuten%C3%A7%C3%A3o-realizada-para-melhorar-o-desempenho-de-um-sistema-em-tempo-de-execu%C3%A7%C3%A3o)
+5. [Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)?](#como-escrever-hist%C3%B3rias-que-valem-para-dois-ou-mais-pap%C3%A9is-de-usu%C3%A1rios-user-roles)
 
 ### 1. O que são personas? {.unnumbered}
 
@@ -81,7 +82,22 @@ atualização básica sobre certos temas. Assim, para atender
 Como essas personas são pessoas do Brasil, o livro foi escrito
 em português.
 
-### 2. O que é dogfooding? {.unnumbered}
+
+### 2. O que significa Ideal Customer Profile (ICP)? {.unnumbered}
+
+O significado é quase que literal, isto é, trata-se do público
+alvo do seu sistema ou produto. Por exemplo, podem ser
+pessoas físicas ou empresas. Se forem pessoas físicas, deve-se
+definir gênero, idade, profissão, principais interesses, etc.
+Se forem pessoas jurídicas, deve-se definir setor de atuação,
+faturamento, localização geográfica, etc. 
+
+Portanto, o conceito de ICP é parecido com o de personas, 
+porém mais abrangente (isto é, não é fragmentado em diferentes
+perfis) e menos visual. Ele é muito usado por times de vendas 
+durante a prospecção de clientes para um sistema.
+
+### 3. O que é dogfooding? {.unnumbered}
 
 Dogfooding é uma outra técnica usada para aproximar desenvolvedores dos 
 produtos de software que eles desenvolvem. No entanto, no caso de 
@@ -109,7 +125,8 @@ sistema para cálculo e geração de apólices de seguros para navios. Mesmo que
 desenvolvedor implemente uma parte desse sistema, ele pode não conseguir usá-lo 
 tal como um analista de seguros navais.
 
-### 3. Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução? {.unnumbered}
+
+### 4. Como podemos classificar uma manutenção realizada para melhorar o desempenho de um sistema em tempo de execução? {.unnumbered}
 
 Se ela for realizada após uma reclamação de usuários do sistema, trata-se de 
 uma manutenção corretiva. Se ela for realizada para evitar reclamações futuras 
@@ -117,7 +134,8 @@ sobre uma possível lentidão do sistema, trata-se de uma manutenção preventiv
 Porém, se ela for realizada para adaptar o sistema a uma demanda externa 
 (por exemplo, alguma regulamentação), trata-se de uma manutenção adaptativa.
 
-### 4. Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)? {.unnumbered}
+
+### 5. Como escrever histórias que valem para dois ou mais papéis de usuários (user roles)? {.unnumbered}
 
 Por exemplo, suponha que em um sistema para controle de bibliotecas tanto professores como alunos possam doar livros. Logo, podemos escrever essa história assim:
 

@@ -8,7 +8,7 @@ Existem diversos caminhos na área de empreendedorismo envolvendo
 Engenharia de Software. Hoje em dia, talvez, o caminho mais 
 desejado seja criar uma startup de sucesso, obter financiamento 
 via capital de risco e virar um unicórnio. No entanto, esse não é 
-um caminho trivial, pois são pouquíssimas empresas que alçam esse 
+um caminho trivial, pois são pouquíssimas empresas que alcançam esse 
 nível de sucesso. Além disso, já existe uma vasta literatura 
 sobre a criação e administração de startups financiadas por 
 meio de capital de risco.
