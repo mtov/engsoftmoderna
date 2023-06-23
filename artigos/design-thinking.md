@@ -255,6 +255,21 @@ uso de Design Thinking.
 resumida de Design Sprint é apresentada na Seção 3.5.3 do 
 [Capítulo 3](https://engsoftmoderna.info/cap3.html#construindo-o-primeiro-mvp) do livro.
 
+6\. Procure na Internet material de referência sobre o 
+conceito de "Duplo Diamante", no contexto de Design
+Thinking, e responda:
+
+(a) O primeiro diamante foca em qual etapa (ou espaço)
+do processo de design? E o segundo diamante?
+
+(b) Qual deve ser a entrada do primeiro diamante?
+
+(c) Qual deve ser a saída do primeiro diamante e, portanto,
+a entrada do segundo diamante? 
+
+(d) Por fim, qual deve ser a saída do segundo diamante?
+
+
 * * * 
 
 ```{=html}

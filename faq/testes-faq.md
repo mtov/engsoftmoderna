@@ -38,6 +38,7 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
 15. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
 16. [O que são testes exploratórios?](#o-que-s%C3%A3o-testes-explorat%C3%B3rios)
+17. [O que são testes de contrato?](#o-que-s%C3%A3o-testes-de-contrato)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -379,6 +380,23 @@ ajudar na escrita de casos de teste (assumindo que iremos ter testes manuais)
 e também para subsidiar a escrita de testes automatizados (principalmente, 
 testes de integração e testes end-to-end).
 
+### 17. O que são testes de contrato? {.unnumbered}
+
+Eles são um tipo teste de integração, mas com sistemas de terceiros, 
+isto é, testam a integração de um sistema X da sua empresa com um 
+sistema Y de uma outra empresa. Por isso, testes de contrato não 
+precisam rodar com frequência. O termo contrato, no nome, reflete 
+o fato de tais testes verificarem, principalmente, se a assinatura 
+dos serviços remotos está de acordo com o esperado. Por exemplo, 
+um teste de contrato deve falhar quando espera-se que o serviço 
+remoto retorne um determinado campo, mas esse campo foi removido 
+pelos provedores do serviço.
+
+Testes de contrato devem ser usados quando você precisa se integrar
+com um sistema externo que é relevante para seu negócio, mas cuja 
+API muda com frequência. Eles podem ser implementados usando-se
+frameworks de testes para testes de unidade e de integração,
+como xUnit e Jest.
 
 * * * 
 
