@@ -535,15 +535,17 @@ end-to-end).</p></li>
 <h3 class="unnumbered" id="o-que-são-testes-de-contrato">17. O que são
 testes de contrato? <a href="#o-que-são-testes-de-contrato"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
-<p>Eles são um tipo teste de integração, mas com sistemas de terceiros,
-isto é, testam a integração de um sistema X da sua empresa com um
-sistema Y de uma outra empresa. Por isso, testes de contrato não
+<p>Eles são um tipo teste de integração que envolve sistemas de
+terceiros, isto é, testam a integração de um sistema X da sua empresa
+com um sistema Y de uma outra empresa. Por isso, testes de contrato não
 precisam rodar com frequência. O termo contrato, no nome, reflete o fato
-de tais testes verificarem, principalmente, se a assinatura dos serviços
+de tais testes verificam, principalmente, se a assinatura dos serviços
 remotos está de acordo com o esperado. Por exemplo, um teste de contrato
 deve falhar quando espera-se que o serviço remoto retorne um determinado
-campo (por exemplo, uma data), mas esse campo foi removido pelos
-provedores do serviço.</p>
+campo, mas esse campo foi removido pelos desenvolvedores do serviço.</p>
+<p>Testes de contrato devem ser usados quando você precisa se integrar
+com um sistema externo que é relevante para seu negócio, mas cuja API
+muda com frequência.</p>
 <hr />
 <p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>

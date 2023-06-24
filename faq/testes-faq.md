@@ -382,21 +382,20 @@ testes de integração e testes end-to-end).
 
 ### 17. O que são testes de contrato? {.unnumbered}
 
-Eles são um tipo teste de integração, mas com sistemas de terceiros, 
-isto é, testam a integração de um sistema X da sua empresa com um 
-sistema Y de uma outra empresa. Por isso, testes de contrato não 
-precisam rodar com frequência. O termo contrato, no nome, reflete 
-o fato de tais testes verificarem, principalmente, se a assinatura 
-dos serviços remotos está de acordo com o esperado. Por exemplo, 
-um teste de contrato deve falhar quando espera-se que o serviço 
-remoto retorne um determinado campo, mas esse campo foi removido 
-pelos provedores do serviço.
+Eles são um tipo teste de integração que envolve sistemas de
+terceiros, isto é, testam a integração de um sistema X da sua
+empresa com um sistema Y de uma outra empresa. Por isso, 
+testes de contrato não precisam rodar com frequência. O 
+termo contrato, no nome, reflete o fato de tais testes 
+verificam, principalmente, se a assinatura dos serviços 
+remotos está de acordo com o esperado. Por exemplo, um 
+teste de contrato deve falhar quando espera-se que o serviço 
+remoto retorne um determinado campo, mas esse campo foi 
+removido pelos desenvolvedores do serviço.
 
-Testes de contrato devem ser usados quando você precisa se integrar
-com um sistema externo que é relevante para seu negócio, mas cuja 
-API muda com frequência. Eles podem ser implementados usando-se
-frameworks de testes para testes de unidade e de integração,
-como xUnit e Jest.
+Testes de contrato devem ser usados quando você precisa 
+se integrar com um sistema externo que é relevante para 
+seu negócio, mas cuja API muda com frequência. 
 
 * * * 
 
