@@ -1,0 +1,6 @@
+@book{engsoftmoderna,
+  title     = "Engenharia de Software Moderna: Princípios e Práticas para Desenvolvimento de Software com Produtividade",
+  author    = "Marco Tulio Valente",
+  year      = 2000,
+  publisher = "Editora: Independente"
+}
