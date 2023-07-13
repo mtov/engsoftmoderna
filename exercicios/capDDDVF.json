@@ -32,6 +32,14 @@
   {
     "text": "Uma vantagem de repositórios é permitir que se mude a implementação concreta da fonte de dados. Por exemplo, para facilitar a implementação de testes de unidade, pode-se usar repositórios que acessam dados armazenados em memória principal.",
     "correct": "true"
+  },
+  {
+    "text": "DDD define uma receita de bolo, constituída por passos precisos e ordenados, para construção de sistemas para domínios complexos.",
+    "correct": "false"
+  },
+  {
+    "text": "Se o seu sistema é (e sempre será) um CRUD, provavelmente não há necessidade de usar DDD.",
+    "correct": "true"
   }
 ]
 }	    
