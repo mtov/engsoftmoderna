@@ -40,6 +40,18 @@
   {
     "text": "Se o seu sistema é (e sempre será) um CRUD, provavelmente não há necessidade de usar DDD.",
     "correct": "true"
+  },
+  {
+    "text": "Os objetos internos de um agregado não são visíveis externamente, isto é, só a raiz de um agregado pode referenciar tais objetos internos.",
+    "correct": "true"
+  },
+  {
+    "text": "Suponha uma classe Pedido (entidade raiz de um agregado). Todo pedido possui uma Data (objeto de valor). Logo, esse objeto (que armazena a data do pedido) também pertence ao agregado.",
+    "correct": "true"
+  },
+  {
+    "text": "Suponha um agregado formado pelas classes Pedido (raiz) e ItensPedido. Logo, um repositório deve ter métodos para inserir em um BD, via transações independentes, tanto Pedido como ItensPedido.",
+    "correct": "false"
   }
 ]
 }	    
