@@ -70,21 +70,24 @@ habitantes e quase 20 milhões de empresas ativas (dados de 2020).
 
 ## Escolhendo o Problema
 
-O grande **desafio de uma microempresa de software é achar um 
-segmento de mercado** que tenha um problema real que possa ser 
+O grande desafio de uma microempresa de software é achar um 
+segmento de mercado que tenha um problema real que possa ser 
 resolvido por meio de um sistema relativamente pequeno. E, mais 
-importante, esse problema tem que ser relevante para **atrair 
-clientes dispostos a pagar uma assinatura mensal** para ter 
+importante, esse problema tem que ser relevante para atrair 
+clientes dispostos a pagar uma assinatura mensal para ter 
 acesso a um sistema que o resolva. 
 
 Os resultados de uma pesquisa realizada em 2020 pela MicroConf, 
 uma empresa organizadora de  eventos, ajudam a entender 
 como a escolha desse problema e sistema ocorre na prática. Nessa 
 pesquisa, foram entrevistados fundadores de SaaS autofinanciados. 
-Uma das perguntas era a seguinte: **Como você teve a ideia para 
-o seu produto ou empresa?** 
-Veja as respostas:
+Uma das perguntas era a seguinte: Como você teve a ideia para 
+o seu produto ou empresa? Veja o percentual de respostas no
+seguinte gráfico.
 
+![](./figs/micro-saas){width=95%}
+
+<!---
 * 45% responderam que escolheram influenciados por um problema 
 que estavam enfrentando.
 
@@ -96,6 +99,7 @@ obtidas no seu trabalho diário.
 
 * 11% responderam que amigos ou parentes estavam enfrentando 
 o problema.
+-->
 
 O seguinte padrão fica então claro nas respostas: a escolha foi 
 de um problema que os fundadores ou pessoas próximas estavam 
