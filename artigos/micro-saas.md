@@ -247,6 +247,16 @@ criação de wireframes de baixa fidelidade. A empresa, localizada
 na Itália, foi fundada em 2008 e, em 2020, obteve um faturamento 
 de US$ 7.3 milhões, com 33 colaboradores.
 
+Outros exemplos, muito conhecidos, são a Mailchimp e a 37signals.
+A [Mailchimp](http://www.mailchimp.com) é um sistema de envio de
+mails, que nasceu em 2001, e operou de forma autofinanciada até 
+ser adquirido por uma outra empresa em 2021 pelo valor de US$ 12
+bilhões. A [37signals](https://37signals.com/) também opera de forma 
+autofinanciada desde a sua fundação no início dos anos 2000. Ela é 
+responsável pelo sistema de gerenciamento de projetos 
+[Basecamp](https://basecamp.com) e, mais recentemente, pelo 
+serviço de mail [Hey](https://www.hey.com).
+
 ## Métricas
 
 Antes de concluir, vamos comentar sobre algumas métricas 
@@ -326,6 +336,14 @@ situações eles ocorrem?
 
 5\. Pesquise e descreva pelo menos um sistema micro-SaaS, de forma semelhante àquela que fizemos no artigo.
 
+6.\ *Total Addressable Market* (TAM) é uma métrica que representa 
+o tamanho do mercado de um produto ou serviço. Em outras palavras, é
+quanto sua empresa pode chegar a faturar supondo que ela conquiste 
+todos os seus potenciais clientes. (a) Por que é importante pensar 
+nesta métrica antes de começar um SaaS? (b) Qual o impacto que essa 
+métrica pode ter na decisão de começar o SaaS de forma 
+autofinanciada ou, alternativamente, já procurar capital externo 
+desde o início da empresa?
 
 * * * 
 
