@@ -46,7 +46,7 @@ alguns freelancers.
 distribuição de podcasts, que é mantido por dois fundadores.
 
 * [Permanentlink](https://permanent.link) é um sistema que se 
-propõe a resolver um problema enfrentado por autores de livros 
+propõe a resolver um problema enfrentado por editoras de livros 
 digitais: esses livros incorporam diversos links que com o tempo 
 podem "quebrar". A ideia então é disponibilizar uma URL 
 permanente para os documentos referenciados. Enquanto o link 
@@ -62,11 +62,13 @@ da Wikipédia. Apesar disso, os fundadores estão tentando criar um
 sistema alternativo que propicie uma experiência mais agradável 
 para criação e resposta de formulários.
 
+<!--
 De forma interessante, esses sistemas são tanto B2B (*Business-to-Business*) 
 como B2C (*Business-to-Customers*). Isto é, eles podem ter clientes que são
 empresas ou consumidores finais. No Brasil, o mercado em ambos 
 os casos é muito grande, pois o país possui mais de 210 milhões de 
 habitantes e quase 20 milhões de empresas ativas (dados de 2020).
+-->
 
 ## Escolhendo o Problema
 
@@ -118,6 +120,13 @@ estão enfrentando.
 * *Eat your own dog food*, que pode ser traduzida como 
 "comer a mesma comida do seu cachorro". Ou seja, empreendedores 
 devem ser também usuários dos sistemas que desenvolvem.
+
+É muito importante também definir se seu sistema será B2B 
+(*Business-to-Business*) ou B2C (*Business-to-Customers*).
+Geralmente, a maioria de sistemas micro-SaaS são voltados para
+empresas ou profissionais autônomos, isto é, são B2B.
+Provavelmente, esse é caso dos sistemas de exemplo que 
+mencionamos acima.
 
 ## Canais de Distribuição
 
@@ -271,12 +280,15 @@ somatório do valor das assinaturas recebidas no mês. Ou seja,
 Receita Anual Recorrente (ARR).
 
 * **Taxa de Cancelamentos** (*Churn Rate*): número de cancelamentos no mês /
-total de clientes no início do mês.
+total de clientes no início do mês. É importante entender que todo sistema
+SaaS terá uma taxa de churn. Por exemplo, churns abaixo de 5% já são
+considerados "bons". Por outro lado, valores acima de 10% tendem a ser 
+um alerta vermelho.
 
 * **Valor do Tempo de Vida do Cliente** (LTV) (*Customer Lifetime Value*): 
 assinatura média no mês / taxa de cancelamentos. Exemplo: se a 
 assinatura média é de R$ 100 e a taxa de cancelamento for de 
-25%, temos que LTV = 100 / 0.25 = R$ 400.
+5%, temos que LTV = 100 / 0.05 = R$ 2000.
 
 Para um SaaS ser viável, LTV > CAC. Na verdade,
 costuma-se recomendar que LTV / CAC > 3.0.
