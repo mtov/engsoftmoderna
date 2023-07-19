@@ -121,12 +121,26 @@ estão enfrentando.
 "comer a mesma comida do seu cachorro". Ou seja, empreendedores 
 devem ser também usuários dos sistemas que desenvolvem.
 
-É muito importante também definir se seu sistema será B2B 
+## B2B ou B2C?
+
+É importante também definir se seu sistema será B2B 
 (*Business-to-Business*) ou B2C (*Business-to-Customers*).
 Geralmente, a maioria de sistemas micro-SaaS são voltados para
 empresas ou profissionais autônomos, isto é, são B2B.
-Provavelmente, esse é caso dos sistemas de exemplo que 
+Provavelmente, esse é o caso dos exemplos de sistemas que 
 mencionamos acima.
+
+Via de regra, sistemas B2B têm um ciclo de vendas
+mais demorado, pois a venda pode depender da aprovação de 
+mais de uma pessoa na empresa que está contratando o sistema. 
+Por outro lado, o preço da assinatura tende a ser maior, 
+quando comparado com sistemas B2C.
+
+Por outro lado, sistemas B2C são mais comuns em áreas como 
+entretenimento, educação, treinamentos, ferramentas de 
+produtividade pessoal, controle de finanças pessoais, etc.
+As decisões de compra desses sistemas tendem a ser mais rápidas
+e mais sujeitas a fatores e gatilhos emocionais.
 
 ## Canais de Distribuição
 
