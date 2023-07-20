@@ -130,17 +130,18 @@ empresas ou profissionais autônomos, isto é, são B2B.
 Provavelmente, esse é o caso dos exemplos de sistemas que 
 mencionamos acima.
 
-Via de regra, sistemas B2B têm um ciclo de vendas
-mais demorado, pois a venda pode depender da aprovação de 
-mais de uma pessoa na empresa que está contratando o sistema. 
+Via de regra, sistemas B2B têm um ciclo de venda
+mais demorado, pois uma venda pode depender da aprovação de 
+várias pessoas na empresa que está contratando o sistema. 
 Por outro lado, o preço da assinatura tende a ser maior, 
 quando comparado com sistemas B2C.
 
-Por outro lado, sistemas B2C são mais comuns em áreas como 
-entretenimento, educação, treinamentos, ferramentas de 
-produtividade pessoal, controle de finanças pessoais, etc.
-As decisões de compra desses sistemas tendem a ser mais rápidas
-e mais sujeitas a fatores e gatilhos emocionais.
+Já sistemas B2C são mais comuns em áreas como entretenimento, 
+educação, cursos, ferramentas de produtividade pessoal, 
+controle de finanças pessoais, etc. As decisões de compra 
+desses sistemas tendem a ser mais rápidas e sujeitas a 
+gatilhos emocionais. Porém, as assinaturas são mais
+baratas.
 
 ## Canais de Distribuição
 
