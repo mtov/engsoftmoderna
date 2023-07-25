@@ -239,9 +239,17 @@ Ou seja, o preço aumenta em função do valor e da importância
 que o sistema tem para cada perfil de assinante. 
 
 Na verdade, esse procedimento costuma ocorrer também com 
-outras assinaturas, como de Internet (preço varia com a 
-velocidade de acesso) ou TV a cabo (preço varia com o número 
-de canais contratados).
+outras assinaturas, como de Internet (quando preço varia com a 
+velocidade de acesso) ou TV a cabo (quando preço varia em função do 
+número de canais contratados).
+
+No entanto, o número de planos ou faixas de preço deve ser
+pequeno e limitado. No caso de SaaS, não é comum, por exemplo,
+realizar customizações ou implementar funcionalidades no sistema
+apenas para viabilizar a sua venda para um determinado cliente.
+Ou seja, um SaaS é um produto de software que é vendido,
+com o mesmo conjunto de funcionalidades, para vários
+clientes.
 
 ## Crescendo a Empresa 
 
