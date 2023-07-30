@@ -17,28 +17,29 @@ A lista atual de perguntas está organizada em quatro grandes temas:
 2. [O que é uma unidade?](#o-que-%C3%A9-uma-unidade)
 3. [No contexto de testes, o que significam os termos falso positivo/negativo e verdadeiro positivo/negativo?](#no-contexto-de-testes-o-que-significam-os-termos-falso-positivonegativo-e-verdadeiro-positivonegativo)
 4. [Por que não usam o termo dublê de testes no livro?](#por-que-n%C3%A3o-usam-o-termo-dubl%C3%AA-de-testes-no-livro)
+5. [No contexto de testes, o que significa "shift to left"?](#no-contexto-de-testes-o-que-significa-shift-to-left)
 
 ##### Perguntas sobre a escrita de testes {.unnumbered}
 
-5. [Precisamos testar métodos privados?](#precisamos-testar-m%C3%A9todos-privados)
-6. [Como testar métodos que têm efeito colateral?](#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral)
-7. [Como testar métodos que não têm efeito colateral?](#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral)
-8. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
-9. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
-10. [Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
+6. [Precisamos testar métodos privados?](#precisamos-testar-m%C3%A9todos-privados)
+7. [Como testar métodos que têm efeito colateral?](#como-testar-m%C3%A9todos-que-t%C3%AAm-efeito-colateral)
+8. [Como testar métodos que não têm efeito colateral?](#como-testar-m%C3%A9todos-que-n%C3%A3o-t%C3%AAm-efeito-colateral)
+9. [Quando preciso criar um mock para uma dependência?](#quando-preciso-criar-um-mock-para-uma-depend%C3%AAncia)
+10. [Como criar um mock para uma dependência privada?](#como-criar-um-mock-para-uma-depend%C3%AAncia-privada)
+11. [Em qual pacote (ou módulo, ou diretório) devo colocar os testes?](#em-qual-pacote-ou-m%C3%B3dulo-ou-diret%C3%B3rio-devo-colocar-os-testes)
 
 ##### Perguntas sobre a execução de testes {.unnumbered}
 
-11. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
-12. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci)
-13. [Para que servem suítes de testes?](#para-que-servem-su%C3%ADtes-de-testes)
+12. [Com que frequência devemos rodar os testes?](#com-que-frequ%C3%AAncia-devemos-rodar-os-testes)
+13. [Quais testes devem ser rodados por um servidor de Integração Contínua (CI)?](#quais-testes-devem-ser-rodados-por-um-servidor-de-integra%C3%A7%C3%A3o-cont%C3%ADnua-ci)
+14. [Para que servem suítes de testes?](#para-que-servem-su%C3%ADtes-de-testes)
 
 ##### Perguntas sobre outros tipos de testes {.unnumbered}
 
-14. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
-15. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
-16. [O que são testes exploratórios?](#o-que-s%C3%A3o-testes-explorat%C3%B3rios)
-17. [O que são testes de contrato?](#o-que-s%C3%A3o-testes-de-contrato)
+15. [O que é um teste de fumaça (smoke test)?](#o-que-%C3%A9-um-teste-de-fuma%C3%A7a-smoke-test)
+16. [O que é um teste de snapshot?](#o-que-%C3%A9-um-teste-de-snapshot)
+17. [O que são testes exploratórios?](#o-que-s%C3%A3o-testes-explorat%C3%B3rios)
+18. [O que são testes de contrato?](#o-que-s%C3%A3o-testes-de-contrato)
 
 Segue a lista de perguntas e suas respostas.
 
@@ -104,15 +105,27 @@ a característica distintiva de um spy, stub, dummy, fake, etc.
 Por outro lado, é importante ressaltar que acrescentamos, no livro, uma nota 
 explicando o conceito de dublês e seus diferentes tipos.
 
+### 5. No contexto de testes, o que significa "shift to left"? {.unnumbered}
 
-### 5. Precisamos testar métodos privados? {.unnumbered}
+*Shift to left* é um termo usado para designar o deslocamento
+de preocupações com testes e qualidade para "a esquerda"
+no fluxo de desenvolvimento de software. Quando se usava 
+[Waterfall](https://engsoftmoderna.info/cap1.html#processos-de-desenvolvimento-de-software),
+testes ocorriam principalmente no final do desenvolvimento, quando
+o sistema já estava praticamente pronto. Com métodos ágeis, ocorreu
+então uma movimentação para a esquerda nas atividades de testes.
+Por exemplo, testes de unidade e de integração podem ser
+implementados logo nas primeiras semanas de um projeto.
 
-Não, pois eles vão ser testados quando testarmos os métodos públicos da classe. 
-Em outras palavras, o foco deve ser testar os métodos públicos. Por tabela, 
-isso vai garantir que os métodos privados também estão funcionando.
+### 6. Precisamos testar métodos privados? {.unnumbered}
+
+Não, pois eles vão ser testados quando testarmos os métodos 
+públicos da classe. Em outras palavras, o foco deve ser testar 
+os métodos públicos. Por tabela, isso vai garantir que os métodos 
+privados também estão funcionando.
 
 
-### 6. Como testar métodos que têm efeito colateral? {.unnumbered}
+### 7. Como testar métodos que têm efeito colateral? {.unnumbered}
 
 Primeiro, uma rápida definição de efeito colateral: o termo designa métodos 
 cuja execução não apenas retorna um valor, mas também altera o contexto de 
@@ -180,7 +193,7 @@ o mostrado acima, são mais frágeis, pois eles estão acoplados a
 detalhes da implementação interna do método que está sendo testado.
 
 
-### 7. Como testar métodos que não têm efeito colateral? {.unnumbered}
+### 8. Como testar métodos que não têm efeito colateral? {.unnumbered}
 
 Normalmente, esses são os métodos fáceis de serem testados: eles 
 recebem alguns parâmetros, processam eles e retornam um resultado, 
@@ -200,7 +213,7 @@ chamado — ou, no máximo, o estado de alguma outra estrutura de
 dados do sistema — são chamados de **testes de estado**.
 
 
-### 8. Quando preciso criar um mock para uma dependência? {.unnumbered}
+### 9. Quando preciso criar um mock para uma dependência? {.unnumbered}
 
 Suponha que temos que testar um método `f` da seguinte classe:
 
@@ -231,14 +244,14 @@ criar um mock para essa dependência?
 * Quando a execução de um método de `D` for importante para o teste, conforme vimos no teste comportamental da pergunta 4. Nesse teste, `D` é o tipo `Mailer`e precisamos testar se a execução de `f` vai enviar um mail.
 
 
-### 9. Como criar um mock para uma dependência privada? {.unnumbered}
+### 10. Como criar um mock para uma dependência privada? {.unnumbered}
 
 Se a dependência for configurável por meio do construtor da classe ou de um método `set` não existe problema.
 
 Porém, se a dependência não for configurável de fora da classe, aí sim temos um problema. Nesse caso, a única solução é expor essa dependência de forma a permitir a sua configuração pelo teste. Evidentemente, isso pode quebrar o encapsulamento da classe, mas não existe outra solução.
 
 
-### 10. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
+### 11. Em qual pacote (ou módulo, ou diretório) devo colocar os testes? {.unnumbered}
 
 Tipicamente, na maioria das linguagens, os testes ficam em um diretório 
 separado, apenas com o código de testes.
@@ -249,7 +262,7 @@ Veja o exemplo do sistema `google/guava`:
 * Os respectivos testes ficam em `test/com/google/common `.
 
 
-### 11. Com que frequência devemos rodar os testes? {.unnumbered}
+### 12. Com que frequência devemos rodar os testes? {.unnumbered}
 
 Basicamente, essa resposta depende do tipo de teste!
 
@@ -272,7 +285,7 @@ costumam rodar rápido, em alguns minutos. Porém, sabemos que
 existem também testes de integração que levam horas para rodar, 
 o que inviabiliza a sua execução frequente.
 
-### 12. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
+### 13. Quais testes devem ser rodados por um servidor de Integração Contínua (CI)? {.unnumbered}
 
 A resposta para essa pergunta é uma consequência da 
 resposta da pergunta anterior. Basicamente, ela é a seguinte:
@@ -291,7 +304,7 @@ que levam bem mais tempo para rodar. Então, se o teste de integração
 rodar dentro de um limite de tempo razoável, ele pode ser sim 
 incluído no serviço de CI.
 
-### 13. Para que servem suítes de testes?  {.unnumbered}
+### 14. Para que servem suítes de testes?  {.unnumbered}
 
 Uma suíte de testes é um conjunto de testes que
 pretendemos rodar juntos. Por exemplo, podemos optar por 
@@ -301,7 +314,7 @@ segunda com testes que demoram mais tempo e que, por isso mesmo,
 queremos rodar mais raramente.
 
 
-### 14. O que é um teste de fumaça (smoke test)? {.unnumbered}
+### 15. O que é um teste de fumaça (smoke test)? {.unnumbered}
 
 É um teste de sistema, porém rápido e superficial. O objetivo é 
 garantir que não existe um erro grave no funcionamento do sistema.
@@ -319,7 +332,7 @@ Veja a descrição do teste de fumaça de uma aplicação:
 > nada sofisticado, ele nos permite responder uma questão essencial:
 > a aplicação está rodando?
 
-### 15. O que é um teste de snapshot? {.unnumbered}
+### 16. O que é um teste de snapshot? {.unnumbered}
 
 Esses testes são usados para testar a saída de componentes visuais,
 como, por exemplo, componentes implementados usando-se frameworks 
@@ -360,7 +373,7 @@ argumentam que o processo de resetar os snapshots é simples e
 rápido.
 
 
-### 16. O que são testes exploratórios? {.unnumbered}
+### 17. O que são testes exploratórios? {.unnumbered}
 
 Basicamente, existem dois tipos de testes manuais:
 
@@ -380,7 +393,7 @@ ajudar na escrita de casos de teste (assumindo que iremos ter testes manuais)
 e também para subsidiar a escrita de testes automatizados (principalmente, 
 testes de integração e testes end-to-end).
 
-### 17. O que são testes de contrato? {.unnumbered}
+### 18. O que são testes de contrato? {.unnumbered}
 
 Eles são um tipo teste de integração que envolve sistemas de
 terceiros, isto é, testam a integração de um sistema X da sua
