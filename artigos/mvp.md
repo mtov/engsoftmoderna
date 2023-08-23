@@ -227,7 +227,7 @@ de risco que está sendo testada.
 
 2\. O seguinte artigo do blog da incubadora de startups YCombinador
 tem um título interessante: 
-[A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/library/4Q-a-minimum-viable-product-is-not-a-product-it-s-a-process).
+[A Minimum Viable Product Is Not a Product, It's a Process](https://www.ycombinator.com/blog/minimum-viable-product-process).
 Por que o artigo defende essa tese? Isto é, por que, segundo o artigo,
 um MVP não é um produto, mas sim um processo?
 
@@ -246,6 +246,9 @@ e argumente  a favor de sua resposta.
 
 5\. Descreva um domínio no qual é mais desafiador criar um MVP. 
 Justifique sua resposta.
+
+6\. Qual a diferença entre um MVP e um protótipo de um sistema?
+
 
 * * * 
 
