@@ -160,7 +160,7 @@ como os pitches serão implementados no intervalo de seis semanas.
 logo no seu início, durante a reunião de planejamento do sprint.
 
 * Ciclos são um pouco mais longos que os sprints de Scrum. Por exemplo,
-um ciclo pode durar seis semamas, enquanto um sprint dura, no máximo, um
+um ciclo pode durar seis semanas, enquanto um sprint dura, no máximo, um
 mês e, frequentemente, menos do que isso. Além disso, os ciclos são
 seguidos de um período de cool down, que não envolve a implementação
 de novas funcionalidades.
