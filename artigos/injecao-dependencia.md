@@ -195,7 +195,7 @@ estruturais e comportamentais. Em qual dessas categorias você classificaria
 Injeção de Dependência? Justifique brevemente.
 
 2\. Injeção de Dependência, muitas vezes, é comparada com padrão de projeto
-Fábrica. Qual a desvantagem de "injetar" dependências por meio de fábricas?
+Fábrica. Qual a desvantagem de configurar dependências por meio de fábricas?
 Para responder, compare os seguintes códigos:
 
  ```
