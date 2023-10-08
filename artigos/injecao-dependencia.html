@@ -115,59 +115,68 @@ poderia ser incluído em uma possível segunda edição do livro.</p>
 aplicação literal do seu nome. Vamos então explicá-la em quatro
 passos:</p>
 <ol type="1">
-<li>Suponha que uma classe <code>A</code> dependa de uma outra classe
-<code>B</code>:</li>
+<li>Suponha que uma classe <code>A</code> depende de uma classe
+<code>PagtoPIX</code>:</li>
 </ol>
 <pre><code>class A {
-   B b; // A depende de B
+   PagtoPIX pagto; // A depende de PagtoPIX
+   ...
 }</code></pre>
 <ol start="2" type="1">
 <li>No entanto, para seguir a ideia do padrão, a classe <code>A</code>
-não deve instanciar diretamente – isto é, no seu código — objetos do
-tipo <code>B</code>, como em:</li>
+não deve instanciar diretamente objetos desse tipo, como em:</li>
 </ol>
 <pre><code>class A {
-   B b = new B(); // instanciação incompatível com injeção de dependência 
+   PagtoPIX pagto = new PagtoPIX();
+   ... 
 }</code></pre>
 <ol start="3" type="1">
-<li>Em vez disso, a classe <code>A</code> deve receber essa dependência
-por meio de um construtor:</li>
+<li>Em vez disso, <code>A</code> deve receber essa dependência por meio
+de um construtor:</li>
 </ol>
 <pre><code>class A {
-   B b;
-   A(B b) { // injeção de dependência via construtor
-      this.b = b;
+   PagtoPIX pagto;
+
+   A(PagtoPIX pagto) { // injeção de dependência via construtor
+      this.pagto = pagto;
    }
+   ...
 }</code></pre>
 <p>ou então receber a dependência por meio de um método
 <code>set</code>:</p>
 <pre><code>class A {
-   B b;
-   void setB(B b) { // injeção de dependência via setter
-      this.b = b;
+   PagtoPIX pagto;
+
+   void setPagto(PagtoPIX pagto) { // injeção de dependência via setter
+      this.pagto = pagto;
    }
+   ...
 }</code></pre>
 <p>Logo, agora fica fácil entender o nome do padrão: as dependências de
 uma classe são <strong>injetadas</strong> nela, seja por meio de
 chamadas do seu construtor ou por meio de chamadas de um setter.</p>
 <ol start="4" type="1">
 <li>Na verdade, o mais recomendado é que o código de <code>A</code> use
-uma interface (isto é, uma abstração) para a classe concreta
-<code>B</code>. Ou seja, em vez de usar <code>B</code> (uma classe
-concreta), deve-se usar <code>IB</code> (uma interface):</li>
+uma interface para a classe concreta <code>PagtoPIX</code>. Ou seja, em
+vez de usar <code>PagtoPIX</code> (uma classe), deve-se usar
+<code>ServicoPagto</code> (uma interface):</li>
 </ol>
 <pre><code>class A {
-   IB b;   // dependência para uma interface IB
-   A(IB b) {
-      this.b = b;
+   ServicoPagto pagto;   // dependência para uma interface 
+
+   A(ServicoPagto pagto) {
+      this.pagto = pagto;
    }
+   ...
 }</code></pre>
 <p>ou</p>
 <pre><code>class A {
-   IB b;  // dependência para uma interface IB
-   void setterB(IB b) {
-      this.b = b;
+   ServicoPagto pagto; 
+
+   void setPagto(ServicoPagto pagto) { 
+      this.pagto = pagto;
    }
+   ...
 }</code></pre>
 <p>Ou seja: quando usamos Injeção de Dependência devemos fazer uso do
 princípio de projeto <strong>Prefira Interfaces a Classes
@@ -177,22 +186,23 @@ href="https://engsoftmoderna.info/cap5.html#princ%C3%ADpio-de-invers%C3%A3o-de-d
 <p>Para concluir, as vantagens de Injeção de Dependência são:</p>
 <ul>
 <li><p>Injeção de Dependência torna mais fácil mudar a dependência
-concreta (<code>B</code>) usada por uma classe <code>A</code>. Por
-exemplo, <code>A</code> pode ser uma classe que precisa enviar mails.
-Para isso, ela faz uso de uma classe <code>B1</code>. Amanhã, no
-entanto, podemos decidir que os mails serão enviados por uma classe
-<code>B2</code>. Para isso, basta que <code>B1</code> e <code>B2</code>
-implementem a interface <code>IB</code>.</p></li>
+concreta (<code>PagtoPIX</code>) usada por uma classe. No nosso exemplo,
+<code>A</code> é uma classe que precisa realizar pagamentos. Para isso,
+ela faz uso de uma classe <code>PagtoPIX</code>. Amanhã, no entanto,
+podemos decidir que os pagamentos serão processados por uma classe
+<code>PagtoCartaoCredito</code>. Para isso, basta que
+<code>PagtoPIX</code> e <code>PagtoCartaoCredito</code> implementem a
+mesma interface <code>ServicoPagto</code>.</p></li>
 <li><p>Injeção de Dependência torna mais fácil o teste da classe
 <code>A</code>, pois podemos <em>mockar</em> mais facilmente a
-dependência para <code>B</code>. Por exemplo, em vez de um serviço de
-mail real (<code>B1</code> ou <code>B2</code>), podemos usar um serviço
-de mail fictício, que apenas emule o envio de uma mensagem simples. Para
-isso, basta que esse serviço fictício implemente a interface
-<code>IB</code>. Se você ainda não sabe o que é um mock, recomendamos a
-leitura da seção do <a
-href="https://engsoftmoderna.info/cap8.html#mocks">Capítulo 8</a> sobre
-o assunto.</p></li>
+dependência para <code>ServicoPagto</code>. Por exemplo, em vez de um
+serviço de pagamento real (<code>PagtoPIX</code> ou
+<code>PagtoCartaoCredito</code>), podemos usar um serviço de pagamento
+fictício, que apenas emule alguns pagamentos. Para isso, basta que esse
+serviço fictício implemente a interface <code>ServicoPagto</code>. Se
+você ainda não sabe o que é um mock, recomendamos a leitura da seção do
+<a href="https://engsoftmoderna.info/cap8.html#mocks">Capítulo 8</a>
+sobre o assunto.</p></li>
 </ul>
 <h2 data-number="1.2" id="frameworks-para-injeção-de-dependência"><span
 class="header-section-number">1.2</span> Frameworks para Injeção de
@@ -201,47 +211,49 @@ Dependência</h2>
 por criar as dependências – isto é, instanciar os objetos que serão
 passados para a classe – é transferida para os seus clientes, como no
 seguinte exemplo:</p>
-<pre><code>class Cliente {
-  void foo() {
-     IB b = new B1();  // instancia dependência
-     A a = new A(b);   // injeta dependência na classe A
-     ...
+<pre><code>class Main {
+   void main() {
+      ServicoPagto pagto = new PagtoPIX();  // instancia dependência
+      A a = new A(pagto);   // injeta dependência na classe A
+      ...
   } 
+  ...
 }</code></pre>
-<p>No entanto, existem frameworks que evitam que os clientes tenham esse
-trabalho extra. Basicamente, eles assumem a responsabilidade de criar as
-dependências e injetá-las nas classe de destino.</p>
+<p>No entanto, existem frameworks que poupam esse trabalho extra por
+parte dos clientes. Basicamente, eles assumem a responsabilidade de
+criar as dependências e injetá-las nas classe de destino.</p>
 <p>De um modo genérico, costuma funcionar assim:</p>
 <pre><code>class A {
-   IB b;
+   ServicoPagto pagto;
 
    @Inject // anotação disponibilizada pelo framework
-   A(IB b) { 
-      this.b = b;
+   A(ServicoPagto pagto) { 
+      this.pagto = pagto;
    }
+   ...
 }</code></pre>
 <p>A anotação <code>@Inject</code> indica que a classe <code>A</code>
 quer fazer uso de Injeção de Dependência. E que, portanto, as
 dependências do seu construtor deverão ser criadas e injetadas pelo
 framework de injeção de dependências.</p>
-<p>No entanto, algum desenvolvedor deverá declarar a classe dos objetos
-que devem ser criados toda vez que o framework precisar chamar um
-construtor anotado com <code>@Inject</code>. Isso pode acontecer em um
-arquivo XML, um outro tipo de arquivo ou mesmo em um método específico.
-Em qualquer caso, a ideia é declarar uma tabela com duas colunas:
-interface e classe concreta.</p>
+<p>No entanto, devemos declarar a classe dos objetos que devem ser
+criados toda vez que o framework precisar chamar um construtor anotado
+com <code>@Inject</code>. Isso pode acontecer em um arquivo XML, um
+outro tipo de arquivo ou mesmo em um método específico. Em qualquer
+caso, a ideia é declarar uma tabela com duas colunas: interface e classe
+concreta.</p>
 <p>No nosso exemplo, essa tabela deve incluir a linha
-<code>(IB, B1)</code>. Essa linha define que objetos do tipo
-<code>B1</code> deverão ser instanciados e injetados em todas as classes
-que precisarem de dependências do tipo <code>IB</code>.</p>
-<p>Por fim, o cliente, quando precisar instanciar um objeto de uma
-classe que usa <code>@Inject</code>, não precisará mais chamar o
-operador <code>new</code>, mas sim um método do próprio framework, como
-em:</p>
-<pre><code>class Cliente {
-  void foo() {
-     A a = DIF.getInstance(A.class);
-     ...
+<code>(ServicoPagto, PagtoPIX)</code>. Essa linha define que objetos do
+tipo <code>PagtoPIX</code> deverão ser instanciados e injetados em todas
+as classes que precisarem de dependências do tipo
+<code>ServicoPagto</code>.</p>
+<p>Por fim, o cliente, para instanciar um objeto de uma classe que usa
+<code>@Inject</code>, não usamos mais o operador <code>new</code>, mas
+sim um método do próprio framework, como em:</p>
+<pre><code>class Main {
+   void main() {
+      A a = DIF.getInstance(A.class);
+      ...
   } 
 }</code></pre>
 <p>Ou seja, <code>getInstance</code> é um método que instancia classes
@@ -253,15 +265,15 @@ seu construtor foi anotado com <code>@Inject</code>.</p></li>
 <li><p>Antes de instanciar um objeto da classe <code>A</code>, o
 framework deve criar os objetos (dependências) usados pelo construtor
 dessa classe. No caso, esses objetos são de classes que implementam a
-interface <code>IB</code>.</p></li>
-<li><p>Mas qual classe que implementa <code>IB</code> deve ser
+interface <code>ServicoPagto</code>.</p></li>
+<li><p>Mas qual classe que implementa <code>ServicoPagto</code> deve ser
 instanciada? Para isso, o framework consulta o arquivo de configuração e
-descobre que <code>IB</code> está mapeada para <code>B1</code>, conforme
-explicamos anteriormente.</p></li>
-<li><p>Então o framework instancia um objeto do tipo <code>B1</code> e
-um objeto do tipo <code>A</code> . Ao instanciar esse último objeto ele
-também passa o objeto do tipo <code>B1</code> como parâmetro de seu
-construtor.</p></li>
+descobre que <code>ServicoPagto</code> está mapeada para
+<code>PagtoPIX</code>, conforme explicamos anteriormente.</p></li>
+<li><p>Então o framework instancia um objeto do tipo
+<code>PagtoPIX</code> e um objeto do tipo <code>A</code> . Ao instanciar
+esse último objeto, ele também passa o objeto do tipo
+<code>PagtoPIX</code> como parâmetro de seu construtor.</p></li>
 </ul>
 <p>A explicação que acabamos de apresentar foi baseada no <a
 href="https://github.com/google/guice">Guice</a>, um framework de
