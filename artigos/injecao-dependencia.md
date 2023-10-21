@@ -170,7 +170,7 @@ define que objetos do tipo `PagtoPIX` deverão ser instanciados e
 injetados em todas as classes que precisarem de dependências do 
 tipo `ServicoPagto`. 
 
-Por fim, o cliente, para instanciar um objeto de uma classe que 
+Por fim, no cliente, para instanciar um objeto de uma classe que 
 usa `@Inject`, não usamos mais o operador `new`, mas sim um 
 método do próprio framework, como em:
 

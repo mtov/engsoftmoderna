@@ -687,10 +687,10 @@ arquitetura baseada em microsserviços.
 \end{center}
 ```
 
-O ideal é que M1 e M2 sejam
-independentes também do ponto de vista de bancos de dados, com mostrado
-na próxima figura. O principal motivo é que quando se têm um único
-banco de dados ele também pode se transformar em um gargalo à evolução
+O ideal é que M1 e M2 sejam independentes também do ponto de 
+vista de bancos de dados, como mostrado na próxima figura. 
+O principal motivo é que quando se tem um único banco de dados 
+ele também pode se transformar em um gargalo à evolução
 do sistema.
 
 ```{=latex}
