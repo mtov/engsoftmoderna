@@ -1,0 +1,11 @@
+body {
+  background-color: #FFFFFF;
+  foreground-color: black;
+}
+.anchor-link {
+  opacity: 0.5;
+  font-size: 70%;
+}
+p code {
+  white-space: nowrap;
+}
