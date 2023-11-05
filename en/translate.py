@@ -1,7 +1,7 @@
 import os
 import openai
 
-openai.api_key = "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"
+// openai.api_key = "..."
 
 input_file_name  = 'input.md'
 output_file_name = 'ouput.md'
