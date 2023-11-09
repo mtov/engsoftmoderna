@@ -74,66 +74,65 @@ href="#introduction" class="anchor-link" aria-hidden="true">🔗</a></h1>
 <blockquote>
 <p><em>Our civilization runs on software.</em> – Bjarne Stroustrup</p>
 </blockquote>
-<p>In this first chapter, we describe the goals and problems
-investigated in Software Engineering (Section 1.1). We also provide an
-overview of the main topics studied in this area of Computer Science
-(Section 1.2). Our intention is to give the reader a broad perspective
-of the area before delving into specific problems and solutions.
-Furthermore, since Software Engineering is a very broad area, we also
-characterize the types of software systems that benefit from the
-techniques and concepts presented in this book (Section 1.3). The
-objective is to avoid false expectations regarding the content of our
-work. Finally, we present the structure and the topics covered in the
-remaining chapters of the book (Section 1.4).</p>
+<p>In this initial chapter, we outline the objectives and challenges
+tackled in Software Engineering (see Section 1.1). We additionally
+provide an overview of the primary subjects investigated in this field
+of Computer Science (see Section 1.2). Our goal is to provide a
+comprehensive understanding of the field before diving into specific
+issues and techniques. As Software Engineering is a broad domain, we
+also discuss the types of software systems that can make use of the
+principles and practices presented in this book (see Section 1.3). This
+is done to avoid any misconceptions concerning the scope of our work. In
+conclusion, we present the topics addressed in the remaining chapters of
+the book (see Section 1.4).</p>
 <h2 data-number="1.1" id="definition-context-and-history"><span
 class="header-section-number">1.1</span> Definition, Context, and
 History <a href="#definition-context-and-history" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
-<p>In the modern world, everything is software. For instance, companies
-of any size depend on software systems to fulfill their mission.
-Governments also interact with citizens through software, for example,
-to provide public services or collect taxes. Companies sell an immense
-range of products directly to consumers through e-commerce platforms.
-Software is also embedded in many physical products and devices, such as
-cars, airplanes, satellites, and robots. Finally, software is
-revitalizing traditional industries and services such as
-telecommunications, transportation in large urban centers, and
-advertising.</p>
-<p>Thus, due to the relevance of software in our world, it is not a
-surprise that there is a field in Computer Science that investigates
-solutions for the development of software systems—particularly the more
-complex and larger ones. This field is called <strong>Software
+<p>In today’s world, virtually everything operates via software. Various
+organizations, including businesses of every scale and governmental
+entities, depend on software systems to deliver their services
+effectively. Governments often interact with citizens through software
+applications like public service delivery platforms and tax collection
+systems. Many businesses sell a wide range of products directly to
+consumers via e-commerce platforms. Software is also in physical
+products and devices including cars, airplanes, satellites, and robots.
+Furthermore, software is revitalizing traditional industries and
+services such as telecommunications, transportation in large urban
+centers, and advertising.</p>
+<p>Given the crucial role software plays in our society, it’s
+unsurprising that a subfield of Computer Science focuses on finding
+solutions for the development of software systems, particularly large
+and complex ones. This subfield is known as <strong>Software
 Engineering</strong>.</p>
-<p>Software Engineering deals with the application of systematic,
-disciplined, and quantifiable approaches to implementing, operating,
-maintaining, and evolving software systems. As we said, it is the field
-of Computer Science that is concerned with proposing and applying
-engineering principles in software construction.</p>
-<p>Historically, the field emerged in the late ’60s of the last century.
-Around this time, the first modern computers were designed and began to
-be used for solving problems. However, at that time software was not a
-central concern, but rather building machines that could solve a limited
-number of scientific or mathematical problems.</p>
-<p>However, progress in hardware technologies quickly changed this
-scenario. By the end of the ’60s, computers were more popular, they were
-present in many universities and they also started to be used by major
-companies. Thus, computer scientists began to face a new challenge,
-since users started to demand more complex and diverse applications,
-including commercial systems in areas such as payroll, accounting, and
-inventory management.</p>
-<p> <strong>NATO Conference</strong>: In October of 1968, a group of
-around 50 renowned Computer Scientists gathered for a week in Garmisch,
-Germany, for a conference sponsored by a scientific committee of NATO,
-the military organization that congregates the countries of the North
-Atlantic (see a picture of the meeting in the next figure). The
-meeting’s goal was to draw attention to a <q>crucial problem of computer
-usage, the so-called software</q>. The conference produced a report with
-over 130 pages, stating the need to construct software based on
-practical and theoretical principles, as happens in well-established
-branches of engineering. To make this proposal clearer, the participants
-decided to coin the term Software Engineering. For this reason, the NATO
-Conference is considered the historical landmark for the creation of the
-Software Engineering research area in Computer Science.</p>
+<p>Software Engineering is concerned with the systematic, disciplined,
+and quantifiable approaches to develop, operate, maintain, and evolve
+software systems. As mentioned, this field is central to Computer
+Science and is engaged with applying engineering principles in software
+construction.</p>
+<p>Historically, Software Engineering as a field emerged in the late
+1960s. During this period, the first generation of modern computers
+began to be used for problem-solving. However, at that time, software
+took a back seat, as the primary focus was building machines capable of
+solving a limited set of scientific or mathematical problems.</p>
+<p>However, advancements in hardware technologies changed this scenario.
+By the end of the ’60s, computers had become more common, were present
+in many universities, and businesses were beginning to reap the benefits
+of their use. Consequently, a new set of challenges surfaced, as users
+demanded more complex and diverse applications, including commercial
+systems for tasks such as payroll, accounting, and inventory
+management.</p>
+<p> <strong>NATO Conference</strong>: In October 1968, around 50 eminent
+Computer Scientists gathered for a week in Garmisch, Germany, for a
+NATO-sponsored conference. The purpose of this meeting was to discuss a
+<q>crucial problem of computer usage, the so-called software</q>. The
+conference concluded with a 130-page report advocating the construction
+of software based on practical and theoretical principles, similar to
+other branches of engineering. In light of this proposition, the
+participants coined the term Software Engineering, effectively
+establishing this field in Computer Science. For this reason, the NATO
+Conference is considered the historical genesis of the Software
+Engineering research field.</p>
 <figure>
 <img src="figs/cap1/otan.jpg" style="width:45.0%"
 alt="Scientists at the 1968 NATO conference on Software Engineering. Reproduction kindly authorized by Prof. Robert McClure." />
@@ -141,9 +140,8 @@ alt="Scientists at the 1968 NATO conference on Software Engineering. Reproductio
 Software Engineering. Reproduction kindly authorized by Prof. Robert
 McClure.</figcaption>
 </figure>
-<p>The following comment, from one of the participants of the NATO
-Conference, illustrates the challenges faced by the newly-created
-research area:</p>
+<p>One of the participants of the NATO Conference summarized the
+challenges faced by the newly created research field:</p>
 <blockquote>
 <p>The basic problem is that certain classes of systems are placing
 demands on us which are beyond our capabilities and our theories and
@@ -153,100 +151,88 @@ applications, for example. It is large systems that are encountering
 great difficulties. We should not expect the production of such systems
 to be easy.</p>
 </blockquote>
-<p>More than half a century after the NATO Conference, the achievements
-in techniques and methods for software construction are notable. Today,
-it is already known that software—most of the time—should not be built
-in strictly sequential phases, as occurs with traditional engineering
-products, such as Civil Engineering, Mechanical Engineering or
-Electrical Engineering. There are also many patterns that can be used by
-software engineers in their systems, so that they do not need to
-<q>reinvent the wheel</q> every time they face a new design problem.
-Libraries and frameworks for various purposes are widely available, so
-that software developers can reuse code without worrying about details
-inherent to tasks like implementing graphical interfaces, manipulating
-data structures, accessing databases, encrypting messages, among others.
-A variety of testing techniques can (and should) be used to assert that
-that failures do not occur when the code is put into production and used
-by real customers. It is also known that software systems age, like
-other engineering products. Therefore, software also needs maintenance,
-not only corrective, to fix bugs reported by users, but also to ensure
-that the systems remain easy to maintain and understand over the
-years.</p>
+<p>Now, more than half a century after the NATO Conference, techniques
+and methods for software construction have improved remarkably. It’s now
+widely recognized that software, in most instances, should not be built
+in strictly sequential phases as happens with traditional engineering
+products. Many patterns can assist software engineers in their work,
+avoiding the need to <q>reinvent the wheel</q> for every new design
+problem. Libraries and frameworks for various purposes are available,
+allowing software developers to reuse code without delving into the
+details of tasks such as implementing graphical interfaces, manipulating
+data structures, accessing databases, and encrypting messages. A
+multitude of testing techniques can—and should—be deployed to ensure
+that the produced code functions as expected when used by actual
+customers. Like other engineering products, software systems also
+deteriorate over time and therefore require maintenance, not only for
+bug fixing but also to ensure their long-term maintainability and
+comprehension.</p>
 <h3 class="unnumbered" id="no-silver-bullet">No Silver Bullet <a
 href="#no-silver-bullet" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
-<p> Software development is inherently different from other engineering
-products, especially when we compare software with hardware. Frederick
-Brooks, Turing Award in Computing (1999) and one of the pioneers of the
-field of Software Engineering, was one of the first to draw attention to
-this fact. In 1987, in an essay titled <em>No Silver Bullet: Essence and
-Accident in Software Engineering</em> (<a
-href="https://doi.org/10.1109/MC.1987.1663532">link</a>), he discussed
-the peculiarities of the Software Engineering field.</p>
-<p> According to Brooks, there are two types of difficulties in software
+<p> Software development has inherent characteristics when compared to
+other engineering products, especially hardware. Frederick Brooks, a
+1999 Turing Award recipient and a pioneer in Software Engineering, was
+among the first to underscore this uniqueness. In 1987, he wrote an
+essay titled <em>No Silver Bullet: Essence and Accident in Software
+Engineering</em> (<a
+href="https://doi.org/10.1109/MC.1987.1663532">link</a>) where he
+highlighted the peculiarities of Software Engineering.</p>
+<p>According to Brooks, there are two types of challenges in software
 engineering: <strong>essential difficulties</strong> and
-<strong>accidental difficulties</strong>. The essential ones are part of
-the nature of the field and thus they probably will not be solved by any
-new technology or method that might be invented.</p>
-<p>In general terms, the term silver bullet – that is part of the essay
-title – designates a magical solution to a complicated problem. Indeed,
-in folklore, a silver bullet is the only way to kill a werewolf,
-provided it is used on a full moon night. According to Brooks, because
-of the essential difficulties that characterize the area, we should not
-assume the existence of silver bullets in Software Engineering. Despite,
-even after Brooks’s essay, new software technologies are often promoted
-and sold as if they were silver bullets.</p>
-<p>According to Brooks, the essential difficulties are:</p>
+<strong>accidental difficulties</strong>. Essential ones are intrinsic
+to the field and are unlikely to be solved by any novel technology or
+method.</p>
+<p>The term <q>silver bullet</q>, as used in Brooks’s essay title,
+refers to a magical solution to a complex problem. Brooks argued that
+due to the innate challenges of Software Engineering, we should not
+anticipate the existence of silver bullets in the field. Nonetheless,
+many new software technologies are often marketed as if they were, in
+fact, silver bullets.</p>
+<p>Brooks described the following essential difficulties:</p>
 <ol type="1">
-<li><p><strong>Complexity</strong>: among the constructions that man can
-build, software is one of the most challenging and most complex one. As
-a matter of fact, even traditional engineering constructions, like
-satellites, nuclear power plants, or rockets, are increasingly dependent
-on software.</p></li>
-<li><p><strong>Conformity</strong>: due to its nature, software has to
-adapt to its environment, which changes all the time in our world. For
-example, if a tax collection rule changes, all software in the related
-domain needs to quickly adapted to it. Brooks notes that this does not
-occur, for example, in Physics, as the laws of nature do not change
-according to men’s decisions.</p></li>
-<li><p><strong>Changeability</strong>: in the case of software, there is
-a pressure for constant evolution, for example to incorporate new
-features. In fact, the more successful a software system is, the more
-demand for changes it receives.</p></li>
-<li><p><strong>Invisibility</strong>: due to its abstract nature, it is
-difficult to visualize the size and consequently estimate the effort
-required to construct software systems.</p></li>
+<li><p><strong>Complexity</strong>: Of all human-made constructions,
+software stands out as one of the most intricate and complex. Even
+conventional engineering constructs, like satellites, nuclear power
+plants, or rockets, are increasingly relying on software.</p></li>
+<li><p><strong>Conformity</strong>: Software must adapt continuously to
+its ever-changing environment. For instance, changes in tax legislation
+require prompt adaptations by all related software. This level of
+adaptability is not required in other fields like Physics where natural
+laws do not change due to human decisions.</p></li>
+<li><p><strong>Changeability</strong>: There is constant pressure for
+software to evolve and incorporate new features. In fact, the more
+successful a software system, the more it is likely to attract demands
+for modifications.</p></li>
+<li><p><strong>Invisibility</strong>: It is inherently challenging to
+visualize the size and effort required to create software due to its
+abstract nature.</p></li>
 </ol>
-<p>Difficulties (2), (3) and (4) are specific to software systems, that
-is, they do not occur in other engineering products, at least not at the
-same intensity. For example, when environmental legislation changes, car
-manufacturers have years to comply with the new rules. Additionally,
-cars are not changed, at least essentially, with new functionalities,
-after being produced. Finally, a car is a physical product with weight,
-height, width, seats, and a geometric shape, which facilitates its
-valuation and pricing by final consumers.</p>
-<p>On the other hand, software development also faces accidental
-difficulties. However, they are associated with technological problems
-that engineers can solve, if properly trained and assuming they have
-access to the necessary technologies and resources. As an example, we
-can mention the following accidental difficulties: a compiler that
-produces obscure error messages, an IDE that has many bugs and
-frequently crashes, a framework that lacks documentation or a Web
-application with an unintuitive interface. However, these problems are
-not an inherent characteristic of the mentioned systems. With time,
-resources, and expertise, they can be adequately tackled.</p>
+<p>Challenges (2), (3), and (4) are exclusive to software systems. They
+do not exist in other engineering products, at least not with the same
+intensity. When environmental laws change, car manufacturers have years
+to comply with new legislation. Also, cars, once manufactured, do not
+usually receive new functionalities. Furthermore, a car’s physical
+properties, such as weight, height, width, seats, and geometric shape,
+facilitate valuation by consumers.</p>
+<p>Software development also faces accidental difficulties, which can
+typically be solved by engineers given adequate training and access to
+existing technologies and resources. Examples of such difficulties
+include an IDE that frequently crashes, a compiler that produces cryptic
+error messages, a framework missing documentation, or a web application
+with a confusing interface.</p>
 <p> </p>
-<p><strong>Real World</strong>: To illustrate the complexity involved in
-building software systems, we give some numbers about the size of these
-systems, in lines of code. For example, the Linux operating system , in
-its version 4.1.3, from 2017, has about 25 million lines of code and
-contributions from almost 1,700 engineers (<a
+<p><strong>Real World</strong>: The complexity involved in building
+software systems can be illustrated by considering their scale. For
+instance, as of 2017, the Linux operating system (version 4.1.3)
+comprised about 25 million lines of code, which were produced by nearly
+1,700 engineers (<a
 href="https://www.linuxfoundation.org/2017-linux-kernel-report-landing-page">link</a>).
-As a second example, Google’s systems, in total, have more than 2
-billion lines of code, distributed across 9 million files, as in January
-2015 (<a href="https://doi.org/10.1145/2854146">link</a>). At that time,
-an average of about 40,000 code change requests (commits) were
-performed, per day, by the company’s software engineers.</p>
+Another example is Google’s applications which, as of January 2015,
+contained over two billion lines of code, distributed across nine
+million files (<a href="https://doi.org/10.1145/2854146">link</a>). At
+that time, Google’s software engineers submitted about 40,000 code
+change requests per day on average.</p>
 <h2 data-number="1.2" id="what-is-studied-in-software-engineering"><span
 class="header-section-number">1.2</span> What is Studied in Software
 Engineering? <a href="#what-is-studied-in-software-engineering"
@@ -782,7 +768,7 @@ Finally, it would be approved by the reviewer. There are several tools
 to support code review processes. In the example, we used the tool
 provided by GitHub.</p>
 <figure>
-<img src="figs/cap1/github.png" style="width:60.0%"
+<img src="figs/cap1/github.png" style="width:65.0%"
 alt="Example of code review" />
 <figcaption aria-hidden="true">Example of code review</figcaption>
 </figure>
@@ -859,75 +845,56 @@ the end, this is an economic decision.</p>
 class="header-section-number">1.3</span> Classification of Software
 Systems <a href="#classification-of-software-systems"
 class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p> As we are emphasizing in this Introduction, software permeates most
-human activities. Consequently, we have software of all sizes, in all
-activities, with the most different functional and non-functional
-requirements, developed by one or two developers or by large
-organizations. Thus, the risk is to consider that there is only one way
-to develop software. In other words, we must not think that all software
-must be built using the same processes, the same design principles, the
-same quality assurance mechanisms, among others.</p>
-<p> A classification proposed by Bertrand Meyer (<a
+<p> Software is integral to almost all human activities and comes in
+various sizes and types, fulfilling an array of functional and
+non-functional requirements. As such, we should not fall into the trap
+of thinking that there is only one way to develop software. It would be
+incorrect to assume that all software must be implemented using the same
+processes, design principles, or quality assurance mechanisms.</p>
+<p></p>
+<p>Bertrand Meyer proposed a classification (<a
 href="https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/">link</a>)
-helps to distinguish and reason about the types of software that can be
-built and the Software Engineering principles most recommended for each
-one. According to this classification, there are three main types of
-software:</p>
-<ul>
-<li><p><strong>A Systems</strong> (<em>Acute</em>)</p></li>
-<li><p><strong>B Systems</strong> (<em>Business</em>)</p></li>
-<li><p><strong>C Systems</strong> (Casual)</p></li>
-</ul>
-<p>We will first discuss C and A Systems and then B Systems.</p>
-<p> Type-C Systems (Casual) do not have pressure for high levels of
-quality. They are systems that can have some bugs, which will not
-compromise their operation. As an example, we can cite a script made for
-an academic work, a data migration program (which will be used only
-once, to convert the data for a new database purchased by the company),
-a system to manage the members of a student association, a system to
-reserve meeting rooms in a company, among others. Therefore, Type-C
-systems do not need to have high levels of internal quality. For
-example, they can have some blocks of duplicated code. They also do not
-need to have the best runtime performance or user interface. In general,
-they are implemented by one or two programmers. In summary, they are
-small and non-critical systems. For these reasons, they do not benefit
-as much from the practices, techniques, and processes we will study in
-this book. On the contrary, in the case of Type-C Systems, the risk is
-<strong>over-engineering</strong>, i.e., the use of advanced techniques
-in a context that does not demand them. As it is commonly said, Software
-Engineering in this context is equivalent to using a sledgehammer to
-crack a nut.</p>
-<p> At the other extreme, we have the Type A systems (from
-<em>acute</em> or mission critical). These are systems where any failure
-can cause major damage, including the loss of human lives. They include
-systems to control autonomous cars, nuclear power plants, airplanes, ICU
-equipment, subway trains, among others. The control system for the
-Ariane 5 rocket, which we used in the Software Testing section, is an
-example of a Type A software. The development of these systems should
-follow rigid processes, including heavyweighted code review and a
-certification by external organizations. It is also common to have
-redundancies not only in hardware, but also in the software itself. For
-example, the system runs in parallel on two machines and a decision is
-only made if both instances recommend the same result. Finally, Type A
-systems are sometimes specified in a formal language, based on set
-theory or logic.</p>
-<p><strong>Alert:</strong> Given all that was stated in the previous
-paragraph, <strong>Type A systems, i.e., mission-critical systems will
-not be addressed in this book</strong>.</p>
-<p>Finally, we have Type B systems, which are exactly the ones that will
-benefit from the principles and practices studied in this book. These
-systems include the most diverse corporate applications (financial,
-human resources, logistics, sales, accounting, among others), Web-based
-systems of various types, from systems with few pages to large social
-networks or search systems. Other examples include software libraries
-and frameworks, general purpose applications (such as text editors,
-spreadsheets and image editors) and basic software systems (like
-compilers, database managers, IDEs, etc.). In the case of Type B
-systems, the concepts that we will study in this book can make the
-development more productive and can contribute to the production of
-software with better quality, both internal (e.g., systems that are
-easier to maintain) and external (e.g., systems with fewer production
-bugs).</p>
+that aids in distinguishing and reasoning about the types of software
+that can be developed and identifying suitable software engineering
+practices for each. According to Meyer, there are three main types of
+software: Systems A (Acute), Systems B (Business), and Systems C
+(Casual). We will initially discuss Systems C and A, followed by Systems
+B.</p>
+<p> Type C systems, or casual systems, are not subject to high-quality
+pressures. They can afford to have minor bugs without jeopardizing their
+operation. Examples include a script for an academic project, a
+one-time-use data migration program, or a system to manage a student
+association’s membership. These systems do not necessarily require high
+standards of internal quality, optimal runtime performance, or
+sophisticated user interfaces. They are usually implemented by a small
+team and are lightweight and non-critical. Therefore, they do not
+benefit from the practices, techniques, and processes discussed in this
+book. <strong>Over-engineering</strong> is a risk for such systems, as
+there is no need for advanced techniques. In the context of Type C
+systems, software engineering can resemble using a sledgehammer to crack
+a nut.</p>
+<p> On the opposite end are Type A systems, or acute systems, where a
+single failure can lead to devastating consequences, including loss of
+life. These include control systems like those in autonomous vehicles,
+nuclear power plants, airplanes, ICU equipment, and subway trains. The
+software that controlled the Ariane 5 rocket is an example. Developing
+these systems demands rigorous processes, including comprehensive code
+review and external certification. It is common to have redundancies in
+hardware and software alike—for instance, two parallel-running systems
+that only make a decision if both agree. Sometimes these systems are
+designed with a formal language, founded on logic or set theory.</p>
+<p><strong>Alert:</strong> We will not focus on Type A systems A, or
+mission-critical systems, in this book.</p>
+<p>Finally, we arrive at Type B systems B, or business systems, which
+benefit most from the principles and practices discussed in this book.
+These systems encompass a broad range of corporate applications (like
+finance, HR, logistics, sales), various types of web-based systems,
+software libraries and frameworks, general-purpose applications (such as
+text editors, spreadsheets), and basic software systems (like compilers,
+IDEs). The concepts discussed in this book will make the development of
+Type B systems more productive and contribute to better quality
+software, both internally (more easy to maintain systems) and externally
+(systems with less production bugs).</p>
 </div>
 </div>
 </div>
