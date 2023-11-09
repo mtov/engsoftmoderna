@@ -885,7 +885,7 @@ it for review. Finally, it would be approved by the reviewer.
 There are several tools to support code review processes. 
 In the example, we used the tool provided by GitHub.
 
-![Example of code review](figs/cap1/github.jpg){width=60%}
+![Example of code review](figs/cap1/github.png){width=65%}
 
 ### Professional Practice
 
