@@ -25,11 +25,11 @@ deliver their services effectively. Governments often interact
 with citizens through software applications like public service 
 delivery platforms and tax collection systems. Many businesses 
 sell a wide range of products directly to consumers via 
-e-commerce platforms. Software is also in physical products and 
-devices including cars, airplanes, satellites, and robots. 
-Furthermore, software is revitalizing traditional industries 
-and services such as telecommunications, transportation in 
-large urban centers, and advertising.
+e-commerce platforms. Software is also in physical products,
+including cars, airplanes, satellites, and robots. Furthermore, 
+software is revitalizing traditional industries such as 
+telecommunications, transportation in large urban centers, 
+and advertising.
 
 Given the crucial role software plays in our society, 
 it's unsurprising that a subfield of Computer Science focuses 
@@ -75,7 +75,7 @@ the Software Engineering research field.
 Reproduction kindly authorized by Prof. Robert McClure.](figs/cap1/otan.jpg){width=45%}
 
 One of the participants of the NATO Conference summarized 
-the challenges faced by the newly created research field:
+the challenges faced by this new research field:
 
 > The basic problem is that certain classes of systems are 
 placing demands on us which are beyond our capabilities and 
@@ -923,5 +923,195 @@ libraries and frameworks, general-purpose applications
 systems (like compilers, IDEs). The concepts presented in 
 this book make the development of Type B systems more 
 productive and contribute to their quality, both internally 
-(systems that are easier to maintain, for example) and 
-externally (systems with fewer production bugs, for example).
+(resulting in systems that are easier to maintain, 
+for example) and externally (producing systems with fewer 
+bugs, for example).
+
+## Upcoming Chapters
+
+This book has **10 chapters** and **one appendix**:
+
+**Chapter 2: Processes**, which focuses on agile development 
+processes, specifically XP, Scrum, and Kanban. Our decision 
+to focus on agile methods derives from their wide usage in 
+modern software development, regardless of the domain or size. 
+However, we also briefly cover traditional processes like 
+Waterfall and the Unified Process.
+
+**Chapter 3: Requirements**, which begins with a discussion on the 
+importance of requirements and the main types of requirements. 
+Then, we introduces two techniques for requirements elicitation 
+and specification: user stories for agile methods, and use cases
+for more traditional and documentation-driven methods. 
+The chapter also covers techniques like Minimum Viable Product 
+(MVPs) and A/B Tests, whose importance nowadays extends beyond 
+startups. 
+
+**Chapter 4: Models**, which focuses on the use of UML as 
+sketches software. Indeed, UML is no longer widely used for 
+creating detailed software models, which was its initial goal. 
+Rarely do companies invest time in creating detailed UML 
+diagrams before starting to code. Despite, we decided to 
+cover UML in the book to ensure a basic understanding of its 
+diagrams, as software developers often use them as sketches 
+when discussing or or documenting design ideas.
+
+**Chapter 5: Design Principles**,  which covers two topics 
+that every software designer needs to know. They are: (1) 
+important properties (or considerations) in software design, 
+including conceptual integrity, information hiding, cohesion, 
+and coupling; (2) design principles, which constitute more 
+specific recommendations for building software projects, 
+such as the SOLID principles.
+
+**Chapter 6: Design Patterns**, which constitute a catalog 
+of solutions for common software project problems. In this chapter,
+we will study the main design patterns defined in the literature. 
+The discussion of each pattern is divided into three parts: 
+(1) a context, that is, a system in which the pattern can be 
+useful; (2) a problem faced when designing this system; 
+(3) a solution to this problem through patterns.
+We also provide several code examples to facilitate 
+comprehension.
+
+**Chapter 7: Architecture**, which starts with a discussion on
+the importance of software architecture. After that, we
+present and discuss five architectural patterns, including:
+layered architectures (such a 3-tier architectures), MVC
+(Model-View Controler, including a discussion on Single Page
+applications), Microservices, message queues, and 
+Publish-Subscribe architectures. To conclude, we present an 
+architectural anti-pattern, called *big ball of mud*, which is 
+a term used to designate systems with no architectural 
+organization. These systems might have had some architecture 
+in their past, but it was progressively abandoned, turning 
+them into a spaghetti of inter-module dependencies.
+
+**Chapter 8: Tests**, with emphasis on unit tests, using 
+frameworks like JUnit. The chapter includes dozens of unit 
+test examples and discusses various aspects of these tests. 
+For instance, we discuss good principles for writing unit tests 
+and also test smells, which are patterns of tests that are not 
+recommended. Then, we address testability, i.e., we discuss 
+the importance of writing code that can be easily tested. The 
+chapter includes a full section on mocks and stubs, which are 
+objects that enable unit testing of code with more complex 
+dependencies, such as dependencies on databases and other external 
+systems. After the discussion on unit tests, we also talk, 
+albeit in a more summarized way, about two other types of tests: 
+integration tests and end-to-end tests. These tests verify the 
+properties of larger code units, like the classes that implement
+a given service or functionality (integration tests) or even all 
+the classes in a system (end-to-end test). To conclude, we 
+include a discussion about other tests, such as black-box 
+tests (or functional tests), white-box tests (or structural 
+tests), acceptance tests and also tests to verify non-functional 
+requirements, like performance.
+
+**Chapter 9: Refactoring**, which presents the main refactorings 
+that can be performed to improve the internal quality of a 
+software system. The presentation includes several source 
+code examples, some of them from actual refactorings performed 
+on open source systems. The aim is to provide a practical 
+refactoring experience to the readers and thus to help them 
+to develop the habit of frequently improving the design of 
+their code. In the chapter, we also present a list of code 
+smells, i.e., indicators that a code structure is not 
+"smelling good" and therefore should be the subject of 
+a refactoring.
+
+**Chapter 10: DevOps**, which is a movement to bring the 
+development (Devs) and operations (Ops) teams of a software 
+organization closer together. The operations team is responsible 
+for keeping the software up and running, and consists of network
+administrators, database administrators, Site Reliability Engineers
+(SRE), among others. In a traditional culture, these two teams 
+tend to operate independently. That is, the development team 
+develops the system and then "throws it over the wall" to the 
+operations department. To solve this problem, DevOps proposes 
+a constant interaction between the Devs and Ops areas, from the 
+early days of development. The aim is to reduce the friction 
+involved in the release of new features. In addition to an 
+introduction to DevOps, we will study some important practices 
+when a organization adopts this culture, including Version 
+Control, Continuous Integration, and Continuous 
+Deployment/Delivery.
+
+**Appendix A: Git** covers the essential Git commands, given that 
+version control is an indispensable practice in today's 
+development world.
+
+## Bibliografia {.unnumbered}
+
+Pierre Bourque, Richard Fairley. Guide to the Software
+Engineering Body of Knowledge, Version 3.0, IEEE Computer Society, 2014.
+
+Armando Fox, David Patterson. Engineering Software as a Service:
+An Agile Approach Using Cloud Computing. 1st edition, 2014.
+
+Frederick Brooks. The Mythical Man-Month: Essays on Software Engineering.
+Addison-Wesley, anniversary edition, 1995.
+
+## Exercises {.unnumbered}
+
+1\. According to Frederick Brooks, software development 
+faces essential difficulties (for which there is no silver 
+bullet) and accidental ones (for which there is a better 
+solution). Give an example of an accidental difficulty you 
+have experienced while developing programs, even small ones. 
+Suggestion: they can be related to tools you have used, 
+such as compilers, IDEs, databases, operating systems, etc. 
+
+2\. Differentiate between functional and non-functional requirements.
+
+3\. Explain why tests can be considered both a software 
+verification and validation activity. Which test type is 
+best suited for verification? Which test type is 
+recommended for validating a software system?
+
+4\. Why can't tests prove the *absence* of bugs?
+
+5\. Suppose a program has only one input: a 64-bit integer. 
+Exhaustive testing demands testing a program with all 
+possible inputs (thus, 2^64^, in our case). If each test 
+requires 1 nanosecond (10^-9^ seconds), calculate the total 
+time required for exhaustively testing our program.
+
+6\. Considering the historical context, explain why early 
+software development processes were sequential and based 
+on comprehensive planning and documentation.
+
+7\. Several studies show that maintenance and evolution 
+costs constitute 80% or more of a software system's total 
+costs over its lifecycle. Explain why this value is so high.
+
+8\. Refactoring is a code transformation that preserves behavior. 
+What is the meaning of the expression *preserve behavior*? 
+In practice, what restriction does it impose on 
+refactoring operations?
+
+9\. Give examples of Type A (*Acute* or critical) and Type B 
+(*Business* or commercial) systems that you've interacted with.
+
+10\. Give examples of Type C (Casual) systems that you've developed.
+
+11\.  In 2015, it was discovered that millions of cars produced
+by a major automobile company emitted pollutants within legal 
+standards only when they were under test in a laboratory. 
+During normal use, the cars emitted more pollutants to 
+improve performance. That is, the code included a decision 
+structure like the following one (merely illustrative, 
+for the purposes of this exercise):
+
+```
+if "Car being tested in a laboratory"
+   "Comply with emission standards"
+else 
+   "Exceed emission standards"
+```
+
+What would you do if your boss asks you to write an *if* like 
+the one above? For more information on this episode, consult 
+this 
+[Wikipedia](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal) 
+page.
