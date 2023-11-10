@@ -4,14 +4,14 @@
 > *Our civilization runs on software.* -- Bjarne Stroustrup
 
 In this initial chapter, we outline the objectives and 
-challenges tackled in Software Engineering (see Section 1.1). 
+challenges tackled in Software Engineering (Section 1.1). 
 We additionally provide an overview of the primary subjects 
-investigated in this field of Computer Science (see Section 1.2). 
+investigated in this field of Computer Science (Section 1.2). 
 Our goal is to provide a comprehensive understanding of 
 the field before diving into specific issues and techniques. As 
 Software Engineering is a broad domain, we also discuss the 
 types of software systems that can make use of the 
-principles and practices presented in this book (see Section 1.3). 
+principles and practices presented in this book (Section 1.3). 
 This is done to avoid any misconceptions concerning the scope 
 of our work. In conclusion, we present the topics addressed 
 in the remaining chapters of the book (see Section 1.4).
@@ -24,17 +24,17 @@ and governmental entities, depend on software systems to
 deliver their services effectively. Governments often interact 
 with citizens through software applications like public service 
 delivery platforms and tax collection systems. Many businesses 
-sell a wide range of products directly to consumers via 
-e-commerce platforms. Software is also in physical products,
+also sell a wide range of products directly to consumers via 
+e-commerce platforms. Software is in physical products,
 including cars, airplanes, satellites, and robots. Furthermore, 
 software is revitalizing traditional industries such as 
 telecommunications, transportation in large urban centers, 
 and advertising.
 
 Given the crucial role software plays in our society, 
-it's unsurprising that a subfield of Computer Science focuses 
-on finding solutions for the development of software systems, 
-particularly large and complex ones. This subfield is 
+it's unsurprising that a field of Computer Science focuses 
+on proposing solutions for the development of software systems, 
+particularly large and complex ones. This field is 
 known as **Software Engineering**.
 
 Software Engineering is concerned with the systematic, disciplined, 
@@ -46,14 +46,14 @@ principles in software construction.
 Historically, Software Engineering as a field emerged in the 
 late 1960s when the first generation of computers began to be 
 used for problem-solving. However, at that time, software 
-took a back seat, as the primary focus was building 
-machines capable of solving a limited set of scientific or 
-mathematical problems.
+took a back seat, as the primary focus was building machines 
+capable of solving a limited set of scientific or mathematical 
+problems.
 
 However, advancements in hardware technologies changed this 
 scenario. By the end of the '60s, computers had become more 
 common, were present in many universities, and businesses were 
-beginning to reap the benefits of their use. Consequently, 
+beginning to envision the benefits of their use. Consequently, 
 a new set of challenges surfaced, as users demanded more complex 
 and diverse applications, including commercial systems for 
 tasks such as payroll, accounting, and inventory management.
@@ -62,20 +62,19 @@ tasks such as payroll, accounting, and inventory management.
 **NATO Conference**: In October 1968, around 50 eminent 
 Computer Scientists gathered for a week in Garmisch, Germany, 
 for a NATO-sponsored conference. The purpose of this meeting 
-was to discuss a "crucial problem of computer usage, the so-called software". The conference concluded with a 130-page report 
-advocating the construction of software based on practical 
-and theoretical principles, similar to other branches of 
-engineering. In light of this proposition, the participants 
-coined the term Software Engineering, effectively establishing 
-this field in Computer Science. For this reason, the NATO 
-Conference is considered the historical genesis of 
-the Software Engineering research field.
+was to discuss a "crucial problem of computer usage, 
+the so-called software". The conference concluded with a 
+130-page report advocating the construction of software 
+based on practical and theoretical principles, similar to 
+other branches of engineering. In light of this proposition, 
+the participants coined the term Software Engineering, 
+effectively establishing this field in Computer Science. 
 
 ![Scientists at the 1968 NATO conference on Software Engineering.
 Reproduction kindly authorized by Prof. Robert McClure.](figs/cap1/otan.jpg){width=45%}
 
 One of the participants of the NATO Conference summarized 
-the challenges faced by this new research field:
+the challenges faced by the new research field:
 
 > The basic problem is that certain classes of systems are 
 placing demands on us which are beyond our capabilities and 
@@ -88,7 +87,7 @@ We should not expect the production of such systems to be easy.
 More than half a century after the NATO Conference, 
 techniques and methods for software construction have improved 
 remarkably. It's now widely recognized that software, 
-in most instances, should not be built in strictly sequential 
+in most instances, should not be built in sequential 
 phases as happens with traditional engineering products. Many 
 patterns can assist software engineers in their work, avoiding 
 the need to reinvent the wheel for every new design problem. 
@@ -96,60 +95,59 @@ Libraries and frameworks for various purposes are
 available, allowing developers to reuse code without 
 delving into the details of tasks such as implementing graphical 
 interfaces, manipulating data structures, accessing databases, 
-and encrypting messages. A multitude of testing techniques 
-can—and should—be deployed to ensure that the produced code 
-functions as expected when used by actual customers. 
-Like other engineering products, software also 
-deteriorates over time and therefore require maintenance, 
-not only for bug fixing but also to ensure their long-term 
-maintainability and comprehension.
+and encrypting messages. Several testing techniques can—and 
+should—be deployed to ensure that the produced code works 
+as expected when used by actual customers. Like other engineering 
+products, software also deteriorates over time and therefore 
+require maintenance, not only for bug fixing but also to 
+ensure their long-term maintainability and comprehension.
 
 ### No Silver Bullet {.unnumbered}
 
 \index{Brooks, Frederick}
-Software development has inherent characteristics when compared to 
+Software development has unique characteristics when compared to 
 other engineering products, especially hardware. Frederick 
 Brooks, a 1999 Turing Award recipient and a pioneer in Software 
-Engineering, was among the first to underscore this uniqueness. 
+Engineering, was among the first to underscore this fact. 
 In 1987, he wrote an essay titled *No Silver Bullet: Essence 
-and Accident in Software Engineering* ([link](https://doi.org/10.1109/MC.1987.1663532)) where he highlighted 
-the peculiarities of Software Engineering.
+and Accident in Software Engineering* 
+([link](https://doi.org/10.1109/MC.1987.1663532)) 
+where he highlights the peculiarities of Software Engineering.
 
-According to Brooks, there are two key types of challenges 
-in software engineering: **essential difficulties** and 
-**accidental difficulties**. Essential ones are intrinsic 
-to the field and are unlikely to be solved by any novel 
-technology or method.
+According to Brooks, there are two challenges in software 
+engineering: **essential difficulties** and **accidental 
+difficulties**. Essential ones are intrinsic to the field 
+and are unlikely to be solved by any novel technology or method.
 
-The term silver bullet, as used in Brooks's essay title, 
-refers to a magical solution to a complex problem. Brooks 
-argued that due to the innate challenges of Software 
+Indeed, the term silver bullet, as used in Brooks's essay 
+title, refers to a magical solution to a complex problem. Brooks 
+argued that due to the essential difficulties of Software 
 Engineering, we should not anticipate the existence of 
 silver bullets in the field. Nonetheless, many new software 
-technologies are often marketed as if they were, 
-in fact, silver bullets.
+technologies are often marketed as if they were, in fact, 
+silver bullets.
 
 Brooks described the following essential difficulties:
 
-1. **Complexity**: Of all human-made constructions, 
+1. Complexity: Of all human-made constructions, 
 software stands out as one of the most intricate and 
 complex. Even traditional engineering constructs, 
 like satellites, nuclear power plants, or rockets, 
 are increasingly relying on software.
 
-2. **Conformity**: Software must adapt continuously 
+2. Conformity: Software must adapt continuously 
 to its ever-changing environment. For instance, 
-changes in tax legislation require prompt adaptations by all 
-related software. This level of adaptability is not 
+changes in tax legislation require prompt adaptations 
+by all related software. This level of adaptability is not 
 required in other fields like Physics where natural 
 laws do not change due to human decisions.
 
-3. **Changeability**: There is constant pressure for 
-software to evolve and incorporate new features. 
-In fact, the more successful a software system, the more 
-it is likely to attract demands for modifications.
+3. Changeability: There is constant pressure for software to 
+evolve and incorporate new features. In fact, the more 
+successful a software system, the more it is likely to attract 
+requests for modifications.
 
-4. **Invisibility**: It is inherently challenging to visualize
+4. Invisibility: It is inherently challenging to visualize
 the size and effort required to create software due to 
 its abstract nature.
 
@@ -157,7 +155,7 @@ Challenges (2), (3), and (4) are exclusive to software
 systems. They do not exist in other engineering products, 
 at least not with the same intensity. When environmental 
 laws change, car manufacturers have years to comply with 
-new legislation. Also, cars, once manufactured, do 
+the new legislation. Also, cars, once manufactured, do 
 not usually receive new functionalities. Furthermore, 
 a car's physical properties, such as weight, height, 
 width, seats, and geometric shape, facilitate valuation 
@@ -167,7 +165,7 @@ Software development also faces accidental difficulties,
 which can typically be solved by engineers given adequate 
 training and access to existing technologies and resources. 
 Examples of such difficulties include an IDE that frequently 
-crashes, a compiler that produces cryptic error messages, 
+crashes, a compiler that has cryptic error messages, 
 a framework missing documentation, or a web application 
 with a confusing interface.
 
@@ -177,13 +175,12 @@ with a confusing interface.
 \begin{esmbox}
 ```
 **Real World Insight**: The complexity involved in building software 
-systems can be illustrated by considering their scale. 
+systems can be illustrated by considering their size. 
 For instance, as of 2017, the Linux operating system 
 (version 4.1.3) comprised about 25 million lines of code, 
 which were produced by nearly 1,700 engineers ([link](https://www.linuxfoundation.org/2017-linux-kernel-report-landing-page)). Another example is Google's applications which, as of January 
-2015, contained over two billion lines of code, 
-distributed across nine 
-million files ([link](https://doi.org/10.1145/2854146)). 
+2015, contained over two billion lines of code, distributed 
+across nine million files ([link](https://doi.org/10.1145/2854146)). 
 At that time, Google's software engineers submitted 
 about 40,000 code change requests per day on average.
 ```{=latex}
@@ -193,19 +190,19 @@ about 40,000 code change requests per day on average.
 ## Topics of Study in Software Engineering
 
 \index{SWEBOK}
-To discuss the core areas of study in software engineering, 
+To present the topics of study in software engineering, 
 we refer to the *Guide to the Software Engineering Body 
 of Knowledge*, also known as the SWEBOK 
 ([link](http://www.swebok.org)). 
 This comprehensive report is organized by the IEEE Computer 
 Society, an internationally recognized scientific society. 
 It is crafted with the expertise of multiple researchers 
-and industry professionals. The aim of the SWEBOK is to 
+and industry professionals. The aim of the report is to 
 document and compile the body of knowledge indicative of 
 the field we now recognize as Software Engineering.
 
-The SWEBOK identifies and categorizes the following twelve 
-key areas of Software Engineering:
+The SWEBOK defines the following key areas of Software 
+Engineering:
 
 1.  Requirements Engineering
 2.  Software Design
@@ -220,14 +217,14 @@ key areas of Software Engineering:
 11. Professional Practice
 12. Software Economics
 
-The SWEBOK also outlines three additional knowledge areas: 
+The report also outlines three additional knowledge areas: 
 Computing Foundations, Mathematical Foundations, and 
 Engineering Foundations. However, given that they 
 overlap with other scientific domains, they 
 won't be featured in this book.
 
-In the remainder of this section, we provide a summary of 
-each of the twelve key areas identified above. Our objective
+In the remainder of this section, we summarize each of the 
+twelve key areas identified above. Our objective
 is to give an overview of the knowledge accumulated over 
 the years in Software Engineering and, consequently, shed 
 light on what is studied in this field.
@@ -239,13 +236,13 @@ light on what is studied in this field.
 Requirements define *what* a system should do and *how* it
 should operate. Thus, Requirements Engineering designates the 
 activities carried out to analyze, document, and validate 
-a system's requirements. Requirements can be **functional** 
-or **non-functional**.
+a system's requirements. 
 
 \index{Requirements!Functional}
 \index{Requirements!Non-Functional}
+Requirements can be **functional** or **non-functional**.
 Functional requirements provide a detailed definition of 
-the functionalities or services a system should provide. 
+the features or services a system should provide. 
 On the other hand, non-functional requirements outline *how* 
 a system should operate, including any constraints and 
 the expected quality of service. Examples of non-functional 
@@ -261,23 +258,22 @@ between accounts, and debit card cancellation, among others.
 Meanwhile, the non-functional requirements might be as 
 follows:
 
-* **Performance**: The application must be able to provide an 
+* Performance: The application must be able to provide an 
 account balance within two seconds.
-* **Availability**: The application must be online 99% of 
+* Availability: The application must be online 99% of 
 the time.
-* **Fault tolerance**: The application must continue 
+* Fault tolerance: The application must continue 
 functioning even if a specific data center fails.
-* **Security**: The application must encrypt all data to 
+* Security: The application must encrypt all data to 
 be exchanged with branches.
-* **Privacy**: Customer data must be maintained confidential 
+* Privacy: Customer data must be maintained confidential 
 and not be leaked to third parties.
-* **Interoperability**: The application has to integrate 
+* Interoperability: The application has to integrate 
 with Central Bank systems.
-* **Capacity**: The application should have the capacity 
+* Capacity: The application should have the capacity 
 to store and handle data for one million banking customers.
-* **Usability**: The application must be accessible for 
+* Usability: The application must be accessible for 
 visually impaired individuals.
-
 
 ### Software Design
 
@@ -290,40 +286,39 @@ are the services that a code unit makes public for other parts
 of the system, while required interfaces are those that a 
 code unit depends on for operation.
 
-Therefore, during software system design, implementation 
+Therefore, during software design, the implementation 
 details of each code unit, such as the specifics of method 
-implementations, are not addressed. For instance, in 
+implementations, are not addressed. For instance, when 
 designing a banking system, a class to represent bank 
 accounts might be defined as follows:
 
 ```
 class BankAccount {
-   private Customer customer;
-   private double balance;
-   public double getBalance() { ... }
-   public String getCustomerName() { ... }
-   public String getStatement (Date start) { ... }
-   ...
+  private Customer customer;
+  private double balance;
+  public double getBalance() { ... }
+  public String getCustomerName() { ... }
+  public String getStatement (Date start) { ... }
+  ...
 }
 ```
 
-It's crucial to note that this is a simplified 
+It's important to note that this is a simplified 
 implementation, used only for illustrative purposes. The 
 `BankAccount` class provides an interface to other 
-system classes through its public methods, thus constituting 
+classes through its public methods, thus constituting 
 the provided interface. However, `BankAccount` also relies 
 on the `Customer` class, making the `Customer` interface 
-a required one for `BankAccount`. This dependency on 
-required interfaces is often referred to as 'dependencies'. 
-In this case, `BankAccount` depends on `Customer`.
+a required one for `BankAccount`.  In this case, 
+we say that `BankAccount` depends on `Customer`.
 
 \index{Software Architecture}
 When design gets more abstract and involves larger units 
-like packages or folders, it steps into the domain of 
-architectural design. Essentially, **software architecture** 
+like packages or folders, it is called architectural 
+design. Essentially, **software architecture** 
 refers to the organization of a system at a higher level of 
 abstraction than the one involving classes or comparable 
-constructs.
+code constructs.
 
 ### Software Construction
 
@@ -340,38 +335,41 @@ database managers, and interface building tools.
 ### Software Testing 
 
 Testing involves executing a program with a finite set of cases 
-and checking whether it delivers the expected outcomes. 
+and checking whether it delivers the expected results. 
 As 1982 Turing Award recipient Edsger W. Dijkstra succinctly 
 put it:
 
-> Software testing can reveal the presence of bugs, but not their absence.
+> Software testing can reveal the presence of bugs, but not 
+their absence.
 
 There are at least three critical points to address about 
-testing in this introductory chapter. First, there are many types 
-of tests, including **unit tests** (testing small code units like 
-a class), **integration tests** (testing larger units like a 
-set of classes), **performance tests** (checking system performance 
-under specific loads), and **usability tests** (evaluating the 
-system's user interface's usability).
+testing in this introductory chapter. First, we should mention
+that there are many types of tests, including **unit tests** 
+(testing small code units like a class), **integration tests** 
+(testing larger units like a set of classes), **performance 
+tests** (checking system performance under specific loads), 
+and **usability tests** (evaluating the system's user 
+interface's usability).
 
 Second, testing serves both verification and validation purposes. 
 Verification ensures a system conforms to its specifications, while
 validation checks if the system meets customer needs. The two 
 concepts are distinct because specifications may at times fail to 
-meet customer needs. This might be due to an error during the 
-requirements specification phase. Misunderstandings between 
-developers and users, or simply poor explanations by users, are 
-typical causes.
+meet customer needs. This might be due to misunderstandings 
+between developers and users or due to poor explanations by 
+users.
 
-Two commonly used phrases succinctly differentiate verification and validation:
+Two commonly used phrases succinctly distinguish verification 
+and validation:
 
 * **Verification**: Are we correctly implementing the system 
 according with its requirements?
-* **Validation**: Are we implementing the correct system—the one that meets customer or market needs?
+* **Validation**: Are we implementing the correct system—the 
+one that meets customer or market needs?
 
-For instance, running a method to check its return of specified 
-results is a verification activity, while conducting an acceptance 
-meeting to demonstrate the system to clients is a validation 
+For instance, running a method to check its result is a 
+verification activity, while conducting an acceptance 
+meeting to show the system to clients is a validation 
 activity.
 
 It's also necessary to distinguish between three important 
@@ -383,10 +381,9 @@ if (condition)
     area = pi * radius * radius * radius; 
 ```
 
-This code contains a defect, as the area of a circle should be 
-"pi times radius squared," not cubed. The term *bug* is frequently 
-used informally and often the same meaning as defects. However, 
-a failure occurs when the defective code is executed––for instance, 
+This code has a defect, as the area of a circle should be 
+"pi times radius squared," not cubed. The term *bug* is  
+used informally with the same meaning as we saylure occurs when the defectivecode is executed––for instance, 
 when the `if` condition above is true, and as a result, the 
 program delivers an incorrect result. Consequently, not every 
 defect or bug results in a failure since the defective code 
@@ -394,16 +391,16 @@ might never be executed.
 
 In summary: defective (or buggy) code is the one that fails to 
 conform to its specification. If this code is executed and 
-yields incorrect output, it is then that we state that 
-a failure has happened.
+yields incorrect results, we say that a failure has happened.
 
 ```{=latex}
 \begin{esmbox}
 ```
-**For Further Exploration:** Literature on testing may sometimes mention 
-**error** and **fault** terms. These terms carry the same 
-meaning we attributed to *defect*. For instance, the 
-*IEEE Standard Glossary of Software Engineering Terminology*([link](https://doi.org/10.1109/IEEESTD.1990.101064)) defines a 
+**For Further Exploration:** The literature on testing sometimes 
+also mention the **error** and **fault** terms. These terms 
+carry the same meaning we attributed to *defect*. For instance, the 
+IEEE Standard Glossary of Software Engineering Terminology 
+([link](https://doi.org/10.1109/IEEESTD.1990.101064)) defines a 
 fault as an "incorrect step, process, or data definition in a computer
 program; the terms error and bug are [also] used to express this 
 meaning." In essence, *defect*, *error*, *fault*, and *bug* 
@@ -415,62 +412,61 @@ are synonymous.
 ```{=latex}
 \begin{esmbox}
 ```
-**Real World Insight:** There are many software failures that have had 
-serious financial and human consequences. A prominent example 
+**Real World Insight:** There are many software failures that 
+had serious financial and human consequences. A prominent example
 is the 1996 explosion of French rocket Ariane 5 shortly 
-after its launch from Kourou, French Guiana. About 30 seconds 
-after the launch, the rocket exploded thanks to an unexpected 
+after its launch from Kourou, in the French Guiana. About 30 seconds 
+after the launch, the rocket exploded due to an unexpected 
 behavior of one of its onboard systems. This resulted in a 
 financial loss of approximately half a billion dollars. 
-Curiously, the defect that caused the failure was minor, 
-specific, and confined only to a few lines of an ADA code (which 
-is a programming language extensively used in military and 
-space software development). The defective lines were responsible
-for converting a 64-bit floating-point value to a 
-16-bit integer. During testing and likely previous rocket launches, 
-the conversion always succeeded––the real number always fit into 
-an integer. However, on the fatal launch day, an untested 
-condition required the conversion of a larger real number 
-than the largest 16-bit integer could accommodate. This 
-generated an erroneous result, causing the rocket's control 
-system to malfunction and subsequently result in its explosion.
+Curiously, the defect that caused the failure was confined 
+to a few lines of an ADA function (which is a programming 
+language widely used in military and space software development). 
+The defective lines were responsible for converting a 64-bit 
+floating-point value to a 16-bit integer. During testing and 
+likely previous Ariane launches, the conversion always 
+succeeded––the real number always fit into an integer. 
+However, on the fatal launch day, a previously untested condition 
+required the conversion of a larger real number than the 
+largest 16-bit integer could accommodate. This generated an 
+erroneous result, causing the rocket's control system to 
+malfunction and subsequently result in its explosion.
 ```{=latex}
 \end{esmbox}
 ```
+
 ### Software Maintenance and Evolution 
 
 \index{Software Maintenance}
 Software systems, like traditional engineering systems, require 
-maintenance. In this book we categorize the types of maintenance 
-that may need to be carried out on a software system into 
-**corrective**, **preventive**, **adaptive**, **refactoring**, 
-and **evolutionary**.
+maintenance. In this book, we categorize the types of maintenance 
+that can be performed in software systems into the following
+categories: **corrective**, **preventive**, **adaptive**, 
+**refactoring**, and **evolutionary**.
 
 \index{Software Maintenance!Corrective}
-Corrective maintenance aims to address bugs reported by users or 
-other developers.
-
 \index{Software Maintenance!Preventive}
-Preventive maintenance, on the other hand, focuses on addressing 
-latent bugs in the code that haven’t yet caused noticeable 
-failures for the system's users.
+Corrective maintenance aims to address bugs reported by users or 
+other developers. Preventive maintenance, on the other hand, 
+focuses on addressing latent bugs in the code that 
+haven’t yet caused failures observed by the users.
 
 \index{Millennium Bug}
 ```{=latex}
 \begin{esmbox}
 ```
-**Real World Insight**: An example of preventive maintenance can 
-be seen in the actions taken by many companies before the turn 
+**Real World Insight**: An example of preventive maintenance 
+are the actions taken by many companies before the turn 
 of the millennium, from 1999 to 2000. At this time, a significant 
-number of software applications used two digits to represent the 
-year in date values, i.e., dates were in the DD-MM-AA format. 
+number of applications used two digits to represent the year in 
+date values, i.e., dates were in the DD-MM-AA format. 
 This led to concerns that date operations in the year 2000 
 and beyond could produce incorrect results. For instance, 
 the calculation 00 - 99 might return an unexpected result. 
 To prevent this, companies created special task groups to 
-convert all date values in their systems to the DD-MM-YYYY 
-format, an action that was a prime example of preventive 
-maintenance.
+convert all date variables and expressions in their systems 
+to the DD-MM-YYYY format, an action that was a prime example of 
+preventive maintenance.
 ```{=latex}
 \end{esmbox}
 ```
@@ -479,7 +475,7 @@ maintenance.
 Adaptive maintenance aims to adjust a system in response to 
 changes in its environment, including technological changes, 
 new legislative rules, integration requirements with 
-other systems, or customization requests from new users. 
+other systems, or customization demands from new users. 
 Examples include:
 
 * Updating a system from Python 2.7 to Python 3.0.
@@ -487,38 +483,37 @@ Examples include:
 * Modifying a system to comply with changes in legislation or 
 other contextual changes.
 
-Refactorings are changes in the code that don't change its external 
-behavior but improve its design and ease of maintenance. 
+Refactorings are changes in a program that don't change its 
+external behavior but improve its design and ease of maintenance. 
 Refactoring operations include renaming a method or variable, 
 breaking a large method into smaller ones, or moving a method 
 to a more suitable class.
 
 \index{Software Maintenance!Evolutionary}
-Evolutionary Maintenance is performed to add new features to 
-a system or to significantly improve existing ones. Its 
-purpose is to preserve the system's value to the customers. 
-Many banking systems developed in the 70s and 80s, for instance, 
-have been continually updated and improved, ensuring their 
-ongoing relevance and value.
+Finally, Evolutionary Maintenance is performed to add new 
+features to a system or to significantly improve existing 
+features. Its purpose is to preserve the system's value 
+to the customers. Many banking systems developed in the 
+70s and 80s, for instance, have been continually updated 
+and improved, ensuring their ongoing relevance and value.
 
 \index{Legacy Systems}
 **Legacy Systems** are older systems built on outdated 
 languages, operating systems, and databases. Despite being 
-obsolete in technological terms, these systems remain vital due 
-to the critical operations they perform.
+obsolete in technological terms, most legacy systems remain 
+vital due to the critical operations they perform.
 
 ```{=latex}
 \begin{esmbox}
 ```
 **For Further Exploration:**: Some alternative classifications 
-for software maintenance types can be found in the literature. 
+for software maintenance can be found in the literature. 
 One proposed by Lientz & Swanson in 1978 
 ([link](https://dl.acm.org/citation.cfm?id=601062)), 
 organizes maintenance activities into four categories: corrective, 
-perfective (adding new functionalities), adaptive (concerning 
-changes in the software's operational environment), and 
-preventive (changes aimed at enhancing a system's 
-maintainability).
+perfective (adding new functionalities), adaptive (changes in 
+the software's operational environment), and preventive 
+(changes aimed at enhancing a system's maintainability).
 ```{=latex}
 \end{esmbox}
 ```
@@ -747,7 +742,7 @@ strategies. Firstly, **metrics** can be utilized to track
 the development process, including source code metrics 
 and process metrics. Code metric examples include the 
 number of lines in a program, providing an indication of 
-its size. Process metrics include, for exaple, the number of 
+its size. Process metrics include, for example, the number of 
 defects reported by end-users over a specific period.
 
 \index{Code Review}
@@ -826,7 +821,7 @@ depend on the code's requirements.
 \end{exmbox}
 ```
 
-### Economic Aspects
+### Software Economics
 
 \index{Software Economics}
 Numerous economic factors are entwined with software 
@@ -1041,7 +1036,7 @@ Deployment/Delivery.
 version control is an indispensable practice in today's 
 development world.
 
-## Bibliografia {.unnumbered}
+## Bibliography {.unnumbered}
 
 Pierre Bourque, Richard Fairley. Guide to the Software
 Engineering Body of Knowledge, Version 3.0, IEEE Computer Society, 2014.
@@ -1104,10 +1099,10 @@ structure like the following one (merely illustrative,
 for the purposes of this exercise):
 
 ```
-if "Car being tested in a laboratory"
-   "Comply with emission standards"
+if "car being tested in a laboratory"
+   "comply with emission standards"
 else 
-   "Exceed emission standards"
+   "exceed emission standards"
 ```
 
 What would you do if your boss asks you to write an *if* like 
