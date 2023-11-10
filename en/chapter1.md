@@ -365,7 +365,8 @@ typical causes.
 
 Two commonly used phrases succinctly differentiate verification and validation:
 
-* **Verification**: Are we correctly implementing the system as per its requirements?
+* **Verification**: Are we correctly implementing the system 
+according with its requirements?
 * **Validation**: Are we implementing the correct system—the one that meets customer or market needs?
 
 For instance, running a method to check its return of specified 
@@ -522,7 +523,7 @@ maintainability).
 \end{esmbox}
 ```
 
-### Configuration Management 
+### Software Configuration Management 
 
 \index{Configuration Management}
 Version control systems, such as Git, are an integral part 
@@ -544,7 +545,7 @@ with small updates, while *z* points to a patch release
 for bug fixes. This identification scheme is often referred 
 to as **semantic versioning**.
 
-### Project Management 
+### Software Project Management 
 
 \index{Project Management}
 \index{Stakeholders}
@@ -597,7 +598,7 @@ akin to a Nobel Prize.
 \end{esmbox}
 ```
 
-### Software Development Processes 
+### Software Processes 
 
 \index{Software Processes}
 A software development process outlines the sequence of 
@@ -693,56 +694,134 @@ in Forward Engineering scenarios.
 
 ![Example of UML Class Diagram](figs/cap1/uml-intro-en){width=80%}
 
+### Software Quality
+
+\index{Software Quality}
+Quality is a prominent goal in the engineering of products, 
+reflected across various industries such as automobile manufacturing, 
+cell phone production, computer companies, and construction. 
+Similarly, quality is of utmost importance in software 
+engineering. A classification proposed by Bertrand Meyer 
+([link](https://dl.acm.org/citation.cfm?id=261119)) suggests 
+that software quality can be evaluated in two dimensions: 
+**external quality** and **internal quality**.
+
+\index{Software Quality!External}
+External quality refers to factors that can be assessed 
+without delving into the code. These factors can be evaluated 
+by end-users who are not necessarily experts in software 
+engineering. Some examples of external quality factors 
+(or attributes) are:
+
+*  Correctness: Does the software align with its specification 
+and perform as expected under normal conditions?
+*  Robustness: Can the software continue to function appropriately 
+during exceptional circumstances, such as communication or 
+disk failure? A robust software implementation should not crash 
+due to such events, instead, it should alert users about 
+the abnormal operation.
+*  Efficiency: Does the software optimally use computational 
+resources?
+*  Portability: Is the software adaptable to other platforms 
+and operating systems? Is it available for major operating 
+systems such as Windows, Linux, and macOS or, in the case of 
+mobile apps, does it support Android and iOS?
+*  Ease of Use: Does the software have a user-friendly interface, 
+clear error messages, and support multiple languages? 
+Can users with disabilities, such as visual or auditory 
+impairments use it?
+*  Compatibility: Does the software support primary data formats 
+prevalent in its specific domain? For instance, a spreadsheet 
+software should import files in XLS and CSV formats.
+
+\index{Software Quality!Internal}
+In contrast, internal quality relates to properties  
+tied to the system's implementation. Assessment of internal 
+quality requires expertise in software engineering and 
+it isn't typically something for end-users. Examples of 
+internal quality factors (or attributes) include modularity, 
+code readability, maintainability, and testability.
+
+The assurance of software quality can be achieved via several 
+strategies. Firstly, **metrics** can be utilized to track 
+the development process, including source code metrics 
+and process metrics. Code metric examples include the 
+number of lines in a program, providing an indication of 
+its size. Process metrics include, for exaple, the number of 
+defects reported by end-users over a specific period.
+
+\index{Code Review}
+Additionally, there are practices that support the 
+production of high-quality software. Notably, many 
+organizations implement **code reviews**, where the code written 
+by one developer is only approved for production after 
+another team member reviews and inspects it. This practice 
+aids in early bug detection (before the system enters 
+production) and improves the internal quality of the code 
+(i.e., its maintainability, readability, modularity, etc.). 
+It also encourages the dissemination of good software 
+engineering practices within the team.
+
+The next figure shows an example of code review, referring 
+to an example we commented in the Software Testing section. 
+When an organization uses code reviews, this code will be 
+reviewed by another developer, called the reviewer, before
+being put into production. The reviewer could notice the 
+bug and tag the code with a question, before approving it.
+Then, the developer responsible for the code could agree 
+that, in fact, there is a bug, fix the code, and resubmit 
+it for review and approval.  There are several tools to 
+support code review processes. In the example, we used the 
+tool provided by GitHub.
+
+![Example of code review](figs/cap1/github.png){width=65%}
 
 ### Professional Practice
 
 \index{Professional Practice}
-As stated in Bjarne Stroustrup's opening quote of this chapter,
-*our civilization runs software*. This results in many
-opportunities for professionals in this area, but also generates 
-responsibilities and concerns. Issues about the professional practice 
-of software engineering start to arise when defining the curricula of 
-undergraduate courses, which should foster a solid
-background in the fundamental aspects of Computer Science, such as
-algorithms and data structures. However, it is also important to
-have courses covering the key aspects of the profession, including 
-the most important concepts, methods, and techniques. 
+The opening quote of this chapter by Bjarne Stroustrup states: 
+*our civilization runs on software*. This statement highlights 
+the myriad of opportunities available to professionals 
+in this field. However, it als implies in challenges and 
+responsibilities. For example, questions surrounding the 
+professional practice of software engineering arise when 
+formulating undergraduate curricula. Courses in the area
+should offer a solid foundation in fundamental aspects of 
+Computer Science, such as algorithms and data structures, 
+while also covering the critical aspects of the profession 
+including concepts, methodologies, and techniques. 
 
 \index{Professional Ethics}
-Lastly, but very relevant, there are questions about the 
-role and **ethical responsibility** of software engineers, 
-particularly in a society where human relationships are increasingly 
-mediated by algorithms and software. In this sense, the scientific 
-societies in the area have codes to help Computing professionals — not necessarily just Software Engineers — to practice their profession 
-ethically. As examples, we have the Code of Ethics of the ACM 
-([link](https://www.acm.org/code-of-ethics)) and the IEEE 
-Computer Society
-([link](https://www.computer.org/education/code-of-ethics)).
-The latter has its focus on the practice of Software Engineering. 
-For example, it recommends that:
+Equally important is the discussion about the **ethical 
+responsibility** of software engineers, particularly in a 
+society where human interactions are increasingly mediated 
+by software and algorithms. Scientific societies within 
+the field have formulated codes to guide computing 
+professionals — not just Software Engineers — in exercising 
+their profession ethically. For instance, the ACM's Code 
+of Ethics ([link](https://www.acm.org/code-of-ethics)) 
+and the IEEE Computer Society's Code ([link](https://www.computer.org/education/code-of-ethics)). The latter puts special emphasis 
+on the practice of software engineering, asserting that:
 
 > Software engineers shall commit themselves to making the 
-analysis, specification, design, development, testing 
-and maintenance of software a beneficial and respected 
-profession. 
+analysis, specification, design, development, testing, and 
+maintenance of software a beneficial and respected profession.
 
 ```{=latex}
 \begin{exmbox}
 ```
-**Real World Insight:** Stack Overflow conducts an annual survey with
-users of the platform. In 2018, this survey was answered by more 
-than 100,000 developers from the most varied countries. Among 
-the questions, a group referred to ethical issues 
+**Real World Insight:** Stack Overflow holds an annual survey, 
+which in 2018 received responses from over 100,000 developers 
+worldwide. A section of the survey focused on ethical 
+considerations 
 ([link](https://insights.stackoverflow.com/survey/2018#ethics)). 
-One of them asked if developers have an obligation to consider the 
-ethical implications of the code they produce. Almost 80% of the 
-respondents answered yes. Another question was the following: 
-who is ultimately responsible for code that contributes to 
-unethical behavior? In this case, 57.5% answered the company's 
-top management, while 23% said that are the developer themselves. 
-When asked if they would agree to write code with ethical concerns, 
-58% answered that no, and 37% said that it would depend on the 
-code requirements.
+One question asked if developers felt obligated to consider 
+the ethical implications of the code they create — almost 80% 
+responded positively. Another asked who should hold the responsibility 
+for code that leads to unethical behavior, to which 57.5% pointed 
+to the company's top management and 23% felt it was the developers themselves. When asked if they would consent to write code with 
+ethical issues, 58% said no, while 37% responded that it would 
+depend on the code's requirements.
 ```{=latex}
 \end{exmbox}
 ```
@@ -750,103 +829,99 @@ code requirements.
 ### Economic Aspects
 
 \index{Software Economics}
-Many economic issues intertwine with software development. For 
-example, a software startup must decide the monetization model 
-it wants to adopt, whether based on subscriptions or advertisements,
-for example. Mobile app developers have to decide on the price they 
-will charge for their application, which, among other variables, 
-requires knowledge about the price of the competitors. 
-For this reason, it is no surprise that large software companies 
-currently employ economists to assess the economic aspects of 
-their software products.
+Numerous economic factors are entwined with software 
+development. For instance, software startups must select 
+their monetization model — perhaps a subscription-based or advertisement-supported model. Mobile app developers must 
+decide how much to charge for their apps, a decision 
+that requires understanding their competitors' pricing among 
+other variables. With such intricate economic considerations, 
+it's no surprise that large software companies now hire 
+economists to evaluate these factors related to their 
+products.
 
-To discuss a concrete case, in economics there is a 
-frequent concern with the opportunity costs of a decision. That is, 
-every decision has an opportunity cost, which refers to the missed 
-opportunities associated with the solutions that were discarded. 
-In other words, when decision Y is discarded and decision 
-X is made instead, the benefits of Y become missed opportunities. 
-For example, suppose that your company's main product has a 
-list of bugs. Are there benefits in correcting such bugs? Sure, 
-this will make customers happier and they will not think to 
-churn. However, there is also an opportunity cost in this decision. Specifically, instead of fixings the bugs, the company could 
-invest in new functionalities, which would help it to expand 
-the customer base. Which is better? To fix the bugs or to 
-implement new functionalities? In the end, this is an economic 
-decision.
+For a practical example, economists frequently discuss the 
+opportunity costs of a decision. These costs represent the 
+missed opportunities associated with disregarded solutions 
+or choices. If you choose decision X over Y, the benefits 
+of Y become your missed opportunities. For instance, 
+imagine your company's main product has a list of bugs. 
+Sure, fixing these bugs will satisfy customers and potentially 
+prevent churn. However, this decision also has an opportunity 
+cost. Instead of bug fixing, the company could invest in 
+new features, which could expand the customer base. 
+Deciding between bug fixes or new features ultimately 
+becomes an economic decision.
 
 ## Classification of Software Systems
 
 \index{ABC Systems}
-Software is integral to almost all human activities and comes 
-in various sizes and types, fulfilling an array of functional and
-non-functional requirements. As such, we should not fall into the 
-trap of thinking that there is only one way to develop software. 
-It would be incorrect to assume that all software must be 
-implemented using the same processes, design principles, 
-or quality assurance mechanisms.
+Software is part to a wide array of human activities. 
+It comes in different sizes and types, fulfilling a variety of 
+functional and non-functional requirements. As such, it's important 
+to avoid the misconception that there is a single and universal 
+method for software development. In other words, we should not
+assume that all software must follow the same processes, 
+design principles, or quality assurance mechanisms.
 
 \index{Meyer, Bertrand}
-
 Bertrand Meyer proposed a classification 
 ([link](https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/)) 
-that aids in distinguishing and reasoning about the types of 
-software that can be developed and identifying suitable software 
-engineering practices for each. According to Meyer, there are three 
-main types of software: Systems A (Acute), Systems B (Business), 
-and Systems C (Casual). We will initially discuss Systems C 
-and A, followed by Systems B.
+that assists in distinguishing between the types of software 
+that can be developed and in identifying suitable software 
+engineering practices for each one. According to Meyer, there are 
+three primary types of software: Acute Systems (A), 
+Business Systems (B), and Casual Systems (C). 
+We will discuss Casual and Acute systems first, followed by 
+Business systems.
 
 \index{Over-engineering}
 \index{Casual Systems}
-Type C systems, or casual systems, are not subject to 
-high-quality pressures. They can afford to have minor bugs 
-without jeopardizing their operation. Examples include a 
-script for an academic project, a one-time-use data migration 
-program, or a system to manage a student association's 
-membership. These systems do not necessarily require high 
-standards of internal quality, optimal runtime performance, 
-or sophisticated user interfaces. They are usually implemented 
-by a small team and are lightweight and non-critical. Therefore, 
-they do not benefit from the practices, techniques, and processes 
-discussed in this book. **Over-engineering** is a risk for 
-such systems, as there is no need for advanced techniques. 
-In the context of Type C systems, software engineering can 
-resemble using a sledgehammer to crack a nut.
+Casual systems, or Type C systems, are not under much pressure for high-quality performance. They can tolerate minor bugs without 
+jeopardizing their operation. As examples, we can mention an academic 
+project script, a data migration program for one-time-use, 
+or a system to manage a student association's membership. 
+These systems do not necessarily require high internal quality, 
+optimal runtime performance, or sophisticated user interfaces. 
+They are typically implemented by a small team and are 
+non-critical and lightweight. As a result, they do not benefit 
+from the practices, techniques, and processes discussed 
+in this book. In fact, over-engineering poses a risk for such 
+systems, as there's no need for advanced techniques. 
+
 
 \index{Mission-Critical Systems}
-On the opposite end are Type A systems, or acute systems, 
-where a single failure can lead to devastating consequences, 
-including loss of life. These include control systems 
-like those in autonomous vehicles, nuclear power plants, 
-airplanes, ICU equipment, and subway trains. The software 
-that controlled the Ariane 5 rocket is an example. Developing 
-these systems demands rigorous processes, including 
-comprehensive code review and external certification. 
-It is common to have redundancies in hardware and 
-software alike—for instance, two parallel-running systems 
-that only make a decision if both agree. Sometimes 
-these systems are designed with a formal language, 
-founded on logic or set theory.
+On the other end of the spectrum, we have Acute systems, 
+or Type A systems, where a single failure can have devastating 
+consequences, including the potential loss of lifes. Notable 
+examples include control systems used in autonomous vehicles, 
+nuclear power plants, airplanes, ICU equipment, and subway 
+trains. The software that controlled the Ariane 5 rocket is 
+an illustrative sample. Developing these systems requires 
+rigorous processes, including comprehensive code review 
+and external certification. It's common to have hardware 
+and software redundancies alike—for example, two systems 
+running in parallel that only make a decision when both agree. 
+Sometimes, these systems are designed using a formal language 
+based on logic or set theory.
 
 ```{=latex}
 \begin{alert}
 ```
-**Alert:** We will not focus on Type A systems A, or 
-mission-critical systems, in this book.
+**Alert:** In this book, we will not cover Type A (Acute) or 
+mission-critical systems.
 ```{=latex}
 \end{alert}
 ```
 
-Finally, we arrive at Type B systems B, or business systems, 
-which benefit most from the principles and practices discussed 
-in this book. These systems encompass a broad range of corporate 
-applications (like finance, HR, logistics, sales), various types 
-of web-based systems, software libraries and frameworks, 
-general-purpose applications (such as text editors, spreadsheets), 
-and basic software systems (like compilers, IDEs). 
-The concepts discussed in this book will make the development 
-of Type B systems more productive and contribute to better 
-quality software, both internally (more easy to maintain systems) 
-and externally (systems with less production bugs).
-
+Lastly, we have Business Systems (B), or Type B systems. 
+These systems are the ones that benefit the most from the 
+principles and practices discussed in this book. They cover a 
+wide array of corporate applications (like finance, HR, 
+logistics, sales), various web-based systems, software 
+libraries and frameworks, general-purpose applications 
+(such as text editors, spreadsheets), and basic software 
+systems (like compilers, IDEs). The concepts presented in 
+this book make the development of Type B systems more 
+productive and contribute to their quality, both internally 
+(systems that are easier to maintain, for example) and 
+externally (systems with fewer production bugs, for example).
