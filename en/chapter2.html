@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Marco Tulio Valente" />
+  <title>Chapter 2: Processes – Software Engineering: A Modern Approach</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    q { quotes: "“" "”" "‘" "’"; }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <meta name="robots" content="noindex">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYNKH464F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RGYNKH464F');
+  </script>
+
+  <style>
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .dark-mode code {
+    background-color: black;
+    color: white;
+  }    
+  </style>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+
+  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="container">
+<div class="row cols-sm-12 col-md-10 col-lg-6">
+<div class="col-md-offset-1 col-lg-offset-3">
+
+<p> <h4>Disclaimer: This chapter is a beta version subjected to copyediting and proofreading. </h4> </p>
+<header id="title-block-header">
+<h1 class="title">Software Engineering: A Modern Approach</h1>
+<p class="author">Marco Tulio Valente</p>
+</header>
+<h1 data-number="2" id="process"><span
+class="header-section-number">2</span> Process <a href="#process"
+class="anchor-link" aria-hidden="true">🔗</a></h1>
+<blockquote>
+<p>In software development, perfect is a verb, not an adjective. There
+is no perfect process. There is no perfect design. There are no perfect
+stories. You can, however, perfect your process, your design, and your
+stories.* – Kent Beck</p>
+</blockquote>
+<p> This chapter starts with an exploration of the importance of
+software process (Section 2.1). Next, we discuss general and
+foundational aspects of agile software development process (Section
+2.2), including a discussion into the historical context that motivated
+the emergence of these processes. The next sections focus on three agile
+methods: Extreme Programming (Section 2.3), Scrum (Section 2.4), and
+Kanban (Section 2.5). Following that, we comment on scenarios where
+agile methods might not be the most recommended process (Section 2.6).
+Lastly, in Section 2.7, we briefly present some traditional processes,
+such as the Unified Process.</p>
+<h2 data-number="2.1" id="importance-of-process"><span
+class="header-section-number">2.1</span> Importance of Process <a
+href="#importance-of-process" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p>Consider the production of a car in an automobile factory, which
+follows a well-defined process. In simple terms, sheets of steel are
+initially cut and pressed to shape doors, roofs, and hoods. Next, the
+car is painted and components like the dashboard, seats, seat belts, and
+wiring are installed. Finally, the mechanical parts, including the
+engine, suspension, and brakes, are fitted.</p>
+<p>Analogously, software production follows a <strong>process</strong>,
+although less mechanized and more dependent on intellectual endeavor. A
+software development process defines a series of steps, tasks, events,
+and practices that developers must observe while developing a software
+system.</p>
+<p> There are some who critique software processes and question their
+need, often asking: <q>Why must I follow a process?</q> and <q>What
+process did Linus Torvalds or Donald Knuth used when implementing the
+Linux operating system or the TeX text formatter?</q></p>
+<p>In reality, the second questions above do not apply to our context as
+both Linux (in its initial versions) and TeX were individual projects
+led by a single developer. In such scenarios, following a process is
+less important. Stated in better terms, the process followed in those
+projects was a personal one, reflecting the principles, practices, and
+decisions of a single developer.</p>
+<p>However, contemporary software systems are too complex to be
+developed by a single person. Thus, systems implemented by solitary
+heroes are increasingly rare. In practice, modern systems — the focus of
+this book — are developed by <strong>teams</strong>.</p>
+<p>These teams require a minimal set of rules to produce quality
+software with efficiency. That’s why software companies invest so much
+in software processes. They serve as instruments for companies to
+coordinate, motivate, organize, and evaluate their developers, ensuring
+at the same time productivity and alignment with the organization’s
+goals. Without a process — even a light and simplified one, such as the
+agile methods we will study in this chapter — there is a risk that teams
+will operate in a uncoordinated way, creating products with no business
+value. Finally, processes not only benefit the company, but they also
+serve developers by clarifying expected tasks and outcomes, thus
+reducing misalignment among team members.</p>
+<p>In this chapter, we explore various software processes. In fact, in
+Chapter 1, we’ve already presented a first introduction to Waterfall and
+Agile methods. In the following sections, we will continue this
+discussion and present the details of three well-known Agile
+methods.</p>
+<h2 data-number="2.2" id="agile-manifesto"><span
+class="header-section-number">2.2</span> Agile Manifesto <a
+href="#agile-manifesto" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p> The earliest software development process — Waterfall, proposed in
+the 1970s — used a sequential approach. It began with a requirement
+specification and ended with the implementation, testing, deployment,
+and maintenance stages.</p>
+<p>Given the historical context, this strictly sequential approach was
+understandable. Traditional engineering projects are also developed
+sequentially and using detailed planning. Therefore, it’s not a surprise
+that the emerging Software Engineering field mirrored the processes of
+longer-established domains like Electronics, Civil, Mechanical, and
+Aeronautical Engineering, among others.</p>
+<p>However, by the 80s, the industry began to recognize that software is
+different from other engineering products. The recurrent problems faced
+by software projects from the 70s to the 90s reinforced this conclusion.
+For instance, projects at this time routinely overshot schedules and
+budgets. Some were even abandoned after years of effort without
+delivering a functioning system to customers.</p>
+<p> The 1994 CHAOS Report from the Standish Group consulting firm
+offered more details about the state of software projects at the time.
+This report (<a
+href="https://www.standishgroup.com/sample_research_files/chaos_report_1994.pdf">link</a>),
+revealed that over 55% of projects surpassed their planned deadlines by
+51% to 200%; and at least 12% exceeded the deadlines by over 200%, as
+shown in the next figure.</p>
+<figure>
+<img src="figs/cap2/chaos2.svg" style="width:95.0%"
+alt="CHAOS Report (1994): percentage of projects exceeding their deadlines (for each range of overrun)." />
+<figcaption aria-hidden="true">CHAOS Report (1994): percentage of
+projects exceeding their deadlines (for each range of
+overrun).</figcaption>
+</figure>
+<p>In terms of costs, almost 40% of the studied projects overshot their
+budget by 51% to 200%, as indicated in the following figure:</p>
+<figure>
+<img src="figs/cap2/chaos1.svg" style="width:95.0%"
+alt="CHAOS Report (1994): percentage of projects exceeding their budgets (for each range of overrun)." />
+<figcaption aria-hidden="true">CHAOS Report (1994): percentage of
+projects exceeding their <strong>budgets</strong> (for each range of
+overrun).</figcaption>
+</figure>
+<p>Therefore, in 2001, several industry professionals gathered in
+Snowbird, Utah, to discuss and propose an alternative to the prevailing
+Waterfall-based processes. They argued that, being different from
+traditional engineering products, software requires a distinct
+development process.</p>
+<p>For instance, software requirements change more frequently than those
+of a laptop, airplane, or bridge. Moreover, customers often lack a clear
+understanding of their needs. There is always a risk of designing a
+product that will be obsolete by the time it’s finished due to changing
+circumstances or distinct customer needs. The group that met at Utah
+also identified issues with the document-centric approach followed by
+Waterfall. At the time, requirements documents were detailed, heavy, and
+dense, which contributes to making them quickly obsolete as the
+developers would not update the documentation to reflect requirement
+changes.</p>
+<p>In response, the group proposed a new type of software process, which
+was describe in a document they named the <strong>Agile
+Manifesto</strong>. The manifesto reads:</p>
+<blockquote>
+<p>Through this work, we have come to value:</p>
+<p><strong>Individuals and interactions</strong> over processes and
+tools</p>
+<p><strong>Working software</strong> over comprehensive
+documentation</p>
+<p><strong>Customer collaboration</strong> over contract negotiation</p>
+<p><strong>Responding to change</strong> over following a plan.</p>
+</blockquote>
+<p> Agile processes are characterized by short and iterative development
+cycles. Systems are built incrementally, starting with the features
+considered most relevant by customers. Initially, a first version of the
+system is created, which implements only high-priority functionalities.
+This version is then validated by the customer. If approved, a new cycle
+— or <strong>sprint</strong> — begins, adding a few more features as
+prioritized by the customer. Typically, these cycles are short, usually
+having two weeks, which allows the system to be incrementally built,
+with each software increment receiving explicit approval by the
+customer. The development ends when all the customer’s requests have
+been implemented.</p>
+<p> The following figures present a comparison between Waterfall and
+Agile development methods:</p>
+<figure>
+<img src="figs/cap2/waterfall2-en.svg" style="width:90.0%"
+alt="Development using a Waterfall Process. The software is finished only at the end." />
+<figcaption aria-hidden="true">Development using a Waterfall Process.
+The software is finished only at the end.</figcaption>
+</figure>
+<figure>
+<img src="figs/cap2/agile-en.svg" style="width:90.0%"
+alt="Development using an Agile Process. Each iteration (represented by the rectangles) produces a product increment (S++), which is validated and tested by end-users." />
+<figcaption aria-hidden="true">Development using an Agile Process. Each
+iteration (represented by the rectangles) produces a product increment
+(S++), which is validated and tested by end-users.</figcaption>
+</figure>
+<p>However, the previous figures may suggest that in agile development,
+each iteration replicates a mini-Waterfall process, encompassing all the
+Waterfall phases. This isn’t accurate; generally, iterations in agile
+methods aren’t a series of tasks like in Waterfall (more details in the
+following sections). The figure may also suggest that a system must be
+put into production for end-user use at the end of each iteration. This
+is also incorrect. The objective is to deliver a functional system that
+performs useful tasks. However, the decision to launch it into
+production involves other variables such as business risks, hardware
+resources availability, marketing campaigns, user training, etc.</p>
+<p>Other agile process characteristics include:</p>
+<ul>
+<li><p>Minimal emphasis on documentation: Only vital information should
+be documented.</p></li>
+<li><p>Less emphasis on detailed plans: At the start of a project, often
+neither the customer nor the software engineers have a clear
+understanding of all requirements that should be implemented. Such
+understanding gradually unfolds as product iterations are created and
+validated. In other words, the essence of agile development is to
+advance even in settings with incomplete, partial, and changing
+information.</p></li>
+<li><p>No dedicated design phase (<em>Big Design Up Front</em>): The
+design of the system is also incremental, evolving the end of each
+iteration.</p></li>
+<li><p>Small team development: Teams typically comprise about a dozen
+developers or, as Amazon CEO Jeff Bezos phrased it, “teams that can be
+fed with two pizzas. We also like to say that the size of agile teams
+varies between the size of a basketball team (5 members) and of a soccer
+team (11 members).</p></li>
+<li><p>Emphasis on novel development practices (in the early 2000s),
+such as pair programming, automated testing, and continuous
+integration.</p></li>
+</ul>
+<p>These characteristics render agile processes <strong>light
+processes</strong>, marked by few prescriptions and documents.</p>
+<p>Since the characteristics above are generic and broad, several
+methods were proposed to help developers more tangibly adopt agile
+principles. Interestingly, they were all initially proposed before the
+2001 Agile Manifesto’s Utah meeting.</p>
+<p>In this chapter, we will study three agile methods:</p>
+<ul>
+<li><p>Extreme Programming (XP): Kent Beck proposed this method in a
+1999 book (<a
+href="https://dl.acm.org/citation.cfm?id=318762">link</a>). A second and
+heavily revised edition of the book was released in 2004.</p></li>
+<li><p>Scrum: This agile method was introduced by Jeffrey Sutherland and
+Ken Schwaber in a 1995 article (<a
+href="https://dl.acm.org/citation.cfm?id=260274">link</a>).</p></li>
+<li><p>Kanban: This method originated from a production control system
+implemented in Toyota’s factories in the 1950s (<a
+href="https://hbr.org/1986/01/the-new-new-product-development-game">link</a>).
+Over the past years, Kanban has been gradually adapted for software
+development.</p></li>
+</ul>
+<p><strong>In-Depth</strong>: The terms process and methods are often
+used interchangeably. However, there is also subtle differences between
+them. A process is a set of steps, events, and tasks used to construct
+software. Every organization employs a process to develop its systems,
+which can be agile, waterfall, or even chaotic. However, the fact is
+that a process always exists. On the other hand, a method defines and
+specifies a particular development process (the term originates from
+Greek, meaning <q>the means to achieve a goal</q>). Therefore, XP,
+Scrum, and Kanban are agile methods or, put another way, they outline
+practices, activities, events, and techniques compatible with agile
+principles.</p>
+<p><strong>Notice</strong>: It’s essential to understand that all
+development methods include essentially a set of recommendations. Every
+organization should analyze each one and decide if it’s suitable for
+their particular context. Consequently, organizations might need to
+adapt these recommendations to their needs. Therefore, it’s rare to see
+two organizations that follow exactly the same development process. For
+instance, even if they say they’re using Scrum.</p>
+<p></p>
+<p><strong>Real World Insight</strong>: The widespread success and
+impact of agile methods are noteworthy. At present, an overwhelming
+majority of organizations, irrespective of their size or business
+domain, rely on agile principles to varying degrees. Here’s an
+interesting statistic: in 2018, the Stack Overflow survey included a
+question about the most used development methods (<a
+href="https://insights.stackoverflow.com/survey/2018/#career-values">link</a>).
+Over 57 thousand professional developers responded, and a majority
+identified with agile methods or practices. This includes methodologies
+we will explore in this chapter - such as Scrum (63% responses), Kanban
+(36%) and Extreme Programming (16%). Only 15% of participants chose
+Waterfall as their development method.</p>
+</div>
+</div>
+</div>
+
+<footer>
+All rights reserved. Version for personal use only.
+To report any errors, including minor typos, use this 
+<a href="https://forms.gle/urrjFgGYgmKuJrfb9">form</a>.
+</footer>
+</body>
+</html>

@@ -204,18 +204,18 @@ the field we now recognize as Software Engineering.
 The SWEBOK defines the following key areas of Software 
 Engineering:
 
-1.  Requirements Engineering
+1.  Software Requirements
 2.  Software Design
 3.  Software Construction
 4.  Software Testing
 5.  Software Maintenance
-6.  Configuration Management
-7.  Project Management
+6.  Software Configuration Management
+7.  Software Project Management
 8.  Software Processes
 9.  Software Models
 10. Software Quality
-11. Professional Practice
-12. Software Economics
+11. Software Engineering Professional Practice
+12. Software Engineering Economics
 
 The report also outlines three additional knowledge areas: 
 Computing Foundations, Mathematical Foundations, and 
@@ -229,7 +229,7 @@ is to give an overview of the knowledge accumulated over
 the years in Software Engineering and, consequently, shed 
 light on what is studied in this field.
 
-### Requirements Engineering
+### Requirements
 
 \index{Requirements Engineering}
 \index{Requirements!Requirements Engineering}
@@ -275,7 +275,7 @@ to store and handle data for one million banking customers.
 * Usability: The application must be accessible for 
 visually impaired individuals.
 
-### Software Design
+### Design
 
 \index{Software Design}
 Software design involves determining the primary code 
@@ -320,7 +320,7 @@ refers to the organization of a system at a higher level of
 abstraction than the one involving classes or comparable 
 code constructs.
 
-### Software Construction
+### Construction
 
 Construction refers to the implementation phase, otherwise 
 known as coding the system. This involves making crucial 
@@ -332,7 +332,7 @@ documentation, and also selecting the development tools, such as
 compilers, integrated development environments (IDEs), debuggers, 
 database managers, and interface building tools.
 
-### Software Testing 
+### Testing 
 
 Testing involves executing a program with a finite set of cases 
 and checking whether it delivers the expected results. 
@@ -362,9 +362,9 @@ users.
 Two commonly used phrases succinctly distinguish verification 
 and validation:
 
-* **Verification**: Are we correctly implementing the system 
+* Verification: Are we correctly implementing the system 
 according with its requirements?
-* **Validation**: Are we implementing the correct system—the 
+* Validation: Are we implementing the correct system—the 
 one that meets customer or market needs?
 
 For instance, running a method to check its result is a 
@@ -383,11 +383,12 @@ if (condition)
 
 This code has a defect, as the area of a circle should be 
 "pi times radius squared," not cubed. The term *bug* is  
-used informally with the same meaning as we saylure occurs when the defectivecode is executed––for instance, 
-when the `if` condition above is true, and as a result, the 
-program delivers an incorrect result. Consequently, not every 
-defect or bug results in a failure since the defective code 
-might never be executed.
+used informally with the same meaning. A failure occurs when 
+the defective code is executed––for instance, when the `if` 
+condition above is true, and as a result, the program delivers 
+an incorrect result. Consequently, not every defect or bug 
+results in a failure since the defective code might never 
+be executed.
 
 In summary: defective (or buggy) code is the one that fails to 
 conform to its specification. If this code is executed and 
@@ -435,7 +436,7 @@ malfunction and subsequently result in its explosion.
 \end{esmbox}
 ```
 
-### Software Maintenance and Evolution 
+### Maintenance and Evolution 
 
 \index{Software Maintenance}
 Software systems, like traditional engineering systems, require 
@@ -518,7 +519,7 @@ the software's operational environment), and preventive
 \end{esmbox}
 ```
 
-### Software Configuration Management 
+### Configuration Management 
 
 \index{Configuration Management}
 Version control systems, such as Git, are an integral part 
@@ -540,7 +541,7 @@ minor version with small updates, while changes inn *z*
 point to a patch release with only bug fixes. This scheme 
 is often referred to as **semantic versioning**.
 
-### Software Project Management 
+### Project Management 
 
 \index{Project Management}
 \index{Stakeholders}
@@ -593,7 +594,7 @@ Science, akin to a Nobel Prize.
 \end{esmbox}
 ```
 
-### Software Processes 
+### Process 
 
 \index{Software Processes}
 A software process defines the sequence of activities and events 
@@ -663,7 +664,7 @@ If possible, every day, for example. The goal is to avoid
 integration conflicts, which occur when two developers 
 change the same lines of code in parallel. 
 
-### Software Models 
+### Models 
 
 \index{Software Models}
 Software models provide a higher-level representation of a system 
@@ -688,7 +689,7 @@ which can be used, for example, in Forward Engineering scenarios.
 
 ![Example of UML Class Diagram](figs/cap1/uml-intro-en){width=80%}
 
-### Software Quality
+### Quality
 
 \index{Software Quality}
 Quality is a prominent goal in the engineering of products, 
@@ -817,7 +818,7 @@ depend on the code's requirements.
 \end{exmbox}
 ```
 
-### Software Economics
+### Economics
 
 \index{Software Economics}
 Numerous economic factors are interlaced with software development. 
@@ -1085,13 +1086,13 @@ operations?
 
 10\. Give examples of Type C (Casual) systems that you've developed.
 
-11\.  In 2015, it was discovered that millions of cars produced
+11\.  In 2015, it was revealed that millions of cars manufactured 
 by a major automobile company emitted pollutants within legal 
-standards only when the cars were under test in a laboratory. 
-During normal use, the cars emitted more pollutants to 
-improve performance. That is, the code included a decision 
-structure like the following one (merely illustrative, 
-for the purpose of this exercise):
+standards only during laboratory tests. However, under 
+normal usage conditions, the cars released higher levels 
+of pollutants to enhance performance. That is, the code included 
+a decision structure like the following one (merely 
+illustrative, for the purpose of this exercise):
 
 ```
 if "car being tested in a laboratory"

@@ -244,18 +244,18 @@ of the field we now recognize as Software Engineering.</p>
 <p>The SWEBOK defines the following key areas of Software
 Engineering:</p>
 <ol type="1">
-<li>Requirements Engineering</li>
+<li>Software Requirements</li>
 <li>Software Design</li>
 <li>Software Construction</li>
 <li>Software Testing</li>
 <li>Software Maintenance</li>
-<li>Configuration Management</li>
-<li>Project Management</li>
+<li>Software Configuration Management</li>
+<li>Software Project Management</li>
 <li>Software Processes</li>
 <li>Software Models</li>
 <li>Software Quality</li>
-<li>Professional Practice</li>
-<li>Software Economics</li>
+<li>Software Engineering Professional Practice</li>
+<li>Software Engineering Economics</li>
 </ol>
 <p>The report also outlines three additional knowledge areas: Computing
 Foundations, Mathematical Foundations, and Engineering Foundations.
@@ -265,10 +265,9 @@ won’t be featured in this book.</p>
 areas identified above. Our objective is to give an overview of the
 knowledge accumulated over the years in Software Engineering and,
 consequently, shed light on what is studied in this field.</p>
-<h3 data-number="1.2.1" id="requirements-engineering"><span
-class="header-section-number">1.2.1</span> Requirements Engineering <a
-href="#requirements-engineering" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.1" id="requirements"><span
+class="header-section-number">1.2.1</span> Requirements <a
+href="#requirements" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Requirements define <em>what</em> a system should do and
 <em>how</em> it should operate. Thus, Requirements Engineering
 designates the activities carried out to analyze, document, and validate
@@ -304,10 +303,9 @@ handle data for one million banking customers.</li>
 <li>Usability: The application must be accessible for visually impaired
 individuals.</li>
 </ul>
-<h3 data-number="1.2.2" id="software-design"><span
-class="header-section-number">1.2.2</span> Software Design <a
-href="#software-design" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.2" id="design"><span
+class="header-section-number">1.2.2</span> Design <a href="#design"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Software design involves determining the primary code units of a
 software system. However, this process only gets to the level of
 interfaces, which include <strong>provided interfaces</strong> and
@@ -340,10 +338,9 @@ packages or folders, it is called architectural design. Essentially,
 <strong>software architecture</strong> refers to the organization of a
 system at a higher level of abstraction than the one involving classes
 or comparable code constructs.</p>
-<h3 data-number="1.2.3" id="software-construction"><span
-class="header-section-number">1.2.3</span> Software Construction <a
-href="#software-construction" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.3" id="construction"><span
+class="header-section-number">1.2.3</span> Construction <a
+href="#construction" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Construction refers to the implementation phase, otherwise known as
 coding the system. This involves making crucial choices, such as
 deciding on the algorithms and data structures to use, installing and
@@ -352,10 +349,9 @@ handling policies, reaching a consensus on standards for names,
 indentation, and code documentation, and also selecting the development
 tools, such as compilers, integrated development environments (IDEs),
 debuggers, database managers, and interface building tools.</p>
-<h3 data-number="1.2.4" id="software-testing"><span
-class="header-section-number">1.2.4</span> Software Testing <a
-href="#software-testing" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.4" id="testing"><span
+class="header-section-number">1.2.4</span> Testing <a href="#testing"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p>Testing involves executing a program with a finite set of cases and
 checking whether it delivers the expected results. As 1982 Turing Award
 recipient Edsger W. Dijkstra succinctly put it:</p>
@@ -380,10 +376,10 @@ users or due to poor explanations by users.</p>
 <p>Two commonly used phrases succinctly distinguish verification and
 validation:</p>
 <ul>
-<li><strong>Verification</strong>: Are we correctly implementing the
-system according with its requirements?</li>
-<li><strong>Validation</strong>: Are we implementing the correct
-system—the one that meets customer or market needs?</li>
+<li>Verification: Are we correctly implementing the system according
+with its requirements?</li>
+<li>Validation: Are we implementing the correct system—the one that
+meets customer or market needs?</li>
 </ul>
 <p>For instance, running a method to check its result is a verification
 activity, while conducting an acceptance meeting to show the system to
@@ -397,8 +393,8 @@ condition:</p>
     area = pi * radius * radius * radius; </code></pre>
 <p>This code has a defect, as the area of a circle should be <q>pi times
 radius squared,</q> not cubed. The term <em>bug</em> is<br />
-used informally with the same meaning as we saylure occurs when the
-defectivecode is executed––for instance, when the <code>if</code>
+used informally with the same meaning. A failure occurs when the
+defective code is executed––for instance, when the <code>if</code>
 condition above is true, and as a result, the program delivers an
 incorrect result. Consequently, not every defect or bug results in a
 failure since the defective code might never be executed.</p>
@@ -432,10 +428,10 @@ condition required the conversion of a larger real number than the
 largest 16-bit integer could accommodate. This generated an erroneous
 result, causing the rocket’s control system to malfunction and
 subsequently result in its explosion.</p>
-<h3 data-number="1.2.5" id="software-maintenance-and-evolution"><span
-class="header-section-number">1.2.5</span> Software Maintenance and
-Evolution <a href="#software-maintenance-and-evolution"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.5" id="maintenance-and-evolution"><span
+class="header-section-number">1.2.5</span> Maintenance and Evolution <a
+href="#maintenance-and-evolution" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> Software systems, like traditional engineering systems, require
 maintenance. In this book, we categorize the types of maintenance that
 can be performed in software systems into the following categories:
@@ -490,10 +486,10 @@ maintenance activities into four categories: corrective, perfective
 (adding new functionalities), adaptive (changes in the software’s
 operational environment), and preventive (changes aimed at enhancing a
 system’s maintainability).</p>
-<h3 data-number="1.2.6" id="software-configuration-management"><span
-class="header-section-number">1.2.6</span> Software Configuration
-Management <a href="#software-configuration-management"
-class="anchor-link" aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.6" id="configuration-management"><span
+class="header-section-number">1.2.6</span> Configuration Management <a
+href="#configuration-management" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
 <p> Version control systems, such as Git, are an integral part of modern
 software development. These systems store all versions of a software
 project, whether it’s source code, documentation, manuals, web pages, or
@@ -509,9 +505,9 @@ with substantial new features, changes in <em>y</em> denote a minor
 version with small updates, while changes inn <em>z</em> point to a
 patch release with only bug fixes. This scheme is often referred to as
 <strong>semantic versioning</strong>.</p>
-<h3 data-number="1.2.7" id="software-project-management"><span
-class="header-section-number">1.2.7</span> Software Project Management
-<a href="#software-project-management" class="anchor-link"
+<h3 data-number="1.2.7" id="project-management"><span
+class="header-section-number">1.2.7</span> Project Management <a
+href="#project-management" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> Project management plays a relevant role in software development. It
 involves activities ranging from negotiating contracts (which define
@@ -549,10 +545,9 @@ article, <em>No Silver Bullet — Essence and Accidents of Software
 Engineering</em>, originally published in 1987. In 1999, Frederick
 Brooks received the Turing Award, the highest honor in Computer Science,
 akin to a Nobel Prize.</p>
-<h3 data-number="1.2.8" id="software-processes"><span
-class="header-section-number">1.2.8</span> Software Processes <a
-href="#software-processes" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.8" id="process"><span
+class="header-section-number">1.2.8</span> Process <a href="#process"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> A software process defines the sequence of activities and events
 necessary to build and deliver software. Indeed, software construction
 can be compared to the construction of buildings, which follow a
@@ -613,10 +608,9 @@ recommends that developers integrate the code they produce immediately.
 If possible, every day, for example. The goal is to avoid integration
 conflicts, which occur when two developers change the same lines of code
 in parallel.</p>
-<h3 data-number="1.2.9" id="software-models"><span
-class="header-section-number">1.2.9</span> Software Models <a
-href="#software-models" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.9" id="models"><span
+class="header-section-number">1.2.9</span> Models <a href="#models"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Software models provide a higher-level representation of a system
 than its source code, enabling developers to analyze a system’s
 essential properties and characteristics without deep-diving into the
@@ -638,10 +632,9 @@ can be used, for example, in Forward Engineering scenarios.</p>
 alt="Example of UML Class Diagram" />
 <figcaption aria-hidden="true">Example of UML Class Diagram</figcaption>
 </figure>
-<h3 data-number="1.2.10" id="software-quality"><span
-class="header-section-number">1.2.10</span> Software Quality <a
-href="#software-quality" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.10" id="quality"><span
+class="header-section-number">1.2.10</span> Quality <a href="#quality"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Quality is a prominent goal in the engineering of products,
 reflected across various industries such as automobile manufacturing,
 cell phone production, computer companies, and construction. Similarly,
@@ -750,10 +743,9 @@ unethical behavior, to which 57% pointed to the company’s top management
 and 23% felt it was the developers themselves. When asked if they would
 agree to write code with ethical issues, 58% said no, while 37%
 responded that it would depend on the code’s requirements.</p>
-<h3 data-number="1.2.12" id="software-economics"><span
-class="header-section-number">1.2.12</span> Software Economics <a
-href="#software-economics" class="anchor-link"
-aria-hidden="true">🔗</a></h3>
+<h3 data-number="1.2.12" id="economics"><span
+class="header-section-number">1.2.12</span> Economics <a
+href="#economics" class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Numerous economic factors are interlaced with software development.
 For instance, software startups must select their monetization model —
 perhaps a subscription-based or advertisement-supported model. Mobile
@@ -963,12 +955,12 @@ practice, what restriction does it impose on refactoring operations?</p>
 with.</p>
 <p>10. Give examples of Type C (Casual) systems that you’ve
 developed.</p>
-<p>11. In 2015, it was discovered that millions of cars produced by a
+<p>11. In 2015, it was revealed that millions of cars manufactured by a
 major automobile company emitted pollutants within legal standards only
-when the cars were under test in a laboratory. During normal use, the
-cars emitted more pollutants to improve performance. That is, the code
-included a decision structure like the following one (merely
-illustrative, for the purpose of this exercise):</p>
+during laboratory tests. However, under normal usage conditions, the
+cars released higher levels of pollutants to enhance performance. That
+is, the code included a decision structure like the following one
+(merely illustrative, for the purpose of this exercise):</p>
 <pre><code>if &quot;car being tested in a laboratory&quot;
    &quot;comply with emission standards&quot;
 else 
