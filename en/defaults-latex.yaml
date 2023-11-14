@@ -1,0 +1,22 @@
+from: markdown
+to: latex
+   
+pdf-engine: pdflatex
+
+include-in-header: helper/packages.tex
+include-before-body: helper/begin-document.tex 
+
+default-image-extension: ".pdf"
+
+listings: true
+
+top-level-division: chapter
+number-sections: true
+
+variables:
+  documentclass: book
+  fontsize: 11pt
+  classoption: twoside
+  colorlinks: false
+  links-as-notes: true
+

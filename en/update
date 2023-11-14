@@ -1,3 +1,5 @@
+rm esm-book-english.* 
+
 git add *
 git commit -a -m "update english"
 

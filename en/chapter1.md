@@ -610,6 +610,7 @@ construction of software:
 *  Waterfall processes
 *  Agile processes
 
+
 \index{Waterfall}
 Originating in the 70s as software engineering began to gain 
 recognition, Waterfall processes were the first to be proposed. 
@@ -799,7 +800,7 @@ analysis, specification, design, development, testing, and
 maintenance of software a beneficial and respected profession.
 
 ```{=latex}
-\begin{exmbox}
+\begin{esmbox}
 ```
 **Real World Insight:** Stack Overflow holds an annual survey, 
 which in 2018 received responses from over 100,000 developers 
@@ -815,7 +816,7 @@ themselves. When asked if they would agree to write code with
 ethical issues, 58% said no, while 37% responded that it would 
 depend on the code's requirements.
 ```{=latex}
-\end{exmbox}
+\end{esmbox}
 ```
 
 ### Economics
@@ -898,12 +899,12 @@ Sometimes, Type A systems are designed using a formal language
 based on logic or set theory.
 
 ```{=latex}
-\begin{alert}
+\begin{esmbox}
 ```
 **Alert:** In this book, we will not cover Type A (Acute) or 
 mission-critical systems.
 ```{=latex}
-\end{alert}
+\end{esmbox}
 ```
 
 Lastly, we have Business Systems, or Type B systems. 

@@ -1,0 +1,13 @@
+cat chapter1.md > esm-book-english.md
+cat chapter2.md >> esm-book-english.md
+
+pandoc --defaults=defaults-latex.yaml esm-book-english.md -o esm-book-english.tex
+
+pdflatex esm-book-english.tex
+
+# gerador de índice remissivo
+texindy -q -L english -C utf8 esm-book-english.idx
+
+rm esm-book-english.md
+
+

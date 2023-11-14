@@ -1,0 +1,106 @@
+%\usepackage[portuguese]{babel}
+
+%\usepackage[T1]{fontenc}
+%\usepackage{librecaslon}
+
+\usepackage{geometry}
+%\geometry{papersize={7in,9in},bottom=3pc,top=5pc,left=5pc,right=5pc,bmargin=4.5pc,footskip=18pt,headsep=25pt}
+
+% versao do primeiro "boneco" com a meta
+%\geometry{papersize={17cm,24cm},bottom=3pc,top=5pc,inner=2.5cm,outer=1.8cm,bmargin=4.5pc,footskip=18pt,headsep=25pt}
+
+
+\geometry{papersize={17cm,24cm},bottom=2.54cm,top=2.1cm,inner=2.64cm,outer=1.8cm,footskip=30pt,headsep=25pt}
+
+
+\pdfobjcompresslevel=0
+%\widowpenalty = 10000
+
+\usepackage[all]{nowidow}
+
+\usepackage{hyperref}
+% comentado em 24/06/2023
+% Motivo: cor dos links é agora definida em defaults-latex.yaml
+% por meio de parâmetro "colorlinks: false"
+%\hypersetup{  
+%    colorlinks=true,
+%    linkcolor=black,
+%    filecolor=black,      
+%    urlcolor=black,
+%}
+\urlstyle{same}
+
+\setcounter{tocdepth}{1}
+
+%\usepackage{imakeidx}
+
+% texindy: gerador de índices alternativo
+% Não estamos usando o gerador default do latex, porque ele não ordena
+% corretamente palavras acentuadas (ou elas vêm todas antes, no início;
+% ou então vem todas juntas no final)
+\usepackage[texindy]{imakeidx}
+\makeindex[title=Index, intoc]
+
+\usepackage{csquotes}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{backcolor}{gray}{0.95}
+
+\lstdefinestyle{mystyle}{
+   aboveskip=0.25in,
+   language=java,
+   basicstyle=\footnotesize\ttfamily\upshape,
+   commentstyle=\footnotesize\ttfamily\upshape,
+  % keywordstyle=\color{blue},
+   keywordstyle=\color{black},
+   frame=single,
+   xrightmargin=0.1in,
+   xleftmargin=0.1in,
+   showstringspaces=false,
+   extendedchars=true,
+   literate={á}{{\'a}}1 {â}{{\^a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {ú}{{\'u}}1 {ó}{{\'o}}1 {í}{{\'i}}1 {Í}{{\'I}}1 {ê}{{\^e}}1
+}
+\lstset{style=mystyle}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbset{boxrule=0.5pt,
+        width=5in,
+        boxsep=3pt,
+        left=5pt,
+        right=5pt,
+        top=5pt}
+
+\renewenvironment{quote}{\centering \vspace{1.5ex} \begin{tcolorbox}[colback=backcolor, width=4.9in]}{\end{tcolorbox}}
+
+\newenvironment{esmbox}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=backcolor, width=4.9in]}{\end{tcolorbox} \vspace{1.5ex}}
+
+\newenvironment{aviso}{\centering \vspace{1.5ex} \begin{tcolorbox}[breakable, colback=backcolor, width=4.9in]}{\end{tcolorbox} \vspace{1.5ex}}
+
+\usepackage[compact]{titlesec}
+
+% Windows (descomentar as próximas 3 linhas)
+% Motivo: elas criam um espaço antes e depois de cada section e subsection
+% Sem elas, esse espaço no Windows fica muito pequeno
+% Causa do problema: nova versão de parskip introduziu um novo comportamento
+% Veja: https://tex.stackexchange.com/questions/559005/different-outputs-for-documents-built-on-different-texlive-versions
+\titlespacing*{\section}{0pt}{\parskip}{\parskip}
+\titlespacing*{\subsection}{0pt}{\parskip}{\parskip}
+\titlespacing*{\subsubsection}{0pt}{1em}{1em}
+
+% Mac - descomentar as próximas duas linhas
+%\titlespacing*{\section}{0pt}{*0}{0pt}
+%\titlespacing*{\subsection}{0pt}{*0}{0pt}
+
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[!h]
+} {
+    \endorigfigure
+}
+
+\AtBeginDocument{\let\maketitle\relax}
