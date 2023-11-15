@@ -95,8 +95,8 @@ Libraries and frameworks for various purposes are
 available, allowing developers to reuse code without 
 delving into the details of tasks such as implementing graphical 
 interfaces, manipulating data structures, accessing databases, 
-and encrypting messages. Several automated testing techniques can—and 
-should—be deployed to ensure that the produced code works 
+and encrypting messages. Several automated testing techniques can---and 
+should---be deployed to ensure that the produced code works 
 as expected when used by actual customers. Like other engineering 
 products, software also deteriorates over time and therefore 
 require maintenance, not only for bug fixing but also to 
@@ -363,7 +363,7 @@ and validation:
 
 * Verification: Are we correctly implementing the system 
 according with its specification?
-* Validation: Are we implementing the correct system—the 
+* Validation: Are we implementing the correct system---the 
 one that meets customer or market needs?
 
 For instance, running a method to check whether it returns the
@@ -426,7 +426,7 @@ language widely used in military and space software).
 The defective lines were responsible for converting a 64-bit 
 floating-point value to a 16-bit integer. During testing and 
 likely previous Ariane launches, the conversion always 
-succeeded––the real number always fit into an integer. 
+succeeded–-–the real number always fit into an integer. 
 However, on the fatal launch day, a previously untested condition 
 required the conversion of a larger real number than the 
 largest 16-bit integer could accommodate. This generated an 
@@ -585,7 +585,7 @@ The first edition was published in 1975
 ([link](https://dl.acm.org/citation.cfm?id=207583)), 
 with Brooks documenting the lessons learned from his time as 
 an IBM project manager. The 20th-anniversary edition includes 
-a new chapter featuring the article *No Silver Bullet — 
+a new chapter featuring the article *No Silver Bullet --- 
 Essence and Accidents of Software Engineering*,
 originally published in 1987. In 1999, Frederick Brooks 
 received the Turing Award, the highest honor in Computer 
@@ -809,7 +809,7 @@ worldwide. A section of the survey focused on ethical
 considerations 
 ([link](https://insights.stackoverflow.com/survey/2018#ethics)). 
 One question asked if developers felt obligated to consider 
-the ethical implications of the code they create — almost 80% 
+the ethical implications of the code they create---almost 80% 
 responded positively. Another question asked who should 
 hold the responsibility for code that leads to unethical behavior, 
 to which 57% pointed to the company's top management and 23% 
@@ -825,7 +825,7 @@ agree to write code with ethical issues, 58% said no, while
 \index{Software Economics}
 Numerous economic factors are interlaced with software development. 
 For instance, software startups must select their monetization 
-model — perhaps a subscription-based or advertisement-supported 
+model---perhaps a subscription-based or advertisement-supported 
 model. Mobile app developers must decide how much to charge for 
 their apps, a decision that requires understanding their 
 competitors' pricing among other variables. With such complex and
@@ -894,7 +894,7 @@ trains. The software that controlled the Ariane 5 rocket is
 an illustrative sample. Developing these systems requires 
 rigorous processes, including comprehensive code review 
 and external certification. It's common to have hardware 
-and software redundancies — for example, two systems 
+and software redundancies---for example, two systems 
 running in parallel that only make a decision when both agree. 
 Sometimes, Type A systems are designed using a formal language 
 based on logic or set theory.
