@@ -283,3 +283,88 @@ method.
 ```{=latex}
 \end{esmbox}
 ```
+## Extreme Programming
+
+\index{Extreme Programming}
+Extreme Programming (XP) is a lightweight method proposed for 
+developing software with ever-changing or unclear requirements, 
+such as the Type B systems (Business), according to the classification
+described in Chapter 1. As an agile method, XP embodies 
+characteristics like short iterative development cycles, 
+less emphasis on comprehensive documentation, incremental 
+design, and small development teams. 
+
+In other words, XP is not a prescriptive method providing a 
+detailed step-by-step plan for software construction. Instead, 
+XP is defined by a set of **values**, **principles**, and **practices**. 
+This means XP is initially defined abstractly, using values and principles that should be part of the culture and habits of software 
+development teams. Then, these values and principles are materialized 
+into a list of development practices. Often, when deciding to adopt 
+XP, developers and organizations focus on the practices. However, 
+the values and principles are also key components of the method, as 
+they give meaning to the proposed XP practices. To be clear, 
+if an organization is unprepared to embrace the XP mindset—represented 
+by its values and principles—it's also advisable to avoid adopting 
+its practices.
+
+In this chapter, we will first present the values and principles 
+of XP. Here is a list of them:
+
+* **Values**: Communication, simplicity, feedback, courage, 
+respect, and quality of life. 
+
+* **Principles**: Humanity, economics, mutual benefits, 
+continuous improvements, acknowledging failures, baby steps, 
+and personal responsibility.
+
+Next, we will describe the practices. To ease their explanation, 
+we decided to group them into three categories: practices about 
+development process, programming practices, and project management 
+practices. Here is a list of the practices within each group:
+
+* **Development Process Practices**: Customer representative, 
+user stories, iterations, releases, release planning, 
+iteration planning, planning poker, slack.
+
+* **Programming Practices**: Incremental design, pair programming, test-driven development (TDD), automated build, continuous 
+integration.
+
+* **Project Management Practices**: Metrics, working environment, 
+open-scope contracts.
+
+### Values
+
+\index{Extreme Programming!Values}
+XP strongly aligns software development with three core societal values: communication, simplicity, and feedback. Good **communication** fosters learning from mistakes in every project while **simplicity** underlines the existence of simpler subsystems within complex systems. Lastly, **feedback** from stakeholders counterbalances risks like changing requirements and technology alterations. To quote Frederick Brooks:
+
+> "Plan to throw away parts of your system, because you will."
+
+Effective feedback helps identify disposable components or versions early, preventing delays and cost overruns. Additional XP values include **courage**, **respect**, and **quality of life**. 
+
+### Principles
+
+\index{Extreme Programming!Principles}
+While XP's values are abstract, its practices are concrete and pragmatic. To bridge this gap, XP encourages following specific principles. Picture it as a river with values on one side and practices on the other. Principles act as a bridge:
+
+* **Humanity**: Software development primarily draws from human resources rather than physical assets. Successfully managing people—encompassing expectations, growth, motivation, transparency, and responsibility—is critical for project success. 
+ 
+* **Economics**: Software development requires substantial financial investment. Hence, it's not merely an intellectual pursuit; it must deliver economic results. 
+
+* **Mutual Benefits**: XP asserts all decisions should mutually benefit stakeholders. For instance, good working environments benefit software clients and the developing team, and writing tests benefits the initial coder and other developers working on the project.
+
+* **Continuous Improvements**: Constant improvement trumps aiming for perfection in software development. XP encourages routinely refining the system with iteration-by-iteration feedback and does not advocate extensive initial planning. Building time for reflection on practices is essential.
+
+* **Failures Happen**: Accepting failures, such as bugs and feature mismatches, is integral to quick software delivery; XP advises not to punish developers for failures. 
+
+* **Baby Steps**: Secure and validated small progressions are preferable to extensive implementations with high discard potential. 
+
+* **Personal Responsibility**: Developers should clearly comprehend their roles and responsibilities in XP, indicating that the implementer of a requirement, or a *story*, should handle its testing and maintenance as well.
+
+\index{Chrysler}
+```{=latex}
+\begin{esmbox}
+```
+**Real World**: One of the first systems to embrace XP was the Chrysler Comprehensive Compensation (C3), a payroll system for the automaker Chrysler ([link](https://doi.org/10.1109/2.796139)). The project initiated in 1995 but was rebooted the following year by Kent Beck due to a lack of tangible results. Renowned agile community member Martin Fowler served as a consultant. While building the C3 system, many facets of the soon-to-be-named XP method were implemented and experimented with.
+```{=latex}
+\end{esmbox}
+```

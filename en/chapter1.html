@@ -63,7 +63,7 @@
 <div class="row cols-sm-12 col-md-10 col-lg-6">
 <div class="col-md-offset-1 col-lg-offset-3">
 
-<p> <h4>Disclaimer: This chapter is a beta version subjected to copyediting and proofreading. </h4> </p>
+<p> <h4>Disclaimer: This chapter is a beta version subjected to proofreading. </h4> </p>
 <header id="title-block-header">
 <h1 class="title">Software Engineering: A Modern Approach</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -78,13 +78,13 @@ href="#introduction" class="anchor-link" aria-hidden="true">🔗</a></h1>
 tackled in Software Engineering (Section 1.1). We additionally provide
 an overview of the primary subjects investigated in this field of
 Computer Science (Section 1.2). Our goal is to provide a comprehensive
-understanding of the field before diving into specific issues and
-techniques. As Software Engineering is a broad domain, we also discuss
-the types of software systems that can make use of the principles and
-practices presented in this book (Section 1.3). This is done to avoid
-any misconceptions concerning the scope of our work. In conclusion, we
-present the topics addressed in the remaining chapters of the book (see
-Section 1.4).</p>
+understanding of the field before diving into specific topics. As
+Software Engineering is a broad domain, we also discuss the types of
+software systems that can make use of the principles and practices
+presented in this book (Section 1.3). This is done to avoid any
+misconceptions concerning the scope of our work. After that, we present
+the topics addressed in the remaining chapters of the book (see Section
+1.4).</p>
 <h2 data-number="1.1" id="definition-context-and-history"><span
 class="header-section-number">1.1</span> Definition, Context, and
 History <a href="#definition-context-and-history" class="anchor-link"
@@ -100,10 +100,10 @@ including cars, airplanes, satellites, and robots. Furthermore, software
 is revitalizing traditional industries such as telecommunications,
 transportation in large urban centers, and advertising.</p>
 <p>Given the crucial role software plays in our society, it’s
-unsurprising that a field of Computer Science focuses on proposing
-solutions for the development of software systems, particularly large
-and complex ones. This field is known as <strong>Software
-Engineering</strong>.</p>
+unsurprising that there is a field of Computer Science that focuses on
+proposing solutions for the development of software systems,
+particularly large and complex ones. This field is known as
+<strong>Software Engineering</strong>.</p>
 <p>Software Engineering is concerned with the systematic, disciplined,
 and quantifiable approaches to develop, operate, maintain, and evolve
 software systems. As mentioned, this field is central to Computer
@@ -140,13 +140,13 @@ McClure.</figcaption>
 <p>One of the participants of the NATO Conference summarized the
 challenges faced by the new research field:</p>
 <blockquote>
-<p>The basic problem is that certain classes of systems are placing
+<p><em>The basic problem is that certain classes of systems are placing
 demands on us which are beyond our capabilities and our theories and
 methods of design and production at this time. There are many areas
 where there is no such thing as a crisis—sort routines, payroll
 applications, for example. It is large systems that are encountering
 great difficulties. We should not expect the production of such systems
-to be easy.</p>
+to be easy</em>.</p>
 </blockquote>
 <p>More than half a century after the NATO Conference, techniques and
 methods for software construction have improved remarkably. It’s now
@@ -157,11 +157,11 @@ need to reinvent the wheel for every new design problem. Libraries and
 frameworks for various purposes are available, allowing developers to
 reuse code without delving into the details of tasks such as
 implementing graphical interfaces, manipulating data structures,
-accessing databases, and encrypting messages. Several testing techniques
-can—and should—be deployed to ensure that the produced code works as
-expected when used by actual customers. Like other engineering products,
-software also deteriorates over time and therefore require maintenance,
-not only for bug fixing but also to ensure their long-term
+accessing databases, and encrypting messages. Several automated testing
+techniques can—and should—be deployed to ensure that the produced code
+works as expected when used by actual customers. Like other engineering
+products, software also deteriorates over time and therefore require
+maintenance, not only for bug fixing but also to ensure their long-term
 maintainability and comprehension.</p>
 <h3 class="unnumbered" id="no-silver-bullet">No Silver Bullet <a
 href="#no-silver-bullet" class="anchor-link"
@@ -174,17 +174,17 @@ titled <em>No Silver Bullet: Essence and Accident in Software
 Engineering</em> (<a
 href="https://doi.org/10.1109/MC.1987.1663532">link</a>) where he
 highlights the peculiarities of Software Engineering.</p>
-<p>According to Brooks, there are two challenges in software
+<p>According to Brooks, there are two types of difficulties in software
 engineering: <strong>essential difficulties</strong> and
 <strong>accidental difficulties</strong>. Essential ones are intrinsic
 to the field and are unlikely to be solved by any novel technology or
 method.</p>
 <p>Indeed, the term silver bullet, as used in Brooks’s essay title,
 refers to a magical solution to a complex problem. Brooks argued that
-due to the essential difficulties of Software Engineering, we should not
-anticipate the existence of silver bullets in the field. Nonetheless,
-many new software technologies are often marketed as if they were, in
-fact, silver bullets.</p>
+due to the essential difficulties, we should not anticipate the
+existence of silver bullets in the field. Nonetheless, many new software
+technologies are often marketed as if they were, in fact, silver
+bullets.</p>
 <p>Brooks described the following essential difficulties:</p>
 <ol type="1">
 <li><p>Complexity: Of all human-made constructions, software stands out
@@ -194,7 +194,7 @@ increasingly relying on software.</p></li>
 <li><p>Conformity: Software must adapt continuously to its ever-changing
 environment. For instance, changes in tax legislation require prompt
 adaptations by all related software. This level of adaptability is not
-required in other fields like Physics where natural laws do not change
+required in other fields like Physics, where natural laws do not change
 due to human decisions.</p></li>
 <li><p>Changeability: There is constant pressure for software to evolve
 and incorporate new features. In fact, the more successful a software
@@ -211,12 +211,12 @@ to comply with the new legislation. Also, cars, once manufactured, do
 not usually receive new functionalities. Furthermore, a car’s physical
 properties, such as weight, height, width, seats, and geometric shape,
 facilitate valuation by consumers.</p>
-<p>Software development also faces accidental difficulties, which can
-typically be solved by engineers given adequate training and access to
-existing technologies and resources. Examples of such difficulties
-include an IDE that frequently crashes, a compiler that has cryptic
-error messages, a framework missing documentation, or a web application
-with a confusing interface.</p>
+<p>Software development also faces accidental difficulties, but they can
+be solved by engineers given adequate training and access to existing
+technologies and resources. Examples of such difficulties include an IDE
+that frequently crashes, a compiler that has cryptic error messages, a
+framework missing documentation, or a web application with a confusing
+interface.</p>
 <p> </p>
 <p><strong>Real World Insight</strong>: The complexity involved in
 building software systems can be illustrated by considering their size.
@@ -229,10 +229,10 @@ contained over two billion lines of code, distributed across nine
 million files (<a href="https://doi.org/10.1145/2854146">link</a>). At
 that time, Google’s software engineers submitted about 40,000 code
 change requests per day on average.</p>
-<h2 data-number="1.2" id="topics-of-study-in-software-engineering"><span
-class="header-section-number">1.2</span> Topics of Study in Software
-Engineering <a href="#topics-of-study-in-software-engineering"
-class="anchor-link" aria-hidden="true">🔗</a></h2>
+<h2 data-number="1.2" id="topics-of-study"><span
+class="header-section-number">1.2</span> Topics of Study <a
+href="#topics-of-study" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
 <p> To present the topics of study in software engineering, we refer to
 the <em>Guide to the Software Engineering Body of Knowledge</em>, also
 known as the SWEBOK (<a href="http://www.swebok.org">link</a>). This
@@ -274,13 +274,12 @@ designates the activities carried out to analyze, document, and validate
 a system’s requirements.</p>
 <p> Requirements can be <strong>functional</strong> or
 <strong>non-functional</strong>. Functional requirements provide a
-detailed definition of the features or services a system should provide.
-On the other hand, non-functional requirements outline <em>how</em> a
-system should operate, including any constraints and the expected
-quality of service. Examples of non-functional requirements include, but
-are not limited to, performance, availability, fault tolerance,
-security, privacy, interoperability, capacity, maintainability, and
-usability.</p>
+definition of the features or services a system should provide. On the
+other hand, non-functional requirements outline <em>how</em> a system
+should operate, including any constraints and the expected quality of
+service. Examples of non-functional requirements include, but are not
+limited to, performance, availability, fault tolerance, security,
+privacy, interoperability, capacity, maintainability, and usability.</p>
 <p>Let’s consider a banking application as an example. The functional
 requirements of this application may include account balance display,
 statement generation, transfers between accounts, and debit card
@@ -337,7 +336,7 @@ also relies on the <code>Customer</code> class, making the
 packages or folders, it is called architectural design. Essentially,
 <strong>software architecture</strong> refers to the organization of a
 system at a higher level of abstraction than the one involving classes
-or comparable code constructs.</p>
+or comparable code units.</p>
 <h3 data-number="1.2.3" id="construction"><span
 class="header-section-number">1.2.3</span> Construction <a
 href="#construction" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -359,32 +358,33 @@ recipient Edsger W. Dijkstra succinctly put it:</p>
 <p>Software testing can reveal the presence of bugs, but not their
 absence.</p>
 </blockquote>
-<p>There are at least three critical points to address about testing in
-this introductory chapter. First, we should mention that there are many
-types of tests, including <strong>unit tests</strong> (testing small
-code units like a class), <strong>integration tests</strong> (testing
-larger units like a set of classes), <strong>performance tests</strong>
-(checking system performance under specific loads), and
+<p>There are at least three relevant points we would like to address
+about testing in this first chapter. First, we should mention that there
+are many types of tests, including <strong>unit tests</strong> (testing
+small code units like a class), <strong>integration tests</strong>
+(testing larger units like a set of classes), <strong>performance
+tests</strong> (checking system performance under specific loads), and
 <strong>usability tests</strong> (evaluating the system’s user
 interface’s usability).</p>
 <p>Second, testing serves both verification and validation purposes.
 Verification ensures a system conforms to its specifications, while
-validation checks if the system meets customer needs. The two concepts
-are distinct because specifications may at times fail to meet customer
-needs. This might be due to misunderstandings between developers and
-users or due to poor explanations by users.</p>
-<p>Two commonly used phrases succinctly distinguish verification and
+validation checks if the system meets the customer needs. The two
+concepts are distinct because specifications may at times fail to meet
+customer needs. This might be due to misunderstandings between
+developers and users or due to poor explanations by users.</p>
+<p>Two commonly used phrases help to distinguish verification and
 validation:</p>
 <ul>
 <li>Verification: Are we correctly implementing the system according
-with its requirements?</li>
+with its specification?</li>
 <li>Validation: Are we implementing the correct system—the one that
 meets customer or market needs?</li>
 </ul>
-<p>For instance, running a method to check its result is a verification
-activity, while conducting an acceptance meeting to show the system to
-clients is a validation activity.</p>
-<p>It’s also necessary to distinguish between three important
+<p>For instance, running a method to check whether it returns the
+specified result is a verification activity, while conducting an
+acceptance meeting to show the system to customers is a validation
+activity.</p>
+<p>It’s also necessary to distinguish between three<br />
 testing-related terms: <strong>defects</strong>, <strong>bugs</strong>,
 and <strong>failures</strong>. For illustration purposes, take the
 following code that computes the area of a circle depending on a certain
@@ -392,20 +392,21 @@ condition:</p>
 <pre><code>if (condition)
     area = pi * radius * radius * radius; </code></pre>
 <p>This code has a defect, as the area of a circle should be <q>pi times
-radius squared,</q> not cubed. The term <em>bug</em> is<br />
-used informally with the same meaning. A failure occurs when the
-defective code is executed––for instance, when the <code>if</code>
-condition above is true, and as a result, the program delivers an
-incorrect result. Consequently, not every defect or bug results in a
-failure since the defective code might never be executed.</p>
-<p>In summary: defective (or buggy) code is the one that fails to
+radius squared,</q> not cubed. The term <em>bug</em> is used informally
+with the same meaning.</p>
+<p>A failure occurs when the defective code is executed––for instance,
+when the <code>if</code> condition above is true, and as a result, the
+program delivers an incorrect result. Consequently, not every defect or
+bug results in a failure since the defective code might never be
+executed.</p>
+<p>In summary: defective (or buggy) code is the one that does not
 conform to its specification. If this code is executed and yields
 incorrect results, we say that a failure has happened.</p>
 <p><strong>For Further Exploration:</strong> The literature on testing
 sometimes also mention the <strong>error</strong> and
 <strong>fault</strong> terms. These terms carry the same meaning we
-attributed to <em>defect</em>. For instance, the IEEE Standard Glossary
-of Software Engineering Terminology (<a
+attributed to defect. For instance, the IEEE Standard Glossary of
+Software Engineering Terminology (<a
 href="https://doi.org/10.1109/IEEESTD.1990.101064">link</a>) defines a
 fault as an <q>incorrect step, process, or data definition in a computer
 program; the terms error and bug are [also] used to express this
@@ -419,22 +420,22 @@ the rocket exploded due to an unexpected behavior of one of its onboard
 systems. This resulted in a financial loss of approximately half a
 billion dollars. Curiously, the defect that caused the failure was
 confined to a few lines of an ADA function (which is a programming
-language widely used in military and space software development). The
-defective lines were responsible for converting a 64-bit floating-point
-value to a 16-bit integer. During testing and likely previous Ariane
-launches, the conversion always succeeded––the real number always fit
-into an integer. However, on the fatal launch day, a previously untested
-condition required the conversion of a larger real number than the
-largest 16-bit integer could accommodate. This generated an erroneous
-result, causing the rocket’s control system to malfunction and
-subsequently result in its explosion.</p>
+language widely used in military and space software). The defective
+lines were responsible for converting a 64-bit floating-point value to a
+16-bit integer. During testing and likely previous Ariane launches, the
+conversion always succeeded––the real number always fit into an integer.
+However, on the fatal launch day, a previously untested condition
+required the conversion of a larger real number than the largest 16-bit
+integer could accommodate. This generated an erroneous result, causing
+the rocket’s control system to malfunction and subsequently result in
+its explosion.</p>
 <h3 data-number="1.2.5" id="maintenance-and-evolution"><span
 class="header-section-number">1.2.5</span> Maintenance and Evolution <a
 href="#maintenance-and-evolution" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> Software systems, like traditional engineering systems, require
 maintenance. In this book, we categorize the types of maintenance that
-can be performed in software systems into the following categories:
+can be performed in software into the following categories:
 <strong>corrective</strong>, <strong>preventive</strong>,
 <strong>adaptive</strong>, <strong>refactoring</strong>, and
 <strong>evolutionary</strong>.</p>
@@ -448,19 +449,19 @@ maintenance are the actions taken by many companies before the turn of
 the millennium, from 1999 to 2000. At this time, a significant number of
 applications used two digits to represent the year in date values, i.e.,
 dates were in the DD-MM-AA format. This led to concerns that date
-operations in the year 2000 and beyond could produce incorrect results.
-For instance, the calculation 00 - 99 might return an unexpected result.
-To prevent this, companies created special task groups to convert all
-date variables and expressions in their systems to the DD-MM-YYYY
-format, an action that was a prime example of preventive
-maintenance.</p>
+operations in 2000 and beyond could produce incorrect results. For
+instance, the calculation 00 - 99 might return an unexpected result. To
+prevent this, companies created special task groups to convert all date
+variables and expressions in their systems to the DD-MM-YYYY format, an
+action that was therefor a prime example of preventive maintenance.</p>
 <p> Adaptive maintenance aims to adjust a system in response to changes
 in its environment, including technological changes, new legislative
 rules, integration requirements with other systems, or customization
-demands from new users. Examples include:</p>
+demands from new clients. Examples include:</p>
 <ul>
 <li>Updating a system from Python 2.7 to Python 3.0.</li>
-<li>Customizing a system to meet the requirements of a new user.</li>
+<li>Customizing a system to meet the requirements of a new
+customer.</li>
 <li>Modifying a system to comply with changes in legislation or other
 contextual changes.</li>
 </ul>
@@ -469,16 +470,16 @@ behavior but improve its design and ease of maintenance. Refactoring
 operations include renaming a method or variable, breaking a large
 method into smaller ones, or moving a method to a more suitable
 class.</p>
-<p> Finally, Evolutionary Maintenance is performed to add new features
+<p> Finally, evolutionary maintenance is performed to add new features
 to a system or to significantly improve existing features. Its purpose
-is to preserve the system’s value to the customers. Many banking systems
-developed in the 70s and 80s, for instance, have been continually
+is to preserve the system’s value to the customers. For instance, many
+banking systems developed in the 70s and 80s have been continually
 updated and improved, ensuring their ongoing relevance and value.</p>
-<p> <strong>Legacy Systems</strong> are older systems built on outdated
-languages, operating systems, and databases. Despite being obsolete in
+<p> Legacy Systems are older systems built on outdated languages,
+operating systems, and databases. Despite being obsolete in
 technological terms, most legacy systems remain vital due to the
 critical operations they perform.</p>
-<p><strong>For Further Exploration:</strong>: Some alternative
+<p><strong>For Further Exploration:</strong> Some alternative
 classifications for software maintenance can be found in the literature.
 One proposed by Lientz &amp; Swanson in 1978 (<a
 href="https://dl.acm.org/citation.cfm?id=601062">link</a>), organizes
@@ -494,7 +495,7 @@ aria-hidden="true">🔗</a></h3>
 software development. These systems store all versions of a software
 project, whether it’s source code, documentation, manuals, web pages, or
 reports. If a change introduces a critical bug, these systems facilitate
-the easy restoration of a specific previous version.</p>
+the restoration of a specific previous version.</p>
 <p> Configuration management, however, is more than just using a system
 like Git. It also includes the definition of policies to handle system
 versions. For example, a team might decide on an
@@ -502,8 +503,8 @@ versions. For example, a team might decide on an
 library they’re working on, with <em>x</em>, <em>y</em>, and <em>z</em>
 being integers. A change in <em>x</em> indicates a major version launch
 with substantial new features, changes in <em>y</em> denote a minor
-version with small updates, while changes inn <em>z</em> point to a
-patch release with only bug fixes. This scheme is often referred to as
+version with small updates, while changes in <em>z</em> point to a patch
+release with only bug fixes. This scheme is often referred to as
 <strong>semantic versioning</strong>.</p>
 <h3 data-number="1.2.7" id="project-management"><span
 class="header-section-number">1.2.7</span> Project Management <a
@@ -515,12 +516,13 @@ deadlines, prices, schedules, etc.) with clients, human resource
 management (hiring, training, and setting promotion policies and
 remuneration values), to risk management, monitoring competition,
 finance, and marketing. In this context, <strong>stakeholders</strong>
-refer to all entities with a vested interest in the project. This
-includes individuals or organizations that affect or are affected by the
-project, such as developers, project managers, contracted companies,
-supply vendors, and in some cases, government entities.</p>
+is a term that refers to all parts with a vested interest in the
+project. This includes individuals or organizations that affect or are
+affected by the project, such as developers, project managers,
+contracted companies, supply vendors, and in some cases, government
+entities.</p>
 <p> Brooks’ Law, stated by Frederick Brooks, is a well-known adage in
-the are of software projects:</p>
+the are of software project management:</p>
 <blockquote>
 <p>Adding manpower to a late software project makes it later.</p>
 </blockquote>
@@ -541,7 +543,7 @@ Man-Month</em>. The first edition was published in 1975 (<a
 href="https://dl.acm.org/citation.cfm?id=207583">link</a>), with Brooks
 documenting the lessons learned from his time as an IBM project manager.
 The 20th-anniversary edition includes a new chapter featuring the
-article, <em>No Silver Bullet — Essence and Accidents of Software
+article <em>No Silver Bullet — Essence and Accidents of Software
 Engineering</em>, originally published in 1987. In 1999, Frederick
 Brooks received the Turing Award, the highest honor in Computer Science,
 akin to a Nobel Prize.</p>
@@ -550,7 +552,7 @@ class="header-section-number">1.2.8</span> Process <a href="#process"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> A software process defines the sequence of activities and events
 necessary to build and deliver software. Indeed, software construction
-can be compared to the construction of buildings, which follow a
+can be compared to the construction of buildings, which need to follow a
 particular sequence of activities: foundation, masonry, roofing,
 plumbing installations, electrical installations, painting, among
 others.</p>
@@ -570,32 +572,32 @@ standardization issued by the US Department of Defense in 1985. Around
 this period, all software contracted by the Department of Defense had to
 be built using Waterfall.</p>
 <p>Also known as <strong>plan-driven processes</strong>, Waterfall
-processes propose a construction sequence where each stage flows
-sequentially like a waterfall. As illustrated in the next figure, these
-stages are requirement specification, analysis, detailed design, coding,
+proposes a construction sequence where each stage flows sequentially
+like a waterfall. As illustrated in the next figure, these stages are
+requirement specification, analysis, detailed design, implementation,
 and testing. The implemented system is released for production use upon
 the waterfall’s completion.</p>
 <figure>
 <img src="./figs/cap1/waterfall-en.svg" style="width:87.0%"
-alt="Phases of a Waterfall process." />
+alt="Phases of a Waterfall process" />
 <figcaption aria-hidden="true">Phases of a Waterfall
-process.</figcaption>
+process</figcaption>
 </figure>
 <p> However, Waterfall faced severe criticism in the late 90s due to
 frequent project delays and costs overruns. These issues usually happen
-because Waterfall assumes a full requirements gathering phase, a
+because Waterfall requires a full requirements gathering phase, a
 complete design phase, followed by a a full implementation and testing
-phase before validating the system with users. Therefore, users may have
-to wait years to see a piece of software running. By then, the world may
+phase before deploying the system to users. Therefore, users may have to
+wait years to see a piece of software running. By then, the world may
 have changed, as well as the needs of the customers, who no longer need
 the system they demanded years before.</p>
 <p>To address these challenges, a group of 17 software engineers
 proposed an alternative approach, called Agile, at a meeting in Utah,
 United States, in February 2001. They also published a manifesto
-detailing the new approach, which they called the <a
-href="https://agilemanifesto.org/">Agile Manifesto</a>. Contrary to the
-Waterfall approach, Agile recommends building a system incrementally and
-iteratively with immediate validation by users at every stage.</p>
+detailing the new approach, which they called the Agile Manifesto (<a
+href="https://agilemanifesto.org">link</a>). Contrary to the Waterfall
+approach, Agile recommends building a system incrementally and
+iteratively with validation by users at every iteration.</p>
 <p>The concepts behind Agile have significantly impacted the software
 industry and are used today across organizations of many sizes. Various
 methods derived from these principles, such as <strong>XP</strong>,
@@ -614,21 +616,22 @@ class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Software models provide a higher-level representation of a system
 than its source code, enabling developers to analyze a system’s
 essential properties and characteristics without deep-diving into the
-source code details. These models can either be created before the code,
-when they are used to support <strong>Forward Engineering</strong>, or
-they can be created for understanding an existing code base, in which
-case they aid in <strong>Reverse Engineering</strong>.</p>
-<p> Typically, software models use graphical notations - for instance,
+source code details. These models can be created before the code, when
+they are used to support <strong>Forward Engineering</strong>, or they
+can be created for understanding an existing code base, in which case
+they aid in <strong>Reverse Engineering</strong>.</p>
+<p> Typically, software models use graphical notations—for instance,
 <strong>UML</strong> (Unified Modeling Language), a notation featuring
-more than a dozen graphical diagrams to model structural and behavioral
-properties of a software project. The next figure shows a UML diagram —
-called a Class Diagram — for the code used in the section on Software
-Design. In this diagram, the rectangular boxes represent classes,
-including their attributes and methods. Arrows denote relationships
-between classes. There are also editors for creating UML diagrams, which
-can be used, for example, in Forward Engineering scenarios.</p>
+more than a dozen graphical diagrams proposed to model structural and
+behavioral properties of a software project. The next figure shows a UML
+diagram—called a Class Diagram—for the code used in the section on
+Software Design. In this diagram, the rectangular boxes represent
+classes, including their attributes and methods. Arrows denote
+relationships between classes. There are also editors for creating UML
+diagrams, which can be used, for example, in forward engineering
+scenarios.</p>
 <figure>
-<img src="figs/cap1/uml-intro-en.svg" style="width:80.0%"
+<img src="figs/cap1/uml-intro-en.svg" style="width:85.0%"
 alt="Example of UML Class Diagram" />
 <figcaption aria-hidden="true">Example of UML Class Diagram</figcaption>
 </figure>
@@ -636,7 +639,7 @@ alt="Example of UML Class Diagram" />
 class="header-section-number">1.2.10</span> Quality <a href="#quality"
 class="anchor-link" aria-hidden="true">🔗</a></h3>
 <p> Quality is a prominent goal in the engineering of products,
-reflected across various industries such as automobile manufacturing,
+reflected across various industries, such as automobile manufacturing,
 cell phone production, computer companies, and construction. Similarly,
 quality is of utmost importance in software engineering. A
 classification proposed by Bertrand Meyer (<a
@@ -651,9 +654,10 @@ examples of external quality factors (or attributes) are:</p>
 <li>Correctness: Does the software align with its specification and
 perform as expected under normal conditions?</li>
 <li>Robustness: Can the software continue to function appropriately
-during exceptional circumstances, such as communication or disk failure?
-A robust software implementation should not crash due to such events,
-instead, it should alert users about the abnormal operation.</li>
+during exceptional circumstances, such as communication or disk
+failures? A robust software implementation should not crash due to such
+events, instead, it should alert users about the abnormal
+operation.</li>
 <li>Efficiency: Does the software optimally use the available
 computational resources?</li>
 <li>Portability: Is the software adaptable to other platforms and
@@ -681,22 +685,21 @@ example, the number of bugs reported by end-users over a specific
 period.</p>
 <p> There are also practices that support the production of high-quality
 software. Notably, many organizations implement <strong>code
-reviews</strong>, where the code written by one developer is only
-approved for production after another team member reviews and approves
-it. This practice aids in early bug detection (before the system enters
+reviews</strong>, where the code written by one developer only moves to
+production after another team member reviews and approves it. This
+practice aids in early bug detection (before the system enters
 production) and improves the internal quality of the code (i.e., its
 maintainability, readability, modularity, etc.). It also encourages the
 dissemination of good software engineering practices within the
 team.</p>
 <p>The next figure shows an example of code review, referring to an
-example we used in the Software Testing section. When an organization
-uses code reviews, this code has to be reviewed by another developer,
-called the reviewer, before being put into production. In our example,
-the reviewer noticed a bug and reported it in a comment. After that, the
-developer responsible for the code should fix the bug and resubmit the
-new code for review and approval. There are several tools to support
-code review processes. In the example, we used the tool provided by
-GitHub.</p>
+example we used in the Software Testing section. As we can see, this
+code was reviewed by another developer, called the reviewer, before
+being put into production. In the case, the reviewer noticed a bug and
+reported it in a comment. After that, the developer responsible for the
+code should fix the bug and resubmit the new code for review and
+approval. There are several tools to support code review practices. In
+the example, we used the tool provided by GitHub.</p>
 <figure>
 <img src="figs/cap1/github.png" style="width:65.0%"
 alt="Example of code review." />
@@ -723,7 +726,7 @@ algorithms. Scientific societies within the field have formulated codes
 to guide computing professionals in exercising their profession
 ethically. For instance, the ACM’s Code of Ethics (<a
 href="https://www.acm.org/code-of-ethics">link</a>) and the IEEE
-Computer Society’s Code (<a
+Computer Society’s Code of Ethics (<a
 href="https://www.computer.org/education/code-of-ethics">link</a>). The
 latter puts special emphasis on the practice of software engineering,
 asserting that:</p>
@@ -738,11 +741,11 @@ worldwide. A section of the survey focused on ethical considerations (<a
 href="https://insights.stackoverflow.com/survey/2018#ethics">link</a>).
 One question asked if developers felt obligated to consider the ethical
 implications of the code they create — almost 80% responded positively.
-Another asked who should hold the responsibility for code that leads to
-unethical behavior, to which 57% pointed to the company’s top management
-and 23% felt it was the developers themselves. When asked if they would
-agree to write code with ethical issues, 58% said no, while 37%
-responded that it would depend on the code’s requirements.</p>
+Another question asked who should hold the responsibility for code that
+leads to unethical behavior, to which 57% pointed to the company’s top
+management and 23% felt it was the developers themselves. When asked if
+they would agree to write code with ethical issues, 58% said no, while
+37% responded that it would depend on the code’s requirements.</p>
 <h3 data-number="1.2.12" id="economics"><span
 class="header-section-number">1.2.12</span> Economics <a
 href="#economics" class="anchor-link" aria-hidden="true">🔗</a></h3>
@@ -754,17 +757,16 @@ that requires understanding their competitors’ pricing among other
 variables. With such complex and relevant economic considerations, it’s
 no surprise that large software companies nowadays hire economists to
 evaluate these factors related to their products.</p>
-<p>For a practical example, economists frequently discuss the
-opportunity costs of a decision. These costs represent the missed
-opportunities associated with disregarded solutions or choices. If you
-choose decision X over Y, the benefits of Y become your missed
-opportunities. For instance, imagine your company’s main product has a
-list of bugs. Sure, fixing these bugs will satisfy customers and
-potentially prevent churn. However, this decision also has an
-opportunity cost. Instead of bug fixing, the company could invest in new
-features, which could contribute to expand the customer base. Deciding
-between bug fixes or new features ultimately becomes an economic
-decision.</p>
+<p>As a practical example, economists frequently discuss the opportunity
+costs of a decision. These costs represent the missed opportunities
+associated with discarded solutions or choices. If you choose decision X
+over Y, the benefits of Y become your missed opportunities. For
+instance, imagine your company’s main product has a list of bugs. Sure,
+fixing these bugs will satisfy customers and potentially prevent churn.
+However, this decision also has an opportunity cost. Instead of bug
+fixing, the company could invest in new features, which would contribute
+to expand the customer base. Thus, deciding between bug fixes or new
+features ultimately becomes an economic decision.</p>
 <h2 data-number="1.3" id="classification-of-software-systems"><span
 class="header-section-number">1.3</span> Classification of Software
 Systems <a href="#classification-of-software-systems"
@@ -775,26 +777,27 @@ non-functional requirements. As such, it’s important to avoid the
 misconception that there is a single and universal method for software
 development. In other words, we should not assume that all software must
 follow the same processes, design guidelines, architectural patterns, or
-quality assurance mechanisms.</p>
+quality assurance practices.</p>
 <p> Bertrand Meyer proposed a classification (<a
 href="https://bertrandmeyer.com/2013/03/25/the-abc-of-software-engineering/">link</a>)
 that assists in distinguishing between the types of software that can be
-developed and in identifying suitable software engineering practices for
-each one. According to Meyer, there are three primary types of software:
-Acute Systems (A), Business Systems (B), and Casual Systems (C). We
-discuss Casual and Acute systems first, followed by Business
-systems.</p>
+developed and in identifying the most recommended software engineering
+practices for each one. According to Meyer, there are three primary
+types of software: Acute Systems (A), Business Systems (B), and Casual
+Systems (C). We discuss Casual and Acute systems first, followed by
+Business systems.</p>
 <p> Casual systems, or Type C systems, are not under much pressure for
 high-quality performance. They can tolerate minor bugs without
 jeopardizing their operation. As examples, we can mention an academic
 project script, a data migration program for one-time-use, or a system
 to manage a student association’s membership. These systems do not
-necessarily require high internal quality, optimal runtime performance,
-or sophisticated user interfaces. They are typically implemented by a
-single developer and are non-critical and lightweight. As a result, they
-do not benefit from the practices, techniques, and processes discussed
-in this book. In fact, over-engineering is a risk for such systems, as
-there’s no need for advanced techniques.</p>
+necessarily require high internal quality standards, optimal runtime
+performance, or sophisticated user interfaces. They are typically
+implemented by a single developer and are non-critical and lightweight.
+As a result, they do not benefit that much from the practices,
+techniques, and processes discussed in this book. In fact,
+<strong>over-engineering</strong> is a risk for such systems, as there’s
+no need for advanced techniques.</p>
 <p> On the other end of the spectrum, we have Acute systems, or Type A
 systems, where a single failure can have devastating consequences,
 including the loss of human lifes. Notable examples include control
@@ -814,7 +817,7 @@ discussed in this book. They cover a wide array of corporate
 applications (like finance, HR, logistics, sales), various web-based
 systems, software libraries and frameworks, general-purpose applications
 (such as text editors, spreadsheets), and basic software systems (like
-compilers, IDEs). The concepts presented in this book were proposed to
+compilers, IDEs). The practices presented in this book were proposed to
 make the development of Type B systems more productive and to contribute
 to their quality, both internally (for example, resulting in systems
 that are easier to maintain) and externally (producing systems with
@@ -823,8 +826,7 @@ fewer bugs, for example).</p>
 class="header-section-number">1.4</span> Upcoming Chapters <a
 href="#upcoming-chapters" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
-<p>This book has <strong>10 chapters</strong> and <strong>one
-appendix</strong>:</p>
+<p>This book has 10 chapters and one appendix:</p>
 <p><strong>Chapter 2: Processes</strong> focuses on agile development
 processes, specifically XP, Scrum, and Kanban. Our decision to focus on
 agile methods derives from their wide usage in modern software
@@ -835,22 +837,21 @@ the importance and the main types of requirements. Then, we introduce
 two techniques for requirements elicitation and specification: user
 stories for agile methods, and use cases for more traditional and
 documentation-driven methods. The chapter also covers novel topics like
-Minimum Viable Product (MVPs) and A/B Tests, whose importance nowadays
+Minimum Viable Products (MVP) and A/B Tests, whose importance nowadays
 extends beyond startups.</p>
 <p><strong>Chapter 4: Models</strong> focuses on the use of UML to
 create sketches during software development projects. Indeed, UML is no
 longer widely used for creating detailed software models, which was its
-initial goal. Nowadays, companies rarely invest time in creating
-detailed UML diagrams before starting to code. Despite that, we decided
-to cover UML in the book to ensure a basic understanding of its
-diagrams, as software developers often use them as sketches when
-discussing or or documenting design ideas.</p>
+initial goal. Despite that, we decided to cover UML in the book to
+ensure a basic understanding of its diagrams, as software developers
+often use them as sketches when discussing or or documenting design
+ideas.</p>
 <p><strong>Chapter 5: Design Principles</strong>, which covers two
 topics that every software engineer needs to know. They are: (1)
 important properties (or considerations) in software design, including
 conceptual integrity, information hiding, cohesion, and coupling; (2)
 design principles, which are specific recommendations for building
-software projects, such as the SOLID principles.</p>
+software projects, such as the widely commented SOLID principles.</p>
 <p><strong>Chapter 6: Design Patterns</strong> summarizes the main
 design patterns defined in the literature. Essentially, design patterns
 are solutions for common problems faced when designing software systems.
@@ -862,30 +863,31 @@ facilitate comprehension.</p>
 <p><strong>Chapter 7: Architecture</strong> starts with a discussion on
 the importance of software architecture. After that, we present and
 discuss five architectural patterns, including: layered architectures
-(such a 3-tier architectures), MVC (Model-View Controler),
-Microservices, Message Queues, and Publish-Subscribe architectures. To
-conclude, we also present an architectural anti-pattern, called <em>big
-ball of mud</em>, which designates systems with no architectural
-organization at all. These systems might have had some architecture in
-the past, but it was progressively abandoned, turning them into a
-spaghetti of inter-module dependencies.</p>
-<p><strong>Chapter 8: Tests</strong> has emphasis on unit tests, using
-frameworks like JUnit. The chapter includes dozens of unit test examples
-and discusses various aspects of these tests. For instance, we discuss
-good principles for writing unit tests and also test smells, which are
-patterns of tests that are not recommended. Then, we address
-testability, i.e., the importance of designing and writing code that can
-be easily tested. The chapter also includes a section on mocks and
-stubs, which are objects that enable unit testing of code with more
-complex dependencies, such as dependencies on databases and other
-external services. After the discussion on unit tests, we also comment
-on two other types of tests: integration tests and end-to-end tests.
-These tests verify the properties of larger code units, like the classes
-that implement a given service (integration tests) or even all the
-classes in a system (end-to-end test). To conclude, we include a brief
-discussion about other tests, such as black-box tests (or functional
-tests), white-box tests (or structural tests), acceptance tests and
-tests to check non-functional requirements, like performance.</p>
+(such a 3-tier architectures), MVC (Model-View Controller),
+Microservices, Message Queues, and Publish-Subscribe. To conclude, we
+also present an architectural anti-pattern, called <em>big ball of
+mud</em>, which designates systems with no architectural organization at
+all. These systems might have had some architecture in the past, but it
+was progressively abandoned, turning them into a spaghetti of
+inter-module dependencies.</p>
+<p><strong>Chapter 8: Tests</strong> has emphasis on unit tests, which
+are usually implemented using frameworks like JUnit. The chapter
+includes dozens of unit test examples and discusses various aspects of
+these tests. For instance, we discuss good principles for writing unit
+tests and also test smells, which are patterns of tests that are not
+recommended. Then, we address testability, i.e., the importance of
+designing and writing code that can be easily tested. The chapter also
+includes a section on mocks and stubs, which are objects that enable
+unit testing of code with complex dependencies, such as dependencies on
+databases and other external services. After the discussion on unit
+tests, we comment on two other types of tests: integration tests and
+end-to-end tests. These tests verify the properties of larger code
+units, like the classes that implement a given service (integration
+tests) or even all the classes in a system (end-to-end test). To
+conclude, we include a brief discussion about other tests, such as
+black-box tests (or functional tests), white-box tests (or structural
+tests), acceptance tests and tests to check non-functional requirements,
+like performance.</p>
 <p><strong>Chapter 9: Refactoring</strong> presents the main code
 transformations that can be performed to improve the internal quality of
 a software system. The presentation includes several source code
@@ -905,10 +907,10 @@ administrators, database administrators, Site Reliability Engineers
 operate independently. That is, the development team implements the
 system and then <q>throws it over the wall</q> to the operations
 department. To solve this problem, DevOps proposes a constant
-interaction between the Devs and Ops teams, from the early days of
+interaction between Devs and Ops teams, from the early days of
 development. The aim is to reduce the friction involved in the release
 of new features. In addition to an introduction to DevOps, we will study
-some important practices when embracing this culture, including Version
+important practices when embracing this culture, including Version
 Control, Continuous Integration, and Continuous Deployment/Delivery.</p>
 <p><strong>Appendix A: Git</strong> covers the essential Git commands,
 given that version control is an indispensable practice in today’s
@@ -925,11 +927,10 @@ Engineering. Addison-Wesley, anniversary edition, 1995.</p>
 class="anchor-link" aria-hidden="true">🔗</a></h2>
 <p>1. According to Frederick Brooks, software development faces
 essential difficulties (for which there is no silver bullet) and
-accidental ones (for which there is always a solution). Give an example
-of an accidental difficulty you have experienced while implementing
-programs, even small ones. Suggestion: they can be related to tools you
-have used, such as compilers, IDEs, databases, operating systems,
-etc.</p>
+accidental ones (for which there is a solution). Give an example of an
+accidental difficulty you have experienced while implementing programs,
+even small ones. Suggestion: they can be related to tools you have used,
+such as compilers, IDEs, databases, operating systems, etc.</p>
 <p>2. Describe the differences between functional and non-functional
 requirements.</p>
 <p>3. Explain why tests can be considered both a software verification
@@ -939,36 +940,36 @@ And which tests are recommended for validating a software system?</p>
 <p>5. Suppose a program has only one input: a 64-bit integer. Exhaustive
 testing tests a program with all possible inputs (thus, 2^64 integers,
 in our case). If each test requires 1 nanosecond (10^-9 seconds),
-calculate the total time required for exhaustively testing our
+calculate the total time required for exhaustively testing this simple
 program.</p>
 <p>6. Considering the historical context, explain why the first software
-development processes were sequential and based on comprehensive
-planning and documentation.</p>
+development processes were sequential and based on detailed planning and
+documentation.</p>
 <p>7. Several studies show that maintenance and evolution costs
 constitute 80% or more of a software system’s total costs over its
 lifecycle. Explain why this value is so high.</p>
 <p>8. Refactoring is a code transformation that preserves behavior. What
 is the meaning of the expression <em>preserve behavior</em>? In
-practice, what restriction does it impose on refactoring operations?</p>
+practice, what restriction does it impose on refactoring activities?</p>
 <p>9. Give examples of Type A (<em>Acute</em> or critical) and Type B
-(<em>Business</em> or commercial) systems that you’ve interacted
-with.</p>
+(<em>Business</em>) systems that you’ve interacted with.</p>
 <p>10. Give examples of Type C (Casual) systems that you’ve
 developed.</p>
 <p>11. In 2015, it was revealed that millions of cars manufactured by a
 major automobile company emitted pollutants within legal standards only
-during laboratory tests. However, under normal usage conditions, the
-cars released higher levels of pollutants to enhance performance. That
-is, the code included a decision structure like the following one
-(merely illustrative, for the purpose of this exercise):</p>
+during laboratory tests. Under normal usage conditions, the cars
+released higher levels of pollutants to enhance performance. That is,
+the code included a decision structure like the following one (merely
+illustrative, for the purpose of this exercise):</p>
 <pre><code>if &quot;car being tested in a laboratory&quot;
    &quot;comply with emission standards&quot;
 else 
    &quot;exceed emission standards&quot;</code></pre>
 <p>What would you do if your boss asks you to write an <em>if</em> like
-the one above? For more information on this episode, consult this <a
-href="https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal">Wikipedia</a>
-page.</p>
+the one above? For more information on this episode, consult this
+Wikipedia page (<a
+href="https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal">link</a>
+page).</p>
 </div>
 </div>
 </div>

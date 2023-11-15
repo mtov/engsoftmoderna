@@ -63,7 +63,7 @@
 <div class="row cols-sm-12 col-md-10 col-lg-6">
 <div class="col-md-offset-1 col-lg-offset-3">
 
-<p> <h4>Disclaimer: This chapter is a beta version subjected to copyediting and proofreading. </h4> </p>
+<p> <h4>Disclaimer: This chapter is a beta version subjected to proofreading. </h4> </p>
 <header id="title-block-header">
 <h1 class="title">Software Engineering: A Modern Approach</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -77,16 +77,16 @@ is no perfect process. There is no perfect design. There are no perfect
 stories. You can, however, perfect your process, your design, and your
 stories. – Kent Beck</p>
 </blockquote>
-<p> This chapter starts with an exploration of the importance of
-software process (Section 2.1). Next, we discuss general and
-foundational aspects of agile software development process (Section
-2.2), including a discussion into the historical context that motivated
-the emergence of these processes. The next sections focus on three agile
-methods: Extreme Programming (Section 2.3), Scrum (Section 2.4), and
-Kanban (Section 2.5). Following that, we comment on scenarios where
-agile methods might not be the most recommended process (Section 2.6).
-Lastly, in Section 2.7, we briefly present some traditional processes,
-such as the Unified Process.</p>
+<p> This chapter starts with a discussion on the importance of software
+process (Section 2.1). Next, we discuss general and foundational aspects
+of agile software development processes (Section 2.2), including a
+discussion into the historical context that motivated the emergence of
+these processes. The next sections focus on three agile methods: Extreme
+Programming (Section 2.3), Scrum (Section 2.4), and Kanban (Section
+2.5). Following that, we comment on scenarios where agile methods might
+not be the most recommended processes (Section 2.6). Lastly, in Section
+2.7, we briefly present some traditional processes, such as the Unified
+Process.</p>
 <h2 data-number="2.1" id="importance-of-process"><span
 class="header-section-number">2.1</span> Importance of Process <a
 href="#importance-of-process" class="anchor-link"
@@ -97,13 +97,13 @@ initially cut and pressed to shape doors, roofs, and hoods. Next, the
 car is painted and components like the dashboard, seats, seat belts, and
 wiring are installed. Finally, the mechanical parts, including the
 engine, suspension, and brakes, are fitted.</p>
-<p>Analogously, software production follows a <strong>process</strong>,
-although less mechanized and more dependent on intellectual endeavor. A
-software development process defines a series of steps, tasks, events,
-and practices that developers must observe while developing a software
-system.</p>
+<p>Analogously, software production also follows a
+<strong>process</strong>, although less mechanized and more dependent on
+intellectual endeavor. A software development process defines a series
+of steps, tasks, events, and practices that developers must observe
+while developing a software system.</p>
 <p> There are some who critique software processes and question their
-need, often asking: <q>Why must I follow a process?</q> and <q>What
+need, often asking: <q>Why must I follow a process?</q> or <q>What
 process did Linus Torvalds or Donald Knuth used when implementing the
 Linux operating system or the TeX text formatter?</q></p>
 <p>In reality, the second questions above do not apply to our context as
@@ -111,35 +111,35 @@ both Linux (in its initial versions) and TeX were individual projects
 led by a single developer. In such scenarios, following a process is
 less important. Stated in better terms, the process followed in those
 projects was a personal one, reflecting the principles, practices, and
-decisions of a single developer.</p>
+experience of a single developer.</p>
 <p>However, contemporary software systems are too complex to be
-developed by a single person. Thus, systems implemented by solitary
-heroes are increasingly rare. In practice, modern systems — the focus of
-this book — are developed by <strong>teams</strong>.</p>
-<p>These teams require a minimal set of rules to produce quality
-software with efficiency. That’s why software companies invest so much
-in software processes. They serve as instruments for companies to
+developed by a single developer. Thus, systems implemented by solitary
+heroes are increasingly rare nowadays. In practice, modern systems — the
+focus of this book — are developed by <strong>teams</strong>.</p>
+<p>However, these teams require a minimal set of rules to produce
+quality software efficiently. That’s why software companies invest so
+much in software processes. They serve as instruments for companies to
 coordinate, motivate, organize, and evaluate their developers, ensuring
 at the same time productivity and alignment with the organization’s
 goals. Without a process — even a light and simplified one, such as the
 agile methods we will study in this chapter — there is a risk that teams
-will operate in a uncoordinated way, creating products with no business
+will work in a uncoordinated way, creating products with no business
 value. Finally, processes not only benefit the company, but they also
 serve developers by clarifying expected tasks and outcomes, thus
 reducing misalignment among team members.</p>
 <p>In this chapter, we explore various software processes. In fact, in
-Chapter 1, we’ve already presented a first introduction to Waterfall and
+Chapter 1, we already presented a first introduction to Waterfall and
 Agile methods. In the following sections, we will continue this
-discussion and present the details of three well-known Agile
-methods.</p>
+discussion and present three well-known Agile methods.</p>
 <h2 data-number="2.2" id="agile-manifesto"><span
 class="header-section-number">2.2</span> Agile Manifesto <a
 href="#agile-manifesto" class="anchor-link"
 aria-hidden="true">🔗</a></h2>
 <p> The earliest software development process — as the Waterfall
-process, proposed in the 1970s — used a sequential approach. It began
-with a requirement specification phase and ended with the
-implementation, testing, deployment, and maintenance phases.</p>
+process, proposed in the 1970s — followed a sequential approach.
+Usually, projects began with a requirement specification phase and ended
+with the implementation, testing, deployment, and maintenance
+phases.</p>
 <p>Given the historical context, this strictly sequential approach was
 understandable. Traditional engineering projects are<br />
 developed sequentially and are based on detailed and upfront planning.
@@ -150,16 +150,16 @@ others.</p>
 <p>However, by the 80s, the industry began to recognize that software is
 different from other engineering products. The recurrent problems faced
 by software projects at his time reinforced this conclusion. For
-instance, projects routinely overshot schedules and budgets. Some were
-even abandoned after years of effort without delivering a functioning
-system to customers.</p>
+instance, such projects routinely overshot schedules and budgets. Some
+were even abandoned after years of effort without delivering a
+functioning system to customers.</p>
 <p> The CHAOS Report published in 1994 by the Standish Group consulting
-firm offered more details about the state of software projects at the
+firm provided more details about the state of software projects at the
 time. This report (<a
 href="https://www.standishgroup.com/sample_research_files/chaos_report_1994.pdf">link</a>),
-revealed that over 55% of projects surpassed their planned deadlines by
-51% to 200%; and at least 12% exceeded the deadlines by more than 200%,
-as shown in the next figure.</p>
+revealed that over 55% of projects surpassed their<br />
+deadlines by 51% to 200%; and at least 12% exceeded the deadlines by
+more than 200%, as shown in the next figure.</p>
 <figure>
 <img src="figs/cap2/chaos2-en.svg" style="width:90.0%"
 alt="CHAOS Report (1994): percentage of projects exceeding their deadlines (for each range of overrun)." />
@@ -168,7 +168,7 @@ projects exceeding their deadlines (for each range of
 overrun).</figcaption>
 </figure>
 <p>In terms of costs, almost 40% of the studied projects overshot their
-budget by 51% to 200%, as indicated in the following figure:</p>
+budgets by 51% to 200%, as indicated in the following figure:</p>
 <figure>
 <img src="figs/cap2/chaos1-en.svg" style="width:90.0%"
 alt="CHAOS Report (1994): percentage of projects exceeding their budgets (for each range of overrun)." />
@@ -182,15 +182,15 @@ Waterfall-based processes. They argued that, being different from
 traditional engineering products, software requires a distinct
 development process.</p>
 <p>For instance, software requirements change more frequently than those
-of a laptop, airplane, or bridge. Moreover, customers often lack a clear
-understanding of their needs. Thus, there is always a risk of designing
-a product that will be obsolete by the time it’s finished due to
-changing circumstances or distinct customer needs. The group that met at
-Utah also identified issues with the document-centric approach advocated
-by Waterfall. At the time, requirements documents were detailed, heavy,
-and dense, which contributes to making them obsolete very quickly as
-developers would not update the documentation to reflect requirement
-changes.</p>
+of a computer, airplane, or bridge. Moreover, customers often lack a
+clear understanding of their needs. Thus, there is always a risk of
+designing a product that will be obsolete by the time it’s finished due
+to changing circumstances or customer needs. The professionals that met
+at Utah also identified issues with the document-centric approach
+advocated by Waterfall. At the time, requirements documents were
+detailed, heavy, and dense, which contributes to making them obsolete
+very quickly as developers would not update the documentation to reflect
+requirement changes.</p>
 <p>In response, the group proposed a new type of software process, which
 was described in a document they named the <strong>Agile
 Manifesto</strong>. The manifesto reads:</p>
@@ -208,24 +208,24 @@ cycles. Systems are built incrementally, starting with the most relevant
 features, according to customers. Initially, a first version of the
 system is created, which implements only high-priority functionalities.
 This version is then validated by the customer. If approved, a new cycle
-— or <strong>iteration</strong>, or <strong>sprint</strong> — begins,
-adding a few more features as prioritized by the customer. Typically,
-these cycles are short, having two weeks, for example. This allows the
-system to be incrementally built, with each software increment receiving
-explicit approval by the customer. The development ends when all the
-customer’s requests have been implemented.</p>
+— also callled <strong>iteration</strong> or <strong>sprint</strong> —
+begins, adding a few more features as prioritized by the customer.
+Typically, these cycles are short, having two weeks, for example. This
+allows the systems to be incrementally built, with each feature
+increment receiving explicit approval by the customer. The development
+ends when all the customer’s requests have been implemented.</p>
 <p> The following figures present a comparison between Waterfall and
 Agile methods:</p>
 <figure>
 <img src="figs/cap2/waterfall2-en.svg" style="width:90.0%"
-alt="Development using a Waterfall Process. The software is finished only at the end." />
-<figcaption aria-hidden="true">Development using a Waterfall Process.
+alt="Development using a Waterfall process. The software is finished only at the end." />
+<figcaption aria-hidden="true">Development using a Waterfall process.
 The software is finished only at the end.</figcaption>
 </figure>
 <figure>
 <img src="figs/cap2/agile-en.svg" style="width:90.0%"
-alt="Development using an Agile Process. Each iteration (represented by the rectangles) produces a product increment (S++), which is validated and tested by customers." />
-<figcaption aria-hidden="true">Development using an Agile Process. Each
+alt="Development using an Agile process. Each iteration (represented by the rectangles) produces a product increment (S++), which is validated and tested by customers." />
+<figcaption aria-hidden="true">Development using an Agile process. Each
 iteration (represented by the rectangles) produces a product increment
 (S++), which is validated and tested by customers.</figcaption>
 </figure>
@@ -236,9 +236,9 @@ methods aren’t a series of tasks like in Waterfall (more details in the
 following sections). The figure may also suggest that a system must be
 put into production at the end of each iteration. This is also
 incorrect. Indeed, the objective is to deliver a functional system that
-performs useful tasks. However, the decision to launch it involves other
-variables such as business risks, hardware resources availability,
-marketing campaigns, user training, etc.</p>
+performs useful tasks. However, the decision to launch the software
+involves other variables such as business risks, hardware resources
+availability, marketing campaigns, user training, etc.</p>
 <p>Other agile process characteristics include:</p>
 <ul>
 <li><p>Minimal emphasis on documentation: Only vital information should
@@ -246,18 +246,18 @@ be documented.</p></li>
 <li><p>Less emphasis on detailed plans: At the start of a project, often
 neither the customer nor the developers have a clear understanding of
 all requirements that should be implemented. Such understanding
-gradually unfolds as iterations are created and validated. In other
-words, the essence of agile development is to advance even when we have
+gradually unfolds as sprints are finished and validated. In other words,
+the essence of agile development is to advance even when we have
 incomplete, partial, and changing requirements.</p></li>
 <li><p>No dedicated design phase (<em>Big Design Up Front</em>): The
-design of the system is also incremental, evolving on each
+design of the software system is also incremental, evolving on each
 iteration.</p></li>
 <li><p>Small team development: Teams typically comprise about a dozen
 developers or, as Amazon CEO Jeff Bezos phrased it, <q>teams that can be
 fed with two pizzas</q>. We also like to say that the size of agile
 teams varies between the size of a basketball team (5 members) to the
 one of a soccer team (11 members).</p></li>
-<li><p>Emphasis on novel programming practices (in the early 2000s),
+<li><p>Emphasis on novel programming practices (as in the early 2000s),
 such as pair programming, automated testing, refactoring, and continuous
 integration.</p></li>
 </ul>
@@ -265,9 +265,9 @@ integration.</p></li>
 processes</strong>, having few prescriptions and documents.</p>
 <p>However, the characteristics we presented above are still generic and
 broad. Thus, to make agile principles more concrete and actionable,
-several methods. Interestingly, they were all initially proposed before
-the 2001 Agile Manifesto’s meeting.</p>
-<p>In this chapter, we will study three agile methods:</p>
+several methods were proposed. Interestingly, they were all initially
+proposed before the 2001 Agile Manifesto’s meeting. Particularly, in
+this chapter, we will study three agile methods:</p>
 <ul>
 <li><p>Extreme Programming (XP): Kent Beck proposed this method in a
 1999 book (<a
@@ -282,23 +282,24 @@ href="https://hbr.org/1986/01/the-new-new-product-development-game">link</a>).
 Over the past years, Kanban has been gradually adapted for software
 development.</p></li>
 </ul>
+<p>It’s also important to understand that all development methods are
+essentially a set of recommendations. Every organization should analyze
+each one and decide if it’s suitable for their particular context.
+Consequently, organizations might need to adapt any existing method to
+their needs. For this reason, it’s rare to see two organizations that
+follow exactly the same development process. For instance, even if they
+say they’re using Scrum.</p>
 <p><strong>In-Depth</strong>: The terms process and methods are often
 used interchangeably. However, there are also subtle differences between
 them. In our context, a process is a set of steps, events, and tasks
 used to construct software. Every organization employs a process to
-develop its systems, which can be agile, Waterfall, or even chaotic.
-However, a process always exists. On the other hand, a method specifies
-a particular development process (the term originates from Greek,
-meaning <q>the means to achieve a goal</q>). Therefore, XP, Scrum, and
-Kanban are agile methods or, put another way, they outline practices,
-activities, events, and techniques compatible with agile principles.</p>
-<p>It’s also essential to understand that all development methods are
-essentially a set of recommendations. Every organization should analyze
-each one and decide if it’s suitable for their particular context.
-Consequently, organizations might need to adapt any method to their
-needs. For this reason, it’s rare to see two organizations that follow
-exactly the same development process. For instance, even if they say
-they’re using Scrum.</p>
+develop its systems, which can be agile, Waterfall, or even a
+<q>chaotic</q> one. However, a process always exists. On the other hand,
+a method specifies a particular development process (the term originates
+from Greek, meaning <q>the means to achieve a goal</q>). Therefore, XP,
+Scrum, and Kanban are agile methods or, put another way, they define
+practices, activities, events, and techniques compatible with agile
+principles.</p>
 <p></p>
 <p><strong>Real World Insight</strong>: The widespread success and
 impact of agile methods are noteworthy. At present, an overwhelming
@@ -309,9 +310,118 @@ question about the most used development methods (<a
 href="https://insights.stackoverflow.com/survey/2018/#career-values">link</a>).
 Over 57 thousand professional developers responded, and a majority
 identified with agile methods or practices. This includes methodologies
-we will explore in this chapter — such as Scrum (63% responses), Kanban
+we will study in this chapter — such as Scrum (63% responses), Kanban
 (36%), and Extreme Programming (16%). Only 15% of participants answered
 Waterfall as their development method.</p>
+<h2 data-number="2.3" id="extreme-programming"><span
+class="header-section-number">2.3</span> Extreme Programming <a
+href="#extreme-programming" class="anchor-link"
+aria-hidden="true">🔗</a></h2>
+<p> Extreme Programming (XP) is a lightweight method proposed for
+developing software with ever-changing or unclear requirements, such as
+the Type B systems (Business), according to the classification described
+in Chapter 1. As an agile method, XP embodies characteristics like short
+iterative development cycles, less emphasis on comprehensive
+documentation, incremental design, and small development teams.</p>
+<p>In other words, XP is not a prescriptive method providing a detailed
+step-by-step plan for software construction. Instead, XP is defined by a
+set of <strong>values</strong>, <strong>principles</strong>, and
+<strong>practices</strong>. This means XP is initially defined
+abstractly, using values and principles that should be part of the
+culture and habits of software development teams. Then, these values and
+principles are materialized into a list of development practices. Often,
+when deciding to adopt XP, developers and organizations focus on the
+practices. However, the values and principles are also key components of
+the method, as they give meaning to the proposed XP practices. To be
+clear, if an organization is unprepared to embrace the XP
+mindset—represented by its values and principles—it’s also advisable to
+avoid adopting its practices.</p>
+<p>In this chapter, we will first present the values and principles of
+XP. Here is a list of them:</p>
+<ul>
+<li><p><strong>Values</strong>: Communication, simplicity, feedback,
+courage, respect, and quality of life.</p></li>
+<li><p><strong>Principles</strong>: Humanity, economics, mutual
+benefits, continuous improvements, acknowledging failures, baby steps,
+and personal responsibility.</p></li>
+</ul>
+<p>Next, we will describe the practices. To ease their explanation, we
+decided to group them into three categories: practices about development
+process, programming practices, and project management practices. Here
+is a list of the practices within each group:</p>
+<ul>
+<li><p><strong>Development Process Practices</strong>: Customer
+representative, user stories, iterations, releases, release planning,
+iteration planning, planning poker, slack.</p></li>
+<li><p><strong>Programming Practices</strong>: Incremental design, pair
+programming, test-driven development (TDD), automated build, continuous
+integration.</p></li>
+<li><p><strong>Project Management Practices</strong>: Metrics, working
+environment, open-scope contracts.</p></li>
+</ul>
+<h3 data-number="2.3.1" id="values"><span
+class="header-section-number">2.3.1</span> Values <a href="#values"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p> XP strongly aligns software development with three core societal
+values: communication, simplicity, and feedback. Good
+<strong>communication</strong> fosters learning from mistakes in every
+project while <strong>simplicity</strong> underlines the existence of
+simpler subsystems within complex systems. Lastly,
+<strong>feedback</strong> from stakeholders counterbalances risks like
+changing requirements and technology alterations. To quote Frederick
+Brooks:</p>
+<blockquote>
+<p><q>Plan to throw away parts of your system, because you will.</q></p>
+</blockquote>
+<p>Effective feedback helps identify disposable components or versions
+early, preventing delays and cost overruns. Additional XP values include
+<strong>courage</strong>, <strong>respect</strong>, and <strong>quality
+of life</strong>.</p>
+<h3 data-number="2.3.2" id="principles"><span
+class="header-section-number">2.3.2</span> Principles <a
+href="#principles" class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p> While XP’s values are abstract, its practices are concrete and
+pragmatic. To bridge this gap, XP encourages following specific
+principles. Picture it as a river with values on one side and practices
+on the other. Principles act as a bridge:</p>
+<ul>
+<li><p><strong>Humanity</strong>: Software development primarily draws
+from human resources rather than physical assets. Successfully managing
+people—encompassing expectations, growth, motivation, transparency, and
+responsibility—is critical for project success.</p></li>
+<li><p><strong>Economics</strong>: Software development requires
+substantial financial investment. Hence, it’s not merely an intellectual
+pursuit; it must deliver economic results.</p></li>
+<li><p><strong>Mutual Benefits</strong>: XP asserts all decisions should
+mutually benefit stakeholders. For instance, good working environments
+benefit software clients and the developing team, and writing tests
+benefits the initial coder and other developers working on the
+project.</p></li>
+<li><p><strong>Continuous Improvements</strong>: Constant improvement
+trumps aiming for perfection in software development. XP encourages
+routinely refining the system with iteration-by-iteration feedback and
+does not advocate extensive initial planning. Building time for
+reflection on practices is essential.</p></li>
+<li><p><strong>Failures Happen</strong>: Accepting failures, such as
+bugs and feature mismatches, is integral to quick software delivery; XP
+advises not to punish developers for failures.</p></li>
+<li><p><strong>Baby Steps</strong>: Secure and validated small
+progressions are preferable to extensive implementations with high
+discard potential.</p></li>
+<li><p><strong>Personal Responsibility</strong>: Developers should
+clearly comprehend their roles and responsibilities in XP, indicating
+that the implementer of a requirement, or a <em>story</em>, should
+handle its testing and maintenance as well.</p></li>
+</ul>
+<p></p>
+<p><strong>Real World</strong>: One of the first systems to embrace XP
+was the Chrysler Comprehensive Compensation (C3), a payroll system for
+the automaker Chrysler (<a
+href="https://doi.org/10.1109/2.796139">link</a>). The project initiated
+in 1995 but was rebooted the following year by Kent Beck due to a lack
+of tangible results. Renowned agile community member Martin Fowler
+served as a consultant. While building the C3 system, many facets of the
+soon-to-be-named XP method were implemented and experimented with.</p>
 </div>
 </div>
 </div>
