@@ -381,13 +381,13 @@ expectations, growth, motivation, transparency, and
 responsibility---is essential for the success of software 
 projects.
  
-* **Economics**: Software development requires substantial 
+**Economics**: Software development requires substantial 
 financial investment. Hence, it's not merely an intellectual pursuit; 
 it must deliver economic results, particularly in the case of
 Type B (Business) systems, according to the classification we
 studied in Chapter 1. 
 
-* **Mutual Benefits**: XP advocates that decisions taken in a 
+**Mutual Benefits**: XP advocates that decisions taken in a 
 software project should benefit multiple stakeholders. For example, 
 a software company should ensure a good work environment; in return, 
 the team should deliver a system that adds value to its business. 
@@ -400,7 +400,7 @@ the developer who wrote it and for the developer who in the future
 will have to maintain it. The phrase "every deal should be good 
 for both sides" summarizes this third XP principle well.
 
-* **Continuous Improvements**: As expressed in the quote by Kent 
+**Continuous Improvements**: As expressed in the quote by Kent 
 Beck opening this chapter, no software development process is 
 perfect. Therefore, what we should aim is a software system that is 
 under continuous improvement, at each iteration, with feedback from 
@@ -411,7 +411,7 @@ each iteration. Finally, the programming practices themselves
 can be improved; for this, the team should set aside time to 
 discuss and reflect on them.
 
-* **Failures Happen**: Software development is not a risk-free 
+**Failures Happen**: Software development is not a risk-free 
 endeavor. As discussed in Chapter 1, software is one of the most 
 complex human constructions. Thus, failures are expected in software
 projects, including bugs, features that did not attracted users, 
@@ -421,7 +421,7 @@ XP does not advocate covering up these failures. However, they should
 not be used to punish team members. On the contrary, failures are 
 part of the game if a team aims to deliver software quickly.
 
-* **Baby Steps**: A secure, tested, and validated progress, albeit 
+**Baby Steps**: A secure, tested, and validated progress, albeit 
 small, is better than large implementations with risks of being 
 discarded by the users. The same applies to tests (which are useful 
 even when the units under test are small, such as individual methods), 
@@ -433,7 +433,7 @@ direction. Improvements in the form of "baby steps" are better than
 major changes, which usually are risky and may not lead to positive 
 results, at least when it comes to software development.
 
-* **Personal Responsibility** (or accepted responsibility): According 
+**Personal Responsibility** (or accepted responsibility): According 
 to this principle, developers should have a clear idea of their role and responsibility in the team. The reason is that responsibility cannot be transferred without the other party accepting it. For a similar reason,
 XP advocates that the developer who implements a *user story*---i.e., 
 a small feature increment---must also be also the one who will test 
@@ -455,7 +455,7 @@ as a consultant. While building the C3 system, many facets of the soon-to-be-nam
 \end{esmbox}
 ```
 
-### Practices in the Development Process
+### Process Practices
 
 \index{Extreme Programming!Practices}
 \index{Extreme Programming!Customer Representative}
@@ -575,16 +575,17 @@ that each release has two iterations, and that the team's velocity
 is 21 story points per iteration (note that the sum of the story 
 points of each iteration is exactly 21).
 
-  **Story**                               **Story Points**   **Iteration**   **Release**
-  ----------------------------------------- ------------------ -------------- -------------
-  Register user                          8                  1              1
-  Post questions                           5                  1              1
-  Post answers                           3                  1              1
-  Opening screen                          5                  1              1
-  Gamify questions/answers              5                  2              1
-  Search questions/answers              8                  2              1
-  Add tags                             5                  2              1
-  Comment on questions/answers               3                  2              1
+ **Story**                                  **Story Points**   **Iteration**  **Release**
+ ----------------------------------------- ------------------ -------------- -------------
+ Register user                              8                  1              1
+ Post questions                             5                  1              1
+ Post answers                               3                  1              1
+ Opening screen                             5                  1              1
+ Gamify questions/answers                   5                  2              1
+ Search questions/answers                   8                  2              1
+ Add tags                                   5                  2              1
+ Comment on questions/answers               3                  2              1
+
 
 The table emphasizes two points: (1) the stories in XP represent 
 the main features of the intended system; meaning, the system's 
@@ -652,10 +653,10 @@ just explained.
 
 **What is the ideal length of an iteration?** It's hard to say 
 because it depends on the characteristics of the team, the contracting 
-company, the complexity of the system to be developed, etc. 
+company, the complexity of the system under development, etc. 
 Short iterations---for example, of one week---provide quicker feedback. 
-But they require a greater commitment from clients, as a new product 
-increment must be validated every week. Also, they require the stories
+But they require a greater commitment from clients, as a new software 
+increment must be validated every week. Also, they require stories
 to be simpler. On the other hand, longer iterations---for example, one 
 month---allow the team to plan and complete the tasks more calmly. 
 However, it takes a bit longer to receive client feedback, which can 
@@ -669,65 +670,216 @@ At the start of a release, it is up to the customer representative
 to write the stories of the iterations that will be part of that release. 
 Then, at the end of each iteration, the representative validates and 
 approve the implementation of such stories. However, during the 
-iterations, the representative must be physically available to answer 
-the team's questions. Note that a story is a summarized document, 
-so it is natural for doubts to arise during its implementation. 
-Therefore, the customer representative must always be available to 
-meet with developers to answer doubts and explain details about the 
-implementation of stories.
+iterations, the representative must be available to answer the team's 
+questions. Note that a story is has only a few sentences, so it is natural 
+for doubts to arise during its implementation. Therefore, the customer 
+representative must be available to meet with developers to answer 
+doubts and explain details about the stories.
 
 **How to choose the customer representative?** First and foremost, 
 it must be someone who knows the system's domain and who has 
-authority to prioritize user stories. Detailed below are at least
-three profiles for customer representatives:
+authority to prioritize the user stories. There are at least three
+profiles for customer representatives:
 
-* Suppose internal development of a system, i.e., the IT 
-department of company X is developing a system for another 
-department Y, of the same company. In this case, the 
-customer representative can be an employee from department Y.
+* Suppose internal development of a system, i.e., the IT department of a 
+company is developing a system for a department X of the same company. 
+In this case, the customer representative can be an employee from 
+department X.
 
 * Suppose the development team was hired to develop a system 
-for company X. That is, we are discussing outsourced development. 
+for another company X. That is, we are discussing outsourced development. 
 In this case, the customer representative should be an employee 
-of company X, who has a strong knowledge of the system area and 
-who will be one of its main users when it is ready.
+of company X, who has a deep knowledge of the system domain and 
+who will be one of its main users.
 
 * Suppose the development team of company X was assigned to make
 a system for an audience external to the company. For example, 
-a system like the one used in this chapter, similar to Stack 
-Overflow. So the clients are not employees of X, but external 
-customers. In this case, the customer representative should 
-be someone from the company X's marketing, sales, or business 
-areas. A last resort could be the company owner. In any case, 
-the suggestion is that it should be a person close to the 
-problem and as far away from the solution as possible. 
-For this reason, it should avoid being a developer. The type 
-of customer representative mentioned in this item is 
-sometimes referred to as a **user proxy**.
+the Q&A forum application used as example in this chapter. So the 
+clients are not employees of X, but external customers. In this case, 
+the customer representative should be someone from the company X's 
+marketing, sales, or business areas. In other words, it should be a person 
+close to the problem and as far away from the solution as possible. 
+For this reason, it should not be a developer. This type of customer 
+representative is sometimes referred to as a **user proxy**.
 
 \index{Velocity}
 \index{User Stories!Velocity}
 **How to define the team's velocity?** There is no silver bullet for
-this issue. This definition depends on the team's experience and its members. If they have already participated in projects similar to the one
-they are starting, this should certainly be a less difficult question.
+this issue. This definition depends on the team's experience. If the team
+members have already participated in projects similar to the one
+they are starting, this is certainly a less difficult question.
 Otherwise, you have to experiment and calibrate the velocity in the
 following iterations.
 
-**Can stories include software infrastructure installation tasks?** No, stories are specified by the customer representative, who is a layman in Software Engineering. Therefore, he usually does not have knowledge of software infrastructure. However, a story can give rise to a task such as "install and test the database". In summary, stories are associated with functional requirements; to implement them tasks are created, which can be associated with functional requirements, non-functional requirements, or technical tasks, such as the installation of databases, servers, frameworks, etc.
+**Can stories include software infrastructure installation tasks?** 
+No, stories are specified by the customer representative, who is not an 
+expert in Software Engineering. However, a story can give rise to a 
+task such as "install and test the database". In summary, stories refer to
+functional requirements. However, to implement them tasks are required, 
+which can be associated with functional requirements, non-functional 
+requirements, or technical tasks, such as the installation of databases, 
+frameworks, etc.
 
 **Story X depends on Story Y, but the customer representative
 prioritized X before Y. What should I do?** For example, suppose that in the
 system example the customer representative allocated the story
 "Post Question" for iteration 2 and the story "Post Answer"
 for iteration 1. The question then is as follows: Should the team respect
-this allocation? Yes, because the rule is clear: the customer's representative is
-the final authority when it comes to defining the order of story implementation. So, you can ask the following: Can we post
-responses without having the questions? For this, just implement some
-fixed questions that cannot be modified by users. In iteration 1, when the customer opens the system, these questions will
-appear by default, perhaps with a very simple layout, and then the
-customer will be able to use the system only to answer these fixed
-questions.
+this allocation? Yes, because the rule is clear: the customer representative 
+is the final authority when it comes to defining the order of story 
+implementation. So, you can ask the following: How can we post responses without 
+having the questions? For this, you can implement some placeholder questions 
+that cannot be modified by users. In iteration 1, after running the system,
+these questions will appear by default, perhaps with a very simple layout, 
+and then we will be able to only to answer these pre-defined questions.
 
-**When does an XP project end?** When the customer representative
-decides that the already implemented stories are sufficient and that there is
-no more anything of relevance that needs to be implemented.
+**When does an XP project end?** When the customer representative decides 
+that the already implemented stories are sufficient and that there is
+no more relevant stories to be implemented.
+
+### Programming Practices
+
+The name Extreme Programming was chosen because XP proposes a set of innovative 
+programming practices, considering the time they were proposed, at the 
+end of the 90s. In fact, XP is a method that gives great importance to programming 
+practices and production of running code. This importance has to be understood in 
+the context of the 90s, when there was a clear distinction between analysts 
+and programmers roles. Analysts were responsible for designing a system at a 
+high level, defining its main components, classes, and interfaces. For this, 
+they used graphical modeling languages, like UML, as we will study in Chapter 4. 
+Once the analysis and design phase was completed, the coding phase began, 
+under the responsibility of programmers. Thus, in practice, there was a 
+hierarchy in these roles, with the analysts being the most prestigious team members. 
+However, agile methods---and particularly XP---abolished this hierarchy and 
+began to advocate for writing code right at the start of a project.
+
+Indeed, XP did not just abolish the initial design and analysis phases. The method 
+also proposed a new set of programming practices, including pair programming, 
+automated testing, test-driven development (TDD), automated builds, continuous 
+integration, etc. Most of these practices found wide acceptance within the 
+software industry. Nowadays, they are widely used, even by projects that do not
+follow agile methods.
+
+In this section, we will study XP's programming practices.
+
+Let's now look at XP's programming practices. 
+
+\index{Incremental Design}
+\index{Big Design Upfront}
+**Incremental Design.** XP rejects a heavyweight design and analysis phases, 
+famously known as *Big Design Up Front* (BDUF), which is a significant 
+facet of Waterfall-based processes. Of course, time should be allocated 
+for defining the design of the system under development. However, this should 
+be a continuous and incremental activity, rather than concentrated at the 
+beginning of the project, prior to any coding. Simplicity is the XP value 
+that justifies this decision for using an incremental design approach. 
+XP argues that when the design is confined to the beginning of the project, 
+several risks can occur since the requirements are not fully clear to the 
+team, and not even to the clients. For example, requirements may be 
+overvalued or undervalued. Not to mention that new requirements can emerge 
+throughout the project, making the initial design outdated and obsolete.
+
+Therefore, XP argues that the ideal time to think about design is when it 
+becomes important. Two frequently phrases motivate and justify this 
+practice: *do the simplest thing that could possibly work* and 
+*you aren't going to need it*, the latter known by the acronym YAGNI.
+
+Two points are also important for better understanding the proposal for 
+incremental design. First, experienced teams usually already have an 
+design approximation before the first iteration. For example, they might 
+know that the system will have a web interface, with backend components 
+for implementing non-trivial business logic and for accessing a relational
+database. In other words, just this information already conveys much of 
+the design that should be adopted. As a second point, the team can also 
+define a technical task in the first iteration to discuss and refine the 
+design to be adopted in the project.
+
+Last but not least, incremental design is only possible if used along 
+with other XP practices, primarily **refactoring**. XP argues that 
+refactoring must be continuously used to improve the quality of the design. 
+Therefore, every opportunity for refactoring cannot be postponed.
+
+\index{Pair Programming}
+**Pair Programming**. Along with incremental design, pair programming is one 
+of the most controversial practices of XP. Despite the controversy, the 
+idea is simple: every coding task---despite being the implementation of 
+a user story, a test, or fixing a bug---should be performed by two developers 
+working together, sharing the same keyboard and monitor. One of the developers 
+is the **leader** (or *driver*) of the session, managing the keyboard and 
+mouse. The second developer takes on the role of reviewer of the leader's work
+and is often called the **navigator**. The name comes from car rallies in 
+which drivers are accompanied by a navigator.
+
+With pair programming, the goal is to improve the quality of the code and design 
+since "two heads think better than one." Besides this, pair programming 
+contributes to disseminating knowledge about the code, which therefore doesn’t 
+end up in the hands and mind of just one developer. For example, it isn't rare 
+to find systems in which some developers struggle to take a vacation because 
+only they know a critical part of the code. As a third advantage, 
+pair programming can be used to train less experienced developers in 
+programming technologies, algorithms and data structures, design patterns 
+and principles,implementation of tests, debugging techniques, etc.
+
+On the other hand, there are also economic consequences derived from 
+pair programming since two programmers are being allocated to perform 
+a task that, in principle, could be performed by just one. Also, 
+many developers do not feel comfortable with this practice. For them, 
+it is emotionally and cognitively uncomfortable to discuss each line 
+of code and each implementation decision with a colleague. To alleviate 
+this discomfort, XP proposes to switch pairs every session. These sessions
+can last, for example, 50 minutes, followed by a 10-minute break. 
+In the next session, the pairs and roles (leader vs. navigator) are 
+switched. So, if in one session you served as the reviewer, in the next 
+session you become the leader, but with a different developer as 
+the reviewer.
+
+\index{Microsoft Research}
+```{=latex}
+\begin{esmbox}
+```
+**Real World Insight:** In 2008, two researchers from Microsoft Research, 
+Andrew Begel and Nachiappan Nagappan, conducted a survey with 106 
+developers of the company to reveal their perception regarding 
+pair programming 
+([link](https://doi.org/10.1145/1414004.1414026)). 
+Nearly 65% of developers positively answered the first question about 
+whether pair programming is working well for them. When asked about 
+the benefits of pair programming, the answers were as follows: fewer 
+bugs (62%), better code quality (45%), knowledge dissemination 
+(40%), and learning opportunity with peers (40%). On the other hand, 
+the cost associated to the practice was pointed out as the main 
+problem (75%). Regarding the ideal pair characteristics, the most common 
+answer was complementary skills (38%). That is, developers prefer to 
+pair with a person that helps in overcoming their weaknesses.
+```{=latex}
+\end{esmbox}
+```
+
+\index{Code Review}
+More recently, several companies have also adopted the practice of 
+**code review**. The idea is that all code produced by a developer must
+be reviewed and inspected by another developer, but in an asynchronous 
+manner. Thus, in these cases, the reviewer will not be physically next 
+to the leader.
+
+\index{Collective Code Ownership}
+**Collective Code Ownership**. The idea is that any developer---or pair 
+of developers working together---can modify any part of the code, 
+whether to implement a new feature, fix a bug, or apply a refactoring. 
+For example, if you discover a bug in some part of the code, go ahead 
+and fix it. For that, you do not need permission from whoever implemented 
+that code or from whoever carried out the last maintenance on it.
+
+\index{Software Testing}
+**Automated Testing**. This is one of the programming practices advocated
+by XP that reached the greatest success. The rationale is that manual 
+testing---a tester running the program, providing inputs and checking the 
+outputs produced---is a costly procedure that cannot be reproduced at 
+every moment. Therefore, XP proposes the implementation of 
+programs---called tests---that call small units of a system, such as methods, 
+and verify if the outputs produced are the ones expected. This practice 
+thrived because, around the same time it was proposed, the first unit 
+testing frameworks were created---such as JUnit, whose first version, 
+implemented by Kent Beck and Erich Gamma, is from 1997. We will not 
+extend the discussion about automated tests here because we have a 
+whole chapter dedicated to this topic (Chapter 8).
