@@ -3,4 +3,4 @@ pandoc_bin="pandoc --defaults=defaults.yaml --lua-filter=../helper/anchor-links.
 
 $pandoc_bin --number-offset=0 -T "Chapter 1: Introduction" chapter1.md -o chapter1.html
 
-$pandoc_bin --number-offset=1 -T "Chapter 2: Processes" chapter2.md -o chapter2.html
+$pandoc_bin --number-offset=1 -T "Chapter 2: Process" chapter2.md -o chapter2.html

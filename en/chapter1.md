@@ -397,7 +397,7 @@ yields incorrect results, we say that a failure has happened.
 ```{=latex}
 \begin{esmbox}
 ```
-**For Further Exploration:** The literature on testing sometimes 
+**In-Depth:** The literature on testing sometimes 
 also mention the **error** and **fault** terms. These terms 
 carry the same meaning we attributed to defect. For instance, the 
 IEEE Standard Glossary of Software Engineering Terminology 
@@ -507,7 +507,7 @@ vital due to the critical operations they perform.
 ```{=latex}
 \begin{esmbox}
 ```
-**For Further Exploration:** Some alternative classifications 
+**In-Depth:** Some alternative classifications 
 for software maintenance can be found in the literature. 
 One proposed by Lientz & Swanson in 1978 
 ([link](https://dl.acm.org/citation.cfm?id=601062)), 
@@ -579,7 +579,7 @@ of at most a dozen engineers.
 ```{=latex}
 \begin{esmbox}
 ```
-**For Further Exploration:** Brooks' Law is drawn from a classic 
+**In-Depth:** Brooks' Law is drawn from a classic 
 software project management book, *The Mythical Man-Month*. 
 The first edition was published in 1975 
 ([link](https://dl.acm.org/citation.cfm?id=207583)), 
