@@ -728,7 +728,7 @@ no more relevant stories to be implemented.
 
 The name Extreme Programming was chosen because XP proposes a set of innovative 
 programming practices, considering the time they were proposed, at the 
-end of the 90s. In fact, XP is a method that gives great importance to programming 
+end of the 90s. In fact, XP is a method that gives importance to programming 
 practices and production of running code. This importance has to be understood in 
 the context of the 90s, when there was a clear distinction between analysts 
 and programmers roles. Analysts were responsible for designing a system at a 
@@ -736,52 +736,46 @@ high level, defining its main components, classes, and interfaces. For this,
 they used graphical modeling languages, like UML, as we will study in Chapter 4. 
 Once the analysis and design phase was completed, the coding phase began, 
 under the responsibility of programmers. Thus, in practice, there was a 
-hierarchy in these roles, with the analysts being the most prestigious team members. 
+hierarchy in these roles, with the analysts being the most prestigious members. 
 However, agile methods---and particularly XP---abolished this hierarchy and 
 began to advocate for writing code right at the start of a project.
 
-Indeed, XP did not just abolish the initial design and analysis phases. The method 
-also proposed a new set of programming practices, including pair programming, 
+At the same time, and to mitigate the risk of producing bad quality code, 
+XP proposed a new set of programming practices, including pair programming, 
 automated testing, test-driven development (TDD), automated builds, continuous 
 integration, etc. Most of these practices found wide acceptance within the 
 software industry. Nowadays, they are widely used, even by projects that do not
-follow agile methods.
-
-In this section, we will study XP's programming practices.
+completely follow agile principles.
 
 Let's now look at XP's programming practices. 
 
 \index{Incremental Design}
 \index{Big Design Upfront}
-**Incremental Design.** XP rejects a heavyweight design and analysis phases, 
-famously known as *Big Design Up Front* (BDUF), which is a significant 
-facet of Waterfall-based processes. Of course, time should be allocated 
-for defining the design of the system under development. However, this should 
-be a continuous and incremental activity, rather than concentrated at the 
-beginning of the project, prior to any coding. Simplicity is the XP value 
-that justifies this decision for using an incremental design approach. 
-XP argues that when the design is confined to the beginning of the project, 
-several risks can occur since the requirements are not fully clear to the 
-team, and not even to the clients. For example, requirements may be 
+**Incremental Design.** XP projects do not have a heavyweight design phase, 
+famously known as *Big Design Up Front* (BDUF). Instead, XP advocates 
+that design should be a continuous and incremental activity. The reason is 
+that confining design in the beginning of the project may lead to several 
+problems. For example, when a project starts, requirements are usually  
+unclear to the team, and even to the clients. As a result, they may be 
 overvalued or undervalued. Not to mention that new requirements can emerge 
-throughout the project, making the initial design outdated and obsolete.
+throughout the project, making the initial design obsolete.
 
 Therefore, XP argues that the ideal time to think about design is when it 
 becomes important. Two frequently phrases motivate and justify this 
 practice: *do the simplest thing that could possibly work* and 
 *you aren't going to need it*, the latter known by the acronym YAGNI.
 
-Two points are also important for better understanding the proposal for 
-incremental design. First, experienced teams usually already have an 
-design approximation before the first iteration. For example, they might 
+Two points are also important for a better understanding of the incremental 
+design practice. First, experienced teams usually have a design approximation 
+in mind before the first iteration. For example, they might 
 know that the system will have a web interface, with backend components 
 for implementing non-trivial business logic and for accessing a relational
-database. In other words, just this information already conveys much of 
-the design that should be adopted. As a second point, the team can also 
-define a technical task in the first iteration to discuss and refine the 
-design to be adopted in the project.
+database. This, this approximation already conveys much of the design 
+the system should follow. As a second point, the team can also 
+define a technical task in the first iteration to discuss and 
+refine the system's design.
 
-Last but not least, incremental design is only possible if used along 
+Last but not least, incremental design is only possible if used  
 with other XP practices, primarily **refactoring**. XP argues that 
 refactoring must be continuously used to improve the quality of the design. 
 Therefore, every opportunity for refactoring cannot be postponed.
@@ -789,25 +783,25 @@ Therefore, every opportunity for refactoring cannot be postponed.
 \index{Pair Programming}
 **Pair Programming**. Along with incremental design, pair programming is one 
 of the most controversial practices of XP. Despite the controversy, the 
-idea is simple: every coding task---despite being the implementation of 
-a user story, a test, or fixing a bug---should be performed by two developers 
+idea is simple: every coding task---such as the implementation of 
+a user story, a test, or a bug fix---should be performed by two developers 
 working together, sharing the same keyboard and monitor. One of the developers 
-is the **leader** (or *driver*) of the session, managing the keyboard and 
+is the **leader** (or driver) of the session, managing the keyboard and 
 mouse. The second developer takes on the role of reviewer of the leader's work
-and is often called the **navigator**. The name comes from car rallies in 
+and is often called the **navigator**. This name comes from car rallies in 
 which drivers are accompanied by a navigator.
 
 With pair programming, the goal is to improve the quality of the code and design 
-since "two heads think better than one." Besides this, pair programming 
+since "two heads think better than one." Besides, pair programming 
 contributes to disseminating knowledge about the code, which therefore doesn’t 
 end up in the hands and mind of just one developer. For example, it isn't rare 
 to find systems in which some developers struggle to take a vacation because 
-only they know a critical part of the code. As a third advantage, 
+only they can maintain a critical part of the code. As a third advantage, 
 pair programming can be used to train less experienced developers in 
 programming technologies, algorithms and data structures, design patterns 
 and principles,implementation of tests, debugging techniques, etc.
 
-On the other hand, there are also economic consequences derived from 
+On the other hand, there are economic consequences derived from 
 pair programming since two programmers are being allocated to perform 
 a task that, in principle, could be performed by just one. Also, 
 many developers do not feel comfortable with this practice. For them, 
@@ -830,7 +824,7 @@ developers of the company to reveal their perception regarding
 pair programming 
 ([link](https://doi.org/10.1145/1414004.1414026)). 
 Nearly 65% of developers positively answered the first question about 
-whether pair programming is working well for them. When asked about 
+whether pair programming works well for them. When asked about 
 the benefits of pair programming, the answers were as follows: fewer 
 bugs (62%), better code quality (45%), knowledge dissemination 
 (40%), and learning opportunity with peers (40%). On the other hand, 
@@ -843,10 +837,10 @@ pair with a person that helps in overcoming their weaknesses.
 ```
 
 \index{Code Review}
-More recently, several companies have also adopted the practice of 
-**code review**. The idea is that all code produced by a developer must
+More recently, several companies are adopting the practice of 
+**code review**. The idea is that the code produced by a developer must
 be reviewed and inspected by another developer, but in an asynchronous 
-manner. Thus, in these cases, the reviewer will not be physically next 
+manner. Thus, in these cases, the reviewer is not physically next 
 to the leader.
 
 \index{Collective Code Ownership}
