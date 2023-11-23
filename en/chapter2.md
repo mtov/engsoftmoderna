@@ -643,54 +643,53 @@ downtime from the demanding and intense project pace.
 #### Frequently Asked Questions {.unnumbered}
 
 Now let's answer some questions about the XP practices we have 
-just explained.
+just studied.
 
 **How long should an iteration be?** There isn't a definitive answer as 
-numerous factors such as team characteristics, company policies, and 
-system requirements all play a part. Short iterations---typically a week 
-long---offer quick feedback. However, they also require greater client 
-involvement as new software increments need weekly validation and 
-stories must be simple and straightforward. Conversely, longer 
-iterations---like a month---grant the team more time to plan and execute 
-tasks with less pressure. The trade-off here is delays in receiving 
-essential client feedback, which is particularly crucial when requirements 
-are ambiguous. As a result, a 2-3 week time box could provide a balance 
-between rapid feedback and less pressure on the team. Another useful 
-approach is experimentation, meaning manually testing and evaluating 
-different durations before settling on one.
+numerous factors such as team characteristics, system domain, and 
+requirements all play a part. Short iterations---typically a week 
+long---offer quick feedback. However, they also require more client 
+involvement as new software increments need weekly validation. 
+Moreover, stories must be simple and straightforward to fit in a
+1-week iteration. Conversely, longer iterations---like a month---grant 
+the team more time to plan and execute tasks with less pressure. The 
+trade-off here is delays in receiving client feedback, which is 
+particularly relevant when the requirements are unclear. As a result, 
+a 2-3 week time box tends to provide a balance between rapid feedback 
+and less pressure on the team. Another useful recommendation is 
+to experiment, meaning testing and evaluating different durations 
+before settling on one.
 
-**What role does the customer representative does during iterations?**
+**What role does the customer representative play during iterations?**
 At the beginning of a release, the customer representative drafts 
 the stories to be included in that release. They then validate 
 and approve the implementation of these stories at the end of each 
 iteration. The representative also needs to be readily available 
-during iterations to address any questions the team may have. 
-Given that a story contains only a few sentences, questions or 
-doubts about their implementation might naturally arise. 
-Therefore, the customer representative must be prepared to meet 
-with developers to discuss and clarify aspects of the stories.
+during iterations to address questions the team may have. Given 
+that user stories contain only a few sentences, these questions 
+might naturally arise. 
 
 **How do we select the customer representative?**
-The most important criteria are that the person has a 
-solid understanding of the system's domain and the authority to 
+The most important criteria are that the person has a solid 
+understanding of the system's domain and authority to 
 prioritize user stories. There are at least three potential 
 scenarios for customer representatives:
 
 * Consider a team developing a system for a department within 
 their own company. In this scenario, the customer representative 
-might be an employee from that department.
+might be an employee from that client department.
 
 * Consider a team developing a system for a different company. 
 Here, the customer representative should ideally be an employee 
-from the other company who possesses significant knowledge of 
-the software domain.
+from that client company who has knowledge of the software 
+domain.
 
-* Consider a team creating a marketable product for any client. 
-The customer representative in this instance should be someone from 
+* Consider a team creating a product for any client. 
+The customer representative in this case should be someone from 
 the marketing, sales or business sectors. Meaning, they should be 
 closely aligned with the problem but distant from the solution. 
-It's preferable not to have a developer in this role. This type of 
-representative is often designated as a **user proxy**.
+For this reason, it's preferable not having a developer in this 
+role. This type of representative is often called a **user proxy**.
 
 \index{Velocity}
 \index{User Stories!Velocity}
@@ -698,59 +697,59 @@ representative is often designated as a **user proxy**.
 this issue. This definition depends on the team's experience. If the team
 members have already participated in projects similar to the one they 
 are starting, this is a less difficult question. Otherwise, the team 
-will need to test and calibrate their velocity throughout 
-successive iterations.
+will need to test and calibrate their velocity throughout successive 
+iterations.
 
-**Can stories incorporate tasks related to software infrastructure 
-installation?** No, as the customer representative---being a non-software 
-engineering expert---defines the stories. However, a story could trigger 
-the necessity for a task like "install and test the database". In essence, 
-stories refer to functional requirements. On the other hand, tasks created 
-for implementing these stories might relate to functional requirements, 
-non-functional requirements or technical tasks such as database or 
-framework installation.
+**Can stories refer to software engineering activities?** No, as the 
+customer representative---who is a non-software engineering expert---is 
+the one responsible for defining the stories. However, a story could 
+trigger the necessity for a task like "install and test the database". 
+In essence, stories refer to functional requirements. On the other 
+hand, the tasks created for implementing these stories might 
+relate to functional requirements, non-functional requirements 
+or technical tasks such as database or framework installation.
 
 **What if story X is prioritized before Y, despite depending on Y?** 
 For instance, the customer representative has allocated the story 
 "Post Question" to iteration 2 and "Post Answer" to iteration 1. 
 Although it seems contradictory, the team should respect this order as 
-the final decision lies with the customer representative. The dilemma 
-might be "how can we post responses without having the questions?" 
-To resolve this, placeholder questions that can't be edited by users 
-could be used. In iteration 1, these placeholder questions will appear 
-by default and users will be able to respond to them.
+the final decision always lies with the customer representative. 
+But then the dilemma might be "how can we post responses without 
+having the questions?" To resolve this problem, placeholder questions 
+that can't be edited by users can be used. In iteration 1, these 
+questions will appear by default and users will be able to respond to them.
 
 **When does an XP project conclude?** The project ends when the customer 
-representative decides the implemented stories to be adequate and 
-that there are no more relevant stories to be implemented.
+representative decides the already implemented stories to be adequate 
+and that there are no more relevant stories to be implemented.
 
 
 ### Programming Practices
 
 The name Extreme Programming was chosen due to the novel programming 
-practices it proposed at the end of the 90’s. 
+practices the method proposed at the end of the 90’s. 
 The essence of XP revolves around its emphasis on many programming 
 practices and on the production of running code since the first
-weeks of a project. The importance of this can be better understood 
+weeks of a project. The importance of this fact can be better understood 
 within the context of the 90's where distinct roles for analysts and 
 programmers were the norm. Analysts at that time were responsible for 
 designing the high-level system, defining its main components, classes, 
 and interfaces using graphical modeling languages, like UML, 
-which is discussed in Chapter 4. Only upon completion of the analysis 
-and design phase, the coding phase would start under the responsibility
+which we will discuss in Chapter 4. Only upon completion of the analysis 
+and design phases, the coding phase would start under the responsibility
 of programmers. This setup inherently created a hierarchy, with 
-analysts often regarded as the more prestigious roles. However, 
+analysts often being regarded as the more prestigious roles. However, 
 with the introduction of agile methodologies---particularly XP---this 
-hierarchy was dismantled, since XP advocates for coding to begin 
+hierarchy was dismantled, since XP advocates for starting coding  
 at a project's outset.
 
 Simultaneously, to counteract the risk of low-quality code production, 
 XP introduced a novel set of programming practices. These practices 
 included pair programming, automated testing, test-driven 
-development (TDD), automated builds, and continual integration, 
+development (TDD), automated builds, and continuous integration, 
 among others. Most of these practices have been widely accepted 
-within the software industry, and are extensively used even by 
-projects not entirely adhering to agile principles.
+within the software industry, and are extensively used nowadays even 
+by projects not entirely adhering to agile principles.
 
 Let's now look at XP's programming practices. 
 
@@ -758,51 +757,52 @@ Let's now look at XP's programming practices.
 \index{Big Design Upfront}
 **Incremental Design.** XP projects do not have a traditional design phase, 
 known as *Big Design Up Front* (BDUF). Instead, XP promotes the idea 
-of making design a persistent and incremental activity. This approach 
+of making design a continuous and incremental activity. This approach 
 aims to address issues that arise when an entire design activity
 is confined to the beginning of a project. This is a stage where the 
-project's requirements can be unclear both to the team and to the 
+project's requirements tend to be unclear both to the team and to the 
 clients, leading to overestimating or underestimating their value. 
 Moreover, new requirements may come up as the project progresses, 
 making the initially intended design obsolete.
 
-XP contends that the best time to contemplate the design is when it 
-becomes crucial. Two key phrases often used to encourage and justify 
-this practice are: *Do the simplest thing that could possibly work* 
-and *you aren't going to need it*, the latter known by the 
-acronym YAGNI.
+For this reason, XP contends that the best time to contemplate the 
+design is when it becomes crucial. Two key phrases often used to 
+encourage and justify this practice are: *Do the simplest thing that 
+could possibly work* and *you aren't going to need it*, the latter 
+known by the acronym YAGNI.
 
-For a deeper understanding of the incremental design approach, 
-two points need to be highlighted. Firstly, proficient teams often 
-have a design in mind before the first iteration. This might include 
-knowing that the system will have a web interface, backend components 
-for implementing complex business logic and for accessing a relational 
-database. These decisions cover the majority of the system's design
-concerns. Secondly, the team can also allocate a technical task to discuss 
-and refine the system's design during the first iteration.
+For a better understanding of the incremental design approach proposed
+by XP, two points need to be highlighted. Firstly, proficient teams 
+often already have a design in mind before the first iteration. This 
+might include knowing that the system will have a web interface, a
+set of backend components for implementing complex business logic and 
+also components for accessing a relational database. These 
+decisions, by themselves, cover and solve major system's design
+concerns. Secondly, at any iteration, the team can also allocate a 
+technical task to discuss and refine the system's design.
 
 Finally, it's crucial to note that the concept of incremental design 
 is viable only when used in conjunction with other XP practices, 
-especially **refactoring**. XP insists on continuous refactoring 
+especially **refactoring**. XP insists on the importance of refactoring 
 to enhance the design's quality. Hence, every opportunity to refactor 
-should put in practice without delay.
+should put be in practice without delay.
 
 \index{Pair Programming}
 **Pair Programming**. Accompanied by incremental design, pair programming 
-stands out as one of the more controversial practices of Extreme 
+stands out as one of the most controversial practices proposed by Extreme 
 Programming. The concept is straightforward: every coding task, whether 
-it's implementing a user story, testing, or fixing a bug, should be conducted 
-by two developers simultaneously, using the same keyboard and monitor. 
-One developer takes on the role of **driver**, controlling the keyboard 
-and mouse, while the other acts as a **navigator** or reviewer. 
-The navigator monitors the driver's code, providing feedback and 
-direction, similar to a car rally team.
+it's implementing a user story, implementing a testing, or fixing a bug, 
+should be conducted by two developers working together, using the same 
+keyboard and monitor. One developer takes on the role of **driver**, 
+controlling the keyboard and mouse, while the other acts as a **navigator** 
+or reviewer. The navigator monitors the driver's code, providing feedback 
+and direction, similar to a car rally team.
 
 Pair programming aims to enhance code quality and internal design, 
 guided by the principle that "two heads are better than one." It also 
 aids in spreading code knowledge within a team, preventing knowledge silos 
 where only one developer understands a specific part of the code. 
-This practice also provides a valuable training tool for less 
+The practice also provides a valuable training tool for less 
 experienced developers, offering exposure to various programming 
 technologies, algorithms, data structures, design patterns, 
 and principles, testing and debugging techniques, etc.
@@ -811,7 +811,7 @@ However, employing two developers per task has economic implications,
 as usually commented by pair programming critics. Also, for
 some developers it is emotionally and cognitively uncomfortable to 
 discuss each line of code and each implementation decision with 
-a colleague. To mitigate this, in XP, it is recommended to rotate pairs 
+a colleague. To mitigate this, XP recommends to rotate pairs 
 at every session. These sessions are typically 50 minutes long, followed 
 by a 10-minute break. In the following session, both pairs and roles 
 (driver vs. navigator) switch.
@@ -836,7 +836,7 @@ for their weaknesses.
 ```
 
 \index{Code Review}
-In recent times, many companies embraced the practice of 
+In recent times, many software companies embraced the practice of 
 **code review**. In this case, another developer checks a developer's 
 code asynchronously, avoiding the need for two developers working
 at the same time on the same code.
@@ -851,15 +851,15 @@ maintained it.
 \index{Software Testing}
 **Automated Testing**. This is one of the programming practices advocated
 by XP that reached the greatest success. The rationale is that manual 
-testing---a tester running the program, providing inputs and checking the 
-produced outputs---is a costly procedure that cannot be reproduced at 
-every moment. Therefore, XP proposes the implementation of 
-programs---called tests---that call small units of a system code, 
-such as methods, and verify if the produced outputs are the ones expected.  
-Automated testing's advent coincided with the development of the 
-first unit testing frameworks, including JUnit (developed by Kent Beck 
-and Erich Gamma in 1997), which was important to promote the practice. 
-We reserve a detailed discussion about automated tests for Chapter 8.
+testing---when a tester runs the program, provides inputs and checks the 
+outputs---is a costly procedure that cannot be reproduced at every moment. 
+Therefore, XP proposes the implementation of programs---called 
+automated tests---that call units of a system code, such as methods, 
+and verify if the results are the ones expected.  Automated testing's 
+advent coincided with the development of the first unit testing frameworks, 
+including JUnit (developed by Kent Beck and Erich Gamma in 1997), which 
+was very important to promote the practice. We reserve a detailed discussion 
+about automated tests for Chapter 8.
 
 \index{Test-Driven Development (TDD)}
 \index{Test Driven Design (TDD)}
@@ -867,12 +867,12 @@ We reserve a detailed discussion about automated tests for Chapter 8.
 practice proposed by XP where every method should first have a test 
 before its actual implementation begins. This practice serves two main 
 purposes: (1) it ensures that developers do not forget to write tests 
-because they are planned and implemented first, and (2) by writing a 
-test first, developers put themselves in the method's user's shoes. 
-They have to consider the method's interface and how it should be 
-utilized before approaching the actual implementation. This encourages 
-the creation of more user-friendly methods. We will discuss TDD in 
-greater detail in Chapter 8.
+because they are implemented first, and (2) by writing a test first, 
+developers put themselves in the method's user's shoes. For example, they 
+have to consider the method's interface and how it should be called 
+before approaching the actual implementation. This encourages the creation 
+of more user-friendly methods. We will discuss TDD in more detail 
+in Chapter 8.
 
 \index{Automated Build}
 **Automated Build**. This practice refers to the automated generation 
@@ -881,37 +881,38 @@ can be used for this process, such as the Make system, a part of Unix
 distributions since the 1970s, or newer tools like Ant, Maven, 
 Gradle, Rake, MSBuild, etc. XP promotes two key concepts about 
 the build process. First, to avoid manual intervention from developers, 
-the process should be fully automated. Second, the build process should 
+it should be fully automated. Second, the build process should 
 be as quick as possible to provide developers with prompt feedback 
-about any possible problems, such as a compilation errors.
+about possible problems, such as compilation errors or failing tests.
 
 \index{Continuous Integration}
-**Continuous Integration**. As discussed in Chapter 1, version control 
-systems (VCS) such as Git are widely used nowadays in software projects. 
-A VCS stores the source code and related files, including configuration 
-files and documentation. To work on a task, developers *pull* the source 
-code to their local machines, make modifications, and then *push* the updated 
-code back to the VCS. This upload step is referred to as **integration**.
+**Continuous Integration**. As we discussed in Chapter 1, version control 
+systems (VCS) such as Git are widely used nowadays. A VCS stores the 
+source code and related files, including configuration files, images, and 
+documentation. To work on a task, developers *pull* the source code to 
+their local machines, make modifications, and then *push* the updated 
+code back to the VCS. This upload and merge step is referred to 
+as **integration**.
 
-However, integration conflicts can occur when multiple developers edit 
-the same lines of code. The VCS prevents integration when a conflict 
-happens---for example, if Developer A assigns a value of 10 to a 
-variable *x*, whilst Developer B, working simultaneously, assigns *x* a 
-value of 20, a conflict is created. To resolve the conflict, A and B must 
-agree on the correct value for *x*. This is a straightforward example, 
-but conflicts often involve larger sections of code and more developers, 
-making them time-consuming and challenging to resolve and leading to 
-situations known as **integration hell**.
+However, integration is subjected to conflicts when multiple developers 
+change the same lines of code. In such cases, the VCS prevents integration.
+For example, if Developer A assigns a value of 10 to a variable *x*, 
+whilst Developer B, working independently, assigns *x* a value of 20, 
+a conflict is created. To resolve this conflict, A and B must agree 
+on the correct value for *x*. This is a simple example, but conflicts 
+often involve larger sections of code and more developers, making them 
+time-consuming and challenging to resolve and leading to situations 
+known as **integration hell**.
 
 To minimize integration conflicts, XP encourages developers to integrate 
-their code frequently---daily, if possible under a practice known 
+their code frequently---daily, if possible---under a practice known 
 as **continuous integration**. The aim is to reduce the number of conflicts 
-and the time developers potentially spend on resolving them.
+and the time developers spend on resolving them.
 
-Moreover, to check the quality of the code that is integrated, we should 
-also configure a **continuous integration service**. Before carrying out any 
+To check the quality of the code that is integrated, we should also 
+configure a **continuous integration service**. Before carrying out any 
 integration, this service builds the code and executes the tests. The 
-aim is to ensure that the code does not have compilation errors and 
+aim is to ensure that the new code does not have compilation errors and 
 that it passes all the tests. Examples of these services include 
 GitHub Actions, Jenkins, TravisCI, CircleCI, and more. In Chapter 10, 
 we will delve deeper into Continuous Integration.
@@ -927,7 +928,7 @@ Participants ranked the importance of various agile practices on a
 scale of 1 to 5, with five denoting essential practices. Three practices 
 tied for first place with an average score of 4.5 and a standard deviation 
 of 0.8: continuous integration, short iterations (less than 30 days), 
-and definition of done criteria (i.e., criteria used to consider the 
+and definition of done criteria (i.e., the criteria used to consider the 
 implementation of user stories finished). Conversely, planning poker 
 and pair programming were ranked lower, with average scores of 3.1 and 3.3, 
 respectively.
@@ -939,18 +940,18 @@ respectively.
 
 \index{Workspace}
 \index{Extreme Programming!Working environment}
-**working Environment**. XP advocates for the development of software 
+**Working Environment**. XP advocates for the development of software 
 by small, dedicated teams, ideally composed of fewer than 10 developers. 
 It also discourages scenarios where team members split their time between 
 multiple projects during the week.
 
 Furthermore, XP emphasizes the importance of maintaining sustainable 
-work schedules. It's a known fact that software development companies often 
+work schedules. It's a known fact that software companies often 
 demand long working hours, extensive overtime, and weekend commitments. 
-However, XP contests this practice, arguing instead for consistent work 
+However, XP contests this practice, arguing instead for sustainable work 
 schedules, with around 40 hours per week, even before important deliveries. 
 Notably, XP was proposed by seasoned professionals with experience in 
-handling real-world software projects, and thus, they have firsthand 
+managing real-world software projects, and thus, they have firsthand 
 experience on the effects of prolonged working hours. Long hours can be 
 detrimental to developers' physical and mental health and can also lead 
 to high team turnover, with developers frequently contemplating 
@@ -958,31 +959,72 @@ changing jobs.
 
 \index{Open Scope Contracts}
 \index{Extreme Programming!Open Scope Contracts}
-**Open Scope Contracts**. Contractually, two modes exist when outsourcing 
+**Open Scope Contracts**. Two types of contracts are possible when outsourcing 
 development: open scope and closed scope contracts. Closed scope contracts 
-requires the hiring company's input on the requirements, even minimally.
-Based on that, the outsourced company establishes a cost and a delivery date. 
-However, XP questions this model due to the mutable nature of software 
-requirements and the client's inability to precisely define them in advance. 
-Consequently, the outsourced company may deliver a system with several
-quality issues, including bugs, solely to evade potential fines. 
+requires the hiring company to provide a specification of the requirements, 
+even minimally. Based on that, the outsourced company establishes a cost 
+and a delivery date. XP questions these contracts due to the volatile nature 
+of software requirements and the client's inability to precisely define 
+them in advance. Consequently, the outsourced company may deliver a 
+system with several quality issues, including bugs, solely to avoid 
+potential fines. 
 
-Conversely, open scope contracts rely on a pay-per-hour model. For instance, 
-an agreement might prescribe the allocation of a full-time development team 
-from the outsourced company paid in accordance with XP practices. The client 
-defines the stories and validate their implementation at the end of each iteration. 
-Open scope contracts also provide the flexibility for termination or renewal 
-every few months, enabling clients to switch companies should they find the 
-quality unsatisfactory. As usual in XP, the objective is to cultivate 
-communication and feedback streams between contractor and contracted, 
-rather than compelling the former to deliver a low-quality product, 
-purely to fulfill the contract. Thus, open scope contracts align better 
-with the Agile Manifesto, which recommends "customer collaboration over 
-contract negotiation".
+Conversely, open scope contracts are based on a pay-per-hour model. For 
+instance, an agreement might prescribe the allocation of a full-time 
+development team from the outsourced company, which will work in accordance 
+with XP practices. The client defines the stories and validate their 
+implementation at the end of each iteration. These contracts also provide 
+the flexibility for termination or renewal every few months, enabling 
+clients to switch companies should they find the quality unsatisfactory. 
+As usual in XP, the objective is to cultivate communication and feedback 
+streams between client and outsourced companies, rather than compelling 
+the latter to deliver a low-quality product just to fulfill the contract. 
+In summary, open scope contracts align better with the Agile Manifesto, 
+which recommends "customer collaboration over contract negotiation".
 
 \index{Extreme Programming!Process Metrics}
 **Process Metrics**. To efficiently track an XP project, managers and 
 executives are encouraged to use two key metrics: number of bug detected 
-in production (ideally a few per year) and the time interval between 
-starting the development and the project yielding its first financial 
-returns (ideally within one year).
+in production (ideally a few per year) and time interval between 
+project start and the project yielding its first financial returns 
+(ideally within one year).
+
+## Scrum Framework
+
+\index{Scrum}
+\index{Sutherland, Jeffrey}
+\index{Schwaber, Ken}
+Scrum is an agile, iterative, and incremental method for project 
+management. It was first proposed by Jeffrey Sutherland and Ken 
+Schwaber in an article in 1995 
+([link]https://doi.org/10.1007/978-1-4471-0947-1_11)). 
+Among various agile methos, Scrum is probably the most popular and 
+broadly applied. Its widespread acceptance can be partly explained by 
+the proliferation of related books, educational courses, professional 
+consultancies, and credentials.
+
+We begin this section by addressing an often-asked question: How do 
+Scrum and XP differ? There are a number of minor variations, but 
+the key difference lies in their purpose:
+
+* XP is an agile method specifically designed for software development 
+projects. For this reason, it introduces a set of programming practices, 
+such as unit testing, pair programming, continuous integration, and 
+incremental design, which we have explored in the previous section.
+
+* Scrum, however, is an agile method that isn't confined to software 
+projects. For example, the creation of this book, as we will explain 
+shortly, was based on Scrum concepts. Having a broader scope than 
+XP, Scrum doesn't specify any programming practices.
+
+Among the agile methods, Scrum stands out as the most well-structured, 
+including a well-defined set of **roles**, **artifacts**, and **events**, 
+which are listed below. In the rest of this section, we will explain each 
+of them.
+
+* **Roles**: Product Owner, Scrum Master, Developer.
+
+* **Artifacts**: Product Backlog, Sprint Backlog, Scrum Board, Burndown Chart.
+
+* **Events**: Sprint Planning, Sprint, Daily Meetings, Sprint Review, Retrospective.
+
