@@ -1028,3 +1028,149 @@ of them.
 
 * **Events**: Sprint Planning, Sprint, Daily Meetings, Sprint Review, Retrospective.
 
+### Roles
+
+\index{Scrum!Roles}
+A Scrum team is composed of a Product Owner, a Scrum Master, and 
+between three to nine developers.
+
+\index{Product Owner}
+\index{Scrum!Product Owner}
+The **Product Owner** is equivalent to the customer representative in XP. 
+Their role requires having a clear vision for the product being developed, 
+in order to maximize the return on investment for the project. 
+Their responsibilities also include writing user stories, and hence, 
+they should always be available to address the team's questions.
+
+\index{Scrum Master}
+\index{Scrum!Scrum Master}
+The **Scrum Master** is a role unique to Scrum. They are the team's 
+Scrum expert and their responsibility involves ensuring adherence 
+to the Scrum methodology. They should continuously train and educate the 
+team members on Scrum principles and work as a facilitator to remove 
+obstacles. For instance, if a team encounters issues with a faulty 
+database server, it is the Scrum Master's role to ensure this issue is 
+resolved promptly to avoid hindering the team's progress. However, 
+it's crucial to note that a Scrum Master is not a traditional 
+project manager---they do not lead the team, as Scrum teams operate on a non-hierarchical basis.
+
+Scrum teams are often described as **cross-functional** or 
+multidisciplinary, implying they should have all necessary specialists 
+for developing the product, thus avoiding dependencies on any external 
+team members. In software projects, this includes specialists such 
+as front-end developers, back-end developers, database specialists, 
+and UI designers. These experts are responsible for technical decisions, 
+including defining the programming language, architecture, and 
+frameworks to be used in the project. They are also responsible for 
+estimating the size of the stories proposed by the Product Owner, using 
+units such as story points, similar to what we studied in XP.
+
+### Key Artifacts and Events 
+
+Scrum defines two key artifacts known as the Product Backlog 
+and the Sprint Backlog. The key events include sprints and 
+sprint planning, which will be detailed below.  
+
+* The **Product Backlog** 
+  \index{Backlog!Product}
+  \index{Scrum!Product Backlog}
+  is composed of a prioritized list of user stories (along with other 
+  pertinent work items). Much like XP, the Product Owner is responsible 
+  for proposing these stories, which are just short descriptions of the 
+  features the system should have. It's worth noting that the Product 
+  Backlog is not static. It constantly requires updates to capture 
+  changes to requirements and the overall product vision. For instance, 
+  as the project advances, new feature ideas may come up while 
+  some may no longer hold relevance. These changes are the responsibility 
+  of the Product Owner---a role which has this title precisely for 
+  maintaining the Product Backlog.
+
+* **Sprint**
+  \index{Sprint}
+  \index{Scrum!Sprint}
+  refers to an iteration in Scrum. Like all agile methods, Scrum employs 
+  an iterative approach, splitting development into sprints, each lasting 
+  up to a month. Every sprint should yield a product that has tangible 
+  value for the customer, called a potentially shippable product. The 
+  term 'potential' indicates that transitioning the product to 
+  production is not mandatory, as previously elaborated in Section 2.2.
+
+* **Sprint Planning**
+  \index{Sprint Planning}
+  \index{Scrum!Sprint Planning}
+  is a preparatory meeting that serves as the launchpad for every 
+  sprint. In this meeting, the entire team decides the stories to be 
+  incorporated in the forthcoming sprint. This meeting comprises two main 
+  parts. Initially, the Product Owner suggests stories for the upcoming 
+  sprint, while the remaining team members evaluate whether they have 
+  enough **velocity** (or capacity) to implement them. In the second part, 
+  driven by the developers, the selected stories are decomposed into 
+  tasks and their execution times are estimated. The Product Owner 
+  should be present in both parts of the sprint planning 
+  to answer questions about the selected stories. In some 
+  circumstances, the team may decide to cancel a story,
+  as it proved to be more complex when broken down into tasks.
+ 
+* The **Sprint Backlog** 
+  \index{Backlog!Sprint}
+  \index{Scrum!Sprint Backlog} is an artifact generated at the 
+  conclusion of the Sprint Planning. Essentially, it is a list of 
+  tasks for the sprint, each with its respective duration. Like 
+  the Product Backlog, the Sprint Backlog is also a dynamic entity. 
+  Tasks may be declared unnecessary or new ones may become 
+  apparent throughout the sprint, and the estimated effort for 
+  each task can also be adjusted if needed. However, the 
+  **sprint goal**---the stories selected by the Product Owner 
+  for the sprint, which the development team has committed 
+  to implement---should not change. Thus, while Scrum is 
+  adaptable to changes, they should occur between sprints. 
+  During a sprint, the development team should have the 
+  stability and assurance to work on a fixed list of stories.
+
+When the sprint planning concludes, the sprint begins, meaning 
+the team starts working on implementing the tasks in the 
+sprint backlog. At this point, it's also worth mentioning that 
+Scrum teams are not only cross-functional but also **self-organizing**, 
+i.e., they have the autonomy to decide how and who will implement 
+the stories.
+
+\index{Scrum Board}
+\index{Scrum!Scrum Board}
+
+In addition to the sprint backlog, teams can use a board 
+with columns denoting individual story stages (to do, 
+in progress, done, etc.). This board, known as a **Scrum Board**, 
+provides a visual aid to track the daily progress of the sprint. 
+Refer to the next figure for an example.
+
+![Example of a Scrum Board, illustrating the stories of the sprint 
+and their corresponding tasks. Each task can be into one of the 
+following states/columns: to do, in progress, in testing, 
+or completed.](figs/cap2/scrum-board){width=65%}
+
+\index{Scrum!Definition of Done}
+
+Defining the criteria for marking a story or task as *done* 
+is crucial in Scrum projects. The team should reach a consensus 
+on these criteria, and every member should follow it. For instance,
+the team can define that a story is only considered completed 
+if it has corresponding unit tests that are all passing. 
+A code review by another team member could also be required. 
+Ultimately, the code should be successfully merged into the project 
+repository. These requirements deter team members from prematurely 
+moving their tasks to the done column using substandard code.
+
+\index{Burndown Chart}
+\index{Scrum!Burndown Chart}
+
+The **Burndown Chart** is another familiar artifact in Scrum. 
+It displays the number of work hours for completing the unfinished 
+tasks at each day of the sprint. In other words, on day *x* 
+of the sprint, it shows that the unfinished tasks amount 
+to *y* hours of work. Ideally, the burndown chart exhibits 
+a continuous decline, hitting zero by the end of the 
+sprint (assuming success). Shown below is a sample 
+burndown chart for a sprint that spans 15 days.
+
+![Burndown Chart for a 15-day sprint.](figs/cap2/burndown-en){width=95%}
+
