@@ -1,5 +1,5 @@
 
-# Process
+# Processes
 
 > *In software development, perfect is a verb, not an adjective. 
 There is no perfect process. There is no perfect design. There 
@@ -19,7 +19,7 @@ most recommended processes (Section 2.6). Lastly, in Section 2.7,
 we briefly present some traditional processes, such as the 
 Unified Process.
 
-## Importance of Process
+## Importance of Processes
 
 The production of a car in an automobile factory follows a 
 well-defined process. In simple terms, sheets 
@@ -1255,4 +1255,199 @@ accordingly.
  Daily Stand-up           15 minutes
  Sprint Review            maximum of 4 hours
  Retrospective            maximum of 3 hours
+
+### Example: Writing a Book Using Scrum
+
+This book was written using various elements from Scrum. 
+For example, at the book's inception, we planned the chapters,
+thus establishing a Product Backlog. After that, each chapter was 
+written within a sprint. During the Sprint Planning meetings, we 
+partitioned each chapter into sections, thus treating these
+sections as tasks. Subsequently, the writing for each chapter 
+began, marking the start of a sprint. Generally, the sprints were 
+scheduled to last two months. Below you can see the backlog of the 
+current sprint, whose goal is to write Chapter 2. You can also 
+see the status of each task/section.
+
++-----------------+----------------+-----------------+----------------+
+| **Story**       | **To Do**      | **In**          | **Done**       |
+|                 |                | **Progress**    |                |
++=================+================+=================+================+
+| Ch. 2 -         | Kanban         | Scrum           | Introduction   |
+| Processes       |                |                 |                |
+|                 | When not       |                 | Agile Manifesto|
+|                 | to use Agile   |                 |                |
+|                 | Methods        |                 | XP             |
+|                 |                |                 |                |
+|                 | Other          |                 |                |
+|                 | Processes      |                 |                |
+|                 |                |                 |                |
+|                 | Exercises      |                 |                |
++-----------------+----------------+-----------------+----------------+
+
+We decided for an agile approach when writing this book to minimize 
+risks associated with developing a product that doesn't meet the 
+needs of our primary audience---students and professors of Software 
+Engineering courses, mainly at the undergraduate level. As such, at 
+the end of each sprint, a chapter was shared and announced publicly, 
+with the aim of receiving feedback. Our objective was to avoid a 
+Waterfall approach, which would involve writing the book over 
+years without receiving any input. 
+
+To conclude, let's examine the criteria we used to consider a chapter 
+as *done*. It involves the author of the book thoroughly reading and 
+reviewing the chapter. Once this in-depth review was completed, the 
+chapter was tentatively released to the members of the 
+Applied Software Engineering Research Group at DCC/UFMG (Brazil)
+for a second round of review and feedback.
+
+### Frequently Asked Questions
+
+Before we conclude this section, here are some answers to common 
+questions about Scrum:
+
+**What does Scrum mean?** Scrum is not an acronym but a term borrowed 
+from rugby, where it refers to the "meeting" on the field where 
+teams compete for possession of the ball after an accidental infringement.
+
+\index{Squad}
+**What is a squad?** A squad is another term for an agile or Scrum 
+team. The term was popularized by Spotify. Similar to Scrum teams, 
+squads are small, cross-functional, and self-organizing units. 
+The term tribe is also commonly used to designate a group of squads.
+
+**Can the Product Owner role be assigned to a committee?** Or in simpler 
+terms, can we have more than one Product Owner in a Scrum team? 
+The answer is no. This role is typically assigned to a single 
+individual to avoid committee-based decision-making, which often 
+leads to products overloaded with features, implemented mainly to 
+satisfy committee members. However, the Product Owner can and 
+should act as a link between the team and other experts 
+in the product being developed. This facilitation is expected of 
+Product Owners as some requirements might be specific to the domain 
+knowledge of certain individuals within the organization. 
+
+\index{Scrum!Scrum Master}
+**Is it required for the Scrum Master to be a full-time role?** 
+Ideally, a Scrum Master should be committed on a full-time basis. 
+However, for mature teams who have a vast experience with Scrum, 
+a full-time Scrum Master might not always be needed. In such 
+scenarios, two alternatives can be considered: (1) Allow the 
+Scrum Master to operate in multiple teams, or (2) Delegate the 
+Scrum Master role to a team member. If the latter approach is 
+used, the chosen team member should not simultaneously act as 
+the Product Owner. This is because one of the key responsibilities 
+of a Scrum Master is to support the Product Owner in writing 
+and prioritizing the user stories.
+
+**Does a Scrum Master need a degree in Computer Science?** 
+No, a Computer Science degree is not a prerequisite as 
+a Scrum Master's role primarily involves removing obstacles and 
+making sure the team follows the Scrum principles. For example,
+they are not expected to resolve technical issues like debugging, 
+using frameworks correctly, implementing features etc. On the
+other hand, it's worth noting that some companies that adopt 
+Scrum may require Scrum Master certifications.
+
+**What other items, besides stories, can be included in the 
+Product Backlog?** In fact, the Product Backlog is not limited to 
+stories---it can also comprise work items like bug fixes 
+(particularly complex ones) and significant refactoring tasks,
+for example.
+
+**Do Scrum organizations have managers?** Indeed, managerial roles are 
+incorporated in Scrum! While Scrum teams have autonomy to implement 
+the stories defined by the Product Owner, additional decisions typically 
+associated with managerial level are required in a project. Examples 
+of these decisions include:
+
+* Team composition: Managers are responsible for allocating developers
+to teams, as developers usually don't possess the authority to select 
+their teams.
+
+* Definition of goals and responsibilities: Managers designate priorities 
+and goals for each team, which includes the systems they will be working on. 
+For example, a team doesn't decide by itself that a new accounting system 
+is needed and then start its development. Such strategic decisions are 
+the responsibility of the organizations' managers and executives.
+
+* Human resources management: Managers also handle human resource tasks, 
+such as recruiting new employees, dismissals, promotions, transfers, 
+and training initiatives.
+
+* Performance evaluation: Managers are tasked with assessing whether 
+the Scrum teams are providing value to the organization.
+
+
+## Kanban
+
+\index{Kanban}
+\index{Toyota}
+The Japanese term *kanban* translates to "visual card". Since the 
+1950s, the term has also been associated with the *just-in-time* 
+production process of Japanese factories, particularly in 
+Toyota where it was initially implemented. This process is also 
+recognized as the Toyota Production System (TPS) or, in more 
+contemporary terms, *lean* manufacturing. car manufacturers, 
+cards are used to manage and control the flow of production 
+on an assembly line.
+
+\index{Microsoft}
+In the context of software development, Kanban was first 
+introduced at Microsoft in 2004, in projects led by David Anderson, 
+a Microsoft employee at that time 
+([source](https://isbnsearch.org/isbn/0984521402)). Anderson 
+describes Kanban as a method that "promotes sustainable work pace 
+for development teams by eliminating waste, delivering 
+consistent value, and fostering a culture of continuous 
+improvement."
+
+To better understand Kanban, let's compare it to Scrum. Primarily, 
+Kanban is more simple than Scrum because it does not have events like 
+sprints. Furthermore, strictly speaking, Kanban does not define 
+particular roles like Product Owner or Scrum Master. Lastly, 
+unlike Scrum, Kanban doesn't include several artifacts, with the 
+exception of one main artifact: the task board. In Kanban, this 
+is referred to as the **Kanban Board**, which also includes 
+the product backlog.
+
+The Kanban Board is organized into specific columns as described below:
+
+* The first column represents the product backlog, closely mirroring 
+the Scrum model. User stories are proposed and subsequently added 
+to this Backlog.
+
+* The next columns represent the steps required to transition 
+a user story into a functioning feature. These columns typically 
+have labels such as Specification, Implementation, and Code Review. 
+The underlying concept involves processing these stories sequentially, 
+mirroring the workflow of an assembly line, progressing from 
+left to right. Furthermore, each column is sectioned into two 
+subcolumns labeled "in progress" and "ready" For instance, 
+the Implementation column contains two subcolumns: 
+tasks undergoing implementation and tasks that have been 
+implemented. Completed tasks from one step await to be 
+pulled into the next step by a team member. This is why Kanban 
+is commonly referred to as a *pull* system.
+
+Let's look at the structure of a Kanban Board using an example.
+
+![](figs/cap2/kanban1.png){width=80%}
+
+In this board, we can see several stories and tasks at various 
+stages. In the backlog, we have one story labeled H3. Another 
+story, labeled as H2, has been picked up by a team member 
+and it is in under specification. Four tasks from a previous 
+story, labeled as T6 to T9, have already been specified.
+Next, there are two tasks, T4 and T5, which are being implemented. 
+Task T3 has been implemented and is now awaiting code review.
+Lastly, Task T2 is currently under review, while T1 has been 
+fully implemented and is now considered done. You may also have 
+noticed the acronym WIP appearing at all stages, with the 
+exception of the backlog. Don't worry about this for now; 
+we will explain it it shortly. It's also important to note that, 
+in this example, we used the letters H and T to represent 
+stories and tasks, respectively. However, in real 
+board setups, tasks and stories are represented as cards 
+that possibly carry a brief description of each.
 
