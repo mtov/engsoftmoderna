@@ -1146,7 +1146,7 @@ Refer to the next figure for an example.
 ![Example of a Scrum Board, illustrating the stories of the sprint 
 and their corresponding tasks. Each task can be into one of the 
 following states/columns: to do, in progress, in testing, 
-or completed.](figs/cap2/scrum-board){width=65%}
+or completed.](figs/cap2/scrum-board){width=60%}
 
 \index{Scrum!Definition of Done}
 
@@ -1165,12 +1165,94 @@ moving their tasks to the done column using substandard code.
 
 The **Burndown Chart** is another familiar artifact in Scrum. 
 It displays the number of work hours for completing the unfinished 
-tasks at each day of the sprint. In other words, on day *x* 
-of the sprint, it shows that the unfinished tasks amount 
-to *y* hours of work. Ideally, the burndown chart exhibits 
-a continuous decline, hitting zero by the end of the 
-sprint (assuming success). Shown below is a sample 
-burndown chart for a sprint that spans 15 days.
+tasks at each day of the sprint. In other words, on day *x*, 
+it shows that the unfinished sprint tasks amount to *y* hours of 
+work. Ideally, the burndown chart exhibits a continuous decline, 
+hitting zero by the end of the sprint (assuming success). Shown 
+below is a sample burndown chart for a sprint that spans 15 days.
 
-![Burndown Chart for a 15-day sprint.](figs/cap2/burndown-en){width=95%}
+![Burndown Chart for a 15-day sprint.](figs/cap2/burndown-en){width=75%}
+
+### Additional Scrum Events
+
+We will now explore three further Scrum events: the Daily Stand-up, 
+Sprint Review, and Retrospective.
+
+\index{Daily Stand-up}
+\index{Scrum!Daily Stand-up}
+
+Scrum recommends conducting **Daily Stand-up** meetings, which typically 
+last approximately 15 minutes and should involve all team members. As the 
+name suggests, these meetings are usually held with participants standing, 
+giving rise to alternative names such as **standup meetings** or 
+*daily scrum*. During these meetings, each team member should respond to 
+three key questions: (1) What tasks were completed the previous day? (2) What 
+tasks are planned for the current day? (3) Are any significant obstacles 
+hindering their progress? The intention of these meetings is to enhance
+communication and information sharing among team members, providing a 
+platform for keeping each team member updated on the project's progress. 
+For example, during the daily stand-up, two developers may discover 
+they are about to work on the same code section. In this scenario, 
+it would be beneficial for them to arrange a separate meeting 
+to discuss their planned changes, thereby reducing potential 
+conflicts when integrating their modifications.
+
+\index{Sprint Review}
+\index{Scrum!Sprint Review}
+
+The **Sprint Review** serves to showcase the results of a sprint. 
+All members of the team are expected to participate, including 
+additional stakeholders involved with the sprint's outcome. 
+At this meeting, the team demonstrates the finished product 
+to the clients. Ideally, the Product Owner will approve all 
+sprint stories. However, if any issues arise with a story, 
+it's moved back to the Product Backlog to be reworked in a 
+future sprint. Similarly, stories the team was not able to
+finish in the sprint should also be returned to the Product 
+Backlog.
+
+\index{Sprint Retrospective}
+\index{Scrum!Retrospective}
+
+The **Retrospective** is the concluding event of a sprint. This 
+meeting is held to reflect on the completed sprint and to identify 
+any possible improvements related to the process, team, 
+interrelationships, and employed practices and tools. For instance, 
+as a result of the retrospective, the team might recommend the need 
+for punctuality and consistent attendance at daily stand-up meetings, 
+particularly if lateness has previously been an issue.  It's also 
+important to note that the primary aim of a retrospective is 
+not to trigger complaints or heated discussions between team members. 
+Instead, more critical points should be addressed separately, 
+either in other meetings or under the supervision of managers. 
+Once the retrospective is completed, the cycle begins again with 
+the following sprint.
+
+\index{Time-box}
+\index{Scrum!Time-box}
+
+A significant aspect of Scrum events is their fixed duration, 
+also known as the **time-box** of the event. That's why 
+this term frequently appears in Scrum literature. For instance, 
+consider a quote from the official Scrum Guide (2017 version): 
+"The heart of Scrum is a sprint, a time-box of one month or less during 
+which a *Done*, useable,and potentially releasable product increment 
+is created" ([link](https://www.scrum.org/resources/scrum-guide)). 
+The objective of defining *time-boxes* is to maintain a steady workflow, 
+encourage team commitment to the sprint's success, and avoid diversion 
+from the sprint goal.
+
+Here's a summarizing table of the time-boxes associated with Scrum 
+events. When events have a maximum time-box (like sprint planning), 
+the maximum value applies to a one-month sprint. Thus, in the case of 
+shorter sprints, the respective time-box should also be adjusted 
+accordingly.
+
+ **Event**                **Time-box**
+ ------------------------ -------------------
+ Sprint Planning          maximum of 8 hours
+ Sprint                   less than 1 month
+ Daily Stand-up           15 minutes
+ Sprint Review            maximum of 4 hours
+ Retrospective            maximum of 3 hours
 
