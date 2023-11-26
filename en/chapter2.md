@@ -989,7 +989,7 @@ in production (ideally a few per year) and time interval between
 project start and the project yielding its first financial returns 
 (ideally within one year).
 
-## Scrum Framework
+## Scrum
 
 \index{Scrum}
 \index{Sutherland, Jeffrey}
@@ -1432,12 +1432,12 @@ is commonly referred to as a *pull* system.
 
 Let's look at the structure of a Kanban Board using an example.
 
-![](figs/cap2/kanban1.png){width=80%}
+![](figs/cap2/kanban1-en.png){width=80%}
 
 In this board, we can see several stories and tasks at various 
 stages. In the backlog, we have one story labeled H3. Another 
 story, labeled as H2, has been picked up by a team member 
-and it is in under specification. Four tasks from a previous 
+and it is in under Specification. Four tasks from a previous 
 story, labeled as T6 to T9, have already been specified.
 Next, there are two tasks, T4 and T5, which are being implemented. 
 Task T3 has been implemented and is now awaiting code review.
@@ -1451,3 +1451,291 @@ stories and tasks, respectively. However, in real
 board setups, tasks and stories are represented as cards 
 that possibly carry a brief description of each.
 
+Days later, the Kanban Board evolved into the following state 
+(tasks that moved forward are distinguished by being 
+underlined and colored red).
+
+![](figs/cap2/kanban2-en.png){width=80%}
+
+It should be noted that the H2 story is no longer visible as it 
+was decomposed into three tasks (T10, T11, and T12). This 
+decomposition is exactly what occurs during the specification 
+phase, whose objective is to convert a story into 
+an actionable task list. Progressing further, T6 and T7---which were 
+previously on hold---are now under implementation. 
+Simultaneously, T3 has transitioned into the code review phase. 
+Finally, the review of T2 has been completed. It's also important 
+to note that currently there are no implemented tasks waiting 
+for entering in the review stage.
+
+Similar to other agile methodologies, Kanban teams are self-organizing. 
+This implies they have the autonomy to decide which task will 
+advance to the next stage. Also, they are cross-functional---meaning 
+the team is composed of members who have the skillset to perform 
+all the tasks in the Kanban Board.
+
+\index{WIP Limits}
+\index{Work in Progress (WIP)}
+\index{Kanban!WIP Limits}
+\index{Kanban!Work in Progress (WIP)}
+
+We will now discuss the concept of **WIP Limits** (short for *Work in 
+Progress*). Project management methods typically strive to 
+maintain a sustainable work rate. To achieve this, two scenarios 
+are to be avoided: 
+
+1. The team having no tasks to do and consequently staying idle most 
+of the time.
+2. The team being overwhelmed with an excess of tasks, negatively 
+affecting the quality of the software produced.
+
+In order to circumvent the second scenario, Kanban proposes setting 
+maximum task limits for each step on a board. This cap is referred 
+to as the WIP Limit, which represents the maximum number of 
+tasks---or cards---that can be present in each step, including the 
+tasks in progress (first sub-column) and those that are ready (second 
+sub-column). The exception is the final step, where the WIP limit
+applies only to the first sub-column as it is meaningless to limit 
+the number of complemented tasks.
+
+Below, we show a Kanban Board that incorporates these WIP limits. You 
+can see the limits below each step's name. Our board allows a maximum 
+of 2 stories in Specification, 5 tasks in Implementation, and 3 tasks 
+in Code Review. The reason for the particular WIP limit in the 
+Specification step will be elaborated later. For now, note that 
+4 tasks are under Implementation (T4, T5, T6, and T7), remaining 
+below the step's WIP limit of 5. Similarly, in Code Review the limit 
+also is followed as only one task (T3) is under review. Remember 
+that to comply with the WIP limit, tasks from both sub-columns---those 
+in progress and ready tasks---are taken into account, except for the final 
+step where only tasks from the first sub-column count (T3, in this case).
+
+![](figs/cap2/kanban3-en.png){width=80%}
+
+Let's now delve into the concept of Work in Progress (WIP) 
+for the Specification step. To compute the WIP for this step, you need 
+to sum up the stories in Specification (which was zero in our previous 
+example) with the stories that have already been specified. 
+For instance, in our previous example, we've specified two stories already, 
+i.e., tasks T8 and T9 are products of the same story's specification, 
+while tasks T10, T11, and T12 resulted from the specification of 
+another story. Therefore, in this step for the means of WIP computation, 
+we have two stories, which is acceptable as it's within its limit 
+of 2. To ease visualization, it is standard to display the tasks 
+emerging from the same story specification on a single line. Hence, 
+to compute the WIP of the Specification step, we should add up 
+the stories in the first sub-column (zero in our case) to the number 
+of lines in the second sub-column (two in this case).
+
+Also about the previous board we have:
+
+* Story H3, in the Backlog, can't be moved into the Specification
+ because this step's WIP has already reached its maximum limit.
+
+* One of the specified tasks (T8 to T12) can be moved to Implementation 
+as the WIP for this step is 4, having a limit of 5.
+
+* One or more tasks in Implementation(T4 to T7) can be completed, i.e., 
+moved to ready, which doesn't affect that step's WIP.
+
+* Reviewing of T3 can be finalized.
+
+An important point to note here is that WIP limits are in place to 
+avoid overloading the team with tasks. When a team is burdened 
+with numerous tasks---that bypass the WIP limits---the probability of 
+accomplishing these tasks with quality reduces. Kanban understands 
+this drawback and implements an automatic "lock" to prevent teams 
+from accepting tasks beyond their delivery capacity. These "locks", 
+which are the WIP limits, have internal as well as significant 
+external usage. For example, they serve as an instrument for the 
+team to decline extra tasks that are being forcefully assigned from 
+the top management.
+
+### Determining WIP Limits
+
+\index{Brechner, Eric}
+\index{Kanban!WIP Calculation}
+In this section, we will explain the steps involved in defining 
+Work in Progress (WIP) limits. While several methods exist, we decided 
+to adapt an algorithm initially proposed by Eric Brechner, 
+a Microsoft engineer. This algorithm is detailed in his book on 
+employing Kanban in software development ([link](https://dl.acm.org/citation.cfm?id=2774938)). Below, we've outlined the algorithm's steps.
+
+Initially, we need to estimate the average time it takes to complete 
+a task in each step of the Kanban board, known as the **lead time (LT)**
+of the step. For our example, we assume these values:
+
+* LT(specification) = 5 days
+* LT(implementation) = 12 days
+* LT(review) = 6 days
+
+These estimated times reflect an average task's duration, taking 
+into account that there will be more complex and simpler tasks. 
+Note that the *lead time* includes the queue time, i.e., the task's 
+waiting time in the "ready" subcolumns of the Kanban board 
+before progressing to the next step.
+
+After that, we should estimate the **throughput (TP)** of the step 
+with the longest lead time. In our example (which holds for most software development projects), this step is Implementation. If the team is 
+capable of implementing eight tasks per month, this 
+step's **throughput** is: 8 / 21 = 0.38 tasks/day 
+(we've assumed a month comprises 21 workdays).
+
+Finally, each step's WIP is calculated as:
+
+**WIP(step) = TP * LT(step)**
+
+Here, TP refers to the throughput of the slowest step, as calculated 
+in the previous step. So, using this formula, we derive:
+
+* WIP(specification) = 0.38 * 5 = 1.9
+* WIP(implementation) = 0.38 * 12 = 4.57
+* WIP(review) = 0.38 * 6 = 2.29
+
+And after rounding, we get:
+
+* WIP(specification) = 2
+* WIP(implementation) = 5
+* WIP(review) = 3
+
+In Eric Brechner's algorithm, it's suggested to add a 50% margin 
+of error to the calculated WIPs to allow for variations in task 
+size and tasks blocked due to external factors. However, we 
+won't apply this adjustment in our example, as it is purely 
+illustrative.
+
+It's important to note that the purpose of WIP limits, 
+as proposed by Kanban, is to maintain a sustainable work pace and 
+therefore to deliver quality software. These limits prevent developers 
+from becoming overburdened with tasks, which would consequently 
+reduce their work quality. Virtually all development methods offer 
+such instruments. For instance, Scrum uses sprints with a fixed
+time-box to avoid overcommitting and to limit the workload 
+based on the team's velocity. Once started, the sprint's 
+goals can't be changed to shield the team from  priority shifts. 
+For Waterfall methods, the strategies to ensure a sustainable 
+workflow with quality outcomes involve a comprehensive 
+phase of requirement specifications. This phase aims to give 
+developers a clear understanding of the system they will implement.
+
+### Little's Law
+
+\index{Little's Law}
+\index{Kanban!Little's Law}
+
+The procedure we used for calculating WIP limits is an  
+application of **Little's Law**, a prominent result from Queue Theory 
+([link](https://isbnsearch.org/isbn/0471503363)). Little's Law states 
+that the number of items in a queue system is the product of the 
+rate of arrival of these items and the time each item spends 
+within the system. 
+
+When applied to our context of a Kanban process, where the items 
+we refer to are tasks, the law can be broken down as follows:
+
+* WIP: the number of tasks in a particular step of the Kanban board.
+
+* Throughput (TP): 
+  \index{Throughput}
+  the rate at which tasks arrive at this step.
+
+* Lead Time (LT): 
+  \index{Lead Time} 
+  the time each task spends at this step.
+
+Thus, according to Little's Law, **WIP = TP * LT**. Below, we've visually 
+represented Little's Law for a clearer understanding.
+
+![Little's Law: WIP = TP * LT](figs/cap2/lei-little-en){width=50%}
+
+### Frequently Asked Questions
+
+Before we conclude, let's answer some common questions related to Kanban:
+
+**What roles exist in Kanban?** In contrast to Scrum, Kanban doesn't 
+prescribe a rigid set of roles. The responsibility rests on the team 
+and the organization to determine the necessary roles, such as a 
+Product Owner, Testers, and so on.
+
+**How are user stories prioritized?** Kanban's approach is lightweight 
+compared to Scrum and even XP. One reason is the absence of explicitly 
+defined criteria for prioritizing user stories. As mentioned in the 
+previous answer, the existence of a Product Owner---responsible 
+for prioritization---isn't a mandatory. Thus, alternative solutions 
+like external prioritization by a  manager can also be implemented.
+
+**Can Kanban teams conduct typical Scrum events, like daily meetings, 
+reviews, and retrospectives?** Yes, they can. While Kanban does not 
+prescribe these events, it doesn't explicitly prevent them either. 
+The decision regarding which events are essential, their timing, 
+duration, etc., is left to the team's discretion.
+
+
+## When Not to Use Agile Methods?
+
+\index{Agile Methods}
+Although agile methods are very popular nowadays, it's important to remember 
+that there's no one-size-fits-all solution in Software Engineering. As such, 
+this section examines scenarios and domains where agile practices may 
+not be the most suitable choice.
+
+However, the question posed in this section doesn't allow for simple answers 
+such as 'systems from areas X, Y, and Z should avoid agile methods, while 
+the rest should use them'. In reality, systems from all areas could 
+potentially gather benefits from at least a few agile methodologies. However,
+some practices might not be advisable for specific types of systems, 
+organizations, and environments. Therefore, we will answer the proposed 
+question at a finer granularity. That is, we will comment below on 
+when **not** to use certain agile practices.
+
+ * Incremental Design. This approach is effective when the team has 
+ an initial understanding of the system's design. However, if such a 
+ vision is absent, or the domain of the system is new and complex, 
+ or if future changes have high costs, it may be better to conduct 
+ an initial design phase prior to starting the implementation of
+ features.
+
+ * User Stories. As a light-weight method for specifying requirements, 
+ stories are typically clarified with daily customer participation in 
+ the project. However, certain projects may require a detailed 
+ requirements specification at the beginning, particularly if they 
+ originate from unfamiliar domains for the developers.
+
+ * Customer Involvement. If the system requirements are stable 
+ and thoroughly understood by the development team, constant involvement 
+ of a Customer Representative or Product Owner may be unnecessary. For 
+ instance, in the development of a compiler for a language with 
+ well-established grammar and semantics, this role is not relevant.
+
+ * Lightweight Documentation. For specific domains, detailed requirements 
+ and comprehensive documentation are crucial. For example, systems where 
+ failures could potentially result in human fatalities---such as in the medical 
+ and transportation sectors---often require certification from 
+ an external entity. This entity may require extensive documentation 
+ in addition to the source code.
+
+ * Self-organizing Teams. Agile teams have autonomy to work without 
+ interference during a sprint. Thus, they need not report daily to the 
+ organization's managers and executives. Nonetheless, this procedure 
+ can conflict with the values and culture of some organizations, 
+ particularly those that with a hierarchical structure and rigid control.
+
+ * Open Scope Contracts. With open scope contracts, remuneration 
+ is defined by the hour. Therefore, the contracting company does not have a 
+ clear understanding of the functionalities to be implemented or the time 
+ and cost of the project. Certain organizations might be reluctant to sign 
+ such types of contracts, particularly if they lack prior experience with 
+ agile development or do not trust the contracted company.
+
+To conclude, it's important to mention that two agile practices have become 
+prevalent in a majority of software projects:
+
+ * Small teams, due to the fact that communication and coordination challenges 
+ increase significantly for large teams.
+ 
+ * Iterations (or sprints), even those that are longer than typical agile 
+ sprints. For instance, iterations lasting two or three months, as opposed 
+ to the usual sprint length of less than 30 days. Interestingly, even before 
+ the rise of agile methods, several iterative methods were suggested, i.e., 
+ those with validation points throughout the development. We will explore 
+ two of these methods in the next section.
