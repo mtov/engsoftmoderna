@@ -1739,3 +1739,45 @@ prevalent in a majority of software projects:
  the rise of agile methods, several iterative methods were suggested, i.e., 
  those with validation points throughout the development. We will explore 
  two of these methods in the next section.
+
+## Other Iterative Methods
+
+The shift from the Waterfall model---highly prevalent during the 70s 
+and 80s---to Agile approaches, which started materializing in the 90s 
+and only gained traction in the final years of the 2000s, 
+was a gradual process. For example, some of the methods developed during 
+this transition period also incorporated the concept of iterations, 
+although they often spanned a longer duration than those typically seen 
+nowadays in Agile. Rather than lasting a few weeks, these iteration could 
+extend over several months. Furthermore, these transition methods retained 
+many elements from Waterfall, like the focus on documentation and an
+initial requirements specification phase followed by a design phase.
+
+\index{Spiral Model}
+\index{Boehm, Barry}
+One such method formulated during this transition period is 
+the **Spiral Model**, proposed by Barry Boehm, in 1986 ([link](https://doi.org/10.1145/12944.12948)). In the Spiral Model, a system is 
+developed through a spiral of iterations. Each iteration, referred to 
+as a "complete round" of the spiral, comprises four stages, as elaborated
+next (see also the following figure):
+
+1. Defining objectives and constraints, including costs, schedules, 
+and so on.
+2. Evaluating alternatives and conducting risk analysis. For instance, 
+considering whether it is more cost-effective to purchase a system instead 
+of developing it in-house.
+3. Development and testing, potentially utilizing the Waterfall model. 
+By the end of this stage, a prototype should be produced for demonstration 
+to system users.
+4. Planning for the next iteration or deciding to conclude the project 
+if the current implementation already attends the organization's needs.
+
+![Spiral Model. Each iteration is divided into four stages.](figs/cap2/spiral-en.png){width=65%}
+
+The Spiral Model aims to generate a more comprehensive version of a 
+system after each iteration, beginning from the version created at 
+the spiral's center. Despite this, each iteration, encapsulating 
+all four phases, can take anywhere from 6 to 24 months---
+which is significantly longer than in XP and Scrum. Another interesting 
+feature of this model is the risk analysis phase where concrete steps 
+to mitigate project risks are laid out.  
