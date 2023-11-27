@@ -1678,14 +1678,14 @@ not be the most suitable choice.
 However, the question posed in this section doesn't allow for simple answers 
 such as 'systems from areas X, Y, and Z should avoid agile methods, while 
 the rest should use them'. In reality, systems from all areas could 
-potentially gather benefits from at least a few agile methodologies. However,
+benefit from at least some agile practices. On the other hand,
 some practices might not be advisable for specific types of systems, 
 organizations, and environments. Therefore, we will answer the proposed 
-question at a finer granularity. That is, we will comment below on 
+question at a finer granularity. That is, we will comment on 
 when **not** to use certain agile practices.
 
  * Incremental Design. This approach is effective when the team has 
- an initial understanding of the system's design. However, if such a 
+ an initial understanding of the system's design. However, if such 
  vision is absent, or the domain of the system is new and complex, 
  or if future changes have high costs, it may be better to conduct 
  an initial design phase prior to starting the implementation of
@@ -1693,60 +1693,58 @@ when **not** to use certain agile practices.
 
  * User Stories. As a light-weight method for specifying requirements, 
  stories are typically clarified with daily customer participation in 
- the project. However, certain projects may require a detailed 
+ the sprints. However, certain projects may require a detailed 
  requirements specification at the beginning, particularly if they 
  originate from unfamiliar domains for the developers.
 
- * Customer Involvement. If the system requirements are stable 
- and thoroughly understood by the development team, constant involvement 
+ * Customer Involvement. If the requirements are stable 
+ and thoroughly understood by the developers, constant involvement 
  of a Customer Representative or Product Owner may be unnecessary. For 
  instance, in the development of a compiler for a language with 
  well-established grammar and semantics, this role is not relevant.
 
  * Lightweight Documentation. For specific domains, detailed requirements 
  and comprehensive documentation are crucial. For example, systems where 
- failures could potentially result in human fatalities---such as in the medical 
+ failures can result in human fatalities---such as in the medical 
  and transportation sectors---often require certification from 
  an external entity. This entity may require extensive documentation 
  in addition to the source code.
 
  * Self-organizing Teams. Agile teams have autonomy to work without 
- interference during a sprint. Thus, they need not report daily to the 
- organization's managers and executives. Nonetheless, this procedure 
+ interference during a sprint. For example, they do not need to report 
+ daily to the organization's managers and executives. Nonetheless, this procedure 
  can conflict with the values and culture of some organizations, 
- particularly those that with a hierarchical structure and rigid control.
+ particularly those with a hierarchical structure and rigid control.
 
  * Open Scope Contracts. With open scope contracts, remuneration 
- is defined by the hour. Therefore, the contracting company does not have a 
- clear understanding of the functionalities to be implemented or the time 
- and cost of the project. Certain organizations might be reluctant to sign 
- such types of contracts, particularly if they lack prior experience with 
- agile development or do not trust the contracted company.
+ is defined by the hour. Therefore, mainly in the first weeks of months, 
+ the contracting company does not have a clear understanding of the features to be implemented or the time and cost of the project. Certain organizations 
+ might be reluctant to sign such types of contracts, particularly if they 
+ lack prior experience with agile development or do not trust the contracted company.
 
 To conclude, it's important to mention that two agile practices have become 
 prevalent in a majority of software projects:
 
- * Small teams, due to the fact that communication and coordination challenges 
+ * Small teams, because communication and coordination challenges 
  increase significantly for large teams.
  
- * Iterations (or sprints), even those that are longer than typical agile 
+ * Iterations (or sprints), even they are longer than typical agile 
  sprints. For instance, iterations lasting two or three months, as opposed 
  to the usual sprint length of less than 30 days. Interestingly, even before 
- the rise of agile methods, several iterative methods were suggested, i.e., 
- those with validation points throughout the development. We will explore 
- two of these methods in the next section.
+ the rise of agile methods, some iterative methods were suggested, i.e., 
+ methods with validation points throughout the development. We 
+ will explore two of these methods in the next section.
 
 ## Other Iterative Methods
 
 The shift from the Waterfall model---highly prevalent during the 70s 
-and 80s---to Agile approaches, which started in the 90s and only gained 
-traction in the final years of the 2000s, was a gradual process. For example, 
+and 80s---to Agile approaches, which only gained traction in the final 
+years of the 2000s, was a gradual process. For example, 
 some methods proposed during this transition also incorporated the 
-concept of iterations, although they often spanned a longer 
-duration than those typically seen nowadays in Agile. Rather than 
-lasting a few weeks, these iteration could extend over several months. 
-Furthermore, these transition methods retained many elements from 
-Waterfall, like the focus on documentation and an initial 
+concept of iterations, although having a longer duration than those typically 
+seen nowadays in Agile. Rather than lasting a few weeks, these iteration 
+could extend over months. Furthermore, these transition methods retained 
+many elements from Waterfall, like the focus on documentation and an initial 
 requirements specification phase followed by a design phase.
 
 \index{Spiral Model}
@@ -1765,19 +1763,18 @@ considering whether it is more cost-effective to purchase a system instead
 of developing it in-house.
 3. Development and testing, potentially utilizing the Waterfall model. 
 By the end of this stage, a prototype should be produced for demonstration 
-to system users.
+to users.
 4. Planning for the next iteration or deciding to conclude the project 
 if the current implementation already attends the organization's needs.
 
-![Spiral Model. Each iteration is divided into four stages.](figs/cap2/spiral-en.png){width=65%}
+![Spiral Model. Each iteration is divided into four stages.](figs/cap2/spiral-en.png){width=75%}
 
 The Spiral Model generates a more comprehensive version of a 
-system after each iteration, beginning from the version created at 
-the spiral's center. Despite this, each iteration, encapsulating 
-all four phases, can take anywhere from 6 to 24 months---
-which is significantly longer than in XP and Scrum. Another interesting 
-feature of this model is the risk analysis phase, where concrete steps 
-to mitigate project risks are laid out.  
+system after each iteration. Despite this, each iteration, encapsulating 
+all four phases, can take anywhere from 6 to 24 months---which is 
+significantly longer than in XP and Scrum. Another interesting feature 
+of this model is the risk analysis phase, where concrete steps 
+to mitigate project risks are considered.  
 
 \index{Unified Process (UP)}
 \index{Rational Software}
@@ -1785,8 +1782,8 @@ to mitigate project risks are laid out.
 \index{Rational Unified Process (RUP)}
 The **Unified Process (UP)**, proposed in the late 90s, is another
 example of an iterative method. Proposed by professionals 
-affiliated with Rational, a software consulting and development tool 
-company, which IBM later acquired in 2003, UP also has a specific 
+affiliated with Rational, a software consulting and development 
+company, which IBM later acquired in 2003, UP has also a specific 
 version known as the **Rational Unified Process (RUP)**.
 
 Due to its origins, RUP is intrinsically associated with two 
@@ -1798,14 +1795,39 @@ in detail in Chapter 4. However, it's worth noting that both UML and
 RUP were proposed by the same group of professionals who intended to 
 define a unified process and modeling language.
 
-* CASE Tools (Computer-Aided Software Engineering), which are analogous to 
+* CASE (Computer-Aided Software Engineering) tools, which are analogous to 
 CAD (Computer-Aided Design) tools used in other fields such as Civil 
 Engineering, Mechanical Engineering, and Architecture. RUP proposes that 
-the design and analysis of a software should heavily rely on UML
+the design of a software should heavily rely on UML
 diagrams. However, these diagrams aren't drawn on paper, but using 
 CASE tools, as illustrated in the following figure. Thus, besides proposing 
-the method, Rational also commercialized licenses for its supporting 
-CASE tools. 
+the method, Rational was also responsible for its supporting CASE tools. 
 
-![Project using a CASE tool. Screenshot generously provided by the 
-developers of the ArgoUML tool.](figs/cap2/case.png){width=70%}
+![Project using a CASE tool. Reproduction kindly authorized by the 
+developers of ArgoUML.](figs/cap2/case.png){width=70%}
+
+When using Rational Unified Process (RUP), development is divided into 
+the following phases:
+
+* Inception: this phase  
+  \index{Inception} encompasses tasks such as feasibility analysis, 
+  budget definition, risk assessment, and system scope determination. At 
+  the end of this phase, the business case for the system should 
+  be well established. It may even be concluded that it is more 
+  cost-effective to purchase a system in the market than to build one.
+
+* Elaboration: this phase involves tasks such as requirements specification 
+(which may be achieved using UML use case diagrams), system architecture 
+definition, and the proposal of a development plan. Upon completion 
+of this phase, all risks identified during the inception phase 
+should be effectively managed and mitigated.
+
+* Construction: in this phase lower-level design, implementation, and 
+system testing take place. Upon completion of this phase, a working system, 
+including documentation and user manuals, should be available. 
+Thus, this system should be ready for validation by users.
+
+* Transition: in this phase, the system is moved to production. Thus,
+it includes defining all necessary deployment procedures, such as data 
+backup policies, data migration from legacy systems, and training 
+the operations team.
