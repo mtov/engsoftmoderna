@@ -1806,51 +1806,49 @@ the method, Rational was also responsible for its supporting CASE tools.
 ![Project using a CASE tool. Reproduction kindly authorized by the 
 developers of ArgoUML.](figs/cap2/case.png){width=70%}
 
-When using Rational Unified Process (RUP), development is divided into 
-the following phases:
+When using RUP, development is divided into the following phases:
 
 * Inception: 
 \index{inception}
 this phase encompasses tasks such as feasibility 
 analysis, budget definition, risk assessment, and system scope determination. 
 At the end of this phase, the business case for the system should be well 
-established. It may even be concluded that it is more cost-effective to 
+established. We can also conclude that it is more cost-effective to 
 purchase a system in the market than to build one.
 
 * Elaboration: this phase involves tasks such as requirements specification 
 (which may be achieved using UML use case diagrams), system architecture 
 definition, and the proposal of a development plan. Upon completion 
-of this phase, all risks identified during the inception phase 
+of this phase, the risks identified during the inception phase 
 should be effectively managed and mitigated.
 
-* Construction: in this phase lower-level design, implementation, and 
-system testing take place. Upon completion of this phase, a working system, 
-including documentation and user manuals, should be available. 
-Thus, this system should be ready for validation by users.
+* Construction: this phase deals with lower-level design, implementation, and 
+testing. Upon its completion, a working system, including documentation and 
+manuals, should be available. 
 
 * Transition: in this phase, the system is moved to production. Thus,
 it includes defining all necessary deployment procedures, such as data 
 backup policies, data migration from legacy systems, and training 
 the operations team.
 
-Similar to the Spiral Model, the phases can be performed repeatedly, 
-making the development incremental with each cycle resulting in 
-the delivery of new features. Furthermore, every phase can be iterated. 
+Similar to the Spiral Model, the phases described above are performed 
+repeatedly, making the development incremental with each cycle resulting in 
+the delivery of new features. Furthermore, each phase can be iterated. 
 For instance, the construction phase can be divided into two iterations, 
 each giving shape to a part of the project. The following figure 
-illustrates the iterative model of RUP:
+illustrates this iterative characteristic of RUP:
 
 ![RUP phases and iterations. Iterations can occur at 
-any phase (as indicated by the self-loops). Another product increment 
-can be created by going through the whole cycle again (as indicated 
+any phase (as indicated by the self-loops). Product increments 
+are created by going through the whole cycle again (as indicated 
 by the outer loop).](figs/cap2/rup1-en){width=70%}
 
 RUP also defines various engineering disciplines, including business 
 modeling, requirement definition, design analysis, implementation, 
 testing, and deployment. These disciplines, also referred to 
-as process workflows, can take place in any phase. However, it 
-is usual for certain disciplines to intensify during specific phases, 
-as illustrated in the next figure. In this project, business modeling 
+as process workflows, can take place in any phase. However, 
+certain disciplines are more important during specific phases, 
+as illustrated in the next figure. In this example, business modeling 
 tasks are primarily performed during the initial phases (inception 
 and elaboration). Conversely, most of the implementation happens 
 during the construction phase.
@@ -1884,3 +1882,102 @@ edition. Wiley, 2008.
 
 Armando Fox, David Patterson. Engineering Software as a Service:
 An Agile Approach Using Cloud Computing. 1st edition, 2014.
+
+## Exercises {.unnumbered}
+
+1. How does XP recommend software development contracts be structured?
+
+2. Describe the key differences between XP and Scrum.
+
+3. Scrum teams are known to be cross-functional and self-organizing. Define these terms.
+
+4. In Scrum, what is the difference between the "top" and "bottom" stories in the
+   Product Backlog?
+
+5. What are story points and what are they used for?
+
+6. In Scrum, what is the difference between a sprint review and a
+    retrospective?
+
+7. Can a sprint be canceled? If so, by whom and for what reasons? For 
+some insights to answer this question, checkout the Scrum Guide 
+([link](https://www.scrum.org/resources/scrum-guide)).
+
+8. Consider a system within your area of expertise. (a) Propose a user 
+story for this system (b) Subsequently, break this story you created 
+into tasks, akin to what we did with the Questions & Answer forum in the
+section about XP. (c) Do these tasks have dependencies or can they be 
+completed in any sequence?
+
+9. Suppose two teams, A and B, working in different projects, employed 
+by separate companies with no interconnections. Both teams follow 
+15-day sprint cycles and both have five developers. In their 
+respective projects, team A estimates their velocity as 24 points, 
+while team B assumes theirs at 16 points. Can we conclude that team A 
+is 50% more efficient than team B? Please justify your answer.
+
+10\. Describe the primary differences between Scrum and Kanban.
+
+11\. What are the differences between a Scrum Board and a Kanban Board?
+
+12\. What error exists in the following Kanban board?
+
+![](figs/cap2/kanban4-en.png){width=80%}
+
+13\. Consider the following Kanban board. At this moment, the team cannot
+    work on the specification of new stories, as the WIP of this step
+    is filled by items waiting to move to the next step (Implementation). 
+    What is more recommended at this moment: Bypass the WIP limit and 
+    pull a new story from the Backlog to Specification? Or handle the
+    tasks in Validation, in order to unlock the process flow?
+
+![](figs/cap2/kanban5-en.png){width=80%}
+
+14. Why is it usually suggested to increase the WIP (Work In Progress) limits 
+calculated using Little's Law, for example, by 50%? What circumstances 
+can lead to errors when computing the WIP limits?
+
+15. Describe the instruments provided by the Waterfall, Scrum, and Kanban 
+for managing risk and promoting a workflow that encourages the development 
+of high-quality software.
+
+16. Consider a Kanban board with four stages. The table below provides 
+the *lead time* for each stage and the throughput for stage C, which is 
+the slowest one. Using these values, calculate the WIP for each stage 
+(displayed in the last column).
+
+ **Step**       **Lead Time** (average, days)   **Throughput** (tasks/day)        **WIP**
+-----------    -----------------------------   -------------------------------   ----------
+    A                4                           -
+    B                3                           -
+    C               10                           0.5
+    D                5                           -
+
+
+17. Consider the following chart, which illustrates how the costs of 
+changes vary according to the development phase in which they 
+occur for a particular system. (a) Which development methodology 
+would you recommend for this system, and why? Give examples of systems 
+that might have a similar change cost curve.
+
+![](figs/cap2/cost-of-changes.png){width=55%}
+
+18. The article *Development and Deployment at Facebook* 
+([link](https://doi.org/10.1109/MIC.2013.25)) presents the software 
+development practices employed at Facebook. In the first section 
+(pages 2-3; figure 2), the authors distinguish between several 
+development methods based on their release frequency. 
+Fill the following table with the release frequency for 
+some methods and policies discussed in the article.
+
+  **Method**            **Frequency of new releases**
+  ----------            --------------------------------
+  Waterfall                                           
+  Evolutionary                    
+  Agile                                                
+  Facebook                            
+  Continuous Deployment         
+
+19. Why are the Unified Process (UP) and Spiral not categorized as agile
+methods? How do they differ from the Waterfall Model?
+
