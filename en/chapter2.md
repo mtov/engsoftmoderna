@@ -751,7 +751,7 @@ among others. Most of these practices have been widely accepted
 within the software industry, and are extensively used nowadays even 
 by projects not entirely adhering to agile principles.
 
-Let's now look at XP's programming practices. 
+We will now look at XP's programming practices. 
 
 \index{Incremental Design}
 \index{Big Design Upfront}
@@ -1290,10 +1290,10 @@ with the aim of receiving feedback. Thus, our objective was to avoid a
 Waterfall approach, which would involve writing the book over 
 years without receiving any input. 
 
-To conclude, let's examine the criteria we used to consider a chapter 
-as *done*. It involves the author of the book thoroughly reading and 
-reviewing the chapter. Once this in-depth review was completed, the 
-chapter was tentatively released to the members of the 
+To conclude, it's important to examine the criteria we used to consider 
+a chapter as *done*. It involves the author of the book thoroughly 
+reading and reviewing the chapter. Once this in-depth review was 
+completed, the chapter was tentatively released to the members of the 
 Applied Software Engineering Research Group at DCC/UFMG (Brazil)
 for a second round of review and feedback.
 
@@ -1394,7 +1394,7 @@ for development teams by eliminating waste, delivering
 consistent value, and fostering a culture of continuous 
 improvement."
 
-To better understand Kanban, let's compare it to Scrum. Primarily, 
+To better understand Kanban, we will compare it to Scrum. Primarily, 
 Kanban is more simple than Scrum because it does not have events like 
 sprints. Furthermore, strictly speaking, Kanban does not define 
 particular roles like Product Owner or Scrum Master. Lastly, 
@@ -1422,7 +1422,7 @@ implemented. Completed tasks from one step await to be
 pulled into the next step by a team member. This is why Kanban 
 is commonly referred to as a *pull* system.
 
-Let's look at the structure of a Kanban Board using an example.
+We will look at the structure of a Kanban Board using an example.
 
 ![](figs/cap2/kanban1-en.png){width=90%}
 
@@ -1504,7 +1504,7 @@ step where only tasks from the first sub-column count (T3, in this case).
 
 ![](figs/cap2/kanban3-en.png){width=90%}
 
-Let's now explain the concept of Work in Progress 
+We will now explain the concept of Work in Progress 
 for the Specification step. To compute the WIP for this step, we need 
 to sum up the stories in Specification (which was zero in our previous 
 example) with the stories that have already been specified. 
@@ -1809,12 +1809,13 @@ developers of ArgoUML.](figs/cap2/case.png){width=70%}
 When using Rational Unified Process (RUP), development is divided into 
 the following phases:
 
-* Inception: this phase  
-  \index{Inception} encompasses tasks such as feasibility analysis, 
-  budget definition, risk assessment, and system scope determination. At 
-  the end of this phase, the business case for the system should 
-  be well established. It may even be concluded that it is more 
-  cost-effective to purchase a system in the market than to build one.
+* Inception: 
+\index{inception}
+this phase encompasses tasks such as feasibility 
+analysis, budget definition, risk assessment, and system scope determination. 
+At the end of this phase, the business case for the system should be well 
+established. It may even be concluded that it is more cost-effective to 
+purchase a system in the market than to build one.
 
 * Elaboration: this phase involves tasks such as requirements specification 
 (which may be achieved using UML use case diagrams), system architecture 
@@ -1831,3 +1832,55 @@ Thus, this system should be ready for validation by users.
 it includes defining all necessary deployment procedures, such as data 
 backup policies, data migration from legacy systems, and training 
 the operations team.
+
+Similar to the Spiral Model, the phases can be performed repeatedly, 
+making the development incremental with each cycle resulting in 
+the delivery of new features. Furthermore, every phase can be iterated. 
+For instance, the construction phase can be divided into two iterations, 
+each giving shape to a part of the project. The following figure 
+illustrates the iterative model of RUP:
+
+![RUP phases and iterations. Iterations can occur at 
+any phase (as indicated by the self-loops). Another product increment 
+can be created by going through the whole cycle again (as indicated 
+by the outer loop).](figs/cap2/rup1-en){width=70%}
+
+RUP also defines various engineering disciplines, including business 
+modeling, requirement definition, design analysis, implementation, 
+testing, and deployment. These disciplines, also referred to 
+as process workflows, can take place in any phase. However, it 
+is usual for certain disciplines to intensify during specific phases, 
+as illustrated in the next figure. In this project, business modeling 
+tasks are primarily performed during the initial phases (inception 
+and elaboration). Conversely, most of the implementation happens 
+during the construction phase.
+
+![Phases (depicted horizontally) and disciplines (depicted vertically) in a project developed using RUP. The area under the curve represents the intensity of the discipline during each phase (image from Wikipedia, license: public domain).](figs/cap2/rup2.png){width=65%}
+
+## Bibliography {.unnumbered}
+
+
+Kent Beck, Cynthia Andres. Extreme Programming Explained: Embrace
+Change. Addison-Wesley, 2nd edition, 2004.
+
+Kent Beck. Embracing Change with Extreme Programming. IEEE Computer,
+vol. 32, issue 10, p. 70-77, 1999.
+
+Kent Beck, Martin Fowler. Planning Extreme Programming. Addison-Wesley, 2000.
+
+Ken Schwaber, Jeff Sutherland. The Scrum Guide, 2017.
+
+Kenneth Rubin. Essential Scrum: A Practical Guide to the Most Popular
+Agile Process. Addison-Wesley, 2012
+
+Eric Brechner. Agile Project Management with Kanban. Microsoft Press, 2015.
+
+David Anderson. Kanban. Blue Hole Press, 2013.
+
+Ian Sommerville. Software Engineering. Pearson, 10th edition, 2019.
+
+Hans van Vliet. Software Engineering: Principles and Practice. 3rd
+edition. Wiley, 2008.
+
+Armando Fox, David Patterson. Engineering Software as a Service:
+An Agile Approach Using Cloud Computing. 1st edition, 2014.
