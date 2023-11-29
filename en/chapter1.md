@@ -362,7 +362,7 @@ Two commonly used phrases help to distinguish verification
 and validation:
 
 * Verification: Are we correctly implementing the system 
-according with its specification?
+according to its specification?
 * Validation: Are we implementing the correct system---the 
 one that meets customer or market needs?
 
@@ -399,7 +399,7 @@ yields incorrect results, we say that a failure has happened.
 ```
 **In-Depth:** The literature on testing sometimes 
 also mention the **error** and **fault** terms. These terms 
-carry the same meaning we attributed to defect. For instance, the 
+carry the same meaning we attributed to defects. For instance, the 
 IEEE Standard Glossary of Software Engineering Terminology 
 ([link](https://doi.org/10.1109/IEEESTD.1990.101064)) defines a 
 fault as an "incorrect step, process, or data definition in a computer
@@ -416,7 +416,7 @@ are synonymous.
 **Real World Insight:** There are many software failures that 
 had serious financial and human consequences. A prominent example
 is the 1996 explosion of French rocket Ariane 5 shortly 
-after its launch from Kourou, in the French Guiana. About 30 seconds 
+after its launch from Kourou, in French Guiana. About 30 seconds 
 after the launch, the rocket exploded due to an unexpected 
 behavior of one of its onboard systems. This resulted in a 
 financial loss of approximately half a billion dollars. 
@@ -426,7 +426,7 @@ language widely used in military and space software).
 The defective lines were responsible for converting a 64-bit 
 floating-point value to a 16-bit integer. During testing and 
 likely previous Ariane launches, the conversion always 
-succeeded–-–the real number always fit into an integer. 
+succeeded–-–the real number always fits into an integer. 
 However, on the fatal launch day, a previously untested condition 
 required the conversion of a larger real number than the 
 largest 16-bit integer could accommodate. This generated an 
@@ -466,7 +466,7 @@ and beyond could produce incorrect results. For instance,
 the calculation 00 - 99 might return an unexpected result. 
 To prevent this, companies created special task groups to 
 convert all date variables and expressions in their systems 
-to the DD-MM-YYYY format, an action that was therefor a prime 
+to the DD-MM-YYYY format, an action that was therefore a prime 
 example of preventive maintenance.
 ```{=latex}
 \end{esmbox}
@@ -634,7 +634,7 @@ production use upon the waterfall's completion.
 \index{Agile Methods}
 \index{Agile Manifesto}
 However, Waterfall faced severe criticism in the late 90s 
-due to frequent project delays and costs overruns. These 
+due to frequent project delays and cost overruns. These 
 issues usually happen because Waterfall requires a full requirements 
 gathering phase, a complete design phase, followed by a a full 
 implementation and testing phase before deploying the 
@@ -740,7 +740,7 @@ and testability.
 The assurance of software quality can be achieved via several 
 strategies. Firstly, **metrics** can be used to track the development process, including source code metrics and process metrics. 
 Code metric examples include the number of lines in a program, 
-with provides an indication of its size. Process metrics include, 
+which provides an indication of its size. Process metrics include, 
 for example, the number of bugs reported by end-users over 
 a specific period.
 
@@ -772,7 +772,7 @@ we used the tool provided by GitHub.
 \index{Professional Practice}
 The opening quote of this chapter by Bjarne Stroustrup states
 that *our civilization runs on software*. For this reason,
-there is a myriad of opportunities to software professionals. 
+there are a myriad of opportunities for software professionals. 
 However, the prevalence of software today also implies in 
 challenges and responsibilities. For example, questions 
 surrounding the professional practice of software engineering 
@@ -850,7 +850,7 @@ becomes an economic decision.
 ## Classification of Software Systems
 
 \index{ABC Systems}
-Software is part to a wide array of human activities. It comes in 
+Software is part of a wide array of human activities. It comes in 
 different sizes and types, fulfilling a variety of functional and
 non-functional requirements. As such, it's important to avoid the
 misconception that there is a single and universal method for 
@@ -895,7 +895,7 @@ an illustrative sample. Developing these systems requires
 rigorous processes, including comprehensive code review 
 and external certification. It's common to have hardware 
 and software redundancies---for example, two systems 
-running in parallel that only make a decision when both agree. 
+running in parallel that only makes a decision when both agree. 
 Sometimes, Type A systems are designed using a formal language 
 based on logic or set theory.
 
@@ -947,7 +947,7 @@ is no longer widely used for creating detailed software
 models, which was its initial goal. Despite that, we decided to 
 cover UML in the book to ensure a basic understanding of its 
 diagrams, as software developers often use them as sketches 
-when discussing or or documenting design ideas.
+when discussing or documenting design ideas.
 
 **Chapter 5: Design Principles**,  which covers two topics 
 that every software engineer needs to know. They are: (1) 
@@ -982,7 +982,7 @@ them into a spaghetti of inter-module dependencies.
 **Chapter 8: Tests** has emphasis on unit tests, 
 which are usually implemented using 
 frameworks like JUnit. The chapter includes dozens of unit 
-test examples and discusses various aspects of these tests. 
+test examples and discuss various aspects of these tests. 
 For instance, we discuss good principles for writing unit tests 
 and also test smells, which are patterns of tests that are not 
 recommended. Then, we address testability, i.e., the importance 

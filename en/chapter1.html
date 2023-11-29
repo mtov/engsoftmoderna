@@ -375,8 +375,8 @@ developers and users or due to poor explanations by users.</p>
 <p>Two commonly used phrases help to distinguish verification and
 validation:</p>
 <ul>
-<li>Verification: Are we correctly implementing the system according
-with its specification?</li>
+<li>Verification: Are we correctly implementing the system according to
+its specification?</li>
 <li>Validation: Are we implementing the correct system—the one that
 meets customer or market needs?</li>
 </ul>
@@ -404,7 +404,7 @@ conform to its specification. If this code is executed and yields
 incorrect results, we say that a failure has happened.</p>
 <p><strong>In-Depth:</strong> The literature on testing sometimes also
 mention the <strong>error</strong> and <strong>fault</strong> terms.
-These terms carry the same meaning we attributed to defect. For
+These terms carry the same meaning we attributed to defects. For
 instance, the IEEE Standard Glossary of Software Engineering Terminology
 (<a href="https://doi.org/10.1109/IEEESTD.1990.101064">link</a>) defines
 a fault as an <q>incorrect step, process, or data definition in a
@@ -414,15 +414,15 @@ this meaning.</q> In essence, <em>defect</em>, <em>error</em>,
 <p><strong>Real World Insight:</strong> There are many software failures
 that had serious financial and human consequences. A prominent example
 is the 1996 explosion of French rocket Ariane 5 shortly after its launch
-from Kourou, in the French Guiana. About 30 seconds after the launch,
-the rocket exploded due to an unexpected behavior of one of its onboard
+from Kourou, in French Guiana. About 30 seconds after the launch, the
+rocket exploded due to an unexpected behavior of one of its onboard
 systems. This resulted in a financial loss of approximately half a
 billion dollars. Curiously, the defect that caused the failure was
 confined to a few lines of an ADA function (which is a programming
 language widely used in military and space software). The defective
 lines were responsible for converting a 64-bit floating-point value to a
 16-bit integer. During testing and likely previous Ariane launches, the
-conversion always succeeded–-–the real number always fit into an
+conversion always succeeded–-–the real number always fits into an
 integer. However, on the fatal launch day, a previously untested
 condition required the conversion of a larger real number than the
 largest 16-bit integer could accommodate. This generated an erroneous
@@ -452,7 +452,7 @@ operations in 2000 and beyond could produce incorrect results. For
 instance, the calculation 00 - 99 might return an unexpected result. To
 prevent this, companies created special task groups to convert all date
 variables and expressions in their systems to the DD-MM-YYYY format, an
-action that was therefor a prime example of preventive maintenance.</p>
+action that was therefore a prime example of preventive maintenance.</p>
 <p> Adaptive maintenance aims to adjust a system in response to changes
 in its environment, including technological changes, new legislative
 rules, integration requirements with other systems, or customization
@@ -583,7 +583,7 @@ alt="Phases of a Waterfall process" />
 process</figcaption>
 </figure>
 <p> However, Waterfall faced severe criticism in the late 90s due to
-frequent project delays and costs overruns. These issues usually happen
+frequent project delays and cost overruns. These issues usually happen
 because Waterfall requires a full requirements gathering phase, a
 complete design phase, followed by a a full implementation and testing
 phase before deploying the system to users. Therefore, users may have to
@@ -678,7 +678,7 @@ modularity, code readability, maintainability, and testability.</p>
 <p>The assurance of software quality can be achieved via several
 strategies. Firstly, <strong>metrics</strong> can be used to track the
 development process, including source code metrics and process metrics.
-Code metric examples include the number of lines in a program, with
+Code metric examples include the number of lines in a program, which
 provides an indication of its size. Process metrics include, for
 example, the number of bugs reported by end-users over a specific
 period.</p>
@@ -709,8 +709,8 @@ class="header-section-number">1.2.11</span> Professional Practice <a
 href="#professional-practice" class="anchor-link"
 aria-hidden="true">🔗</a></h3>
 <p> The opening quote of this chapter by Bjarne Stroustrup states that
-<em>our civilization runs on software</em>. For this reason, there is a
-myriad of opportunities to software professionals. However, the
+<em>our civilization runs on software</em>. For this reason, there are a
+myriad of opportunities for software professionals. However, the
 prevalence of software today also implies in challenges and
 responsibilities. For example, questions surrounding the professional
 practice of software engineering start to arise when formulating
@@ -770,7 +770,7 @@ features ultimately becomes an economic decision.</p>
 class="header-section-number">1.3</span> Classification of Software
 Systems <a href="#classification-of-software-systems"
 class="anchor-link" aria-hidden="true">🔗</a></h2>
-<p> Software is part to a wide array of human activities. It comes in
+<p> Software is part of a wide array of human activities. It comes in
 different sizes and types, fulfilling a variety of functional and
 non-functional requirements. As such, it’s important to avoid the
 misconception that there is a single and universal method for software
@@ -805,9 +805,9 @@ ICU equipment, and subway trains. The software that controlled the
 Ariane 5 rocket is an illustrative sample. Developing these systems
 requires rigorous processes, including comprehensive code review and
 external certification. It’s common to have hardware and software
-redundancies—for example, two systems running in parallel that only make
-a decision when both agree. Sometimes, Type A systems are designed using
-a formal language based on logic or set theory.</p>
+redundancies—for example, two systems running in parallel that only
+makes a decision when both agree. Sometimes, Type A systems are designed
+using a formal language based on logic or set theory.</p>
 <p><strong>Alert:</strong> In this book, we will not cover Type A
 (Acute) or mission-critical systems.</p>
 <p>Lastly, we have Business Systems, or Type B systems. These systems
@@ -843,7 +843,7 @@ create sketches during software development projects. Indeed, UML is no
 longer widely used for creating detailed software models, which was its
 initial goal. Despite that, we decided to cover UML in the book to
 ensure a basic understanding of its diagrams, as software developers
-often use them as sketches when discussing or or documenting design
+often use them as sketches when discussing or documenting design
 ideas.</p>
 <p><strong>Chapter 5: Design Principles</strong>, which covers two
 topics that every software engineer needs to know. They are: (1)
@@ -871,7 +871,7 @@ was progressively abandoned, turning them into a spaghetti of
 inter-module dependencies.</p>
 <p><strong>Chapter 8: Tests</strong> has emphasis on unit tests, which
 are usually implemented using frameworks like JUnit. The chapter
-includes dozens of unit test examples and discusses various aspects of
+includes dozens of unit test examples and discuss various aspects of
 these tests. For instance, we discuss good principles for writing unit
 tests and also test smells, which are patterns of tests that are not
 recommended. Then, we address testability, i.e., the importance of

@@ -158,7 +158,7 @@ development cycles. Systems are built incrementally, starting
 with the most relevant features, according to customers. Initially, 
 a first version of the system is created, which implements only 
 high-priority functionalities. This version is then validated 
-by the customer. If approved, a new cycle---also callled **iteration** 
+by the customer. If approved, a new cycle---also called **iteration** 
 or **sprint**---begins, adding a few more features.  Typically, 
 these cycles are short, having two weeks, for example. This 
 allows the systems to be incrementally built, with each feature 
@@ -200,7 +200,7 @@ gradually unfolds as sprints are finished and validated. In other
 words, the essence of agile development is to advance even when 
 we have incomplete, partial, and changing requirements.
 
-* No dedicated design phase, i.e., no Big Design Up Fron (BDUF): 
+* No dedicated design phase, i.e., no Big Design Up Front (BDUF): 
 The design of the software system is also incremental, evolving 
 on each iteration.
 
@@ -366,7 +366,7 @@ following a set of principles. Picture it as a river with the values
 on one side and the practices on the other. Principles act as a bridge 
 between both sides. The main XP principles are:
 
-**Humanity**. Software is a activity that depends on human capital. 
+**Humanity**. Software is an activity that depends on human capital. 
 The principal resource of software companies are not physical 
 assets---computers, buildings, chairs, or Internet connections, 
 for example---but their developers. A term that nicely reflects the
@@ -386,7 +386,7 @@ studied in Chapter 1.
 **Mutual Benefits**: XP advocates that decisions taken in a 
 software project should benefit multiple stakeholders. For example, 
 a software company should ensure a good work environment; in return, 
-the team should deliver a software that adds value to its business. 
+the team should deliver software that adds value to its business. 
 Another example: by writing tests a developer benefits, as tests 
 help to detect bugs in her code. But tests also help other developers, 
 who will be more confident that their code does not introduce 
@@ -554,7 +554,7 @@ To summarize, to initiate the use of XP, an organization should:
 
 *   Define the duration of an iteration.
 *   Define the number of iterations in a release.
-*   Set a list of stories, as proposed the customer representative.
+*   Set a list of stories, as proposed by the customer representative.
 *   Get estimates for each story from the developers.
 *   Define the team's velocity, that is, the number of story points that
    it can implement per iteration
@@ -652,7 +652,7 @@ long---offer quick feedback. However, they also require more client
 involvement as new software increments need weekly validation. 
 Moreover, stories must be simple and straightforward to fit in a
 1-week iteration. Conversely, longer iterations---like a month---grant 
-the team more time to plan and execute tasks with less pressure. The 
+the team has more time to plan and execute tasks with less pressure. The 
 trade-off here is delays in receiving client feedback, which is 
 particularly relevant when the requirements are unclear. As a result, 
 a 2-3 week time box tends to provide a balance between rapid feedback 
@@ -715,7 +715,7 @@ For instance, the customer representative has allocated the story
 Although it seems contradictory, the team should respect this order as 
 the final decision always lies with the customer representative. 
 But then the dilemma might be "how can we post responses without 
-having the questions?" To resolve this problem, placeholder questions 
+having questions?" To resolve this problem, placeholder questions 
 that can't be edited by users can be used. In iteration 1, these 
 questions will appear by default and users will be able to respond to them.
 
@@ -737,8 +737,8 @@ designing the high-level system, defining its main components, classes,
 and interfaces using graphical modeling languages, like UML, 
 which we will discuss in Chapter 4. Only upon completion of the analysis 
 and design phases, the coding phase would start under the responsibility
-of programmers. This setup inherently created a hierarchy, with 
-analysts often being regarded as the more prestigious roles. However, 
+of programmers. This setup inherently created a hierarchy where 
+analysts are often regarded as the more prestigious roles. However, 
 with the introduction of agile methodologies---particularly XP---this 
 hierarchy was dismantled, since XP advocates for starting coding  
 at a project's outset.
@@ -827,7 +827,7 @@ experiences with pair programming
 Approximately 65% of the respondents found pair programming beneficial. 
 When asked about the advantages, reduced bugs (62%), better code 
 quality (45%), knowledge spread (40%), and peer learning opportunities 
-(40%) received most votes. However, 75% regarded the associated cost 
+(40%) received the most votes. However, 75% regarded the associated cost 
 as a significant disadvantage. Lastly, the majority (38%) preferred 
 pairing with a colleague having complementary skills to compensate 
 for their weaknesses.
@@ -975,7 +975,7 @@ development team from the outsourced company, which will work in accordance
 with XP practices. The client defines the stories and validate their 
 implementation at the end of each iteration. These contracts also provide 
 the flexibility for termination or renewal every few months, enabling 
-clients to switch companies should they find the quality unsatisfactory. 
+clients switch companies should they find the quality unsatisfactory. 
 As usual in XP, the objective is to cultivate communication and feedback 
 streams between client and outsourced companies, rather than compelling 
 the latter to deliver a low-quality product just to fulfill the contract. 
@@ -998,7 +998,7 @@ Scrum is an agile, iterative, and incremental method for project
 management. It was first proposed by Jeffrey Sutherland and Ken 
 Schwaber in an article in 1995 
 ([link](https://doi.org/10.1007/978-1-4471-0947-1_11)). 
-Among various agile methos, Scrum is probably the most popular and 
+Among various agile methods, Scrum is probably the most popular and 
 broadly applied. Its widespread acceptance can be partly explained by 
 the proliferation of related books, educational courses, professional 
 consultancies, and certifications.
@@ -1885,63 +1885,60 @@ An Agile Approach Using Cloud Computing. 1st edition, 2014.
 
 ## Exercises {.unnumbered}
 
-1. How does XP recommend software development contracts be structured?
+1. How are the software development contracts structured when adopting XP?
 
 2. Describe the key differences between XP and Scrum.
 
-3. Scrum teams are known to be cross-functional and self-organizing. Define these terms.
+3. Scrum teams are cross-functional and self-organizing. Define these terms.
 
-4. In Scrum, what is the difference between the "top" and "bottom" stories in the
-   Product Backlog?
+4. In Scrum, what is the difference between stories in the the top and in 
+   the bottom of the Product Backlog?
 
 5. What are story points and what are they used for?
 
 6. In Scrum, what is the difference between a sprint review and a
-    retrospective?
+   retrospective?
 
-7. Can a sprint be canceled? If so, by whom and for what reasons? For 
-some insights to answer this question, checkout the Scrum Guide 
+7. Can a sprint be canceled? If so, by whom and for what reasons? To answer 
+this question, checkout the Scrum Guide 
 ([link](https://www.scrum.org/resources/scrum-guide)).
 
 8. Consider a system within your area of expertise. (a) Propose a user 
-story for this system (b) Subsequently, break this story you created 
-into tasks, akin to what we did with the Questions & Answer forum in the
-section about XP. (c) Do these tasks have dependencies or can they be 
-completed in any sequence?
+story for this system. (b) Break this story into tasks, akin to what we 
+did with the Q& A forum in the section about XP. (c) Do these tasks 
+have dependencies or can they be implemented in any order?
 
-9. Suppose two teams, A and B, working in different projects, employed 
-by separate companies with no interconnections. Both teams follow 
-15-day sprint cycles and both have five developers. In their 
-respective projects, team A estimates their velocity as 24 points, 
-while team B assumes theirs at 16 points. Can we conclude that team A 
-is 50% more efficient than team B? Please justify your answer.
+9. Suppose two teams, A and B, working in different projects, from different 
+companies with no interconnections. Both teams follow 15-day sprint cycles 
+and both have five developers. In their respective projects, team A 
+estimates their velocity as 24 points, while team B assumes theirs at 
+16 points. Can we conclude that team A is 50% more productive than 
+team B? Justify your answer.
 
 10\. Describe the primary differences between Scrum and Kanban.
 
 11\. What are the differences between a Scrum Board and a Kanban Board?
 
-12\. What error exists in the following Kanban board?
+12\. What is the error in the following Kanban board?
 
 ![](figs/cap2/kanban4-en.png){width=80%}
 
 13\. Consider the following Kanban board. At this moment, the team cannot
-    work on the specification of new stories, as the WIP of this step
-    is filled by items waiting to move to the next step (Implementation). 
-    What is more recommended at this moment: Bypass the WIP limit and 
-    pull a new story from the Backlog to Specification? Or handle the
-    tasks in Validation, in order to unlock the process flow?
+work on the specification of new stories, as the WIP of this step
+is filled by items waiting to move to Implementation. What is more 
+recommended at this moment: Bypass the WIP limit and pull a new story 
+from the Backlog to Specification? Or work in the tasks in Validation? 
 
 ![](figs/cap2/kanban5-en.png){width=80%}
 
-14. Why is it usually suggested to increase the WIP (Work In Progress) limits 
-calculated using Little's Law, for example, by 50%? What circumstances 
-can lead to errors when computing the WIP limits?
+14. Why is it usually suggested to increase the WIP limits calculated 
+using Little's Law, for example, by 50%? What circumstances can lead 
+to errors when computing the WIP limits?
 
 15. Describe the instruments provided by the Waterfall, Scrum, and Kanban 
-for managing risk and promoting a workflow that encourages the development 
-of high-quality software.
+for managing risk and promoting the development of high-quality software.
 
-16. Consider a Kanban board with four stages. The table below provides 
+16. Consider a Kanban board with four stages. The following table provides 
 the *lead time* for each stage and the throughput for stage C, which is 
 the slowest one. Using these values, calculate the WIP for each stage 
 (displayed in the last column).
@@ -1956,19 +1953,20 @@ the slowest one. Using these values, calculate the WIP for each stage
 
 17. Consider the following chart, which illustrates how the costs of 
 changes vary according to the development phase in which they 
-occur for a particular system. (a) Which development methodology 
-would you recommend for this system, and why? Give examples of systems 
-that might have a similar change cost curve.
+occur for a particular software application. (a) Which development 
+method would you recommend for this system, and why? Give examples 
+of systems that might have a similar change cost curve.
 
 ![](figs/cap2/cost-of-changes.png){width=55%}
 
 18. The article *Development and Deployment at Facebook* 
-([link](https://doi.org/10.1109/MIC.2013.25)) presents the software 
+([link](https://doi.org/10.1109/MIC.2013.25)) presents the 
 development practices employed at Facebook. In the first section 
 (pages 2-3; figure 2), the authors distinguish between several 
 development methods based on their release frequency. 
 Fill the following table with the release frequency for 
-some methods and policies discussed in the article.
+the methods and policies discussed in that part of the 
+article.
 
   **Method**            **Frequency of new releases**
   ----------            --------------------------------
@@ -1978,6 +1976,6 @@ some methods and policies discussed in the article.
   Facebook                            
   Continuous Deployment         
 
-19. Why are the Unified Process (UP) and Spiral not categorized as agile
-methods? How do they differ from the Waterfall Model?
+19. Why are RUP and Spiral not categorized as agile methods? How 
+do they differ from the Waterfall Model?
 
