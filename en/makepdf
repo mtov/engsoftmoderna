@@ -1,5 +1,6 @@
 cat chapter1.md > esm-book-english.md
 cat chapter2.md >> esm-book-english.md
+cat chapter3.md >> esm-book-english.md
 
 pandoc --defaults=defaults-latex.yaml esm-book-english.md -o esm-book-english.tex
 

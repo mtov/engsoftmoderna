@@ -4,13 +4,13 @@
 > *Our civilization runs on software.* -- Bjarne Stroustrup
 
 In this initial chapter, we outline the objectives and 
-challenges tackled in Software Engineering (Section 1.1). 
+challenges addressed in Software Engineering (Section 1.1). 
 We additionally provide an overview of the primary subjects 
 investigated in this field of Computer Science (Section 1.2). 
 Our goal is to provide a comprehensive understanding of 
 the field before diving into specific topics. As 
 Software Engineering is a broad domain, we also discuss the 
-types of software systems that can make use of the 
+types of software systems that can make benefit from 
 principles and practices presented in this book (Section 1.3). 
 This is done to avoid any misconceptions concerning the scope 
 of our work. After that, we present the topics addressed 
@@ -32,15 +32,15 @@ telecommunications, transportation in large urban centers,
 and advertising.
 
 Given the crucial role software plays in our society, 
-it's unsurprising that there is a field of Computer Science that 
-focuses on proposing solutions for the development of software 
+it's unsurprising that there is a field of Computer Science focusing 
+on proposing solutions for the development of software 
 systems, particularly large and complex ones. This field is 
 known as **Software Engineering**.
 
-Software Engineering is concerned with the systematic, disciplined, 
+Software Engineering is concerned with systematic, disciplined, 
 and quantifiable approaches to develop, operate, maintain, and 
 evolve software systems. As mentioned, this field is central to 
-Computer Science and is engaged with applying engineering 
+Computer Science and involves applying engineering 
 principles in software construction. 
 
 Historically, Software Engineering as a field emerged in the 
@@ -65,7 +65,7 @@ for a NATO-sponsored conference. The purpose of this meeting
 was to discuss a "crucial problem of computer usage, 
 the so-called software". The conference concluded with a 
 130-page report advocating the construction of software 
-based on practical and theoretical principles, similar to 
+based on practical and theoretical principles, akin to 
 other branches of engineering. In light of this proposition, 
 the participants coined the term Software Engineering, 
 effectively establishing this field in Computer Science. 
@@ -88,7 +88,7 @@ More than half a century after the NATO Conference,
 techniques and methods for software construction have improved 
 remarkably. It's now widely recognized that software, 
 in most instances, should not be built in sequential 
-phases as happens with traditional engineering products. Many 
+phases, as happens with traditional engineering products. Many 
 patterns can assist software engineers in their work, avoiding 
 the need to reinvent the wheel for every new design problem. 
 Libraries and frameworks for various purposes are 
@@ -107,7 +107,7 @@ ensure their long-term maintainability and comprehension.
 \index{Brooks, Frederick}
 Software development has unique characteristics when compared to 
 other engineering products, especially hardware. Frederick 
-Brooks, a 1999 Turing Award recipient and a pioneer in Software 
+Brooks, a recipient of 1999 Turing Award and a pioneer in Software 
 Engineering, was among the first to underscore this fact. 
 In 1987, he wrote an essay titled *No Silver Bullet: Essence 
 and Accident in Software Engineering* 
@@ -151,7 +151,7 @@ the size and effort required to create software due to
 its abstract nature.
 
 Challenges (2), (3), and (4) are exclusive to software 
-systems. They do not exist in other engineering products, 
+systems; they do not exist in other engineering products, 
 at least not with the same intensity. When environmental 
 laws change, car manufacturers have years to comply with 
 the new legislation. Also, cars, once manufactured, do 
