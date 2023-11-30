@@ -3,20 +3,20 @@
 
 > *Our civilization runs on software.* -- Bjarne Stroustrup
 
-In this initial chapter, we outline the objectives and 
+In this first chapter, we outline the objectives and 
 challenges addressed in Software Engineering (Section 1.1). 
-We additionally provide an overview of the primary subjects 
-investigated in this field of Computer Science (Section 1.2). 
+We also present and explore the primary topics studied 
+in this field of Computer Science (Section 1.2). 
 Our goal is to provide a comprehensive understanding of 
 the field before diving into specific topics. As 
-Software Engineering is a broad domain, we also discuss the 
-types of software systems that can make benefit from 
+Software Engineering is a broad domain, we discuss the 
+types of software systems that can benefit from the 
 principles and practices presented in this book (Section 1.3). 
-This is done to avoid any misconceptions concerning the scope 
+This is done to avoid misconceptions concerning the scope 
 of our work. After that, we present the topics addressed 
 in the remaining chapters of the book (see Section 1.4).
 
-## Definition, Context, and History
+## Definition and Historical Context
 
 In today's world, virtually everything operates via software. 
 Various organizations, including businesses of every scale 
@@ -24,16 +24,16 @@ and governmental entities, depend on software systems to
 deliver their services effectively. Governments often interact 
 with citizens through software applications like public service 
 delivery platforms and tax collection systems. Many businesses 
-also sell a wide range of products directly to consumers via 
-e-commerce platforms. Software is in physical products,
+sell a wide range of products directly to consumers via 
+e-commerce platforms. Software is also in physical products,
 including cars, airplanes, satellites, and robots. Furthermore, 
 software is revitalizing traditional industries such as 
 telecommunications, transportation in large urban centers, 
 and advertising.
 
 Given the crucial role software plays in our society, 
-it's unsurprising that there is a field of Computer Science focusing 
-on proposing solutions for the development of software 
+it's unsurprising that there is a field of Computer Science 
+focusing on proposing solutions for the development of software 
 systems, particularly large and complex ones. This field is 
 known as **Software Engineering**.
 
@@ -1087,13 +1087,12 @@ activities?
 
 10\. Give examples of Type C (Casual) systems that you've developed.
 
-11\.  In 2015, it was revealed that millions of cars manufactured 
+11\.  In 2015, it was discovered that millions of cars manufactured 
 by a major automobile company emitted pollutants within legal 
-standards only during laboratory tests. Under 
-normal usage conditions, the cars released higher levels 
-of pollutants to enhance performance. That is, the code included 
-a decision structure like the following one (merely 
-illustrative, for the purpose of this exercise):
+standards only during laboratory tests. Under normal usage conditions, 
+the cars released higher levels of pollutants to enhance performance. 
+That is, the code possibly included a decision command like 
+the following one (merely illustrative, for the purpose of this exercise):
 
 ```
 if "car being tested in a laboratory"

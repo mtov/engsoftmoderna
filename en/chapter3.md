@@ -71,7 +71,7 @@ window should have a maximum response time of 1 second.
 
 \index{Sommerville, Ian}
 Some authors, such as Ian Sommerville 
-([link](https://iansommerville.com/software-engineering-book/)), 
+([link](https://dl.acm.org/doi/book/10.5555/2851535)), 
 also divide requirements into **user requirements** and **system requirements**. 
 User requirements are high-level, non-technical, and usually written 
 by users in natural language. Conversely, system requirements are more 
@@ -99,8 +99,37 @@ this context, implies drawing out the main requirements of the system
 from discussions and interactions between the system's developers 
 and its stakeholders.
 
-Requirements elicitation can utilize various techniques, including conducting 
-stakeholder interviews, issuing questionnaires, reviewing organizational 
-documents, organizing user workshops, creating prototypes, and analyzing 
-usage scenarios. Some elicitation techniques also rely on ethnographic studies. 
-Ethnography, typically used in Anthropology to understand a culture in its natural setting, — where the root *ethnos* translates as people or culture — is applied in Requirements Engineering to facilitate the developer's integration into a stakeholder's working environment. This enables the developer to observe, without interfering in or expressing personal views about the observed tasks and events, how stakeholders perform their tasks over several days.
+We can use various techniques for requirements elicitation, 
+including conducting stakeholder interviews, issuing questionnaires, 
+reviewing organizational documents, organizing user workshops, 
+creating prototypes, and analyzing usage scenarios. Some elicitation 
+techniques also rely on ethnographic studies. Ethnography, a term 
+whose roots trace back to Anthropology, refers to studying a culture 
+in its natural environment (*ethnos*, in Greek, means people 
+or culture). For instance, to study a newly discovered indigenous tribe 
+in Amazon, an anthropologist might move to the tribe's location and spend 
+months living amongst them and understanding their habits, customs, 
+language, etc. Similarly, in the context of Requirements Engineering, 
+ethnography is a technique of requirements elicitation that recommends 
+the developer integrate into the work environment of the stakeholders 
+and observe---typically for several days--how they perform their tasks. 
+Note that this observation is silent, meaning that the developer should 
+not interfere with or express personal views about the observed 
+tasks and events.
+
+Once requirements are elicited, they should be (1) documented, (2) 
+checked, validated, and (3) prioritized.
+
+In Agile development, requirements are documented through simplified 
+**user stories** as previously discussed in Chapter 2. However, 
+in some projects, a **Requirements Specification Document** might be necessary. 
+This document elaborates all requirements of the software to be built---
+including functional and non-functional requirements--- normally in natural 
+language. In the 90s, the **IEEE 830 Standard**, a standard for 
+requirements specification documents, was proposed. This standard was 
+suggested within the context of Waterfall-based models, which, as we
+studied in Chapter 2, involves a lengthy phase of requirements 
+gathering. The main sections of the IEEE 830 standard are 
+illustrated in the next figure.
+
+![IEEE 830 standard for requirement specification documents](figs/cap3/ieee-830-standard){width=70%}
