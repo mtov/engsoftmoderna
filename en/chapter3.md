@@ -71,7 +71,7 @@ window should have a maximum response time of 1 second.
 
 \index{Sommerville, Ian}
 Some authors, such as Ian Sommerville 
-([link](https://dl.acm.org/doi/book/10.5555/2851535)), 
+([link](c)), 
 also divide requirements into **user requirements** and **system requirements**. 
 User requirements are high-level, non-technical, and usually written 
 by users in natural language. Conversely, system requirements are more 
@@ -120,16 +120,152 @@ tasks and events.
 Once requirements are elicited, they should be (1) documented, (2) 
 checked, validated, and (3) prioritized.
 
-In Agile development, requirements are documented through simplified 
+In Agile development, requirements are documented using 
 **user stories** as previously discussed in Chapter 2. However, 
 in some projects, a **Requirements Specification Document** might be necessary. 
-This document elaborates all requirements of the software to be built---
-including functional and non-functional requirements--- normally in natural 
-language. In the 90s, the **IEEE 830 Standard**, a standard for 
-requirements specification documents, was proposed. This standard was 
+This document elaborates all requirements of the software to be 
+built---including functional and non-functional requirements---
+normally in natural language. In the 90s, the **IEEE 830 Standard**, 
+a standard for such documents was proposed. This standard was 
 suggested within the context of Waterfall-based models, which, as we
 studied in Chapter 2, involves a lengthy phase of requirements 
-gathering. The main sections of the IEEE 830 standard are 
+specification. The main sections of the IEEE 830 standard are 
 illustrated in the next figure.
 
-![IEEE 830 standard for requirement specification documents](figs/cap3/ieee-830-standard){width=70%}
+![Template of a requirement specification document following the IEEE 830 standard](figs/cap3/ieee-830-standard){width=70%}
+
+\index{Requirements!Properties}
+After specification, requirements should be checked and validated to 
+ensure they are correct, precise, complete, consistent, and verifiable, 
+as described below:
+
+* Requirement should be **correct**. For example, an incorrect computation 
+for the savings account returns in a banking system could result in 
+either bank or client losses.
+
+*  Requirements should be **precise** to avoid ambiguity. However, ambiguity 
+occurs more frequently than we'd like when using natural language. For 
+example, consider the following condition: to pass, a student needs to score 
+60 points during the semester or score 60 points in the Special Exam and 
+attend the classes regularly. Observe that it admits two different 
+interpretations. Firstly: (60 points during the semester or 60 points 
+in the Special Exam) and attend classes regularly. But it can also be 
+interpreted as: 60 points during the semester or (60 points in the 
+Special Exam and regular attendance). As shown, parentheses had to 
+be used to remove ambiguity in the combination of the "and" and "or" 
+operations
+
+*  Requirements should be **complete** to ensure all necessary 
+features, especially crucial ones, are considered and are not 
+forgotten.
+
+*  Requirements must be **consistent**. Inconsistency arises when different 
+stakeholders have distinct expectations---for example, if one stakeholder 
+expects system availability at 99.9%, but another believes 90% suffices.
+
+*  Requirements should be **verifiable**, implying we can test their 
+implementations. For example, stating that a system should be 
+user-friendly is vague; how can developers verify if they've met the 
+clients' expectations in this case?
+
+Lastly, requirements must be prioritized. At times, the term requirements 
+is taken literally, i.e., as a list of mandatory features and constraints 
+in software systems. However, not everything specified by clients will be 
+implemented in the initial releases. For instance, budget and time constraints 
+might require the delay of certain requirements.
+
+Furthermore, requirements can change, as the world changes. For example, 
+in the banking system mentioned earlier, the rules for savings account 
+returns should be updated every time they are changed by the responsible 
+federal agencies. Thus, if a requirements specification document exists, 
+documenting such rules, it should be updated, just like the source code. 
+The ability to identify the requirements implemented by a given piece 
+of code and vice versa (i.e., to map a particular requirement to 
+the code implementing it) is called **traceability**.
+
+Before concluding, it's important to mention that Requirements Engineering 
+is a multi-disciplinary and complex activity. For instance, political 
+factors might motivate certain stakeholders to do not cooperate with 
+requirement elicitation, particularly when this threatens their status 
+and power within the organization. Other stakeholders may simply not have 
+time to meet with developers to explain the system's requirements.
+Moreover, a cognitive barrier between stakeholders and developers may 
+also impact the elicitation of requirements. For example, since 
+stakeholders are typically seasoned experts, they might use a specialized 
+language, unfamiliar to developers.
+
+
+```{=latex}
+\begin{esmbox}
+```
+**Real World Insight**: To understand the challenges faced in Requirements
+Engineering, in 2016, about two dozen researchers organized a survey with 
+228 software-developing companies spread across 10 countries 
+([link](https://arxiv.org/abs/1611.10288)). 
+When asked about the main problems faced in requirements the specification, 
+the ten most common answers were as follows (including the percentage of 
+companies that cited each problem):
+
+* Incomplete or undocumented requirements (48%)
+* Communication failures between team members and customers (41%)
+* Constantly changing requirements (33%)
+* Abstractly specified requirements (33%)
+* Time constraints (32%)
+* Communication problems among team members (27%)
+* Difficulty to distinguish requirements from solutions (25%)
+* Lack of customer support (20%)
+* Inconsistent requirements (19%)
+* Lack of access to customers' or business needs (18%)
+```{=latex}
+\end{esmbox}
+```
+
+### What Will We Study?
+
+The following figure summarizes our studies on requirements so far, 
+showing how they act as a pivotal bridge that links a real-world problem
+with a software designed to solve it. We will use this figure to motivate 
+and introduce the topics we will study for the rest of this chapter.
+
+![Requirements are the bridge between real-world problems and their software solutions](figs/cap3/requirements){width=60%}
+
+The figure is useful for illustrating a common situation in Requirements
+Engineering: systems whose requirements change frequently or whose users 
+cannot accurately specify what they want in the system. In fact, 
+we've already studied such systems in Chapter 2, when we covered 
+Agile Methods. As the reader may recall, when requirements change 
+frequently, and the system is a non-mission-critical one, it is not
+recommended to invest years drafting a Detailed Requirements Document. 
+There's a risk the requirements become outdated before the system 
+is finalized---or a competitor can build an equivalent 
+system and dominate the market. In such cases, as we also commented
+on Chapter 2, we should use lightweight requirement specification 
+documents---called **User Stories**---and incorporate a representative 
+of the customers into the development team, to clarify and explain 
+the requirements to the developers. Given the importance of 
+such scenarios---systems with constantly evolving, but non-critical 
+requirements--we will start by studying User Stories in Section 3.3.
+
+On the other hand, some systems have relatively stable requirements. 
+In these cases, it might be worth to invest in detailed requirement 
+specifications. Certain companies, for instance, might prefer to know all 
+the system's requirements before starting its development. Lastly, 
+requirements can be demanded by certification organizations, especially 
+for systems that deal with human lives, such as systems in the medical, 
+transportation, or military fields. In Section 3.4, we will study 
+**Use Cases**, which are comprehensive documents for specifying 
+requirements.
+
+A third scenario arises when we are no sure if the proposed "problem" truly 
+warrants a solution. That is, we might collect all the requirements of 
+this "problem" and implement a system that solves it. However, the uncertainty 
+remains whether this system will succeed and attract users. In these scenarios, 
+an interesting procedure is to take a step back and first test the relevance 
+of the problem we intend to solve using a software system. A possible test 
+involves building a **Minimal Viable Product** (**MVP**). An MVP is a functional 
+system that can be used by real clients. However, it only includes the features 
+necessary to prove its market feasibility, i.e, its ability to solve a 
+problem faced by some clients. Given the contemporary importance of such 
+scenarios---software for solving problems in unknown or uncertain 
+markets---we will study more about MVPs in Section 3.5.
+
