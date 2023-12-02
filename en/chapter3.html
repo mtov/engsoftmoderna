@@ -422,16 +422,190 @@ next sprints. In addition, they agree to be available during the sprints
 to refine the story, and explain it to the developers. Lastly, they also
 will consider the story implemented as long as it meets the confirmation
 tests they have also specified.</p>
-<p>Looking from the developers’ perspective, the process works like
-this: the customer’s representative is asking us to implement the story
-summarized on this card. Therefore, we will have to implement it in the
-next sprint. However, we can count on the full support of the customer
+<p>From a developer’s standpoint,, the process works like this: the
+customer’s representative is asking us to implement the story summarized
+on this card. Therefore, we will have to implement it in the next
+sprint. However, we can count on the full support of the customer
 representative to discuss and clarify any doubts about the story.
 Additionally, the representative has already defined the tests they will
 use at the sprint review meeting to consider the story implemented.
 Finally, we further agree that the representative cannot change their
 mind at the end of the sprint and use an entirely different test to
 assess our implementation.</p>
+<p>In essence, when employing user stories, requirements engineering
+becomes a continuous activity occurring daily during development. The
+traditional requirements document with hundreds of pages is replaced by
+regular conversations between developers and the customer
+representative. User stories emphasize verbal engagement over written
+communication, thus aligning with the following principles of the Agile
+Manifesto: (1) individuals and interactions over processes and tools;
+(2) working software over comprehensive documentation; (3) customer
+collaboration over contract negotiation; (4) responding to change over
+following a plan.</p>
+<p> User stories should have the following characteristics (whose
+initials in English form the acronym INVEST):</p>
+<ul>
+<li><p>Stories must be <strong>independent</strong>: given two stories X
+and Y, it should be possible to implement them in any order. Ideally,
+there should no have dependencies between them.</p></li>
+<li><p>Stories must be <strong>negotiable</strong>. As we mentioned
+before, stories (the card) are invitations for conversations between
+customers and developers during a sprint. Therefore, both parties should
+be open to change and adapt their opinions as result of these
+discussions. Developers should be open to implement details not
+expressed or that do not fit on the story cards. Customers should accept
+technical arguments from developers, for example about the complexity of
+implementing some aspect of the story as initially planned.</p></li>
+<li><p>Stories must add <strong>value</strong> to the customers’
+business. Stories are proposed, written, and ranked by the customers
+according to the value they add to their business. For this reason, the
+idea of a technical story doesn’t exist, such as this one: <q>the system
+has to be implemented in JavaScript, using React on the front-end and
+Node.js on the backend</q>.</p></li>
+<li><p>It should be possible to <strong>estimate</strong> the size of a
+story, i.e., to define how many days will be necessary to implement it.
+Normally, this requires the story to be small, which we will discuss
+next, and for the developers to have experience in the system’s
+domain.</p></li>
+<li><p>Stories must be <strong>small</strong>. In fact, complex and
+large stories—also known as <strong>epics</strong>—can exist but they
+should be placed at the bottom of the backlog, meaning they will not be
+implemented soon. On the contrary, stories at the top of the backlog
+should be short and small to facilitate understanding and estimating
+them. Assuming that a sprint has a maximum duration of one month, it
+should be possible to implement such stories in less than one week, for
+example.</p></li>
+<li><p>Stories must be <strong>testable</strong>, that is, they should
+have clear acceptance tests. For example, <q>the customer may pay with
+credit cards</q> is testable, assuming we know the credit card brands
+that can be used. On the other hand, the following story is a
+counter-example: <q>a customer should not wait too long to have their
+purchase confirmed.</q> This is a vague story and, therefore, it does
+not have a clear acceptance criterion.</p></li>
+</ul>
+<p>It is also recommended to list the main users who will interact with
+the system before starting to write stories in order to avoid stories
+that only serve certain users. Once you have defined these <strong>user
+roles</strong> (or <strong>personas</strong>), stories are commonly
+written in the following format:</p>
+<blockquote>
+<p>As a [user role], I want to [do something with the system]</p>
+</blockquote>
+<p> We will show examples of stories in this format in the next section.
+But first, we would like to mention that a <strong>story writing
+workshop</strong> is usually carried out at the inception of a software
+project. This workshop gathers the the system’s main users in a room,
+who then discuss the system’s objectives, its main features, and so on.
+At the end of the workshop, which can last a week depending on the size
+and relevance of the project, we should have a valuable list of user
+stories for implementation over multiple sprints.</p>
+<h3 data-number="2.3.1" id="example-library-management-system"><span
+class="header-section-number">2.3.1</span> Example: Library Management
+System <a href="#example-library-management-system" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
+<p>In this section, we give examples of user stories for a library
+management system. They are associated with three types of users:
+typical users, professors, and library staff.</p>
+<p>First, we show stories suggested by regular users (see below). Any
+library user fits this role and therefore can perform the operations
+described in these stories. Note that the stories are just a sentence
+and do not elaborate on how each operation will be implemented. For
+example, a story defines that users should search for books. However,
+many details are omitted, including the search criteria, available
+filters, limits on the number of search results, the layout of search
+and results screens, etc. But we should remember that a story is
+essentially a commitment: the customer representative assures that they
+will be available to clarify these details in discussions with the
+developers during the sprint in which the story will be implemented.
+When working with user stories, this verbal interaction between
+developers and the customer representative is key for successful
+requirements specification.</p>
+<blockquote>
+<p>As a regular user, I want to borrow books</p>
+<p>As a regular user, I want to return a book I borrowed</p>
+<p>As a regular user, I want to renew my book loans</p>
+<p>As a regular user, I want to search for books</p>
+<p>As a regular user, I want reserve borrowed books</p>
+<p>As a regular user, I want to receive emails about new
+acquisitions</p>
+</blockquote>
+<p>Next, we show the stories suggested by professors:</p>
+<blockquote>
+<p>As a professor, I want borrow books for an extended period of
+time</p>
+<p>As a professor, I want to recommend books for acquisition</p>
+<p>As a professor, I want to donate books to the library</p>
+<p>As a professor, I want to return books to other libraries</p>
+</blockquote>
+<p> Even though these stories originate from professor users, this
+doesn’t mean they are exclusive for this user group. During the
+sprint’s, the customer representative (or Product Owner) may consider
+making the donation feature available to all users. The final story
+proposed by professor—allowing books to be returned at any university
+library—can be classified as an <strong>epic</strong>, i.e., a complex
+story. This story refer to a scenario where a professor borrows a book
+from the main library but want to return it to the library of a given
+department, or vice versa. Implementing this functionality is more
+complex because it requires integrating different library systems and
+having staff to transport the books back to their original location.</p>
+<p>Lastly, we share the stories proposed by library staff, typically
+concerning library organization and ensuring the library’s seamless
+operation:</p>
+<blockquote>
+<p>As a staff member, I want to register new users</p>
+<p>As a staff member, I want to add new books to the system</p>
+<p>As a staff member, I want to discard damaged books</p>
+<p>As a staff member, I want to access statistics about the
+collection</p>
+<p>As a staff member, I want the system to send reminder emails to
+students with overdue books</p>
+<p>As a staff member, I want the system to apply fines in the case of
+late book returns</p>
+</blockquote>
+<p>To confirm the implementation of this story, the customer
+representative specified that they would like to successfully perform
+the following searches.</p>
+<blockquote>
+<p>Search for books using the ISBN</p>
+<p>Search for books using the author’s name, returning books whose
+author matches the search string</p>
+<p>Search for books using the title, returning books with titles
+containing the search string</p>
+<p>Search for books added to the library from a specific date
+onwards</p>
+</blockquote>
+<p>The execution of these types of search will be demonstrated during
+the Sprint Review meeting, assuming the team is using Scrum.</p>
+<p>Acceptance tests should be specified by the customer representative.
+(or Product Owner). This practice prevents a scenario known as
+<strong>gold plating</strong>. In Requirements Engineering, the
+expression describes the situation where developers decide on their own
+to elaborate some stories—or requirements, more generally—without the
+customer’s input. In a literal translation, developers are embellishing
+stories with layers of gold, when this won’t generate value for
+users.</p>
+<h3 data-number="2.3.2" id="frequently-asked-questions"><span
+class="header-section-number">2.3.2</span> Frequently Asked Questions <a
+href="#frequently-asked-questions" class="anchor-link"
+aria-hidden="true">🔗</a></h3>
+<p>Before we wrap up, and as usual in this book, let’s answer some
+questions about user stories:</p>
+<p><strong>How do we specify non-functional requirements using
+stories?</strong> This is a challenging issue when using agile methods.
+Indeed, the customer representative (or Product Owner) may write a story
+stating that <q>the system’s maximum response time should be 1
+second.</q> However, it doesn’t make sense to allocate this story to a
+given sprint as it should be a concern in each sprint of the project.
+Therefore, the best solution is to allow (and ask) the PO to write
+stories about non-functional requirements, but use them primarily to
+reinforce the <q>done criteria</q> for stories. For example, for the
+implementation of a story to be considered complete, it should pass a
+code review aimed at detecting performance problems. Before the code
+moves to production, a performance test can also be executed to ensure
+that the non-functional requirements are being met. In short, one
+can—and should—–write stories about non-functional requirements, but
+they do not go into the product backlog. Instead, they are used to
+refine the “done criteria for stories.</p>
 </div>
 </div>
 </div>
