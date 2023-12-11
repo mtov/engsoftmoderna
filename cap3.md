@@ -590,11 +590,11 @@ Seguem algumas perguntas e esclarecimentos sobre testes A/B.
 
 * Na Netflix, 
   \index{Netflix}
-  "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com que certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.org/10.1145/2487575.2488217))
+  "os desenvolvedores tratam cada funcionalidade como um experimento, o que faz com que certas funcionalidades possam morrer após serem liberadas para uso. Por exemplo, se um número pequeno de clientes estiver usando um novo elemento \[de uma interface com o usuário\], um experimento \[isto é, um teste A/B\] pode ser realizado, incluindo a movimentação do elemento para uma nova posição na tela. Se todos os experimentos falharem, a funcionalidade é removida do sistema". ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
 
 * Na Microsoft, 
    \index{Facebook}
-   especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.ieeecomputersociety.org/10.1109/MS.2017.86))
+   especificamente no serviço de buscas Bing, "o uso de experimentos controlados cresceu exponencialmente ao longo dos anos, com mais de 200 experimentos concorrentes sendo executados a cada dia \[dados de 2013\]. Consideramos que o Sistema de Experimentos do Bing foi responsável por acelerar a inovação e aumentar a receita da empresa em milhões de dólares, por permitir a descoberta de ideias que foram avaliadas por milhares de experimentos controlados." ([link](https://doi.org/10.1145/2487575.2488217))
 ```{=latex}
 \end{esmbox}
 ```
