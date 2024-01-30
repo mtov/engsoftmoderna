@@ -641,7 +641,7 @@ class Fone { // classe extraída
 
 class Pessoa {
   Fone foneFixo;
-  Fone foneCelular
+  Fone foneCelular;
   ...
 }
 ```
