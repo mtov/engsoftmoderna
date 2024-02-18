@@ -781,4 +781,4 @@ para reproduzir os comandos de cada usuário.
 \clearpage
 \thispagestyle{empty}
 \vspace*{\fill}
-Este livro foi formatado pelo autor usando o sistemas Pandoc, para conversão de Markdown para LaTeX e, em seguida, geração de um arquivo PDF. A fonte usada é Computer Modern, 11pt. A partir dos mesmos arquivos Markdown são geradas as versões Kindle e HTML.
+Este livro foi formatado pelo autor usando o sistema Pandoc, para conversão de Markdown para LaTeX e, em seguida, geração de um arquivo PDF. A fonte usada é Computer Modern, 11pt. A partir dos mesmos arquivos Markdown são geradas as versões Kindle e HTML.
