@@ -1446,36 +1446,36 @@ void f {
 Observe que, no método `f`, após a refatoração, comentários não são mais necessários, pois os nomes dos métodos chamados já revelam muito do que eles fazem.
 
 
-\index{Débito Técnico}
+\index{Dívida Técnica}
 ```{=latex}
 \begin{esmbox}
 ```
 **Aprofundamento**: 
-**Débito técnico** é um termo cunhado por Ward Cunningham, em 1992, para designar
+**Dívida técnica** é um termo cunhado por Ward Cunningham, em 1992, para designar
 os problemas técnicos que podem dificultar a manutenção
 e evolução de um sistema. Dentre outros, esses problemas incluem falta de testes,
 problemas arquiteturais (por exemplo, sistemas mais parecidos com uma *big ball of mud*),
 sistemas com um número grande de code smells ou sem qualquer documentação.
 A intenção de Cunningham foi criar um termo que pudesse ser compreendido
 por gerentes e pessoas sem conhecimento de princípios e práticas de Engenharia
-de Software. Assim, ele optou pelo termo débito para reforçar que esses problemas, 
+de Software. Assim, ele optou pelo termo dívida para reforçar que esses problemas, 
 caso não sejam resolvidos, em algum momento vão requerer o pagamento
 de juros. Tais juros vão se manifestar na forma de sistemas inflexíveis e difíceis de manter,
 nos quais a correção de bugs e a implementação de novas funcionalidades 
 leva cada vez mais tempo e mostra-se mais arriscada.
 
 Para ilustrar melhor o conceito, suponha que 
-exista um débito técnico em um determinado módulo M de um
+exista uma dívida técnica em um determinado módulo M de um
 sistema. Suponha ainda que a adição de uma nova funcionalidade F1 em M 
-requer um esforço de 3 dias. Porém, se não houvesse o débito
-técnico, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
-os juros cobrados pela existência do débito técnico em M. Uma
-alternativa seria então pagar o principal do débito, isto é, remover
-completamente o débito técnico de M. Mas isso pode levar, por exemplo,
+requer um esforço de 3 dias. Porém, se não houvesse a dívida
+técnica, F1 poderia ser implementada em apenas 2 dias. Essa diferença de um dia constitui
+os juros cobrados pela existência da dívida técnica em M. Uma
+alternativa seria então pagar o principal da dívida, isto é, remover
+completamente a dívida técnica de M. Mas isso pode levar, por exemplo,
 4 dias. Ou seja, se considerarmos que vamos estender o módulo
 com apenas F1, ainda não há vantagem. Porém, suponha que nos próximos
 meses vamos ter que implementar mais funcionalidades em M, tais como F2, F3, F4,
-etc. Nesse caso, a eliminação do principal do débito técnico pode
+etc. Nesse caso, a eliminação do principal da dívida técnica pode
 compensar.
 
 ```{=latex}
