@@ -1464,7 +1464,7 @@ Eric Freeman, Elisabeth Robson, Bert Bates, Kathy Sierra. Head First
 Design Patterns: A Brain-Friendly Guide. O\'Reilly, 2004.
 
 Eduardo Guerra. Design Patterns com Java: Projeto Orientado a Objetos
-guiado por Padrões. Caso do Código, 2014.
+guiado por Padrões. Casa do Código, 2014.
 
 Fernando Pereira, Marco Tulio Valente, Roberto Bigonha, Mariza Bigonha.
 Arcademis: A Framework for Object Oriented Communication Middleware

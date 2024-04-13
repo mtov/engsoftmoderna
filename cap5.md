@@ -886,7 +886,7 @@ SOLID**, que é uma sigla cunhada por Robert Martin e Michael Feathers
 deriva da letra inicial de cada princípio, em inglês:
 
 *  **S**ingle Responsibility Principle
-*  **O**pen Closed/Principle
+*  **O**pen/Closed Principle
 *  **L**iskov Substitution Principle
 *  **I**nterface Segregation Principle
 *  **D**ependency Inversion Principle
