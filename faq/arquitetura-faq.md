@@ -15,6 +15,7 @@ Segue a lista atual de perguntas:
 5. [O que é o padrão Strangler Fig?](#o-que-%C3%A9-o-padr%C3%A3o-strangler-fig)
 6. [O que é um orquestrador?](#o-que-%C3%A9-um-orquestrador)
 7. [O que é escalabilidade vertical e horizontal?](#o-que-%C3%A9-escalabilidade-vertical-e-horizontal)
+8. [Em uma arquitetura baseada em fila de mensagens é preciso usar uma segunda fila para receber respostas?](#em-uma-arquitetura-baseada-em-fila-de-mensagens-%C3%A9-preciso-usar-uma-segunda-fila-para-receber-respostas)
 
 * * * 
 
@@ -205,6 +206,21 @@ Ou seja, em uma determinada máquina você não executa todos
 os microsserviços, mas apenas alguns deles.
 
 
+### 8. Em uma arquitetura baseada em fila de mensagens é preciso usar uma segunda fila para receber respostas? {.unnumbered}
+
+Sim! Suponha que um processo X precise enviar uma mensagem para um
+processo Y. Para isso, X pretende  usar um fila de mensagem. Mas
+agora suponha que Y tenha que responder com uma outra mensagem. Nesse
+caso, essa resposta deverá ser inserida por Y em uma segunda fila, de onde
+ela será lida por X. Na verdade, quando X envia a mensagem de ida, ele
+já costuma informar o nome da fila na qual irá consumir a resposta.
+Esse estilo de comunicação é chamado de Chamada Remota de Procedimentos
+(RPC, na sigla em inglês).
+
+Para o exemplo ficar mais concreto, suponha que X está solicitando que Y 
+calcule o limite de crédito de um certo cliente. Essa solicitação será
+inserida em uma fila, conforme afirmamos antes. Já a resposta de Y, ou seja, 
+o limite de crédito do cliente, será inserido em uma segunda fila.
 
 * * * 
 

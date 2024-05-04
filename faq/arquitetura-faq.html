@@ -10,10 +10,13 @@
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: 1;}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -49,9 +52,6 @@
 
   <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
 
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -70,20 +70,29 @@
 <p>Compre na
 
 <a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
+      UmLivro</a>
 <!--
 <a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
       Submarino</a> ou 
-<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
-      UmLivro</a>
--->
+
 <a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
 </p>
+-->
+
 
 <p>
-Veja também os cursos de extensão a distância 
-<a href="https://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
-<a href="https://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
+Veja também nosso  
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG.
+</p>
 
+<!---
+<p>
+<mark>Novo</mark> Inscrições abertas até 16/02/2024 para a Turma 12 do nosso   
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância,
+com certificados emitidos pelo DCC/UFMG.
+</p>
+---->
 
 <!---
 <p>
@@ -119,6 +128,10 @@ Strangler Fig?</a></li>
 orquestrador?</a></li>
 <li><a href="#o-que-%C3%A9-escalabilidade-vertical-e-horizontal">O que é
 escalabilidade vertical e horizontal?</a></li>
+<li><a
+href="#em-uma-arquitetura-baseada-em-fila-de-mensagens-%C3%A9-preciso-usar-uma-segunda-fila-para-receber-respostas">Em
+uma arquitetura baseada em fila de mensagens é preciso usar uma segunda
+fila para receber respostas?</a></li>
 </ol>
 <hr />
 <h3 class="unnumbered" id="o-que-é-uma-camada-de-domínio">1. O que é uma
@@ -291,6 +304,25 @@ diversas máquinas. Por outro lado, se o sistema tiver sido desenvolvido
 usando microsserviços, você pode dividir os microsserviços pelas
 máquinas disponíveis. Ou seja, em uma determinada máquina você não
 executa todos os microsserviços, mas apenas alguns deles.</p>
+<h3 class="unnumbered"
+id="em-uma-arquitetura-baseada-em-fila-de-mensagens-é-preciso-usar-uma-segunda-fila-para-receber-respostas">8.
+Em uma arquitetura baseada em fila de mensagens é preciso usar uma
+segunda fila para receber respostas? <a
+href="#em-uma-arquitetura-baseada-em-fila-de-mensagens-é-preciso-usar-uma-segunda-fila-para-receber-respostas"
+class="anchor-link" aria-hidden="true">🔗</a></h3>
+<p>Sim! Suponha que um processo X precise enviar uma mensagem para um
+processo Y. Para isso, X pretende usar um fila de mensagem. Mas agora
+suponha que Y tenha que responder com uma outra mensagem. Nesse caso,
+essa resposta deverá ser inserida por Y em uma segunda fila, de onde ela
+será lida por X. Na verdade, quando X envia a mensagem de ida, ele já
+costuma informar o nome da fila na qual irá consumir a resposta. Esse
+estilo de comunicação é chamado de Chamada Remota de Procedimentos (RPC,
+na sigla em inglês).</p>
+<p>Para o exemplo ficar mais concreto, suponha que X está solicitando
+que Y calcule o limite de crédito de um certo cliente. Essa solicitação
+será inserida em uma fila, conforme afirmamos antes. Já a resposta de Y,
+ou seja, o limite de crédito do cliente, será inserido em uma segunda
+fila.</p>
 <hr />
 <p>Voltar para a <a href="https://engsoftmoderna.info">página principal</a>.</p>
 <button onclick="darkMode()">Modo noturno</button>
@@ -308,7 +340,7 @@ function darkMode() {
 
 <footer>
 Direitos autorais reservados. Versão para uso pessoal.
-Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/YhKNRZjkHu7ASc7M8">formulário</a>.
 </footer>
 </body>
 </html>

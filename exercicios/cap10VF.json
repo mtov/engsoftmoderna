@@ -76,6 +76,10 @@
   {
     "text": "Em um Teste A/B, um sistema é liberado primeiro para um percentual pequeno de seus usuários, com o objetivo de verificar a existência de eventuais bugs.",
     "correct": "false"
+  },
+  {
+    "text": "Em projetos de código aberto, é mais comum usar feature branches, pull requests e revisão de código. Ou seja, integração contínua não é uma prática viável em tais projetos.",
+    "correct": "true"
   }
 ]
 }	    

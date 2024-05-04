@@ -49,8 +49,8 @@ De forma não menos importante, DevOps advoga a automatização de todos os pass
 ```
 
 \index{Humble, Jez}
-\index{Harley, David}
-Para finalizar, vamos discutir um conjunto de princípios para entrega de software, enunciados por Jez Humble e David Harley ([link](https://dl.acm.org/doi/book/10.5555/1869904)). Apesar de propostos antes da ideia de DevOps ganhar tração, eles estão completamente alinhados com essa ideia. Alguns desses princípios são os seguintes:
+\index{Farley, David}
+Para finalizar, vamos discutir um conjunto de princípios para entrega de software, enunciados por Jez Humble e David Farley ([link](https://dl.acm.org/doi/book/10.5555/1869904)). Apesar de propostos antes da ideia de DevOps ganhar tração, eles estão completamente alinhados com essa ideia. Alguns desses princípios são os seguintes:
 
 * **Crie um processo repetível e confiável para entrega de software**. Esse princípio 
 é o mais importante deles. A ideia é que a entrega de software não
