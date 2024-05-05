@@ -78,7 +78,7 @@
     "correct": "false"
   },
   {
-    "text": "Em projetos de código aberto, é mais comum usar feature branches, pull requests e revisão de código. Ou seja, integração contínua não é uma prática viável em tais projetos.",
+    "text": "Em projetos de código aberto, é mais comum usar feature branches, pull requests e revisão de código. Ou seja, integração contínua é uma prática menos viável em tais projetos.",
     "correct": "true"
   }
 ]

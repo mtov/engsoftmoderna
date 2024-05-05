@@ -209,6 +209,7 @@ Porém, hoje também existem serviços de terceiros para isso.
 Para isso, é importante automatizar e documentar todos os 
 processos e, também, usar sistemas de low-code, como Zapier.
 
+
 ## Precificação
 
 Um outro desafio importante consiste na definição do 
@@ -250,6 +251,23 @@ apenas para viabilizar a sua venda para um determinado cliente.
 Ou seja, um SaaS é um produto de software que é vendido,
 com o mesmo conjunto de funcionalidades, para vários
 clientes.
+
+## Barreiras de Entrada
+
+Um importante risco de uma microempresa de software é resolver
+um problema ou operar em um mercado com uma baixa barreira de 
+entrada. Em outras palavras, pode ser relativamente fácil que
+sistemas semelhantes sejam desenvolvidos por concorrentes. Na literatura
+de negócios, essas barreiras são também chamadas de **moats**, 
+ou seja, o fosso que protege uma empresa de seus concorrentes, 
+tal como o fosso que protege um castelo de invasores.
+
+Por isso, é importante que fundadores de microempresas de
+software se preocupem com essa possível baixa barreira de entrada.
+Por exemplo, eles podem tentar rapidamente conquistar uma grande 
+fatia do mercado, mesmo que seja um mercado pequeno, e depois 
+oferecer um serviço de qualidade, de forma a desestimular os clientes a
+mudarem para concorrentes.
 
 ## Crescendo a Empresa 
 
@@ -339,6 +357,7 @@ próximo de 60 ou até mesmo um pouco inferior.
 O NPS é importante porque se uma empresa tem um 
 NPS alto então o seu CAC e Churn tendem a ser menores. E, 
 consequentemente, o LTV será maior.
+
 
 ### Artigo Relacionado {.unnumbered}
 
