@@ -2043,7 +2043,7 @@ entender.
 public void testEmptyStackException() {
   boolean sucesso = false;
   try {
-    Stack s<Integer> = new Stack<Integer>();
+    Stack<Integer> s = new Stack<Integer>();
     s.push(10);
     int r = stack.pop();
     r = stack.pop();
