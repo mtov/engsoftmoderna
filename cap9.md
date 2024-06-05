@@ -1257,7 +1257,7 @@ class DateRange {
    Date fim;
 }
 
-void f(DateRange range} {
+void f(DateRange range) {
   ...
 }
 ```
@@ -1431,9 +1431,9 @@ void f() {
 Se usarmos Extração de Método para extrair o código comentado, teremos o código a seguir de melhor qualidade:
 
 ```
-void task1 { ... }
-void task2 { ... }
-void taskn { ... }
+void task1() { ... }
+void task2() { ... }
+void taskn() { ... }
 
 void f { 
   task1();
@@ -1538,7 +1538,7 @@ refactoring A.
 ```
 class A {
   void f() {
-    int x = 10
+    int x = 10;
     x++;      
     print x;   // extrair
   }
@@ -1550,7 +1550,7 @@ class A {
 ```
 class A {
   void f() {
-    int x = 10
+    int x = 10;
     x++;     // extrair
     print x; // extrair
   }
@@ -1562,7 +1562,7 @@ class A {
 ```
 class A {
   void f() {
-    int x = 10
+    int x = 10;
     x++;     // extrair
     print x; // extrair
     int y = x+1;
@@ -1576,7 +1576,7 @@ class A {
 ```
 class A {
   void f() {
-    int x = 10
+    int x = 10;
     int y;     // extrair
     y = h()*2; // extrair
     print y;   // extrair
