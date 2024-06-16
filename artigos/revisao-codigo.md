@@ -123,7 +123,13 @@ Por exemplo, os autores do livro *Software Engineering at Google*, recomendam qu
 
 Se PRs forem muito grandes, existe também a chance de a qualidade da revisão cair muito, como sumarizado no tweet deste engenheiro de software:
 
+> Ask a programmer to review 20 lines of code, they'll find 7 issues. Ask them to review 500 lines & they'll find 0 issues.
+> — Hays Stanford (@haysstanford) March 10, 2021
+
+<!--
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Ask a programmer to review 20 lines of code, they&#39;ll find 7 issues. Ask them to review 500 lines &amp; they&#39;ll find 0 issues.</p>&mdash; Hays Stanford (@haysstanford) <a href="https://twitter.com/haysstanford/status/1369721213963079680?ref_src=twsrc%5Etfw">March 10, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+-->
+
 
 ## Automatizando a Revisão
 
