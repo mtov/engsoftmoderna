@@ -571,7 +571,7 @@ iniciais dão origem à palavra FIRST, em Inglês):
 **Rápidos (Fast)**: desenvolvedores devem executar testes
 de unidades frequentemente, para obter feedback rápido sobre bugs e
 regressões no código. Por isso, é importante que eles sejam executados
-rapidamente, em questões de milisegundos. Se isso não for possível,
+rapidamente, em questões de milissegundos. Se isso não for possível,
 pode-se dividir uma suíte de testes em dois grupos: testes que
 executam rapidamente e que, portanto, serão frequentemente chamados; e
 testes mais demorados, que serão, por exemplo, executados uma vez por
