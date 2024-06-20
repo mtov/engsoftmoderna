@@ -1159,7 +1159,7 @@ dados. Um exemplo é mostrado a seguir:
 ```
 import static org.junit.Assert.*;
 import org.junit.*;
-import static org.junit.Assert.*;
+
 
 class BookConst {
 
