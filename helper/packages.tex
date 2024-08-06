@@ -86,11 +86,14 @@
 % Sem elas, esse espaço no Windows fica muito pequeno
 % Causa do problema: nova versão de parskip introduziu um novo comportamento
 % Veja: https://tex.stackexchange.com/questions/559005/different-outputs-for-documents-built-on-different-texlive-versions
+
+% Parece que tem que descomentar também para o novo macbook
+
 \titlespacing*{\section}{0pt}{\parskip}{\parskip}
 \titlespacing*{\subsection}{0pt}{\parskip}{\parskip}
 \titlespacing*{\subsubsection}{0pt}{1em}{1em}
 
-% Mac - descomentar as próximas duas linhas
+% Mac antigo - descomentar as próximas duas linhas
 %\titlespacing*{\section}{0pt}{*0}{0pt}
 %\titlespacing*{\subsection}{0pt}{*0}{0pt}
 
