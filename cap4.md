@@ -81,7 +81,7 @@ implementada, usando-se linguagens de programação, bibliotecas,
 frameworks, bancos de dados, etc.
 
 Especificamente, neste capítulo, iremos estudar um subconjunto dos
-diagramas propostos pela UML (*Unified Modelling Language*). Vamos
+diagramas propostos pela UML (*Unified Modeling Language*). Vamos
 começar descrevendo a história e o contexto que levou à criação da UML.
 Em seguida, vamos estudar alguns dos principais diagramas UML com mais 
 detalhes.

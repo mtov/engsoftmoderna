@@ -793,7 +793,7 @@ os casos, modelos são uma forma de documentar o código de um sistema.
 
 \index{UML}
 Frequentemente, modelos de software são baseados em notações gráficas.
-Por exemplo, **UML** (*Unified Modelling Language*) é uma notação que
+Por exemplo, **UML** (*Unified Modeling Language*) é uma notação que
 define mais de uma dezena de diagramas gráficos para representar
 propriedades estruturais e comportamentais de um sistema. Na próxima
 figura, mostra-se um diagrama UML — chamado Diagrama de Classes
