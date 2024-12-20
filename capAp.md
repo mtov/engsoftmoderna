@@ -327,7 +327,7 @@ dar um  `pull`. `HEAD` designa que o código foi modificado no
 
 * Entre  `=======` e `>>>>>>> f25bce8 ...` temos o código modificado
  por Alice, isto é, pela desenvolvedora que executou com sucesso seu  `push`.
-`f225bce8...` é o ID do commit no qual Alice modificou essa parte do código.       
+`f25bce8...` é o ID do commit no qual Alice modificou essa parte do código.
 
 
 Cabe então a Bob resolver o conflito, o que é sempre uma tarefa manual.
@@ -753,9 +753,9 @@ Carol).
 
 ## Bibliografia {.unnumbered}
 
-* Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
+Scott Chacon; Ben Straub. Pro Git. 2a edição, Apress, 2014.
 
-* Rachel M. Carmena. How to teach Git. Blog post [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
+Rachel M. Carmena. How to teach Git. Blog post [(link)](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html).
 
 ## Exercícios de Fixação {.unnumbered}
 

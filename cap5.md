@@ -242,7 +242,7 @@ alocado para manter uma outra parte.
 ```{=latex} 
 \begin{esmbox} 
 ```
-**Mundo Real**: Samuel Roso e Daniel Jackson, pesquisadores do
+**Mundo Real**: Santiago Roso e Daniel Jackson, pesquisadores do
 MIT, nos EUA, dão um exemplo real de sistema que implementa duas
 funcionalidades com propósitos semelhantes — o que também revela uma
 falta de integridade conceitual
@@ -1272,7 +1272,7 @@ orientados a objetos, as quais ficaram conhecidas como Princípio ou Lei
 de Demeter.
 
 O Princípio de Demeter — também chamado de **Princípio do Menor
-Privilégio** (*Principle of Least Privilege*) — defende que a
+Conhecimento** (*Principle of Least Knowledge*) — defende que a
 implementação de um método deve invocar apenas os seguintes outros
 métodos:
 
@@ -1437,7 +1437,7 @@ Princípio Aberto/Fechado.
 ```
 double calcTotalBolsas(Aluno[] lista) {
   double  total = 0.0;
-  foreach (Aluno aluno in lista) {
+  for (Aluno aluno : lista) {
     if (aluno instanceof AlunoGrad) {
       AlunoGrad grad = (AlunoGrad) aluno;
       total += "código que calcula bolsa de grad";
@@ -1806,7 +1806,7 @@ class A extends T1 implements T2 {
   }
 
   void metodo2() {
-    T8 = new T8();
+    T8 obj = new T8();
     try {
       ...
     }

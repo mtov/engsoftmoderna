@@ -229,7 +229,7 @@ public class StackTest {
 
   @Test
   public void testEmptyStack() {
-    Stack<Integer> stack = new Stack<Integer>();
+    Stack<Integer> stack = new Stack<>();
     boolean empty = stack.isEmpty();
     assertTrue(empty);
   }
@@ -310,7 +310,7 @@ public class StackTest {
 
   @Before
   public void init() {
-    stack = new Stack<Integer>();
+    stack = new Stack<>();
   }
 
   @Test
@@ -373,7 +373,7 @@ pelo JUnit para executar os testes de um programa:
 para cada classe de teste TC
   para cada método m de TC com anotação @Test
     o = new TC();       // instancia objeto de teste
-    se C possui um método b com anotação @Before
+    se TC possui um método b com anotação @Before
          então o.b();   // chama método @Before
     o.m();              // chama método @Test
 ```
@@ -1596,7 +1596,7 @@ public class ShoppingCart {
 
   public void add(Book b) {}
 
-  double getTotal() {
+  public double getTotal() {
     return 0.0;
   }
 }
@@ -2043,8 +2043,8 @@ entender.
 public void testEmptyStackException() {
   boolean sucesso = false;
   try {
-    Stack<Integer> s = new Stack<Integer>();
-    s.push(10);
+    Stack<Integer> stack = new Stack<>();
+    stack.push(10);
     int r = stack.pop();
     r = stack.pop();
   } catch (EmptyStackException e) {
@@ -2072,7 +2072,7 @@ public class Main {
   public static void main(String[] args) {
 
     // teste 1  
-    List<Integer> s = new ArrayList<Integer>();
+    List<Integer> s = new ArrayList<>();
     System.out.println(s.isEmpty());
 
     // teste 2

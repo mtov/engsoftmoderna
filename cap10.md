@@ -39,11 +39,11 @@ Quando migra-se para uma cultura de DevOps, os times ágeis podem incluir um pro
 
 De forma não menos importante, DevOps advoga a automatização de todos os passos necessários para colocar um sistema em produção e monitorar o seu correto funcionamento. Isso requer a adoção de práticas que já vimos neste livro, notadamente testes automatizados. Mas também requer o emprego de novas práticas e ferramentas, tais como Integração Contínua (*Continuous Integration*) e Deployment Contínuo (*Continuous Deployment*), que iremos estudar no presente capítulo.
 
-\index{DevOpsDay}
+\index{DevOpsDays}
 ```{=latex}
 \begin{esmbox}
 ```
-**Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por profissionais frustrados com os atritos constantes entre as equipes de desenvolvimento e de operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também na fase de implantação de sistemas. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
+**Mundo Real**: O termo DevOps começou a ser usado no final dos anos 2000 por profissionais frustrados com os atritos constantes entre as equipes de desenvolvimento e de operações. Então, eles convenceram-se de que uma solução seria a adoção de princípios ágeis não apenas na fase de desenvolvimento, mas também na fase de implantação de sistemas. Para citar uma data precisa, em Novembro de 2009 foi realizada, na Bélgica, a primeira conferência da indústria sobre o tema, chamada DevOpsDays. Considera-se que foi nesta conferência, organizada por Patrick Dubois, que a palavra DevOps foi cunhada ([link](https://dl.acm.org/doi/book/10.5555/3044729)).
 ```{=latex}
 \end{esmbox}
 ```
@@ -401,7 +401,7 @@ Para facilitar a execução de releases canários e testes A/B, pode-se usar uma
 FeatureFlagsTable fft = new FeatureFlagsTable();
 fft.addFeature("novo-carrinho-compras", false);
 ...
-if (fft.IsEnabled("novo-carrinho-compras"))
+if (fft.isEnabled("novo-carrinho-compras"))
    // processa compra usando novo carrinho
 else 
    // processa compra usando carrinho atual

@@ -506,13 +506,13 @@ E agora o código após a refatoração:
 ```
 class A {
   B b = new B();
-  void f {
+  void f() {
     b.f(); // apenas delega chamada para B
   }
 }
 
 class B {    // f foi movido de A para B
-   void f { ... }
+   void f() { ... }
 }
 
 class Cliente {
@@ -692,7 +692,7 @@ void g() {    // novo nome do método
   // A
 }
 
-@deprecated
+@Deprecated
 void f() {    // mantêm nome antigo
   g();        // mas delega chamada para novo nome
 }
@@ -749,11 +749,11 @@ Veja que uma variável `delta` foi criada e inicializada com uma parte de uma ex
 flags. Seja o seguinte código de exemplo:
 
 ```
-boolean search(int x, int[]a) {
+boolean search(int x, int[] a) {
    boolean achou = false;
-   i = 0;
-   while (i < a.length) && (!achou) {
-     if (a[i] == x);
+   int i = 0;
+   while ((i < a.length) && (!achou)) {
+     if (a[i] == x)
         achou = true;
      i++;
    }
@@ -764,7 +764,7 @@ Esse código pode ser refatorado da seguinte forma:
 
 ```
 boolean search(int x, int[]a) {
-  for (i = 0; i < a.length; i++)
+  for (int i = 0; i < a.length; i++)
     if (a[i] == x)
        return true;
   return false;
@@ -1123,7 +1123,7 @@ int fatorial(int n) {
 ```{=latex}
 \begin{esmbox}
 ```
-**Mundo Real**: Em 2013, Auki Yamashita e Leon Moonen, dois
+**Mundo Real**: Em 2013, Aiko Yamashita e Leon Moonen, dois
 pesquisadores de um laboratório de pesquisa na Noruega, publicaram os
 resultados de um estudo exploratório sobre code smells envolvendo 85
 desenvolvedores de software
@@ -1205,7 +1205,7 @@ public class DrawingEditorProxy
   void fireAreaInvalidated2 (AbstractTool abt , Double r ){
     Point p1 = abt.getView().drawingToView (...);
     Point p2 = abt.getView().drawingToView (...);
-    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
+    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
     abt.fireAreaInvalidated (r);
   }
   ...
@@ -1253,8 +1253,8 @@ Pode-se criar uma classe `DateRange` para representar uma faixa de datas. O cód
 
 ```
 class DateRange {
-   Date inicio;
-   Date fim;
+  Date inicio;
+  Date fim;
 }
 
 void f(DateRange range) {
@@ -1408,7 +1408,7 @@ Pode soar estranho ver comentários incluídos em uma lista de code
 smells. Por exemplo, em cursos de Introdução a Programação, os alunos
 são incentivados a comentar todo o código produzido, com o objetivo de
 ensinar a importância de documentação de código. No livro *Elements of
-Programming Style*, Brian Kerninghan — um dos criadores das
+Programming Style*, Brian Kernighan — um dos criadores das
 primeiras versões do sistema operacional Unix e da linguagem de
 programação C — e P. J. Plauger dão uma recomendação que ajuda, de
 forma certeira, a esclarecer essa dúvida. Eles recomendam o seguinte:
