@@ -596,13 +596,13 @@ class Cliente {
 <p>E agora o código após a refatoração:</p>
 <pre><code>class A {
   B b = new B();
-  void f {
+  void f() {
     b.f(); // apenas delega chamada para B
   }
 }
 
 class B {    // f foi movido de A para B
-   void f { ... }
+   void f() { ... }
 }
 
 class Cliente {
@@ -771,7 +771,7 @@ depreciado.</p>
   // A
 }
 
-@deprecated
+@Deprecated
 void f() {    // mantêm nome antigo
   g();        // mas delega chamada para novo nome
 }</code></pre>
@@ -817,11 +817,11 @@ após a refatoração, ficou menor e mais fácil de entender.</p>
 comandos como <code>break</code> ou <code>return</code>, em vez de
 variáveis de controle, também chamadas de flags. Seja o seguinte código
 de exemplo:</p>
-<pre><code>boolean search(int x, int[]a) {
+<pre><code>boolean search(int x, int[] a) {
    boolean achou = false;
-   i = 0;
-   while (i &lt; a.length) &amp;&amp; (!achou) {
-     if (a[i] == x);
+   int i = 0;
+   while ((i &lt; a.length) &amp;&amp; (!achou)) {
+     if (a[i] == x)
         achou = true;
      i++;
    }
@@ -829,7 +829,7 @@ de exemplo:</p>
 }</code></pre>
 <p>Esse código pode ser refatorado da seguinte forma:</p>
 <pre><code>boolean search(int x, int[]a) {
-  for (i = 0; i &lt; a.length; i++)
+  for (int i = 0; i &lt; a.length; i++)
     if (a[i] == x)
        return true;
   return false;
@@ -1141,7 +1141,7 @@ fatorial.</li>
 <p>Em todos esses casos, não precisaríamos ter duas ou mais funções
 <code>fatorial</code> no sistema. Apenas uma delas poderia ficar no
 código e a outra seria removida.</p>
-<p><strong>Mundo Real</strong>: Em 2013, Auki Yamashita e Leon Moonen,
+<p><strong>Mundo Real</strong>: Em 2013, Aiko Yamashita e Leon Moonen,
 dois pesquisadores de um laboratório de pesquisa na Noruega, publicaram
 os resultados de um estudo exploratório sobre code smells envolvendo 85
 desenvolvedores de software (<a
@@ -1211,7 +1211,7 @@ Logo, deve-se analisar a conveniência de mover esse método para
   void fireAreaInvalidated2 (AbstractTool abt , Double r ){
     Point p1 = abt.getView().drawingToView (...);
     Point p2 = abt.getView().drawingToView (...);
-    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x p2.y-p1.y);
+    Rectangle r=new Rectangle(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
     abt.fireAreaInvalidated (r);
   }
   ...
@@ -1242,8 +1242,8 @@ parâmetros de um método. Por exemplo, suponha o seguinte método:</p>
 <p>Pode-se criar uma classe <code>DateRange</code> para representar uma
 faixa de datas. O código refatorado ficaria assim:</p>
 <pre><code>class DateRange {
-   Date inicio;
-   Date fim;
+  Date inicio;
+  Date fim;
 }
 
 void f(DateRange range) {
@@ -1394,7 +1394,7 @@ href="#comentários" class="anchor-link" aria-hidden="true">🔗</a></h3>
 smells. Por exemplo, em cursos de Introdução a Programação, os alunos
 são incentivados a comentar todo o código produzido, com o objetivo de
 ensinar a importância de documentação de código. No livro <em>Elements
-of Programming Style</em>, Brian Kerninghan — um dos criadores das
+of Programming Style</em>, Brian Kernighan — um dos criadores das
 primeiras versões do sistema operacional Unix e da linguagem de
 programação C — e P. J. Plauger dão uma recomendação que ajuda, de forma
 certeira, a esclarecer essa dúvida. Eles recomendam o seguinte:</p>

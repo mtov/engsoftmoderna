@@ -328,7 +328,7 @@ passada como parâmetro.</p></li>
 integridade conceitual. Eles são um problema porque tornam mais difícil
 um desenvolvedor acostumado a manter uma parte do sistema ser alocado
 para manter uma outra parte.</p>
-<p><strong>Mundo Real</strong>: Samuel Roso e Daniel Jackson,
+<p><strong>Mundo Real</strong>: Santiago Roso e Daniel Jackson,
 pesquisadores do MIT, nos EUA, dão um exemplo real de sistema que
 implementa duas funcionalidades com propósitos semelhantes — o que
 também revela uma falta de integridade conceitual (<a
@@ -1270,7 +1270,7 @@ regras para evitar problemas de encapsulamento em projeto de sistemas
 orientados a objetos, as quais ficaram conhecidas como Princípio ou Lei
 de Demeter.</p>
 <p>O Princípio de Demeter — também chamado de <strong>Princípio do Menor
-Privilégio</strong> (<em>Principle of Least Privilege</em>) — defende
+Conhecimento</strong> (<em>Principle of Least Knowledge</em>) — defende
 que a implementação de um método deve invocar apenas os seguintes outros
 métodos:</p>
 <ul>
@@ -1407,7 +1407,7 @@ isto é, o código fonte da classe não teve que ser modificado.</p>
 não segue o Princípio Aberto/Fechado.</p>
 <pre><code>double calcTotalBolsas(Aluno[] lista) {
   double  total = 0.0;
-  foreach (Aluno aluno in lista) {
+  for (Aluno aluno : lista) {
     if (aluno instanceof AlunoGrad) {
       AlunoGrad grad = (AlunoGrad) aluno;
       total += &quot;código que calcula bolsa de grad&quot;;
@@ -1720,7 +1720,7 @@ do tipo B</p></li>
   }
 
   void metodo2() {
-    T8 = new T8();
+    T8 obj = new T8();
     try {
       ...
     }

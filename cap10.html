@@ -230,8 +230,9 @@ eles convenceram-se de que uma solução seria a adoção de princípios
 ágeis não apenas na fase de desenvolvimento, mas também na fase de
 implantação de sistemas. Para citar uma data precisa, em Novembro de
 2009 foi realizada, na Bélgica, a primeira conferência da indústria
-sobre o tema, chamada DevOpsDay. Considera-se que foi nesta conferência,
-organizada por Patrick Dubois, que a palavra DevOps foi cunhada (<a
+sobre o tema, chamada DevOpsDays. Considera-se que foi nesta
+conferência, organizada por Patrick Dubois, que a palavra DevOps foi
+cunhada (<a
 href="https://dl.acm.org/doi/book/10.5555/3044729">link</a>).</p>
 <p> Para finalizar, vamos discutir um conjunto de princípios para
 entrega de software, enunciados por Jez Humble e David Farley (<a
@@ -971,7 +972,7 @@ ou desligado). Um exemplo é mostrado a seguir:</p>
 <pre><code>FeatureFlagsTable fft = new FeatureFlagsTable();
 fft.addFeature(&quot;novo-carrinho-compras&quot;, false);
 ...
-if (fft.IsEnabled(&quot;novo-carrinho-compras&quot;))
+if (fft.isEnabled(&quot;novo-carrinho-compras&quot;))
    // processa compra usando novo carrinho
 else 
    // processa compra usando carrinho atual

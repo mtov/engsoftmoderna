@@ -331,7 +331,7 @@ public class StackTest {
 
   @Test
   public void testEmptyStack() {
-    Stack&lt;Integer&gt; stack = new Stack&lt;Integer&gt;();
+    Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
     boolean empty = stack.isEmpty();
     assertTrue(empty);
   }
@@ -397,7 +397,7 @@ public class StackTest {
 
   @Before
   public void init() {
-    stack = new Stack&lt;Integer&gt;();
+    stack = new Stack&lt;&gt;();
   }
 
   @Test
@@ -456,7 +456,7 @@ pelo JUnit para executar os testes de um programa:</p>
 <pre><code>para cada classe de teste TC
   para cada método m de TC com anotação @Test
     o = new TC();       // instancia objeto de teste
-    se C possui um método b com anotação @Before
+    se TC possui um método b com anotação @Before
          então o.b();   // chama método @Before
     o.m();              // chama método @Test</code></pre>
 <p>Voltando à classe <code>StackTest</code>, outro método interessante é
@@ -1538,7 +1538,7 @@ public class ShoppingCart {
 
   public void add(Book b) {}
 
-  double getTotal() {
+  public double getTotal() {
     return 0.0;
   }
 }</code></pre>
@@ -1982,8 +1982,8 @@ simples e fácil de entender.</p>
 public void testEmptyStackException() {
   boolean sucesso = false;
   try {
-    Stack&lt;Integer&gt; s = new Stack&lt;Integer&gt;();
-    s.push(10);
+    Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();
+    stack.push(10);
     int r = stack.pop();
     r = stack.pop();
   } catch (EmptyStackException e) {
@@ -2007,7 +2007,7 @@ public class Main {
   public static void main(String[] args) {
 
     // teste 1  
-    List&lt;Integer&gt; s = new ArrayList&lt;Integer&gt;();
+    List&lt;Integer&gt; s = new ArrayList&lt;&gt;();
     System.out.println(s.isEmpty());
 
     // teste 2
