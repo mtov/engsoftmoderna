@@ -826,7 +826,7 @@ assumindo a existência dessa ficha.
 
 ![](figs/cap4/activity-t-merge){width=20%}
 
-**Forks:** Possuem um único fluxo de entrada e um ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
+**Forks:** Possuem um único fluxo de entrada e dois ou mais fluxos de saída. Atuam como multiplicadores de ficha: quando recebem uma ficha no fluxo de entrada, criam e repassam fichas idênticas em cada fluxo de saída. Como resultado, passam a existir múltiplos processos em execução de forma paralela.
 
 ![](figs/cap4/activity-t-fork){width=20%}
 

@@ -142,7 +142,7 @@ Segundo Brooks, as dificuldades essenciais são as seguintes:
 
 1.  **Complexidade**: dentre as construções que o homem se propõe a
     realizar, software é uma das mais desafiadoras e mais complexas
-    que existe. Na verdade, como dissemos antes, mesmo construções de
+    que existem. Na verdade, como dissemos antes, mesmo construções de
     engenharia tradicional, como um satélite, uma usina nuclear ou um
     foguete, são cada vez mais dependentes de software.
 

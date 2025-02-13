@@ -619,7 +619,7 @@ possível concluí-las em alguns dias.
 
 Resumindo, um projeto XP é organizado em:
 
-*   releases, que são conjunto de iterações, com duração total de alguns
+*   releases, que são conjuntos de iterações, com duração total de alguns
     meses.
 
 *   iterações, que são conjuntos de tarefas resultantes da decomposição 
@@ -631,7 +631,7 @@ Definidas as tarefas, o time deve decidir qual desenvolvedor será
 responsável por cada uma. Feito isso, começa de fato a iteração, com a
 implementação das tarefas.
 
-Uma iteração termina quando todas a suas histórias estiverem
+Uma iteração termina quando todas as suas histórias estiverem
 implementadas e validadas pelo representante dos clientes. Assim, ao fim
 de uma iteração, as histórias devem ser mostradas para o representante
 dos clientes, que deve concordar que elas, de fato, atendem ao que ele
