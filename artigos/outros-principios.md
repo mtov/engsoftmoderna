@@ -119,7 +119,7 @@ sistema.
 Em outras palavras, como é sempre fácil pedir, os clientes de 
 um sistema podem demandar uma lista enorme de funcionalidades, 
 sendo que algumas delas não são tão importantes. Inclusive, 
-pode ser que elas nunca sejam fato usadas.
+pode ser que elas nunca sejam de fato usadas.
 
 Por isso, o princípio YAGNI (ou "você não vai precisar disso")
 diz o seguinte:
