@@ -50,8 +50,8 @@
     "correct": "true"
   },
   {
-    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no espaço, isto é, produtores e consumidores não precisam estar conectados na mesma rede local.",
-    "correct": "false"
+    "text": "Arquiteturas orientadas a mensagens oferecem desacoplamento no espaço, isto é, os publicadores de eventos não precisam conhecer os assinantes e vice-versa.",
+    "correct": "true"
   },
   {
     "text": "Em arquiteturas Publish/Subscribe temos um estilo de comunicação de 1 para 1, pois um evento é sempre enviado para um único assinante (subscriber).",
