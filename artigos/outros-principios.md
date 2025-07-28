@@ -152,8 +152,7 @@ arquitetura super complexa, baseada em padrões elaborados,
 tais como 
 [microsserviços](https://engsoftmoderna.info/cap7.html#microsservi%C3%A7os), 
 [Arquitetura Hexagonal](https://engsoftmoderna.info/artigos/arquitetura-hexagonal.html), 
-[Arquitetura Limpa](https://engsoftmoderna.info/artigos/arquitetura-limpa.html), etc. Ou então optam por implementações que 
-fazem um uso exagerado de  
+[Arquitetura Limpa](https://engsoftmoderna.info/artigos/arquitetura-limpa.html), etc. Ou então optam por implementações que fazem um uso exagerado de
 [padrões de projeto](https://engsoftmoderna.info/cap6.html).
 Não que esses padrões sejam inúteis... Mas 
 em algumas aplicações -- menores e menos sujeitas a mudanças -- 
