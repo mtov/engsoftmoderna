@@ -10,10 +10,13 @@
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: 1;}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -49,9 +52,6 @@
 
   <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
 
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <div class="container">
@@ -70,20 +70,30 @@
 <p>Compre na
 
 <a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
+<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
+      UmLivro</a>
 <!--
 <a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
       Submarino</a> ou 
-<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
-      UmLivro</a>
--->
+
 <a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
 </p>
+-->
 
+<!--
 <p>
-Veja também os cursos de extensão a distância 
-<a href="http://www.engsoftmoderna.dcc.ufmg.br">Engenharia de Software Moderna</a> (48 horas) e
-<a href="http://www.testesoft.dcc.ufmg.br">Teste de Software</a> (20 horas), oferecidos pelo DCC/UFMG.</p>
+Veja também nosso  
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG.
+</p>
+-->
 
+<!---
+<p>
+<mark>Novo</mark> Inscrições abertas até 16/02/2024 para a Turma 12 do nosso   
+<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância,
+com certificados emitidos pelo DCC/UFMG.
+</p>
+---->
 
 <!---
 <p>
@@ -580,7 +590,7 @@ function darkMode() {
 
 <footer>
 Direitos autorais reservados. Versão para uso pessoal.
-Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/KbzvMx5RLnqPR7uq7">formulário</a>.
+Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/YhKNRZjkHu7ASc7M8">formulário</a>.
 </footer>
 </body>
 </html>
