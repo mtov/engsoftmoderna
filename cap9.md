@@ -763,7 +763,7 @@ boolean search(int x, int[] a) {
 Esse código pode ser refatorado da seguinte forma:
 
 ```
-boolean search(int x, int[]a) {
+boolean search(int x, int[] a) {
   for (int i = 0; i < a.length; i++)
     if (a[i] == x)
        return true;
