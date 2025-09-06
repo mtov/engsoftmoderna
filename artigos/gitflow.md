@@ -95,7 +95,7 @@ o branch foi também integrado em *develop*.
 
 Em resumo, o fluxo mais comum quando se usa Git-flow é o seguinte:
 
-Funcionalidade ⇒ develop ⇒ release ⇒ main
+Funcionalidade $\Rightarrow$ develop $\Rightarrow$ release $\Rightarrow$ main
 
 Ou seja, uma funcionalidade é sempre implementada em um branch 
 específico. Em seguida, esse branch é integrado em `develop`, onde 

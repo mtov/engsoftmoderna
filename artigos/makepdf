@@ -31,6 +31,8 @@ cat testes-mutacao.md >> esm-artigos.md
 cat broken-windows.md >> esm-artigos.md
 cat revisao-codigo.md >> esm-artigos.md
 
+cat gitflow.md >> esm-artigos.md
+
 cat como-monetizar.md >> esm-artigos.md
 cat micro-saas.md >> esm-artigos.md
 
