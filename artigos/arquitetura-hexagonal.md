@@ -135,12 +135,12 @@ mais externo.
 ##### Código de Exemplo {.unnumbered}
 
 Uma implementação mínima do Sistema de Bibliotecas, com 
-motivação meramente didática, está disponível na IDE online Repl.it. 
+motivação meramente didática, está disponível no GitHub. 
 Basicamente, implementamos um serviço muito simples de pesquisa de 
 livros por autor, em Java, usando ferramentas como SparkJava (para 
 implementar APIs REST) e SQLite (banco de dados). Você pode ver o 
 código no seguinte 
-[link](https://replit.com/@engsoftmoderna/ExemploArquiteturaHexagonal).
+[link](https://github.com/mtov/ESM-ExemplosCodigo/tree/master/cap7/hexagonal).
 
 
 ## Conclusão

@@ -157,7 +157,7 @@ ocorre sobre um objeto simples ou sobre um objeto composto.
 
 **Código fonte:** O código fonte do exemplo usado neste 
 artigo está disponível 
-[aqui](https://repl.it/@mtvalente/Padrao-de-Projeto-Composite).
+[aqui](https://github.com/mtov/ESM-ExemplosCodigo/tree/master/cap6/11-composite).
 
 ## Exercícios {.unnumbered}
 
