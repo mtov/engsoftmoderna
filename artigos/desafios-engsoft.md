@@ -180,7 +180,7 @@ Product Owner, Scrum Master e consultor técnico dos times.
 
 * Estamos também iniciando o desenvolvimento de um conjunto de 
 roteiros e programas "ilustrativos", de pequeno porte e que 
-exercitam conceitos básicos de divisão processos, arquitetura, devops,
+exercitam conceitos básicos de processos, arquitetura, devops,
 testes, etc. 
 
 ## Eixo Transversal de Formação 
