@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en" data-theme="light">
 
 <head>
 
@@ -19,41 +20,38 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+<link rel="stylesheet" href="https://softengbook.org/helper/pico.min.css"/>
 
 <style>
-body {
-  background-color: #FFFFFF;
-  foreground-color: black;
-}
+  .container {
+      max-width: 900px; /* Set your desired maximum width here */
+      margin: 0 auto; /* Center the container */
+      padding: 0 20px; /* Optional: Add some horizontal padding */
+  }
+  .no-margins-no-bullets {
+      list-style-type: none; /* Remove bullets */
+      margin-left: 0;       /* Remove left margin */
+      padding-left: 0;      /* Remove left padding */
+  }
+  .no-margins-no-bullets li {
+            list-style-type: none; /* Ensure bullets are removed for list items */
+  }
 </style>
 
 </head>
 
-
 <body>
 
-<div class="container">
+<header class="container">
 
-<!---	
-<div class="row cols-sm-12 cols-md-8">
-<div class="col-md-offset-2">
----->
-
-<div class="row cols-sm-12 col-md-10 col-lg-8">
-<div class="col-md-offset-1 col-lg-offset-3">
-	
-<div class="row">
-
-<div>
-
+<div style="margin-top: 30px;">
 <img src="../figs/capa/capa-3d.jpg">
 <p><a href="https://engsoftmoderna.info/">Página principal do livro</a></p>
-
 </div>
 
-</div>
+</header>
 
+<main class="container">
 
 <h2>Artigos Didáticos</h2>
 
@@ -65,20 +63,20 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 
 <p> Segue a lista de artigos (organizados segundo o capítulo e tema que eles abordam): </p> 
 
-<ul>
+<ul class="no-margins-no-bullets">
 
 <li> Cap. 0: Prefácio </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./desafios-engsoft.html">Desafios da Formação de Engenheiros de Software</a> </li>
 </ul>
 
 <li> Cap. 1: Introdução </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./como-monetizar.html">Como Monetizar Sistemas de Software?</a> </li>
 </ul>
 
 <li> Cap. 2: Processos </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./pix-banco-x.html">Estudo de Caso: PIX no Banco X</a> </li>  
 <li> <a href="./squads.html">Organizando Times Ágeis em Squads</a></li> 
 <li> <a href="./shape-up.html">Shape Up: Uma Possível Alternativa a Scrum?</a> </li>
@@ -86,7 +84,7 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 </ul>
 
 <li> Cap. 3: Requisitos </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./mvp.html">O que é – e também o que não é – um MVP?</a> </li> 
 <li> <a href="./product-discovery.html">Product Discovery: Uma Breve Introdução</a> </li>
 <li> <a href="./design-thinking.html">Design Thinking: Principais Conceitos e Atividades</a> </li>
@@ -94,20 +92,20 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 </ul>
 
 <li> Cap. 5: Princípios de Projeto </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./outros-principios.html">Mais Alguns Princípios de Projeto</a></li>	
 <li> <a href="./deep-modules.html">Módulos devem ser Profundos!</a> </li>
 <li> <a href="./ddd.html">Domain-Driven Design (DDD): Um Resumo</a> </li>
 </ul>
 
 <li> Cap. 6: Padrões de Projeto </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./composite.html">Criando Objetos Compostos com o Padrão Composite</a></li>
 <li> <a href="./injecao-dependencia.html">O que é Injeção de Dependência?</a> </li>
 </ul>
 
 <li> Cap. 7: Arquitetura </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./arquitetura-hexagonal.html">O que é uma Arquitetura Hexagonal?</a> </li>	
 <li> <a href="./arquitetura-limpa.html">Construindo Sistemas com uma Arquitetura Limpa</a> </li>
 <li> <a href="./serverless.html">O que é uma Arquitetura Serverless?</a> </li>
@@ -115,23 +113,24 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 </ul>
 
 <li> Cap. 8: Testes </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./exemplos-teste.html">Alguns Exemplos Reais e Interessantes de Testes</a> </li>
 <li> <a href="./testes-mutacao.html">Testes de Mutação: Uma Visão Prática</a> </li>
 
 </ul>
 
 <li> Cap. 9: Refactoring </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./broken-windows.html">Duas Recomendações para Manutenção de Software</a> </li>
 </ul>
 
 <li> Cap. 10: DevOps </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./gitflow.html">Gerenciando Branches com Git-flow, GitHubFlow e TBD</a> </li>
 </ul>
+
 <li> Outros Temas </li>
-<ul>
+<ul class="no-margins-no-bullets">
 <li> <a href="./revisao-codigo.html">Revisão de Código: Uma Breve Introdução</a> </li>
 <li> <a href="./micro-saas.html">Microempresas de Software como Serviço</a> </li>
 </ul>
@@ -140,7 +139,7 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 
 <h2 id="slides"> Slides </h2>
 
-<ul>
+<ul class="no-margins-no-bullets">
 
 <li><a href="https://docs.google.com/presentation/d/109LtBohQA-o7ntJeJVjHkfYQNMthcdwJ2me5_hpICkk/edit?usp=sharing">Slides</a> dos artigos sobre processos e requisitos</li>
 
@@ -152,15 +151,10 @@ artigos, totalizando 130 páginas. Todos os artigos são acompanhados de exercí
 
 </ul>
 
-<p></p>
+</main>
 
-<hr>
-
-</div>
-</div>
-</div>
-
-<footer>
+<footer class="container">
+Todos os direitos reservados. Versão apenas para uso pessoal.
 </footer>
 
 </body>
