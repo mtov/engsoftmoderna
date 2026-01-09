@@ -1,17 +1,16 @@
-<button onclick="darkMode()">Modo noturno</button>
+</main>
 
-<script>
-function darkMode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-</script>
-
-</div>
-</div>
-</div>
-
-<footer>
+<footer class="container">
 Direitos autorais reservados. Versão para uso pessoal.
 Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/YhKNRZjkHu7ASc7M8">formulário</a>.
 </footer>
+
+<script>
+  document.getElementById('dark-mode-toggle').addEventListener('click', function(event) {
+    event.preventDefault();
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    this.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+  });
+</script>

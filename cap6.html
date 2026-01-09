@@ -27,7 +27,6 @@
     q { quotes: "“" "”" "‘" "’"; }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYNKH464F"></script>
   <script>
@@ -38,71 +37,55 @@
     gtag('config', 'G-RGYNKH464F');
   </script>
 
-  <style>
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
-  .dark-mode code {
-    background-color: black;
-    color: white;
-  }    
-  </style>
-
   <link rel="shortcut icon" type="image/x-icon" href="https://engsoftmoderna.info/figs/favicon.ico">
 
-  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
+  <link rel="stylesheet" href="helper/pico.min.css"/>
 
-  <link rel="stylesheet" href="https://engsoftmoderna.info/helper/engsoftmoderna.css">
+  <style>
+    .container {
+        max-width: 900px; /* Set your desired maximum width here */
+        margin: 0 auto; /* Center the container */
+        padding: 0 20px; /* Optional: Add some horizontal padding */
+    }
+    .anchor-link {
+        opacity: 0.5;
+        font-size: 60%;
+    }
+  </style>
+
+  <style>
+    code {
+      word-spacing: 0; /* Ensures no extra space around words */
+      padding: 0; /* Adjusts any unwanted padding */
+      margin: 0; /* Removes any unnecessary margin */
+    }  
+  </style>
+
+  <script>
+    document.documentElement.setAttribute('data-theme', 'light');
+  </script>
 
 </head>
 <body>
-<div class="container">
-<div class="row cols-sm-12 col-md-10 col-lg-6">
-<div class="col-md-offset-1 col-lg-offset-3">
+<header class="container">
 
-<p>
-<a href="https://engsoftmoderna.info">
-<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg"></a>
+<div style="margin-top: 30px;">
+<a href="https://engsoftmoderna.info">   
+<img src="https://engsoftmoderna.info/figs/capa/capa-3d.jpg" alt="Capa do livro">
+</a>
+</div>
+
+<div style="margin-top: 30px;">
+<p> 
+<a href="https://engsoftmoderna.info">Página Principal</a> |
+<a href="#" id="dark-mode-toggle">Modo Dark</a> 
 </p>
+</div>
 
-<p>
-<a href="https://engsoftmoderna.info">Página principal do livro</a>
-</p>
+</header>
 
-<p>Compre na
+<main class="container">
 
-<a href="https://www.amazon.com.br/gp/product/6500019504">Amazon</a> ou
-<a href="https://loja.umlivro.com.br/engenharia-de-software-moderna-4778188/p">
-      UmLivro</a>
-<!--
-<a href="https://www.submarino.com.br/produto/1768283036/engenharia-de-software-moderna">
-      Submarino</a> ou 
-
-<a href="https://www.casasbahia.com.br/livros/InformaticaCertificacao/livrosdeinformatica/engenharia-de-software-moderna-1513074930.html">Casas Bahia</a>
-</p>
--->
-
-<!--
-<p>
-Veja também nosso  
-<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG.
-</p>
--->
-
-<!---
-<p>
-<mark>Novo</mark> Inscrições abertas até 16/02/2024 para a Turma 12 do nosso   
-<a href="https://www.engsoftmoderna.dcc.ufmg.br">curso de extensão</a> a distância,
-com certificados emitidos pelo DCC/UFMG.
-</p>
----->
-
-<!---
-<p>
-Veja também nosso <a href="https://engsoftmoderna.info/curso">curso de extensão</a> a distância, com certificados emitidos pelo DCC/UFMG. 
-</p>
---->
 <header id="title-block-header">
 <h1 class="title">Engenharia de Software Moderna</h1>
 <p class="author">Marco Tulio Valente</p>
@@ -1543,22 +1526,21 @@ Ou então o refactoring chamado <q>Introduce Null Object</q> do livro de
 Refactoring de Martin Fowler.</p>
 <h2 class="unnumbered">Perguntas Frequentes</h2>
 <p>Veja também o <a href="./faq/padroes-faq.html">FAQ</a> deste capítulo.</p>
-<button onclick="darkMode()">Modo noturno</button>
+</main>
 
-<script>
-function darkMode() {
-   var element = document.body;
-   element.classList.toggle("dark-mode");
-}
-</script>
-
-</div>
-</div>
-</div>
-
-<footer>
+<footer class="container">
 Direitos autorais reservados. Versão para uso pessoal.
 Para reportar quaisquer erros, incluindo pequenos erros de ortografia, use este <a href="https://forms.gle/YhKNRZjkHu7ASc7M8">formulário</a>.
 </footer>
+
+<script>
+  document.getElementById('dark-mode-toggle').addEventListener('click', function(event) {
+    event.preventDefault();
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    this.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
+  });
+</script>
 </body>
 </html>
