@@ -44,10 +44,10 @@
 
 <header class="container">
 
-<div style="margin-top: 30px;">
-<img src="figs/capa/capa-3d.jpg">
-<p><a href="https://engsoftmoderna.info/">Página principal do livro</a></p>
-</div>
+<p>
+<a href="https://softengbook.org">Página Principal</a> |
+<a href="#" id="dark-mode-toggle">Dark Mode</a>
+</p>
 
 </header>
 
@@ -147,13 +147,7 @@ var Exercise = {
   template: `
       <div>
 
-      <div class="row">
-      <div>      
-      <p><img src="../figs/capa/capa-3d-principal.jpg" width="280"></p>
-      <p><a href="https://engsoftmoderna.info/">Página principal do livro</a></p>
-      </div>
-      </div>
-
+      <h2 class="text-center">Engenharia de Software Moderna</h2>
       <h2 class="text-center">{{title}} - Exercícios de V ou F</h2>
 
       <div v-if="answering">
