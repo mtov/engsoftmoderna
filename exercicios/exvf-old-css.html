@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-
-<html data-theme="light">
+<html>
 
 <head>
 
@@ -20,58 +18,41 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="https://engsoftmoderna.info/helper/pico.min.css"/>
+<link rel="stylesheet" href="https://engsoftmoderna.info/helper/mini-default.min.css">
 
 <style>
-  .container {
-      max-width: 900px; /* Set your desired maximum width here */
-      margin: 0 auto; /* Center the container */
-      padding: 0 20px; /* Optional: Add some horizontal padding */
-  }
-  .no-margins-no-bullets {
-      list-style-type: none; /* Remove bullets */
-      margin-left: 0;       /* Remove left margin */
-      padding-left: 0;      /* Remove left padding */
-  }
-  .no-margins-no-bullets li {
-      list-style-type: none; /* Ensure bullets are removed for list items */
+  body {
+    background-color: #FFFFFF;
+    foreground-color: black;
   }
 </style>
 
-<header class="container">
+</head>
 
-<div style="margin-top: 30px;">
-<img src="figs/capa/capa-3d.jpg">
-<p><a href="https://engsoftmoderna.info/">Página principal do livro</a></p>
-</div>
+<body>
 
-</header>
-
-<main class="container">
-
-<p> 
-<a href="https://engsoftmoderna.info">Página Principal</a> |
-<a href="#" id="dark-mode-toggle">Modo Dark</a> 
-</p>
+<div class="container">
+<div class="row cols-sm-12 cols-md-10">
+<div class="col-md-offset-1">
+<div class="row">
 
 <div id="app" class="container">
 <router-view></router-view>
 </div>
 
-</main>
 
-<script>
-  document.getElementById('dark-mode-toggle').addEventListener('click', function(event) {
-    event.preventDefault();
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    this.textContent = newTheme === 'dark' ? 'Light Mode' : 'Dark Mode';
-  });
-</script>
+</div>
+</div>
+</div>
+</div>
 
-</body>
-</html>
+<!--
+<script src="https://vuejs.org/js/vue.js" ></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+-->
+<!---
+<script src="https://v2.vuejs.org/js/vue.js"></script>
+-->
 
 <script src="https://unpkg.com/vue@2"></script>
 <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
