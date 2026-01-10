@@ -1,4 +1,8 @@
 
+Você também pode escutar um resumo deste artigo gerado por IA.
+
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0mkbd8vUTiTjRCsY3FbgVR?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
 # Gerenciando Branches com Git-flow, GitHubFlow e TBD
 
 Neste artigo vamos apresentar três modelos que padronizam os branches
