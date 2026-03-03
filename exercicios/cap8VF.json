@@ -55,7 +55,7 @@
   },
   {
     "text": "Teste caixa-preta é também chamado de funcional; teste caixa-branca é chamado de não-funcional.",
-    "correct": "true"
+    "correct": "false"
   },
   {
     "text": "TDD é uma técnica de escrita de testes apenas do tipo caixa-branca.",
