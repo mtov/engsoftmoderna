@@ -1,4 +1,4 @@
-nome="engsoftmoderna-$(date +%Y)-$(date +%m).zip"
+nome="engsoftmoderna-backup-$(date +%Y)-$(date +%m).zip"
 echo git archive -o "$nome" HEAD
 git archive -o "$nome" HEAD
 echo cp "$nome" ../Dropbox/_backup-all/engsoftmoderna
