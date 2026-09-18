@@ -80,9 +80,9 @@ ler o arquivo de entrada e dividi-lo em tokens (como `if`, `for`, `while`, `x`,
 `+`, etc.).
 
 Depois, temos que implementar um analisador sintático, que vai analisar
-as tokens e verificar se elas respeitam a gramática da linguagem fonte.
-Feito isso, ele deve "hierarquizar" essas tokens, isto é,
-transformá-las em uma estrutura conhecida como Árvore de Sintaxe
+os tokens e verificar se eles respeitam a gramática da linguagem fonte.
+Feito isso, ele deve "hierarquizar" esses tokens, isto é,
+transformá-los em uma estrutura conhecida como Árvore de Sintaxe
 Abstrata (AST). Por fim, temos o analisador semântico, que detecta, por
 exemplo, erros de tipo; e o gerador de código, que vai converter a
 representação do programa para uma linguagem de mais baixo nível, que
@@ -103,7 +103,7 @@ analisador léxico, a qual envolve certos desafios. No entanto, eles
 devem ser uma preocupação apenas dos desenvolvedores que ficaram
 responsáveis por essa parte do sistema. Para os demais desenvolvedores,
 deve ser possível usar o analisador léxico da forma mais simples
-possível. Por exemplo, apenas chamando uma função que retorna a próxima
+possível. Por exemplo, apenas chamando uma função que retorna o próximo
 token do arquivo de entrada, como no seguinte código:
 
 `String token = Scanner.next_token();`
