@@ -262,13 +262,11 @@ Compre na <a href="https://www.amazon.com.br/dp/B086K5QJ9V"> Amazon</a>
 <a href="https://creators.spotify.com/pod/show/engsoftmoderna">Spotify</a> 
 ou assine o 
 <a href="https://anchor.fm/s/105ed5fac/podcast/rss">feed</a>.
+Veja também um exemplo de episódio:
 </p>
 
-<!--
-<div>
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/0JNPlRo7PxoQCM52s5sVWD?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
--->
+<div id="spotify-player"></div>
+
 
 <h4>Artigos Didáticos</h4>
 
@@ -339,9 +337,6 @@ Ap</a>
 <a href="https://youtu.be/YCsXtEG51tA">8</a>, 
 <a href="https://youtu.be/BSnnTl4-TMA">9</a> e
 <a href="https://youtu.be/odqn_6S-p6k">10</a>
-</li>
-
-<li> Palestra sobre Impacto de IA em Engenharia de Software: <a href="https://www.youtube.com/live/CLUHM8yuBUk?si=5g2JjsFwon_Czgia">YouTube</a>, <a href="https://docs.google.com/presentation/d/e/2PACX-1vSfePAZUM8yuer5tycQ7WcT9ugLY8S8VUIFtLVsr_v7BrLlx4kxHu-7aUgglfconH3LRH6h-uNxx8p8/pub?start=false&loop=false" target="_blank">slides</a>
 </li>
 
 <li> Explicando conceitos de ES em <a href="https://docs.google.com/presentation/d/e/2PACX-1vRFsVVQ0QgwlhnuKjgAOIR3E2fUC2XADunj6csQVpJt6Bs6Mrt5bYYlmW3yUwZYflakVszKfk6v7QvG/pub?start=false&loop=false" target="_blank">1 slide</a>
@@ -420,6 +415,136 @@ erros de redação), use este
 <footer class="container">
 Todos os direitos reservados. Versão apenas para uso pessoal.
 </footer>
+
+<script>
+
+const episodes = [
+  "0p5KUl5MMHJJc8mT2K8iWn",
+  "1hIW1JBOwt12HDJhCtvd4H",
+  "1igkNROujPa1G8YEJNBQWl",
+  "6Y3kAaHMfCvELHtcpIKg9O",
+  "0s1vqIoCVM5gaqCfGj8Kxt",
+  "1fzB1IYgI4DCLuQrzPuhHx",
+  "0JNPlRo7PxoQCM52s5sVWD",
+  "1yrGtLpPvguy9uai9YPUXf",
+  "6CF6tDvJp0d5Ie1deZGTRJ",
+  "4bLvvEGQpEBaPdlrQZzYod",
+  "0QwHNmy3ng1iIE0o2uIOPf",
+  "3PQd2LQGMvBWDoRlXFXq5v",
+  "4PxPGuJeCmY2Ky7n0QF2v3",
+  "0QUeyaYP5disniVhHMEJlk",
+  "1fSAFbw8rK7OM5YYwdAZvb",
+  "71oR7rnaeZzZeOQEoK3euo",
+  "4Kv99bsdWsqWyMFkn7uiKO",
+  "0RgfMtlRlVNQx3ebXAbvrO",
+  "49swEz69hdkpV5aqSnXC4x",
+  "3jIOI4FIUdq43toy5RqwcT",
+  "45vYRDQA071kJWmN221VMZ",
+  "317QwmHNgdPJNPKmkuMKKJ",
+  "5sG2izjqRVXTtOEAovUBUi",
+  "3xSjqyY1BWQCpLfE2ZQOH0",
+  "2KXrGbCCuPOynQwrFOOAxm",
+  "6IseLbizWAiIwzYFh0UPL0",
+  "4MaMLFcO0Nj4tfWxyiBszk",
+  "3SDhZ0yqvr1DfWHZkIaxIb",
+  "6CX5PpC10oxzrZM0nJdi0e",
+  "1BcP0RdIyDvc0gTDKGUdhy",
+  "4sUfY3Xohlk24NBV27gMbX",
+  "3dS6lbRZbOQ35T4HhczMSK",
+  "1N5Hj02kZA6zuH5UWQ2s37",
+  "1ErfIVzngu2rkmQlr2QZ8D",
+  "6A2buQXSfTyeJLrONkI8nJ",
+  "6DVMclWJrvKk4u1aIlaZq6",
+  "5w7IF3af8CGZjzaKIONt22",
+  "1Qy3Fs7M83lhnu1txSoJg4",
+  "5mJGxqcvSvSYu0brkfNeH6",
+  "54Azm0Xpw9NxxpHAG1F6fP",
+  "7vCctoxy0gUWzh9768ygKI",
+  "3zK50uz9VhrEYoUjSNPxoA",
+  "2A3eYHXCeP7SpjEfbngTR0",
+  "1nIWoMhavYg8PMcdbcK0H6",
+  "5Aqc7SMO9aoQmcCzVFk6UG",
+  "1ovAOyPXPv6QFoxVI2gA8Z",
+  "1zawEkrbTpW9UbZulg1gsS",
+  "2aRZzrkpEhxMsfxgJLCQlp",
+  "70tWglIr9HR4u3bckzA4NJ",
+  "6HhAqkqA4rNCd8P8PwLPA9",
+  "5vSufGFdp9DRk88qHH1VMh",
+  "2t9Mb8X3laVe395r3s9JAQ",
+  "2WxUoYOWS2lMihqAqLO6gy",
+  "5IR06a48A3fbLQEwfVybap",
+  "6tEUmTs5LEmJxGMZ1toMjf",
+  "4txazgkWUWLUUQ0DowGFZ6",
+  "3YX1mAI2KnP6zXb3X48Kfh",
+  "0zVgDyr8CpXlXojRHghGjk",
+  "0WbufIZejvA2mlkbDTosoe",
+  "2JzlQLORNeXbuwuLvxPEGE",
+  "7DQCmffBibDOeTNeuD4O1X",
+  "1mDTDKBkGJtVxBjNJ4DQeP",
+  "2pyAIqb1rXFAST4dpUQYh2",
+  "2DOFh8GrRRWpNvzKWjuvxu",
+  "4EtagnyFRyGjWI8yw5TLOp",
+  "1ReJF2F1Bj7383NUHI7iRn",
+  "2dQ3IQdLlK0YIw9TDSP9Oc",
+  "1kOZWXUbbjs3l85nEIQc52",
+  "5CECXnhWmePJnoIwExwrrE",
+  "6pXg3Tc4TWMY6UvJZnDLje",
+  "0n9unxLf1ow8UUugpHIOTG",
+  "5sfDtIYevm6EUXsISzcRYJ",
+  "7H7qFdRnKIhZnA8lR4RJhW",
+  "0Ds9C8vuohFxxXoJiNsERN",
+  "7qGcBwJBUyzD5yrrKLtqvD",
+  "7c6LWw7HPp11yviFbFULM4",
+  "5kj1E0x4evaOGCImDRt40E",
+  "17Nh8AsrLw7P3IvQ4q03La",
+  "1sbY7a8u6mx2NKBGkrg8Yp",
+  "2CTuIiJxlahRtm4I3UJfS8",
+  "51mWBTkL54SvVXqbMNavbm",
+  "2vKKo03pzISMHxzfZqzfPi",
+  "3neebs9BlfxR9lentbo1vx",
+  "0mkbd8vUTiTjRCsY3FbgVR"
+];
+
+// Data civil em Brasília, independente do fuso do visitante.
+const parts = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Sao_Paulo",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit"
+}).formatToParts(new Date());
+
+const datePart = type =>
+  Number(parts.find(p => p.type === type).value);
+
+const dayNumber = Math.floor(Date.UTC(
+  datePart("year"),
+  datePart("month") - 1,
+  datePart("day")
+) / 86400000);
+
+// Primeiro episódio em 15/10/2026.
+const startDay = Math.floor(
+  Date.UTC(2026, 9, 15) / 86400000
+);
+
+// Exibe os episódios em sequência, reiniciando após o último.
+const elapsedDays = dayNumber - startDay;
+const index = ((elapsedDays % episodes.length) + episodes.length)
+  % episodes.length;
+
+const iframe = document.createElement("iframe");
+iframe.src = `https://open.spotify.com/embed/episode/${episodes[index]}`;
+iframe.title = "Spotify — episódio do dia";
+iframe.width = "100%";
+iframe.height = "152";
+iframe.style.border = "0";
+iframe.style.borderRadius = "12px";
+iframe.loading = "lazy";
+iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+
+document.getElementById("spotify-player").appendChild(iframe);
+
+</script>
 
 </body>
 </html>
