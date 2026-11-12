@@ -210,7 +210,7 @@ Engenheiros de Software empregados pelo Google nessa época.
 \index{SWEBOK}
 Para responder a essa pergunta, vamos nos basear no *Guide to the
 Software Engineering Body of Knowledge*, também conhecido pela sigla
-SWEBOK ([link](http://www.swebok.org)). Trata-se de um
+SWEBOK ([link](https://www.computer.org/education/bodies-of-knowledge/software-engineering)). Trata-se de um
 documento, organizado pela IEEE Computer Society (uma sociedade
 científica internacional), com o apoio de diversos pesquisadores e de
 profissionais da indústria. O objetivo do SWEBOK é precisamente
